@@ -1,0 +1,136 @@
+import type { Parameters, Preset } from '../core/types';
+
+export const hiwinGuideReference =
+  'https://www.hiwin.com/wp-content/uploads/HIWIN-Linear-Guideway-Catalog.pdf#page=91';
+
+/** HIWIN G99TE24-2410, printed page 88: nominal MGN block and rail dimensions. */
+const mgnSizes = [
+  {
+    size: 7,
+    height: 8,
+    base: 1.5,
+    width: 17,
+    across: 12,
+    railHeight: 4.8,
+    counterbore: 4.2,
+    counterDepth: 2.3,
+    railHole: 2.4,
+    pitch: 15,
+    end: 5,
+    mount: 2,
+    depth: 2.5,
+    short: [22.5, 8],
+    long: [30.8, 13],
+  },
+  {
+    size: 9,
+    height: 10,
+    base: 2,
+    width: 20,
+    across: 15,
+    railHeight: 6.5,
+    counterbore: 6,
+    counterDepth: 3.5,
+    railHole: 3.5,
+    pitch: 20,
+    end: 7.5,
+    mount: 3,
+    depth: 3,
+    short: [28.9, 10],
+    long: [39.9, 16],
+  },
+  {
+    size: 12,
+    height: 13,
+    base: 3,
+    width: 27,
+    across: 20,
+    railHeight: 8,
+    counterbore: 6,
+    counterDepth: 4.5,
+    railHole: 3.5,
+    pitch: 25,
+    end: 10,
+    mount: 3,
+    depth: 3.5,
+    short: [34.7, 15],
+    long: [45.4, 20],
+  },
+  {
+    size: 15,
+    height: 16,
+    base: 4,
+    width: 32,
+    across: 25,
+    railHeight: 10,
+    counterbore: 6,
+    counterDepth: 4.5,
+    railHole: 3.5,
+    pitch: 40,
+    end: 15,
+    mount: 3,
+    depth: 4,
+    short: [42.1, 20],
+    long: [58.8, 25],
+  },
+];
+
+export function mgnGuidePresets(defaults: Parameters): Preset[] {
+  return mgnSizes.flatMap((row) =>
+    [
+      ['C', row.short],
+      ['H', row.long],
+    ].map(([variant, block]) => {
+      const [blockLength, blockPitchX] = block as number[];
+      const designation = `MGN${row.size}${variant}`;
+      return {
+        id: designation.toLowerCase(),
+        name: `${designation} · HIWIN`,
+        description: `${row.size} mm rail · ${row.width} × ${blockLength} mm block · ${row.height} mm assembly. Published mounting dimensions; rail length, clearance and ball circuits are prototype settings.`,
+        parameters: {
+          ...defaults,
+          length: row.size < 12 ? 150 : row.size === 12 ? 200 : 300,
+          railWidth: row.size,
+          railHeight: row.railHeight,
+          railHole: row.railHole,
+          counterbore: row.counterbore,
+          counterDepth: row.counterDepth,
+          holePitch: row.pitch,
+          endOffset: row.end,
+          blockLength,
+          blockWidth: row.width,
+          totalHeight: row.height,
+          baseClearance: row.base,
+          blockPitchX,
+          blockPitchY: row.across,
+          blockHole: row.mount,
+          holeDepth: row.depth,
+        },
+        catalog: {
+          designation,
+          sourceName: 'HIWIN',
+          sourceUrl: hiwinGuideReference,
+          manufacturer: 'HIWIN',
+          standard: 'MGN mounting envelope',
+          verifiedParameters: [
+            'railWidth',
+            'railHeight',
+            'railHole',
+            'counterbore',
+            'counterDepth',
+            'holePitch',
+            'endOffset',
+            'blockLength',
+            'blockWidth',
+            'totalHeight',
+            'baseClearance',
+            'blockPitchX',
+            'blockPitchY',
+            'blockHole',
+            'holeDepth',
+          ],
+        },
+      };
+    }),
+  );
+}

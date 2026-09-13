@@ -1,0 +1,6412 @@
+{
+  "freecadVersion": [
+    "1",
+    "0",
+    "2",
+    "39319 (Git)",
+    "https://github.com/FreeCAD/FreeCAD",
+    "2025/08/05 20:19:07",
+    "(HEAD detached at 1.0.2)",
+    "256fc7eff3379911ab5daf88e10182c509aa8052"
+  ],
+  "count": 266,
+  "failures": [],
+  "retainedUnchangedGeometryCases": 135,
+  "finalOffsetCutawayCases": 131,
+  "inspectionPlaneOffsetMm": 0.001,
+  "cases": [
+    {
+      "name": "sfu1204-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 70,
+      "componentValid": true,
+      "bounds": [
+        29.999999999999773,
+        40.0,
+        40.0
+      ],
+      "expectedBounds": [
+        30,
+        40,
+        40
+      ],
+      "boundsValid": true,
+      "seconds": 4.04,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "d7c1213473b735a4e297aacb7a54ab0e2b293795bafa3c070f39e0ac89bc2015",
+      "codeSha256": "82a7a52a457eb48e3db35bc8cf2058a4d00eb98958722156dcf54b6874eb4cb9",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfu1610-3-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 54,
+      "componentValid": true,
+      "bounds": [
+        39.99999999999974,
+        48.0,
+        57.0
+      ],
+      "expectedBounds": [
+        40,
+        48,
+        57
+      ],
+      "boundsValid": true,
+      "seconds": 2.77,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "cc51fab99e259f88e92e363910e1c378fcdea44a2404d9d9247f0a0ef80942b0",
+      "codeSha256": "297f28329d2c3f4b3428d0a9496e14ed325327680b9408b9a330ac5750d346ff",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfu2504-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 133,
+      "componentValid": true,
+      "bounds": [
+        48.00000000000091,
+        62.0,
+        42.0
+      ],
+      "expectedBounds": [
+        48,
+        62,
+        42
+      ],
+      "boundsValid": true,
+      "seconds": 6.5,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "d0b83c24e25710c88aa76ecc5e735133a77475f2047819434ef6209e2cfc8abd",
+      "codeSha256": "2bedc5e85939f3ce8ccf0b3e93f2a1d655e02a283e585a95894285af6deac436",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfu2508-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 72,
+      "componentValid": true,
+      "bounds": [
+        48.00000000000091,
+        62.0,
+        63.0
+      ],
+      "expectedBounds": [
+        48,
+        62,
+        63
+      ],
+      "boundsValid": true,
+      "seconds": 3.72,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "551f36c9537e089e1c950cb259e638eb6456a964a7b4ada4c7244ae324fee3a3",
+      "codeSha256": "bb69c2a72ec01e230770d05645560941261a6b5d9981e1df7b63afc904c38131",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfu3205-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 129,
+      "componentValid": true,
+      "bounds": [
+        62.00000000000007,
+        80.0,
+        52.0
+      ],
+      "expectedBounds": [
+        62,
+        80,
+        52
+      ],
+      "boundsValid": true,
+      "seconds": 6.39,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "c213fd429f5e291cc62b721cc4b0b2bb3366b34130403f331d7c4ace164732de",
+      "codeSha256": "0641893a7beca58c53178e0d5914d4f8aa2aa75b418fae1041e22dbcbd8e5bfa",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfu3210-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 70,
+      "componentValid": true,
+      "bounds": [
+        62.00000000000007,
+        80.0,
+        90.0
+      ],
+      "expectedBounds": [
+        62,
+        80,
+        90
+      ],
+      "boundsValid": true,
+      "seconds": 4.97,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "ae742b9c872f881cc15655ce7144e1f85729f8473aab1fd8cb5f56bb4b0ff26c",
+      "codeSha256": "8f48d57c8d23e8f2660fe219cf7188d229688286254bbb69eccab066b22090f8",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfu4008-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 109,
+      "componentValid": true,
+      "bounds": [
+        69.99999999999956,
+        92.97533689454275,
+        67.0
+      ],
+      "expectedBounds": [
+        70,
+        93,
+        67
+      ],
+      "boundsValid": true,
+      "seconds": 5.59,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "56a6f2388a4cf26dea5704f02d6502fb6d85849712a30bca2a27871349f79fae",
+      "codeSha256": "0694ae07838cb9b475aaa79406be2fd33f4483b0ae2f5c3661fa9b5f79c9e29f",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfu5020-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 93,
+      "componentValid": true,
+      "bounds": [
+        84.99999999999984,
+        110.0,
+        138.0
+      ],
+      "expectedBounds": [
+        85,
+        110,
+        138
+      ],
+      "boundsValid": true,
+      "seconds": 5.54,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "4671064012c5f473df23782de2ec6c5bf9429a19fadb6f346b20642d73c1822d",
+      "codeSha256": "76ddde32fc3ee1ccb9af1b86b94a2793afb025205574498c91c4ad1a90388b8d",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfu8010-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 158,
+      "componentValid": true,
+      "bounds": [
+        109.99999999999906,
+        144.97565938207444,
+        98.0
+      ],
+      "expectedBounds": [
+        110,
+        145,
+        98
+      ],
+      "boundsValid": true,
+      "seconds": 8.4,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "49c1cc386c527344655334b7777d327698dc01b3425064643693d16f48ec62ff",
+      "codeSha256": "e2cd4ddf69e89eff48ca6ed945abca6836e12ea3453954acf0fb27c276bf8166",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfk0401-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 36,
+      "componentValid": true,
+      "bounds": [
+        13.999999999999986,
+        20.0,
+        12.0
+      ],
+      "expectedBounds": [
+        14,
+        20,
+        12
+      ],
+      "boundsValid": true,
+      "seconds": 3.17,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "63be5d1162d9c10c65e999c768373ec395d91c5285742f71c1a2fd04673f9f01",
+      "codeSha256": "0ff815cb1091b3d97c79fc91890f4b418fe9826e203bcce49886a04661974548",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfk0802-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 67,
+      "componentValid": true,
+      "bounds": [
+        18.000000000000014,
+        27.0,
+        16.0
+      ],
+      "expectedBounds": [
+        18,
+        27,
+        16
+      ],
+      "boundsValid": true,
+      "seconds": 3.28,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "9f9003e37d32b6829d30e5cac82994c8f34dffb4368e22c95698f076002e1653",
+      "codeSha256": "d17b41b45caabacd7e2184726b6bcbba7b8e8d47f2b3f23d0cff1264cb63e416",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfk1004-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 53,
+      "componentValid": true,
+      "bounds": [
+        28.000000000000185,
+        45.98648903765567,
+        34.0
+      ],
+      "expectedBounds": [
+        28,
+        46,
+        34
+      ],
+      "boundsValid": true,
+      "seconds": 3.46,
+      "raceClear": true,
+      "overlaps": [],
+      "stepValid": true,
+      "originalCodeSha256": "5c37294d18254cfaa36eb4446a9ca7c7403bd8f78650ca9835514fff4c5ebc82",
+      "codeSha256": "7d8ccf3142d6538eb09d52083c284c9110ad1e986f294e8d1bf1f49da4b30e07",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfk1602-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 167,
+      "componentValid": true,
+      "bounds": [
+        28.99999999999931,
+        43.0,
+        40.0
+      ],
+      "expectedBounds": [
+        29,
+        43,
+        40
+      ],
+      "boundsValid": true,
+      "seconds": 8.48,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "e75a8ae95c6b0aeb9914d8e20f9eb141fc62b32b2eb430d01df39ccf3cc048e4",
+      "codeSha256": "4d3ce9679755050a5c3d58f97d7778df494e75fc3bf49a8c49876b09594379bb",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfs1605-3-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 69,
+      "componentValid": true,
+      "bounds": [
+        39.99999999999974,
+        48.0,
+        38.0
+      ],
+      "expectedBounds": [
+        40,
+        48,
+        38
+      ],
+      "boundsValid": true,
+      "seconds": 3.45,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "2c90d05c764fb367fa6094c7fab3688a627282365f9082871d6eafd32ec4dea3",
+      "codeSha256": "8e4e3159b843c3e1f10515ae215596beaedbb4b9cbf8e8883ba486da21e451fd",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfs1620-1-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 69,
+      "componentValid": true,
+      "bounds": [
+        39.99999999999974,
+        48.0,
+        57.0
+      ],
+      "expectedBounds": [
+        40,
+        48,
+        57
+      ],
+      "boundsValid": true,
+      "seconds": 4.85,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "fb696b7065a8ab0e970fd70bf4e94f64eefa369023a46d8da36d64312250d1ae",
+      "codeSha256": "d94c0c94d4c1861456038f2b0fab00af7f91fde8f52647b46bf6f9c16a9352ef",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfs2525-1-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 95,
+      "componentValid": true,
+      "bounds": [
+        48.00000000000091,
+        62.0,
+        70.0
+      ],
+      "expectedBounds": [
+        48,
+        62,
+        70
+      ],
+      "boundsValid": true,
+      "seconds": 6.67,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "ba9699328f60db55ad1e84bcecccc4c053bb05d9396b16259e46ce195c0fd9d3",
+      "codeSha256": "6a3269ed460ea6bcfd7d0ccbd1fd5c06217d33456ab0142723fb3efa75e9c809",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfs3232-1-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 93,
+      "componentValid": true,
+      "bounds": [
+        62.00000000000007,
+        80.0,
+        84.0
+      ],
+      "expectedBounds": [
+        62,
+        80,
+        84
+      ],
+      "boundsValid": true,
+      "seconds": 5.07,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "a751e125ff1ba098dde5669b352295bada43e9231ef2463342797427b9a3b4de",
+      "codeSha256": "414c38c7d3da7786be89971dc608eabb0adce4709b0a9e2c25081b40b7fa6e6f",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfe1616-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 83,
+      "componentValid": true,
+      "bounds": [
+        33.999999999999886,
+        53.0,
+        38.0
+      ],
+      "expectedBounds": [
+        34,
+        53,
+        38
+      ],
+      "boundsValid": true,
+      "seconds": 3.49,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "708d87327d1f9bd9118dd9c3a95b69291f52fcc647aa6eca00b93f07c02986b6",
+      "codeSha256": "f4544681c5bd369888aa6356951c54f429b7a158440c706f00947eb041bf3fc3",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfe1632-6-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 37,
+      "componentValid": true,
+      "bounds": [
+        36.00000000000004,
+        54.9833504836361,
+        34.0
+      ],
+      "expectedBounds": [
+        36,
+        55,
+        34
+      ],
+      "boundsValid": true,
+      "seconds": 2.05,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "fd7a7c4ceb9d25a73cad3d8d1ba8156a9fc963b64bb1ff8e4b7a42295ad0e1fb",
+      "codeSha256": "4926199bed04cdc9acb7921c97ff6eb852dad488e5ef08efec51c9286537936e",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfe2040-3-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 45,
+      "componentValid": true,
+      "bounds": [
+        40.000000000000426,
+        57.98252421590614,
+        41.0
+      ],
+      "expectedBounds": [
+        40,
+        58,
+        41
+      ],
+      "boundsValid": true,
+      "seconds": 2.49,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "1fa1a3535a1d518bf27fc2c2bd34f633e3c1e9188c1dd36b6463e9b4175b3ed7",
+      "codeSha256": "cb387c562fd821c9f307c7f0f72f64fe5b6127ea9bc9e0686b2b9e2040a7f9cc",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfe2525-6-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 87,
+      "componentValid": true,
+      "bounds": [
+        48.99999999999965,
+        73.97695902452976,
+        57.0
+      ],
+      "expectedBounds": [
+        49,
+        74,
+        57
+      ],
+      "boundsValid": true,
+      "seconds": 3.79,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "62d03232e2b3a67dd5a6c7af602cb5fab0471bf9080eebeb909013aadc33282e",
+      "codeSha256": "49a1460e2c6a6e5387a54522105b9ff16c0b1dbff7dd4c382d75a4f1f5b9a6dd",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfe3232-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 105,
+      "componentValid": true,
+      "bounds": [
+        60.00000000000145,
+        91.97584089888142,
+        82.0
+      ],
+      "expectedBounds": [
+        60,
+        92,
+        82
+      ],
+      "boundsValid": true,
+      "seconds": 4.23,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "f185317b0cea58837486c79d0c8038296b991db542eaa0ac829054d7af09b4e0",
+      "codeSha256": "922d269c1ca222f10ed197317589f4a018f0a0de500c7beb15bc12c4dd20494f",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfe3264-6-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 45,
+      "componentValid": true,
+      "bounds": [
+        60.00000000000145,
+        91.97584089888142,
+        62.0
+      ],
+      "expectedBounds": [
+        60,
+        92,
+        62
+      ],
+      "boundsValid": true,
+      "seconds": 2.39,
+      "raceClear": true,
+      "overlaps": [],
+      "stepValid": true,
+      "originalCodeSha256": "b6a7c6615c920e0204a8761b6c251057b9971169921fc51bcbb7c30781db58da",
+      "codeSha256": "c9e53b03866c6d0be3243d7d063bc96ff0c8ca25f38f1c8c1329f64649f7a991",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfe5050-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 89,
+      "componentValid": true,
+      "bounds": [
+        91.99999999999889,
+        134.9750520561845,
+        117.0
+      ],
+      "expectedBounds": [
+        92,
+        135,
+        117
+      ],
+      "boundsValid": true,
+      "seconds": 4.26,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "cb19b4b709c7baa3ce045779a2329ca5beab7962e8cbff4b66394ea3b992ffd1",
+      "codeSha256": "b52c40d43451926ef4ce3a9a16965a8ffd6474d6e37f485b88c55be014e978ba",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfi1610-3-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 52,
+      "componentValid": true,
+      "bounds": [
+        58.0,
+        57.98197255827206,
+        57.0
+      ],
+      "expectedBounds": [
+        58,
+        58,
+        57
+      ],
+      "boundsValid": true,
+      "seconds": 3.7,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "258d57378fcc2ab598d95eff6e64571733f4c836c5b49fd48e19802e5e5f3044",
+      "codeSha256": "d97d41c7d14aeeca6c3e6d6f7cac59b56de1ec8311a6c73f19664dfc76b351e2",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfi2505-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 100,
+      "componentValid": true,
+      "bounds": [
+        63.0,
+        62.9804184663897,
+        51.0
+      ],
+      "expectedBounds": [
+        63,
+        63,
+        51
+      ],
+      "boundsValid": true,
+      "seconds": 5.43,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "a6c1c8457f68e2751625e4b3af00fb4cd092c80e8cbe813edb9859e64818b87c",
+      "codeSha256": "5e30600772c49bd6a572fd1922705c88ddd755077fcfe2fff21796ca5b89ca29",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "dfi2510-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 73,
+      "componentValid": true,
+      "bounds": [
+        72.0,
+        71.97762110683004,
+        145.0
+      ],
+      "expectedBounds": [
+        72,
+        72,
+        145
+      ],
+      "boundsValid": true,
+      "seconds": 6.18,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "a6d0d205c708fb0591dc31045b42b72953c957464c0a073ff91366dcc6e000de",
+      "codeSha256": "571a142801d6ab18def1b5033f408be57ae4a0caa6adba669ef03d9abb71c3d3",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfi3210-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 67,
+      "componentValid": true,
+      "bounds": [
+        88.0,
+        88.0,
+        90.0
+      ],
+      "expectedBounds": [
+        88,
+        88,
+        90
+      ],
+      "boundsValid": true,
+      "seconds": 4.01,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "874b2d0570cc9c5d274516f6114de665280b3efb8cbd81b449c3d81182fb030e",
+      "codeSha256": "17d81176899629617e814b96da9525869ab1ac82746bf763b076c562bb29cc80",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "dfi4005-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 159,
+      "componentValid": true,
+      "bounds": [
+        90.0,
+        89.97526666068869,
+        105.0
+      ],
+      "expectedBounds": [
+        90,
+        90,
+        105
+      ],
+      "boundsValid": true,
+      "seconds": 9.73,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "8f2f704e978f48701d092e789c4ecbfa6a204c2d8c13912eab189d1bd0cd913a",
+      "codeSha256": "a4aa3eb0017218b8699d4aaf9f12e81c9ea81bdbe8e2861da77ec982c59d7829",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfi5010-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 100,
+      "componentValid": true,
+      "bounds": [
+        114.0,
+        114.0,
+        93.0
+      ],
+      "expectedBounds": [
+        114,
+        114,
+        93
+      ],
+      "boundsValid": true,
+      "seconds": 5.65,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "f8936ce8bf5312ef1353159da468a73f54930a26848a54abb6694df55de02291",
+      "codeSha256": "4f11cdfbf31fc36ca580235a22276064700be2a827059cb3eabdbe251864bd04",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "dfi6310-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 129,
+      "componentValid": true,
+      "bounds": [
+        131.0,
+        130.97536812925034,
+        182.0
+      ],
+      "expectedBounds": [
+        131,
+        131,
+        182
+      ],
+      "boundsValid": true,
+      "seconds": 15.42,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "aadabdec9e10ee43cb6b731ca5608e5cc88a5d90a7c6b75ca9ade111f3c5e41d",
+      "codeSha256": "0f546dbde371ef3a66b45a5bde08a5a9f799eab819f7c76582f71a388feb1c01",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfh01205-2-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 47,
+      "componentValid": true,
+      "bounds": [
+        29.999999999999773,
+        40.0,
+        30.0
+      ],
+      "expectedBounds": [
+        30,
+        40,
+        30
+      ],
+      "boundsValid": true,
+      "seconds": 4.17,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "2130a0710b4f7f6ee3250804b134938dcbe309691a97884ac007840d06d7cddc",
+      "codeSha256": "d96953c0ce20341260fee2867927b2d83e2cfe7e2d193ee2d06b12ee95027c16",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfh01610-2-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 52,
+      "componentValid": true,
+      "bounds": [
+        39.99999999999974,
+        48.0,
+        45.0
+      ],
+      "expectedBounds": [
+        40,
+        48,
+        45
+      ],
+      "boundsValid": true,
+      "seconds": 3.25,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "95b2974f6420e69b7780e03acbe1d23a9224e2c8bf9b28ddffe96f88319f864d",
+      "codeSha256": "ab86f594e2512bee00af3ad67df738bd75844b15a7f0ad2e775b908b57706952",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfh01620-1-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 37,
+      "componentValid": true,
+      "bounds": [
+        39.99999999999974,
+        48.0,
+        58.0
+      ],
+      "expectedBounds": [
+        40,
+        48,
+        58
+      ],
+      "boundsValid": true,
+      "seconds": 3.26,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "720b549ab00eb4dc9534f525bf26824f4ff41f06fe16f81749e968924761c19c",
+      "codeSha256": "0a1ff332c5640d1847ff57e93d8673cf2d16387489c9a348042ec2e850c0abfd",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfh02020-1-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 41,
+      "componentValid": true,
+      "bounds": [
+        43.99999999999906,
+        57.98244335784446,
+        54.0
+      ],
+      "expectedBounds": [
+        44,
+        58,
+        54
+      ],
+      "boundsValid": true,
+      "seconds": 2.29,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "d3a1810ca99c4b933f8181be08eafebc67cb5ce17db2731ac3ea8539fee2ac66",
+      "codeSha256": "dad90a40d762f956c007a282280401c47892d36b418f2df00c495c70f9744320",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfh02510-3-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 97,
+      "componentValid": true,
+      "bounds": [
+        48.00000000000091,
+        62.0,
+        55.0
+      ],
+      "expectedBounds": [
+        48,
+        62,
+        55
+      ],
+      "boundsValid": true,
+      "seconds": 4.93,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "8c37fa7b3ac179c038894fa78b01569b27dda929f77fe2a820198169bfccbab9",
+      "codeSha256": "8c9eca9bcf02bcdf863089459f108b1cde2931f849cfe59d8ec4846955491be6",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfh03205-3-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 120,
+      "componentValid": true,
+      "bounds": [
+        62.00000000000007,
+        80.0,
+        37.0
+      ],
+      "expectedBounds": [
+        62,
+        80,
+        37
+      ],
+      "boundsValid": true,
+      "seconds": 6.68,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "1320946e4e3db4cc4a0e8d2e47e17e0a24c75af9d24fcfd2fe8a8cbbf6a6fa38",
+      "codeSha256": "d65ddd116f007f0c93fe1ef73bbeb7545531f9b274965c7f9dda77da50927066",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfh03232-1-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 49,
+      "componentValid": true,
+      "bounds": [
+        62.00000000000007,
+        80.0,
+        80.0
+      ],
+      "expectedBounds": [
+        62,
+        80,
+        80
+      ],
+      "boundsValid": true,
+      "seconds": 2.28,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "140f09983d090075ef0791c419e5bb29972f9dd1bf2727085202f7ee0fc5f7bb",
+      "codeSha256": "7260d636c64e6e0e2f8e777feaf3546d9e7d4467005f907b2804a652e1e65aa7",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfh04010-3-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 75,
+      "componentValid": true,
+      "bounds": [
+        69.99999999999956,
+        92.97533689454275,
+        60.0
+      ],
+      "expectedBounds": [
+        70,
+        93,
+        60
+      ],
+      "boundsValid": true,
+      "seconds": 4.88,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "cf260a933e2a9403b0d889f37a61fd24c75fe782ed9b28607c1de4ec2ebadda1",
+      "codeSha256": "d0fdcacce1be6dc84449a99e33d8d1e6c16d9210e6bfd9ee311ccebab1ea45ae",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfh04040-2-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 59,
+      "componentValid": true,
+      "bounds": [
+        69.99999999999956,
+        92.97533689454275,
+        138.0
+      ],
+      "expectedBounds": [
+        70,
+        93,
+        138
+      ],
+      "boundsValid": true,
+      "seconds": 2.64,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "1159a890d449d8c7c4b970b44109475bfd3b8c4c9948cd747434e370d71a9700",
+      "codeSha256": "12050d86d0c194518f2cdbd5bd36daa3c3da8a9eea331b1b4e23d22236ec860b",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfh05020-3-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 93,
+      "componentValid": true,
+      "bounds": [
+        84.99999999999984,
+        110.0,
+        100.0
+      ],
+      "expectedBounds": [
+        85,
+        110,
+        100
+      ],
+      "boundsValid": true,
+      "seconds": 5.87,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "af5790f5e3ac4ac2096a7a0757360128f8f1d9f7663e98dcb4622ffa24c5630b",
+      "codeSha256": "e43ae4fbc0651eb901931c12bf80751eb8c95794efde6cbe5bf5f5dda3b72ba5",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfy1616-3-6-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 52,
+      "componentValid": true,
+      "bounds": [
+        33.999999999999886,
+        53.0,
+        45.0
+      ],
+      "expectedBounds": [
+        34,
+        53,
+        45
+      ],
+      "boundsValid": true,
+      "seconds": 2.65,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "1b439327a7cda9fd6133e25a9a23eee03a44309534800deb3d1f6e83a39e462d",
+      "codeSha256": "8780f35ae0dbd31df861cf7f4b1eb2fe913084bb38f767862ceae36038473836",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfy3232-3-6-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 52,
+      "componentValid": true,
+      "bounds": [
+        60.00000000000145,
+        91.97584089888142,
+        78.0
+      ],
+      "expectedBounds": [
+        60,
+        92,
+        78
+      ],
+      "boundsValid": true,
+      "seconds": 3.21,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "53d07e277e3642e624e479ac6476d486750dc9c5d7c4a2d3c2a47275363798d3",
+      "codeSha256": "982c774db7caef11cb6f6345624ad5b58388b4508efb5b6a99a16b6e7e5fc611",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfk602 / sfk0602 \u00b7 unverified listing-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 75,
+      "componentValid": true,
+      "bounds": [
+        16.00000000000015,
+        24.0,
+        18.0
+      ],
+      "expectedBounds": [
+        16,
+        24,
+        18
+      ],
+      "boundsValid": true,
+      "seconds": 5.04,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "fb8cef770672f5dd6b8d9235e7c9f06a81ca3dd8dcf3aa74f33822ae22915dd5",
+      "codeSha256": "1cba1f9ae5c9ba4761e5625d79fab91acfddf2057474409f4e483b2ae19b26d8",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfu10020-4-260-full-shaft",
+      "valid": true,
+      "closed": true,
+      "solids": 1,
+      "componentValid": true,
+      "bounds": [
+        100.00000000000001,
+        99.99398366825133,
+        260.00000000000017
+      ],
+      "expectedBounds": [
+        100,
+        100,
+        260
+      ],
+      "boundsValid": true,
+      "seconds": 5.07,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "887ad8b4496ef6b367b32535f28ae2b2546fb8a33962b722760f1df5007fdf22",
+      "codeSha256": "3f144eebc2a71f01145cf54650b0be6ebdd24c7e81d27bf49f8bea60b6eb17b4",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-0.json"
+    },
+    {
+      "name": "sfu1605-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 70,
+      "componentValid": true,
+      "bounds": [
+        39.99999999999974,
+        48.0,
+        50.0
+      ],
+      "expectedBounds": [
+        40,
+        48,
+        50
+      ],
+      "boundsValid": true,
+      "seconds": 4.19,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "ac1075ddce4710473c5e512d16d5c5a663bf1d4bc9bec6d42a6539512a40ab0a",
+      "codeSha256": "97724953638bc896b199162c1adf8e133335bf061096a5e4b4194b8e47d670f5",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfu2005-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 84,
+      "componentValid": true,
+      "bounds": [
+        43.99999999999906,
+        57.98244335784446,
+        51.0
+      ],
+      "expectedBounds": [
+        44,
+        58,
+        51
+      ],
+      "boundsValid": true,
+      "seconds": 4.26,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "71d3bf37f1d56a3897f81235b6251604d44a02c1952fc5ce886d6c27a8d8fe7c",
+      "codeSha256": "f527b4dc7de8790c007740f227bd18ba2175d7338760e54732f78c830d0fe1ab",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfu2506-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 84,
+      "componentValid": true,
+      "bounds": [
+        48.00000000000091,
+        62.0,
+        54.0
+      ],
+      "expectedBounds": [
+        48,
+        62,
+        54
+      ],
+      "boundsValid": true,
+      "seconds": 4.35,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "ceb170ffe660481d9f0467e9b27ed29fee26a509c13c8d0691788c8628f4fa77",
+      "codeSha256": "d2da313b5454a1abc01e5c4cbf5004971e03d6a90689bdfabec935fe4f37098a",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfu3204-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 168,
+      "componentValid": true,
+      "bounds": [
+        62.00000000000007,
+        80.0,
+        44.0
+      ],
+      "expectedBounds": [
+        62,
+        80,
+        44
+      ],
+      "boundsValid": true,
+      "seconds": 7.85,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "63825788675d68b262bbed909250cb6bdbcf0dabaff80ad758abaea797515d1c",
+      "codeSha256": "43ced8047276f4b9043a1bf7f38e9a185f68c674218a6b7c98a3a56308816d4a",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfu3208-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 89,
+      "componentValid": true,
+      "bounds": [
+        62.00000000000007,
+        80.0,
+        65.0
+      ],
+      "expectedBounds": [
+        62,
+        80,
+        65
+      ],
+      "boundsValid": true,
+      "seconds": 4.48,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "0c2a72063f36290758769099dc1f1a025eab7bddfd669790f08f30b46d1186ab",
+      "codeSha256": "3a6cbf2642a4ed85a26142d7fd424063ad4e5947c5569a6eef6b98bc204bd7df",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfu4006-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 129,
+      "componentValid": true,
+      "bounds": [
+        69.99999999999956,
+        92.97533689454275,
+        60.0
+      ],
+      "expectedBounds": [
+        70,
+        93,
+        60
+      ],
+      "boundsValid": true,
+      "seconds": 6.52,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "644fabf4f7842a339b249bf29f581c93b9ef56764259eda1b0618b9d9991e53b",
+      "codeSha256": "699a7c2aa3fde6dd49c7b6f66c294dd6b6edd66ed9edf8eb51049246dccaf345",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfu5010-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 103,
+      "componentValid": true,
+      "bounds": [
+        84.99999999999984,
+        110.0,
+        93.0
+      ],
+      "expectedBounds": [
+        85,
+        110,
+        93
+      ],
+      "boundsValid": true,
+      "seconds": 5.71,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "1fddf98fa0d3d29caad2f3084900c211e6843eca8bedf1410131be7773c79721",
+      "codeSha256": "6131eab24a19e1c058c3c3e7dd3e47b516e99ca196900edbba08e59b5820b600",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfu6320-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 88,
+      "componentValid": true,
+      "bounds": [
+        99.99999999999932,
+        135.0,
+        149.0
+      ],
+      "expectedBounds": [
+        100,
+        135,
+        149
+      ],
+      "boundsValid": true,
+      "seconds": 5.2,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "622f706cbf2f1a17fd84410423d055517e8d9c1d6e58d905b5987ab1d119aa59",
+      "codeSha256": "08da3b36efd2fd5c4e053100cb83d8019083410d92e7e4e980a087ccf51d30a1",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfu10020-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 134,
+      "componentValid": true,
+      "bounds": [
+        154.99999999999883,
+        202.0,
+        180.0
+      ],
+      "expectedBounds": [
+        155,
+        202,
+        180
+      ],
+      "boundsValid": true,
+      "seconds": 6.64,
+      "raceClear": true,
+      "overlaps": [],
+      "stepValid": true,
+      "originalCodeSha256": "1546570865e513616980a08fe4cd7e1c364228eb75920e5cdf1778575eb8795b",
+      "codeSha256": "1572875e73cef1c9f376fa7f8d6ec8f404bcf73680de2dbd8bf472f3f3f6b5c4",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfk0801-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 128,
+      "componentValid": true,
+      "bounds": [
+        18.000000000000014,
+        27.0,
+        16.0
+      ],
+      "expectedBounds": [
+        18,
+        27,
+        16
+      ],
+      "boundsValid": true,
+      "seconds": 7.1,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "9bb7fa577f0c3a7011a234dbd26c5e4118dad4b41ec46490a5ce220ae94b62b1",
+      "codeSha256": "275116bd62e33b118ce5cc9f590b8b8d43b65ba081f4dacb9b0f9f5f19cdbb0c",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfk1002-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 82,
+      "componentValid": true,
+      "bounds": [
+        22.000000000000327,
+        35.0,
+        28.0
+      ],
+      "expectedBounds": [
+        22,
+        35,
+        28
+      ],
+      "boundsValid": true,
+      "seconds": 5.57,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "051a32e8b143a76e07c81e9381954dc1ee188cae128c84f74a2b6b9a267b2c50",
+      "codeSha256": "2177364855d4144cf9be84afda7e2abc4b96d031a2b29ecebf10b59b9877ae99",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfk1402-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 147,
+      "componentValid": true,
+      "bounds": [
+        25.99999999999978,
+        39.98809391447112,
+        23.0
+      ],
+      "expectedBounds": [
+        26,
+        40,
+        23
+      ],
+      "boundsValid": true,
+      "seconds": 6.5,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "1b66efc0e2048816a326e02cbbf43b29b464119a821d01cc76ebfe23dfbe3158",
+      "codeSha256": "475f9c1f16c6bee2c5fc64cfec3026a17064c3f19638e3db1c5a9b54bf303b09",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfs1210-2-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 91,
+      "componentValid": true,
+      "bounds": [
+        29.999999999999773,
+        40.0,
+        48.5
+      ],
+      "expectedBounds": [
+        30,
+        40,
+        48.5
+      ],
+      "boundsValid": true,
+      "seconds": 7.39,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "37bf1601fa52af68d4ccde06a8988b2a6790c3d8b28a09c0211562414629aeb8",
+      "codeSha256": "44fa693cb63087c68dc50a0582fbefed86e4289d187cf2f13087c9b610a98a38",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfs1616-1-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 67,
+      "componentValid": true,
+      "bounds": [
+        39.99999999999974,
+        48.0,
+        45.0
+      ],
+      "expectedBounds": [
+        40,
+        48,
+        45
+      ],
+      "boundsValid": true,
+      "seconds": 5.54,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "ae537f3bd366f9b617a6320931e418e72f638c9ac44d3d7f649dce386caec176",
+      "codeSha256": "da294f20296e9382d9cdc521bd39fb81c5fd37b948f9accb385715e783d24078",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfs2510-3-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 97,
+      "componentValid": true,
+      "bounds": [
+        48.00000000000091,
+        62.0,
+        62.0
+      ],
+      "expectedBounds": [
+        48,
+        62,
+        62
+      ],
+      "boundsValid": true,
+      "seconds": 3.37,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "2420431b3e200fbbe8d7d3c696f27d1991d9467b8883c2bde996e16149a0949a",
+      "codeSha256": "6c742eade4e103acc450d24049eb81c7fb421b97df248bf62d0fec81953ea4de",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfs3220-2-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 73,
+      "componentValid": true,
+      "bounds": [
+        62.00000000000007,
+        80.0,
+        80.0
+      ],
+      "expectedBounds": [
+        62,
+        80,
+        80
+      ],
+      "boundsValid": true,
+      "seconds": 3.4,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "3e2c5efc982944fc4d2f776ec243b0283cd6289e87a686485017f8d016130c09",
+      "codeSha256": "6146cd4aa75601bee2c2ab5daf965d6d6512e65280c7371236af71ee2e82658b",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "dfu2510-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 79,
+      "componentValid": true,
+      "bounds": [
+        48.00000000000091,
+        62.0,
+        145.0
+      ],
+      "expectedBounds": [
+        48,
+        62,
+        145
+      ],
+      "boundsValid": true,
+      "seconds": 5.62,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "8fba1b8cd0cabbcf31fa3a2ae4afe61b8c1a955d04819cf63a43b80583d011b9",
+      "codeSha256": "0797d1321e1ca4e70ceb06cf1d47159fce9268daa710b21cd80a3a44b7da7c5f",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfe1632-3-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 37,
+      "componentValid": true,
+      "bounds": [
+        36.00000000000004,
+        54.9833504836361,
+        34.0
+      ],
+      "expectedBounds": [
+        36,
+        55,
+        34
+      ],
+      "boundsValid": true,
+      "seconds": 2.09,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "fd7a7c4ceb9d25a73cad3d8d1ba8156a9fc963b64bb1ff8e4b7a42295ad0e1fb",
+      "codeSha256": "4926199bed04cdc9acb7921c97ff6eb852dad488e5ef08efec51c9286537936e",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfe2020-6-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 89,
+      "componentValid": true,
+      "bounds": [
+        40.99999999999973,
+        61.98075738345008,
+        47.0
+      ],
+      "expectedBounds": [
+        41,
+        62,
+        47
+      ],
+      "boundsValid": true,
+      "seconds": 3.46,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "7e8f0b8b74d02e01e7d9cc69a9dfd5fa7a704cf52c146337eb87e16dcb0392ce",
+      "codeSha256": "a2f1f13f59aa9dabfb266e2b9547e00a19a76bb67c0cab2ad50096f4a4fa7a44",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfe2525-3-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 87,
+      "componentValid": true,
+      "bounds": [
+        48.99999999999965,
+        73.97695902452976,
+        57.0
+      ],
+      "expectedBounds": [
+        49,
+        74,
+        57
+      ],
+      "boundsValid": true,
+      "seconds": 4.03,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "1944c222baae25e1fb4096b7a933e5a90081e28d37449db586c2f5094c4b861a",
+      "codeSha256": "81dae7efced72ba660e96ef9cd85a7eeaf4a1f6deda475c595a1385ec9438158",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfe2550-6-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 43,
+      "componentValid": true,
+      "bounds": [
+        48.000000000000355,
+        69.97920833205663,
+        50.0
+      ],
+      "expectedBounds": [
+        48,
+        70,
+        50
+      ],
+      "boundsValid": true,
+      "seconds": 2.72,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "84279fc22d0edca6562dbf9e81c6b9a0cd6f4a8f6c361e597c227d3a69d77aa2",
+      "codeSha256": "2d7294ef26cb68a2926948c6161feb2317521e809d7672db2eace9a73c95c0ac",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfe3264-3-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 45,
+      "componentValid": true,
+      "bounds": [
+        60.00000000000145,
+        91.97584089888142,
+        62.0
+      ],
+      "expectedBounds": [
+        60,
+        92,
+        62
+      ],
+      "boundsValid": true,
+      "seconds": 2.22,
+      "raceClear": true,
+      "overlaps": [],
+      "stepValid": true,
+      "originalCodeSha256": "27d50f9ecf942336a597104b0bb23661a47a73151daa87c54819d4542454f76f",
+      "codeSha256": "9490e88e4056da7f8e4c2dc034f292095f7e9790331a5ac811856da14546c7be",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfe4040-6-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 85,
+      "componentValid": true,
+      "bounds": [
+        75.0000000000004,
+        113.97601186364946,
+        89.0
+      ],
+      "expectedBounds": [
+        75,
+        114,
+        89
+      ],
+      "boundsValid": true,
+      "seconds": 4.2,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "0003990024827968f0792679b309678c21ab70f8f4ebb479481872429dd19b91",
+      "codeSha256": "63ac2e5bd1539ba2ab7470bbf61db002064d1284f582e896d3542b4cea171619",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfi1605-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 67,
+      "componentValid": true,
+      "bounds": [
+        49.0,
+        48.98476991804,
+        50.0
+      ],
+      "expectedBounds": [
+        49,
+        49,
+        50
+      ],
+      "boundsValid": true,
+      "seconds": 4.64,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "1d0db70a39a7114f7cf783ff1394228f37685d0ea20472969201268c4f1c381e",
+      "codeSha256": "ed0e7f5a298454bfb893b13eb0a9ccf228cade8524a2047fc83ef219797a2885",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "dfi2005-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 85,
+      "componentValid": true,
+      "bounds": [
+        57.0,
+        56.98228337404653,
+        101.0
+      ],
+      "expectedBounds": [
+        57,
+        57,
+        101
+      ],
+      "boundsValid": true,
+      "seconds": 7.35,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "a27905557791d2adbe6346269fe9182d915020e72f21483c8d2ad44f60c4980c",
+      "codeSha256": "f6872ae4fcd78893e5a58759d9501e3505494afbcbfc61dbd795cf6e90ed563e",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfi2510-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 69,
+      "componentValid": true,
+      "bounds": [
+        72.0,
+        71.97762110683004,
+        85.0
+      ],
+      "expectedBounds": [
+        72,
+        72,
+        85
+      ],
+      "boundsValid": true,
+      "seconds": 4.87,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "4e0279b4a75613e85d8828188f9724ef8f5e1b72c33df231342428e1ecdc383b",
+      "codeSha256": "5dbc2a1229b4b8ebdd9d7e21afd04f005bdf2a490f15dc1d6ae7318bbe7f976a",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "dfi3205-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 131,
+      "componentValid": true,
+      "bounds": [
+        72.0,
+        71.97762110683004,
+        102.0
+      ],
+      "expectedBounds": [
+        72,
+        72,
+        102
+      ],
+      "boundsValid": true,
+      "seconds": 8.49,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "9a99c7dd1f9ccc97a6a3c125452d5c3ff32243cf5c8354ee07fd50cf3226a720",
+      "codeSha256": "adadd41360e69039892d59eecf771a427b6a3c3f88b624fa636c90a37c5570f9",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfi4005-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 155,
+      "componentValid": true,
+      "bounds": [
+        90.0,
+        89.97526666068869,
+        55.0
+      ],
+      "expectedBounds": [
+        90,
+        90,
+        55
+      ],
+      "boundsValid": true,
+      "seconds": 6.79,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "a269a7a3be6448f0f64970deae9274531c34099ec898c1c198c811366ea3ee96",
+      "codeSha256": "c6cc09d6efe9538712be02b8b8f298bbd8e0fce266125b52c679a6d54a563dfb",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "dfi4010-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 85,
+      "componentValid": true,
+      "bounds": [
+        104.0,
+        104.0,
+        165.0
+      ],
+      "expectedBounds": [
+        104,
+        104,
+        165
+      ],
+      "boundsValid": true,
+      "seconds": 11.66,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "10f3236ab94d3022f47500785da5cfb1e1d4e97f44f8180525fb2d93d95d34e9",
+      "codeSha256": "f4d785a111d4ab20ae7a79df147066a3c1df3b04b3314ed37af1941e02585c71",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfi6310-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 124,
+      "componentValid": true,
+      "bounds": [
+        131.0,
+        130.97536812925034,
+        98.0
+      ],
+      "expectedBounds": [
+        131,
+        131,
+        98
+      ],
+      "boundsValid": true,
+      "seconds": 11.87,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "fb49408e5a6acc9bb8268186754dda89df5db05b9bc9e47df221130f11f674a5",
+      "codeSha256": "c6eaf1bda167ff123069eea3fe3a854ee5f2777e3acd9e705a76387f5cea781c",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "dfi8010-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 159,
+      "componentValid": true,
+      "bounds": [
+        150.0,
+        149.97555158481453,
+        182.0
+      ],
+      "expectedBounds": [
+        150,
+        150,
+        182
+      ],
+      "boundsValid": true,
+      "seconds": 13.74,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "7843e0b431e566f243a6420f6b15b44cb46e1e25e1b59d6f79e7783da465ab3e",
+      "codeSha256": "cfb1e68dfa5698195832ccdbeaad4d8fe29ab7f9e7ef397dddc3e97869c2a79d",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfh01605-3-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 69,
+      "componentValid": true,
+      "bounds": [
+        39.99999999999974,
+        48.0,
+        37.0
+      ],
+      "expectedBounds": [
+        40,
+        48,
+        37
+      ],
+      "boundsValid": true,
+      "seconds": 4.26,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "019037320d45b77f8d92ad642416e8a745531b12a1819ddf669610aebcc70ac6",
+      "codeSha256": "6d68b836f1a10703e71f3765ba4ee62b1aa776cdb8ef459e0de1b9f9380ccab6",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfh01616-2-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 54,
+      "componentValid": true,
+      "bounds": [
+        39.99999999999974,
+        48.0,
+        61.0
+      ],
+      "expectedBounds": [
+        40,
+        48,
+        61
+      ],
+      "boundsValid": true,
+      "seconds": 2.98,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "026a47b2404889fde81e9ccf618085daab9a1d907fc5a406a2359a450d41a1a2",
+      "codeSha256": "c9b80f39068a501ad09578029b394e07e2f7bed6d30ee960807fc7a6fbe26212",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfh02010-3-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 79,
+      "componentValid": true,
+      "bounds": [
+        43.99999999999906,
+        57.98244335784446,
+        55.0
+      ],
+      "expectedBounds": [
+        44,
+        58,
+        55
+      ],
+      "boundsValid": true,
+      "seconds": 3.78,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "8c031c20f8fd01ec16923b42dc382887e0df149867c19f64a434e2ef2cc9dee7",
+      "codeSha256": "e343741cfc3a71c3214acf9621a2a79361b16dd26833eea2521e5f1a99f4f3fe",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfh02505-3-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 96,
+      "componentValid": true,
+      "bounds": [
+        48.00000000000091,
+        62.0,
+        37.0
+      ],
+      "expectedBounds": [
+        48,
+        62,
+        37
+      ],
+      "boundsValid": true,
+      "seconds": 5.56,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "1b42a56329934b2872edf688c2d560c8dd7bcdcefe84524dc80cd8c5667b52f6",
+      "codeSha256": "de1598ed1b1eeee6d71c264789a39c91debeb019694a0761888cbff5b84be33e",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfh02525-2-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 75,
+      "componentValid": true,
+      "bounds": [
+        48.00000000000091,
+        62.0,
+        89.0
+      ],
+      "expectedBounds": [
+        48,
+        62,
+        89
+      ],
+      "boundsValid": true,
+      "seconds": 3.44,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "886a41c9b4f239c9a5fbf2c7c798927ba7c7421560cd9e3732b1d74884b26984",
+      "codeSha256": "4352d53df74cb2bdb938a1981b053fa96ae5cc0ea501eb333148f6e8c96ad454",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfh03220-2-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 73,
+      "componentValid": true,
+      "bounds": [
+        62.00000000000007,
+        80.0,
+        76.0
+      ],
+      "expectedBounds": [
+        62,
+        80,
+        76
+      ],
+      "boundsValid": true,
+      "seconds": 4.5,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "fe5b31ec3fbe529bf0f307a5756603cbfc2d47d320ba912c1abc3b350102f5fb",
+      "codeSha256": "8fe7e83a00a5f445456a2d21f3e5565d3c14b55509250006e884d9ec5d0b887c",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfh04005-3-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 148,
+      "componentValid": true,
+      "bounds": [
+        69.99999999999956,
+        92.97533689454275,
+        42.0
+      ],
+      "expectedBounds": [
+        70,
+        93,
+        42
+      ],
+      "boundsValid": true,
+      "seconds": 8.72,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "0f879b79f6cd5d787bf91380636ad4e6580e3eb46ab77599ea3c6013f5e8504e",
+      "codeSha256": "b98c6282b43f0a6c6f63f725083b4dc792d1d4621b8b7e9d66a6a3cf0024f5d6",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfh04040-1-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 39,
+      "componentValid": true,
+      "bounds": [
+        69.99999999999956,
+        92.97533689454275,
+        98.0
+      ],
+      "expectedBounds": [
+        70,
+        93,
+        98
+      ],
+      "boundsValid": true,
+      "seconds": 2.82,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "d791e00e9958524b60cec49874b5e2b42873e6b6a697e811f2adb9ea9f429295",
+      "codeSha256": "f355cd046a86d40880464a88153a4dd6ad4545c30c1fe6318325774bf5380513",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfh05010-3-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 93,
+      "componentValid": true,
+      "bounds": [
+        84.99999999999984,
+        110.0,
+        60.0
+      ],
+      "expectedBounds": [
+        85,
+        110,
+        60
+      ],
+      "boundsValid": true,
+      "seconds": 6.55,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "3499c5562cbd02de04c542b5ff20a0a25e5dc94c6ae647de27a16623ddf82f17",
+      "codeSha256": "d96baa31ba165301d226c410411df6b84ef150e940716d617fc381b19aaf8180",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfh05050-2-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 72,
+      "componentValid": true,
+      "bounds": [
+        84.99999999999984,
+        110.0,
+        170.0
+      ],
+      "expectedBounds": [
+        85,
+        110,
+        170
+      ],
+      "boundsValid": true,
+      "seconds": 5.54,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "4bd7c83e8647c6774999c355c3004e60bd15bb8f19188045551257e57fc6accf",
+      "codeSha256": "a4f189492f5b865424e25e085a12a1b4c99f380bfd3b75b3d5e624d03385cf2b",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfy2525-3-6-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 52,
+      "componentValid": true,
+      "bounds": [
+        48.99999999999965,
+        73.97695902452976,
+        64.0
+      ],
+      "expectedBounds": [
+        49,
+        74,
+        64
+      ],
+      "boundsValid": true,
+      "seconds": 1.87,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "056ac59dc182581adbb7038a179cc5b37dfe40c42a1781e9c1dd1ce030c88555",
+      "codeSha256": "b0cf754a3d84257cff30e2968343d5b21e6dc3840c93312d22a0c55ec1c7e4cc",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfy5050-3-6-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 47,
+      "componentValid": true,
+      "bounds": [
+        91.99999999999889,
+        134.9750520561845,
+        117.0
+      ],
+      "expectedBounds": [
+        92,
+        135,
+        117
+      ],
+      "boundsValid": true,
+      "seconds": 1.7,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "18a169cbb9fb52673f230505ebaaa25d3272a1920c06cd3f70040febba8f4d35",
+      "codeSha256": "ecb18dbdb1eaa0d1845b7a24d7b856e118487fd9239b14d6d4e4cdff861b66a5",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfk0401-550-full-shaft",
+      "valid": true,
+      "closed": true,
+      "solids": 1,
+      "componentValid": true,
+      "bounds": [
+        3.9999922638043337,
+        3.999968614618652,
+        550.0
+      ],
+      "expectedBounds": [
+        4,
+        4,
+        550
+      ],
+      "boundsValid": true,
+      "seconds": 78.39,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "1e902fd8167d4c5ebae319215ee810d29fe28cdefebd165c33d3900ddd8ff7e4",
+      "codeSha256": "5279d1661279383499b95117ed34673b98739a0da8e52ac32c95c590a70e7c0c",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "left-machined-journals",
+      "valid": true,
+      "closed": true,
+      "solids": 71,
+      "componentValid": true,
+      "bounds": [
+        39.99999999999974,
+        48.0,
+        240.0
+      ],
+      "expectedBounds": [
+        40,
+        48,
+        240
+      ],
+      "boundsValid": true,
+      "seconds": 13.81,
+      "raceClear": true,
+      "overlaps": [],
+      "stepValid": true,
+      "originalCodeSha256": "0900dff5f13c023750dbfd4adfcf8d94ed3929092ad34e83007e6c4a8cc69a35",
+      "codeSha256": "55053613dc429984c5d7e5b2ae8f2a60486a80922a5a343222c12f5649936818",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-1.json"
+    },
+    {
+      "name": "sfu1604-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 89,
+      "componentValid": true,
+      "bounds": [
+        39.99999999999974,
+        48.0,
+        40.0
+      ],
+      "expectedBounds": [
+        40,
+        48,
+        40
+      ],
+      "boundsValid": true,
+      "seconds": 4.55,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "f683fd9fc2fcd5fe9a6b4ce8634e8e88958579d2a01108924ee32d0a068388d8",
+      "codeSha256": "c163cfc5b1114110839a7f1ad3d121f166e47a2c1d514af21bf7c355e7ac610b",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfu2004-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 109,
+      "componentValid": true,
+      "bounds": [
+        43.99999999999906,
+        57.98244335784446,
+        42.0
+      ],
+      "expectedBounds": [
+        44,
+        58,
+        42
+      ],
+      "boundsValid": true,
+      "seconds": 5.43,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "7a847771d158905cfb03207e156fa4697b2141ebf8daa554da4dd051c4dd93e6",
+      "codeSha256": "055913c26c4e76ff70a4d8922f1c563c498017ea121d801028e2a76f04ecea9c",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfu2505-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 103,
+      "componentValid": true,
+      "bounds": [
+        48.00000000000091,
+        62.0,
+        51.0
+      ],
+      "expectedBounds": [
+        48,
+        62,
+        51
+      ],
+      "boundsValid": true,
+      "seconds": 4.34,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "2ca728ca8f8b5d7a1a6d4ce524d5c7e5612427048649251e9b75874a8a763dcc",
+      "codeSha256": "f8027800490cd01bf9049e864f90d1eeca144887551a253b5fa6ee25634f2751",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfu2510-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 72,
+      "componentValid": true,
+      "bounds": [
+        48.00000000000091,
+        62.0,
+        85.0
+      ],
+      "expectedBounds": [
+        48,
+        62,
+        85
+      ],
+      "boundsValid": true,
+      "seconds": 3.63,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "59b29d6de17e837b1c27c7acbddcdc449987c4ce8d50992e2d10fdbf3c6224cc",
+      "codeSha256": "fa53ee40f424415f68e891e63690604ba9d3f049fc55279e31d1e1f62dac7907",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfu3206-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 105,
+      "componentValid": true,
+      "bounds": [
+        62.00000000000007,
+        80.0,
+        57.0
+      ],
+      "expectedBounds": [
+        62,
+        80,
+        57
+      ],
+      "boundsValid": true,
+      "seconds": 5.0,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "5c4cbbc9ecf654e8a90fa9eb6831018a0d770c7dac4617d1bf2d1e7e0ae0495c",
+      "codeSha256": "3ee2e1671a683f079cdaad6f60d42447095899ba8506adeeacfbf870ef388a91",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfu4005-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 158,
+      "componentValid": true,
+      "bounds": [
+        69.99999999999956,
+        92.97533689454275,
+        55.0
+      ],
+      "expectedBounds": [
+        70,
+        93,
+        55
+      ],
+      "boundsValid": true,
+      "seconds": 7.4,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "52d3c7697a8ba03324d74e176e41a629b3d04512db10b3798a33e30e29a9f594",
+      "codeSha256": "4ebdc11ab2e96caf383fa1c27d8478814c30888372eb155497339ba682f971b6",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfu4010-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 84,
+      "componentValid": true,
+      "bounds": [
+        69.99999999999956,
+        92.97533689454275,
+        93.0
+      ],
+      "expectedBounds": [
+        70,
+        93,
+        93
+      ],
+      "boundsValid": true,
+      "seconds": 4.93,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "ab41fa824eed692d8aada450ee1c5b45b012c319702d00c0e4d922fae4775a1c",
+      "codeSha256": "5b3e25bb89dbb931b3f574c00d99f95a4d501c44b54d105bb462597daaf73b70",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfu6310-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 127,
+      "componentValid": true,
+      "bounds": [
+        95.0,
+        125.0,
+        98.0
+      ],
+      "expectedBounds": [
+        95,
+        125,
+        98
+      ],
+      "boundsValid": true,
+      "seconds": 7.24,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "5842b33ad0a6333fe20a0c15aa05ca3ec36ea338f41e7648c557491b1b5ebb1a",
+      "codeSha256": "0e3cf3ddfeef1eea6d9f5edf4a57054ecebe9a3aa254cbd839df2a66e5b36c62",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfu8020-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 109,
+      "componentValid": true,
+      "bounds": [
+        129.9999999999989,
+        164.975820468199,
+        154.0
+      ],
+      "expectedBounds": [
+        130,
+        165,
+        154
+      ],
+      "boundsValid": true,
+      "seconds": 5.31,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "4705b7e0a18f6320291ad0a9a08fccb666821638ea48039ce8350160100145a9",
+      "codeSha256": "d1127167aba5a28bec2e6c4c423181b3b2d9d96c1bdefdd24485f0aa69ae35b3",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfk0601-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 74,
+      "componentValid": true,
+      "bounds": [
+        16.00000000000015,
+        24.0,
+        15.0
+      ],
+      "expectedBounds": [
+        16,
+        24,
+        15
+      ],
+      "boundsValid": true,
+      "seconds": 4.54,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "1f6ea271e099410fa9452df5334b947469035fc1d131342a23e819934d1694e2",
+      "codeSha256": "f2a057a2514d1cf25d6f80ef7a5363e44359836d1516e8d4ce9a4c269124ce2a",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfk082-5-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 67,
+      "componentValid": true,
+      "bounds": [
+        20.000000000000284,
+        28.991262107953084,
+        26.0
+      ],
+      "expectedBounds": [
+        20,
+        29,
+        26
+      ],
+      "boundsValid": true,
+      "seconds": 4.14,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "1b502e2d3b80e86d1b9fcdefa9cd9d33ec47b3fac65e26fd7218ae072e0f7844",
+      "codeSha256": "146d4bc153b4451e2648f1a57527f368078a95de883e250e9045c05b1b3dc26b",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfk1202-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 128,
+      "componentValid": true,
+      "bounds": [
+        23.999999999999773,
+        36.989042111433825,
+        28.0
+      ],
+      "expectedBounds": [
+        24,
+        37,
+        28
+      ],
+      "boundsValid": true,
+      "seconds": 6.63,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "2c2b286b66a7c91334d3c626a5fab939d6189e8023a7b998b52e891797c02992",
+      "codeSha256": "e403712fc7aaac7873635d10445b76ac798aa415fd7a785380d67f004ae4ef9f",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfs1205-2-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 47,
+      "componentValid": true,
+      "bounds": [
+        29.999999999999773,
+        40.0,
+        31.0
+      ],
+      "expectedBounds": [
+        30,
+        40,
+        31
+      ],
+      "boundsValid": true,
+      "seconds": 2.69,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "11e51f67fa91b1755592c09be5a51ecee201f5a4561d86355ad3fd8d304057e3",
+      "codeSha256": "73304277b86b412c023f842b5143792ed4f3daf05f6abad137e9196c5ba10a5e",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfs1610-2-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 99,
+      "componentValid": true,
+      "bounds": [
+        39.99999999999974,
+        48.0,
+        47.0
+      ],
+      "expectedBounds": [
+        40,
+        48,
+        47
+      ],
+      "boundsValid": true,
+      "seconds": 4.64,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "be8930d2dadfc9d6b27d943568b922932c28ce008e8bbfb450457870400838a8",
+      "codeSha256": "b14c30286a042c30b7f9d0512c6752b17561956cecc51701fde2c79cb0730e8e",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfs2010-3-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 79,
+      "componentValid": true,
+      "bounds": [
+        43.99999999999906,
+        57.98244335784446,
+        60.0
+      ],
+      "expectedBounds": [
+        44,
+        58,
+        60
+      ],
+      "boundsValid": true,
+      "seconds": 4.9,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "e02faa416f7ff6506b979e985b7a537b9f55b7cc1c4259eb87580e387e786b5d",
+      "codeSha256": "23dfb5c41bcc89d5b38d5dc21886db523755d0f49041704122e1f8291ca3793a",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfs3210-3-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 96,
+      "componentValid": true,
+      "bounds": [
+        62.00000000000007,
+        80.0,
+        62.0
+      ],
+      "expectedBounds": [
+        62,
+        80,
+        62
+      ],
+      "boundsValid": true,
+      "seconds": 6.45,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "87f0efd4c82cb10ffcc273072e6df68f0950c7565b0576e46ea9205647b56675",
+      "codeSha256": "79099ef2e89fc4868195d1cea7745548eaafb42129410524acf13afcc2d971f8",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "dfu2505-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 111,
+      "componentValid": true,
+      "bounds": [
+        48.00000000000091,
+        62.0,
+        101.0
+      ],
+      "expectedBounds": [
+        48,
+        62,
+        101
+      ],
+      "boundsValid": true,
+      "seconds": 8.65,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "addc08815b439316fa647e79d6f8252499b5c77cc5fff666991e19dec3b07fe2",
+      "codeSha256": "d8e46ab12626e521c13a3c2248436d1842c4b9fe6819067743ea6501fd4848e4",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfe1616-6-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 83,
+      "componentValid": true,
+      "bounds": [
+        33.999999999999886,
+        53.0,
+        38.0
+      ],
+      "expectedBounds": [
+        34,
+        53,
+        38
+      ],
+      "boundsValid": true,
+      "seconds": 3.76,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "708d87327d1f9bd9118dd9c3a95b69291f52fcc647aa6eca00b93f07c02986b6",
+      "codeSha256": "f4544681c5bd369888aa6356951c54f429b7a158440c706f00947eb041bf3fc3",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfe2020-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 105,
+      "componentValid": true,
+      "bounds": [
+        40.99999999999973,
+        61.98075738345008,
+        55.0
+      ],
+      "expectedBounds": [
+        41,
+        62,
+        55
+      ],
+      "boundsValid": true,
+      "seconds": 3.99,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "8fb943730fcdc6ff7c89a40cfbfda8781b4761f5693e7d729330294bb2a0c314",
+      "codeSha256": "982dab80de59a8200a0405ee7a124a34c711622362c3baa054800863a3c2a068",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfe2040-6-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 45,
+      "componentValid": true,
+      "bounds": [
+        40.000000000000426,
+        57.98252421590614,
+        41.0
+      ],
+      "expectedBounds": [
+        40,
+        58,
+        41
+      ],
+      "boundsValid": true,
+      "seconds": 1.9,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "1fa1a3535a1d518bf27fc2c2bd34f633e3c1e9188c1dd36b6463e9b4175b3ed7",
+      "codeSha256": "cb387c562fd821c9f307c7f0f72f64fe5b6127ea9bc9e0686b2b9e2040a7f9cc",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfe2550-3-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 43,
+      "componentValid": true,
+      "bounds": [
+        48.000000000000355,
+        69.97920833205663,
+        50.0
+      ],
+      "expectedBounds": [
+        48,
+        70,
+        50
+      ],
+      "boundsValid": true,
+      "seconds": 1.84,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "84279fc22d0edca6562dbf9e81c6b9a0cd6f4a8f6c361e597c227d3a69d77aa2",
+      "codeSha256": "2d7294ef26cb68a2926948c6161feb2317521e809d7672db2eace9a73c95c0ac",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfe3232-6-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 91,
+      "componentValid": true,
+      "bounds": [
+        60.00000000000145,
+        91.97584089888142,
+        71.0
+      ],
+      "expectedBounds": [
+        60,
+        92,
+        71
+      ],
+      "boundsValid": true,
+      "seconds": 3.91,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "73f5b2fe25f5b6fafea75f7cda5bbe863cc402a35ea88fef1edd28e9b398034f",
+      "codeSha256": "e072ba83f39679c0133f94431763455c7df71316b1ab78dcf9182967605bb078",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfe4040-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 95,
+      "componentValid": true,
+      "bounds": [
+        75.0000000000004,
+        113.97601186364946,
+        100.0
+      ],
+      "expectedBounds": [
+        75,
+        114,
+        100
+      ],
+      "boundsValid": true,
+      "seconds": 4.61,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "f9bb4d40ce82e17a4dc7aac4dc4a8f63d6730e280c22fc37b7503c6730c906dd",
+      "codeSha256": "19ed3cf952ac79c495a692840e27939ee2046e7dbf338ace6428e1d73edb3fbd",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfe5050-6-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 81,
+      "componentValid": true,
+      "bounds": [
+        91.99999999999889,
+        134.9750520561845,
+        107.0
+      ],
+      "expectedBounds": [
+        92,
+        135,
+        107
+      ],
+      "boundsValid": true,
+      "seconds": 3.77,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "6023ec114e8836f647b6718eeff699b76ca22110e474bf2ebc56b19b6e30d877",
+      "codeSha256": "2d0bf13a64d32c1a23cd20dd5246ea489ef7af613cca63c674c4647074917af7",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfi2005-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 81,
+      "componentValid": true,
+      "bounds": [
+        57.0,
+        56.98228337404653,
+        51.0
+      ],
+      "expectedBounds": [
+        57,
+        57,
+        51
+      ],
+      "boundsValid": true,
+      "seconds": 5.43,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "038d93610bb760391d08c243ef8dfe1fe496a922b6423eb08b2478c69e749ccf",
+      "codeSha256": "ba5de40a3558b6c49d7fda3463fd1521a378900256a211d12770f39d0b0f5675",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "dfi2505-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 105,
+      "componentValid": true,
+      "bounds": [
+        63.0,
+        62.9804184663897,
+        101.0
+      ],
+      "expectedBounds": [
+        63,
+        63,
+        101
+      ],
+      "boundsValid": true,
+      "seconds": 8.02,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "362903e02120e5f33cde7bb19cf8b935c7645ef1b2573b500185a724c1a6d6cc",
+      "codeSha256": "75fa224ee559f4b31301423dd92723bb11ca7b3b5d602db42002b0a94f773216",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfi3205-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 126,
+      "componentValid": true,
+      "bounds": [
+        72.0,
+        71.97762110683004,
+        52.0
+      ],
+      "expectedBounds": [
+        72,
+        72,
+        52
+      ],
+      "boundsValid": true,
+      "seconds": 6.83,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "e4d7c4420c9214b4894c30b3860cd6f2bd7a63e166735289f563e3ee3f54e863",
+      "codeSha256": "df4eb1f47b096fb3d5a8c8a8f8b7921d13ea1593da920d3f469bb5e92138a090",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "dfi3210-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 71,
+      "componentValid": true,
+      "bounds": [
+        88.0,
+        88.0,
+        162.0
+      ],
+      "expectedBounds": [
+        88,
+        88,
+        162
+      ],
+      "boundsValid": true,
+      "seconds": 5.96,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "0a3db2d34185a0c18cadbe78d7b0e37c1ca9e9e85f7b99ace1f47915cfb54466",
+      "codeSha256": "a2d2e953ab60b54d96052a99be5fd93c1a7daf5abe65c247414214d86c353963",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfi4010-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 81,
+      "componentValid": true,
+      "bounds": [
+        104.0,
+        104.0,
+        93.0
+      ],
+      "expectedBounds": [
+        104,
+        104,
+        93
+      ],
+      "boundsValid": true,
+      "seconds": 4.55,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "5d6047545891c630bd54f99b5cd5bec67cce36bfe83a1d2afe153bd02fad9842",
+      "codeSha256": "11d062d5b8decc2bd05acc93ba8548c61b594dcfdedcb8b3ee0acea17160339c",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "dfi5010-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 105,
+      "componentValid": true,
+      "bounds": [
+        114.0,
+        114.0,
+        171.0
+      ],
+      "expectedBounds": [
+        114,
+        114,
+        171
+      ],
+      "boundsValid": true,
+      "seconds": 9.57,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "b30a823233207472e04119fa633d40e97507e049b3bffe54d3ccfc50dcb806fc",
+      "codeSha256": "d5c8441c5d589cf178658260a441e29b303369f94f2cbb61464394c307fc70a9",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfi8010-4-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 155,
+      "componentValid": true,
+      "bounds": [
+        150.0,
+        149.97555158481453,
+        98.0
+      ],
+      "expectedBounds": [
+        150,
+        150,
+        98
+      ],
+      "boundsValid": true,
+      "seconds": 12.26,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "dcfac908a748bb2dbd610608c62fe05c876c820d8cda3ebc7963537ba542a45e",
+      "codeSha256": "d187ab33ba8cbc9ea85e6fcf8d06d1579cef2108d9d89117299e86ac38a990f4",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfh01210-2-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 48,
+      "componentValid": true,
+      "bounds": [
+        29.999999999999773,
+        40.0,
+        45.0
+      ],
+      "expectedBounds": [
+        30,
+        40,
+        45
+      ],
+      "boundsValid": true,
+      "seconds": 2.85,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "db13191ae29c9500ea58d693da1f5e7e33952599659e1b09e8cd4e1f90c9b265",
+      "codeSha256": "6e95538289b995b428cd3d99d6c1628bd162034daf425f41cd309ee6c02d132b",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfh01616-1-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 36,
+      "componentValid": true,
+      "bounds": [
+        39.99999999999974,
+        48.0,
+        45.0
+      ],
+      "expectedBounds": [
+        40,
+        48,
+        45
+      ],
+      "boundsValid": true,
+      "seconds": 3.28,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "5b4a7d38c1a01b8b7d80cb478b85171e75506fdeef38eea01d4bd502c274b252",
+      "codeSha256": "0db332ba2786e14ac49834799cd16447ca3a82989c081b7264d9b9d6eb0370fb",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfh02005-3-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 79,
+      "componentValid": true,
+      "bounds": [
+        43.99999999999906,
+        57.98244335784446,
+        37.0
+      ],
+      "expectedBounds": [
+        44,
+        58,
+        37
+      ],
+      "boundsValid": true,
+      "seconds": 4.78,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "b4aada5b7fcbcdf283e923cbf8dabfce0097eb55ac2e60f7da703a817b8ca0e3",
+      "codeSha256": "e54eaccea0ea4202b105fb1cad5e6cb5b7722501ace75be9b37157a8fd8357cf",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfh02020-2-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 61,
+      "componentValid": true,
+      "bounds": [
+        43.99999999999906,
+        57.98244335784446,
+        74.0
+      ],
+      "expectedBounds": [
+        44,
+        58,
+        74
+      ],
+      "boundsValid": true,
+      "seconds": 3.13,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "ce54f50d47d24e1a79f1ed8d1e23531b6c27e44508e2d541753eea3c4f83398b",
+      "codeSha256": "1c1accce84742f685047cffcd9b7b124e918db04b72d51dda9e41539891fc1d5",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfh02525-1-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 50,
+      "componentValid": true,
+      "bounds": [
+        48.00000000000091,
+        62.0,
+        64.0
+      ],
+      "expectedBounds": [
+        48,
+        62,
+        64
+      ],
+      "boundsValid": true,
+      "seconds": 3.12,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "1318556657bb7c2ca3aa18e68e834d9b207308b123aabf997e80f5570afddb16",
+      "codeSha256": "8a6cd5c14b6c36785a41b0a8f8f50e0b9372463cad18ff6107edcd11bac01601",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfh03210-3-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 96,
+      "componentValid": true,
+      "bounds": [
+        62.00000000000007,
+        80.0,
+        57.0
+      ],
+      "expectedBounds": [
+        62,
+        80,
+        57
+      ],
+      "boundsValid": true,
+      "seconds": 5.25,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "4e87224986d38b49ec237343c17c66201ff7ee53fb421e177b51c4f42353a164",
+      "codeSha256": "872b683f9b3cc46cbaf9fa4618d943c31a67c011943ac4dcde0afe385a6f0b3e",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfh03232-2-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 74,
+      "componentValid": true,
+      "bounds": [
+        62.00000000000007,
+        80.0,
+        112.0
+      ],
+      "expectedBounds": [
+        62,
+        80,
+        112
+      ],
+      "boundsValid": true,
+      "seconds": 4.4,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "523082f03c49abeed8520a4b4742177bb632374fc9872949c1d66726456de8b8",
+      "codeSha256": "d235ad8da7ffff661006b096fd9a968555c1c3bcb222e7e0f1b1090f65ef0c77",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfh04020-2-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 57,
+      "componentValid": true,
+      "bounds": [
+        69.99999999999956,
+        92.97533689454275,
+        80.0
+      ],
+      "expectedBounds": [
+        70,
+        93,
+        80
+      ],
+      "boundsValid": true,
+      "seconds": 4.36,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "d8e6f06edf68da1a4fe7c8d1c25497d3d3e8e2465ed2faff32771241dfb107d3",
+      "codeSha256": "6e69e7359188a445608efb20e000bcda20ba83da480cc6d72a8aeda8fbabd73a",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfh05005-3-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 183,
+      "componentValid": true,
+      "bounds": [
+        84.99999999999984,
+        110.0,
+        42.0
+      ],
+      "expectedBounds": [
+        85,
+        110,
+        42
+      ],
+      "boundsValid": true,
+      "seconds": 9.53,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "deb59256e68f9a9522ad3b94bda393f192b6a183b9686f4b59d34f73df5ada03",
+      "codeSha256": "4cb093bbf590d473e8fb3468210a8327dde8d33a0a891398959e209fe6f9b84e",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfh05050-1-8-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 48,
+      "componentValid": true,
+      "bounds": [
+        84.99999999999984,
+        110.0,
+        120.0
+      ],
+      "expectedBounds": [
+        85,
+        110,
+        120
+      ],
+      "boundsValid": true,
+      "seconds": 2.67,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "910058f113e282fe14e06ee7f9b9d5e107e242210883d125244307f7ad01a0cd",
+      "codeSha256": "f265f38d6c063bf473073342d3937d107130e378ee81ef8bfa3b78ab4a3790bf",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfy2020-3-6-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 52,
+      "componentValid": true,
+      "bounds": [
+        40.99999999999973,
+        61.98075738345008,
+        52.0
+      ],
+      "expectedBounds": [
+        41,
+        62,
+        52
+      ],
+      "boundsValid": true,
+      "seconds": 3.21,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "4e4a4ee21e5e4736cdb0c9da223f2280988b6bbb46196d05a3e3794f430205bb",
+      "codeSha256": "d13f1a280b6b23500dced96af030e2be0f92c0e0c1687fea3f406883ad5fc1d5",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfy4040-3-6-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 50,
+      "componentValid": true,
+      "bounds": [
+        75.0000000000004,
+        113.97601186364946,
+        99.0
+      ],
+      "expectedBounds": [
+        75,
+        114,
+        99
+      ],
+      "boundsValid": true,
+      "seconds": 3.24,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "bd86405512a417db1b858e83b34e8b4b0c4efb01649a2491bb81804f25ca16e2",
+      "codeSha256": "d9c42256f746ad409e6b9d7e0d0ac38806f769542a50d66973aee10c613276b6",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfe3210 \u00b7 unverified listing-assembled",
+      "valid": true,
+      "closed": true,
+      "solids": 75,
+      "componentValid": true,
+      "bounds": [
+        60.00000000000145,
+        91.97584089888142,
+        82.0
+      ],
+      "expectedBounds": [
+        60,
+        92,
+        82
+      ],
+      "boundsValid": true,
+      "seconds": 5.59,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "e42128298d13b2ad2e0a566b63850bd49bc67f8ca9634bbe48fc986da985f996",
+      "codeSha256": "ffbaaee9a361bb0f279851294f9168831021efac1fc503a4934a93918f0bcaed",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfe3264-3-210-full-shaft",
+      "valid": true,
+      "closed": true,
+      "solids": 1,
+      "componentValid": true,
+      "bounds": [
+        31.998961808629176,
+        31.997623683275965,
+        210.00000000000003
+      ],
+      "expectedBounds": [
+        32,
+        32,
+        210
+      ],
+      "boundsValid": true,
+      "seconds": 1.04,
+      "raceClear": true,
+      "stepValid": true,
+      "originalCodeSha256": "4da5eaa030690c7512f69c189cd00f90fef926a50f4a5499a0d1d0989ce5d0fa",
+      "codeSha256": "c44ab043c5c5b49274c2062bec990ab1fff948b377c2f6ee93ee763476c6b69c",
+      "geometryAstUnchanged": true,
+      "verificationSource": "/tmp/protolab-ball-source-results-2.json"
+    },
+    {
+      "name": "sfu1204-4-cutaway",
+      "codeSha256": "ad180008f58d86f16d01cee6fa0a59ffe678564670eb809b93fe45cbc4c6c76b",
+      "valid": true,
+      "closed": true,
+      "solids": 68,
+      "componentValid": true,
+      "bounds": [
+        30.000000000000078,
+        27.598214023216233,
+        40.0
+      ],
+      "expectedBounds": [
+        30,
+        27.598939243651813,
+        40
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 9.15,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfu1610-3-cutaway",
+      "codeSha256": "ee6ae112e0f292d25a8ad3b7153da943531952a55a535846d0050e27245d5a91",
+      "valid": true,
+      "closed": true,
+      "solids": 52,
+      "componentValid": true,
+      "bounds": [
+        40.00000000000008,
+        34.137380166582815,
+        57.0
+      ],
+      "expectedBounds": [
+        40,
+        34.13834722868966,
+        57
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 5.99,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfu2504-4-cutaway",
+      "codeSha256": "523b6e0ed60d767a78914d8efa674a64987a8f0a31d5bc3d7c2fcd464a84461c",
+      "valid": true,
+      "closed": true,
+      "solids": 131,
+      "componentValid": true,
+      "bounds": [
+        48.0000000000009,
+        45.105429933166235,
+        42.0
+      ],
+      "expectedBounds": [
+        48,
+        45.106155153641325,
+        42
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 7.61,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfu2508-4-cutaway",
+      "codeSha256": "dc8c47c5d8424b2af28c5246c5b16c2961470ef496b714a02547260896a5fe21",
+      "valid": true,
+      "closed": true,
+      "solids": 70,
+      "componentValid": true,
+      "bounds": [
+        48.0000000000009,
+        46.71289955913247,
+        63.0
+      ],
+      "expectedBounds": [
+        48,
+        46.714349999999996,
+        63
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 5.72,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfu3205-4-cutaway",
+      "codeSha256": "96379b545363530e1bc283d3c8db7032c11b91867f19413810aeb6ee478e9ba1",
+      "valid": true,
+      "closed": true,
+      "solids": 127,
+      "componentValid": true,
+      "bounds": [
+        62.000000000000206,
+        58.14076292409281,
+        52.0
+      ],
+      "expectedBounds": [
+        62,
+        58.141729986214756,
+        52
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 7.01,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfu3210-4-cutaway",
+      "codeSha256": "8e6f4c353933cf7d9ec41cc55484478b057d15f16a721eb1b0e32b473532e7a8",
+      "valid": true,
+      "closed": true,
+      "solids": 68,
+      "componentValid": true,
+      "bounds": [
+        62.000000000000206,
+        60.26235370908563,
+        90.0
+      ],
+      "expectedBounds": [
+        62,
+        60.26428783333068,
+        90
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 6.42,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfu4008-4-cutaway",
+      "codeSha256": "1f3b4079d9ac52aa9c3bffd204fc59d1d4abcf43bc2e4ba86e211214af44f04a",
+      "valid": true,
+      "closed": true,
+      "solids": 107,
+      "componentValid": true,
+      "bounds": [
+        70.00000000000051,
+        69.69804848900384,
+        67.0
+      ],
+      "expectedBounds": [
+        70,
+        69.71183048257083,
+        67
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 7.03,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfu5020-4-cutaway",
+      "codeSha256": "41186f76bb0e6cf8c0913468b3b84a125477e02569887eef5744e0792e2fcd03",
+      "valid": true,
+      "closed": true,
+      "solids": 91,
+      "componentValid": true,
+      "bounds": [
+        85.00000000000053,
+        84.81554182451221,
+        138.0
+      ],
+      "expectedBounds": [
+        85,
+        84.81771779037398,
+        138
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 9.22,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfu8010-4-cutaway",
+      "codeSha256": "86867f29af0f28d1b5d24e90906fff766e63a4c0e207827f59c111e24adaa8fb",
+      "valid": true,
+      "closed": true,
+      "solids": 156,
+      "componentValid": true,
+      "bounds": [
+        110.0,
+        116.76312919032284,
+        98.0
+      ],
+      "expectedBounds": [
+        110,
+        116.77723362350524,
+        98
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 9.92,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfk0401-cutaway",
+      "codeSha256": "e918a5a83fb42016c58a45d25bd355398dfdc04b370a9b8f793e418d871b29f2",
+      "valid": true,
+      "closed": true,
+      "solids": 34,
+      "componentValid": true,
+      "bounds": [
+        14.000000000000004,
+        12.528033186897638,
+        12.0
+      ],
+      "expectedBounds": [
+        14,
+        12.528276856088105,
+        12
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 4.25,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfk0802-cutaway",
+      "codeSha256": "25d1b9e18b34978432119e0dfb7de672c5b807f9d7eb8148fb402ebaad9fc06b",
+      "valid": true,
+      "closed": true,
+      "solids": 65,
+      "componentValid": true,
+      "bounds": [
+        18.000000000000302,
+        18.30963449621146,
+        16.0
+      ],
+      "expectedBounds": [
+        18,
+        18.31,
+        16
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 3.87,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfk1004-cutaway",
+      "codeSha256": "26e037df0517011b1c2d87bbaefe5007ed47dcbe35f8f6434e48ec54d0b27be2",
+      "valid": true,
+      "closed": true,
+      "solids": 51,
+      "componentValid": true,
+      "bounds": [
+        28.000000000000462,
+        29.33016326101693,
+        34.0
+      ],
+      "expectedBounds": [
+        28,
+        29.337527915169385,
+        34
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 4.51,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfk1602-cutaway",
+      "codeSha256": "3e6b1a5b9bc0a73b54256649c36798e6eb4e65aaaf584af73e2025956c2c3c35",
+      "valid": true,
+      "closed": true,
+      "solids": 165,
+      "componentValid": true,
+      "bounds": [
+        29.0,
+        30.30923385545146,
+        40.0
+      ],
+      "expectedBounds": [
+        29,
+        30.30959935923667,
+        40
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 11.62,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfs1605-3-8-cutaway",
+      "codeSha256": "dd23b4fa57195a9466330139e2541b9db9fdfd97f12753ef97bfc0f4f672418a",
+      "valid": true,
+      "closed": true,
+      "solids": 67,
+      "componentValid": true,
+      "bounds": [
+        40.00000000000008,
+        33.37182161956952,
+        38.0
+      ],
+      "expectedBounds": [
+        40,
+        33.37266776083582,
+        38
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 6.07,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfs1620-1-8-cutaway",
+      "codeSha256": "9ce9884e415aea01b6a0f563654688af01ea965ee8ff1cddcc0e322115902eb9",
+      "valid": true,
+      "closed": true,
+      "solids": 67,
+      "componentValid": true,
+      "bounds": [
+        40.00000000000008,
+        33.354217659319524,
+        57.0
+      ],
+      "expectedBounds": [
+        40,
+        33.355063800585114,
+        57
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 5.47,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfs2525-1-8-cutaway",
+      "codeSha256": "5f633845795d16452b7bce73707663a136d9c36c4776fc6d1838294253b52f3c",
+      "valid": true,
+      "closed": true,
+      "solids": 93,
+      "componentValid": true,
+      "bounds": [
+        48.0000000000009,
+        45.63683376039282,
+        70.0
+      ],
+      "expectedBounds": [
+        48,
+        45.63780082249253,
+        70
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 6.72,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfs3232-1-8-cutaway",
+      "codeSha256": "30c172a7c09936601f5afdcc37b2fbfc49f9f0a2b0051c5196febdc07576be83",
+      "valid": true,
+      "closed": true,
+      "solids": 91,
+      "componentValid": true,
+      "bounds": [
+        62.000000000000206,
+        58.080714439819396,
+        84.0
+      ],
+      "expectedBounds": [
+        62,
+        58.08192334359644,
+        84
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 6.44,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfe1616-4-cutaway",
+      "codeSha256": "2241fa62fa87c828d4a6c94a0096f1e922409b4e17a6767e1a38fa30ec1c475f",
+      "valid": true,
+      "closed": true,
+      "solids": 81,
+      "componentValid": true,
+      "bounds": [
+        34.00000000000017,
+        36.256082461229525,
+        38.0
+      ],
+      "expectedBounds": [
+        34,
+        36.25692860250431,
+        38
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 5.18,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfe1632-6-cutaway",
+      "codeSha256": "5114515caf9fd50880ebcf59c24d338f53b6d1a503b59f6c1b7209fdfe66c650",
+      "valid": true,
+      "closed": true,
+      "solids": 35,
+      "componentValid": true,
+      "bounds": [
+        36.00000000000004,
+        37.535919861610864,
+        34.0
+      ],
+      "expectedBounds": [
+        36,
+        37.545211681901925,
+        34
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 2.84,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfe2040-3-cutaway",
+      "codeSha256": "4662cbd93067248eb04f493fc3fa7df4bbf3df5c06cef54c76001a7b55dea067",
+      "valid": true,
+      "closed": true,
+      "solids": 43,
+      "componentValid": true,
+      "bounds": [
+        40.000000000000405,
+        41.102193661745886,
+        41.0
+      ],
+      "expectedBounds": [
+        40,
+        41.11189861594579,
+        41
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 2.81,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfe2525-6-cutaway",
+      "codeSha256": "212a430ab834534042038676d76dc7dac1aa10a56c518431631fee07ec001c47",
+      "valid": true,
+      "closed": true,
+      "solids": 85,
+      "componentValid": true,
+      "bounds": [
+        49.00000000000007,
+        52.15921536268428,
+        57.0
+      ],
+      "expectedBounds": [
+        49,
+        52.171944754185475,
+        57
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 5.29,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfe3232-4-cutaway",
+      "codeSha256": "53b8ba4ac2c4b531ff07f73656ceb2e01c4129c8a63a8469cd61c0c1b528a429",
+      "valid": true,
+      "closed": true,
+      "solids": 103,
+      "componentValid": true,
+      "bounds": [
+        60.00000000000145,
+        65.16744846437318,
+        82.0
+      ],
+      "expectedBounds": [
+        60,
+        65.18097845576702,
+        82
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 5.63,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfe3264-6-cutaway",
+      "codeSha256": "e98c28a6606d8a28415d717215a5f1c6f679e1b71bb2d9489a6b5d4c8d648055",
+      "valid": true,
+      "closed": true,
+      "solids": 43,
+      "componentValid": true,
+      "bounds": [
+        60.00000000000145,
+        65.19964519077317,
+        62.0
+      ],
+      "expectedBounds": [
+        60,
+        65.21317518223714,
+        62
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 3.36,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfe5050-4-cutaway",
+      "codeSha256": "615334233c191f43ff32167d8034fe15085e9d94f411a027c0ffe887be403a74",
+      "valid": true,
+      "closed": true,
+      "solids": 87,
+      "componentValid": true,
+      "bounds": [
+        92.0,
+        97.82016179323104,
+        117.0
+      ],
+      "expectedBounds": [
+        92,
+        97.83505357265751,
+        117
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 6.71,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfi1610-3-cutaway",
+      "codeSha256": "df79b676a726c569a1940cb9700407de3552b8345416da4a15a93a146965707c",
+      "valid": true,
+      "closed": true,
+      "solids": 50,
+      "componentValid": true,
+      "bounds": [
+        57.99999996551724,
+        39.12836684032741,
+        57.0
+      ],
+      "expectedBounds": [
+        58,
+        39.13834722868966,
+        57
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 4.23,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfi2505-4-cutaway",
+      "codeSha256": "5860bcc7f6c8e1c160866b56151b0d79e058e7b53a72ace02f39ae35a60d2dad",
+      "valid": true,
+      "closed": true,
+      "solids": 98,
+      "componentValid": true,
+      "bounds": [
+        62.99999996825397,
+        46.1305829278398,
+        51.0
+      ],
+      "expectedBounds": [
+        63,
+        46.1413403612423,
+        51
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 5.57,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "dfi2510-4-cutaway",
+      "codeSha256": "e846bf0afc27651945a3860caabca41c257bd843663a1e4864f2c7e0444a2a88",
+      "valid": true,
+      "closed": true,
+      "solids": 69,
+      "componentValid": true,
+      "bounds": [
+        71.99999997222221,
+        58.74363613953554,
+        145.0
+      ],
+      "expectedBounds": [
+        72,
+        58.7619,
+        145
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 6.42,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfi3210-4-cutaway",
+      "codeSha256": "536ff18f6a2ec8eb26313365dc5fad8a986b8e6c45d232c85f11b505103a2c7f",
+      "valid": true,
+      "closed": true,
+      "solids": 65,
+      "componentValid": true,
+      "bounds": [
+        87.99999997727274,
+        64.26235370908563,
+        90.0
+      ],
+      "expectedBounds": [
+        88,
+        64.26428783333068,
+        90
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 4.72,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "dfi4005-4-cutaway",
+      "codeSha256": "19b80cf9c31f09fedfbb823329992318c78a67a246d97d36c9476bcc721f0bf4",
+      "valid": true,
+      "closed": true,
+      "solids": 155,
+      "componentValid": true,
+      "bounds": [
+        89.99999997777778,
+        72.82023011820863,
+        105.0
+      ],
+      "expectedBounds": [
+        90,
+        72.84125,
+        105
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 10.24,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfi5010-4-cutaway",
+      "codeSha256": "5675d9cecdc089f6566ac214699fa8f929dda5a71b33da3681514a718b9150c0",
+      "valid": true,
+      "closed": true,
+      "solids": 98,
+      "componentValid": true,
+      "bounds": [
+        113.99999998245615,
+        86.28074659828563,
+        93.0
+      ],
+      "expectedBounds": [
+        114,
+        86.2826807224846,
+        93
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 6.91,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "dfi6310-4-cutaway",
+      "codeSha256": "b8d8eae66e4d595a4b4eb01d26588d2b35314bd5f463df3a1746f81f8b40441c",
+      "valid": true,
+      "closed": true,
+      "solids": 125,
+      "componentValid": true,
+      "bounds": [
+        130.99999998473282,
+        107.65786760771259,
+        182.0
+      ],
+      "expectedBounds": [
+        131,
+        107.6825,
+        182
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 9.36,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfh01205-2-8-cutaway",
+      "codeSha256": "49654eae31cfa7b761499321aa31557a030c10f4c9c8e1cdc31a8eacb6b5eb7c",
+      "valid": true,
+      "closed": true,
+      "solids": 45,
+      "componentValid": true,
+      "bounds": [
+        30.000000000000078,
+        27.67143709831387,
+        30.0
+      ],
+      "expectedBounds": [
+        30,
+        27.672198564539073,
+        30
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 3.19,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfh01610-2-8-cutaway",
+      "codeSha256": "a1eaa919ebe15ad5ec00a9dfb76479885e74beab3b893154ef5d0d6a43a7c3c5",
+      "valid": true,
+      "closed": true,
+      "solids": 50,
+      "componentValid": true,
+      "bounds": [
+        40.00000000000008,
+        33.367599869939525,
+        45.0
+      ],
+      "expectedBounds": [
+        40,
+        33.3684460112119,
+        45
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 2.64,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfh01620-1-8-cutaway",
+      "codeSha256": "027f17096a98d044e388ef3f939f01da99618d661ae6dd310633ecc3b075a7a9",
+      "valid": true,
+      "closed": true,
+      "solids": 35,
+      "componentValid": true,
+      "bounds": [
+        40.00000000000008,
+        33.354217659319524,
+        58.0
+      ],
+      "expectedBounds": [
+        40,
+        33.355063800585114,
+        58
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 2.11,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfh02020-1-8-cutaway",
+      "codeSha256": "8cad045ba243cecbd57266d3f22cc2ce7d38b7857bf7fcfdf4e3e999711db9aa",
+      "valid": true,
+      "closed": true,
+      "solids": 39,
+      "componentValid": true,
+      "bounds": [
+        44.0,
+        41.12955283341505,
+        54.0
+      ],
+      "expectedBounds": [
+        44,
+        41.13929821660696,
+        54
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 2.6,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfh02510-3-8-cutaway",
+      "codeSha256": "920f7abca7214fe91df360522d3e94575a3d309c3b33d9d4ec720fcb78691c6f",
+      "valid": true,
+      "closed": true,
+      "solids": 95,
+      "componentValid": true,
+      "bounds": [
+        48.0000000000009,
+        45.56746260579281,
+        55.0
+      ],
+      "expectedBounds": [
+        48,
+        45.568429667917925,
+        55
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 4.08,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfh03205-3-8-cutaway",
+      "codeSha256": "a918a3fe19dc909c9e6e14621d75db23f7995e77888b781dd29e8eea6c690858",
+      "valid": true,
+      "closed": true,
+      "solids": 118,
+      "componentValid": true,
+      "bounds": [
+        62.000000000000206,
+        58.051464491892816,
+        37.0
+      ],
+      "expectedBounds": [
+        62,
+        58.052431554006375,
+        37
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 6.16,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfh03232-1-8-cutaway",
+      "codeSha256": "cabcd1de2ccfe8e421a33bdbf2c8a873e6f080bd9c2d94a2afd0fc9e5673b119",
+      "valid": true,
+      "closed": true,
+      "solids": 47,
+      "componentValid": true,
+      "bounds": [
+        62.000000000000206,
+        58.080714439819396,
+        80.0
+      ],
+      "expectedBounds": [
+        62,
+        58.08192334359644,
+        80
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 2.2,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfh04010-3-8-cutaway",
+      "codeSha256": "c799b87ff34b731ac500c64e5f3c5af3ad052ba8d1a2d28357a41bc692328581",
+      "valid": true,
+      "closed": true,
+      "solids": 73,
+      "componentValid": true,
+      "bounds": [
+        70.00000000000051,
+        69.77010826445701,
+        60.0
+      ],
+      "expectedBounds": [
+        70,
+        69.78437394144149,
+        60
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 3.86,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfh04040-2-8-cutaway",
+      "codeSha256": "c337b9f48f1308bce7b7f8b9cb4a7e9f8487fb5e1cebe3b636b98c7c91f24b31",
+      "valid": true,
+      "closed": true,
+      "solids": 57,
+      "componentValid": true,
+      "bounds": [
+        70.00000000000051,
+        69.743372924157,
+        138.0
+      ],
+      "expectedBounds": [
+        70,
+        69.757638601127,
+        138
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 3.18,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfh05020-3-8-cutaway",
+      "codeSha256": "dbb619c3ec58027124a6ab6f8d8825ef802798892fc9726a4f642f5c9b0c9ecc",
+      "valid": true,
+      "closed": true,
+      "solids": 91,
+      "componentValid": true,
+      "bounds": [
+        85.00000000000053,
+        83.27105578888563,
+        100.0
+      ],
+      "expectedBounds": [
+        85,
+        83.27298991311791,
+        100
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 3.56,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfy1616-3-6-cutaway",
+      "codeSha256": "efa8f0a3a20fd7b9af65898bbd8629618bcf00ce75a18aa9e052f94200be4e69",
+      "valid": true,
+      "closed": true,
+      "solids": 50,
+      "componentValid": true,
+      "bounds": [
+        34.00000000000017,
+        36.261047628319524,
+        45.0
+      ],
+      "expectedBounds": [
+        34,
+        36.26189376958959,
+        45
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 2.0,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfy3232-3-6-cutaway",
+      "codeSha256": "353ac4e508cf994aa5af4d95e3bc82eced906a0fd5ca59d33739ad4527c8bb45",
+      "valid": true,
+      "closed": true,
+      "solids": 50,
+      "componentValid": true,
+      "bounds": [
+        60.00000000000145,
+        65.17198286357318,
+        78.0
+      ],
+      "expectedBounds": [
+        60,
+        65.18551285498928,
+        78
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 2.24,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfk602 / sfk0602 \u00b7 unverified listing-cutaway",
+      "codeSha256": "a97754ac10b3259f5265835149f3617d54ecb4504199282bfdd4ca3b62f02fe8",
+      "valid": true,
+      "closed": true,
+      "solids": 73,
+      "componentValid": true,
+      "bounds": [
+        16.000000000000217,
+        15.539756330807638,
+        18.0
+      ],
+      "expectedBounds": [
+        16,
+        15.54,
+        18
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 3.5,
+      "verificationSource": "/tmp/protolab-ball-offset-results-0.json"
+    },
+    {
+      "name": "sfu1604-4-cutaway",
+      "codeSha256": "cb6c3d04e33ee3f0382be1575b375fcdcbe2088db6f1867ea0d167db46460b88",
+      "valid": true,
+      "closed": true,
+      "solids": 87,
+      "componentValid": true,
+      "bounds": [
+        40.00000000000008,
+        33.60486719593624,
+        40.0
+      ],
+      "expectedBounds": [
+        40,
+        33.60559241637464,
+        40
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 8.73,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfu2004-4-cutaway",
+      "codeSha256": "75c785b8c1e6eaee719d98bdb695249b119bf7690cbd4ca3acc82f4b921138e0",
+      "valid": true,
+      "closed": true,
+      "solids": 107,
+      "componentValid": true,
+      "bounds": [
+        44.0,
+        40.59641169978846,
+        42.0
+      ],
+      "expectedBounds": [
+        44,
+        40.605915241285416,
+        42
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 6.87,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfu2505-4-cutaway",
+      "codeSha256": "9a7510ea48a54cacc1ca2c4b73194fcf3ad865e8ba8bb627941e7c23faca0f49",
+      "valid": true,
+      "closed": true,
+      "solids": 101,
+      "componentValid": true,
+      "bounds": [
+        48.0000000000009,
+        45.640373299092815,
+        51.0
+      ],
+      "expectedBounds": [
+        48,
+        45.6413403612423,
+        51
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 6.29,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfu2510-4-cutaway",
+      "codeSha256": "6285804d6940179bbedc72d5a24909c151d373d541a1791baf794de78554939f",
+      "valid": true,
+      "closed": true,
+      "solids": 70,
+      "componentValid": true,
+      "bounds": [
+        48.0000000000009,
+        46.71289955913247,
+        85.0
+      ],
+      "expectedBounds": [
+        48,
+        46.714349999999996,
+        85
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 4.18,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfu3206-4-cutaway",
+      "codeSha256": "e5aa17c2e435ca2bf9faa04872a8c56e96edd7e23b907712e7deca49d60aa728",
+      "valid": true,
+      "closed": true,
+      "solids": 103,
+      "componentValid": true,
+      "bounds": [
+        62.000000000000206,
+        58.675677164719396,
+        57.0
+      ],
+      "expectedBounds": [
+        62,
+        58.67688606852217,
+        57
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 8.77,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfu4005-4-cutaway",
+      "codeSha256": "772dae7c63facfbf8cf08a60bb45388f04540bf3dc321d60d26cf0d16b7a3a83",
+      "valid": true,
+      "closed": true,
+      "solids": 156,
+      "componentValid": true,
+      "bounds": [
+        70.00000000000051,
+        68.62531819696419,
+        55.0
+      ],
+      "expectedBounds": [
+        70,
+        68.63861681175263,
+        55
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 9.38,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfu4010-4-cutaway",
+      "codeSha256": "e2255f7117ae466bce0476f0f0f160656224eabbfb34b55599520ac84f9da356",
+      "valid": true,
+      "closed": true,
+      "solids": 82,
+      "componentValid": true,
+      "bounds": [
+        70.00000000000051,
+        70.699878701057,
+        93.0
+      ],
+      "expectedBounds": [
+        70,
+        70.71414437798705,
+        93
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 7.55,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfu6310-4-cutaway",
+      "codeSha256": "af00040f4683a9c9411adbe817e4a61de51cf23fb83a5a859a35e42d08ea19ec",
+      "valid": true,
+      "closed": true,
+      "solids": 125,
+      "componentValid": true,
+      "bounds": [
+        94.99999999999912,
+        98.28147483818563,
+        98.0
+      ],
+      "expectedBounds": [
+        95,
+        98.2834089624394,
+        98
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 10.0,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfu8020-4-cutaway",
+      "codeSha256": "4ab4ce43fabc8c2dad33da69599e37f16ab7a9c32c6706579ca742aa7e8e7176",
+      "valid": true,
+      "closed": true,
+      "solids": 107,
+      "componentValid": true,
+      "bounds": [
+        130.00000000000003,
+        128.90934499177794,
+        154.0
+      ],
+      "expectedBounds": [
+        130,
+        128.92433594397775,
+        154
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 7.96,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfk0601-cutaway",
+      "codeSha256": "54dea1e823eae742ff04472b3e32c675438524a5dcb80237f4a59a1f460f291f",
+      "valid": true,
+      "closed": true,
+      "solids": 72,
+      "componentValid": true,
+      "bounds": [
+        16.000000000000217,
+        15.538893412047639,
+        15.0
+      ],
+      "expectedBounds": [
+        16,
+        15.53913708124482,
+        15
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 5.86,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfk082-5-cutaway",
+      "codeSha256": "163119bbb6b781b94f7e42e38bf62874d961095ba44306ad7cea01257ee166e8",
+      "valid": true,
+      "closed": true,
+      "solids": 65,
+      "componentValid": true,
+      "bounds": [
+        20.00000000000031,
+        19.305265550187997,
+        26.0
+      ],
+      "expectedBounds": [
+        20,
+        19.31,
+        26
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 4.88,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfk1202-cutaway",
+      "codeSha256": "1814ec673c6c6f39eaddf29ee5ef6823d7b11967194bc44ad0ee5e023170bf21",
+      "valid": true,
+      "closed": true,
+      "solids": 126,
+      "componentValid": true,
+      "bounds": [
+        24.000000000000085,
+        25.27013652216837,
+        28.0
+      ],
+      "expectedBounds": [
+        24,
+        25.27598097023698,
+        28
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 8.33,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfs1205-2-8-cutaway",
+      "codeSha256": "1f1f0e7e44269c74d2a055a026382003c12e34724c70aef6cc8787bec16f5db2",
+      "valid": true,
+      "closed": true,
+      "solids": 45,
+      "componentValid": true,
+      "bounds": [
+        30.000000000000078,
+        27.67143709831387,
+        31.0
+      ],
+      "expectedBounds": [
+        30,
+        27.672198564539073,
+        31
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 4.03,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfs1610-2-8-cutaway",
+      "codeSha256": "c4b52aaeec5285aae04b582eb4dd5dabba581a88619a43680e55395eea2fb0f1",
+      "valid": true,
+      "closed": true,
+      "solids": 97,
+      "componentValid": true,
+      "bounds": [
+        40.00000000000008,
+        33.367599869939525,
+        47.0
+      ],
+      "expectedBounds": [
+        40,
+        33.3684460112119,
+        47
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 7.05,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfs2010-3-8-cutaway",
+      "codeSha256": "c32d9851dd72ffa312a5b014aa962f0f00fbe69ca965263942bc2485b560e30a",
+      "valid": true,
+      "closed": true,
+      "solids": 77,
+      "componentValid": true,
+      "bounds": [
+        44.0,
+        41.12859032591504,
+        60.0
+      ],
+      "expectedBounds": [
+        44,
+        41.138335709080486,
+        60
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 3.92,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfs3210-3-8-cutaway",
+      "codeSha256": "4526eb9af2af4111fa1016e1f7210bb293ea4797159c000b60f87f303bdba71f",
+      "valid": true,
+      "closed": true,
+      "solids": 94,
+      "componentValid": true,
+      "bounds": [
+        62.000000000000206,
+        58.17431435831939,
+        62.0
+      ],
+      "expectedBounds": [
+        62,
+        58.175523262084646,
+        62
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 3.91,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "dfu2505-4-cutaway",
+      "codeSha256": "d62b16f221c5bf40123d459d6434efcd1943221adc67baf0341e1f84b1a87b31",
+      "valid": true,
+      "closed": true,
+      "solids": 107,
+      "componentValid": true,
+      "bounds": [
+        48.0000000000009,
+        50.8350829823737,
+        101.0
+      ],
+      "expectedBounds": [
+        48,
+        50.84125,
+        101
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 8.64,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfe1616-6-cutaway",
+      "codeSha256": "2241fa62fa87c828d4a6c94a0096f1e922409b4e17a6767e1a38fa30ec1c475f",
+      "valid": true,
+      "closed": true,
+      "solids": 81,
+      "componentValid": true,
+      "bounds": [
+        34.00000000000017,
+        36.256082461229525,
+        38.0
+      ],
+      "expectedBounds": [
+        34,
+        36.25692860250431,
+        38
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 4.09,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfe2020-4-cutaway",
+      "codeSha256": "f0e937452704aea1be6ad93f8d80f777a716374cfda106a3f7eef859041c56ab",
+      "valid": true,
+      "closed": true,
+      "solids": 103,
+      "componentValid": true,
+      "bounds": [
+        41.0,
+        43.12519198871786,
+        55.0
+      ],
+      "expectedBounds": [
+        41,
+        43.13578035906246,
+        55
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 5.02,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfe2040-6-cutaway",
+      "codeSha256": "4662cbd93067248eb04f493fc3fa7df4bbf3df5c06cef54c76001a7b55dea067",
+      "valid": true,
+      "closed": true,
+      "solids": 43,
+      "componentValid": true,
+      "bounds": [
+        40.000000000000405,
+        41.102193661745886,
+        41.0
+      ],
+      "expectedBounds": [
+        40,
+        41.11189861594579,
+        41
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 2.1,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfe2550-3-cutaway",
+      "codeSha256": "acea4486b4f6d486596da489f98ca068314e4e6f8b5e810c2ca3b670007f2060",
+      "valid": true,
+      "closed": true,
+      "solids": 41,
+      "componentValid": true,
+      "bounds": [
+        48.00000000000041,
+        50.160162549947714,
+        50.0
+      ],
+      "expectedBounds": [
+        48,
+        50.171767287732784,
+        50
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 2.5,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfe3232-6-cutaway",
+      "codeSha256": "0bef78fcc1e7506679cb8d45d7916070cd4b137055d2c0324e882eae08647d35",
+      "valid": true,
+      "closed": true,
+      "solids": 89,
+      "componentValid": true,
+      "bounds": [
+        60.00000000000145,
+        65.16624560937318,
+        71.0
+      ],
+      "expectedBounds": [
+        60,
+        65.17977560078636,
+        71
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 4.36,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfe4040-4-cutaway",
+      "codeSha256": "58a9943c6dd446f825d6411c0866b86434609825610bdd7e1e4108a55735408c",
+      "valid": true,
+      "closed": true,
+      "solids": 93,
+      "componentValid": true,
+      "bounds": [
+        75.00000000000132,
+        81.25172318731036,
+        100.0
+      ],
+      "expectedBounds": [
+        75,
+        81.26565137971447,
+        100
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 4.81,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfe5050-6-cutaway",
+      "codeSha256": "f53a8d29fa6afa9d5dc1e1c456e40691c458c8f5fdbca85e06e1cecf33e9c90b",
+      "valid": true,
+      "closed": true,
+      "solids": 79,
+      "componentValid": true,
+      "bounds": [
+        92.0,
+        97.83186718353105,
+        107.0
+      ],
+      "expectedBounds": [
+        92,
+        97.84675896297622,
+        107
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 4.07,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfi2005-4-cutaway",
+      "codeSha256": "dd7474a3bd383b301d5148ec72c9d95f83507c6d2e87393e8ace784873eff360",
+      "valid": true,
+      "closed": true,
+      "solids": 79,
+      "componentValid": true,
+      "bounds": [
+        56.99999996491228,
+        40.597247209636926,
+        51.0
+      ],
+      "expectedBounds": [
+        57,
+        40.60707218899353,
+        51
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 5.33,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "dfi2505-4-cutaway",
+      "codeSha256": "058e01746404cc4576b8a634592a71a9cda52aef0f91c700787f82afc11f66cd",
+      "valid": true,
+      "closed": true,
+      "solids": 101,
+      "componentValid": true,
+      "bounds": [
+        62.99999996825397,
+        51.32529261112068,
+        101.0
+      ],
+      "expectedBounds": [
+        63,
+        51.34125,
+        101
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 9.57,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfi3205-4-cutaway",
+      "codeSha256": "ae0ec0226a3ce7299e0aa9a9b727c4c5eab1e559ff72239ba707978820696811",
+      "valid": true,
+      "closed": true,
+      "solids": 124,
+      "componentValid": true,
+      "bounds": [
+        71.99999997222221,
+        54.129573871843974,
+        52.0
+      ],
+      "expectedBounds": [
+        72,
+        54.141729986214756,
+        52
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 6.62,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "dfi3210-4-cutaway",
+      "codeSha256": "d6f9e70ad958a49b7a2b0f0c656e6436a41fb0e76468bfd9914bf3fe22a54aca",
+      "valid": true,
+      "closed": true,
+      "solids": 67,
+      "componentValid": true,
+      "bounds": [
+        87.99999997727274,
+        70.67420659873679,
+        162.0
+      ],
+      "expectedBounds": [
+        88,
+        70.6825,
+        162
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 7.26,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfi4010-4-cutaway",
+      "codeSha256": "a45100a6f11e31003517949ac170e7fd0250da3649e2cc9d65de61b24c02a7ad",
+      "valid": true,
+      "closed": true,
+      "solids": 79,
+      "componentValid": true,
+      "bounds": [
+        103.99999998076923,
+        76.21221025378563,
+        93.0
+      ],
+      "expectedBounds": [
+        104,
+        76.21414437798705,
+        93
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 5.83,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "dfi5010-4-cutaway",
+      "codeSha256": "a5621b565ba2ac34a8ef97ab9dc4916c94ce5c20dabb45935d8831def82d0bff",
+      "valid": true,
+      "closed": true,
+      "solids": 101,
+      "componentValid": true,
+      "bounds": [
+        113.99999998245615,
+        92.67140923674413,
+        171.0
+      ],
+      "expectedBounds": [
+        114,
+        92.6825,
+        171
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 8.85,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfi8010-4-cutaway",
+      "codeSha256": "9aedd5443ad03c885c8c5ea61aea40a656bb4bc0c83264a6ac106a7d6bb14be9",
+      "valid": true,
+      "closed": true,
+      "solids": 153,
+      "componentValid": true,
+      "bounds": [
+        149.99999998666667,
+        119.2630754991518,
+        98.0
+      ],
+      "expectedBounds": [
+        150,
+        119.27723362350524,
+        98
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 6.47,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfh01210-2-8-cutaway",
+      "codeSha256": "5277836ed82cf2f64146194d2626695f46312d8fd6d021785b52df34a5b64111",
+      "valid": true,
+      "closed": true,
+      "solids": 46,
+      "componentValid": true,
+      "bounds": [
+        30.000000000000078,
+        27.65147323520387,
+        45.0
+      ],
+      "expectedBounds": [
+        30,
+        27.652234701433258,
+        45
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 1.81,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfh01616-1-8-cutaway",
+      "codeSha256": "ae7cd8bdb0022a0e889df4a5e4bff8157e547c6949aca80b3c013cd109bfe08e",
+      "valid": true,
+      "closed": true,
+      "solids": 34,
+      "componentValid": true,
+      "bounds": [
+        40.00000000000008,
+        33.358545015969526,
+        45.0
+      ],
+      "expectedBounds": [
+        40,
+        33.35939115723744,
+        45
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 1.73,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfh02005-3-8-cutaway",
+      "codeSha256": "075d54cc44cf67cc46a7cc3130616dae74b5c18ba82f0e8b5d909ce9ed00bdb4",
+      "valid": true,
+      "closed": true,
+      "solids": 77,
+      "componentValid": true,
+      "bounds": [
+        44.0,
+        41.12859032591504,
+        37.0
+      ],
+      "expectedBounds": [
+        44,
+        41.138335709080486,
+        37
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 3.63,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfh02020-2-8-cutaway",
+      "codeSha256": "1b10e3666c96226ddc9e11d4b4e359f261a319f20824f7a3756301438dbc2b73",
+      "valid": true,
+      "closed": true,
+      "solids": 59,
+      "componentValid": true,
+      "bounds": [
+        44.0,
+        41.131829871915045,
+        74.0
+      ],
+      "expectedBounds": [
+        44,
+        41.14157525513518,
+        74
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 1.91,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfh02525-1-8-cutaway",
+      "codeSha256": "b632e695f8320d9b3fff99541ad549112d9520faab4ebc3dc72a79a2e23046f6",
+      "valid": true,
+      "closed": true,
+      "solids": 48,
+      "componentValid": true,
+      "bounds": [
+        48.0000000000009,
+        45.63683376039282,
+        64.0
+      ],
+      "expectedBounds": [
+        48,
+        45.63780082249253,
+        64
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 1.45,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfh03210-3-8-cutaway",
+      "codeSha256": "e13a176a6e35194160e4e029f2a50bddbf33c4720a18ff89e08ec9ec02167825",
+      "valid": true,
+      "closed": true,
+      "solids": 94,
+      "componentValid": true,
+      "bounds": [
+        62.000000000000206,
+        58.17431435831939,
+        57.0
+      ],
+      "expectedBounds": [
+        62,
+        58.175523262084646,
+        57
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 2.78,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfh03232-2-8-cutaway",
+      "codeSha256": "28b7a4385aa38db0230d56e595193a3d582daa8cb46f70ef08127fb9e9f4610c",
+      "valid": true,
+      "closed": true,
+      "solids": 72,
+      "componentValid": true,
+      "bounds": [
+        62.000000000000206,
+        58.1751008799194,
+        112.0
+      ],
+      "expectedBounds": [
+        62,
+        58.17630978373672,
+        112
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 2.12,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfh04020-2-8-cutaway",
+      "codeSha256": "b62f45822e40bdfea2f2abad0e79d82b2551a8b4d63736ba91bb14de8e503b29",
+      "valid": true,
+      "closed": true,
+      "solids": 55,
+      "componentValid": true,
+      "bounds": [
+        70.00000000000051,
+        69.76855033635701,
+        80.0
+      ],
+      "expectedBounds": [
+        70,
+        69.78281601327451,
+        80
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 1.82,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfh05005-3-8-cutaway",
+      "codeSha256": "16ad38efb625751858a4eea67512e55c965c384d695da7ab7cbd2dbf19d99e37",
+      "valid": true,
+      "closed": true,
+      "solids": 181,
+      "componentValid": true,
+      "bounds": [
+        85.00000000000053,
+        82.14211768379282,
+        42.0
+      ],
+      "expectedBounds": [
+        85,
+        82.1430847459474,
+        42
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 4.31,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfh05050-1-8-cutaway",
+      "codeSha256": "6040b86c28d8d6cc62b356ab3e41b2e6a29ed20837b5d1afe7684fc03fcf5f63",
+      "valid": true,
+      "closed": true,
+      "solids": 46,
+      "componentValid": true,
+      "bounds": [
+        85.00000000000053,
+        83.25903051798562,
+        120.0
+      ],
+      "expectedBounds": [
+        85,
+        83.26096464218558,
+        120
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 1.55,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfy2020-3-6-cutaway",
+      "codeSha256": "480750bb37742c84f29cb16c928107aea5bcb6ce7c0edf3e9f9d8c0d415ee98b",
+      "valid": true,
+      "closed": true,
+      "solids": 50,
+      "componentValid": true,
+      "bounds": [
+        41.0,
+        43.123113311917855,
+        52.0
+      ],
+      "expectedBounds": [
+        41,
+        43.133701682267066,
+        52
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 1.41,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfy4040-3-6-cutaway",
+      "codeSha256": "321b71eba93ce0c438bbdebdfe651725cb2a39f054848f3fdb5a5ddeb80c1dcd",
+      "valid": true,
+      "closed": true,
+      "solids": 48,
+      "componentValid": true,
+      "bounds": [
+        75.00000000000132,
+        81.26500507281037,
+        99.0
+      ],
+      "expectedBounds": [
+        75,
+        81.27893326517432,
+        99
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 1.4,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfe3210 \u00b7 unverified listing-cutaway",
+      "codeSha256": "36ed44fa38baa197e2661d3ef7cb51b6db83137c764d1fe36e549ca235cb996c",
+      "valid": true,
+      "closed": true,
+      "solids": 73,
+      "componentValid": true,
+      "bounds": [
+        60.00000000000145,
+        65.18668922097318,
+        82.0
+      ],
+      "expectedBounds": [
+        60,
+        65.20021921236564,
+        82
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 2.62,
+      "verificationSource": "/tmp/protolab-ball-offset-results-1.json"
+    },
+    {
+      "name": "sfu1605-4-cutaway",
+      "codeSha256": "14ab1117e7f085fab9b0a3ae250e2d2e799072fc62975a10dd9d5ee1e7a25fef",
+      "valid": true,
+      "closed": true,
+      "solids": 68,
+      "componentValid": true,
+      "bounds": [
+        40.00000000000008,
+        34.13117685456281,
+        50.0
+      ],
+      "expectedBounds": [
+        40,
+        34.13214391666534,
+        50
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 9.24,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfu2005-4-cutaway",
+      "codeSha256": "51de43569850bc72a93b6499359dd553157ed13cf829f9b4daf54dcabaf21555",
+      "valid": true,
+      "closed": true,
+      "solids": 82,
+      "componentValid": true,
+      "bounds": [
+        44.0,
+        41.097326805815044,
+        51.0
+      ],
+      "expectedBounds": [
+        44,
+        41.10707218899353,
+        51
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 6.96,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfu2506-4-cutaway",
+      "codeSha256": "f428478a6952db92d5d1878b2beea2c1bd1bcbbe2aaaaab75029ab9dc771af5c",
+      "valid": true,
+      "closed": true,
+      "solids": 82,
+      "componentValid": true,
+      "bounds": [
+        48.0000000000009,
+        46.1327999330194,
+        54.0
+      ],
+      "expectedBounds": [
+        48,
+        46.13400883681348,
+        54
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 5.43,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfu3204-4-cutaway",
+      "codeSha256": "52d15eba7e6f30e63a0cdc2e83a9afcdbdbdb4f0b122b5e3762b98d0bd514e8d",
+      "valid": true,
+      "closed": true,
+      "solids": 166,
+      "componentValid": true,
+      "bounds": [
+        62.000000000000206,
+        57.60644977956623,
+        44.0
+      ],
+      "expectedBounds": [
+        62,
+        57.607175,
+        44
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 7.55,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfu3208-4-cutaway",
+      "codeSha256": "934bbbdf4978647da5d8f80017dac3ecb4cda1979b0a4f827f8b6c7cec71b44d",
+      "valid": true,
+      "closed": true,
+      "solids": 87,
+      "componentValid": true,
+      "bounds": [
+        62.000000000000206,
+        59.20973439183247,
+        65.0
+      ],
+      "expectedBounds": [
+        62,
+        59.21118483274928,
+        65
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 5.17,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfu4006-4-cutaway",
+      "codeSha256": "41b152c2ac3ba64d5914abb330def087b127a1e98ea3a0e8aeaff8d122002351",
+      "valid": true,
+      "closed": true,
+      "solids": 127,
+      "componentValid": true,
+      "bounds": [
+        70.00000000000051,
+        69.16379077259077,
+        60.0
+      ],
+      "expectedBounds": [
+        70,
+        69.17733122908197,
+        60
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 8.62,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfu5010-4-cutaway",
+      "codeSha256": "1a477b850a3adec7f799801b7d7fd423bd7c7b8f9c9b9c3396b8d1891ca3e2d5",
+      "valid": true,
+      "closed": true,
+      "solids": 101,
+      "componentValid": true,
+      "bounds": [
+        85.00000000000053,
+        84.28074659828563,
+        93.0
+      ],
+      "expectedBounds": [
+        85,
+        84.2826807224846,
+        93
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 9.88,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfu6320-4-cutaway",
+      "codeSha256": "267835a67bb5482cbb7ab9d4f10d943f36b0a0e5e574e7ba5c5649d9f9a72bc8",
+      "valid": true,
+      "closed": true,
+      "solids": 86,
+      "componentValid": true,
+      "bounds": [
+        100.00000000000026,
+        105.42647381367844,
+        149.0
+      ],
+      "expectedBounds": [
+        100,
+        105.429375,
+        149
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 8.83,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfu10020-4-cutaway",
+      "codeSha256": "7910bde81265531b4182df24cc3e69fb89971265e18b15ec9221fb5b6dfdc8a0",
+      "valid": true,
+      "closed": true,
+      "solids": 132,
+      "componentValid": true,
+      "bounds": [
+        155.00000000000182,
+        157.41041481897844,
+        180.0
+      ],
+      "expectedBounds": [
+        155,
+        157.41331600528844,
+        180
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 7.0,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfk0801-cutaway",
+      "codeSha256": "3ffbd92f73c2192aa68484a4b23f4651d3fedd6eb5084435ed961b9302b99297",
+      "valid": true,
+      "closed": true,
+      "solids": 126,
+      "componentValid": true,
+      "bounds": [
+        18.000000000000302,
+        18.01707697762764,
+        16.0
+      ],
+      "expectedBounds": [
+        18,
+        18.01732064682465,
+        16
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 7.18,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfk1002-cutaway",
+      "codeSha256": "ed120bdd053d3f758adf9e1a3cdebbeddda5bf9bbbbd934bc1a049ee6ab9c099",
+      "valid": true,
+      "closed": true,
+      "solids": 80,
+      "componentValid": true,
+      "bounds": [
+        22.000000000000327,
+        23.29935375132146,
+        28.0
+      ],
+      "expectedBounds": [
+        22,
+        23.299719255111295,
+        28
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 6.94,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfk1402-cutaway",
+      "codeSha256": "c9f24455b61fd8b53186bcf67cf433defb966bee7b7efa6897549cdf010939ec",
+      "valid": true,
+      "closed": true,
+      "solids": 145,
+      "componentValid": true,
+      "bounds": [
+        26.0,
+        27.80322107943702,
+        23.0
+      ],
+      "expectedBounds": [
+        26,
+        27.809539625986993,
+        23
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 10.25,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfs1210-2-8-cutaway",
+      "codeSha256": "05e111addb05fc91c1fb03643ccb29f1e168f8dc53a920c37f4238453b6fe9af",
+      "valid": true,
+      "closed": true,
+      "solids": 89,
+      "componentValid": true,
+      "bounds": [
+        30.000000000000078,
+        27.65147323520387,
+        48.5
+      ],
+      "expectedBounds": [
+        30,
+        27.65223470143326,
+        48.5
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 6.96,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfs1616-1-8-cutaway",
+      "codeSha256": "893f756b82590fddda209bc60c93205bcb4844748080dcef6848bf46bcb3f177",
+      "valid": true,
+      "closed": true,
+      "solids": 65,
+      "componentValid": true,
+      "bounds": [
+        40.00000000000008,
+        33.358545015969526,
+        45.0
+      ],
+      "expectedBounds": [
+        40,
+        33.35939115723744,
+        45
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 5.66,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfs2510-3-8-cutaway",
+      "codeSha256": "3825b574e0065d4bd0cdb8161a78052436c9cdb9f7c4951d792be82864cbf93f",
+      "valid": true,
+      "closed": true,
+      "solids": 95,
+      "componentValid": true,
+      "bounds": [
+        48.0000000000009,
+        45.56746260579281,
+        62.0
+      ],
+      "expectedBounds": [
+        48,
+        45.568429667917925,
+        62
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 5.21,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfs3220-2-8-cutaway",
+      "codeSha256": "acf7049759224a9bb7890ee8023d73911ef12fc35ec630b85e288ef1522309fe",
+      "valid": true,
+      "closed": true,
+      "solids": 71,
+      "componentValid": true,
+      "bounds": [
+        62.000000000000206,
+        58.0837802269194,
+        80.0
+      ],
+      "expectedBounds": [
+        62,
+        58.08498913074841,
+        80
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 4.31,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "dfu2510-4-cutaway",
+      "codeSha256": "73118537069395be68713f85cfaa764dfbe827d385cb3f9570f1e4f5327223ac",
+      "valid": true,
+      "closed": true,
+      "solids": 75,
+      "componentValid": true,
+      "bounds": [
+        48.0000000000009,
+        50.75575764578194,
+        145.0
+      ],
+      "expectedBounds": [
+        48,
+        50.7619,
+        145
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 8.36,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfe1632-3-cutaway",
+      "codeSha256": "5114515caf9fd50880ebcf59c24d338f53b6d1a503b59f6c1b7209fdfe66c650",
+      "valid": true,
+      "closed": true,
+      "solids": 35,
+      "componentValid": true,
+      "bounds": [
+        36.00000000000004,
+        37.535919861610864,
+        34.0
+      ],
+      "expectedBounds": [
+        36,
+        37.545211681901925,
+        34
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 2.4,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfe2020-6-cutaway",
+      "codeSha256": "00133b57df511e7da0b13680eabe0bdc75d1a24aae8d55a893abc5ade03be218",
+      "valid": true,
+      "closed": true,
+      "solids": 87,
+      "componentValid": true,
+      "bounds": [
+        41.0,
+        43.130511845317855,
+        47.0
+      ],
+      "expectedBounds": [
+        41,
+        43.1411002157446,
+        47
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 5.26,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfe2525-3-cutaway",
+      "codeSha256": "42ed62d1c990441accb3a6f7a0ac80b0ff24e31c150f751bc11eacf8c0df5a42",
+      "valid": true,
+      "closed": true,
+      "solids": 85,
+      "componentValid": true,
+      "bounds": [
+        49.00000000000007,
+        52.15921536268428,
+        57.0
+      ],
+      "expectedBounds": [
+        49,
+        52.171944754185475,
+        57
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 5.83,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfe2550-6-cutaway",
+      "codeSha256": "acea4486b4f6d486596da489f98ca068314e4e6f8b5e810c2ca3b670007f2060",
+      "valid": true,
+      "closed": true,
+      "solids": 41,
+      "componentValid": true,
+      "bounds": [
+        48.00000000000041,
+        50.160162549947714,
+        50.0
+      ],
+      "expectedBounds": [
+        48,
+        50.171767287732784,
+        50
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 3.26,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfe3264-3-cutaway",
+      "codeSha256": "5acd0e2d775cc4bda289c6e89cd3ca409cc8b9234ef4e1352bea7c1fbedd3e01",
+      "valid": true,
+      "closed": true,
+      "solids": 43,
+      "componentValid": true,
+      "bounds": [
+        60.00000000000145,
+        65.19964519077317,
+        62.0
+      ],
+      "expectedBounds": [
+        60,
+        65.21317518223714,
+        62
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 3.46,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfe4040-6-cutaway",
+      "codeSha256": "1ece5fe32511c42baf798bf63a343ce105d2d2d773096db5b78027053d1a462c",
+      "valid": true,
+      "closed": true,
+      "solids": 83,
+      "componentValid": true,
+      "bounds": [
+        75.00000000000132,
+        81.21922671551036,
+        89.0
+      ],
+      "expectedBounds": [
+        75,
+        81.2331549078977,
+        89
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 5.52,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfi1605-4-cutaway",
+      "codeSha256": "522e4a29350ef510c279c7f147f3f49018400dab67d4cd52b5ffc441dfaa1c64",
+      "valid": true,
+      "closed": true,
+      "solids": 65,
+      "componentValid": true,
+      "bounds": [
+        48.999999959183675,
+        34.62356220930293,
+        50.0
+      ],
+      "expectedBounds": [
+        49,
+        34.63214391666534,
+        50
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 4.99,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "dfi2005-4-cutaway",
+      "codeSha256": "22fbecb86f779cf8e06492d6d3d0deff4b5cee2bc6b37428a301ab0f5ac4a644",
+      "valid": true,
+      "closed": true,
+      "solids": 81,
+      "componentValid": true,
+      "bounds": [
+        56.99999996491228,
+        45.32715751911536,
+        101.0
+      ],
+      "expectedBounds": [
+        57,
+        45.34125,
+        101
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 8.16,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfi2510-4-cutaway",
+      "codeSha256": "6ac9bb7d3256ccfa4c247ad2841fbf108ceb96217b750ae8f5950507ab4a8cd4",
+      "valid": true,
+      "closed": true,
+      "solids": 67,
+      "componentValid": true,
+      "bounds": [
+        71.99999997222221,
+        51.70171050688362,
+        85.0
+      ],
+      "expectedBounds": [
+        72,
+        51.714349999999996,
+        85
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 4.31,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "dfi3205-4-cutaway",
+      "codeSha256": "d0ed3598234092c1246cf35b64604117f8598c1f3f5497c6e0cc2dee650798e5",
+      "valid": true,
+      "closed": true,
+      "solids": 127,
+      "componentValid": true,
+      "bounds": [
+        71.99999997222221,
+        58.822961476127304,
+        102.0
+      ],
+      "expectedBounds": [
+        72,
+        58.84125,
+        102
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 10.28,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfi4005-4-cutaway",
+      "codeSha256": "65782a6f1ddf1e96b6be3ef6be00479dce957d7cdadaeda44536ac104c6cf432",
+      "valid": true,
+      "closed": true,
+      "solids": 153,
+      "componentValid": true,
+      "bounds": [
+        89.99999997777778,
+        67.12528342952122,
+        55.0
+      ],
+      "expectedBounds": [
+        90,
+        67.13861681175263,
+        55
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 7.62,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "dfi4010-4-cutaway",
+      "codeSha256": "5af1d5684ecea89841660da793176e996686bcd813dabda720aaf1816cd0191b",
+      "valid": true,
+      "closed": true,
+      "solids": 81,
+      "componentValid": true,
+      "bounds": [
+        103.99999998076923,
+        82.67296332674005,
+        165.0
+      ],
+      "expectedBounds": [
+        104,
+        82.6825,
+        165
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 7.79,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfi6310-4-cutaway",
+      "codeSha256": "5c0ef8f4d7dd4f93e1131c3eaff8559cf588cd05b42fea46ef9b33e7afb69b18",
+      "valid": true,
+      "closed": true,
+      "solids": 122,
+      "componentValid": true,
+      "bounds": [
+        130.99999998473282,
+        101.26915914196047,
+        98.0
+      ],
+      "expectedBounds": [
+        131,
+        101.2834089624394,
+        98
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 7.45,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "dfi8010-4-cutaway",
+      "codeSha256": "7bf5ad55260b498a4b9ff0a1cec6d8adbf08608f4ea8bb44d2d7a1eaabb1ad0e",
+      "valid": true,
+      "closed": true,
+      "solids": 155,
+      "componentValid": true,
+      "bounds": [
+        149.99999998666667,
+        127.17027599986616,
+        182.0
+      ],
+      "expectedBounds": [
+        150,
+        127.1825,
+        182
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 10.97,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfh01605-3-8-cutaway",
+      "codeSha256": "fbdb88b6ac2b193e876496e286714b16ea991010e4e957d56bb6bed8e5031aac",
+      "valid": true,
+      "closed": true,
+      "solids": 67,
+      "componentValid": true,
+      "bounds": [
+        40.00000000000008,
+        33.37182161956952,
+        37.0
+      ],
+      "expectedBounds": [
+        40,
+        33.37266776083582,
+        37
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 4.62,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfh01616-2-8-cutaway",
+      "codeSha256": "bfa753616d288573dfc20d435ac4694d61af5ab169436876e77523f04ee7a9a9",
+      "valid": true,
+      "closed": true,
+      "solids": 52,
+      "componentValid": true,
+      "bounds": [
+        40.00000000000008,
+        33.36335911770952,
+        61.0
+      ],
+      "expectedBounds": [
+        40,
+        33.36420525898024,
+        61
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 2.67,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfh02010-3-8-cutaway",
+      "codeSha256": "57a457413389e16a037043508970a4f547d81bd8a766391fdc7ebcdeea3a1c98",
+      "valid": true,
+      "closed": true,
+      "solids": 77,
+      "componentValid": true,
+      "bounds": [
+        44.0,
+        41.12859032591504,
+        55.0
+      ],
+      "expectedBounds": [
+        44,
+        41.138335709080486,
+        55
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 3.98,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfh02505-3-8-cutaway",
+      "codeSha256": "030f2c04496f8750d0def8a9e1b6bf71871c3c4f0005a9ef6191009561471341",
+      "valid": true,
+      "closed": true,
+      "solids": 94,
+      "componentValid": true,
+      "bounds": [
+        48.0000000000009,
+        45.63929462359282,
+        37.0
+      ],
+      "expectedBounds": [
+        48,
+        45.64026168569128,
+        37
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 5.54,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfh02525-2-8-cutaway",
+      "codeSha256": "273de9b8c83e87931b5e9f997b1eb974f67c22066da6ae15e7f03075c7f64efe",
+      "valid": true,
+      "closed": true,
+      "solids": 73,
+      "componentValid": true,
+      "bounds": [
+        48.0000000000009,
+        45.64202261589281,
+        89.0
+      ],
+      "expectedBounds": [
+        48,
+        45.64298967797588,
+        89
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 3.46,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfh03220-2-8-cutaway",
+      "codeSha256": "7b8ad174e94e4a415109fed30ee8cb2a7d8ca680440ad40ff634c507f4555974",
+      "valid": true,
+      "closed": true,
+      "solids": 71,
+      "componentValid": true,
+      "bounds": [
+        62.000000000000206,
+        58.0837802269194,
+        76.0
+      ],
+      "expectedBounds": [
+        62,
+        58.08498913074841,
+        76
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 3.84,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfh04005-3-8-cutaway",
+      "codeSha256": "f43d61cd0b07bf8f56c0e198553906e6c364413c4c279d2a36fdaa713a967d96",
+      "valid": true,
+      "closed": true,
+      "solids": 146,
+      "componentValid": true,
+      "bounds": [
+        70.00000000000051,
+        68.62962515966419,
+        42.0
+      ],
+      "expectedBounds": [
+        70,
+        68.64292377449318,
+        42
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 4.88,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfh04040-1-8-cutaway",
+      "codeSha256": "d0c8f2b668217b098aaf0808e775d734ac6857fe9ea573cec84686991dc73a93",
+      "valid": true,
+      "closed": true,
+      "solids": 37,
+      "componentValid": true,
+      "bounds": [
+        70.00000000000051,
+        69.763782811057,
+        98.0
+      ],
+      "expectedBounds": [
+        70,
+        69.77804848801591,
+        98
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 2.01,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfh05010-3-8-cutaway",
+      "codeSha256": "f6a9805e1fe02874e4d535285cdb0b3b6e8964a37c83636a044cc21c289fe226",
+      "valid": true,
+      "closed": true,
+      "solids": 91,
+      "componentValid": true,
+      "bounds": [
+        85.00000000000053,
+        83.27105578888563,
+        60.0
+      ],
+      "expectedBounds": [
+        85,
+        83.27298991311791,
+        60
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 3.24,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfh05050-2-8-cutaway",
+      "codeSha256": "8fdbad473da5feccb2fbccc3df7151a519b5c757c2b9c840bfb6f1951acadee2",
+      "valid": true,
+      "closed": true,
+      "solids": 70,
+      "componentValid": true,
+      "bounds": [
+        85.00000000000053,
+        83.27407532798563,
+        170.0
+      ],
+      "expectedBounds": [
+        85,
+        83.27600945215687,
+        170
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 3.05,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfy2525-3-6-cutaway",
+      "codeSha256": "ab973e7bdd3486e9e7f6bc7e9014619ee371c936812fac1810e47e141604383c",
+      "valid": true,
+      "closed": true,
+      "solids": 50,
+      "componentValid": true,
+      "bounds": [
+        49.00000000000007,
+        52.16487518728428,
+        64.0
+      ],
+      "expectedBounds": [
+        49,
+        52.17760457884906,
+        64
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 1.81,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    },
+    {
+      "name": "sfy5050-3-6-cutaway",
+      "codeSha256": "c71c616918d027979a3d254cb9eb8facc1f0e92a6137120c7f88b03215833a7f",
+      "valid": true,
+      "closed": true,
+      "solids": 45,
+      "componentValid": true,
+      "bounds": [
+        92.0,
+        97.82016179323104,
+        117.0
+      ],
+      "expectedBounds": [
+        92,
+        97.83505357265751,
+        117
+      ],
+      "boundsValid": true,
+      "raceClear": true,
+      "stepValid": true,
+      "seconds": 1.58,
+      "verificationSource": "/tmp/protolab-ball-offset-results-2.json"
+    }
+  ]
+}

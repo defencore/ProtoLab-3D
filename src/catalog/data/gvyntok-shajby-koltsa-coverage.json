@@ -1,0 +1,63 @@
+{
+  "source": "https://gvyntok.com/product-category/shajby-koltsa/",
+  "retrievedAt": "2026-09-13T17:50:00.810985+00:00",
+  "categories": 35,
+  "listedProducts": 606,
+  "visibleProducts": 606,
+  "navigationCountDifferences": [],
+  "importedProducts": 606,
+  "pages": 37,
+  "errors": [],
+  "unparsedSizes": [
+    {
+      "sku": "060-310-001",
+      "sourceTitle": "Шайба прижимная (Реборра) d40 (ф5) — кругла",
+      "url": "https://gvyntok.com/shop/shajby-koltsa/shajba-prizhimnaya-reborra/shajba-prizhimnaya-reborra-d40-f5-krugla/",
+      "categoryUrl": "https://gvyntok.com/product-category/shajby-koltsa/shajba-prizhimnaya-reborra/",
+      "standard": null,
+      "diameter": null,
+      "length": null,
+      "pitch": null
+    },
+    {
+      "sku": "060-310-002",
+      "sourceTitle": "Шайба прижимная (Реборра) d40 (ф7) — кругла",
+      "url": "https://gvyntok.com/shop/shajby-koltsa/shajba-prizhimnaya-reborra/shajba-prizhimnaya-reborra-d40-f7-krugla/",
+      "categoryUrl": "https://gvyntok.com/product-category/shajby-koltsa/shajba-prizhimnaya-reborra/",
+      "standard": null,
+      "diameter": null,
+      "length": null,
+      "pitch": null
+    },
+    {
+      "sku": "060-310-003",
+      "sourceTitle": "Шайба прижимная (Реборра) d50 (ф5) — кругла",
+      "url": "https://gvyntok.com/shop/shajby-koltsa/shajba-prizhimnaya-reborra/shajba-prizhimnaya-reborra-d50-f5-krugla/",
+      "categoryUrl": "https://gvyntok.com/product-category/shajby-koltsa/shajba-prizhimnaya-reborra/",
+      "standard": null,
+      "diameter": null,
+      "length": null,
+      "pitch": null
+    },
+    {
+      "sku": "060-310-004",
+      "sourceTitle": "Шайба прижимная (Реборра) d50 (ф7) — кругла",
+      "url": "https://gvyntok.com/shop/shajby-koltsa/shajba-prizhimnaya-reborra/shajba-prizhimnaya-reborra-d50-f7-krugla/",
+      "categoryUrl": "https://gvyntok.com/product-category/shajby-koltsa/shajba-prizhimnaya-reborra/",
+      "standard": null,
+      "diameter": null,
+      "length": null,
+      "pitch": null
+    },
+    {
+      "sku": "060-310-005",
+      "sourceTitle": "Шайба прижимная (Реборра) d70 — кругла",
+      "url": "https://gvyntok.com/shop/shajby-koltsa/shajba-prizhimnaya-reborra/shajba-prizhimnaya-reborra-d70-krugla/",
+      "categoryUrl": "https://gvyntok.com/product-category/shajby-koltsa/shajba-prizhimnaya-reborra/",
+      "standard": null,
+      "diameter": null,
+      "length": null,
+      "pitch": null
+    }
+  ]
+}

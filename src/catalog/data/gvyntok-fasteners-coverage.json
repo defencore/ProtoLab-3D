@@ -1,0 +1,33 @@
+{
+  "source": "https://gvyntok.com/product-category/bolty-i-vinty/",
+  "retrievedAt": "2026-09-13T17:54:56.028904+00:00",
+  "categories": 55,
+  "listedProducts": 5922,
+  "visibleProducts": 5901,
+  "importedProducts": 5901,
+  "pages": 148,
+  "errors": [],
+  "navigationCountDifferences": [
+    {
+      "url": "https://gvyntok.com/product-category/bolty-i-vinty/bolt-mebelnyj-din-603/",
+      "navigation": 83,
+      "results": 74
+    },
+    {
+      "url": "https://gvyntok.com/product-category/bolty-i-vinty/vint-mebelnyj-din-967/",
+      "navigation": 86,
+      "results": 83
+    },
+    {
+      "url": "https://gvyntok.com/product-category/bolty-i-vinty/vint-potajnoj-din-965/",
+      "navigation": 125,
+      "results": 118
+    },
+    {
+      "url": "https://gvyntok.com/product-category/bolty-i-vinty/vint-sfericheskij-din-7985/",
+      "navigation": 117,
+      "results": 115
+    }
+  ],
+  "unparsedSizes": []
+}

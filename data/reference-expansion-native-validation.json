@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-13T20:05:57+00:00",
+  "status": "passed",
+  "scope": "Native geometry evidence for the user-supplied ball-screw, miniature pinion, bevel-pair and jaw-coupling reference expansion.",
+  "runtime": {
+    "application": "FreeCAD",
+    "version": "1.0.2",
+    "build": "39319 (Git)",
+    "commit": "256fc7eff3379911ab5daf88e10182c509aa8052",
+    "buildDate": "2025-08-05 20:19:07",
+    "execution": "Headless local Python; temporary shapes and STEP files, without changing a user CAD document."
+  },
+  "units": {
+    "length": "mm",
+    "volume": "mm^3",
+    "relativeError": "fraction; multiply by 100 for percent"
+  },
+  "jawCoupling": {
+    "status": "passed",
+    "nativeCases": 20,
+    "borePairsMm": [
+      [
+        5,
+        5
+      ],
+      [
+        14,
+        14
+      ],
+      [
+        5,
+        14
+      ],
+      [
+        12.7,
+        6.35
+      ]
+    ],
+    "states": [
+      "assembly",
+      "exploded",
+      "hub-a",
+      "hub-b",
+      "spider"
+    ],
+    "checks": [
+      "Valid closed solids and expected component counts",
+      "Disjoint components",
+      "Independent shaft bores and clear central shaft passage",
+      "Clamp screw through-holes and head counterbores on both hubs",
+      "Valid STEP round trips with retained solid counts"
+    ],
+    "clampProbeAssemblies": 4,
+    "stepRoundTrips": 20,
+    "maxPreviewCadComponentVolumeRelativeError": 0.0016851451233375863,
+    "maxPreviewCadDimensionErrorMm": 6.398691406417356e-05,
+    "maxStepVolumeRelativeError": 1.5475152670417283e-05,
+    "componentIntersectionLimitMm3": 1e-06,
+    "shaftProbeIntersectionLimitMm3": 1e-06,
+    "clampProbeIntersectionLimitMm3": 1e-08,
+    "limits": [
+      "Reference verifies D25, L30 and the listed bore pairs. Jaw, spider and clamp details are editable prototype dimensions.",
+      "Four bore combinations exercise boundary and mixed-bore geometry; this is not native validation of every possible custom parameter combination."
+    ],
+    "evidence": [
+      {
+        "file": "protolab-jaw-cases.json",
+        "sha256": "ffeb6dbd9a9fe11441c4725e7c2587ae1358d07a032a64a3528bfa7d4275e8c5"
+      },
+      {
+        "file": "protolab-jaw-native-results.json",
+        "sha256": "2af0a7048565be6ee48117fe8e3336f44ca28cb6688e319752723e4642fe1922"
+      },
+      {
+        "file": "protolab-jaw-native.py",
+        "sha256": "f044c89f29a7510c0d2c6a6dd863e828fc13ed37180e35c8f722fb9ad80d1713"
+      },
+      {
+        "file": "protolab-jaw-clamps.log",
+        "sha256": "8708c065d26b2660bd4da286797321229368e5004ae48216ce7660b9cf50d757"
+      }
+    ]
+  },
+  "gears": {
+    "status": "passed",
+    "nativeCases": 46,
+    "stepRoundTrips": 46,
+    "bevelPairs": {
+      "status": "passed",
+      "nativeCases": 42,
+      "stepRoundTrips": 42,
+      "maxPreviewCadVolumeRelativeError": 0.0004811455884850232,
+      "maxPreviewCadVolumeErrorCase": "reference-bevel-m2-15-30-pinion-Max",
+      "maxPreviewCadDimensionErrorMm": 1.8310546892053026e-06,
+      "maxObservedComponentIntersectionMm3": 0.0,
+      "sourcePairs": 6,
+      "sourceTableRows": 12,
+      "scope": "All assembly/separated states; both bore interval endpoints for each individual gear; linked 37 degree rotation.",
+      "checkedTwoComponentAssemblies": 18,
+      "previewManifoldChecks": {
+        "configurations": 48,
+        "meshes": 48,
+        "failedEdges": 0,
+        "nonpositiveVolumes": 0,
+        "nonfiniteVertices": 0
+      }
+    },
+    "miniatureSpurPinions": {
+      "status": "passed",
+      "nativeCases": 4,
+      "stepRoundTrips": 4,
+      "maxPreviewCadVolumeRelativeError": 0.0006611619324719965,
+      "maxPreviewCadVolumeErrorCase": "reference-m05-11t-298",
+      "maxPreviewCadDimensionErrorMm": 2.000037770955032e-07,
+      "maxObservedComponentIntersectionMm3": 0,
+      "moduleMm": 0.5,
+      "teeth": [
+        11,
+        13,
+        15,
+        17
+      ],
+      "boreMm": 2.98
+    },
+    "checks": [
+      "Valid closed positive-volume solids and expected component counts",
+      "Preview/native bounds agreement",
+      "All checked bevel assembly positions have zero measured component intersection",
+      "Valid STEP round trips with retained solid counts"
+    ],
+    "stepVolumeAcceptance": "Absolute error < max(0.001 mm^3, native volume * 0.00001). Per-case STEP volume errors were asserted but not recorded; no measured maximum is claimed.",
+    "limits": [
+      "Bevel teeth are faceted tapered layout approximations, not generated conjugate contact surfaces. Zero intersection at checked positions does not certify continuous meshing or load capacity.",
+      "Miniature spur width 5 mm, pressure angle 20 degrees and tooth thinning 0.02 mm are prototype assumptions. Low-tooth layout mode does not reproduce manufacturing undercut or profile shift."
+    ],
+    "evidence": [
+      {
+        "file": "protolab-reference-gears-native-cases.json",
+        "sha256": "ef6c28ecc4d72fb6465bf2a306ab11b6a0d5abe6680f5d915c95ed94ab82b692"
+      },
+      {
+        "file": "protolab-reference-gears-native-results.json",
+        "sha256": "b2f70b971a8d979a58f910484e6a4869342cce9d641093c8408a5c4dfb49450d"
+      },
+      {
+        "file": "protolab-reference-gears-preview-volumes.json",
+        "sha256": "a7930cf5accac70870e36837ca28b8954dfc18800effe0f2694c7e2fce3ed8ce"
+      },
+      {
+        "file": "protolab-reference-gears-preview-results.json",
+        "sha256": "af36b8d086425d517411aea6ec20d29e877862464cea320c0e5f44ca6b5b3791"
+      },
+      {
+        "file": "protolab-reference-gears-native.py",
+        "sha256": "0501f49d8013dd51a4011da336a986d57a61361ef69a228915adb92a282d3e81"
+      }
+    ]
+  },
+  "ballScrews": {
+    "status": "passed",
+    "nativeCases": 266,
+    "nativeSolids": 22310,
+    "stepRoundTrips": 266,
+    "sourceNutConfigurations": 131,
+    "states": [
+      "assembled",
+      "cutaway"
+    ],
+    "additionalCases": [
+      "SFU10020-4 full shaft",
+      "SFK0401 550 mm full shaft",
+      "SFE3264-3 full shaft",
+      "Left-hand machined assembly"
+    ],
+    "retainedUnchangedGeometryCases": 135,
+    "finalOffsetCutawayCases": 131,
+    "codeVerification": "The 135 retained non-cutaway generated Python bodies have unchanged geometry ASTs after excluding a defensive error guard. The final 131 cutaway bodies were rerun with the common 0.001 mm inspection offset. Per-case code hashes are recorded in the aggregate evidence.",
+    "algorithm": "Elliptical groove profile seam shifted by 0.37 rad; direct nut-body groove cut; uniform +0.001 mm inspection-plane offset in preview and native CAD, with 0.00001 mm OCC common tolerance.",
+    "checks": [
+      "Valid closed positive-volume components and expected retained solids",
+      "Preview/native envelope agreement for all 266 cases",
+      "Representative ball-to-housing race clearance samples in each nut configuration",
+      "Valid STEP round trips retaining solid counts",
+      "Exhaustive component-intersection checks on SFI1605 assembled and cutaway comparisons"
+    ],
+    "maxSourceCasePreviewCadDimensionErrorMm": 0.024947943815504914,
+    "maxSourceCaseDimensionErrorCase": "sfy5050-3-6-assembled",
+    "previewCadComparisonCases": 8,
+    "maxPreviewCadVolumeRelativeError": 0.002202985143654695,
+    "maxVolumeErrorCase": "sfi1605-4-cutaway",
+    "maxComparisonDimensionErrorMm": 0.024159101118584658,
+    "maxComparisonDimensionErrorCase": "sfe3264-3-assembled",
+    "exhaustivePairwiseContactCases": 2,
+    "observedPairwiseOverlapsAboveLimit": 0,
+    "raceAndContactIntersectionLimitMm3": 1e-05,
+    "stepVolumeAcceptance": "The 266-case audit checks imported validity and solid counts. It does not claim a measured STEP volume error maximum.",
+    "independentShaftProbeDiagnostic": {
+      "status": "passed_with_boolean_query_limitation",
+      "scope": "Three full-shaft cases already included in the 266 native cases; these extra checks do not increase the unique case count.",
+      "virtualBallLocations": 16,
+      "zeroGlobalCommonLocations": 15,
+      "zeroLocalizedCommonLocations": 1,
+      "cases": [
+        {
+          "name": "sfu10020-4-260-full-shaft",
+          "locations": 4,
+          "maxBallIntersectionMm3": 0
+        },
+        {
+          "name": "sfe3264-3-210-full-shaft",
+          "locations": 8,
+          "maxBallIntersectionMm3": 0
+        },
+        {
+          "name": "sfk0401-550-full-shaft",
+          "locations": 4,
+          "globalClearLocations": 3,
+          "localizedClearLocations": 1
+        }
+      ],
+      "sfk550Diagnostic": {
+        "zMm": 165,
+        "sphereCenterMm": [
+          2.14,
+          0,
+          165
+        ],
+        "sphereRadiusMm": 0.4,
+        "globalCommonReportedMm3": 0.268082573106329,
+        "globalFuzzyCommonReportedMm3": 0.268082573106329,
+        "shapeDistanceMm": 0.023899020081774733,
+        "outsidePointSamples": 7,
+        "insidePointSamples": 0,
+        "localizedShaftLengthMm": 6,
+        "localizedShapeValid": true,
+        "localizedBallIntersectionMm3": 0.0,
+        "localizedFuzzyBallIntersectionMm3": 0.0,
+        "localizedDistanceMm": 0.023899020081774733
+      },
+      "limitation": "On the 550-turn SFK0401 shaft at z=165 mm, the full-shape OCC common query incorrectly returns the entire sphere despite positive shape separation, seven outside point samples, and zero intersection against a valid local shaft segment. That full-shape Boolean query is unreliable at this sample; it is not used as evidence of physical overlap.",
+      "additionalShaftStepChecks": [
+        {
+          "name": "sfu10020-4-260-full-shaft",
+          "stepVolumeRelativeError": 5.59619868203548e-07
+        },
+        {
+          "name": "sfe3264-3-210-full-shaft",
+          "stepVolumeRelativeError": 6.475047119049074e-07
+        }
+      ]
+    },
+    "limits": [
+      "Catalog envelopes are transcribed dimensions, not certification of supplier interchangeability or load capacity. Undimensioned internal races, return paths, seals, tube routing and end machining remain editable prototype geometry.",
+      "Only the documented sample spheres and two exhaustive SFI1605 assemblies were tested for component contact; this is not a kinematic or load simulation.",
+      "A deterministic 0.001 mm inspection-plane offset avoids OCC degeneracies and is applied equally to preview and FreeCAD cutaways.",
+      "Two named options lacking complete dimensional evidence remain explicitly unverified prototype examples."
+    ],
+    "evidence": [
+      {
+        "file": "protolab-ball-native-final-results.json",
+        "sha256": "e40065963d04a127faa8e42dc443e3e524cbee4e7e6ee035edef927cfc62e0d8"
+      },
+      {
+        "file": "protolab-ball-pairs-results.json",
+        "sha256": "7820ebec74a79e45b174d54f6a5b757f0d3f47ee1580c03adfc3ff88b19e7325"
+      },
+      {
+        "file": "protolab-ball-unchanged-assembly-results.json",
+        "sha256": "b5d455be77ac82b43ba0c06fad9e0292eae0658e68acf0506058667cbdfce731"
+      },
+      {
+        "file": "protolab-ball-offset-results-0.json",
+        "sha256": "0504a45b26cdb771c5ea8de78ec7527c7b46b95d723cf188ef660dd3d0512ca7"
+      },
+      {
+        "file": "protolab-ball-offset-results-1.json",
+        "sha256": "7564fabbe9c69e6bb1fe492b2c8f7ac25be40eeabe46a2bfef4955f176815457"
+      },
+      {
+        "file": "protolab-ball-offset-results-2.json",
+        "sha256": "84f901ef25bd0445f48dde576c7dd0f3cd56971904735223d76ae84be167bd69"
+      },
+      {
+        "file": "protolab-ball-shaft-probe-results.json",
+        "sha256": "7fbcc9b224a0b74008d39e60212be6ce2a8ebc6010da0105ffb5614d2fe69a05"
+      },
+      {
+        "file": "protolab-sfk550-local-probe-results.json",
+        "sha256": "1bbe8b58d1b20aad75a6d0ac7a0185d3bbdefb5f232123bfed92eee0577c1571"
+      },
+      {
+        "file": "protolab-sfk550-local-probe.py",
+        "sha256": "580ec49069794bafcd420195d0f74b15734e202c924cebe75ac909f8ed43bbdb"
+      }
+    ],
+    "reproduce": [
+      "node --import tsx scripts/verify-ball-screws.ts",
+      "Run scripts/verify-ball-screws.py with a FreeCAD Python runtime; see docs/ball-screw-catalog.md for commands."
+    ],
+    "detailedResults": "data/ball-screw-native-validation.json"
+  }
+}

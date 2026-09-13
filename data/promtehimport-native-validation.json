@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-09-13T18:54:57.198459+00:00",
+  "sourceStatus": "source-fetch-complete",
+  "sourceProducts": 11977,
+  "importedPresets": 7928,
+  "distinctMacroStates": 4833,
+  "failures": [],
+  "freecadVersion": [
+    "1",
+    "0",
+    "2",
+    "39319 (Git)",
+    "https://github.com/FreeCAD/FreeCAD",
+    "2025/08/05 20:19:07",
+    "(HEAD detached at 1.0.2)",
+    "256fc7eff3379911ab5daf88e10182c509aa8052"
+  ],
+  "presetDataSha256": "4086393eea48588fe0e4079bd92c506eb560c6d3324601bf2b26bc4e0f0f9ead",
+  "macroManifestSha256": "c199dc40a397a545a28e05328c6bda71c1ed6002813d7e39ce5585e49f579511",
+  "checks": [
+    "Valid positive-volume assembly and component solids",
+    "Configured envelope in every supported state",
+    "FreeCAD source metadata"
+  ],
+  "method": "Unchanged complete macros reuse successful checks keyed by macro text, dimensions and FreeCAD version; new or changed macros execute in isolated FreeCAD processes."
+}

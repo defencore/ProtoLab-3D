@@ -1,0 +1,4034 @@
+{
+  "checkedAt": "2026-09-13T20:46:05.364Z",
+  "purpose": "One-time behavioral equivalence proof for isolated part-package migration. These hashes document the migration; future intended geometry edits are not pinned to them.",
+  "baseline": {
+    "archiveSha256": "ce1bf03b1485a79cbfd877f99cb6593c2a8d486a43e450068447c8ab20fb937e",
+    "metadataSha256": "4718bcf8db494e21c0f1ca64dd3b9dd622db1b65ef38ce83f76723a9e31161b4"
+  },
+  "scope": {
+    "parts": 74,
+    "presets": 12591,
+    "sourcedPresets": 12497,
+    "defaultStateCases": 123,
+    "sourceAndExamplePresets": "Exact deep equality of every ID, order, parameter value, source URL, designation, verified dimension and other catalog metadata.",
+    "geometry": "Every part default in every declared state; all mesh attributes, triangle indices, transforms, component names, mesh counts, triangle counts, exact world bounds, declared dimensions and Python recipe text.",
+    "limitations": "No new native FreeCAD execution was needed because every emitted part recipe and default geometry are byte-for-byte identical. Parameter extremes and intended future geometry changes continue to use their part tests and parts:check."
+  },
+  "result": {
+    "allMetadataIdentical": true,
+    "allPresetDataIdentical": true,
+    "allGeometryAndRecipesIdentical": true,
+    "geometryDifferences": 0
+  },
+  "workflowChecks": {
+    "automaticDiscovery": "Adding a scaffolded package appeared in the running library without a registry edit.",
+    "liveReplacement": "Changing the selected package name, field label and default diameter updated the configurator and geometry; the manually entered length stayed at 24 mm.",
+    "handoffRoundTrip": "Exported the temporary package, edited its returned default diameter from 12 to 16 mm, and imported it with --replace. The running preview became 16 x 16 x 24 mm and a backup of the previous package was retained.",
+    "cleanup": "The temporary package was moved out of the library; the final production build contains the original 74 parts.",
+    "standaloneWorkbench": "Exported bolt-screw and ball-screw-axis handoffs both passed standalone TypeScript and Vite builds. The bolt workbench rendered its own model and generated updated Python after changing the head type.",
+    "productionBuild": "Main TypeScript and Vite build passed; the production browser rendered the library and bolt configurator. Vite reports the existing large-chunk advisory for the embedded catalog and geometry dependencies.",
+    "focusedTests": "32 configuration, selection, catalog and package tests plus 15 preset-search tests passed. Application and test/tooling TypeScript checks passed."
+  },
+  "packages": [
+    {
+      "id": "ball-bearing",
+      "presets": 2942,
+      "sourcedPresets": 2939,
+      "metadataSha256": "e94aaf50914e6382886d87218a89b123ed13f5db2207e55bbae34c98cd7e1e8e",
+      "presetsSha256": "94e7232539f49280980958dbb9f640a33110eab2f74f3486f4bb1c6914babb66",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "self-aligning-bearing",
+      "presets": 456,
+      "sourcedPresets": 456,
+      "metadataSha256": "487876ac1d70c1f52f74ce5171f1e844ceab2f4b7bc5db803aace1aeb31c5d37",
+      "presetsSha256": "c2bdaae15d3a692bac03f3d83f57199f24c3943427480853178cf9fdb9770123",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "angular-contact-bearing",
+      "presets": 240,
+      "sourcedPresets": 240,
+      "metadataSha256": "57f8af89a51d94862fb962e2bc9cec47343b13e001f22b0b0cdabcb004521630",
+      "presetsSha256": "28810ef3967a7f6c32360b436a00a0bf748fd5390751a708ac7139df7325b513",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "double-row-bearing",
+      "presets": 31,
+      "sourcedPresets": 31,
+      "metadataSha256": "62f951c5ddfb6f1c6a0cafb9836b44b0904a079f05810a05345eb95c797f6250",
+      "presetsSha256": "edf39eb1827b1a30994f273c99ddb4875d7b5a05ba4ddc2b918f3989526e9129",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "double-row-angular-contact-bearing",
+      "presets": 259,
+      "sourcedPresets": 259,
+      "metadataSha256": "c17ac5f419c530067dd59d3595997dbeb91637fbe63c00470b3ffdf76b552039",
+      "presetsSha256": "f621e7ec005e7d2b534efef3c6be0a947a02e2d354d5f4cd6ded1c2520592b3a",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "roller-bearing",
+      "presets": 608,
+      "sourcedPresets": 606,
+      "metadataSha256": "6799632e9075dbf46628e90f539e60bb80d45c58605c7eaf948193bbe5ad7dba",
+      "presetsSha256": "4807547f8a80a7d749699beaa25f2134e63fb4553d8a3736ff6279c33e763573",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "spherical-roller-bearing",
+      "presets": 600,
+      "sourcedPresets": 600,
+      "metadataSha256": "0d6c0feecedfcbb8e61bf03c3743e829489202bc7bb1347ff7a21b3c7e7619d1",
+      "presetsSha256": "3d5a9acf0ed575e65becab471b311bffe17f1aca7563d33342f139a0672186d2",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "tapered-roller-bearing",
+      "presets": 1480,
+      "sourcedPresets": 1480,
+      "metadataSha256": "1a0bcf3188cdb86ab64a3f2e2370a0706821e5bffc5d766cc795f372a094271d",
+      "presetsSha256": "9d19aaf71ccd6f5433e92ff7b2695a1e73440a8c64ef62fb68fb732ad2a6eafc",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "needle-bearing",
+      "presets": 201,
+      "sourcedPresets": 201,
+      "metadataSha256": "ba0e678ca276284237fbcf84eaedbd0f56a62a49b8f448cc76878b868c350fb2",
+      "presetsSha256": "cb7ca9dc23e6df4e52057480dd51b76744144419d1a424d80b5ee1ec03783160",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "rod-end-bearing",
+      "presets": 28,
+      "sourcedPresets": 26,
+      "metadataSha256": "eba3ca1205d0dddeb3bf7420fd6c244bf117044e4eda9e75538a97bd5b1a2d4b",
+      "presetsSha256": "100c9b29073474ff042f7cbfaac6924e6dee3445d867bf82672b294bbe49f0aa",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "linear-bearing",
+      "presets": 41,
+      "sourcedPresets": 41,
+      "metadataSha256": "dc7e3af25fe64a3703b8bd468a866690caf3d3a7a93308fd0b2804b6f3109207",
+      "presetsSha256": "83462aec01be6cd670cfdf4e92c6fee0b93c8ec2a87ee09610e4668d6e9cd299",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "flanged-linear-bearing",
+      "presets": 19,
+      "sourcedPresets": 18,
+      "metadataSha256": "aa26b842ead45915a077d66c453fd91104040f2a748984e32a475104ea5a02c4",
+      "presetsSha256": "59a66035bd19c94f0d956948b9d46b9f2f59691a687633d4d8e72b73ca1663d3",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "round-flange-linear-bearing",
+      "presets": 14,
+      "sourcedPresets": 13,
+      "metadataSha256": "0c6cbd632044215dc53c7402db010830785da6e41fc1a525f1bab7b150092647",
+      "presetsSha256": "395dd72a04223f6fce2d8cb839fda8b3dbf0637c7b036b6b78b4dfdfe20e2955",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "thrust-bearing",
+      "presets": 337,
+      "sourcedPresets": 337,
+      "metadataSha256": "e214d40b25d29120ef18adbb12bd251e0e71c2fc1c02d7aaf8a28360b15798bd",
+      "presetsSha256": "ca78481795c5cbcc65cda715395201e91e16a702527ae08cc07343fc3c275154",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "flange-2-bolt-bearing",
+      "presets": 20,
+      "sourcedPresets": 19,
+      "metadataSha256": "b696e307a547586124c4c9de9707357bf22b9620135afeaa1e60f0c255e9dfe7",
+      "presetsSha256": "39517b1b35eab659d96bf8890906af9aa0c3a2601707da671699f8613c14ce53",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "flange-4-bolt-bearing",
+      "presets": 72,
+      "sourcedPresets": 71,
+      "metadataSha256": "13039cb5d4bb6c702e525b3e8b164cec6e6ab3ee745114a4190fc448a995d132",
+      "presetsSha256": "d2b3f20b8a624320fbf6ae7195f360e0927a1b7c061c710190513777de216fa0",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "pillow-block-bearing",
+      "presets": 109,
+      "sourcedPresets": 107,
+      "metadataSha256": "566dad903d9ddce31913cdb55621c082dbdfe0ad22de7f3263d264340fcff462",
+      "presetsSha256": "2d7c82e98d1e6ab03c943a856f08b77007e945d3b32c53d1c0fc8672b53a5921",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "insert-bearing",
+      "presets": 128,
+      "sourcedPresets": 128,
+      "metadataSha256": "c6de3de37694b14349b016257ddc72646d555453ff8d27dbdfe40ad3187debaf",
+      "presetsSha256": "098720cc10665fd0d1f75a42054438dfce381ce8ead8d4ef5a540166b08acfb0",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "one-way-clutch",
+      "presets": 11,
+      "sourcedPresets": 11,
+      "metadataSha256": "55b9e7a63d6f33eab6430acfe3d7f7b9efdeac130257ceb966f1afb203787a85",
+      "presetsSha256": "21c2dc9a7cfadff7c15cfef568cabca221d92ebe839dd8e52c283813a1638d26",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "csk-clutch",
+      "presets": 32,
+      "sourcedPresets": 32,
+      "metadataSha256": "5a3b63a4f979e08a6bdd8e8bd04993273d75f533252144693a2f40641ae7dd21",
+      "presetsSha256": "886ed5cf35981f53bf6b3ea63f6149385e76feb6a7839fc53e5a7d054185b800",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "thrust-roller-bearing",
+      "presets": 15,
+      "sourcedPresets": 15,
+      "metadataSha256": "9440be4159f5a126dbc17063282b4d0dfe6ace33b4c96a3c5b73beedc6a941b7",
+      "presetsSha256": "4189309d8af63bec17fcfa9f6ef40a447b79aed757e2291ef4ea2dd8cea8905b",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "spherical-thrust-bearing",
+      "presets": 41,
+      "sourcedPresets": 39,
+      "metadataSha256": "4d47d18c823ceeb732ee829a4eb07b1c82aeab0bd311cb7803023294bb8b1633",
+      "presetsSha256": "3b9ba790b1743c7783594a3acc9492377b485f92873100a1500be5e36e6358ae",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "combined-bearing",
+      "presets": 2,
+      "sourcedPresets": 2,
+      "metadataSha256": "a80f8f4f6d35537c7b8e3a06095de7071b4094ec562feaf05ad0c3a374027bc4",
+      "presetsSha256": "366d2f24f470506e53e1df74d9bc11ffdadb60fe2701e374808d4674fda3c0e9",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "zarn-bearing",
+      "presets": 6,
+      "sourcedPresets": 6,
+      "metadataSha256": "25f0ab07facacb21a780ebbb87bea5f1e03a0bfa75e61586a9fbf2244249d2b6",
+      "presetsSha256": "5278f206a80ed4ce8d7c6d5ee652fe01819a38bdd01a40acf7d046cb877631cb",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "plain-bearing",
+      "presets": 117,
+      "sourcedPresets": 117,
+      "metadataSha256": "e81957b648ccfd75797bdc72ba4972501ad9c39815fb9118a725688d198cc15e",
+      "presetsSha256": "52de8df661d2d49201f6a40d530f1109c9ba3274c3cf04f3571c805a4cc31f95",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "adapter-sleeve",
+      "presets": 56,
+      "sourcedPresets": 56,
+      "metadataSha256": "e58d640db800fd11352d3cd8334029767001942207002643c093d6288e52051c",
+      "presetsSha256": "bc8d10222f3fe2e797fa4f252d337d7bf1bd5220c6a0d6232936deaa41014a47",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "radial-oil-seal",
+      "presets": 68,
+      "sourcedPresets": 68,
+      "metadataSha256": "84f20479113039bdce8ea04704187caa626099b33e13cf9638495816c810205b",
+      "presetsSha256": "9fb87f27fcf13c76ad20c4b83e330aa1bafd80780e63e49f95052a0eadd6098f",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "wing-screw",
+      "presets": 117,
+      "sourcedPresets": 117,
+      "metadataSha256": "5fdafe5163e4f9dae2a78741dc5c01f218c0e9bef3cb2581cdfdcbc368a40d4b",
+      "presetsSha256": "be591093e334d5f559f5b9cbf1d55b833d745386d9dc3e0b4f79562d48b109ca",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "swing-eye-bolt",
+      "presets": 187,
+      "sourcedPresets": 187,
+      "metadataSha256": "d86c89cbb25c032ac8f0e08aab2726ffb0d5b46915057d3df194efd2b35dbd27",
+      "presetsSha256": "d14379b92287ec3a4cf22db7109bd521840b1942d9210f990fae2e2b9728c7da",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "lifting-eye-bolt",
+      "presets": 18,
+      "sourcedPresets": 18,
+      "metadataSha256": "8928a0220beb0684721e01ad16a2447c9f16266baff0b78820b6a6c67156f112",
+      "presetsSha256": "67d4f9bba2fe191db5ecfe5925fb5cdd1b4fc2270841bc6d04ba131c8dfecb3c",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "bolt-screw",
+      "presets": 2568,
+      "sourcedPresets": 2560,
+      "metadataSha256": "e0b33e1cf34bc6e25cf1c8c9fb25a4459214636316106f64c4fa166e2d6fa722",
+      "presetsSha256": "9d176453f9d21db7b3a130d9d086c5fe774f73760e12209064357db9fca35375",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "set-screw",
+      "presets": 463,
+      "sourcedPresets": 459,
+      "metadataSha256": "06458b2b18e5baef8bba3405d6f869d4c1d02ef3279c68a83af820bde576afb7",
+      "presetsSha256": "2d659407903ed1c2316ddfc6c70c0874ed7da3de2445fda9739d865a5da1adec",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "thin-nut",
+      "presets": 25,
+      "sourcedPresets": 25,
+      "metadataSha256": "3b02b045ba801494790d75871de00e855c9808dc56067762aa0f341b71c9609f",
+      "presetsSha256": "f4d3c44d6095226bd910eb148d2912acb543bc6e3e28fc053c984c6c8d68352f",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "wing-nut",
+      "presets": 9,
+      "sourcedPresets": 9,
+      "metadataSha256": "88f26c761409597c56ccbb77c4ba5fe2fd2ea62b210c764a6634e15035d49e0c",
+      "presetsSha256": "2b01aeb36cd62de57e486e1a61d7a12a9f11107d71212cff70edcdbda76f9ad4",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "lifting-eye-nut",
+      "presets": 10,
+      "sourcedPresets": 10,
+      "metadataSha256": "821927dbfd739b511d86c9cc0d6b3fb8fdd63f1c5b5932735529e98da31942b9",
+      "presetsSha256": "bc0d716616be50ac16e2ce111df2f8a7e327ac3d378bd2565c7c646fa7dbb1a0",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "coupling-nut",
+      "presets": 14,
+      "sourcedPresets": 14,
+      "metadataSha256": "8f6da6b3dc76d0ffe9c9c0bfd404bfcf1b56d3420e22f65d6f51b1f9f888f245",
+      "presetsSha256": "694aebd046680790d4b78ebc4235402b3cb57643dfba79455a3efceefdd69213",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "high-nut",
+      "presets": 14,
+      "sourcedPresets": 14,
+      "metadataSha256": "db42c53b8b72ac094e48171514d717aa4174b7fbe1d0736fa82b41c1f98c242f",
+      "presetsSha256": "a510f6589db5dee36f36c0167d745cfdbf9fa996eaf8947764e8584e4cf28e51",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "square-nut",
+      "presets": 14,
+      "sourcedPresets": 14,
+      "metadataSha256": "edcacaeb6bd180e5c75058fef730ab9244eaf93f16186a69e880ec81f465dbff",
+      "presetsSha256": "a7bf3f58e354d0eabdd97d4cc2e29cbf7b01aea517212812f9e020b419e589ef",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "flange-nut",
+      "presets": 9,
+      "sourcedPresets": 9,
+      "metadataSha256": "92eabb0341159f82bc85e65fcb85aa39472e83c1e939f7a3fd2143c1f2032386",
+      "presetsSha256": "97fd5525175364433e38b6bf84cdad1141bad2f0877d7fa2eb7dbe1709b16d80",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "nyloc-nut",
+      "presets": 32,
+      "sourcedPresets": 32,
+      "metadataSha256": "e9b854835ea3c6135edcb1a50be014e3c6bbbaade38a0c7fb22e2fd60be2c94d",
+      "presetsSha256": "481301efaf4f57486b83ee57a188e4a9a098a491cb85a4cdbabf1c0649855e5e",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "cap-nut",
+      "presets": 14,
+      "sourcedPresets": 14,
+      "metadataSha256": "877b84d86a994fe00b0cd468826649be89b3d2ad39d040716be3f44e43922ef7",
+      "presetsSha256": "70e6fb70bafc42a136499eac4c162fab2ecebbb797c81c474cbaf8b6c3fc5402",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "metal-lock-nut",
+      "presets": 17,
+      "sourcedPresets": 17,
+      "metadataSha256": "82d9670d058969df0084fff444e117a0489e05a900a95e76374189752a7f3f14",
+      "presetsSha256": "6e2aa352f78f4fcf35cb85029f3ae0432f88033e131648044b53db4305762ece",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "square-washer",
+      "presets": 8,
+      "sourcedPresets": 8,
+      "metadataSha256": "0545da40e524a79d69e70879ac3e252fe63d93c0d2cfb6b66863c67c1ff597cd",
+      "presetsSha256": "d37f9cc1d31559889ad60ace09bc06ef2b3125605ae4474e851c367c5ea8a717",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "conical-washer",
+      "presets": 7,
+      "sourcedPresets": 7,
+      "metadataSha256": "564a6524a2d6e5107c561bc0d524e6abc6e3fb5d2d781ae1426f3c62e4ed7803",
+      "presetsSha256": "0c380468c4af8fcef908c4de9e745597f5f6de6ddb2e32a3696ed0dc5a157569",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "toothed-washer",
+      "presets": 15,
+      "sourcedPresets": 15,
+      "metadataSha256": "939e5ab5fc5cc2032c9b15f064aaeaaf1f278e8f44ce3efbdd165488efbaed25",
+      "presetsSha256": "c3fcba5cd11e7ab7cf1157c20551aeaa835fef53ce683dc9d423d710c2727550",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "threaded-rod",
+      "presets": 78,
+      "sourcedPresets": 78,
+      "metadataSha256": "f7b9063e5a68ed318ba7b07f7b4e52aab5bb1f811c4ea19f78b5ee4593139b5c",
+      "presetsSha256": "a57c24d8bb9165d8b0d610eeed09546d17942a909c19e38074dd37213297a63a",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "hex-nut",
+      "presets": 34,
+      "sourcedPresets": 34,
+      "metadataSha256": "fe82dcecc57ac8727d161881c92c9612be1c6cee9ef355b4d1ae1f9b9a7f4607",
+      "presetsSha256": "3e6601e60dc787db7120becfd4b7aba277bfa69adcd8144b2682cbcd82b1a3f9",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "washer",
+      "presets": 131,
+      "sourcedPresets": 131,
+      "metadataSha256": "93952ff9a36248e3ee046240482c43d0e499f1fc7f6749f6d81efce5f90f70dd",
+      "presetsSha256": "c6dd63a333ac76a78f5d80906f9995f2060b8aca01045966c294e79a2b613ea7",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "retaining-ring",
+      "presets": 130,
+      "sourcedPresets": 127,
+      "metadataSha256": "c7046fa90d99f8246fd3aa1f7776feafecb7b0194efba246f6750f4516d8a22e",
+      "presetsSha256": "bf8dd0d7deb5258a995f0af699e75a7965617336b82801fa6c05e8d43e97cec2",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "e-ring",
+      "presets": 16,
+      "sourcedPresets": 16,
+      "metadataSha256": "ac2e1bfcad23c29f85d3d42c303d032c15e7bcdd899e594caf8c915d8e0ef7e7",
+      "presetsSha256": "2dfe73161a3091a624bc115026126392e1246ac3e7da2c03ea01686d7722733d",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "split-lock-washer",
+      "presets": 24,
+      "sourcedPresets": 24,
+      "metadataSha256": "689b07e41f0089e6492fec9816bca8b25cc86acbda9e6658192fd917ab095fbd",
+      "presetsSha256": "803429a9d11d044f0571699871ccde052055fdf6796149f41366dd211a9d653c",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "spring-pin",
+      "presets": 95,
+      "sourcedPresets": 95,
+      "metadataSha256": "5bff28108c00168c939a5b5d23746be247f43a15e9b1455dca463c918a1cb00c",
+      "presetsSha256": "c3b229dd542da95d9b35f6f28f250fa2466451bc73fcca822a9d5aec14c02119",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "cotter-pin",
+      "presets": 141,
+      "sourcedPresets": 141,
+      "metadataSha256": "d95a5ce94019ce156d4c5ea3c8a709e236845c36a3d2f8149600b073c47230c5",
+      "presetsSha256": "2ec50ebb478785091e59f5da52aa0234c9e56cc55e4537bc0a2078f1f2a556f8",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "compression-spring",
+      "presets": 4,
+      "sourcedPresets": 0,
+      "metadataSha256": "6ee31e4b03cd4ae10e67eb64de66a08bc77fa7f7b9fa30561e284cd18c16d5fb",
+      "presetsSha256": "529a86a9bce7e5eeec09f12885fb2921f336bc26073497bca500e5a8d2f68095",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "extension-spring",
+      "presets": 4,
+      "sourcedPresets": 0,
+      "metadataSha256": "b0f7dec34ca920eb48e9d6b8e254723faf49587dad38f14bafa6d6e0fdde1a44",
+      "presetsSha256": "c99d2dbb2c730bed2fc704791e42f3e070ae383ddbf699160226ff23920c630c",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "torsion-spring",
+      "presets": 3,
+      "sourcedPresets": 0,
+      "metadataSha256": "0df798a52e0ef49036d9e12f26bf154dc18132543f5f8b731204ba4d806d6d5b",
+      "presetsSha256": "e9e9bbe086ed8c0a588ffe8dad9df4892f79a4d4d9c6437222a8c4a264d5cbb4",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "double-torsion-spring",
+      "presets": 2,
+      "sourcedPresets": 0,
+      "metadataSha256": "ce6654369b0c779839c7dbcd5fbbe44c37ef16ece4b403de8e6cf6a32ba167da",
+      "presetsSha256": "87aab125ddeb58bbcec554996df3b9dffcc57efa9e9a7fed5ca757a796db43c0",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "spiral-spring",
+      "presets": 3,
+      "sourcedPresets": 0,
+      "metadataSha256": "65760b41e90a10a4965dbf222eb3565eab094c72048e4a0b3d766e27a8116f7e",
+      "presetsSha256": "bfb5f0e8419adafa165639c35da0d943991c9d2d0336705ee8a5534938568be5",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "worm-drive",
+      "presets": 3,
+      "sourcedPresets": 0,
+      "metadataSha256": "b4c67fdaa3a7bb63febddb0a516547df3bc2bed3f9d510386af0e1e21cbbd73e",
+      "presetsSha256": "e8f856c31bae5d5a162234239ddf5a6b2a253bb4cfafb076c3058b4e0073a2d4",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "spur-gear",
+      "presets": 7,
+      "sourcedPresets": 4,
+      "metadataSha256": "559d62128b5ab18f5e189cfe5b576900acf1fb19dba9e768fddb87402fe13004",
+      "presetsSha256": "8988ed79af83fd0205e7cfb772c6e48137ada9f5f37851cd44c5dea1906b5714",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "helical-gear",
+      "presets": 3,
+      "sourcedPresets": 0,
+      "metadataSha256": "950fdab175e5502935a2b920d341cd11dd42a6902cabe79e1625dfc79c4304be",
+      "presetsSha256": "c5c4d2d0a5239e749d51e1dea2d3a21a355d393661c26edcf0517551c734c665",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "bevel-gear",
+      "presets": 3,
+      "sourcedPresets": 0,
+      "metadataSha256": "beb53ccf43f4f4f75ed6d49f4a9312ac8018840f5b2c46203d559b810803a3cf",
+      "presetsSha256": "e7e9f13b0aa925488ec806ee3c82e5140de9595e94d799eb536c3d5639b8d570",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "bevel-gear-pair",
+      "presets": 6,
+      "sourcedPresets": 6,
+      "metadataSha256": "941ef5cc5e22801f012baf326cba98d18c33dc0845d994c0a6d1cd46e48b5941",
+      "presetsSha256": "bb32d2450168cac0bf97eadfe2d3bff0017f823215ef312819ecbdd69eb8f7db",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "gear-rack",
+      "presets": 3,
+      "sourcedPresets": 0,
+      "metadataSha256": "3e29cbb579c0b4b2bf94812b10d420d8849effc97766872e690ef8c5df62cb52",
+      "presetsSha256": "1d57629b5a7807bea3e6139f60302b6094bf9fed544e1c20007d4227bb5da80d",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "linear-guide",
+      "presets": 8,
+      "sourcedPresets": 8,
+      "metadataSha256": "0eb4a46fa3a70f167c5105f27a8a389f3d2e289d2fb85a8c579d60edb01fcfe3",
+      "presetsSha256": "810e5c3dcd84453629e462086b5eb696c9d8ba5092913a76ea99cea2c020cd70",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "round-linear-guide",
+      "presets": 2,
+      "sourcedPresets": 0,
+      "metadataSha256": "28df8e69afd4700549a5a6e70e1e249eb22627dc34a37622a000fb240de6d9f1",
+      "presetsSha256": "0cb04ce7dca47eeb198928d61bd4fe9cc213c1bf5fe5c53902a4dc4e18d4d43a",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "ball-screw",
+      "presets": 230,
+      "sourcedPresets": 219,
+      "metadataSha256": "27387b436e449cdd30e63566c8f43746b7c4477fe2260509b1f9835bbe983f7f",
+      "presetsSha256": "1566433e902b0bed34592cc498d39943e7e047005165429cfe5b15331e7f9da6",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "ball-nut",
+      "presets": 131,
+      "sourcedPresets": 129,
+      "metadataSha256": "3f4ca6b19bf36dc0c5c191a03cdacf3f59cec63910ddc49231eb4223ac4e0ff3",
+      "presetsSha256": "a828d01a20e07f9c6645f0d50ef77a8eae77c8748cdb69babe12ef5601b2731e",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "ball-screw-axis",
+      "presets": 6,
+      "sourcedPresets": 0,
+      "metadataSha256": "9ac4a2c06196e25d23f27962067cd7bbcfb2baec51991306e6abe79747794341",
+      "presetsSha256": "e573332cc243706b1073a07ff60202f27a026d27dc8cdf3cefbf664c5653b50c",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "jaw-coupling",
+      "presets": 38,
+      "sourcedPresets": 38,
+      "metadataSha256": "1e02794bbb39c23f70b6c00fb52d8985b6b79a10f6611d1e087ad25ea8bba0bd",
+      "presetsSha256": "786228b1c22a6041f0f566d728bedcd91611a30d3bc4884f4e72a3bf2956a2b1",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "enclosure",
+      "presets": 3,
+      "sourcedPresets": 0,
+      "metadataSha256": "be6bb273075e7e2958ebafe33fc8ec8c154068c7f1670679d8f614858ade60a5",
+      "presetsSha256": "bf8a4aa3a0f66db9670be61cb3a111701104cddd4bade1a626f3d9ac3c893090",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "l-bracket",
+      "presets": 3,
+      "sourcedPresets": 0,
+      "metadataSha256": "9980f62e8fc825c9856e7b2d37bfcb6ec27c47f055eac18b4405ef3423b4099f",
+      "presetsSha256": "6b92c1bfc12c575556018df35bd19d9737451131bf85420ff4c1071848222acb",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "spacer",
+      "presets": 3,
+      "sourcedPresets": 0,
+      "metadataSha256": "8377c434a0e5c29b10881f3a848370c279b1f31814f958a745c8ddad5b9b3a24",
+      "presetsSha256": "47498bb359e7cb00cebfff66afdadc38d9d01e86370a317440b4407825e1e5b7",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    },
+    {
+      "id": "wheel",
+      "presets": 3,
+      "sourcedPresets": 0,
+      "metadataSha256": "b9210cf29107d70c7d8fb3b36c0167632086041d27b4182cedf13b741ca6f51f",
+      "presetsSha256": "6e7ce762c945a3b7aaf8742a5fb6ccd34d5dbedc960dcd2bf314fce99f94b764",
+      "metadataIdentical": true,
+      "presetsIdentical": true
+    }
+  ],
+  "geometryCases": [
+    {
+      "id": "ball-bearing",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        22,
+        22,
+        7
+      ],
+      "meshes": 10,
+      "triangles": 49692,
+      "bounds": [
+        [
+          -11,
+          -11,
+          -3.5
+        ],
+        [
+          11,
+          11,
+          3.5
+        ]
+      ],
+      "geometrySha256": "385cb2eefa4c67d817e1f83094835e252e492cac1ff39d1ae9640fc2e83fb602",
+      "recipeSha256": "eb79d950154136cb84ff571f71188198a3c99ec5678dea442446254e8e1ce173",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "ball-bearing",
+      "state": "exploded",
+      "validation": [],
+      "dimensions": [
+        22,
+        22,
+        19.599999999999998
+      ],
+      "meshes": 10,
+      "triangles": 49692,
+      "bounds": [
+        [
+          -11,
+          -11,
+          -9.8
+        ],
+        [
+          11,
+          11,
+          9.8
+        ]
+      ],
+      "geometrySha256": "5f47b67841b2f03387495bf4ff74ccb0c93199e942d3e9be2c8efa41309e7167",
+      "recipeSha256": "ae70ab1147ac1827462e32ec5f946703ae3daf80c7cf2bb90833a5e3341eae5c",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "self-aligning-bearing",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        32,
+        32,
+        10
+      ],
+      "meshes": 28,
+      "triangles": 50592,
+      "bounds": [
+        [
+          -16,
+          -16,
+          -5
+        ],
+        [
+          16,
+          16,
+          5
+        ]
+      ],
+      "geometrySha256": "d190ec4ce28751e3d396e3763249e11730899004a1c0e6cf7cf85a4b36e2c320",
+      "recipeSha256": "c6b555eca605cb217dc4921a28e2faa52ba7762f2f413926c08b83d6f7a7ec56",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "self-aligning-bearing",
+      "state": "exploded",
+      "validation": [],
+      "dimensions": [
+        32,
+        32,
+        28
+      ],
+      "meshes": 28,
+      "triangles": 50592,
+      "bounds": [
+        [
+          -16,
+          -16,
+          -14
+        ],
+        [
+          16,
+          16,
+          14
+        ]
+      ],
+      "geometrySha256": "6a5e341453eb0d180a62ebe109a8f03179356477210c54d3b61bcb6cf978adbd",
+      "recipeSha256": "e3238cf8c877b850b5b78161b9068f24c5a7fc854533f26e6ee1ea9baa17690b",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "angular-contact-bearing",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        28,
+        28,
+        8
+      ],
+      "meshes": 13,
+      "triangles": 54696,
+      "bounds": [
+        [
+          -14,
+          -14,
+          -4
+        ],
+        [
+          14,
+          14,
+          4
+        ]
+      ],
+      "geometrySha256": "f16300ea0e024949054f65c35c03b4a061014af5b2cdb72316e6abcc446090e1",
+      "recipeSha256": "f14cab05835a91056dbd865d0cde6e2173937380b45fa1db71e4b2c8644c6300",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "angular-contact-bearing",
+      "state": "exploded",
+      "validation": [],
+      "dimensions": [
+        28,
+        28,
+        22.4
+      ],
+      "meshes": 13,
+      "triangles": 54696,
+      "bounds": [
+        [
+          -14,
+          -14,
+          -11.2
+        ],
+        [
+          14,
+          14,
+          11.2
+        ]
+      ],
+      "geometrySha256": "30e2487685394040fa63da9e6bcd8cc8061cadd6f959943f6189120163719eac",
+      "recipeSha256": "ef89448db9c99040e5845c2efd9b091c83a6dd7df30ef5e0f53ee248dd0389f3",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "double-row-bearing",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        40,
+        40,
+        16
+      ],
+      "meshes": 30,
+      "triangles": 80096,
+      "bounds": [
+        [
+          -20,
+          -20,
+          -8
+        ],
+        [
+          20,
+          20,
+          8
+        ]
+      ],
+      "geometrySha256": "54f7b4abad5368a485ef443dc470de9ea74b9f1ea32f71c38c22839228d57459",
+      "recipeSha256": "887f43f0e70431e1cd05a88066816ffc7c0b0c693072702fb87fa6522ed73b26",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "double-row-bearing",
+      "state": "exploded",
+      "validation": [],
+      "dimensions": [
+        40,
+        40,
+        44.8
+      ],
+      "meshes": 30,
+      "triangles": 80096,
+      "bounds": [
+        [
+          -20,
+          -20,
+          -22.4
+        ],
+        [
+          20,
+          20,
+          22.4
+        ]
+      ],
+      "geometrySha256": "0d0c1f2bd18c1c7c784ac9b603f6833b23b6e35bfe5e25d3ce4d21bd34c21181",
+      "recipeSha256": "926772d371835ea0c6911ef7bd6287253fe8c1130bbbd4f255f8aa1b729d3a33",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "double-row-angular-contact-bearing",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        47,
+        47,
+        20.600000381469727
+      ],
+      "meshes": 24,
+      "triangles": 83664,
+      "bounds": [
+        [
+          -23.5,
+          -23.5,
+          -10.300000190734863
+        ],
+        [
+          23.5,
+          23.5,
+          10.300000190734863
+        ]
+      ],
+      "geometrySha256": "b3e093702f863054b75f2b3df8f62e4e5f7f843529988d89344cd9b736e40bda",
+      "recipeSha256": "262bfb266e885b3e3eaca783c4bc00cb50c9e2306d7bf49f85ac568b765087e4",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "double-row-angular-contact-bearing",
+      "state": "exploded",
+      "validation": [],
+      "dimensions": [
+        47,
+        47,
+        65.92000038146973
+      ],
+      "meshes": 24,
+      "triangles": 83664,
+      "bounds": [
+        [
+          -23.5,
+          -23.5,
+          -32.96000019073487
+        ],
+        [
+          23.5,
+          23.5,
+          32.96000019073487
+        ]
+      ],
+      "geometrySha256": "f8b06567b2ccef8ba15603684bc258b34c467032e957ea4a0b040fcd08d003cf",
+      "recipeSha256": "b4b60ca4f6ecdce067c53ef23cbb41e70c4cdc5c47e11eba9262b6cb6f49f547",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "double-row-angular-contact-bearing",
+      "state": "internals",
+      "validation": [],
+      "dimensions": [
+        40.519999980926514,
+        40.519999980926514,
+        20.600000381469727
+      ],
+      "meshes": 23,
+      "triangles": 58512,
+      "bounds": [
+        [
+          -20.259999990463257,
+          -20.259999990463257,
+          -10.300000190734863
+        ],
+        [
+          20.259999990463257,
+          20.259999990463257,
+          10.300000190734863
+        ]
+      ],
+      "geometrySha256": "48ff417c7cc508e4702584b8851ad1f6bd5d6b3ec2a55233ec1546d43fe319db",
+      "recipeSha256": "ca698433648108369b371fce1eb2704da8f159f348433514b7c6b20d01f4cada",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "roller-bearing",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        47,
+        47,
+        14
+      ],
+      "meshes": 13,
+      "triangles": 7144,
+      "bounds": [
+        [
+          -23.5,
+          -23.5,
+          -7
+        ],
+        [
+          23.5,
+          23.5,
+          7
+        ]
+      ],
+      "geometrySha256": "b64d36c9c1ffb98f88d3173d183345b4c0e9327fec4c48ed1d410a95c9835ee6",
+      "recipeSha256": "4555ce675a51410700dad2443b4f60511bcaedaf7ffd0affb472e6281af8d587",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "roller-bearing",
+      "state": "exploded",
+      "validation": [],
+      "dimensions": [
+        47,
+        47,
+        39.199999999999996
+      ],
+      "meshes": 13,
+      "triangles": 7144,
+      "bounds": [
+        [
+          -23.5,
+          -23.5,
+          -19.6
+        ],
+        [
+          23.5,
+          23.5,
+          19.6
+        ]
+      ],
+      "geometrySha256": "2432a638b67c69ce266332bbd2ab415a91982009e527ca71e34674f09bd7bded",
+      "recipeSha256": "c12fd455be4e12725dcbe43241489877a23bb9b04a092e15e807e20b0c0bb469",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "spherical-roller-bearing",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        52,
+        52,
+        18
+      ],
+      "meshes": 28,
+      "triangles": 75168,
+      "bounds": [
+        [
+          -26,
+          -26,
+          -9
+        ],
+        [
+          26,
+          26,
+          9
+        ]
+      ],
+      "geometrySha256": "eb3185032c0ab1b379e6effec09ff638f397a268b641d58b89c2f09092330563",
+      "recipeSha256": "0b40b712b40370fa24933b38559d0f3f2f6b4404bfcfee27323ed429474c5c12",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "spherical-roller-bearing",
+      "state": "exploded",
+      "validation": [],
+      "dimensions": [
+        52,
+        52,
+        50.4
+      ],
+      "meshes": 28,
+      "triangles": 75168,
+      "bounds": [
+        [
+          -26,
+          -26,
+          -25.2
+        ],
+        [
+          26,
+          26,
+          25.2
+        ]
+      ],
+      "geometrySha256": "7009f37fbfbcbb8f825509f23388354ab92b376eb625b5677d7199f8cd984b00",
+      "recipeSha256": "934a0185520e388f391ea616c1c467da15e2f53ce852331545af7eacb0887eee",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "tapered-roller-bearing",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        40,
+        40,
+        13.25
+      ],
+      "meshes": 15,
+      "triangles": 8496,
+      "bounds": [
+        [
+          -20,
+          -20,
+          -6.625
+        ],
+        [
+          20,
+          20,
+          6.625
+        ]
+      ],
+      "geometrySha256": "af6bafc079f7ec14f8ef7b5140bf2666aba0011279182dfbadbc78e3411980bd",
+      "recipeSha256": "15d682365a7d292445a5bd718a3812b5f004a28001ab5a361da7f094cfbdb57d",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "tapered-roller-bearing",
+      "state": "exploded",
+      "validation": [],
+      "dimensions": [
+        40,
+        40,
+        37.099999999999994
+      ],
+      "meshes": 15,
+      "triangles": 8496,
+      "bounds": [
+        [
+          -20,
+          -20,
+          -18.55
+        ],
+        [
+          20,
+          20,
+          18.55
+        ]
+      ],
+      "geometrySha256": "7ca96750618cf340c8a8d767a70057be18e05ce54188667dfcee5448e524e7a3",
+      "recipeSha256": "4bfc2145cb87ebb5249491b9646c9278c902c55add6fb88180bb4ac7025f10f0",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "needle-bearing",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        10,
+        10,
+        8
+      ],
+      "meshes": 14,
+      "triangles": 7344,
+      "bounds": [
+        [
+          -5,
+          -5,
+          -4
+        ],
+        [
+          5,
+          5,
+          4
+        ]
+      ],
+      "geometrySha256": "a28570de785234497741de13dfe7a6b6d91ad2e4848e80c76c32bc509ae39b5f",
+      "recipeSha256": "4e24b3d19080d26396068f9ed01b59ff2fc93a641f704c05f88dd80d9f6da9ca",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "needle-bearing",
+      "state": "exploded",
+      "validation": [],
+      "dimensions": [
+        10,
+        10,
+        14.928
+      ],
+      "meshes": 14,
+      "triangles": 7344,
+      "bounds": [
+        [
+          -5,
+          -5,
+          -3.328000068664551
+        ],
+        [
+          5,
+          5,
+          11.6
+        ]
+      ],
+      "geometrySha256": "83ea22b12ca1a6b031b0260bc2e12e513bfacb517de68c1e9bcc9a0df17a54d9",
+      "recipeSha256": "d5717c46d449c872fb392079e47e65b8f62aa1d5abefabbf41371d0f22fa19a8",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "rod-end-bearing",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        22,
+        50,
+        9
+      ],
+      "meshes": 3,
+      "triangles": 8032,
+      "bounds": [
+        [
+          -11,
+          -39.00000030517578,
+          -4.5
+        ],
+        [
+          11,
+          11,
+          4.5
+        ]
+      ],
+      "geometrySha256": "1b244d65026bc55949714807fbededc9626c8918560ee37c0e834f1e556f1770",
+      "recipeSha256": "5186ec1fd04422b814c58823059d4e0c0854e7fb475cce7ed2d17b826a10abdf",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "linear-bearing",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        15,
+        15,
+        24
+      ],
+      "meshes": 144,
+      "triangles": 81466,
+      "bounds": [
+        [
+          -7.5,
+          -7.5,
+          -11.999999987602234
+        ],
+        [
+          7.5,
+          7.5,
+          11.999999987602234
+        ]
+      ],
+      "geometrySha256": "eb51bc0ca3aca8fdfcfba2ba57ecb5e393a22f8a42248a062375d1da5157f557",
+      "recipeSha256": "5a66af7670c780745a3f264949c17a7f2656d94a67f6b873bcb1a515fdb853b6",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "linear-bearing",
+      "state": "cutaway",
+      "validation": [],
+      "dimensions": [
+        15,
+        15,
+        24
+      ],
+      "meshes": 144,
+      "triangles": 78172,
+      "bounds": [
+        [
+          -7.5,
+          -7.5,
+          -11.999999987602234
+        ],
+        [
+          7.5,
+          7.5,
+          11.999999987602234
+        ]
+      ],
+      "geometrySha256": "619d92dd4dae4a33eebbda1853f27a5bc966d460f86a060bf2b7dd65d3c8d3f9",
+      "recipeSha256": "fc2268ba93cd4d48d27e7cb07f4a6c5cd70c60b911d1e01d6792ab45e0e0e914",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "flanged-linear-bearing",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        37,
+        37,
+        37
+      ],
+      "meshes": 139,
+      "triangles": 80954,
+      "bounds": [
+        [
+          -18.5,
+          -18.5,
+          -18.500045471191406
+        ],
+        [
+          18.5,
+          18.5,
+          18.500000007152558
+        ]
+      ],
+      "geometrySha256": "050eca55d8cd6b8584715c91e9c7d088204f17a00b9d0049cb5d53fd94761b22",
+      "recipeSha256": "82e2d233f142444c707fedac198d5b6cea34860a7b7e3a278dd7497c345749ff",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "flanged-linear-bearing",
+      "state": "cutaway",
+      "validation": [],
+      "dimensions": [
+        32.5,
+        37,
+        37
+      ],
+      "meshes": 139,
+      "triangles": 76850,
+      "bounds": [
+        [
+          -18.500039100646973,
+          -18.500078201293945,
+          -18.500037841796875
+        ],
+        [
+          14,
+          18.500078201293945,
+          18.500000007152558
+        ]
+      ],
+      "geometrySha256": "f6f394064a3833252a1e11156f674ed7a6557d5b8e8f058202317725416e10e8",
+      "recipeSha256": "ef1c7dcd71baae0611eefecd17196ce54756e4a964a9eda1d32f04bc725de7dc",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "round-flange-linear-bearing",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        48,
+        48,
+        37
+      ],
+      "meshes": 139,
+      "triangles": 81310,
+      "bounds": [
+        [
+          -24,
+          -24,
+          -18.500173263549804
+        ],
+        [
+          24,
+          24,
+          18.500000007152558
+        ]
+      ],
+      "geometrySha256": "8cd6fd7eb92d7b69a9848043d1c4d718cc9fea32a383ab3e4e26e1288baee965",
+      "recipeSha256": "6069856116924cfb1d8e1e8971dfd518433f978d0df0903ecfa4e3f54aaeff2e",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "round-flange-linear-bearing",
+      "state": "cutaway",
+      "validation": [],
+      "dimensions": [
+        38,
+        48,
+        37
+      ],
+      "meshes": 139,
+      "triangles": 76962,
+      "bounds": [
+        [
+          -24,
+          -24,
+          -18.50003402709961
+        ],
+        [
+          14,
+          24,
+          18.500000007152558
+        ]
+      ],
+      "geometrySha256": "87d20becb727c1467c2d2f877073aa7e1c5d024e141a7e494704d689ce0b7aa8",
+      "recipeSha256": "1f3b7ed3a460295a405606c57d7da54ee24502502cae05be867c165984250412",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "thrust-bearing",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        24,
+        24,
+        9
+      ],
+      "meshes": 10,
+      "triangles": 37504,
+      "bounds": [
+        [
+          -12,
+          -12,
+          -4.5
+        ],
+        [
+          12,
+          12,
+          4.5
+        ]
+      ],
+      "geometrySha256": "9973a7a8a616a6bd43b2803309927b5bfcd473e75bf89b0698dbae4dc925aba3",
+      "recipeSha256": "9665dee74aa7dbd6c71dbce5590b33803b1a1403dbbd764aa43e6bba023ced76",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "thrust-bearing",
+      "state": "exploded",
+      "validation": [],
+      "dimensions": [
+        24,
+        24,
+        23.400000000000002
+      ],
+      "meshes": 10,
+      "triangles": 37504,
+      "bounds": [
+        [
+          -12,
+          -12,
+          -11.699999809265137
+        ],
+        [
+          12,
+          12,
+          11.699999809265137
+        ]
+      ],
+      "geometrySha256": "5e7170a66e572627757045ee3777f910338d92e12581b453e5e7d9c1d850b6ee",
+      "recipeSha256": "1d3845e767267abc864b6241339d59ab95f65b8c141fef4dfef4ac33caa559ad",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "flange-2-bolt-bearing",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        113,
+        60,
+        33.3
+      ],
+      "meshes": 5,
+      "triangles": 11208,
+      "bounds": [
+        [
+          -56.5,
+          -30,
+          0
+        ],
+        [
+          56.5,
+          30,
+          33.3
+        ]
+      ],
+      "geometrySha256": "666a749faa28991b8c7e5f5cf335e7ff4af4e78881d90974006c43948466f42b",
+      "recipeSha256": "c18a5d74ab16f4ed8f0371bd47b96000ace5133abb522456f1f9d8043782c660",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "flange-4-bolt-bearing",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        86,
+        86,
+        33.3
+      ],
+      "meshes": 5,
+      "triangles": 11808,
+      "bounds": [
+        [
+          -43,
+          -43,
+          0
+        ],
+        [
+          43,
+          43,
+          33.3
+        ]
+      ],
+      "geometrySha256": "aff20f79a2c7b8a85e79f57bdf58cf9a62a45833012e14622566e45426772177",
+      "recipeSha256": "3ae907bd5643c237c65413ef75fbe55e38b4476f4f2936cf7ef2735ca1a080cb",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "pillow-block-bearing",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        90,
+        32,
+        60
+      ],
+      "meshes": 3,
+      "triangles": 2400,
+      "bounds": [
+        [
+          -45,
+          -16,
+          -32
+        ],
+        [
+          45,
+          16,
+          28.000000000000004
+        ]
+      ],
+      "geometrySha256": "1080c757efe90ae9388f78172023b23be881b4bd58c2ac69171a2dfbdfb6d14a",
+      "recipeSha256": "1621822324aae50d79980cdf2f8416a5e7eca856118e44e8e26bc3e7feb111fc",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "insert-bearing",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        47,
+        47,
+        31
+      ],
+      "meshes": 4,
+      "triangles": 9792,
+      "bounds": [
+        [
+          -23.5,
+          -23.5,
+          -15.5
+        ],
+        [
+          23.5,
+          23.5,
+          15.5
+        ]
+      ],
+      "geometrySha256": "b7cb7043aa308e247b4b116078ebabe20f57ca6a4dc17bba29d43fb6de52ce90",
+      "recipeSha256": "5e7165c95242866d9290bc7e41baa5de06a85a7d9796f7c80208005fa1e8a5d7",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "one-way-clutch",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        14,
+        14,
+        12
+      ],
+      "meshes": 11,
+      "triangles": 4224,
+      "bounds": [
+        [
+          -7,
+          -7,
+          -6
+        ],
+        [
+          7,
+          7,
+          6
+        ]
+      ],
+      "geometrySha256": "9f7ee667f80be88d0c26d5619923eefd5688ad4396534a08ae425de1007b5764",
+      "recipeSha256": "af45eb5ee3edaf193d4a237026c46f2d9448dc6863d7bcbe7b36266f22cbc1eb",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "csk-clutch",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        40,
+        40,
+        12
+      ],
+      "meshes": 27,
+      "triangles": 71456,
+      "bounds": [
+        [
+          -20,
+          -20,
+          -6
+        ],
+        [
+          20,
+          20,
+          6
+        ]
+      ],
+      "geometrySha256": "380ee5eb56b2c3cb74cf7afc32489475f9335e6b3f9cd1c5fbb085ea67979106",
+      "recipeSha256": "60e2bf39d08bc96eb32d632a2ce2e1206039c023eb8d5cca9b0beeb2550b2603",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "csk-clutch",
+      "state": "exploded",
+      "validation": [],
+      "dimensions": [
+        40,
+        40,
+        38.400000000000006
+      ],
+      "meshes": 27,
+      "triangles": 71456,
+      "bounds": [
+        [
+          -20,
+          -20,
+          -19.200000000000003
+        ],
+        [
+          20,
+          20,
+          19.200000000000003
+        ]
+      ],
+      "geometrySha256": "53d8f5915bd71af2e7662cba24e50157abff8b7ba97a3cb247afa00c4b547bcd",
+      "recipeSha256": "4b54c784f232e6a3902a27a381c41b5fb562f8f6aaa1d4349f5ea5c217213fde",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "csk-clutch",
+      "state": "internals",
+      "validation": [],
+      "dimensions": [
+        32.325000286102295,
+        32.267020770113064,
+        12
+      ],
+      "meshes": 26,
+      "triangles": 45586,
+      "bounds": [
+        [
+          -15.975000381469727,
+          -16.133510385056532,
+          -6
+        ],
+        [
+          16.34999990463257,
+          16.133510385056532,
+          6
+        ]
+      ],
+      "geometrySha256": "b03e5a6742d3ed86ad29e0ae1957e7613fdc17157f69ee5afd9f1ecc17b08a2f",
+      "recipeSha256": "89cd5c869de95be10df3305327a6a0257cd8b2ee0afa03c9ef6cf79a37d5b3d5",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "thrust-roller-bearing",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        42,
+        42,
+        11
+      ],
+      "meshes": 14,
+      "triangles": 5504,
+      "bounds": [
+        [
+          -21,
+          -21,
+          -5.5
+        ],
+        [
+          21,
+          21,
+          5.5
+        ]
+      ],
+      "geometrySha256": "b13b4270a7989e7aea25e4fb896deb5248b36c72dff99a5c055170d99682cfc4",
+      "recipeSha256": "873a14ebb455d9dfa60607e277eea4435fa9be702aadfbcc9caeb283c0b828d5",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "thrust-roller-bearing",
+      "state": "exploded",
+      "validation": [],
+      "dimensions": [
+        42,
+        42,
+        28.6
+      ],
+      "meshes": 14,
+      "triangles": 5504,
+      "bounds": [
+        [
+          -21,
+          -21,
+          -14.3
+        ],
+        [
+          21,
+          21,
+          14.3
+        ]
+      ],
+      "geometrySha256": "b70d198392e9c9bbc75553aa59ef2dd5302f1bbf692963a703ac63520a4ad9a8",
+      "recipeSha256": "a35129b1f0bc96afb2f1830deb4381d576424c10a34aeb7653c7bf67d44c208c",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "spherical-thrust-bearing",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        155,
+        155,
+        39
+      ],
+      "meshes": 19,
+      "triangles": 105664,
+      "bounds": [
+        [
+          -77.5,
+          -77.5,
+          -19.500000000000004
+        ],
+        [
+          77.5,
+          77.5,
+          19.5
+        ]
+      ],
+      "geometrySha256": "0fa787978d99a94b8323ae6e02149b21af03b04180ca316cdc2c58e70fa33042",
+      "recipeSha256": "38b511503857918058dcc1ce90e6ae6000222a825f4a5e3f338241cd48ce0eb1",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "spherical-thrust-bearing",
+      "state": "exploded",
+      "validation": [],
+      "dimensions": [
+        155,
+        155,
+        93.6
+      ],
+      "meshes": 19,
+      "triangles": 105664,
+      "bounds": [
+        [
+          -77.5,
+          -77.5,
+          -46.800000000000004
+        ],
+        [
+          77.5,
+          77.5,
+          46.8
+        ]
+      ],
+      "geometrySha256": "c74a940daf633545625679ee638c3d1c18b3eacb9d76f1a0e6a603186e5c5629",
+      "recipeSha256": "0a76b3620819c8c0ad4b6cb27a78f903ff74172a77b7d45c17d6a46570aed99e",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "combined-bearing",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        30,
+        30,
+        20
+      ],
+      "meshes": 28,
+      "triangles": 21376,
+      "bounds": [
+        [
+          -15,
+          -15,
+          -10
+        ],
+        [
+          15,
+          15,
+          10
+        ]
+      ],
+      "geometrySha256": "ce368ce61bbf4bc122df52c2e4a2f35cc57315472052f99da5c6b1277ffcb0c9",
+      "recipeSha256": "4c1f4df8cc7eb962a502f00020ad322918c3d0fca5c3dc4edd7593eb5a4952d9",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "zarn-bearing",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        52,
+        52,
+        46
+      ],
+      "meshes": 49,
+      "triangles": 24424,
+      "bounds": [
+        [
+          -26,
+          -26,
+          -23
+        ],
+        [
+          26,
+          26,
+          23
+        ]
+      ],
+      "geometrySha256": "1dc45d5a3fe3ba2412e4b015c9a70870c9fd7ed3c68fe3a3f5a383bd53275478",
+      "recipeSha256": "08b737209cfd700dfb5524364a02a3c8d65b318d4bd8a0a9341e16fa383f0322",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "zarn-bearing",
+      "state": "exploded",
+      "validation": [],
+      "dimensions": [
+        52,
+        52,
+        87.4
+      ],
+      "meshes": 49,
+      "triangles": 24424,
+      "bounds": [
+        [
+          -26,
+          -26,
+          -43.7
+        ],
+        [
+          26,
+          26,
+          43.7
+        ]
+      ],
+      "geometrySha256": "529ffd85cc5b886543fc09821ad0cd640d9575e831f7ba02310e356e891d8615",
+      "recipeSha256": "d5d5428c7b79023f37895ffd9862d95681c2bc8e04e12a2907713a9003cdbc32",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "zarn-bearing",
+      "state": "internals",
+      "validation": [],
+      "dimensions": [
+        41.66999816894531,
+        41.66999816894531,
+        25.91200065612793
+      ],
+      "meshes": 46,
+      "triangles": 21352,
+      "bounds": [
+        [
+          -20.834999084472656,
+          -20.834999084472656,
+          -12.956000328063965
+        ],
+        [
+          20.834999084472656,
+          20.834999084472656,
+          12.956000328063965
+        ]
+      ],
+      "geometrySha256": "3e7d85969cfcfe734944cf8e03f2120fab1749df8d1ceaee7d70850d602472f4",
+      "recipeSha256": "2057bf5118d5a4621efb52e653e80350d6f6641208cf091a8ef293c28cfadbcd",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "plain-bearing",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        16,
+        16,
+        8
+      ],
+      "meshes": 2,
+      "triangles": 13440,
+      "bounds": [
+        [
+          -8,
+          -8,
+          -4
+        ],
+        [
+          8,
+          8,
+          4
+        ]
+      ],
+      "geometrySha256": "cc6001586f6a74117260b9581de76fc9de4892544cd973020ecba2c856ac4e40",
+      "recipeSha256": "3f4982bc8c027eeba79561a50c3aead7026a015f591ffc4d20f7ec6d7d2384ac",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "adapter-sleeve",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        45,
+        45,
+        27
+      ],
+      "meshes": 2,
+      "triangles": 2056,
+      "bounds": [
+        [
+          -22.5,
+          -22.5,
+          -13.5
+        ],
+        [
+          22.5,
+          22.5,
+          13.5
+        ]
+      ],
+      "geometrySha256": "932c43866a0bfa2e84dd53c6b87634f1ad503ebe792ae8c1fb7d0d0683c2baee",
+      "recipeSha256": "bf487af03f033790eeb2ac06c16374b2d928450d8fc8287c5ca5164aa9cf574d",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "radial-oil-seal",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        28,
+        28,
+        7
+      ],
+      "meshes": 2,
+      "triangles": 2368,
+      "bounds": [
+        [
+          -14,
+          -14,
+          -3.5
+        ],
+        [
+          14,
+          14,
+          3.5
+        ]
+      ],
+      "geometrySha256": "f747b8a4cd67e6996e70a2fac945ed8882f3d5915c33a16c47152e4a130d6fe7",
+      "recipeSha256": "f8d31720703d4dfdce56fcc0ddd13228f342e0153c727f931ef3cfcc87498df6",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "wing-screw",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        26.399999618530273,
+        12.100000381469727,
+        32.70000076293945
+      ],
+      "meshes": 1,
+      "triangles": 624,
+      "bounds": [
+        [
+          -13.199999809265137,
+          -6.050000190734863,
+          -16.350000381469727
+        ],
+        [
+          13.199999809265137,
+          6.050000190734863,
+          16.350000381469727
+        ]
+      ],
+      "geometrySha256": "2ef10a8cd6860032ebb608b0176d880cefea09e2bcae92f2a11330daa7d2e91d",
+      "recipeSha256": "8ec29ee1989ae90d300177cb4714008b53c2136ed93db568e1d3b2a055acd042",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "swing-eye-bolt",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        18,
+        9,
+        59
+      ],
+      "meshes": 1,
+      "triangles": 1484,
+      "bounds": [
+        [
+          -9,
+          -4.5,
+          -29.5
+        ],
+        [
+          9,
+          4.5,
+          29.5
+        ]
+      ],
+      "geometrySha256": "cb94700df99187266971b067271a35f55534b8318259a034a035307b987f8f51",
+      "recipeSha256": "e4e57220232109221f083d7aa054ac53591c52fa93e5897e66a82d6974eda81b",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "lifting-eye-bolt",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        45,
+        25,
+        62
+      ],
+      "meshes": 1,
+      "triangles": 4080,
+      "bounds": [
+        [
+          -22.5,
+          -12.5,
+          -31
+        ],
+        [
+          22.5,
+          12.5,
+          31
+        ]
+      ],
+      "geometrySha256": "7545124c98badc66f04d94b6053310ff774c10ecf02a941e7720ac405f5675c3",
+      "recipeSha256": "0f7be051fc144c81757ed29e00b562bd8dfa08bec6b9183ce7f05c6a6a9ea015",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "bolt-screw",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        10.000000000000004,
+        11.547005383792513,
+        29
+      ],
+      "meshes": 1,
+      "triangles": 79872,
+      "bounds": [
+        [
+          -5,
+          -5.773502826690674,
+          -14.5
+        ],
+        [
+          5,
+          5.773502826690674,
+          14.5
+        ]
+      ],
+      "geometrySha256": "ed5c5c8038876f31fe146d13055129ef1594c75af7e2aa4e9b032bcaf0a44c7f",
+      "recipeSha256": "7164a3049f76e7a45901259af1b8fec9a7500d729987baafc9839d7c4202d9ed",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "set-screw",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        2.5,
+        2.5,
+        8
+      ],
+      "meshes": 1,
+      "triangles": 55296,
+      "bounds": [
+        [
+          -1.25,
+          -1.25,
+          -4
+        ],
+        [
+          1.25,
+          1.25,
+          4
+        ]
+      ],
+      "geometrySha256": "948993d4b9709df90222a196419efbc812bb8318a92eae3bc1098a8549afc80d",
+      "recipeSha256": "fe5434fa01b1e0409424c4b2331f48d00bbf06d320cb47fb88a2ac8d0006cc28",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "thin-nut",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        10,
+        11.547005653381348,
+        3.200000047683716
+      ],
+      "meshes": 1,
+      "triangles": 29952,
+      "bounds": [
+        [
+          -5,
+          -5.773502826690674,
+          0
+        ],
+        [
+          5,
+          5.773502826690674,
+          3.200000047683716
+        ]
+      ],
+      "geometrySha256": "aa55ddc07c275a593c27026a01e4514f3beb1d40d577b339e71ac3067d441bd3",
+      "recipeSha256": "e486115b3ca71394d712584b0b9f48ddba0382e9570e628c6afb144284ae7928",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "wing-nut",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        28.7,
+        14.2,
+        15
+      ],
+      "meshes": 1,
+      "triangles": 12016,
+      "bounds": [
+        [
+          -14.350000381469727,
+          -7.099999904632568,
+          -7.5
+        ],
+        [
+          14.350000381469727,
+          7.099999904632568,
+          7.5
+        ]
+      ],
+      "geometrySha256": "c8f8c2c453480658290354045ffa3849fb4f65167fd7da62565f94b03f21df36",
+      "recipeSha256": "ee6e07da35051c0069deff42ddc4f2bea73c6e341237373dd04d744a0b923c6c",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "lifting-eye-nut",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        45,
+        25,
+        45
+      ],
+      "meshes": 1,
+      "triangles": 18016,
+      "bounds": [
+        [
+          -22.5,
+          -12.5,
+          -22.5
+        ],
+        [
+          22.5,
+          12.5,
+          22.5
+        ]
+      ],
+      "geometrySha256": "969e0582f1caf388f5174ffcafb0848c06cef54405f8bd266130f8759c6b752b",
+      "recipeSha256": "13f7070377b880c9d15179731d2c5ab472d0757876b94213f76fcd86a50c1c0a",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "coupling-nut",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        10,
+        11.547005653381348,
+        18
+      ],
+      "meshes": 1,
+      "triangles": 166656,
+      "bounds": [
+        [
+          -5,
+          -5.773502826690674,
+          0
+        ],
+        [
+          5,
+          5.773502826690674,
+          18
+        ]
+      ],
+      "geometrySha256": "e81806c39e0c01e27a839479daf94b51e5090bbbd0f7e3d0e5d907ac45103297",
+      "recipeSha256": "9cbe62b96483f26234e7ab0d00b9c696765dfc7f7823eb307ec8f59b7c5d7790",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "high-nut",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        10,
+        11.547005653381348,
+        9
+      ],
+      "meshes": 1,
+      "triangles": 83712,
+      "bounds": [
+        [
+          -5,
+          -5.773502826690674,
+          0
+        ],
+        [
+          5,
+          5.773502826690674,
+          9
+        ]
+      ],
+      "geometrySha256": "e6271a8075cec3995c8158f05743f5ede589160f1179ace72703af06cef6872e",
+      "recipeSha256": "4c8d7090318b6e320817a2ec2d715cc40020d4aa974551a97d546d48f29981bc",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "square-nut",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        10,
+        10,
+        5
+      ],
+      "meshes": 1,
+      "triangles": 46848,
+      "bounds": [
+        [
+          -5,
+          -5,
+          0
+        ],
+        [
+          5,
+          5,
+          5
+        ]
+      ],
+      "geometrySha256": "6984cf038116cedb071a883d026c069a9cc230c6df1f64e7e6a762fe8584940e",
+      "recipeSha256": "b048a84a206475ab28095fd0f6ae91bea43225d3aec4cb8e2b7fa24807d233f5",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "flange-nut",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        14.199999809265137,
+        14.199999809265137,
+        6
+      ],
+      "meshes": 2,
+      "triangles": 56448,
+      "bounds": [
+        [
+          -7.099999904632568,
+          -7.099999904632568,
+          0
+        ],
+        [
+          7.099999904632568,
+          7.099999904632568,
+          6
+        ]
+      ],
+      "geometrySha256": "7b0904b2e8551748b342f89ed5ce1b88f2c9bae23cf50fa99db36724bc7a3c5c",
+      "recipeSha256": "e153cc50767cece328f08f533f908cc5c4b5879e9bad8eef00b972649215b49b",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "nyloc-nut",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        10,
+        11.547005653381348,
+        6
+      ],
+      "meshes": 3,
+      "triangles": 39680,
+      "bounds": [
+        [
+          -5,
+          -5.773502826690674,
+          0
+        ],
+        [
+          5,
+          5.773502826690674,
+          6
+        ]
+      ],
+      "geometrySha256": "965c5badbfc59f60dde705dbd1d6706bee79f574d867f883c38b977dd88daa67",
+      "recipeSha256": "b18b4b8afc919b2cab25509afd12a5855decb2c4f580e4c57009161a84cf6355",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "cap-nut",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        10,
+        11.547005653381348,
+        12
+      ],
+      "meshes": 2,
+      "triangles": 52032,
+      "bounds": [
+        [
+          -5,
+          -5.773502826690674,
+          0
+        ],
+        [
+          5,
+          5.773502826690674,
+          12
+        ]
+      ],
+      "geometrySha256": "69ef418601a7f340a64b1f6af903744a5e764ec663dab51e9594f13f889277ae",
+      "recipeSha256": "9b1599a284c34e0d5706a0d80fc8bd15a2216cc8a32ac12e75f076a4bbb4dbfa",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "metal-lock-nut",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        10,
+        11.547005653381348,
+        6
+      ],
+      "meshes": 1,
+      "triangles": 56064,
+      "bounds": [
+        [
+          -5,
+          -5.773502826690674,
+          0
+        ],
+        [
+          5,
+          5.773502826690674,
+          6
+        ]
+      ],
+      "geometrySha256": "0efa84e3fd663204dbf8624a5cb073adaca86cafd1404ebe3f75041ecaabf53e",
+      "recipeSha256": "5312e71b0cb32c8ce5bab6e6b2ada6b0b07f3f999561ee4ddfca5fdc70773a9b",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "square-washer",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        30,
+        30,
+        3
+      ],
+      "meshes": 1,
+      "triangles": 528,
+      "bounds": [
+        [
+          -15,
+          -15,
+          -1.5
+        ],
+        [
+          15,
+          15,
+          1.5
+        ]
+      ],
+      "geometrySha256": "03f184cb76ad709c9e418ee987dcdf751524a513520da1a829f69d8d7c7b176a",
+      "recipeSha256": "c86d38ab6c477648e78e3d6f9bb86ebda862165e1376f78cbe6a00a27f72a59d",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "conical-washer",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        14,
+        14,
+        2.400000095367432
+      ],
+      "meshes": 1,
+      "triangles": 768,
+      "bounds": [
+        [
+          -7,
+          -7,
+          -4.2862638516991895e-16
+        ],
+        [
+          7,
+          7,
+          2.4000000953674316
+        ]
+      ],
+      "geometrySha256": "37743f688545a6bde1132c2a219f7f880a03ffbe3b60c8a5c5016b61945639b9",
+      "recipeSha256": "fe54de844ffa7f7faf6cb2f2da9dc1bb98a40b8baafaf941739f891e704e0115",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "toothed-washer",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        11,
+        11,
+        0.699999988079071
+      ],
+      "meshes": 1,
+      "triangles": 704,
+      "bounds": [
+        [
+          -5.5,
+          -5.5,
+          -0.3499999940395355
+        ],
+        [
+          5.5,
+          5.5,
+          0.3499999940395355
+        ]
+      ],
+      "geometrySha256": "e4627a8f09085d1057dec3b2af5a59cc50b7dfb717633bdfaf69ed8cf3c15fa3",
+      "recipeSha256": "8a4977922ecf95e99b5f7bffa2ac776024763d9eb217b710a4146419bbc22c63",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "threaded-rod",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        6,
+        6,
+        100
+      ],
+      "meshes": 1,
+      "triangles": 576,
+      "bounds": [
+        [
+          -3,
+          -3,
+          -50
+        ],
+        [
+          3,
+          3,
+          50
+        ]
+      ],
+      "geometrySha256": "c140dc28394e73bd805a544b937e7b23add9c229a56d4d96d5268ad74033c9df",
+      "recipeSha256": "00202517429d41e2282cdb3980ae79121f24490fe0b802b5dbfc03f98c724c07",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "hex-nut",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        10,
+        11.547005653381348,
+        5
+      ],
+      "meshes": 1,
+      "triangles": 46848,
+      "bounds": [
+        [
+          -5,
+          -5.773502826690674,
+          0
+        ],
+        [
+          5,
+          5.773502826690674,
+          5
+        ]
+      ],
+      "geometrySha256": "4b660f7a36b113d8f3bda78f5492bbf5460342ed9edd09c425532eca922cc995",
+      "recipeSha256": "e45250013bceee0c9ea9c2f6a0af77d42fe3f61a9927c29663bd86298ec292d9",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "washer",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        12,
+        12,
+        1.6
+      ],
+      "meshes": 1,
+      "triangles": 1024,
+      "bounds": [
+        [
+          -6,
+          -6,
+          -0.800000011920929
+        ],
+        [
+          6,
+          6,
+          0.800000011920929
+        ]
+      ],
+      "geometrySha256": "114d557b8a69d6f072a8dab6b8d0e8170315c01799d51010cd444a723800f62d",
+      "recipeSha256": "0c72bb2ffc8a5c0f435ddd786767465ae47a09e482133192cf04c7081b73e999",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "retaining-ring",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        22.77280330657959,
+        22,
+        1.2000000476837158
+      ],
+      "meshes": 1,
+      "triangles": 1812,
+      "bounds": [
+        [
+          -11,
+          -11,
+          -0.6000000238418579
+        ],
+        [
+          11.77280330657959,
+          11,
+          0.6000000238418579
+        ]
+      ],
+      "geometrySha256": "c9e94f6a1e9af252b44034e555a0c655739e645c46078d5ef76a1a5bc567ebb5",
+      "recipeSha256": "3e75a1b703c3531e8e6825089bdb2007a5fcf4c5a40b03cf80f0eac274354145",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "e-ring",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        11.3,
+        10.278209050232807,
+        0.7
+      ],
+      "meshes": 1,
+      "triangles": 1892,
+      "bounds": [
+        [
+          -5.650000095367432,
+          -5.13910436630249,
+          -0.3499999940395355
+        ],
+        [
+          5.650000095367432,
+          5.13910436630249,
+          0.3499999940395355
+        ]
+      ],
+      "geometrySha256": "ffe67bb3b6738d3a50d4c79251bd8f08de344948aca89db3bc69b84e3f20252c",
+      "recipeSha256": "b687dd771680a14fc365b92c0d416e015997af31cc918565d86f70d556797f40",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "split-lock-washer",
+      "state": "free",
+      "validation": [],
+      "dimensions": [
+        14.7819739719227,
+        14.8,
+        4.7
+      ],
+      "meshes": 1,
+      "triangles": 788,
+      "bounds": [
+        [
+          -7.400000095367432,
+          -7.400000095367432,
+          -2.3499999046325684
+        ],
+        [
+          7.381973743438721,
+          7.400000095367432,
+          2.3499999046325684
+        ]
+      ],
+      "geometrySha256": "3faa580dac97f15304da5a035819adfc324f21f02d441fd625913570b4a8590b",
+      "recipeSha256": "d95382167a976be51935a2c0d1dd81bcf4fe5bb0063064b86ee8b615ed8f64a4",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "split-lock-washer",
+      "state": "flattened",
+      "validation": [],
+      "dimensions": [
+        14.7819739719227,
+        14.8,
+        2.1
+      ],
+      "meshes": 1,
+      "triangles": 788,
+      "bounds": [
+        [
+          -7.400000095367432,
+          -7.400000095367432,
+          -1.0499999523162842
+        ],
+        [
+          7.381973743438721,
+          7.400000095367432,
+          1.0499999523162842
+        ]
+      ],
+      "geometrySha256": "eecfb06d737d6f35bc09a49f325c56cd0f29eb4ab53a1a9d999e5eeed3d34b2f",
+      "recipeSha256": "ba607b1666cc8945593f0be564d9457837233f995bd0e34cfa5814f5f1b15fec",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "spring-pin",
+      "state": "free",
+      "validation": [],
+      "dimensions": [
+        4.314775731064302,
+        4.399087871575709,
+        20
+      ],
+      "meshes": 1,
+      "triangles": 1548,
+      "bounds": [
+        [
+          -2.200000047683716,
+          -2.1995439529418945,
+          -10
+        ],
+        [
+          2.1147756576538086,
+          2.1995439529418945,
+          10
+        ]
+      ],
+      "geometrySha256": "e36ba16b06f3b96eb02caff70dd6544f6a09833ba120a8c9d015a82a9e69e1b6",
+      "recipeSha256": "2b5e95cbd0765396c9b02f52a876631f7283e98e7dbaa7c5df1316128d97c464",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "spring-pin",
+      "state": "installed",
+      "validation": [],
+      "dimensions": [
+        3.9951281005196484,
+        3.9983078003288024,
+        20
+      ],
+      "meshes": 1,
+      "triangles": 1548,
+      "bounds": [
+        [
+          -2,
+          -1.9991538524627686,
+          -10
+        ],
+        [
+          1.9951281547546387,
+          1.9991538524627686,
+          10
+        ]
+      ],
+      "geometrySha256": "da12210f357152f8772450e680c6d7f8f6e8b46c9337902d07ba310ad148804d",
+      "recipeSha256": "3a87bae3c66f8bd61f815434d7a5563291349bc6cb38bfebea13712a3f6a3a09",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "cotter-pin",
+      "state": "straight",
+      "validation": [],
+      "dimensions": [
+        7.400000095367432,
+        3.6445000171661377,
+        42
+      ],
+      "meshes": 1,
+      "triangles": 2818,
+      "bounds": [
+        [
+          -3.700000047683716,
+          -1.8222500085830688,
+          -8
+        ],
+        [
+          3.700000047683716,
+          1.8222500085830688,
+          34
+        ]
+      ],
+      "geometrySha256": "c4951b322c7a98f30a7259d2cef969892e573a8886f8c1ea6d54f1db2d68079c",
+      "recipeSha256": "8a6936a53a29573445b0625e2bae5b6eea9cdcdca8664cfad8a152615267086f",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "cotter-pin",
+      "state": "bent",
+      "validation": [],
+      "dimensions": [
+        21.37454128265381,
+        3.6445000171661377,
+        35.484134674072266
+      ],
+      "meshes": 1,
+      "triangles": 3770,
+      "bounds": [
+        [
+          -11.593578338623047,
+          -1.8222500085830688,
+          -8
+        ],
+        [
+          9.780962944030762,
+          1.8222500085830688,
+          27.484134674072266
+        ]
+      ],
+      "geometrySha256": "baa0d55a3dc8679ab984011ae5dcf6cf532e0954dd1528c7ffaebcaf5ad39684",
+      "recipeSha256": "b58f0ce53aec5623e8276564766cfec07ee10595f1c21092adfe1e81e6a1946e",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "compression-spring",
+      "state": "relaxed",
+      "validation": [],
+      "dimensions": [
+        19.997403144836426,
+        19.998262405395508,
+        39.97874641418457
+      ],
+      "meshes": 1,
+      "triangles": 18560,
+      "bounds": [
+        [
+          -9.998632431030273,
+          -9.998604774475098,
+          -19.993711471557617
+        ],
+        [
+          9.998770713806152,
+          9.99965763092041,
+          19.985034942626953
+        ]
+      ],
+      "geometrySha256": "4fce04dc4fd3b0b91e266a2d04f519dc110d64ffb2c6c9ef9ed126d90da82a31",
+      "recipeSha256": "673b38b95ee25fb301c438413788c3e9fea6cc52f30e87a3e681891915926368",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "compression-spring",
+      "state": "compressed",
+      "validation": [],
+      "dimensions": [
+        19.997281074523926,
+        19.996840476989746,
+        27.98720359802246
+      ],
+      "meshes": 1,
+      "triangles": 18560,
+      "bounds": [
+        [
+          -9.998519897460938,
+          -9.999641418457031,
+          -13.997068405151367
+        ],
+        [
+          9.998761177062988,
+          9.997199058532715,
+          13.990135192871094
+        ]
+      ],
+      "geometrySha256": "9f120948e3f6f47194bf999f8d47b2f3be099e83f71bdb3b1d9ee7275d9090c2",
+      "recipeSha256": "950fffc4c5d04847875f2386470fb8a29dda039ad548b1b54d90c865b8a7c8bd",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "extension-spring",
+      "state": "relaxed",
+      "validation": [],
+      "dimensions": [
+        13.997075080871582,
+        13.996447563171387,
+        56.993812561035156
+      ],
+      "meshes": 1,
+      "triangles": 38528,
+      "bounds": [
+        [
+          -6.999856472015381,
+          -6.9996724128723145,
+          -28.49832534790039
+        ],
+        [
+          6.997218608856201,
+          6.996775150299072,
+          28.495487213134766
+        ]
+      ],
+      "geometrySha256": "a56125418a3746d4adf96976eb7c76404d2a046981db5dfeb83229fe7275d194",
+      "recipeSha256": "2115d9ef4e1037fe2bbd8901422016ae544d0d1415044cf837b057a502feb5ce",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "extension-spring",
+      "state": "extended",
+      "validation": [],
+      "dimensions": [
+        13.999277591705322,
+        13.998043537139893,
+        71.9935188293457
+      ],
+      "meshes": 1,
+      "triangles": 38528,
+      "bounds": [
+        [
+          -6.999460220336914,
+          -6.999368667602539,
+          -35.99714660644531
+        ],
+        [
+          6.999817371368408,
+          6.9986748695373535,
+          35.99637222290039
+        ]
+      ],
+      "geometrySha256": "b228f92bc35b4d4c4193ede49237182e3c5edd12bbfa87975e48439023c8931b",
+      "recipeSha256": "279443864ff38dbdb26e8d4bb16c28668fd056a1e865924c618d75f91ffbbab0",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "torsion-spring",
+      "state": "relaxed",
+      "validation": [],
+      "dimensions": [
+        34.02347469329834,
+        39.00866222381592,
+        11.842696189880371
+      ],
+      "meshes": 1,
+      "triangles": 15872,
+      "bounds": [
+        [
+          -25.01009750366211,
+          -30.006988525390625,
+          -6.020975589752197
+        ],
+        [
+          9.01337718963623,
+          9.001673698425293,
+          5.821720600128174
+        ]
+      ],
+      "geometrySha256": "23cb4f9677d8e1634f081997f84e43cb16227d4f2ad5567f656a09f977367076",
+      "recipeSha256": "313ee4e8a306cceedb449f119e76efd20a920a5be8cc654cf4e36e95041e6346",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "torsion-spring",
+      "state": "wound",
+      "validation": [],
+      "dimensions": [
+        28.712879180908203,
+        38.69526672363281,
+        11.847228050231934
+      ],
+      "meshes": 1,
+      "triangles": 16448,
+      "bounds": [
+        [
+          -20.011810302734375,
+          -30.006988525390625,
+          -6.020975589752197
+        ],
+        [
+          8.701068878173828,
+          8.688278198242188,
+          5.826252460479736
+        ]
+      ],
+      "geometrySha256": "57d723ef4ae0195ecda11c0e19bcb0074f3dba688e45bc42714b0036551ac74d",
+      "recipeSha256": "addb486799821ab8651cddd93f26b452f1e248930a327b7870764e37e9856213",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "torsion-spring",
+      "state": "unwound",
+      "validation": [],
+      "dimensions": [
+        18.683076858520508,
+        56.307363510131836,
+        11.841951847076416
+      ],
+      "meshes": 1,
+      "triangles": 15392,
+      "bounds": [
+        [
+          -9.332655906677246,
+          -30.006988525390625,
+          -6.020975589752197
+        ],
+        [
+          9.350420951843262,
+          26.30037498474121,
+          5.820976257324219
+        ]
+      ],
+      "geometrySha256": "6a9a067c00943939c618025819a16eec4e088c7d85d2ad7eb46de2d0263244f7",
+      "recipeSha256": "17cffee3554cff08c3a311310cada5593a59337d39c3cefc6480447502b631a4",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "double-torsion-spring",
+      "state": "relaxed",
+      "validation": [],
+      "dimensions": [
+        18.00918483734131,
+        40.74980926513672,
+        23.00334930419922
+      ],
+      "meshes": 1,
+      "triangles": 25472,
+      "bounds": [
+        [
+          -8.995442390441895,
+          -24.01123046875,
+          -11.50167465209961
+        ],
+        [
+          9.013742446899414,
+          16.73857879638672,
+          11.50167465209961
+        ]
+      ],
+      "geometrySha256": "b8472f37a869a1ab022d9866b53924d2b638010a8c38fc0525a4fb9f332a7e10",
+      "recipeSha256": "1dc3f4c3d8b8dbd8126dfddeeb75d74fd71fb4034ddccd52912dc9ba85bd14ea",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "double-torsion-spring",
+      "state": "wound",
+      "validation": [],
+      "dimensions": [
+        20.56767177581787,
+        39.82967948913574,
+        23.00334930419922
+      ],
+      "meshes": 1,
+      "triangles": 26240,
+      "bounds": [
+        [
+          -11.888611793518066,
+          -23.089183807373047,
+          -11.50167465209961
+        ],
+        [
+          8.679059982299805,
+          16.740495681762695,
+          11.50167465209961
+        ]
+      ],
+      "geometrySha256": "46f19571f26f5dd5d346003534a6b4dd803343eae3dc3233bc84ceb7523f38af",
+      "recipeSha256": "1402fbcfc1bb8259b1170a27c955e20b4953aba0d6d29ed3e2001d3983debb43",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "spiral-spring",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        29.199784934322317,
+        30.39980198034572,
+        6
+      ],
+      "meshes": 1,
+      "triangles": 3268,
+      "bounds": [
+        [
+          -13.999883651733398,
+          -14.599892616271973,
+          -3
+        ],
+        [
+          15.199901580810547,
+          15.799908638000488,
+          3
+        ]
+      ],
+      "geometrySha256": "369d67eaa8f3808065748aca7e22f2ee355b3829692bc97071138c5ea694708c",
+      "recipeSha256": "c2593794e86cf2724bf24a8eace5eabd2da50ab252af15557b040661e246ca47",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "worm-drive",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        66.92707061767578,
+        80.95948123931885,
+        17.99406814575196
+      ],
+      "meshes": 2,
+      "triangles": 63836,
+      "bounds": [
+        [
+          -33.46353530883789,
+          -33.46353530883789,
+          -8.997034072875973
+        ],
+        [
+          33.46353530883789,
+          47.49594593048096,
+          8.997034072875973
+        ]
+      ],
+      "geometrySha256": "f165c7a25f3aa61978f8deb9e3175d210a51bf11e1ac0a7b4f36c490259c0827",
+      "recipeSha256": "7d1a20479a425797c722198d5b6c87702c9db0dd825e7595881e84a9ee8d7569",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "worm-drive",
+      "state": "exploded",
+      "validation": [],
+      "dimensions": [
+        66.92707061767578,
+        98.95948123931885,
+        17.99406814575196
+      ],
+      "meshes": 2,
+      "triangles": 63836,
+      "bounds": [
+        [
+          -33.46353530883789,
+          -33.46353530883789,
+          -8.997034072875973
+        ],
+        [
+          33.46353530883789,
+          65.49594593048096,
+          8.997034072875973
+        ]
+      ],
+      "geometrySha256": "648f167a63f934a1e7fbba2333142b42322070c782c6eadfa8d0e9a47ce681bf",
+      "recipeSha256": "049c3b236f94f98e6bf19eb3f7979de2a88a69ea594b45dd6591e248bb32d09d",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "worm-drive",
+      "state": "worm",
+      "validation": [],
+      "dimensions": [
+        32.00000000000001,
+        17.992636680603027,
+        17.99406814575196
+      ],
+      "meshes": 1,
+      "triangles": 41852,
+      "bounds": [
+        [
+          -16.000000000000004,
+          -8.99669075012207,
+          -8.997034072875973
+        ],
+        [
+          16.000000000000004,
+          8.995945930480957,
+          8.997034072875973
+        ]
+      ],
+      "geometrySha256": "d6b78d1725b2e12ac3032f747383236da370c45c25f933e93021264d26aa83fb",
+      "recipeSha256": "0211533bef2b4cddce416de3f14818ad988bc882d0b56a347265d97b47599df4",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "worm-drive",
+      "state": "wheel",
+      "validation": [],
+      "dimensions": [
+        66.92707061767578,
+        66.92707061767578,
+        10
+      ],
+      "meshes": 1,
+      "triangles": 21984,
+      "bounds": [
+        [
+          -33.46353530883789,
+          -33.46353530883789,
+          -5
+        ],
+        [
+          33.46353530883789,
+          33.46353530883789,
+          5
+        ]
+      ],
+      "geometrySha256": "059e5a0f9dff13ac66ac798a640fde5784f00b541d7228148e965539ce126fc7",
+      "recipeSha256": "ba968048db08d054827256bb249ed8a653ace9d8b5da144f68a7b14fe7f7622d",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "spur-gear",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        39,
+        39,
+        16
+      ],
+      "meshes": 1,
+      "triangles": 4032,
+      "bounds": [
+        [
+          -19.5,
+          -19.5,
+          -8
+        ],
+        [
+          19.5,
+          19.5,
+          8
+        ]
+      ],
+      "geometrySha256": "74e007ecf6f7db8ba2361e901486d82280efdcdd02e86d1a100025c14180bc84",
+      "recipeSha256": "e0a1ab0c1f16b94d6d8d16c0b7c45e1457c6fcba4d385355e54388a95a9083bf",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "helical-gear",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        41.31039980913283,
+        41.31039980913283,
+        12
+      ],
+      "meshes": 1,
+      "triangles": 7584,
+      "bounds": [
+        [
+          -20.65519905090332,
+          -20.65519905090332,
+          -6
+        ],
+        [
+          20.65519905090332,
+          20.65519905090332,
+          6
+        ]
+      ],
+      "geometrySha256": "e1eceb1edd06b62c47ecdd2e410baa3f1140d62a31473782765078fbab5e1b52",
+      "recipeSha256": "5e0b3c0e50ba6a8c8897f41a1b2527f19edab75956fdcae6cd71e0bd6c312781",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "bevel-gear",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        52,
+        52,
+        8
+      ],
+      "meshes": 1,
+      "triangles": 3264,
+      "bounds": [
+        [
+          -26,
+          -26,
+          -4
+        ],
+        [
+          26,
+          26,
+          4
+        ]
+      ],
+      "geometrySha256": "e685d510b8d50cff306837e569aab26e0af0a148ff6f27a68bab81658ee7b723",
+      "recipeSha256": "55c8a2da2094a414e7b61cb4113a98c33e2192fcdf5494e0786db759c87bfb55",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "bevel-gear-pair",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        50.044999561309815,
+        40.88999938964844,
+        32.59984497070312
+      ],
+      "meshes": 2,
+      "triangles": 6090,
+      "bounds": [
+        [
+          -20.44499969482422,
+          -20.44499969482422,
+          -21.800000228881828
+        ],
+        [
+          29.599999866485597,
+          20.44499969482422,
+          10.79984474182129
+        ]
+      ],
+      "geometrySha256": "9b521660cdf14d13bff776dc9632ea9dad3912a403d96b7afac194b025d758c0",
+      "recipeSha256": "39409e86c09b7bf01a8f978e03fb1665387b639399a4933ed88d771223c37167",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "bevel-gear-pair",
+      "state": "exploded",
+      "validation": [],
+      "dimensions": [
+        62.044999561309815,
+        40.88999938964844,
+        44.59984497070312
+      ],
+      "meshes": 2,
+      "triangles": 6090,
+      "bounds": [
+        [
+          -20.44499969482422,
+          -20.44499969482422,
+          -33.80000022888183
+        ],
+        [
+          41.5999998664856,
+          20.44499969482422,
+          10.79984474182129
+        ]
+      ],
+      "geometrySha256": "c2fb0b6c5abb7fb37a5a6505f367d4ca4e6a5f275c3dfec0779d8959d511bd7e",
+      "recipeSha256": "51752c096ac27fa6c53a0d25943e8d95cff8ca3db0f9afa9e514ef1ebf33ccc4",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "bevel-gear-pair",
+      "state": "pinion",
+      "validation": [],
+      "dimensions": [
+        21.599689483642578,
+        21.599689483642578,
+        15.029999732971191
+      ],
+      "meshes": 1,
+      "triangles": 2868,
+      "bounds": [
+        [
+          -10.799844741821289,
+          -10.799844741821289,
+          -7.514999866485595
+        ],
+        [
+          10.799844741821289,
+          10.799844741821289,
+          7.514999866485597
+        ]
+      ],
+      "geometrySha256": "8cc48fbb90752a755d6c5ff0de9d271ef52b87b98c5d4e51473c303c7337e390",
+      "recipeSha256": "e1fa2f3f49e2b0878a21e16185f8cccb6224567ff66d792514368be59f790a33",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "bevel-gear-pair",
+      "state": "wheel",
+      "validation": [],
+      "dimensions": [
+        40.88999938964844,
+        40.88999938964844,
+        15.020000457763672
+      ],
+      "meshes": 1,
+      "triangles": 3222,
+      "bounds": [
+        [
+          -20.44499969482422,
+          -20.44499969482422,
+          -7.510000228881829
+        ],
+        [
+          20.44499969482422,
+          20.44499969482422,
+          7.510000228881843
+        ]
+      ],
+      "geometrySha256": "bf5da56a43a29444ac299f6207a87b8d89951e230617853f322a564803583577",
+      "recipeSha256": "6a457098159e4dc1f2aa5c6e846d99edd171ae996c55e31ca09c8d8461ab0430",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "gear-rack",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        62.83185307179586,
+        7.25,
+        8
+      ],
+      "meshes": 1,
+      "triangles": 332,
+      "bounds": [
+        [
+          -31.415925979614258,
+          -3.625,
+          -4
+        ],
+        [
+          31.415925979614258,
+          3.625,
+          4
+        ]
+      ],
+      "geometrySha256": "fc530ff227569df8910958a0cd3d609f04b1f018702a1abb12bd4089278ca49b",
+      "recipeSha256": "2ee4ee804e8545406d6fedc1becf72cc40555ab016ccfa0cad9abfc8a0f02fa6",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "linear-guide",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        200,
+        27,
+        13
+      ],
+      "meshes": 76,
+      "triangles": 44640,
+      "bounds": [
+        [
+          -100,
+          -13.5,
+          0
+        ],
+        [
+          100,
+          13.5,
+          13
+        ]
+      ],
+      "geometrySha256": "59073942e15a27c306c2b5a00b72d0f2eeb919f6b8848392761c4fdece2c124c",
+      "recipeSha256": "2dbe3ac52c23b812a27a7ca3bebf871086b343038b25741cd3a8c42b0747d4fe",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "linear-guide",
+      "state": "cutaway",
+      "validation": [],
+      "dimensions": [
+        200,
+        23.25,
+        13
+      ],
+      "meshes": 76,
+      "triangles": 44040,
+      "bounds": [
+        [
+          -100,
+          -9.749999976158142,
+          0
+        ],
+        [
+          100,
+          13.5,
+          13
+        ]
+      ],
+      "geometrySha256": "e1fb1c9d13603cc36e28ef7c68de45e952458e2d52b168caa0fac22c062ae0cf",
+      "recipeSha256": "5de8f6edfc551238573f08e2f87807d953c55557dd3aeb847aa18205781426af",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "linear-guide",
+      "state": "rail",
+      "validation": [],
+      "dimensions": [
+        200,
+        12,
+        8
+      ],
+      "meshes": 1,
+      "triangles": 4948,
+      "bounds": [
+        [
+          -100,
+          -6,
+          0
+        ],
+        [
+          100,
+          6,
+          8
+        ]
+      ],
+      "geometrySha256": "1d18c418e750dba51d682ee78b1f5e22749323a969cb1a60c5104c665b314b88",
+      "recipeSha256": "5a12f5f620e34db51c01a47f490fcfefb240630697c6e06f6824a6ec36ab9c1b",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "linear-guide",
+      "state": "carriage",
+      "validation": [],
+      "dimensions": [
+        45.4,
+        27,
+        10
+      ],
+      "meshes": 75,
+      "triangles": 39692,
+      "bounds": [
+        [
+          -22.700000762939453,
+          -13.5,
+          3
+        ],
+        [
+          22.700000762939453,
+          13.5,
+          13
+        ]
+      ],
+      "geometrySha256": "c9917ad3d48e454ba74e51248a72e8f6bb96ede22ca97a21bb618a1833d83c5d",
+      "recipeSha256": "fefa2b9cc2614d286dd1652d44af7345cc33657f67808ab7475148bb7202477d",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "round-linear-guide",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        200,
+        24,
+        24
+      ],
+      "meshes": 157,
+      "triangles": 84784,
+      "bounds": [
+        [
+          -100,
+          -12,
+          0
+        ],
+        [
+          100,
+          12,
+          24
+        ]
+      ],
+      "geometrySha256": "7a82a2f4d0fd8fdc500be1afe193561e595d3b867adc135e72000c9098d35607",
+      "recipeSha256": "a0601bf11900d4b2ef4c7860e1428ae968e2576abb18e4db1e7bd666add896ee",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "round-linear-guide",
+      "state": "cutaway",
+      "validation": [],
+      "dimensions": [
+        200,
+        18.8,
+        24
+      ],
+      "meshes": 157,
+      "triangles": 83240,
+      "bounds": [
+        [
+          -100,
+          -6.800000190734865,
+          0
+        ],
+        [
+          100,
+          12,
+          24
+        ]
+      ],
+      "geometrySha256": "2fab10e65bd0b525183d7a6bed20c295a5f81a3384ce566dd1a8518d49e9610f",
+      "recipeSha256": "34258b90e97d8551ed5f3b7bef3a55e5799cfcf9904ff25d6260edb5dc52f2ea",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "round-linear-guide",
+      "state": "shaft",
+      "validation": [],
+      "dimensions": [
+        200,
+        8,
+        8
+      ],
+      "meshes": 1,
+      "triangles": 288,
+      "bounds": [
+        [
+          -100,
+          -4,
+          7.999999999999978
+        ],
+        [
+          100,
+          4,
+          16.00000000000002
+        ]
+      ],
+      "geometrySha256": "019e0bd143c4f5d29d8ece801a28447ed46c8211ba7638c04c76a8189d49d875",
+      "recipeSha256": "f7ff3a317d7ca5e39946120548a8dd98ed396b6b67741512816afd1b5ced1cbb",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "round-linear-guide",
+      "state": "block",
+      "validation": [],
+      "dimensions": [
+        30,
+        24,
+        24
+      ],
+      "meshes": 156,
+      "triangles": 84496,
+      "bounds": [
+        [
+          -15.000000001192095,
+          -12,
+          0
+        ],
+        [
+          15.000000001192095,
+          12,
+          24
+        ]
+      ],
+      "geometrySha256": "0f8b2989b210a260ca06a0dc696b4ddab1a289bf7ddf53da065aa035e9c5e5e4",
+      "recipeSha256": "a838be2f5722550d4718662af198675febd4e8f58fafdc781da514c6e3bf2db9",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "ball-screw",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        40,
+        48,
+        200
+      ],
+      "meshes": 75,
+      "triangles": 222042,
+      "bounds": [
+        [
+          -20,
+          -24,
+          -100
+        ],
+        [
+          20,
+          24,
+          100
+        ]
+      ],
+      "geometrySha256": "7076770d3d7fc779ac352d0f2614d17f8a61fcd6156f8e16c753c25a3b778bfd",
+      "recipeSha256": "8d76729efa5abddbdf8dd5a944c60e7cdc9df73619021b9e39342dbe14c5bff5",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "ball-screw",
+      "state": "cutaway",
+      "validation": [],
+      "dimensions": [
+        40,
+        34.10756359019481,
+        200
+      ],
+      "meshes": 73,
+      "triangles": 217132,
+      "bounds": [
+        [
+          -20,
+          -10.107563315536604,
+          -100
+        ],
+        [
+          20,
+          24.000000274658206,
+          100
+        ]
+      ],
+      "geometrySha256": "2d91364981ee66084c397c7fa11179254d0a8eae3c295287749f872476153e96",
+      "recipeSha256": "b6dca4154e571aa4029b41f05f04de6a6e296ca8fdce048c43da10ab7f09e9f1",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "ball-screw",
+      "state": "screw",
+      "validation": [],
+      "dimensions": [
+        16,
+        16,
+        200
+      ],
+      "meshes": 4,
+      "triangles": 73820,
+      "bounds": [
+        [
+          -8,
+          -8,
+          -100
+        ],
+        [
+          8,
+          8,
+          100
+        ]
+      ],
+      "geometrySha256": "492b5869d4376a7006bb2116aeb2109ca3cca8a5efd713aad4a5852925867725",
+      "recipeSha256": "197daa253c3497efc32ba4ca0c65eb4d75f07d650accdbd39e982a1a198886c0",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "ball-screw",
+      "state": "nut",
+      "validation": [],
+      "dimensions": [
+        40,
+        48,
+        50.000160217285156
+      ],
+      "meshes": 71,
+      "triangles": 148222,
+      "bounds": [
+        [
+          -20,
+          -24,
+          -25.000080108642578
+        ],
+        [
+          20,
+          24,
+          25.000080108642578
+        ]
+      ],
+      "geometrySha256": "445fbc301d5d53a04fccf95821c4c45cd1a69f894b84b4af4fe3b783007fba3d",
+      "recipeSha256": "28bf5cd143cb54fa5bfe1a47406d855255f8f22c6d46cedb3dc2463952b7e451",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "ball-nut",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        40,
+        48,
+        50.000160217285156
+      ],
+      "meshes": 71,
+      "triangles": 148222,
+      "bounds": [
+        [
+          -20,
+          -24,
+          -25.000080108642578
+        ],
+        [
+          20,
+          24,
+          25.000080108642578
+        ]
+      ],
+      "geometrySha256": "445fbc301d5d53a04fccf95821c4c45cd1a69f894b84b4af4fe3b783007fba3d",
+      "recipeSha256": "28bf5cd143cb54fa5bfe1a47406d855255f8f22c6d46cedb3dc2463952b7e451",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "ball-nut",
+      "state": "cutaway",
+      "validation": [],
+      "dimensions": [
+        40,
+        34.132144167481684,
+        50
+      ],
+      "meshes": 69,
+      "triangles": 143312,
+      "bounds": [
+        [
+          -20,
+          -10.13214389282348,
+          -25
+        ],
+        [
+          20,
+          24.000000274658206,
+          25
+        ]
+      ],
+      "geometrySha256": "00d4a3f15ffe104bdd3aebc3b8c268616bf4d540fb7f5111478f7b9c2b639c53",
+      "recipeSha256": "ad01336ee82afdb1a501cb3e7bc90628bf4ef9c86b9c9e9cb67fffbb42092885",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "ball-screw-axis",
+      "state": "assembled",
+      "validation": [],
+      "dimensions": [
+        216,
+        143,
+        74
+      ],
+      "meshes": 252,
+      "triangles": 342396,
+      "bounds": [
+        [
+          -108,
+          -71.5,
+          -0.0002999305725097656
+        ],
+        [
+          108,
+          71.5,
+          74
+        ]
+      ],
+      "geometrySha256": "0c9efe0547c5b35e43141b6f3edc2ca40acebace16c97a9da081787d30595dd6",
+      "recipeSha256": "d77c4f420cbfc1db4b87aaf4800094e98423f3be389fc93d8e0ce58b9b82e39e",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "ball-screw-axis",
+      "state": "cutaway",
+      "validation": [],
+      "dimensions": [
+        216,
+        143,
+        74
+      ],
+      "meshes": 250,
+      "triangles": 336286,
+      "bounds": [
+        [
+          -108,
+          -71.5,
+          -0.0002999305725097656
+        ],
+        [
+          108,
+          71.5,
+          74
+        ]
+      ],
+      "geometrySha256": "01d9f988e40b3aa09c9cf8402ca658cb587d5b319cc84e1ea5878e57a388b289",
+      "recipeSha256": "3ff79b36be6519de425660c27bc933f9fb869dedb89542393027e79a8403cb09",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "jaw-coupling",
+      "state": "assembly",
+      "validation": [],
+      "dimensions": [
+        25,
+        25,
+        30
+      ],
+      "meshes": 5,
+      "triangles": 13654,
+      "bounds": [
+        [
+          -12.5,
+          -12.5,
+          -15.000032043457033
+        ],
+        [
+          12.5,
+          12.500000000000002,
+          15.000032043457033
+        ]
+      ],
+      "geometrySha256": "f77556eca54ae2d4a062d07e43264471ec5c5f019c8507400f366204a7d11468",
+      "recipeSha256": "96cc3e75c2a66951a363c36465eba9a90d73e0294e9c77a24980cfffaef09edc",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "jaw-coupling",
+      "state": "exploded",
+      "validation": [],
+      "dimensions": [
+        25,
+        25,
+        69
+      ],
+      "meshes": 5,
+      "triangles": 13654,
+      "bounds": [
+        [
+          -12.5,
+          -12.5,
+          -34.50003204345703
+        ],
+        [
+          12.5,
+          12.500000000000002,
+          34.50003204345703
+        ]
+      ],
+      "geometrySha256": "03b97ff8739665239d4530f836149ae88322894803738435750969cf4d9c644a",
+      "recipeSha256": "cabb00aebf773f1ee00f68755a719745ad5833139e966839a02d2d2bb22ac8cf",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "jaw-coupling",
+      "state": "hub-a",
+      "validation": [],
+      "dimensions": [
+        25,
+        25,
+        19.3
+      ],
+      "meshes": 2,
+      "triangles": 5916,
+      "bounds": [
+        [
+          -12.5,
+          -12.5,
+          -9.650032043457031
+        ],
+        [
+          12.5,
+          12.5,
+          9.650032043457031
+        ]
+      ],
+      "geometrySha256": "96ac77d39ead5b03bb401d4be1cab3062d6a3fa71de2856918278bf5ea72d948",
+      "recipeSha256": "eabdd4c089b3d3d5d0cc88bd447bf682a96e2878afb5d37a338db0d8e64f38a2",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "jaw-coupling",
+      "state": "hub-b",
+      "validation": [],
+      "dimensions": [
+        25,
+        25,
+        19.3
+      ],
+      "meshes": 2,
+      "triangles": 5962,
+      "bounds": [
+        [
+          -12.5,
+          -12.5,
+          -9.650032043457033
+        ],
+        [
+          12.5,
+          12.500000000000002,
+          9.650032043457033
+        ]
+      ],
+      "geometrySha256": "ca902501a91286579ee21614a7bf6010d7cda169f47fc68db987f64239ba055c",
+      "recipeSha256": "dceea655f0defcb164e412758c35d3ea27c3fe9f67e98a7bf3ed605c099dfcd0",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "jaw-coupling",
+      "state": "spider",
+      "validation": [],
+      "dimensions": [
+        23.354308817303124,
+        24.7,
+        9
+      ],
+      "meshes": 1,
+      "triangles": 1776,
+      "bounds": [
+        [
+          -11.677154541015625,
+          -12.350000381469727,
+          -4.5
+        ],
+        [
+          11.677154541015625,
+          12.350000381469727,
+          4.5
+        ]
+      ],
+      "geometrySha256": "63a68b4e6225e6cc3a2ba60acdb40da49680c67a086ce1c0373a0d280a6eb340",
+      "recipeSha256": "816b1c1fd016ff95e538ca57e0427a0b053f8357ede27f3ed92c1a47f40ddc38",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "enclosure",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        80,
+        55,
+        30
+      ],
+      "meshes": 1,
+      "triangles": 28,
+      "bounds": [
+        [
+          -40,
+          -27.5,
+          -15
+        ],
+        [
+          40,
+          27.5,
+          15
+        ]
+      ],
+      "geometrySha256": "78d1b78c817ea5ca83551f23af9c0772888ac057b8b8ee62ec8b83fd6eb7384d",
+      "recipeSha256": "f858aa453179653d41e287c5980b12a5b8e04e80d224c1a0335aaeb730272df4",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "l-bracket",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        40,
+        30,
+        35
+      ],
+      "meshes": 2,
+      "triangles": 1576,
+      "bounds": [
+        [
+          -20,
+          -15,
+          -17.5
+        ],
+        [
+          20,
+          15,
+          17.5
+        ]
+      ],
+      "geometrySha256": "fd20160413f7a7a8717fc94721775c94b72c146f136221f2b7fe130ac377ab3a",
+      "recipeSha256": "4f20012b934f7e0ecead573887c9cc2713f232e853b171963b6c682612b57813",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "spacer",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        8,
+        8,
+        15
+      ],
+      "meshes": 1,
+      "triangles": 1024,
+      "bounds": [
+        [
+          -4,
+          -4,
+          -7.5
+        ],
+        [
+          4,
+          4,
+          7.5
+        ]
+      ],
+      "geometrySha256": "0db053799f232829b1a420bfd4ac56f56bc0b7b0604ececeb132d3b0ac313425",
+      "recipeSha256": "92717af9d9554d000fb6df93f73ca8675074634ae0876f7643f472530aa338ad",
+      "identicalAfterMigration": true
+    },
+    {
+      "id": "wheel",
+      "state": "default",
+      "validation": [],
+      "dimensions": [
+        60,
+        60,
+        24
+      ],
+      "meshes": 1,
+      "triangles": 2304,
+      "bounds": [
+        [
+          -30,
+          -30,
+          -12
+        ],
+        [
+          30,
+          30,
+          12
+        ]
+      ],
+      "geometrySha256": "2b5c36d5aede96c0af2172d18d27897140307988e956c6dfadb96acf63ea8b34",
+      "recipeSha256": "0658cfbf74d177fa12dbc077a3c15d7d2c3cdb4235d5840f9c14cea2eec06d7d",
+      "identicalAfterMigration": true
+    }
+  ],
+  "continuingChecks": {
+    "testFile": "tests/module-isolation.test.ts",
+    "passed": 4,
+    "coverage": [
+      "All part folders obey dependency boundaries and registry order.",
+      "Source reference assets exist for portable export.",
+      "Every package preset file equals its complete runtime preset list.",
+      "No mutable configurator, default, preset, state or catalog-selection object is shared between parts.",
+      "Every local catalog selector belongs to its own parameter schema."
+    ]
+  }
+}

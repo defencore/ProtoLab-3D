@@ -1,0 +1,17 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.DS_Store
+screenshots/
+test-results/
+
+__pycache__/
+*.pyc
+.part-module-backups/
+.catalog-snapshot-backup-*/
+.part-module-staging-*/
+
+data/*
+!data/*validation.json
+!data/promtehimport-import-report.json
+!data/promtehimport-inventory.json

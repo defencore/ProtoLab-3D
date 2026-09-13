@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.json",
+  "files": [],
+  "include": ["tests", "scripts/parts.ts", "scripts/part-modules"]
+}

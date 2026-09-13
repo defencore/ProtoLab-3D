@@ -1,0 +1,40 @@
+{
+  "name": "protolab-3d",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 8080",
+    "build": "npm run parts:sync && tsc -b && vite build",
+    "typecheck": "npm run parts:sync && tsc --noEmit",
+    "typecheck:tests": "npm run parts:sync && tsc --noEmit -p tsconfig.tests.json",
+    "preview": "vite preview --host 0.0.0.0 --port 8081",
+    "test": "npm run typecheck:tests && node --import tsx --test tests/*.test.ts",
+    "parts:sync": "node --import tsx scripts/parts.ts sync",
+    "parts:check": "node --import tsx scripts/parts.ts check",
+    "parts:create": "node --import tsx scripts/parts.ts create",
+    "parts:export": "node --import tsx scripts/parts.ts export",
+    "parts:import": "node --import tsx scripts/parts.ts import",
+    "format": "prettier --write src tests index.html vite.config.ts README.md"
+  },
+  "dependencies": {
+    "@fontsource-variable/dm-sans": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@jscad/modeling": "^2.13.0",
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "three": "^0.183.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/three": "^0.183.0",
+    "@vitejs/plugin-react": "^4.4.1",
+    "prettier": "^3.9.6",
+    "tsx": "^4.19.0",
+    "typescript": "~5.7.2",
+    "vite": "^6.3.5"
+  }
+}

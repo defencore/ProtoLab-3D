@@ -1,0 +1,531 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "scope": "Gear shaft profiles: round, hexagon, D-shaft, double D, square, custom polygon and round with keyway",
+  "validatedAt": "2026-09-13T20:16:36.196200+00:00",
+  "runtime": "FreeCAD bundled Python / OpenCascade, isolated from GUI documents",
+  "scenarios": 36,
+  "solids": 43,
+  "crossSectionProbes": 110,
+  "checks": [
+    "Valid, closed, positive-volume native solids",
+    "Expected solid count",
+    "Preview/native bounds within 0.05 mm",
+    "STEP export/re-import validity and stable volume",
+    "Independent bore cross-section point probes on single gears and worm wheel"
+  ],
+  "limits": [
+    "Representative parameters cover every shape; this is not an audit of all possible combinations.",
+    "Bevel pairs use mounting-envelope tooth geometry; checks do not certify manufacturing fit or conjugate tooth contact."
+  ],
+  "results": [
+    {
+      "id": "spur-gear-round",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 4,
+      "volume": 10700.473625207924,
+      "dimensions": [
+        39.0000002,
+        39.0000002,
+        16.0
+      ],
+      "step": true,
+      "seconds": 0.6112279891967773
+    },
+    {
+      "id": "spur-gear-hex",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 4,
+      "volume": 10654.032334744988,
+      "dimensions": [
+        39.0000002,
+        39.0000002,
+        16.0
+      ],
+      "step": true,
+      "seconds": 0.47137904167175293
+    },
+    {
+      "id": "spur-gear-d",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 4,
+      "volume": 10736.33157680888,
+      "dimensions": [
+        39.0000002,
+        39.0000002,
+        16.0
+      ],
+      "step": true,
+      "seconds": 0.5250062942504883
+    },
+    {
+      "id": "spur-gear-double-d",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 5,
+      "volume": 10772.189528409841,
+      "dimensions": [
+        39.0000002,
+        39.0000002,
+        16.0
+      ],
+      "step": true,
+      "seconds": 0.4458909034729004
+    },
+    {
+      "id": "spur-gear-square",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 4,
+      "volume": 10576.862967324336,
+      "dimensions": [
+        39.0000002,
+        39.0000002,
+        16.0
+      ],
+      "step": true,
+      "seconds": 0.42785000801086426
+    },
+    {
+      "id": "spur-gear-polygon",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 2,
+      "volume": 10629.752347160822,
+      "dimensions": [
+        39.0000002,
+        39.0000002,
+        16.0
+      ],
+      "step": true,
+      "seconds": 0.41616201400756836
+    },
+    {
+      "id": "spur-gear-keyway",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 4,
+      "volume": 10673.064974165258,
+      "dimensions": [
+        39.0000002,
+        39.0000002,
+        16.0
+      ],
+      "step": true,
+      "seconds": 0.44793701171875
+    },
+    {
+      "id": "helical-gear-round",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 4,
+      "volume": 13221.850974770545,
+      "dimensions": [
+        41.310400009199995,
+        41.3104000092,
+        12.000000200000002
+      ],
+      "step": true,
+      "seconds": 2.297668933868408
+    },
+    {
+      "id": "helical-gear-hex",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 4,
+      "volume": 13187.020006923307,
+      "dimensions": [
+        41.310400009199995,
+        41.3104000092,
+        12.000000200000004
+      ],
+      "step": true,
+      "seconds": 2.1459310054779053
+    },
+    {
+      "id": "helical-gear-d",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 4,
+      "volume": 13248.744438471245,
+      "dimensions": [
+        41.310400009199995,
+        41.3104000092,
+        12.000000200000004
+      ],
+      "step": true,
+      "seconds": 1.88615083694458
+    },
+    {
+      "id": "helical-gear-double-d",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 5,
+      "volume": 13275.63790217194,
+      "dimensions": [
+        41.310400009199995,
+        41.3104000092,
+        12.000000200000004
+      ],
+      "step": true,
+      "seconds": 2.0201199054718018
+    },
+    {
+      "id": "helical-gear-square",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 4,
+      "volume": 13129.14298135781,
+      "dimensions": [
+        41.310400009199995,
+        41.3104000092,
+        12.000000200000002
+      ],
+      "step": true,
+      "seconds": 1.7819640636444092
+    },
+    {
+      "id": "helical-gear-polygon",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 2,
+      "volume": 13168.81001623518,
+      "dimensions": [
+        41.310400009199995,
+        41.3104000092,
+        12.000000200000004
+      ],
+      "step": true,
+      "seconds": 1.7331700325012207
+    },
+    {
+      "id": "helical-gear-keyway",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 4,
+      "volume": 13201.294486488534,
+      "dimensions": [
+        41.310400009199995,
+        41.3104000092,
+        12.000000200000004
+      ],
+      "step": true,
+      "seconds": 1.8095769882202148
+    },
+    {
+      "id": "bevel-gear-round",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 4,
+      "volume": 9738.633685701509,
+      "dimensions": [
+        52.00000020000001,
+        52.00000020000001,
+        8.000000200000002
+      ],
+      "step": true,
+      "seconds": 0.5534389019012451
+    },
+    {
+      "id": "bevel-gear-hex",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 4,
+      "volume": 9715.41304047005,
+      "dimensions": [
+        52.00000020000001,
+        52.00000020000001,
+        8.000000200000002
+      ],
+      "step": true,
+      "seconds": 0.5617499351501465
+    },
+    {
+      "id": "bevel-gear-d",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 4,
+      "volume": 9756.562661501988,
+      "dimensions": [
+        52.00000020000001,
+        52.00000020000001,
+        8.000000200000002
+      ],
+      "step": true,
+      "seconds": 0.5508339405059814
+    },
+    {
+      "id": "bevel-gear-double-d",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 5,
+      "volume": 9774.491637302466,
+      "dimensions": [
+        52.00000020000001,
+        52.00000020000001,
+        8.000000200000002
+      ],
+      "step": true,
+      "seconds": 0.5733661651611328
+    },
+    {
+      "id": "bevel-gear-square",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 4,
+      "volume": 9676.828356759715,
+      "dimensions": [
+        52.00000020000001,
+        52.00000020000001,
+        8.000000200000002
+      ],
+      "step": true,
+      "seconds": 0.5482358932495117
+    },
+    {
+      "id": "bevel-gear-polygon",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 2,
+      "volume": 9703.273046677958,
+      "dimensions": [
+        52.00000020000001,
+        52.00000020000001,
+        8.000000200000002
+      ],
+      "step": true,
+      "seconds": 0.5254948139190674
+    },
+    {
+      "id": "bevel-gear-keyway",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 4,
+      "volume": 9724.929360180176,
+      "dimensions": [
+        52.00000020000001,
+        52.00000020000001,
+        8.000000200000002
+      ],
+      "step": true,
+      "seconds": 0.6471059322357178
+    },
+    {
+      "id": "worm-drive-round",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 4,
+      "volume": 28831.482945180596,
+      "dimensions": [
+        66.92706899301068,
+        66.92706899301068,
+        10.000000200000004
+      ],
+      "step": true,
+      "seconds": 12.148035764694214
+    },
+    {
+      "id": "worm-drive-hex",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 4,
+      "volume": 28802.457138641254,
+      "dimensions": [
+        66.92706899301068,
+        66.92706899301068,
+        10.000000200000004
+      ],
+      "step": true,
+      "seconds": 11.417332887649536
+    },
+    {
+      "id": "worm-drive-d",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 4,
+      "volume": 28853.8941649312,
+      "dimensions": [
+        66.92706899301068,
+        66.92706899301068,
+        10.000000200000004
+      ],
+      "step": true,
+      "seconds": 11.591253995895386
+    },
+    {
+      "id": "worm-drive-double-d",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 5,
+      "volume": 28876.30538468178,
+      "dimensions": [
+        66.92706899301068,
+        66.92706899301068,
+        10.000000200000004
+      ],
+      "step": true,
+      "seconds": 26.17490816116333
+    },
+    {
+      "id": "worm-drive-square",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 4,
+      "volume": 28754.226284003336,
+      "dimensions": [
+        66.92706899301068,
+        66.92706899301068,
+        10.000000200000004
+      ],
+      "step": true,
+      "seconds": 33.78162884712219
+    },
+    {
+      "id": "worm-drive-polygon",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 2,
+      "volume": 28787.282146401147,
+      "dimensions": [
+        66.92706899301068,
+        66.92706899301068,
+        10.000000200000004
+      ],
+      "step": true,
+      "seconds": 22.898620128631592
+    },
+    {
+      "id": "worm-drive-keyway",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 4,
+      "volume": 28814.352538278945,
+      "dimensions": [
+        66.92706899301068,
+        66.92706899301068,
+        10.000000200000004
+      ],
+      "step": true,
+      "seconds": 28.25223398208618
+    },
+    {
+      "id": "bevel-pair-round",
+      "valid": true,
+      "solids": 2,
+      "crossSectionProbes": 0,
+      "volume": 11217.66322280148,
+      "dimensions": [
+        50.044221617046986,
+        40.88844303409397,
+        32.6232753007767
+      ],
+      "step": true,
+      "seconds": 7.963098764419556
+    },
+    {
+      "id": "bevel-pair-hex",
+      "valid": true,
+      "solids": 2,
+      "crossSectionProbes": 0,
+      "volume": 11266.825393972365,
+      "dimensions": [
+        50.044221517046985,
+        40.88844303409397,
+        32.623275400776706
+      ],
+      "step": true,
+      "seconds": 4.16914701461792
+    },
+    {
+      "id": "bevel-pair-d",
+      "valid": true,
+      "solids": 2,
+      "crossSectionProbes": 0,
+      "volume": 11382.279037042881,
+      "dimensions": [
+        50.044221617046986,
+        40.88844303409397,
+        32.623275400776706
+      ],
+      "step": true,
+      "seconds": 7.913504123687744
+    },
+    {
+      "id": "bevel-pair-double-d",
+      "valid": true,
+      "solids": 2,
+      "crossSectionProbes": 0,
+      "volume": 11142.655772709886,
+      "dimensions": [
+        50.044221617046986,
+        40.88844303409397,
+        32.6232753007767
+      ],
+      "step": true,
+      "seconds": 6.204789876937866
+    },
+    {
+      "id": "bevel-pair-square",
+      "valid": true,
+      "solids": 2,
+      "crossSectionProbes": 0,
+      "volume": 11077.004740092698,
+      "dimensions": [
+        50.044221517046985,
+        40.88844303409397,
+        32.6232753007767
+      ],
+      "step": true,
+      "seconds": 7.162231922149658
+    },
+    {
+      "id": "bevel-pair-polygon",
+      "valid": true,
+      "solids": 2,
+      "crossSectionProbes": 0,
+      "volume": 11189.230177793046,
+      "dimensions": [
+        50.044221517046985,
+        40.88844303409397,
+        32.623275400776706
+      ],
+      "step": true,
+      "seconds": 6.0843000411987305
+    },
+    {
+      "id": "bevel-pair-keyway",
+      "valid": true,
+      "solids": 2,
+      "crossSectionProbes": 0,
+      "volume": 11248.081893536648,
+      "dimensions": [
+        50.044221617046986,
+        40.88844303409397,
+        32.623275400776706
+      ],
+      "step": true,
+      "seconds": 9.154725790023804
+    },
+    {
+      "id": "worm-drive-d-rotated",
+      "valid": true,
+      "solids": 1,
+      "crossSectionProbes": 2,
+      "volume": 28853.894164931222,
+      "dimensions": [
+        66.99480707634376,
+        66.99480707634378,
+        10.000000200000004
+      ],
+      "step": true,
+      "seconds": 35.63057518005371
+    }
+  ],
+  "units": {
+    "length": "mm",
+    "volume": "mm^3"
+  }
+}

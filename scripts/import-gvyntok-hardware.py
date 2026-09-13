@@ -1,0 +1,127 @@
+#!/usr/bin/env python3
+"""Import all public pages for a requested hardware category, retaining source rows and coverage.
+
+Run explicitly to refresh the checked-in catalogue. No cart, account or checkout
+requests are made. Discovered next-page links are followed without a page cap.
+"""
+import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime, timezone
+import hashlib
+import html
+import json
+from pathlib import Path
+import re
+import subprocess
+from urllib.parse import urljoin
+
+import sys
+SECTION = sys.argv[1] if len(sys.argv) > 1 else "gajki"
+ROOT = Path(__file__).resolve().parents[1]
+START = "https://gvyntok.com/product-category/" + SECTION + "/"
+
+
+def clean(value):
+    return html.unescape(re.sub(r"<[^>]*>", "", value)).strip()
+
+
+def import_catalog(cache):
+    cache.mkdir(parents=True, exist_ok=True)
+
+    def fetch(url):
+        file = cache / (hashlib.sha256(url.encode()).hexdigest() + ".html")
+        if not file.exists():
+            result = subprocess.run(
+                ["curl", "--fail", "--location", "--silent", "--show-error", "--max-time", "45", url],
+                capture_output=True, check=True,
+            )
+            file.write_bytes(result.stdout)
+        return file.read_text()
+
+    main = fetch(START)
+    categories = {}
+    for url, body in re.findall(r'<a class="iksm-term__link" href=[\'\"]([^\'\"]+)[\'\"](.*?)</a>', main, re.S):
+        if f"/product-category/{SECTION}/" not in url or url.rstrip("/").endswith(SECTION):
+            continue
+        name = re.search(r'iksm-term__text">(.*?)</span>', body, re.S)
+        count = re.search(r'iksm-term__posts-count__text"\s*>(.*?)</span>', body, re.S)
+        categories[url] = {"url": html.unescape(url), "sourceTitle": clean(name.group(1)), "listedCount": int(clean(count.group(1)))}
+
+    def crawl(category):
+        url = category["url"]
+        pages, products, errors = [], {}, []
+        visible_count = None
+        while url:
+            if url in pages:
+                errors.append("Repeated pagination URL: " + url)
+                break
+            try:
+                page = fetch(url)
+            except Exception as error:
+                errors.append(str(error))
+                break
+            pages.append(url)
+            if visible_count is None:
+                count_text = re.search(r'<p class="woocommerce-result-count[^>]*>(.*?)</p>', page, re.S)
+                counts = re.findall(r'\d+', clean(count_text.group(1))) if count_text else []
+                visible_count = int(counts[-1]) if counts else None
+                if count_text and "единственного товара" in clean(count_text.group(1)):
+                    visible_count = 1
+            rows = re.findall(r'<p class="name product-title woocommerce-loop-product__title"><a href="([^"]+)"[^>]*>(.*?)</a></p>\s*<span class="sku">SKU:\s*([^<]+)', page, re.S)
+            for product_url, name, sku in rows:
+                name, sku = clean(name), clean(sku)
+                standard = re.search(r'\b(DIN|ISO)\s*(\d+(?:-\d+)?)', category["sourceTitle"], re.I)
+                sizes = re.search(r'(?<!\d)[мm]?(\d+(?:[.,]\d+)?)\s*[хx×]\s*(\d+(?:[.,]\d+)?)(?:\s*[хx×]\s*(\d+(?:[.,]\d+)?))?', name, re.I)
+                diameter = length = pitch = None
+                if sizes:
+                    values = [float(value.replace(",", ".")) for value in sizes.groups() if value]
+                    diameter, length = values[0], values[-1]
+                    if len(values) == 3:
+                        pitch = values[1]
+                else:
+                    nominal = re.search(r'[мm](\d+(?:[.,]\d+)?)', name, re.I)
+                    if nominal:
+                        diameter = float(nominal.group(1).replace(",", "."))
+                products[sku] = {"sku": sku, "sourceTitle": name, "url": html.unescape(product_url),
+                    "categoryUrl": category["url"], "standard": f"{standard.group(1).upper()} {standard.group(2)}" if standard else None,
+                    "diameter": diameter, "length": length, "pitch": pitch}
+            next_page = re.search(r'<link rel="next" href="([^"]+)"', page)
+            url = urljoin(url, html.unescape(next_page.group(1))) if next_page else None
+        summary = {**category, "visibleCount": visible_count, "drawings": sorted(set(re.findall(r'https://gvyntok.com/[^\"\s<>]+\.pdf', page))), "pages": pages, "importedCount": len(products), "errors": errors}
+        if len(products) != visible_count:
+            summary["errors"].append(f"Category results list {visible_count} rows but extracted {len(products)} rows.")
+        return summary, list(products.values())
+
+    summaries, products = [], {}
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        tasks = [executor.submit(crawl, category) for category in categories.values()]
+        for task in as_completed(tasks):
+            summary, rows = task.result()
+            summaries.append(summary)
+            products.update({row["sku"]: row for row in rows})
+            print(summary["sourceTitle"], summary["importedCount"], "/", summary["listedCount"], flush=True)
+    return {"source": START, "retrievedAt": datetime.now(timezone.utc).isoformat(),
+        "categories": sorted(summaries, key=lambda item: item["url"]),
+        "products": sorted(products.values(), key=lambda item: item["sku"])}
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("section", choices=["gajki", "shajby-koltsa", "shpilki", "shplinty-i-strubtsiny"])
+    parser.add_argument("--cache", type=Path, default=Path("/private/tmp/protolab-gvyntok-hardware-cache"))
+    args = parser.parse_args()
+    data = import_catalog(args.cache)
+    target = ROOT / f"src/catalog/data/gvyntok-{SECTION}.json"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")) + "\n")
+    report = {"source": data["source"], "retrievedAt": data["retrievedAt"], "categories": len(data["categories"]),
+        "listedProducts": sum(item["listedCount"] for item in data["categories"]),
+        "visibleProducts": sum(item["visibleCount"] or 0 for item in data["categories"]),
+        "navigationCountDifferences": [{"url": item["url"], "navigation": item["listedCount"], "results": item["visibleCount"]} for item in data["categories"] if item["listedCount"] != item["visibleCount"]],
+        "importedProducts": len(data["products"]), "pages": sum(len(item["pages"]) for item in data["categories"]),
+        "errors": [{"url": item["url"], "errors": item["errors"]} for item in data["categories"] if item["errors"]],
+        "unparsedSizes": [item for item in data["products"] if item["diameter"] is None]}
+    (ROOT / f"src/catalog/data/gvyntok-{SECTION}-coverage.json").write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n")
+    print(json.dumps({key: value for key, value in report.items() if key != "unparsedSizes"}, ensure_ascii=False))
+    if report["errors"]:
+        raise SystemExit("Catalogue extraction was incomplete; inspect the coverage report.")

@@ -1,0 +1,18 @@
+{
+  "source": "https://gvyntok.com/product-category/shpilki/",
+  "retrievedAt": "2026-09-13T17:50:00.281872+00:00",
+  "categories": 10,
+  "listedProducts": 221,
+  "visibleProducts": 186,
+  "navigationCountDifferences": [
+    {
+      "url": "https://gvyntok.com/product-category/shpilki/shpilka-metricheskaya-nerzhaveyushhaya-a2-70/",
+      "navigation": 59,
+      "results": 24
+    }
+  ],
+  "importedProducts": 186,
+  "pages": 10,
+  "errors": [],
+  "unparsedSizes": []
+}
