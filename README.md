@@ -13,7 +13,7 @@ npm ci
 npm run dev
 ```
 
-Open the local URL printed by Vite. The default development port is `8080`, with the application at `http://localhost:8080/ProtoLab-3D/`.
+Open the local URL printed by Vite. The default development port is `8080`, with the application at `http://localhost:8080/`.
 
 ```sh
 npm run typecheck
@@ -22,7 +22,7 @@ npm run build
 npm run preview
 ```
 
-The production output is `dist/`. Vite uses the explicit base `/ProtoLab-3D/` for the GitHub Pages repository path, including local development and reference images. The GitHub Actions Pages workflow builds and uploads this directory; enable **Settings → Pages → Source → GitHub Actions** in the repository.
+The production output is `dist/`. Vite uses `/` as the base for the custom domain `https://protolab.defencore.com/`, including JavaScript, styles and reference images. The GitHub Actions Pages workflow builds and uploads this directory; enable **Settings → Pages → Source → GitHub Actions** and set the custom domain in the repository. Deploying instead to a repository URL such as `https://defencore.github.io/ProtoLab-3D/` requires changing the Vite base to `/ProtoLab-3D/` before rebuilding.
 
 ## Working with parts
 

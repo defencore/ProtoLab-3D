@@ -4,7 +4,7 @@ import { partModulesPlugin } from './scripts/part-modules/vite-plugin';
 
 export default defineConfig({
   plugins: [partModulesPlugin(), react()],
-  base: '/ProtoLab-3D/',
+  base: '/',
   build: {
     rollupOptions: {
       output: {
