@@ -6,13 +6,18 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      full_tests:
+        description: Run all geometry tests even when an exact successful result is cached
+        type: boolean
+        default: false
 
 permissions:
   contents: read
 
 concurrency:
   group: pages-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -27,8 +32,46 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Check TypeScript and test contracts
+        run: npm run typecheck:tests
+      - name: Check all part packages and presets
+        run: npm run parts:check
+      - name: Fingerprint test inputs
+        id: test-inputs
+        run: node scripts/ci-test-key.mjs --github-output
+      - name: Restore exact successful test result
+        id: test-cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/ci-tests/passed
+          key: geometry-tests-v1-${{ steps.test-inputs.outputs.key }}
       - name: Verify geometry and generators
+        if: inputs.full_tests || steps.test-cache.outputs.cache-hit != 'true'
         run: npm test
+      - name: Record successful test result
+        if: success() && (inputs.full_tests || steps.test-cache.outputs.cache-hit != 'true')
+        env:
+          TEST_KEY: ${{ steps.test-inputs.outputs.key }}
+        run: |
+          mkdir -p .cache/ci-tests
+          printf '%s\n' "$TEST_KEY" > .cache/ci-tests/passed
+      - name: Cache successful test result
+        if: success() && github.event_name != 'pull_request' && steps.test-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/ci-tests/passed
+          key: geometry-tests-v1-${{ steps.test-inputs.outputs.key }}
+      - name: Explain test verification
+        env:
+          CACHE_HIT: ${{ steps.test-cache.outputs.cache-hit }}
+          FORCE_TESTS: ${{ inputs.full_tests }}
+        run: |
+          if [ "$CACHE_HIT" = "true" ] && [ "$FORCE_TESTS" != "true" ]; then
+            echo 'Full geometry suite: reused an exact successful result for unchanged test inputs and Node runtime.' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'Full geometry suite: executed and passed for these test inputs and Node runtime.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo 'TypeScript, package validation and the production build run on every deployment.' >> "$GITHUB_STEP_SUMMARY"
       - name: Build static app
         run: npm run build
       - name: Configure Pages

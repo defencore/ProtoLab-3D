@@ -4,6 +4,7 @@ dist/
 .DS_Store
 screenshots/
 test-results/
+.cache/ci-tests/
 
 __pycache__/
 *.pyc
