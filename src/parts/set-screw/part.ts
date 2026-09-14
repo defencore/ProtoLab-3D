@@ -3,6 +3,9 @@ import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
 
 import type { Parameters, PartDefinition, Preset } from '../../core/types';
+import { Mesh, MeshStandardMaterial } from 'three';
+import { numberParameter } from '../../core/geometry';
+import { din915ReferenceFiles } from './lib/catalog/din915';
 import {
   buildFastenerGeometry,
   fastenerDimensions,
@@ -30,6 +33,8 @@ const defaults: Parameters = {
   tip: 'cone',
   tipLength: 1.25,
   tipDiameter: 0,
+  dogShoulderLength: 0,
+  finish: 'plain',
 };
 
 const part: PartDefinition = {
@@ -49,6 +54,9 @@ const part: PartDefinition = {
     'DIN 913',
     'DIN 914',
     'DIN 915',
+    'DIN915',
+    '12.9',
+    'black steel',
     'ISO 4027',
     'cone point',
     'cup point',
@@ -57,18 +65,58 @@ const part: PartDefinition = {
     'M2.5',
     'shaft collar',
   ],
-  parameters: fastenerParameters(true),
+  parameters: [
+    ...fastenerParameters(true),
+    {
+      ...numberParameter(
+        'dogShoulderLength',
+        'Dog point shoulder chamfer',
+        'a',
+        'Point',
+        0,
+        10,
+        0.05,
+      ),
+      visibleWhen: (p) => p.tip === 'dog',
+      description:
+        'Axial transition after the cylindrical point. Added to the dog cylinder length within overall L; the source does not specify this chamfer.',
+    },
+    {
+      key: 'finish',
+      label: 'Display finish',
+      type: 'select',
+      group: 'Appearance',
+      options: [
+        { value: 'plain', label: 'Plain metal' },
+        { value: 'black', label: 'Black steel' },
+      ],
+      description:
+        'Display color only. The listed material grade is retained in reference specifications.',
+    },
+  ],
   presetMatchKeys: ['diameter', 'drive', 'tip'],
   defaults,
   presets: modulePresets,
   validate: (p) => validateFastener(p, true),
   updateParameters: (p, changedKey) => updateFastenerParameters(p, changedKey, true),
-  buildGeometry: (p) => buildFastenerGeometry(p, true),
-  python: (p) => fastenerPython(p, true),
+  buildGeometry(p) {
+    const model = buildFastenerGeometry(p, true);
+    if (p.finish === 'black')
+      model.traverse((object) => {
+        if (object instanceof Mesh && object.material instanceof MeshStandardMaterial)
+          object.material.color.set(0x34363b);
+      });
+    return model;
+  },
+  python: (p) =>
+    fastenerPython(p, true) +
+    (p.finish === 'black' ? '\ncomponent_colors = [(0.204, 0.212, 0.231)]' : ''),
   dimensions: (p) => fastenerDimensions(p, true),
   notes:
-    'Prototype reference, not a certified DIN 914 / ISO 4027 fastener. M2.5 × 8 uses the requested cone-point format, 0.45 mm pitch and a 1.3 mm hex socket. Material grade is not modeled. The thread is a truncated single-start 60° reference with no fit tolerances; cross and six-lobe drive forms are dimensional approximations. Overall length includes the point. Cup recesses are conical.',
+    'Prototype reference, not a certified fastener. M2.5 × 8 uses the requested DIN 914 cone-point format. DIN 915 black steel references retain the supplied M2–M16 dimension rows and stated grade 12.9. Their overall lengths and shoulder chamfers are editable prototype choices; the image supplies no stock lengths. Socket nominal sizes and printed tolerance intervals are retained separately, including source inconsistencies. Material strength is not modeled. The thread is a truncated single-start 60° reference with no fit tolerances. Overall length includes the point and its shoulder transition. Cup recesses are conical.',
   sources: [
+    { label: 'User-supplied DIN 915 dimension table', url: din915ReferenceFiles.dimensions },
+    { label: 'User-supplied DIN 915 black steel example', url: din915ReferenceFiles.photo },
     {
       label: 'Gvyntok cone-point set-screw dimensional grid',
       url: 'https://gvyntok.com/wp-content/uploads/2024/06/040-260-001.pdf',

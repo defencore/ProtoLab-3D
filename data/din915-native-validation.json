@@ -1,0 +1,86 @@
+{
+  "checkedAt": "2026-09-14T02:04:28.734716+00:00",
+  "freecadVersion": [
+    "1",
+    "0",
+    "2",
+    "39319 (Git)",
+    "https://github.com/FreeCAD/FreeCAD",
+    "2025/08/05 20:19:07",
+    "(HEAD detached at 1.0.2)",
+    "256fc7eff3379911ab5daf88e10182c509aa8052"
+  ],
+  "casesRequested": 4,
+  "passed": 4,
+  "failed": 0,
+  "cases": [
+    {
+      "id": "reference-din915-m2",
+      "codeSha256": "dc970c51870b26437484c129113df6318717959ae838f207ed7b03a712877068",
+      "passed": true,
+      "dimensions": [
+        1.9999958400859286,
+        1.99999474921474,
+        6.000000000000001
+      ],
+      "volume": 11.748165991244877,
+      "relativePreviewVolumeError": 0.001147716559918627,
+      "pointProbes": 48,
+      "socketProbes": 14,
+      "shoulderProbes": 2,
+      "stepRoundtrip": true,
+      "durationSeconds": 2.2306867910083383
+    },
+    {
+      "id": "reference-din915-m2.5",
+      "codeSha256": "02f9945890f9196a36f04fb9d773ee0befc6fb4d7efa4e18b1f49c8425b563ff",
+      "passed": true,
+      "dimensions": [
+        2.4999931574947545,
+        2.4999934629955405,
+        8.0
+      ],
+      "volume": 25.890217933398354,
+      "relativePreviewVolumeError": 0.0010701125780395331,
+      "pointProbes": 48,
+      "socketProbes": 14,
+      "shoulderProbes": 2,
+      "stepRoundtrip": true,
+      "durationSeconds": 2.647479542007204
+    },
+    {
+      "id": "reference-din915-m6",
+      "codeSha256": "da2eca4b8ff7abac40bfb5e2ff44caf5a376f35b34e51756ac23d738668e9fd2",
+      "passed": true,
+      "dimensions": [
+        5.99999974675121,
+        5.999990497946376,
+        16.00000000000001
+      ],
+      "volume": 313.8068289013597,
+      "relativePreviewVolumeError": 0.0010142487389965624,
+      "pointProbes": 48,
+      "socketProbes": 14,
+      "shoulderProbes": 2,
+      "stepRoundtrip": true,
+      "durationSeconds": 2.63459808396874
+    },
+    {
+      "id": "reference-din915-m16",
+      "codeSha256": "840d2928fdf3689ac937825f532e459e911ccdbe8a299bc972319f07c654ba9a",
+      "passed": true,
+      "dimensions": [
+        15.99999198585584,
+        15.99998185839087,
+        40.0
+      ],
+      "volume": 5989.5375789190075,
+      "relativePreviewVolumeError": 0.0009205007450940882,
+      "pointProbes": 48,
+      "socketProbes": 14,
+      "shoulderProbes": 2,
+      "stepRoundtrip": true,
+      "durationSeconds": 4.989246708981227
+    }
+  ]
+}

@@ -118,6 +118,8 @@ export function fastenerParameters(headless: boolean): ParameterDefinition[] {
     {
       ...numberParameter('tipLength', 'Point / recess length', 'c', 'Point', 0.05, 50, 0.05),
       visibleWhen: (p) => p.tip !== 'flat',
+      description:
+        'For a dog point, this is cylindrical projection Z; its shoulder chamfer follows after Z.',
     },
     {
       ...numberParameter('tipDiameter', 'End / cup diameter', 'dp', 'Point', 0, 80, 0.05),
@@ -318,7 +320,8 @@ export function validateFastener(p: Parameters, headless = false): string[] {
   if (p.tip !== 'flat') {
     const tipLength = n(p, 'tipLength'),
       tipR = n(p, 'tipDiameter') / 2;
-    if (tipLength >= v.shaftLength - 0.1)
+    const shoulder = p.tip === 'dog' ? n(p, 'dogShoulderLength') : 0;
+    if (tipLength + shoulder >= v.shaftLength - 0.1)
       errors.push('The point must leave at least 0.1 mm of straight body.');
     const endCore = v.threaded && v.start < tipLength ? v.rootR : v.smoothR;
     if (tipR >= endCore)
@@ -347,7 +350,11 @@ export function validateFastener(p: Parameters, headless = false): string[] {
   if (!Number.isInteger(n(p, 'driveSides'))) errors.push('Socket sides must be an integer.');
   if (p.drive !== 'none') {
     const depth = n(p, 'driveDepth');
-    const maxDepth = headless ? v.shaftLength - (p.tip === 'flat' ? 0 : n(p, 'tipLength')) : v.h;
+    const maxDepth = headless
+      ? v.shaftLength -
+        (p.tip === 'flat' ? 0 : n(p, 'tipLength')) -
+        (p.tip === 'dog' ? n(p, 'dogShoulderLength') : 0)
+      : v.h;
     if (depth >= maxDepth - 0.05)
       errors.push('The drive must leave at least 0.05 mm of material above the body or point.');
     if ((p.drive === 'cross' || p.drive === 'slot') && n(p, 'driveThickness') >= n(p, 'driveWidth'))
@@ -476,6 +483,7 @@ function ringMesh(rings: RadialRing[], angles: number[]): THREE.BufferGeometry {
 export function buildFastenerGeometry(p: Parameters, headless = false): THREE.Group {
   const v = fastenerValues(p, headless);
   const tipLength = p.tip === 'flat' || p.tip === 'cup' ? 0 : n(p, 'tipLength');
+  const shoulderLength = p.tip === 'dog' ? n(p, 'dogShoulderLength') : 0;
   const tipR = n(p, 'tipDiameter') / 2;
   const angles = Array.from({ length: 96 }, (_, i) => (i * TAU) / 96);
   const drivePoints = drivePolygon(p);
@@ -511,6 +519,8 @@ export function buildFastenerGeometry(p: Parameters, headless = false): THREE.Gr
       const envelope = p.tip === 'dog' ? tipR : tipR + ((tipOuter - tipR) * z) / tipLength;
       result = Math.min(result, envelope);
     }
+    if (shoulderLength > 0 && z > tipLength && z <= tipLength + shoulderLength)
+      result = Math.min(result, tipR + ((tipOuter - tipR) * (z - tipLength)) / shoulderLength);
     return result;
   };
   const rings: RadialRing[] = [{ z: p.tip === 'cup' ? n(p, 'tipLength') : 0, radius: 0 }];
@@ -532,11 +542,17 @@ export function buildFastenerGeometry(p: Parameters, headless = false): THREE.Gr
       (_, i) => region.start + ((region.end - region.start) * i) / count,
     );
     if (tipLength > region.start && tipLength < region.end) heights.push(tipLength);
+    if (
+      shoulderLength > 0 &&
+      tipLength + shoulderLength > region.start &&
+      tipLength + shoulderLength < region.end
+    )
+      heights.push(tipLength + shoulderLength);
     heights.sort((a, b) => a - b);
     for (const z of heights.filter((z, i) => i === 0 || z - heights[i - 1] > 1e-8)) {
       if (z === 0 && tipLength > 0 && tipR === 0) continue;
       rings.push({ z, radius: (a) => clippedRadius(z, a, region.kind) });
-      if (p.tip === 'dog' && Math.abs(z - tipLength) < 1e-8)
+      if (p.tip === 'dog' && shoulderLength === 0 && Math.abs(z - tipLength) < 1e-8)
         rings.push({ z, radius: (a) => clippedRadius(z, a, region.kind, true) });
     }
   }
@@ -618,14 +634,19 @@ export function fastenerPython(p: Parameters, headless = false): string {
   if (p.tip !== 'flat' && p.tip !== 'cup') {
     const c = n(p, 'tipLength'),
       rt = n(p, 'tipDiameter') / 2;
+    const shoulder = p.tip === 'dog' ? n(p, 'dogShoulderLength') : 0;
     const outer = v.threaded && v.start === 0 ? v.r : v.smoothR;
     lines.push(
       p.tip === 'dog'
         ? `point_envelope = Part.makeCylinder(${num(rt)}, ${num(c)})`
         : `point_envelope = Part.makeCone(${num(rt)}, ${num(outer)}, ${num(c)})`,
     );
+    if (shoulder > 0)
+      lines.push(
+        `point_envelope = point_envelope.fuse(Part.makeCone(${num(rt)}, ${num(outer)}, ${num(shoulder)}, App.Vector(0, 0, ${num(c)})))`,
+      );
     lines.push(
-      `point_envelope = point_envelope.fuse(Part.makeCylinder(${num(Math.max(v.r, v.smoothR) + 0.1)}, ${num(v.shaftLength - c)}, App.Vector(0, 0, ${num(c)})))`,
+      `point_envelope = point_envelope.fuse(Part.makeCylinder(${num(Math.max(v.r, v.smoothR) + 0.1)}, ${num(v.shaftLength - c - shoulder)}, App.Vector(0, 0, ${num(c + shoulder)})))`,
       'shape = shape.common(point_envelope)',
     );
   }
