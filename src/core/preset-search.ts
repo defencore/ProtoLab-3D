@@ -160,6 +160,13 @@ export function getFilterFields(parts: PartDefinition[]): PresetFilterField[] {
 
 export function seedCurrentFilters(part: PartDefinition, parameters: Parameters): PresetFilters {
   const filters = emptyPresetFilters(part);
+  const currentPreset =
+    part.presets.find((preset) => preset.catalog && preset.parameters === parameters) ??
+    part.presets.find(
+      (preset) =>
+        preset.catalog &&
+        part.parameters.every((field) => preset.parameters[field.key] === parameters[field.key]),
+    );
   const keys =
     part.presetMatchKeys ??
     part.parameters
@@ -169,6 +176,15 @@ export function seedCurrentFilters(part: PartDefinition, parameters: Parameters)
   for (const field of part.parameters) {
     if (field.filterable === false) continue;
     if (!keys.includes(field.key) || (field.visibleWhen && !field.visibleWhen(parameters)))
+      continue;
+    // An exact catalog configuration also contains editable prototype dimensions.
+    // Do not turn those assumptions into automatic catalog requirements.
+    if (
+      currentPreset?.catalog &&
+      field.type === 'number' &&
+      !currentPreset.catalog.verifiedParameters.includes(field.key) &&
+      !getPresetParameterRange(currentPreset, field.key)
+    )
       continue;
     const value = parameters[field.key];
     if (field.type === 'number' && typeof value === 'number' && Number.isFinite(value)) {

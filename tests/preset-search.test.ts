@@ -309,6 +309,30 @@ test('current-parameter matching is opt-in and ignores hidden or invalid fields'
   );
 });
 
+test('exact catalog matching skips assumed dimensions while custom matching preserves requested values', () => {
+  const preset: Preset = {
+    id: 'nominal-only',
+    name: 'Nominal bore reference',
+    description: 'Width is an editable prototype assumption.',
+    parameters: { bore: 20, width: 14 },
+    catalog: { ...source, verifiedParameters: ['bore'] },
+  };
+  const configurable = {
+    ...part('reference', [bore, width], [preset]),
+    defaults: { ...preset.parameters },
+    presetMatchKeys: ['bore', 'width'],
+  };
+  for (const values of [preset.parameters, { ...preset.parameters }]) {
+    const filters = seedCurrentFilters(configurable, values);
+    assert.deepEqual(filters.parameters[boreId], { min: '20', max: '20' });
+    assert.equal(filters.parameters[fieldId(width)], undefined);
+    assert.equal(filterPresets(buildPresetIndex([configurable]), filters).items[0].preset, preset);
+  }
+  const custom = seedCurrentFilters(configurable, { ...preset.parameters, width: 16 });
+  assert.deepEqual(custom.parameters[fieldId(width)], { min: '16', max: '16' });
+  assert.equal(filterPresets(buildPresetIndex([configurable]), custom).items.length, 0);
+});
+
 test('a hidden conditional parameter never matches an inactive preset feature', () => {
   const socket: ParameterDefinition = {
     key: 'socketDepth',
