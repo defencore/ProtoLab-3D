@@ -105,18 +105,24 @@ export function reconcileQuickPickFilters(
   part: PartDefinition,
   parameters: Parameters,
   filters: QuickPickFilters,
+  presetId: string,
 ): QuickPickFilters {
   const fields = quickPickFields(part);
-  const entries = Object.entries(filters).filter(([key]) =>
-    fields.some((field) => field.key === key),
+  const selected = part.presets.find((preset) => preset.id === presetId && preset.catalog);
+  const entries = Object.entries(filters).filter(
+    ([key, value]) =>
+      fields.some((field) => field.key === key) &&
+      (!value || !selected || selected.catalog!.verifiedParameters.includes(key)),
   );
   if (entries.every(([key, value]) => !value || String(parameters[key]) === value))
     return entries.length === Object.keys(filters).length ? filters : Object.fromEntries(entries);
-  const matchingPreset = part.presets.find(
-    (preset) =>
-      preset.catalog &&
-      fields.every((field) => preset.parameters[field.key] === parameters[field.key]),
-  );
+  const matchingPreset =
+    selected ??
+    part.presets.find(
+      (preset) =>
+        preset.catalog &&
+        fields.every((field) => preset.parameters[field.key] === parameters[field.key]),
+    );
   const next = Object.fromEntries(
     fields
       .filter((field) => matchingPreset?.catalog?.verifiedParameters.includes(field.key))

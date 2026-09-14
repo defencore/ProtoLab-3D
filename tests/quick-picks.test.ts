@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { parts } from '../src/parts';
 import { validateParameters } from '../src/core/validation';
+import type { QuickPickFilters } from '../src/core/quick-picks';
 import {
   closestQuickPick,
   initialQuickPickFilters,
@@ -49,6 +50,7 @@ test('catalog selectors come from each module and do not depend on its name or c
       independent,
       { diameter: 3, drive: 'hex-socket' },
       { diameter: '3', length: '8' },
+      '',
     ),
     { diameter: '3' },
   );
@@ -126,17 +128,25 @@ test('nuts and ball screws expose their natural standard size choices', () => {
 test('external selections reconcile stale filters while progressive choices remain unset', () => {
   const chosen = quickPickMatches(bolt.presets, { diameter: '8', length: '30', head: 'hex' })[0];
   assert.ok(chosen);
-  const updated = reconcileQuickPickFilters(bolt, chosen.parameters, {
-    diameter: '2',
-    length: '8',
-  });
+  const updated = reconcileQuickPickFilters(
+    bolt,
+    chosen.parameters,
+    {
+      diameter: '2',
+      length: '8',
+    },
+    chosen.id,
+  );
   assert.equal(updated.diameter, '8');
   assert.equal(updated.length, '30');
   assert.ok(quickPickMatches(bolt.presets, updated).includes(chosen));
-  assert.deepEqual(reconcileQuickPickFilters(bolt, chosen.parameters, { diameter: '8' }), {
-    diameter: '8',
-  });
-  assert.deepEqual(reconcileQuickPickFilters(bolt, chosen.parameters, {}), {});
+  assert.deepEqual(
+    reconcileQuickPickFilters(bolt, chosen.parameters, { diameter: '8' }, chosen.id),
+    {
+      diameter: '8',
+    },
+  );
+  assert.deepEqual(reconcileQuickPickFilters(bolt, chosen.parameters, {}, chosen.id), {});
   assert.equal(hasCatalogQuickSize(bolt, chosen.parameters), true);
   assert.equal(hasCatalogQuickSize(bolt, { ...chosen.parameters, diameter: 6.3 }), false);
   assert.equal(hasCatalogQuickSize(bolt, { ...chosen.parameters, threadMode: 'envelope' }), true);
@@ -163,11 +173,51 @@ test('sourced ball screws keep catalog mode when assembly length is a prototype 
   )!;
   assert.ok(preset);
   assert.equal(hasCatalogQuickSize(screw, preset.parameters), true);
-  const filters = reconcileQuickPickFilters(screw, preset.parameters, {
-    family: 'SFK',
-    length: '100',
-  });
+  const filters = reconcileQuickPickFilters(
+    screw,
+    preset.parameters,
+    {
+      family: 'SFK',
+      length: '100',
+    },
+    preset.id,
+  );
   assert.equal(filters.family, 'SFU');
   assert.equal(filters.length, undefined);
   assert.ok(quickPickMatches(screw.presets, filters).includes(preset));
+});
+
+test('the selected DIN 915 reference retains its own source scope beside equal-size stock screws', () => {
+  const screw = parts.find((part) => part.id === 'set-screw')!;
+  const chosen = screw.presets.find((preset) => preset.id === 'reference-din915-m6')!;
+  assert.ok(
+    screw.presets.some(
+      (preset) =>
+        preset.id !== chosen.id &&
+        preset.parameters.diameter === 6 &&
+        preset.parameters.length === 16 &&
+        preset.parameters.tip === 'dog',
+    ),
+  );
+  const preceding: QuickPickFilters[] = [
+    { diameter: '2.5', length: '8' },
+    { diameter: '6', length: '16', tip: 'dog', drive: 'hex' },
+  ];
+  for (const before of preceding) {
+    const filters = reconcileQuickPickFilters(screw, chosen.parameters, before, chosen.id);
+    assert.equal(
+      filters.length,
+      undefined,
+      'Prototype length must not become a stock-length constraint',
+    );
+    assert.ok(
+      quickPickMatches(screw.presets, filters).includes(chosen),
+      'Selected reference remains visible',
+    );
+  }
+  const progressive = { diameter: '6' };
+  assert.deepEqual(
+    reconcileQuickPickFilters(screw, chosen.parameters, progressive, chosen.id),
+    progressive,
+  );
 });

@@ -29,8 +29,8 @@ export default function QuickPicks({ part, parameters, presetId, onSelect, onBro
   const pageCount = Math.max(1, Math.ceil(matches.length / 4));
   const visiblePage = Math.min(page, pageCount - 1);
   useEffect(() => {
-    setFilters((current) => reconcileQuickPickFilters(part, parameters, current));
-  }, [part, parameters]);
+    setFilters((current) => reconcileQuickPickFilters(part, parameters, current, presetId));
+  }, [part, parameters, presetId]);
   useEffect(() => {
     const selectedIndex = matches.findIndex((preset) => preset.id === presetId);
     if (selectedIndex >= 0) setPage(Math.floor(selectedIndex / 4));
