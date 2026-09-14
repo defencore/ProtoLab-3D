@@ -70,6 +70,7 @@ The library uses independent part modules, including the requested bearing famil
 | Linear motion           | Ball screw assemblies and standalone nuts: SFK, SFU, SFS, SFE, DFU, SFI, DFI, SFH and SFY; machined ends and helical ball raceways                                    |
 | Linear motion           | Ball screw linear axis: six prototype presets with dual profile rails, moving table, fixed/floating bearing supports and cutaway view                                 |
 | Motion                  | D25 L30 jaw coupling with independent bores, clamp screws and elastomer spider; six dimensioned bevel gear pairs; miniature m0.5 pinions                              |
+| Servo linkages          | Single, double, cross, six-arm and disc horns; clamping arms; servo spline gears; pushrod, female/male threaded and cable clevis ends                                 |
 | Enclosures & structural | Open enclosure, L bracket and round spacer                                                                                                                            |
 
 Standard fastener selection starts with the available catalog thread and length sizes. **Custom dimensions** exposes thread pitch, handedness, coverage, start offset from the tip, length and smooth shoulder diameter. Choose a modeled helical thread, a smooth thread envelope or no thread. Countersunk nominal length includes the head; other headed fasteners use length under the head. Irrelevant fields disappear when a variant changes. Switching head or point type initializes sensible editable dimensions.
@@ -91,6 +92,8 @@ Additional source links remain under **Reference dimensions & sources** in each 
 An exact sourced configuration also embeds its designation, source URL and recorded dimensions as FreeCAD object properties. Editing a dimension removes that source attribution unless the complete configuration matches a catalog preset again.
 
 The eight supplied reference images are available from the relevant presets. The extension includes all 27 SFU table rows, 38 unique jaw-coupling bore pairs, four miniature spur pinions and all 12 bevel table rows arranged into six pairs. Ball screws have 131 nut configurations and 230 assembly presets, including 100–550 mm miniature shaft lengths. Two listing codes without a matching drawing, `SFK602` and `SFE3210`, remain explicitly unverified examples. See [ball screw coverage](docs/ball-screw-catalog.md) and [gear reference mapping](docs/reference-gears.md). Reference load ratings are read-only source specifications and do not certify edited models.
+
+The servo linkage extension adds 28 horn references, 16 servo gear presets (13 actual ServoCity catalog sizes and three prototype examples), and 24 clevis presets. Find them under **MOTION → SERVO LINKAGES**, or search for **servo**, **horn** or **clevis**. The 18 supplied images remain linked from the corresponding references. See [servo linkage coverage](docs/servo-linkages.md) for source dimensions, modeling limits and native FreeCAD verification.
 
 The [native validation report](data/reference-expansion-native-validation.json) records FreeCAD solid checks, STEP round trips, sampled clearances and preview comparisons for the reference expansion. Repeatable ball-screw checks are documented in the [validation guide](docs/ball-screw-catalog.md#repeating-native-validation).
 

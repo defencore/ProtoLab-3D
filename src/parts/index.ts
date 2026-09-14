@@ -71,9 +71,12 @@ import module67 from './ball-nut/index';
 import module68 from './ball-screw-axis/index';
 import module69 from './jaw-coupling/index';
 import module70 from './enclosure/index';
-import module71 from './l-bracket/index';
-import module72 from './spacer/index';
-import module73 from './wheel/index';
+import module71 from './servo-arm/index';
+import module72 from './servo-gear/index';
+import module73 from './clevis/index';
+import module74 from './l-bracket/index';
+import module75 from './spacer/index';
+import module76 from './wheel/index';
 
 export const parts = registerPartModules([
   module0,
@@ -150,4 +153,7 @@ export const parts = registerPartModules([
   module71,
   module72,
   module73,
+  module74,
+  module75,
+  module76,
 ]);

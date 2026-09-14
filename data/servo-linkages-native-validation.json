@@ -1,0 +1,464 @@
+{
+  "freecad": "1.0.2",
+  "caseCount": 76,
+  "allPassed": true,
+  "coverage": "All 68 presets, default states and clamping socket-side view. Representative STEP and FCStd round trips; independent component placement.",
+  "cases": [
+    {
+      "name": "servo-arm/default/assembled",
+      "passed": true,
+      "components": 1,
+      "roundTrip": true
+    },
+    {
+      "name": "servo-arm/default/socket-up",
+      "passed": true,
+      "components": 1,
+      "roundTrip": true
+    },
+    {
+      "name": "servo-arm/nylon-double-58",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/nylon-single-36",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/nylon-single-30",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/nylon-single-42",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/aluminium-25t-single-28",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/aluminium-25t-double-47",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/pdrs60-15t",
+      "passed": true,
+      "components": 2,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/micro-arm-25-25",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/q-xa15-cross",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/cross-inch-reference",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/spline-set-23t-single",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/spline-set-23t-double",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/spline-set-24t-single",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/spline-set-24t-double",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/spline-set-25t-single",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/spline-set-25t-double",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/6mm-double-39-7",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/6mm-disc-21-6",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/6mm-cross-31-7",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/6mm-six-31-7",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/5mm-double-long-58-5",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/5mm-double-30-1",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/5mm-single-18-7",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/5mm-disc-18-7",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/4mm-double-28-9",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/4mm-single-17-9",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/4mm-cross-27-8",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/25t-clamping-52",
+      "passed": true,
+      "components": 2,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-arm/clamp/socket-up",
+      "passed": true,
+      "components": 2,
+      "roundTrip": true
+    },
+    {
+      "name": "servo-gear/default/default",
+      "passed": true,
+      "components": 1,
+      "roundTrip": true
+    },
+    {
+      "name": "servo-gear/default/socket-up",
+      "passed": true,
+      "components": 1,
+      "roundTrip": true
+    },
+    {
+      "name": "servo-gear/2305-0024-0012",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-gear/2305-0024-0015",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-gear/2305-0024-0020",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-gear/2305-0024-0024",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-gear/2305-0024-0030",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-gear/2305-0024-0040",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-gear/2305-0025-0012",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-gear/2305-0025-0015",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-gear/2305-0025-0020",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-gear/2305-0025-0024",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-gear/2305-0025-0030",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-gear/2305-0025-0040",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-gear/2305-0025-0048",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-gear/example-23t",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-gear/example-15t-hub",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "servo-gear/example-through-spline",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/default/assembled",
+      "passed": true,
+      "components": 5,
+      "roundTrip": true
+    },
+    {
+      "name": "clevis/default/exploded",
+      "passed": true,
+      "components": 5,
+      "roundTrip": true
+    },
+    {
+      "name": "clevis/default/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": true
+    },
+    {
+      "name": "clevis/reference-pushrod-2mm-25x7",
+      "passed": true,
+      "components": 5,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/reference-cable-1p5",
+      "passed": true,
+      "components": 5,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/reference-cable-2",
+      "passed": true,
+      "components": 5,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/reference-cable-3",
+      "passed": true,
+      "components": 5,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/reference-cable-4",
+      "passed": true,
+      "components": 5,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/reference-cable-5",
+      "passed": true,
+      "components": 5,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/reference-cable-6",
+      "passed": true,
+      "components": 5,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/reference-cable-8",
+      "passed": true,
+      "components": 5,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/reference-cable-10",
+      "passed": true,
+      "components": 5,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/reference-cable-12",
+      "passed": true,
+      "components": 5,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/example-female-threaded-m2",
+      "passed": true,
+      "components": 3,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/example-male-threaded-m2",
+      "passed": true,
+      "components": 3,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/example-female-threaded-m3",
+      "passed": true,
+      "components": 3,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/example-male-threaded-m3",
+      "passed": true,
+      "components": 3,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/example-female-threaded-m4",
+      "passed": true,
+      "components": 3,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/example-male-threaded-m4",
+      "passed": true,
+      "components": 3,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/example-female-threaded-m5",
+      "passed": true,
+      "components": 3,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/example-male-threaded-m5",
+      "passed": true,
+      "components": 3,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/example-female-threaded-m6",
+      "passed": true,
+      "components": 3,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/example-male-threaded-m6",
+      "passed": true,
+      "components": 3,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/example-female-threaded-m8",
+      "passed": true,
+      "components": 3,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/example-male-threaded-m8",
+      "passed": true,
+      "components": 3,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/example-female-threaded-m12",
+      "passed": true,
+      "components": 3,
+      "roundTrip": false
+    },
+    {
+      "name": "clevis/example-male-threaded-m12",
+      "passed": true,
+      "components": 3,
+      "roundTrip": false
+    }
+  ]
+}

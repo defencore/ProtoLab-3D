@@ -1,0 +1,185 @@
+import type { ParameterDefinition, Parameters, PartDefinition } from '../../core/types';
+import { numberParameter } from '../../core/geometry';
+
+export const defaults: Parameters = {
+  form: 'single',
+  armLength: 28,
+  perpendicularLength: 36,
+  armWidth: 8,
+  tipWidth: 7,
+  plateThickness: 3,
+  hubDiameter: 9.5,
+  hubHeight: 7.5,
+  splineTeeth: 25,
+  splineMajorDiameter: 5.9,
+  splineMinorDiameter: 5.4,
+  socketDepth: 4,
+  screwBore: 3,
+  counterboreDiameter: 5.8,
+  counterboreDepth: 1.5,
+  holeCount: 3,
+  firstHoleRadius: 11,
+  holeSpacing: 4,
+  holeDiameter: 2.5,
+  perpendicularHoleCount: 3,
+  perpendicularFirstHole: 8,
+  perpendicularHoleSpacing: 3,
+  discHoleCount: 8,
+  discPitchDiameter: 15,
+  clamp: false,
+  clampExtension: 5,
+  clampWidth: 9,
+  clampSlit: 0.8,
+  clampScrewDiameter: 2.5,
+  showClampScrew: true,
+  finish: 'red',
+};
+const numeric = (
+  key: string,
+  label: string,
+  group: string,
+  min: number,
+  max: number,
+  step = 0.1,
+): ParameterDefinition => numberParameter(key, label, '', group, min, max, step);
+const count = (
+  key: string,
+  label: string,
+  group: string,
+  min: number,
+  max: number,
+): ParameterDefinition => ({ ...numeric(key, label, group, min, max, 1), unit: '' });
+const arm = (p: Parameters) => p.form !== 'disc';
+const cross = (p: Parameters) => p.form === 'cross';
+const clamp = (p: Parameters) => Boolean(p.clamp);
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'form',
+    label: 'Horn shape',
+    type: 'select',
+    group: 'Shape',
+    options: [
+      { value: 'single', label: 'Single arm' },
+      { value: 'double', label: 'Double arm' },
+      { value: 'cross', label: 'Cross / four arms' },
+      { value: 'six', label: 'Six arms' },
+      { value: 'disc', label: 'Circular disc' },
+    ],
+  },
+  numeric('armLength', 'Overall length / X span', 'Shape', 8, 250),
+  {
+    ...numeric('perpendicularLength', 'Perpendicular overall span', 'Shape', 8, 250),
+    visibleWhen: cross,
+  },
+  { ...numeric('armWidth', 'Arm root width', 'Shape', 2, 40), visibleWhen: arm },
+  { ...numeric('tipWidth', 'Rounded tip width', 'Shape', 2, 40), visibleWhen: arm },
+  numeric('plateThickness', 'Arm / disc thickness', 'Shape', 0.5, 20),
+  numeric('hubDiameter', 'Hub outside diameter', 'Hub and spline fit', 4, 60),
+  numeric('hubHeight', 'Total hub height', 'Hub and spline fit', 1, 30),
+  {
+    ...count('splineTeeth', 'Socket tooth count', 'Hub and spline fit', 10, 60),
+    description:
+      'Tooth count alone does not establish compatibility. Set both diameters and check your servo.',
+  },
+  numeric('splineMajorDiameter', 'Socket major diameter', 'Hub and spline fit', 2, 30, 0.01),
+  numeric('splineMinorDiameter', 'Socket minor diameter', 'Hub and spline fit', 1, 29, 0.01),
+  numeric('socketDepth', 'Socket depth from underside', 'Hub and spline fit', 0.5, 25),
+  numeric('screwBore', 'Central screw through bore', 'Hub and spline fit', 0.8, 15, 0.05),
+  numeric(
+    'counterboreDiameter',
+    'Top screw counterbore diameter',
+    'Hub and spline fit',
+    1,
+    30,
+    0.05,
+  ),
+  numeric('counterboreDepth', 'Top counterbore depth', 'Hub and spline fit', 0, 15, 0.05),
+  { ...count('holeCount', 'Holes per arm', 'Linkage holes', 1, 12), visibleWhen: arm },
+  {
+    ...numeric(
+      'firstHoleRadius',
+      'First hole distance from servo axis',
+      'Linkage holes',
+      2,
+      150,
+      0.05,
+    ),
+    visibleWhen: arm,
+  },
+  { ...numeric('holeSpacing', 'Hole spacing', 'Linkage holes', 1, 30, 0.05), visibleWhen: arm },
+  numeric('holeDiameter', 'Linkage hole diameter', 'Linkage holes', 0.5, 12, 0.05),
+  {
+    ...count('perpendicularHoleCount', 'Holes per perpendicular arm', 'Perpendicular holes', 1, 12),
+    visibleWhen: cross,
+  },
+  {
+    ...numeric(
+      'perpendicularFirstHole',
+      'Perpendicular first hole radius',
+      'Perpendicular holes',
+      2,
+      150,
+      0.05,
+    ),
+    visibleWhen: cross,
+  },
+  {
+    ...numeric(
+      'perpendicularHoleSpacing',
+      'Perpendicular hole spacing',
+      'Perpendicular holes',
+      1,
+      30,
+      0.05,
+    ),
+    visibleWhen: cross,
+  },
+  {
+    ...count('discHoleCount', 'Holes around disc', 'Linkage holes', 3, 24),
+    visibleWhen: (p) => p.form === 'disc',
+  },
+  {
+    ...numeric('discPitchDiameter', 'Disc hole pitch diameter', 'Linkage holes', 4, 200),
+    visibleWhen: (p) => p.form === 'disc',
+  },
+  {
+    key: 'clamp',
+    label: 'Split clamping hub',
+    group: 'Clamp',
+    type: 'boolean',
+    visibleWhen: (p) => p.form === 'single',
+  },
+  {
+    ...numeric('clampExtension', 'Clamp extension behind hub', 'Clamp', 2, 25),
+    visibleWhen: clamp,
+  },
+  { ...numeric('clampWidth', 'Clamp ear width', 'Clamp', 3, 30), visibleWhen: clamp },
+  { ...numeric('clampSlit', 'Clamp slit width', 'Clamp', 0.3, 3), visibleWhen: clamp },
+  { ...numeric('clampScrewDiameter', 'Clamp screw diameter', 'Clamp', 1.2, 8), visibleWhen: clamp },
+  {
+    key: 'showClampScrew',
+    label: 'Include removable clamp screw',
+    group: 'Clamp',
+    type: 'boolean',
+    visibleWhen: clamp,
+  },
+  {
+    key: 'finish',
+    label: 'Preview finish',
+    group: 'Appearance',
+    type: 'select',
+    filterable: false,
+    options: [
+      { value: 'red', label: 'Red anodized' },
+      { value: 'blue', label: 'Blue anodized' },
+      { value: 'silver', label: 'Aluminium' },
+      { value: 'black', label: 'Black nylon' },
+      { value: 'white', label: 'White nylon' },
+    ],
+  },
+];
+export const catalogSelection: NonNullable<PartDefinition['catalogSelection']> = [
+  { key: 'splineTeeth', label: 'Spline teeth' },
+  { key: 'form', label: 'Horn shape' },
+  { key: 'armLength', label: 'Overall length' },
+];

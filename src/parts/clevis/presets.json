@@ -1,0 +1,782 @@
+[
+  {
+    "id": "reference-pushrod-2mm-25x7",
+    "name": "Pushrod fork \u00b7 2 mm rod \u00b7 25 \u00d7 7 mm",
+    "description": "Supplied dimensional reference. Fork depth, pin setback and hardware envelopes remain editable assumptions.",
+    "parameters": {
+      "variant": "pushrod",
+      "length": 25,
+      "bodyDiameter": 7,
+      "forkGap": 3,
+      "forkDepth": 10,
+      "pinDiameter": 2.5,
+      "pinOffset": 3.5,
+      "rodDiameter": 2,
+      "rodDepth": 15,
+      "threadPitch": 0.5,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 12,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 5,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "red"
+    },
+    "catalog": {
+      "designation": "25 \u00d7 7 mm pushrod clevis",
+      "sourceName": "User-supplied pushrod clevis drawing",
+      "sourceUrl": "references/clevis-pushrod-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": [
+        "length",
+        "bodyDiameter",
+        "forkGap",
+        "rodDiameter",
+        "pinDiameter",
+        "setScrewDiameter",
+        "setScrewCount"
+      ]
+    }
+  },
+  {
+    "id": "reference-cable-1p5",
+    "name": "Cable fork terminal \u00b7 1.5 mm cable",
+    "description": "Only the cable bore option is established by the supplied listing. Fork, barrel and fasteners are scalable prototype geometry.",
+    "parameters": {
+      "variant": "cable",
+      "length": 32,
+      "bodyDiameter": 8,
+      "forkGap": 3,
+      "forkDepth": 12,
+      "pinDiameter": 2.5,
+      "pinOffset": 4,
+      "rodDiameter": 1.5,
+      "rodDepth": 20,
+      "threadPitch": 0.5,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 12,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 6.4,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    },
+    "catalog": {
+      "designation": "Cable fork \u00b7 1.5 mm",
+      "sourceName": "User-supplied cable fork terminal listing",
+      "sourceUrl": "references/clevis-cable-terminal.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["rodDiameter"],
+      "specifications": [
+        {
+          "label": "Reference construction",
+          "value": "Fork jaw with two radial grub screws; other dimensions are unspecified."
+        }
+      ]
+    }
+  },
+  {
+    "id": "reference-cable-2",
+    "name": "Cable fork terminal \u00b7 2 mm cable",
+    "description": "Only the cable bore option is established by the supplied listing. Fork, barrel and fasteners are scalable prototype geometry.",
+    "parameters": {
+      "variant": "cable",
+      "length": 32,
+      "bodyDiameter": 8,
+      "forkGap": 3,
+      "forkDepth": 12,
+      "pinDiameter": 2.5,
+      "pinOffset": 4,
+      "rodDiameter": 2,
+      "rodDepth": 20,
+      "threadPitch": 0.5,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 12,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 6.4,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    },
+    "catalog": {
+      "designation": "Cable fork \u00b7 2 mm",
+      "sourceName": "User-supplied cable fork terminal listing",
+      "sourceUrl": "references/clevis-cable-terminal.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["rodDiameter"],
+      "specifications": [
+        {
+          "label": "Reference construction",
+          "value": "Fork jaw with two radial grub screws; other dimensions are unspecified."
+        }
+      ]
+    }
+  },
+  {
+    "id": "reference-cable-3",
+    "name": "Cable fork terminal \u00b7 3 mm cable",
+    "description": "Only the cable bore option is established by the supplied listing. Fork, barrel and fasteners are scalable prototype geometry.",
+    "parameters": {
+      "variant": "cable",
+      "length": 36,
+      "bodyDiameter": 9,
+      "forkGap": 3,
+      "forkDepth": 13.5,
+      "pinDiameter": 2.5,
+      "pinOffset": 4.5,
+      "rodDiameter": 3,
+      "rodDepth": 22.5,
+      "threadPitch": 0.5,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 12,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 7.2,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    },
+    "catalog": {
+      "designation": "Cable fork \u00b7 3 mm",
+      "sourceName": "User-supplied cable fork terminal listing",
+      "sourceUrl": "references/clevis-cable-terminal.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["rodDiameter"],
+      "specifications": [
+        {
+          "label": "Reference construction",
+          "value": "Fork jaw with two radial grub screws; other dimensions are unspecified."
+        }
+      ]
+    }
+  },
+  {
+    "id": "reference-cable-4",
+    "name": "Cable fork terminal \u00b7 4 mm cable",
+    "description": "Only the cable bore option is established by the supplied listing. Fork, barrel and fasteners are scalable prototype geometry.",
+    "parameters": {
+      "variant": "cable",
+      "length": 40,
+      "bodyDiameter": 10,
+      "forkGap": 3,
+      "forkDepth": 15,
+      "pinDiameter": 2.5,
+      "pinOffset": 5,
+      "rodDiameter": 4,
+      "rodDepth": 25,
+      "threadPitch": 0.5,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 12,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 8,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    },
+    "catalog": {
+      "designation": "Cable fork \u00b7 4 mm",
+      "sourceName": "User-supplied cable fork terminal listing",
+      "sourceUrl": "references/clevis-cable-terminal.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["rodDiameter"],
+      "specifications": [
+        {
+          "label": "Reference construction",
+          "value": "Fork jaw with two radial grub screws; other dimensions are unspecified."
+        }
+      ]
+    }
+  },
+  {
+    "id": "reference-cable-5",
+    "name": "Cable fork terminal \u00b7 5 mm cable",
+    "description": "Only the cable bore option is established by the supplied listing. Fork, barrel and fasteners are scalable prototype geometry.",
+    "parameters": {
+      "variant": "cable",
+      "length": 44,
+      "bodyDiameter": 11,
+      "forkGap": 3,
+      "forkDepth": 16.5,
+      "pinDiameter": 3,
+      "pinOffset": 5.5,
+      "rodDiameter": 5,
+      "rodDepth": 27.5,
+      "threadPitch": 0.5,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 12,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 8.8,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    },
+    "catalog": {
+      "designation": "Cable fork \u00b7 5 mm",
+      "sourceName": "User-supplied cable fork terminal listing",
+      "sourceUrl": "references/clevis-cable-terminal.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["rodDiameter"],
+      "specifications": [
+        {
+          "label": "Reference construction",
+          "value": "Fork jaw with two radial grub screws; other dimensions are unspecified."
+        }
+      ]
+    }
+  },
+  {
+    "id": "reference-cable-6",
+    "name": "Cable fork terminal \u00b7 6 mm cable",
+    "description": "Only the cable bore option is established by the supplied listing. Fork, barrel and fasteners are scalable prototype geometry.",
+    "parameters": {
+      "variant": "cable",
+      "length": 48,
+      "bodyDiameter": 12,
+      "forkGap": 3,
+      "forkDepth": 18,
+      "pinDiameter": 3,
+      "pinOffset": 6,
+      "rodDiameter": 6,
+      "rodDepth": 30,
+      "threadPitch": 0.5,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 12,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 9.600000000000001,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    },
+    "catalog": {
+      "designation": "Cable fork \u00b7 6 mm",
+      "sourceName": "User-supplied cable fork terminal listing",
+      "sourceUrl": "references/clevis-cable-terminal.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["rodDiameter"],
+      "specifications": [
+        {
+          "label": "Reference construction",
+          "value": "Fork jaw with two radial grub screws; other dimensions are unspecified."
+        }
+      ]
+    }
+  },
+  {
+    "id": "reference-cable-8",
+    "name": "Cable fork terminal \u00b7 8 mm cable",
+    "description": "Only the cable bore option is established by the supplied listing. Fork, barrel and fasteners are scalable prototype geometry.",
+    "parameters": {
+      "variant": "cable",
+      "length": 56,
+      "bodyDiameter": 14,
+      "forkGap": 3.5,
+      "forkDepth": 21,
+      "pinDiameter": 3.5,
+      "pinOffset": 7,
+      "rodDiameter": 8,
+      "rodDepth": 35,
+      "threadPitch": 0.5,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 12,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 11.200000000000001,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    },
+    "catalog": {
+      "designation": "Cable fork \u00b7 8 mm",
+      "sourceName": "User-supplied cable fork terminal listing",
+      "sourceUrl": "references/clevis-cable-terminal.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["rodDiameter"],
+      "specifications": [
+        {
+          "label": "Reference construction",
+          "value": "Fork jaw with two radial grub screws; other dimensions are unspecified."
+        }
+      ]
+    }
+  },
+  {
+    "id": "reference-cable-10",
+    "name": "Cable fork terminal \u00b7 10 mm cable",
+    "description": "Only the cable bore option is established by the supplied listing. Fork, barrel and fasteners are scalable prototype geometry.",
+    "parameters": {
+      "variant": "cable",
+      "length": 64,
+      "bodyDiameter": 16,
+      "forkGap": 4,
+      "forkDepth": 24,
+      "pinDiameter": 4,
+      "pinOffset": 8,
+      "rodDiameter": 10,
+      "rodDepth": 40,
+      "threadPitch": 0.5,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 12,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 12.8,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    },
+    "catalog": {
+      "designation": "Cable fork \u00b7 10 mm",
+      "sourceName": "User-supplied cable fork terminal listing",
+      "sourceUrl": "references/clevis-cable-terminal.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["rodDiameter"],
+      "specifications": [
+        {
+          "label": "Reference construction",
+          "value": "Fork jaw with two radial grub screws; other dimensions are unspecified."
+        }
+      ]
+    }
+  },
+  {
+    "id": "reference-cable-12",
+    "name": "Cable fork terminal \u00b7 12 mm cable",
+    "description": "Only the cable bore option is established by the supplied listing. Fork, barrel and fasteners are scalable prototype geometry.",
+    "parameters": {
+      "variant": "cable",
+      "length": 72,
+      "bodyDiameter": 18,
+      "forkGap": 4.5,
+      "forkDepth": 27,
+      "pinDiameter": 4.5,
+      "pinOffset": 9,
+      "rodDiameter": 12,
+      "rodDepth": 45,
+      "threadPitch": 0.5,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 12,
+      "setScrewDiameter": 4,
+      "setScrewCount": 2,
+      "setScrewSpacing": 14.4,
+      "setScrewOffset": 5,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    },
+    "catalog": {
+      "designation": "Cable fork \u00b7 12 mm",
+      "sourceName": "User-supplied cable fork terminal listing",
+      "sourceUrl": "references/clevis-cable-terminal.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["rodDiameter"],
+      "specifications": [
+        {
+          "label": "Reference construction",
+          "value": "Fork jaw with two radial grub screws; other dimensions are unspecified."
+        }
+      ]
+    }
+  },
+  {
+    "id": "example-female-threaded-m2",
+    "name": "Female fork \u00b7 M2 \u00d7 0.4",
+    "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
+    "parameters": {
+      "variant": "female-threaded",
+      "length": 28,
+      "bodyDiameter": 8,
+      "forkGap": 3,
+      "forkDepth": 12,
+      "pinDiameter": 2.5,
+      "pinOffset": 4,
+      "rodDiameter": 2,
+      "rodDepth": 4,
+      "threadPitch": 0.4,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 4,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 5,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    }
+  },
+  {
+    "id": "example-male-threaded-m2",
+    "name": "Male fork \u00b7 M2 \u00d7 0.4",
+    "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
+    "parameters": {
+      "variant": "male-threaded",
+      "length": 28,
+      "bodyDiameter": 8,
+      "forkGap": 3,
+      "forkDepth": 12,
+      "pinDiameter": 2.5,
+      "pinOffset": 4,
+      "rodDiameter": 2,
+      "rodDepth": 4,
+      "threadPitch": 0.4,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 4,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 5,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    }
+  },
+  {
+    "id": "example-female-threaded-m3",
+    "name": "Female fork \u00b7 M3 \u00d7 0.5",
+    "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
+    "parameters": {
+      "variant": "female-threaded",
+      "length": 28,
+      "bodyDiameter": 8,
+      "forkGap": 3,
+      "forkDepth": 12,
+      "pinDiameter": 2.5,
+      "pinOffset": 4,
+      "rodDiameter": 3,
+      "rodDepth": 6,
+      "threadPitch": 0.5,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 6,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 5,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    }
+  },
+  {
+    "id": "example-male-threaded-m3",
+    "name": "Male fork \u00b7 M3 \u00d7 0.5",
+    "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
+    "parameters": {
+      "variant": "male-threaded",
+      "length": 28,
+      "bodyDiameter": 8,
+      "forkGap": 3,
+      "forkDepth": 12,
+      "pinDiameter": 2.5,
+      "pinOffset": 4,
+      "rodDiameter": 3,
+      "rodDepth": 6,
+      "threadPitch": 0.5,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 6,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 5,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    }
+  },
+  {
+    "id": "example-female-threaded-m4",
+    "name": "Female fork \u00b7 M4 \u00d7 0.7",
+    "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
+    "parameters": {
+      "variant": "female-threaded",
+      "length": 28,
+      "bodyDiameter": 8,
+      "forkGap": 3,
+      "forkDepth": 12,
+      "pinDiameter": 2.5,
+      "pinOffset": 4,
+      "rodDiameter": 4,
+      "rodDepth": 8,
+      "threadPitch": 0.7,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 8,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 5,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    }
+  },
+  {
+    "id": "example-male-threaded-m4",
+    "name": "Male fork \u00b7 M4 \u00d7 0.7",
+    "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
+    "parameters": {
+      "variant": "male-threaded",
+      "length": 28,
+      "bodyDiameter": 8,
+      "forkGap": 3,
+      "forkDepth": 12,
+      "pinDiameter": 2.5,
+      "pinOffset": 4,
+      "rodDiameter": 4,
+      "rodDepth": 8,
+      "threadPitch": 0.7,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 8,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 5,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    }
+  },
+  {
+    "id": "example-female-threaded-m5",
+    "name": "Female fork \u00b7 M5 \u00d7 0.8",
+    "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
+    "parameters": {
+      "variant": "female-threaded",
+      "length": 35,
+      "bodyDiameter": 10,
+      "forkGap": 3.5,
+      "forkDepth": 15,
+      "pinDiameter": 3,
+      "pinOffset": 5,
+      "rodDiameter": 5,
+      "rodDepth": 10,
+      "threadPitch": 0.8,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 10,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 5,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    }
+  },
+  {
+    "id": "example-male-threaded-m5",
+    "name": "Male fork \u00b7 M5 \u00d7 0.8",
+    "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
+    "parameters": {
+      "variant": "male-threaded",
+      "length": 35,
+      "bodyDiameter": 10,
+      "forkGap": 3.5,
+      "forkDepth": 15,
+      "pinDiameter": 3,
+      "pinOffset": 5,
+      "rodDiameter": 5,
+      "rodDepth": 10,
+      "threadPitch": 0.8,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 10,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 5,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    }
+  },
+  {
+    "id": "example-female-threaded-m6",
+    "name": "Female fork \u00b7 M6 \u00d7 1",
+    "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
+    "parameters": {
+      "variant": "female-threaded",
+      "length": 42,
+      "bodyDiameter": 12,
+      "forkGap": 4.199999999999999,
+      "forkDepth": 18,
+      "pinDiameter": 3.5999999999999996,
+      "pinOffset": 6,
+      "rodDiameter": 6,
+      "rodDepth": 12,
+      "threadPitch": 1,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 12,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 5,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    }
+  },
+  {
+    "id": "example-male-threaded-m6",
+    "name": "Male fork \u00b7 M6 \u00d7 1",
+    "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
+    "parameters": {
+      "variant": "male-threaded",
+      "length": 42,
+      "bodyDiameter": 12,
+      "forkGap": 4.199999999999999,
+      "forkDepth": 18,
+      "pinDiameter": 3.5999999999999996,
+      "pinOffset": 6,
+      "rodDiameter": 6,
+      "rodDepth": 12,
+      "threadPitch": 1,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 12,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 5,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    }
+  },
+  {
+    "id": "example-female-threaded-m8",
+    "name": "Female fork \u00b7 M8 \u00d7 1.25",
+    "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
+    "parameters": {
+      "variant": "female-threaded",
+      "length": 56,
+      "bodyDiameter": 16,
+      "forkGap": 5.6,
+      "forkDepth": 24,
+      "pinDiameter": 4.8,
+      "pinOffset": 8,
+      "rodDiameter": 8,
+      "rodDepth": 16,
+      "threadPitch": 1.25,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 16,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 5,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    }
+  },
+  {
+    "id": "example-male-threaded-m8",
+    "name": "Male fork \u00b7 M8 \u00d7 1.25",
+    "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
+    "parameters": {
+      "variant": "male-threaded",
+      "length": 56,
+      "bodyDiameter": 16,
+      "forkGap": 5.6,
+      "forkDepth": 24,
+      "pinDiameter": 4.8,
+      "pinOffset": 8,
+      "rodDiameter": 8,
+      "rodDepth": 16,
+      "threadPitch": 1.25,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 16,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 5,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    }
+  },
+  {
+    "id": "example-female-threaded-m12",
+    "name": "Female fork \u00b7 M12 \u00d7 1.75",
+    "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
+    "parameters": {
+      "variant": "female-threaded",
+      "length": 84,
+      "bodyDiameter": 24,
+      "forkGap": 8.399999999999999,
+      "forkDepth": 36,
+      "pinDiameter": 7.199999999999999,
+      "pinOffset": 12,
+      "rodDiameter": 12,
+      "rodDepth": 24,
+      "threadPitch": 1.75,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 24,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 5,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    }
+  },
+  {
+    "id": "example-male-threaded-m12",
+    "name": "Male fork \u00b7 M12 \u00d7 1.75",
+    "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
+    "parameters": {
+      "variant": "male-threaded",
+      "length": 84,
+      "bodyDiameter": 24,
+      "forkGap": 8.399999999999999,
+      "forkDepth": 36,
+      "pinDiameter": 7.199999999999999,
+      "pinOffset": 12,
+      "rodDiameter": 12,
+      "rodDepth": 24,
+      "threadPitch": 1.75,
+      "threadMode": "modeled",
+      "handedness": "right",
+      "maleLength": 24,
+      "setScrewDiameter": 3,
+      "setScrewCount": 2,
+      "setScrewSpacing": 5,
+      "setScrewOffset": 4,
+      "includeHardware": true,
+      "clearance": 0.15,
+      "finish": "steel"
+    }
+  }
+]
