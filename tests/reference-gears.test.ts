@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { Box3, Mesh, Vector3 } from 'three';
-import bevel, { bevelPairValues } from "../src/parts/bevel-gear-pair/part";
-import spur from "../src/parts/spur-gear/part";
+import { Box3, Mesh, Raycaster, Vector3 } from 'three';
+import bevel, { bevelPairValues } from '../src/parts/bevel-gear-pair/part';
+import spur from '../src/parts/spur-gear/part';
 import { bevelReferenceRows } from '../src/catalog/reference-gears';
 import { validateParameters } from '../src/core/validation';
 import { disposeModel } from '../src/core/mechanical';
@@ -85,12 +85,15 @@ test('all bevel reference assemblies contain closed positive-volume meshes at th
       model.traverse((object) => {
         if (!(object instanceof Mesh)) return;
         const position = object.geometry.getAttribute('position'),
-          edges = new Map<string, number>();
+          edges = new Map<string, number>(),
+          directions = new Map<string, number>();
         let volume = 0;
         for (let i = 0; i < position.count; i += 3) {
           const points = [0, 1, 2].map((offset) =>
             new Vector3().fromBufferAttribute(position, i + offset),
           );
+          const normal = points[1].clone().sub(points[0]).cross(points[2].clone().sub(points[0]));
+          assert.ok(normal.lengthSq() > 1e-18, `${preset.id}: degenerate triangle`);
           volume += points[0].dot(points[1].clone().cross(points[2])) / 6;
           const keys = points.map((point) =>
             point
@@ -100,14 +103,76 @@ test('all bevel reference assemblies contain closed positive-volume meshes at th
           );
           for (let side = 0; side < 3; side++) {
             const key = [keys[side], keys[(side + 1) % 3]].sort().join('|');
-            if (keys[side] !== keys[(side + 1) % 3]) edges.set(key, (edges.get(key) ?? 0) + 1);
+            if (keys[side] !== keys[(side + 1) % 3]) {
+              edges.set(key, (edges.get(key) ?? 0) + 1);
+              directions.set(
+                key,
+                (directions.get(key) ?? 0) + (keys[side] < keys[(side + 1) % 3] ? 1 : -1),
+              );
+            }
           }
         }
         assert.ok(volume > 0);
-        for (const [edge, count] of edges) assert.equal(count, 2, `${preset.id}: ${edge}`);
+        for (const [edge, count] of edges) {
+          assert.equal(count, 2, `${preset.id}: ${edge}`);
+          assert.equal(directions.get(edge), 0, `${preset.id}: inconsistent winding at ${edge}`);
+        }
       });
     } finally {
       disposeModel(model);
+    }
+  }
+});
+
+test('bevel front and back root annuli remain planar at their mounting datums', () => {
+  for (const preset of bevel.presets) {
+    const parameters: Parameters = {
+      ...preset.parameters,
+      setScrews: false,
+      pinionBoreShape: 'round',
+      wheelBoreShape: 'round',
+    };
+    for (const side of ['pinion', 'wheel'] as const) {
+      const values = bevelPairValues(parameters, side),
+        get = (key: string) => Number(parameters[`${side}${key}`]);
+      const model = bevel.buildGeometry(parameters, side);
+      model.updateMatrixWorld(true);
+      try {
+        const offset = -get('Overall') / 2;
+        const checks = [
+          {
+            radius: (get('Bore') / 2 + values.v.rootRadius * values.scale) / 2,
+            expected: get('BodyLength') + offset,
+            front: true,
+          },
+          {
+            radius: (get('Hub') / 2 + values.v.rootRadius) / 2,
+            expected: get('HubLength') + offset,
+            front: false,
+          },
+        ];
+        for (const check of checks)
+          for (let sample = 0; sample < 48; sample++) {
+            const angle = (sample * Math.PI) / 24 + (0.173 * Math.PI) / 180;
+            const origin = new Vector3(
+              check.radius * Math.cos(angle),
+              check.radius * Math.sin(angle),
+              check.front ? get('Overall') + 1 : -get('Overall') - 1,
+            );
+            const ray = new Raycaster(origin, new Vector3(0, 0, check.front ? -1 : 1));
+            const hit = ray.intersectObject(model, true)[0];
+            assert.ok(
+              hit,
+              `${preset.id}/${side}: missing ${check.front ? 'front' : 'back'} annulus`,
+            );
+            assert.ok(
+              Math.abs(hit.point.z - check.expected) < 1e-4,
+              `${preset.id}/${side}/${check.front ? 'front' : 'back'} angle ${sample}: ${hit.point.z} != ${check.expected}`,
+            );
+          }
+      } finally {
+        disposeModel(model);
+      }
     }
   }
 });

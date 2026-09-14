@@ -2,13 +2,14 @@ import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
 import modeling from '@jscad/modeling';
-import { Box3, Group, Mesh, ShapeUtils, Vector2, Vector3 } from 'three';
+import { Box3, Group, Mesh, Vector3 } from 'three';
 import type { Parameters, PartDefinition } from '../../core/types';
 import { n, num, numberParameter } from '../../core/geometry';
 import { gearValues, involuteProfile } from './lib/core/gears';
 import { disposeModel } from '../../core/mechanical';
 import { booleans, primitives, transforms, solidUnionMesh } from '../../core/solid-union';
 import { gearReferenceFiles } from './lib/catalog/reference-gears';
+import { appendBevelEndCap } from './lib/core/end-cap';
 import {
   shaftBoreOutline,
   shaftBoreParameters,
@@ -58,10 +59,7 @@ export function bevelPairValues(p: Parameters, side: GearSide) {
   );
   // The source gives envelope dimensions, not a generated bevel flank or cutter geometry.
   const source = involuteProfile(v);
-  const outline = source.segments.flatMap((segment) => {
-    const pts = segment.points;
-    return segment.kind === 'line' ? [pts[0]] : [pts[0], pts[Math.floor(pts.length / 2)]];
-  });
+  const outline = source.points.map((point) => point.toArray());
   const phase =
     side === 'pinion'
       ? Math.PI + Math.PI / teeth + (n(p, 'rotation') * Math.PI) / 180
@@ -78,32 +76,22 @@ export function bevelPairValues(p: Parameters, side: GearSide) {
       return [radius * s * Math.cos(a), radius * s * Math.sin(a), u];
     }),
   );
-  const points = [
-    ...rings[0],
-    ...rings[1],
-    [0, 0, get('HubLength')],
-    [0, 0, get('BodyLength')],
-  ] as Point[];
+  const points = [...rings[0], ...rings[1]];
   const count = rings[0].length,
     faces: number[][] = [];
   for (let i = 0; i < count; i++) {
     const j = (i + 1) % count;
-    faces.push(
-      [i, j, i + count],
-      [j, j + count, i + count],
-      [2 * count, j, i],
-      [2 * count + 1, i + count, j + count],
-    );
+    faces.push([i, j, i + count], [j, j + count, i + count]);
   }
   return { get, delta, scale, v, points, faces, phase };
 }
 
 function solid(p: Parameters, side: GearSide) {
-  const { get, points: toothPoints, faces: toothFaces } = bevelPairValues(p, side);
+  const { get, v, scale, points: toothPoints, faces: toothFaces } = bevelPairValues(p, side);
   const bore = shaftBoreOutline(boreValues(p, side));
-  const count = (toothPoints.length - 2) / 2;
-  const points = toothPoints.slice(0, 2 * count);
-  const faces = toothFaces.filter((_, index) => index % 4 < 2);
+  const count = toothPoints.length / 2;
+  const points = [...toothPoints];
+  const faces = [...toothFaces];
   const circle = (radius: number, z: number) =>
     Array.from({ length: 96 }, (_, i) => {
       const index = points.length,
@@ -127,25 +115,25 @@ function solid(p: Parameters, side: GearSide) {
         faces.push(inward ? face.reverse() : face);
     }
   };
-  const cap = (outer: number[], inner: number[], top: boolean) => {
-    const vertices = [...outer, ...inner],
-      project = (index: number) => new Vector2(points[index][0], points[index][1]);
-    for (const triangle of ShapeUtils.triangulateShape(outer.map(project), [inner.map(project)])) {
-      const face = triangle.map((index) => vertices[index]);
-      faces.push(top ? face : face.reverse());
-    }
-  };
   const hubTop = circle(get('Hub') / 2, get('HubLength'));
   const boreBase = boreRing(get('HubLength')),
     boreTop = boreRing(get('BodyLength'));
-  cap(
+  appendBevelEndCap(
+    points,
+    faces,
     Array.from({ length: count }, (_, i) => i),
     hubTop,
+    v.rootRadius,
+    get('HubLength'),
     false,
   );
-  cap(
+  appendBevelEndCap(
+    points,
+    faces,
     Array.from({ length: count }, (_, i) => i + count),
     boreTop,
+    v.rootRadius * scale,
+    get('BodyLength'),
     true,
   );
   bridge(boreBase, boreTop, true);

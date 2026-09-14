@@ -31,7 +31,13 @@ Both models include editable smooth radial set screw holes. Their diameter and t
 
 The paired teeth retain the supplied envelopes with a faceted, tapered involute-like profile. They are not generated conjugate bevel tooth surfaces. The source has insufficient information for tooth corrections, root fillets, contact analysis, strength ratings or interchangeable manufacturing geometry. Linked rotation illustrates the tooth ratio; it does not certify transmission contact.
 
+Both root annuli are planar at **H** and **L**. Local radial patches connect these planes to the raised tooth-end contours at **G** and **F**. Full flank samples retain the involute curvature; the module does not triangulate across unrelated teeth or stretch a tooth-tip height through the central face. The preview and FreeCAD share this boundary construction.
+
 ## Validation
+
+The end-face repair has a [17-case native FreeCAD audit](../data/bevel-pair-native-validation.json). It covers all six catalog pairs, all four display states on the first two pairs, hex/D/keyway bores, maximum bores at 37° rotation, and 128 inside/outside root-plane probes. All checked assemblies have zero measured component intersection. Every case preserves valid separate solids through STEP and FCStd round trips. Preview tests additionally sample both planar annuli on both gears for every preset and check closed, consistently oriented triangles for all seven shaft profiles.
+
+To reproduce a small native smoke check, run `node --import tsx scripts/verify-bevel-pair.ts`, then run `scripts/verify-bevel-pair.py --intersections` using a FreeCAD-enabled Python. The preparer's optional `--matrix` expands to every catalog state and all seven bore shapes.
 
 The reference expansion was checked in native FreeCAD using 46 cases: all assembly and separated states, both bore endpoints for each individual bevel gear, linked 37° rotation, and the four miniature spur pinions. All generated solids and STEP round trips were valid. The maximum preview/native volume difference was 0.067%; all checked pair positions had zero component intersection. This sampled geometry check does not establish continuous conjugate contact or a load rating.
 
