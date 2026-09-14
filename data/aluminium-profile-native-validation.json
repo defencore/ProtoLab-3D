@@ -1,0 +1,138 @@
+{
+  "checkedAt": "2026-09-14T02:24:52.514432+00:00",
+  "freecadVersion": [
+    "1",
+    "0",
+    "2",
+    "39319 (Git)",
+    "https://github.com/FreeCAD/FreeCAD",
+    "2025/08/05 20:19:07",
+    "(HEAD detached at 1.0.2)",
+    "256fc7eff3379911ab5daf88e10182c509aa8052"
+  ],
+  "casesRequested": 8,
+  "passed": 8,
+  "failed": 0,
+  "cases": [
+    {
+      "id": "eu1020",
+      "codeSha256": "325f26a2d0568d4f49a504a20a8127735561f84782db4b8e35d8bd26530e75fb",
+      "passed": true,
+      "dimensions": [
+        20.0,
+        10.0,
+        550.0
+      ],
+      "volume": 66612.00999692145,
+      "relativePreviewVolumeError": 9.12167340642459e-05,
+      "sectionProbes": 513,
+      "stepRoundtrip": true,
+      "durationSeconds": 0.5223012500209734
+    },
+    {
+      "id": "eu1030",
+      "codeSha256": "8ca19245705becfb7226c9371db6435120538afdf91314f90d00b886f42b9ed9",
+      "passed": true,
+      "dimensions": [
+        29.8,
+        9.9,
+        50.0
+      ],
+      "volume": 8650.637166943268,
+      "relativePreviewVolumeError": 1.095113674621564e-07,
+      "sectionProbes": 513,
+      "stepRoundtrip": true,
+      "durationSeconds": 1.1483827090123668
+    },
+    {
+      "id": "eu1040",
+      "codeSha256": "5ea23c6ee008a40fad42a841a12302393cc546d53fca16dfd3c250542497a340",
+      "passed": true,
+      "dimensions": [
+        40.0,
+        10.0,
+        550.0
+      ],
+      "volume": 127578.08704699276,
+      "relativePreviewVolumeError": 2.7522855341880526e-05,
+      "sectionProbes": 512,
+      "stepRoundtrip": true,
+      "durationSeconds": 0.6409059999859892
+    },
+    {
+      "id": "eu1050",
+      "codeSha256": "e0c51a0920d9706cf02945233fc89b33426cecdd94d14160ad8b521b015d7af2",
+      "passed": true,
+      "dimensions": [
+        50.0,
+        10.0,
+        50.0
+      ],
+      "volume": 15550.97903062102,
+      "relativePreviewVolumeError": 1.8494376714296133e-05,
+      "sectionProbes": 513,
+      "stepRoundtrip": true,
+      "durationSeconds": 1.7316534160054289
+    },
+    {
+      "id": "2020",
+      "codeSha256": "3f6c3dcd3fb67dab5add279a01368d0beca4b3c93841bddf2f3dc84c46d8d680",
+      "passed": true,
+      "dimensions": [
+        20.0,
+        20.0,
+        550.0
+      ],
+      "volume": 87074.15121277061,
+      "relativePreviewVolumeError": 4.933320525476424e-05,
+      "sectionProbes": 512,
+      "stepRoundtrip": true,
+      "durationSeconds": 1.684963500010781
+    },
+    {
+      "id": "2040",
+      "codeSha256": "be48101cb540dce891f11c7c5682f9adace6cbb6b09a69d4218cabf35892c47a",
+      "passed": true,
+      "dimensions": [
+        40.0,
+        20.0,
+        50.0
+      ],
+      "volume": 17445.66233193571,
+      "relativePreviewVolumeError": 4.4668895884106985e-05,
+      "sectionProbes": 513,
+      "stepRoundtrip": true,
+      "durationSeconds": 1.326045791967772
+    },
+    {
+      "id": "gb1020h",
+      "codeSha256": "8bc10d314fb15318747cacdd0f7f4feed4d80f98bb3ab919664d382b7c67b4b5",
+      "passed": true,
+      "dimensions": [
+        20.0,
+        10.0,
+        550.0
+      ],
+      "volume": 63524.513503231086,
+      "relativePreviewVolumeError": 2.7287810184666746e-05,
+      "sectionProbes": 513,
+      "stepRoundtrip": true,
+      "durationSeconds": 0.8736510419985279
+    },
+    {
+      "id": "eu1540",
+      "codeSha256": "5999cefe5f719449fed9a7559af173ef284df9cb177d1fdc6c1e2886cac7a559",
+      "passed": true,
+      "dimensions": [
+        40.0,
+        15.0,
+        50.0
+      ],
+      "volume": 17305.173788344513,
+      "relativePreviewVolumeError": 3.50602059783523e-05,
+      "sectionProbes": 513,
+      "stepRoundtrip": true,
+      "durationSeconds": 0.6971765839844011
+    }
+  ]
+}

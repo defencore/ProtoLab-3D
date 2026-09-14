@@ -78,7 +78,8 @@ import module74 from './piston/index';
 import module75 from './connecting-rod/index';
 import module76 from './l-bracket/index';
 import module77 from './spacer/index';
-import module78 from './wheel/index';
+import module78 from './aluminium-profile/index';
+import module79 from './wheel/index';
 
 export const parts = registerPartModules([
   module0,
@@ -160,4 +161,5 @@ export const parts = registerPartModules([
   module76,
   module77,
   module78,
+  module79,
 ]);

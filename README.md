@@ -73,6 +73,7 @@ The library uses independent part modules, including the requested bearing famil
 | Servo linkages          | Single, double, cross, six-arm and disc horns; clamping arms; servo spline gears; pushrod, female/male threaded and cable clevis ends                                 |
 | Pistons & rods          | Compressor/engine hollow pistons and pneumatic disks; separate rings, seals and wrist pins; rods with bushings, bearing shells and removable big-end caps             |
 | Enclosures & structural | Open enclosure, L bracket and round spacer                                                                                                                            |
+| Aluminium profiles      | EU 1020/1030/1040/1050, 2020, 2040, GB1020H and 40 × 15 sections, with open slots, through bores and editable cut length                                              |
 
 Standard fastener selection starts with the available catalog thread and length sizes. **Custom dimensions** exposes thread pitch, handedness, coverage, start offset from the tip, length and smooth shoulder diameter. Choose a modeled helical thread, a smooth thread envelope or no thread. Countersunk nominal length includes the head; other headed fasteners use length under the head. Irrelevant fields disappear when a variant changes. Switching head or point type initializes sensible editable dimensions.
 
@@ -99,6 +100,8 @@ The **Set screw / grub screw** package includes 11 **DIN 915 · black 12.9** ref
 The servo linkage extension adds 28 horn references, 16 servo gear presets (13 actual ServoCity catalog sizes and three prototype examples), and 24 clevis presets. Find them under **MOTION → SERVO LINKAGES**, or search for **servo**, **horn** or **clevis**. The 18 supplied images remain linked from the corresponding references. See [servo linkage coverage](docs/servo-linkages.md) for source dimensions, modeling limits and native FreeCAD verification.
 
 Find **Piston** and **Connecting rod** under **MOTION → PISTONS & CONNECTING RODS**. Piston catalog presets include all eight supplied nominal sizes: 42, 47, 48, 51, 65, 70, 80 and 90 mm. Other dimensions, pneumatic configurations and connecting-rod presets are editable prototype examples. Both packages support assembled, exploded and body-only states, with movable FreeCAD components. See [piston and connecting-rod coverage](docs/piston-linkages.md) for reference evidence, editing and verification.
+
+Find **Aluminium extrusion / T-slot profile** under **STRUCTURAL → ALUMINIUM PROFILES**. Eight supplied sections have 48 presets; the four low EU profiles include all listed lengths from 50 to 550 mm. Other lengths and undimensioned internals remain editable prototype settings. See [aluminium profile coverage and cross sections](docs/aluminium-profiles.md).
 
 The [native validation report](data/reference-expansion-native-validation.json) records FreeCAD solid checks, STEP round trips, sampled clearances and preview comparisons for the reference expansion. Repeatable ball-screw checks are documented in the [validation guide](docs/ball-screw-catalog.md#repeating-native-validation).
 

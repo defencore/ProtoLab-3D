@@ -1,0 +1,238 @@
+import type { Parameters, ParameterDefinition, PartDefinition } from '../../core/types';
+import { numberParameter } from '../../core/geometry';
+
+export const profileNames = {
+  eu1020: 'EU 1020 · 20 × 10',
+  eu1030: 'EU 1030 · 29.8 × 9.9',
+  eu1040: 'EU 1040 · 40 × 10',
+  eu1050: 'EU 1050 · 50 × 10',
+  '2020': '2020 · 20 × 20',
+  '2040': '2040 · 40 × 20',
+  gb1020h: 'GB1020H · 20 × 10',
+  eu1540: 'EU 40 × 15',
+} as const;
+export type ProfileId = keyof typeof profileNames;
+
+const base: Parameters = {
+  profile: 'eu1020',
+  length: 100,
+  width: 20,
+  height: 10,
+  slotOpening: 6.2,
+  slotOuterOpening: 6.2,
+  slotStepDepth: 0,
+  slotCavityWidth: 11.2,
+  slotDepth: 6.1,
+  slotFloorWidth: 5.2,
+  lipThickness: 1.8,
+  slotPitch: 20,
+  sideOpening: 4.5,
+  sideCavityHeight: 7.2,
+  sideCavityDepth: 6,
+  sideLipWidth: 2,
+  boreDiameter: 4.2,
+  boreSpacing: 15,
+  boreHeight: 3,
+  centerVoidWidth: 11.8,
+  centerVoidHeight: 5.5,
+  centerVoidHeightFromBase: 3.75,
+  cornerRadius: 1,
+};
+/** Undimensioned cavity widths, positions and reliefs are editable prototype values. */
+const sections: Record<ProfileId, Partial<Parameters>> = {
+  eu1020: {},
+  eu1030: {
+    width: 29.8,
+    height: 9.9,
+    slotOpening: 6,
+    slotOuterOpening: 6,
+    slotCavityWidth: 10.8,
+    slotDepth: 6,
+    slotFloorWidth: 5,
+    lipThickness: 1.9,
+    sideOpening: 4.7,
+    sideCavityHeight: 7.1,
+    sideCavityDepth: 5.9,
+    sideLipWidth: 1.9,
+    boreDiameter: 0,
+    cornerRadius: 0.3,
+  },
+  eu1040: {
+    width: 40,
+    slotOpening: 5.4,
+    slotOuterOpening: 5.4,
+    slotCavityWidth: 11.8,
+    slotDepth: 6.5,
+    slotFloorWidth: 5,
+    lipThickness: 2,
+    boreDiameter: 3.2,
+    boreSpacing: 33,
+    boreHeight: 3.5,
+  },
+  eu1050: {
+    width: 50,
+    slotOuterOpening: 7.2,
+    slotStepDepth: 0.5,
+    slotCavityWidth: 11,
+    slotFloorWidth: 5,
+    lipThickness: 2,
+    sideCavityHeight: 7.2,
+    boreDiameter: 4.3,
+    boreHeight: 5,
+  },
+  '2020': {
+    height: 20,
+    slotCavityWidth: 11,
+    slotDepth: 6.5,
+    slotFloorWidth: 5.5,
+    sideOpening: 6.2,
+    sideLipWidth: 1.8,
+    boreDiameter: 5,
+    boreHeight: 10,
+  },
+  '2040': {
+    width: 40,
+    height: 20,
+    slotOpening: 6.1,
+    slotOuterOpening: 6.1,
+    slotCavityWidth: 11,
+    // Adjacent 45-degree slot flanks retain the drawing's 1.5 mm diagonal web.
+    slotDepth: 10 - 5.5 / 2 - 1.5 / Math.SQRT2,
+    slotFloorWidth: 5.5,
+    sideOpening: 6.2,
+    sideLipWidth: 1.8,
+    boreDiameter: 5,
+    boreSpacing: 20,
+    boreHeight: 10,
+    centerVoidWidth: 9,
+    centerVoidHeight: 12.4,
+    centerVoidHeightFromBase: 10,
+    cornerRadius: 1.5,
+  },
+  gb1020h: { boreDiameter: 3.2, boreHeight: 5 },
+  eu1540: {
+    width: 40,
+    height: 15,
+    slotOpening: 8.3,
+    slotOuterOpening: 8.3,
+    slotCavityWidth: 16.5,
+    slotDepth: 9.3,
+    slotFloorWidth: 8.4,
+    lipThickness: 2,
+    sideOpening: 7.2,
+    sideCavityHeight: 11,
+    sideCavityDepth: 6.2,
+    sideLipWidth: 2,
+    boreDiameter: 4.4,
+    boreSpacing: 18.5,
+    boreHeight: 4.4,
+  },
+};
+export function profileDefaults(profile: ProfileId, length = 100): Parameters {
+  return { ...base, ...sections[profile], profile, length };
+}
+export const defaults = profileDefaults('eu1020');
+export const hasTopSlot = (p: Parameters) => p.profile !== 'gb1020h';
+export const hasSideC = (p: Parameters) =>
+  ['eu1030', 'eu1050', 'gb1020h'].includes(String(p.profile));
+export const hasSideT = (p: Parameters) => ['2020', '2040', 'eu1540'].includes(String(p.profile));
+export const hasTwoTop = (p: Parameters) =>
+  ['eu1040', 'eu1050', '2040'].includes(String(p.profile));
+export const hasTwoBores = (p: Parameters) =>
+  ['eu1020', 'eu1040', '2040', 'eu1540'].includes(String(p.profile));
+export const hasVoid = (p: Parameters) => ['eu1040', '2040'].includes(String(p.profile));
+const field = (
+  key: string,
+  label: string,
+  symbol: string,
+  group: string,
+  min: number,
+  max: number,
+  visibleWhen?: ParameterDefinition['visibleWhen'],
+): ParameterDefinition => ({
+  ...numberParameter(key, label, symbol, group, min, max, 0.1),
+  visibleWhen,
+});
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'profile',
+    label: 'Profile section',
+    type: 'select',
+    group: 'Section',
+    options: Object.entries(profileNames).map(([value, label]) => ({ value, label })),
+  },
+  field('length', 'Cut length', 'L', 'Envelope', 1, 6000),
+  field('width', 'Section width', 'W', 'Envelope', 8, 200),
+  field('height', 'Section height', 'H', 'Envelope', 5, 100),
+  field('cornerRadius', 'Outside corner radius', 'R', 'Envelope', 0, 10),
+  field('slotOpening', 'Slot throat width', 'b', 'T slots', 1, 40, hasTopSlot),
+  field('slotOuterOpening', 'Slot surface opening', 'b₀', 'T slots', 1, 40, hasTopSlot),
+  field('slotStepDepth', 'Surface step depth', 's', 'T slots', 0, 5, hasTopSlot),
+  field('slotCavityWidth', 'Slot cavity width', 'B', 'T slots', 2, 60, hasTopSlot),
+  field('slotDepth', 'Slot depth', 'D', 'T slots', 2, 40, hasTopSlot),
+  field('slotFloorWidth', 'Slot floor width', 'f', 'T slots', 1, 40, hasTopSlot),
+  field('lipThickness', 'Slot lip thickness', 't', 'T slots', 0.2, 10, hasTopSlot),
+  field('slotPitch', 'Slot center spacing', 'P', 'T slots', 10, 100, hasTwoTop),
+  field(
+    'sideOpening',
+    'Side slot opening',
+    'bₛ',
+    'Side slots',
+    1,
+    40,
+    (p) => hasSideC(p) || hasSideT(p),
+  ),
+  field(
+    'sideCavityHeight',
+    'Side cavity height',
+    'Hₛ',
+    'Side slots',
+    2,
+    60,
+    (p) => hasSideC(p) || p.profile === 'eu1540',
+  ),
+  field(
+    'sideCavityDepth',
+    'Side slot depth from edge',
+    'Dₛ',
+    'Side slots',
+    2,
+    30,
+    (p) => hasSideC(p) || p.profile === 'eu1540',
+  ),
+  field(
+    'sideLipWidth',
+    'Side lip thickness',
+    'tₛ',
+    'Side slots',
+    0.2,
+    10,
+    (p) => hasSideC(p) || hasSideT(p),
+  ),
+  field(
+    'boreDiameter',
+    'Longitudinal bore diameter',
+    'd',
+    'Bores',
+    0,
+    30,
+    (p) => p.profile !== 'eu1030',
+  ),
+  field('boreSpacing', 'Bore center spacing', 'C', 'Bores', 5, 100, hasTwoBores),
+  field('boreHeight', 'Bore center from base', 'y', 'Bores', 1, 80, (p) => p.profile !== 'eu1030'),
+  field('centerVoidWidth', 'Central cavity width', 'Vw', 'Internal cavity', 1, 60, hasVoid),
+  field('centerVoidHeight', 'Central cavity height', 'Vh', 'Internal cavity', 1, 40, hasVoid),
+  field(
+    'centerVoidHeightFromBase',
+    'Central cavity center from base',
+    'Vy',
+    'Internal cavity',
+    1,
+    80,
+    hasVoid,
+  ),
+];
+export const catalogSelection: NonNullable<PartDefinition['catalogSelection']> = [
+  { key: 'profile', label: 'Profile section' },
+  { key: 'length', label: 'Cut length' },
+];
