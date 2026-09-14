@@ -1,0 +1,629 @@
+{
+  "freecad": "1.0.2",
+  "cases": [
+    {
+      "name": "piston/default/assembled",
+      "passed": true,
+      "components": 7,
+      "roundTrip": true,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/default/exploded",
+      "passed": true,
+      "components": 7,
+      "roundTrip": true,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/default/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": true,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-42/assembled",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-42/exploded",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-42/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-47/assembled",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-47/exploded",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-47/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-48/assembled",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-48/exploded",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-48/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-51/assembled",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-51/exploded",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-51/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-65/assembled",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-65/exploded",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-65/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-70/assembled",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-70/exploded",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-70/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-80/assembled",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-80/exploded",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-80/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-90/assembled",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-90/exploded",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/compressor-nominal-90/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/engine-dished-65/assembled",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/engine-dished-65/exploded",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/engine-dished-65/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/pneumatic-disk-32/assembled",
+      "passed": true,
+      "components": 3,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/pneumatic-disk-32/exploded",
+      "passed": true,
+      "components": 3,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/pneumatic-disk-32/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/pneumatic-disk-50/assembled",
+      "passed": true,
+      "components": 3,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/pneumatic-disk-50/exploded",
+      "passed": true,
+      "components": 3,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/pneumatic-disk-50/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/pneumatic-disk-80/assembled",
+      "passed": true,
+      "components": 3,
+      "roundTrip": true,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/pneumatic-disk-80/exploded",
+      "passed": true,
+      "components": 3,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/pneumatic-disk-80/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/transition-pneumatic-to-engine-20/assembled",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/transition-pneumatic-to-engine-20/exploded",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/transition-pneumatic-to-engine-20/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/transition-pneumatic-to-engine-42/assembled",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/transition-pneumatic-to-engine-42/exploded",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/transition-pneumatic-to-engine-42/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/transition-pneumatic-to-engine-90/assembled",
+      "passed": true,
+      "components": 7,
+      "roundTrip": true,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/transition-pneumatic-to-engine-90/exploded",
+      "passed": true,
+      "components": 7,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "piston/transition-pneumatic-to-engine-90/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/default/assembled",
+      "passed": true,
+      "components": 9,
+      "roundTrip": true,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/default/exploded",
+      "passed": true,
+      "components": 9,
+      "roundTrip": true,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/default/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": true,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/medium-engine-i-beam/assembled",
+      "passed": true,
+      "components": 9,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/medium-engine-i-beam/exploded",
+      "passed": true,
+      "components": 9,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/medium-engine-i-beam/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/compact-compressor/assembled",
+      "passed": true,
+      "components": 9,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/compact-compressor/exploded",
+      "passed": true,
+      "components": 9,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/compact-compressor/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/large-engine-h-beam/assembled",
+      "passed": true,
+      "components": 9,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/large-engine-h-beam/exploded",
+      "passed": true,
+      "components": 9,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/large-engine-h-beam/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/one-piece-compressor/assembled",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/one-piece-compressor/exploded",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/one-piece-compressor/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/compact-linkage/assembled",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/compact-linkage/exploded",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/compact-linkage/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/long-linkage-h-beam/assembled",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/long-linkage-h-beam/exploded",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/long-linkage-h-beam/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/heavy-compressor/assembled",
+      "passed": true,
+      "components": 9,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/heavy-compressor/exploded",
+      "passed": true,
+      "components": 9,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/heavy-compressor/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/bare-split-cap/assembled",
+      "passed": true,
+      "components": 2,
+      "roundTrip": true,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/bare-split-cap/exploded",
+      "passed": true,
+      "components": 2,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/bare-split-cap/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/transition-compact-to-split/assembled",
+      "passed": true,
+      "components": 6,
+      "roundTrip": true,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/transition-compact-to-split/exploded",
+      "passed": true,
+      "components": 6,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    },
+    {
+      "name": "connecting-rod/transition-compact-to-split/body",
+      "passed": true,
+      "components": 1,
+      "roundTrip": false,
+      "previewBounds": true,
+      "overlaps": []
+    }
+  ]
+}

@@ -691,6 +691,8 @@ kbd {
 }
 .viewport-area {
   position: relative;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) 64px;
   flex: 1;
   min-height: 210px;
   overflow: hidden;
@@ -745,10 +747,10 @@ kbd {
   box-shadow: 0 0 6px #8aa27855;
 }
 .viewport-toolbar {
-  position: absolute;
-  bottom: 21px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  grid-row: 2;
+  justify-self: center;
+  align-self: center;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -2149,7 +2151,6 @@ kbd {
     top: 9px;
   }
   .viewport-toolbar {
-    bottom: 13px;
     height: 39px;
     padding: 3px;
   }

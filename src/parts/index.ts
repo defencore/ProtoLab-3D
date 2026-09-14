@@ -74,9 +74,11 @@ import module70 from './enclosure/index';
 import module71 from './servo-arm/index';
 import module72 from './servo-gear/index';
 import module73 from './clevis/index';
-import module74 from './l-bracket/index';
-import module75 from './spacer/index';
-import module76 from './wheel/index';
+import module74 from './piston/index';
+import module75 from './connecting-rod/index';
+import module76 from './l-bracket/index';
+import module77 from './spacer/index';
+import module78 from './wheel/index';
 
 export const parts = registerPartModules([
   module0,
@@ -156,4 +158,6 @@ export const parts = registerPartModules([
   module74,
   module75,
   module76,
+  module77,
+  module78,
 ]);
