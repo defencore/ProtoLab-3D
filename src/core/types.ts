@@ -16,6 +16,8 @@ export interface ParameterDefinition {
   options?: { label: string; value: string }[];
   visibleWhen?: (parameters: Parameters) => boolean;
   filterable?: boolean;
+  catalogSummary?: boolean;
+  catalogCondition?: boolean;
 }
 
 export interface Preset {
@@ -35,6 +37,9 @@ export interface Preset {
     productCodes?: string[];
     alternateSourceUrls?: string[];
     specifications?: { label: string; value: string }[];
+    /** Published model characteristics, independent of editable geometry or pose. Missing means unknown. */
+    attributes?: Record<string, number | string | boolean>;
+    attributeConditions?: Record<string, string>;
   };
 }
 
@@ -46,7 +51,7 @@ export interface PartDefinition {
   subgroup: string;
   description: string;
   keywords: string[];
-  icon: 'bearing' | 'bolt' | 'spring' | 'box' | 'bracket' | 'wheel' | 'gear' | 'rail';
+  icon: 'bearing' | 'bolt' | 'spring' | 'box' | 'bracket' | 'wheel' | 'gear' | 'rail' | 'magnet';
   standard?: string;
   complexity: string;
   parameters: ParameterDefinition[];
@@ -61,6 +66,9 @@ export interface PartDefinition {
   sources?: { label: string; url: string }[];
   updateParameters?: (parameters: Parameters, changedKey: string) => Parameters;
   presetMatchKeys?: string[];
+  /** Fixed manufactured models are selected from the catalog; only pose/accessory controls remain editable. */
+  catalogSelectionOnly?: boolean;
+  catalogFilterFields?: ParameterDefinition[];
   catalogSelection?: {
     key: string;
     label?: string;

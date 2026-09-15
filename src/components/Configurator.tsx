@@ -13,6 +13,7 @@ import {
 import { useEffect, useState } from 'react';
 import { ReferenceSpecifications } from './ReferenceSpecifications';
 import QuickPicks from './QuickPicks';
+import CatalogModelPicker from './CatalogModelPicker';
 import { hasCatalogQuickSize, quickPickFields } from '../core/quick-picks';
 import type { QuickPickFilters } from '../core/quick-picks';
 import type { Parameters, PartDefinition, ParameterDefinition, Preset } from '../core/types';
@@ -117,21 +118,24 @@ export default function Configurator({
   const pickFields = quickPickFields(part);
   const [customMode, setCustomMode] = useState(() => !hasCatalogQuickSize(part, parameters));
   useEffect(() => {
-    if (!hasCatalogQuickSize(part, parameters)) setCustomMode(true);
+    if (!part.catalogSelectionOnly && !hasCatalogQuickSize(part, parameters)) setCustomMode(true);
   }, [part, parameters]);
   const [pickerReset, setPickerReset] = useState(0);
   const selectedPreset = part.presets.find((preset) => preset.id === presetId);
   const visibleFields = part.parameters.filter(
     (field) =>
       (!field.visibleWhen || field.visibleWhen(parameters)) &&
-      (customMode ||
+      (!part.catalogSelectionOnly ||
+        !part.catalogSelection?.some((selection) => selection.key === field.key)) &&
+      (part.catalogSelectionOnly ||
+        customMode ||
         (field.type !== 'number' && !pickFields.some((pick) => pick.key === field.key))),
   );
   return (
     <aside className="configurator">
       <div className="config-heading">
         <SlidersHorizontal size={17} />
-        <h2>Configure part</h2>
+        <h2>{part.catalogSelectionOnly ? 'Select model & pose' : 'Configure part'}</h2>
         <span className="live-label">
           <span />
           Live
@@ -141,7 +145,7 @@ export default function Configurator({
         <section className="preset-section">
           <div className="field-title">
             <span className="preset-field-label">
-              SIZE & CATALOG
+              {part.catalogSelectionOnly ? 'MODEL CATALOG' : 'SIZE & CATALOG'}
               {part.presets.length > 0
                 ? ` · ${part.presets.length.toLocaleString('en-US')} AVAILABLE`
                 : ''}
@@ -156,7 +160,7 @@ export default function Configurator({
               <BookmarkPlus size={17} />
             </button>
           </div>
-          {pickFields.length > 0 && (
+          {!part.catalogSelectionOnly && pickFields.length > 0 && (
             <div className="configuration-mode" aria-label="Configuration mode">
               <button
                 className={!customMode ? 'active' : ''}
@@ -174,7 +178,14 @@ export default function Configurator({
               </button>
             </div>
           )}
-          {!customMode && (
+          {part.catalogSelectionOnly ? (
+            <CatalogModelPicker
+              key={`${part.id}-${pickerReset}`}
+              part={part}
+              presetId={presetId}
+              onSelect={onPreset}
+            />
+          ) : !customMode ? (
             <QuickPicks
               key={`${part.id}-${pickerReset}`}
               part={part}
@@ -183,8 +194,11 @@ export default function Configurator({
               onSelect={onPreset}
               onBrowse={onBrowse}
             />
-          )}
-          <details className="preset-reference-details" open={customMode || undefined}>
+          ) : null}
+          <details
+            className="preset-reference-details"
+            open={(!part.catalogSelectionOnly && customMode) || undefined}
+          >
             <summary>{selectedPreset?.name ?? 'Current configuration'} · details</summary>
             <div className="current-preset">
               <strong>{selectedPreset?.name ?? 'Custom configuration'}</strong>
@@ -198,16 +212,18 @@ export default function Configurator({
                     : 'Your dimensions, ready to refine'}
               </span>
             </div>
-            <div className="preset-finder-actions">
-              <button onClick={() => onBrowse()}>
-                <Search size={14} />
-                Browse presets
-              </button>
-              <button onClick={onFindMatching}>
-                <Filter size={14} />
-                Find matching
-              </button>
-            </div>
+            {!part.catalogSelectionOnly && (
+              <div className="preset-finder-actions">
+                <button onClick={() => onBrowse()}>
+                  <Search size={14} />
+                  Browse presets
+                </button>
+                <button onClick={onFindMatching}>
+                  <Filter size={14} />
+                  Find matching
+                </button>
+              </div>
+            )}
             {selectedPreset?.catalog && (
               <a
                 className="current-preset-source"

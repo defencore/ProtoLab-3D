@@ -1,0 +1,828 @@
+[
+  {
+    "id": "waveshare-st3215-hs",
+    "name": "Waveshare ST3215-HS",
+    "description": "Original manufacturer STEP geometry with eight components. Supplied disc pair shown by default; optional illustrative single arm.",
+    "parameters": {
+      "model": "waveshare-st3215-hs",
+      "outputAngle": 0,
+      "showHorn": true,
+      "hornStyle": "disc"
+    },
+    "catalog": {
+      "designation": "ST3215-HS",
+      "manufacturer": "Waveshare",
+      "sourceName": "Waveshare ST3215-HS wiki; linked ST3215 dimension drawing and STEP",
+      "sourceUrl": "https://www.waveshare.com/wiki/ST3215-HS_Servo_Motor",
+      "alternateSourceUrls": [
+        "https://files.waveshare.com/upload/0/08/ST3215-2D.zip",
+        "https://files.waveshare.com/upload/5/59/ST3215-3D.zip",
+        "references/st3215-hs-drawing.png",
+        "https://www.waveshare.com/product/modules/motors-servos/st3215-hs-servo-motor.htm",
+        "references/st3215-hs-manufacturer.step"
+      ],
+      "verifiedParameters": ["model"],
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "6–12.6 V"
+        },
+        {
+          "label": "Published torque",
+          "value": "20 kg·cm at 12 V"
+        },
+        {
+          "label": "No-load speed",
+          "value": "0.094 s/60° (106 RPM) at 12 V"
+        },
+        {
+          "label": "Interface",
+          "value": "TTL serial bus, 1 Mbps; 360° magnetic position sensor"
+        },
+        {
+          "label": "Drawing datums",
+          "value": "45.22 × 24.72 × 29 mm main case; 32 mm raised faces; 37.25 mm across supplied disc faces."
+        },
+        {
+          "label": "STEP rear pivot",
+          "value": "An additional 0.55 mm below the disc gives 37.8 mm overall with discs; plain case height is not the wiki nominal 35 mm."
+        },
+        {
+          "label": "Original STEP geometry",
+          "value": "Original case contours, shaft splines, motor, PCB and discs. Rear cover internal void shifted 0.00001 mm to repair a source topology defect; external surfaces unchanged. Source component overlaps are preserved; the optional single arm is illustrative."
+        },
+        {
+          "label": "Reference torque / speed",
+          "value": "20 kgf·cm / 0.094 s per 60° at 12 V."
+        },
+        {
+          "label": "Published current",
+          "value": "No-load 0.24 A; locked rotor 2.4 A. Current test voltage is not stated."
+        },
+        {
+          "label": "Supply and control",
+          "value": "6–12.6 V; TTL serial bus, up to 1 Mbps; magnetic encoder, 360° positioning and continuous rotation modes."
+        },
+        {
+          "label": "Weight basis",
+          "value": "68 g from the product listing; accessory inclusion is not specified."
+        },
+        {
+          "label": "Mounting and envelope",
+          "value": "Front pitch 20.7 × 20.5 mm; rear pitch 24.45 × 20.5 mm. Bare-output envelope height 36.3 mm; with supplied discs 37.8 mm."
+        },
+        {
+          "label": "Unavailable ratings",
+          "value": "Motor type and spline tooth count are not established by the linked manufacturer sources."
+        }
+      ],
+      "attributes": {
+        "caseLength": 45.22,
+        "caseWidth": 24.72,
+        "caseHeight": 29,
+        "totalHeight": 36.3,
+        "mountPitch": 20.7,
+        "voltageMin": 6,
+        "voltageMax": 12.6,
+        "referenceVoltage": 12,
+        "stallTorque": 20,
+        "noLoadSpeed": 0.094,
+        "noLoadCurrent": 0.24,
+        "stallCurrent": 2.4,
+        "weight": 68,
+        "interfaceType": "TTL serial bus"
+      },
+      "attributeConditions": {
+        "stallTorque": "At 12 V; published torque, not a continuous torque rating.",
+        "noLoadSpeed": "At 12 V, unloaded.",
+        "noLoadCurrent": "Current test voltage not stated by manufacturer.",
+        "stallCurrent": "Current test voltage not stated by manufacturer.",
+        "weight": "Manufacturer product-listing weight; accessory inclusion not specified.",
+        "mountPitch": "Front-face longitudinal pitch; rear-face pitch is 24.45 mm."
+      }
+    }
+  },
+  {
+    "id": "kst-x10-mini-pro-a",
+    "name": "KST X10 Mini Pro-A",
+    "description": "Official KST installation dimensions with three transverse mounting holes. The variant drawing specifies a 28.5 mm height; the shared specification table says 28 ±0.2 mm. Undimensioned case contours and optional horn are simplified.",
+    "parameters": {
+      "model": "kst-x10-mini-pro-a",
+      "outputAngle": 0,
+      "showHorn": false,
+      "hornStyle": "single"
+    },
+    "catalog": {
+      "designation": "X10 Mini Pro-A",
+      "manufacturer": "KST",
+      "sourceName": "KST X10 Mini Pro technical specification · 2023-07",
+      "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+      "alternateSourceUrls": [
+        "https://kstservos.com/products/x10-mini-pro-digital-metal-gear-servo-8-0kgf-cm-0-08sec-for-competition-gliders-and-large-scale-gliders",
+        "references/kst-x10-mini-pro.pdf",
+        "references/kst-x10-mini-pro.png"
+      ],
+      "verifiedParameters": ["model"],
+      "productCodes": ["BR0023.0230-A"],
+      "specifications": [
+        {
+          "label": "Case envelope",
+          "value": "30 × 10 × 28.5 mm (A drawing; shared table says 28 ±0.2 mm)"
+        },
+        {
+          "label": "Voltage range",
+          "value": "DC 4.8–8.4 V; rated 7.4 V"
+        },
+        {
+          "label": "Rated-voltage torque",
+          "value": "7.2 kgf·cm at 7.4 V"
+        },
+        {
+          "label": "Rated-voltage speed",
+          "value": "0.09 s / 60° at 7.4 V"
+        },
+        {
+          "label": "Default travel",
+          "value": "±60° (120° total)"
+        },
+        {
+          "label": "Output spline",
+          "value": "25T nominal 5 mm; drawing Ø4.94 / (Ø4.25), M2.5 retaining thread"
+        },
+        {
+          "label": "Model simplifications",
+          "value": "Straight spline flanks, smooth screw bore, simplified lower case relief, no internal mechanism or wiring; optional horn dimensions illustrative"
+        },
+        {
+          "label": "Reference review",
+          "value": "2026-09-15; checked against supplied PDF"
+        },
+        {
+          "label": "Performance at 4.8 V",
+          "value": "Torque 4.5 kgf·cm; speed 0.13 s per 60°."
+        },
+        {
+          "label": "Performance at 6.0 V",
+          "value": "Torque 6.0 kgf·cm; speed 0.11 s per 60°."
+        },
+        {
+          "label": "Performance at rated 7.4 V",
+          "value": "Torque 7.2 kgf·cm; speed 0.09 s per 60°."
+        },
+        {
+          "label": "Performance at 8.4 V",
+          "value": "Torque 8.0 kgf·cm; speed 0.08 s per 60°."
+        },
+        {
+          "label": "Current data",
+          "value": "The datasheet provides a current-versus-torque graph at 7.4 V, but no tabulated no-load or stall current rating. Numeric current filters omit this model."
+        },
+        {
+          "label": "Control",
+          "value": "PWM, 1520 µs / 333 Hz; pulse range 900–2100 µs; default travel ±60°."
+        },
+        {
+          "label": "Construction",
+          "value": "Coreless DC motor, hardened steel gears, potentiometer; 20 g ±10%; 25T nominal 5 mm spline."
+        },
+        {
+          "label": "Dimension basis",
+          "value": "Pro-A case 30 × 10 × 28.5 mm; 36 mm mounting pitch, 42 mm ear span. The common table says 28 ±0.2 mm; variant drawing is used."
+        }
+      ],
+      "attributes": {
+        "caseLength": 30,
+        "caseWidth": 10,
+        "caseHeight": 28.5,
+        "totalHeight": 32.0,
+        "mountPitch": 36,
+        "voltageMin": 4.8,
+        "voltageMax": 8.4,
+        "referenceVoltage": 7.4,
+        "stallTorque": 7.2,
+        "noLoadSpeed": 0.09,
+        "weight": 20,
+        "motorType": "Coreless DC",
+        "interfaceType": "PWM",
+        "splineTeeth": 25
+      },
+      "attributeConditions": {
+        "stallTorque": "At 7.4 V; manufacturer labels this torque, not a continuous torque rating.",
+        "noLoadSpeed": "At 7.4 V.",
+        "weight": "20 g ±10%.",
+        "noLoadCurrent": "No numeric no-load current rating published.",
+        "stallCurrent": "Performance curve only; no numeric stall current rating used."
+      }
+    }
+  },
+  {
+    "id": "kst-x10-mini-pro-b",
+    "name": "KST X10 Mini Pro-B",
+    "description": "Official KST installation dimensions with two mounting holes through horizontal ears. Undimensioned case contours and optional horn are simplified.",
+    "parameters": {
+      "model": "kst-x10-mini-pro-b",
+      "outputAngle": 0,
+      "showHorn": false,
+      "hornStyle": "single"
+    },
+    "catalog": {
+      "designation": "X10 Mini Pro-B",
+      "manufacturer": "KST",
+      "sourceName": "KST X10 Mini Pro technical specification · 2023-07",
+      "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+      "alternateSourceUrls": [
+        "https://kstservos.com/products/x10-mini-pro-digital-metal-gear-servo-8-0kgf-cm-0-08sec-for-competition-gliders-and-large-scale-gliders",
+        "references/kst-x10-mini-pro.pdf",
+        "references/kst-x10-mini-pro.png"
+      ],
+      "verifiedParameters": ["model"],
+      "productCodes": ["BR0023.0230-B"],
+      "specifications": [
+        {
+          "label": "Case envelope",
+          "value": "30 × 10 × 28 mm"
+        },
+        {
+          "label": "Voltage range",
+          "value": "DC 4.8–8.4 V; rated 7.4 V"
+        },
+        {
+          "label": "Rated-voltage torque",
+          "value": "7.2 kgf·cm at 7.4 V"
+        },
+        {
+          "label": "Rated-voltage speed",
+          "value": "0.09 s / 60° at 7.4 V"
+        },
+        {
+          "label": "Default travel",
+          "value": "±60° (120° total)"
+        },
+        {
+          "label": "Output spline",
+          "value": "25T nominal 5 mm; drawing Ø4.94 / (Ø4.25), M2.5 retaining thread"
+        },
+        {
+          "label": "Model simplifications",
+          "value": "Straight spline flanks, smooth screw bore, simplified lower case relief, no internal mechanism or wiring; optional horn dimensions illustrative"
+        },
+        {
+          "label": "Reference review",
+          "value": "2026-09-15; checked against supplied PDF"
+        },
+        {
+          "label": "Performance at 4.8 V",
+          "value": "Torque 4.5 kgf·cm; speed 0.13 s per 60°."
+        },
+        {
+          "label": "Performance at 6.0 V",
+          "value": "Torque 6.0 kgf·cm; speed 0.11 s per 60°."
+        },
+        {
+          "label": "Performance at rated 7.4 V",
+          "value": "Torque 7.2 kgf·cm; speed 0.09 s per 60°."
+        },
+        {
+          "label": "Performance at 8.4 V",
+          "value": "Torque 8.0 kgf·cm; speed 0.08 s per 60°."
+        },
+        {
+          "label": "Current data",
+          "value": "The datasheet provides a current-versus-torque graph at 7.4 V, but no tabulated no-load or stall current rating. Numeric current filters omit this model."
+        },
+        {
+          "label": "Control",
+          "value": "PWM, 1520 µs / 333 Hz; pulse range 900–2100 µs; default travel ±60°."
+        },
+        {
+          "label": "Construction",
+          "value": "Coreless DC motor, hardened steel gears, potentiometer; 20 g ±10%; 25T nominal 5 mm spline."
+        },
+        {
+          "label": "Dimension basis",
+          "value": "Pro-B case 30 × 10 × 28 mm; 36 mm mounting pitch, 42 mm ear span. The common table says 28 ±0.2 mm; variant drawing is used."
+        }
+      ],
+      "attributes": {
+        "caseLength": 30,
+        "caseWidth": 10,
+        "caseHeight": 28,
+        "totalHeight": 31.5,
+        "mountPitch": 36,
+        "voltageMin": 4.8,
+        "voltageMax": 8.4,
+        "referenceVoltage": 7.4,
+        "stallTorque": 7.2,
+        "noLoadSpeed": 0.09,
+        "weight": 20,
+        "motorType": "Coreless DC",
+        "interfaceType": "PWM",
+        "splineTeeth": 25
+      },
+      "attributeConditions": {
+        "stallTorque": "At 7.4 V; manufacturer labels this torque, not a continuous torque rating.",
+        "noLoadSpeed": "At 7.4 V.",
+        "weight": "20 g ±10%.",
+        "noLoadCurrent": "No numeric no-load current rating published.",
+        "stallCurrent": "Performance curve only; no numeric stall current rating used."
+      }
+    }
+  },
+  {
+    "id": "kst-x10-v8",
+    "name": "KST X10 V8.0",
+    "description": "Case 30 × 10 × 35.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.3 mm and its axis is 6.55 mm from the case end. Lower mounting hole lies 35.2 mm below the upper holes and centrally at 18 mm from either upper hole. The lower tab extends 6.4 mm below the main case, giving a 45.2 mm overall bare envelope. Upper hole centres are assumed halfway through the dimensioned 8 mm ears; lower tab rounding is derived from that assumption. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring.",
+    "parameters": {
+      "model": "kst-x10-v8",
+      "outputAngle": 0,
+      "showHorn": false,
+      "hornStyle": "single"
+    },
+    "catalog": {
+      "designation": "X10 V8.0",
+      "manufacturer": "KST",
+      "sourceName": "KST X10 V8.0 technical specification",
+      "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839",
+      "alternateSourceUrls": [
+        "https://kstservos.com/products/x10-10-8kg-torque-servo-micro-digital-metal-gear-glider-servo-motor",
+        "references/kst-x10-v8.pdf",
+        "references/kst-x10-v8.png"
+      ],
+      "verifiedParameters": ["model"],
+      "productCodes": ["BR0023.0008-V8"],
+      "specifications": [
+        {
+          "label": "Dimension basis",
+          "value": "Case 30 × 10 × 35.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.3 mm and its axis is 6.55 mm from the case end. Lower mounting hole lies 35.2 mm below the upper holes and centrally at 18 mm from either upper hole. The lower tab extends 6.4 mm below the main case, giving a 45.2 mm overall bare envelope. Upper hole centres are assumed halfway through the dimensioned 8 mm ears; lower tab rounding is derived from that assumption. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring."
+        },
+        {
+          "label": "Supply",
+          "value": "DC 4.8–8.4 V; rated 7.4 V"
+        },
+        {
+          "label": "Default travel",
+          "value": "±50° (100° total)"
+        },
+        {
+          "label": "Construction",
+          "value": "Coreless DC motor, hardened steel gears, potentiometer, aluminium case; 28 g ±10%."
+        },
+        {
+          "label": "Control",
+          "value": "PWM, 1520 µs / 333 Hz; signal high 3.3–5.0 V, low 0–1.5 V; pulse range 900–2100 µs. The pulse-to-angle map is not simulated."
+        },
+        {
+          "label": "Current data",
+          "value": "The manufacturer supplies a performance graph at 7.4 V but no numeric no-load or stall current table. Numeric current filters omit unknown values."
+        },
+        {
+          "label": "Reference review",
+          "value": "2026-09-15"
+        },
+        {
+          "label": "Performance at 4.8 V",
+          "value": "Torque 6.2 kgf·cm; speed 0.16 s per 60°."
+        },
+        {
+          "label": "Performance at 6 V",
+          "value": "Torque 7.5 kgf·cm; speed 0.14 s per 60°."
+        },
+        {
+          "label": "Performance at 7.4 V",
+          "value": "Torque 9.5 kgf·cm; speed 0.12 s per 60°."
+        },
+        {
+          "label": "Performance at 8.4 V",
+          "value": "Torque 10.8 kgf·cm; speed 0.1 s per 60°."
+        }
+      ],
+      "attributes": {
+        "caseLength": 30,
+        "caseWidth": 10,
+        "caseHeight": 35.5,
+        "totalHeight": 45.199999999999996,
+        "mountPitch": 36,
+        "voltageMin": 4.8,
+        "voltageMax": 8.4,
+        "referenceVoltage": 7.4,
+        "stallTorque": 9.5,
+        "noLoadSpeed": 0.12,
+        "weight": 28,
+        "motorType": "Coreless DC",
+        "interfaceType": "PWM",
+        "splineTeeth": 25
+      },
+      "attributeConditions": {
+        "stallTorque": "At 7.4 V; published torque, not a continuous torque rating.",
+        "noLoadSpeed": "At 7.4 V, unloaded.",
+        "weight": "28 g ±10%.",
+        "noLoadCurrent": "No tabulated no-load current rating published.",
+        "stallCurrent": "Graph only; no numeric stall-current rating used.",
+        "totalHeight": "Includes the lower mounting tab and bare output shaft."
+      }
+    }
+  },
+  {
+    "id": "kst-x10-pro-a",
+    "name": "KST X10 Pro-A",
+    "description": "Case 30 × 10 × 33.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.5 mm and its axis is 6.6 mm from the case end. Three transverse Ø3 holes; lower hole is 24.5 mm below the upper pair and offset 14 mm from one upper hole. Upper mounting elevation and ear height are fixed approximations because the drawing omits them. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring.",
+    "parameters": {
+      "model": "kst-x10-pro-a",
+      "outputAngle": 0,
+      "showHorn": false,
+      "hornStyle": "single"
+    },
+    "catalog": {
+      "designation": "X10 Pro-A",
+      "manufacturer": "KST",
+      "sourceName": "KST X10 Pro-A technical specification",
+      "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+      "alternateSourceUrls": [
+        "https://kstservos.com/products/x10-pro-digital-metal-gear-servo-11-5kgf-cm-0-10sec-for-f5j-competition-gliders-and-large-scale-gliders",
+        "references/kst-x10-pro.pdf",
+        "references/kst-x10-pro.png"
+      ],
+      "verifiedParameters": ["model"],
+      "productCodes": ["BR0023.0229-A"],
+      "specifications": [
+        {
+          "label": "Dimension basis",
+          "value": "Case 30 × 10 × 33.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.5 mm and its axis is 6.6 mm from the case end. Three transverse Ø3 holes; lower hole is 24.5 mm below the upper pair and offset 14 mm from one upper hole. Upper mounting elevation and ear height are fixed approximations because the drawing omits them. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring."
+        },
+        {
+          "label": "Supply",
+          "value": "DC 4.8–8.4 V; rated 7.4 V"
+        },
+        {
+          "label": "Default travel",
+          "value": "±60° (120° total)"
+        },
+        {
+          "label": "Construction",
+          "value": "Coreless DC motor, hardened steel gears, potentiometer, aluminium case; 25 g ±10%."
+        },
+        {
+          "label": "Control",
+          "value": "PWM, 1520 µs / 333 Hz; signal high 3.3–5.0 V, low 0–1.5 V; pulse range 900–2100 µs. The pulse-to-angle map is not simulated."
+        },
+        {
+          "label": "Current data",
+          "value": "The manufacturer supplies a performance graph at 7.4 V but no numeric no-load or stall current table. Numeric current filters omit unknown values."
+        },
+        {
+          "label": "Reference review",
+          "value": "2026-09-15"
+        },
+        {
+          "label": "Performance at 4.8 V",
+          "value": "Torque 6.5 kgf·cm; speed 0.16 s per 60°."
+        },
+        {
+          "label": "Performance at 6 V",
+          "value": "Torque 8.5 kgf·cm; speed 0.14 s per 60°."
+        },
+        {
+          "label": "Performance at 7.4 V",
+          "value": "Torque 10.5 kgf·cm; speed 0.12 s per 60°."
+        },
+        {
+          "label": "Performance at 8.4 V",
+          "value": "Torque 11.5 kgf·cm; speed 0.1 s per 60°."
+        }
+      ],
+      "attributes": {
+        "caseLength": 30,
+        "caseWidth": 10,
+        "caseHeight": 33.5,
+        "totalHeight": 37.0,
+        "mountPitch": 36,
+        "voltageMin": 4.8,
+        "voltageMax": 8.4,
+        "referenceVoltage": 7.4,
+        "stallTorque": 10.5,
+        "noLoadSpeed": 0.12,
+        "weight": 25,
+        "motorType": "Coreless DC",
+        "interfaceType": "PWM",
+        "splineTeeth": 25
+      },
+      "attributeConditions": {
+        "stallTorque": "At 7.4 V; published torque, not a continuous torque rating.",
+        "noLoadSpeed": "At 7.4 V, unloaded.",
+        "weight": "25 g ±10%.",
+        "noLoadCurrent": "No tabulated no-load current rating published.",
+        "stallCurrent": "Graph only; no numeric stall-current rating used.",
+        "totalHeight": "Case height plus bare output shaft; optional horn excluded."
+      }
+    }
+  },
+  {
+    "id": "kst-x10-pro-b",
+    "name": "KST X10 Pro-B",
+    "description": "Case 30 × 10 × 33.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.5 mm and its axis is 6.6 mm from the case end. Two vertical Ø3 mounting holes; upper mounting face is 6.1 mm below case top and ears are 1.9 mm thick. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring.",
+    "parameters": {
+      "model": "kst-x10-pro-b",
+      "outputAngle": 0,
+      "showHorn": false,
+      "hornStyle": "single"
+    },
+    "catalog": {
+      "designation": "X10 Pro-B",
+      "manufacturer": "KST",
+      "sourceName": "KST X10 Pro-B technical specification",
+      "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+      "alternateSourceUrls": [
+        "https://kstservos.com/products/x10-pro-digital-metal-gear-servo-11-5kgf-cm-0-10sec-for-f5j-competition-gliders-and-large-scale-gliders",
+        "references/kst-x10-pro.pdf",
+        "references/kst-x10-pro.png"
+      ],
+      "verifiedParameters": ["model"],
+      "productCodes": ["BR0023.0229-B"],
+      "specifications": [
+        {
+          "label": "Dimension basis",
+          "value": "Case 30 × 10 × 33.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.5 mm and its axis is 6.6 mm from the case end. Two vertical Ø3 mounting holes; upper mounting face is 6.1 mm below case top and ears are 1.9 mm thick. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring."
+        },
+        {
+          "label": "Supply",
+          "value": "DC 4.8–8.4 V; rated 7.4 V"
+        },
+        {
+          "label": "Default travel",
+          "value": "±60° (120° total)"
+        },
+        {
+          "label": "Construction",
+          "value": "Coreless DC motor, hardened steel gears, potentiometer, aluminium case; 25 g ±10%."
+        },
+        {
+          "label": "Control",
+          "value": "PWM, 1520 µs / 333 Hz; signal high 3.3–5.0 V, low 0–1.5 V; pulse range 900–2100 µs. The pulse-to-angle map is not simulated."
+        },
+        {
+          "label": "Current data",
+          "value": "The manufacturer supplies a performance graph at 7.4 V but no numeric no-load or stall current table. Numeric current filters omit unknown values."
+        },
+        {
+          "label": "Reference review",
+          "value": "2026-09-15"
+        },
+        {
+          "label": "Performance at 4.8 V",
+          "value": "Torque 6.5 kgf·cm; speed 0.16 s per 60°."
+        },
+        {
+          "label": "Performance at 6 V",
+          "value": "Torque 8.5 kgf·cm; speed 0.14 s per 60°."
+        },
+        {
+          "label": "Performance at 7.4 V",
+          "value": "Torque 10.5 kgf·cm; speed 0.12 s per 60°."
+        },
+        {
+          "label": "Performance at 8.4 V",
+          "value": "Torque 11.5 kgf·cm; speed 0.1 s per 60°."
+        }
+      ],
+      "attributes": {
+        "caseLength": 30,
+        "caseWidth": 10,
+        "caseHeight": 33.5,
+        "totalHeight": 37.0,
+        "mountPitch": 36,
+        "voltageMin": 4.8,
+        "voltageMax": 8.4,
+        "referenceVoltage": 7.4,
+        "stallTorque": 10.5,
+        "noLoadSpeed": 0.12,
+        "weight": 25,
+        "motorType": "Coreless DC",
+        "interfaceType": "PWM",
+        "splineTeeth": 25
+      },
+      "attributeConditions": {
+        "stallTorque": "At 7.4 V; published torque, not a continuous torque rating.",
+        "noLoadSpeed": "At 7.4 V, unloaded.",
+        "weight": "25 g ±10%.",
+        "noLoadCurrent": "No tabulated no-load current rating published.",
+        "stallCurrent": "Graph only; no numeric stall-current rating used.",
+        "totalHeight": "Case height plus bare output shaft; optional horn excluded."
+      }
+    }
+  },
+  {
+    "id": "power-hd-t60-bhv",
+    "name": "Power-HD T60-BHV",
+    "description": "Brushless Power-HD servo envelope with sourced 40.7 × 20.5 mm case footprint, 49 × 10 mm mounting centers and 25T output interface. Undimensioned fitting details remain illustrative.",
+    "parameters": {
+      "model": "power-hd-t60-bhv",
+      "outputAngle": 0,
+      "showHorn": false,
+      "hornStyle": "single"
+    },
+    "catalog": {
+      "designation": "T60-BHV",
+      "manufacturer": "Power-HD",
+      "sourceName": "Power-HD T60-BHV specification V1, pages 2–3; reviewed 2026-09-14",
+      "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2025041613344325.pdf",
+      "alternateSourceUrls": [
+        "references/power-hd-t60-bhv-dimensions.png",
+        "https://www.chd.hk/Product_Detail.aspx?id=256"
+      ],
+      "verifiedParameters": ["model"],
+      "specifications": [
+        {
+          "label": "Motor",
+          "value": "Brushless"
+        },
+        {
+          "label": "Operating voltage",
+          "value": "6.0–8.4 V"
+        },
+        {
+          "label": "Stall torque at 6.0 / 7.4 V",
+          "value": "45 / 50 kg·cm"
+        },
+        {
+          "label": "No-load speed at 6.0 / 7.4 V",
+          "value": "0.098 / 0.089 s per 60°"
+        },
+        {
+          "label": "Weight",
+          "value": "83 ± 1 g"
+        },
+        {
+          "label": "Spline interface",
+          "value": "25T; drawing major Ø5.90 +0.02/−0 mm; table nominal Ø5.80 mm"
+        },
+        {
+          "label": "Neutral / published control travel",
+          "value": "1500 µs; approximately 110° over 900–2100 µs"
+        },
+        {
+          "label": "Unspecified mounting details",
+          "value": "Cutout diameter and opening throat are illustrative"
+        },
+        {
+          "label": "Performance at 6.0 V",
+          "value": "Stall torque 45 kgf·cm; no-load speed 0.098 s per 60°. No-load current 0.3 A. Stall current 2.1 A. Idle current 0.08 A."
+        },
+        {
+          "label": "Performance at 7.4 V",
+          "value": "Stall torque 50 kgf·cm; no-load speed 0.089 s per 60°. No-load current 0.3 A. Stall current 2.5 A. Idle current 0.08 A."
+        },
+        {
+          "label": "Performance at 8.4 V",
+          "value": "Stall torque 60 kgf·cm; no-load speed 0.08 s per 60°. Torque/speed from manufacturer product page; currents not specified at 8.4 V."
+        },
+        {
+          "label": "Test conditions",
+          "value": "Datasheet electrical measurements: 25 ±5 °C, 65 ±10% relative humidity."
+        },
+        {
+          "label": "Control",
+          "value": "PWM; datasheet neutral 1500 µs and pulse range 900–2100 µs, approximately 110° travel. Product page lists 1520 µs / 50–1500 Hz and iBUS2 compatibility."
+        },
+        {
+          "label": "Construction",
+          "value": "Brushless motor, steel gears; 83 ±1 g; nominal Ø5.80 mm / 25T, dimensioned spline tip Ø5.90 mm."
+        }
+      ],
+      "attributes": {
+        "caseLength": 40.7,
+        "caseWidth": 20.5,
+        "caseHeight": 38.7,
+        "totalHeight": 44.2,
+        "mountPitch": 49,
+        "voltageMin": 6,
+        "voltageMax": 8.4,
+        "referenceVoltage": 7.4,
+        "stallTorque": 50,
+        "noLoadSpeed": 0.089,
+        "noLoadCurrent": 0.3,
+        "stallCurrent": 2.5,
+        "weight": 83,
+        "motorType": "Brushless",
+        "interfaceType": "PWM",
+        "splineTeeth": 25
+      },
+      "attributeConditions": {
+        "stallTorque": "At 7.4 V, locked rotor.",
+        "noLoadSpeed": "At 7.4 V, unloaded.",
+        "noLoadCurrent": "At 7.4 V, average while running with no load.",
+        "weight": "83 g ±1 g.",
+        "mountPitch": "Longitudinal 49 mm; transverse 10 mm.",
+        "stallCurrent": "At 7.4 V, locked rotor."
+      }
+    }
+  },
+  {
+    "id": "power-hd-tds-2",
+    "name": "Power-HD TDS-2",
+    "description": "Low-profile Power-HD digital servo envelope with sourced 41 × 20 mm case footprint, 29 mm case height and 49 × 10 mm mounting centers. Undimensioned fitting details remain illustrative.",
+    "parameters": {
+      "model": "power-hd-tds-2",
+      "outputAngle": 0,
+      "showHorn": false,
+      "hornStyle": "single"
+    },
+    "catalog": {
+      "designation": "TDS-2",
+      "manufacturer": "Power-HD",
+      "sourceName": "Power-HD TDS-2 specification V1, pages 2–3; reviewed 2026-09-14",
+      "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2024111314082653.pdf",
+      "alternateSourceUrls": [
+        "references/power-hd-tds-2-dimensions.png",
+        "https://www.chd.hk/Product_Detail.aspx?id=238"
+      ],
+      "verifiedParameters": ["model"],
+      "specifications": [
+        {
+          "label": "Operating voltage",
+          "value": "6.0–8.4 V"
+        },
+        {
+          "label": "Stall torque at 6.0 / 7.4 V",
+          "value": "18 / 22 kg·cm"
+        },
+        {
+          "label": "No-load speed at 6.0 / 7.4 V",
+          "value": "0.13 / 0.10 s per 60°"
+        },
+        {
+          "label": "Weight",
+          "value": "61 ± 1 g"
+        },
+        {
+          "label": "Spline interface",
+          "value": "Nominal Ø5.8 mm / 25T"
+        },
+        {
+          "label": "Gear material",
+          "value": "Titanium and steel"
+        },
+        {
+          "label": "Neutral / published control travel",
+          "value": "1500 µs; approximately 110° over 800–2200 µs"
+        },
+        {
+          "label": "Unspecified fitting details",
+          "value": "Shaft offset, cutout diameter and opening throat are illustrative"
+        },
+        {
+          "label": "Performance at 6.0 V",
+          "value": "Stall torque 18 kgf·cm; no-load speed 0.13 s per 60°. No-load current 0.4 A. Idle current 0.06 A."
+        },
+        {
+          "label": "Performance at 7.4 V",
+          "value": "Stall torque 22 kgf·cm; no-load speed 0.1 s per 60°. No-load current 0.4 A. Idle current 0.07 A."
+        },
+        {
+          "label": "Performance at 8.4 V",
+          "value": "Stall torque 25 kgf·cm; no-load speed 0.09 s per 60°. Torque/speed from manufacturer product page; currents not specified at 8.4 V."
+        },
+        {
+          "label": "Test conditions",
+          "value": "Datasheet electrical measurements: 25 ±5 °C, 65 ±10% relative humidity."
+        },
+        {
+          "label": "Stall current",
+          "value": "Not used as a numeric rating: V1 datasheet prints 1900 / 2400 mAh at 6.0 / 7.4 V, a charge unit instead of current."
+        },
+        {
+          "label": "Control",
+          "value": "PWM, 333 Hz controller; datasheet neutral 1500 µs, pulse range 800–2200 µs; approximately 110° travel. Product page lists 1520 µs / 333 Hz."
+        },
+        {
+          "label": "Construction",
+          "value": "Coreless motor, titanium and steel gears; 61 ±1 g; nominal Ø5.8 mm / 25T output spline."
+        }
+      ],
+      "attributes": {
+        "caseLength": 41,
+        "caseWidth": 20,
+        "caseHeight": 29,
+        "totalHeight": 34,
+        "mountPitch": 49,
+        "voltageMin": 6,
+        "voltageMax": 8.4,
+        "referenceVoltage": 7.4,
+        "stallTorque": 22,
+        "noLoadSpeed": 0.1,
+        "noLoadCurrent": 0.4,
+        "weight": 61,
+        "motorType": "Coreless DC",
+        "interfaceType": "PWM",
+        "splineTeeth": 25
+      },
+      "attributeConditions": {
+        "stallTorque": "At 7.4 V, locked rotor.",
+        "noLoadSpeed": "At 7.4 V, unloaded.",
+        "noLoadCurrent": "At 7.4 V, average while running with no load.",
+        "weight": "61 g ±1 g.",
+        "mountPitch": "Longitudinal 49 mm; transverse 10 mm.",
+        "stallCurrent": "Unusable current unit in manufacturer V1 datasheet; numeric rating omitted."
+      }
+    }
+  }
+]

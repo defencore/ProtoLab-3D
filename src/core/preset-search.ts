@@ -1,4 +1,10 @@
 import type { ParameterDefinition, Parameters, PartDefinition, Preset } from './types';
+import {
+  isPublishedValue,
+  presetMatchesConfiguration,
+  presetValue,
+  searchableFields,
+} from './catalog-models';
 
 export interface PresetEntry {
   id: string;
@@ -85,13 +91,15 @@ export function buildPresetIndex(parts: PartDefinition[]): PresetEntry[] {
   return parts.flatMap((part) =>
     part.presets.map((preset) => {
       const catalog = preset.catalog;
-      const values = Object.entries(preset.parameters).flatMap(([key, value]) => {
-        const definition = part.parameters.find((field) => field.key === key);
-        if (definition?.filterable === false) return [];
-        return [
-          definition?.options?.find((option) => option.value === value)?.label ?? String(value),
-        ];
-      });
+      const values = Object.entries({ ...preset.parameters, ...catalog?.attributes }).flatMap(
+        ([key, value]) => {
+          const definition = searchableFields(part).find((field) => field.key === key);
+          if (definition?.filterable === false) return [];
+          return [
+            definition?.options?.find((option) => option.value === value)?.label ?? String(value),
+          ];
+        },
+      );
       return {
         id: `${part.id}:${preset.id}`,
         part,
@@ -122,7 +130,7 @@ export function getFilterFields(parts: PartDefinition[]): PresetFilterField[] {
   const fields = new Map<string, PresetFilterField>();
   for (const part of parts) {
     const primaryKeys = part.presetMatchKeys ?? commonKeys;
-    for (const field of part.parameters) {
+    for (const field of searchableFields(part)) {
       if (field.filterable === false) continue;
       const id = fieldId(field);
       const previous = fields.get(id);
@@ -163,9 +171,7 @@ export function seedCurrentFilters(part: PartDefinition, parameters: Parameters)
   const currentPreset =
     part.presets.find((preset) => preset.catalog && preset.parameters === parameters) ??
     part.presets.find(
-      (preset) =>
-        preset.catalog &&
-        part.parameters.every((field) => preset.parameters[field.key] === parameters[field.key]),
+      (preset) => preset.catalog && presetMatchesConfiguration(part, preset, parameters),
     );
   const keys =
     part.presetMatchKeys ??
@@ -173,7 +179,7 @@ export function seedCurrentFilters(part: PartDefinition, parameters: Parameters)
       .filter((field) => commonKeys.includes(field.key))
       .slice(0, 4)
       .map((field) => field.key);
-  for (const field of part.parameters) {
+  for (const field of searchableFields(part)) {
     if (field.filterable === false) continue;
     if (!keys.includes(field.key) || (field.visibleWhen && !field.visibleWhen(parameters)))
       continue;
@@ -182,11 +188,14 @@ export function seedCurrentFilters(part: PartDefinition, parameters: Parameters)
     if (
       currentPreset?.catalog &&
       field.type === 'number' &&
-      !currentPreset.catalog.verifiedParameters.includes(field.key) &&
+      !isPublishedValue(currentPreset, field.key) &&
       !getPresetParameterRange(currentPreset, field.key)
     )
       continue;
-    const value = parameters[field.key];
+    const value =
+      currentPreset && part.catalogFilterFields?.some((item) => item.key === field.key)
+        ? presetValue(currentPreset, field.key)
+        : parameters[field.key];
     if (field.type === 'number' && typeof value === 'number' && Number.isFinite(value)) {
       filters.parameters[fieldId(field)] = { min: String(value), max: String(value) };
     } else if (field.type === 'select' && typeof value === 'string') {
@@ -278,18 +287,18 @@ export function filterPresets(
       )
         return false;
       return active.every(([id, filter]) => {
-        const field = part.parameters.find(
+        const field = searchableFields(part).find(
           (candidate) => candidate.filterable !== false && fieldId(candidate) === id,
         );
         if (!field) return false;
         const values = { ...part.defaults, ...preset.parameters };
         if (field.visibleWhen && !field.visibleWhen(values)) return false;
-        const value = values[field.key];
+        const value = presetValue(preset, field.key) ?? values[field.key];
         if (field.type === 'number') {
           if (typeof value !== 'number' || !Number.isFinite(value)) return false;
           const range = getPresetParameterRange(preset, field.key);
           if (catalog?.parameterRanges?.[field.key] && !range) return false;
-          if (catalog && !range && !catalog.verifiedParameters.includes(field.key)) return false;
+          if (catalog && !range && !isPublishedValue(preset, field.key)) return false;
           const min = filter.min?.trim() ? Number(filter.min) : undefined;
           const max = filter.max?.trim() ? Number(filter.max) : undefined;
           const tolerance = 1e-6;
@@ -310,8 +319,9 @@ export function filterPresets(
 
 export function formatPresetValue(
   field: ParameterDefinition,
-  value: number | string | boolean,
+  value: number | string | boolean | undefined,
 ): string {
+  if (value === undefined) return 'Not published';
   if (field.type === 'boolean') return value ? 'Yes' : 'No';
   if (field.type === 'select')
     return field.options?.find((option) => option.value === value)?.label ?? String(value);

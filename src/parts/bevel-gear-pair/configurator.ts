@@ -14,4 +14,12 @@ export const catalogSelection: NonNullable<PartDefinition['catalogSelection']> =
     key: 'wheelTeeth',
     label: 'Wheel teeth',
   },
+  {
+    key: 'pinionBore',
+    label: 'Pinion stock bore',
+  },
+  {
+    key: 'wheelBore',
+    label: 'Wheel stock bore',
+  },
 ];

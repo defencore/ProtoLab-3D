@@ -1,5 +1,6 @@
 import type { ParameterDefinition, Parameters, PartDefinition } from './types';
 import { validateParameters } from './validation';
+import { presetMatchesConfiguration } from './catalog-models';
 
 export interface PartSelection {
   partId: string;
@@ -14,7 +15,7 @@ function matchesParameters(part: PartDefinition, left: Parameters, right: Parame
 
 export function matchingPresetId(part: PartDefinition, parameters: Parameters): string {
   return (
-    part.presets.find((preset) => matchesParameters(part, parameters, preset.parameters))?.id ??
+    part.presets.find((preset) => presetMatchesConfiguration(part, preset, parameters))?.id ??
     'custom'
   );
 }

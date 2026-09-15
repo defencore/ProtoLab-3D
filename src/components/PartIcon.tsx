@@ -4,6 +4,7 @@ import {
   Cog,
   Disc3,
   Layers3,
+  Magnet,
   Nut,
   Rotate3D,
   Route,
@@ -23,6 +24,7 @@ export function PartIcon({ type, size = 18 }: { type: string; size?: number }) {
         wheel: Disc3,
         gear: Cog,
         rail: Route,
+        magnet: Magnet,
       } as Record<string, typeof Box>
     )[type] ?? Wrench;
   return <Icon size={size} strokeWidth={1.65} />;

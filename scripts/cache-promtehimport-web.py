@@ -31,9 +31,10 @@ def parse(text, members):
     cells = [cell.strip() for cell in line.strip('|').split('|')]
     if len(cells) >= 2 and re.search(r'\d', ''.join(cells[1:])): rows.append(cells)
   assigned_rows=[]
-  for i, line in enumerate(lines[:-1]):
+  for i, line in enumerate(lines):
    assigned=re.match(r'^(d|D|B|C|Fw|T)\s*=\s*(\d+(?:[.,]\d+)?)\s*(?:mm|мм)',line)
    if assigned:assigned_rows.append([assigned.group(1),assigned.group(2)+' mm'])
+   if i+1>=len(lines):continue
    if re.match(r'^[a-zA-Z][a-zA-Z0-9_{}]*$', line):
     at=i+1;symbol=line
     if at+1<len(lines) and re.match(r'^[a-zA-Z0-9]{1,3}$',lines[at]) and re.match(r'^(?:\d+(?:[.,]\d+)?(?:\s*(?:mm|мм))?|M\s*\d.*)$',lines[at+1]):symbol+=lines[at];at+=1
@@ -56,6 +57,7 @@ def main():
  parser.add_argument('--cache',type=Path,default=Path('/tmp/protolab-full-promtehimport-cache/products'))
  args=parser.parse_args()
  inventory=json.loads(args.inventory.read_text());members={url for category in inventory['categories'].values() for url in category['productUrls']}
+ args.cache.mkdir(parents=True,exist_ok=True)
  added=[]
  for path in args.input:
   for product in parse(path.read_text(),members):

@@ -1,0 +1,5 @@
+import type { PartModule } from '../../core/part-modules';
+import definition from './part';
+import { catalogSelection } from './configurator';
+const part = { ...definition, id: 'open-frame-solenoid', catalogSelection };
+export default { apiVersion: 1, order: 82, part } satisfies PartModule;

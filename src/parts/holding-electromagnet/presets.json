@@ -1,0 +1,112 @@
+[
+  {
+    "id": "prototype-pot-20",
+    "name": "Compact pot Ø20 × 12",
+    "description": "Compact geometric prototype with a 3 mm blind mounting bore and paired rear leads.",
+    "parameters": {
+      "bodyDiameter": 20,
+      "bodyHeight": 12,
+      "wallThickness": 1.5,
+      "backThickness": 2,
+      "poleDiameter": 8,
+      "coilClearance": 0.3,
+      "coilRecess": 0.6,
+      "mountingBoreDiameter": 3,
+      "mountingBoreDepth": 5,
+      "armatureDiameter": 20,
+      "armatureThickness": 2,
+      "airGap": 0.25,
+      "showLeads": true,
+      "leadDiameter": 1,
+      "leadLength": 10
+    }
+  },
+  {
+    "id": "prototype-pot-30",
+    "name": "Low-profile pot Ø30 × 14",
+    "description": "Low-profile geometric prototype without leads; the back plate has only its central blind bore.",
+    "parameters": {
+      "bodyDiameter": 30,
+      "bodyHeight": 14,
+      "wallThickness": 2,
+      "backThickness": 3,
+      "poleDiameter": 12,
+      "coilClearance": 0.4,
+      "coilRecess": 0.8,
+      "mountingBoreDiameter": 4,
+      "mountingBoreDepth": 6,
+      "armatureDiameter": 32,
+      "armatureThickness": 3,
+      "airGap": 0.3,
+      "showLeads": false,
+      "leadDiameter": 1.4,
+      "leadLength": 12
+    }
+  },
+  {
+    "id": "prototype-pot-40",
+    "name": "General-purpose pot Ø40 × 20",
+    "description": "Medium geometric prototype with separate potted coil, 5 mm mounting bore and rear leads.",
+    "parameters": {
+      "bodyDiameter": 40,
+      "bodyHeight": 20,
+      "wallThickness": 3,
+      "backThickness": 4,
+      "poleDiameter": 16,
+      "coilClearance": 0.5,
+      "coilRecess": 1,
+      "mountingBoreDiameter": 5,
+      "mountingBoreDepth": 8,
+      "armatureDiameter": 40,
+      "armatureThickness": 4,
+      "airGap": 0.5,
+      "showLeads": true,
+      "leadDiameter": 1.8,
+      "leadLength": 16
+    }
+  },
+  {
+    "id": "prototype-pot-60",
+    "name": "Wide pot Ø60 × 28",
+    "description": "Wide geometric prototype with a 6 mm blind mounting bore and an oversize removable armature.",
+    "parameters": {
+      "bodyDiameter": 60,
+      "bodyHeight": 28,
+      "wallThickness": 4,
+      "backThickness": 5,
+      "poleDiameter": 24,
+      "coilClearance": 0.6,
+      "coilRecess": 1.2,
+      "mountingBoreDiameter": 6,
+      "mountingBoreDepth": 10,
+      "armatureDiameter": 64,
+      "armatureThickness": 5,
+      "airGap": 0.6,
+      "showLeads": true,
+      "leadDiameter": 2.2,
+      "leadLength": 22
+    }
+  },
+  {
+    "id": "prototype-pot-100",
+    "name": "Large pot Ø100 × 40",
+    "description": "Large geometric prototype with a 10 mm blind mounting bore, thick keeper plate and paired rear leads.",
+    "parameters": {
+      "bodyDiameter": 100,
+      "bodyHeight": 40,
+      "wallThickness": 7,
+      "backThickness": 8,
+      "poleDiameter": 40,
+      "coilClearance": 0.8,
+      "coilRecess": 1.5,
+      "mountingBoreDiameter": 10,
+      "mountingBoreDepth": 16,
+      "armatureDiameter": 100,
+      "armatureThickness": 8,
+      "airGap": 1,
+      "showLeads": true,
+      "leadDiameter": 3.2,
+      "leadLength": 30
+    }
+  }
+]

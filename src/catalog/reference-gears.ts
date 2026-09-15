@@ -136,6 +136,7 @@ export function bevelPairPresets(defaults: Parameters): Preset[] {
         },
         verifiedParameters: Object.keys(parameters).filter(
           (key) =>
+            !/^(pinion|wheel)Bore(Shape|Angle|FlatDepth|Sides|KeyWidth|KeyDepth)$/.test(key) &&
             ![
               'pinionBore',
               'wheelBore',

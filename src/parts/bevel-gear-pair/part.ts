@@ -248,9 +248,17 @@ const fields = (side: GearSide) => {
     {
       ...numberParameter(`${side}Bore`, `${name} bore`, 'd', group, 1, 80, 0.01),
       description:
-        'Diameter for round / D / keyed holes; across flats for hex / square; inscribed diameter for custom polygons. A custom shape is not supplied by the reference listing.',
+        'Diameter for round / D / keyed holes; across flats for hex / square; inscribed diameter for custom polygons. The m2 15/30 stock options specify a round pinion and keyed wheel.',
     },
-    ...shaftBoreParameters(group, side, name),
+    ...shaftBoreParameters(group, side, name).map((field) =>
+      field.key === `${side}BoreKeyDepth`
+        ? {
+            ...field,
+            description:
+              'Editable prototype depth from the nominal circular edge to the outer slot wall. The supplied m2 drawing specifies keyway width only; it does not specify this depth.',
+          }
+        : field,
+    ),
     ...(
       [
         ['Outer', 'Outside diameter', 'D', 2, 200],
@@ -298,6 +306,9 @@ const part: PartDefinition = {
     'pinion',
     'right angle',
     '2:1',
+    '1:2',
+    '45# steel',
+    'keyway',
     'miter',
     'mitre',
     'transmission',
@@ -460,7 +471,12 @@ const part: PartDefinition = {
     }
   },
   notes:
-    'The six supplied pairs cover twelve mounting-table rows. Dimensions D/G/A/F/Z/N/H/L and bore intervals are transcribed from the anonymous reference. The origin is the shaft intersection. Teeth use a faceted, tapered involute-like layout profile; this is not a generated conjugate bevel surface or a verified interference-free pair. The drawing does not specify pressure angle, tooth correction, root fillets, keyways or set screw thread sizes. Editable values for these prototype details do not establish supplier interchangeability.',
-  sources: [{ label: 'User-supplied bevel mounting drawing', url: gearReferenceFiles.bevel }],
+    'Six mounting references cover twelve table rows. The m2 15/30 listing adds 25 configurations of separately sold gears: pinion bores 8/10/12/14/15 mm without a keyway, and wheel bores 14/15/16 mm with a 5 mm keyway or 18/20 mm with a 6 mm keyway. Keyway depth remains an editable prototype dimension. The origin is the intersection of the 90° shaft axes. Teeth use a faceted, tapered involute-like layout profile; pressure angle, tooth corrections, root fillets and set screw thread sizes are unspecified. This geometry does not establish conjugate contact or supplier interchangeability.',
+  sources: [
+    { label: 'User-supplied bevel mounting drawing', url: gearReferenceFiles.bevel },
+    { label: 'Additional mounting size table', url: gearReferenceFiles.mounting },
+    { label: '1:2 bevel pair · separately sold gears', url: gearReferenceFiles.pairPhoto },
+    { label: 'm2 15T / 30T · bore and keyway options', url: gearReferenceFiles.m2Options },
+  ],
 };
 export default { ...part, presets: modulePresets };

@@ -457,7 +457,7 @@ test('malformed source intervals cannot create matches even when a default scala
 
 test('bevel Match current accepts fitting bores throughout both sourced intervals and rejects either bore outside', () => {
   const bevelIndex = buildPresetIndex([bevel]);
-  for (const preset of bevel.presets) {
+  for (const preset of bevel.presets.filter((item) => item.catalog?.parameterRanges)) {
     const ranges = preset.catalog!.parameterRanges!;
     for (const position of [0, 0.5, 1]) {
       const parameters = {
@@ -488,4 +488,40 @@ test('bevel Match current accepts fitting bores throughout both sourced interval
       }
     }
   }
+});
+
+test('bevel stock bore searches match exact combinations and source keyway widths, not intermediate bores or prototype depth', () => {
+  const bevelIndex = buildPresetIndex([bevel]);
+  const stockPrefix = 'reference-bevel-m2-15-30-bore-';
+  const stockPresets = bevel.presets.filter((preset) => preset.id.startsWith(stockPrefix));
+  assert.equal(stockPresets.length, 25);
+  for (const preset of stockPresets) {
+    const result = filterPresets(bevelIndex, seedCurrentFilters(bevel, preset.parameters));
+    assert.deepEqual(result.errors, []);
+    assert.deepEqual(
+      result.items.filter((entry) => entry.preset.id.startsWith(stockPrefix)).map((entry) => entry.preset.id),
+      [preset.id],
+    );
+    for (const key of ['pinionBore', 'wheelBore']) {
+      const intermediate = { ...preset.parameters, [key]: Number(preset.parameters[key]) + 0.5 };
+      const customResult = filterPresets(bevelIndex, seedCurrentFilters(bevel, intermediate));
+      assert.deepEqual(customResult.errors, []);
+      assert.ok(!customResult.items.some((entry) => entry.preset.id.startsWith(stockPrefix)));
+    }
+  }
+
+  const keyWidthField = bevel.parameters.find((field) => field.key === 'wheelBoreKeyWidth')!;
+  for (const [width, count] of [[5, 15], [6, 10]]) {
+    const filters = emptyPresetFilters(bevel);
+    filters.parameters[fieldId(keyWidthField)] = { min: String(width), max: String(width) };
+    const result = filterPresets(bevelIndex, filters);
+    assert.deepEqual(result.errors, []);
+    assert.equal(result.items.length, count);
+    assert.ok(result.items.every((entry) => entry.preset.parameters.wheelBoreKeyWidth === width));
+  }
+
+  const keyDepthField = bevel.parameters.find((field) => field.key === 'wheelBoreKeyDepth')!;
+  const depthFilters = emptyPresetFilters(bevel);
+  depthFilters.parameters[fieldId(keyDepthField)] = { min: '2', max: '2' };
+  assert.deepEqual(filterPresets(bevelIndex, depthFilters).items, []);
 });

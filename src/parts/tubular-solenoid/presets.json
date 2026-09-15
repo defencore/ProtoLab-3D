@@ -1,0 +1,140 @@
+[
+  {
+    "id": "prototype-pull-18",
+    "name": "Compact pull \u00b7 18 \u00d7 32",
+    "description": "Compact prototype with a front pull rod and insulated terminal pins.",
+    "parameters": {
+      "action": "pull",
+      "outerDiameter": 18,
+      "bodyLength": 32,
+      "wallThickness": 1,
+      "endThickness": 2,
+      "plungerDiameter": 6,
+      "plungerLength": 16,
+      "rodDiameter": 3,
+      "stroke": 4,
+      "extension": 3,
+      "clearance": 0.15,
+      "guideWall": 0.5,
+      "terminals": true,
+      "terminalDiameter": 0.8,
+      "terminalLength": 5,
+      "terminalSpacing": 12
+    }
+  },
+  {
+    "id": "prototype-pull-30",
+    "name": "Pull \u00b7 30 \u00d7 50",
+    "description": "Medium prototype with an 8 mm pull stroke and a separate guide sleeve.",
+    "parameters": {
+      "action": "pull",
+      "outerDiameter": 30,
+      "bodyLength": 50,
+      "wallThickness": 1.5,
+      "endThickness": 3,
+      "plungerDiameter": 10,
+      "plungerLength": 28,
+      "rodDiameter": 5,
+      "stroke": 8,
+      "extension": 5,
+      "clearance": 0.2,
+      "guideWall": 0.8,
+      "terminals": true,
+      "terminalDiameter": 1.5,
+      "terminalLength": 8,
+      "terminalSpacing": 20
+    }
+  },
+  {
+    "id": "prototype-push-30",
+    "name": "Push \u00b7 30 \u00d7 50",
+    "description": "Rear output rod passes through the fixed pole for an 8 mm push stroke.",
+    "parameters": {
+      "action": "push",
+      "outerDiameter": 30,
+      "bodyLength": 50,
+      "wallThickness": 1.5,
+      "endThickness": 3,
+      "plungerDiameter": 10,
+      "plungerLength": 28,
+      "rodDiameter": 5,
+      "stroke": 8,
+      "extension": 5,
+      "clearance": 0.2,
+      "guideWall": 0.8,
+      "terminals": true,
+      "terminalDiameter": 1.5,
+      "terminalLength": 8,
+      "terminalSpacing": 20
+    }
+  },
+  {
+    "id": "prototype-pull-45",
+    "name": "Long-stroke pull \u00b7 45 \u00d7 80",
+    "description": "Large prototype with a 16 mm pull stroke; connection details omitted.",
+    "parameters": {
+      "action": "pull",
+      "outerDiameter": 45,
+      "bodyLength": 80,
+      "wallThickness": 2,
+      "endThickness": 4,
+      "plungerDiameter": 16,
+      "plungerLength": 40,
+      "rodDiameter": 8,
+      "stroke": 16,
+      "extension": 8,
+      "clearance": 0.25,
+      "guideWall": 1,
+      "terminals": false,
+      "terminalDiameter": 2,
+      "terminalLength": 12,
+      "terminalSpacing": 30
+    }
+  },
+  {
+    "id": "prototype-push-60",
+    "name": "Large push \u00b7 60 \u00d7 100",
+    "description": "Large prototype with a 20 mm rear push stroke and insulated terminals.",
+    "parameters": {
+      "action": "push",
+      "outerDiameter": 60,
+      "bodyLength": 100,
+      "wallThickness": 2.5,
+      "endThickness": 5,
+      "plungerDiameter": 22,
+      "plungerLength": 55,
+      "rodDiameter": 10,
+      "stroke": 20,
+      "extension": 10,
+      "clearance": 0.3,
+      "guideWall": 1.2,
+      "terminals": true,
+      "terminalDiameter": 2.5,
+      "terminalLength": 15,
+      "terminalSpacing": 40
+    }
+  },
+  {
+    "id": "prototype-push-18",
+    "name": "Compact push \u00b7 18 \u00d7 32",
+    "description": "Compact rear-rod push prototype with connection details omitted.",
+    "parameters": {
+      "action": "push",
+      "outerDiameter": 18,
+      "bodyLength": 32,
+      "wallThickness": 1,
+      "endThickness": 2,
+      "plungerDiameter": 6,
+      "plungerLength": 16,
+      "rodDiameter": 3,
+      "stroke": 4,
+      "extension": 3,
+      "clearance": 0.15,
+      "guideWall": 0.5,
+      "terminals": false,
+      "terminalDiameter": 0.8,
+      "terminalLength": 5,
+      "terminalSpacing": 12
+    }
+  }
+]

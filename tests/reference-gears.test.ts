@@ -1,12 +1,20 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { Box3, Mesh, Raycaster, Vector3 } from 'three';
-import bevel, { bevelPairValues } from '../src/parts/bevel-gear-pair/part';
+import { bevelPairValues } from '../src/parts/bevel-gear-pair/part';
+import bevelModule from '../src/parts/bevel-gear-pair';
 import spur from '../src/parts/spur-gear/part';
 import { bevelReferenceRows } from '../src/catalog/reference-gears';
 import { validateParameters } from '../src/core/validation';
 import { disposeModel } from '../src/core/mechanical';
 import type { Parameters } from '../src/core/types';
+import { quickPickFields, quickPickOptions } from '../src/core/quick-picks';
+
+const bevel = bevelModule.part;
+const mountingPresets = bevel.presets.filter((preset) => preset.catalog?.parameterRanges);
+const stockBorePresets = bevel.presets.filter((preset) =>
+  preset.id.startsWith('reference-bevel-m2-15-30-bore-'),
+);
 
 test('miniature pinions retain the four visible sizes without claiming unspecified dimensions', () => {
   const presets = spur.presets.filter((preset) => preset.id.startsWith('reference-m05'));
@@ -26,8 +34,9 @@ test('miniature pinions retain the four visible sizes without claiming unspecifi
 
 test('bevel presets preserve every row, mounting datum and continuous bore interval', () => {
   assert.equal(bevelReferenceRows.length, 12);
-  assert.equal(bevel.presets.length, 6);
-  for (const [index, preset] of bevel.presets.entries()) {
+  assert.equal(mountingPresets.length, 6);
+  for (const [index, preset] of mountingPresets.entries()) {
+    assert.ok(!preset.catalog!.verifiedParameters.some((key) => /Bore(?:Shape|Angle|FlatDepth|Sides|KeyWidth|KeyDepth)$/.test(key)));
     for (const [offset, side] of ['pinion', 'wheel'].entries()) {
       const row = bevelReferenceRows[index * 2 + offset],
         p = preset.parameters;
@@ -57,6 +66,59 @@ test('bevel presets preserve every row, mounting datum and continuous bore inter
       assert.ok(Math.abs(Math.max(...points.map((point) => point[2])) - row.overall) < 1e-8);
     }
   }
+});
+
+test('m2 15/30 stock configurations preserve the listed bores and keyway widths without verifying prototype depth', () => {
+  const pinionBores = [8, 10, 12, 14, 15];
+  const wheelBores = [14, 15, 16, 18, 20];
+  assert.equal(stockBorePresets.length, 25);
+  assert.equal(bevel.presets.length, 31);
+  for (const pinionBore of pinionBores)
+    for (const wheelBore of wheelBores) {
+      const preset = stockBorePresets.find(
+        (item) => item.id === `reference-bevel-m2-15-30-bore-${pinionBore}-${wheelBore}`,
+      );
+      assert.ok(preset);
+      const p = preset.parameters;
+      assert.equal(p.module, 2);
+      assert.equal(p.pinionTeeth, 15);
+      assert.equal(p.wheelTeeth, 30);
+      assert.equal(p.pinionBore, pinionBore);
+      assert.equal(p.wheelBore, wheelBore);
+      assert.equal(p.pinionBoreShape, 'round');
+      assert.equal(p.wheelBoreShape, 'keyway');
+      assert.equal(p.wheelBoreKeyWidth, wheelBore <= 16 ? 5 : 6);
+      assert.equal(p.wheelBoreKeyDepth, 2);
+      assert.equal(p.pinionOverall, 20.59);
+      assert.equal(p.wheelOverall, 21.6);
+      assert.equal(p.pinionMounting, 40);
+      assert.equal(p.wheelMounting, 31);
+      assert.deepEqual(validateParameters(bevel, p, 'assembled'), []);
+      const catalog = preset.catalog!;
+      assert.equal(catalog.parameterRanges, undefined);
+      for (const key of ['pinionBore', 'wheelBore', 'pinionBoreShape', 'wheelBoreShape', 'wheelBoreKeyWidth'])
+        assert.ok(catalog.verifiedParameters.includes(key), `${preset.id}: ${key}`);
+      for (const key of ['pinionBoreKeyWidth', 'pinionBoreKeyDepth', 'wheelBoreKeyDepth', 'pinionBoreAngle', 'wheelBoreAngle', 'pressureAngle', 'backlash', 'setScrewDiameter'])
+        assert.ok(!catalog.verifiedParameters.includes(key), `${preset.id}: prototype ${key}`);
+      assert.match(catalog.sourceUrl, /bevel-gear-m2-15-30-bore-options\.png$/);
+      assert.ok(catalog.alternateSourceUrls?.some((url) => url.endsWith('bevel-gear-mounting-table.png')));
+      assert.ok(catalog.specifications?.some((item) => /sold separately/.test(item.value)));
+      assert.ok(catalog.specifications?.some((item) => item.value === '45# steel'));
+    }
+
+  const fields = quickPickFields(bevel);
+  const pinionIndex = fields.findIndex((field) => field.key === 'pinionBore');
+  const wheelIndex = fields.findIndex((field) => field.key === 'wheelBore');
+  assert.ok(pinionIndex >= 0 && wheelIndex > pinionIndex);
+  const filters = { module: '2', pinionTeeth: '15', wheelTeeth: '30' };
+  assert.deepEqual(
+    quickPickOptions(bevel.presets, fields, filters, pinionIndex).map((item) => Number(item.value)),
+    pinionBores,
+  );
+  assert.deepEqual(
+    quickPickOptions(bevel.presets, fields, { ...filters, pinionBore: '8' }, wheelIndex).map((item) => Number(item.value)),
+    wheelBores,
+  );
 });
 
 test('bevel dimensions reject inconsistent envelopes before meshing', () => {
@@ -125,7 +187,7 @@ test('all bevel reference assemblies contain closed positive-volume meshes at th
 });
 
 test('bevel front and back root annuli remain planar at their mounting datums', () => {
-  for (const preset of bevel.presets) {
+  for (const preset of mountingPresets) {
     const parameters: Parameters = {
       ...preset.parameters,
       setScrews: false,

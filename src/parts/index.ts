@@ -80,6 +80,10 @@ import module76 from './l-bracket/index';
 import module77 from './spacer/index';
 import module78 from './aluminium-profile/index';
 import module79 from './wheel/index';
+import module80 from './holding-electromagnet/index';
+import module81 from './tubular-solenoid/index';
+import module82 from './open-frame-solenoid/index';
+import module83 from './servo-motor/index';
 
 export const parts = registerPartModules([
   module0,
@@ -162,4 +166,8 @@ export const parts = registerPartModules([
   module77,
   module78,
   module79,
+  module80,
+  module81,
+  module82,
+  module83,
 ]);

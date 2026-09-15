@@ -15,6 +15,12 @@ import {
 } from 'lucide-react';
 import type { Parameters, PartDefinition, Preset } from '../core/types';
 import {
+  isPublishedValue,
+  presetMatchesConfiguration,
+  presetValue,
+  searchableFields,
+} from '../core/catalog-models';
+import {
   buildPresetIndex,
   emptyPresetFilters,
   fieldId,
@@ -49,13 +55,13 @@ const sortedUnique = (values: (string | undefined)[]) =>
 
 function DimensionSummary({ entry }: { entry: PresetEntry }) {
   const primary = entry.part.presetMatchKeys ?? ['bore', 'outer', 'width', 'diameter', 'length'];
-  const fields = entry.part.parameters
+  const fields = searchableFields(entry.part)
     .filter(
       (field) =>
         field.type === 'number' &&
         (!field.visibleWhen || field.visibleWhen(entry.preset.parameters)) &&
         (entry.preset.catalog
-          ? entry.preset.catalog.verifiedParameters.includes(field.key) ||
+          ? isPublishedValue(entry.preset, field.key) ||
             !!getPresetParameterRange(entry.preset, field.key)
           : (entry.part.presetMatchKeys?.includes(field.key) ??
             [
@@ -87,14 +93,14 @@ function DimensionSummary({ entry }: { entry: PresetEntry }) {
               key={field.key}
               title={
                 range
-                  ? `${field.label}: source range; preset value ${formatPresetValue(field, entry.preset.parameters[field.key])}`
+                  ? `${field.label}: source range; preset value ${formatPresetValue(field, presetValue(entry.preset, field.key))}`
                   : field.label
               }
             >
               <small>{field.symbol ?? field.label}</small>
               {range
                 ? `${formatPresetRange(field, range)} range`
-                : formatPresetValue(field, entry.preset.parameters[field.key])}
+                : formatPresetValue(field, presetValue(entry.preset, field.key))}
             </span>
           );
         })}
@@ -265,10 +271,15 @@ export default function PresetBrowser({
     (entry) =>
       entry.part.id === currentPart.id &&
       entry.preset.id === currentPresetId &&
-      Object.keys(currentPart.defaults).every(
-        (key) => entry.preset.parameters[key] === currentParameters[key],
-      ),
+      presetMatchesConfiguration(currentPart, entry.preset, currentParameters),
   );
+  const reviewParameters: Parameters = selected?.part.catalogSelectionOnly
+    ? currentParameters
+    : (selected?.preset.parameters ?? {});
+  const reviewValues: Parameters = {
+    ...reviewParameters,
+    ...selected?.preset.catalog?.attributes,
+  };
   const selectedId = selected?.id ?? '';
   const categories = sortedUnique(parts.map((part) => part.category));
   const categoryParts = parts.filter(
@@ -770,16 +781,19 @@ export default function PresetBrowser({
                 <details className="pb-review-parameters">
                   <summary>Review all parameters</summary>
                   <dl>
-                    {selected.part.parameters
-                      .filter(
-                        (field) =>
-                          !field.visibleWhen || field.visibleWhen(selected.preset.parameters),
-                      )
+                    {searchableFields(selected.part)
+                      .filter((field) => !field.visibleWhen || field.visibleWhen(reviewParameters))
                       .map((field) => (
                         <div key={field.key}>
                           <dt>{field.label}</dt>
                           <dd>
-                            {formatPresetValue(field, selected.preset.parameters[field.key])}
+                            {formatPresetValue(field, reviewValues[field.key])}
+                            {selected.preset.catalog?.attributeConditions?.[field.key] && (
+                              <small>
+                                {' '}
+                                · {selected.preset.catalog.attributeConditions[field.key]}
+                              </small>
+                            )}
                             {getPresetParameterRange(selected.preset, field.key) && (
                               <>
                                 {' '}
@@ -799,10 +813,10 @@ export default function PresetBrowser({
                 {selected.preset.catalog && (
                   <p className="pb-verified">
                     Sourced parameters:{' '}
-                    {selected.part.parameters
+                    {searchableFields(selected.part)
                       .filter(
                         (field) =>
-                          selected.preset.catalog!.verifiedParameters.includes(field.key) ||
+                          isPublishedValue(selected.preset, field.key) ||
                           !!getPresetParameterRange(selected.preset, field.key),
                       )
                       .map(
@@ -810,7 +824,7 @@ export default function PresetBrowser({
                           `${field.label} ${
                             getPresetParameterRange(selected.preset, field.key)
                               ? `${formatPresetRange(field, getPresetParameterRange(selected.preset, field.key)!)} range`
-                              : formatPresetValue(field, selected.preset.parameters[field.key])
+                              : formatPresetValue(field, presetValue(selected.preset, field.key))
                           }`,
                       )
                       .join(' · ')}

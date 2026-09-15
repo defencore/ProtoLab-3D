@@ -1,0 +1,2 @@
+# Preserve the manufacturer's original STEP bytes and omit generated CAD diffs.
+public/references/st3215-hs-manufacturer.step -text -diff

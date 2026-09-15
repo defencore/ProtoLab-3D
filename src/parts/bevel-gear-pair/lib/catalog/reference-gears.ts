@@ -16,4 +16,7 @@ export interface BevelReferenceRow {
 export const gearReferenceFiles = {
   spur: 'references/spur-pinion-options.png',
   bevel: 'references/bevel-gear-dimensions.png',
+  mounting: 'references/bevel-gear-mounting-table.png',
+  pairPhoto: 'references/bevel-gear-1-to-2-photo.png',
+  m2Options: 'references/bevel-gear-m2-15-30-bore-options.png',
 };

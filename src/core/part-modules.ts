@@ -65,10 +65,47 @@ export function registerPartModules(modules: readonly PartModule[]): PartDefinit
         fail(`Default ${field.key} must be one of its options.`);
     }
     const presetIds = new Set<string>();
+    const attributeKeys = new Set<string>();
+    for (const field of part.catalogFilterFields ?? []) {
+      if (!field.key || keys.has(field.key) || attributeKeys.has(field.key))
+        fail(`Duplicate catalog characteristic key: ${field.key}.`);
+      attributeKeys.add(field.key);
+      if (!['number', 'select', 'boolean'].includes(field.type))
+        fail(`Unknown catalog characteristic type: ${field.key}.`);
+    }
+    if (part.catalogSelectionOnly && (!attributeKeys.size || !part.presets.length))
+      fail('Fixed catalog models require characteristics and presets.');
     for (const preset of part.presets) {
       if (!preset.id || presetIds.has(preset.id))
         fail(`Duplicate or missing preset ID: ${preset.id}.`);
       presetIds.add(preset.id);
+      if (part.catalogSelectionOnly) {
+        const identity = preset.catalog?.verifiedParameters;
+        if (!Array.isArray(identity) || !identity.length)
+          fail(`Fixed model ${preset.id} requires source-verified identity parameters.`);
+        for (const key of identity!) {
+          const field = part.parameters.find((field) => field.key === key);
+          if (!field || !Object.hasOwn(preset.parameters, key))
+            fail(`Fixed model ${preset.id} has an unknown or missing identity parameter: ${key}.`);
+          const value = preset.parameters[key];
+          if (
+            (field!.type === 'number' && (typeof value !== 'number' || !Number.isFinite(value))) ||
+            (field!.type === 'boolean' && typeof value !== 'boolean') ||
+            (field!.type === 'select' && !field!.options?.some((option) => option.value === value))
+          )
+            fail(`Fixed model ${preset.id} has an invalid identity value for ${key}.`);
+        }
+      }
+      for (const [key, value] of Object.entries(preset.catalog?.attributes ?? {})) {
+        const field = part.catalogFilterFields?.find((field) => field.key === key);
+        if (!field) fail(`Unknown catalog characteristic ${key} in ${preset.id}.`);
+        if (field!.type === 'number' && (typeof value !== 'number' || !Number.isFinite(value)))
+          fail(`Catalog characteristic ${key} must be finite in ${preset.id}.`);
+        if (field!.type === 'boolean' && typeof value !== 'boolean')
+          fail(`Catalog characteristic ${key} must be boolean in ${preset.id}.`);
+        if (field!.type === 'select' && !field!.options?.some((option) => option.value === value))
+          fail(`Catalog characteristic ${key} must match an option in ${preset.id}.`);
+      }
     }
     for (const selection of part.catalogSelection ?? [])
       if (!keys.has(selection.key))

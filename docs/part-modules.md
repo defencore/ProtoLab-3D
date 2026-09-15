@@ -1,6 +1,6 @@
 # Independent part packages
 
-The editable unit is `src/parts/<part-id>/`. Keep the part's controls, defaults, presets, geometry, FreeCAD recipe and validation in that folder. The application discovers packages and renders their schemas; adding a part does not require editing the UI or a list of imports.
+The development unit is `src/parts/<part-id>/`. Keep the part's controls, defaults, presets, geometry, FreeCAD recipe and validation in that folder. A package may expose editable geometry or select fixed manufactured models. The application discovers packages and renders their schemas; adding a part does not require editing the UI or a list of imports.
 
 ## Files to edit
 
@@ -99,6 +99,39 @@ Each key must exist in the schema. Only source-verified, filterable parameters p
 
 `presetMatchKeys` also selects the initial conditions for **Find matching**. Choose useful fitting dimensions and shape choices. Other schema parameters remain available to advanced search unless marked `filterable: false`; use that flag for internal metadata that should not be searched as a part size.
 
+### Fixed manufactured models
+
+Set `catalogSelectionOnly: true` when the user should select an existing manufactured model rather than edit its dimensions. The configurator then shows a model catalog and the remaining pose/accessory controls, without a custom-dimensions mode. For example, `servo-motor` has one `model` select parameter and three pose/accessory parameters; its case dimensions and electrical ratings are read-only catalog attributes.
+
+Declare the searchable characteristics in `catalogFilterFields`, using `ParameterDefinition` labels, types, units, groups and select options. These fields have their own keys and do not belong in `defaults` or a preset's `parameters`. Their values come from `preset.catalog.attributes`. Keep catalog field keys distinct from editable parameter keys. Optional `catalogSummary: true` displays a characteristic on a model card; `catalogCondition: true` displays a contextual value, such as the reference voltage, below the card's summary.
+
+```ts
+import type { ParameterDefinition } from '../../core/types';
+
+const catalogFilterFields: ParameterDefinition[] = [
+  {
+    key: 'caseWidth',
+    label: 'Case width',
+    type: 'number',
+    unit: 'mm',
+    group: 'Dimensions',
+    catalogSummary: true,
+  },
+  {
+    key: 'referenceVoltage',
+    label: 'Torque / speed test voltage',
+    type: 'number',
+    unit: 'V',
+    group: 'Electrical performance',
+    catalogCondition: true,
+  },
+];
+```
+
+Catalog numeric filters have inclusive minimum and maximum bounds; empty bounds are unrestricted. Select and boolean filters require the selected published value. Missing attributes mean unknown: a model remains eligible without that filter and is excluded when that characteristic is required. Invalid or reversed numeric bounds produce an error rather than matching models. Filtering does not change the current model; selecting a result applies its stored configuration.
+
+The `model` value must select a fixed package-owned geometry record. Validation should reject unsupported model IDs and obsolete dimension parameters; geometry should not derive physical sizes from filter inputs. `updateParameters` can adapt pose limits when a different model is chosen. The existing `catalogSelection` parameter selectors remain a separate contract for packages that expose catalog sizes of editable geometry.
+
 Relational validation belongs to `validate(parameters, state)`: check that bores fit, walls remain positive, coils have clearance and other dependent dimensions agree. Schema min/max limits cannot express those relationships. If states are provided, geometry, validation, Python and dimensions must interpret the same state IDs.
 
 ## Presets and source evidence
@@ -111,6 +144,12 @@ For a supplied drawing, use `catalog.sourceKind: 'attachment'` and an app-relati
 
 `catalog.parameterRanges` may record explicitly published numeric intervals, such as `bore: { min: 6, max: 8 }`. Advanced search uses inclusive interval overlap. Applying the result uses its stored parameters; an interval does not make every possible edited value an independently verified measurement.
 
+`catalog.attributes` records published fixed-model characteristics as a dictionary of numeric, string or boolean values. Every key must have a corresponding `catalogFilterFields` definition, numeric values must be finite, and select values must match declared options. These are source facts used for search and display; they are not passed into geometry as editable parameters. Omit unknown values instead of storing zero, an empty string or a guessed rating.
+
+`catalog.attributeConditions` maps characteristic keys to readable measurement conditions or reasons a value is unavailable. It may explain an omitted attribute, such as an unreported current. Keep conditions specific: a torque/speed reference voltage does not establish the voltage for a current measurement unless the source says so. Preserve source URLs and human-readable specifications alongside numeric attributes so a result remains reviewable.
+
+For a fixed catalog model, `verifiedParameters` identifies the source-owned model identity, for example `['model']`. Shared source matching compares those identity parameters, allowing pose, optional accessories and state to change without losing the manufacturer's identity in the UI or FreeCAD metadata. That identity does not claim every modeled detail or illustrative accessory is source-dimensioned. Record verified dimensions, approximations and conflicts in package-local evidence and notes. Packages with editable geometry retain exact full-configuration source matching.
+
 ## Geometry and FreeCAD
 
 Use millimetres and native Z-up coordinates. Define a useful part origin and keep `dimensions` consistent with both representations. The viewer handles display orientation.
@@ -121,7 +160,9 @@ For an assembly, return `Part.makeCompound` with direct children representing in
 
 ## Shared SDK and independence
 
-The supported outside-package imports are the generic SDK modules `types.ts`, `geometry.ts`, `mechanical.ts`, `solid-union.ts` and `part-modules.ts` under `src/core`, plus the installed Three.js and JSCAD packages. The SDK provides contracts and generic primitives; application export and validation wrappers are supplied to the workbench by its host.
+The supported outside-package imports are the generic SDK modules `types.ts`, `geometry.ts`, `mechanical.ts`, `solid-union.ts` and `part-modules.ts` under `src/core`, plus the installed Three.js and JSCAD packages. The SDK provides contracts and generic primitives; application export and validation wrappers are supplied to the workbench by its host. Fixed-model packages declare catalog data through these contracts, without importing application UI components.
+
+The generic `catalog-models.ts` helper belongs to the host. It centralizes attribute lookup, inclusive model filters and source-identity matching for the application catalog and export wrappers. Runnable handoffs must carry this helper with the host files that import it, so fixed-model source metadata behaves consistently outside the main app. A standalone workbench can select the same model through its schema controls without reproducing the full library's filter UI; the package's fixed geometry and published attributes remain intact.
 
 Domain-specific algorithms belong under the part's own `lib/`. Imports from another part, `src/catalog`, UI components or arbitrary dependencies are rejected by package inspection. Copy a needed domain helper into the package instead of linking across that boundary. The deliberate duplication allows a developer to improve one part without altering its siblings. A change to the shared SDK is an application-wide change and needs broader verification.
 

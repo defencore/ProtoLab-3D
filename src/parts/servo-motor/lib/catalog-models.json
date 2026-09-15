@@ -1,0 +1,1238 @@
+[
+  {
+    "model": "waveshare-st3215-hs",
+    "name": "Waveshare ST3215-HS",
+    "family": "waveshare",
+    "angleLimit": 180,
+    "geometry": {
+      "bodyHeight": 29,
+      "shaftHeight": 3.2,
+      "shaftDiameter": 6,
+      "hornDiameter": 19.2,
+      "hornThickness": 2.5,
+      "hornHoleDiameter": 2.5,
+      "hornArmLength": 25,
+      "hornArmWidth": 7,
+      "fitClearance": 0.2
+    },
+    "geometryEvidence": {
+      "verifiedDimensions": [
+        "bodyLength",
+        "bodyWidth",
+        "bodyHeight",
+        "shaftOffset",
+        "mountStart",
+        "frontMountPitch",
+        "rearMountPitch",
+        "mountRowPitch",
+        "mountHoleDiameter",
+        "shaftDiameter",
+        "shaftHeight",
+        "shaftBore",
+        "rearPivotHeight",
+        "rearPivotBore",
+        "hornDiameter",
+        "hornThickness",
+        "hornHolePitch",
+        "hornHoleDiameter"
+      ],
+      "notes": "Original ST3215 STEP geometry, SHA-256 58e38e4dc49f97df738c5f229f9aa8a7dce64a0a1d01335486a52d53e6017e8a. Eight native solids mapped by X=x+25.5, Y=-z, Z=y+24.1. Only an internal annular void in the rear cover is translated -0.00001 mm in source Y to repair a touching-shell defect; external surfaces and volume are retained. Manufacturer component overlaps are preserved. Preview is tessellated at 0.02 mm; FreeCAD reconstructs native BREP surfaces. The optional single arm is an illustrative accessory. Listed drawing dimensions are nominal source metadata, not geometry controls.",
+      "sources": [
+        {
+          "label": "Waveshare ST3215-HS official wiki",
+          "url": "https://www.waveshare.com/wiki/ST3215-HS_Servo_Motor"
+        },
+        {
+          "label": "Official dimension drawing (local copy)",
+          "url": "references/st3215-hs-drawing.png"
+        },
+        {
+          "label": "Official drawing PDF",
+          "url": "references/st3215-hs-drawing.pdf"
+        },
+        {
+          "label": "Official STEP model",
+          "url": "https://files.waveshare.com/upload/5/59/ST3215-3D.zip"
+        },
+        {
+          "label": "Manufacturer STEP (local copy)",
+          "url": "references/st3215-hs-manufacturer.step"
+        },
+        {
+          "label": "Waveshare ST3215-HS manufacturer specifications 1",
+          "url": "https://files.waveshare.com/upload/0/08/ST3215-2D.zip"
+        },
+        {
+          "label": "Waveshare ST3215-HS manufacturer specifications 3",
+          "url": "https://www.waveshare.com/product/modules/motors-servos/st3215-hs-servo-motor.htm"
+        }
+      ],
+      "dimensions": {
+        "bodyLength": 45.22,
+        "bodyWidth": 24.72,
+        "bodyHeight": 29,
+        "shaftOffset": 10.11,
+        "mountStart": 18.41,
+        "frontMountPitch": 20.7,
+        "rearMountPitch": 24.45,
+        "mountRowPitch": 20.5,
+        "mountHoleDiameter": 1.6,
+        "shaftDiameter": 6,
+        "shaftHeight": 3.2,
+        "shaftBore": 2.5,
+        "rearPivotHeight": 4.1,
+        "rearPivotBore": 2.6,
+        "hornDiameter": 19.2,
+        "hornThickness": 2.5,
+        "hornHolePitch": 14,
+        "hornHoleDiameter": 2.5
+      }
+    },
+    "electricalEvidence": {
+      "attributeEvidence": {
+        "caseLength": {
+          "sourceUrl": "https://files.waveshare.com/upload/0/08/ST3215-2D.zip",
+          "condition": "Main case excludes raised faces and discs; mounting pitch is front-face longitudinal row spacing, rear row spacing is 24.45 mm."
+        },
+        "caseWidth": {
+          "sourceUrl": "https://files.waveshare.com/upload/0/08/ST3215-2D.zip",
+          "condition": "Main case excludes raised faces and discs; mounting pitch is front-face longitudinal row spacing, rear row spacing is 24.45 mm."
+        },
+        "caseHeight": {
+          "sourceUrl": "https://files.waveshare.com/upload/0/08/ST3215-2D.zip",
+          "condition": "Main case excludes raised faces and discs; mounting pitch is front-face longitudinal row spacing, rear row spacing is 24.45 mm."
+        },
+        "mountPitch": {
+          "sourceUrl": "https://files.waveshare.com/upload/0/08/ST3215-2D.zip",
+          "condition": "Main case excludes raised faces and discs; mounting pitch is front-face longitudinal row spacing, rear row spacing is 24.45 mm."
+        },
+        "totalHeight": {
+          "sourceUrl": "https://files.waveshare.com/upload/5/59/ST3215-3D.zip",
+          "condition": "Derived bare-output shaft-to-rear-pivot envelope, without supplied discs: 29 + 3.2 + 4.1 = 36.3 mm. With supplied discs the full envelope is 37.8 mm. The wiki nominal 35 mm is not the main case height."
+        },
+        "voltageMin": {
+          "sourceUrl": "https://www.waveshare.com/wiki/ST3215-HS_Servo_Motor",
+          "condition": "Published operating supply range."
+        },
+        "voltageMax": {
+          "sourceUrl": "https://www.waveshare.com/wiki/ST3215-HS_Servo_Motor",
+          "condition": "Published operating supply range."
+        },
+        "referenceVoltage": {
+          "sourceUrl": "https://www.waveshare.com/wiki/ST3215-HS_Servo_Motor",
+          "condition": "Torque 20 kg·cm and no-load speed 0.094 s/60° at 12 V. Manufacturer calls torque simply torque, not continuous duty torque."
+        },
+        "stallTorque": {
+          "sourceUrl": "https://www.waveshare.com/wiki/ST3215-HS_Servo_Motor",
+          "condition": "Torque 20 kg·cm and no-load speed 0.094 s/60° at 12 V. Manufacturer calls torque simply torque, not continuous duty torque."
+        },
+        "noLoadSpeed": {
+          "sourceUrl": "https://www.waveshare.com/wiki/ST3215-HS_Servo_Motor",
+          "condition": "Torque 20 kg·cm and no-load speed 0.094 s/60° at 12 V. Manufacturer calls torque simply torque, not continuous duty torque."
+        },
+        "noLoadCurrent": {
+          "sourceUrl": "https://www.waveshare.com/product/modules/motors-servos/st3215-hs-servo-motor.htm",
+          "condition": "Published no-load 240 mA and locked-rotor 2.4 A; current test voltage is not stated. Do not attach 12 V to these current figures."
+        },
+        "stallCurrent": {
+          "sourceUrl": "https://www.waveshare.com/product/modules/motors-servos/st3215-hs-servo-motor.htm",
+          "condition": "Published no-load 240 mA and locked-rotor 2.4 A; current test voltage is not stated. Do not attach 12 V to these current figures."
+        },
+        "weight": {
+          "sourceUrl": "https://www.waveshare.com/product/modules/motors-servos/st3215-hs-servo-motor.htm",
+          "condition": "Product listing says Weight 0.068 kg; it does not explicitly distinguish bare servo from supplied accessories."
+        },
+        "interfaceType": {
+          "sourceUrl": "https://www.waveshare.com/wiki/ST3215-HS_Servo_Motor",
+          "condition": "TTL serial bus, 1 Mbps default. No PWM command input claimed."
+        }
+      },
+      "performancePoints": [
+        {
+          "voltage": 12,
+          "torque": 20,
+          "noLoadSpeed": 0.094
+        }
+      ],
+      "omittedAttributes": {
+        "motorType": "No authoritative motor construction stated in the HS-specific sources.",
+        "splineTeeth": "No verified tooth count in linked source."
+      }
+    }
+  },
+  {
+    "model": "kst-x10-mini-pro-a",
+    "name": "KST X10 Mini Pro-A",
+    "family": "kst",
+    "angleLimit": 60,
+    "geometry": {
+      "variant": "a",
+      "bodyLength": 30,
+      "bodyWidth": 10,
+      "bodyHeight": 28.5,
+      "mountingSpan": 42,
+      "mountingPitch": 36,
+      "mountingHoleDiameter": 3,
+      "earThickness": 1.8,
+      "earHeight": 8,
+      "mountingTopOffset": 4,
+      "lowerHolePitch": 21.5,
+      "lowerHoleOffset": 14,
+      "shaftOffset": 6.6,
+      "shaftDiameter": 4.94,
+      "shaftRootDiameter": 4.25,
+      "shaftHeight": 3.5,
+      "splineTeeth": 25,
+      "retainingBore": 2.5,
+      "hornReach": 20,
+      "hornWidth": 6,
+      "hornThickness": 2,
+      "hornHoleDiameter": 2,
+      "hornClearance": 0.1,
+      "caseRelief": 4.5600000000000005,
+      "lowerEarRadius": 3,
+      "caseColor": "#d9ad20"
+    },
+    "geometryEvidence": {
+      "verifiedDimensions": [
+        "variant",
+        "bodyLength",
+        "bodyWidth",
+        "bodyHeight",
+        "mountingSpan",
+        "mountingPitch",
+        "mountingHoleDiameter",
+        "earThickness",
+        "shaftOffset",
+        "shaftDiameter",
+        "shaftRootDiameter",
+        "shaftHeight",
+        "splineTeeth",
+        "retainingBore",
+        "earHeight",
+        "lowerHolePitch",
+        "lowerHoleOffset"
+      ],
+      "notes": "Millimetres, Z-up: case bottom Z=0; output axis is X=-bodyLength/2+shaftOffset, or shaftOffset from the left case end. A has three transverse mounting holes; B has two holes through horizontal ears. The KST 2023-07 drawing gives A a 28.5 mm height and B 28 mm, while its shared table and product page say 28 ±0.2 mm; this model follows each variant drawing. Main envelope, mounting datums, spline diameters/count and shaft height are sourced. Undimensioned corner rounds and lower case contours are simplified. Shaft teeth have straight flanks and the M2.5 bore is smooth; fit is not certified. Internal gears, motor, wiring and screws are omitted. The optional horn is an fixed prototype, not a KST dimensional claim. Output angle only changes placement; no torque or electrical simulation.",
+      "sources": [
+        {
+          "label": "KST X10 Mini Pro product page",
+          "url": "https://kstservos.com/products/x10-mini-pro-digital-metal-gear-servo-8-0kgf-cm-0-08sec-for-competition-gliders-and-large-scale-gliders"
+        },
+        {
+          "label": "KST X10 Mini Pro technical drawing · July 2023",
+          "url": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183"
+        },
+        {
+          "label": "KST X10 Mini Pro supplied PDF",
+          "url": "references/kst-x10-mini-pro.pdf"
+        },
+        {
+          "label": "KST X10 Mini Pro installation drawing",
+          "url": "references/kst-x10-mini-pro.png"
+        }
+      ]
+    },
+    "electricalEvidence": {
+      "attributeEvidence": {
+        "caseLength": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Variant A installation drawing: body height 28.5 mm plus shaft projection 3.5 mm. Shared case table says 28 ±0.2 mm; Pro-A drawing says 28.5 mm and takes precedence for A geometry."
+        },
+        "caseWidth": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Variant A installation drawing: body height 28.5 mm plus shaft projection 3.5 mm. Shared case table says 28 ±0.2 mm; Pro-A drawing says 28.5 mm and takes precedence for A geometry."
+        },
+        "caseHeight": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Variant A installation drawing: body height 28.5 mm plus shaft projection 3.5 mm. Shared case table says 28 ±0.2 mm; Pro-A drawing says 28.5 mm and takes precedence for A geometry."
+        },
+        "totalHeight": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Variant A installation drawing: body height 28.5 mm plus shaft projection 3.5 mm. Shared case table says 28 ±0.2 mm; Pro-A drawing says 28.5 mm and takes precedence for A geometry."
+        },
+        "mountPitch": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Variant A installation drawing: body height 28.5 mm plus shaft projection 3.5 mm. Shared case table says 28 ±0.2 mm; Pro-A drawing says 28.5 mm and takes precedence for A geometry."
+        },
+        "splineTeeth": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Variant A installation drawing: body height 28.5 mm plus shaft projection 3.5 mm. Shared case table says 28 ±0.2 mm; Pro-A drawing says 28.5 mm and takes precedence for A geometry."
+        },
+        "voltageMin": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Rated 7.4 V. Published torque 7.2 kgf·cm and speed 0.09 s/60° at this supply; performance plot shows speed decreasing with load. Weight 20 g ±10%. Coreless DC motor; PWM command interface."
+        },
+        "voltageMax": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Rated 7.4 V. Published torque 7.2 kgf·cm and speed 0.09 s/60° at this supply; performance plot shows speed decreasing with load. Weight 20 g ±10%. Coreless DC motor; PWM command interface."
+        },
+        "referenceVoltage": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Rated 7.4 V. Published torque 7.2 kgf·cm and speed 0.09 s/60° at this supply; performance plot shows speed decreasing with load. Weight 20 g ±10%. Coreless DC motor; PWM command interface."
+        },
+        "stallTorque": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Rated 7.4 V. Published torque 7.2 kgf·cm and speed 0.09 s/60° at this supply; performance plot shows speed decreasing with load. Weight 20 g ±10%. Coreless DC motor; PWM command interface."
+        },
+        "noLoadSpeed": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Rated 7.4 V. Published torque 7.2 kgf·cm and speed 0.09 s/60° at this supply; performance plot shows speed decreasing with load. Weight 20 g ±10%. Coreless DC motor; PWM command interface."
+        },
+        "weight": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Rated 7.4 V. Published torque 7.2 kgf·cm and speed 0.09 s/60° at this supply; performance plot shows speed decreasing with load. Weight 20 g ±10%. Coreless DC motor; PWM command interface."
+        },
+        "motorType": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Rated 7.4 V. Published torque 7.2 kgf·cm and speed 0.09 s/60° at this supply; performance plot shows speed decreasing with load. Weight 20 g ±10%. Coreless DC motor; PWM command interface."
+        },
+        "interfaceType": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Rated 7.4 V. Published torque 7.2 kgf·cm and speed 0.09 s/60° at this supply; performance plot shows speed decreasing with load. Weight 20 g ±10%. Coreless DC motor; PWM command interface."
+        }
+      },
+      "performancePoints": [
+        {
+          "voltage": 4.8,
+          "torque": 4.5,
+          "noLoadSpeed": 0.13
+        },
+        {
+          "voltage": 6,
+          "torque": 6,
+          "noLoadSpeed": 0.11
+        },
+        {
+          "voltage": 7.4,
+          "torque": 7.2,
+          "noLoadSpeed": 0.09
+        },
+        {
+          "voltage": 8.4,
+          "torque": 8,
+          "noLoadSpeed": 0.08
+        }
+      ],
+      "omittedAttributes": {
+        "noLoadCurrent": "No exact numeric rating; do not infer zero from graph origin.",
+        "stallCurrent": "No exact numeric rating; do not digitize or extrapolate graph as guaranteed current."
+      }
+    }
+  },
+  {
+    "model": "kst-x10-mini-pro-b",
+    "name": "KST X10 Mini Pro-B",
+    "family": "kst",
+    "angleLimit": 60,
+    "geometry": {
+      "variant": "b",
+      "bodyLength": 30,
+      "bodyWidth": 10,
+      "bodyHeight": 28,
+      "mountingSpan": 42,
+      "mountingPitch": 36,
+      "mountingHoleDiameter": 3,
+      "earThickness": 1.9,
+      "earHeight": 8,
+      "mountingTopOffset": 6.1,
+      "lowerHolePitch": 21.5,
+      "lowerHoleOffset": 14,
+      "shaftOffset": 6.6,
+      "shaftDiameter": 4.94,
+      "shaftRootDiameter": 4.25,
+      "shaftHeight": 3.5,
+      "splineTeeth": 25,
+      "retainingBore": 2.5,
+      "hornReach": 20,
+      "hornWidth": 6,
+      "hornThickness": 2,
+      "hornHoleDiameter": 2,
+      "hornClearance": 0.1,
+      "caseRelief": 4.48,
+      "lowerEarRadius": 3,
+      "caseColor": "#d9ad20"
+    },
+    "geometryEvidence": {
+      "verifiedDimensions": [
+        "variant",
+        "bodyLength",
+        "bodyWidth",
+        "bodyHeight",
+        "mountingSpan",
+        "mountingPitch",
+        "mountingHoleDiameter",
+        "earThickness",
+        "shaftOffset",
+        "shaftDiameter",
+        "shaftRootDiameter",
+        "shaftHeight",
+        "splineTeeth",
+        "retainingBore",
+        "mountingTopOffset"
+      ],
+      "notes": "Millimetres, Z-up: case bottom Z=0; output axis is X=-bodyLength/2+shaftOffset, or shaftOffset from the left case end. A has three transverse mounting holes; B has two holes through horizontal ears. The KST 2023-07 drawing gives A a 28.5 mm height and B 28 mm, while its shared table and product page say 28 ±0.2 mm; this model follows each variant drawing. Main envelope, mounting datums, spline diameters/count and shaft height are sourced. Undimensioned corner rounds and lower case contours are simplified. Shaft teeth have straight flanks and the M2.5 bore is smooth; fit is not certified. Internal gears, motor, wiring and screws are omitted. The optional horn is an fixed prototype, not a KST dimensional claim. Output angle only changes placement; no torque or electrical simulation.",
+      "sources": [
+        {
+          "label": "KST X10 Mini Pro product page",
+          "url": "https://kstservos.com/products/x10-mini-pro-digital-metal-gear-servo-8-0kgf-cm-0-08sec-for-competition-gliders-and-large-scale-gliders"
+        },
+        {
+          "label": "KST X10 Mini Pro technical drawing · July 2023",
+          "url": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183"
+        },
+        {
+          "label": "KST X10 Mini Pro supplied PDF",
+          "url": "references/kst-x10-mini-pro.pdf"
+        },
+        {
+          "label": "KST X10 Mini Pro installation drawing",
+          "url": "references/kst-x10-mini-pro.png"
+        }
+      ]
+    },
+    "electricalEvidence": {
+      "attributeEvidence": {
+        "caseLength": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Variant B installation drawing: body height 28 mm plus shaft projection 3.5 mm. Shared case table says 28 ±0.2 mm; Pro-A drawing says 28.5 mm and takes precedence for A geometry."
+        },
+        "caseWidth": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Variant B installation drawing: body height 28 mm plus shaft projection 3.5 mm. Shared case table says 28 ±0.2 mm; Pro-A drawing says 28.5 mm and takes precedence for A geometry."
+        },
+        "caseHeight": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Variant B installation drawing: body height 28 mm plus shaft projection 3.5 mm. Shared case table says 28 ±0.2 mm; Pro-A drawing says 28.5 mm and takes precedence for A geometry."
+        },
+        "totalHeight": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Variant B installation drawing: body height 28 mm plus shaft projection 3.5 mm. Shared case table says 28 ±0.2 mm; Pro-A drawing says 28.5 mm and takes precedence for A geometry."
+        },
+        "mountPitch": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Variant B installation drawing: body height 28 mm plus shaft projection 3.5 mm. Shared case table says 28 ±0.2 mm; Pro-A drawing says 28.5 mm and takes precedence for A geometry."
+        },
+        "splineTeeth": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Variant B installation drawing: body height 28 mm plus shaft projection 3.5 mm. Shared case table says 28 ±0.2 mm; Pro-A drawing says 28.5 mm and takes precedence for A geometry."
+        },
+        "voltageMin": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Rated 7.4 V. Published torque 7.2 kgf·cm and speed 0.09 s/60° at this supply; performance plot shows speed decreasing with load. Weight 20 g ±10%. Coreless DC motor; PWM command interface."
+        },
+        "voltageMax": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Rated 7.4 V. Published torque 7.2 kgf·cm and speed 0.09 s/60° at this supply; performance plot shows speed decreasing with load. Weight 20 g ±10%. Coreless DC motor; PWM command interface."
+        },
+        "referenceVoltage": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Rated 7.4 V. Published torque 7.2 kgf·cm and speed 0.09 s/60° at this supply; performance plot shows speed decreasing with load. Weight 20 g ±10%. Coreless DC motor; PWM command interface."
+        },
+        "stallTorque": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Rated 7.4 V. Published torque 7.2 kgf·cm and speed 0.09 s/60° at this supply; performance plot shows speed decreasing with load. Weight 20 g ±10%. Coreless DC motor; PWM command interface."
+        },
+        "noLoadSpeed": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Rated 7.4 V. Published torque 7.2 kgf·cm and speed 0.09 s/60° at this supply; performance plot shows speed decreasing with load. Weight 20 g ±10%. Coreless DC motor; PWM command interface."
+        },
+        "weight": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Rated 7.4 V. Published torque 7.2 kgf·cm and speed 0.09 s/60° at this supply; performance plot shows speed decreasing with load. Weight 20 g ±10%. Coreless DC motor; PWM command interface."
+        },
+        "motorType": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Rated 7.4 V. Published torque 7.2 kgf·cm and speed 0.09 s/60° at this supply; performance plot shows speed decreasing with load. Weight 20 g ±10%. Coreless DC motor; PWM command interface."
+        },
+        "interfaceType": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+          "condition": "Rated 7.4 V. Published torque 7.2 kgf·cm and speed 0.09 s/60° at this supply; performance plot shows speed decreasing with load. Weight 20 g ±10%. Coreless DC motor; PWM command interface."
+        }
+      },
+      "performancePoints": [
+        {
+          "voltage": 4.8,
+          "torque": 4.5,
+          "noLoadSpeed": 0.13
+        },
+        {
+          "voltage": 6,
+          "torque": 6,
+          "noLoadSpeed": 0.11
+        },
+        {
+          "voltage": 7.4,
+          "torque": 7.2,
+          "noLoadSpeed": 0.09
+        },
+        {
+          "voltage": 8.4,
+          "torque": 8,
+          "noLoadSpeed": 0.08
+        }
+      ],
+      "omittedAttributes": {
+        "noLoadCurrent": "No exact numeric rating; do not infer zero from graph origin.",
+        "stallCurrent": "No exact numeric rating; do not digitize or extrapolate graph as guaranteed current."
+      }
+    }
+  },
+  {
+    "model": "kst-x10-v8",
+    "name": "KST X10 V8.0",
+    "family": "kst",
+    "angleLimit": 50,
+    "geometry": {
+      "variant": "a",
+      "bodyLength": 30,
+      "bodyWidth": 10,
+      "bodyHeight": 35.5,
+      "mountingSpan": 42,
+      "mountingPitch": 36,
+      "mountingHoleDiameter": 3,
+      "earThickness": 1.8,
+      "earHeight": 8,
+      "mountingTopOffset": 4,
+      "lowerHolePitch": 35.2,
+      "lowerHoleOffset": 18,
+      "shaftOffset": 6.55,
+      "shaftDiameter": 4.94,
+      "shaftRootDiameter": 4.25,
+      "shaftHeight": 3.3,
+      "splineTeeth": 25,
+      "retainingBore": 2.5,
+      "hornReach": 20,
+      "hornWidth": 6,
+      "hornThickness": 2,
+      "hornHoleDiameter": 2,
+      "hornClearance": 0.1,
+      "caseRelief": 0,
+      "lowerEarRadius": 2.7,
+      "caseColor": "#bfc3c8"
+    },
+    "geometryEvidence": {
+      "verifiedDimensions": [
+        "variant",
+        "bodyLength",
+        "bodyWidth",
+        "bodyHeight",
+        "mountingSpan",
+        "mountingPitch",
+        "mountingHoleDiameter",
+        "earThickness",
+        "shaftOffset",
+        "shaftDiameter",
+        "shaftRootDiameter",
+        "shaftHeight",
+        "splineTeeth",
+        "lowerHolePitch",
+        "lowerHoleOffset",
+        "earHeight"
+      ],
+      "notes": "Case 30 × 10 × 35.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.3 mm and its axis is 6.55 mm from the case end. Lower mounting hole lies 35.2 mm below the upper holes and centrally at 18 mm from either upper hole. The lower tab extends 6.4 mm below the main case, giving a 45.2 mm overall bare envelope. Upper hole centres are assumed halfway through the dimensioned 8 mm ears; lower tab rounding is derived from that assumption. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring.",
+      "sources": [
+        {
+          "label": "KST X10 V8.0 product page",
+          "url": "https://kstservos.com/products/x10-10-8kg-torque-servo-micro-digital-metal-gear-glider-servo-motor"
+        },
+        {
+          "label": "KST X10 V8.0 technical specification",
+          "url": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839"
+        },
+        {
+          "label": "KST X10 V8.0 PDF (local copy)",
+          "url": "references/kst-x10-v8.pdf"
+        },
+        {
+          "label": "KST X10 V8.0 installation drawing",
+          "url": "references/kst-x10-v8.png"
+        }
+      ]
+    },
+    "electricalEvidence": {
+      "attributeEvidence": {
+        "caseLength": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839",
+          "condition": "Case 30 × 10 × 35.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.3 mm and its axis is 6.55 mm from the case end. Lower mounting hole lies 35.2 mm below the upper holes and centrally at 18 mm from either upper hole. The lower tab extends 6.4 mm below the main case, giving a 45.2 mm overall bare envelope. Upper hole centres are assumed halfway through the dimensioned 8 mm ears; lower tab rounding is derived from that assumption. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring."
+        },
+        "caseWidth": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839",
+          "condition": "Case 30 × 10 × 35.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.3 mm and its axis is 6.55 mm from the case end. Lower mounting hole lies 35.2 mm below the upper holes and centrally at 18 mm from either upper hole. The lower tab extends 6.4 mm below the main case, giving a 45.2 mm overall bare envelope. Upper hole centres are assumed halfway through the dimensioned 8 mm ears; lower tab rounding is derived from that assumption. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring."
+        },
+        "caseHeight": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839",
+          "condition": "Case 30 × 10 × 35.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.3 mm and its axis is 6.55 mm from the case end. Lower mounting hole lies 35.2 mm below the upper holes and centrally at 18 mm from either upper hole. The lower tab extends 6.4 mm below the main case, giving a 45.2 mm overall bare envelope. Upper hole centres are assumed halfway through the dimensioned 8 mm ears; lower tab rounding is derived from that assumption. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring."
+        },
+        "totalHeight": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839",
+          "condition": "Includes the lower mounting tab and bare output shaft."
+        },
+        "mountPitch": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839",
+          "condition": "Case 30 × 10 × 35.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.3 mm and its axis is 6.55 mm from the case end. Lower mounting hole lies 35.2 mm below the upper holes and centrally at 18 mm from either upper hole. The lower tab extends 6.4 mm below the main case, giving a 45.2 mm overall bare envelope. Upper hole centres are assumed halfway through the dimensioned 8 mm ears; lower tab rounding is derived from that assumption. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring."
+        },
+        "voltageMin": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839",
+          "condition": "Manufacturer specification table; reference performance at 7.4 V."
+        },
+        "voltageMax": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839",
+          "condition": "Manufacturer specification table; reference performance at 7.4 V."
+        },
+        "referenceVoltage": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839",
+          "condition": "Manufacturer specification table; reference performance at 7.4 V."
+        },
+        "stallTorque": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839",
+          "condition": "At 7.4 V; published torque, not a continuous torque rating."
+        },
+        "noLoadSpeed": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839",
+          "condition": "At 7.4 V, unloaded."
+        },
+        "weight": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839",
+          "condition": "28 g ±10%."
+        },
+        "motorType": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839",
+          "condition": "Manufacturer specification table; reference performance at 7.4 V."
+        },
+        "interfaceType": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839",
+          "condition": "Manufacturer specification table; reference performance at 7.4 V."
+        },
+        "splineTeeth": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839",
+          "condition": "Case 30 × 10 × 35.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.3 mm and its axis is 6.55 mm from the case end. Lower mounting hole lies 35.2 mm below the upper holes and centrally at 18 mm from either upper hole. The lower tab extends 6.4 mm below the main case, giving a 45.2 mm overall bare envelope. Upper hole centres are assumed halfway through the dimensioned 8 mm ears; lower tab rounding is derived from that assumption. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring."
+        }
+      },
+      "performancePoints": [
+        {
+          "voltage": 4.8,
+          "torque": 6.2,
+          "noLoadSpeed": 0.16
+        },
+        {
+          "voltage": 6,
+          "torque": 7.5,
+          "noLoadSpeed": 0.14
+        },
+        {
+          "voltage": 7.4,
+          "torque": 9.5,
+          "noLoadSpeed": 0.12
+        },
+        {
+          "voltage": 8.4,
+          "torque": 10.8,
+          "noLoadSpeed": 0.1
+        }
+      ],
+      "omittedAttributes": {
+        "noLoadCurrent": "Graph only; no tabulated rating.",
+        "stallCurrent": "Graph only; no tabulated rating."
+      }
+    }
+  },
+  {
+    "model": "kst-x10-pro-a",
+    "name": "KST X10 Pro-A",
+    "family": "kst",
+    "angleLimit": 60,
+    "geometry": {
+      "variant": "a",
+      "bodyLength": 30,
+      "bodyWidth": 10,
+      "bodyHeight": 33.5,
+      "mountingSpan": 42,
+      "mountingPitch": 36,
+      "mountingHoleDiameter": 3,
+      "earThickness": 1.8,
+      "earHeight": 8,
+      "mountingTopOffset": 4,
+      "lowerHolePitch": 24.5,
+      "lowerHoleOffset": 14,
+      "shaftOffset": 6.6,
+      "shaftDiameter": 4.94,
+      "shaftRootDiameter": 4.25,
+      "shaftHeight": 3.5,
+      "splineTeeth": 25,
+      "retainingBore": 2.5,
+      "hornReach": 20,
+      "hornWidth": 6,
+      "hornThickness": 2,
+      "hornHoleDiameter": 2,
+      "hornClearance": 0.1,
+      "caseRelief": 5.36,
+      "lowerEarRadius": 3,
+      "caseColor": "#d9ad20"
+    },
+    "geometryEvidence": {
+      "verifiedDimensions": [
+        "variant",
+        "bodyLength",
+        "bodyWidth",
+        "bodyHeight",
+        "mountingSpan",
+        "mountingPitch",
+        "mountingHoleDiameter",
+        "earThickness",
+        "shaftOffset",
+        "shaftDiameter",
+        "shaftRootDiameter",
+        "shaftHeight",
+        "splineTeeth",
+        "lowerHolePitch",
+        "lowerHoleOffset",
+        "retainingBore"
+      ],
+      "notes": "Case 30 × 10 × 33.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.5 mm and its axis is 6.6 mm from the case end. Three transverse Ø3 holes; lower hole is 24.5 mm below the upper pair and offset 14 mm from one upper hole. Upper mounting elevation and ear height are fixed approximations because the drawing omits them. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring.",
+      "sources": [
+        {
+          "label": "KST X10 Pro-A product page",
+          "url": "https://kstservos.com/products/x10-pro-digital-metal-gear-servo-11-5kgf-cm-0-10sec-for-f5j-competition-gliders-and-large-scale-gliders"
+        },
+        {
+          "label": "KST X10 Pro-A technical specification",
+          "url": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163"
+        },
+        {
+          "label": "KST X10 Pro-A PDF (local copy)",
+          "url": "references/kst-x10-pro.pdf"
+        },
+        {
+          "label": "KST X10 Pro-A installation drawing",
+          "url": "references/kst-x10-pro.png"
+        }
+      ]
+    },
+    "electricalEvidence": {
+      "attributeEvidence": {
+        "caseLength": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Case 30 × 10 × 33.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.5 mm and its axis is 6.6 mm from the case end. Three transverse Ø3 holes; lower hole is 24.5 mm below the upper pair and offset 14 mm from one upper hole. Upper mounting elevation and ear height are fixed approximations because the drawing omits them. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring."
+        },
+        "caseWidth": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Case 30 × 10 × 33.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.5 mm and its axis is 6.6 mm from the case end. Three transverse Ø3 holes; lower hole is 24.5 mm below the upper pair and offset 14 mm from one upper hole. Upper mounting elevation and ear height are fixed approximations because the drawing omits them. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring."
+        },
+        "caseHeight": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Case 30 × 10 × 33.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.5 mm and its axis is 6.6 mm from the case end. Three transverse Ø3 holes; lower hole is 24.5 mm below the upper pair and offset 14 mm from one upper hole. Upper mounting elevation and ear height are fixed approximations because the drawing omits them. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring."
+        },
+        "totalHeight": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Case height plus bare output shaft; optional horn excluded."
+        },
+        "mountPitch": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Case 30 × 10 × 33.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.5 mm and its axis is 6.6 mm from the case end. Three transverse Ø3 holes; lower hole is 24.5 mm below the upper pair and offset 14 mm from one upper hole. Upper mounting elevation and ear height are fixed approximations because the drawing omits them. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring."
+        },
+        "voltageMin": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Manufacturer specification table; reference performance at 7.4 V."
+        },
+        "voltageMax": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Manufacturer specification table; reference performance at 7.4 V."
+        },
+        "referenceVoltage": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Manufacturer specification table; reference performance at 7.4 V."
+        },
+        "stallTorque": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "At 7.4 V; published torque, not a continuous torque rating."
+        },
+        "noLoadSpeed": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "At 7.4 V, unloaded."
+        },
+        "weight": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "25 g ±10%."
+        },
+        "motorType": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Manufacturer specification table; reference performance at 7.4 V."
+        },
+        "interfaceType": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Manufacturer specification table; reference performance at 7.4 V."
+        },
+        "splineTeeth": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Case 30 × 10 × 33.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.5 mm and its axis is 6.6 mm from the case end. Three transverse Ø3 holes; lower hole is 24.5 mm below the upper pair and offset 14 mm from one upper hole. Upper mounting elevation and ear height are fixed approximations because the drawing omits them. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring."
+        }
+      },
+      "performancePoints": [
+        {
+          "voltage": 4.8,
+          "torque": 6.5,
+          "noLoadSpeed": 0.16
+        },
+        {
+          "voltage": 6,
+          "torque": 8.5,
+          "noLoadSpeed": 0.14
+        },
+        {
+          "voltage": 7.4,
+          "torque": 10.5,
+          "noLoadSpeed": 0.12
+        },
+        {
+          "voltage": 8.4,
+          "torque": 11.5,
+          "noLoadSpeed": 0.1
+        }
+      ],
+      "omittedAttributes": {
+        "noLoadCurrent": "Graph only; no tabulated rating.",
+        "stallCurrent": "Graph only; no tabulated rating."
+      }
+    }
+  },
+  {
+    "model": "kst-x10-pro-b",
+    "name": "KST X10 Pro-B",
+    "family": "kst",
+    "angleLimit": 60,
+    "geometry": {
+      "variant": "b",
+      "bodyLength": 30,
+      "bodyWidth": 10,
+      "bodyHeight": 33.5,
+      "mountingSpan": 42,
+      "mountingPitch": 36,
+      "mountingHoleDiameter": 3,
+      "earThickness": 1.9,
+      "earHeight": 8,
+      "mountingTopOffset": 6.1,
+      "lowerHolePitch": 24.5,
+      "lowerHoleOffset": 14,
+      "shaftOffset": 6.6,
+      "shaftDiameter": 4.94,
+      "shaftRootDiameter": 4.25,
+      "shaftHeight": 3.5,
+      "splineTeeth": 25,
+      "retainingBore": 2.5,
+      "hornReach": 20,
+      "hornWidth": 6,
+      "hornThickness": 2,
+      "hornHoleDiameter": 2,
+      "hornClearance": 0.1,
+      "caseRelief": 5.36,
+      "lowerEarRadius": 3,
+      "caseColor": "#d9ad20"
+    },
+    "geometryEvidence": {
+      "verifiedDimensions": [
+        "variant",
+        "bodyLength",
+        "bodyWidth",
+        "bodyHeight",
+        "mountingSpan",
+        "mountingPitch",
+        "mountingHoleDiameter",
+        "earThickness",
+        "shaftOffset",
+        "shaftDiameter",
+        "shaftRootDiameter",
+        "shaftHeight",
+        "splineTeeth",
+        "mountingTopOffset",
+        "retainingBore"
+      ],
+      "notes": "Case 30 × 10 × 33.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.5 mm and its axis is 6.6 mm from the case end. Two vertical Ø3 mounting holes; upper mounting face is 6.1 mm below case top and ears are 1.9 mm thick. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring.",
+      "sources": [
+        {
+          "label": "KST X10 Pro-B product page",
+          "url": "https://kstservos.com/products/x10-pro-digital-metal-gear-servo-11-5kgf-cm-0-10sec-for-f5j-competition-gliders-and-large-scale-gliders"
+        },
+        {
+          "label": "KST X10 Pro-B technical specification",
+          "url": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163"
+        },
+        {
+          "label": "KST X10 Pro-B PDF (local copy)",
+          "url": "references/kst-x10-pro.pdf"
+        },
+        {
+          "label": "KST X10 Pro-B installation drawing",
+          "url": "references/kst-x10-pro.png"
+        }
+      ]
+    },
+    "electricalEvidence": {
+      "attributeEvidence": {
+        "caseLength": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Case 30 × 10 × 33.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.5 mm and its axis is 6.6 mm from the case end. Two vertical Ø3 mounting holes; upper mounting face is 6.1 mm below case top and ears are 1.9 mm thick. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring."
+        },
+        "caseWidth": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Case 30 × 10 × 33.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.5 mm and its axis is 6.6 mm from the case end. Two vertical Ø3 mounting holes; upper mounting face is 6.1 mm below case top and ears are 1.9 mm thick. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring."
+        },
+        "caseHeight": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Case 30 × 10 × 33.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.5 mm and its axis is 6.6 mm from the case end. Two vertical Ø3 mounting holes; upper mounting face is 6.1 mm below case top and ears are 1.9 mm thick. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring."
+        },
+        "totalHeight": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Case height plus bare output shaft; optional horn excluded."
+        },
+        "mountPitch": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Case 30 × 10 × 33.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.5 mm and its axis is 6.6 mm from the case end. Two vertical Ø3 mounting holes; upper mounting face is 6.1 mm below case top and ears are 1.9 mm thick. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring."
+        },
+        "voltageMin": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Manufacturer specification table; reference performance at 7.4 V."
+        },
+        "voltageMax": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Manufacturer specification table; reference performance at 7.4 V."
+        },
+        "referenceVoltage": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Manufacturer specification table; reference performance at 7.4 V."
+        },
+        "stallTorque": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "At 7.4 V; published torque, not a continuous torque rating."
+        },
+        "noLoadSpeed": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "At 7.4 V, unloaded."
+        },
+        "weight": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "25 g ±10%."
+        },
+        "motorType": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Manufacturer specification table; reference performance at 7.4 V."
+        },
+        "interfaceType": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Manufacturer specification table; reference performance at 7.4 V."
+        },
+        "splineTeeth": {
+          "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+          "condition": "Case 30 × 10 × 33.5 mm; 42 mm mounting span, 36 mm upper pitch; shaft projects 3.5 mm and its axis is 6.6 mm from the case end. Two vertical Ø3 mounting holes; upper mounting face is 6.1 mm below case top and ears are 1.9 mm thick. Lower case relief, corner fillets and optional horn are simplified. Spline is 25T, Ø4.94 major / Ø4.25 root, with straight-flank approximation; no certified mating fit. No internal motor, gears or wiring."
+        }
+      },
+      "performancePoints": [
+        {
+          "voltage": 4.8,
+          "torque": 6.5,
+          "noLoadSpeed": 0.16
+        },
+        {
+          "voltage": 6,
+          "torque": 8.5,
+          "noLoadSpeed": 0.14
+        },
+        {
+          "voltage": 7.4,
+          "torque": 10.5,
+          "noLoadSpeed": 0.12
+        },
+        {
+          "voltage": 8.4,
+          "torque": 11.5,
+          "noLoadSpeed": 0.1
+        }
+      ],
+      "omittedAttributes": {
+        "noLoadCurrent": "Graph only; no tabulated rating.",
+        "stallCurrent": "Graph only; no tabulated rating."
+      }
+    }
+  },
+  {
+    "model": "power-hd-t60-bhv",
+    "name": "Power-HD T60-BHV",
+    "family": "power-hd",
+    "angleLimit": 55,
+    "geometry": {
+      "bodyLength": 40.7,
+      "bodyWidth": 20.5,
+      "bodyHeight": 38.7,
+      "totalHeight": 44.2,
+      "shaftDiameter": 5.9,
+      "shaftOffset": -10,
+      "mountSpan": 54.2,
+      "mountPitchX": 49,
+      "mountPitchY": 10,
+      "mountBottom": 28,
+      "mountThickness": 2.6,
+      "mountHoleDiameter": 4.4,
+      "hornLength": 20
+    },
+    "geometryEvidence": {
+      "verifiedDimensions": [
+        "bodyLength",
+        "bodyWidth",
+        "bodyHeight",
+        "totalHeight",
+        "shaftDiameter",
+        "mountSpan",
+        "mountPitchX",
+        "mountPitchY",
+        "mountBottom",
+        "mountThickness",
+        "shaftOffset"
+      ],
+      "notes": "Source-based external envelope, not internal gear geometry or a manufacturing model. Case bottom is Z=0 and case center is X=Y=0. Mounting cutout diameter, throat shape, case grooves, top cover, shaft bore and optional horn are illustrative and not source-verified. The drawing specifies spline tip diameter 5.90 (+0.02/-0) mm while the mechanical table calls the interface nominal 5.80 mm / 25T; this model uses the drawing tip envelope and omits teeth. Body height 38.7 mm and overall shaft-tip height 44.2 mm follow page 3. Positive geometric angle is counterclockwise; the sheet specifies clockwise response to increasing PWM. Electrical ratings apply only to the original servo.",
+      "sources": [
+        {
+          "label": "Power-HD T60-BHV official specification, V1",
+          "url": "https://www.chd.hk/UploadFiles/Att/2025041613344325.pdf"
+        },
+        {
+          "label": "Dimension drawing, page 3 (reviewed 2026-09-14)",
+          "url": "references/power-hd-t60-bhv-dimensions.png"
+        },
+        {
+          "label": "Power-HD T60-BHV manufacturer specifications 1",
+          "url": "https://www.chd.hk/Product_Detail.aspx?id=256"
+        }
+      ]
+    },
+    "electricalEvidence": {
+      "attributeEvidence": {
+        "caseLength": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2025041613344325.pdf",
+          "condition": "Page 3 installation drawing; mounting pitch is 49 mm longitudinal, 10 mm transverse; total height includes bare output shaft but no optional horn."
+        },
+        "caseWidth": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2025041613344325.pdf",
+          "condition": "Page 3 installation drawing; mounting pitch is 49 mm longitudinal, 10 mm transverse; total height includes bare output shaft but no optional horn."
+        },
+        "caseHeight": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2025041613344325.pdf",
+          "condition": "Page 3 installation drawing; mounting pitch is 49 mm longitudinal, 10 mm transverse; total height includes bare output shaft but no optional horn."
+        },
+        "totalHeight": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2025041613344325.pdf",
+          "condition": "Page 3 installation drawing; mounting pitch is 49 mm longitudinal, 10 mm transverse; total height includes bare output shaft but no optional horn."
+        },
+        "mountPitch": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2025041613344325.pdf",
+          "condition": "Page 3 installation drawing; mounting pitch is 49 mm longitudinal, 10 mm transverse; total height includes bare output shaft but no optional horn."
+        },
+        "voltageMin": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2025041613344325.pdf",
+          "condition": "Page 1, operating voltage range 6.0–8.4 V."
+        },
+        "voltageMax": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2025041613344325.pdf",
+          "condition": "Page 1, operating voltage range 6.0–8.4 V."
+        },
+        "referenceVoltage": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2025041613344325.pdf",
+          "condition": "Page 2, 7.4 V column; 25 ±5 °C and 65 ±10% relative humidity per page 1. Running current is an average with no mechanical load; stall torque/current are locked-rotor values. mA converted to A."
+        },
+        "stallTorque": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2025041613344325.pdf",
+          "condition": "Page 2, 7.4 V column; 25 ±5 °C and 65 ±10% relative humidity per page 1. Running current is an average with no mechanical load; stall torque/current are locked-rotor values. mA converted to A."
+        },
+        "noLoadSpeed": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2025041613344325.pdf",
+          "condition": "Page 2, 7.4 V column; 25 ±5 °C and 65 ±10% relative humidity per page 1. Running current is an average with no mechanical load; stall torque/current are locked-rotor values. mA converted to A."
+        },
+        "noLoadCurrent": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2025041613344325.pdf",
+          "condition": "Page 2, 7.4 V column; 25 ±5 °C and 65 ±10% relative humidity per page 1. Running current is an average with no mechanical load; stall torque/current are locked-rotor values. mA converted to A."
+        },
+        "stallCurrent": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2025041613344325.pdf",
+          "condition": "Page 2, 7.4 V column; 25 ±5 °C and 65 ±10% relative humidity per page 1. Running current is an average with no mechanical load; stall torque/current are locked-rotor values. mA converted to A."
+        },
+        "weight": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2025041613344325.pdf",
+          "condition": "Page 2 mechanical specifications; weight tolerance ±1 g, output spline 25T."
+        },
+        "splineTeeth": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2025041613344325.pdf",
+          "condition": "Page 2 mechanical specifications; weight tolerance ±1 g, output spline 25T."
+        },
+        "motorType": {
+          "sourceUrl": "https://www.chd.hk/Product_Detail.aspx?id=256",
+          "condition": "Manufacturer product listing specifies motor construction."
+        },
+        "interfaceType": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2025041613344325.pdf",
+          "condition": "Page 3 PWM command input; neutral is 1500 µs in V1 specification."
+        }
+      },
+      "performancePoints": [
+        {
+          "voltage": 6,
+          "torque": 45,
+          "noLoadSpeed": 0.098,
+          "noLoadCurrent": 0.3,
+          "stallCurrent": 2.1,
+          "idleCurrent": 0.08
+        },
+        {
+          "voltage": 7.4,
+          "torque": 50,
+          "noLoadSpeed": 0.089,
+          "noLoadCurrent": 0.3,
+          "stallCurrent": 2.5,
+          "idleCurrent": 0.08
+        },
+        {
+          "voltage": 8.4,
+          "torque": 60,
+          "noLoadSpeed": 0.08
+        }
+      ],
+      "omittedAttributes": {}
+    }
+  },
+  {
+    "model": "power-hd-tds-2",
+    "name": "Power-HD TDS-2",
+    "family": "power-hd",
+    "angleLimit": 55,
+    "geometry": {
+      "bodyLength": 41,
+      "bodyWidth": 20,
+      "bodyHeight": 29,
+      "totalHeight": 34,
+      "shaftDiameter": 5.8,
+      "shaftOffset": 10,
+      "mountSpan": 54.4,
+      "mountPitchX": 49,
+      "mountPitchY": 10,
+      "mountBottom": 19.7,
+      "mountThickness": 2.5,
+      "mountHoleDiameter": 4.4,
+      "hornLength": 20
+    },
+    "geometryEvidence": {
+      "verifiedDimensions": [
+        "bodyLength",
+        "bodyWidth",
+        "bodyHeight",
+        "totalHeight",
+        "shaftDiameter",
+        "mountSpan",
+        "mountPitchX",
+        "mountPitchY",
+        "mountBottom",
+        "mountThickness"
+      ],
+      "notes": "Source-based external envelope, not internal gear geometry or a manufacturing model. Case bottom is Z=0 and case center is X=Y=0. The source does not dimension the shaft-axis offset, mounting cutout diameter or throat. Their defaults are illustrative and are fixed approximations; verify on hardware for a close fit. Case grooves, top cover, shaft bore and optional horn are also illustrative. The cylindrical output envelope represents the nominal 5.8 mm / 25T spline without individual teeth. Body height is 29 mm and shaft-tip height is 34 mm. Positive geometric angle is counterclockwise; no PWM mapping is simulated. Electrical ratings apply only to the original servo.",
+      "sources": [
+        {
+          "label": "Power-HD TDS-2 official specification, V1",
+          "url": "https://www.chd.hk/UploadFiles/Att/2024111314082653.pdf"
+        },
+        {
+          "label": "Dimension drawing, page 3 (reviewed 2026-09-14)",
+          "url": "references/power-hd-tds-2-dimensions.png"
+        },
+        {
+          "label": "Power-HD TDS-2 manufacturer specifications 1",
+          "url": "https://www.chd.hk/Product_Detail.aspx?id=238"
+        }
+      ]
+    },
+    "electricalEvidence": {
+      "attributeEvidence": {
+        "caseLength": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2024111314082653.pdf",
+          "condition": "Page 3 installation drawing; mounting pitch is 49 mm longitudinal, 10 mm transverse; total height includes bare output shaft but no optional horn."
+        },
+        "caseWidth": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2024111314082653.pdf",
+          "condition": "Page 3 installation drawing; mounting pitch is 49 mm longitudinal, 10 mm transverse; total height includes bare output shaft but no optional horn."
+        },
+        "caseHeight": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2024111314082653.pdf",
+          "condition": "Page 3 installation drawing; mounting pitch is 49 mm longitudinal, 10 mm transverse; total height includes bare output shaft but no optional horn."
+        },
+        "totalHeight": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2024111314082653.pdf",
+          "condition": "Page 3 installation drawing; mounting pitch is 49 mm longitudinal, 10 mm transverse; total height includes bare output shaft but no optional horn."
+        },
+        "mountPitch": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2024111314082653.pdf",
+          "condition": "Page 3 installation drawing; mounting pitch is 49 mm longitudinal, 10 mm transverse; total height includes bare output shaft but no optional horn."
+        },
+        "voltageMin": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2024111314082653.pdf",
+          "condition": "Page 1, operating voltage range 6.0–8.4 V."
+        },
+        "voltageMax": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2024111314082653.pdf",
+          "condition": "Page 1, operating voltage range 6.0–8.4 V."
+        },
+        "referenceVoltage": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2024111314082653.pdf",
+          "condition": "Page 2, 7.4 V column; 25 ±5 °C and 65 ±10% relative humidity per page 1. Running current is an average with no mechanical load; stall torque/current are locked-rotor values. mA converted to A."
+        },
+        "stallTorque": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2024111314082653.pdf",
+          "condition": "Page 2, 7.4 V column; 25 ±5 °C and 65 ±10% relative humidity per page 1. Running current is an average with no mechanical load; stall torque/current are locked-rotor values. mA converted to A."
+        },
+        "noLoadSpeed": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2024111314082653.pdf",
+          "condition": "Page 2, 7.4 V column; 25 ±5 °C and 65 ±10% relative humidity per page 1. Running current is an average with no mechanical load; stall torque/current are locked-rotor values. mA converted to A."
+        },
+        "noLoadCurrent": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2024111314082653.pdf",
+          "condition": "Page 2, 7.4 V column; 25 ±5 °C and 65 ±10% relative humidity per page 1. Running current is an average with no mechanical load; stall torque/current are locked-rotor values. mA converted to A."
+        },
+        "weight": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2024111314082653.pdf",
+          "condition": "Page 2 mechanical specifications; weight tolerance ±1 g, output spline 25T."
+        },
+        "splineTeeth": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2024111314082653.pdf",
+          "condition": "Page 2 mechanical specifications; weight tolerance ±1 g, output spline 25T."
+        },
+        "motorType": {
+          "sourceUrl": "https://www.chd.hk/Product_Detail.aspx?id=238",
+          "condition": "Manufacturer product listing specifies motor construction."
+        },
+        "interfaceType": {
+          "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2024111314082653.pdf",
+          "condition": "Page 3 PWM command input; neutral is 1500 µs in V1 specification."
+        }
+      },
+      "performancePoints": [
+        {
+          "voltage": 6,
+          "torque": 18,
+          "noLoadSpeed": 0.13,
+          "noLoadCurrent": 0.4,
+          "idleCurrent": 0.06
+        },
+        {
+          "voltage": 7.4,
+          "torque": 22,
+          "noLoadSpeed": 0.1,
+          "noLoadCurrent": 0.4,
+          "idleCurrent": 0.07
+        },
+        {
+          "voltage": 8.4,
+          "torque": 25,
+          "noLoadSpeed": 0.09
+        }
+      ],
+      "omittedAttributes": {
+        "stallCurrent": "The V1 datasheet prints 1900 mAh at 6.0 V and 2400 mAh at 7.4 V under stall current. mAh is charge, not current; no independent manufacturer clarification found. Do not reinterpret as 1.9/2.4 A."
+      }
+    }
+  }
+]

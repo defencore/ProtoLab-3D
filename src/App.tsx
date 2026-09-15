@@ -38,7 +38,7 @@ import { generateScript, consoleCommand } from './core/freecad';
 import { validateParameters } from './core/validation';
 import { parseConfiguration } from './core/configuration';
 import { downloadFile, downloadStl } from './core/download';
-import { readPresets, storePresets, type SavedPreset } from './core/storage';
+import { createPresetId, readPresets, storePresets, type SavedPreset } from './core/storage';
 import type { Parameters, PartDefinition, Preset } from './core/types';
 import type { QuickPickFilters } from './core/quick-picks';
 import { emptyPresetFilters, fieldId, type PresetFilters } from './core/preset-search';
@@ -86,7 +86,10 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
         modelState: storedModelState,
         presetId: storedPresetId,
       };
-  const { parameters, modelState, presetId } = selection;
+  const { parameters, modelState } = selection;
+  const presetId = part.catalogSelectionOnly
+    ? matchingPresetId(part, parameters)
+    : selection.presetId;
   if (moduleChanged) {
     loadedDefinition.current = part;
     setSelectedPartId(selection.partId);
@@ -229,14 +232,14 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
   }
   function savePreset() {
     if (!presetName.trim() || errors.length) return;
-    const preset = {
-      id: crypto.randomUUID(),
-      name: presetName.trim(),
-      partId: part.id,
-      parameters: { ...parameters },
-      state: modelState,
-    };
     try {
+      const preset = {
+        id: createPresetId(),
+        name: presetName.trim(),
+        partId: part.id,
+        parameters: { ...parameters },
+        state: modelState,
+      };
       const next = [...savedPresets, preset];
       storePresets(next);
       setSavedPresets(next);

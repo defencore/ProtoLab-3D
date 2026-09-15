@@ -12,10 +12,27 @@ const args = process.argv.slice(2);
 const output =
   args.find((value) => !value.startsWith('--')) ?? '/tmp/protolab-bevel-pair-cases.json';
 const matrix = args.includes('--matrix');
-const unknown = args.filter((value) => value.startsWith('--') && value !== '--matrix');
+const stock = args.includes('--stock-bores');
+const unknown = args.filter(
+  (value) => value.startsWith('--') && !['--matrix', '--stock-bores'].includes(value),
+);
 if (unknown.length) throw new Error(`Unknown option: ${unknown.join(', ')}`);
+if (matrix && stock) throw new Error('Choose either --matrix or --stock-bores.');
 const inputs: { id: string; parameters: Parameters; state: string }[] = [];
-if (matrix) {
+if (stock) {
+  // One pairing for each distinct pinion and wheel bore covers all ten stock members.
+  for (const [index, pinion] of [8, 10, 12, 14, 15].entries()) {
+    const wheel = [14, 15, 16, 18, 20][index];
+    const preset = bevel.presets.find(
+      (entry) => entry.id === `reference-bevel-m2-15-30-bore-${pinion}-${wheel}`,
+    )!;
+    inputs.push({
+      id: `${preset.id}/assembled`,
+      parameters: preset.parameters,
+      state: 'assembled',
+    });
+  }
+} else if (matrix) {
   for (const preset of bevel.presets)
     for (const state of bevel.states!)
       inputs.push({
@@ -60,16 +77,17 @@ if (matrix) {
   inputs.push({ id: 'default/assembled', parameters: bevel.defaults, state: 'assembled' });
 }
 // Smooth round bores leave uninterrupted annuli; radial screw bores are irrelevant to this defect.
-inputs.push({
-  id: 'planar-annuli/assembled',
-  parameters: {
-    ...bevel.defaults,
-    setScrews: false,
-    pinionBoreShape: 'round',
-    wheelBoreShape: 'round',
-  },
-  state: 'assembled',
-});
+if (!stock)
+  inputs.push({
+    id: 'planar-annuli/assembled',
+    parameters: {
+      ...bevel.defaults,
+      setScrews: false,
+      pinionBoreShape: 'round',
+      wheelBoreShape: 'round',
+    },
+    state: 'assembled',
+  });
 
 function previewVolume(mesh: Mesh): number {
   const position = mesh.geometry.getAttribute('position'),
@@ -106,6 +124,35 @@ const cases = inputs.map((input) => {
       return { side: sides[index], bounds: [b.min.toArray(), b.max.toArray()], volume };
     });
     const annuli: { component: number; name: string; inside: number[]; outside: number[] }[] = [];
+    const boreChecks: { component: number; name: string; point: number[]; material: boolean }[] =
+      [];
+    if (stock)
+      for (const [component, side] of sides.entries()) {
+        const get = (key: string) => Number(input.parameters[`${side}${key}`]);
+        const radius = get('Bore') / 2;
+        for (const z of [0.1, get('HubLength') / 2, get('BodyLength') - 0.1]) {
+          const check = (name: string, x: number, y: number, material: boolean) =>
+            boreChecks.push({
+              component,
+              name: `${side}/${z}/${name}`,
+              material,
+              point: new Vector3(x, y, z)
+                .applyMatrix4(model.children[component].matrixWorld)
+                .toArray(),
+            });
+          check('round opening', -(radius - 0.05), 0, false);
+          check('round wall', -(radius + 0.05), 0, true);
+          if (input.parameters[`${side}BoreShape`] === 'keyway') {
+            const x = radius + get('BoreKeyDepth') / 2;
+            check('keyway opening', x, 0, false);
+            check('keyway depth', radius + get('BoreKeyDepth') + 0.05, 0, true);
+            for (const sign of [-1, 1]) {
+              check('keyway inner edge', x, sign * (get('BoreKeyWidth') / 2 - 0.05), false);
+              check('keyway outer edge', x, sign * (get('BoreKeyWidth') / 2 + 0.05), true);
+            }
+          }
+        }
+      }
     if (!input.parameters.setScrews)
       for (const [index, side] of sides.entries()) {
         if (input.parameters[`${side}BoreShape`] !== 'round') continue;
@@ -140,10 +187,17 @@ const cases = inputs.map((input) => {
       code: generateScript(bevel, input.parameters, input.state),
       components,
       annuli,
+      boreChecks,
     };
   } finally {
     disposeModel(model);
   }
 });
 fs.writeFileSync(output, JSON.stringify(cases));
-console.log(JSON.stringify({ cases: cases.length, mode: matrix ? 'matrix' : 'smoke', output }));
+console.log(
+  JSON.stringify({
+    cases: cases.length,
+    mode: stock ? 'stock-bores' : matrix ? 'matrix' : 'smoke',
+    output,
+  }),
+);

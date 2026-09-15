@@ -11,6 +11,11 @@ export interface SavedPreset {
 
 const key = 'protolab.presets.v1';
 
+export function createPresetId(): string {
+  const bytes = crypto.getRandomValues(new Uint8Array(16));
+  return Array.from(bytes, (byte) => byte.toString(16).padStart(2, '0')).join('');
+}
+
 export function readPresets(parts: PartDefinition[]): SavedPreset[] {
   try {
     const parsed: unknown = JSON.parse(localStorage.getItem(key) ?? '[]');

@@ -1,0 +1,1599 @@
+{
+  "checkedAt": "2026-09-15T04:43:16.254045+00:00",
+  "freecad": "1.0.2",
+  "cases": [
+    {
+      "name": "servo-motor/default/assembled",
+      "passed": true,
+      "codeSha256": "7236624864ca0bd9c48c0cd1b058092c087a12b70faab72f3118024ddaea678b",
+      "components": 8,
+      "maxBoundsError": 1.7723072929243244e-06,
+      "maxRelativeVolumeError": 0.0009781378938977295,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 8,
+      "preservedSourceIntersections": [
+        {
+          "first": "Middle case",
+          "second": "Front cover",
+          "volume": 1006.9384713891511
+        },
+        {
+          "first": "Middle case",
+          "second": "Rear cover and pivot",
+          "volume": 142.48922495689496
+        },
+        {
+          "first": "Middle case",
+          "second": "Motor",
+          "volume": 2917.433734570861
+        },
+        {
+          "first": "Middle case",
+          "second": "Circuit board",
+          "volume": 372.1591751931678
+        },
+        {
+          "first": "Middle case",
+          "second": "Output gear and shaft",
+          "volume": 618.2078170230063
+        },
+        {
+          "first": "Front cover",
+          "second": "Motor",
+          "volume": 534.9501250889755
+        },
+        {
+          "first": "Front cover",
+          "second": "Output gear and shaft",
+          "volume": 367.0476288632632
+        },
+        {
+          "first": "Rear cover and pivot",
+          "second": "Motor",
+          "volume": 1941.601651364543
+        },
+        {
+          "first": "Rear cover and pivot",
+          "second": "Circuit board",
+          "volume": 812.6623858246676
+        },
+        {
+          "first": "Output gear and shaft",
+          "second": "Front output disc",
+          "volume": 1.842717905756927
+        }
+      ]
+    },
+    {
+      "name": "servo-motor/default/exploded",
+      "passed": true,
+      "codeSha256": "9501d2c35062d2f9b82fa8fb6bcf557e855ea09f5d3ced78beae52eb295f1952",
+      "components": 8,
+      "maxBoundsError": 1.7723072929243244e-06,
+      "maxRelativeVolumeError": 0.0009781378939119887,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 8,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/default/body",
+      "passed": true,
+      "codeSha256": "146d58cae20e2f8802d312f2ec48c056439f66cab4d3764bc6dc96ac01fb63c4",
+      "components": 3,
+      "maxBoundsError": 1.7723072929243244e-06,
+      "maxRelativeVolumeError": 3.6856062303253926e-05,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 3,
+      "preservedSourceIntersections": [
+        {
+          "first": "Middle case",
+          "second": "Front cover",
+          "volume": 1006.9384713891511
+        },
+        {
+          "first": "Middle case",
+          "second": "Rear cover and pivot",
+          "volume": 142.48922495689496
+        }
+      ]
+    },
+    {
+      "name": "servo-motor/waveshare-st3215-hs/assembled",
+      "passed": true,
+      "codeSha256": "7236624864ca0bd9c48c0cd1b058092c087a12b70faab72f3118024ddaea678b",
+      "components": 8,
+      "maxBoundsError": 1.7723072929243244e-06,
+      "maxRelativeVolumeError": 0.0009781378938977295,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 8,
+      "preservedSourceIntersections": [
+        {
+          "first": "Middle case",
+          "second": "Front cover",
+          "volume": 1006.9384713891511
+        },
+        {
+          "first": "Middle case",
+          "second": "Rear cover and pivot",
+          "volume": 142.48922495689496
+        },
+        {
+          "first": "Middle case",
+          "second": "Motor",
+          "volume": 2917.433734570861
+        },
+        {
+          "first": "Middle case",
+          "second": "Circuit board",
+          "volume": 372.1591751931678
+        },
+        {
+          "first": "Middle case",
+          "second": "Output gear and shaft",
+          "volume": 618.2078170230063
+        },
+        {
+          "first": "Front cover",
+          "second": "Motor",
+          "volume": 534.9501250889755
+        },
+        {
+          "first": "Front cover",
+          "second": "Output gear and shaft",
+          "volume": 367.0476288632632
+        },
+        {
+          "first": "Rear cover and pivot",
+          "second": "Motor",
+          "volume": 1941.601651364543
+        },
+        {
+          "first": "Rear cover and pivot",
+          "second": "Circuit board",
+          "volume": 812.6623858246676
+        },
+        {
+          "first": "Output gear and shaft",
+          "second": "Front output disc",
+          "volume": 1.842717905756927
+        }
+      ]
+    },
+    {
+      "name": "servo-motor/waveshare-st3215-hs/exploded",
+      "passed": true,
+      "codeSha256": "9501d2c35062d2f9b82fa8fb6bcf557e855ea09f5d3ced78beae52eb295f1952",
+      "components": 8,
+      "maxBoundsError": 1.7723072929243244e-06,
+      "maxRelativeVolumeError": 0.0009781378939119887,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 8,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/waveshare-st3215-hs/body",
+      "passed": true,
+      "codeSha256": "146d58cae20e2f8802d312f2ec48c056439f66cab4d3764bc6dc96ac01fb63c4",
+      "components": 3,
+      "maxBoundsError": 1.7723072929243244e-06,
+      "maxRelativeVolumeError": 3.6856062303253926e-05,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 3,
+      "preservedSourceIntersections": [
+        {
+          "first": "Middle case",
+          "second": "Front cover",
+          "volume": 1006.9384713891511
+        },
+        {
+          "first": "Middle case",
+          "second": "Rear cover and pivot",
+          "volume": 142.48922495689496
+        }
+      ]
+    },
+    {
+      "name": "servo-motor/kst-x10-mini-pro-a/assembled",
+      "passed": true,
+      "codeSha256": "5eb7482ab63c00342863741fce3371ad572cdd13439f4bc7018ff6f042f5fce7",
+      "components": 2,
+      "maxBoundsError": 0.00012350082397460938,
+      "maxRelativeVolumeError": 0.0002784133603949683,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-mini-pro-a/exploded",
+      "passed": true,
+      "codeSha256": "85bf3bc64ecd3ad395617a1eff00ec54fa3a52868b6d12283bf006c9efb59ba0",
+      "components": 2,
+      "maxBoundsError": 0.00012350082397460938,
+      "maxRelativeVolumeError": 0.00027841336038998514,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-mini-pro-a/body",
+      "passed": true,
+      "codeSha256": "ff1e044515ef7d232dff002b8fd9fbc96196cbf8295903944210b184d2e27372",
+      "components": 1,
+      "maxBoundsError": 0.00012350082397460938,
+      "maxRelativeVolumeError": 1.2819276271340537e-05,
+      "intersections": [],
+      "independentMovement": false,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-mini-pro-b/assembled",
+      "passed": true,
+      "codeSha256": "4d40ac006c97653a53b7ca1cf33c7a21362703413e4e535b679d48a2f043d29b",
+      "components": 2,
+      "maxBoundsError": 1.2231200686052546e-05,
+      "maxRelativeVolumeError": 0.0002784133603959328,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-mini-pro-b/exploded",
+      "passed": true,
+      "codeSha256": "42ac53aacd94a53209b131613c0b5240c3bbbe4f3a7bdc02d37ed1c8bc8fb003",
+      "components": 2,
+      "maxBoundsError": 1.2231200686052546e-05,
+      "maxRelativeVolumeError": 0.00027841336038869917,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-mini-pro-b/body",
+      "passed": true,
+      "codeSha256": "9093371afd4c3eae2d471f05f7eb0dd04e15489b57f43646abbf3dc708925cc3",
+      "components": 1,
+      "maxBoundsError": 1.0046365396458256e-15,
+      "maxRelativeVolumeError": 2.3785424969863815e-06,
+      "intersections": [],
+      "independentMovement": false,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-v8/assembled",
+      "passed": true,
+      "codeSha256": "819c5012f4d58e22583969bb8b347d2021488c89091da6cb87989c417ef26942",
+      "components": 2,
+      "maxBoundsError": 0.0001087188720703125,
+      "maxRelativeVolumeError": 0.0002783989067628863,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-v8/exploded",
+      "passed": true,
+      "codeSha256": "32dc271a799b925ed6348f62c44ab22ed7524803128d9c80a1873478a29d1e52",
+      "components": 2,
+      "maxBoundsError": 0.0001087188720703125,
+      "maxRelativeVolumeError": 0.00027839890676936507,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-v8/body",
+      "passed": true,
+      "codeSha256": "49a470cb9ee888f3a38ba5b7c9c6c73ed000a1b8f435bbbc731776dacaf5387a",
+      "components": 1,
+      "maxBoundsError": 0.0001087188720703125,
+      "maxRelativeVolumeError": 9.916348945312869e-06,
+      "intersections": [],
+      "independentMovement": false,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-pro-a/assembled",
+      "passed": true,
+      "codeSha256": "753c65906f612c32447487bdf3dd42227300f311a2b0bee8fe48330fdfa508cb",
+      "components": 2,
+      "maxBoundsError": 4.00543212890625e-05,
+      "maxRelativeVolumeError": 0.00027841336040011224,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-pro-a/exploded",
+      "passed": true,
+      "codeSha256": "b790c6fe2b470b58b1d6cbf31e735d8800a96d23e5498b588f29d0093358b420",
+      "components": 2,
+      "maxBoundsError": 4.00543212890625e-05,
+      "maxRelativeVolumeError": 0.00027841336039094965,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-pro-a/body",
+      "passed": true,
+      "codeSha256": "6e9f01e88fa58ca70f5c6d43c7840c30bb7cff60ac4ca41a21e526916a0cf484",
+      "components": 1,
+      "maxBoundsError": 4.00543212890625e-05,
+      "maxRelativeVolumeError": 9.535943420217427e-06,
+      "intersections": [],
+      "independentMovement": false,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-pro-b/assembled",
+      "passed": true,
+      "codeSha256": "5967273bd188778f9b85963466259b2cd4554aa365ca93d36f6222ce5d89ac54",
+      "components": 2,
+      "maxBoundsError": 4.00543212890625e-05,
+      "maxRelativeVolumeError": 0.00027841336040011224,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-pro-b/exploded",
+      "passed": true,
+      "codeSha256": "77817c1ba6f29f623048ece0585c70d76fec5c46b46843fd1c34af15e011b1bd",
+      "components": 2,
+      "maxBoundsError": 4.00543212890625e-05,
+      "maxRelativeVolumeError": 0.00027841336039094965,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-pro-b/body",
+      "passed": true,
+      "codeSha256": "716cd6bc1cb25ced52a650791871f7688a2c0bb1f13ebad7b0d8b572c54e924d",
+      "components": 1,
+      "maxBoundsError": 4.00543212890625e-05,
+      "maxRelativeVolumeError": 5.552313927340091e-06,
+      "intersections": [],
+      "independentMovement": false,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/power-hd-t60-bhv/assembled",
+      "passed": true,
+      "codeSha256": "3503b779bf2fca7d6e068b9eb63eacad1d663b513ec4381cc61cb8965e547425",
+      "components": 2,
+      "maxBoundsError": 9.918212889203915e-06,
+      "maxRelativeVolumeError": 0.0007137372843944592,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/power-hd-t60-bhv/exploded",
+      "passed": true,
+      "codeSha256": "fa7ae0774cd7ad8b373e48aa2613a2ffd168cd55dc7dd4d780bc27fee92ae7cb",
+      "components": 2,
+      "maxBoundsError": 9.918212889203915e-06,
+      "maxRelativeVolumeError": 0.0007137372843918247,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/power-hd-t60-bhv/body",
+      "passed": true,
+      "codeSha256": "7c61af5b88326f446492124f0f557234085db789c2457858cd680d5b2dbb5ec0",
+      "components": 1,
+      "maxBoundsError": 9.918212889203915e-06,
+      "maxRelativeVolumeError": 1.226218261260472e-06,
+      "intersections": [],
+      "independentMovement": false,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/power-hd-tds-2/assembled",
+      "passed": true,
+      "codeSha256": "d1a39df9d883bb8b8ce5ea52118eada9114b11349acf9b032ba87bf8e3cf0e02",
+      "components": 2,
+      "maxBoundsError": 0.0001583099365234375,
+      "maxRelativeVolumeError": 0.0007120485300756863,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/power-hd-tds-2/exploded",
+      "passed": true,
+      "codeSha256": "bb843c274d3479fddc14d6b8ab653557670347c1beb19d27b79ee735c493e22e",
+      "components": 2,
+      "maxBoundsError": 0.0001583099365234375,
+      "maxRelativeVolumeError": 0.0007120485300756863,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/power-hd-tds-2/body",
+      "passed": true,
+      "codeSha256": "efdafe1464d3e7dfc661804b6434bcdbfd03ff3cd56bd124a4bd41affef760ca",
+      "components": 1,
+      "maxBoundsError": 0.0001583099365234375,
+      "maxRelativeVolumeError": 3.316930775198973e-07,
+      "intersections": [],
+      "independentMovement": false,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/waveshare-st3215-hs/horn--45/assembled",
+      "passed": true,
+      "codeSha256": "71645cf824df7ea1edc103051d78524fa82538cbc0722b6db77b2588eb7870d3",
+      "components": 7,
+      "maxBoundsError": 2.675254392947579e-05,
+      "maxRelativeVolumeError": 0.0010789125075481264,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 6,
+      "preservedSourceIntersections": [
+        {
+          "first": "Middle case",
+          "second": "Front cover",
+          "volume": 1006.9384713891511
+        },
+        {
+          "first": "Middle case",
+          "second": "Rear cover and pivot",
+          "volume": 142.48922495689496
+        },
+        {
+          "first": "Middle case",
+          "second": "Motor",
+          "volume": 2917.433734570861
+        },
+        {
+          "first": "Middle case",
+          "second": "Circuit board",
+          "volume": 372.1591751931678
+        },
+        {
+          "first": "Middle case",
+          "second": "Output gear and shaft",
+          "volume": 618.2077984831936
+        },
+        {
+          "first": "Front cover",
+          "second": "Motor",
+          "volume": 534.9501250889755
+        },
+        {
+          "first": "Front cover",
+          "second": "Output gear and shaft",
+          "volume": 367.0471907692893
+        },
+        {
+          "first": "Rear cover and pivot",
+          "second": "Motor",
+          "volume": 1941.601651364543
+        },
+        {
+          "first": "Rear cover and pivot",
+          "second": "Circuit board",
+          "volume": 812.6623858246676
+        }
+      ]
+    },
+    {
+      "name": "servo-motor/waveshare-st3215-hs/horn--45/exploded",
+      "passed": true,
+      "codeSha256": "7813561d0b6c9d247476e3d71bc7602f29a78f98a5691f3e59cff3f2a2643eb5",
+      "components": 7,
+      "maxBoundsError": 2.675254392947579e-05,
+      "maxRelativeVolumeError": 0.001078912507545716,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 6,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/waveshare-st3215-hs/horn--45/body",
+      "passed": true,
+      "codeSha256": "ca7aeda690fcbab05816930056d31c26cd71a9d4fb87f1c6d23e1ae18473047a",
+      "components": 3,
+      "maxBoundsError": 1.7723072929243244e-06,
+      "maxRelativeVolumeError": 3.6856062303253926e-05,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 3,
+      "preservedSourceIntersections": [
+        {
+          "first": "Middle case",
+          "second": "Front cover",
+          "volume": 1006.9384713891511
+        },
+        {
+          "first": "Middle case",
+          "second": "Rear cover and pivot",
+          "volume": 142.48922495689496
+        }
+      ]
+    },
+    {
+      "name": "servo-motor/waveshare-st3215-hs/horn-45/assembled",
+      "passed": true,
+      "codeSha256": "714a6126441dffb419e1680a7511092097c961b0654b606444946371f3ca29b5",
+      "components": 7,
+      "maxBoundsError": 2.675254392947579e-05,
+      "maxRelativeVolumeError": 0.0010789125075496486,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 6,
+      "preservedSourceIntersections": [
+        {
+          "first": "Middle case",
+          "second": "Front cover",
+          "volume": 1006.9384713891511
+        },
+        {
+          "first": "Middle case",
+          "second": "Rear cover and pivot",
+          "volume": 142.48922495689496
+        },
+        {
+          "first": "Middle case",
+          "second": "Motor",
+          "volume": 2917.433734570861
+        },
+        {
+          "first": "Middle case",
+          "second": "Circuit board",
+          "volume": 372.1591751931678
+        },
+        {
+          "first": "Middle case",
+          "second": "Output gear and shaft",
+          "volume": 618.2077957765118
+        },
+        {
+          "first": "Front cover",
+          "second": "Motor",
+          "volume": 534.9501250889755
+        },
+        {
+          "first": "Front cover",
+          "second": "Output gear and shaft",
+          "volume": 367.04763013759145
+        },
+        {
+          "first": "Rear cover and pivot",
+          "second": "Motor",
+          "volume": 1941.601651364543
+        },
+        {
+          "first": "Rear cover and pivot",
+          "second": "Circuit board",
+          "volume": 812.6623858246676
+        }
+      ]
+    },
+    {
+      "name": "servo-motor/waveshare-st3215-hs/horn-45/exploded",
+      "passed": true,
+      "codeSha256": "667795fef5b91c535b090f196edd194121e3f6d9e13a57fc605422a59bce6c56",
+      "components": 7,
+      "maxBoundsError": 2.675254392947579e-05,
+      "maxRelativeVolumeError": 0.0010789125075512974,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 6,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/waveshare-st3215-hs/horn-45/body",
+      "passed": true,
+      "codeSha256": "77788fcf01470453138464fd7e136c161feb9fef78c15f0e7f44aa3a310633aa",
+      "components": 3,
+      "maxBoundsError": 1.7723072929243244e-06,
+      "maxRelativeVolumeError": 3.6856062303253926e-05,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 3,
+      "preservedSourceIntersections": [
+        {
+          "first": "Middle case",
+          "second": "Front cover",
+          "volume": 1006.9384713891511
+        },
+        {
+          "first": "Middle case",
+          "second": "Rear cover and pivot",
+          "volume": 142.48922495689496
+        }
+      ]
+    },
+    {
+      "name": "servo-motor/kst-x10-mini-pro-a/horn--45/assembled",
+      "passed": true,
+      "codeSha256": "7bddbff0f13f19d4ca71071baec1d35eb6a86b07e20609a86e95d6e97c4c4180",
+      "components": 3,
+      "maxBoundsError": 0.00012350082397460938,
+      "maxRelativeVolumeError": 0.00035277626914524245,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-mini-pro-a/horn--45/exploded",
+      "passed": true,
+      "codeSha256": "f124f980e889ad0b61177e61b363d263ea1fc03a2347613884764a6748816eae",
+      "components": 3,
+      "maxBoundsError": 0.00012350082397460938,
+      "maxRelativeVolumeError": 0.0003527762691499098,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-mini-pro-a/horn--45/body",
+      "passed": true,
+      "codeSha256": "f522721ec33a573b1b6f3497f5d75165e815508c89bf83ed59710f8d11644158",
+      "components": 1,
+      "maxBoundsError": 0.00012350082397460938,
+      "maxRelativeVolumeError": 1.2819276271340537e-05,
+      "intersections": [],
+      "independentMovement": false,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-mini-pro-a/horn-45/assembled",
+      "passed": true,
+      "codeSha256": "4a6c15068981726c9200fa7f44b23783c4763737d8567232c9f8f3f979ad10f3",
+      "components": 3,
+      "maxBoundsError": 0.00012350082397460938,
+      "maxRelativeVolumeError": 0.00035277626914913187,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-mini-pro-a/horn-45/exploded",
+      "passed": true,
+      "codeSha256": "5610fd0e90c711df1f272efa511dc06f95ac46dc0aaeb834bdacf3c466b15373",
+      "components": 3,
+      "maxBoundsError": 0.00012350082397460938,
+      "maxRelativeVolumeError": 0.0003527762691407309,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-mini-pro-a/horn-45/body",
+      "passed": true,
+      "codeSha256": "27db63ac9492a7032a745a8e577df4b38b34cdd2a29241885bc07e69dc74a5bf",
+      "components": 1,
+      "maxBoundsError": 0.00012350082397460938,
+      "maxRelativeVolumeError": 1.2819276271340537e-05,
+      "intersections": [],
+      "independentMovement": false,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-mini-pro-b/horn--45/assembled",
+      "passed": true,
+      "codeSha256": "cdb5754bf3725114b68df5ce91b5716f42ce702a5528b2c15f2c22bc75d94477",
+      "components": 3,
+      "maxBoundsError": 2.3078918456320707e-05,
+      "maxRelativeVolumeError": 0.000352776269142131,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-mini-pro-b/horn--45/exploded",
+      "passed": true,
+      "codeSha256": "791d76a0edcc32b677b1c4d61d68f2957b23ae49029a308403bbde42f90de3ab",
+      "components": 3,
+      "maxBoundsError": 2.307891845987342e-05,
+      "maxRelativeVolumeError": 0.00035277626915255453,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-mini-pro-b/horn--45/body",
+      "passed": true,
+      "codeSha256": "8d22d6636babd33bba8ba7891e356a3420f095b91ca8725d024445ec542738cd",
+      "components": 1,
+      "maxBoundsError": 1.0046365396458256e-15,
+      "maxRelativeVolumeError": 2.3785424969863815e-06,
+      "intersections": [],
+      "independentMovement": false,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-mini-pro-b/horn-45/assembled",
+      "passed": true,
+      "codeSha256": "52fd082702128d35f8e9a96bc23fe64b7e93b5ecd36230f3e3701f0b326e6679",
+      "components": 3,
+      "maxBoundsError": 2.3078918456320707e-05,
+      "maxRelativeVolumeError": 0.0003527762691360636,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-mini-pro-b/horn-45/exploded",
+      "passed": true,
+      "codeSha256": "9789b7e47310fb196ab42c3e3f784c2eba28c468d1ee064db72f9798c0223026",
+      "components": 3,
+      "maxBoundsError": 2.307891845987342e-05,
+      "maxRelativeVolumeError": 0.0003527762691541103,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-mini-pro-b/horn-45/body",
+      "passed": true,
+      "codeSha256": "88873b71dea158f13ac227fc868fec2beba5274cc64eb030b263b746b75b4bb1",
+      "components": 1,
+      "maxBoundsError": 1.0046365396458256e-15,
+      "maxRelativeVolumeError": 2.3785424969863815e-06,
+      "intersections": [],
+      "independentMovement": false,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-v8/horn--45/assembled",
+      "passed": true,
+      "codeSha256": "24e6aba7b9b5c229373a1acb655276e7c3a42094941930fee43e63935c7cf89b",
+      "components": 3,
+      "maxBoundsError": 0.0001087188720703125,
+      "maxRelativeVolumeError": 0.0003433987210773132,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-v8/horn--45/exploded",
+      "passed": true,
+      "codeSha256": "b99de1d4e8ee6048d5d6591c724850e8597cff24fde3fefe17f2d63d4a85f256",
+      "components": 3,
+      "maxBoundsError": 0.0001087188720703125,
+      "maxRelativeVolumeError": 0.00034339872107034863,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-v8/horn--45/body",
+      "passed": true,
+      "codeSha256": "05355472bce559f1a619217d4e30205e7efc5382589c499f3fd06ccb1357c0c7",
+      "components": 1,
+      "maxBoundsError": 0.0001087188720703125,
+      "maxRelativeVolumeError": 9.916348945312869e-06,
+      "intersections": [],
+      "independentMovement": false,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-v8/horn-45/assembled",
+      "passed": true,
+      "codeSha256": "7cb5681068ff4f9b750745cfe33d97fa0da361a3f21427a962bbcd471d30fc2e",
+      "components": 3,
+      "maxBoundsError": 0.0001087188720703125,
+      "maxRelativeVolumeError": 0.0003433987210630675,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-v8/horn-45/exploded",
+      "passed": true,
+      "codeSha256": "526bfea15df2e174c349c44e0cc1ac21465ac97b0aac9ea73881e3684d676725",
+      "components": 3,
+      "maxBoundsError": 0.0001087188720703125,
+      "maxRelativeVolumeError": 0.00034339872107129834,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-v8/horn-45/body",
+      "passed": true,
+      "codeSha256": "cb38629413007c1bafaace85ebb96ad704e17c958190bceed659b493e64f0902",
+      "components": 1,
+      "maxBoundsError": 0.0001087188720703125,
+      "maxRelativeVolumeError": 9.916348945312869e-06,
+      "intersections": [],
+      "independentMovement": false,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-pro-a/horn--45/assembled",
+      "passed": true,
+      "codeSha256": "61d88468ebfd874bd39070d4766a32e21fe514c03229e0f2e2713e67c796ec97",
+      "components": 3,
+      "maxBoundsError": 4.00543212890625e-05,
+      "maxRelativeVolumeError": 0.00035277626914586484,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-pro-a/horn--45/exploded",
+      "passed": true,
+      "codeSha256": "3bebc0dcad4bdfce4d30a7c0b30bca92860b0ced5dd94e7c9af79725dc411de3",
+      "components": 3,
+      "maxBoundsError": 4.00543212890625e-05,
+      "maxRelativeVolumeError": 0.0003527762691415087,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-pro-a/horn--45/body",
+      "passed": true,
+      "codeSha256": "145264154ffb4cdcdb924d8967963b58b2078da23ac2d4093f471f9d229f204b",
+      "components": 1,
+      "maxBoundsError": 4.00543212890625e-05,
+      "maxRelativeVolumeError": 9.535943420217427e-06,
+      "intersections": [],
+      "independentMovement": false,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-pro-a/horn-45/assembled",
+      "passed": true,
+      "codeSha256": "9122aae8bd5d08e4d0d6ee39847389bbc6bd511ccc6f122e46d27d73463ab37a",
+      "components": 3,
+      "maxBoundsError": 4.00543212890625e-05,
+      "maxRelativeVolumeError": 0.00035277626914322,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-pro-a/horn-45/exploded",
+      "passed": true,
+      "codeSha256": "f6be6e749c00407003b11a8afb46fcc363d195b90b5c48c2e94a4e7ec38cc6f4",
+      "components": 3,
+      "maxBoundsError": 4.00543212890625e-05,
+      "maxRelativeVolumeError": 0.0003527762691354413,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-pro-a/horn-45/body",
+      "passed": true,
+      "codeSha256": "5401150518ace5cdb9be4841cc652f72371e4a40bb8647ed95c36f20709a4a74",
+      "components": 1,
+      "maxBoundsError": 4.00543212890625e-05,
+      "maxRelativeVolumeError": 9.535943420217427e-06,
+      "intersections": [],
+      "independentMovement": false,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-pro-b/horn--45/assembled",
+      "passed": true,
+      "codeSha256": "512d7f4f6bdfe44d85d1feb27bd9f89b2a350df5940cc402d4f8feaa769dca8b",
+      "components": 3,
+      "maxBoundsError": 4.00543212890625e-05,
+      "maxRelativeVolumeError": 0.00035277626914586484,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-pro-b/horn--45/exploded",
+      "passed": true,
+      "codeSha256": "a2bbf94de3bfa91db8bc37a5b37a17eff01989be4dfa799f89b895c3794e2a16",
+      "components": 3,
+      "maxBoundsError": 4.00543212890625e-05,
+      "maxRelativeVolumeError": 0.0003527762691415087,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-pro-b/horn--45/body",
+      "passed": true,
+      "codeSha256": "a26b0cc04bdc76f100fbe4db8344f0f9a25715be812b95a2cff81494eeaa784a",
+      "components": 1,
+      "maxBoundsError": 4.00543212890625e-05,
+      "maxRelativeVolumeError": 5.552313927340091e-06,
+      "intersections": [],
+      "independentMovement": false,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-pro-b/horn-45/assembled",
+      "passed": true,
+      "codeSha256": "a4a57dc755c4d28fb38f57d98a3dffa3aea2b2769b016dbcc40173e871c78fad",
+      "components": 3,
+      "maxBoundsError": 4.00543212890625e-05,
+      "maxRelativeVolumeError": 0.00035277626914322,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-pro-b/horn-45/exploded",
+      "passed": true,
+      "codeSha256": "766a8e38abad61ccad2c4449448fb86045909d31a2a9129232f687463672636d",
+      "components": 3,
+      "maxBoundsError": 4.00543212890625e-05,
+      "maxRelativeVolumeError": 0.0003527762691354413,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/kst-x10-pro-b/horn-45/body",
+      "passed": true,
+      "codeSha256": "7801653dbde9e10ea377503c1c550f7ef1bb2751f74cd78615edacf38e732a42",
+      "components": 1,
+      "maxBoundsError": 4.00543212890625e-05,
+      "maxRelativeVolumeError": 5.552313927340091e-06,
+      "intersections": [],
+      "independentMovement": false,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/power-hd-t60-bhv/horn--45/assembled",
+      "passed": true,
+      "codeSha256": "885f390adc3b4f6859956896af0db1d5bc6b8d5d4e96ccdf940b0550913f6409",
+      "components": 3,
+      "maxBoundsError": 2.47955322265625e-05,
+      "maxRelativeVolumeError": 0.000713737284391166,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/power-hd-t60-bhv/horn--45/exploded",
+      "passed": true,
+      "codeSha256": "d82cea74ac9ed220b70c3c1bf920c683993ba1575728e0c48eb26bbb8ce54155",
+      "components": 3,
+      "maxBoundsError": 2.47955322265625e-05,
+      "maxRelativeVolumeError": 0.0007137372843940199,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/power-hd-t60-bhv/horn--45/body",
+      "passed": true,
+      "codeSha256": "c0dcb4d87c26ec2efc7a2a37157ace2b26777af7f4fd2d2b13c9f3b26b6dc9a6",
+      "components": 1,
+      "maxBoundsError": 9.918212889203915e-06,
+      "maxRelativeVolumeError": 1.226218261260472e-06,
+      "intersections": [],
+      "independentMovement": false,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/power-hd-t60-bhv/horn-45/assembled",
+      "passed": true,
+      "codeSha256": "6601b6c4db4cdb6fba08499e89a82e43adf95505818091be7322fa9ad269aa46",
+      "components": 3,
+      "maxBoundsError": 2.47955322265625e-05,
+      "maxRelativeVolumeError": 0.0007137372843955568,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/power-hd-t60-bhv/horn-45/exploded",
+      "passed": true,
+      "codeSha256": "54a74c70efc194e9756a522363437f2a5628e7b6fd6f72d604c73934db72d7e8",
+      "components": 3,
+      "maxBoundsError": 2.47955322265625e-05,
+      "maxRelativeVolumeError": 0.000713737284391166,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/power-hd-t60-bhv/horn-45/body",
+      "passed": true,
+      "codeSha256": "0fd8697842b8c05c685edc6f0147db1fbd05c4a57e190335040f6591a0e46fa1",
+      "components": 1,
+      "maxBoundsError": 9.918212889203915e-06,
+      "maxRelativeVolumeError": 1.226218261260472e-06,
+      "intersections": [],
+      "independentMovement": false,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/power-hd-tds-2/horn--45/assembled",
+      "passed": true,
+      "codeSha256": "690bcf5b3fc526f4cc2050ac63e9b32e3f6ef78580dec7ed0dd3d698991f0917",
+      "components": 3,
+      "maxBoundsError": 0.0001583099365234375,
+      "maxRelativeVolumeError": 0.0007120485300780737,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/power-hd-tds-2/horn--45/exploded",
+      "passed": true,
+      "codeSha256": "db08448653cf9a17fbebfda91478cf9e26b3bee13dc163cd6d054d42564a6add",
+      "components": 3,
+      "maxBoundsError": 0.0001583099365234375,
+      "maxRelativeVolumeError": 0.0007120485300730477,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/power-hd-tds-2/horn--45/body",
+      "passed": true,
+      "codeSha256": "f0f1c1d0494e9092437ae035ae2e174e6f3a1a8981989ffae1e0f76f58650bb0",
+      "components": 1,
+      "maxBoundsError": 0.0001583099365234375,
+      "maxRelativeVolumeError": 3.316930775198973e-07,
+      "intersections": [],
+      "independentMovement": false,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/power-hd-tds-2/horn-45/assembled",
+      "passed": true,
+      "codeSha256": "cfb63dedee2f580199182f63713b5bea8b12a969ce9c3dea1db6dc7abf1c19fe",
+      "components": 3,
+      "maxBoundsError": 0.0001583099365234375,
+      "maxRelativeVolumeError": 0.0007120485300727964,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/power-hd-tds-2/horn-45/exploded",
+      "passed": true,
+      "codeSha256": "3a97637beb237557227b4dfd390977600967d606388209edade57eb1bd8ce5ff",
+      "components": 3,
+      "maxBoundsError": 0.0001583099365234375,
+      "maxRelativeVolumeError": 0.0007120485300744298,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/power-hd-tds-2/horn-45/body",
+      "passed": true,
+      "codeSha256": "dca30a544fa682dc8213036f912ae78739b95ab0e7247101c776c428f271752e",
+      "components": 1,
+      "maxBoundsError": 0.0001583099365234375,
+      "maxRelativeVolumeError": 3.316930775198973e-07,
+      "intersections": [],
+      "independentMovement": false,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 0,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/waveshare-st3215-hs/supplied-discs-0/assembled",
+      "passed": true,
+      "codeSha256": "7236624864ca0bd9c48c0cd1b058092c087a12b70faab72f3118024ddaea678b",
+      "components": 8,
+      "maxBoundsError": 1.7723072929243244e-06,
+      "maxRelativeVolumeError": 0.0009781378938977295,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 8,
+      "preservedSourceIntersections": [
+        {
+          "first": "Middle case",
+          "second": "Front cover",
+          "volume": 1006.9384713891511
+        },
+        {
+          "first": "Middle case",
+          "second": "Rear cover and pivot",
+          "volume": 142.48922495689496
+        },
+        {
+          "first": "Middle case",
+          "second": "Motor",
+          "volume": 2917.433734570861
+        },
+        {
+          "first": "Middle case",
+          "second": "Circuit board",
+          "volume": 372.1591751931678
+        },
+        {
+          "first": "Middle case",
+          "second": "Output gear and shaft",
+          "volume": 618.2078170230063
+        },
+        {
+          "first": "Front cover",
+          "second": "Motor",
+          "volume": 534.9501250889755
+        },
+        {
+          "first": "Front cover",
+          "second": "Output gear and shaft",
+          "volume": 367.0476288632632
+        },
+        {
+          "first": "Rear cover and pivot",
+          "second": "Motor",
+          "volume": 1941.601651364543
+        },
+        {
+          "first": "Rear cover and pivot",
+          "second": "Circuit board",
+          "volume": 812.6623858246676
+        },
+        {
+          "first": "Output gear and shaft",
+          "second": "Front output disc",
+          "volume": 1.842717905756927
+        }
+      ]
+    },
+    {
+      "name": "servo-motor/waveshare-st3215-hs/supplied-discs-0/exploded",
+      "passed": true,
+      "codeSha256": "9501d2c35062d2f9b82fa8fb6bcf557e855ea09f5d3ced78beae52eb295f1952",
+      "components": 8,
+      "maxBoundsError": 1.7723072929243244e-06,
+      "maxRelativeVolumeError": 0.0009781378939119887,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 8,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/waveshare-st3215-hs/supplied-discs-0/body",
+      "passed": true,
+      "codeSha256": "146d58cae20e2f8802d312f2ec48c056439f66cab4d3764bc6dc96ac01fb63c4",
+      "components": 3,
+      "maxBoundsError": 1.7723072929243244e-06,
+      "maxRelativeVolumeError": 3.6856062303253926e-05,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 3,
+      "preservedSourceIntersections": [
+        {
+          "first": "Middle case",
+          "second": "Front cover",
+          "volume": 1006.9384713891511
+        },
+        {
+          "first": "Middle case",
+          "second": "Rear cover and pivot",
+          "volume": 142.48922495689496
+        }
+      ]
+    },
+    {
+      "name": "servo-motor/waveshare-st3215-hs/supplied-discs-45/assembled",
+      "passed": true,
+      "codeSha256": "5924ac0fdf306f82e2ebf0c2d0ab2b90f6c132d5c9a3a7f0a7c6fe24534a2b14",
+      "components": 8,
+      "maxBoundsError": 0.0067130445879879375,
+      "maxRelativeVolumeError": 0.0009781378938983297,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 8,
+      "preservedSourceIntersections": [
+        {
+          "first": "Middle case",
+          "second": "Front cover",
+          "volume": 1006.9384713891511
+        },
+        {
+          "first": "Middle case",
+          "second": "Rear cover and pivot",
+          "volume": 142.48922495689496
+        },
+        {
+          "first": "Middle case",
+          "second": "Motor",
+          "volume": 2917.433734570861
+        },
+        {
+          "first": "Middle case",
+          "second": "Circuit board",
+          "volume": 372.1591751931678
+        },
+        {
+          "first": "Middle case",
+          "second": "Output gear and shaft",
+          "volume": 618.2077957765118
+        },
+        {
+          "first": "Front cover",
+          "second": "Motor",
+          "volume": 534.9501250889755
+        },
+        {
+          "first": "Front cover",
+          "second": "Output gear and shaft",
+          "volume": 367.04763013759145
+        },
+        {
+          "first": "Rear cover and pivot",
+          "second": "Motor",
+          "volume": 1941.601651364543
+        },
+        {
+          "first": "Rear cover and pivot",
+          "second": "Circuit board",
+          "volume": 812.6623858246676
+        },
+        {
+          "first": "Output gear and shaft",
+          "second": "Front output disc",
+          "volume": 1.8427178954689714
+        }
+      ]
+    },
+    {
+      "name": "servo-motor/waveshare-st3215-hs/supplied-discs-45/exploded",
+      "passed": true,
+      "codeSha256": "64891c797c246c6075bd8c64730e8d955c91175e43e6e9e5157df29367c1c02c",
+      "components": 8,
+      "maxBoundsError": 0.0067130445879879375,
+      "maxRelativeVolumeError": 0.0009781378939103373,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 8,
+      "preservedSourceIntersections": []
+    },
+    {
+      "name": "servo-motor/waveshare-st3215-hs/supplied-discs-45/body",
+      "passed": true,
+      "codeSha256": "f59f96d5df93342c2b877e365e3c4005687a22fc67c536fbabc7ff90cd4d315c",
+      "components": 3,
+      "maxBoundsError": 1.7723072929243244e-06,
+      "maxRelativeVolumeError": 3.6856062303253926e-05,
+      "intersections": [],
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "fcstdRoundtrip": true,
+      "catalogMetadata": true,
+      "sourceComponentsChecked": 3,
+      "preservedSourceIntersections": [
+        {
+          "first": "Middle case",
+          "second": "Front cover",
+          "volume": 1006.9384713891511
+        },
+        {
+          "first": "Middle case",
+          "second": "Rear cover and pivot",
+          "volume": 142.48922495689496
+        }
+      ]
+    }
+  ],
+  "passed": 81,
+  "failed": 0,
+  "elapsedSeconds": 200.21068558294792,
+  "sourceVerification": {
+    "sha256": "58e38e4dc49f97df738c5f229f9aa8a7dce64a0a1d01335486a52d53e6017e8a",
+    "transform": "X=x+25.5, Y=-z, Z=y+24.1",
+    "repair": "Rear cover internal annular void translated -0.00001 mm on source Y; external surfaces unchanged.",
+    "intersections": "Existing manufacturer overlaps are checked against the source and reported separately; no new intersections accepted."
+  },
+  "verificationBatches": [
+    {
+      "checkedAt": "2026-09-15T04:42:09.862928+00:00",
+      "cases": 45,
+      "scope": "All five KST configurations; remaining 36 case results retained only after matching generated macro SHA-256."
+    }
+  ]
+}

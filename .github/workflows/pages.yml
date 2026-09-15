@@ -36,6 +36,8 @@ jobs:
         run: npm run typecheck:tests
       - name: Check all part packages and presets
         run: npm run parts:check
+      - name: Check Python catalog importers
+        run: python3 -m unittest discover -s tests -p 'test_*.py'
       - name: Fingerprint test inputs
         id: test-inputs
         run: node scripts/ci-test-key.mjs --github-output

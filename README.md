@@ -2,6 +2,8 @@
 
 A browser-based library of configurable mechanical parts for quick FreeCAD prototyping. Find a component in the category tree, adjust its dimensions, inspect its 3D preview, and bring the generated solid geometry into an existing FreeCAD document.
 
+![ProtoLab interface showing the part library, a live 3D ball screw assembly preview, and the configurator](docs/protolab-preview.png)
+
 The application is a static React / TypeScript / Three.js site built with Vite. It runs without a backend and is suitable for GitHub Pages. The interface, generated Python, and source comments are in English.
 
 ## Run locally
@@ -70,8 +72,10 @@ The library uses independent part modules, including the requested bearing famil
 | Linear motion           | Ball screw assemblies and standalone nuts: SFK, SFU, SFS, SFE, DFU, SFI, DFI, SFH and SFY; machined ends and helical ball raceways                                    |
 | Linear motion           | Ball screw linear axis: six prototype presets with dual profile rails, moving table, fixed/floating bearing supports and cutaway view                                 |
 | Motion                  | D25 L30 jaw coupling with independent bores, clamp screws and elastomer spider; six dimensioned bevel gear pairs; miniature m0.5 pinions                              |
+| Servo motors            | One Servo motor selector: eight fixed Waveshare, KST and Power-HD models, filtered by dimensions, torque, current and other specifications                                        |
 | Servo linkages          | Single, double, cross, six-arm and disc horns; clamping arms; servo spline gears; pushrod, female/male threaded and cable clevis ends                                 |
 | Pistons & rods          | Compressor/engine hollow pistons and pneumatic disks; separate rings, seals and wrist pins; rods with bushings, bearing shells and removable big-end caps             |
+| Electromagnetics         | Holding pot electromagnets, tubular pull/push solenoids and open-frame solenoids; 16 editable prototype presets                                                         |
 | Enclosures & structural | Open enclosure, L bracket and round spacer                                                                                                                            |
 | Aluminium profiles      | EU 1020/1030/1040/1050, 2020, 2040, GB1020H and 40 × 15 sections, with open slots, through bores and editable cut length                                              |
 
@@ -83,7 +87,7 @@ Gear shaft connections offer seven bore shapes: round, hexagon, D-shaft, double 
 
 Spring and guide states affect the generated geometry and every export. Profile guide presets cover MGN7, MGN9, MGN12 and MGN15 in C and H lengths. Bearing construction choices include cylindrical and K/K30 tapered bores where applicable, along with supported closure variants. Guides can export their assembled arrangement or individual components, and carriage position is editable. Spring pin free and installed states have separate outside and slit envelopes.
 
-Size presets are reference geometry. The preset browser separates **Sourced catalog dimensions** from **Prototype examples**. Each catalog result links to its supplier product, listing or dimensional drawing and identifies the parameters recorded from that source. Numeric catalog filters only match these recorded parameters; illustrative internal dimensions cannot accidentally qualify a catalog part. Other dimensions remain editable prototype settings. The catalog is an offline snapshot. Product availability and prices are not tracked. Identical geometry across finishes is grouped into one preset, preserving each original product code for search.
+Size presets are reference geometry. The preset browser separates **Sourced catalog dimensions** from **Prototype examples**. Each catalog result links to its supplier product, listing or dimensional drawing and identifies the parameters or fixed-model characteristics recorded from that source. Numeric catalog filters match published values; illustrative internal dimensions cannot accidentally qualify a catalog part. Editable packages expose other dimensions as prototype settings, while fixed manufactured models retain their recorded geometry. The catalog is an offline snapshot. Product availability and prices are not tracked. Identical geometry across finishes is grouped into one preset, preserving each original product code for search.
 
 Supplier import scripts enumerate every public category page and retain the original SKU, product URL and size text. Geometry adapters then admit only supported, validated configurations. Gvyntok bolt/screw inventory covers 55 categories, 148 pages and 5,901 visible products; the other supplied Gvyntok sections contain 958 nuts, 606 washers/rings, 186 threaded rods and 272 pins/cotters/clamps. Sidebar totals sometimes differ from actual visible result counts; coverage reports distinguish those discrepancies from extraction errors. Promtehimport enumeration covers 510 pages and 11,977 distinct product URLs. Its product-table import resumes from a saved cache; the current completed and pending counts are in the coverage report. Discovered URLs are not counted as usable presets until dimensions have been retrieved and validated.
 
@@ -93,13 +97,17 @@ Additional source links remain under **Reference dimensions & sources** in each 
 
 An exact sourced configuration also embeds its designation, source URL and recorded dimensions as FreeCAD object properties. Editing a dimension removes that source attribution unless the complete configuration matches a catalog preset again.
 
-The eight supplied reference images are available from the relevant presets. The extension includes all 27 SFU table rows, 38 unique jaw-coupling bore pairs, four miniature spur pinions and all 12 bevel table rows arranged into six pairs. Ball screws have 131 nut configurations and 230 assembly presets, including 100–550 mm miniature shaft lengths. Two listing codes without a matching drawing, `SFK602` and `SFE3210`, remain explicitly unverified examples. See [ball screw coverage](docs/ball-screw-catalog.md) and [gear reference mapping](docs/reference-gears.md). Reference load ratings are read-only source specifications and do not certify edited models.
+The supplied reference images are available from the relevant presets. The extension includes all 27 SFU table rows, 38 unique jaw-coupling bore pairs, four miniature spur pinions and all 12 bevel table rows arranged into six mounting pairs, plus 25 m2 15/30 stock bore configurations. Ball screws have 131 nut configurations and 230 assembly presets, including 100–550 mm miniature shaft lengths. Two listing codes without a matching drawing, `SFK602` and `SFE3210`, remain explicitly unverified examples. See [ball screw coverage](docs/ball-screw-catalog.md) and [gear reference mapping](docs/reference-gears.md). Reference load ratings are read-only source specifications and do not certify edited models.
 
 The **Set screw / grub screw** package includes 11 **DIN 915 · black 12.9** references from M2 through M16, with a helical thread, blind hex socket and cylindrical dog point. Overall lengths are editable prototype choices because the supplied table does not list stock lengths. See [DIN 915 source dimensions and verification](docs/din915.md).
+
+Find **Servo motor** under **MOTION → SERVO MOTORS**. Its catalog contains Waveshare ST3215-HS, KST X10 Mini Pro-A/Pro-B, KST X10 V8.0, KST X10 Pro-A/Pro-B, Power-HD T60-BHV and Power-HD TDS-2. Filter eight fixed models by case dimensions, torque, no-load/stall current, voltage, speed, weight and other published characteristics; numeric ranges include their boundaries, and unknown values are excluded only when their filter is active. Servo dimensions stay fixed; output angle, optional horns and inspection states remain configurable, with source identity preserved in FreeCAD exports. Current test conditions remain separate from the torque/speed reference voltage. ST3215 uses the original eight-component STEP assembly, with native CAD surfaces preserved in FreeCAD export. See [servo catalog, source dimensions and verification](docs/servo-motors.md).
 
 The servo linkage extension adds 28 horn references, 16 servo gear presets (13 actual ServoCity catalog sizes and three prototype examples), and 24 clevis presets. Find them under **MOTION → SERVO LINKAGES**, or search for **servo**, **horn** or **clevis**. The 18 supplied images remain linked from the corresponding references. See [servo linkage coverage](docs/servo-linkages.md) for source dimensions, modeling limits and native FreeCAD verification.
 
 Find **Piston** and **Connecting rod** under **MOTION → PISTONS & CONNECTING RODS**. Piston catalog presets include all eight supplied nominal sizes: 42, 47, 48, 51, 65, 70, 80 and 90 mm. Other dimensions, pneumatic configurations and connecting-rod presets are editable prototype examples. Both packages support assembled, exploded and body-only states, with movable FreeCAD components. See [piston and connecting-rod coverage](docs/piston-linkages.md) for reference evidence, editing and verification.
+
+Find **Holding electromagnet** under **ELECTROMAGNETICS → ELECTROMAGNETS**, and **Tubular solenoid** and **Open-frame solenoid** under **ELECTROMAGNETICS → SOLENOIDS**. Their 16 prototype presets expose editable bodies, coils, mounting features, armatures and solenoid travel, with separate FreeCAD components and inspection states. These are geometric models without electrical or force ratings. See [electromagnetic geometry and verification](docs/electromagnetics.md) for controls, export scope and the 63-case native audit.
 
 Find **Aluminium extrusion / T-slot profile** under **STRUCTURAL → ALUMINIUM PROFILES**. Eight supplied sections have 48 presets; the four low EU profiles include all listed lengths from 50 to 550 mm. Other lengths and undimensioned internals remain editable prototype settings. See [aluminium profile coverage and cross sections](docs/aluminium-profiles.md).
 
@@ -215,7 +223,7 @@ These components are prototype references. The detailed notes beside each config
 
 ## Verification
 
-`npm run parts:check -- <part-id>` checks a single package boundary, API, schema, defaults and preset parameters. `npm run parts:check` checks the complete library. `npm test` runs offline catalog, geometry, export, and validation checks, without requiring a FreeCAD installation. `npm run typecheck` and `npm run build` verify the TypeScript application and production bundle.
+`npm run parts:check -- <part-id>` checks a single package boundary, API, schema, defaults and preset parameters. `npm run parts:check` checks the complete library. `npm test` runs offline catalog, geometry, export, and validation checks, without requiring a FreeCAD installation. `python3 -m unittest discover -s tests -p 'test_*.py'` checks the Python catalog importers. `npm run typecheck` and `npm run build` verify the TypeScript application and production bundle.
 
 The generated recipes are also checked with a local FreeCAD runtime during development. Checks include validity, positive solid volume and agreement with preview dimensions. Gear checks include all defaults/presets; fastener checks exercise head, drive, thread and point variants; spring checks exercise presets, states and end profiles. Runtime checks establish that the recipes execute and produce the intended geometry; they do not establish engineering suitability or exact manufacturer internals. In-memory shape checks do not add objects to user documents. Full macro checks use a temporary document and restore the previously active document.
 
@@ -223,7 +231,7 @@ GitHub Pages deployment follows the [official custom workflow documentation](htt
 
 ### Reusing successful CI verification
 
-Every workflow run installs locked dependencies, checks TypeScript and test contracts, validates all part packages and presets, and builds the production site. The npm download cache speeds up installation; the geometry tests themselves are CPU work.
+Every workflow run installs locked dependencies, checks TypeScript and test contracts, validates all part packages and presets, runs the Python importer tests, and builds the production site. The npm download cache speeds up installation; the geometry tests themselves are CPU work.
 
 The full suite is reused only when an exact successful result exists for the same test inputs and Node runtime. `scripts/ci-test-key.mjs` hashes tracked file paths and contents under `src/`, `tests/`, `scripts/`, `data/`, `public/` and `.github/workflows/`, plus the package manifests and root TypeScript configurations. The key also includes the exact Node version, operating system and architecture. Changes, additions, removals and renames invalidate the result. Add any future test inputs outside these paths to the fingerprint contract.
 

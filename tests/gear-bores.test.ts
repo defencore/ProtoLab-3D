@@ -144,10 +144,21 @@ test('polygon size means across flats, and key corners and polygon corners parti
     assert.ok(validateParameters(spur, { ...spur.defaults, ...changes }, 'default').length > 0);
 });
 
-test('sourced gear presets retain round bores and custom shaft shapes remain explicit edits', () => {
+test('sourced gear presets retain round bores except explicitly listed stock wheel keyways', () => {
   for (const part of [spur, pair])
     for (const preset of part.presets.filter((preset) => preset.catalog)) {
       const keys = part === pair ? ['pinionBoreShape', 'wheelBoreShape'] : ['boreShape'];
-      for (const key of keys) assert.equal(preset.parameters[key], 'round');
+      for (const key of keys) {
+        const stockKeyway =
+          part === pair &&
+          preset.id.startsWith('reference-bevel-m2-15-30-bore-') &&
+          key === 'wheelBoreShape';
+        assert.equal(preset.parameters[key], stockKeyway ? 'keyway' : 'round', preset.id);
+        if (stockKeyway) {
+          assert.ok(preset.catalog!.verifiedParameters.includes(key));
+          assert.ok(preset.catalog!.verifiedParameters.includes('wheelBoreKeyWidth'));
+          assert.ok(!preset.catalog!.verifiedParameters.includes('wheelBoreKeyDepth'));
+        }
+      }
     }
 });

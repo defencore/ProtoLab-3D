@@ -76,6 +76,9 @@ with tempfile.TemporaryDirectory(prefix='protolab-bevel-qa-') as folder:
                 shape = objects[point['component']].Shape
                 assert shape.isInside(App.Vector(*point['inside']), 1e-7, True), point['name']+': missing material below the root plane'
                 assert not shape.isInside(App.Vector(*point['outside']), 1e-7, True), point['name']+': nonplanar ridge above the root plane'
+            for check in case.get('boreChecks', []):
+                actual = objects[check['component']].Shape.isInside(App.Vector(*check['point']), 1e-7, True)
+                assert actual == check['material'], check['name']+': bore or keyway wall mismatch'
             if args.intersections and case['state'] == 'assembled' and len(objects) == 2:
                 intersection = objects[0].Shape.common(objects[1].Shape)
                 assert intersection.isNull() or intersection.isValid(), 'Pair intersection produced an invalid Boolean result'
@@ -107,7 +110,7 @@ with tempfile.TemporaryDirectory(prefix='protolab-bevel-qa-') as folder:
             for obj, expected in zip(restored,case['components']):
                 valid_component(obj.Shape,expected['side'])
                 compare_bounds(shape_bounds(obj.Shape),expected['bounds'],'FCStd '+expected['side'])
-            record.update(passed=True,components=len(restored),annulusChecks=len(case['annuli']),volumes=volumes,relativeVolumeErrors=volume_errors,maxBoundsError=max(bounds_errors),independentMovement=len(restored)>1,stepRoundtrip=True,fcstdRoundtrip=True)
+            record.update(passed=True,components=len(restored),annulusChecks=len(case['annuli']),boreChecks=len(case.get('boreChecks', [])),volumes=volumes,relativeVolumeErrors=volume_errors,maxBoundsError=max(bounds_errors),independentMovement=len(restored)>1,stepRoundtrip=True,fcstdRoundtrip=True)
         except Exception as error:
             record['error'] = str(error)
         finally:

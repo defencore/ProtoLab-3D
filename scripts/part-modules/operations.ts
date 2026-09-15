@@ -67,7 +67,7 @@ export async function exportPackage(projectRoot: string, id: string, destination
   }
   try {
     await copyPackage(module, path.join(destination, 'src/parts', id));
-    for (const name of [...SDK_FILES, 'freecad.ts', 'validation.ts']) {
+    for (const name of [...SDK_FILES, 'freecad.ts', 'validation.ts', 'catalog-models.ts']) {
       await fs.mkdir(path.join(destination, 'src/core'), { recursive: true });
       await fs.copyFile(
         path.join(projectRoot, 'src/core', name),
