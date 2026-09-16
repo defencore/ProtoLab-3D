@@ -33,7 +33,7 @@ The inspection cutaway removes the housing in front of a plane 0.001 mm from the
 
 Sources are linked from each preset:
 
-- [Supplied SFU drawing](../public/references/sfu-dimensions.png)
+- Supplied SFU drawing (original reference, not bundled)
 - [Wangong SFK](https://www.wangong.net/product/ball-screw/mini-type-sfk-series-ball-screw.html), [SFS](https://www.wangong.net/product/ball-screw/high-speed-low-noise-sfs-series-ball-screw.html), [DFU](https://www.wangong.net/product/ball-screw/double-nut-dfu-series-ball-screw.html), [SFY](https://www.wangong.net/product/ball-screw/big-lead-sfy-series-ball-screw.html)
 - [DLY SFE](https://www.deliyalinearmotion.com/ball-nut/sfe-nuts.html)
 - [LIMON catalog, mounting drawings on PDF page 13](https://image.makewebeasy.net/makeweb/0/WRl0sbTiz/Document/Ball_Screw_catalogue.pdf?v=202012190947#page=13)

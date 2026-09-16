@@ -70,7 +70,7 @@ function camCup(p: Parameters) {
 const part: PartDefinition = {
   id: 'one-way-clutch',
   name: 'Drawn-cup one-way clutch',
-  category: 'BEARINGS',
+  category: 'TRANSMISSION & LINKAGES',
   subgroup: 'ONE-WAY CLUTCHES',
   icon: 'bearing',
   complexity: 'Cup + locking rollers',

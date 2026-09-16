@@ -1,0 +1,41 @@
+[
+  {
+    "id": "slot6-m5",
+    "name": "Slot 6 sliding nut \u00b7 M5",
+    "description": "Sliding and hammer-head nuts with an actual through bore and configurable slot shoulder. Editable prototype dimensions.",
+    "parameters": {
+      "form": "slide",
+      "length": 16,
+      "width": 10,
+      "height": 6,
+      "neck": 6,
+      "bore": 5
+    }
+  },
+  {
+    "id": "slot8-m6",
+    "name": "Slot 8 sliding nut \u00b7 M6",
+    "description": "Sliding and hammer-head nuts with an actual through bore and configurable slot shoulder. Editable prototype dimensions.",
+    "parameters": {
+      "form": "slide",
+      "length": 20,
+      "width": 16,
+      "height": 8,
+      "neck": 8,
+      "bore": 6
+    }
+  },
+  {
+    "id": "hammer-m5",
+    "name": "Hammer-head nut \u00b7 M5",
+    "description": "Sliding and hammer-head nuts with an actual through bore and configurable slot shoulder. Editable prototype dimensions.",
+    "parameters": {
+      "form": "hammer",
+      "length": 16,
+      "width": 10,
+      "height": 6,
+      "neck": 6,
+      "bore": 5
+    }
+  }
+]

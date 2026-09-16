@@ -32,7 +32,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU1204-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -94,7 +94,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU1604-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -160,7 +160,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU1605-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -226,7 +226,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU1610-3',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -292,7 +292,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU2004-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -358,7 +358,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU2005-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -424,7 +424,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU2504-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -490,7 +490,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU2505-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -556,7 +556,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU2506-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -622,7 +622,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU2508-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -688,7 +688,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU2510-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -754,7 +754,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU3204-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -820,7 +820,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU3205-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -886,7 +886,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU3206-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -952,7 +952,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU3208-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -1018,7 +1018,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU3210-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -1084,7 +1084,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU4005-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -1150,7 +1150,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU4006-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -1216,7 +1216,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU4008-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -1282,7 +1282,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU4010-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -1348,7 +1348,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU5010-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -1414,7 +1414,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU5020-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -1480,7 +1480,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU6310-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -1546,7 +1546,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU6320-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -1612,7 +1612,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU8010-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -1678,7 +1678,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU8020-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -1744,7 +1744,7 @@ export const ballScrewReferences: BallScrewReference[] = [
     catalog: {
       designation: 'SFU10020-4',
       sourceName: 'User-supplied reference',
-      sourceUrl: 'references/sfu-dimensions.png',
+      sourceUrl: '',
       sourceKind: 'attachment',
       verifiedParameters: [
         'family',
@@ -2487,7 +2487,7 @@ export const ballScrewReferences: BallScrewReference[] = [
       ],
       alternateSourceUrls: [
         'https://image.makewebeasy.net/makeweb/0/WRl0sbTiz/Document/Ball_Screw_catalogue.pdf?v=202012190947#page=7',
-        'references/ball-nut-options.png',
+        '',
       ],
     },
   },
@@ -2560,7 +2560,7 @@ export const ballScrewReferences: BallScrewReference[] = [
       ],
       alternateSourceUrls: [
         'https://image.makewebeasy.net/makeweb/0/WRl0sbTiz/Document/Ball_Screw_catalogue.pdf?v=202012190947#page=7',
-        'references/ball-nut-options.png',
+        '',
       ],
     },
   },
@@ -2633,7 +2633,7 @@ export const ballScrewReferences: BallScrewReference[] = [
       ],
       alternateSourceUrls: [
         'https://image.makewebeasy.net/makeweb/0/WRl0sbTiz/Document/Ball_Screw_catalogue.pdf?v=202012190947#page=7',
-        'references/ball-nut-options.png',
+        '',
       ],
     },
   },
@@ -2706,7 +2706,7 @@ export const ballScrewReferences: BallScrewReference[] = [
       ],
       alternateSourceUrls: [
         'https://image.makewebeasy.net/makeweb/0/WRl0sbTiz/Document/Ball_Screw_catalogue.pdf?v=202012190947#page=7',
-        'references/ball-nut-options.png',
+        '',
       ],
     },
   },
@@ -2779,7 +2779,7 @@ export const ballScrewReferences: BallScrewReference[] = [
       ],
       alternateSourceUrls: [
         'https://image.makewebeasy.net/makeweb/0/WRl0sbTiz/Document/Ball_Screw_catalogue.pdf?v=202012190947#page=7',
-        'references/ball-nut-options.png',
+        '',
       ],
     },
   },
@@ -2852,7 +2852,7 @@ export const ballScrewReferences: BallScrewReference[] = [
       ],
       alternateSourceUrls: [
         'https://image.makewebeasy.net/makeweb/0/WRl0sbTiz/Document/Ball_Screw_catalogue.pdf?v=202012190947#page=7',
-        'references/ball-nut-options.png',
+        '',
       ],
     },
   },
@@ -2925,7 +2925,7 @@ export const ballScrewReferences: BallScrewReference[] = [
       ],
       alternateSourceUrls: [
         'https://image.makewebeasy.net/makeweb/0/WRl0sbTiz/Document/Ball_Screw_catalogue.pdf?v=202012190947#page=7',
-        'references/ball-nut-options.png',
+        '',
       ],
     },
   },
@@ -2998,7 +2998,7 @@ export const ballScrewReferences: BallScrewReference[] = [
       ],
       alternateSourceUrls: [
         'https://image.makewebeasy.net/makeweb/0/WRl0sbTiz/Document/Ball_Screw_catalogue.pdf?v=202012190947#page=7',
-        'references/ball-nut-options.png',
+        '',
       ],
     },
   },
@@ -3071,7 +3071,7 @@ export const ballScrewReferences: BallScrewReference[] = [
       ],
       alternateSourceUrls: [
         'https://image.makewebeasy.net/makeweb/0/WRl0sbTiz/Document/Ball_Screw_catalogue.pdf?v=202012190947#page=7',
-        'references/ball-nut-options.png',
+        '',
       ],
     },
   },
@@ -3144,7 +3144,7 @@ export const ballScrewReferences: BallScrewReference[] = [
       ],
       alternateSourceUrls: [
         'https://image.makewebeasy.net/makeweb/0/WRl0sbTiz/Document/Ball_Screw_catalogue.pdf?v=202012190947#page=7',
-        'references/ball-nut-options.png',
+        '',
       ],
     },
   },
@@ -3217,7 +3217,7 @@ export const ballScrewReferences: BallScrewReference[] = [
       ],
       alternateSourceUrls: [
         'https://image.makewebeasy.net/makeweb/0/WRl0sbTiz/Document/Ball_Screw_catalogue.pdf?v=202012190947#page=7',
-        'references/ball-nut-options.png',
+        '',
       ],
     },
   },
@@ -3290,7 +3290,7 @@ export const ballScrewReferences: BallScrewReference[] = [
       ],
       alternateSourceUrls: [
         'https://image.makewebeasy.net/makeweb/0/WRl0sbTiz/Document/Ball_Screw_catalogue.pdf?v=202012190947#page=7',
-        'references/ball-nut-options.png',
+        '',
       ],
     },
   },
@@ -3492,7 +3492,7 @@ export const ballScrewReferences: BallScrewReference[] = [
           value: '19 kgf/µm',
         },
       ],
-      alternateSourceUrls: ['references/ball-nut-options.png'],
+      alternateSourceUrls: [''],
     },
   },
   {
@@ -3561,7 +3561,7 @@ export const ballScrewReferences: BallScrewReference[] = [
           value: '36 kgf/µm',
         },
       ],
-      alternateSourceUrls: ['references/ball-nut-options.png'],
+      alternateSourceUrls: [''],
     },
   },
   {
@@ -3630,7 +3630,7 @@ export const ballScrewReferences: BallScrewReference[] = [
           value: '21 kgf/µm',
         },
       ],
-      alternateSourceUrls: ['references/ball-nut-options.png'],
+      alternateSourceUrls: [''],
     },
   },
   {
@@ -3699,7 +3699,7 @@ export const ballScrewReferences: BallScrewReference[] = [
           value: '41 kgf/µm',
         },
       ],
-      alternateSourceUrls: ['references/ball-nut-options.png'],
+      alternateSourceUrls: [''],
     },
   },
   {
@@ -3768,7 +3768,7 @@ export const ballScrewReferences: BallScrewReference[] = [
           value: '25 kgf/µm',
         },
       ],
-      alternateSourceUrls: ['references/ball-nut-options.png'],
+      alternateSourceUrls: [''],
     },
   },
   {
@@ -3837,7 +3837,7 @@ export const ballScrewReferences: BallScrewReference[] = [
           value: '49 kgf/µm',
         },
       ],
-      alternateSourceUrls: ['references/ball-nut-options.png'],
+      alternateSourceUrls: [''],
     },
   },
   {
@@ -3906,7 +3906,7 @@ export const ballScrewReferences: BallScrewReference[] = [
           value: '25 kgf/µm',
         },
       ],
-      alternateSourceUrls: ['references/ball-nut-options.png'],
+      alternateSourceUrls: [''],
     },
   },
   {
@@ -3975,7 +3975,7 @@ export const ballScrewReferences: BallScrewReference[] = [
           value: '49 kgf/µm',
         },
       ],
-      alternateSourceUrls: ['references/ball-nut-options.png'],
+      alternateSourceUrls: [''],
     },
   },
   {
@@ -4044,7 +4044,7 @@ export const ballScrewReferences: BallScrewReference[] = [
           value: '31 kgf/µm',
         },
       ],
-      alternateSourceUrls: ['references/ball-nut-options.png'],
+      alternateSourceUrls: [''],
     },
   },
   {
@@ -4113,7 +4113,7 @@ export const ballScrewReferences: BallScrewReference[] = [
           value: '60 kgf/µm',
         },
       ],
-      alternateSourceUrls: ['references/ball-nut-options.png'],
+      alternateSourceUrls: [''],
     },
   },
   {
@@ -4182,7 +4182,7 @@ export const ballScrewReferences: BallScrewReference[] = [
           value: '31 kgf/µm',
         },
       ],
-      alternateSourceUrls: ['references/ball-nut-options.png'],
+      alternateSourceUrls: [''],
     },
   },
   {
@@ -4251,7 +4251,7 @@ export const ballScrewReferences: BallScrewReference[] = [
           value: '60 kgf/µm',
         },
       ],
-      alternateSourceUrls: ['references/ball-nut-options.png'],
+      alternateSourceUrls: [''],
     },
   },
   {
@@ -4320,7 +4320,7 @@ export const ballScrewReferences: BallScrewReference[] = [
           value: '40 kgf/µm',
         },
       ],
-      alternateSourceUrls: ['references/ball-nut-options.png'],
+      alternateSourceUrls: [''],
     },
   },
   {
@@ -4389,7 +4389,7 @@ export const ballScrewReferences: BallScrewReference[] = [
           value: '76 kgf/µm',
         },
       ],
-      alternateSourceUrls: ['references/ball-nut-options.png'],
+      alternateSourceUrls: [''],
     },
   },
   {
@@ -4458,7 +4458,7 @@ export const ballScrewReferences: BallScrewReference[] = [
           value: '40 kgf/µm',
         },
       ],
-      alternateSourceUrls: ['references/ball-nut-options.png'],
+      alternateSourceUrls: [''],
     },
   },
   {
@@ -4527,7 +4527,7 @@ export const ballScrewReferences: BallScrewReference[] = [
           value: '77 kgf/µm',
         },
       ],
-      alternateSourceUrls: ['references/ball-nut-options.png'],
+      alternateSourceUrls: [''],
     },
   },
   {
@@ -4596,7 +4596,7 @@ export const ballScrewReferences: BallScrewReference[] = [
           value: '49 kgf/µm',
         },
       ],
-      alternateSourceUrls: ['references/ball-nut-options.png'],
+      alternateSourceUrls: [''],
     },
   },
   {
@@ -4665,7 +4665,7 @@ export const ballScrewReferences: BallScrewReference[] = [
           value: '95 kgf/µm',
         },
       ],
-      alternateSourceUrls: ['references/ball-nut-options.png'],
+      alternateSourceUrls: [''],
     },
   },
   {
@@ -4734,7 +4734,7 @@ export const ballScrewReferences: BallScrewReference[] = [
           value: '60 kgf/µm',
         },
       ],
-      alternateSourceUrls: ['references/ball-nut-options.png'],
+      alternateSourceUrls: [''],
     },
   },
   {
@@ -4803,7 +4803,7 @@ export const ballScrewReferences: BallScrewReference[] = [
           value: '117 kgf/µm',
         },
       ],
-      alternateSourceUrls: ['references/ball-nut-options.png'],
+      alternateSourceUrls: [''],
     },
   },
   {

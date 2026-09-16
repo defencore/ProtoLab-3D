@@ -1,0 +1,41 @@
+[
+  {
+    "id": "pneumatic",
+    "name": "Pneumatic wheel \u00b7 \u00d8100 mm",
+    "description": "Pneumatic, omni and mecanum wheel construction references. Editable prototype dimensions.",
+    "parameters": {
+      "form": "pneumatic",
+      "diameter": 100,
+      "width": 30,
+      "bore": 8,
+      "rollers": 8,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "omni",
+    "name": "Omni wheel \u00b7 \u00d8100 mm",
+    "description": "Pneumatic, omni and mecanum wheel construction references. Editable prototype dimensions.",
+    "parameters": {
+      "form": "omni",
+      "diameter": 100,
+      "width": 30,
+      "bore": 8,
+      "rollers": 8,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "mecanum",
+    "name": "Mecanum wheel \u00b7 \u00d8100 mm",
+    "description": "Pneumatic, omni and mecanum wheel construction references. Editable prototype dimensions.",
+    "parameters": {
+      "form": "mecanum",
+      "diameter": 100,
+      "width": 45,
+      "bore": 8,
+      "rollers": 8,
+      "detail": "envelope"
+    }
+  }
+]

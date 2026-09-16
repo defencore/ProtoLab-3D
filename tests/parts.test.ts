@@ -165,11 +165,17 @@ for (const part of parts) {
     }
   });
 
-  test(`${part.name}: invalid numeric inputs cannot generate a CAD macro`, () => {
-    const field = part.parameters.find((parameter) => parameter.type === 'number');
+  test(`${part.name}: invalid parameter inputs cannot generate a CAD macro`, () => {
+    const field =
+      part.parameters.find((parameter) => parameter.type === 'number') ??
+      part.parameters.find((parameter) => parameter.type === 'select');
     assert.ok(field);
     const state = stateIds(part)[0];
-    for (const badValue of [NaN, Infinity, -Infinity, '12', (field.min ?? 0) - 1]) {
+    const badValues =
+      field.type === 'number'
+        ? [NaN, Infinity, -Infinity, '12', (field.min ?? 0) - 1]
+        : [NaN, Infinity, -Infinity, '__unsupported_catalog_option__', false];
+    for (const badValue of badValues) {
       const values = { ...part.defaults, [field.key]: badValue };
       assert.ok(validateParameters(part, values, state).length > 0);
       assert.throws(() => generateScript(part, values, state));

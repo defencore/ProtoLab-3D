@@ -14,6 +14,7 @@ import {
   X,
 } from 'lucide-react';
 import type { Parameters, PartDefinition, Preset } from '../core/types';
+import { libraryCategories, sortLibraryParts } from '../core/library';
 import {
   isPublishedValue,
   presetMatchesConfiguration,
@@ -243,7 +244,8 @@ export default function PresetBrowser({
   const [page, setPage] = useState(0);
   const [showFilters, setShowFilters] = useState(initialMode === 'match' || !!initialFilters);
   const searchInput = useRef<HTMLInputElement>(null);
-  const index = useMemo(() => buildPresetIndex(parts), [parts]);
+  const orderedParts = useMemo(() => sortLibraryParts(parts), [parts]);
+  const index = useMemo(() => buildPresetIndex(orderedParts), [orderedParts]);
   const scopeParts = useMemo(
     () =>
       parts.filter(
@@ -281,8 +283,8 @@ export default function PresetBrowser({
     ...selected?.preset.catalog?.attributes,
   };
   const selectedId = selected?.id ?? '';
-  const categories = sortedUnique(parts.map((part) => part.category));
-  const categoryParts = parts.filter(
+  const categories = libraryCategories(orderedParts);
+  const categoryParts = orderedParts.filter(
     (part) => !filters.category || part.category === filters.category,
   );
   const scopeEntries = index.filter((entry) =>
@@ -298,7 +300,7 @@ export default function PresetBrowser({
     displayedPage * PAGE_SIZE,
     (displayedPage + 1) * PAGE_SIZE,
   );
-  const commonBearingScope = filters.category === 'BEARINGS' && scopeParts.length > 1;
+  const commonBearingScope = filters.category === 'BEARINGS & SEALS' && scopeParts.length > 1;
   const isPrimary = (field: PresetFilterField) =>
     commonBearingScope
       ? ['bore', 'outer', 'width'].includes(field.key)
@@ -700,7 +702,7 @@ export default function PresetBrowser({
                         <p className="pb-result-description">{entry.preset.description}</p>
                       )}
                     </button>
-                    {entry.preset.catalog && (
+                    {entry.preset.catalog?.sourceUrl && (
                       <a
                         className="pb-source-link"
                         href={entry.preset.catalog.sourceUrl}

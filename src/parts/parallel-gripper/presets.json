@@ -1,0 +1,28 @@
+[
+  {
+    "id": "gripper30",
+    "name": "Parallel gripper \u00b7 30 mm opening",
+    "description": "Two-jaw gripper with editable opening, finger geometry and mounting holes. Editable prototype dimensions.",
+    "parameters": {
+      "width": 70,
+      "length": 40,
+      "height": 25,
+      "opening": 30,
+      "finger": 40,
+      "thickness": 8
+    }
+  },
+  {
+    "id": "gripper60",
+    "name": "Parallel gripper \u00b7 60 mm opening",
+    "description": "Two-jaw gripper with editable opening, finger geometry and mounting holes. Editable prototype dimensions.",
+    "parameters": {
+      "width": 100,
+      "length": 40,
+      "height": 25,
+      "opening": 60,
+      "finger": 60,
+      "thickness": 8
+    }
+  }
+]

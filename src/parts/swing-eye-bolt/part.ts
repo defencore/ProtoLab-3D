@@ -33,7 +33,7 @@ function head(p: Parameters): ProfileHead {
 const part: PartDefinition = {
   id: 'swing-eye-bolt',
   name: 'Swing eye bolt',
-  category: 'FASTENERS',
+  category: 'FASTENERS & THREADS',
   subgroup: 'BOLTS & SCREWS',
   icon: 'bolt',
   complexity: 'Flat eye head',

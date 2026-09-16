@@ -1,0 +1,78 @@
+[
+  {
+    "id": "gear60",
+    "name": "Fork strut · single Ø60 mm wheel",
+    "description": "Editable mechanical layout with fork, axle, telescopic strut envelope and pivot mounts. Illustrative dimensions; no load rating.",
+    "parameters": {
+      "form": "fork",
+      "wheels": "single",
+      "wheel": 60,
+      "width": 18,
+      "strut": 115,
+      "rod": 14,
+      "axle": 6,
+      "forkWall": 4,
+      "clearance": 3,
+      "plate": 36,
+      "braceSpan": 65,
+      "kneeOffset": 12
+    }
+  },
+  {
+    "id": "gear100",
+    "name": "Braced strut · single Ø100 mm wheel",
+    "description": "Editable mechanical layout with fork, axle, telescopic strut envelope and pivot mounts. Illustrative dimensions; no load rating.",
+    "parameters": {
+      "form": "braced",
+      "wheels": "single",
+      "wheel": 100,
+      "width": 25,
+      "strut": 180,
+      "rod": 20,
+      "axle": 10,
+      "forkWall": 6,
+      "clearance": 3,
+      "plate": 50,
+      "braceSpan": 100,
+      "kneeOffset": 20
+    }
+  },
+  {
+    "id": "folding60",
+    "name": "Two-link brace · single Ø60 mm wheel",
+    "description": "Editable mechanical layout with fork, axle, telescopic strut envelope and pivot mounts. Illustrative dimensions; no load rating.",
+    "parameters": {
+      "form": "folding",
+      "wheels": "single",
+      "wheel": 60,
+      "width": 18,
+      "strut": 115,
+      "rod": 14,
+      "axle": 6,
+      "forkWall": 4,
+      "clearance": 3,
+      "plate": 36,
+      "braceSpan": 65,
+      "kneeOffset": 12
+    }
+  },
+  {
+    "id": "twin100",
+    "name": "Two-link brace · twin Ø100 mm wheels",
+    "description": "Editable mechanical layout with fork, axle, telescopic strut envelope and pivot mounts. Illustrative dimensions; no load rating.",
+    "parameters": {
+      "form": "folding",
+      "wheels": "twin",
+      "wheel": 100,
+      "width": 25,
+      "strut": 180,
+      "rod": 20,
+      "axle": 10,
+      "forkWall": 6,
+      "clearance": 3,
+      "plate": 50,
+      "braceSpan": 100,
+      "kneeOffset": 20
+    }
+  }
+]

@@ -3,7 +3,7 @@ import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
 import { nutDefinition } from './lib/core/nuts';
 
-const part = nutDefinition('hex-nut', 'Hex nut', 'DIN 934', 'hex', {
+const part = nutDefinition('hex-nut', 'Hexagon nut', 'DIN 934', 'hex', {
   bore: 6,
   acrossFlats: 10,
   height: 5,

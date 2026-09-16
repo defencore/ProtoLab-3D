@@ -1,0 +1,326 @@
+[
+  {
+    "id": "molicel-p28a",
+    "name": "Molicel P28A · 18650 · 2800 mAh",
+    "description": "18.6 × 18.6 × 65.2 mm · 3.6 V",
+    "parameters": {
+      "model": "molicel-p28a"
+    },
+    "catalog": {
+      "designation": "Molicel P28A · 18650 · 2800 mAh",
+      "manufacturer": "Molicel",
+      "sourceName": "Molicel — dimensions and specifications",
+      "sourceUrl": "https://www.molicel.com/product/inr-18650-p28a/",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External geometry follows the published envelope; undimensioned details are approximate.",
+        "limitations": "Maximum cell envelopes from current manufacturer product pages. Flat-top unprotected cells only; protected and button-top versions have different lengths. Cap, gasket and rolled-rim details are approximate. Electrical ratings require the linked model datasheet conditions; no internal cell construction is modeled.",
+        "sourceUrl": "https://www.molicel.com/product/inr-18650-p28a/"
+      },
+      "attributes": {
+        "manufacturer": "Molicel",
+        "format": "18650",
+        "chemistry": "Li-ion",
+        "connection": "Flat top",
+        "capacity": 2800,
+        "voltage": 3.6,
+        "current": 35,
+        "width": 18.6,
+        "length": 18.6,
+        "height": 65.2,
+        "diameter": 18.6,
+        "weight": 46
+      },
+      "attributeConditions": {
+        "width": "Maximum envelope from manufacturer dimensional specification.",
+        "length": "Maximum envelope from manufacturer dimensional specification.",
+        "height": "Maximum envelope from manufacturer dimensional specification.",
+        "diameter": "Maximum diameter, not nominal format code.",
+        "capacity": "Typical manufacturer capacity.",
+        "current": "Manufacturer product-page discharge rating. Cutoff and thermal conditions apply; consult model datasheet.",
+        "weight": "Maximum weight on current manufacturer product page."
+      },
+      "specifications": [
+        {
+          "label": "Geometry basis",
+          "value": "Maximum manufacturer envelope"
+        },
+        {
+          "label": "Mechanical detail limits",
+          "value": "Maximum cell envelopes from current manufacturer product pages. Flat-top unprotected cells only; protected and button-top versions have different lengths. Cap, gasket and rolled-rim details are approximate. Electrical ratings require the linked model datasheet conditions; no internal cell construction is modeled."
+        }
+      ]
+    }
+  },
+  {
+    "id": "molicel-p30b",
+    "name": "Molicel P30B · 18650 · 3000 mAh",
+    "description": "18.6 × 18.6 × 65.2 mm · 3.6 V",
+    "parameters": {
+      "model": "molicel-p30b"
+    },
+    "catalog": {
+      "designation": "Molicel P30B · 18650 · 3000 mAh",
+      "manufacturer": "Molicel",
+      "sourceName": "Molicel — dimensions and specifications",
+      "sourceUrl": "https://www.molicel.com/product/inr-18650-p30b/",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External geometry follows the published envelope; undimensioned details are approximate.",
+        "limitations": "Maximum cell envelopes from current manufacturer product pages. Flat-top unprotected cells only; protected and button-top versions have different lengths. Cap, gasket and rolled-rim details are approximate. Electrical ratings require the linked model datasheet conditions; no internal cell construction is modeled.",
+        "sourceUrl": "https://www.molicel.com/product/inr-18650-p30b/"
+      },
+      "attributes": {
+        "manufacturer": "Molicel",
+        "format": "18650",
+        "chemistry": "Li-ion",
+        "connection": "Flat top",
+        "capacity": 3000,
+        "voltage": 3.6,
+        "current": 36,
+        "width": 18.6,
+        "length": 18.6,
+        "height": 65.2,
+        "diameter": 18.6,
+        "weight": 47
+      },
+      "attributeConditions": {
+        "width": "Maximum envelope from manufacturer dimensional specification.",
+        "length": "Maximum envelope from manufacturer dimensional specification.",
+        "height": "Maximum envelope from manufacturer dimensional specification.",
+        "diameter": "Maximum diameter, not nominal format code.",
+        "capacity": "Typical manufacturer capacity.",
+        "current": "Manufacturer product-page discharge rating. Cutoff and thermal conditions apply; consult model datasheet.",
+        "weight": "Maximum weight on current manufacturer product page."
+      },
+      "specifications": [
+        {
+          "label": "Geometry basis",
+          "value": "Maximum manufacturer envelope"
+        },
+        {
+          "label": "Mechanical detail limits",
+          "value": "Maximum cell envelopes from current manufacturer product pages. Flat-top unprotected cells only; protected and button-top versions have different lengths. Cap, gasket and rolled-rim details are approximate. Electrical ratings require the linked model datasheet conditions; no internal cell construction is modeled."
+        }
+      ]
+    }
+  },
+  {
+    "id": "molicel-m35a",
+    "name": "Molicel M35A · 18650 · 3500 mAh",
+    "description": "18.6 × 18.6 × 65.2 mm · 3.6 V",
+    "parameters": {
+      "model": "molicel-m35a"
+    },
+    "catalog": {
+      "designation": "Molicel M35A · 18650 · 3500 mAh",
+      "manufacturer": "Molicel",
+      "sourceName": "Molicel — dimensions and specifications",
+      "sourceUrl": "https://www.molicel.com/product/inr-18650-m35a/",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External geometry follows the published envelope; undimensioned details are approximate.",
+        "limitations": "Maximum cell envelopes from current manufacturer product pages. Flat-top unprotected cells only; protected and button-top versions have different lengths. Cap, gasket and rolled-rim details are approximate. Electrical ratings require the linked model datasheet conditions; no internal cell construction is modeled.",
+        "sourceUrl": "https://www.molicel.com/product/inr-18650-m35a/"
+      },
+      "attributes": {
+        "manufacturer": "Molicel",
+        "format": "18650",
+        "chemistry": "Li-ion",
+        "connection": "Flat top",
+        "capacity": 3500,
+        "voltage": 3.6,
+        "current": 10,
+        "width": 18.6,
+        "length": 18.6,
+        "height": 65.2,
+        "diameter": 18.6,
+        "weight": 48
+      },
+      "attributeConditions": {
+        "width": "Maximum envelope from manufacturer dimensional specification.",
+        "length": "Maximum envelope from manufacturer dimensional specification.",
+        "height": "Maximum envelope from manufacturer dimensional specification.",
+        "diameter": "Maximum diameter, not nominal format code.",
+        "capacity": "Typical manufacturer capacity.",
+        "current": "Manufacturer product-page discharge rating. Cutoff and thermal conditions apply; consult model datasheet.",
+        "weight": "Maximum weight on current manufacturer product page."
+      },
+      "specifications": [
+        {
+          "label": "Geometry basis",
+          "value": "Maximum manufacturer envelope"
+        },
+        {
+          "label": "Mechanical detail limits",
+          "value": "Maximum cell envelopes from current manufacturer product pages. Flat-top unprotected cells only; protected and button-top versions have different lengths. Cap, gasket and rolled-rim details are approximate. Electrical ratings require the linked model datasheet conditions; no internal cell construction is modeled."
+        }
+      ]
+    }
+  },
+  {
+    "id": "molicel-p42a",
+    "name": "Molicel P42A · 21700 · 4200 mAh",
+    "description": "21.7 × 21.7 × 70.2 mm · 3.6 V",
+    "parameters": {
+      "model": "molicel-p42a"
+    },
+    "catalog": {
+      "designation": "Molicel P42A · 21700 · 4200 mAh",
+      "manufacturer": "Molicel",
+      "sourceName": "Molicel — dimensions and specifications",
+      "sourceUrl": "https://www.molicel.com/product/inr-21700-p42a/",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External geometry follows the published envelope; undimensioned details are approximate.",
+        "limitations": "Maximum cell envelopes from current manufacturer product pages. Flat-top unprotected cells only; protected and button-top versions have different lengths. Cap, gasket and rolled-rim details are approximate. Electrical ratings require the linked model datasheet conditions; no internal cell construction is modeled.",
+        "sourceUrl": "https://www.molicel.com/product/inr-21700-p42a/"
+      },
+      "attributes": {
+        "manufacturer": "Molicel",
+        "format": "21700",
+        "chemistry": "Li-ion",
+        "connection": "Flat top",
+        "capacity": 4200,
+        "voltage": 3.6,
+        "current": 45,
+        "width": 21.7,
+        "length": 21.7,
+        "height": 70.2,
+        "diameter": 21.7,
+        "weight": 70
+      },
+      "attributeConditions": {
+        "width": "Maximum envelope from manufacturer dimensional specification.",
+        "length": "Maximum envelope from manufacturer dimensional specification.",
+        "height": "Maximum envelope from manufacturer dimensional specification.",
+        "diameter": "Maximum diameter, not nominal format code.",
+        "capacity": "Typical manufacturer capacity.",
+        "current": "Manufacturer product-page discharge rating. Cutoff and thermal conditions apply; consult model datasheet.",
+        "weight": "Maximum weight on current manufacturer product page."
+      },
+      "specifications": [
+        {
+          "label": "Geometry basis",
+          "value": "Maximum manufacturer envelope"
+        },
+        {
+          "label": "Mechanical detail limits",
+          "value": "Maximum cell envelopes from current manufacturer product pages. Flat-top unprotected cells only; protected and button-top versions have different lengths. Cap, gasket and rolled-rim details are approximate. Electrical ratings require the linked model datasheet conditions; no internal cell construction is modeled."
+        }
+      ]
+    }
+  },
+  {
+    "id": "molicel-p45b",
+    "name": "Molicel P45B · 21700 · 4500 mAh",
+    "description": "21.6 × 21.6 × 70.2 mm · 3.6 V",
+    "parameters": {
+      "model": "molicel-p45b"
+    },
+    "catalog": {
+      "designation": "Molicel P45B · 21700 · 4500 mAh",
+      "manufacturer": "Molicel",
+      "sourceName": "Molicel — dimensions and specifications",
+      "sourceUrl": "https://www.molicel.com/product/inr-21700-p45b/",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External geometry follows the published envelope; undimensioned details are approximate.",
+        "limitations": "Maximum cell envelopes from current manufacturer product pages. Flat-top unprotected cells only; protected and button-top versions have different lengths. Cap, gasket and rolled-rim details are approximate. Electrical ratings require the linked model datasheet conditions; no internal cell construction is modeled.",
+        "sourceUrl": "https://www.molicel.com/product/inr-21700-p45b/"
+      },
+      "attributes": {
+        "manufacturer": "Molicel",
+        "format": "21700",
+        "chemistry": "Li-ion",
+        "connection": "Flat top",
+        "capacity": 4500,
+        "voltage": 3.6,
+        "current": 45,
+        "width": 21.6,
+        "length": 21.6,
+        "height": 70.2,
+        "diameter": 21.6,
+        "weight": 69
+      },
+      "attributeConditions": {
+        "width": "Maximum envelope from manufacturer dimensional specification.",
+        "length": "Maximum envelope from manufacturer dimensional specification.",
+        "height": "Maximum envelope from manufacturer dimensional specification.",
+        "diameter": "Maximum diameter, not nominal format code.",
+        "capacity": "Typical manufacturer capacity.",
+        "current": "Manufacturer product-page discharge rating. Cutoff and thermal conditions apply; consult model datasheet.",
+        "weight": "Maximum weight on current manufacturer product page."
+      },
+      "specifications": [
+        {
+          "label": "Geometry basis",
+          "value": "Maximum manufacturer envelope"
+        },
+        {
+          "label": "Mechanical detail limits",
+          "value": "Maximum cell envelopes from current manufacturer product pages. Flat-top unprotected cells only; protected and button-top versions have different lengths. Cap, gasket and rolled-rim details are approximate. Electrical ratings require the linked model datasheet conditions; no internal cell construction is modeled."
+        }
+      ]
+    }
+  },
+  {
+    "id": "molicel-p50b",
+    "name": "Molicel P50B · 21700 · 5000 mAh",
+    "description": "21.55 × 21.55 × 70.15 mm · 3.6 V",
+    "parameters": {
+      "model": "molicel-p50b"
+    },
+    "catalog": {
+      "designation": "Molicel P50B · 21700 · 5000 mAh",
+      "manufacturer": "Molicel",
+      "sourceName": "Molicel — dimensions and specifications",
+      "sourceUrl": "https://www.molicel.com/product/inr-21700-p50b/",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External geometry follows the published envelope; undimensioned details are approximate.",
+        "limitations": "Maximum cell envelopes from current manufacturer product pages. Flat-top unprotected cells only; protected and button-top versions have different lengths. Cap, gasket and rolled-rim details are approximate. Electrical ratings require the linked model datasheet conditions; no internal cell construction is modeled.",
+        "sourceUrl": "https://www.molicel.com/product/inr-21700-p50b/"
+      },
+      "attributes": {
+        "manufacturer": "Molicel",
+        "format": "21700",
+        "chemistry": "Li-ion",
+        "connection": "Flat top",
+        "capacity": 5000,
+        "voltage": 3.6,
+        "current": 60,
+        "width": 21.55,
+        "length": 21.55,
+        "height": 70.15,
+        "diameter": 21.55,
+        "weight": 71
+      },
+      "attributeConditions": {
+        "width": "Maximum envelope from manufacturer dimensional specification.",
+        "length": "Maximum envelope from manufacturer dimensional specification.",
+        "height": "Maximum envelope from manufacturer dimensional specification.",
+        "diameter": "Maximum diameter, not nominal format code.",
+        "capacity": "Typical manufacturer capacity.",
+        "current": "Manufacturer product-page discharge rating. Cutoff and thermal conditions apply; consult model datasheet.",
+        "weight": "Maximum weight on current manufacturer product page."
+      },
+      "specifications": [
+        {
+          "label": "Geometry basis",
+          "value": "Maximum manufacturer envelope"
+        },
+        {
+          "label": "Mechanical detail limits",
+          "value": "Maximum cell envelopes from current manufacturer product pages. Flat-top unprotected cells only; protected and button-top versions have different lengths. Cap, gasket and rolled-rim details are approximate. Electrical ratings require the linked model datasheet conditions; no internal cell construction is modeled."
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,119 @@
+[
+  {
+    "id": "3-2",
+    "name": "3/2 pneumatic valve",
+    "description": "Valve blocks, solenoids, FRL bowls and vacuum ejector mounting references. Editable prototype dimensions.",
+    "parameters": {
+      "form": "3-2",
+      "length": 60,
+      "width": 25,
+      "height": 25,
+      "port": 6,
+      "mount": 4
+    }
+  },
+  {
+    "id": "5-2",
+    "name": "5/2 pneumatic valve",
+    "description": "Valve blocks, solenoids, FRL bowls and vacuum ejector mounting references. Editable prototype dimensions.",
+    "parameters": {
+      "form": "5-2",
+      "length": 60,
+      "width": 25,
+      "height": 25,
+      "port": 6,
+      "mount": 4
+    }
+  },
+  {
+    "id": "5-3",
+    "name": "5/3 pneumatic valve",
+    "description": "Valve blocks, solenoids, FRL bowls and vacuum ejector mounting references. Editable prototype dimensions.",
+    "parameters": {
+      "form": "5-3",
+      "length": 60,
+      "width": 25,
+      "height": 25,
+      "port": 6,
+      "mount": 4
+    }
+  },
+  {
+    "id": "check",
+    "name": "Check valve",
+    "description": "Valve blocks, solenoids, FRL bowls and vacuum ejector mounting references. Editable prototype dimensions.",
+    "parameters": {
+      "form": "check",
+      "length": 60,
+      "width": 25,
+      "height": 25,
+      "port": 6,
+      "mount": 4
+    }
+  },
+  {
+    "id": "throttle",
+    "name": "Flow-control valve",
+    "description": "Valve blocks, solenoids, FRL bowls and vacuum ejector mounting references. Editable prototype dimensions.",
+    "parameters": {
+      "form": "throttle",
+      "length": 60,
+      "width": 25,
+      "height": 25,
+      "port": 6,
+      "mount": 4
+    }
+  },
+  {
+    "id": "relief",
+    "name": "Relief valve",
+    "description": "Valve blocks, solenoids, FRL bowls and vacuum ejector mounting references. Editable prototype dimensions.",
+    "parameters": {
+      "form": "relief",
+      "length": 60,
+      "width": 25,
+      "height": 25,
+      "port": 6,
+      "mount": 4
+    }
+  },
+  {
+    "id": "ball",
+    "name": "Ball valve",
+    "description": "Valve blocks, solenoids, FRL bowls and vacuum ejector mounting references. Editable prototype dimensions.",
+    "parameters": {
+      "form": "ball",
+      "length": 60,
+      "width": 25,
+      "height": 25,
+      "port": 6,
+      "mount": 4
+    }
+  },
+  {
+    "id": "frl",
+    "name": "FRL preparation unit",
+    "description": "Valve blocks, solenoids, FRL bowls and vacuum ejector mounting references. Editable prototype dimensions.",
+    "parameters": {
+      "form": "frl",
+      "length": 60,
+      "width": 25,
+      "height": 25,
+      "port": 6,
+      "mount": 4
+    }
+  },
+  {
+    "id": "ejector",
+    "name": "Vacuum ejector",
+    "description": "Valve blocks, solenoids, FRL bowls and vacuum ejector mounting references. Editable prototype dimensions.",
+    "parameters": {
+      "form": "ejector",
+      "length": 60,
+      "width": 25,
+      "height": 25,
+      "port": 6,
+      "mount": 4
+    }
+  }
+]

@@ -45,8 +45,8 @@ function nutOutline(p: Parameters): Vector2[] {
 const part: PartDefinition = {
   id: 'adapter-sleeve',
   name: 'Adapter sleeve with locknut',
-  category: 'BEARINGS',
-  subgroup: 'ADAPTER SLEEVES',
+  category: 'BEARINGS & SEALS',
+  subgroup: 'BEARING MOUNTING',
   icon: 'bearing',
   complexity: 'Split tapered sleeve',
   description:

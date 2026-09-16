@@ -1,0 +1,2702 @@
+[
+  {
+    "id": "x2204",
+    "name": "SunnySky X2204 · 1480 KV",
+    "description": "Ø27 × 13 mm · 1480 KV · outrunner",
+    "parameters": {
+      "model": "x2204",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "SunnySky X2204",
+      "manufacturer": "SunnySky",
+      "sourceName": "SunnySky drawing and specifications",
+      "sourceUrl": "https://sunnyskyusa.com/products/sunnysky-x2204-brushless-motors",
+      "verifiedParameters": ["model"],
+      "productCodes": ["SunnySky X2204"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "diameter": 27,
+        "length": 13,
+        "shaft": 3,
+        "extension": 0.8,
+        "kv": 1480,
+        "current": 11,
+        "power": 120,
+        "weight": 19.6,
+        "noLoadCurrent": 0.1,
+        "resistance": 0.338,
+        "cellMin": 2,
+        "cellMax": 3,
+        "manufacturer": "SunnySky",
+        "rotor": "outrunner",
+        "application": "general-rc"
+      },
+      "attributeConditions": {
+        "current": "Manufacturer maximum for 15 seconds; not a continuous rating.",
+        "noLoadCurrent": "At 10 V.",
+        "power": "Manufacturer published maximum; operating conditions vary by application."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "27 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "13 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "3 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "0.8 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "1480 rpm/V"
+        },
+        {
+          "label": "Max current (limited duration)",
+          "value": "11 A"
+        },
+        {
+          "label": "Published max power",
+          "value": "120 W"
+        },
+        {
+          "label": "Mass",
+          "value": "19.6 g"
+        },
+        {
+          "label": "No-load current",
+          "value": "0.1 A"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.338 Ω"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "2 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "3 S"
+        },
+        {
+          "label": "Pole count",
+          "value": "14"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "ears"
+        },
+        {
+          "label": "Mounting circle(s)",
+          "value": "31.5 / 31.5 mm"
+        },
+        {
+          "label": "Mounting holes",
+          "value": "4 × Ø2; depth 1.1 mm"
+        },
+        {
+          "label": "Maximum current duration",
+          "value": "15 s"
+        },
+        {
+          "label": "CAD detail",
+          "value": "Dimensions and mounting follow the supplier drawing. Cosmetic details and internal clearances are reconstructed; threads are represented by nominal holes."
+        },
+        {
+          "label": "Drawing envelope",
+          "value": "13 mm bare motor, 20.5 mm with prop-saver hub; mounting ears extend outside Ø27 mm bell. Shaft projects 0.8 mm at rear."
+        },
+        {
+          "label": "Body length datum",
+          "value": "Mounting plane to bell face; rear pilot and output hardware are additional."
+        }
+      ]
+    }
+  },
+  {
+    "id": "x2212",
+    "name": "SunnySky X2212 · 980 KV",
+    "description": "Ø27.5 × 28 mm · 980 KV · outrunner",
+    "parameters": {
+      "model": "x2212",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "SunnySky X2212",
+      "manufacturer": "SunnySky",
+      "sourceName": "SunnySky drawing and specifications",
+      "sourceUrl": "https://sunnyskyusa.com/products/sunnysky-x2212-brushless-motors",
+      "verifiedParameters": ["model"],
+      "productCodes": ["SunnySky X2212"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "diameter": 27.5,
+        "length": 28,
+        "shaft": 3.175,
+        "extension": 2.5,
+        "kv": 980,
+        "current": 15,
+        "power": 300,
+        "weight": 58.5,
+        "noLoadCurrent": 0.3,
+        "resistance": 0.133,
+        "cellMin": 2,
+        "cellMax": 4,
+        "manufacturer": "SunnySky",
+        "rotor": "outrunner",
+        "application": "general-rc"
+      },
+      "attributeConditions": {
+        "current": "Manufacturer maximum for 30 seconds; not a continuous rating.",
+        "noLoadCurrent": "At 10 V.",
+        "power": "Manufacturer published maximum; operating conditions vary by application."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "27.5 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "28 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "3.175 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "2.5 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "980 rpm/V"
+        },
+        {
+          "label": "Max current (limited duration)",
+          "value": "15 A"
+        },
+        {
+          "label": "Published max power",
+          "value": "300 W"
+        },
+        {
+          "label": "Mass",
+          "value": "58.5 g"
+        },
+        {
+          "label": "No-load current",
+          "value": "0.3 A"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.133 Ω"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "2 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "4 S"
+        },
+        {
+          "label": "Pole count",
+          "value": "14"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "cross"
+        },
+        {
+          "label": "Mounting circle(s)",
+          "value": "16 / 19 mm"
+        },
+        {
+          "label": "Mounting holes",
+          "value": "4 × M3; depth 2.8 mm"
+        },
+        {
+          "label": "Maximum current duration",
+          "value": "30 s"
+        },
+        {
+          "label": "CAD detail",
+          "value": "Dimensions and mounting follow the supplier drawing. Cosmetic details and internal clearances are reconstructed; threads are represented by nominal holes."
+        },
+        {
+          "label": "Body length datum",
+          "value": "Mounting plane to bell face; rear pilot and output hardware are additional."
+        }
+      ]
+    }
+  },
+  {
+    "id": "x2814",
+    "name": "SunnySky X2814 · 900 KV",
+    "description": "Ø35 × 34 mm · 900 KV · outrunner",
+    "parameters": {
+      "model": "x2814",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "SunnySky X2814",
+      "manufacturer": "SunnySky",
+      "sourceName": "SunnySky drawing and specifications",
+      "sourceUrl": "https://sunnyskyusa.com/products/sunnysky-x2814-brushless-motors",
+      "verifiedParameters": ["model"],
+      "productCodes": ["SunnySky X2814"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "diameter": 35,
+        "length": 34,
+        "shaft": 4,
+        "extension": 18,
+        "kv": 900,
+        "current": 40,
+        "power": 570,
+        "weight": 108,
+        "noLoadCurrent": 0.7,
+        "resistance": 0.052,
+        "cellMin": 3,
+        "cellMax": 4,
+        "manufacturer": "SunnySky",
+        "rotor": "outrunner",
+        "application": "general-rc"
+      },
+      "attributeConditions": {
+        "current": "Manufacturer maximum for 30 seconds; not a continuous rating.",
+        "noLoadCurrent": "At 10 V.",
+        "power": "Manufacturer published maximum; operating conditions vary by application."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "35 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "34 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "4 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "18 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "900 rpm/V"
+        },
+        {
+          "label": "Max current (limited duration)",
+          "value": "40 A"
+        },
+        {
+          "label": "Published max power",
+          "value": "570 W"
+        },
+        {
+          "label": "Mass",
+          "value": "108 g"
+        },
+        {
+          "label": "No-load current",
+          "value": "0.7 A"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.052 Ω"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "3 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "4 S"
+        },
+        {
+          "label": "Pole count",
+          "value": "14"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "cross"
+        },
+        {
+          "label": "Mounting circle(s)",
+          "value": "19 / 25 mm"
+        },
+        {
+          "label": "Mounting holes",
+          "value": "4 × M3; depth 3 mm"
+        },
+        {
+          "label": "Maximum current duration",
+          "value": "30 s"
+        },
+        {
+          "label": "CAD detail",
+          "value": "Dimensions and mounting follow the supplier drawing. Cosmetic details and internal clearances are reconstructed; threads are represented by nominal holes."
+        },
+        {
+          "label": "Body length datum",
+          "value": "Mounting plane to bell face; rear pilot and output hardware are additional."
+        }
+      ]
+    }
+  },
+  {
+    "id": "x3520-v3",
+    "name": "SunnySky X3520 V3 · 560 KV",
+    "description": "Ø42.5 × 42.5 mm · 560 KV · outrunner",
+    "parameters": {
+      "model": "x3520-v3",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "SunnySky X3520 V3",
+      "manufacturer": "SunnySky",
+      "sourceName": "SunnySky drawing and specifications",
+      "sourceUrl": "https://sunnyskyusa.com/products/sunnysky-x3520",
+      "verifiedParameters": ["model"],
+      "productCodes": ["SunnySky X3520 V3"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "diameter": 42.5,
+        "length": 42.5,
+        "shaft": 5,
+        "extension": 19,
+        "kv": 560,
+        "current": 80,
+        "power": 2000,
+        "weight": 219,
+        "noLoadCurrent": 1.1,
+        "resistance": 0.023,
+        "cellMin": 6,
+        "cellMax": 6,
+        "manufacturer": "SunnySky",
+        "rotor": "outrunner",
+        "application": "general-rc"
+      },
+      "attributeConditions": {
+        "current": "Manufacturer maximum for 30 seconds; not a continuous rating.",
+        "noLoadCurrent": "At 10 V.",
+        "power": "Manufacturer published maximum; operating conditions vary by application."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "42.5 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "42.5 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "19 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "560 rpm/V"
+        },
+        {
+          "label": "Max current (limited duration)",
+          "value": "80 A"
+        },
+        {
+          "label": "Published max power",
+          "value": "2000 W"
+        },
+        {
+          "label": "Mass",
+          "value": "219 g"
+        },
+        {
+          "label": "No-load current",
+          "value": "1.1 A"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.023 Ω"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "6 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "6 S"
+        },
+        {
+          "label": "Pole count",
+          "value": "14"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "circle"
+        },
+        {
+          "label": "Mounting circle(s)",
+          "value": "25 / 25 mm"
+        },
+        {
+          "label": "Mounting holes",
+          "value": "4 × M3; depth 4 mm"
+        },
+        {
+          "label": "Maximum current duration",
+          "value": "30 s"
+        },
+        {
+          "label": "CAD detail",
+          "value": "Dimensions and mounting follow the supplier drawing. Cosmetic details and internal clearances are reconstructed; threads are represented by nominal holes."
+        },
+        {
+          "label": "Body length datum",
+          "value": "Mounting plane to bell face; rear pilot and output hardware are additional."
+        }
+      ]
+    }
+  },
+  {
+    "id": "x4120-v3",
+    "name": "SunnySky X4120 V3 · 480 KV",
+    "description": "Ø49.7 × 46 mm · 480 KV · outrunner",
+    "parameters": {
+      "model": "x4120-v3",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "SunnySky X4120 V3",
+      "manufacturer": "SunnySky",
+      "sourceName": "SunnySky drawing and specifications",
+      "sourceUrl": "https://sunnyskyusa.com/products/sunnysky-x4120",
+      "verifiedParameters": ["model"],
+      "productCodes": ["SunnySky X4120 V3"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "diameter": 49.7,
+        "length": 46,
+        "shaft": 6,
+        "extension": 21,
+        "kv": 480,
+        "current": 97,
+        "power": 2425,
+        "weight": 292,
+        "noLoadCurrent": 1.5,
+        "resistance": 0.0225,
+        "cellMin": 6,
+        "cellMax": 6,
+        "manufacturer": "SunnySky",
+        "rotor": "outrunner",
+        "application": "general-rc"
+      },
+      "attributeConditions": {
+        "current": "Manufacturer maximum for 30 seconds; not a continuous rating.",
+        "noLoadCurrent": "At 10 V.",
+        "power": "Manufacturer published maximum; operating conditions vary by application."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "49.7 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "46 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "6 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "21 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "480 rpm/V"
+        },
+        {
+          "label": "Max current (limited duration)",
+          "value": "97 A"
+        },
+        {
+          "label": "Published max power",
+          "value": "2425 W"
+        },
+        {
+          "label": "Mass",
+          "value": "292 g"
+        },
+        {
+          "label": "No-load current",
+          "value": "1.5 A"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.0225 Ω"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "6 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "6 S"
+        },
+        {
+          "label": "Pole count",
+          "value": "14"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "circle"
+        },
+        {
+          "label": "Mounting circle(s)",
+          "value": "30 / 30 mm"
+        },
+        {
+          "label": "Mounting holes",
+          "value": "4 × M4; depth 4 mm"
+        },
+        {
+          "label": "Maximum current duration",
+          "value": "30 s"
+        },
+        {
+          "label": "CAD detail",
+          "value": "Dimensions and mounting follow the supplier drawing. Cosmetic details and internal clearances are reconstructed; threads are represented by nominal holes."
+        },
+        {
+          "label": "Body length datum",
+          "value": "Mounting plane to bell face; rear pilot and output hardware are additional."
+        }
+      ]
+    }
+  },
+  {
+    "id": "x5330",
+    "name": "SunnySky X5330 · 200 KV",
+    "description": "Ø62.8 × 57.5 mm · 200 KV · outrunner",
+    "parameters": {
+      "model": "x5330",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "SunnySky X5330",
+      "manufacturer": "SunnySky",
+      "sourceName": "SunnySky drawing and specifications",
+      "sourceUrl": "https://sunnyskyusa.com/products/sunnysky-x3530-brushless-motors",
+      "verifiedParameters": ["model"],
+      "productCodes": ["SunnySky X5330"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "diameter": 62.8,
+        "length": 57.5,
+        "shaft": 8,
+        "extension": 50,
+        "kv": 200,
+        "current": 85,
+        "power": 3145,
+        "weight": 670,
+        "noLoadCurrent": 1.9,
+        "resistance": 0.025,
+        "cellMin": 8,
+        "cellMax": 10,
+        "manufacturer": "SunnySky",
+        "rotor": "outrunner",
+        "application": "general-rc"
+      },
+      "attributeConditions": {
+        "current": "Manufacturer maximum for 10 seconds; not a continuous rating.",
+        "noLoadCurrent": "At 10 V.",
+        "power": "Manufacturer published maximum; operating conditions vary by application."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "62.8 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "57.5 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "8 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "50 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "200 rpm/V"
+        },
+        {
+          "label": "Max current (limited duration)",
+          "value": "85 A"
+        },
+        {
+          "label": "Published max power",
+          "value": "3145 W"
+        },
+        {
+          "label": "Mass",
+          "value": "670 g"
+        },
+        {
+          "label": "No-load current",
+          "value": "1.9 A"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.025 Ω"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "8 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "10 S"
+        },
+        {
+          "label": "Pole count",
+          "value": "14"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "dual-circle"
+        },
+        {
+          "label": "Mounting circle(s)",
+          "value": "30 / 44 mm"
+        },
+        {
+          "label": "Mounting holes",
+          "value": "8 × M4; depth 4 mm"
+        },
+        {
+          "label": "Maximum current duration",
+          "value": "10 s"
+        },
+        {
+          "label": "CAD detail",
+          "value": "Dimensions and mounting follow the supplier drawing. Cosmetic details and internal clearances are reconstructed; threads are represented by nominal holes."
+        },
+        {
+          "label": "Body length datum",
+          "value": "Mounting plane to bell face; rear pilot and output hardware are additional."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xerun-4268-g3",
+    "name": "Hobbywing XERUN-4268-G3 · 1900 KV",
+    "description": "Ø42 × 67.8 mm · 1900 KV · inrunner",
+    "parameters": {
+      "model": "xerun-4268-g3",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "30401906",
+      "manufacturer": "Hobbywing",
+      "sourceName": "Hobbywing drawing and specifications",
+      "sourceUrl": "https://www.hobbywing.com/products/xerun-4268--4274-g332",
+      "verifiedParameters": ["model"],
+      "productCodes": ["30401906"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "diameter": 42,
+        "length": 67.8,
+        "shaft": 5,
+        "extension": 18.5,
+        "kv": 1900,
+        "weight": 315,
+        "noLoadCurrent": 4,
+        "resistance": 0.0075,
+        "cellMin": 2,
+        "cellMax": 6,
+        "manufacturer": "Hobbywing",
+        "rotor": "inrunner",
+        "application": "rc-car"
+      },
+      "attributeConditions": {
+        "noLoadCurrent": "Test voltage not stated in the source."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "42 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "67.8 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "18.5 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "1900 rpm/V"
+        },
+        {
+          "label": "Mass",
+          "value": "315 g"
+        },
+        {
+          "label": "No-load current",
+          "value": "4 A"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.0075 Ω"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "2 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "6 S"
+        },
+        {
+          "label": "Pole count",
+          "value": "4"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "alternating"
+        },
+        {
+          "label": "Mounting circle(s)",
+          "value": "25.4 / 25.4 mm"
+        },
+        {
+          "label": "Mounting holes",
+          "value": "4 × M3 + 4 × M4; minimum depth 5.5 mm"
+        },
+        {
+          "label": "CAD detail",
+          "value": "Dimensions and mounting follow the supplier drawing. Cosmetic details and internal clearances are reconstructed; threads are represented by nominal holes."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xerun-4274-g3",
+    "name": "Hobbywing XERUN-4274-G3 · 2250 KV",
+    "description": "Ø42 × 74 mm · 2250 KV · inrunner",
+    "parameters": {
+      "model": "xerun-4274-g3",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "30405001",
+      "manufacturer": "Hobbywing",
+      "sourceName": "Hobbywing drawing and specifications",
+      "sourceUrl": "https://www.hobbywing.com/products/xerun-4268--4274-g332",
+      "verifiedParameters": ["model"],
+      "productCodes": ["30405001"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "diameter": 42,
+        "length": 74,
+        "shaft": 5,
+        "extension": 18.5,
+        "kv": 2250,
+        "weight": 354,
+        "noLoadCurrent": 5,
+        "resistance": 0.0037,
+        "cellMin": 2,
+        "cellMax": 6,
+        "manufacturer": "Hobbywing",
+        "rotor": "inrunner",
+        "application": "rc-car"
+      },
+      "attributeConditions": {
+        "noLoadCurrent": "Test voltage not stated in the source."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "42 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "74 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "18.5 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "2250 rpm/V"
+        },
+        {
+          "label": "Mass",
+          "value": "354 g"
+        },
+        {
+          "label": "No-load current",
+          "value": "5 A"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.0037 Ω"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "2 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "6 S"
+        },
+        {
+          "label": "Pole count",
+          "value": "4"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "alternating"
+        },
+        {
+          "label": "Mounting circle(s)",
+          "value": "25.4 / 25.4 mm"
+        },
+        {
+          "label": "Mounting holes",
+          "value": "4 × M3 + 4 × M4; minimum depth 5.5 mm"
+        },
+        {
+          "label": "CAD detail",
+          "value": "Dimensions and mounting follow the supplier drawing. Cosmetic details and internal clearances are reconstructed; threads are represented by nominal holes."
+        }
+      ]
+    }
+  },
+  {
+    "id": "0802se-19500",
+    "name": "BETAFPV 0802SE (2022) · 19500 KV",
+    "description": "Ø10.5 mm · 19500 KV · whoop",
+    "parameters": {
+      "model": "0802se-19500",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "BETAFPV 0802SE (2022)",
+      "manufacturer": "BETAFPV",
+      "sourceName": "BETAFPV product specifications",
+      "sourceUrl": "https://betafpv.com/products/0802se-22000kv-brushless-motors",
+      "verifiedParameters": ["model"],
+      "productCodes": ["BETAFPV 0802SE (2022)", "19500 KV"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "diameter": 10.5,
+        "length": 8.8,
+        "shaft": 1,
+        "extension": 5,
+        "kv": 19500,
+        "weight": 1.83,
+        "cellMin": 1,
+        "cellMax": 1,
+        "manufacturer": "BETAFPV",
+        "rotor": "outrunner",
+        "application": "whoop"
+      },
+      "attributeConditions": {
+        "weight": "Including leads, as listed by manufacturer."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "10.5 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "8.8 mm"
+        },
+        {
+          "label": "Output shaft diameter",
+          "value": "1 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "5 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "19500 rpm/V"
+        },
+        {
+          "label": "Mass",
+          "value": "1.83 g"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "1 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "1 S"
+        },
+        {
+          "label": "Application",
+          "value": "whoop"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "3 × M1.4 on Ø6.6 mm"
+        },
+        {
+          "label": "Propeller interface",
+          "value": "Ø1 × 5 mm press-fit shaft"
+        },
+        {
+          "label": "Overall axial envelope",
+          "value": "13.8 mm"
+        },
+        {
+          "label": "Reconstruction notes",
+          "value": "2022 dimensions. Brass bushings. Internal tooth/magnet layout is illustrative; manufacturer does not specify the pole count."
+        },
+        {
+          "label": "CAD detail",
+          "value": "Vents, cover profiles, internal clearances and winding envelopes are reconstructed; threads use nominal cylinders."
+        },
+        {
+          "label": "Hole depth",
+          "value": "Undimensioned in source; modeled depths are approximate."
+        }
+      ]
+    }
+  },
+  {
+    "id": "0802se-23000",
+    "name": "BETAFPV 0802SE (2022) · 23000 KV",
+    "description": "Ø10.5 mm · 23000 KV · whoop",
+    "parameters": {
+      "model": "0802se-23000",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "BETAFPV 0802SE (2022)",
+      "manufacturer": "BETAFPV",
+      "sourceName": "BETAFPV product specifications",
+      "sourceUrl": "https://betafpv.com/products/0802se-22000kv-brushless-motors",
+      "verifiedParameters": ["model"],
+      "productCodes": ["BETAFPV 0802SE (2022)", "23000 KV"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "diameter": 10.5,
+        "length": 8.8,
+        "shaft": 1,
+        "extension": 5,
+        "kv": 23000,
+        "weight": 1.8,
+        "cellMin": 1,
+        "cellMax": 1,
+        "manufacturer": "BETAFPV",
+        "rotor": "outrunner",
+        "application": "whoop"
+      },
+      "attributeConditions": {
+        "weight": "Including leads, as listed by manufacturer."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "10.5 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "8.8 mm"
+        },
+        {
+          "label": "Output shaft diameter",
+          "value": "1 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "5 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "23000 rpm/V"
+        },
+        {
+          "label": "Mass",
+          "value": "1.8 g"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "1 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "1 S"
+        },
+        {
+          "label": "Application",
+          "value": "whoop"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "3 × M1.4 on Ø6.6 mm"
+        },
+        {
+          "label": "Propeller interface",
+          "value": "Ø1 × 5 mm press-fit shaft"
+        },
+        {
+          "label": "Overall axial envelope",
+          "value": "13.8 mm"
+        },
+        {
+          "label": "Reconstruction notes",
+          "value": "2022 dimensions. Brass bushings. Internal tooth/magnet layout is illustrative; manufacturer does not specify the pole count."
+        },
+        {
+          "label": "CAD detail",
+          "value": "Vents, cover profiles, internal clearances and winding envelopes are reconstructed; threads use nominal cylinders."
+        },
+        {
+          "label": "Hole depth",
+          "value": "Undimensioned in source; modeled depths are approximate."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xing2-1404-3800",
+    "name": "iFlight XING2 1404 · 3800 KV",
+    "description": "Ø19.9 mm · 3800 KV · micro-fpv",
+    "parameters": {
+      "model": "xing2-1404-3800",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "iFlight XING2 1404",
+      "manufacturer": "iFlight",
+      "sourceName": "iFlight product specifications",
+      "sourceUrl": "https://shop.iflight.com/xing2-1404-toothpick-ultralight-build-unibell-pro1482",
+      "verifiedParameters": ["model"],
+      "productCodes": ["iFlight XING2 1404", "3800 KV"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "diameter": 19.9,
+        "kv": 3800,
+        "weight": 9.1,
+        "current": 15.84,
+        "power": 253.4,
+        "resistance": 0.22,
+        "cellMin": 3,
+        "cellMax": 4,
+        "manufacturer": "iFlight",
+        "rotor": "outrunner",
+        "application": "micro-fpv"
+      },
+      "attributeConditions": {
+        "current": "Manufacturer peak current; duration is not specified. Not a continuous rating.",
+        "power": "Manufacturer maximum; peak duration is not specified.",
+        "weight": "Including leads, as listed by manufacturer."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "19.9 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "3800 rpm/V"
+        },
+        {
+          "label": "Mass",
+          "value": "9.1 g"
+        },
+        {
+          "label": "Peak current",
+          "value": "15.84 A"
+        },
+        {
+          "label": "Published max power",
+          "value": "253.4 W"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.22 Ω"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "3 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "4 S"
+        },
+        {
+          "label": "Application",
+          "value": "micro-fpv"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "4 × M2 on 9 × 9 mm square"
+        },
+        {
+          "label": "Propeller interface",
+          "value": "Small press-fit shaft; CAD Ø1.5 × 4 mm assumed"
+        },
+        {
+          "label": "Overall axial envelope",
+          "value": "18.4 mm"
+        },
+        {
+          "label": "Stator / rotor configuration",
+          "value": "9N12P"
+        },
+        {
+          "label": "Reconstruction notes",
+          "value": "Manufacturer gives Ø19.9 × 18.4 mm overall. Shaft Ø1.5 × 4 mm and 14.4 mm body split are reconstruction assumptions, excluded from dimensional filters. Propeller screw interface is not dimensioned and is omitted."
+        },
+        {
+          "label": "CAD detail",
+          "value": "Vents, cover profiles, internal clearances and winding envelopes are reconstructed; threads use nominal cylinders."
+        },
+        {
+          "label": "Hole depth",
+          "value": "Undimensioned in source; modeled depths are approximate."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xing2-1404-4600",
+    "name": "iFlight XING2 1404 · 4600 KV",
+    "description": "Ø19.9 mm · 4600 KV · micro-fpv",
+    "parameters": {
+      "model": "xing2-1404-4600",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "iFlight XING2 1404",
+      "manufacturer": "iFlight",
+      "sourceName": "iFlight product specifications",
+      "sourceUrl": "https://shop.iflight.com/xing2-1404-toothpick-ultralight-build-unibell-pro1482",
+      "verifiedParameters": ["model"],
+      "productCodes": ["iFlight XING2 1404", "4600 KV"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "diameter": 19.9,
+        "kv": 4600,
+        "weight": 9.1,
+        "current": 17.99,
+        "power": 287.8,
+        "resistance": 0.159,
+        "cellMin": 3,
+        "cellMax": 4,
+        "manufacturer": "iFlight",
+        "rotor": "outrunner",
+        "application": "micro-fpv"
+      },
+      "attributeConditions": {
+        "current": "Manufacturer peak current; duration is not specified. Not a continuous rating.",
+        "power": "Manufacturer maximum; peak duration is not specified.",
+        "weight": "Including leads, as listed by manufacturer."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "19.9 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "4600 rpm/V"
+        },
+        {
+          "label": "Mass",
+          "value": "9.1 g"
+        },
+        {
+          "label": "Peak current",
+          "value": "17.99 A"
+        },
+        {
+          "label": "Published max power",
+          "value": "287.8 W"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.159 Ω"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "3 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "4 S"
+        },
+        {
+          "label": "Application",
+          "value": "micro-fpv"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "4 × M2 on 9 × 9 mm square"
+        },
+        {
+          "label": "Propeller interface",
+          "value": "Small press-fit shaft; CAD Ø1.5 × 4 mm assumed"
+        },
+        {
+          "label": "Overall axial envelope",
+          "value": "18.4 mm"
+        },
+        {
+          "label": "Stator / rotor configuration",
+          "value": "9N12P"
+        },
+        {
+          "label": "Reconstruction notes",
+          "value": "Manufacturer gives Ø19.9 × 18.4 mm overall. Shaft Ø1.5 × 4 mm and 14.4 mm body split are reconstruction assumptions, excluded from dimensional filters. Propeller screw interface is not dimensioned and is omitted."
+        },
+        {
+          "label": "CAD detail",
+          "value": "Vents, cover profiles, internal clearances and winding envelopes are reconstructed; threads use nominal cylinders."
+        },
+        {
+          "label": "Hole depth",
+          "value": "Undimensioned in source; modeled depths are approximate."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xing2-2207-1855",
+    "name": "iFlight XING2 2207 · 1855 KV",
+    "description": "Ø29.08 mm · 1855 KV · fpv",
+    "parameters": {
+      "model": "xing2-2207-1855",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "iFlight XING2 2207",
+      "manufacturer": "iFlight",
+      "sourceName": "iFlight product specifications",
+      "sourceUrl": "https://shop.iflight.com/xing2-2207-4s-6s-fpv-motor-unibell-pro1464",
+      "verifiedParameters": ["model"],
+      "productCodes": ["iFlight XING2 2207", "1855 KV"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "diameter": 29.08,
+        "length": 19.1,
+        "shaft": 5,
+        "extension": 13.5,
+        "kv": 1855,
+        "weight": 31.6,
+        "current": 35.08,
+        "power": 841.9,
+        "resistance": 0.05,
+        "cellMin": 6,
+        "cellMax": 6,
+        "manufacturer": "iFlight",
+        "rotor": "outrunner",
+        "application": "fpv"
+      },
+      "attributeConditions": {
+        "current": "Manufacturer peak current; duration is not specified. Not a continuous rating. Published at 24 V input.",
+        "power": "Manufacturer maximum; peak duration is not specified. Published at 24 V input.",
+        "weight": "Including leads, as listed by manufacturer."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "29.08 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "19.1 mm"
+        },
+        {
+          "label": "Output shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "13.5 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "1855 rpm/V"
+        },
+        {
+          "label": "Mass",
+          "value": "31.6 g"
+        },
+        {
+          "label": "Peak current",
+          "value": "35.08 A"
+        },
+        {
+          "label": "Published max power",
+          "value": "841.9 W"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.05 Ω"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "6 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "6 S"
+        },
+        {
+          "label": "Application",
+          "value": "fpv"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "4 × M3 on 16 × 16 mm square"
+        },
+        {
+          "label": "Propeller interface",
+          "value": "M5 output shaft, 13.5 mm projection"
+        },
+        {
+          "label": "Overall axial envelope",
+          "value": "32.6 mm"
+        },
+        {
+          "label": "Stator / rotor configuration",
+          "value": "12N14P"
+        },
+        {
+          "label": "Reconstruction notes",
+          "value": "Ø4 mm internal shaft; Ø5 mm output. 1855 KV: 6S; 2755 KV: 4S."
+        },
+        {
+          "label": "CAD detail",
+          "value": "Vents, cover profiles, internal clearances and winding envelopes are reconstructed; threads use nominal cylinders."
+        },
+        {
+          "label": "Hole depth",
+          "value": "Undimensioned in source; modeled depths are approximate."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xing2-2207-2755",
+    "name": "iFlight XING2 2207 · 2755 KV",
+    "description": "Ø29.08 mm · 2755 KV · fpv",
+    "parameters": {
+      "model": "xing2-2207-2755",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "iFlight XING2 2207",
+      "manufacturer": "iFlight",
+      "sourceName": "iFlight product specifications",
+      "sourceUrl": "https://shop.iflight.com/xing2-2207-4s-6s-fpv-motor-unibell-pro1464",
+      "verifiedParameters": ["model"],
+      "productCodes": ["iFlight XING2 2207", "2755 KV"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "diameter": 29.08,
+        "length": 19.1,
+        "shaft": 5,
+        "extension": 13.5,
+        "kv": 2755,
+        "weight": 31.6,
+        "current": 40.35,
+        "power": 645.6,
+        "resistance": 0.0415,
+        "cellMin": 4,
+        "cellMax": 4,
+        "manufacturer": "iFlight",
+        "rotor": "outrunner",
+        "application": "fpv"
+      },
+      "attributeConditions": {
+        "current": "Manufacturer peak current; duration is not specified. Not a continuous rating. Published at 16 V input.",
+        "power": "Manufacturer maximum; peak duration is not specified. Published at 16 V input.",
+        "weight": "Including leads, as listed by manufacturer."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "29.08 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "19.1 mm"
+        },
+        {
+          "label": "Output shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "13.5 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "2755 rpm/V"
+        },
+        {
+          "label": "Mass",
+          "value": "31.6 g"
+        },
+        {
+          "label": "Peak current",
+          "value": "40.35 A"
+        },
+        {
+          "label": "Published max power",
+          "value": "645.6 W"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.0415 Ω"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "4 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "4 S"
+        },
+        {
+          "label": "Application",
+          "value": "fpv"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "4 × M3 on 16 × 16 mm square"
+        },
+        {
+          "label": "Propeller interface",
+          "value": "M5 output shaft, 13.5 mm projection"
+        },
+        {
+          "label": "Overall axial envelope",
+          "value": "32.6 mm"
+        },
+        {
+          "label": "Stator / rotor configuration",
+          "value": "12N14P"
+        },
+        {
+          "label": "Reconstruction notes",
+          "value": "Ø4 mm internal shaft; Ø5 mm output. 1855 KV: 6S; 2755 KV: 4S."
+        },
+        {
+          "label": "CAD detail",
+          "value": "Vents, cover profiles, internal clearances and winding envelopes are reconstructed; threads use nominal cylinders."
+        },
+        {
+          "label": "Hole depth",
+          "value": "Undimensioned in source; modeled depths are approximate."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xing-2806-5-1300",
+    "name": "iFlight XING 2806.5 · 1300 KV",
+    "description": "Ø35.06 mm · 1300 KV · fpv-long-range",
+    "parameters": {
+      "model": "xing-2806-5-1300",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "iFlight XING 2806.5",
+      "manufacturer": "iFlight",
+      "sourceName": "iFlight product specifications",
+      "sourceUrl": "https://shop.iflight.com/xing-x2806-5-fpv-nextgen-motor-pro1001",
+      "verifiedParameters": ["model"],
+      "productCodes": ["iFlight XING 2806.5", "1300 KV"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "diameter": 35.06,
+        "length": 21.3,
+        "shaft": 5,
+        "extension": 15.5,
+        "kv": 1300,
+        "weight": 54.3,
+        "current": 48.33,
+        "power": 1132.9,
+        "resistance": 0.07229,
+        "manufacturer": "iFlight",
+        "rotor": "outrunner",
+        "application": "fpv-long-range"
+      },
+      "attributeConditions": {
+        "current": "Manufacturer peak current; duration is not specified. Not a continuous rating. Published at 24 V input.",
+        "power": "Manufacturer maximum; peak duration is not specified. Published at 24 V input.",
+        "weight": "Including leads, as listed by manufacturer."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "35.06 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "21.3 mm"
+        },
+        {
+          "label": "Output shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "15.5 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "1300 rpm/V"
+        },
+        {
+          "label": "Mass",
+          "value": "54.3 g"
+        },
+        {
+          "label": "Peak current",
+          "value": "48.33 A"
+        },
+        {
+          "label": "Published max power",
+          "value": "1132.9 W"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.07229 Ω"
+        },
+        {
+          "label": "Application",
+          "value": "fpv-long-range"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "4 × M3 on 19 × 19 mm square"
+        },
+        {
+          "label": "Propeller interface",
+          "value": "M5 output shaft, 15.5 mm projection"
+        },
+        {
+          "label": "Overall axial envelope",
+          "value": "36.8 mm"
+        },
+        {
+          "label": "Stator / rotor configuration",
+          "value": "12N14P"
+        },
+        {
+          "label": "Reconstruction notes",
+          "value": "Manufacturer describes 7–8 inch FPV use. Published input 24 V; no LiPo cell range inferred. Internal shaft geometry is reconstructed."
+        },
+        {
+          "label": "CAD detail",
+          "value": "Vents, cover profiles, internal clearances and winding envelopes are reconstructed; threads use nominal cylinders."
+        },
+        {
+          "label": "Hole depth",
+          "value": "Undimensioned in source; modeled depths are approximate."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xing-2806-5-1800",
+    "name": "iFlight XING 2806.5 · 1800 KV",
+    "description": "Ø35.06 mm · 1800 KV · fpv-long-range",
+    "parameters": {
+      "model": "xing-2806-5-1800",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "iFlight XING 2806.5",
+      "manufacturer": "iFlight",
+      "sourceName": "iFlight product specifications",
+      "sourceUrl": "https://shop.iflight.com/xing-x2806-5-fpv-nextgen-motor-pro1001",
+      "verifiedParameters": ["model"],
+      "productCodes": ["iFlight XING 2806.5", "1800 KV"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "diameter": 35.06,
+        "length": 21.3,
+        "shaft": 5,
+        "extension": 15.5,
+        "kv": 1800,
+        "weight": 53.3,
+        "current": 72.3,
+        "power": 1681,
+        "resistance": 0.0485,
+        "manufacturer": "iFlight",
+        "rotor": "outrunner",
+        "application": "fpv-long-range"
+      },
+      "attributeConditions": {
+        "current": "Manufacturer peak current; duration is not specified. Not a continuous rating. Published at 24 V input.",
+        "power": "Manufacturer maximum; peak duration is not specified. Published at 24 V input.",
+        "weight": "Including leads, as listed by manufacturer."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "35.06 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "21.3 mm"
+        },
+        {
+          "label": "Output shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "15.5 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "1800 rpm/V"
+        },
+        {
+          "label": "Mass",
+          "value": "53.3 g"
+        },
+        {
+          "label": "Peak current",
+          "value": "72.3 A"
+        },
+        {
+          "label": "Published max power",
+          "value": "1681 W"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.0485 Ω"
+        },
+        {
+          "label": "Application",
+          "value": "fpv-long-range"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "4 × M3 on 19 × 19 mm square"
+        },
+        {
+          "label": "Propeller interface",
+          "value": "M5 output shaft, 15.5 mm projection"
+        },
+        {
+          "label": "Overall axial envelope",
+          "value": "36.8 mm"
+        },
+        {
+          "label": "Stator / rotor configuration",
+          "value": "12N14P"
+        },
+        {
+          "label": "Reconstruction notes",
+          "value": "Manufacturer describes 7–8 inch FPV use. Published input 24 V; no LiPo cell range inferred. Internal shaft geometry is reconstructed."
+        },
+        {
+          "label": "CAD detail",
+          "value": "Vents, cover profiles, internal clearances and winding envelopes are reconstructed; threads use nominal cylinders."
+        },
+        {
+          "label": "Hole depth",
+          "value": "Undimensioned in source; modeled depths are approximate."
+        }
+      ]
+    }
+  },
+  {
+    "id": "nidici-3115-900",
+    "name": "NIDICI 3115 · 900 KV",
+    "description": "Ø36.85 mm · 900 KV · large-fpv",
+    "parameters": {
+      "model": "nidici-3115-900",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "NIDICI 3115",
+      "manufacturer": "NIDICI",
+      "sourceName": "NIDICI product specifications",
+      "sourceUrl": "https://shop.iflight.com/NIDICI-3115-FPV-Motor-Pro2317",
+      "verifiedParameters": ["model"],
+      "productCodes": ["NIDICI 3115", "900 KV"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "diameter": 36.85,
+        "length": 31.15,
+        "shaft": 5,
+        "extension": 15.65,
+        "kv": 900,
+        "weight": 77,
+        "current": 63.28,
+        "power": 1479.5,
+        "resistance": 0.05124,
+        "manufacturer": "NIDICI",
+        "rotor": "outrunner",
+        "application": "large-fpv"
+      },
+      "attributeConditions": {
+        "current": "Manufacturer peak current; duration is not specified. Not a continuous rating. Published at 24 V input.",
+        "power": "Manufacturer maximum; peak duration is not specified. Published at 24 V input.",
+        "weight": "Including leads, as listed by manufacturer."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "36.85 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "31.15 mm"
+        },
+        {
+          "label": "Output shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "15.65 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "900 rpm/V"
+        },
+        {
+          "label": "Mass",
+          "value": "77 g"
+        },
+        {
+          "label": "Peak current",
+          "value": "63.28 A"
+        },
+        {
+          "label": "Published max power",
+          "value": "1479.5 W"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.05124 Ω"
+        },
+        {
+          "label": "Application",
+          "value": "large-fpv"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "4 × M3 on 19 × 19 mm square"
+        },
+        {
+          "label": "Propeller interface",
+          "value": "M5 output shaft, 15.65 mm projection"
+        },
+        {
+          "label": "Overall axial envelope",
+          "value": "46.8 mm"
+        },
+        {
+          "label": "Stator / rotor configuration",
+          "value": "12N14P"
+        },
+        {
+          "label": "Reconstruction notes",
+          "value": "Published input 24 V; no LiPo cell range inferred."
+        },
+        {
+          "label": "CAD detail",
+          "value": "Vents, cover profiles, internal clearances and winding envelopes are reconstructed; threads use nominal cylinders."
+        },
+        {
+          "label": "Hole depth",
+          "value": "Undimensioned in source; modeled depths are approximate."
+        }
+      ]
+    }
+  },
+  {
+    "id": "nidici-3115-1250",
+    "name": "NIDICI 3115 · 1250 KV",
+    "description": "Ø36.85 mm · 1250 KV · large-fpv",
+    "parameters": {
+      "model": "nidici-3115-1250",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "NIDICI 3115",
+      "manufacturer": "NIDICI",
+      "sourceName": "NIDICI product specifications",
+      "sourceUrl": "https://shop.iflight.com/NIDICI-3115-FPV-Motor-Pro2317",
+      "verifiedParameters": ["model"],
+      "productCodes": ["NIDICI 3115", "1250 KV"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "diameter": 36.85,
+        "length": 31.15,
+        "shaft": 5,
+        "extension": 15.65,
+        "kv": 1250,
+        "weight": 77,
+        "current": 78.86,
+        "power": 1830.3,
+        "resistance": 0.02415,
+        "manufacturer": "NIDICI",
+        "rotor": "outrunner",
+        "application": "large-fpv"
+      },
+      "attributeConditions": {
+        "current": "Manufacturer peak current; duration is not specified. Not a continuous rating. Published at 24 V input.",
+        "power": "Manufacturer maximum; peak duration is not specified. Published at 24 V input.",
+        "weight": "Including leads, as listed by manufacturer."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "36.85 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "31.15 mm"
+        },
+        {
+          "label": "Output shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "15.65 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "1250 rpm/V"
+        },
+        {
+          "label": "Mass",
+          "value": "77 g"
+        },
+        {
+          "label": "Peak current",
+          "value": "78.86 A"
+        },
+        {
+          "label": "Published max power",
+          "value": "1830.3 W"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.02415 Ω"
+        },
+        {
+          "label": "Application",
+          "value": "large-fpv"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "4 × M3 on 19 × 19 mm square"
+        },
+        {
+          "label": "Propeller interface",
+          "value": "M5 output shaft, 15.65 mm projection"
+        },
+        {
+          "label": "Overall axial envelope",
+          "value": "46.8 mm"
+        },
+        {
+          "label": "Stator / rotor configuration",
+          "value": "12N14P"
+        },
+        {
+          "label": "Reconstruction notes",
+          "value": "Published input 24 V; no LiPo cell range inferred."
+        },
+        {
+          "label": "CAD detail",
+          "value": "Vents, cover profiles, internal clearances and winding envelopes are reconstructed; threads use nominal cylinders."
+        },
+        {
+          "label": "Hole depth",
+          "value": "Undimensioned in source; modeled depths are approximate."
+        }
+      ]
+    }
+  },
+  {
+    "id": "mn4014-330",
+    "name": "T-MOTOR MN4014 · 330 KV",
+    "description": "Ø44.7 mm · 330 KV · multirotor",
+    "parameters": {
+      "model": "mn4014-330",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "T-MOTOR MN4014",
+      "manufacturer": "T-MOTOR",
+      "sourceName": "T-MOTOR product specifications",
+      "sourceUrl": "https://store.tmotor.com/product/mn4014-kv400-motor-navigator-type.html",
+      "verifiedParameters": ["model"],
+      "productCodes": ["T-MOTOR MN4014", "330 KV"],
+      "alternateSourceUrls": ["https://store.tmotor.com/images/202606/MN4014-draw-0603-v1.jpg"],
+      "attributes": {
+        "diameter": 44.7,
+        "length": 34.5,
+        "shaft": 4,
+        "extension": 6,
+        "kv": 330,
+        "weight": 171,
+        "current": 25,
+        "power": 750,
+        "resistance": 0.085,
+        "cellMin": 4,
+        "cellMax": 8,
+        "noLoadCurrent": 1.1,
+        "manufacturer": "T-MOTOR",
+        "rotor": "outrunner",
+        "application": "multirotor"
+      },
+      "attributeConditions": {
+        "current": "Manufacturer maximum for 180 seconds; not a continuous rating.",
+        "power": "Manufacturer maximum for 180 seconds.",
+        "noLoadCurrent": "At 10 V.",
+        "weight": "Including leads, as listed by manufacturer."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "44.7 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "34.5 mm"
+        },
+        {
+          "label": "Output shaft diameter",
+          "value": "4 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "6 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "330 rpm/V"
+        },
+        {
+          "label": "Mass",
+          "value": "171 g"
+        },
+        {
+          "label": "Peak current",
+          "value": "25 A"
+        },
+        {
+          "label": "Published max power",
+          "value": "750 W"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.085 Ω"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "4 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "8 S"
+        },
+        {
+          "label": "No-load current",
+          "value": "1.1 A"
+        },
+        {
+          "label": "Application",
+          "value": "multirotor"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "4 × M3 on Ø25 mm + 3 × M2.5 on Ø32 mm"
+        },
+        {
+          "label": "Propeller interface",
+          "value": "Ø4 × 6 mm shaft; 3 × M3 on Ø17 + 2 × M3 at 12 mm"
+        },
+        {
+          "label": "Overall axial envelope",
+          "value": "42.9 mm"
+        },
+        {
+          "label": "Stator / rotor configuration",
+          "value": "18N24P"
+        },
+        {
+          "label": "Reconstruction notes",
+          "value": "Body 34.5 mm, front shaft 6 mm, rear shaft 2.4 mm. Mass includes 600 mm leads; 150 g without leads."
+        },
+        {
+          "label": "CAD detail",
+          "value": "Vents, cover profiles, internal clearances and winding envelopes are reconstructed; threads use nominal cylinders."
+        },
+        {
+          "label": "Hole depth",
+          "value": "Undimensioned in source; modeled depths are approximate."
+        }
+      ]
+    }
+  },
+  {
+    "id": "mn4014-400",
+    "name": "T-MOTOR MN4014 · 400 KV",
+    "description": "Ø44.7 mm · 400 KV · multirotor",
+    "parameters": {
+      "model": "mn4014-400",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "T-MOTOR MN4014",
+      "manufacturer": "T-MOTOR",
+      "sourceName": "T-MOTOR product specifications",
+      "sourceUrl": "https://store.tmotor.com/product/mn4014-kv400-motor-navigator-type.html",
+      "verifiedParameters": ["model"],
+      "productCodes": ["T-MOTOR MN4014", "400 KV"],
+      "alternateSourceUrls": ["https://store.tmotor.com/images/202606/MN4014-draw-0603-v1.jpg"],
+      "attributes": {
+        "diameter": 44.7,
+        "length": 34.5,
+        "shaft": 4,
+        "extension": 6,
+        "kv": 400,
+        "weight": 171,
+        "current": 30,
+        "power": 900,
+        "resistance": 0.067,
+        "cellMin": 4,
+        "cellMax": 8,
+        "noLoadCurrent": 1.3,
+        "manufacturer": "T-MOTOR",
+        "rotor": "outrunner",
+        "application": "multirotor"
+      },
+      "attributeConditions": {
+        "current": "Manufacturer maximum for 180 seconds; not a continuous rating.",
+        "power": "Manufacturer maximum for 180 seconds.",
+        "noLoadCurrent": "At 10 V.",
+        "weight": "Including leads, as listed by manufacturer."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "44.7 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "34.5 mm"
+        },
+        {
+          "label": "Output shaft diameter",
+          "value": "4 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "6 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "400 rpm/V"
+        },
+        {
+          "label": "Mass",
+          "value": "171 g"
+        },
+        {
+          "label": "Peak current",
+          "value": "30 A"
+        },
+        {
+          "label": "Published max power",
+          "value": "900 W"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.067 Ω"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "4 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "8 S"
+        },
+        {
+          "label": "No-load current",
+          "value": "1.3 A"
+        },
+        {
+          "label": "Application",
+          "value": "multirotor"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "4 × M3 on Ø25 mm + 3 × M2.5 on Ø32 mm"
+        },
+        {
+          "label": "Propeller interface",
+          "value": "Ø4 × 6 mm shaft; 3 × M3 on Ø17 + 2 × M3 at 12 mm"
+        },
+        {
+          "label": "Overall axial envelope",
+          "value": "42.9 mm"
+        },
+        {
+          "label": "Stator / rotor configuration",
+          "value": "18N24P"
+        },
+        {
+          "label": "Reconstruction notes",
+          "value": "Body 34.5 mm, front shaft 6 mm, rear shaft 2.4 mm. Mass includes 600 mm leads; 150 g without leads."
+        },
+        {
+          "label": "CAD detail",
+          "value": "Vents, cover profiles, internal clearances and winding envelopes are reconstructed; threads use nominal cylinders."
+        },
+        {
+          "label": "Hole depth",
+          "value": "Undimensioned in source; modeled depths are approximate."
+        }
+      ]
+    }
+  },
+  {
+    "id": "mn6007-ii-160",
+    "name": "T-MOTOR MN6007 II · 160 KV",
+    "description": "Ø67.2 mm · 160 KV · large-multirotor",
+    "parameters": {
+      "model": "mn6007-ii-160",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "T-MOTOR MN6007 II",
+      "manufacturer": "T-MOTOR",
+      "sourceName": "T-MOTOR product specifications",
+      "sourceUrl": "https://store.tmotor.com/product/mn6007-v2-motor-antigravity-type.html",
+      "verifiedParameters": ["model"],
+      "productCodes": ["T-MOTOR MN6007 II", "160 KV"],
+      "alternateSourceUrls": ["https://store.tmotor.com/images/202408/271724738437322975.jpg"],
+      "attributes": {
+        "diameter": 67.2,
+        "length": 26.1,
+        "shaft": 4,
+        "extension": 5,
+        "kv": 160,
+        "weight": 159,
+        "current": 23.7,
+        "power": 1120,
+        "resistance": 0.178,
+        "cellMin": 12,
+        "cellMax": 12,
+        "noLoadCurrent": 0.5,
+        "manufacturer": "T-MOTOR",
+        "rotor": "outrunner",
+        "application": "large-multirotor"
+      },
+      "attributeConditions": {
+        "current": "Manufacturer maximum for 180 seconds; not a continuous rating.",
+        "power": "Manufacturer maximum for 180 seconds.",
+        "noLoadCurrent": "At 18 V.",
+        "weight": "Including leads, as listed by manufacturer."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "67.2 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "26.1 mm"
+        },
+        {
+          "label": "Output shaft diameter",
+          "value": "4 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "5 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "160 rpm/V"
+        },
+        {
+          "label": "Mass",
+          "value": "159 g"
+        },
+        {
+          "label": "Peak current",
+          "value": "23.7 A"
+        },
+        {
+          "label": "Published max power",
+          "value": "1120 W"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.178 Ω"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "12 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "12 S"
+        },
+        {
+          "label": "No-load current",
+          "value": "0.5 A"
+        },
+        {
+          "label": "Application",
+          "value": "large-multirotor"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "4 × M4 on Ø32 mm, depth 9 mm"
+        },
+        {
+          "label": "Propeller interface",
+          "value": "Ø4 × 5 mm shaft; 12 × M3 on Ø12/18/20, depth 7 mm"
+        },
+        {
+          "label": "Overall axial envelope",
+          "value": "31.1 mm"
+        },
+        {
+          "label": "Stator / rotor configuration",
+          "value": "24N28P"
+        },
+        {
+          "label": "Reconstruction notes",
+          "value": "Version II drawing Ø67.2 × 26.1 mm. Ø6 mm internal shaft. Internal stator dimensions and rear support profile are reconstructed."
+        },
+        {
+          "label": "CAD detail",
+          "value": "Vents, cover profiles, internal clearances and winding envelopes are reconstructed; threads use nominal cylinders."
+        }
+      ]
+    }
+  },
+  {
+    "id": "mn6007-ii-320",
+    "name": "T-MOTOR MN6007 II · 320 KV",
+    "description": "Ø67.2 mm · 320 KV · large-multirotor",
+    "parameters": {
+      "model": "mn6007-ii-320",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "T-MOTOR MN6007 II",
+      "manufacturer": "T-MOTOR",
+      "sourceName": "T-MOTOR product specifications",
+      "sourceUrl": "https://store.tmotor.com/product/mn6007-v2-motor-antigravity-type.html",
+      "verifiedParameters": ["model"],
+      "productCodes": ["T-MOTOR MN6007 II", "320 KV"],
+      "alternateSourceUrls": ["https://store.tmotor.com/images/202408/271724738437322975.jpg"],
+      "attributes": {
+        "diameter": 67.2,
+        "length": 26.1,
+        "shaft": 4,
+        "extension": 5,
+        "kv": 320,
+        "weight": 161,
+        "current": 44.2,
+        "power": 1040,
+        "resistance": 0.0475,
+        "cellMin": 6,
+        "cellMax": 6,
+        "noLoadCurrent": 1,
+        "manufacturer": "T-MOTOR",
+        "rotor": "outrunner",
+        "application": "large-multirotor"
+      },
+      "attributeConditions": {
+        "current": "Manufacturer maximum for 180 seconds; not a continuous rating.",
+        "power": "Manufacturer maximum for 180 seconds.",
+        "noLoadCurrent": "At 18 V.",
+        "weight": "Including leads, as listed by manufacturer."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "67.2 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "26.1 mm"
+        },
+        {
+          "label": "Output shaft diameter",
+          "value": "4 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "5 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "320 rpm/V"
+        },
+        {
+          "label": "Mass",
+          "value": "161 g"
+        },
+        {
+          "label": "Peak current",
+          "value": "44.2 A"
+        },
+        {
+          "label": "Published max power",
+          "value": "1040 W"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.0475 Ω"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "6 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "6 S"
+        },
+        {
+          "label": "No-load current",
+          "value": "1 A"
+        },
+        {
+          "label": "Application",
+          "value": "large-multirotor"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "4 × M4 on Ø32 mm, depth 9 mm"
+        },
+        {
+          "label": "Propeller interface",
+          "value": "Ø4 × 5 mm shaft; 12 × M3 on Ø12/18/20, depth 7 mm"
+        },
+        {
+          "label": "Overall axial envelope",
+          "value": "31.1 mm"
+        },
+        {
+          "label": "Stator / rotor configuration",
+          "value": "24N28P"
+        },
+        {
+          "label": "Reconstruction notes",
+          "value": "Version II drawing Ø67.2 × 26.1 mm. Ø6 mm internal shaft. Internal stator dimensions and rear support profile are reconstructed."
+        },
+        {
+          "label": "CAD detail",
+          "value": "Vents, cover profiles, internal clearances and winding envelopes are reconstructed; threads use nominal cylinders."
+        }
+      ]
+    }
+  },
+  {
+    "id": "u8-lite-100",
+    "name": "T-MOTOR U8 Lite · 100 KV",
+    "description": "Ø87.1 mm · 100 KV · large-multirotor",
+    "parameters": {
+      "model": "u8-lite-100",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "T-MOTOR U8 Lite",
+      "manufacturer": "T-MOTOR",
+      "sourceName": "T-MOTOR product specifications",
+      "sourceUrl": "https://store.tmotor.com/product/u8-lite-kv100-u-efficiency.html",
+      "verifiedParameters": ["model"],
+      "productCodes": ["T-MOTOR U8 Lite", "100 KV"],
+      "alternateSourceUrls": ["https://store.tmotor.com/images/202508/U8-Lite-draw-v1.png"],
+      "attributes": {
+        "diameter": 87.1,
+        "length": 24.05,
+        "kv": 100,
+        "weight": 238,
+        "current": 29.3,
+        "power": 1406.4,
+        "resistance": 0.17,
+        "cellMin": 12,
+        "cellMax": 12,
+        "noLoadCurrent": 0.7,
+        "manufacturer": "T-MOTOR",
+        "rotor": "outrunner",
+        "application": "large-multirotor"
+      },
+      "attributeConditions": {
+        "current": "Manufacturer maximum for 180 seconds; not a continuous rating.",
+        "power": "Manufacturer maximum for 180 seconds.",
+        "noLoadCurrent": "At 18 V.",
+        "weight": "Including leads, as listed by manufacturer."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "87.1 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "24.05 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "100 rpm/V"
+        },
+        {
+          "label": "Mass",
+          "value": "238 g"
+        },
+        {
+          "label": "Peak current",
+          "value": "29.3 A"
+        },
+        {
+          "label": "Published max power",
+          "value": "1406.4 W"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.17 Ω"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "12 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "12 S"
+        },
+        {
+          "label": "No-load current",
+          "value": "0.7 A"
+        },
+        {
+          "label": "Application",
+          "value": "large-multirotor"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "4 × M4 on Ø36 mm"
+        },
+        {
+          "label": "Propeller interface",
+          "value": "Ø29 × 3 mm propeller boss; 4 × M4 on Ø23 + 4 × M3 on Ø20"
+        },
+        {
+          "label": "Overall axial envelope",
+          "value": "27.05 mm"
+        },
+        {
+          "label": "Stator / rotor configuration",
+          "value": "36N42P"
+        },
+        {
+          "label": "Reconstruction notes",
+          "value": "Ø15 mm is the internal shaft, not a projecting propeller shaft. Overall height 27.05 mm including the boss. Internal stator dimensions are reconstructed."
+        },
+        {
+          "label": "CAD detail",
+          "value": "Vents, cover profiles, internal clearances and winding envelopes are reconstructed; threads use nominal cylinders."
+        },
+        {
+          "label": "Hole depth",
+          "value": "Undimensioned in source; modeled depths are approximate."
+        }
+      ]
+    }
+  },
+  {
+    "id": "u8-lite-190",
+    "name": "T-MOTOR U8 Lite · 190 KV",
+    "description": "Ø87.1 mm · 190 KV · large-multirotor",
+    "parameters": {
+      "model": "u8-lite-190",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "T-MOTOR U8 Lite",
+      "manufacturer": "T-MOTOR",
+      "sourceName": "T-MOTOR product specifications",
+      "sourceUrl": "https://store.tmotor.com/product/u8-lite-kv100-u-efficiency.html",
+      "verifiedParameters": ["model"],
+      "productCodes": ["T-MOTOR U8 Lite", "190 KV"],
+      "alternateSourceUrls": ["https://store.tmotor.com/images/202508/U8-Lite-draw-v1.png"],
+      "attributes": {
+        "diameter": 87.1,
+        "length": 24.05,
+        "kv": 190,
+        "weight": 243,
+        "current": 43.7,
+        "power": 1048.8,
+        "resistance": 0.048,
+        "cellMin": 6,
+        "cellMax": 6,
+        "noLoadCurrent": 1.3,
+        "manufacturer": "T-MOTOR",
+        "rotor": "outrunner",
+        "application": "large-multirotor"
+      },
+      "attributeConditions": {
+        "current": "Manufacturer maximum for 180 seconds; not a continuous rating.",
+        "power": "Manufacturer maximum for 180 seconds.",
+        "noLoadCurrent": "At 18 V.",
+        "weight": "Including leads, as listed by manufacturer."
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "87.1 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "24.05 mm"
+        },
+        {
+          "label": "Speed constant",
+          "value": "190 rpm/V"
+        },
+        {
+          "label": "Mass",
+          "value": "243 g"
+        },
+        {
+          "label": "Peak current",
+          "value": "43.7 A"
+        },
+        {
+          "label": "Published max power",
+          "value": "1048.8 W"
+        },
+        {
+          "label": "Resistance",
+          "value": "0.048 Ω"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "6 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "6 S"
+        },
+        {
+          "label": "No-load current",
+          "value": "1.3 A"
+        },
+        {
+          "label": "Application",
+          "value": "large-multirotor"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "4 × M4 on Ø36 mm"
+        },
+        {
+          "label": "Propeller interface",
+          "value": "Ø29 × 3 mm propeller boss; 4 × M4 on Ø23 + 4 × M3 on Ø20"
+        },
+        {
+          "label": "Overall axial envelope",
+          "value": "27.05 mm"
+        },
+        {
+          "label": "Stator / rotor configuration",
+          "value": "36N42P"
+        },
+        {
+          "label": "Reconstruction notes",
+          "value": "Ø15 mm is the internal shaft, not a projecting propeller shaft. Overall height 27.05 mm including the boss. Internal stator dimensions are reconstructed."
+        },
+        {
+          "label": "CAD detail",
+          "value": "Vents, cover profiles, internal clearances and winding envelopes are reconstructed; threads use nominal cylinders."
+        },
+        {
+          "label": "Hole depth",
+          "value": "Undimensioned in source; modeled depths are approximate."
+        }
+      ]
+    }
+  }
+]

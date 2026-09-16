@@ -58,7 +58,8 @@ test('electromagnetics is a discoverable section with complete prototype size ch
     ids,
   );
   for (const part of electromagneticParts) {
-    assert.equal(part.category, 'ELECTROMAGNETICS');
+    assert.equal(part.category, 'MOTORS & ACTUATORS');
+    assert.equal(part.subgroup, part.id === 'holding-electromagnet' ? 'HOLDING MAGNETS' : 'SOLENOIDS');
     assert.equal(part.icon, 'magnet');
     assert.ok(part.presets.length >= 4);
     for (const preset of part.presets) {

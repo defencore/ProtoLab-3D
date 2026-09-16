@@ -1,0 +1,217 @@
+[
+  {
+    "id": "pololu-d24v50f5",
+    "name": "Pololu D24V50F5",
+    "manufacturer": "Pololu",
+    "width": 17.78,
+    "length": 20.32,
+    "board": 1.6,
+    "color": 2313328,
+    "construction": "Bare PCB",
+    "source": "https://www.pololu.com/product/2851/specs",
+    "holes": [],
+    "details": [
+      {
+        "kind": "chip",
+        "name": "Inductor",
+        "x": 0,
+        "y": 1,
+        "z": 1.6,
+        "w": 9.779000000000002,
+        "l": 7.7216000000000005,
+        "h": 7.290000000000001,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "Regulator IC",
+        "x": 0,
+        "y": -5.08,
+        "z": 1.6,
+        "w": 4,
+        "l": 3,
+        "h": 1,
+        "color": 2435116
+      },
+      {
+        "kind": "pads",
+        "name": "Input/output",
+        "x": 0,
+        "y": 8.96,
+        "z": 1.6,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 3,
+        "rows": 1,
+        "dir": "horizontal",
+        "pitch": 2.54,
+        "bore": 0.8
+      }
+    ],
+    "attributes": {
+      "inputMin": 6,
+      "inputMax": 38,
+      "outputMin": 5,
+      "outputMax": 5,
+      "topology": "Buck",
+      "connection": "Through-hole pads",
+      "height": 8.89,
+      "outputCurrent": 5
+    },
+    "scope": "Bare board, no optional headers or terminal blocks. Dimensions converted from manufacturer inches. Output current depends on cooling and input voltage.",
+    "references": []
+  },
+  {
+    "id": "pololu-s7v8f5",
+    "name": "Pololu S7V8F5",
+    "manufacturer": "Pololu",
+    "width": 11.43,
+    "length": 16.51,
+    "board": 0.8,
+    "color": 2313328,
+    "construction": "Bare PCB",
+    "source": "https://www.pololu.com/product/2123/specs",
+    "holes": [],
+    "details": [
+      {
+        "kind": "chip",
+        "name": "Inductor",
+        "x": 0,
+        "y": 1,
+        "z": 0.8,
+        "w": 6.2865,
+        "l": 6.2738000000000005,
+        "h": 1.74,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "Regulator IC",
+        "x": 0,
+        "y": -4.1275,
+        "z": 0.8,
+        "w": 4,
+        "l": 3,
+        "h": 1,
+        "color": 2435116
+      },
+      {
+        "kind": "pads",
+        "name": "Input/output",
+        "x": 0,
+        "y": 7.055000000000001,
+        "z": 0.8,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 3,
+        "rows": 1,
+        "dir": "horizontal",
+        "pitch": 2.54,
+        "bore": 0.8
+      }
+    ],
+    "attributes": {
+      "inputMin": 2.7,
+      "inputMax": 11.8,
+      "outputMin": 5,
+      "outputMax": 5,
+      "topology": "Buck-boost",
+      "connection": "Through-hole pads",
+      "height": 2.54,
+      "outputCurrent": 1
+    },
+    "scope": "Bare board, no optional headers or terminal blocks. Dimensions converted from manufacturer inches. 1 A output applies to buck operation; boost output depends on input voltage.",
+    "references": []
+  },
+  {
+    "id": "pololu-u3v50f5",
+    "name": "Pololu U3V50F5",
+    "manufacturer": "Pololu",
+    "width": 15.24,
+    "length": 48.26,
+    "board": 1.6,
+    "color": 2313328,
+    "construction": "Bare PCB",
+    "source": "https://www.pololu.com/product/2565/specs",
+    "holes": [],
+    "details": [
+      {
+        "kind": "chip",
+        "name": "Shielded inductor",
+        "x": 0,
+        "y": -5,
+        "z": 1.6,
+        "w": 10,
+        "l": 10,
+        "h": 7,
+        "color": 2435116
+      },
+      {
+        "kind": "cylinder",
+        "name": "Input capacitor",
+        "x": 0,
+        "y": 12,
+        "z": 1.6,
+        "w": 8,
+        "l": 8,
+        "h": 8.814,
+        "color": 4277579
+      },
+      {
+        "kind": "chip",
+        "name": "Switching IC",
+        "x": 0,
+        "y": -16,
+        "z": 1.6,
+        "w": 5,
+        "l": 5,
+        "h": 1,
+        "color": 2435116
+      },
+      {
+        "kind": "pads",
+        "name": "Power pads",
+        "x": 0,
+        "y": 21,
+        "z": 1.6,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 3,
+        "rows": 1,
+        "dir": "horizontal",
+        "pitch": 3.5,
+        "bore": 1
+      },
+      {
+        "kind": "pads",
+        "name": "Output pads",
+        "x": 0,
+        "y": -22,
+        "z": 1.6,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 3,
+        "rows": 1,
+        "dir": "horizontal",
+        "pitch": 3.5,
+        "bore": 1
+      }
+    ],
+    "attributes": {
+      "inputMin": 2.9,
+      "inputMax": 5,
+      "outputMin": 5,
+      "outputMax": 5,
+      "topology": "Boost",
+      "connection": "Through-hole pads",
+      "height": 10.414,
+      "inputCurrent": 5
+    },
+    "scope": "Bare board, no optional headers or terminal blocks. Dimensions converted from manufacturer inches. 5 A is the INPUT current limit, not a 5 A output rating.",
+    "references": ["u3v50.pdf"]
+  }
+]

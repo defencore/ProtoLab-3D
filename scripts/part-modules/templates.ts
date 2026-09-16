@@ -37,7 +37,7 @@ import presets from './presets.json';
 const part: PartDefinition = {
   id: ${JSON.stringify(id)},
   name: ${JSON.stringify(name)},
-  category: 'STRUCTURAL',
+  category: 'FASTENERS',
   subgroup: 'SPACERS & STANDOFFS',
   description: 'A configurable spacer with an open through bore.',
   icon: 'bolt',

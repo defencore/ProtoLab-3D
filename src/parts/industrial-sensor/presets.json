@@ -1,0 +1,67 @@
+[
+  {
+    "id": "m8",
+    "name": "Proximity sensor \u00b7 M8 body",
+    "description": "Cylindrical inductive sensors, shaft encoders and mechanical limit-switch references. Editable prototype dimensions.",
+    "parameters": {
+      "form": "inductive",
+      "diameter": 8,
+      "length": 40,
+      "shaft": 4,
+      "projection": 15,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "m12",
+    "name": "Proximity sensor \u00b7 M12 body",
+    "description": "Cylindrical inductive sensors, shaft encoders and mechanical limit-switch references. Editable prototype dimensions.",
+    "parameters": {
+      "form": "inductive",
+      "diameter": 12,
+      "length": 40,
+      "shaft": 4,
+      "projection": 15,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "m18",
+    "name": "Proximity sensor \u00b7 M18 body",
+    "description": "Cylindrical inductive sensors, shaft encoders and mechanical limit-switch references. Editable prototype dimensions.",
+    "parameters": {
+      "form": "inductive",
+      "diameter": 18,
+      "length": 50,
+      "shaft": 4,
+      "projection": 15,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "encoder",
+    "name": "Shaft encoder \u00b7 \u00d840 body",
+    "description": "Cylindrical inductive sensors, shaft encoders and mechanical limit-switch references. Editable prototype dimensions.",
+    "parameters": {
+      "form": "encoder",
+      "diameter": 40,
+      "length": 30,
+      "shaft": 6,
+      "projection": 15,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "limit",
+    "name": "Roller limit switch",
+    "description": "Cylindrical inductive sensors, shaft encoders and mechanical limit-switch references. Editable prototype dimensions.",
+    "parameters": {
+      "form": "limit",
+      "diameter": 20,
+      "length": 30,
+      "shaft": 4,
+      "projection": 15,
+      "detail": "envelope"
+    }
+  }
+]

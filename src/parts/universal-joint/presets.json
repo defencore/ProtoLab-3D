@@ -1,0 +1,24 @@
+[
+  {
+    "id": "hooke",
+    "name": "Cross-yoke universal joint",
+    "description": "Cross-yoke universal joint and spherical joint dimensional references. Editable prototype dimensions.",
+    "parameters": {
+      "form": "hooke",
+      "diameter": 30,
+      "shaft": 8,
+      "length": 70
+    }
+  },
+  {
+    "id": "ball",
+    "name": "Ball-and-socket joint",
+    "description": "Cross-yoke universal joint and spherical joint dimensional references. Editable prototype dimensions.",
+    "parameters": {
+      "form": "ball",
+      "diameter": 30,
+      "shaft": 8,
+      "length": 70
+    }
+  }
+]

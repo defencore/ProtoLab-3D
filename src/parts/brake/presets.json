@@ -1,0 +1,26 @@
+[
+  {
+    "id": "disc80",
+    "name": "Disc brake \u00b7 \u00d880 mm",
+    "description": "Disc and drum brake mounting forms with separate rotating and stationary bodies. Editable prototype dimensions.",
+    "parameters": {
+      "form": "disc",
+      "diameter": 80,
+      "bore": 12,
+      "thickness": 5,
+      "depth": 30
+    }
+  },
+  {
+    "id": "drum80",
+    "name": "Drum brake \u00b7 \u00d880 mm",
+    "description": "Disc and drum brake mounting forms with separate rotating and stationary bodies. Editable prototype dimensions.",
+    "parameters": {
+      "form": "drum",
+      "diameter": 80,
+      "bore": 12,
+      "thickness": 5,
+      "depth": 30
+    }
+  }
+]

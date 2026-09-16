@@ -34,8 +34,8 @@ function panel(width: number, depth: number, thickness: number, holeRadius: numb
 }
 const part: PartDefinition = {
   id: 'l-bracket',
-  name: 'L bracket',
-  category: 'STRUCTURAL',
+  name: 'Angle bracket',
+  category: 'STRUCTURAL PARTS',
   subgroup: 'BRACKETS & MOUNTS',
   icon: 'bracket',
   complexity: '5 parameters',

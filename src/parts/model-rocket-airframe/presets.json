@@ -1,0 +1,126 @@
+[
+  {
+    "id": "custom-40",
+    "name": "Custom model rocket · Ø40 × 500 mm",
+    "description": "Editable design example · lightweight geometry",
+    "parameters": {
+      "length": 500,
+      "diameter": 40,
+      "wall": 1,
+      "noseLength": 100,
+      "nose": "elliptical",
+      "finCount": 4,
+      "finRoot": 90,
+      "finTip": 40,
+      "finSpan": 45,
+      "finSweep": 15,
+      "finThickness": 2
+    }
+  },
+  {
+    "id": "custom-66",
+    "name": "Custom model rocket · Ø66 × 900 mm",
+    "description": "Editable design example · lightweight geometry",
+    "parameters": {
+      "length": 900,
+      "diameter": 66,
+      "wall": 1,
+      "noseLength": 165,
+      "nose": "conical",
+      "finCount": 4,
+      "finRoot": 140,
+      "finTip": 60,
+      "finSpan": 70,
+      "finSweep": 15,
+      "finThickness": 3
+    }
+  },
+  {
+    "id": "estes-alpha-iii",
+    "name": "Estes Alpha III",
+    "description": "Published 307 mm length and 25 mm body diameter; simplified nose and fins.",
+    "parameters": {
+      "length": 307,
+      "diameter": 25,
+      "wall": 0.6,
+      "noseLength": 75,
+      "nose": "elliptical",
+      "finCount": 3,
+      "finRoot": 62,
+      "finTip": 28,
+      "finSpan": 33,
+      "finSweep": 4,
+      "finThickness": 1.5
+    },
+    "catalog": {
+      "designation": "Estes Alpha III",
+      "manufacturer": "Estes",
+      "sourceName": "Estes · dimensions",
+      "sourceUrl": "https://estesrockets.com/products/alpha-iii",
+      "verifiedParameters": [
+        "length",
+        "diameter"
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Published 307 mm length and 25 mm body diameter; simplified nose and fins.",
+        "limitations": "External airframe reference for educational model rockets: open tube, hollow nose and separate fins. Z is the longitudinal axis. No motor mount, motor, igniter, propellant or deployment mechanism. Published product dimensions are rounded; tube wall, nose profile/length and fin shapes are editable assumptions, not traced factory parts. The nose sits at the tube end without a modeled retention joint. These are layout solids, not flight-ready kits.",
+        "sourceUrl": "https://estesrockets.com/products/alpha-iii"
+      },
+      "specifications": [
+        {
+          "label": "Reference dimensions",
+          "value": "length: 307 mm, diameter: 25 mm"
+        },
+        {
+          "label": "Geometry scope",
+          "value": "Simplified editable reference; unlisted dimensions and fittings are design assumptions, not manufacturer CAD."
+        }
+      ]
+    }
+  },
+  {
+    "id": "estes-big-bertha",
+    "name": "Estes Big Bertha",
+    "description": "Published 610 mm length and 42 mm body diameter; simplified nose and fins.",
+    "parameters": {
+      "length": 610,
+      "diameter": 42,
+      "wall": 0.8,
+      "noseLength": 78,
+      "nose": "elliptical",
+      "finCount": 4,
+      "finRoot": 112,
+      "finTip": 38,
+      "finSpan": 58,
+      "finSweep": 10,
+      "finThickness": 2
+    },
+    "catalog": {
+      "designation": "Estes Big Bertha",
+      "manufacturer": "Estes",
+      "sourceName": "Estes · dimensions",
+      "sourceUrl": "https://estesrockets.com/products/big-bertha",
+      "verifiedParameters": [
+        "length",
+        "diameter"
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Published 610 mm length and 42 mm body diameter; simplified nose and fins.",
+        "limitations": "External airframe reference for educational model rockets: open tube, hollow nose and separate fins. Z is the longitudinal axis. No motor mount, motor, igniter, propellant or deployment mechanism. Published product dimensions are rounded; tube wall, nose profile/length and fin shapes are editable assumptions, not traced factory parts. The nose sits at the tube end without a modeled retention joint. These are layout solids, not flight-ready kits.",
+        "sourceUrl": "https://estesrockets.com/products/big-bertha"
+      },
+      "specifications": [
+        {
+          "label": "Reference dimensions",
+          "value": "length: 610 mm, diameter: 42 mm"
+        },
+        {
+          "label": "Geometry scope",
+          "value": "Simplified editable reference; unlisted dimensions and fittings are design assumptions, not manufacturer CAD."
+        }
+      ]
+    }
+  }
+]

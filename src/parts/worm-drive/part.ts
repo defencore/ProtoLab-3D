@@ -147,8 +147,8 @@ function build(p: Parameters, state: string): Group {
 const part: PartDefinition = {
   id: 'worm-drive',
   name: 'Worm drive',
-  category: 'MOTION',
-  subgroup: 'GEARS & RACKS',
+  category: 'TRANSMISSION & LINKAGES',
+  subgroup: 'GEARS & GEAR DRIVES',
   icon: 'gear',
   complexity: 'Worm + wheel',
   description:

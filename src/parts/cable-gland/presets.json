@@ -1,0 +1,26 @@
+[
+  {
+    "id": "gland6",
+    "name": "Cable gland \u00b7 \u00d86 cable",
+    "description": "Panel cable gland with separate compression nut, body and seal envelope. Editable prototype dimensions.",
+    "parameters": {
+      "cable": 6,
+      "thread": 12,
+      "hex": 18,
+      "length": 22,
+      "nut": 8
+    }
+  },
+  {
+    "id": "gland10",
+    "name": "Cable gland \u00b7 \u00d810 cable",
+    "description": "Panel cable gland with separate compression nut, body and seal envelope. Editable prototype dimensions.",
+    "parameters": {
+      "cable": 10,
+      "thread": 20,
+      "hex": 27,
+      "length": 30,
+      "nut": 10
+    }
+  }
+]

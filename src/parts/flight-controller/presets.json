@@ -1,0 +1,680 @@
+[
+  {
+    "id": "betafpv-f4-1s-light",
+    "name": "BETAFPV F4 1S 5 A · Light",
+    "description": "30 × 30 mm · Whoop 26 mm · Solder pads",
+    "parameters": {
+      "model": "betafpv-f4-1s-light"
+    },
+    "catalog": {
+      "designation": "BETAFPV F4 1S 5A — Light",
+      "manufacturer": "BETAFPV",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://betafpv.com/products/f4-1s-5a-aio-brushless-flight-controller-elrs-2-4g",
+      "alternateSourceUrls": [
+        "https://betafpv.com/products/f4-1s-5a-aio-brushless-flight-controller-elrs-2-4g",
+        "https://betafpv.com/products/f4-1s-5a-aio-brushless-flight-controller-elrs-2-4g",
+        "https://betafpv.com/products/f4-1s-5a-aio-brushless-flight-controller-elrs-2-4g"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "BETAFPV",
+        "width": 30,
+        "length": 30,
+        "weight": 2.96,
+        "kind": "Whoop AIO",
+        "mount": "Whoop 26 mm",
+        "motorConnection": "Solder pads",
+        "outputs": 4,
+        "usb": "Micro USB",
+        "onboardESC": true,
+        "hdSocket": false,
+        "can": false,
+        "cellsMin": 1,
+        "cellsMax": 1
+      },
+      "attributeConditions": {
+        "weight": "Manufacturer mass for the named hardware. Loose cables and accessories excluded; Mini case mass comes from the store specification.",
+        "mount": "Manufacturer nominal 26 × 26 mm whoop format; no verified Cartesian pitch or bore diameter assigned.",
+        "cellsMin": "Direct LiPo battery input. BEC output ratings are not controller consumption.",
+        "cellsMax": "Direct LiPo battery input. BEC output ratings are not controller consumption."
+      },
+      "specifications": [
+        {
+          "label": "Width (X)",
+          "value": "30 mm"
+        },
+        {
+          "label": "Length (Y)",
+          "value": "30 mm"
+        },
+        {
+          "label": "Published mass",
+          "value": "2.96 g"
+        },
+        {
+          "label": "Motor / PWM signal outputs",
+          "value": "4"
+        },
+        {
+          "label": "USB connector",
+          "value": "Micro USB"
+        },
+        {
+          "label": "Motor / PWM connection",
+          "value": "Solder pads"
+        },
+        {
+          "label": "Physical distinction and model scope",
+          "value": "Serial ELRS revision. Classical has four three-contact motor sockets; Light has solder pads only. Bare board without BT2.0 power lead or wire antenna. Height, bore diameter and connector offsets are illustrative. Nominal 26 mm whoop mounting is represented with opposing holes on the board axes as photographed; not a verified square drilling template."
+        },
+        {
+          "label": "Geometry fidelity",
+          "value": "Reconstructed external envelope. Undimensioned outlines, components, connector bodies, offsets and internals are illustrative; connector pins are visual geometry, not a wiring guide."
+        },
+        {
+          "label": "Integrated ESC rating",
+          "value": "Four 5 A continuous motor channels; 6 A peak for 3 seconds. This is not FC supply current."
+        }
+      ]
+    }
+  },
+  {
+    "id": "betafpv-f4-1s-classical",
+    "name": "BETAFPV F4 1S 5 A · Classical",
+    "description": "30 × 30 mm · Whoop 26 mm · 4 motor sockets",
+    "parameters": {
+      "model": "betafpv-f4-1s-classical"
+    },
+    "catalog": {
+      "designation": "BETAFPV F4 1S 5A — Classical",
+      "manufacturer": "BETAFPV",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://betafpv.com/products/f4-1s-5a-aio-brushless-flight-controller-elrs-2-4g",
+      "alternateSourceUrls": [
+        "https://betafpv.com/products/f4-1s-5a-aio-brushless-flight-controller-elrs-2-4g",
+        "https://betafpv.com/products/f4-1s-5a-aio-brushless-flight-controller-elrs-2-4g",
+        "https://betafpv.com/products/f4-1s-5a-aio-brushless-flight-controller-elrs-2-4g"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "BETAFPV",
+        "width": 30,
+        "length": 30,
+        "weight": 3.64,
+        "kind": "Whoop AIO",
+        "mount": "Whoop 26 mm",
+        "motorConnection": "4 motor sockets",
+        "outputs": 4,
+        "usb": "Micro USB",
+        "onboardESC": true,
+        "hdSocket": false,
+        "can": false,
+        "cellsMin": 1,
+        "cellsMax": 1
+      },
+      "attributeConditions": {
+        "weight": "Manufacturer mass for the named hardware. Loose cables and accessories excluded; Mini case mass comes from the store specification.",
+        "mount": "Manufacturer nominal 26 × 26 mm whoop format; no verified Cartesian pitch or bore diameter assigned.",
+        "cellsMin": "Direct LiPo battery input. BEC output ratings are not controller consumption.",
+        "cellsMax": "Direct LiPo battery input. BEC output ratings are not controller consumption."
+      },
+      "specifications": [
+        {
+          "label": "Width (X)",
+          "value": "30 mm"
+        },
+        {
+          "label": "Length (Y)",
+          "value": "30 mm"
+        },
+        {
+          "label": "Published mass",
+          "value": "3.64 g"
+        },
+        {
+          "label": "Motor / PWM signal outputs",
+          "value": "4"
+        },
+        {
+          "label": "USB connector",
+          "value": "Micro USB"
+        },
+        {
+          "label": "Motor / PWM connection",
+          "value": "4 motor sockets"
+        },
+        {
+          "label": "Physical distinction and model scope",
+          "value": "Serial ELRS revision. Classical has four three-contact motor sockets; Light has solder pads only. Bare board without BT2.0 power lead or wire antenna. Height, bore diameter and connector offsets are illustrative. Nominal 26 mm whoop mounting is represented with opposing holes on the board axes as photographed; not a verified square drilling template."
+        },
+        {
+          "label": "Geometry fidelity",
+          "value": "Reconstructed external envelope. Undimensioned outlines, components, connector bodies, offsets and internals are illustrative; connector pins are visual geometry, not a wiring guide."
+        },
+        {
+          "label": "Integrated ESC rating",
+          "value": "Four 5 A continuous motor channels; 6 A peak for 3 seconds. This is not FC supply current."
+        }
+      ]
+    }
+  },
+  {
+    "id": "speedybee-f405-mini",
+    "name": "SpeedyBee F405 Mini",
+    "description": "32 × 30 mm · 20 × 20 mm · 8-pin ESC socket",
+    "parameters": {
+      "model": "speedybee-f405-mini"
+    },
+    "catalog": {
+      "designation": "SpeedyBee F405 Mini",
+      "manufacturer": "SpeedyBee",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://www.speedybee.com/speedybee-f405-mini-bls-35a-20x20-stack/",
+      "alternateSourceUrls": [
+        "https://www.speedybee.com/speedybee-f405-mini-bls-35a-20x20-stack/"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "SpeedyBee",
+        "width": 32,
+        "length": 30,
+        "height": 7.8,
+        "weight": 9.6,
+        "kind": "Stack FC",
+        "mount": "20 × 20 mm",
+        "motorConnection": "8-pin ESC socket",
+        "outputs": 4,
+        "usb": "USB-C",
+        "onboardESC": false,
+        "hdSocket": false,
+        "can": false,
+        "cellsMin": 3,
+        "cellsMax": 6,
+        "mountX": 20,
+        "mountY": 20,
+        "hole": 3.5
+      },
+      "attributeConditions": {
+        "weight": "Manufacturer mass for the named hardware. Loose cables and accessories excluded; Mini case mass comes from the store specification.",
+        "cellsMin": "Direct LiPo battery input. BEC output ratings are not controller consumption.",
+        "cellsMax": "Direct LiPo battery input. BEC output ratings are not controller consumption."
+      },
+      "specifications": [
+        {
+          "label": "Width (X)",
+          "value": "32 mm"
+        },
+        {
+          "label": "Length (Y)",
+          "value": "30 mm"
+        },
+        {
+          "label": "Height",
+          "value": "7.8 mm"
+        },
+        {
+          "label": "Published mass",
+          "value": "9.6 g"
+        },
+        {
+          "label": "Mounting pitch X",
+          "value": "20 mm"
+        },
+        {
+          "label": "Mounting pitch Y",
+          "value": "20 mm"
+        },
+        {
+          "label": "Bare PCB bore",
+          "value": "3.5 mm"
+        },
+        {
+          "label": "Motor / PWM signal outputs",
+          "value": "4"
+        },
+        {
+          "label": "USB connector",
+          "value": "USB-C"
+        },
+        {
+          "label": "Motor / PWM connection",
+          "value": "8-pin ESC socket"
+        },
+        {
+          "label": "Physical distinction and model scope",
+          "value": "FC alone, not the 35 A ESC or full stack. USB-C, underside SH 1.0 mm eight-pin ESC socket; DJI/VTX uses solder pads, not a dedicated socket. Six UART assignments include Bluetooth and ESC telemetry."
+        },
+        {
+          "label": "Geometry fidelity",
+          "value": "Reconstructed external envelope. Undimensioned outlines, components, connector bodies, offsets and internals are illustrative; connector pins are visual geometry, not a wiring guide."
+        }
+      ]
+    }
+  },
+  {
+    "id": "speedybee-f405-v4",
+    "name": "SpeedyBee F405 V4",
+    "description": "39.4 × 41.6 mm · 30.5 × 30.5 mm · 8-pin ESC socket",
+    "parameters": {
+      "model": "speedybee-f405-v4"
+    },
+    "catalog": {
+      "designation": "SpeedyBee F405 V4",
+      "manufacturer": "SpeedyBee",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://www.speedybee.com/speedybee-f405-v4-bls-55a-30x30-fc-esc-stack/",
+      "alternateSourceUrls": [
+        "https://www.speedybee.com/speedybee-f405-v4-bls-55a-30x30-fc-esc-stack/"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "SpeedyBee",
+        "width": 39.4,
+        "length": 41.6,
+        "height": 7.8,
+        "weight": 10.5,
+        "kind": "Stack FC",
+        "mount": "30.5 × 30.5 mm",
+        "motorConnection": "8-pin ESC socket",
+        "outputs": 8,
+        "usb": "USB-C",
+        "onboardESC": false,
+        "hdSocket": true,
+        "can": false,
+        "cellsMin": 3,
+        "cellsMax": 6,
+        "mountX": 30.5,
+        "mountY": 30.5,
+        "hole": 4
+      },
+      "attributeConditions": {
+        "weight": "Manufacturer mass for the named hardware. Loose cables and accessories excluded; Mini case mass comes from the store specification.",
+        "cellsMin": "Direct LiPo battery input. BEC output ratings are not controller consumption.",
+        "cellsMax": "Direct LiPo battery input. BEC output ratings are not controller consumption."
+      },
+      "specifications": [
+        {
+          "label": "Width (X)",
+          "value": "39.4 mm"
+        },
+        {
+          "label": "Length (Y)",
+          "value": "41.6 mm"
+        },
+        {
+          "label": "Height",
+          "value": "7.8 mm"
+        },
+        {
+          "label": "Published mass",
+          "value": "10.5 g"
+        },
+        {
+          "label": "Mounting pitch X",
+          "value": "30.5 mm"
+        },
+        {
+          "label": "Mounting pitch Y",
+          "value": "30.5 mm"
+        },
+        {
+          "label": "Bare PCB bore",
+          "value": "4 mm"
+        },
+        {
+          "label": "Motor / PWM signal outputs",
+          "value": "8"
+        },
+        {
+          "label": "USB connector",
+          "value": "USB-C"
+        },
+        {
+          "label": "Motor / PWM connection",
+          "value": "8-pin ESC socket"
+        },
+        {
+          "label": "Physical distinction and model scope",
+          "value": "FC alone, not the 55 A ESC. USB-C, underside ESC eight-pin and HD VTX six-pin sockets plus microSD slot. Six UART assignments include Bluetooth and ESC telemetry."
+        },
+        {
+          "label": "Geometry fidelity",
+          "value": "Reconstructed external envelope. Undimensioned outlines, components, connector bodies, offsets and internals are illustrative; connector pins are visual geometry, not a wiring guide."
+        }
+      ]
+    }
+  },
+  {
+    "id": "kakute-h7-mini",
+    "name": "Holybro Kakute H7 Mini v1.5",
+    "description": "31 × 30 mm · 20 × 20 mm · 8-pin ESC socket",
+    "parameters": {
+      "model": "kakute-h7-mini"
+    },
+    "catalog": {
+      "designation": "Holybro Kakute H7 Mini v1.5",
+      "manufacturer": "Holybro",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://holybro.com/products/kakute-h7-mini",
+      "alternateSourceUrls": [
+        "https://holybro.com/products/kakute-h7-mini"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Holybro",
+        "width": 31,
+        "length": 30,
+        "height": 6,
+        "weight": 5.5,
+        "kind": "Stack FC",
+        "mount": "20 × 20 mm",
+        "motorConnection": "8-pin ESC socket",
+        "outputs": 8,
+        "onboardESC": false,
+        "hdSocket": true,
+        "can": false,
+        "cellsMin": 2,
+        "cellsMax": 6,
+        "mountX": 20,
+        "mountY": 20,
+        "hole": 3.6
+      },
+      "attributeConditions": {
+        "weight": "Manufacturer mass for the named hardware. Loose cables and accessories excluded; Mini case mass comes from the store specification.",
+        "cellsMin": "Direct LiPo battery input. BEC output ratings are not controller consumption.",
+        "cellsMax": "Direct LiPo battery input. BEC output ratings are not controller consumption."
+      },
+      "specifications": [
+        {
+          "label": "Width (X)",
+          "value": "31 mm"
+        },
+        {
+          "label": "Length (Y)",
+          "value": "30 mm"
+        },
+        {
+          "label": "Height",
+          "value": "6 mm"
+        },
+        {
+          "label": "Published mass",
+          "value": "5.5 g"
+        },
+        {
+          "label": "Mounting pitch X",
+          "value": "20 mm"
+        },
+        {
+          "label": "Mounting pitch Y",
+          "value": "20 mm"
+        },
+        {
+          "label": "Bare PCB bore",
+          "value": "3.6 mm"
+        },
+        {
+          "label": "Motor / PWM signal outputs",
+          "value": "8"
+        },
+        {
+          "label": "Motor / PWM connection",
+          "value": "8-pin ESC socket"
+        },
+        {
+          "label": "Physical distinction and model scope",
+          "value": "FC alone. SH 1.0 mm eight-pin ESC and six-pin VTX sockets. Bare mounting bores 3.6 mm; grommets accept M2/M3. USB shell reconstructed from the pinout illustration; connector subtype is not assigned to a filter. MCU/IMU-only revisions are not separate entries."
+        },
+        {
+          "label": "Geometry fidelity",
+          "value": "Reconstructed external envelope. Undimensioned outlines, components, connector bodies, offsets and internals are illustrative; connector pins are visual geometry, not a wiring guide."
+        }
+      ]
+    }
+  },
+  {
+    "id": "pixhawk-6c",
+    "name": "Holybro Pixhawk 6C · plastic case",
+    "description": "44 × 84.8 mm · Case · GH PWM breakout",
+    "parameters": {
+      "model": "pixhawk-6c"
+    },
+    "catalog": {
+      "designation": "Holybro Pixhawk 6C — plastic case",
+      "manufacturer": "Holybro",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://holybro.com/products/pixhawk-6c",
+      "alternateSourceUrls": [
+        "https://holybro.com/products/pixhawk-6c"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Holybro",
+        "width": 44,
+        "length": 84.8,
+        "height": 12.4,
+        "weight": 34.6,
+        "kind": "Cased autopilot",
+        "mount": "Case",
+        "motorConnection": "GH PWM breakout",
+        "outputs": 16,
+        "usb": "USB-C",
+        "onboardESC": false,
+        "hdSocket": false,
+        "can": true
+      },
+      "attributeConditions": {
+        "weight": "Manufacturer mass for the named hardware. Loose cables and accessories excluded; Mini case mass comes from the store specification."
+      },
+      "specifications": [
+        {
+          "label": "Width (X)",
+          "value": "44 mm"
+        },
+        {
+          "label": "Length (Y)",
+          "value": "84.8 mm"
+        },
+        {
+          "label": "Height",
+          "value": "12.4 mm"
+        },
+        {
+          "label": "Published mass",
+          "value": "34.6 g"
+        },
+        {
+          "label": "Motor / PWM signal outputs",
+          "value": "16"
+        },
+        {
+          "label": "USB connector",
+          "value": "USB-C"
+        },
+        {
+          "label": "Motor / PWM connection",
+          "value": "GH PWM breakout"
+        },
+        {
+          "label": "Physical distinction and model scope",
+          "value": "Plastic enclosure only; aluminum case shares the published envelope and is not duplicated. Top GH ports include two ten-pin PWM breakout sockets; external breakout boards excluded. USB-C, microSD and two side debug ports. Case fasteners and port offsets reconstructed. Regulated power input up to 6 V; servo rail 0–36 V is not the controller supply."
+        },
+        {
+          "label": "Geometry fidelity",
+          "value": "Reconstructed external envelope. Undimensioned outlines, components, connector bodies, offsets and internals are illustrative; connector pins are visual geometry, not a wiring guide."
+        }
+      ]
+    }
+  },
+  {
+    "id": "pixhawk-6c-mini-a",
+    "name": "Holybro Pixhawk 6C Mini · Model A (current)",
+    "description": "39 × 54.3 mm · Case · End-facing PWM headers",
+    "parameters": {
+      "model": "pixhawk-6c-mini-a"
+    },
+    "catalog": {
+      "designation": "Holybro Pixhawk 6C Mini — Model A (current)",
+      "manufacturer": "Holybro",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://docs.holybro.com/autopilot/pixhawk-6c-mini/dimensions",
+      "alternateSourceUrls": [
+        "https://docs.holybro.com/autopilot/pixhawk-6c-mini/dimensions",
+        "https://docs.holybro.com/autopilot/pixhawk-6c-mini/dimensions"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Holybro",
+        "width": 39,
+        "length": 54.3,
+        "height": 17.5,
+        "weight": 39.2,
+        "kind": "Cased autopilot",
+        "mount": "Case",
+        "motorConnection": "End-facing PWM headers",
+        "outputs": 14,
+        "usb": "USB-C",
+        "onboardESC": false,
+        "hdSocket": false,
+        "can": true
+      },
+      "attributeConditions": {
+        "weight": "Manufacturer mass for the named hardware. Loose cables and accessories excluded; Mini case mass comes from the store specification.",
+        "height": "Current manufacturer drawing takes precedence over the conflicting store table.",
+        "length": "Current manufacturer drawing takes precedence over the conflicting store table."
+      },
+      "specifications": [
+        {
+          "label": "Width (X)",
+          "value": "39 mm"
+        },
+        {
+          "label": "Length (Y)",
+          "value": "54.3 mm"
+        },
+        {
+          "label": "Height",
+          "value": "17.5 mm"
+        },
+        {
+          "label": "Published mass",
+          "value": "39.2 g"
+        },
+        {
+          "label": "Motor / PWM signal outputs",
+          "value": "14"
+        },
+        {
+          "label": "USB connector",
+          "value": "USB-C"
+        },
+        {
+          "label": "Motor / PWM connection",
+          "value": "End-facing PWM headers"
+        },
+        {
+          "label": "Physical distinction and model scope",
+          "value": "Envelope follows the current mechanical drawing: 54.3 × 39 × 17.5 mm. The store table differs (A: 53.3 × 39 × 16.2; B: 58.3 × 39 × 18.15). Three-row 2.54 mm headers face the end. Eight MAIN and six AUX outputs plus RC IN. Case screw patterns shown in the drawing are not treated as verified through-mount holes. Regulated input up to 6 V, separate from 0–36 V servo rail."
+        },
+        {
+          "label": "Geometry fidelity",
+          "value": "Reconstructed external envelope. Undimensioned outlines, components, connector bodies, offsets and internals are illustrative; connector pins are visual geometry, not a wiring guide."
+        }
+      ]
+    }
+  },
+  {
+    "id": "pixhawk-6c-mini-b",
+    "name": "Holybro Pixhawk 6C Mini · Model B",
+    "description": "39 × 58.3 mm · Case · Top-facing PWM headers",
+    "parameters": {
+      "model": "pixhawk-6c-mini-b"
+    },
+    "catalog": {
+      "designation": "Holybro Pixhawk 6C Mini — Model B",
+      "manufacturer": "Holybro",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://docs.holybro.com/autopilot/pixhawk-6c-mini/dimensions",
+      "alternateSourceUrls": [
+        "https://docs.holybro.com/autopilot/pixhawk-6c-mini/dimensions",
+        "https://docs.holybro.com/autopilot/pixhawk-6c-mini/dimensions"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Holybro",
+        "width": 39,
+        "length": 58.3,
+        "height": 18.2,
+        "weight": 46.8,
+        "kind": "Cased autopilot",
+        "mount": "Case",
+        "motorConnection": "Top-facing PWM headers",
+        "outputs": 14,
+        "usb": "USB-C",
+        "onboardESC": false,
+        "hdSocket": false,
+        "can": true
+      },
+      "attributeConditions": {
+        "weight": "Manufacturer mass for the named hardware. Loose cables and accessories excluded; Mini case mass comes from the store specification.",
+        "height": "Current manufacturer drawing takes precedence over the conflicting store table.",
+        "length": "Current manufacturer drawing takes precedence over the conflicting store table."
+      },
+      "specifications": [
+        {
+          "label": "Width (X)",
+          "value": "39 mm"
+        },
+        {
+          "label": "Length (Y)",
+          "value": "58.3 mm"
+        },
+        {
+          "label": "Height",
+          "value": "18.2 mm"
+        },
+        {
+          "label": "Published mass",
+          "value": "46.8 g"
+        },
+        {
+          "label": "Motor / PWM signal outputs",
+          "value": "14"
+        },
+        {
+          "label": "USB connector",
+          "value": "USB-C"
+        },
+        {
+          "label": "Motor / PWM connection",
+          "value": "Top-facing PWM headers"
+        },
+        {
+          "label": "Physical distinction and model scope",
+          "value": "Envelope follows the current mechanical drawing: 58.3 × 39 × 18.2 mm. The store table differs (A: 53.3 × 39 × 16.2; B: 58.3 × 39 × 18.15). Three-row 2.54 mm headers face up. Eight MAIN and six AUX outputs plus RC IN. Case screw patterns shown in the drawing are not treated as verified through-mount holes. Regulated input up to 6 V, separate from 0–36 V servo rail."
+        },
+        {
+          "label": "Geometry fidelity",
+          "value": "Reconstructed external envelope. Undimensioned outlines, components, connector bodies, offsets and internals are illustrative; connector pins are visual geometry, not a wiring guide."
+        }
+      ]
+    }
+  }
+]

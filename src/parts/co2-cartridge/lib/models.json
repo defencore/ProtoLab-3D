@@ -1,0 +1,242 @@
+[
+  {
+    "id": "leland-40102",
+    "sku": "40102",
+    "name": "Leland 40102 · 8 g · Unthreaded",
+    "gasMass": 8,
+    "length": 64.008,
+    "diameter": 18.5928,
+    "neckDiameter": 8.5852,
+    "neckLength": 5.842,
+    "tpi": 0,
+    "connection": "Smooth / unthreaded",
+    "source": "https://www.lelandltd.com/small_high_pressure.htm",
+    "sourceSection": "1.1",
+    "sourceInches": {
+      "length": 2.52,
+      "diameter": 0.732,
+      "neckDiameter": 0.338,
+      "neckLength": 0.23
+    }
+  },
+  {
+    "id": "leland-80121",
+    "sku": "80121",
+    "name": "Leland 80121 · 8 g · 3/8″-24 UNF",
+    "gasMass": 8,
+    "length": 67.0052,
+    "diameter": 18.669,
+    "neckDiameter": 9.525,
+    "neckLength": 9.271,
+    "tpi": 24,
+    "connection": "3/8″-24 UNF",
+    "source": "https://www.lelandltd.com/small_high_pressure2.1.htm",
+    "sourceSection": "2.1",
+    "sourceInches": {
+      "length": 2.638,
+      "diameter": 0.735,
+      "neckDiameter": 0.375,
+      "neckLength": 0.365
+    }
+  },
+  {
+    "id": "leland-42221",
+    "sku": "42221",
+    "name": "Leland 42221 · 12 g · Unthreaded",
+    "gasMass": 12,
+    "length": 82.296,
+    "diameter": 18.923,
+    "neckDiameter": 7.2898,
+    "neckLength": 3.9878,
+    "tpi": 0,
+    "connection": "Smooth / unthreaded",
+    "source": "https://www.lelandltd.com/small_high_pressure3.1.htm",
+    "sourceSection": "3.1",
+    "sourceInches": {
+      "length": 3.24,
+      "diameter": 0.745,
+      "neckDiameter": 0.287,
+      "neckLength": 0.157
+    }
+  },
+  {
+    "id": "leland-81121",
+    "sku": "81121",
+    "name": "Leland 81121 · 12 g · 3/8″-24 UNF",
+    "gasMass": 12,
+    "length": 82.55,
+    "diameter": 18.669,
+    "neckDiameter": 9.525,
+    "neckLength": 9.271,
+    "tpi": 24,
+    "connection": "3/8″-24 UNF",
+    "source": "https://www.lelandltd.com/small_high_pressure2.1.htm",
+    "sourceSection": "2.1",
+    "sourceInches": {
+      "length": 3.25,
+      "diameter": 0.735,
+      "neckDiameter": 0.375,
+      "neckLength": 0.365
+    }
+  },
+  {
+    "id": "leland-42101",
+    "sku": "42101",
+    "name": "Leland 42101 · 16 g · Unthreaded",
+    "gasMass": 16,
+    "length": 88.392,
+    "diameter": 21.7932,
+    "neckDiameter": 9.2456,
+    "neckLength": 5.9944,
+    "tpi": 0,
+    "connection": "Smooth / unthreaded",
+    "source": "https://www.lelandltd.com/small_high_pressure.htm",
+    "sourceSection": "1.1",
+    "sourceInches": {
+      "length": 3.48,
+      "diameter": 0.858,
+      "neckDiameter": 0.364,
+      "neckLength": 0.236
+    }
+  },
+  {
+    "id": "leland-82122",
+    "sku": "82122",
+    "name": "Leland 82122 · 16 g · 3/8″-24 UNF",
+    "gasMass": 16,
+    "length": 88.392,
+    "diameter": 21.844,
+    "neckDiameter": 9.525,
+    "neckLength": 9.271,
+    "tpi": 24,
+    "connection": "3/8″-24 UNF",
+    "source": "https://www.lelandltd.com/small_high_pressure2.1.htm",
+    "sourceSection": "2.1",
+    "sourceInches": {
+      "length": 3.48,
+      "diameter": 0.86,
+      "neckDiameter": 0.375,
+      "neckLength": 0.365
+    }
+  },
+  {
+    "id": "leland-84201",
+    "sku": "84201",
+    "name": "Leland 84201 · 20 g · 1/2″-20 UNF",
+    "gasMass": 20,
+    "length": 102.997,
+    "diameter": 25.4,
+    "neckDiameter": 12.7,
+    "neckLength": 14.5034,
+    "tpi": 20,
+    "connection": "1/2″-20 UNF",
+    "source": "https://www.lelandltd.com/small_high_pressure2.1.htm",
+    "sourceSection": "2.1",
+    "sourceInches": {
+      "length": 4.055,
+      "diameter": 1,
+      "neckDiameter": 0.5,
+      "neckLength": 0.571
+    }
+  },
+  {
+    "id": "leland-84121",
+    "sku": "84121",
+    "name": "Leland 84121 · 25 g · 3/8″-24 UNF",
+    "gasMass": 25,
+    "length": 105.156,
+    "diameter": 25.4,
+    "neckDiameter": 9.525,
+    "neckLength": 11.5062,
+    "tpi": 24,
+    "connection": "3/8″-24 UNF",
+    "source": "https://www.lelandltd.com/small_high_pressure2.1.htm",
+    "sourceSection": "2.1",
+    "sourceInches": {
+      "length": 4.14,
+      "diameter": 1,
+      "neckDiameter": 0.375,
+      "neckLength": 0.453
+    }
+  },
+  {
+    "id": "leland-85202",
+    "sku": "85202",
+    "name": "Leland 85202 · 33 g · 1/2″-20 UNF",
+    "gasMass": 33,
+    "length": 139.7,
+    "diameter": 25.4,
+    "neckDiameter": 12.7,
+    "neckLength": 12.4968,
+    "tpi": 20,
+    "connection": "1/2″-20 UNF",
+    "source": "https://www.lelandltd.com/small_high_pressure2.1.htm",
+    "sourceSection": "2.1",
+    "sourceInches": {
+      "length": 5.5,
+      "diameter": 1,
+      "neckDiameter": 0.5,
+      "neckLength": 0.492
+    }
+  },
+  {
+    "id": "leland-86121",
+    "sku": "86121",
+    "name": "Leland 86121 · 38 g · 3/8″-24 UNF",
+    "gasMass": 38,
+    "length": 118.11,
+    "diameter": 29.972,
+    "neckDiameter": 9.525,
+    "neckLength": 11.049,
+    "tpi": 24,
+    "connection": "3/8″-24 UNF",
+    "source": "https://www.lelandltd.com/small_high_pressure2.1.htm",
+    "sourceSection": "2.1",
+    "sourceInches": {
+      "length": 4.65,
+      "diameter": 1.18,
+      "neckDiameter": 0.375,
+      "neckLength": 0.435
+    }
+  },
+  {
+    "id": "leland-86202",
+    "sku": "86202",
+    "name": "Leland 86202 · 38 g · 1/2″-20 UNF",
+    "gasMass": 38,
+    "length": 118.11,
+    "diameter": 29.972,
+    "neckDiameter": 12.7,
+    "neckLength": 11.049,
+    "tpi": 20,
+    "connection": "1/2″-20 UNF",
+    "source": "https://www.lelandltd.com/small_high_pressure2.1.htm",
+    "sourceSection": "2.1",
+    "sourceInches": {
+      "length": 4.65,
+      "diameter": 1.18,
+      "neckDiameter": 0.5,
+      "neckLength": 0.435
+    }
+  },
+  {
+    "id": "leland-87202",
+    "sku": "87202",
+    "name": "Leland 87202 · 45 g · 1/2″-20 UNF",
+    "gasMass": 45,
+    "length": 137.9982,
+    "diameter": 29.9974,
+    "neckDiameter": 12.7,
+    "neckLength": 13.0048,
+    "tpi": 20,
+    "connection": "1/2″-20 UNF",
+    "source": "https://www.lelandltd.com/small_high_pressure2.1.htm",
+    "sourceSection": "2.1",
+    "sourceInches": {
+      "length": 5.433,
+      "diameter": 1.181,
+      "neckDiameter": 0.5,
+      "neckLength": 0.512
+    }
+  }
+]

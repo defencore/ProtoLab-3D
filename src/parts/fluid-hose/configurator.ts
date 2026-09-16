@@ -1,0 +1,60 @@
+import type { Parameters, ParameterDefinition } from '../../core/types';
+export const defaults: Parameters = {
+  form: 'straight',
+  diameter: 10,
+  bore: 6,
+  length: 100,
+  radius: 30,
+};
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'form',
+    label: 'Route shape',
+    type: 'select',
+    group: 'Configuration',
+    options: [
+      { value: 'straight', label: 'Straight' },
+      { value: 'elbow', label: '90-degree bend' },
+    ],
+  },
+  {
+    key: 'diameter',
+    label: 'Outside diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'bore',
+    label: 'Inside diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'length',
+    label: 'Straight length',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'radius',
+    label: 'Bend centreline radius',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+];

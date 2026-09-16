@@ -1,7 +1,7 @@
 [
   {
     "id": "reference-pushrod-2mm-25x7",
-    "name": "Pushrod fork \u00b7 2 mm rod \u00b7 25 \u00d7 7 mm",
+    "name": "Pushrod fork · 2 mm rod · 25 × 7 mm",
     "description": "Supplied dimensional reference. Fork depth, pin setback and hardware envelopes remain editable assumptions.",
     "parameters": {
       "variant": "pushrod",
@@ -26,9 +26,9 @@
       "finish": "red"
     },
     "catalog": {
-      "designation": "25 \u00d7 7 mm pushrod clevis",
+      "designation": "25 × 7 mm pushrod clevis",
       "sourceName": "User-supplied pushrod clevis drawing",
-      "sourceUrl": "references/clevis-pushrod-dimensions.png",
+      "sourceUrl": "",
       "sourceKind": "attachment",
       "verifiedParameters": [
         "length",
@@ -43,7 +43,7 @@
   },
   {
     "id": "reference-cable-1p5",
-    "name": "Cable fork terminal \u00b7 1.5 mm cable",
+    "name": "Cable fork terminal · 1.5 mm cable",
     "description": "Only the cable bore option is established by the supplied listing. Fork, barrel and fasteners are scalable prototype geometry.",
     "parameters": {
       "variant": "cable",
@@ -68,11 +68,13 @@
       "finish": "steel"
     },
     "catalog": {
-      "designation": "Cable fork \u00b7 1.5 mm",
+      "designation": "Cable fork · 1.5 mm",
       "sourceName": "User-supplied cable fork terminal listing",
-      "sourceUrl": "references/clevis-cable-terminal.png",
+      "sourceUrl": "",
       "sourceKind": "attachment",
-      "verifiedParameters": ["rodDiameter"],
+      "verifiedParameters": [
+        "rodDiameter"
+      ],
       "specifications": [
         {
           "label": "Reference construction",
@@ -83,7 +85,7 @@
   },
   {
     "id": "reference-cable-2",
-    "name": "Cable fork terminal \u00b7 2 mm cable",
+    "name": "Cable fork terminal · 2 mm cable",
     "description": "Only the cable bore option is established by the supplied listing. Fork, barrel and fasteners are scalable prototype geometry.",
     "parameters": {
       "variant": "cable",
@@ -108,11 +110,13 @@
       "finish": "steel"
     },
     "catalog": {
-      "designation": "Cable fork \u00b7 2 mm",
+      "designation": "Cable fork · 2 mm",
       "sourceName": "User-supplied cable fork terminal listing",
-      "sourceUrl": "references/clevis-cable-terminal.png",
+      "sourceUrl": "",
       "sourceKind": "attachment",
-      "verifiedParameters": ["rodDiameter"],
+      "verifiedParameters": [
+        "rodDiameter"
+      ],
       "specifications": [
         {
           "label": "Reference construction",
@@ -123,7 +127,7 @@
   },
   {
     "id": "reference-cable-3",
-    "name": "Cable fork terminal \u00b7 3 mm cable",
+    "name": "Cable fork terminal · 3 mm cable",
     "description": "Only the cable bore option is established by the supplied listing. Fork, barrel and fasteners are scalable prototype geometry.",
     "parameters": {
       "variant": "cable",
@@ -148,11 +152,13 @@
       "finish": "steel"
     },
     "catalog": {
-      "designation": "Cable fork \u00b7 3 mm",
+      "designation": "Cable fork · 3 mm",
       "sourceName": "User-supplied cable fork terminal listing",
-      "sourceUrl": "references/clevis-cable-terminal.png",
+      "sourceUrl": "",
       "sourceKind": "attachment",
-      "verifiedParameters": ["rodDiameter"],
+      "verifiedParameters": [
+        "rodDiameter"
+      ],
       "specifications": [
         {
           "label": "Reference construction",
@@ -163,7 +169,7 @@
   },
   {
     "id": "reference-cable-4",
-    "name": "Cable fork terminal \u00b7 4 mm cable",
+    "name": "Cable fork terminal · 4 mm cable",
     "description": "Only the cable bore option is established by the supplied listing. Fork, barrel and fasteners are scalable prototype geometry.",
     "parameters": {
       "variant": "cable",
@@ -188,11 +194,13 @@
       "finish": "steel"
     },
     "catalog": {
-      "designation": "Cable fork \u00b7 4 mm",
+      "designation": "Cable fork · 4 mm",
       "sourceName": "User-supplied cable fork terminal listing",
-      "sourceUrl": "references/clevis-cable-terminal.png",
+      "sourceUrl": "",
       "sourceKind": "attachment",
-      "verifiedParameters": ["rodDiameter"],
+      "verifiedParameters": [
+        "rodDiameter"
+      ],
       "specifications": [
         {
           "label": "Reference construction",
@@ -203,7 +211,7 @@
   },
   {
     "id": "reference-cable-5",
-    "name": "Cable fork terminal \u00b7 5 mm cable",
+    "name": "Cable fork terminal · 5 mm cable",
     "description": "Only the cable bore option is established by the supplied listing. Fork, barrel and fasteners are scalable prototype geometry.",
     "parameters": {
       "variant": "cable",
@@ -228,11 +236,13 @@
       "finish": "steel"
     },
     "catalog": {
-      "designation": "Cable fork \u00b7 5 mm",
+      "designation": "Cable fork · 5 mm",
       "sourceName": "User-supplied cable fork terminal listing",
-      "sourceUrl": "references/clevis-cable-terminal.png",
+      "sourceUrl": "",
       "sourceKind": "attachment",
-      "verifiedParameters": ["rodDiameter"],
+      "verifiedParameters": [
+        "rodDiameter"
+      ],
       "specifications": [
         {
           "label": "Reference construction",
@@ -243,7 +253,7 @@
   },
   {
     "id": "reference-cable-6",
-    "name": "Cable fork terminal \u00b7 6 mm cable",
+    "name": "Cable fork terminal · 6 mm cable",
     "description": "Only the cable bore option is established by the supplied listing. Fork, barrel and fasteners are scalable prototype geometry.",
     "parameters": {
       "variant": "cable",
@@ -268,11 +278,13 @@
       "finish": "steel"
     },
     "catalog": {
-      "designation": "Cable fork \u00b7 6 mm",
+      "designation": "Cable fork · 6 mm",
       "sourceName": "User-supplied cable fork terminal listing",
-      "sourceUrl": "references/clevis-cable-terminal.png",
+      "sourceUrl": "",
       "sourceKind": "attachment",
-      "verifiedParameters": ["rodDiameter"],
+      "verifiedParameters": [
+        "rodDiameter"
+      ],
       "specifications": [
         {
           "label": "Reference construction",
@@ -283,7 +295,7 @@
   },
   {
     "id": "reference-cable-8",
-    "name": "Cable fork terminal \u00b7 8 mm cable",
+    "name": "Cable fork terminal · 8 mm cable",
     "description": "Only the cable bore option is established by the supplied listing. Fork, barrel and fasteners are scalable prototype geometry.",
     "parameters": {
       "variant": "cable",
@@ -308,11 +320,13 @@
       "finish": "steel"
     },
     "catalog": {
-      "designation": "Cable fork \u00b7 8 mm",
+      "designation": "Cable fork · 8 mm",
       "sourceName": "User-supplied cable fork terminal listing",
-      "sourceUrl": "references/clevis-cable-terminal.png",
+      "sourceUrl": "",
       "sourceKind": "attachment",
-      "verifiedParameters": ["rodDiameter"],
+      "verifiedParameters": [
+        "rodDiameter"
+      ],
       "specifications": [
         {
           "label": "Reference construction",
@@ -323,7 +337,7 @@
   },
   {
     "id": "reference-cable-10",
-    "name": "Cable fork terminal \u00b7 10 mm cable",
+    "name": "Cable fork terminal · 10 mm cable",
     "description": "Only the cable bore option is established by the supplied listing. Fork, barrel and fasteners are scalable prototype geometry.",
     "parameters": {
       "variant": "cable",
@@ -348,11 +362,13 @@
       "finish": "steel"
     },
     "catalog": {
-      "designation": "Cable fork \u00b7 10 mm",
+      "designation": "Cable fork · 10 mm",
       "sourceName": "User-supplied cable fork terminal listing",
-      "sourceUrl": "references/clevis-cable-terminal.png",
+      "sourceUrl": "",
       "sourceKind": "attachment",
-      "verifiedParameters": ["rodDiameter"],
+      "verifiedParameters": [
+        "rodDiameter"
+      ],
       "specifications": [
         {
           "label": "Reference construction",
@@ -363,7 +379,7 @@
   },
   {
     "id": "reference-cable-12",
-    "name": "Cable fork terminal \u00b7 12 mm cable",
+    "name": "Cable fork terminal · 12 mm cable",
     "description": "Only the cable bore option is established by the supplied listing. Fork, barrel and fasteners are scalable prototype geometry.",
     "parameters": {
       "variant": "cable",
@@ -388,11 +404,13 @@
       "finish": "steel"
     },
     "catalog": {
-      "designation": "Cable fork \u00b7 12 mm",
+      "designation": "Cable fork · 12 mm",
       "sourceName": "User-supplied cable fork terminal listing",
-      "sourceUrl": "references/clevis-cable-terminal.png",
+      "sourceUrl": "",
       "sourceKind": "attachment",
-      "verifiedParameters": ["rodDiameter"],
+      "verifiedParameters": [
+        "rodDiameter"
+      ],
       "specifications": [
         {
           "label": "Reference construction",
@@ -403,7 +421,7 @@
   },
   {
     "id": "example-female-threaded-m2",
-    "name": "Female fork \u00b7 M2 \u00d7 0.4",
+    "name": "Female fork · M2 × 0.4",
     "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
     "parameters": {
       "variant": "female-threaded",
@@ -430,7 +448,7 @@
   },
   {
     "id": "example-male-threaded-m2",
-    "name": "Male fork \u00b7 M2 \u00d7 0.4",
+    "name": "Male fork · M2 × 0.4",
     "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
     "parameters": {
       "variant": "male-threaded",
@@ -457,7 +475,7 @@
   },
   {
     "id": "example-female-threaded-m3",
-    "name": "Female fork \u00b7 M3 \u00d7 0.5",
+    "name": "Female fork · M3 × 0.5",
     "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
     "parameters": {
       "variant": "female-threaded",
@@ -484,7 +502,7 @@
   },
   {
     "id": "example-male-threaded-m3",
-    "name": "Male fork \u00b7 M3 \u00d7 0.5",
+    "name": "Male fork · M3 × 0.5",
     "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
     "parameters": {
       "variant": "male-threaded",
@@ -511,7 +529,7 @@
   },
   {
     "id": "example-female-threaded-m4",
-    "name": "Female fork \u00b7 M4 \u00d7 0.7",
+    "name": "Female fork · M4 × 0.7",
     "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
     "parameters": {
       "variant": "female-threaded",
@@ -538,7 +556,7 @@
   },
   {
     "id": "example-male-threaded-m4",
-    "name": "Male fork \u00b7 M4 \u00d7 0.7",
+    "name": "Male fork · M4 × 0.7",
     "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
     "parameters": {
       "variant": "male-threaded",
@@ -565,7 +583,7 @@
   },
   {
     "id": "example-female-threaded-m5",
-    "name": "Female fork \u00b7 M5 \u00d7 0.8",
+    "name": "Female fork · M5 × 0.8",
     "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
     "parameters": {
       "variant": "female-threaded",
@@ -592,7 +610,7 @@
   },
   {
     "id": "example-male-threaded-m5",
-    "name": "Male fork \u00b7 M5 \u00d7 0.8",
+    "name": "Male fork · M5 × 0.8",
     "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
     "parameters": {
       "variant": "male-threaded",
@@ -619,7 +637,7 @@
   },
   {
     "id": "example-female-threaded-m6",
-    "name": "Female fork \u00b7 M6 \u00d7 1",
+    "name": "Female fork · M6 × 1",
     "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
     "parameters": {
       "variant": "female-threaded",
@@ -646,7 +664,7 @@
   },
   {
     "id": "example-male-threaded-m6",
-    "name": "Male fork \u00b7 M6 \u00d7 1",
+    "name": "Male fork · M6 × 1",
     "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
     "parameters": {
       "variant": "male-threaded",
@@ -673,7 +691,7 @@
   },
   {
     "id": "example-female-threaded-m8",
-    "name": "Female fork \u00b7 M8 \u00d7 1.25",
+    "name": "Female fork · M8 × 1.25",
     "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
     "parameters": {
       "variant": "female-threaded",
@@ -700,7 +718,7 @@
   },
   {
     "id": "example-male-threaded-m8",
-    "name": "Male fork \u00b7 M8 \u00d7 1.25",
+    "name": "Male fork · M8 × 1.25",
     "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
     "parameters": {
       "variant": "male-threaded",
@@ -727,7 +745,7 @@
   },
   {
     "id": "example-female-threaded-m12",
-    "name": "Female fork \u00b7 M12 \u00d7 1.75",
+    "name": "Female fork · M12 × 1.75",
     "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
     "parameters": {
       "variant": "female-threaded",
@@ -754,7 +772,7 @@
   },
   {
     "id": "example-male-threaded-m12",
-    "name": "Male fork \u00b7 M12 \u00d7 1.75",
+    "name": "Male fork · M12 × 1.75",
     "description": "Editable prototype example. No supplier dimensions or manufacturing fit is claimed.",
     "parameters": {
       "variant": "male-threaded",

@@ -1,0 +1,54 @@
+[
+  {
+    "id": "fan40",
+    "name": "Axial fan \u00b7 40 \u00d7 40 \u00d7 10 mm",
+    "description": "Square axial fans with a central rotor, open airflow aperture and four mounting bores. Editable prototype dimensions.",
+    "parameters": {
+      "size": 40,
+      "depth": 10,
+      "pitch": 32,
+      "hole": 3.2,
+      "blades": 7,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "fan60",
+    "name": "Axial fan \u00b7 60 \u00d7 60 \u00d7 15 mm",
+    "description": "Square axial fans with a central rotor, open airflow aperture and four mounting bores. Editable prototype dimensions.",
+    "parameters": {
+      "size": 60,
+      "depth": 15,
+      "pitch": 50,
+      "hole": 4,
+      "blades": 7,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "fan80",
+    "name": "Axial fan \u00b7 80 \u00d7 80 \u00d7 25 mm",
+    "description": "Square axial fans with a central rotor, open airflow aperture and four mounting bores. Editable prototype dimensions.",
+    "parameters": {
+      "size": 80,
+      "depth": 25,
+      "pitch": 71.5,
+      "hole": 4.3,
+      "blades": 7,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "fan120",
+    "name": "Axial fan \u00b7 120 \u00d7 120 \u00d7 25 mm",
+    "description": "Square axial fans with a central rotor, open airflow aperture and four mounting bores. Editable prototype dimensions.",
+    "parameters": {
+      "size": 120,
+      "depth": 25,
+      "pitch": 105,
+      "hole": 4.3,
+      "blades": 7,
+      "detail": "envelope"
+    }
+  }
+]

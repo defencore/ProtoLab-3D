@@ -1,0 +1,38 @@
+[
+  {
+    "id": "gear",
+    "name": "External gear pump",
+    "description": "Gear-pump, vane-pump and hydraulic-motor external forms with shaft, flange and ports. Editable prototype dimensions.",
+    "parameters": {
+      "form": "gear",
+      "diameter": 70,
+      "length": 80,
+      "shaft": 15,
+      "port": 12
+    }
+  },
+  {
+    "id": "vane",
+    "name": "Vane pump",
+    "description": "Gear-pump, vane-pump and hydraulic-motor external forms with shaft, flange and ports. Editable prototype dimensions.",
+    "parameters": {
+      "form": "vane",
+      "diameter": 70,
+      "length": 80,
+      "shaft": 15,
+      "port": 12
+    }
+  },
+  {
+    "id": "motor",
+    "name": "Hydraulic motor",
+    "description": "Gear-pump, vane-pump and hydraulic-motor external forms with shaft, flange and ports. Editable prototype dimensions.",
+    "parameters": {
+      "form": "motor",
+      "diameter": 70,
+      "length": 80,
+      "shaft": 15,
+      "port": 12
+    }
+  }
+]

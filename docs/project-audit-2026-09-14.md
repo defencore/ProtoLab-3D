@@ -33,7 +33,7 @@ Browser verification covered development and final production builds at desktop 
 
 An initial development tab displayed an old Vite `Missing required package file: README.md` overlay. Reloading cleared it. All required package files were present, and package validation passed; no current missing-file defect was reproduced.
 
-The [native stock-bore audit](../data/bevel-pair-stock-native-validation.json) passed all five pairs in FreeCAD 1.0.2: 150 bore/keyway probes, valid closed solids, independent component movement, and STEP/FCStd round trips. All measured pair intersections were zero. Maximum preview/native differences were 0.0475% in volume and 0.000409 mm in bounds.
+The native stock-bore audit (generated local report) passed all five pairs in FreeCAD 1.0.2: 150 bore/keyway probes, valid closed solids, independent component movement, and STEP/FCStd round trips. All measured pair intersections were zero. Maximum preview/native differences were 0.0475% in volume and 0.000409 mm in bounds.
 
 ## Remaining limits
 

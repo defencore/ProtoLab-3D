@@ -1,0 +1,56 @@
+import type { Parameters, ParameterDefinition } from '../../core/types';
+export const defaults: Parameters = { form: 'i', width: 40, height: 60, wall: 3, length: 200 };
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'form',
+    label: 'Section',
+    type: 'select',
+    group: 'Configuration',
+    options: [
+      { value: 'i', label: 'I section' },
+      { value: 'c', label: 'C channel' },
+      { value: 'l', label: 'L angle' },
+      { value: 'tube', label: 'Rectangular tube' },
+    ],
+  },
+  {
+    key: 'width',
+    label: 'Section width',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'height',
+    label: 'Section height',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'wall',
+    label: 'Wall thickness',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'length',
+    label: 'Cut length',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+];

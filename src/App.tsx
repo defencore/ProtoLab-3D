@@ -129,8 +129,8 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
     [preview.part, preview.parameters, preview.modelState],
   );
   const script = useMemo(
-    () => (errors.length ? '' : generateScript(part, parameters, modelState)),
-    [part, parameters, modelState, errors.length],
+    () => (errors.length ? '' : generateScript(part, parameters, modelState, presetId)),
+    [part, parameters, modelState, presetId, errors.length],
   );
 
   useEffect(() => {

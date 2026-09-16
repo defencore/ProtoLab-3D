@@ -162,9 +162,9 @@ function bounds(p: Parameters, state: string): [number, number, number] {
 }
 const part: PartDefinition = {
   id: 'clevis',
-  name: 'Clevis / fork end',
-  category: 'MOTION',
-  subgroup: 'SERVO LINKAGES',
+  name: 'Clevis fork',
+  category: 'TRANSMISSION & LINKAGES',
+  subgroup: 'JOINTS & ROD ENDS',
   icon: 'bracket',
   description:
     'Pushrod clamps, threaded fork ends and cable terminals with an open fork, transverse pin and removable fasteners.',
@@ -330,16 +330,16 @@ const part: PartDefinition = {
   sources: [
     {
       label: 'Supplied pushrod clevis dimensions',
-      url: 'references/clevis-pushrod-dimensions.png',
+      url: '',
     },
-    { label: 'Supplied assembled servo linkage', url: 'references/clevis-servo-linkage.png' },
+    { label: 'Supplied assembled servo linkage', url: '' },
     {
       label: 'Supplied fork and removable hardware',
-      url: 'references/clevis-pushrod-assembly.png',
+      url: '',
     },
     {
       label: 'Supplied cable terminal and bore choices',
-      url: 'references/clevis-cable-terminal.png',
+      url: '',
     },
   ],
 };

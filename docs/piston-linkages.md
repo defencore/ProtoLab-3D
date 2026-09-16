@@ -1,6 +1,6 @@
 # Pistons and connecting rods
 
-Two independent packages appear under **MOTION → PISTONS & CONNECTING RODS**. Each folder owns its configurator, presets, geometry, validation and FreeCAD recipe.
+Two independent packages appear under **TRANSMISSION & LINKAGES → PISTONS & CONNECTING RODS**. Each folder owns its configurator, presets, geometry, validation and FreeCAD recipe.
 
 | Package          | Purpose                                                                                                   |
 | ---------------- | --------------------------------------------------------------------------------------------------------- |
@@ -45,7 +45,7 @@ npm run build
 
 An optional native audit compares individual preview component envelopes with FreeCAD solids, checks for component interference, verifies independent movement, and round-trips representative assemblies through STEP and FCStd:
 
-The [recorded native audit](../data/piston-linkages-native-validation.json) contains **78 passing cases** in FreeCAD 1.0.2: defaults and all 20 presets in three states, plus four construction transitions in three states. The transition cases include a 20 mm engine piston and a compact rod changed to a split cap.
+The recorded native audit (generated local report) contains **78 passing cases** in FreeCAD 1.0.2: defaults and all 20 presets in three states, plus four construction transitions in three states. The transition cases include a 20 mm engine piston and a compact rod changed to a split cap.
 
 ```sh
 node --import tsx scripts/verify-piston-linkages.ts /tmp/protolab-piston-native.json

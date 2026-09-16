@@ -1,0 +1,38 @@
+[
+  {
+    "id": "nozzle",
+    "name": "Convergent circular nozzle",
+    "description": "Hollow circular ducts with independently adjustable inlet, outlet and length. Editable prototype dimensions.",
+    "parameters": {
+      "form": "nozzle",
+      "inlet": 60,
+      "outlet": 30,
+      "length": 80,
+      "wall": 2
+    }
+  },
+  {
+    "id": "diffuser",
+    "name": "Divergent circular diffuser",
+    "description": "Hollow circular ducts with independently adjustable inlet, outlet and length. Editable prototype dimensions.",
+    "parameters": {
+      "form": "diffuser",
+      "inlet": 30,
+      "outlet": 60,
+      "length": 80,
+      "wall": 2
+    }
+  },
+  {
+    "id": "inlet",
+    "name": "Bell-mouth inlet",
+    "description": "Hollow circular ducts with independently adjustable inlet, outlet and length. Editable prototype dimensions.",
+    "parameters": {
+      "form": "inlet",
+      "inlet": 80,
+      "outlet": 40,
+      "length": 40,
+      "wall": 2
+    }
+  }
+]

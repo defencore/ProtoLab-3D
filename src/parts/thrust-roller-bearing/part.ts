@@ -36,8 +36,8 @@ function values(p: Parameters, state: string) {
 const part: PartDefinition = {
   id: 'thrust-roller-bearing',
   name: 'Cylindrical thrust roller bearing',
-  category: 'BEARINGS',
-  subgroup: 'THRUST ROLLER BEARINGS',
+  category: 'BEARINGS & SEALS',
+  subgroup: 'THRUST BEARINGS',
   icon: 'bearing',
   complexity: 'Radial roller set',
   description:

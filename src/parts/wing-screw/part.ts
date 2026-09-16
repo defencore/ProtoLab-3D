@@ -52,7 +52,7 @@ function head(p: Parameters): ProfileHead {
 const part: PartDefinition = {
   id: 'wing-screw',
   name: 'Wing screw',
-  category: 'FASTENERS',
+  category: 'FASTENERS & THREADS',
   subgroup: 'BOLTS & SCREWS',
   icon: 'bolt',
   complexity: 'Hand tightened',

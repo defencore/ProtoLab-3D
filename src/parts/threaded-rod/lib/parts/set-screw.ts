@@ -35,7 +35,7 @@ const defaults: Parameters = {
 const part: PartDefinition = {
   id: 'set-screw',
   name: 'Set screw / grub screw',
-  category: 'FASTENERS',
+  category: 'FASTENERS & THREADS',
   subgroup: 'BOLTS & SCREWS',
   icon: 'bolt',
   complexity: 'Drive, point & thread',

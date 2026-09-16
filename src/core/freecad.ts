@@ -1,13 +1,14 @@
 import type { Parameters, PartDefinition } from './types';
 
+import { modelEvidence } from './model-evidence';
 import { validateParameters } from './validation';
-import { presetMatchesConfiguration } from './catalog-models';
 
 /** A standalone macro that adds a solid or assembly to the active document. */
 export function generateScript(
   part: PartDefinition,
   parameters: Parameters,
   state: string,
+  presetId?: string,
 ): string {
   const errors = validateParameters(part, parameters, state);
   if (errors.length) throw new Error(errors.join(' '));
@@ -16,11 +17,10 @@ export function generateScript(
     .split('\n')
     .map((line) => `        ${line}`)
     .join('\n');
+  const evidence = modelEvidence(part, parameters, presetId);
   const featureName = `ProtoLab_${part.id.replace(/[^a-zA-Z0-9_]/g, '_')}`;
   const expectedDimensions = JSON.stringify(part.dimensions(parameters, state));
-  const catalog = part.presets.find(
-    (preset) => preset.catalog && presetMatchesConfiguration(part, preset, parameters),
-  )?.catalog;
+  const catalog = part.presets.find((preset) => preset.id === evidence.presetId)?.catalog;
   const catalogProperties = catalog
     ? `
         obj.addProperty("App::PropertyString", "CatalogDesignation", "ProtoLab")
@@ -107,6 +107,8 @@ ${body}
         obj.Configuration = ${JSON.stringify(JSON.stringify(parameters))}
         obj.addProperty("App::PropertyString", "ModelState", "ProtoLab")
         obj.ModelState = ${JSON.stringify(state)}${catalogProperties}
+        obj.addProperty("App::PropertyString", "GeometryEvidence", "ProtoLab")
+        obj.GeometryEvidence = ${JSON.stringify(JSON.stringify(evidence))}
         if App.GuiUp:
             for index, display_object in enumerate(display_objects):
                 display_object.ViewObject.ShapeColor = tuple(component_colors[index]) if component_colors is not None else (0.62, 0.70, 0.78)

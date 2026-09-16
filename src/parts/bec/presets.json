@@ -1,0 +1,318 @@
+[
+  {
+    "id": "hobbywing-ubec-3a",
+    "name": "Hobbywing UBEC 3 A · 2–6S",
+    "description": "17 × 43 mm · Flying leads",
+    "parameters": {
+      "model": "hobbywing-ubec-3a"
+    },
+    "catalog": {
+      "designation": "Hobbywing UBEC 3A — 2–6S",
+      "manufacturer": "Hobbywing",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://www.hobbywingdirect.com/products/ubec-3a-2-6s-lipo-input",
+      "alternateSourceUrls": [],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Hobbywing",
+        "construction": "Enclosed regulator",
+        "width": 17,
+        "length": 43,
+        "inputMin": 5.5,
+        "inputMax": 26,
+        "outputMin": 5,
+        "outputMax": 6,
+        "outputCurrent": 3,
+        "connection": "Flying leads",
+        "topology": "Buck",
+        "height": 7
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded.",
+        "height": "Published supplier envelope for this revision; undimensioned component heights are reconstructed.",
+        "outputCurrent": "Output rating subject to input voltage and cooling. S7V8F5 1 A applies to buck operation; see source curves for boost.",
+        "outputMin": "Range endpoints only. BECs have discrete jumper settings listed in the model scope; this is not a continuously adjustable output.",
+        "outputMax": "Range endpoints only. BECs have discrete jumper settings listed in the model scope; this is not a continuously adjustable output."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "17 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "43 mm"
+        },
+        {
+          "label": "Minimum input voltage",
+          "value": "5.5 V"
+        },
+        {
+          "label": "Maximum input voltage",
+          "value": "26 V"
+        },
+        {
+          "label": "Minimum selectable output",
+          "value": "5 V"
+        },
+        {
+          "label": "Maximum selectable output",
+          "value": "6 V"
+        },
+        {
+          "label": "Rated output current",
+          "value": "3 A"
+        },
+        {
+          "label": "Published height",
+          "value": "7 mm"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Hobbywing"
+        },
+        {
+          "label": "Construction",
+          "value": "Enclosed regulator"
+        },
+        {
+          "label": "Physical connection",
+          "value": "Flying leads"
+        },
+        {
+          "label": "Converter topology",
+          "value": "Buck"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "43 × 17 × 7 mm insulated body. Output selectable 5/6 V. Flexible input/output leads and ferrite ring excluded."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Published external body dimensions; simplified insulated casing.",
+        "limitations": "Cable exits, lead lengths, heat-shrink contours, labels and internal electronics are not reproduced. Do not use the simplified shell as an exact enclosure or connector model.",
+        "sourceUrl": "https://www.hobbywingdirect.com/products/ubec-3a-2-6s-lipo-input"
+      }
+    }
+  },
+  {
+    "id": "hobbywing-ubec-5a-2-8s",
+    "name": "Hobbywing UBEC 5 A · 2–8S",
+    "description": "17 × 50 mm · Flying leads",
+    "parameters": {
+      "model": "hobbywing-ubec-5a-2-8s"
+    },
+    "catalog": {
+      "designation": "Hobbywing UBEC 5A — 2–8S revision",
+      "manufacturer": "Hobbywing",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://oss.hobbywing.com/pdf/pdfen/UBEC5A.pdf",
+      "alternateSourceUrls": [
+        "https://oss.hobbywing.com/pdf/pdfen/UBEC5A.pdf"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Hobbywing",
+        "construction": "Enclosed regulator",
+        "width": 17,
+        "length": 50,
+        "cellsMin": 2,
+        "cellsMax": 8,
+        "outputMin": 5,
+        "outputMax": 7.4,
+        "outputCurrent": 5,
+        "connection": "Flying leads",
+        "topology": "Buck",
+        "height": 10
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded.",
+        "height": "Published supplier envelope for this revision; undimensioned component heights are reconstructed.",
+        "outputCurrent": "Output rating subject to input voltage and cooling. S7V8F5 1 A applies to buck operation; see source curves for boost.",
+        "outputMin": "Range endpoints only. BECs have discrete jumper settings listed in the model scope; this is not a continuously adjustable output.",
+        "outputMax": "Range endpoints only. BECs have discrete jumper settings listed in the model scope; this is not a continuously adjustable output."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "17 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "50 mm"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "2 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "8 S"
+        },
+        {
+          "label": "Minimum selectable output",
+          "value": "5 V"
+        },
+        {
+          "label": "Maximum selectable output",
+          "value": "7.4 V"
+        },
+        {
+          "label": "Rated output current",
+          "value": "5 A"
+        },
+        {
+          "label": "Published height",
+          "value": "10 mm"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Hobbywing"
+        },
+        {
+          "label": "Construction",
+          "value": "Enclosed regulator"
+        },
+        {
+          "label": "Physical connection",
+          "value": "Flying leads"
+        },
+        {
+          "label": "Converter topology",
+          "value": "Buck"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "PDF revision: 50 × 17 × 10 mm, selectable 5/6/7.4 V, 15 A peak. Not the older 48 × 27 × 9 mm version. Leads, jumper and ferrite excluded."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Published external body dimensions; simplified insulated casing.",
+        "limitations": "Cable exits, lead lengths, heat-shrink contours, labels and internal electronics are not reproduced. Do not use the simplified shell as an exact enclosure or connector model.",
+        "sourceUrl": "https://oss.hobbywing.com/pdf/pdfen/UBEC5A.pdf"
+      }
+    }
+  },
+  {
+    "id": "hobbywing-ubec-10a-car",
+    "name": "Hobbywing UBEC 10 A · car",
+    "description": "20 × 45 mm · Flying leads",
+    "parameters": {
+      "model": "hobbywing-ubec-10a-car"
+    },
+    "catalog": {
+      "designation": "Hobbywing UBEC 10A — car revision",
+      "manufacturer": "Hobbywing",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://hobbywing.oss-cn-shenzhen.aliyuncs.com/pdf/pdfen/UBEC10ACar.pdf",
+      "alternateSourceUrls": [
+        "https://hobbywing.oss-cn-shenzhen.aliyuncs.com/pdf/pdfen/UBEC10ACar.pdf"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Hobbywing",
+        "construction": "Enclosed regulator",
+        "width": 20,
+        "length": 45,
+        "cellsMin": 2,
+        "cellsMax": 6,
+        "outputMin": 6,
+        "outputMax": 8.4,
+        "outputCurrent": 10,
+        "connection": "Flying leads",
+        "topology": "Buck",
+        "height": 16.2
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded.",
+        "height": "Published supplier envelope for this revision; undimensioned component heights are reconstructed.",
+        "outputCurrent": "Output rating subject to input voltage and cooling. S7V8F5 1 A applies to buck operation; see source curves for boost.",
+        "outputMin": "Range endpoints only. BECs have discrete jumper settings listed in the model scope; this is not a continuously adjustable output.",
+        "outputMax": "Range endpoints only. BECs have discrete jumper settings listed in the model scope; this is not a continuously adjustable output."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "20 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "45 mm"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "2 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "6 S"
+        },
+        {
+          "label": "Minimum selectable output",
+          "value": "6 V"
+        },
+        {
+          "label": "Maximum selectable output",
+          "value": "8.4 V"
+        },
+        {
+          "label": "Rated output current",
+          "value": "10 A"
+        },
+        {
+          "label": "Published height",
+          "value": "16.2 mm"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Hobbywing"
+        },
+        {
+          "label": "Construction",
+          "value": "Enclosed regulator"
+        },
+        {
+          "label": "Physical connection",
+          "value": "Flying leads"
+        },
+        {
+          "label": "Converter topology",
+          "value": "Buck"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "Car PDF revision: 45 × 20 × 16.2 mm, selectable 6/7.4/8.4 V, 15 A peak. Not the 43.1 × 32.3 mm UBEC. Leads, switch and jumper excluded."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Published external body dimensions; simplified insulated casing.",
+        "limitations": "Cable exits, lead lengths, heat-shrink contours, labels and internal electronics are not reproduced. Do not use the simplified shell as an exact enclosure or connector model.",
+        "sourceUrl": "https://hobbywing.oss-cn-shenzhen.aliyuncs.com/pdf/pdfen/UBEC10ACar.pdf"
+      }
+    }
+  }
+]

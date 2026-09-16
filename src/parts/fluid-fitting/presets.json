@@ -1,0 +1,100 @@
+[
+  {
+    "id": "straight6",
+    "name": "Straight push-in fitting \u00b7 6 mm passage",
+    "description": "Straight, elbow, tee and bulkhead fittings with configurable flow passage and connection envelopes. Editable prototype dimensions.",
+    "parameters": {
+      "form": "straight",
+      "connection": "push",
+      "diameter": 14,
+      "passage": 6,
+      "length": 28,
+      "connectionDiameter": 10,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "elbow6",
+    "name": "Elbow fitting \u00b7 6 mm passage",
+    "description": "Straight, elbow, tee and bulkhead fittings with configurable flow passage and connection envelopes. Editable prototype dimensions.",
+    "parameters": {
+      "form": "elbow",
+      "connection": "push",
+      "diameter": 14,
+      "passage": 6,
+      "length": 28,
+      "connectionDiameter": 10,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "tee6",
+    "name": "T fitting \u00b7 6 mm passage",
+    "description": "Straight, elbow, tee and bulkhead fittings with configurable flow passage and connection envelopes. Editable prototype dimensions.",
+    "parameters": {
+      "form": "tee",
+      "connection": "push",
+      "diameter": 14,
+      "passage": 6,
+      "length": 28,
+      "connectionDiameter": 10,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "quick6",
+    "name": "Quick coupling \u00b7 6 mm passage",
+    "description": "Straight, elbow, tee and bulkhead fittings with configurable flow passage and connection envelopes. Editable prototype dimensions.",
+    "parameters": {
+      "form": "quick",
+      "connection": "push",
+      "diameter": 14,
+      "passage": 6,
+      "length": 28,
+      "connectionDiameter": 10,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "bulkhead",
+    "name": "Bulkhead threaded fitting",
+    "description": "Straight, elbow, tee and bulkhead fittings with configurable flow passage and connection envelopes. Editable prototype dimensions.",
+    "parameters": {
+      "form": "bulkhead",
+      "connection": "bsp",
+      "diameter": 14,
+      "passage": 6,
+      "length": 28,
+      "connectionDiameter": 10,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "jic",
+    "name": "Cone-seat fitting",
+    "description": "Straight, elbow, tee and bulkhead fittings with configurable flow passage and connection envelopes. Editable prototype dimensions.",
+    "parameters": {
+      "form": "straight",
+      "connection": "jic",
+      "diameter": 14,
+      "passage": 6,
+      "length": 28,
+      "connectionDiameter": 10,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "orfs",
+    "name": "Face-seal fitting",
+    "description": "Straight, elbow, tee and bulkhead fittings with configurable flow passage and connection envelopes. Editable prototype dimensions.",
+    "parameters": {
+      "form": "straight",
+      "connection": "orfs",
+      "diameter": 14,
+      "passage": 6,
+      "length": 28,
+      "connectionDiameter": 10,
+      "detail": "envelope"
+    }
+  }
+]

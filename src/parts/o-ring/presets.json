@@ -1,0 +1,38 @@
+[
+  {
+    "id": "oring15x2",
+    "name": "O-ring \u00b7 15 \u00d7 2 mm",
+    "description": "Round elastomer seal and separate face or radial groove cutter for CAD cut operations. Editable prototype dimensions.",
+    "parameters": {
+      "mode": "seal",
+      "inside": 15,
+      "section": 2,
+      "grooveWidth": 2.5,
+      "grooveDepth": 1.5
+    }
+  },
+  {
+    "id": "face15x2",
+    "name": "Face groove tool \u00b7 for 15 \u00d7 2 mm ring",
+    "description": "Round elastomer seal and separate face or radial groove cutter for CAD cut operations. Editable prototype dimensions.",
+    "parameters": {
+      "mode": "face",
+      "inside": 15,
+      "section": 2,
+      "grooveWidth": 2.5,
+      "grooveDepth": 1.5
+    }
+  },
+  {
+    "id": "radial15x2",
+    "name": "Radial groove tool \u00b7 for 15 \u00d7 2 mm ring",
+    "description": "Round elastomer seal and separate face or radial groove cutter for CAD cut operations. Editable prototype dimensions.",
+    "parameters": {
+      "mode": "radial",
+      "inside": 15,
+      "section": 2,
+      "grooveWidth": 2.5,
+      "grooveDepth": 1.5
+    }
+  }
+]

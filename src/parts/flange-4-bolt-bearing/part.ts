@@ -15,8 +15,8 @@ import {
 const part: PartDefinition = {
   id: 'flange-4-bolt-bearing',
   name: 'Four-bolt flange bearing',
-  category: 'BEARINGS',
-  subgroup: 'PILLOW & FLANGE BLOCK BEARINGS',
+  category: 'BEARINGS & SEALS',
+  subgroup: 'MOUNTED BEARINGS',
   icon: 'bearing',
   complexity: 'Square flange unit',
   description:

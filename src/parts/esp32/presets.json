@@ -1,0 +1,221 @@
+[
+  {
+    "id": "esp32-devkitc-v4",
+    "name": "Espressif ESP32-DevKitC V4 · WROOM",
+    "description": "27.94 × 48.26 mm · 38-pin headers",
+    "parameters": {
+      "model": "esp32-devkitc-v4"
+    },
+    "catalog": {
+      "designation": "Espressif ESP32-DevKitC V4 — WROOM",
+      "manufacturer": "Espressif",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html",
+      "alternateSourceUrls": [
+        "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Espressif",
+        "construction": "Bare PCB",
+        "width": 27.94,
+        "length": 48.26,
+        "usb": "Micro USB",
+        "connection": "38-pin headers",
+        "interface": "Wi-Fi / BLE",
+        "headerPitch": 2.54
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "27.94 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "48.26 mm"
+        },
+        {
+          "label": "Header pitch",
+          "value": "2.54 mm"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Espressif"
+        },
+        {
+          "label": "Construction",
+          "value": "Bare PCB"
+        },
+        {
+          "label": "USB connector",
+          "value": "Micro USB"
+        },
+        {
+          "label": "Physical connection",
+          "value": "38-pin headers"
+        },
+        {
+          "label": "Interface",
+          "value": "Wi-Fi / BLE"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "Official PCB: 27.94 × 48.26 mm; WROOM antenna extends 6.04 mm beyond PCB. Headers at 25.40 mm row spacing. Header height and passive layout approximate."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout."
+        }
+      ]
+    }
+  },
+  {
+    "id": "waveshare-esp32-s3-zero",
+    "name": "Waveshare ESP32-S3-Zero · no headers",
+    "description": "18 × 23.5 mm · Castellated pads",
+    "parameters": {
+      "model": "waveshare-esp32-s3-zero"
+    },
+    "catalog": {
+      "designation": "Waveshare ESP32-S3-Zero — no headers",
+      "manufacturer": "Waveshare",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://docs.waveshare.com/ESP32-S3-Zero",
+      "alternateSourceUrls": [],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Waveshare",
+        "construction": "Bare PCB",
+        "width": 18,
+        "length": 23.5,
+        "usb": "USB-C",
+        "connection": "Castellated pads",
+        "interface": "Wi-Fi / BLE"
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "18 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "23.5 mm"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Waveshare"
+        },
+        {
+          "label": "Construction",
+          "value": "Bare PCB"
+        },
+        {
+          "label": "USB connector",
+          "value": "USB-C"
+        },
+        {
+          "label": "Physical connection",
+          "value": "Castellated pads"
+        },
+        {
+          "label": "Interface",
+          "value": "Wi-Fi / BLE"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "18 × 23.5 mm PCB; USB-C, onboard ceramic antenna and castellated I/O. No optional pin headers. Port and pad offsets reconstructed from product drawings; not a PCB footprint."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xiao-esp32c3",
+    "name": "Seeed XIAO ESP32C3",
+    "description": "17.8 × 21 mm · 14 castellated pads",
+    "parameters": {
+      "model": "xiao-esp32c3"
+    },
+    "catalog": {
+      "designation": "Seeed XIAO ESP32C3",
+      "manufacturer": "Seeed Studio",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/",
+      "alternateSourceUrls": [],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Seeed Studio",
+        "construction": "Bare PCB",
+        "width": 17.8,
+        "length": 21,
+        "usb": "USB-C",
+        "connection": "14 castellated pads",
+        "interface": "Wi-Fi / BLE / U.FL",
+        "headerPitch": 2.54
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "17.8 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "21 mm"
+        },
+        {
+          "label": "Header pitch",
+          "value": "2.54 mm"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Seeed Studio"
+        },
+        {
+          "label": "Construction",
+          "value": "Bare PCB"
+        },
+        {
+          "label": "USB connector",
+          "value": "USB-C"
+        },
+        {
+          "label": "Physical connection",
+          "value": "14 castellated pads"
+        },
+        {
+          "label": "Interface",
+          "value": "Wi-Fi / BLE / U.FL"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "17.8 × 21 mm PCB. U.FL external antenna socket; antenna cable excluded. No soldered headers. Pin count is physical contacts, not GPIO count."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout."
+        }
+      ]
+    }
+  }
+]

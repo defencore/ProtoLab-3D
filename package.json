@@ -15,7 +15,8 @@
     "parts:create": "node --import tsx scripts/parts.ts create",
     "parts:export": "node --import tsx scripts/parts.ts export",
     "parts:import": "node --import tsx scripts/parts.ts import",
-    "format": "prettier --write src tests index.html vite.config.ts README.md"
+    "format": "prettier --write src tests index.html vite.config.ts README.md",
+    "audit:models": "node --import tsx scripts/audit-model-evidence.ts"
   },
   "dependencies": {
     "@fontsource-variable/dm-sans": "^5.3.0",

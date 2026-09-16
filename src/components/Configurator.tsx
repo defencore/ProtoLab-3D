@@ -13,6 +13,7 @@ import {
 import { useEffect, useState } from 'react';
 import { ReferenceSpecifications } from './ReferenceSpecifications';
 import QuickPicks from './QuickPicks';
+import { modelEvidence } from '../core/model-evidence';
 import CatalogModelPicker from './CatalogModelPicker';
 import { hasCatalogQuickSize, quickPickFields } from '../core/quick-picks';
 import type { QuickPickFilters } from '../core/quick-picks';
@@ -114,6 +115,7 @@ export default function Configurator({
   onSave,
   onPreset,
 }: Props) {
+  const evidence = modelEvidence(part, parameters, presetId);
   const [collapsed, setCollapsed] = useState<string[]>([]);
   const pickFields = quickPickFields(part);
   const [customMode, setCustomMode] = useState(() => !hasCatalogQuickSize(part, parameters));
@@ -195,6 +197,16 @@ export default function Configurator({
               onBrowse={onBrowse}
             />
           ) : null}
+          <details className="model-evidence">
+            <summary>{evidence.label}</summary>
+            <p>{evidence.summary}</p>
+            <p>{evidence.limitations}</p>
+            {evidence.source && (
+              <a href={evidence.source} target="_blank" rel="noreferrer">
+                Geometry reference <ArrowUpRight size={12} />
+              </a>
+            )}
+          </details>
           <details
             className="preset-reference-details"
             open={(!part.catalogSelectionOnly && customMode) || undefined}
@@ -224,7 +236,7 @@ export default function Configurator({
                 </button>
               </div>
             )}
-            {selectedPreset?.catalog && (
+            {selectedPreset?.catalog?.sourceUrl && (
               <a
                 className="current-preset-source"
                 href={selectedPreset.catalog.sourceUrl}
@@ -316,14 +328,16 @@ export default function Configurator({
             </p>
           </details>
         )}
-        {!!part.sources?.length && (
+        {!!part.sources?.some((source) => source.url) && (
           <details className="reference-sources">
             <summary>Reference dimensions & sources</summary>
-            {part.sources.map((source) => (
-              <a key={source.url} href={source.url} target="_blank" rel="noreferrer">
-                {source.label} ↗
-              </a>
-            ))}
+            {part.sources
+              .filter((source) => source.url)
+              .map((source) => (
+                <a key={source.url} href={source.url} target="_blank" rel="noreferrer">
+                  {source.label} ↗
+                </a>
+              ))}
           </details>
         )}
       </div>

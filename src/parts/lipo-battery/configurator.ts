@@ -1,0 +1,180 @@
+import type { ParameterDefinition, Parameters, PartDefinition } from '../../core/types';
+import models from './lib/models.json';
+export const defaults: Parameters = { model: 'tattu-1s-270-75c' };
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'model',
+    label: 'Battery model',
+    type: 'select',
+    group: 'Model',
+    options: models.map((m) => ({ value: m.id, label: m.name })),
+    description:
+      'Fixed manufactured dimensions. Select a model by format, capacity and electrical ratings.',
+  },
+];
+export const catalogSelection: NonNullable<PartDefinition['catalogSelection']> = [{ key: 'model' }];
+export const catalogFilterFields: ParameterDefinition[] = [
+  {
+    key: 'manufacturer',
+    label: 'Manufacturer',
+    type: 'select',
+    group: 'Battery selection',
+    options: [
+      {
+        value: 'Tattu / Grepow',
+        label: 'Tattu / Grepow',
+      },
+    ],
+  },
+  {
+    key: 'format',
+    label: 'Cell format / series',
+    type: 'select',
+    group: 'Battery selection',
+    options: [
+      {
+        value: '1S1P',
+        label: '1S1P',
+      },
+      {
+        value: '2S1P',
+        label: '2S1P',
+      },
+      {
+        value: '4S1P',
+        label: '4S1P',
+      },
+      {
+        value: '3S1P',
+        label: '3S1P',
+      },
+    ],
+  },
+  {
+    key: 'chemistry',
+    label: 'Chemistry',
+    type: 'select',
+    group: 'Battery selection',
+    options: [
+      {
+        value: 'LiHV',
+        label: 'LiHV',
+      },
+      {
+        value: 'Li-Po',
+        label: 'Li-Po',
+      },
+    ],
+  },
+  {
+    key: 'connection',
+    label: 'Terminal / connection',
+    type: 'select',
+    group: 'Battery selection',
+    options: [
+      {
+        value: 'Flying leads (excluded)',
+        label: 'Flying leads (excluded)',
+      },
+    ],
+  },
+  {
+    key: 'cells',
+    label: 'Series cells',
+    unit: 'S',
+    type: 'number',
+    group: 'Dimensions & ratings',
+    min: 0,
+    max: 4,
+    step: 1,
+    catalogSummary: true,
+  },
+  {
+    key: 'capacity',
+    label: 'Capacity',
+    unit: 'mAh',
+    type: 'number',
+    group: 'Dimensions & ratings',
+    min: 0,
+    max: 3700,
+    step: 1,
+    catalogSummary: true,
+  },
+  {
+    key: 'voltage',
+    label: 'Nominal voltage',
+    unit: 'V',
+    type: 'number',
+    group: 'Dimensions & ratings',
+    min: 0,
+    max: 14.8,
+    step: 0.01,
+    catalogSummary: true,
+  },
+  {
+    key: 'cRate',
+    label: 'Published discharge C-rate',
+    unit: 'C',
+    type: 'number',
+    group: 'Dimensions & ratings',
+    min: 0,
+    max: 95,
+    step: 1,
+    catalogSummary: false,
+  },
+  {
+    key: 'current',
+    label: 'Current from C-rate',
+    unit: 'A',
+    type: 'number',
+    group: 'Dimensions & ratings',
+    min: 0,
+    max: 172.5,
+    step: 0.01,
+    catalogSummary: true,
+  },
+  {
+    key: 'width',
+    label: 'Pack width / envelope X',
+    unit: 'mm',
+    type: 'number',
+    group: 'Dimensions & ratings',
+    min: 0,
+    max: 41,
+    step: 0.01,
+    catalogSummary: false,
+  },
+  {
+    key: 'length',
+    label: 'Pack length / envelope Y',
+    unit: 'mm',
+    type: 'number',
+    group: 'Dimensions & ratings',
+    min: 0,
+    max: 136,
+    step: 0.01,
+    catalogSummary: false,
+  },
+  {
+    key: 'height',
+    label: 'Height / envelope Z',
+    unit: 'mm',
+    type: 'number',
+    group: 'Dimensions & ratings',
+    min: 0,
+    max: 27,
+    step: 0.01,
+    catalogSummary: false,
+  },
+  {
+    key: 'weight',
+    label: 'Weight',
+    unit: 'g',
+    type: 'number',
+    group: 'Dimensions & ratings',
+    min: 0,
+    max: 372,
+    step: 1,
+    catalogSummary: false,
+  },
+];

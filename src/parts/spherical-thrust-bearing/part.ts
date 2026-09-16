@@ -19,8 +19,8 @@ const defaults = { bore: 90, outer: 155, width: 39, elements: 16, contactAngle: 
 const part: PartDefinition = {
   id: 'spherical-thrust-bearing',
   name: 'Spherical thrust roller bearing',
-  category: 'BEARINGS',
-  subgroup: 'THRUST ROLLER BEARINGS',
+  category: 'BEARINGS & SEALS',
+  subgroup: 'THRUST BEARINGS',
   icon: 'bearing',
   complexity: 'Inclined barrel roller row',
   standard: '292 / 293 / 294 series',

@@ -1,7 +1,7 @@
 [
   {
     "id": "prototype-pot-20",
-    "name": "Compact pot Ø20 × 12",
+    "name": "Compact pot Ø20 × 12 mm",
     "description": "Compact geometric prototype with a 3 mm blind mounting bore and paired rear leads.",
     "parameters": {
       "bodyDiameter": 20,
@@ -23,7 +23,7 @@
   },
   {
     "id": "prototype-pot-30",
-    "name": "Low-profile pot Ø30 × 14",
+    "name": "Low-profile pot Ø30 × 14 mm",
     "description": "Low-profile geometric prototype without leads; the back plate has only its central blind bore.",
     "parameters": {
       "bodyDiameter": 30,
@@ -45,7 +45,7 @@
   },
   {
     "id": "prototype-pot-40",
-    "name": "General-purpose pot Ø40 × 20",
+    "name": "General-purpose pot Ø40 × 20 mm",
     "description": "Medium geometric prototype with separate potted coil, 5 mm mounting bore and rear leads.",
     "parameters": {
       "bodyDiameter": 40,
@@ -67,7 +67,7 @@
   },
   {
     "id": "prototype-pot-60",
-    "name": "Wide pot Ø60 × 28",
+    "name": "Wide pot Ø60 × 28 mm",
     "description": "Wide geometric prototype with a 6 mm blind mounting bore and an oversize removable armature.",
     "parameters": {
       "bodyDiameter": 60,
@@ -89,7 +89,7 @@
   },
   {
     "id": "prototype-pot-100",
-    "name": "Large pot Ø100 × 40",
+    "name": "Large pot Ø100 × 40 mm",
     "description": "Large geometric prototype with a 10 mm blind mounting bore, thick keeper plate and paired rear leads.",
     "parameters": {
       "bodyDiameter": 100,

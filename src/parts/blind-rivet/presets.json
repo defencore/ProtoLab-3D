@@ -1,0 +1,26 @@
+[
+  {
+    "id": "4-8-12",
+    "name": "Blind rivet \u00b7 \u00d84.8 \u00d7 12 mm",
+    "description": "Uninstalled blind rivet with separate sleeve and pull mandrel. Editable prototype dimensions.",
+    "parameters": {
+      "diameter": 4.8,
+      "length": 12,
+      "head": 9,
+      "mandrel": 2.4,
+      "pull": 25
+    }
+  },
+  {
+    "id": "3-2-8",
+    "name": "Blind rivet \u00b7 \u00d83.2 \u00d7 8 mm",
+    "description": "Uninstalled blind rivet with separate sleeve and pull mandrel. Editable prototype dimensions.",
+    "parameters": {
+      "diameter": 3.2,
+      "length": 8,
+      "head": 6,
+      "mandrel": 1.6,
+      "pull": 20
+    }
+  }
+]

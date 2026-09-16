@@ -8,8 +8,8 @@ import presetData from './presets.json';
 
 const part: PartDefinition = {
   id: 'aluminium-profile',
-  name: 'Aluminium extrusion / T-slot profile',
-  category: 'STRUCTURAL',
+  name: 'T-slot aluminium profile',
+  category: 'STRUCTURAL PARTS',
   subgroup: 'ALUMINIUM PROFILES',
   icon: 'rail',
   complexity: '8 cross sections · open slots and longitudinal cavities',

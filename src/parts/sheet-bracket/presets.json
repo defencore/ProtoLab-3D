@@ -1,0 +1,30 @@
+[
+  {
+    "id": "u40",
+    "name": "U bracket \u00b7 40 mm wide",
+    "description": "U and Z brackets with editable thickness, bends and mounting bores. Editable prototype dimensions.",
+    "parameters": {
+      "form": "u",
+      "width": 40,
+      "length": 60,
+      "height": 30,
+      "wall": 3,
+      "hole": 6,
+      "pitch": 24
+    }
+  },
+  {
+    "id": "z40",
+    "name": "Z bracket \u00b7 40 mm wide",
+    "description": "U and Z brackets with editable thickness, bends and mounting bores. Editable prototype dimensions.",
+    "parameters": {
+      "form": "z",
+      "width": 40,
+      "length": 60,
+      "height": 30,
+      "wall": 3,
+      "hole": 6,
+      "pitch": 24
+    }
+  }
+]

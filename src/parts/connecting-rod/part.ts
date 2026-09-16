@@ -234,7 +234,7 @@ export function assemblyBounds(p: Parameters, state: string): Bounds {
 const part: PartDefinition = {
   id: 'connecting-rod',
   name: 'Connecting rod',
-  category: 'MOTION',
+  category: 'TRANSMISSION & LINKAGES',
   subgroup: 'PISTONS & CONNECTING RODS',
   icon: 'bracket',
   complexity: 'Rod + cap + bearing inserts',
@@ -388,10 +388,10 @@ const part: PartDefinition = {
   notes:
     'All presets are editable dimensional examples. The supplied anatomy and exploded illustrations establish component names and arrangement only. No engine fit, supplier dimensions, standard, strength, fatigue life or load rating is claimed. Pin and journal bores are finished working diameters; fitted inserts enlarge the rod housing by their thickness and the chosen clearance. Bolts and nuts use smooth thread envelopes. Small geometric clearances separate components. No oil channels, bearing locating tangs, fillets or balancing/mass target are modeled.',
   sources: [
-    { label: 'Supplied connecting rod anatomy', url: 'references/connecting-rod-anatomy.png' },
+    { label: 'Supplied connecting rod anatomy', url: '' },
     {
       label: 'Supplied piston and rod exploded assembly',
-      url: 'references/piston-rod-exploded.png',
+      url: '',
     },
   ],
 };

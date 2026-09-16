@@ -43,20 +43,8 @@
           "url": "https://www.waveshare.com/wiki/ST3215-HS_Servo_Motor"
         },
         {
-          "label": "Official dimension drawing (local copy)",
-          "url": "references/st3215-hs-drawing.png"
-        },
-        {
-          "label": "Official drawing PDF",
-          "url": "references/st3215-hs-drawing.pdf"
-        },
-        {
           "label": "Official STEP model",
           "url": "https://files.waveshare.com/upload/5/59/ST3215-3D.zip"
-        },
-        {
-          "label": "Manufacturer STEP (local copy)",
-          "url": "references/st3215-hs-manufacturer.step"
         },
         {
           "label": "Waveshare ST3215-HS manufacturer specifications 1",
@@ -222,14 +210,6 @@
         {
           "label": "KST X10 Mini Pro technical drawing · July 2023",
           "url": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183"
-        },
-        {
-          "label": "KST X10 Mini Pro supplied PDF",
-          "url": "references/kst-x10-mini-pro.pdf"
-        },
-        {
-          "label": "KST X10 Mini Pro installation drawing",
-          "url": "references/kst-x10-mini-pro.png"
         }
       ]
     },
@@ -380,14 +360,6 @@
         {
           "label": "KST X10 Mini Pro technical drawing · July 2023",
           "url": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183"
-        },
-        {
-          "label": "KST X10 Mini Pro supplied PDF",
-          "url": "references/kst-x10-mini-pro.pdf"
-        },
-        {
-          "label": "KST X10 Mini Pro installation drawing",
-          "url": "references/kst-x10-mini-pro.png"
         }
       ]
     },
@@ -539,14 +511,6 @@
         {
           "label": "KST X10 V8.0 technical specification",
           "url": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839"
-        },
-        {
-          "label": "KST X10 V8.0 PDF (local copy)",
-          "url": "references/kst-x10-v8.pdf"
-        },
-        {
-          "label": "KST X10 V8.0 installation drawing",
-          "url": "references/kst-x10-v8.png"
         }
       ]
     },
@@ -698,14 +662,6 @@
         {
           "label": "KST X10 Pro-A technical specification",
           "url": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163"
-        },
-        {
-          "label": "KST X10 Pro-A PDF (local copy)",
-          "url": "references/kst-x10-pro.pdf"
-        },
-        {
-          "label": "KST X10 Pro-A installation drawing",
-          "url": "references/kst-x10-pro.png"
         }
       ]
     },
@@ -856,14 +812,6 @@
         {
           "label": "KST X10 Pro-B technical specification",
           "url": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163"
-        },
-        {
-          "label": "KST X10 Pro-B PDF (local copy)",
-          "url": "references/kst-x10-pro.pdf"
-        },
-        {
-          "label": "KST X10 Pro-B installation drawing",
-          "url": "references/kst-x10-pro.png"
         }
       ]
     },
@@ -993,10 +941,6 @@
         {
           "label": "Power-HD T60-BHV official specification, V1",
           "url": "https://www.chd.hk/UploadFiles/Att/2025041613344325.pdf"
-        },
-        {
-          "label": "Dimension drawing, page 3 (reviewed 2026-09-14)",
-          "url": "references/power-hd-t60-bhv-dimensions.png"
         },
         {
           "label": "Power-HD T60-BHV manufacturer specifications 1",
@@ -1135,10 +1079,6 @@
         {
           "label": "Power-HD TDS-2 official specification, V1",
           "url": "https://www.chd.hk/UploadFiles/Att/2024111314082653.pdf"
-        },
-        {
-          "label": "Dimension drawing, page 3 (reviewed 2026-09-14)",
-          "url": "references/power-hd-tds-2-dimensions.png"
         },
         {
           "label": "Power-HD TDS-2 manufacturer specifications 1",

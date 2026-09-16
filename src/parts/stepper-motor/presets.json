@@ -1,0 +1,960 @@
+[
+  {
+    "id": "8hs12-0506s",
+    "name": "STEPPERONLINE NEMA 8 · 8HS12-0506S",
+    "description": "20.3 mm frame · 28.3 mm body · 0.012 N·m holding · 0.5 A/phase",
+    "parameters": {
+      "model": "8hs12-0506s",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "8HS12-0506S",
+      "manufacturer": "STEPPERONLINE",
+      "sourceName": "STEPPERONLINE drawing and specifications",
+      "sourceUrl": "https://www.omc-stepperonline.com/nema-8-unipolar-1-8deg-1-2ncm-1-70oz-in-0-5a-20x20x28mm-6-wires-8hs12-0506s",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "8HS12-0506S"
+      ],
+      "alternateSourceUrls": [
+        "https://www.omc-stepperonline.com/image/catalog/dimensions/8HS12-0506S_Dimension.svg"
+      ],
+      "attributes": {
+        "width": 20.3,
+        "length": 28.3,
+        "shaft": 4,
+        "extension": 10,
+        "pilot": 16,
+        "pitch": 15.4,
+        "torque": 0.012,
+        "current": 0.5,
+        "weight": 80,
+        "resistance": 11.5,
+        "inductance": 1.7,
+        "nema": "8",
+        "winding": "unipolar",
+        "shaftType": "D"
+      },
+      "attributeConditions": {
+        "torque": "Static holding torque at rated phase current; not running torque.",
+        "current": "Rated current per phase."
+      },
+      "specifications": [
+        {
+          "label": "Frame width",
+          "value": "20.3 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "28.3 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "4 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "10 mm"
+        },
+        {
+          "label": "Locating pilot",
+          "value": "16 mm"
+        },
+        {
+          "label": "Square mounting pitch",
+          "value": "15.4 mm"
+        },
+        {
+          "label": "Holding torque",
+          "value": "0.012 N·m"
+        },
+        {
+          "label": "Rated phase current",
+          "value": "0.5 A"
+        },
+        {
+          "label": "Mass",
+          "value": "80 g"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "11.5 Ω"
+        },
+        {
+          "label": "Phase inductance",
+          "value": "1.7 mH"
+        },
+        {
+          "label": "Step angle",
+          "value": "1.8°"
+        },
+        {
+          "label": "Mounting holes",
+          "value": "4 × M2; minimum depth 2.5 mm"
+        },
+        {
+          "label": "Leads",
+          "value": "6"
+        },
+        {
+          "label": "CAD detail",
+          "value": "Dimensions and mounting follow the supplier drawing. Cosmetic details and internal clearances are reconstructed; threads are represented by nominal holes."
+        }
+      ]
+    }
+  },
+  {
+    "id": "11hs12-0674s",
+    "name": "STEPPERONLINE NEMA 11 · 11HS12-0674S",
+    "description": "28.3 mm frame · 33 mm body · 0.07 N·m holding · 0.67 A/phase",
+    "parameters": {
+      "model": "11hs12-0674s",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "11HS12-0674S",
+      "manufacturer": "STEPPERONLINE",
+      "sourceName": "STEPPERONLINE drawing and specifications",
+      "sourceUrl": "https://www.omc-stepperonline.com/nema-11-bipolar-1-8deg-7ncm-9-91oz-in-0-67a-3-8v-28x28x31mm-4-wires-11hs12-0674s",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "11HS12-0674S"
+      ],
+      "alternateSourceUrls": [
+        "https://www.omc-stepperonline.com/image/catalog/dimensions/11HS12-0674S_Dimension-1.svg"
+      ],
+      "attributes": {
+        "width": 28.3,
+        "length": 33,
+        "shaft": 5,
+        "extension": 20,
+        "pilot": 22,
+        "pitch": 23,
+        "torque": 0.07,
+        "current": 0.67,
+        "weight": 110,
+        "resistance": 5.6,
+        "inductance": 4,
+        "nema": "11",
+        "winding": "bipolar",
+        "shaftType": "round"
+      },
+      "attributeConditions": {
+        "torque": "Static holding torque at rated phase current; not running torque.",
+        "current": "Rated current per phase."
+      },
+      "specifications": [
+        {
+          "label": "Frame width",
+          "value": "28.3 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "33 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "20 mm"
+        },
+        {
+          "label": "Locating pilot",
+          "value": "22 mm"
+        },
+        {
+          "label": "Square mounting pitch",
+          "value": "23 mm"
+        },
+        {
+          "label": "Holding torque",
+          "value": "0.07 N·m"
+        },
+        {
+          "label": "Rated phase current",
+          "value": "0.67 A"
+        },
+        {
+          "label": "Mass",
+          "value": "110 g"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "5.6 Ω"
+        },
+        {
+          "label": "Phase inductance",
+          "value": "4 mH"
+        },
+        {
+          "label": "Step angle",
+          "value": "1.8°"
+        },
+        {
+          "label": "Mounting holes",
+          "value": "4 × M2.5; minimum depth 3.5 mm"
+        },
+        {
+          "label": "Leads",
+          "value": "4"
+        },
+        {
+          "label": "CAD detail",
+          "value": "Dimensions and mounting follow the supplier drawing. Cosmetic details and internal clearances are reconstructed; threads are represented by nominal holes."
+        }
+      ]
+    }
+  },
+  {
+    "id": "14hs10-0404s",
+    "name": "STEPPERONLINE NEMA 14 · 14HS10-0404S",
+    "description": "35.2 mm frame · 26 mm body · 0.14 N·m holding · 0.4 A/phase",
+    "parameters": {
+      "model": "14hs10-0404s",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "14HS10-0404S",
+      "manufacturer": "STEPPERONLINE",
+      "sourceName": "STEPPERONLINE drawing and specifications",
+      "sourceUrl": "https://www.omc-stepperonline.com/nema-14-bipolar-1-8deg-14ncm-20oz-in-0-4a-12v-35x35x26mm-4-wires-14hs10-0404s",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "14HS10-0404S"
+      ],
+      "alternateSourceUrls": [
+        "https://www.omc-stepperonline.com/image/catalog/dimensions/14HS10-0404S_Dimension.svg"
+      ],
+      "attributes": {
+        "width": 35.2,
+        "length": 26,
+        "shaft": 5,
+        "extension": 20.5,
+        "pilot": 22,
+        "pitch": 26,
+        "torque": 0.14,
+        "current": 0.4,
+        "weight": 140,
+        "resistance": 30,
+        "inductance": 30,
+        "nema": "14",
+        "winding": "bipolar",
+        "shaftType": "D"
+      },
+      "attributeConditions": {
+        "torque": "Static holding torque at rated phase current; not running torque.",
+        "current": "Rated current per phase."
+      },
+      "specifications": [
+        {
+          "label": "Frame width",
+          "value": "35.2 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "26 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "20.5 mm"
+        },
+        {
+          "label": "Locating pilot",
+          "value": "22 mm"
+        },
+        {
+          "label": "Square mounting pitch",
+          "value": "26 mm"
+        },
+        {
+          "label": "Holding torque",
+          "value": "0.14 N·m"
+        },
+        {
+          "label": "Rated phase current",
+          "value": "0.4 A"
+        },
+        {
+          "label": "Mass",
+          "value": "140 g"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "30 Ω"
+        },
+        {
+          "label": "Phase inductance",
+          "value": "30 mH"
+        },
+        {
+          "label": "Step angle",
+          "value": "1.8°"
+        },
+        {
+          "label": "Mounting holes",
+          "value": "4 × M3; minimum depth 3 mm"
+        },
+        {
+          "label": "Leads",
+          "value": "4"
+        },
+        {
+          "label": "CAD detail",
+          "value": "Dimensions and mounting follow the supplier drawing. Cosmetic details and internal clearances are reconstructed; threads are represented by nominal holes."
+        }
+      ]
+    }
+  },
+  {
+    "id": "17hs08-1004s",
+    "name": "STEPPERONLINE NEMA 17 · 17HS08-1004S",
+    "description": "42.3 mm frame · 21.5 mm body · 0.16 N·m holding · 1 A/phase",
+    "parameters": {
+      "model": "17hs08-1004s",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "17HS08-1004S",
+      "manufacturer": "STEPPERONLINE",
+      "sourceName": "STEPPERONLINE drawing and specifications",
+      "sourceUrl": "https://www.omc-stepperonline.com/nema-17-bipolar-1-8deg-16ncm-22-6oz-in-1a-3-7v-42x42x20mm-4-wires-17hs08-1004s",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "17HS08-1004S"
+      ],
+      "alternateSourceUrls": [
+        "https://www.omc-stepperonline.com/image/catalog/dimensions/17HS08-1004S_Dimension-2.svg"
+      ],
+      "attributes": {
+        "width": 42.3,
+        "length": 21.5,
+        "shaft": 5,
+        "extension": 20,
+        "pilot": 22,
+        "pitch": 31,
+        "torque": 0.16,
+        "current": 1,
+        "weight": 140,
+        "resistance": 3.7,
+        "inductance": 4.5,
+        "nema": "17",
+        "winding": "bipolar",
+        "shaftType": "D"
+      },
+      "attributeConditions": {
+        "torque": "Static holding torque at rated phase current; not running torque.",
+        "current": "Rated current per phase."
+      },
+      "specifications": [
+        {
+          "label": "Frame width",
+          "value": "42.3 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "21.5 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "20 mm"
+        },
+        {
+          "label": "Locating pilot",
+          "value": "22 mm"
+        },
+        {
+          "label": "Square mounting pitch",
+          "value": "31 mm"
+        },
+        {
+          "label": "Holding torque",
+          "value": "0.16 N·m"
+        },
+        {
+          "label": "Rated phase current",
+          "value": "1 A"
+        },
+        {
+          "label": "Mass",
+          "value": "140 g"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "3.7 Ω"
+        },
+        {
+          "label": "Phase inductance",
+          "value": "4.5 mH"
+        },
+        {
+          "label": "Step angle",
+          "value": "1.8°"
+        },
+        {
+          "label": "Mounting holes",
+          "value": "4 × M3; minimum depth 2.5 mm"
+        },
+        {
+          "label": "Leads",
+          "value": "4"
+        },
+        {
+          "label": "CAD detail",
+          "value": "Dimensions and mounting follow the supplier drawing. Cosmetic details and internal clearances are reconstructed; threads are represented by nominal holes."
+        }
+      ]
+    }
+  },
+  {
+    "id": "17hs19-2004s1",
+    "name": "STEPPERONLINE NEMA 17 · 17HS19-2004S1",
+    "description": "42.3 mm frame · 48 mm body · 0.59 N·m holding · 2 A/phase",
+    "parameters": {
+      "model": "17hs19-2004s1",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "17HS19-2004S1",
+      "manufacturer": "STEPPERONLINE",
+      "sourceName": "STEPPERONLINE drawing and specifications",
+      "sourceUrl": "https://www.omc-stepperonline.com/nema-17-bipolar-59ncm-84oz-in-2a-42x48mm-4-wires-w-1m-cable-connector-17hs19-2004s1",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "17HS19-2004S1"
+      ],
+      "alternateSourceUrls": [
+        "https://www.omc-stepperonline.com/image/catalog/dimensions/17HS19-2004S1_Dimension-2.svg"
+      ],
+      "attributes": {
+        "width": 42.3,
+        "length": 48,
+        "shaft": 5,
+        "extension": 24,
+        "pilot": 22,
+        "pitch": 31,
+        "torque": 0.59,
+        "current": 2,
+        "weight": 390,
+        "resistance": 1.6,
+        "inductance": 3,
+        "nema": "17",
+        "winding": "bipolar",
+        "shaftType": "D"
+      },
+      "attributeConditions": {
+        "torque": "Static holding torque at rated phase current; not running torque.",
+        "current": "Rated current per phase."
+      },
+      "specifications": [
+        {
+          "label": "Frame width",
+          "value": "42.3 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "48 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "24 mm"
+        },
+        {
+          "label": "Locating pilot",
+          "value": "22 mm"
+        },
+        {
+          "label": "Square mounting pitch",
+          "value": "31 mm"
+        },
+        {
+          "label": "Holding torque",
+          "value": "0.59 N·m"
+        },
+        {
+          "label": "Rated phase current",
+          "value": "2 A"
+        },
+        {
+          "label": "Mass",
+          "value": "390 g"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "1.6 Ω"
+        },
+        {
+          "label": "Phase inductance",
+          "value": "3 mH"
+        },
+        {
+          "label": "Step angle",
+          "value": "1.8°"
+        },
+        {
+          "label": "Mounting holes",
+          "value": "4 × M3; minimum depth 4.5 mm"
+        },
+        {
+          "label": "Leads",
+          "value": "4"
+        },
+        {
+          "label": "CAD detail",
+          "value": "Dimensions and mounting follow the supplier drawing. Cosmetic details and internal clearances are reconstructed; threads are represented by nominal holes."
+        }
+      ]
+    }
+  },
+  {
+    "id": "23hs30-2804s2",
+    "name": "STEPPERONLINE NEMA 23 · 23HS30-2804S2",
+    "description": "56.4 mm frame · 76.5 mm body · 1.9 N·m holding · 2.8 A/phase",
+    "parameters": {
+      "model": "23hs30-2804s2",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "23HS30-2804S2",
+      "manufacturer": "STEPPERONLINE",
+      "sourceName": "STEPPERONLINE drawing and specifications",
+      "sourceUrl": "https://www.omc-stepperonline.com/nema-23-bipolar-1-9nm-269-06oz-in-2-8a-57x57x76mm-4-wires-8mm-shaft-23hs30-2804s2",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "23HS30-2804S2"
+      ],
+      "alternateSourceUrls": [
+        "https://www.omc-stepperonline.com/image/catalog/dimensions/23HS30-2804S2_Dimension.svg"
+      ],
+      "attributes": {
+        "width": 56.4,
+        "length": 76.5,
+        "shaft": 8,
+        "extension": 22,
+        "pilot": 38.1,
+        "pitch": 47.14,
+        "torque": 1.9,
+        "current": 2.8,
+        "resistance": 1.13,
+        "inductance": 4.8,
+        "nema": "23",
+        "winding": "bipolar",
+        "shaftType": "D"
+      },
+      "attributeConditions": {
+        "torque": "Static holding torque at rated phase current; not running torque.",
+        "current": "Rated current per phase."
+      },
+      "specifications": [
+        {
+          "label": "Frame width",
+          "value": "56.4 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "76.5 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "8 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "22 mm"
+        },
+        {
+          "label": "Locating pilot",
+          "value": "38.1 mm"
+        },
+        {
+          "label": "Square mounting pitch",
+          "value": "47.14 mm"
+        },
+        {
+          "label": "Holding torque",
+          "value": "1.9 N·m"
+        },
+        {
+          "label": "Rated phase current",
+          "value": "2.8 A"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "1.13 Ω"
+        },
+        {
+          "label": "Phase inductance",
+          "value": "4.8 mH"
+        },
+        {
+          "label": "Step angle",
+          "value": "1.8°"
+        },
+        {
+          "label": "Mounting holes",
+          "value": "4 × Ø5; clearance"
+        },
+        {
+          "label": "Leads",
+          "value": "4"
+        },
+        {
+          "label": "CAD detail",
+          "value": "Dimensions and mounting follow the supplier drawing. Cosmetic details and internal clearances are reconstructed; threads are represented by nominal holes."
+        }
+      ]
+    }
+  },
+  {
+    "id": "24hs40-4204s",
+    "name": "STEPPERONLINE NEMA 24 · 24HS40-4204S",
+    "description": "60 mm frame · 100 mm body · 4.2 N·m holding · 4.2 A/phase",
+    "parameters": {
+      "model": "24hs40-4204s",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "24HS40-4204S",
+      "manufacturer": "STEPPERONLINE",
+      "sourceName": "STEPPERONLINE drawing and specifications",
+      "sourceUrl": "https://www.omc-stepperonline.com/s-series-nema-24-bipolar-1-8deg-4-2nm-594-77oz-in-4-2a-60x60x100mm-4-wires-24hs40-4204s",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "24HS40-4204S"
+      ],
+      "alternateSourceUrls": [
+        "https://www.omc-stepperonline.com/image/catalog/dimensions/24HS40-4204S_Dimension.svg"
+      ],
+      "attributes": {
+        "width": 60,
+        "length": 100,
+        "shaft": 10,
+        "extension": 21,
+        "pilot": 38.1,
+        "pitch": 50,
+        "torque": 4.2,
+        "current": 4.2,
+        "weight": 1670,
+        "resistance": 0.9,
+        "inductance": 3.3,
+        "nema": "24",
+        "winding": "bipolar",
+        "shaftType": "D"
+      },
+      "attributeConditions": {
+        "torque": "Static holding torque at rated phase current; not running torque.",
+        "current": "Rated current per phase."
+      },
+      "specifications": [
+        {
+          "label": "Frame width",
+          "value": "60 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "100 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "10 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "21 mm"
+        },
+        {
+          "label": "Locating pilot",
+          "value": "38.1 mm"
+        },
+        {
+          "label": "Square mounting pitch",
+          "value": "50 mm"
+        },
+        {
+          "label": "Holding torque",
+          "value": "4.2 N·m"
+        },
+        {
+          "label": "Rated phase current",
+          "value": "4.2 A"
+        },
+        {
+          "label": "Mass",
+          "value": "1670 g"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "0.9 Ω"
+        },
+        {
+          "label": "Phase inductance",
+          "value": "3.3 mH"
+        },
+        {
+          "label": "Step angle",
+          "value": "1.8°"
+        },
+        {
+          "label": "Mounting holes",
+          "value": "4 × Ø5.1; clearance"
+        },
+        {
+          "label": "Leads",
+          "value": "4"
+        },
+        {
+          "label": "CAD detail",
+          "value": "Dimensions and mounting follow the supplier drawing. Cosmetic details and internal clearances are reconstructed; threads are represented by nominal holes."
+        }
+      ]
+    }
+  },
+  {
+    "id": "34he45-6004s",
+    "name": "STEPPERONLINE NEMA 34 · 34HE45-6004S",
+    "description": "86 mm frame · 114 mm body · 8.2 N·m holding · 6 A/phase",
+    "parameters": {
+      "model": "34he45-6004s",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "34HE45-6004S",
+      "manufacturer": "STEPPERONLINE",
+      "sourceName": "STEPPERONLINE drawing and specifications",
+      "sourceUrl": "https://www.omc-stepperonline.com/e-series-nema-34-stepper-motor-bipolar-1-8deg-8-2-nm-1161-45oz-in-6-0a-86x86x114mm-4-wires-34he45-6004s",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "34HE45-6004S"
+      ],
+      "alternateSourceUrls": [
+        "https://www.omc-stepperonline.com/image/catalog/dimensions/34HE45-6004S_Dimension-2.svg"
+      ],
+      "attributes": {
+        "width": 86,
+        "length": 114,
+        "shaft": 14,
+        "extension": 37,
+        "pilot": 73,
+        "pitch": 69.6,
+        "torque": 8.2,
+        "current": 6,
+        "weight": 3700,
+        "resistance": 0.51,
+        "inductance": 5.1,
+        "nema": "34",
+        "winding": "bipolar",
+        "shaftType": "keyed"
+      },
+      "attributeConditions": {
+        "torque": "Static holding torque at rated phase current; not running torque.",
+        "current": "Rated current per phase."
+      },
+      "specifications": [
+        {
+          "label": "Frame width",
+          "value": "86 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "114 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "14 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "37 mm"
+        },
+        {
+          "label": "Locating pilot",
+          "value": "73 mm"
+        },
+        {
+          "label": "Square mounting pitch",
+          "value": "69.6 mm"
+        },
+        {
+          "label": "Holding torque",
+          "value": "8.2 N·m"
+        },
+        {
+          "label": "Rated phase current",
+          "value": "6 A"
+        },
+        {
+          "label": "Mass",
+          "value": "3700 g"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "0.51 Ω"
+        },
+        {
+          "label": "Phase inductance",
+          "value": "5.1 mH"
+        },
+        {
+          "label": "Step angle",
+          "value": "1.8°"
+        },
+        {
+          "label": "Mounting holes",
+          "value": "4 × Ø6.5; clearance"
+        },
+        {
+          "label": "Leads",
+          "value": "4"
+        },
+        {
+          "label": "CAD detail",
+          "value": "Dimensions and mounting follow the supplier drawing. Cosmetic details and internal clearances are reconstructed; threads are represented by nominal holes."
+        }
+      ]
+    }
+  },
+  {
+    "id": "42hs79-8004s",
+    "name": "STEPPERONLINE NEMA 42 · 42HS79-8004S",
+    "description": "110 mm frame · 201 mm body · 30 N·m holding · 8 A/phase",
+    "parameters": {
+      "model": "42hs79-8004s",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "42HS79-8004S",
+      "manufacturer": "STEPPERONLINE",
+      "sourceName": "STEPPERONLINE drawing and specifications",
+      "sourceUrl": "https://www.omc-stepperonline.com/nema-42-cnc-stepper-motor-bipolar-30nm-4248oz-in-8a-110x201mm-4-wires-42hs79-8004s",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "42HS79-8004S"
+      ],
+      "alternateSourceUrls": [
+        "https://www.omc-stepperonline.com/image/catalog/dimensions/42HS79-8004S_Dimension-2.svg"
+      ],
+      "attributes": {
+        "width": 110,
+        "length": 201,
+        "shaft": 19,
+        "extension": 55.5,
+        "pilot": 55.5,
+        "pitch": 89,
+        "torque": 30,
+        "current": 8,
+        "weight": 11700,
+        "resistance": 1,
+        "inductance": 17.5,
+        "nema": "42",
+        "winding": "bipolar",
+        "shaftType": "keyed"
+      },
+      "attributeConditions": {
+        "torque": "Static holding torque at rated phase current; not running torque.",
+        "current": "Rated current per phase."
+      },
+      "specifications": [
+        {
+          "label": "Frame width",
+          "value": "110 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "201 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "19 mm"
+        },
+        {
+          "label": "Shaft extension",
+          "value": "55.5 mm"
+        },
+        {
+          "label": "Locating pilot",
+          "value": "55.5 mm"
+        },
+        {
+          "label": "Square mounting pitch",
+          "value": "89 mm"
+        },
+        {
+          "label": "Holding torque",
+          "value": "30 N·m"
+        },
+        {
+          "label": "Rated phase current",
+          "value": "8 A"
+        },
+        {
+          "label": "Mass",
+          "value": "11700 g"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "1 Ω"
+        },
+        {
+          "label": "Phase inductance",
+          "value": "17.5 mH"
+        },
+        {
+          "label": "Step angle",
+          "value": "1.8°"
+        },
+        {
+          "label": "Mounting holes",
+          "value": "4 × Ø8.5; clearance"
+        },
+        {
+          "label": "Leads",
+          "value": "4"
+        },
+        {
+          "label": "CAD detail",
+          "value": "Dimensions and mounting follow the supplier drawing. Cosmetic details and internal clearances are reconstructed; threads are represented by nominal holes."
+        }
+      ]
+    }
+  }
+]

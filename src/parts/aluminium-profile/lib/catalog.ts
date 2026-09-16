@@ -41,16 +41,16 @@ export interface AluminiumProfileReference {
 }
 
 export const aluminiumProfileReferenceFiles = {
-  eu1020: 'references/aluminium-eu1020-dimensions.png',
-  eu1030: 'references/aluminium-eu1030-dimensions.png',
-  eu1040: 'references/aluminium-eu1040-dimensions.png',
-  eu1050: 'references/aluminium-eu1050-dimensions.png',
-  euLengthOptions: 'references/aluminium-eu-length-options.png',
-  profile2020: 'references/aluminium-2020-dimensions.png',
-  profile2040: 'references/aluminium-2040-dimensions.png',
-  eu1030Mass: 'references/aluminium-eu1030-mass-dimensions.png',
-  gb1020h: 'references/aluminium-gb1020h-dimensions.png',
-  eu1540: 'references/aluminium-eu1540-dimensions.png',
+  eu1020: '',
+  eu1030: '',
+  eu1040: '',
+  eu1050: '',
+  euLengthOptions: '',
+  profile2020: '',
+  profile2040: '',
+  eu1030Mass: '',
+  gb1020h: '',
+  eu1540: '',
 };
 
 const source = aluminiumProfileReferenceFiles;

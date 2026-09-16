@@ -51,7 +51,7 @@ export function washerDefinition(
   return {
     id,
     name,
-    category: 'FASTENERS',
+    category: 'FASTENERS & THREADS',
     subgroup: 'WASHERS',
     icon: 'bolt',
     complexity: 'Washer profile',

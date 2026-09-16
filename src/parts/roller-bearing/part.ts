@@ -14,7 +14,7 @@ import { assemblyStates, bearingParameters } from './lib/parts/bearing-utils';
 const part: PartDefinition = {
   id: 'roller-bearing',
   name: 'Cylindrical roller bearing',
-  category: 'BEARINGS',
+  category: 'BEARINGS & SEALS',
   subgroup: 'ROLLER BEARINGS',
   description: 'Radial bearing envelope with straight cylindrical rolling elements.',
   keywords: ['roller', 'shaft', 'radial', 'NU', 'cylindrical'],

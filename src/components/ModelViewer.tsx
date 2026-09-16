@@ -538,6 +538,7 @@ export default function ModelViewer({
       displayRoot.traverse((child) => {
         if (child instanceof Mesh) meshes.push(child);
       });
+      const edgeGeometries = new Map<BufferGeometry, EdgesGeometry>();
       meshes.forEach((mesh) => {
         mesh.castShadow = true;
         mesh.receiveShadow = true;
@@ -555,8 +556,10 @@ export default function ModelViewer({
             wireframe: 'wireframe' in material ? Boolean(material.wireframe) : undefined,
           });
         });
+        if (!edgeGeometries.has(mesh.geometry))
+          edgeGeometries.set(mesh.geometry, new EdgesGeometry(mesh.geometry, 35));
         const edges = new LineSegments(
-          new EdgesGeometry(mesh.geometry, 35),
+          edgeGeometries.get(mesh.geometry)!,
           new LineBasicMaterial({
             color: new Color(0x111820),
             transparent: true,

@@ -1,7 +1,7 @@
 [
   {
     "id": "nylon-double-58",
-    "name": "Nylon double horn 58 \u00d7 14 \u00d7 8.7",
+    "name": "Nylon double horn 58 × 14 × 8.7",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "double",
@@ -37,11 +37,16 @@
       "finish": "black"
     },
     "catalog": {
-      "designation": "Nylon double horn 58 \u00d7 14 \u00d7 8.7",
+      "designation": "Nylon double horn 58 × 14 × 8.7",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-set-nylon.png",
-      "verifiedParameters": ["form", "armLength", "armWidth", "hubHeight"],
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "form",
+        "armLength",
+        "armWidth",
+        "hubHeight"
+      ],
       "specifications": [
         {
           "label": "Envelope",
@@ -52,7 +57,7 @@
   },
   {
     "id": "nylon-single-36",
-    "name": "Nylon single horn 36 \u00d7 14 \u00d7 8.7",
+    "name": "Nylon single horn 36 × 14 × 8.7",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "single",
@@ -88,11 +93,16 @@
       "finish": "black"
     },
     "catalog": {
-      "designation": "Nylon single horn 36 \u00d7 14 \u00d7 8.7",
+      "designation": "Nylon single horn 36 × 14 × 8.7",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-set-nylon.png",
-      "verifiedParameters": ["form", "armLength", "armWidth", "hubHeight"],
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "form",
+        "armLength",
+        "armWidth",
+        "hubHeight"
+      ],
       "specifications": [
         {
           "label": "Envelope",
@@ -103,7 +113,7 @@
   },
   {
     "id": "nylon-single-30",
-    "name": "Nylon single horn 30 \u00d7 14 \u00d7 8.7",
+    "name": "Nylon single horn 30 × 14 × 8.7",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "single",
@@ -139,11 +149,16 @@
       "finish": "black"
     },
     "catalog": {
-      "designation": "Nylon single horn 30 \u00d7 14 \u00d7 8.7",
+      "designation": "Nylon single horn 30 × 14 × 8.7",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-set-nylon.png",
-      "verifiedParameters": ["form", "armLength", "armWidth", "hubHeight"],
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "form",
+        "armLength",
+        "armWidth",
+        "hubHeight"
+      ],
       "specifications": [
         {
           "label": "Envelope",
@@ -154,7 +169,7 @@
   },
   {
     "id": "nylon-single-42",
-    "name": "Nylon single horn 42 \u00d7 14 \u00d7 8.7",
+    "name": "Nylon single horn 42 × 14 × 8.7",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "single",
@@ -190,11 +205,16 @@
       "finish": "black"
     },
     "catalog": {
-      "designation": "Nylon single horn 42 \u00d7 14 \u00d7 8.7",
+      "designation": "Nylon single horn 42 × 14 × 8.7",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-set-nylon.png",
-      "verifiedParameters": ["form", "armLength", "armWidth", "hubHeight"],
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "form",
+        "armLength",
+        "armWidth",
+        "hubHeight"
+      ],
       "specifications": [
         {
           "label": "Envelope",
@@ -205,7 +225,7 @@
   },
   {
     "id": "aluminium-25t-single-28",
-    "name": "25T aluminium single arm \u00b7 28 mm",
+    "name": "25T aluminium single arm · 28 mm",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "single",
@@ -241,10 +261,10 @@
       "finish": "red"
     },
     "catalog": {
-      "designation": "25T aluminium single arm \u00b7 28 mm",
+      "designation": "25T aluminium single arm · 28 mm",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-aluminium.png",
+      "sourceUrl": "",
       "verifiedParameters": [
         "form",
         "armLength",
@@ -258,7 +278,7 @@
   },
   {
     "id": "aluminium-25t-double-47",
-    "name": "25T aluminium double arm \u00b7 47 mm",
+    "name": "25T aluminium double arm · 47 mm",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "double",
@@ -294,17 +314,22 @@
       "finish": "red"
     },
     "catalog": {
-      "designation": "25T aluminium double arm \u00b7 47 mm",
+      "designation": "25T aluminium double arm · 47 mm",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-aluminium.png",
-      "verifiedParameters": ["form", "armLength", "tipWidth", "splineTeeth"],
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "form",
+        "armLength",
+        "tipWidth",
+        "splineTeeth"
+      ],
       "specifications": []
     }
   },
   {
     "id": "pdrs60-15t",
-    "name": "PDRS60 15T clamping arm \u00b7 78.4 mm",
+    "name": "PDRS60 15T clamping arm · 78.4 mm",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "single",
@@ -340,10 +365,10 @@
       "finish": "silver"
     },
     "catalog": {
-      "designation": "PDRS60 15T clamping arm \u00b7 78.4 mm",
+      "designation": "PDRS60 15T clamping arm · 78.4 mm",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-arm-pdrs60-15t.png",
+      "sourceUrl": "",
       "verifiedParameters": [
         "form",
         "armLength",
@@ -365,18 +390,18 @@
       "specifications": [
         {
           "label": "Linkage holes",
-          "value": "8 \u00d7 M3.0; prototype bores are smooth."
+          "value": "8 × M3.0; prototype bores are smooth."
         },
         {
           "label": "Spline",
-          "value": "Drawing labels \u00d87.7\u201315T; the minor diameter is not specified."
+          "value": "Drawing labels Ø7.7–15T; the minor diameter is not specified."
         }
       ]
     }
   },
   {
     "id": "micro-arm-25-25",
-    "name": "Micro horn \u00b7 25.25 mm \u00b7 6 holes",
+    "name": "Micro horn · 25.25 mm · 6 holes",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "single",
@@ -412,10 +437,10 @@
       "finish": "white"
     },
     "catalog": {
-      "designation": "Micro horn \u00b7 25.25 mm \u00b7 6 holes",
+      "designation": "Micro horn · 25.25 mm · 6 holes",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-arm-micro-drawing.png",
+      "sourceUrl": "",
       "verifiedParameters": [
         "form",
         "armLength",
@@ -439,7 +464,7 @@
   },
   {
     "id": "q-xa15-cross",
-    "name": "Q-XA15 15T cross horn \u00b7 \u00d88 socket",
+    "name": "Q-XA15 15T cross horn · Ø8 socket",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "cross",
@@ -475,10 +500,10 @@
       "finish": "silver"
     },
     "catalog": {
-      "designation": "Q-XA15 15T cross horn \u00b7 \u00d88 socket",
+      "designation": "Q-XA15 15T cross horn · Ø8 socket",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-cross-q-xa15.png",
+      "sourceUrl": "",
       "verifiedParameters": [
         "form",
         "splineTeeth",
@@ -507,7 +532,7 @@
   },
   {
     "id": "cross-inch-reference",
-    "name": "Cross horn \u00b7 0.095 in linkage holes",
+    "name": "Cross horn · 0.095 in linkage holes",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "cross",
@@ -543,11 +568,15 @@
       "finish": "white"
     },
     "catalog": {
-      "designation": "Cross horn \u00b7 0.095 in linkage holes",
+      "designation": "Cross horn · 0.095 in linkage holes",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-cross-inch.png",
-      "verifiedParameters": ["form", "perpendicularLength", "holeDiameter"],
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "form",
+        "perpendicularLength",
+        "holeDiameter"
+      ],
       "specifications": [
         {
           "label": "Original dimensions",
@@ -562,7 +591,7 @@
   },
   {
     "id": "spline-set-23t-single",
-    "name": "23T single horn \u00b7 spline set reference",
+    "name": "23T single horn · spline set",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "single",
@@ -598,11 +627,14 @@
       "finish": "black"
     },
     "catalog": {
-      "designation": "23T single horn \u00b7 spline set reference",
+      "designation": "23T single horn · spline set reference",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-spline-set.png",
-      "verifiedParameters": ["form", "splineTeeth"],
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "form",
+        "splineTeeth"
+      ],
       "specifications": [
         {
           "label": "Unspecified dimensions",
@@ -613,7 +645,7 @@
   },
   {
     "id": "spline-set-23t-double",
-    "name": "23T double horn \u00b7 spline set reference",
+    "name": "23T double horn · spline set",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "double",
@@ -649,11 +681,14 @@
       "finish": "black"
     },
     "catalog": {
-      "designation": "23T double horn \u00b7 spline set reference",
+      "designation": "23T double horn · spline set reference",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-spline-set.png",
-      "verifiedParameters": ["form", "splineTeeth"],
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "form",
+        "splineTeeth"
+      ],
       "specifications": [
         {
           "label": "Unspecified dimensions",
@@ -664,7 +699,7 @@
   },
   {
     "id": "spline-set-24t-single",
-    "name": "24T single horn \u00b7 spline set reference",
+    "name": "24T single horn · spline set",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "single",
@@ -700,11 +735,14 @@
       "finish": "black"
     },
     "catalog": {
-      "designation": "24T single horn \u00b7 spline set reference",
+      "designation": "24T single horn · spline set reference",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-spline-set.png",
-      "verifiedParameters": ["form", "splineTeeth"],
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "form",
+        "splineTeeth"
+      ],
       "specifications": [
         {
           "label": "Unspecified dimensions",
@@ -715,7 +753,7 @@
   },
   {
     "id": "spline-set-24t-double",
-    "name": "24T double horn \u00b7 spline set reference",
+    "name": "24T double horn · spline set",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "double",
@@ -751,11 +789,14 @@
       "finish": "black"
     },
     "catalog": {
-      "designation": "24T double horn \u00b7 spline set reference",
+      "designation": "24T double horn · spline set reference",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-spline-set.png",
-      "verifiedParameters": ["form", "splineTeeth"],
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "form",
+        "splineTeeth"
+      ],
       "specifications": [
         {
           "label": "Unspecified dimensions",
@@ -766,7 +807,7 @@
   },
   {
     "id": "spline-set-25t-single",
-    "name": "25T single horn \u00b7 spline set reference",
+    "name": "25T single horn · spline set",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "single",
@@ -802,11 +843,14 @@
       "finish": "black"
     },
     "catalog": {
-      "designation": "25T single horn \u00b7 spline set reference",
+      "designation": "25T single horn · spline set reference",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-spline-set.png",
-      "verifiedParameters": ["form", "splineTeeth"],
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "form",
+        "splineTeeth"
+      ],
       "specifications": [
         {
           "label": "Unspecified dimensions",
@@ -817,7 +861,7 @@
   },
   {
     "id": "spline-set-25t-double",
-    "name": "25T double horn \u00b7 spline set reference",
+    "name": "25T double horn · spline set",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "double",
@@ -853,11 +897,14 @@
       "finish": "black"
     },
     "catalog": {
-      "designation": "25T double horn \u00b7 spline set reference",
+      "designation": "25T double horn · spline set reference",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-spline-set.png",
-      "verifiedParameters": ["form", "splineTeeth"],
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "form",
+        "splineTeeth"
+      ],
       "specifications": [
         {
           "label": "Unspecified dimensions",
@@ -868,7 +915,7 @@
   },
   {
     "id": "6mm-double-39-7",
-    "name": "\u00d86 horn set \u00b7 double 39.7 mm",
+    "name": "Ø6 horn set · double 39.7 mm",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "double",
@@ -904,11 +951,15 @@
       "finish": "white"
     },
     "catalog": {
-      "designation": "\u00d86 horn set \u00b7 double 39.7 mm",
+      "designation": "Ø6 horn set · double 39.7 mm",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-6mm-set.png",
-      "verifiedParameters": ["form", "armLength", "splineMajorDiameter"],
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "form",
+        "armLength",
+        "splineMajorDiameter"
+      ],
       "specifications": [
         {
           "label": "Hole pair spans",
@@ -919,7 +970,7 @@
   },
   {
     "id": "6mm-disc-21-6",
-    "name": "\u00d86 horn set \u00b7 disc 21.6 mm",
+    "name": "Ø6 horn set · disc 21.6 mm",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "disc",
@@ -955,11 +1006,16 @@
       "finish": "white"
     },
     "catalog": {
-      "designation": "\u00d86 horn set \u00b7 disc 21.6 mm",
+      "designation": "Ø6 horn set · disc 21.6 mm",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-6mm-set.png",
-      "verifiedParameters": ["form", "armLength", "splineMajorDiameter", "discHoleCount"],
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "form",
+        "armLength",
+        "splineMajorDiameter",
+        "discHoleCount"
+      ],
       "specifications": [
         {
           "label": "Disc pattern",
@@ -970,7 +1026,7 @@
   },
   {
     "id": "6mm-cross-31-7",
-    "name": "\u00d86 horn set \u00b7 cross 31.7 mm",
+    "name": "Ø6 horn set · cross 31.7 mm",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "cross",
@@ -1006,11 +1062,15 @@
       "finish": "white"
     },
     "catalog": {
-      "designation": "\u00d86 horn set \u00b7 cross 31.7 mm",
+      "designation": "Ø6 horn set · cross 31.7 mm",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-6mm-set.png",
-      "verifiedParameters": ["form", "armLength", "splineMajorDiameter"],
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "form",
+        "armLength",
+        "splineMajorDiameter"
+      ],
       "specifications": [
         {
           "label": "Hole pair spans",
@@ -1021,7 +1081,7 @@
   },
   {
     "id": "6mm-six-31-7",
-    "name": "\u00d86 horn set \u00b7 six 31.7 mm",
+    "name": "Ø6 horn set · six 31.7 mm",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "six",
@@ -1057,11 +1117,15 @@
       "finish": "white"
     },
     "catalog": {
-      "designation": "\u00d86 horn set \u00b7 six 31.7 mm",
+      "designation": "Ø6 horn set · six 31.7 mm",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-6mm-set.png",
-      "verifiedParameters": ["form", "armLength", "splineMajorDiameter"],
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "form",
+        "armLength",
+        "splineMajorDiameter"
+      ],
       "specifications": [
         {
           "label": "Hole pair spans",
@@ -1072,7 +1136,7 @@
   },
   {
     "id": "5mm-double-long-58-5",
-    "name": "\u00d85 horn set \u00b7 long double 58.5 mm",
+    "name": "Ø5 horn set · long double 58.5 mm",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "double",
@@ -1108,10 +1172,10 @@
       "finish": "white"
     },
     "catalog": {
-      "designation": "\u00d85 horn set \u00b7 long double 58.5 mm",
+      "designation": "Ø5 horn set · long double 58.5 mm",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-5mm-set.png",
+      "sourceUrl": "",
       "verifiedParameters": [
         "form",
         "armLength",
@@ -1134,7 +1198,7 @@
   },
   {
     "id": "5mm-double-30-1",
-    "name": "\u00d85 horn set \u00b7 double 30.1 mm",
+    "name": "Ø5 horn set · double 30.1 mm",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "double",
@@ -1170,11 +1234,16 @@
       "finish": "white"
     },
     "catalog": {
-      "designation": "\u00d85 horn set \u00b7 double 30.1 mm",
+      "designation": "Ø5 horn set · double 30.1 mm",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-5mm-set.png",
-      "verifiedParameters": ["form", "armLength", "splineMajorDiameter", "holeCount"],
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "form",
+        "armLength",
+        "splineMajorDiameter",
+        "holeCount"
+      ],
       "specifications": [
         {
           "label": "Hole pair spans",
@@ -1185,7 +1254,7 @@
   },
   {
     "id": "5mm-single-18-7",
-    "name": "\u00d85 horn set \u00b7 single 18.7 mm",
+    "name": "Ø5 horn set · single 18.7 mm",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "single",
@@ -1221,17 +1290,22 @@
       "finish": "white"
     },
     "catalog": {
-      "designation": "\u00d85 horn set \u00b7 single 18.7 mm",
+      "designation": "Ø5 horn set · single 18.7 mm",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-5mm-set.png",
-      "verifiedParameters": ["form", "armLength", "splineMajorDiameter", "holeCount"],
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "form",
+        "armLength",
+        "splineMajorDiameter",
+        "holeCount"
+      ],
       "specifications": []
     }
   },
   {
     "id": "5mm-disc-18-7",
-    "name": "\u00d85 horn set \u00b7 disc 18.7 mm",
+    "name": "Ø5 horn set · disc 18.7 mm",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "disc",
@@ -1267,11 +1341,16 @@
       "finish": "white"
     },
     "catalog": {
-      "designation": "\u00d85 horn set \u00b7 disc 18.7 mm",
+      "designation": "Ø5 horn set · disc 18.7 mm",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-5mm-set.png",
-      "verifiedParameters": ["form", "armLength", "splineMajorDiameter", "discHoleCount"],
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "form",
+        "armLength",
+        "splineMajorDiameter",
+        "discHoleCount"
+      ],
       "specifications": [
         {
           "label": "Disc pattern",
@@ -1282,7 +1361,7 @@
   },
   {
     "id": "4mm-double-28-9",
-    "name": "\u00d84 horn set \u00b7 double 28.9 mm",
+    "name": "Ø4 horn set · double 28.9 mm",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "double",
@@ -1318,10 +1397,10 @@
       "finish": "white"
     },
     "catalog": {
-      "designation": "\u00d84 horn set \u00b7 double 28.9 mm",
+      "designation": "Ø4 horn set · double 28.9 mm",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-4mm-set.png",
+      "sourceUrl": "",
       "verifiedParameters": [
         "form",
         "armLength",
@@ -1340,7 +1419,7 @@
   },
   {
     "id": "4mm-single-17-9",
-    "name": "\u00d84 horn set \u00b7 single 17.9 mm",
+    "name": "Ø4 horn set · single 17.9 mm",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "single",
@@ -1376,11 +1455,16 @@
       "finish": "white"
     },
     "catalog": {
-      "designation": "\u00d84 horn set \u00b7 single 17.9 mm",
+      "designation": "Ø4 horn set · single 17.9 mm",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-4mm-set.png",
-      "verifiedParameters": ["form", "armLength", "splineMajorDiameter", "holeCount"],
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "form",
+        "armLength",
+        "splineMajorDiameter",
+        "holeCount"
+      ],
       "specifications": [
         {
           "label": "Pattern",
@@ -1391,7 +1475,7 @@
   },
   {
     "id": "4mm-cross-27-8",
-    "name": "\u00d84 horn set \u00b7 asymmetric cross 27.8 \u00d7 24.8",
+    "name": "Ø4 horn set · asymmetric cross 27.8 × 24.8",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "cross",
@@ -1427,10 +1511,10 @@
       "finish": "white"
     },
     "catalog": {
-      "designation": "\u00d84 horn set \u00b7 asymmetric cross 27.8 \u00d7 24.8",
+      "designation": "Ø4 horn set · asymmetric cross 27.8 × 24.8",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-horn-4mm-set.png",
+      "sourceUrl": "",
       "verifiedParameters": [
         "form",
         "armLength",
@@ -1453,7 +1537,7 @@
   },
   {
     "id": "25t-clamping-52",
-    "name": "25T clamping arm \u00b7 52 mm \u00b7 32 / 38 mm holes",
+    "name": "25T clamping arm · 52 mm · 32 / 38 mm holes",
     "description": "Transcribed from the supplied reference. Unspecified spline fit, wall sections and hardware dimensions remain editable prototype values.",
     "parameters": {
       "form": "single",
@@ -1489,10 +1573,10 @@
       "finish": "red"
     },
     "catalog": {
-      "designation": "25T clamping arm \u00b7 52 mm \u00b7 32 / 38 mm holes",
+      "designation": "25T clamping arm · 52 mm · 32 / 38 mm holes",
       "sourceName": "User-supplied servo horn reference",
       "sourceKind": "attachment",
-      "sourceUrl": "references/servo-arm-clamping-25t.png",
+      "sourceUrl": "",
       "verifiedParameters": [
         "form",
         "armLength",
@@ -1510,7 +1594,7 @@
       "specifications": [
         {
           "label": "Linkage holes",
-          "value": "2 \u00d7 M3 at 32 and 38 mm from servo axis; prototype bores are smooth."
+          "value": "2 × M3 at 32 and 38 mm from servo axis; prototype bores are smooth."
         },
         {
           "label": "Lightening pocket",
@@ -1518,7 +1602,7 @@
         },
         {
           "label": "Spline",
-          "value": "Futaba label and \u00d85.5 / 25T as printed. Minor diameter and fit are not specified."
+          "value": "Futaba label and Ø5.5 / 25T as printed. Minor diameter and fit are not specified."
         }
       ]
     }

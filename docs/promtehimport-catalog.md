@@ -78,7 +78,7 @@ Products may appear in more than one category. The distinct total deduplicates t
 
 ## Validation
 
-The final snapshot passed 4,833 distinct macro/state checks in FreeCAD 1.0.2 with no failures. The [recorded validation summary](../data/promtehimport-native-validation.json) includes the preset and macro-manifest fingerprints.
+The final snapshot passed 4,833 distinct macro/state checks in FreeCAD 1.0.2 with no failures. The recorded validation summary (generated local report) includes the preset and macro-manifest fingerprints.
 
 The adapter validates every accepted configuration and preview envelope in each supported state. Regression tests check complete inventory accounting, preservation of supplier identifiers, construction mapping, URL deduplication, and source-aware preset matching. To validate every distinct supplier macro with a local FreeCAD installation:
 

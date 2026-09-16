@@ -130,7 +130,7 @@ export function assembly(p: Parameters, state: string): Component[] {
 const part: PartDefinition = {
   id: 'open-frame-solenoid',
   name: 'Open-frame solenoid',
-  category: 'ELECTROMAGNETICS',
+  category: 'MOTORS & ACTUATORS',
   subgroup: 'SOLENOIDS',
   icon: 'magnet',
   description:

@@ -15,8 +15,8 @@ export interface Din915Row {
 }
 
 export const din915ReferenceFiles = {
-  dimensions: 'references/din915-dimensions.png',
-  photo: 'references/din915-dog-point.png',
+  dimensions: '',
+  photo: '',
 };
 
 // Preserve the printed "metric", "max" and "min" socket columns independently.

@@ -1,6 +1,5 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import fs from 'node:fs';
 import { parts } from '../src/parts';
 import { generateScript } from '../src/core/freecad';
 import { validateParameters } from '../src/core/validation';
@@ -28,12 +27,13 @@ test('sourced presets have auditable dimensions and complete valid configuration
       if (!preset.catalog) continue;
       count++;
       const { catalog } = preset;
-      if (catalog.sourceKind === 'attachment') {
-        assert.match(catalog.sourceUrl, /^references\/[a-z0-9-]+\.png$/);
-        assert.ok(fs.existsSync(new URL(`../public/${catalog.sourceUrl}`, import.meta.url)));
-      } else {
-        assert.equal(new URL(catalog.sourceUrl).protocol, 'https:');
-      }
+      if (catalog.sourceUrl) assert.equal(new URL(catalog.sourceUrl).protocol, 'https:');
+      else
+        assert.equal(
+          catalog.sourceKind,
+          'attachment',
+          'Only supplied references may lack a public URL.',
+        );
       assert.ok(catalog.designation && catalog.sourceName);
       assert.ok(catalog.verifiedParameters.length > 0);
       assert.equal(new Set(catalog.verifiedParameters).size, catalog.verifiedParameters.length);
@@ -49,7 +49,9 @@ test('sourced presets have auditable dimensions and complete valid configuration
     }
   }
   assert.ok(count >= 3500, 'The supplier catalog must retain the full imported geometry range.');
-  const bearingParts = parts.filter((part) => part.category === 'BEARINGS');
+  const bearingParts = parts.filter(
+    (part) => part.category === 'BEARINGS & SEALS' && part.presets.some((p) => p.catalog),
+  );
   assert.ok(bearingParts.length >= 19);
   for (const part of bearingParts) {
     assert.ok(

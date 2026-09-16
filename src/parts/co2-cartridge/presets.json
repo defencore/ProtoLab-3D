@@ -1,0 +1,704 @@
+[
+  {
+    "id": "leland-40102",
+    "name": "Leland 40102 · 8 g · Unthreaded",
+    "description": "Ø18.5928 × 64.008 mm · neck Ø8.5852 × 5.842 mm",
+    "parameters": {
+      "model": "leland-40102"
+    },
+    "catalog": {
+      "designation": "8 g · Smooth / unthreaded · Leland 40102",
+      "manufacturer": "Leland",
+      "sourceName": "Leland specification 1.1 · Rev 14.0",
+      "sourceUrl": "https://www.lelandltd.com/small_high_pressure.htm",
+      "productCodes": [
+        "40102"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published body and neck dimensions; reconstructed curved exterior and nominal thread.",
+        "limitations": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight.",
+        "sourceUrl": "https://www.lelandltd.com/small_high_pressure.htm"
+      },
+      "attributes": {
+        "gasMass": 8,
+        "length": 64.008,
+        "diameter": 18.5928,
+        "neckDiameter": 8.5852,
+        "neckLength": 5.842,
+        "connection": "Smooth / unthreaded",
+        "neckType": "Unthreaded"
+      },
+      "attributeConditions": {
+        "gasMass": "CO₂ fill mass; not empty or gross cartridge mass.",
+        "length": "Reference dimension A in the manufacturer table, converted from inches × 25.4.",
+        "diameter": "Reference dimension B; no unlisted tolerance is inferred.",
+        "neckDiameter": "Dimension C; nominal major diameter for threaded necks.",
+        "neckLength": "Dimension D from the same manufacturer specification row.",
+        "pitch": "Calculated exactly as 25.4/TPI; reference thread profile, not class-specific fit."
+      },
+      "specifications": [
+        {
+          "label": "Gas",
+          "value": "CO₂"
+        },
+        {
+          "label": "Source dimensions A / B / C / D (in)",
+          "value": "2.52 / 0.732 / 0.338 / 0.23"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight."
+        }
+      ]
+    }
+  },
+  {
+    "id": "leland-80121",
+    "name": "Leland 80121 · 8 g · 3/8″-24 UNF",
+    "description": "Ø18.669 × 67.0052 mm · neck Ø9.525 × 9.271 mm",
+    "parameters": {
+      "model": "leland-80121"
+    },
+    "catalog": {
+      "designation": "8 g · 3/8″-24 UNF · Leland 80121",
+      "manufacturer": "Leland",
+      "sourceName": "Leland specification 2.1 · Rev 14.0",
+      "sourceUrl": "https://www.lelandltd.com/small_high_pressure2.1.htm",
+      "productCodes": [
+        "80121"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published body and neck dimensions; reconstructed curved exterior and nominal thread.",
+        "limitations": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight.",
+        "sourceUrl": "https://www.lelandltd.com/small_high_pressure2.1.htm"
+      },
+      "attributes": {
+        "gasMass": 8,
+        "length": 67.0052,
+        "diameter": 18.669,
+        "neckDiameter": 9.525,
+        "neckLength": 9.271,
+        "connection": "3/8″-24 UNF",
+        "neckType": "Threaded",
+        "tpi": 24,
+        "pitch": 1.0583333333333333
+      },
+      "attributeConditions": {
+        "gasMass": "CO₂ fill mass; not empty or gross cartridge mass.",
+        "length": "Reference dimension A in the manufacturer table, converted from inches × 25.4.",
+        "diameter": "Reference dimension B; no unlisted tolerance is inferred.",
+        "neckDiameter": "Dimension C; nominal major diameter for threaded necks.",
+        "neckLength": "Dimension D from the same manufacturer specification row.",
+        "pitch": "Calculated exactly as 25.4/TPI; reference thread profile, not class-specific fit."
+      },
+      "specifications": [
+        {
+          "label": "Gas",
+          "value": "CO₂"
+        },
+        {
+          "label": "Source dimensions A / B / C / D (in)",
+          "value": "2.638 / 0.735 / 0.375 / 0.365"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight."
+        }
+      ]
+    }
+  },
+  {
+    "id": "leland-42221",
+    "name": "Leland 42221 · 12 g · Unthreaded",
+    "description": "Ø18.923 × 82.296 mm · neck Ø7.2898 × 3.9878 mm",
+    "parameters": {
+      "model": "leland-42221"
+    },
+    "catalog": {
+      "designation": "12 g · Smooth / unthreaded · Leland 42221",
+      "manufacturer": "Leland",
+      "sourceName": "Leland specification 3.1 · Rev 14.0",
+      "sourceUrl": "https://www.lelandltd.com/small_high_pressure3.1.htm",
+      "productCodes": [
+        "42221"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published body and neck dimensions; reconstructed curved exterior and nominal thread.",
+        "limitations": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight.",
+        "sourceUrl": "https://www.lelandltd.com/small_high_pressure3.1.htm"
+      },
+      "attributes": {
+        "gasMass": 12,
+        "length": 82.296,
+        "diameter": 18.923,
+        "neckDiameter": 7.2898,
+        "neckLength": 3.9878,
+        "connection": "Smooth / unthreaded",
+        "neckType": "Unthreaded"
+      },
+      "attributeConditions": {
+        "gasMass": "CO₂ fill mass; not empty or gross cartridge mass.",
+        "length": "Reference dimension A in the manufacturer table, converted from inches × 25.4.",
+        "diameter": "Reference dimension B; no unlisted tolerance is inferred.",
+        "neckDiameter": "Dimension C; nominal major diameter for threaded necks.",
+        "neckLength": "Dimension D from the same manufacturer specification row.",
+        "pitch": "Calculated exactly as 25.4/TPI; reference thread profile, not class-specific fit."
+      },
+      "specifications": [
+        {
+          "label": "Gas",
+          "value": "CO₂"
+        },
+        {
+          "label": "Source dimensions A / B / C / D (in)",
+          "value": "3.24 / 0.745 / 0.287 / 0.157"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight."
+        }
+      ]
+    }
+  },
+  {
+    "id": "leland-81121",
+    "name": "Leland 81121 · 12 g · 3/8″-24 UNF",
+    "description": "Ø18.669 × 82.55 mm · neck Ø9.525 × 9.271 mm",
+    "parameters": {
+      "model": "leland-81121"
+    },
+    "catalog": {
+      "designation": "12 g · 3/8″-24 UNF · Leland 81121",
+      "manufacturer": "Leland",
+      "sourceName": "Leland specification 2.1 · Rev 14.0",
+      "sourceUrl": "https://www.lelandltd.com/small_high_pressure2.1.htm",
+      "productCodes": [
+        "81121"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published body and neck dimensions; reconstructed curved exterior and nominal thread.",
+        "limitations": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight.",
+        "sourceUrl": "https://www.lelandltd.com/small_high_pressure2.1.htm"
+      },
+      "attributes": {
+        "gasMass": 12,
+        "length": 82.55,
+        "diameter": 18.669,
+        "neckDiameter": 9.525,
+        "neckLength": 9.271,
+        "connection": "3/8″-24 UNF",
+        "neckType": "Threaded",
+        "tpi": 24,
+        "pitch": 1.0583333333333333
+      },
+      "attributeConditions": {
+        "gasMass": "CO₂ fill mass; not empty or gross cartridge mass.",
+        "length": "Reference dimension A in the manufacturer table, converted from inches × 25.4.",
+        "diameter": "Reference dimension B; no unlisted tolerance is inferred.",
+        "neckDiameter": "Dimension C; nominal major diameter for threaded necks.",
+        "neckLength": "Dimension D from the same manufacturer specification row.",
+        "pitch": "Calculated exactly as 25.4/TPI; reference thread profile, not class-specific fit."
+      },
+      "specifications": [
+        {
+          "label": "Gas",
+          "value": "CO₂"
+        },
+        {
+          "label": "Source dimensions A / B / C / D (in)",
+          "value": "3.25 / 0.735 / 0.375 / 0.365"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight."
+        }
+      ]
+    }
+  },
+  {
+    "id": "leland-42101",
+    "name": "Leland 42101 · 16 g · Unthreaded",
+    "description": "Ø21.7932 × 88.392 mm · neck Ø9.2456 × 5.9944 mm",
+    "parameters": {
+      "model": "leland-42101"
+    },
+    "catalog": {
+      "designation": "16 g · Smooth / unthreaded · Leland 42101",
+      "manufacturer": "Leland",
+      "sourceName": "Leland specification 1.1 · Rev 14.0",
+      "sourceUrl": "https://www.lelandltd.com/small_high_pressure.htm",
+      "productCodes": [
+        "42101"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published body and neck dimensions; reconstructed curved exterior and nominal thread.",
+        "limitations": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight.",
+        "sourceUrl": "https://www.lelandltd.com/small_high_pressure.htm"
+      },
+      "attributes": {
+        "gasMass": 16,
+        "length": 88.392,
+        "diameter": 21.7932,
+        "neckDiameter": 9.2456,
+        "neckLength": 5.9944,
+        "connection": "Smooth / unthreaded",
+        "neckType": "Unthreaded"
+      },
+      "attributeConditions": {
+        "gasMass": "CO₂ fill mass; not empty or gross cartridge mass.",
+        "length": "Reference dimension A in the manufacturer table, converted from inches × 25.4.",
+        "diameter": "Reference dimension B; no unlisted tolerance is inferred.",
+        "neckDiameter": "Dimension C; nominal major diameter for threaded necks.",
+        "neckLength": "Dimension D from the same manufacturer specification row.",
+        "pitch": "Calculated exactly as 25.4/TPI; reference thread profile, not class-specific fit."
+      },
+      "specifications": [
+        {
+          "label": "Gas",
+          "value": "CO₂"
+        },
+        {
+          "label": "Source dimensions A / B / C / D (in)",
+          "value": "3.48 / 0.858 / 0.364 / 0.236"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight."
+        }
+      ]
+    }
+  },
+  {
+    "id": "leland-82122",
+    "name": "Leland 82122 · 16 g · 3/8″-24 UNF",
+    "description": "Ø21.844 × 88.392 mm · neck Ø9.525 × 9.271 mm",
+    "parameters": {
+      "model": "leland-82122"
+    },
+    "catalog": {
+      "designation": "16 g · 3/8″-24 UNF · Leland 82122",
+      "manufacturer": "Leland",
+      "sourceName": "Leland specification 2.1 · Rev 14.0",
+      "sourceUrl": "https://www.lelandltd.com/small_high_pressure2.1.htm",
+      "productCodes": [
+        "82122"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published body and neck dimensions; reconstructed curved exterior and nominal thread.",
+        "limitations": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight.",
+        "sourceUrl": "https://www.lelandltd.com/small_high_pressure2.1.htm"
+      },
+      "attributes": {
+        "gasMass": 16,
+        "length": 88.392,
+        "diameter": 21.844,
+        "neckDiameter": 9.525,
+        "neckLength": 9.271,
+        "connection": "3/8″-24 UNF",
+        "neckType": "Threaded",
+        "tpi": 24,
+        "pitch": 1.0583333333333333
+      },
+      "attributeConditions": {
+        "gasMass": "CO₂ fill mass; not empty or gross cartridge mass.",
+        "length": "Reference dimension A in the manufacturer table, converted from inches × 25.4.",
+        "diameter": "Reference dimension B; no unlisted tolerance is inferred.",
+        "neckDiameter": "Dimension C; nominal major diameter for threaded necks.",
+        "neckLength": "Dimension D from the same manufacturer specification row.",
+        "pitch": "Calculated exactly as 25.4/TPI; reference thread profile, not class-specific fit."
+      },
+      "specifications": [
+        {
+          "label": "Gas",
+          "value": "CO₂"
+        },
+        {
+          "label": "Source dimensions A / B / C / D (in)",
+          "value": "3.48 / 0.86 / 0.375 / 0.365"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight."
+        }
+      ]
+    }
+  },
+  {
+    "id": "leland-84201",
+    "name": "Leland 84201 · 20 g · 1/2″-20 UNF",
+    "description": "Ø25.4 × 102.997 mm · neck Ø12.7 × 14.5034 mm",
+    "parameters": {
+      "model": "leland-84201"
+    },
+    "catalog": {
+      "designation": "20 g · 1/2″-20 UNF · Leland 84201",
+      "manufacturer": "Leland",
+      "sourceName": "Leland specification 2.1 · Rev 14.0",
+      "sourceUrl": "https://www.lelandltd.com/small_high_pressure2.1.htm",
+      "productCodes": [
+        "84201"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published body and neck dimensions; reconstructed curved exterior and nominal thread.",
+        "limitations": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight.",
+        "sourceUrl": "https://www.lelandltd.com/small_high_pressure2.1.htm"
+      },
+      "attributes": {
+        "gasMass": 20,
+        "length": 102.997,
+        "diameter": 25.4,
+        "neckDiameter": 12.7,
+        "neckLength": 14.5034,
+        "connection": "1/2″-20 UNF",
+        "neckType": "Threaded",
+        "tpi": 20,
+        "pitch": 1.27
+      },
+      "attributeConditions": {
+        "gasMass": "CO₂ fill mass; not empty or gross cartridge mass.",
+        "length": "Reference dimension A in the manufacturer table, converted from inches × 25.4.",
+        "diameter": "Reference dimension B; no unlisted tolerance is inferred.",
+        "neckDiameter": "Dimension C; nominal major diameter for threaded necks.",
+        "neckLength": "Dimension D from the same manufacturer specification row.",
+        "pitch": "Calculated exactly as 25.4/TPI; reference thread profile, not class-specific fit."
+      },
+      "specifications": [
+        {
+          "label": "Gas",
+          "value": "CO₂"
+        },
+        {
+          "label": "Source dimensions A / B / C / D (in)",
+          "value": "4.055 / 1 / 0.5 / 0.571"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight."
+        }
+      ]
+    }
+  },
+  {
+    "id": "leland-84121",
+    "name": "Leland 84121 · 25 g · 3/8″-24 UNF",
+    "description": "Ø25.4 × 105.156 mm · neck Ø9.525 × 11.5062 mm",
+    "parameters": {
+      "model": "leland-84121"
+    },
+    "catalog": {
+      "designation": "25 g · 3/8″-24 UNF · Leland 84121",
+      "manufacturer": "Leland",
+      "sourceName": "Leland specification 2.1 · Rev 14.0",
+      "sourceUrl": "https://www.lelandltd.com/small_high_pressure2.1.htm",
+      "productCodes": [
+        "84121"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published body and neck dimensions; reconstructed curved exterior and nominal thread.",
+        "limitations": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight.",
+        "sourceUrl": "https://www.lelandltd.com/small_high_pressure2.1.htm"
+      },
+      "attributes": {
+        "gasMass": 25,
+        "length": 105.156,
+        "diameter": 25.4,
+        "neckDiameter": 9.525,
+        "neckLength": 11.5062,
+        "connection": "3/8″-24 UNF",
+        "neckType": "Threaded",
+        "tpi": 24,
+        "pitch": 1.0583333333333333
+      },
+      "attributeConditions": {
+        "gasMass": "CO₂ fill mass; not empty or gross cartridge mass.",
+        "length": "Reference dimension A in the manufacturer table, converted from inches × 25.4.",
+        "diameter": "Reference dimension B; no unlisted tolerance is inferred.",
+        "neckDiameter": "Dimension C; nominal major diameter for threaded necks.",
+        "neckLength": "Dimension D from the same manufacturer specification row.",
+        "pitch": "Calculated exactly as 25.4/TPI; reference thread profile, not class-specific fit."
+      },
+      "specifications": [
+        {
+          "label": "Gas",
+          "value": "CO₂"
+        },
+        {
+          "label": "Source dimensions A / B / C / D (in)",
+          "value": "4.14 / 1 / 0.375 / 0.453"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight."
+        }
+      ]
+    }
+  },
+  {
+    "id": "leland-85202",
+    "name": "Leland 85202 · 33 g · 1/2″-20 UNF",
+    "description": "Ø25.4 × 139.7 mm · neck Ø12.7 × 12.4968 mm",
+    "parameters": {
+      "model": "leland-85202"
+    },
+    "catalog": {
+      "designation": "33 g · 1/2″-20 UNF · Leland 85202",
+      "manufacturer": "Leland",
+      "sourceName": "Leland specification 2.1 · Rev 14.0",
+      "sourceUrl": "https://www.lelandltd.com/small_high_pressure2.1.htm",
+      "productCodes": [
+        "85202"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published body and neck dimensions; reconstructed curved exterior and nominal thread.",
+        "limitations": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight.",
+        "sourceUrl": "https://www.lelandltd.com/small_high_pressure2.1.htm"
+      },
+      "attributes": {
+        "gasMass": 33,
+        "length": 139.7,
+        "diameter": 25.4,
+        "neckDiameter": 12.7,
+        "neckLength": 12.4968,
+        "connection": "1/2″-20 UNF",
+        "neckType": "Threaded",
+        "tpi": 20,
+        "pitch": 1.27
+      },
+      "attributeConditions": {
+        "gasMass": "CO₂ fill mass; not empty or gross cartridge mass.",
+        "length": "Reference dimension A in the manufacturer table, converted from inches × 25.4.",
+        "diameter": "Reference dimension B; no unlisted tolerance is inferred.",
+        "neckDiameter": "Dimension C; nominal major diameter for threaded necks.",
+        "neckLength": "Dimension D from the same manufacturer specification row.",
+        "pitch": "Calculated exactly as 25.4/TPI; reference thread profile, not class-specific fit."
+      },
+      "specifications": [
+        {
+          "label": "Gas",
+          "value": "CO₂"
+        },
+        {
+          "label": "Source dimensions A / B / C / D (in)",
+          "value": "5.5 / 1 / 0.5 / 0.492"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight."
+        }
+      ]
+    }
+  },
+  {
+    "id": "leland-86121",
+    "name": "Leland 86121 · 38 g · 3/8″-24 UNF",
+    "description": "Ø29.972 × 118.11 mm · neck Ø9.525 × 11.049 mm",
+    "parameters": {
+      "model": "leland-86121"
+    },
+    "catalog": {
+      "designation": "38 g · 3/8″-24 UNF · Leland 86121",
+      "manufacturer": "Leland",
+      "sourceName": "Leland specification 2.1 · Rev 14.0",
+      "sourceUrl": "https://www.lelandltd.com/small_high_pressure2.1.htm",
+      "productCodes": [
+        "86121"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published body and neck dimensions; reconstructed curved exterior and nominal thread.",
+        "limitations": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight.",
+        "sourceUrl": "https://www.lelandltd.com/small_high_pressure2.1.htm"
+      },
+      "attributes": {
+        "gasMass": 38,
+        "length": 118.11,
+        "diameter": 29.972,
+        "neckDiameter": 9.525,
+        "neckLength": 11.049,
+        "connection": "3/8″-24 UNF",
+        "neckType": "Threaded",
+        "tpi": 24,
+        "pitch": 1.0583333333333333
+      },
+      "attributeConditions": {
+        "gasMass": "CO₂ fill mass; not empty or gross cartridge mass.",
+        "length": "Reference dimension A in the manufacturer table, converted from inches × 25.4.",
+        "diameter": "Reference dimension B; no unlisted tolerance is inferred.",
+        "neckDiameter": "Dimension C; nominal major diameter for threaded necks.",
+        "neckLength": "Dimension D from the same manufacturer specification row.",
+        "pitch": "Calculated exactly as 25.4/TPI; reference thread profile, not class-specific fit."
+      },
+      "specifications": [
+        {
+          "label": "Gas",
+          "value": "CO₂"
+        },
+        {
+          "label": "Source dimensions A / B / C / D (in)",
+          "value": "4.65 / 1.18 / 0.375 / 0.435"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight."
+        }
+      ]
+    }
+  },
+  {
+    "id": "leland-86202",
+    "name": "Leland 86202 · 38 g · 1/2″-20 UNF",
+    "description": "Ø29.972 × 118.11 mm · neck Ø12.7 × 11.049 mm",
+    "parameters": {
+      "model": "leland-86202"
+    },
+    "catalog": {
+      "designation": "38 g · 1/2″-20 UNF · Leland 86202",
+      "manufacturer": "Leland",
+      "sourceName": "Leland specification 2.1 · Rev 14.0",
+      "sourceUrl": "https://www.lelandltd.com/small_high_pressure2.1.htm",
+      "productCodes": [
+        "86202"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published body and neck dimensions; reconstructed curved exterior and nominal thread.",
+        "limitations": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight.",
+        "sourceUrl": "https://www.lelandltd.com/small_high_pressure2.1.htm"
+      },
+      "attributes": {
+        "gasMass": 38,
+        "length": 118.11,
+        "diameter": 29.972,
+        "neckDiameter": 12.7,
+        "neckLength": 11.049,
+        "connection": "1/2″-20 UNF",
+        "neckType": "Threaded",
+        "tpi": 20,
+        "pitch": 1.27
+      },
+      "attributeConditions": {
+        "gasMass": "CO₂ fill mass; not empty or gross cartridge mass.",
+        "length": "Reference dimension A in the manufacturer table, converted from inches × 25.4.",
+        "diameter": "Reference dimension B; no unlisted tolerance is inferred.",
+        "neckDiameter": "Dimension C; nominal major diameter for threaded necks.",
+        "neckLength": "Dimension D from the same manufacturer specification row.",
+        "pitch": "Calculated exactly as 25.4/TPI; reference thread profile, not class-specific fit."
+      },
+      "specifications": [
+        {
+          "label": "Gas",
+          "value": "CO₂"
+        },
+        {
+          "label": "Source dimensions A / B / C / D (in)",
+          "value": "4.65 / 1.18 / 0.5 / 0.435"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight."
+        }
+      ]
+    }
+  },
+  {
+    "id": "leland-87202",
+    "name": "Leland 87202 · 45 g · 1/2″-20 UNF",
+    "description": "Ø29.9974 × 137.9982 mm · neck Ø12.7 × 13.0048 mm",
+    "parameters": {
+      "model": "leland-87202"
+    },
+    "catalog": {
+      "designation": "45 g · 1/2″-20 UNF · Leland 87202",
+      "manufacturer": "Leland",
+      "sourceName": "Leland specification 2.1 · Rev 14.0",
+      "sourceUrl": "https://www.lelandltd.com/small_high_pressure2.1.htm",
+      "productCodes": [
+        "87202"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published body and neck dimensions; reconstructed curved exterior and nominal thread.",
+        "limitations": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight.",
+        "sourceUrl": "https://www.lelandltd.com/small_high_pressure2.1.htm"
+      },
+      "attributes": {
+        "gasMass": 45,
+        "length": 137.9982,
+        "diameter": 29.9974,
+        "neckDiameter": 12.7,
+        "neckLength": 13.0048,
+        "connection": "1/2″-20 UNF",
+        "neckType": "Threaded",
+        "tpi": 20,
+        "pitch": 1.27
+      },
+      "attributeConditions": {
+        "gasMass": "CO₂ fill mass; not empty or gross cartridge mass.",
+        "length": "Reference dimension A in the manufacturer table, converted from inches × 25.4.",
+        "diameter": "Reference dimension B; no unlisted tolerance is inferred.",
+        "neckDiameter": "Dimension C; nominal major diameter for threaded necks.",
+        "neckLength": "Dimension D from the same manufacturer specification row.",
+        "pitch": "Calculated exactly as 25.4/TPI; reference thread profile, not class-specific fit."
+      },
+      "specifications": [
+        {
+          "label": "Gas",
+          "value": "CO₂"
+        },
+        {
+          "label": "Source dimensions A / B / C / D (in)",
+          "value": "5.433 / 1.181 / 0.5 / 0.512"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Body diameter, overall length, neck diameter/thread and neck length follow Leland specification tables Rev 14.0. Bottom radius, shoulder curve, cap recess/chamfer and thread coverage/runout are reconstructed, not dimensioned by the source. Thread uses a nominal 60-degree UNF profile without 1A/2A tolerance allowance. Solid external representation only; no pressure-vessel wall, gas cavity or puncture mechanism is modeled. Gas mass is the fill mass, not total cartridge weight."
+        }
+      ]
+    }
+  }
+]

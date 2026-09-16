@@ -1,0 +1,30 @@
+[
+  {
+    "id": "sleeve16",
+    "name": "Sleeve bushing \u00b7 \u00d816 / \u00d820 \u00d7 20 mm",
+    "description": "Cylindrical and flanged sliding bushings, with optional lubrication groove. Editable prototype dimensions.",
+    "parameters": {
+      "form": "sleeve",
+      "diameter": 20,
+      "bore": 16,
+      "length": 20,
+      "flange": 26,
+      "flangeHeight": 2,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "flange16",
+    "name": "Flanged bushing \u00b7 \u00d816 bore",
+    "description": "Cylindrical and flanged sliding bushings, with optional lubrication groove. Editable prototype dimensions.",
+    "parameters": {
+      "form": "flange",
+      "diameter": 20,
+      "bore": 16,
+      "length": 20,
+      "flange": 26,
+      "flangeHeight": 2,
+      "detail": "envelope"
+    }
+  }
+]

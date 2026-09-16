@@ -1,7 +1,7 @@
 [
   {
     "id": "2305-0024-0012",
-    "name": "2305-0024-0012 · 24T spline / 12 teeth",
+    "name": "goBILDA 2305-0024-0012 · 24T spline / 12 teeth",
     "description": "Brass MOD 0.8 servo gear. Width and retaining screw geometry are editable prototype assumptions. Socket diameters, depth and head recess are unverified. Small-pinion layout profile does not reproduce manufactured undercut.",
     "parameters": {
       "profileMode": "layout",
@@ -29,8 +29,14 @@
       "manufacturer": "goBILDA",
       "sourceName": "ServoCity 2305 servo gear catalog",
       "sourceUrl": "https://www.servocity.com/mod-0-8-pitch-servo-gears/",
-      "verifiedParameters": ["module", "teeth", "splineTeeth"],
-      "productCodes": ["2305-0024-0012"],
+      "verifiedParameters": [
+        "module",
+        "teeth",
+        "splineTeeth"
+      ],
+      "productCodes": [
+        "2305-0024-0012"
+      ],
       "specifications": [
         {
           "label": "Spline fit",
@@ -41,7 +47,7 @@
   },
   {
     "id": "2305-0024-0015",
-    "name": "2305-0024-0015 · 24T spline / 15 teeth",
+    "name": "goBILDA 2305-0024-0015 · 24T spline / 15 teeth",
     "description": "Brass MOD 0.8 servo gear. Width and retaining screw geometry are editable prototype assumptions. Socket diameters, depth and head recess are unverified. Small-pinion layout profile does not reproduce manufactured undercut.",
     "parameters": {
       "profileMode": "layout",
@@ -69,8 +75,14 @@
       "manufacturer": "goBILDA",
       "sourceName": "ServoCity 2305 servo gear catalog",
       "sourceUrl": "https://www.servocity.com/mod-0-8-pitch-servo-gears/",
-      "verifiedParameters": ["module", "teeth", "splineTeeth"],
-      "productCodes": ["2305-0024-0015"],
+      "verifiedParameters": [
+        "module",
+        "teeth",
+        "splineTeeth"
+      ],
+      "productCodes": [
+        "2305-0024-0015"
+      ],
       "specifications": [
         {
           "label": "Spline fit",
@@ -81,7 +93,7 @@
   },
   {
     "id": "2305-0024-0020",
-    "name": "2305-0024-0020 · 24T spline / 20 teeth",
+    "name": "goBILDA 2305-0024-0020 · 24T spline / 20 teeth",
     "description": "Brass MOD 0.8 servo gear. Width and screw clearance transcribed from the supplied drawing. Socket diameters, depth and head recess are unverified.",
     "parameters": {
       "profileMode": "standard",
@@ -108,7 +120,7 @@
       "designation": "2305-0024-0020",
       "manufacturer": "goBILDA",
       "sourceName": "User drawing + ServoCity 2305 specification",
-      "sourceUrl": "references/servo-gear-20t.png",
+      "sourceUrl": "https://www.servocity.com/2305-series-brass-mod-0-8-servo-gear-24-tooth-spline-20-tooth/",
       "sourceKind": "attachment",
       "alternateSourceUrls": [
         "https://www.servocity.com/2305-series-brass-mod-0-8-servo-gear-24-tooth-spline-20-tooth/"
@@ -121,7 +133,9 @@
         "faceWidth",
         "screwBore"
       ],
-      "productCodes": ["2305-0024-0020"],
+      "productCodes": [
+        "2305-0024-0020"
+      ],
       "specifications": [
         {
           "label": "Spline fit",
@@ -136,7 +150,7 @@
   },
   {
     "id": "2305-0024-0024",
-    "name": "2305-0024-0024 · 24T spline / 24 teeth",
+    "name": "goBILDA 2305-0024-0024 · 24T spline / 24 teeth",
     "description": "Brass MOD 0.8 servo gear. Width and retaining screw geometry are editable prototype assumptions. Socket diameters, depth and head recess are unverified.",
     "parameters": {
       "profileMode": "standard",
@@ -164,8 +178,14 @@
       "manufacturer": "goBILDA",
       "sourceName": "ServoCity 2305 servo gear catalog",
       "sourceUrl": "https://www.servocity.com/mod-0-8-pitch-servo-gears/",
-      "verifiedParameters": ["module", "teeth", "splineTeeth"],
-      "productCodes": ["2305-0024-0024"],
+      "verifiedParameters": [
+        "module",
+        "teeth",
+        "splineTeeth"
+      ],
+      "productCodes": [
+        "2305-0024-0024"
+      ],
       "specifications": [
         {
           "label": "Spline fit",
@@ -176,7 +196,7 @@
   },
   {
     "id": "2305-0024-0030",
-    "name": "2305-0024-0030 · 24T spline / 30 teeth",
+    "name": "goBILDA 2305-0024-0030 · 24T spline / 30 teeth",
     "description": "Brass MOD 0.8 servo gear. Width and screw clearance transcribed from the supplied drawing. Socket diameters, depth and head recess are unverified.",
     "parameters": {
       "profileMode": "standard",
@@ -203,7 +223,7 @@
       "designation": "2305-0024-0030",
       "manufacturer": "goBILDA",
       "sourceName": "User drawing + ServoCity 2305 specification",
-      "sourceUrl": "references/servo-gear-30t.png",
+      "sourceUrl": "https://www.servocity.com/2305-series-brass-mod-0-8-servo-gear-24-tooth-spline-30-tooth/",
       "sourceKind": "attachment",
       "alternateSourceUrls": [
         "https://www.servocity.com/2305-series-brass-mod-0-8-servo-gear-24-tooth-spline-30-tooth/"
@@ -216,7 +236,9 @@
         "faceWidth",
         "screwBore"
       ],
-      "productCodes": ["2305-0024-0030"],
+      "productCodes": [
+        "2305-0024-0030"
+      ],
       "specifications": [
         {
           "label": "Spline fit",
@@ -231,7 +253,7 @@
   },
   {
     "id": "2305-0024-0040",
-    "name": "2305-0024-0040 · 24T spline / 40 teeth",
+    "name": "goBILDA 2305-0024-0040 · 24T spline / 40 teeth",
     "description": "Brass MOD 0.8 servo gear. Width and retaining screw geometry are editable prototype assumptions. Socket diameters, depth and head recess are unverified.",
     "parameters": {
       "profileMode": "standard",
@@ -259,8 +281,14 @@
       "manufacturer": "goBILDA",
       "sourceName": "ServoCity 2305 servo gear catalog",
       "sourceUrl": "https://www.servocity.com/mod-0-8-pitch-servo-gears/",
-      "verifiedParameters": ["module", "teeth", "splineTeeth"],
-      "productCodes": ["2305-0024-0040"],
+      "verifiedParameters": [
+        "module",
+        "teeth",
+        "splineTeeth"
+      ],
+      "productCodes": [
+        "2305-0024-0040"
+      ],
       "specifications": [
         {
           "label": "Spline fit",
@@ -271,7 +299,7 @@
   },
   {
     "id": "2305-0025-0012",
-    "name": "2305-0025-0012 · 25T spline / 12 teeth",
+    "name": "goBILDA 2305-0025-0012 · 25T spline / 12 teeth",
     "description": "Brass MOD 0.8 servo gear. Width and retaining screw geometry are editable prototype assumptions. Socket diameters, depth and head recess are unverified. Small-pinion layout profile does not reproduce manufactured undercut.",
     "parameters": {
       "profileMode": "layout",
@@ -299,8 +327,14 @@
       "manufacturer": "goBILDA",
       "sourceName": "ServoCity 2305 servo gear catalog",
       "sourceUrl": "https://www.servocity.com/mod-0-8-pitch-servo-gears/",
-      "verifiedParameters": ["module", "teeth", "splineTeeth"],
-      "productCodes": ["2305-0025-0012"],
+      "verifiedParameters": [
+        "module",
+        "teeth",
+        "splineTeeth"
+      ],
+      "productCodes": [
+        "2305-0025-0012"
+      ],
       "specifications": [
         {
           "label": "Spline fit",
@@ -311,7 +345,7 @@
   },
   {
     "id": "2305-0025-0015",
-    "name": "2305-0025-0015 · 25T spline / 15 teeth",
+    "name": "goBILDA 2305-0025-0015 · 25T spline / 15 teeth",
     "description": "Brass MOD 0.8 servo gear. Width and retaining screw geometry are editable prototype assumptions. Socket diameters, depth and head recess are unverified. Small-pinion layout profile does not reproduce manufactured undercut.",
     "parameters": {
       "profileMode": "layout",
@@ -339,8 +373,14 @@
       "manufacturer": "goBILDA",
       "sourceName": "ServoCity 2305 servo gear catalog",
       "sourceUrl": "https://www.servocity.com/mod-0-8-pitch-servo-gears/",
-      "verifiedParameters": ["module", "teeth", "splineTeeth"],
-      "productCodes": ["2305-0025-0015"],
+      "verifiedParameters": [
+        "module",
+        "teeth",
+        "splineTeeth"
+      ],
+      "productCodes": [
+        "2305-0025-0015"
+      ],
       "specifications": [
         {
           "label": "Spline fit",
@@ -351,7 +391,7 @@
   },
   {
     "id": "2305-0025-0020",
-    "name": "2305-0025-0020 · 25T spline / 20 teeth",
+    "name": "goBILDA 2305-0025-0020 · 25T spline / 20 teeth",
     "description": "Brass MOD 0.8 servo gear. Width and retaining screw geometry are editable prototype assumptions. Socket diameters, depth and head recess are unverified.",
     "parameters": {
       "profileMode": "standard",
@@ -379,8 +419,15 @@
       "manufacturer": "goBILDA",
       "sourceName": "ServoCity 2305 servo gear catalog",
       "sourceUrl": "https://www.servocity.com/2305-series-brass-mod-0-8-servo-gear-25-tooth-spline-20-tooth/",
-      "verifiedParameters": ["module", "teeth", "splineTeeth", "pressureAngle"],
-      "productCodes": ["2305-0025-0020"],
+      "verifiedParameters": [
+        "module",
+        "teeth",
+        "splineTeeth",
+        "pressureAngle"
+      ],
+      "productCodes": [
+        "2305-0025-0020"
+      ],
       "specifications": [
         {
           "label": "Spline fit",
@@ -391,7 +438,7 @@
   },
   {
     "id": "2305-0025-0024",
-    "name": "2305-0025-0024 · 25T spline / 24 teeth",
+    "name": "goBILDA 2305-0025-0024 · 25T spline / 24 teeth",
     "description": "Brass MOD 0.8 servo gear. Width and retaining screw geometry are editable prototype assumptions. Socket diameters, depth and head recess are unverified.",
     "parameters": {
       "profileMode": "standard",
@@ -419,8 +466,14 @@
       "manufacturer": "goBILDA",
       "sourceName": "ServoCity 2305 servo gear catalog",
       "sourceUrl": "https://www.servocity.com/mod-0-8-pitch-servo-gears/",
-      "verifiedParameters": ["module", "teeth", "splineTeeth"],
-      "productCodes": ["2305-0025-0024"],
+      "verifiedParameters": [
+        "module",
+        "teeth",
+        "splineTeeth"
+      ],
+      "productCodes": [
+        "2305-0025-0024"
+      ],
       "specifications": [
         {
           "label": "Spline fit",
@@ -431,7 +484,7 @@
   },
   {
     "id": "2305-0025-0030",
-    "name": "2305-0025-0030 · 25T spline / 30 teeth",
+    "name": "goBILDA 2305-0025-0030 · 25T spline / 30 teeth",
     "description": "Brass MOD 0.8 servo gear. Width and retaining screw geometry are editable prototype assumptions. Socket diameters, depth and head recess are unverified.",
     "parameters": {
       "profileMode": "standard",
@@ -459,8 +512,15 @@
       "manufacturer": "goBILDA",
       "sourceName": "ServoCity 2305 servo gear catalog",
       "sourceUrl": "https://www.servocity.com/2305-series-brass-mod-0-8-servo-gear-25-tooth-spline-30-tooth/",
-      "verifiedParameters": ["module", "teeth", "splineTeeth", "pressureAngle"],
-      "productCodes": ["2305-0025-0030"],
+      "verifiedParameters": [
+        "module",
+        "teeth",
+        "splineTeeth",
+        "pressureAngle"
+      ],
+      "productCodes": [
+        "2305-0025-0030"
+      ],
       "specifications": [
         {
           "label": "Spline fit",
@@ -471,7 +531,7 @@
   },
   {
     "id": "2305-0025-0040",
-    "name": "2305-0025-0040 · 25T spline / 40 teeth",
+    "name": "goBILDA 2305-0025-0040 · 25T spline / 40 teeth",
     "description": "Brass MOD 0.8 servo gear. Width and retaining screw geometry are editable prototype assumptions. Socket diameters, depth and head recess are unverified.",
     "parameters": {
       "profileMode": "standard",
@@ -499,8 +559,14 @@
       "manufacturer": "goBILDA",
       "sourceName": "ServoCity 2305 servo gear catalog",
       "sourceUrl": "https://www.servocity.com/mod-0-8-pitch-servo-gears/",
-      "verifiedParameters": ["module", "teeth", "splineTeeth"],
-      "productCodes": ["2305-0025-0040"],
+      "verifiedParameters": [
+        "module",
+        "teeth",
+        "splineTeeth"
+      ],
+      "productCodes": [
+        "2305-0025-0040"
+      ],
       "specifications": [
         {
           "label": "Spline fit",
@@ -511,7 +577,7 @@
   },
   {
     "id": "2305-0025-0048",
-    "name": "2305-0025-0048 · 25T spline / 48 teeth",
+    "name": "goBILDA 2305-0025-0048 · 25T spline / 48 teeth",
     "description": "Brass MOD 0.8 servo gear. Width and retaining screw geometry are editable prototype assumptions. Socket diameters, depth and head recess are unverified.",
     "parameters": {
       "profileMode": "standard",
@@ -539,8 +605,14 @@
       "manufacturer": "goBILDA",
       "sourceName": "ServoCity 2305 servo gear catalog",
       "sourceUrl": "https://www.servocity.com/mod-0-8-pitch-servo-gears/",
-      "verifiedParameters": ["module", "teeth", "splineTeeth"],
-      "productCodes": ["2305-0025-0048"],
+      "verifiedParameters": [
+        "module",
+        "teeth",
+        "splineTeeth"
+      ],
+      "productCodes": [
+        "2305-0025-0048"
+      ],
       "specifications": [
         {
           "label": "Spline fit",

@@ -1,0 +1,61 @@
+import type { Parameters, ParameterDefinition } from '../../core/types';
+export const defaults: Parameters = {
+  mode: 'seal',
+  inside: 15,
+  section: 2,
+  grooveWidth: 2.5,
+  grooveDepth: 1.5,
+};
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'mode',
+    label: 'Output',
+    type: 'select',
+    group: 'Configuration',
+    options: [
+      { value: 'seal', label: 'O-ring only' },
+      { value: 'face', label: 'Face groove cutter' },
+      { value: 'radial', label: 'Shaft groove cutter' },
+    ],
+  },
+  {
+    key: 'inside',
+    label: 'Seal inside diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'section',
+    label: 'Seal cross-section diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'grooveWidth',
+    label: 'Groove width',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'grooveDepth',
+    label: 'Groove depth',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+];

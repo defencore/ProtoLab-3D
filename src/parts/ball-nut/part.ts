@@ -62,9 +62,9 @@ const part: PartDefinition = {
   python: (p, state) => ballScrewPython(p, state, true),
   dimensions: (p, state) => ballScrewDimensions(p, state, true),
   sources: [
-    { label: 'Supplied ball nut construction families', url: 'references/ball-nut-families.png' },
-    { label: 'Supplied ball nut size options', url: 'references/ball-nut-options.png' },
-    { label: 'Supplied SFU dimension table', url: 'references/sfu-dimensions.png' },
+    { label: 'Supplied ball nut construction families', url: '' },
+    { label: 'Supplied ball nut size options', url: '' },
+    { label: 'Supplied SFU dimension table', url: '' },
   ],
   notes:
     'Source-backed presets identify the dimensions transcribed from their drawing. Loaded ball spacing, circular raceway clearance, return features, preload spacer, and blind lubrication pilot bore are prototype details. A family name alone does not verify the remaining dimensions or certify a production nut. The inspection cutaway is offset by 0.001 mm to keep periodic CAD faces robust.',

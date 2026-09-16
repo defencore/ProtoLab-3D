@@ -1,0 +1,92 @@
+[
+  {
+    "id": "dc",
+    "name": "Brushed DC motor \u00b7 \u00d850",
+    "description": "Brushed DC, geared DC, industrial foot/flange, servo and torque-motor forms with shafts and mounts. Editable prototype dimensions.",
+    "parameters": {
+      "form": "dc",
+      "diameter": 50,
+      "length": 70,
+      "shaft": 8,
+      "projection": 20,
+      "pitch": 35,
+      "hole": 4,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "tt",
+    "name": "Geared DC motor \u00b7 compact",
+    "description": "Brushed DC, geared DC, industrial foot/flange, servo and torque-motor forms with shafts and mounts. Editable prototype dimensions.",
+    "parameters": {
+      "form": "tt",
+      "diameter": 25,
+      "length": 55,
+      "shaft": 5,
+      "projection": 20,
+      "pitch": 16,
+      "hole": 3,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "iec-b3",
+    "name": "Foot-mounted industrial motor",
+    "description": "Brushed DC, geared DC, industrial foot/flange, servo and torque-motor forms with shafts and mounts. Editable prototype dimensions.",
+    "parameters": {
+      "form": "iec-b3",
+      "diameter": 100,
+      "length": 150,
+      "shaft": 19,
+      "projection": 20,
+      "pitch": 70,
+      "hole": 7,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "iec-b5",
+    "name": "Flange-mounted industrial motor",
+    "description": "Brushed DC, geared DC, industrial foot/flange, servo and torque-motor forms with shafts and mounts. Editable prototype dimensions.",
+    "parameters": {
+      "form": "iec-b5",
+      "diameter": 100,
+      "length": 150,
+      "shaft": 19,
+      "projection": 20,
+      "pitch": 70,
+      "hole": 7,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "servo",
+    "name": "Industrial servo \u00b7 60 mm frame",
+    "description": "Brushed DC, geared DC, industrial foot/flange, servo and torque-motor forms with shafts and mounts. Editable prototype dimensions.",
+    "parameters": {
+      "form": "servo",
+      "diameter": 60,
+      "length": 100,
+      "shaft": 8,
+      "projection": 20,
+      "pitch": 44,
+      "hole": 4,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "torque",
+    "name": "Pancake torque motor",
+    "description": "Brushed DC, geared DC, industrial foot/flange, servo and torque-motor forms with shafts and mounts. Editable prototype dimensions.",
+    "parameters": {
+      "form": "torque",
+      "diameter": 90,
+      "length": 25,
+      "shaft": 8,
+      "projection": 20,
+      "pitch": 60,
+      "hole": 4,
+      "detail": "envelope"
+    }
+  }
+]

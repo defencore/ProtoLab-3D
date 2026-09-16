@@ -16,7 +16,7 @@ const defaults = { bore: 12, outer: 28, width: 8, elements: 10, contactAngle: 25
 const part: PartDefinition = {
   id: 'angular-contact-bearing',
   name: 'Angular contact ball bearing',
-  category: 'BEARINGS',
+  category: 'BEARINGS & SEALS',
   subgroup: 'BALL BEARINGS',
   description:
     'Single ball row with opposite race shoulders for combined radial and axial layouts.',

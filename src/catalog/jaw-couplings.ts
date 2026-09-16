@@ -1,6 +1,6 @@
 import type { Parameters, Preset } from '../core/types';
 
-export const jawCouplingReference = 'references/jaw-coupling-options.png';
+export const jawCouplingReference = '';
 
 /** The repeated 9 × 9 entry in the supplied listing is represented once. */
 export const jawCouplingBorePairs: [number, number][] = [

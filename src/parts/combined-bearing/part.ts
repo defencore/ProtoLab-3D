@@ -34,8 +34,8 @@ function values(p: Parameters) {
 }
 const part: PartDefinition = {
   id: 'combined-bearing',
-  name: 'Combined needle / ball bearing',
-  category: 'BEARINGS',
+  name: 'Combined needle and ball bearing',
+  category: 'BEARINGS & SEALS',
   subgroup: 'COMBINED BEARINGS',
   icon: 'bearing',
   complexity: 'Radial + axial elements',

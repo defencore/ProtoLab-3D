@@ -1,0 +1,47 @@
+[
+  {
+    "id": "belt",
+    "name": "Belt-driven linear slide",
+    "description": "Belt-stage, dovetail and telescopic guide mounting forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "belt",
+      "length": 300,
+      "width": 50,
+      "height": 16,
+      "carriage": 60,
+      "position": 100,
+      "holePitch": 30,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "dovetail",
+    "name": "Dovetail slide",
+    "description": "Belt-stage, dovetail and telescopic guide mounting forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "dovetail",
+      "length": 300,
+      "width": 50,
+      "height": 16,
+      "carriage": 60,
+      "position": 100,
+      "holePitch": 30,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "telescopic",
+    "name": "Telescopic rail",
+    "description": "Belt-stage, dovetail and telescopic guide mounting forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "telescopic",
+      "length": 300,
+      "width": 50,
+      "height": 16,
+      "carriage": 60,
+      "position": 100,
+      "holePitch": 30,
+      "detail": "envelope"
+    }
+  }
+]

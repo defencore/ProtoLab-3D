@@ -10,8 +10,8 @@ const defaults = { ...lmkReference[16], width: 37 };
 const part: PartDefinition = {
   id: 'flanged-linear-bearing',
   name: 'Square-flange linear bushing',
-  category: 'BEARINGS',
-  subgroup: 'LINEAR BEARINGS',
+  category: 'LINEAR MOTION',
+  subgroup: 'LINEAR BUSHINGS',
   icon: 'bearing',
   complexity: 'Flange + ball circuits',
   description:

@@ -29,8 +29,8 @@ function values(p: Parameters) {
 const part: PartDefinition = {
   id: 'lifting-eye-bolt',
   name: 'Lifting eye bolt',
-  category: 'FASTENERS',
-  subgroup: 'BOLTS & SCREWS',
+  category: 'FASTENERS & THREADS',
+  subgroup: 'LIFTING EYES',
   icon: 'bolt',
   complexity: 'Round eye & collar',
   standard: 'DIN 580',

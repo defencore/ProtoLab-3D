@@ -1,6 +1,6 @@
 # Servo horns, gears and clevis ends
 
-Three independent packages appear under **MOTION → SERVO LINKAGES**. Each owns its configurator, source presets, geometry and FreeCAD recipe; no existing part package is imported or modified.
+Servo arms and spline gears appear under **MOTORS & ACTUATORS → SERVOS**. Clevises appear beside rod ends under **TRANSMISSION & LINKAGES → JOINTS & ROD ENDS**. Each owns its configurator, source presets, geometry and FreeCAD recipe; no existing part package is imported or modified.
 
 | Package      | Configurations                                                                                              | Presets                                        |
 | ------------ | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |

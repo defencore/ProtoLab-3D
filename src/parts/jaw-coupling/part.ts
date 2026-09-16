@@ -214,7 +214,7 @@ function sectorPython(
 const part: PartDefinition = {
   id: 'jaw-coupling',
   name: 'Flexible jaw coupling',
-  category: 'MOTION',
+  category: 'TRANSMISSION & LINKAGES',
   subgroup: 'SHAFT COUPLINGS',
   icon: 'wheel',
   complexity: 'Two clamping hubs + elastomer spider',

@@ -44,8 +44,8 @@ function values(p: Parameters) {
 const part: PartDefinition = {
   id: 'lifting-eye-nut',
   name: 'Lifting eye nut',
-  category: 'FASTENERS',
-  subgroup: 'NUTS',
+  category: 'FASTENERS & THREADS',
+  subgroup: 'LIFTING EYES',
   icon: 'bolt',
   complexity: 'Ring & threaded base',
   standard: 'DIN 582',

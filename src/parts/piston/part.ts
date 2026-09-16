@@ -8,7 +8,7 @@ import presetData from './presets.json';
 const part: PartDefinition = {
   id: 'piston',
   name: 'Piston',
-  category: 'MOTION',
+  category: 'TRANSMISSION & LINKAGES',
   subgroup: 'PISTONS & CONNECTING RODS',
   icon: 'bearing',
   complexity: 'Hollow skirt, split rings, wrist pin and clips / pneumatic disk',
@@ -168,9 +168,9 @@ const part: PartDefinition = {
   sources: [
     {
       label: 'Supplied compressor nominal size choices',
-      url: 'references/piston-compressor-sizes.png',
+      url: '',
     },
-    { label: 'Supplied piston / rod assembly anatomy', url: 'references/piston-rod-exploded.png' },
+    { label: 'Supplied piston / rod assembly anatomy', url: '' },
   ],
 };
 export default part;

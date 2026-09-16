@@ -118,7 +118,7 @@ const defaults = {
 const part: PartDefinition = {
   id: 'cotter-pin',
   name: 'Split cotter pin',
-  category: 'FASTENERS',
+  category: 'FASTENERS & THREADS',
   subgroup: 'PINS & DOWELS',
   icon: 'bolt',
   complexity: 'Folded half-round wire',

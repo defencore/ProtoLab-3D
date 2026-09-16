@@ -1,0 +1,26 @@
+[
+  {
+    "id": "sheave40",
+    "name": "Cable sheave \u00b7 \u00d840 mm",
+    "description": "Grooved rope pulley and turnbuckle with adjustable eye separation. Editable prototype dimensions.",
+    "parameters": {
+      "form": "sheave",
+      "diameter": 40,
+      "bore": 8,
+      "length": 12,
+      "groove": 3
+    }
+  },
+  {
+    "id": "turnbuckle",
+    "name": "Turnbuckle \u00b7 80 mm body",
+    "description": "Grooved rope pulley and turnbuckle with adjustable eye separation. Editable prototype dimensions.",
+    "parameters": {
+      "form": "turnbuckle",
+      "diameter": 16,
+      "bore": 6,
+      "length": 80,
+      "groove": 20
+    }
+  }
+]

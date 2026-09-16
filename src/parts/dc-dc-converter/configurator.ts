@@ -1,0 +1,172 @@
+import type { ParameterDefinition, Parameters, PartDefinition } from '../../core/types';
+import models from './lib/models.json';
+export const defaults: Parameters = { model: 'pololu-d24v50f5' };
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'model',
+    label: 'Board / module model',
+    type: 'select',
+    group: 'Model',
+    options: models.map((m) => ({ value: m.id, label: m.name })),
+    description:
+      'Fixed supplier hardware; select a different model to change dimensions or connections.',
+  },
+];
+export const catalogSelection: NonNullable<PartDefinition['catalogSelection']> = [{ key: 'model' }];
+export const catalogFilterFields: ParameterDefinition[] = [
+  {
+    key: 'manufacturer',
+    label: 'Manufacturer',
+    type: 'select',
+    group: 'Hardware',
+    options: [
+      {
+        value: 'Pololu',
+        label: 'Pololu',
+      },
+    ],
+  },
+  {
+    key: 'construction',
+    label: 'Construction',
+    type: 'select',
+    group: 'Hardware',
+    options: [
+      {
+        value: 'Bare PCB',
+        label: 'Bare PCB',
+      },
+    ],
+  },
+  {
+    key: 'connection',
+    label: 'Physical connection',
+    type: 'select',
+    group: 'Hardware',
+    options: [
+      {
+        value: 'Through-hole pads',
+        label: 'Through-hole pads',
+      },
+    ],
+  },
+  {
+    key: 'topology',
+    label: 'Converter topology',
+    type: 'select',
+    group: 'Hardware',
+    options: [
+      {
+        value: 'Boost',
+        label: 'Boost',
+      },
+      {
+        value: 'Buck',
+        label: 'Buck',
+      },
+      {
+        value: 'Buck-boost',
+        label: 'Buck-boost',
+      },
+    ],
+  },
+  {
+    key: 'width',
+    label: 'PCB / body width (X)',
+    unit: 'mm',
+    type: 'number',
+    group: 'Dimensions & ratings',
+    min: 0,
+    max: 200,
+    step: 0.1,
+    catalogSummary: true,
+  },
+  {
+    key: 'length',
+    label: 'PCB / body length (Y)',
+    unit: 'mm',
+    type: 'number',
+    group: 'Dimensions & ratings',
+    min: 0,
+    max: 200,
+    step: 0.1,
+    catalogSummary: true,
+  },
+  {
+    key: 'height',
+    label: 'Published height',
+    unit: 'mm',
+    type: 'number',
+    group: 'Dimensions & ratings',
+    min: 0,
+    max: 100,
+    step: 0.1,
+    catalogSummary: true,
+  },
+  {
+    key: 'inputMin',
+    label: 'Minimum input voltage',
+    unit: 'V',
+    type: 'number',
+    group: 'Dimensions & ratings',
+    min: 0,
+    max: 100,
+    step: 0.1,
+    catalogSummary: false,
+  },
+  {
+    key: 'inputMax',
+    label: 'Maximum input voltage',
+    unit: 'V',
+    type: 'number',
+    group: 'Dimensions & ratings',
+    min: 0,
+    max: 100,
+    step: 0.1,
+    catalogSummary: false,
+  },
+  {
+    key: 'outputMin',
+    label: 'Minimum selectable output',
+    unit: 'V',
+    type: 'number',
+    group: 'Dimensions & ratings',
+    min: 0,
+    max: 50,
+    step: 0.1,
+    catalogSummary: false,
+  },
+  {
+    key: 'outputMax',
+    label: 'Maximum selectable output',
+    unit: 'V',
+    type: 'number',
+    group: 'Dimensions & ratings',
+    min: 0,
+    max: 50,
+    step: 0.1,
+    catalogSummary: false,
+  },
+  {
+    key: 'outputCurrent',
+    label: 'Rated output current',
+    unit: 'A',
+    type: 'number',
+    group: 'Dimensions & ratings',
+    min: 0,
+    max: 100,
+    step: 0.1,
+    catalogSummary: true,
+  },
+  {
+    key: 'inputCurrent',
+    label: 'Rated INPUT current limit',
+    unit: 'A',
+    type: 'number',
+    group: 'Dimensions & ratings',
+    min: 0,
+    max: 100,
+    step: 0.1,
+    catalogSummary: false,
+  },
+];

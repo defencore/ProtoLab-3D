@@ -56,8 +56,8 @@ const defaults = {
 };
 const part: PartDefinition = {
   id: 'retaining-ring',
-  name: 'Retaining ring / circlip',
-  category: 'FASTENERS',
+  name: 'Retaining ring',
+  category: 'FASTENERS & THREADS',
   subgroup: 'RETAINING RINGS',
   icon: 'bearing',
   complexity: 'External / internal',

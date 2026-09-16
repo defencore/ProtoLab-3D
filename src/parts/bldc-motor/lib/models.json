@@ -1,0 +1,1780 @@
+[
+  {
+    "id": "x2204",
+    "code": "SunnySky X2204",
+    "name": "SunnySky X2204 · 1480 KV",
+    "manufacturer": "SunnySky",
+    "rotor": "outrunner",
+    "diameter": 27,
+    "length": 13,
+    "shaft": 3,
+    "extension": 0.8,
+    "pilot": 4,
+    "pilotHeight": 0,
+    "mountX": 31.5,
+    "mountY": 31.5,
+    "hole": 2,
+    "holeDepth": 1.1,
+    "mountPattern": "ears",
+    "weight": 19.6,
+    "kv": 1480,
+    "current": 11,
+    "currentSeconds": 15,
+    "power": 120,
+    "noLoadCurrent": 0.1,
+    "noLoadVoltage": 10,
+    "resistance": 0.338,
+    "cellMin": 2,
+    "cellMax": 3,
+    "statorDiameter": 22,
+    "statorLength": 4,
+    "slots": 12,
+    "poles": 14,
+    "source": "https://sunnyskyusa.com/products/sunnysky-x2204-brushless-motors",
+    "drawing": "https://sunnyskyusa.com/products/sunnysky-x2204-brushless-motors",
+    "adapterCircle": 0,
+    "adapterHole": 0,
+    "adapterCount": 0,
+    "adapterDepth": 0,
+    "flatLength": 0,
+    "flatDepth": 0,
+    "application": "general-rc"
+  },
+  {
+    "id": "x2212",
+    "code": "SunnySky X2212",
+    "name": "SunnySky X2212 · 980 KV",
+    "manufacturer": "SunnySky",
+    "rotor": "outrunner",
+    "diameter": 27.5,
+    "length": 28,
+    "shaft": 3.175,
+    "extension": 2.5,
+    "pilot": 9,
+    "pilotHeight": 2,
+    "mountX": 16,
+    "mountY": 19,
+    "hole": 3,
+    "holeDepth": 2.8,
+    "mountPattern": "cross",
+    "weight": 58.5,
+    "kv": 980,
+    "current": 15,
+    "currentSeconds": 30,
+    "power": 300,
+    "noLoadCurrent": 0.3,
+    "noLoadVoltage": 10,
+    "resistance": 0.133,
+    "cellMin": 2,
+    "cellMax": 4,
+    "statorDiameter": 22,
+    "statorLength": 12,
+    "slots": 12,
+    "poles": 14,
+    "source": "https://sunnyskyusa.com/products/sunnysky-x2212-brushless-motors",
+    "drawing": "https://sunnyskyusa.com/products/sunnysky-x2212-brushless-motors",
+    "adapterCircle": 12,
+    "adapterHole": 2,
+    "adapterCount": 3,
+    "adapterDepth": 2.8,
+    "flatLength": 0,
+    "flatDepth": 0,
+    "application": "general-rc"
+  },
+  {
+    "id": "x2814",
+    "code": "SunnySky X2814",
+    "name": "SunnySky X2814 · 900 KV",
+    "manufacturer": "SunnySky",
+    "rotor": "outrunner",
+    "diameter": 35,
+    "length": 34,
+    "shaft": 4,
+    "extension": 18,
+    "pilot": 11,
+    "pilotHeight": 2,
+    "mountX": 19,
+    "mountY": 25,
+    "hole": 3,
+    "holeDepth": 3,
+    "mountPattern": "cross",
+    "weight": 108,
+    "kv": 900,
+    "current": 40,
+    "currentSeconds": 30,
+    "power": 570,
+    "noLoadCurrent": 0.7,
+    "noLoadVoltage": 10,
+    "resistance": 0.052,
+    "cellMin": 3,
+    "cellMax": 4,
+    "statorDiameter": 28,
+    "statorLength": 14,
+    "slots": 12,
+    "poles": 14,
+    "source": "https://sunnyskyusa.com/products/sunnysky-x2814-brushless-motors",
+    "drawing": "https://sunnyskyusa.com/products/sunnysky-x2814-brushless-motors",
+    "adapterCircle": 15,
+    "adapterHole": 2.5,
+    "adapterCount": 3,
+    "adapterDepth": 3.5,
+    "flatLength": 12,
+    "flatDepth": 0.4,
+    "application": "general-rc"
+  },
+  {
+    "id": "x3520-v3",
+    "code": "SunnySky X3520 V3",
+    "name": "SunnySky X3520 V3 · 560 KV",
+    "manufacturer": "SunnySky",
+    "rotor": "outrunner",
+    "diameter": 42.5,
+    "length": 42.5,
+    "shaft": 5,
+    "extension": 19,
+    "pilot": 12,
+    "pilotHeight": 2.5,
+    "mountX": 25,
+    "mountY": 25,
+    "hole": 3,
+    "holeDepth": 4,
+    "mountPattern": "circle",
+    "weight": 219,
+    "kv": 560,
+    "current": 80,
+    "currentSeconds": 30,
+    "power": 2000,
+    "noLoadCurrent": 1.1,
+    "noLoadVoltage": 10,
+    "resistance": 0.023,
+    "cellMin": 6,
+    "cellMax": 6,
+    "statorDiameter": 35,
+    "statorLength": 20,
+    "slots": 12,
+    "poles": 14,
+    "source": "https://sunnyskyusa.com/products/sunnysky-x3520",
+    "drawing": "https://sunnyskyusa.com/products/sunnysky-x3520",
+    "adapterCircle": 17,
+    "adapterHole": 3,
+    "adapterCount": 3,
+    "adapterDepth": 4,
+    "flatLength": 11,
+    "flatDepth": 0.4,
+    "application": "general-rc"
+  },
+  {
+    "id": "x4120-v3",
+    "code": "SunnySky X4120 V3",
+    "name": "SunnySky X4120 V3 · 480 KV",
+    "manufacturer": "SunnySky",
+    "rotor": "outrunner",
+    "diameter": 49.7,
+    "length": 46,
+    "shaft": 6,
+    "extension": 21,
+    "pilot": 14,
+    "pilotHeight": 3,
+    "mountX": 30,
+    "mountY": 30,
+    "hole": 4,
+    "holeDepth": 4,
+    "mountPattern": "circle",
+    "weight": 292,
+    "kv": 480,
+    "current": 97,
+    "currentSeconds": 30,
+    "power": 2425,
+    "noLoadCurrent": 1.5,
+    "noLoadVoltage": 10,
+    "resistance": 0.0225,
+    "cellMin": 6,
+    "cellMax": 6,
+    "statorDiameter": 41,
+    "statorLength": 20,
+    "slots": 12,
+    "poles": 14,
+    "source": "https://sunnyskyusa.com/products/sunnysky-x4120",
+    "drawing": "https://sunnyskyusa.com/products/sunnysky-x4120",
+    "adapterCircle": 20,
+    "adapterHole": 3,
+    "adapterCount": 4,
+    "adapterDepth": 4,
+    "flatLength": 0,
+    "flatDepth": 0,
+    "application": "general-rc"
+  },
+  {
+    "id": "x5330",
+    "code": "SunnySky X5330",
+    "name": "SunnySky X5330 · 200 KV",
+    "manufacturer": "SunnySky",
+    "rotor": "outrunner",
+    "diameter": 62.8,
+    "length": 57.5,
+    "shaft": 8,
+    "extension": 50,
+    "pilot": 16,
+    "pilotHeight": 2.5,
+    "mountX": 30,
+    "mountY": 44,
+    "hole": 4,
+    "holeDepth": 4,
+    "mountPattern": "dual-circle",
+    "weight": 670,
+    "kv": 200,
+    "current": 85,
+    "currentSeconds": 10,
+    "power": 3145,
+    "noLoadCurrent": 1.9,
+    "noLoadVoltage": 10,
+    "resistance": 0.025,
+    "cellMin": 8,
+    "cellMax": 10,
+    "statorDiameter": 53,
+    "statorLength": 30,
+    "slots": 12,
+    "poles": 14,
+    "source": "https://sunnyskyusa.com/products/sunnysky-x3530-brushless-motors",
+    "drawing": "https://sunnyskyusa.com/products/sunnysky-x3530-brushless-motors",
+    "adapterCircle": 20,
+    "adapterHole": 3,
+    "adapterCount": 3,
+    "adapterDepth": 5.5,
+    "flatLength": 20,
+    "flatDepth": 0.7,
+    "application": "general-rc"
+  },
+  {
+    "id": "xerun-4268-g3",
+    "code": "30401906",
+    "name": "Hobbywing XERUN-4268-G3 · 1900 KV",
+    "manufacturer": "Hobbywing",
+    "rotor": "inrunner",
+    "diameter": 42,
+    "length": 67.8,
+    "shaft": 5,
+    "extension": 18.5,
+    "pilot": 0,
+    "pilotHeight": 0,
+    "mountX": 25.4,
+    "mountY": 25.4,
+    "hole": 3,
+    "holeDepth": 5.5,
+    "mountPattern": "alternating",
+    "weight": 315,
+    "kv": 1900,
+    "noLoadCurrent": 4,
+    "resistance": 0.0075,
+    "cellMin": 2,
+    "cellMax": 6,
+    "poles": 4,
+    "source": "https://www.hobbywing.com/products/xerun-4268--4274-g332",
+    "drawing": "https://www.hobbywing.com/products/xerun-4268--4274-g332",
+    "adapterCircle": 0,
+    "adapterHole": 0,
+    "adapterCount": 0,
+    "adapterDepth": 0,
+    "flatLength": 16,
+    "flatDepth": 0.5,
+    "application": "rc-car"
+  },
+  {
+    "id": "xerun-4274-g3",
+    "code": "30405001",
+    "name": "Hobbywing XERUN-4274-G3 · 2250 KV",
+    "manufacturer": "Hobbywing",
+    "rotor": "inrunner",
+    "diameter": 42,
+    "length": 74,
+    "shaft": 5,
+    "extension": 18.5,
+    "pilot": 0,
+    "pilotHeight": 0,
+    "mountX": 25.4,
+    "mountY": 25.4,
+    "hole": 3,
+    "holeDepth": 5.5,
+    "mountPattern": "alternating",
+    "weight": 354,
+    "kv": 2250,
+    "noLoadCurrent": 5,
+    "resistance": 0.0037,
+    "cellMin": 2,
+    "cellMax": 6,
+    "poles": 4,
+    "source": "https://www.hobbywing.com/products/xerun-4268--4274-g332",
+    "drawing": "https://www.hobbywing.com/products/xerun-4268--4274-g332",
+    "adapterCircle": 0,
+    "adapterHole": 0,
+    "adapterCount": 0,
+    "adapterDepth": 0,
+    "flatLength": 16,
+    "flatDepth": 0.5,
+    "application": "rc-car"
+  },
+  {
+    "id": "0802se-19500",
+    "code": "BETAFPV 0802SE (2022)",
+    "name": "BETAFPV 0802SE (2022) · 19500 KV",
+    "manufacturer": "BETAFPV",
+    "rotor": "outrunner",
+    "application": "whoop",
+    "diameter": 10.5,
+    "length": 8.8,
+    "shaft": 1,
+    "extension": 5,
+    "pilot": 0,
+    "pilotHeight": 0,
+    "mountX": 0,
+    "mountY": 0,
+    "hole": 1.4,
+    "holeDepth": 1.2,
+    "mountPattern": "supplier-pattern",
+    "weight": 1.83,
+    "kv": 19500,
+    "statorDiameter": 8,
+    "statorLength": 2,
+    "slots": 9,
+    "poles": 12,
+    "source": "https://betafpv.com/products/0802se-22000kv-brushless-motors",
+    "drawing": "",
+    "adapterCircle": 0,
+    "adapterHole": 0,
+    "adapterCount": 0,
+    "adapterDepth": 0,
+    "flatLength": 0,
+    "flatDepth": 0,
+    "drone": {
+      "family": "whoop",
+      "baseHeight": 1.2,
+      "topHeight": 0.8,
+      "wall": 0.45,
+      "internalShaft": 1,
+      "rearExtension": 0,
+      "bossDiameter": 0,
+      "bossHeight": 0,
+      "mountHoles": [
+        {
+          "x": 0.0,
+          "y": 3.3,
+          "diameter": 1.4
+        },
+        {
+          "x": -2.857884,
+          "y": -1.65,
+          "diameter": 1.4
+        },
+        {
+          "x": 2.857884,
+          "y": -1.65,
+          "diameter": 1.4
+        }
+      ],
+      "frontHoles": [],
+      "frontDepth": 1.5,
+      "bearingDiameter": 1.8,
+      "color": 10988981
+    },
+    "cellMin": 1,
+    "cellMax": 1
+  },
+  {
+    "id": "0802se-23000",
+    "code": "BETAFPV 0802SE (2022)",
+    "name": "BETAFPV 0802SE (2022) · 23000 KV",
+    "manufacturer": "BETAFPV",
+    "rotor": "outrunner",
+    "application": "whoop",
+    "diameter": 10.5,
+    "length": 8.8,
+    "shaft": 1,
+    "extension": 5,
+    "pilot": 0,
+    "pilotHeight": 0,
+    "mountX": 0,
+    "mountY": 0,
+    "hole": 1.4,
+    "holeDepth": 1.2,
+    "mountPattern": "supplier-pattern",
+    "weight": 1.8,
+    "kv": 23000,
+    "statorDiameter": 8,
+    "statorLength": 2,
+    "slots": 9,
+    "poles": 12,
+    "source": "https://betafpv.com/products/0802se-22000kv-brushless-motors",
+    "drawing": "",
+    "adapterCircle": 0,
+    "adapterHole": 0,
+    "adapterCount": 0,
+    "adapterDepth": 0,
+    "flatLength": 0,
+    "flatDepth": 0,
+    "drone": {
+      "family": "whoop",
+      "baseHeight": 1.2,
+      "topHeight": 0.8,
+      "wall": 0.45,
+      "internalShaft": 1,
+      "rearExtension": 0,
+      "bossDiameter": 0,
+      "bossHeight": 0,
+      "mountHoles": [
+        {
+          "x": 0.0,
+          "y": 3.3,
+          "diameter": 1.4
+        },
+        {
+          "x": -2.857884,
+          "y": -1.65,
+          "diameter": 1.4
+        },
+        {
+          "x": 2.857884,
+          "y": -1.65,
+          "diameter": 1.4
+        }
+      ],
+      "frontHoles": [],
+      "frontDepth": 1.5,
+      "bearingDiameter": 1.8,
+      "color": 10988981
+    },
+    "cellMin": 1,
+    "cellMax": 1
+  },
+  {
+    "id": "xing2-1404-3800",
+    "code": "iFlight XING2 1404",
+    "name": "iFlight XING2 1404 · 3800 KV",
+    "manufacturer": "iFlight",
+    "rotor": "outrunner",
+    "application": "micro-fpv",
+    "diameter": 19.9,
+    "length": 14.4,
+    "shaft": 1.5,
+    "extension": 4,
+    "pilot": 0,
+    "pilotHeight": 0,
+    "mountX": 0,
+    "mountY": 0,
+    "hole": 2,
+    "holeDepth": 2.4,
+    "mountPattern": "supplier-pattern",
+    "weight": 9.1,
+    "kv": 3800,
+    "statorDiameter": 14,
+    "statorLength": 4,
+    "slots": 9,
+    "poles": 12,
+    "source": "https://shop.iflight.com/xing2-1404-toothpick-ultralight-build-unibell-pro1482",
+    "drawing": "",
+    "adapterCircle": 0,
+    "adapterHole": 0,
+    "adapterCount": 0,
+    "adapterDepth": 0,
+    "flatLength": 0,
+    "flatDepth": 0,
+    "drone": {
+      "family": "fpv",
+      "baseHeight": 2.4,
+      "topHeight": 1.5,
+      "wall": 0.8,
+      "internalShaft": 1.5,
+      "rearExtension": 0,
+      "bossDiameter": 0,
+      "bossHeight": 0,
+      "mountHoles": [
+        {
+          "x": 4.5,
+          "y": 4.5,
+          "diameter": 2
+        },
+        {
+          "x": -4.5,
+          "y": 4.5,
+          "diameter": 2
+        },
+        {
+          "x": -4.5,
+          "y": -4.5,
+          "diameter": 2
+        },
+        {
+          "x": 4.5,
+          "y": -4.5,
+          "diameter": 2
+        }
+      ],
+      "frontHoles": [],
+      "frontDepth": 1.5,
+      "bearingDiameter": 3.5,
+      "color": 3491156
+    },
+    "resistance": 0.22,
+    "current": 15.84,
+    "power": 253.4,
+    "cellMin": 3,
+    "cellMax": 4
+  },
+  {
+    "id": "xing2-1404-4600",
+    "code": "iFlight XING2 1404",
+    "name": "iFlight XING2 1404 · 4600 KV",
+    "manufacturer": "iFlight",
+    "rotor": "outrunner",
+    "application": "micro-fpv",
+    "diameter": 19.9,
+    "length": 14.4,
+    "shaft": 1.5,
+    "extension": 4,
+    "pilot": 0,
+    "pilotHeight": 0,
+    "mountX": 0,
+    "mountY": 0,
+    "hole": 2,
+    "holeDepth": 2.4,
+    "mountPattern": "supplier-pattern",
+    "weight": 9.1,
+    "kv": 4600,
+    "statorDiameter": 14,
+    "statorLength": 4,
+    "slots": 9,
+    "poles": 12,
+    "source": "https://shop.iflight.com/xing2-1404-toothpick-ultralight-build-unibell-pro1482",
+    "drawing": "",
+    "adapterCircle": 0,
+    "adapterHole": 0,
+    "adapterCount": 0,
+    "adapterDepth": 0,
+    "flatLength": 0,
+    "flatDepth": 0,
+    "drone": {
+      "family": "fpv",
+      "baseHeight": 2.4,
+      "topHeight": 1.5,
+      "wall": 0.8,
+      "internalShaft": 1.5,
+      "rearExtension": 0,
+      "bossDiameter": 0,
+      "bossHeight": 0,
+      "mountHoles": [
+        {
+          "x": 4.5,
+          "y": 4.5,
+          "diameter": 2
+        },
+        {
+          "x": -4.5,
+          "y": 4.5,
+          "diameter": 2
+        },
+        {
+          "x": -4.5,
+          "y": -4.5,
+          "diameter": 2
+        },
+        {
+          "x": 4.5,
+          "y": -4.5,
+          "diameter": 2
+        }
+      ],
+      "frontHoles": [],
+      "frontDepth": 1.5,
+      "bearingDiameter": 3.5,
+      "color": 3491156
+    },
+    "resistance": 0.159,
+    "current": 17.99,
+    "power": 287.8,
+    "cellMin": 3,
+    "cellMax": 4
+  },
+  {
+    "id": "xing2-2207-1855",
+    "code": "iFlight XING2 2207",
+    "name": "iFlight XING2 2207 · 1855 KV",
+    "manufacturer": "iFlight",
+    "rotor": "outrunner",
+    "application": "fpv",
+    "diameter": 29.08,
+    "length": 19.1,
+    "shaft": 5,
+    "extension": 13.5,
+    "pilot": 0,
+    "pilotHeight": 0,
+    "mountX": 0,
+    "mountY": 0,
+    "hole": 3,
+    "holeDepth": 3.2,
+    "mountPattern": "supplier-pattern",
+    "weight": 31.6,
+    "kv": 1855,
+    "statorDiameter": 22,
+    "statorLength": 7,
+    "slots": 12,
+    "poles": 14,
+    "source": "https://shop.iflight.com/xing2-2207-4s-6s-fpv-motor-unibell-pro1464",
+    "drawing": "",
+    "adapterCircle": 0,
+    "adapterHole": 0,
+    "adapterCount": 0,
+    "adapterDepth": 0,
+    "flatLength": 0,
+    "flatDepth": 0,
+    "drone": {
+      "family": "fpv",
+      "baseHeight": 3.2,
+      "topHeight": 2,
+      "wall": 0.8,
+      "internalShaft": 4,
+      "rearExtension": 0,
+      "bossDiameter": 0,
+      "bossHeight": 0,
+      "mountHoles": [
+        {
+          "x": 8.0,
+          "y": 8.0,
+          "diameter": 3
+        },
+        {
+          "x": -8.0,
+          "y": 8.0,
+          "diameter": 3
+        },
+        {
+          "x": -8.0,
+          "y": -8.0,
+          "diameter": 3
+        },
+        {
+          "x": 8.0,
+          "y": -8.0,
+          "diameter": 3
+        }
+      ],
+      "frontHoles": [],
+      "frontDepth": 1.5,
+      "bearingDiameter": 9,
+      "color": 3491156
+    },
+    "resistance": 0.05,
+    "current": 35.08,
+    "power": 841.9,
+    "cellMin": 6,
+    "cellMax": 6
+  },
+  {
+    "id": "xing2-2207-2755",
+    "code": "iFlight XING2 2207",
+    "name": "iFlight XING2 2207 · 2755 KV",
+    "manufacturer": "iFlight",
+    "rotor": "outrunner",
+    "application": "fpv",
+    "diameter": 29.08,
+    "length": 19.1,
+    "shaft": 5,
+    "extension": 13.5,
+    "pilot": 0,
+    "pilotHeight": 0,
+    "mountX": 0,
+    "mountY": 0,
+    "hole": 3,
+    "holeDepth": 3.2,
+    "mountPattern": "supplier-pattern",
+    "weight": 31.6,
+    "kv": 2755,
+    "statorDiameter": 22,
+    "statorLength": 7,
+    "slots": 12,
+    "poles": 14,
+    "source": "https://shop.iflight.com/xing2-2207-4s-6s-fpv-motor-unibell-pro1464",
+    "drawing": "",
+    "adapterCircle": 0,
+    "adapterHole": 0,
+    "adapterCount": 0,
+    "adapterDepth": 0,
+    "flatLength": 0,
+    "flatDepth": 0,
+    "drone": {
+      "family": "fpv",
+      "baseHeight": 3.2,
+      "topHeight": 2,
+      "wall": 0.8,
+      "internalShaft": 4,
+      "rearExtension": 0,
+      "bossDiameter": 0,
+      "bossHeight": 0,
+      "mountHoles": [
+        {
+          "x": 8.0,
+          "y": 8.0,
+          "diameter": 3
+        },
+        {
+          "x": -8.0,
+          "y": 8.0,
+          "diameter": 3
+        },
+        {
+          "x": -8.0,
+          "y": -8.0,
+          "diameter": 3
+        },
+        {
+          "x": 8.0,
+          "y": -8.0,
+          "diameter": 3
+        }
+      ],
+      "frontHoles": [],
+      "frontDepth": 1.5,
+      "bearingDiameter": 9,
+      "color": 3491156
+    },
+    "resistance": 0.0415,
+    "current": 40.35,
+    "power": 645.6,
+    "cellMin": 4,
+    "cellMax": 4
+  },
+  {
+    "id": "xing-2806-5-1300",
+    "code": "iFlight XING 2806.5",
+    "name": "iFlight XING 2806.5 · 1300 KV",
+    "manufacturer": "iFlight",
+    "rotor": "outrunner",
+    "application": "fpv-long-range",
+    "diameter": 35.06,
+    "length": 21.3,
+    "shaft": 5,
+    "extension": 15.5,
+    "pilot": 0,
+    "pilotHeight": 0,
+    "mountX": 0,
+    "mountY": 0,
+    "hole": 3,
+    "holeDepth": 3.2,
+    "mountPattern": "supplier-pattern",
+    "weight": 54.3,
+    "kv": 1300,
+    "statorDiameter": 28,
+    "statorLength": 6.5,
+    "slots": 12,
+    "poles": 14,
+    "source": "https://shop.iflight.com/xing-x2806-5-fpv-nextgen-motor-pro1001",
+    "drawing": "",
+    "adapterCircle": 0,
+    "adapterHole": 0,
+    "adapterCount": 0,
+    "adapterDepth": 0,
+    "flatLength": 0,
+    "flatDepth": 0,
+    "drone": {
+      "family": "fpv",
+      "baseHeight": 3.2,
+      "topHeight": 2.4,
+      "wall": 0.8,
+      "internalShaft": 5,
+      "rearExtension": 0,
+      "bossDiameter": 0,
+      "bossHeight": 0,
+      "mountHoles": [
+        {
+          "x": 9.5,
+          "y": 9.5,
+          "diameter": 3
+        },
+        {
+          "x": -9.5,
+          "y": 9.5,
+          "diameter": 3
+        },
+        {
+          "x": -9.5,
+          "y": -9.5,
+          "diameter": 3
+        },
+        {
+          "x": 9.5,
+          "y": -9.5,
+          "diameter": 3
+        }
+      ],
+      "frontHoles": [],
+      "frontDepth": 1.5,
+      "bearingDiameter": 11,
+      "color": 9911365
+    },
+    "resistance": 0.07229,
+    "current": 48.33,
+    "power": 1132.9
+  },
+  {
+    "id": "xing-2806-5-1800",
+    "code": "iFlight XING 2806.5",
+    "name": "iFlight XING 2806.5 · 1800 KV",
+    "manufacturer": "iFlight",
+    "rotor": "outrunner",
+    "application": "fpv-long-range",
+    "diameter": 35.06,
+    "length": 21.3,
+    "shaft": 5,
+    "extension": 15.5,
+    "pilot": 0,
+    "pilotHeight": 0,
+    "mountX": 0,
+    "mountY": 0,
+    "hole": 3,
+    "holeDepth": 3.2,
+    "mountPattern": "supplier-pattern",
+    "weight": 53.3,
+    "kv": 1800,
+    "statorDiameter": 28,
+    "statorLength": 6.5,
+    "slots": 12,
+    "poles": 14,
+    "source": "https://shop.iflight.com/xing-x2806-5-fpv-nextgen-motor-pro1001",
+    "drawing": "",
+    "adapterCircle": 0,
+    "adapterHole": 0,
+    "adapterCount": 0,
+    "adapterDepth": 0,
+    "flatLength": 0,
+    "flatDepth": 0,
+    "drone": {
+      "family": "fpv",
+      "baseHeight": 3.2,
+      "topHeight": 2.4,
+      "wall": 0.8,
+      "internalShaft": 5,
+      "rearExtension": 0,
+      "bossDiameter": 0,
+      "bossHeight": 0,
+      "mountHoles": [
+        {
+          "x": 9.5,
+          "y": 9.5,
+          "diameter": 3
+        },
+        {
+          "x": -9.5,
+          "y": 9.5,
+          "diameter": 3
+        },
+        {
+          "x": -9.5,
+          "y": -9.5,
+          "diameter": 3
+        },
+        {
+          "x": 9.5,
+          "y": -9.5,
+          "diameter": 3
+        }
+      ],
+      "frontHoles": [],
+      "frontDepth": 1.5,
+      "bearingDiameter": 11,
+      "color": 9911365
+    },
+    "resistance": 0.0485,
+    "current": 72.3,
+    "power": 1681
+  },
+  {
+    "id": "nidici-3115-900",
+    "code": "NIDICI 3115",
+    "name": "NIDICI 3115 · 900 KV",
+    "manufacturer": "NIDICI",
+    "rotor": "outrunner",
+    "application": "large-fpv",
+    "diameter": 36.85,
+    "length": 31.15,
+    "shaft": 5,
+    "extension": 15.65,
+    "pilot": 0,
+    "pilotHeight": 0,
+    "mountX": 0,
+    "mountY": 0,
+    "hole": 3,
+    "holeDepth": 3.2,
+    "mountPattern": "supplier-pattern",
+    "weight": 77,
+    "kv": 900,
+    "statorDiameter": 31,
+    "statorLength": 15,
+    "slots": 12,
+    "poles": 14,
+    "source": "https://shop.iflight.com/NIDICI-3115-FPV-Motor-Pro2317",
+    "drawing": "",
+    "adapterCircle": 0,
+    "adapterHole": 0,
+    "adapterCount": 0,
+    "adapterDepth": 0,
+    "flatLength": 0,
+    "flatDepth": 0,
+    "drone": {
+      "family": "fpv",
+      "baseHeight": 3.2,
+      "topHeight": 2.4,
+      "wall": 0.8,
+      "internalShaft": 5,
+      "rearExtension": 0,
+      "bossDiameter": 0,
+      "bossHeight": 0,
+      "mountHoles": [
+        {
+          "x": 9.5,
+          "y": 9.5,
+          "diameter": 3
+        },
+        {
+          "x": -9.5,
+          "y": 9.5,
+          "diameter": 3
+        },
+        {
+          "x": -9.5,
+          "y": -9.5,
+          "diameter": 3
+        },
+        {
+          "x": 9.5,
+          "y": -9.5,
+          "diameter": 3
+        }
+      ],
+      "frontHoles": [],
+      "frontDepth": 1.5,
+      "bearingDiameter": 11,
+      "color": 3491156
+    },
+    "resistance": 0.05124,
+    "current": 63.28,
+    "power": 1479.5
+  },
+  {
+    "id": "nidici-3115-1250",
+    "code": "NIDICI 3115",
+    "name": "NIDICI 3115 · 1250 KV",
+    "manufacturer": "NIDICI",
+    "rotor": "outrunner",
+    "application": "large-fpv",
+    "diameter": 36.85,
+    "length": 31.15,
+    "shaft": 5,
+    "extension": 15.65,
+    "pilot": 0,
+    "pilotHeight": 0,
+    "mountX": 0,
+    "mountY": 0,
+    "hole": 3,
+    "holeDepth": 3.2,
+    "mountPattern": "supplier-pattern",
+    "weight": 77,
+    "kv": 1250,
+    "statorDiameter": 31,
+    "statorLength": 15,
+    "slots": 12,
+    "poles": 14,
+    "source": "https://shop.iflight.com/NIDICI-3115-FPV-Motor-Pro2317",
+    "drawing": "",
+    "adapterCircle": 0,
+    "adapterHole": 0,
+    "adapterCount": 0,
+    "adapterDepth": 0,
+    "flatLength": 0,
+    "flatDepth": 0,
+    "drone": {
+      "family": "fpv",
+      "baseHeight": 3.2,
+      "topHeight": 2.4,
+      "wall": 0.8,
+      "internalShaft": 5,
+      "rearExtension": 0,
+      "bossDiameter": 0,
+      "bossHeight": 0,
+      "mountHoles": [
+        {
+          "x": 9.5,
+          "y": 9.5,
+          "diameter": 3
+        },
+        {
+          "x": -9.5,
+          "y": 9.5,
+          "diameter": 3
+        },
+        {
+          "x": -9.5,
+          "y": -9.5,
+          "diameter": 3
+        },
+        {
+          "x": 9.5,
+          "y": -9.5,
+          "diameter": 3
+        }
+      ],
+      "frontHoles": [],
+      "frontDepth": 1.5,
+      "bearingDiameter": 11,
+      "color": 3491156
+    },
+    "resistance": 0.02415,
+    "current": 78.86,
+    "power": 1830.3
+  },
+  {
+    "id": "mn4014-330",
+    "code": "T-MOTOR MN4014",
+    "name": "T-MOTOR MN4014 · 330 KV",
+    "manufacturer": "T-MOTOR",
+    "rotor": "outrunner",
+    "application": "multirotor",
+    "diameter": 44.7,
+    "length": 34.5,
+    "shaft": 4,
+    "extension": 6,
+    "pilot": 0,
+    "pilotHeight": 0,
+    "mountX": 0,
+    "mountY": 0,
+    "hole": 3,
+    "holeDepth": 3.6,
+    "mountPattern": "supplier-pattern",
+    "weight": 171,
+    "kv": 330,
+    "statorDiameter": 40,
+    "statorLength": 14,
+    "slots": 18,
+    "poles": 24,
+    "source": "https://store.tmotor.com/product/mn4014-kv400-motor-navigator-type.html",
+    "drawing": "https://store.tmotor.com/images/202606/MN4014-draw-0603-v1.jpg",
+    "adapterCircle": 0,
+    "adapterHole": 0,
+    "adapterCount": 0,
+    "adapterDepth": 0,
+    "flatLength": 0,
+    "flatDepth": 0,
+    "drone": {
+      "family": "multirotor",
+      "baseHeight": 3.6,
+      "topHeight": 3.8,
+      "wall": 1.2,
+      "internalShaft": 4,
+      "rearExtension": 2.4,
+      "bossDiameter": 0,
+      "bossHeight": 0,
+      "mountHoles": [
+        {
+          "x": 12.5,
+          "y": 0.0,
+          "diameter": 3
+        },
+        {
+          "x": 0.0,
+          "y": 12.5,
+          "diameter": 3
+        },
+        {
+          "x": -12.5,
+          "y": 0.0,
+          "diameter": 3
+        },
+        {
+          "x": -0.0,
+          "y": -12.5,
+          "diameter": 3
+        },
+        {
+          "x": 15.454813,
+          "y": 4.141105,
+          "diameter": 2.5
+        },
+        {
+          "x": -11.313708,
+          "y": 11.313708,
+          "diameter": 2.5
+        },
+        {
+          "x": -4.141105,
+          "y": -15.454813,
+          "diameter": 2.5
+        }
+      ],
+      "frontHoles": [
+        {
+          "x": 0.0,
+          "y": 8.5,
+          "diameter": 3
+        },
+        {
+          "x": -7.361216,
+          "y": -4.25,
+          "diameter": 3
+        },
+        {
+          "x": 7.361216,
+          "y": -4.25,
+          "diameter": 3
+        },
+        {
+          "x": 6.0,
+          "y": 0.0,
+          "diameter": 3
+        },
+        {
+          "x": -6.0,
+          "y": 0.0,
+          "diameter": 3
+        }
+      ],
+      "frontDepth": 3.8,
+      "bearingDiameter": 9,
+      "color": 3491156
+    },
+    "resistance": 0.085,
+    "current": 25,
+    "power": 750,
+    "cellMin": 4,
+    "cellMax": 8,
+    "noLoadCurrent": 1.1,
+    "currentSeconds": 180,
+    "noLoadVoltage": 10
+  },
+  {
+    "id": "mn4014-400",
+    "code": "T-MOTOR MN4014",
+    "name": "T-MOTOR MN4014 · 400 KV",
+    "manufacturer": "T-MOTOR",
+    "rotor": "outrunner",
+    "application": "multirotor",
+    "diameter": 44.7,
+    "length": 34.5,
+    "shaft": 4,
+    "extension": 6,
+    "pilot": 0,
+    "pilotHeight": 0,
+    "mountX": 0,
+    "mountY": 0,
+    "hole": 3,
+    "holeDepth": 3.6,
+    "mountPattern": "supplier-pattern",
+    "weight": 171,
+    "kv": 400,
+    "statorDiameter": 40,
+    "statorLength": 14,
+    "slots": 18,
+    "poles": 24,
+    "source": "https://store.tmotor.com/product/mn4014-kv400-motor-navigator-type.html",
+    "drawing": "https://store.tmotor.com/images/202606/MN4014-draw-0603-v1.jpg",
+    "adapterCircle": 0,
+    "adapterHole": 0,
+    "adapterCount": 0,
+    "adapterDepth": 0,
+    "flatLength": 0,
+    "flatDepth": 0,
+    "drone": {
+      "family": "multirotor",
+      "baseHeight": 3.6,
+      "topHeight": 3.8,
+      "wall": 1.2,
+      "internalShaft": 4,
+      "rearExtension": 2.4,
+      "bossDiameter": 0,
+      "bossHeight": 0,
+      "mountHoles": [
+        {
+          "x": 12.5,
+          "y": 0.0,
+          "diameter": 3
+        },
+        {
+          "x": 0.0,
+          "y": 12.5,
+          "diameter": 3
+        },
+        {
+          "x": -12.5,
+          "y": 0.0,
+          "diameter": 3
+        },
+        {
+          "x": -0.0,
+          "y": -12.5,
+          "diameter": 3
+        },
+        {
+          "x": 15.454813,
+          "y": 4.141105,
+          "diameter": 2.5
+        },
+        {
+          "x": -11.313708,
+          "y": 11.313708,
+          "diameter": 2.5
+        },
+        {
+          "x": -4.141105,
+          "y": -15.454813,
+          "diameter": 2.5
+        }
+      ],
+      "frontHoles": [
+        {
+          "x": 0.0,
+          "y": 8.5,
+          "diameter": 3
+        },
+        {
+          "x": -7.361216,
+          "y": -4.25,
+          "diameter": 3
+        },
+        {
+          "x": 7.361216,
+          "y": -4.25,
+          "diameter": 3
+        },
+        {
+          "x": 6.0,
+          "y": 0.0,
+          "diameter": 3
+        },
+        {
+          "x": -6.0,
+          "y": 0.0,
+          "diameter": 3
+        }
+      ],
+      "frontDepth": 3.8,
+      "bearingDiameter": 9,
+      "color": 3491156
+    },
+    "resistance": 0.067,
+    "current": 30,
+    "power": 900,
+    "cellMin": 4,
+    "cellMax": 8,
+    "noLoadCurrent": 1.3,
+    "currentSeconds": 180,
+    "noLoadVoltage": 10
+  },
+  {
+    "id": "mn6007-ii-160",
+    "code": "T-MOTOR MN6007 II",
+    "name": "T-MOTOR MN6007 II · 160 KV",
+    "manufacturer": "T-MOTOR",
+    "rotor": "outrunner",
+    "application": "large-multirotor",
+    "diameter": 67.2,
+    "length": 26.1,
+    "shaft": 4,
+    "extension": 5,
+    "pilot": 0,
+    "pilotHeight": 0,
+    "mountX": 0,
+    "mountY": 0,
+    "hole": 4,
+    "holeDepth": 9,
+    "mountPattern": "supplier-pattern",
+    "weight": 159,
+    "kv": 160,
+    "statorDiameter": 60,
+    "statorLength": 7,
+    "slots": 24,
+    "poles": 28,
+    "source": "https://store.tmotor.com/product/mn6007-v2-motor-antigravity-type.html",
+    "drawing": "https://store.tmotor.com/images/202408/271724738437322975.jpg",
+    "adapterCircle": 0,
+    "adapterHole": 0,
+    "adapterCount": 0,
+    "adapterDepth": 0,
+    "flatLength": 0,
+    "flatDepth": 0,
+    "drone": {
+      "family": "multirotor",
+      "baseHeight": 9.4,
+      "topHeight": 7.4,
+      "wall": 1.2,
+      "internalShaft": 6,
+      "rearExtension": 0,
+      "bossDiameter": 0,
+      "bossHeight": 0,
+      "mountHoles": [
+        {
+          "x": 11.313708,
+          "y": 11.313708,
+          "diameter": 4
+        },
+        {
+          "x": -11.313708,
+          "y": 11.313708,
+          "diameter": 4
+        },
+        {
+          "x": -11.313708,
+          "y": -11.313708,
+          "diameter": 4
+        },
+        {
+          "x": 11.313708,
+          "y": -11.313708,
+          "diameter": 4
+        }
+      ],
+      "frontHoles": [
+        {
+          "x": 6.0,
+          "y": 0.0,
+          "diameter": 3
+        },
+        {
+          "x": 0.0,
+          "y": 6.0,
+          "diameter": 3
+        },
+        {
+          "x": -6.0,
+          "y": 0.0,
+          "diameter": 3
+        },
+        {
+          "x": -0.0,
+          "y": -6.0,
+          "diameter": 3
+        },
+        {
+          "x": 6.363961,
+          "y": 6.363961,
+          "diameter": 3
+        },
+        {
+          "x": -6.363961,
+          "y": 6.363961,
+          "diameter": 3
+        },
+        {
+          "x": -6.363961,
+          "y": -6.363961,
+          "diameter": 3
+        },
+        {
+          "x": 6.363961,
+          "y": -6.363961,
+          "diameter": 3
+        },
+        {
+          "x": 10.0,
+          "y": 0.0,
+          "diameter": 3
+        },
+        {
+          "x": 0.0,
+          "y": 10.0,
+          "diameter": 3
+        },
+        {
+          "x": -10.0,
+          "y": 0.0,
+          "diameter": 3
+        },
+        {
+          "x": -0.0,
+          "y": -10.0,
+          "diameter": 3
+        }
+      ],
+      "frontDepth": 7,
+      "bearingDiameter": 12,
+      "color": 3491156
+    },
+    "resistance": 0.178,
+    "current": 23.7,
+    "power": 1120,
+    "cellMin": 12,
+    "cellMax": 12,
+    "noLoadCurrent": 0.5,
+    "currentSeconds": 180,
+    "noLoadVoltage": 18
+  },
+  {
+    "id": "mn6007-ii-320",
+    "code": "T-MOTOR MN6007 II",
+    "name": "T-MOTOR MN6007 II · 320 KV",
+    "manufacturer": "T-MOTOR",
+    "rotor": "outrunner",
+    "application": "large-multirotor",
+    "diameter": 67.2,
+    "length": 26.1,
+    "shaft": 4,
+    "extension": 5,
+    "pilot": 0,
+    "pilotHeight": 0,
+    "mountX": 0,
+    "mountY": 0,
+    "hole": 4,
+    "holeDepth": 9,
+    "mountPattern": "supplier-pattern",
+    "weight": 161,
+    "kv": 320,
+    "statorDiameter": 60,
+    "statorLength": 7,
+    "slots": 24,
+    "poles": 28,
+    "source": "https://store.tmotor.com/product/mn6007-v2-motor-antigravity-type.html",
+    "drawing": "https://store.tmotor.com/images/202408/271724738437322975.jpg",
+    "adapterCircle": 0,
+    "adapterHole": 0,
+    "adapterCount": 0,
+    "adapterDepth": 0,
+    "flatLength": 0,
+    "flatDepth": 0,
+    "drone": {
+      "family": "multirotor",
+      "baseHeight": 9.4,
+      "topHeight": 7.4,
+      "wall": 1.2,
+      "internalShaft": 6,
+      "rearExtension": 0,
+      "bossDiameter": 0,
+      "bossHeight": 0,
+      "mountHoles": [
+        {
+          "x": 11.313708,
+          "y": 11.313708,
+          "diameter": 4
+        },
+        {
+          "x": -11.313708,
+          "y": 11.313708,
+          "diameter": 4
+        },
+        {
+          "x": -11.313708,
+          "y": -11.313708,
+          "diameter": 4
+        },
+        {
+          "x": 11.313708,
+          "y": -11.313708,
+          "diameter": 4
+        }
+      ],
+      "frontHoles": [
+        {
+          "x": 6.0,
+          "y": 0.0,
+          "diameter": 3
+        },
+        {
+          "x": 0.0,
+          "y": 6.0,
+          "diameter": 3
+        },
+        {
+          "x": -6.0,
+          "y": 0.0,
+          "diameter": 3
+        },
+        {
+          "x": -0.0,
+          "y": -6.0,
+          "diameter": 3
+        },
+        {
+          "x": 6.363961,
+          "y": 6.363961,
+          "diameter": 3
+        },
+        {
+          "x": -6.363961,
+          "y": 6.363961,
+          "diameter": 3
+        },
+        {
+          "x": -6.363961,
+          "y": -6.363961,
+          "diameter": 3
+        },
+        {
+          "x": 6.363961,
+          "y": -6.363961,
+          "diameter": 3
+        },
+        {
+          "x": 10.0,
+          "y": 0.0,
+          "diameter": 3
+        },
+        {
+          "x": 0.0,
+          "y": 10.0,
+          "diameter": 3
+        },
+        {
+          "x": -10.0,
+          "y": 0.0,
+          "diameter": 3
+        },
+        {
+          "x": -0.0,
+          "y": -10.0,
+          "diameter": 3
+        }
+      ],
+      "frontDepth": 7,
+      "bearingDiameter": 12,
+      "color": 3491156
+    },
+    "resistance": 0.0475,
+    "current": 44.2,
+    "power": 1040,
+    "cellMin": 6,
+    "cellMax": 6,
+    "noLoadCurrent": 1,
+    "currentSeconds": 180,
+    "noLoadVoltage": 18
+  },
+  {
+    "id": "u8-lite-100",
+    "code": "T-MOTOR U8 Lite",
+    "name": "T-MOTOR U8 Lite · 100 KV",
+    "manufacturer": "T-MOTOR",
+    "rotor": "outrunner",
+    "application": "large-multirotor",
+    "diameter": 87.1,
+    "length": 24.05,
+    "shaft": 15,
+    "extension": 0,
+    "pilot": 0,
+    "pilotHeight": 0,
+    "mountX": 0,
+    "mountY": 0,
+    "hole": 4,
+    "holeDepth": 3.6,
+    "mountPattern": "supplier-pattern",
+    "weight": 238,
+    "kv": 100,
+    "statorDiameter": 80,
+    "statorLength": 8,
+    "slots": 36,
+    "poles": 42,
+    "source": "https://store.tmotor.com/product/u8-lite-kv100-u-efficiency.html",
+    "drawing": "https://store.tmotor.com/images/202508/U8-Lite-draw-v1.png",
+    "adapterCircle": 0,
+    "adapterHole": 0,
+    "adapterCount": 0,
+    "adapterDepth": 0,
+    "flatLength": 0,
+    "flatDepth": 0,
+    "drone": {
+      "family": "multirotor",
+      "baseHeight": 4,
+      "topHeight": 3.8,
+      "wall": 1.3,
+      "internalShaft": 15,
+      "rearExtension": 0,
+      "bossDiameter": 29,
+      "bossHeight": 3,
+      "mountHoles": [
+        {
+          "x": 18.0,
+          "y": 0.0,
+          "diameter": 4
+        },
+        {
+          "x": 0.0,
+          "y": 18.0,
+          "diameter": 4
+        },
+        {
+          "x": -18.0,
+          "y": 0.0,
+          "diameter": 4
+        },
+        {
+          "x": -0.0,
+          "y": -18.0,
+          "diameter": 4
+        }
+      ],
+      "frontHoles": [
+        {
+          "x": 8.131728,
+          "y": 8.131728,
+          "diameter": 4
+        },
+        {
+          "x": -8.131728,
+          "y": 8.131728,
+          "diameter": 4
+        },
+        {
+          "x": -8.131728,
+          "y": -8.131728,
+          "diameter": 4
+        },
+        {
+          "x": 8.131728,
+          "y": -8.131728,
+          "diameter": 4
+        },
+        {
+          "x": 10.0,
+          "y": 0.0,
+          "diameter": 3
+        },
+        {
+          "x": 0.0,
+          "y": 10.0,
+          "diameter": 3
+        },
+        {
+          "x": -10.0,
+          "y": 0.0,
+          "diameter": 3
+        },
+        {
+          "x": -0.0,
+          "y": -10.0,
+          "diameter": 3
+        }
+      ],
+      "frontDepth": 3,
+      "bearingDiameter": 19,
+      "color": 3491156
+    },
+    "resistance": 0.17,
+    "current": 29.3,
+    "power": 1406.4,
+    "cellMin": 12,
+    "cellMax": 12,
+    "noLoadCurrent": 0.7,
+    "currentSeconds": 180,
+    "noLoadVoltage": 18
+  },
+  {
+    "id": "u8-lite-190",
+    "code": "T-MOTOR U8 Lite",
+    "name": "T-MOTOR U8 Lite · 190 KV",
+    "manufacturer": "T-MOTOR",
+    "rotor": "outrunner",
+    "application": "large-multirotor",
+    "diameter": 87.1,
+    "length": 24.05,
+    "shaft": 15,
+    "extension": 0,
+    "pilot": 0,
+    "pilotHeight": 0,
+    "mountX": 0,
+    "mountY": 0,
+    "hole": 4,
+    "holeDepth": 3.6,
+    "mountPattern": "supplier-pattern",
+    "weight": 243,
+    "kv": 190,
+    "statorDiameter": 80,
+    "statorLength": 8,
+    "slots": 36,
+    "poles": 42,
+    "source": "https://store.tmotor.com/product/u8-lite-kv100-u-efficiency.html",
+    "drawing": "https://store.tmotor.com/images/202508/U8-Lite-draw-v1.png",
+    "adapterCircle": 0,
+    "adapterHole": 0,
+    "adapterCount": 0,
+    "adapterDepth": 0,
+    "flatLength": 0,
+    "flatDepth": 0,
+    "drone": {
+      "family": "multirotor",
+      "baseHeight": 4,
+      "topHeight": 3.8,
+      "wall": 1.3,
+      "internalShaft": 15,
+      "rearExtension": 0,
+      "bossDiameter": 29,
+      "bossHeight": 3,
+      "mountHoles": [
+        {
+          "x": 18.0,
+          "y": 0.0,
+          "diameter": 4
+        },
+        {
+          "x": 0.0,
+          "y": 18.0,
+          "diameter": 4
+        },
+        {
+          "x": -18.0,
+          "y": 0.0,
+          "diameter": 4
+        },
+        {
+          "x": -0.0,
+          "y": -18.0,
+          "diameter": 4
+        }
+      ],
+      "frontHoles": [
+        {
+          "x": 8.131728,
+          "y": 8.131728,
+          "diameter": 4
+        },
+        {
+          "x": -8.131728,
+          "y": 8.131728,
+          "diameter": 4
+        },
+        {
+          "x": -8.131728,
+          "y": -8.131728,
+          "diameter": 4
+        },
+        {
+          "x": 8.131728,
+          "y": -8.131728,
+          "diameter": 4
+        },
+        {
+          "x": 10.0,
+          "y": 0.0,
+          "diameter": 3
+        },
+        {
+          "x": 0.0,
+          "y": 10.0,
+          "diameter": 3
+        },
+        {
+          "x": -10.0,
+          "y": 0.0,
+          "diameter": 3
+        },
+        {
+          "x": -0.0,
+          "y": -10.0,
+          "diameter": 3
+        }
+      ],
+      "frontDepth": 3,
+      "bearingDiameter": 19,
+      "color": 3491156
+    },
+    "resistance": 0.048,
+    "current": 43.7,
+    "power": 1048.8,
+    "cellMin": 6,
+    "cellMax": 6,
+    "noLoadCurrent": 1.3,
+    "currentSeconds": 180,
+    "noLoadVoltage": 18
+  }
+]

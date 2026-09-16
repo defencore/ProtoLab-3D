@@ -1,0 +1,60 @@
+import type { Parameters, ParameterDefinition } from '../../core/types';
+export const defaults: Parameters = {
+  diameter: 80,
+  length: 60,
+  shaft: 16,
+  projection: 35,
+  detail: 'envelope',
+};
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'diameter',
+    label: 'Carrier diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'length',
+    label: 'Carrier width',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'shaft',
+    label: 'Half-shaft diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'projection',
+    label: 'Half-shaft projection',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'detail',
+    label: 'Model detail',
+    type: 'select',
+    group: 'Configuration',
+    options: [
+      { value: 'envelope', label: 'Envelope \u00b7 assembly fit' },
+      { value: 'detailed', label: 'Detailed \u00b7 visible construction' },
+    ],
+  },
+];

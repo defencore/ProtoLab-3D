@@ -12,7 +12,7 @@ const values = (p: Parameters) => ({
 const part: PartDefinition = {
   id: 'washer',
   name: 'Flat washer',
-  category: 'FASTENERS',
+  category: 'FASTENERS & THREADS',
   subgroup: 'WASHERS',
   icon: 'bolt',
   complexity: '3 parameters',

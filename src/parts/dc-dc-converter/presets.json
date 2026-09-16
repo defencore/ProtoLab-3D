@@ -1,0 +1,298 @@
+[
+  {
+    "id": "pololu-d24v50f5",
+    "name": "Pololu D24V50F5",
+    "description": "17.78 × 20.32 mm · Through-hole pads",
+    "parameters": {
+      "model": "pololu-d24v50f5"
+    },
+    "catalog": {
+      "designation": "Pololu D24V50F5",
+      "manufacturer": "Pololu",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://www.pololu.com/product/2851/specs",
+      "alternateSourceUrls": [],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Pololu",
+        "construction": "Bare PCB",
+        "width": 17.78,
+        "length": 20.32,
+        "inputMin": 6,
+        "inputMax": 38,
+        "outputMin": 5,
+        "outputMax": 5,
+        "topology": "Buck",
+        "connection": "Through-hole pads",
+        "height": 8.89,
+        "outputCurrent": 5
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded.",
+        "height": "Published supplier envelope for this revision; undimensioned component heights are reconstructed.",
+        "outputCurrent": "Output rating subject to input voltage and cooling. S7V8F5 1 A applies to buck operation; see source curves for boost.",
+        "outputMin": "Range endpoints only. BECs have discrete jumper settings listed in the model scope; this is not a continuously adjustable output.",
+        "outputMax": "Range endpoints only. BECs have discrete jumper settings listed in the model scope; this is not a continuously adjustable output."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "17.78 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "20.32 mm"
+        },
+        {
+          "label": "Minimum input voltage",
+          "value": "6 V"
+        },
+        {
+          "label": "Maximum input voltage",
+          "value": "38 V"
+        },
+        {
+          "label": "Minimum selectable output",
+          "value": "5 V"
+        },
+        {
+          "label": "Maximum selectable output",
+          "value": "5 V"
+        },
+        {
+          "label": "Published height",
+          "value": "8.89 mm"
+        },
+        {
+          "label": "Rated output current",
+          "value": "5 A"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Pololu"
+        },
+        {
+          "label": "Construction",
+          "value": "Bare PCB"
+        },
+        {
+          "label": "Converter topology",
+          "value": "Buck"
+        },
+        {
+          "label": "Physical connection",
+          "value": "Through-hole pads"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "Bare board, no optional headers or terminal blocks. Dimensions converted from manufacturer inches. Output current depends on cooling and input voltage."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout."
+        }
+      ]
+    }
+  },
+  {
+    "id": "pololu-s7v8f5",
+    "name": "Pololu S7V8F5",
+    "description": "11.43 × 16.51 mm · Through-hole pads",
+    "parameters": {
+      "model": "pololu-s7v8f5"
+    },
+    "catalog": {
+      "designation": "Pololu S7V8F5",
+      "manufacturer": "Pololu",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://www.pololu.com/product/2123/specs",
+      "alternateSourceUrls": [],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Pololu",
+        "construction": "Bare PCB",
+        "width": 11.43,
+        "length": 16.51,
+        "inputMin": 2.7,
+        "inputMax": 11.8,
+        "outputMin": 5,
+        "outputMax": 5,
+        "topology": "Buck-boost",
+        "connection": "Through-hole pads",
+        "height": 2.54,
+        "outputCurrent": 1
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded.",
+        "height": "Published supplier envelope for this revision; undimensioned component heights are reconstructed.",
+        "outputCurrent": "Output rating subject to input voltage and cooling. S7V8F5 1 A applies to buck operation; see source curves for boost.",
+        "outputMin": "Range endpoints only. BECs have discrete jumper settings listed in the model scope; this is not a continuously adjustable output.",
+        "outputMax": "Range endpoints only. BECs have discrete jumper settings listed in the model scope; this is not a continuously adjustable output."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "11.43 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "16.51 mm"
+        },
+        {
+          "label": "Minimum input voltage",
+          "value": "2.7 V"
+        },
+        {
+          "label": "Maximum input voltage",
+          "value": "11.8 V"
+        },
+        {
+          "label": "Minimum selectable output",
+          "value": "5 V"
+        },
+        {
+          "label": "Maximum selectable output",
+          "value": "5 V"
+        },
+        {
+          "label": "Published height",
+          "value": "2.54 mm"
+        },
+        {
+          "label": "Rated output current",
+          "value": "1 A"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Pololu"
+        },
+        {
+          "label": "Construction",
+          "value": "Bare PCB"
+        },
+        {
+          "label": "Converter topology",
+          "value": "Buck-boost"
+        },
+        {
+          "label": "Physical connection",
+          "value": "Through-hole pads"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "Bare board, no optional headers or terminal blocks. Dimensions converted from manufacturer inches. 1 A output applies to buck operation; boost output depends on input voltage."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout."
+        }
+      ]
+    }
+  },
+  {
+    "id": "pololu-u3v50f5",
+    "name": "Pololu U3V50F5",
+    "description": "15.24 × 48.26 mm · Through-hole pads",
+    "parameters": {
+      "model": "pololu-u3v50f5"
+    },
+    "catalog": {
+      "designation": "Pololu U3V50F5",
+      "manufacturer": "Pololu",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://www.pololu.com/product/2565/specs",
+      "alternateSourceUrls": [
+        "https://www.pololu.com/product/2565/specs"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Pololu",
+        "construction": "Bare PCB",
+        "width": 15.24,
+        "length": 48.26,
+        "inputMin": 2.9,
+        "inputMax": 5,
+        "outputMin": 5,
+        "outputMax": 5,
+        "topology": "Boost",
+        "connection": "Through-hole pads",
+        "height": 10.414,
+        "inputCurrent": 5
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded.",
+        "height": "Published supplier envelope for this revision; undimensioned component heights are reconstructed.",
+        "inputCurrent": "Boost converter INPUT limit. This is not the available output current.",
+        "outputMin": "Range endpoints only. BECs have discrete jumper settings listed in the model scope; this is not a continuously adjustable output.",
+        "outputMax": "Range endpoints only. BECs have discrete jumper settings listed in the model scope; this is not a continuously adjustable output."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "15.24 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "48.26 mm"
+        },
+        {
+          "label": "Minimum input voltage",
+          "value": "2.9 V"
+        },
+        {
+          "label": "Maximum input voltage",
+          "value": "5 V"
+        },
+        {
+          "label": "Minimum selectable output",
+          "value": "5 V"
+        },
+        {
+          "label": "Maximum selectable output",
+          "value": "5 V"
+        },
+        {
+          "label": "Published height",
+          "value": "10.414 mm"
+        },
+        {
+          "label": "Rated INPUT current limit",
+          "value": "5 A"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Pololu"
+        },
+        {
+          "label": "Construction",
+          "value": "Bare PCB"
+        },
+        {
+          "label": "Converter topology",
+          "value": "Boost"
+        },
+        {
+          "label": "Physical connection",
+          "value": "Through-hole pads"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "Bare board, no optional headers or terminal blocks. Dimensions converted from manufacturer inches. 5 A is the INPUT current limit, not a 5 A output rating."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout."
+        }
+      ]
+    }
+  }
+]

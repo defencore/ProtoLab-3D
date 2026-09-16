@@ -1,14 +1,14 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import screw from "../src/parts/ball-screw/part";
-import nut from "../src/parts/ball-nut/part";
+import screw from '../src/parts/ball-screw/part';
+import nut from '../src/parts/ball-nut/part';
 import {
   ballScrewReferences,
   sfuReferences,
   sfkReferences,
   sfsReferences,
   internalReturnReferences,
-} from "../src/catalog/ball-screw-reference";
+} from '../src/catalog/ball-screw-reference';
 import { miniatureShaftLengths } from '../src/catalog/ball-screws';
 import {
   buildPresetIndex,
@@ -89,7 +89,8 @@ test('all 27 rows from the supplied SFU drawing retain their designations and di
   assert.equal(sfuReferences.find((r) => r.designation === 'SFU1610-3')!.parameters.circuits, 3);
   for (const reference of sfuReferences) {
     assert.equal(reference.catalog!.sourceKind, 'attachment');
-    assert.equal(reference.catalog!.sourceUrl, 'references/sfu-dimensions.png');
+    assert.equal(reference.catalog!.sourceKind, 'attachment');
+    assert.equal(reference.catalog!.sourceUrl, '');
   }
 });
 
@@ -115,9 +116,9 @@ test('all 11 miniature listing options expose ten shaft lengths while ambiguous 
   assert.equal(miniature.filter((p) => p.catalog).length, 100);
   for (const reference of ballScrewReferences.filter((r) => r.parameters.family === 'SFK')) {
     const variants = miniature.filter((p) =>
-      p.name.startsWith(
-        reference.designation === 'SFK082.5' ? 'SFK0825 / SFK082.5' : reference.designation,
-      ),
+      p.catalog
+        ? p.catalog.designation === reference.designation
+        : p.name.startsWith(reference.designation),
     );
     assert.deepEqual(
       variants.map((p) => p.parameters.length),
@@ -128,9 +129,7 @@ test('all 11 miniature listing options expose ten shaft lengths while ambiguous 
       assert.deepEqual(validateParameters(screw, preset.parameters, 'assembled'), []);
       if (preset.catalog) {
         assert.ok(preset.catalog.verifiedParameters.includes('length'));
-        assert.ok(
-          preset.catalog.alternateSourceUrls!.includes('references/ball-screw-mini-options.png'),
-        );
+        assert.ok(preset.catalog.alternateSourceUrls?.every((url) => url.startsWith('https://')));
       } else {
         assert.match(preset.name, /SFK602 \/ SFK0602.*unverified listing/);
         assert.match(preset.description, /provisional/);

@@ -1,0 +1,329 @@
+[
+  {
+    "id": "nanopi-neo-air",
+    "name": "FriendlyELEC NanoPi NEO Air v1.1",
+    "manufacturer": "FriendlyELEC",
+    "width": 40,
+    "length": 40,
+    "board": 1.6,
+    "color": 2119239,
+    "construction": "Bare PCB",
+    "source": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_NEO_Air",
+    "holes": [
+      [
+        -17.0,
+        -17.0,
+        3
+      ],
+      [
+        -17.0,
+        17.0,
+        3
+      ],
+      [
+        17.0,
+        -17.0,
+        3
+      ],
+      [
+        17.0,
+        17.0,
+        3
+      ]
+    ],
+    "details": [
+      {
+        "kind": "pads",
+        "name": "GPIO1 footprint",
+        "x": 0,
+        "y": 16,
+        "z": 1.6,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 12,
+        "rows": 2,
+        "dir": "horizontal",
+        "pitch": 2.54,
+        "bore": 1
+      },
+      {
+        "kind": "pads",
+        "name": "GPIO2 footprint",
+        "x": -16,
+        "y": -3,
+        "z": 1.6,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 6,
+        "rows": 2,
+        "dir": "vertical",
+        "pitch": 2.54,
+        "bore": 1
+      },
+      {
+        "kind": "pads",
+        "name": "Debug UART",
+        "x": 8,
+        "y": -17,
+        "z": 1.6,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 4,
+        "rows": 1,
+        "dir": "horizontal",
+        "pitch": 2.54,
+        "bore": 1
+      },
+      {
+        "kind": "socket",
+        "name": "Micro USB OTG",
+        "x": -5,
+        "y": -18,
+        "z": 1.6,
+        "w": 7.5,
+        "l": 6,
+        "h": 2.5,
+        "dir": "south",
+        "count": 5,
+        "color": 11187388
+      },
+      {
+        "kind": "socket",
+        "name": "24-pin camera FPC",
+        "x": 17,
+        "y": -2,
+        "z": 1.6,
+        "w": 3,
+        "l": 15,
+        "h": 2,
+        "dir": "east",
+        "count": 12,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "Allwinner H3",
+        "x": 0,
+        "y": 0,
+        "z": 1.6,
+        "w": 12,
+        "l": 12,
+        "h": 1.6,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "RAM",
+        "x": 9,
+        "y": 9,
+        "z": 1.6,
+        "w": 8,
+        "l": 6,
+        "h": 1,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "Wireless module",
+        "x": -10,
+        "y": -10,
+        "z": 1.6,
+        "w": 7,
+        "l": 7,
+        "h": 1.6,
+        "color": 11187388
+      },
+      {
+        "kind": "socket",
+        "name": "microSD",
+        "x": 4,
+        "y": 0,
+        "z": -1.5,
+        "w": 14,
+        "l": 15,
+        "h": 1.5,
+        "dir": "south",
+        "count": 8,
+        "color": 11187388
+      }
+    ],
+    "attributes": {
+      "usb": "Micro USB",
+      "connection": "24-pin + 12-pin footprints",
+      "interface": "CSI / Wi-Fi / microSD"
+    },
+    "scope": "40 × 40 mm bare PCB. V1.1 microSD position; unpopulated GPIO footprints. No heatsink or external antenna. Hole and component offsets are approximate.",
+    "references": []
+  },
+  {
+    "id": "nanopi-r4s",
+    "name": "FriendlyELEC NanoPi R4S · bare board",
+    "manufacturer": "FriendlyELEC",
+    "width": 66,
+    "length": 66,
+    "board": 1.6,
+    "color": 2119239,
+    "construction": "Bare PCB",
+    "source": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_R4S",
+    "holes": [
+      [
+        -29.0,
+        -29.0,
+        3
+      ],
+      [
+        -29.0,
+        29.0,
+        3
+      ],
+      [
+        29.0,
+        -29.0,
+        3
+      ],
+      [
+        29.0,
+        29.0,
+        3
+      ]
+    ],
+    "details": [
+      {
+        "kind": "socket",
+        "name": "GbE RJ45 -17",
+        "x": -17,
+        "y": 25,
+        "z": 1.6,
+        "w": 16,
+        "l": 21,
+        "h": 15,
+        "dir": "north",
+        "count": 8,
+        "color": 11187388
+      },
+      {
+        "kind": "socket",
+        "name": "GbE RJ45 5",
+        "x": 5,
+        "y": 25,
+        "z": 1.6,
+        "w": 16,
+        "l": 21,
+        "h": 15,
+        "dir": "north",
+        "count": 8,
+        "color": 11187388
+      },
+      {
+        "kind": "socket",
+        "name": "USB-C power",
+        "x": 25,
+        "y": 28,
+        "z": 1.6,
+        "w": 9,
+        "l": 7,
+        "h": 3.2,
+        "dir": "north",
+        "count": 12,
+        "color": 11187388
+      },
+      {
+        "kind": "socket",
+        "name": "Dual USB-A lower",
+        "x": 26,
+        "y": -13,
+        "z": 1.6,
+        "w": 16,
+        "l": 14,
+        "h": 7.5,
+        "dir": "east",
+        "count": 9,
+        "color": 11187388
+      },
+      {
+        "kind": "socket",
+        "name": "Dual USB-A upper",
+        "x": 26,
+        "y": -13,
+        "z": 9.1,
+        "w": 16,
+        "l": 14,
+        "h": 7.5,
+        "dir": "east",
+        "count": 9,
+        "color": 11187388
+      },
+      {
+        "kind": "chip",
+        "name": "RK3399",
+        "x": -5,
+        "y": -6,
+        "z": 1.6,
+        "w": 18,
+        "l": 18,
+        "h": 2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "RAM",
+        "x": -23,
+        "y": -9,
+        "z": 1.6,
+        "w": 10,
+        "l": 14,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "Ethernet controller",
+        "x": 6,
+        "y": 9,
+        "z": 1.6,
+        "w": 9,
+        "l": 9,
+        "h": 1,
+        "color": 2435116
+      },
+      {
+        "kind": "header",
+        "name": "GPIO",
+        "x": -22,
+        "y": -26,
+        "z": 1.6,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 5,
+        "rows": 2,
+        "dir": "horizontal",
+        "pitch": 2.54,
+        "bore": 1
+      },
+      {
+        "kind": "socket",
+        "name": "microSD",
+        "x": -12,
+        "y": -16,
+        "z": -1.5,
+        "w": 14,
+        "l": 15,
+        "h": 1.5,
+        "dir": "south",
+        "count": 8,
+        "color": 11187388
+      }
+    ],
+    "attributes": {
+      "usb": "USB-C power + 2 USB-A",
+      "connection": "10-pin GPIO",
+      "interface": "Dual GbE / microSD"
+    },
+    "scope": "66 × 66 mm bare PCB. Dual RJ45, two USB 3 Type-A and USB-C power. Metal enclosure and heatsink excluded. Undimensioned mounting/connector offsets are approximate.",
+    "references": []
+  }
+]

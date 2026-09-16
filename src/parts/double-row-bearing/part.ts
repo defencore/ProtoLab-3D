@@ -16,7 +16,7 @@ const defaults = { bore: 17, outer: 40, width: 16, elements: 12, seals: 'rubber'
 const part: PartDefinition = {
   id: 'double-row-bearing',
   name: 'Double-row ball bearing',
-  category: 'BEARINGS',
+  category: 'BEARINGS & SEALS',
   subgroup: 'BALL BEARINGS',
   description:
     'Two radial ball rows with optional rubber sealing discs and straight race envelopes.',

@@ -1,0 +1,680 @@
+{
+  "source": "User supplied engineering-library analysis",
+  "parts": [
+    {
+      "id": "dowel-pin",
+      "name": "Solid dowel pin",
+      "category": "FASTENERS & THREADS",
+      "subgroup": "PINS & DOWELS",
+      "variants": [
+        "straight-6",
+        "taper-6"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "t-slot-nut",
+      "name": "T-slot nut",
+      "category": "FASTENERS & THREADS",
+      "subgroup": "NUTS",
+      "variants": [
+        "slot6-m5",
+        "slot8-m6",
+        "hammer-m5"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "threaded-insert",
+      "name": "Threaded insert and rivet nut",
+      "category": "FASTENERS & THREADS",
+      "subgroup": "INSERTS & RIVETS",
+      "variants": [
+        "heat-m3",
+        "press-m4",
+        "rivnut-m6",
+        "clinch-m3"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "blind-rivet",
+      "name": "Blind rivet",
+      "category": "FASTENERS & THREADS",
+      "subgroup": "INSERTS & RIVETS",
+      "variants": [
+        "4-8-12",
+        "3-2-8"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "shaft-key",
+      "name": "Shaft key",
+      "category": "TRANSMISSION & LINKAGES",
+      "subgroup": "SHAFTS & KEYS",
+      "variants": [
+        "parallel6",
+        "round6",
+        "woodruff4"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "shaft",
+      "name": "Stepped drive shaft",
+      "category": "TRANSMISSION & LINKAGES",
+      "subgroup": "SHAFTS & KEYS",
+      "variants": [
+        "shaft20",
+        "shaft-taper",
+        "shaft-spline"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "shaft-collar",
+      "name": "Shaft collar",
+      "category": "TRANSMISSION & LINKAGES",
+      "subgroup": "SHAFTS & KEYS",
+      "variants": [
+        "set12",
+        "split12"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "plain-bushing",
+      "name": "Plain sleeve bushing",
+      "category": "BEARINGS & SEALS",
+      "subgroup": "PLAIN BEARINGS",
+      "variants": [
+        "sleeve16",
+        "flange16"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "o-ring",
+      "name": "O-ring and groove tool",
+      "category": "BEARINGS & SEALS",
+      "subgroup": "STATIC SEALS",
+      "variants": [
+        "oring15x2",
+        "face15x2",
+        "radial15x2"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "seal-profile",
+      "name": "Seal and gasket profile",
+      "category": "BEARINGS & SEALS",
+      "subgroup": "STATIC SEALS",
+      "variants": [
+        "gasket",
+        "rod",
+        "wiper"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "vibration-mount",
+      "name": "Vibration isolator",
+      "category": "BEARINGS & SEALS",
+      "subgroup": "DAMPERS & ISOLATORS",
+      "variants": [
+        "bobbin25",
+        "sleeve25"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "shaft-coupling",
+      "name": "Shaft coupling",
+      "category": "TRANSMISSION & LINKAGES",
+      "subgroup": "SHAFT COUPLINGS",
+      "variants": [
+        "rigid",
+        "oldham",
+        "bellows",
+        "beam",
+        "flange"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "universal-joint",
+      "name": "Universal and ball joint",
+      "category": "TRANSMISSION & LINKAGES",
+      "subgroup": "JOINTS & ROD ENDS",
+      "variants": [
+        "hooke",
+        "ball"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "bearing-locknut",
+      "name": "Bearing locknut and tab washer",
+      "category": "BEARINGS & SEALS",
+      "subgroup": "BEARING MOUNTING",
+      "variants": [
+        "lock25",
+        "lock40"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "disc-wave-spring",
+      "name": "Disc, wave and leaf spring",
+      "category": "SPRINGS",
+      "subgroup": "DISC & LEAF SPRINGS",
+      "variants": [
+        "disc40",
+        "wave40",
+        "leaf120"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "strut",
+      "name": "Gas spring and damper",
+      "category": "BEARINGS & SEALS",
+      "subgroup": "DAMPERS & ISOLATORS",
+      "variants": [
+        "strut150"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "gearbox",
+      "name": "Gear reducer",
+      "category": "TRANSMISSION & LINKAGES",
+      "subgroup": "REDUCERS & DIFFERENTIALS",
+      "variants": [
+        "parallel",
+        "worm",
+        "planetary"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "differential",
+      "name": "Differential carrier",
+      "category": "TRANSMISSION & LINKAGES",
+      "subgroup": "REDUCERS & DIFFERENTIALS",
+      "variants": [
+        "carrier80"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "belt-drive",
+      "name": "Belt and pulley drive",
+      "category": "TRANSMISSION & LINKAGES",
+      "subgroup": "BELTS CHAINS & CABLES",
+      "variants": [
+        "gt2",
+        "htd3",
+        "htd5",
+        "htd8",
+        "t5",
+        "t10",
+        "v",
+        "poly"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "chain-drive",
+      "name": "Roller chain and sprocket drive",
+      "category": "TRANSMISSION & LINKAGES",
+      "subgroup": "BELTS CHAINS & CABLES",
+      "variants": [
+        "08b",
+        "10b",
+        "12b",
+        "16b"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "cable-hardware",
+      "name": "Cable sheave and turnbuckle",
+      "category": "TRANSMISSION & LINKAGES",
+      "subgroup": "BELTS CHAINS & CABLES",
+      "variants": [
+        "sheave40",
+        "turnbuckle"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "shaft-support",
+      "name": "Shaft and screw support",
+      "category": "LINEAR MOTION",
+      "subgroup": "SHAFT & SCREW SUPPORTS",
+      "variants": [
+        "sk",
+        "shf",
+        "bk"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "lead-screw-axis",
+      "name": "Lead screw and nut",
+      "category": "LINEAR MOTION",
+      "subgroup": "LEAD SCREWS & STAGES",
+      "variants": [
+        "tr8",
+        "acme12"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "linear-stage",
+      "name": "Linear slide module",
+      "category": "LINEAR MOTION",
+      "subgroup": "LEAD SCREWS & STAGES",
+      "variants": [
+        "belt",
+        "dovetail",
+        "telescopic"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "industrial-motor",
+      "name": "DC and industrial motor",
+      "category": "MOTORS & ACTUATORS",
+      "subgroup": "DC & INDUSTRIAL MOTORS",
+      "variants": [
+        "dc",
+        "tt",
+        "iec-b3",
+        "iec-b5",
+        "servo",
+        "torque"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "linear-actuator",
+      "name": "Electric linear actuator",
+      "category": "MOTORS & ACTUATORS",
+      "subgroup": "LINEAR ACTUATORS",
+      "variants": [
+        "100",
+        "200"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "structural-section",
+      "name": "Structural section",
+      "category": "STRUCTURAL PARTS",
+      "subgroup": "STEEL & GENERAL SECTIONS",
+      "variants": [
+        "i",
+        "c",
+        "l",
+        "tube"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "slot-profile",
+      "name": "Modular T-slot extrusion",
+      "category": "STRUCTURAL PARTS",
+      "subgroup": "ALUMINIUM PROFILES",
+      "variants": [
+        "3030",
+        "4040",
+        "4080",
+        "8080"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "sheet-bracket",
+      "name": "Bent sheet bracket",
+      "category": "STRUCTURAL PARTS",
+      "subgroup": "BRACKETS & MOUNTS",
+      "variants": [
+        "u40",
+        "z40"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "fluid-cylinder",
+      "name": "Pneumatic and hydraulic cylinder",
+      "category": "PNEUMATICS & GAS",
+      "subgroup": "CYLINDERS",
+      "variants": [
+        "round25",
+        "tie32",
+        "compact25",
+        "hydraulic40",
+        "rodless25"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "fluid-fitting",
+      "name": "Fluid fitting and quick coupling",
+      "category": "PNEUMATICS & GAS",
+      "subgroup": "FITTINGS & HOSES",
+      "variants": [
+        "straight6",
+        "elbow6",
+        "tee6",
+        "quick6",
+        "bulkhead",
+        "jic",
+        "orfs"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "fluid-valve",
+      "name": "Fluid valve and air preparation unit",
+      "category": "PNEUMATICS & GAS",
+      "subgroup": "VALVES & AIR PREPARATION",
+      "variants": [
+        "3-2",
+        "5-2",
+        "5-3",
+        "check",
+        "throttle",
+        "relief",
+        "ball",
+        "frl",
+        "ejector"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "fluid-pump",
+      "name": "Fluid pump and hydraulic motor",
+      "category": "PNEUMATICS & GAS",
+      "subgroup": "PUMPS & MOTORS",
+      "variants": [
+        "gear",
+        "vane",
+        "motor"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "fluid-hose",
+      "name": "Hose and tube segment",
+      "category": "PNEUMATICS & GAS",
+      "subgroup": "FITTINGS & HOSES",
+      "variants": [
+        "tube10",
+        "elbow10"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "vacuum-cup",
+      "name": "Vacuum suction cup",
+      "category": "PNEUMATICS & GAS",
+      "subgroup": "VACUUM HANDLING",
+      "variants": [
+        "cup30",
+        "cup60"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "machine-hardware",
+      "name": "Machine frame hardware",
+      "category": "STRUCTURAL PARTS",
+      "subgroup": "HANDLES HINGES & FEET",
+      "variants": [
+        "hinge",
+        "handle",
+        "latch",
+        "foot",
+        "cap"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "cable-carrier",
+      "name": "Cable duct and drag chain",
+      "category": "STRUCTURAL PARTS",
+      "subgroup": "CABLE MANAGEMENT",
+      "variants": [
+        "duct25",
+        "chain25"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "cooling-fan",
+      "name": "Axial cooling fan",
+      "category": "ELECTRONICS & VISION",
+      "subgroup": "COOLING & MOUNTING",
+      "variants": [
+        "fan40",
+        "fan60",
+        "fan80",
+        "fan120"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "heat-sink",
+      "name": "Finned heat sink",
+      "category": "ELECTRONICS & VISION",
+      "subgroup": "COOLING & MOUNTING",
+      "variants": [
+        "sink40",
+        "sink80"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "din-rail",
+      "name": "DIN mounting rail",
+      "category": "ELECTRONICS & VISION",
+      "subgroup": "COOLING & MOUNTING",
+      "variants": [
+        "rail35",
+        "rail35deep",
+        "rail15"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "battery-holder",
+      "name": "Cylindrical cell holder",
+      "category": "ELECTRONICS & VISION",
+      "subgroup": "COOLING & MOUNTING",
+      "variants": [
+        "18650-2",
+        "21700-2",
+        "aa-4",
+        "aaa-2"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "industrial-sensor",
+      "name": "Industrial sensor",
+      "category": "ELECTRONICS & VISION",
+      "subgroup": "SENSORS & SWITCHES",
+      "variants": [
+        "m8",
+        "m12",
+        "m18",
+        "encoder",
+        "limit"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "panel-control",
+      "name": "Panel button, knob and beacon",
+      "category": "ELECTRONICS & VISION",
+      "subgroup": "SENSORS & SWITCHES",
+      "variants": [
+        "button22",
+        "knob6",
+        "tower40"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "electrical-connector",
+      "name": "AMASS power connectors",
+      "category": "CONNECTORS & INTERFACES",
+      "subgroup": "POWER & INDUSTRIAL",
+      "variants": [
+        "xt30u-m",
+        "xt30u-f",
+        "xt60-m",
+        "xt60-f",
+        "xt60u-m",
+        "xt60u-f",
+        "xt60h-m",
+        "xt60h-f",
+        "xt90h-m",
+        "xt90h-f",
+        "mr60-m",
+        "mr60-f"
+      ],
+      "fidelity": "source-dimension-catalog"
+    },
+    {
+      "id": "cable-gland",
+      "name": "Cable gland",
+      "category": "CONNECTORS & INTERFACES",
+      "subgroup": "CABLE ENTRY",
+      "variants": [
+        "gland6",
+        "gland10"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "propeller",
+      "name": "Propeller and rotor",
+      "category": "VEHICLE STRUCTURES",
+      "subgroup": "PROPELLERS & ROTORS",
+      "variants": [
+        "air2",
+        "air3",
+        "air4",
+        "marine3",
+        "axial7",
+        "centrifugal"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "duct",
+      "name": "Nozzle, diffuser and inlet",
+      "category": "VEHICLE STRUCTURES",
+      "subgroup": "DUCTS & LANDING GEAR",
+      "variants": [
+        "nozzle",
+        "diffuser",
+        "inlet"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "landing-gear",
+      "name": "Landing gear strut",
+      "category": "VEHICLE STRUCTURES",
+      "subgroup": "DUCTS & LANDING GEAR",
+      "variants": [
+        "gear60",
+        "gear100",
+        "folding60",
+        "twin100"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "robot-wheel",
+      "name": "Robot and pneumatic wheel",
+      "category": "STRUCTURAL PARTS",
+      "subgroup": "WHEELS & ROLLERS",
+      "variants": [
+        "pneumatic",
+        "omni",
+        "mecanum"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "track-drive",
+      "name": "Tracked running gear",
+      "category": "STRUCTURAL PARTS",
+      "subgroup": "WHEELS & ROLLERS",
+      "variants": [
+        "track70",
+        "track120"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "brake",
+      "name": "Brake assembly",
+      "category": "TRANSMISSION & LINKAGES",
+      "subgroup": "BRAKES & GRIPPERS",
+      "variants": [
+        "disc80",
+        "drum80"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "parallel-gripper",
+      "name": "Parallel gripper",
+      "category": "TRANSMISSION & LINKAGES",
+      "subgroup": "BRAKES & GRIPPERS",
+      "variants": [
+        "gripper30",
+        "gripper60"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "slewing-bearing",
+      "name": "Slewing ring bearing",
+      "category": "BEARINGS & SEALS",
+      "subgroup": "ROTARY TABLES",
+      "variants": [
+        "slew150",
+        "slew250"
+      ],
+      "fidelity": "editable-prototype"
+    },
+    {
+      "id": "linkage-mechanism",
+      "name": "Linkage and indexing mechanism",
+      "category": "TRANSMISSION & LINKAGES",
+      "subgroup": "MOTION MECHANISMS",
+      "variants": [
+        "fourbar",
+        "slider",
+        "yoke",
+        "scissor",
+        "pantograph",
+        "eccentric",
+        "cam",
+        "ratchet",
+        "geneva"
+      ],
+      "fidelity": "editable-prototype"
+    }
+  ]
+}

@@ -69,16 +69,16 @@ const part: PartDefinition = {
   python: ballScrewPython,
   dimensions: ballScrewDimensions,
   sources: [
-    { label: 'Supplied ball nut construction families', url: 'references/ball-nut-families.png' },
-    { label: 'Supplied ball nut size options', url: 'references/ball-nut-options.png' },
-    { label: 'Supplied SFU dimension table', url: 'references/sfu-dimensions.png' },
+    { label: 'Supplied ball nut construction families', url: '' },
+    { label: 'Supplied ball nut size options', url: '' },
+    { label: 'Supplied SFU dimension table', url: '' },
     {
       label: 'Supplied miniature screw and length options',
-      url: 'references/ball-screw-mini-options.png',
+      url: '',
     },
     {
       label: 'Supplied C7 miniature screw options',
-      url: 'references/ball-screw-mini-c7-options.png',
+      url: '',
     },
   ],
   notes:

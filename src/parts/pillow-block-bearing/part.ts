@@ -5,7 +5,7 @@ import { Group, Path, Shape, Vector2 } from 'three';
 import type { PartDefinition, Parameters } from '../../core/types';
 import { annulusPython, ACCENT, extrude, n, num, numberParameter, ring } from '../../core/geometry';
 import { pythonWire } from '../../core/mechanical';
-import { motionSources } from './lib/catalog/motion-bearings';
+import * as kp from './lib/kp';
 
 function slotPoints(center: number, diameter: number, length: number): Vector2[] {
   const r = diameter / 2,
@@ -38,39 +38,53 @@ function crownPoints(p: Parameters): Vector2[] {
     ),
   ];
 }
-const defaults = {
-  bore: 12,
-  outer: 56,
-  width: 20,
-  insertWidth: 21,
-  totalHeight: 60,
-  centerHeight: 32,
-  baseWidth: 90,
-  baseDepth: 32,
-  baseThickness: 8,
-  hole: 6,
-  slotLength: 6,
-  mountPitch: 74.4,
-};
+const defaults = { ...modulePresets.find((preset) => preset.id === 'kp001-mini-tech')!.parameters };
 const part: PartDefinition = {
   id: 'pillow-block-bearing',
   name: 'Pillow block bearing',
-  category: 'BEARINGS',
-  subgroup: 'PILLOW & FLANGE BLOCK BEARINGS',
+  category: 'BEARINGS & SEALS',
+  subgroup: 'MOUNTED BEARINGS',
   description:
-    'A mounted bearing envelope with independently specified shaft height and slotted mounting centers.',
-  keywords: ['pillow', 'plummer', 'mounted', 'housing', 'shaft', 'support', 'UCP204', 'UCP205'],
+    'Cast KP08/KP001 supports and UCP bearing housings, with sourced shaft heights, mounting patterns and separate bearing components.',
+  keywords: [
+    'pillow',
+    'plummer',
+    'mounted',
+    'housing',
+    'shaft',
+    'support',
+    'UCP204',
+    'UCP205',
+    'KP08',
+    'KP001',
+    'Mini-Tech',
+  ],
   icon: 'bearing',
   complexity: 'Assembly',
   parameters: [
+    {
+      key: 'housingStyle',
+      label: 'Housing style',
+      type: 'select',
+      group: 'Bearing',
+      options: [
+        { value: 'kp', label: 'KP cast compact housing' },
+        { value: 'ucp', label: 'UCP housing envelope' },
+      ],
+    },
     numberParameter('bore', 'Shaft diameter', 'd', 'Bearing', 3, 100),
     numberParameter('outer', 'Housing crown width', 'D', 'Bearing', 15, 400),
     numberParameter('width', 'Housing depth', 'B', 'Bearing', 6, 100),
     numberParameter('insertWidth', 'Insert axial width', 'Bi', 'Bearing', 6, 150),
+    {
+      ...numberParameter('insertOffset', 'Insert axial offset', 'Y', 'Bearing', -50, 50),
+      visibleWhen: (p) => p.housingStyle === 'kp',
+      description: 'Offset of the insert midpoint along the shaft axis. KP001: S − B/2 = −3.25 mm.',
+    },
     numberParameter('totalHeight', 'Overall height', 'Ht', 'Mount', 20, 350),
     numberParameter('centerHeight', 'Shaft center height', 'H', 'Mount', 10, 200),
     numberParameter('baseWidth', 'Base width', 'L', 'Mount', 30, 600),
-    numberParameter('baseDepth', 'Base depth', 'A', 'Mount', 15, 200),
+    numberParameter('baseDepth', 'Base depth', 'A', 'Mount', 6, 200),
     numberParameter('baseThickness', 'Base thickness', 't', 'Mount', 2, 100),
     numberParameter('hole', 'Mount slot diameter', 'N', 'Mount', 2, 30),
     numberParameter('slotLength', 'Mount slot length', 'N1', 'Mount', 2, 60),
@@ -78,15 +92,34 @@ const part: PartDefinition = {
   ],
   defaults,
   presets: modulePresets,
-  presetMatchKeys: ['bore', 'totalHeight', 'baseWidth', 'baseDepth', 'mountPitch'],
-  sources: motionSources('pillow-block-bearing'),
+  presetMatchKeys: ['housingStyle', 'bore', 'totalHeight', 'baseWidth', 'baseDepth', 'mountPitch'],
+  sources: [
+    ...new Map(
+      modulePresets
+        .filter((p) => p.catalog)
+        .flatMap((p) => [
+          {
+            label: `${p.catalog!.sourceName} · ${p.catalog!.designation}`,
+            url: p.catalog!.sourceUrl,
+          },
+          ...(p.catalog!.alternateSourceUrls ?? []).map((url) => ({
+            label: 'KP dimension drawing',
+            url,
+          })),
+        ])
+        .map((source) => [source.url, source]),
+    ).values(),
+  ],
   validate(p) {
     const errors: string[] = [],
       R = n(p, 'outer') / 2,
       r = n(p, 'bore') / 2,
-      bearingR = r + (R - r) * 0.6;
+      bearingR = p.housingStyle === 'kp' ? kp.layout(p).seat : r + (R - r) * 0.6;
     if (R <= r + 4) errors.push('Housing crown width must exceed the bore by more than 8 mm.');
-    if (n(p, 'centerHeight') <= n(p, 'baseThickness') + bearingR + 1)
+    if (
+      n(p, 'centerHeight') <=
+      (p.housingStyle === 'kp' ? 0 : n(p, 'baseThickness')) + bearingR + 1
+    )
       errors.push('Raise the shaft center to clear the mounting base.');
     if (n(p, 'totalHeight') - n(p, 'centerHeight') <= bearingR + 1)
       errors.push('Increase the overall height so the crown surrounds the insert.');
@@ -98,9 +131,18 @@ const part: PartDefinition = {
       errors.push('Move the mounting slots outward to clear the housing.');
     if (n(p, 'baseDepth') < Math.max(n(p, 'width'), n(p, 'hole') + 2))
       errors.push('Base depth must contain the housing and mounting slots.');
+    if (p.housingStyle === 'kp') {
+      const a = kp.layout(p);
+      if (a.seat <= r + 2) errors.push('Increase the KP crown width to contain the bearing rings.');
+      if (a.raceWidth < 2)
+        errors.push('Keep at least 2 mm of insert width across the housing centre plane.');
+      if (n(p, 'baseThickness') >= n(p, 'centerHeight'))
+        errors.push('The KP base must stay below the shaft centre.');
+    }
     return errors;
   },
   buildGeometry(p) {
+    if (p.housingStyle === 'kp') return kp.geometry(p);
     const group = new Group(),
       R = n(p, 'outer') / 2,
       r = n(p, 'bore') / 2;
@@ -136,6 +178,7 @@ const part: PartDefinition = {
     return group;
   },
   python(p) {
+    if (p.housingStyle === 'kp') return kp.python(p);
     const R = n(p, 'outer') / 2,
       r = n(p, 'bore') / 2,
       bearingR = r + (R - r) * 0.6;
@@ -165,10 +208,13 @@ shape = Part.makeCompound([housing, insert])`;
   },
   dimensions: (p) => [
     n(p, 'baseWidth'),
-    Math.max(n(p, 'baseDepth'), n(p, 'width'), n(p, 'insertWidth')),
+    p.housingStyle === 'kp'
+      ? Math.max(n(p, 'baseDepth') / 2, n(p, 'insertOffset') + n(p, 'insertWidth') / 2) -
+        Math.min(-n(p, 'baseDepth') / 2, n(p, 'insertOffset') - n(p, 'insertWidth') / 2)
+      : Math.max(n(p, 'baseDepth'), n(p, 'width'), n(p, 'insertWidth')),
     n(p, 'totalHeight'),
   ],
   notes:
-    'Supplier presets verify the marked envelope and mounting dimensions. Housing crown, base thickness, insert section and unspecified slot dimensions are representative. No rolling elements or self-alignment. The origin is at the shaft center.',
+    'The origin is at the shaft centre, with the shaft along Y and the foot at Z = −H. KP08/KP001 use supplied drawing dimensions; the cast contours, bearing internals and unthreaded socket set screws are illustrative. KP001 B = 14.5 and S = 4 place the insert asymmetrically, so the complete depth is 18.5 mm although the housing base is A = 16 mm. KP08 insert width/offset are not published. Mount holes follow drawing N, which conflicts with the supplier bolt labels. UCP crown, base thickness, insert section and unspecified slot dimensions remain representative. No rolling elements or self-alignment simulation.',
 };
 export default { ...part, presets: modulePresets };

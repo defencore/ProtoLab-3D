@@ -63,8 +63,8 @@ function socketSections(p: Parameters) {
 const part: PartDefinition = {
   id: 'servo-gear',
   name: 'Servo spline gear',
-  category: 'MOTION',
-  subgroup: 'SERVO LINKAGES',
+  category: 'MOTORS & ACTUATORS',
+  subgroup: 'SERVO ACCESSORIES',
   icon: 'gear',
   complexity: 'Involute gear · servo spline',
   description:

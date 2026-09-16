@@ -14,7 +14,7 @@ const values = (p: Parameters) => ({
 const part: PartDefinition = {
   id: 'wheel',
   name: 'Utility wheel',
-  category: 'MOTION',
+  category: 'STRUCTURAL PARTS',
   subgroup: 'WHEELS & ROLLERS',
   icon: 'wheel',
   complexity: '5 parameters',

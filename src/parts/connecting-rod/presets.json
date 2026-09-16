@@ -1,7 +1,7 @@
 [
   {
     "id": "medium-engine-i-beam",
-    "name": "Medium engine layout · I-beam",
+    "name": "Medium engine · I-beam",
     "description": "Unsourced prototype dimensions for layout and mechanism studies. Confirm the working bores, center distance and construction for your own design.",
     "parameters": {
       "centerDistance": 110,
@@ -33,7 +33,7 @@
   },
   {
     "id": "compact-compressor",
-    "name": "Compact compressor layout · solid",
+    "name": "Compact compressor · solid",
     "description": "Unsourced prototype dimensions for layout and mechanism studies. Confirm the working bores, center distance and construction for your own design.",
     "parameters": {
       "centerDistance": 65,
@@ -65,7 +65,7 @@
   },
   {
     "id": "large-engine-h-beam",
-    "name": "Large engine layout · H-beam",
+    "name": "Large engine · H-beam",
     "description": "Unsourced prototype dimensions for layout and mechanism studies. Confirm the working bores, center distance and construction for your own design.",
     "parameters": {
       "centerDistance": 150,
@@ -97,7 +97,7 @@
   },
   {
     "id": "one-piece-compressor",
-    "name": "One-piece compressor layout",
+    "name": "One-piece compressor",
     "description": "Unsourced prototype dimensions for layout and mechanism studies. Confirm the working bores, center distance and construction for your own design.",
     "parameters": {
       "centerDistance": 85,
@@ -193,7 +193,7 @@
   },
   {
     "id": "heavy-compressor",
-    "name": "Large compressor layout · solid",
+    "name": "Large compressor · solid",
     "description": "Unsourced prototype dimensions for layout and mechanism studies. Confirm the working bores, center distance and construction for your own design.",
     "parameters": {
       "centerDistance": 120,

@@ -4,7 +4,7 @@ const modulePresets = presetData as ModulePreset[];
 import { nutDefinition } from './lib/core/nuts';
 
 export default {
-  ...nutDefinition('nyloc-nut', 'Nylon insert lock nut', 'DIN 985 / DIN 982', 'nyloc', {
+  ...nutDefinition('nyloc-nut', 'Nylon-insert locknut', 'DIN 985 / DIN 982', 'nyloc', {
     bore: 6,
     acrossFlats: 10,
     height: 6,

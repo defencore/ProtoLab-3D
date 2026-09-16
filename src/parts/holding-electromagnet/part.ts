@@ -103,8 +103,8 @@ function components(p: Parameters, state: string): Component[] {
 const part: PartDefinition = {
   id: 'holding-electromagnet',
   name: 'Holding electromagnet',
-  category: 'ELECTROMAGNETICS',
-  subgroup: 'ELECTROMAGNETS',
+  category: 'MOTORS & ACTUATORS',
+  subgroup: 'HOLDING MAGNETS',
   icon: 'magnet',
   complexity: 'Pot core, potted coil, rear mounting and removable armature',
   description:

@@ -38,9 +38,9 @@ function values(p: Parameters) {
 }
 const part: PartDefinition = {
   id: 'bevel-gear',
-  name: 'Bevel gear · layout model',
-  category: 'MOTION',
-  subgroup: 'GEARS & RACKS',
+  name: 'Bevel gear',
+  category: 'TRANSMISSION & LINKAGES',
+  subgroup: 'GEARS & GEAR DRIVES',
   icon: 'gear',
   complexity: 'Tapered approximation',
   description:

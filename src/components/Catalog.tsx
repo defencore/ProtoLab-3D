@@ -2,6 +2,12 @@ import { useRef, useState, useEffect, useMemo } from 'react';
 import { ChevronDown, ChevronRight, Search, X, ArrowUpRight, Box, FolderOpen } from 'lucide-react';
 import type { PartDefinition } from '../core/types';
 import { PartIcon } from './PartIcon';
+import {
+  libraryCategories,
+  librarySubgroups,
+  libraryCategoryIcon,
+  sortLibraryParts,
+} from '../core/library';
 
 interface Props {
   parts: PartDefinition[];
@@ -13,11 +19,15 @@ interface Props {
 export default function Catalog({ parts, selected, onSelect, onClose }: Props) {
   const [query, setQuery] = useState('');
   const [expanded, setExpanded] = useState<string[]>([selected.category]);
-  const [subgroups, setSubgroups] = useState<string[]>([selected.subgroup]);
+  const [subgroups, setSubgroups] = useState<string[]>([
+    `${selected.category}/${selected.subgroup}`,
+  ]);
   const search = useRef<HTMLInputElement>(null);
   useEffect(() => {
     setExpanded((current) => [...new Set([...current, selected.category])]);
-    setSubgroups((current) => [...new Set([...current, selected.subgroup])]);
+    setSubgroups((current) => [
+      ...new Set([...current, `${selected.category}/${selected.subgroup}`]),
+    ]);
   }, [selected]);
   useEffect(() => {
     const handler = (event: KeyboardEvent) => {
@@ -39,7 +49,7 @@ export default function Catalog({ parts, selected, onSelect, onClose }: Props) {
   }, []);
   const searchIndex = useMemo(
     () =>
-      parts.map((part) => ({
+      sortLibraryParts(parts).map((part) => ({
         part,
         text: `${part.name} ${part.category} ${part.subgroup} ${part.description} ${part.keywords.join(' ')} ${part.presets.map((preset) => `${preset.name} ${preset.description} ${preset.catalog?.designation ?? ''} ${preset.catalog?.manufacturer ?? ''} ${preset.catalog?.standard ?? ''} ${preset.catalog?.sourceName ?? ''} ${preset.catalog?.productCodes?.join(' ') ?? ''}`).join(' ')}`.toLowerCase(),
       })),
@@ -49,7 +59,7 @@ export default function Catalog({ parts, selected, onSelect, onClose }: Props) {
   const filtered = searchIndex
     .filter(({ text }) => text.includes(normalizedQuery))
     .map(({ part }) => part);
-  const categories = [...new Set(filtered.map((part) => part.category))];
+  const categories = libraryCategories(filtered);
   const toggle = (name: string, items: string[], update: (items: string[]) => void) =>
     update(items.includes(name) ? items.filter((item) => item !== name) : [...items, name]);
   return (
@@ -104,19 +114,20 @@ export default function Catalog({ parts, selected, onSelect, onClose }: Props) {
                 aria-expanded={open}
               >
                 {open ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
-                <PartIcon type={items[0].icon} size={17} />
+                <PartIcon type={libraryCategoryIcon(category)} size={17} />
                 <span>{category}</span>
                 <small>{parts.filter((part) => part.category === category).length}</small>
               </button>
               {open && (
                 <div className="category-content">
-                  {[...new Set(items.map((part) => part.subgroup))].map((subgroup) => {
-                    const groupOpen = subgroups.includes(subgroup) || !!query;
+                  {librarySubgroups(items, category).map((subgroup) => {
+                    const groupKey = `${category}/${subgroup}`;
+                    const groupOpen = subgroups.includes(groupKey) || !!query;
                     return (
                       <div key={subgroup} className="subgroup">
                         <button
                           className="subgroup-button"
-                          onClick={() => toggle(subgroup, subgroups, setSubgroups)}
+                          onClick={() => toggle(groupKey, subgroups, setSubgroups)}
                           aria-expanded={groupOpen}
                         >
                           {groupOpen ? <ChevronDown size={12} /> : <ChevronRight size={12} />}

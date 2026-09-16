@@ -1,0 +1,348 @@
+[
+  {
+    "id": "raspberry-pi-5",
+    "name": "Raspberry Pi 5 · bare board",
+    "description": "85 × 56 mm PCB · lightweight assembly · 20 bodies",
+    "parameters": {
+      "model": "raspberry-pi-5",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "Raspberry Pi 5 — bare board",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Manufacturer STEP and product specifications",
+      "sourceUrl": "https://www.raspberrypi.com/products/raspberry-pi-5/",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/raspberry-pi-5/",
+        "https://www.raspberrypi.com/products/raspberry-pi-5/",
+        "https://pip.raspberrypi.com/categories/892-raspberry-pi-5"
+      ],
+      "verifiedParameters": [
+        "model",
+        "detail"
+      ],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 85,
+        "length": 56,
+        "usb": "USB-C power + 4 USB-A",
+        "connection": "40-pin header",
+        "interface": "PCIe / MIPI / GbE",
+        "mountX": 58,
+        "mountY": 49,
+        "hole": 2.7
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "85 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "56 mm"
+        },
+        {
+          "label": "Mounting pitch X",
+          "value": "58 mm"
+        },
+        {
+          "label": "Mounting pitch Y",
+          "value": "49 mm"
+        },
+        {
+          "label": "Mounting bore",
+          "value": "2.7 mm"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Raspberry Pi"
+        },
+        {
+          "label": "Construction",
+          "value": "Bare PCB"
+        },
+        {
+          "label": "USB connector",
+          "value": "USB-C power + 4 USB-A"
+        },
+        {
+          "label": "Physical connection",
+          "value": "40-pin header"
+        },
+        {
+          "label": "Interface",
+          "value": "PCIe / MIPI / GbE"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "Exact source PCB plus 19 simplified connector/package bodies derived from source CAD bounds. Connector cavities, contacts and small components are simplified or omitted. Preserves original PCB, mounting holes and overall assembly bounds. Not original manufacturer geometry for every component; switch to Full detail for all 2,689 source solids."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Exact source PCB plus 19 simplified connector/package bodies derived from source CAD bounds. Connector cavities, contacts and small components are simplified or omitted. Preserves original PCB, mounting holes and overall assembly bounds. Not original manufacturer geometry for every component; switch to Full detail for all 2,689 source solids."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Exact source PCB plus 19 simplified connector/package bodies derived from source CAD bounds.",
+        "limitations": "Connector cavities, contacts and small components are simplified or omitted. Preserves original PCB, mounting holes and overall assembly bounds. Not original manufacturer geometry for every component; switch to Full detail for all 2,689 source solids.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/892-raspberry-pi-5",
+        "sourceSha256": "78164070c1cc7ab854382950d2e85926c6e35432f1e5a146b733397a7c6afb44"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-5-full",
+    "name": "Raspberry Pi 5 · full detail",
+    "description": "85 × 56 mm PCB · manufacturer STEP",
+    "parameters": {
+      "model": "raspberry-pi-5",
+      "detail": "full"
+    },
+    "catalog": {
+      "designation": "Raspberry Pi 5 — bare board",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Manufacturer STEP and product specifications",
+      "sourceUrl": "https://www.raspberrypi.com/products/raspberry-pi-5/",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/raspberry-pi-5/",
+        "https://www.raspberrypi.com/products/raspberry-pi-5/",
+        "https://pip.raspberrypi.com/categories/892-raspberry-pi-5"
+      ],
+      "verifiedParameters": [
+        "model",
+        "detail"
+      ],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 85,
+        "length": 56,
+        "usb": "USB-C power + 4 USB-A",
+        "connection": "40-pin header",
+        "interface": "PCIe / MIPI / GbE",
+        "mountX": 58,
+        "mountY": 49,
+        "hole": 2.7
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "85 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "56 mm"
+        },
+        {
+          "label": "Mounting pitch X",
+          "value": "58 mm"
+        },
+        {
+          "label": "Mounting pitch Y",
+          "value": "49 mm"
+        },
+        {
+          "label": "Mounting bore",
+          "value": "2.7 mm"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Raspberry Pi"
+        },
+        {
+          "label": "Construction",
+          "value": "Bare PCB"
+        },
+        {
+          "label": "USB connector",
+          "value": "USB-C power + 4 USB-A"
+        },
+        {
+          "label": "Physical connection",
+          "value": "40-pin header"
+        },
+        {
+          "label": "Interface",
+          "value": "PCIe / MIPI / GbE"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "Official Raspberry Pi 5 STEP dated 2026-05-27 (portal release 2026-06-11); all 2689 source solids, unchanged surfaces. 85 × 56 mm PCB; full CAD envelope 88.5 × 57.2 × 18.976 mm. No cooler or microSD card. Manufacturer supplies this reference without a guarantee of physical accuracy or current revision. Colors illustrative."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Official Raspberry Pi 5 STEP dated 2026-05-27 (portal release 2026-06-11); all 2689 source solids, unchanged surfaces. 85 × 56 mm PCB; full CAD envelope 88.5 × 57.2 × 18.976 mm. No cooler or microSD card. Manufacturer supplies this reference without a guarantee of physical accuracy or current revision. Colors illustrative."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Official Raspberry Pi 5 STEP dated 2026-05-27 (portal release 2026-06-11); all 2689 source solids, unchanged surfaces. 85 × 56 mm PCB; full CAD envelope 88.5 × 57.2 × 18.976 mm. No cooler or microSD card. Manufacturer supplies this reference without a guarantee of physical accuracy or current revision. Colors illustrative.",
+        "limitations": "Original CAD surfaces retained in FreeCAD/STEP exports. Browser preview is a triangulation; tiny meshing gaps are patched only within the recorded tolerance. Colors are illustrative. Manufacturer CAD does not establish production tolerances or validate other product revisions.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/892-raspberry-pi-5",
+        "sourceSha256": "78164070c1cc7ab854382950d2e85926c6e35432f1e5a146b733397a7c6afb44"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-zero-2-w",
+    "name": "Raspberry Pi Zero 2 W · unpopulated header",
+    "description": "65 × 30 mm · 40-pin unpopulated",
+    "parameters": {
+      "model": "raspberry-pi-zero-2-w",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "Raspberry Pi Zero 2 W — unpopulated header",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/",
+      "alternateSourceUrls": [],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 65,
+        "length": 30,
+        "usb": "2 Micro USB",
+        "connection": "40-pin unpopulated",
+        "interface": "Mini HDMI / CSI / Wi-Fi"
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "65 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "30 mm"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Raspberry Pi"
+        },
+        {
+          "label": "Construction",
+          "value": "Bare PCB"
+        },
+        {
+          "label": "USB connector",
+          "value": "2 Micro USB"
+        },
+        {
+          "label": "Physical connection",
+          "value": "40-pin unpopulated"
+        },
+        {
+          "label": "Interface",
+          "value": "Mini HDMI / CSI / Wi-Fi"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "65 × 30 mm PCB. Unpopulated 40-pin footprint; no soldered header or microSD card. Port offsets and component heights are approximate."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout."
+        }
+      ]
+    }
+  },
+  {
+    "id": "raspberry-pi-cm4",
+    "name": "Raspberry Pi Compute Module 4 · wireless",
+    "description": "55 × 40 mm · 2 × 100-pin board-to-board",
+    "parameters": {
+      "model": "raspberry-pi-cm4",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "Raspberry Pi Compute Module 4 — wireless",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm4/cm4-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://datasheets.raspberrypi.com/cm4/cm4-datasheet.pdf"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "55 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "40 mm"
+        },
+        {
+          "label": "Mounting pitch X",
+          "value": "48 mm"
+        },
+        {
+          "label": "Mounting pitch Y",
+          "value": "33 mm"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Raspberry Pi"
+        },
+        {
+          "label": "Construction",
+          "value": "Bare PCB"
+        },
+        {
+          "label": "USB connector",
+          "value": "None"
+        },
+        {
+          "label": "Physical connection",
+          "value": "2 × 100-pin board-to-board"
+        },
+        {
+          "label": "Interface",
+          "value": "Carrier required"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "55 × 40 mm compute module. Two underside 100-pin connectors require a carrier; USB/Ethernet ports are not fitted. Carrier, heatsink and antenna cable excluded. Nominal module depth 4.7 mm; mating assembly height depends on carrier connector."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout."
+        }
+      ]
+    }
+  }
+]

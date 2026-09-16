@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cup30",
+    "name": "Vacuum cup \u00b7 \u00d830 mm",
+    "description": "Flared suction cup and optional bellows-style skirt with an open suction passage. Editable prototype dimensions.",
+    "parameters": {
+      "diameter": 30,
+      "neck": 10,
+      "height": 18,
+      "wall": 1.5,
+      "bore": 4
+    }
+  },
+  {
+    "id": "cup60",
+    "name": "Vacuum cup \u00b7 \u00d860 mm",
+    "description": "Flared suction cup and optional bellows-style skirt with an open suction passage. Editable prototype dimensions.",
+    "parameters": {
+      "diameter": 60,
+      "neck": 18,
+      "height": 30,
+      "wall": 1.5,
+      "bore": 6
+    }
+  }
+]

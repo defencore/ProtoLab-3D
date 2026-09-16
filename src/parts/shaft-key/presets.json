@@ -1,0 +1,35 @@
+[
+  {
+    "id": "parallel6",
+    "name": "Parallel key \u00b7 6 \u00d7 6 \u00d7 25 mm",
+    "description": "Parallel and Woodruff keys for configurable shaft/hub connections. Editable prototype dimensions.",
+    "parameters": {
+      "form": "parallel",
+      "width": 6,
+      "height": 6,
+      "length": 25
+    }
+  },
+  {
+    "id": "round6",
+    "name": "Round-end key \u00b7 6 \u00d7 6 \u00d7 25 mm",
+    "description": "Parallel and Woodruff keys for configurable shaft/hub connections. Editable prototype dimensions.",
+    "parameters": {
+      "form": "round",
+      "width": 6,
+      "height": 6,
+      "length": 25
+    }
+  },
+  {
+    "id": "woodruff4",
+    "name": "Woodruff key \u00b7 4 \u00d7 6 \u00d7 16 mm",
+    "description": "Parallel and Woodruff keys for configurable shaft/hub connections. Editable prototype dimensions.",
+    "parameters": {
+      "form": "woodruff",
+      "width": 4,
+      "height": 6,
+      "length": 16
+    }
+  }
+]

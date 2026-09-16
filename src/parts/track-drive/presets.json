@@ -1,0 +1,26 @@
+[
+  {
+    "id": "track70",
+    "name": "Track module \u00b7 \u00d870 wheels",
+    "description": "Continuous track envelope with separate drive and idler wheel bodies. Editable prototype dimensions.",
+    "parameters": {
+      "diameter": 70,
+      "centres": 180,
+      "width": 35,
+      "thickness": 5,
+      "bore": 10
+    }
+  },
+  {
+    "id": "track120",
+    "name": "Track module \u00b7 \u00d8120 wheels",
+    "description": "Continuous track envelope with separate drive and idler wheel bodies. Editable prototype dimensions.",
+    "parameters": {
+      "diameter": 120,
+      "centres": 300,
+      "width": 60,
+      "thickness": 8,
+      "bore": 16
+    }
+  }
+]

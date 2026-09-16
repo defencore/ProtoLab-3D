@@ -1,0 +1,72 @@
+import type { Parameters, ParameterDefinition } from '../../core/types';
+export const defaults: Parameters = {
+  form: 'inductive',
+  diameter: 12,
+  length: 40,
+  shaft: 4,
+  projection: 15,
+  detail: 'envelope',
+};
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'form',
+    label: 'Sensor type',
+    type: 'select',
+    group: 'Configuration',
+    options: [
+      { value: 'inductive', label: 'Cylindrical proximity sensor' },
+      { value: 'encoder', label: 'Shaft encoder' },
+      { value: 'limit', label: 'Roller limit switch' },
+    ],
+  },
+  {
+    key: 'diameter',
+    label: 'Body diameter / width',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'length',
+    label: 'Body length',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'shaft',
+    label: 'Encoder shaft / cable diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'projection',
+    label: 'Shaft / cable projection',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'detail',
+    label: 'Model detail',
+    type: 'select',
+    group: 'Configuration',
+    options: [
+      { value: 'envelope', label: 'Envelope \u00b7 assembly fit' },
+      { value: 'detailed', label: 'Detailed \u00b7 visible construction' },
+    ],
+  },
+];

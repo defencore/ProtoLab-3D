@@ -292,9 +292,9 @@ const fields = (side: GearSide) => {
 
 const part: PartDefinition = {
   id: 'bevel-gear-pair',
-  name: 'Bevel gear pair · mounting layout',
-  category: 'MOTION',
-  subgroup: 'GEARS & RACKS',
+  name: 'Bevel gear pair',
+  category: 'TRANSMISSION & LINKAGES',
+  subgroup: 'GEARS & GEAR DRIVES',
   icon: 'gear',
   complexity: 'Perpendicular shaft pair',
   description:

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "gt2",
+    "name": "Timing drive \u00b7 2 mm pitch",
+    "description": "Equal-pulley drive with a separate closed belt, bores and flanges. Editable prototype dimensions.",
+    "parameters": {
+      "form": "gt2",
+      "pitch": 2,
+      "teeth": 20,
+      "centres": 80,
+      "width": 6,
+      "thickness": 1.5,
+      "bore": 5,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "htd3",
+    "name": "Timing drive \u00b7 3 mm pitch",
+    "description": "Equal-pulley drive with a separate closed belt, bores and flanges. Editable prototype dimensions.",
+    "parameters": {
+      "form": "htd3",
+      "pitch": 3,
+      "teeth": 20,
+      "centres": 80,
+      "width": 6,
+      "thickness": 1.5,
+      "bore": 5,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "htd5",
+    "name": "Timing drive \u00b7 5 mm pitch",
+    "description": "Equal-pulley drive with a separate closed belt, bores and flanges. Editable prototype dimensions.",
+    "parameters": {
+      "form": "htd5",
+      "pitch": 5,
+      "teeth": 20,
+      "centres": 120,
+      "width": 6,
+      "thickness": 1.5,
+      "bore": 8,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "htd8",
+    "name": "Timing drive \u00b7 8 mm pitch",
+    "description": "Equal-pulley drive with a separate closed belt, bores and flanges. Editable prototype dimensions.",
+    "parameters": {
+      "form": "htd8",
+      "pitch": 8,
+      "teeth": 20,
+      "centres": 180,
+      "width": 6,
+      "thickness": 1.5,
+      "bore": 12,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "t5",
+    "name": "Trapezoidal timing drive \u00b7 5 mm pitch",
+    "description": "Equal-pulley drive with a separate closed belt, bores and flanges. Editable prototype dimensions.",
+    "parameters": {
+      "form": "t5",
+      "pitch": 5,
+      "teeth": 20,
+      "centres": 120,
+      "width": 6,
+      "thickness": 1.5,
+      "bore": 5,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "t10",
+    "name": "Trapezoidal timing drive \u00b7 10 mm pitch",
+    "description": "Equal-pulley drive with a separate closed belt, bores and flanges. Editable prototype dimensions.",
+    "parameters": {
+      "form": "t10",
+      "pitch": 10,
+      "teeth": 20,
+      "centres": 200,
+      "width": 6,
+      "thickness": 1.5,
+      "bore": 5,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "v",
+    "name": "V-belt drive",
+    "description": "Equal-pulley drive with a separate closed belt, bores and flanges. Editable prototype dimensions.",
+    "parameters": {
+      "form": "v",
+      "pitch": 5,
+      "teeth": 20,
+      "centres": 160,
+      "width": 10,
+      "thickness": 1.5,
+      "bore": 5,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "poly",
+    "name": "Poly-V drive",
+    "description": "Equal-pulley drive with a separate closed belt, bores and flanges. Editable prototype dimensions.",
+    "parameters": {
+      "form": "poly",
+      "pitch": 5,
+      "teeth": 20,
+      "centres": 160,
+      "width": 12,
+      "thickness": 1.5,
+      "bore": 5,
+      "detail": "envelope"
+    }
+  }
+]

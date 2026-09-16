@@ -1,0 +1,54 @@
+[
+  {
+    "id": "3030",
+    "name": "3030 extrusion \u00b7 prototype section",
+    "description": "Configurable multi-cell extrusion for larger square and rectangular profile frames. Editable prototype dimensions.",
+    "parameters": {
+      "cell": 30,
+      "columns": 1,
+      "rows": 1,
+      "length": 200,
+      "slot": 8,
+      "wall": 2
+    }
+  },
+  {
+    "id": "4040",
+    "name": "4040 extrusion \u00b7 prototype section",
+    "description": "Configurable multi-cell extrusion for larger square and rectangular profile frames. Editable prototype dimensions.",
+    "parameters": {
+      "cell": 40,
+      "columns": 1,
+      "rows": 1,
+      "length": 200,
+      "slot": 8,
+      "wall": 2
+    }
+  },
+  {
+    "id": "4080",
+    "name": "4080 extrusion \u00b7 prototype section",
+    "description": "Configurable multi-cell extrusion for larger square and rectangular profile frames. Editable prototype dimensions.",
+    "parameters": {
+      "cell": 40,
+      "columns": 2,
+      "rows": 1,
+      "length": 200,
+      "slot": 8,
+      "wall": 2
+    }
+  },
+  {
+    "id": "8080",
+    "name": "8080 extrusion \u00b7 prototype section",
+    "description": "Configurable multi-cell extrusion for larger square and rectangular profile frames. Editable prototype dimensions.",
+    "parameters": {
+      "cell": 40,
+      "columns": 2,
+      "rows": 2,
+      "length": 200,
+      "slot": 8,
+      "wall": 2
+    }
+  }
+]

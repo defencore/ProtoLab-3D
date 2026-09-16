@@ -13,7 +13,7 @@ const values = (p: Parameters) => ({
 const part: PartDefinition = {
   id: 'enclosure',
   name: 'Open enclosure',
-  category: 'ENCLOSURES',
+  category: 'STRUCTURAL PARTS',
   subgroup: 'BOXES & CASES',
   icon: 'box',
   complexity: '4 parameters',

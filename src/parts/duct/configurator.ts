@@ -1,0 +1,55 @@
+import type { Parameters, ParameterDefinition } from '../../core/types';
+export const defaults: Parameters = { form: 'nozzle', inlet: 60, outlet: 30, length: 80, wall: 2 };
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'form',
+    label: 'Duct role',
+    type: 'select',
+    group: 'Configuration',
+    options: [
+      { value: 'nozzle', label: 'Convergent nozzle' },
+      { value: 'diffuser', label: 'Divergent diffuser' },
+      { value: 'inlet', label: 'Bell-mouth inlet' },
+    ],
+  },
+  {
+    key: 'inlet',
+    label: 'Inlet diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'outlet',
+    label: 'Outlet diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'length',
+    label: 'Axial length',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'wall',
+    label: 'Wall thickness',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+];

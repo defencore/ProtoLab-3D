@@ -31,8 +31,8 @@ function outerProfile(p: PartDefinition['defaults']): TurnedProfile {
 const part: PartDefinition = {
   id: 'insert-bearing',
   name: 'Insert bearing',
-  category: 'BEARINGS',
-  subgroup: 'INSERT BEARINGS',
+  category: 'BEARINGS & SEALS',
+  subgroup: 'MOUNTED BEARINGS',
   icon: 'bearing',
   complexity: 'Spherical outer seat',
   description:

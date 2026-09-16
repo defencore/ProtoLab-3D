@@ -1,0 +1,113 @@
+[
+  {
+    "id": "xiao-nrf52840",
+    "name": "Seeed XIAO nRF52840 · basic",
+    "manufacturer": "Seeed Studio",
+    "width": 17.8,
+    "length": 21,
+    "board": 1.6,
+    "color": 2435116,
+    "construction": "Bare PCB",
+    "source": "https://wiki.seeedstudio.com/XIAO_BLE/",
+    "holes": [],
+    "details": [
+      {
+        "kind": "pads",
+        "name": "Castellated I/O -7.62",
+        "x": -7.62,
+        "y": 0,
+        "z": 1.6,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 7,
+        "rows": 1,
+        "dir": "vertical",
+        "pitch": 2.54,
+        "bore": 0.8,
+        "castellated": true
+      },
+      {
+        "kind": "pads",
+        "name": "Castellated I/O 7.62",
+        "x": 7.62,
+        "y": 0,
+        "z": 1.6,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 7,
+        "rows": 1,
+        "dir": "vertical",
+        "pitch": 2.54,
+        "bore": 0.8,
+        "castellated": true
+      },
+      {
+        "kind": "socket",
+        "name": "USB-C",
+        "x": 0,
+        "y": -8,
+        "z": 1.6,
+        "w": 9,
+        "l": 6,
+        "h": 3.2,
+        "dir": "south",
+        "count": 12,
+        "color": 11187388
+      },
+      {
+        "kind": "chip",
+        "name": "nRF52840 shield",
+        "x": 0,
+        "y": 2,
+        "z": 1.6,
+        "w": 10,
+        "l": 8,
+        "h": 1.8,
+        "color": 11187388
+      },
+      {
+        "kind": "chip",
+        "name": "Antenna region",
+        "x": 0,
+        "y": 8.5,
+        "z": 1.6,
+        "w": 8,
+        "l": 2,
+        "h": 0.3,
+        "color": 11641453
+      }
+    ],
+    "attributes": {
+      "usb": "USB-C",
+      "connection": "14 castellated pads",
+      "interface": "BLE / Thread / NFC",
+      "headerPitch": 2.54
+    },
+    "scope": "17.8 × 21 mm basic XIAO PCB, without Sense IMU/microphone or headers. Onboard antenna; no external antenna lead.",
+    "references": []
+  },
+  {
+    "id": "adafruit-feather-nrf52840",
+    "name": "Adafruit Feather nRF52840 Express · Rev D",
+    "manufacturer": "Adafruit",
+    "width": 22.86,
+    "length": 50.8,
+    "board": 1.99,
+    "color": 2313328,
+    "construction": "Bare PCB",
+    "source": "https://www.adafruit.com/product/4062",
+    "holes": [],
+    "details": [],
+    "attributes": {
+      "usb": "Micro USB",
+      "connection": "Feather pads + JST battery",
+      "interface": "BLE / Thread / NFC",
+      "height": 6.99,
+      "headerPitch": 2.54
+    },
+    "scope": "Original Adafruit 4062 STEP, Feather nRF52840 Express Rev D. CAD PCB 50.8 × 22.86 mm; assembled height 6.99 mm, Micro USB overhang 0.655 mm. Product-page dimensions 51 × 23 × 7.2 mm are rounded and differ from this CAD revision. No optional headers, battery or cable. Colors illustrative.",
+    "references": []
+  }
+]

@@ -20,8 +20,8 @@ const bodyParameters = (p: Parameters): Parameters => ({
 const part: PartDefinition = {
   id: 'round-flange-linear-bearing',
   name: 'Round-flange linear bushing',
-  category: 'BEARINGS',
-  subgroup: 'LINEAR BEARINGS',
+  category: 'LINEAR MOTION',
+  subgroup: 'LINEAR BUSHINGS',
   icon: 'bearing',
   complexity: 'Flange + ball circuits',
   description:

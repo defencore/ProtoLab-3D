@@ -1,0 +1,221 @@
+[
+  {
+    "id": "te-akii-1",
+    "name": "TE Connectivity 1-1823640-1 · AK II · key I",
+    "description": "Original TE customer-view STEP. Keyed device-side retainer; nominal Ø11 mm body, 7.85 mm height. Ears extend beyond the body diameter.",
+    "parameters": {
+      "model": "te-akii-1"
+    },
+    "catalog": {
+      "designation": "1-1823640-1",
+      "manufacturer": "TE Connectivity",
+      "sourceName": "TE 1823640 customer drawing and customer-view STEP",
+      "sourceUrl": "https://www.te.com/en/product-1-1823640-1.html",
+      "verifiedParameters": ["model"],
+      "productCodes": ["1-1823640-1"],
+      "alternateSourceUrls": [
+        "https://www.te.com/en/product-1-1823640-1.html",
+        "https://www.te.com/en/product-1-1823640-1.html"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Unmodified source solid from TE customer-view STEP; only translated +7.5 mm in Z.",
+        "limitations": "One source solid is supplied. No separately modeled shorting clip, male pins, squib holder or initiator. The 2016 STEP revision is preserved; the current A1 drawing also lists newer -2 variants, which are not included. Exact source geometry does not certify fit with reconstructed library connectors. For 2-way AK II, matching key required; not a 3-way counterpart.",
+        "sourceUrl": "https://www.te.com/en/product-1-1823640-1.html",
+        "sourceSha256": "877007a4e65885a7004fd772f4ce60757fe24251bb2c78b0e4190e76d31857d2"
+      },
+      "attributes": {
+        "manufacturer": "TE Connectivity",
+        "interface": "AK-2",
+        "key": "I"
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "11 mm nominal · ears excluded"
+        },
+        {
+          "label": "Axial height",
+          "value": "7.85 mm · drawing ±0.05 mm"
+        },
+        {
+          "label": "Contact interface",
+          "value": "2-way AK II · Ø1 mm pin · 3.1 mm nominal pitch"
+        },
+        {
+          "label": "Mechanical key",
+          "value": "I"
+        },
+        {
+          "label": "Source model",
+          "value": "Single original customer-view solid"
+        },
+        {
+          "label": "Library counterpart",
+          "value": "TE AK II 2-way family; connector key and detailed fit remain unverified"
+        }
+      ]
+    }
+  },
+  {
+    "id": "te-akii-2",
+    "name": "TE Connectivity 2-1823640-1 · AK II · key II",
+    "description": "Original TE customer-view STEP. Keyed device-side retainer; nominal Ø11 mm body, 7.85 mm height. Ears extend beyond the body diameter.",
+    "parameters": {
+      "model": "te-akii-2"
+    },
+    "catalog": {
+      "designation": "2-1823640-1",
+      "manufacturer": "TE Connectivity",
+      "sourceName": "TE 1823640 customer drawing and customer-view STEP",
+      "sourceUrl": "https://www.te.com/en/product-2-1823640-1.html",
+      "verifiedParameters": ["model"],
+      "productCodes": ["2-1823640-1"],
+      "alternateSourceUrls": [
+        "https://www.te.com/en/product-2-1823640-1.html",
+        "https://www.te.com/en/product-1-1823640-1.html"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Unmodified source solid from TE customer-view STEP; only translated +7.5 mm in Z.",
+        "limitations": "One source solid is supplied. No separately modeled shorting clip, male pins, squib holder or initiator. The 2016 STEP revision is preserved; the current A1 drawing also lists newer -2 variants, which are not included. Exact source geometry does not certify fit with reconstructed library connectors. For 2-way AK II, matching key required; not a 3-way counterpart.",
+        "sourceUrl": "https://www.te.com/en/product-2-1823640-1.html",
+        "sourceSha256": "d31af457f44e8870424f3ba0acbea99468995575b47c4b78f8459435288b1563"
+      },
+      "attributes": {
+        "manufacturer": "TE Connectivity",
+        "interface": "AK-2",
+        "key": "II"
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "11 mm nominal · ears excluded"
+        },
+        {
+          "label": "Axial height",
+          "value": "7.85 mm · drawing ±0.05 mm"
+        },
+        {
+          "label": "Contact interface",
+          "value": "2-way AK II · Ø1 mm pin · 3.1 mm nominal pitch"
+        },
+        {
+          "label": "Mechanical key",
+          "value": "II"
+        },
+        {
+          "label": "Source model",
+          "value": "Single original customer-view solid"
+        },
+        {
+          "label": "Library counterpart",
+          "value": "TE AK II 2-way family; connector key and detailed fit remain unverified"
+        }
+      ]
+    }
+  },
+  {
+    "id": "te-akii-3",
+    "name": "TE Connectivity 3-1823640-1 · AK II · key III",
+    "description": "Original TE customer-view STEP. Keyed device-side retainer; nominal Ø11 mm body, 7.85 mm height. Ears extend beyond the body diameter.",
+    "parameters": {
+      "model": "te-akii-3"
+    },
+    "catalog": {
+      "designation": "3-1823640-1",
+      "manufacturer": "TE Connectivity",
+      "sourceName": "TE 1823640 customer drawing and customer-view STEP",
+      "sourceUrl": "https://www.te.com/en/product-3-1823640-1.html",
+      "verifiedParameters": ["model"],
+      "productCodes": ["3-1823640-1"],
+      "alternateSourceUrls": [
+        "https://www.te.com/en/product-3-1823640-1.html",
+        "https://www.te.com/en/product-1-1823640-1.html"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Unmodified source solid from TE customer-view STEP; only translated +7.5 mm in Z.",
+        "limitations": "One source solid is supplied. No separately modeled shorting clip, male pins, squib holder or initiator. The 2016 STEP revision is preserved; the current A1 drawing also lists newer -2 variants, which are not included. Exact source geometry does not certify fit with reconstructed library connectors. For 2-way AK II, matching key required; not a 3-way counterpart.",
+        "sourceUrl": "https://www.te.com/en/product-3-1823640-1.html",
+        "sourceSha256": "2820fd43418b99b9eeed73e808e041e5e6e5f20a93882da211cefd291e58db38"
+      },
+      "attributes": {
+        "manufacturer": "TE Connectivity",
+        "interface": "AK-2",
+        "key": "III"
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "11 mm nominal · ears excluded"
+        },
+        {
+          "label": "Axial height",
+          "value": "7.85 mm · drawing ±0.05 mm"
+        },
+        {
+          "label": "Contact interface",
+          "value": "2-way AK II · Ø1 mm pin · 3.1 mm nominal pitch"
+        },
+        {
+          "label": "Mechanical key",
+          "value": "III"
+        },
+        {
+          "label": "Source model",
+          "value": "Single original customer-view solid"
+        },
+        {
+          "label": "Library counterpart",
+          "value": "TE AK II 2-way family; connector key and detailed fit remain unverified"
+        }
+      ]
+    }
+  },
+  {
+    "id": "aptiv-ak1",
+    "name": "Aptiv AK-1 · dimensional sample",
+    "description": "Reconstructed AK-1 retainer from the brochure sample: Ø11 mm body, 7.9 mm height. Key geometry and local clearances are approximate.",
+    "parameters": {
+      "model": "aptiv-ak1"
+    },
+    "catalog": {
+      "designation": "AK-1 retainer dimensional sample",
+      "manufacturer": "Aptiv",
+      "sourceName": "Aptiv AK-1 retainer brochure CS-SP104-SRS-En0519",
+      "sourceUrl": "https://www.aptiv.com/docs/default-source/ecat-docs/ak-1-retainers-a4-web.pdf?Status=Master&sfvrsn=b2a5623c_3",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": ["https://www.aptiv.com/docs/default-source/ecat-docs/ak-1-retainers-a4-web.pdf?Status=Master&sfvrsn=b2a5623c_3"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Brochure sample body diameter and height, with reconstructed exterior.",
+        "limitations": "Only nominal body Ø11 mm and total height 7.9 mm anchor this reconstruction. Ears, slots, wall thickness and key details are approximate; shorting clip omitted. The brochure lists A/B/C product codes but does not dimension their different key shapes, so those codes are not assigned to invented variants. AK-1 family corresponds to the stated CA281A/CA282B interface, not verified model-to-model mating. Not AK-2 and not a complete pocket or holder.",
+        "sourceUrl": "https://www.aptiv.com/docs/default-source/ecat-docs/ak-1-retainers-a4-web.pdf?Status=Master&sfvrsn=b2a5623c_3"
+      },
+      "attributes": {
+        "manufacturer": "Aptiv",
+        "interface": "AK-1",
+        "key": "Dimensional sample"
+      },
+      "specifications": [
+        {
+          "label": "Body diameter / height",
+          "value": "11 / 7.9 mm"
+        },
+        {
+          "label": "Interface",
+          "value": "AK-1 · NF R 13-483 · Type K/L initiator family"
+        },
+        {
+          "label": "Catalog codes (not modeled key variants)",
+          "value": "A: 33501683 / 33501684; B: 33501685; C: 15522281"
+        },
+        {
+          "label": "Library counterpart",
+          "value": "Amphenol CA281A / CA282B family; coding and fit unverified"
+        }
+      ]
+    }
+  }
+]

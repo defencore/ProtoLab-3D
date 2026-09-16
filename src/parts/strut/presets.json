@@ -1,0 +1,15 @@
+[
+  {
+    "id": "strut150",
+    "name": "Telescopic strut \u00b7 150 mm body",
+    "description": "Telescopic strut with adjustable extension and separate rod/end eyes. Editable prototype dimensions.",
+    "parameters": {
+      "diameter": 20,
+      "rod": 8,
+      "bodyLength": 150,
+      "stroke": 80,
+      "extension": 40,
+      "eye": 6
+    }
+  }
+]

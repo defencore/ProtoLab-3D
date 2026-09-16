@@ -42,8 +42,8 @@ function validate(p: Parameters, state: string): string[] {
 const part: PartDefinition = {
   id: 'servo-motor',
   name: 'Servo motor',
-  category: 'MOTION',
-  subgroup: 'SERVO MOTORS',
+  category: 'MOTORS & ACTUATORS',
+  subgroup: 'SERVOS',
   icon: 'gear',
   complexity: 'Supplier models selected by fixed dimensions and electrical specifications',
   description:
@@ -87,7 +87,7 @@ const part: PartDefinition = {
       attributeConditions: Object.fromEntries<string>(
         Object.entries(preset.catalog.attributeConditions),
       ),
-    },
+    } as NonNullable<Preset['catalog']>,
   })),
   presetMatchKeys: ['model'],
   catalogSelectionOnly: true,

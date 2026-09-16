@@ -45,8 +45,8 @@ const defaults: Parameters = {
 
 const part: PartDefinition = {
   id: 'bolt-screw',
-  name: 'Bolt & screw',
-  category: 'FASTENERS',
+  name: 'Bolt or screw',
+  category: 'FASTENERS & THREADS',
   subgroup: 'BOLTS & SCREWS',
   icon: 'bolt',
   complexity: 'Head, drive & thread',

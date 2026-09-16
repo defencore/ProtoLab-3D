@@ -38,7 +38,7 @@ function washerProfiles(p: PartDefinition['defaults'], state: string): TurnedPro
 const part: PartDefinition = {
   id: 'thrust-bearing',
   name: 'Thrust ball bearing',
-  category: 'BEARINGS',
+  category: 'BEARINGS & SEALS',
   subgroup: 'THRUST BEARINGS',
   description: 'Two axial washers and a ball set for axial load assembly layouts.',
   keywords: ['axial', 'thrust', 'washer', '51100'],

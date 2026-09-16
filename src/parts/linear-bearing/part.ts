@@ -10,8 +10,8 @@ import { bushingGeometry, bushingLayout, bushingPython } from './lib/parts/linea
 const part: PartDefinition = {
   id: 'linear-bearing',
   name: 'Linear ball bushing',
-  category: 'BEARINGS',
-  subgroup: 'LINEAR BEARINGS',
+  category: 'LINEAR MOTION',
+  subgroup: 'LINEAR BUSHINGS',
   description:
     'Grooved steel sleeve, return cage, end wipers and closed recirculating ball circuits.',
   keywords: ['LM8UU', 'LM12UU', 'linear', 'bushing', 'rail', 'shaft', 'recirculating balls'],

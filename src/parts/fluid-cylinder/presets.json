@@ -1,0 +1,77 @@
+[
+  {
+    "id": "round25",
+    "name": "Round pneumatic cylinder \u00b7 \u00d825 \u00d7 100 mm",
+    "description": "Round, tie-rod, compact, hydraulic and rodless actuator construction forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "round",
+      "bore": 25,
+      "rod": 10,
+      "stroke": 100,
+      "extension": 50,
+      "wall": 3,
+      "port": 5,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "tie32",
+    "name": "Tie-rod cylinder \u00b7 \u00d832 \u00d7 100 mm",
+    "description": "Round, tie-rod, compact, hydraulic and rodless actuator construction forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "tie",
+      "bore": 32,
+      "rod": 12,
+      "stroke": 100,
+      "extension": 50,
+      "wall": 3,
+      "port": 5,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "compact25",
+    "name": "Compact cylinder \u00b7 \u00d825 \u00d7 25 mm",
+    "description": "Round, tie-rod, compact, hydraulic and rodless actuator construction forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "compact",
+      "bore": 25,
+      "rod": 10,
+      "stroke": 25,
+      "extension": 12,
+      "wall": 3,
+      "port": 5,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "hydraulic40",
+    "name": "Hydraulic cylinder \u00b7 \u00d840 \u00d7 100 mm",
+    "description": "Round, tie-rod, compact, hydraulic and rodless actuator construction forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "hydraulic",
+      "bore": 40,
+      "rod": 20,
+      "stroke": 100,
+      "extension": 50,
+      "wall": 6,
+      "port": 8,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "rodless25",
+    "name": "Rodless cylinder \u00b7 100 mm travel",
+    "description": "Round, tie-rod, compact, hydraulic and rodless actuator construction forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "rodless",
+      "bore": 25,
+      "rod": 10,
+      "stroke": 100,
+      "extension": 50,
+      "wall": 3,
+      "port": 5,
+      "detail": "envelope"
+    }
+  }
+]

@@ -14,7 +14,7 @@ import { assemblyStates, bearingParameters } from './lib/parts/bearing-utils';
 const part: PartDefinition = {
   id: 'ball-bearing',
   name: 'Deep groove ball bearing',
-  category: 'BEARINGS',
+  category: 'BEARINGS & SEALS',
   subgroup: 'BALL BEARINGS',
   description:
     'Deep-groove radial races with a ball set and selectable open, shielded or sealed faces.',

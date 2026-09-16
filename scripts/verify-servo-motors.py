@@ -24,7 +24,7 @@ report = {'checkedAt': datetime.now(timezone.utc).isoformat(), 'freecad': '.'.jo
 # Independent reference geometry read directly from the unmodified manufacturer
 # STEP. Its deliberate overlapping components must not be mistaken for a new
 # intersection introduced by the preview/export integration.
-source_step = Path(__file__).resolve().parents[1] / 'public/references/st3215-hs-manufacturer.step'
+source_step = Path(os.environ.get('ST3215_SOURCE_STEP', 'st3215-hs-manufacturer.step'))
 source_shape = Part.Shape()
 source_shape.read(str(source_step))
 source_labels = ['Middle case', 'Front cover', 'Rear cover and pivot', 'Motor',

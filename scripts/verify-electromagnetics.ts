@@ -5,7 +5,9 @@ import { parts } from '../src/parts';
 import { generateScript } from '../src/core/freecad';
 import { disposeModel } from '../src/core/mechanical';
 
-const selections = parts.filter((part) => part.category === 'ELECTROMAGNETICS');
+const selections = parts.filter((part) =>
+  ['holding-electromagnet', 'open-frame-solenoid', 'tubular-solenoid'].includes(part.id),
+);
 if (selections.length !== 3) throw new Error('Expected all three electromagnetic packages.');
 const cases = selections.flatMap((part) =>
   [{ id: 'default', parameters: part.defaults }, ...part.presets].flatMap((preset) =>

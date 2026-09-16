@@ -1,0 +1,72 @@
+import type { Parameters, ParameterDefinition } from '../../core/types';
+export const defaults: Parameters = {
+  form: 'pneumatic',
+  diameter: 100,
+  width: 30,
+  bore: 8,
+  rollers: 8,
+  detail: 'envelope',
+};
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'form',
+    label: 'Wheel type',
+    type: 'select',
+    group: 'Configuration',
+    options: [
+      { value: 'pneumatic', label: 'Pneumatic tyre' },
+      { value: 'omni', label: 'Omnidirectional wheel' },
+      { value: 'mecanum', label: 'Mecanum wheel' },
+    ],
+  },
+  {
+    key: 'diameter',
+    label: 'Wheel diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'width',
+    label: 'Wheel width',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'bore',
+    label: 'Axle bore',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'rollers',
+    label: 'Peripheral roller count',
+    type: 'number',
+    group: 'Dimensions',
+    min: 6,
+    max: 16,
+    step: 1,
+    unit: '',
+  },
+  {
+    key: 'detail',
+    label: 'Model detail',
+    type: 'select',
+    group: 'Configuration',
+    options: [
+      { value: 'envelope', label: 'Envelope \u00b7 assembly fit' },
+      { value: 'detailed', label: 'Detailed \u00b7 visible construction' },
+    ],
+  },
+];

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "duct25",
+    "name": "Cable duct \u00b7 25 \u00d7 18 mm",
+    "description": "Open cable duct and articulated rectangular cable carrier reference. Editable prototype dimensions.",
+    "parameters": {
+      "form": "duct",
+      "width": 25,
+      "height": 18,
+      "length": 150,
+      "wall": 2,
+      "links": 8,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "chain25",
+    "name": "Drag chain \u00b7 25 \u00d7 18 mm",
+    "description": "Open cable duct and articulated rectangular cable carrier reference. Editable prototype dimensions.",
+    "parameters": {
+      "form": "chain",
+      "width": 25,
+      "height": 18,
+      "length": 150,
+      "wall": 2,
+      "links": 8,
+      "detail": "envelope"
+    }
+  }
+]

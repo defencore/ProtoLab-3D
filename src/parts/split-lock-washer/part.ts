@@ -40,7 +40,7 @@ const defaults = {
 const part: PartDefinition = {
   id: 'split-lock-washer',
   name: 'Split spring lock washer',
-  category: 'FASTENERS',
+  category: 'FASTENERS & THREADS',
   subgroup: 'WASHERS',
   icon: 'bearing',
   complexity: 'Free / flattened',

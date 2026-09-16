@@ -1,2 +1,5 @@
-# Preserve the manufacturer's original STEP bytes and omit generated CAD diffs.
-public/references/st3215-hs-manufacturer.step -text -diff
+# Manufacturer drawings and CAD sources must retain their original bytes.
+*.pdf binary
+*.step -text -diff
+*.stp -text -diff
+*.zip binary

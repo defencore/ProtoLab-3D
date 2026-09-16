@@ -31,8 +31,8 @@ const defaults = {
 const part: PartDefinition = {
   id: 'spur-gear',
   name: 'Spur gear',
-  category: 'MOTION',
-  subgroup: 'GEARS & RACKS',
+  category: 'TRANSMISSION & LINKAGES',
+  subgroup: 'GEARS & GEAR DRIVES',
   icon: 'gear',
   complexity: 'Involute teeth',
   description:

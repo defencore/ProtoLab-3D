@@ -1,7 +1,7 @@
 [
   {
     "id": "prototype-pull-18",
-    "name": "Compact pull \u00b7 18 \u00d7 32",
+    "name": "Compact pull · 18 × 32 mm",
     "description": "Compact prototype with a front pull rod and insulated terminal pins.",
     "parameters": {
       "action": "pull",
@@ -24,7 +24,7 @@
   },
   {
     "id": "prototype-pull-30",
-    "name": "Pull \u00b7 30 \u00d7 50",
+    "name": "Pull · 30 × 50 mm",
     "description": "Medium prototype with an 8 mm pull stroke and a separate guide sleeve.",
     "parameters": {
       "action": "pull",
@@ -47,7 +47,7 @@
   },
   {
     "id": "prototype-push-30",
-    "name": "Push \u00b7 30 \u00d7 50",
+    "name": "Push · 30 × 50 mm",
     "description": "Rear output rod passes through the fixed pole for an 8 mm push stroke.",
     "parameters": {
       "action": "push",
@@ -70,7 +70,7 @@
   },
   {
     "id": "prototype-pull-45",
-    "name": "Long-stroke pull \u00b7 45 \u00d7 80",
+    "name": "Long-stroke pull · 45 × 80 mm",
     "description": "Large prototype with a 16 mm pull stroke; connection details omitted.",
     "parameters": {
       "action": "pull",
@@ -93,7 +93,7 @@
   },
   {
     "id": "prototype-push-60",
-    "name": "Large push \u00b7 60 \u00d7 100",
+    "name": "Large push · 60 × 100 mm",
     "description": "Large prototype with a 20 mm rear push stroke and insulated terminals.",
     "parameters": {
       "action": "push",
@@ -116,7 +116,7 @@
   },
   {
     "id": "prototype-push-18",
-    "name": "Compact push \u00b7 18 \u00d7 32",
+    "name": "Compact push · 18 × 32 mm",
     "description": "Compact rear-rod push prototype with connection details omitted.",
     "parameters": {
       "action": "push",

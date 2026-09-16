@@ -1,0 +1,55 @@
+import type { Parameters, ParameterDefinition } from '../../core/types';
+export const defaults: Parameters = { form: 'gasket', diameter: 30, bore: 20, height: 6, lip: 1 };
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'form',
+    label: 'Seal form',
+    type: 'select',
+    group: 'Configuration',
+    options: [
+      { value: 'gasket', label: 'Flat gasket / copper ring' },
+      { value: 'rod', label: 'U-cup seal' },
+      { value: 'wiper', label: 'Rod wiper' },
+    ],
+  },
+  {
+    key: 'diameter',
+    label: 'Outside diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'bore',
+    label: 'Inside diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'height',
+    label: 'Seal height',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'lip',
+    label: 'Lip thickness',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+];

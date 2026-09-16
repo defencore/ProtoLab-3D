@@ -1,0 +1,603 @@
+[
+  {
+    "id": "custom-trainer",
+    "name": "High-wing trainer · 1.2 m",
+    "description": "Conventional high wing; ailerons, elevator and rudder.",
+    "parameters": {
+      "length": 900,
+      "bodyWidth": 90,
+      "bodyHeight": 105,
+      "wall": 2,
+      "span": 1200,
+      "rootChord": 220,
+      "tipChord": 160,
+      "sweep": 4,
+      "dihedral": 3,
+      "tail": "conventional",
+      "tailSpan": 380,
+      "tailChord": 135,
+      "finHeight": 135,
+      "layout": "conventional",
+      "wingMount": "high",
+      "wingStation": 34,
+      "wingThickness": 12,
+      "wingControl": "ailerons",
+      "controlChord": 26,
+      "hingeGap": 0.4,
+      "winglets": true,
+      "foreplaneControl": true
+    }
+  },
+  {
+    "id": "custom-mid-wing",
+    "name": "Mid-wing sport plane · 1.2 m",
+    "description": "Conventional mid wing; ailerons, elevator and rudder.",
+    "parameters": {
+      "length": 900,
+      "bodyWidth": 90,
+      "bodyHeight": 105,
+      "wall": 2,
+      "span": 1200,
+      "rootChord": 220,
+      "tipChord": 160,
+      "sweep": 4,
+      "dihedral": 0,
+      "tail": "conventional",
+      "tailSpan": 380,
+      "tailChord": 135,
+      "finHeight": 135,
+      "layout": "conventional",
+      "wingMount": "mid",
+      "wingStation": 34,
+      "wingThickness": 12,
+      "wingControl": "ailerons",
+      "controlChord": 26,
+      "hingeGap": 0.4,
+      "winglets": true,
+      "foreplaneControl": true
+    }
+  },
+  {
+    "id": "custom-low-wing",
+    "name": "Low-wing sport plane · 1.2 m",
+    "description": "Low wing with separate flaps and ailerons.",
+    "parameters": {
+      "length": 900,
+      "bodyWidth": 90,
+      "bodyHeight": 105,
+      "wall": 2,
+      "span": 1200,
+      "rootChord": 220,
+      "tipChord": 160,
+      "sweep": 4,
+      "dihedral": 5,
+      "tail": "conventional",
+      "tailSpan": 380,
+      "tailChord": 135,
+      "finHeight": 135,
+      "layout": "conventional",
+      "wingMount": "low",
+      "wingStation": 34,
+      "wingThickness": 12,
+      "wingControl": "flaps-ailerons",
+      "controlChord": 26,
+      "hingeGap": 0.4,
+      "winglets": true,
+      "foreplaneControl": true
+    }
+  },
+  {
+    "id": "custom-glider",
+    "name": "T-tail glider · 2 m",
+    "description": "Slender fuselage, long tapered wings, flaps and ailerons.",
+    "parameters": {
+      "length": 1150,
+      "bodyWidth": 65,
+      "bodyHeight": 80,
+      "wall": 2,
+      "span": 2000,
+      "rootChord": 200,
+      "tipChord": 90,
+      "sweep": 4,
+      "dihedral": 3,
+      "tail": "t-tail",
+      "tailSpan": 440,
+      "tailChord": 120,
+      "finHeight": 150,
+      "layout": "glider",
+      "wingMount": "mid",
+      "wingStation": 34,
+      "wingThickness": 12,
+      "wingControl": "flaps-ailerons",
+      "controlChord": 26,
+      "hingeGap": 0.4,
+      "winglets": true,
+      "foreplaneControl": true
+    }
+  },
+  {
+    "id": "custom-wing",
+    "name": "Flying wing · 900 mm",
+    "description": "Swept flying wing with equipment bay, elevons and tip fins.",
+    "parameters": {
+      "length": 420,
+      "bodyWidth": 120,
+      "bodyHeight": 70,
+      "wall": 2,
+      "span": 900,
+      "rootChord": 250,
+      "tipChord": 120,
+      "sweep": 25,
+      "dihedral": 0,
+      "tail": "none",
+      "tailSpan": 380,
+      "tailChord": 135,
+      "finHeight": 70,
+      "layout": "flying-wing",
+      "wingMount": "mid",
+      "wingStation": 34,
+      "wingThickness": 12,
+      "wingControl": "elevons",
+      "controlChord": 26,
+      "hingeGap": 0.4,
+      "winglets": true,
+      "foreplaneControl": true
+    }
+  },
+  {
+    "id": "custom-delta",
+    "name": "Delta wing · 900 mm",
+    "description": "Triangular wing with elevons and a rear rudder.",
+    "parameters": {
+      "length": 900,
+      "bodyWidth": 90,
+      "bodyHeight": 105,
+      "wall": 2,
+      "span": 900,
+      "rootChord": 470,
+      "tipChord": 35,
+      "sweep": 44,
+      "dihedral": 0,
+      "tail": "none",
+      "tailSpan": 380,
+      "tailChord": 135,
+      "finHeight": 135,
+      "layout": "delta",
+      "wingMount": "low",
+      "wingStation": 32,
+      "wingThickness": 8,
+      "wingControl": "elevons",
+      "controlChord": 26,
+      "hingeGap": 0.4,
+      "winglets": true,
+      "foreplaneControl": true
+    }
+  },
+  {
+    "id": "custom-canard",
+    "name": "Canard aircraft · 1.2 m",
+    "description": "Forward elevators control pitch; main-wing ailerons control roll.",
+    "parameters": {
+      "length": 900,
+      "bodyWidth": 90,
+      "bodyHeight": 105,
+      "wall": 2,
+      "span": 1200,
+      "rootChord": 220,
+      "tipChord": 160,
+      "sweep": 12,
+      "dihedral": 3,
+      "tail": "conventional",
+      "tailSpan": 400,
+      "tailChord": 110,
+      "finHeight": 135,
+      "layout": "canard",
+      "wingMount": "mid",
+      "wingStation": 55,
+      "wingThickness": 12,
+      "wingControl": "ailerons",
+      "controlChord": 26,
+      "hingeGap": 0.4,
+      "winglets": true,
+      "foreplaneControl": true
+    }
+  },
+  {
+    "id": "custom-twin-boom",
+    "name": "Twin-boom aircraft · 1.2 m",
+    "description": "Short equipment pod, two tail booms and H-tail.",
+    "parameters": {
+      "length": 900,
+      "bodyWidth": 90,
+      "bodyHeight": 105,
+      "wall": 2,
+      "span": 1200,
+      "rootChord": 220,
+      "tipChord": 160,
+      "sweep": 0,
+      "dihedral": 0,
+      "tail": "conventional",
+      "tailSpan": 480,
+      "tailChord": 135,
+      "finHeight": 135,
+      "layout": "twin-boom",
+      "wingMount": "mid",
+      "wingStation": 28,
+      "wingThickness": 12,
+      "wingControl": "ailerons",
+      "controlChord": 26,
+      "hingeGap": 0.4,
+      "winglets": true,
+      "foreplaneControl": true
+    }
+  },
+  {
+    "id": "custom-tandem",
+    "name": "Tandem-wing aircraft · 1.2 m",
+    "description": "Forward ailerons and aft-wing elevators; two lifting wings.",
+    "parameters": {
+      "length": 900,
+      "bodyWidth": 90,
+      "bodyHeight": 105,
+      "wall": 2,
+      "span": 1200,
+      "rootChord": 220,
+      "tipChord": 160,
+      "sweep": 0,
+      "dihedral": 0,
+      "tail": "conventional",
+      "tailSpan": 960,
+      "tailChord": 185,
+      "finHeight": 135,
+      "layout": "tandem",
+      "wingMount": "mid",
+      "wingStation": 18,
+      "wingThickness": 12,
+      "wingControl": "ailerons",
+      "controlChord": 26,
+      "hingeGap": 0.4,
+      "winglets": true,
+      "foreplaneControl": true
+    }
+  },
+  {
+    "id": "ft-simple-cub",
+    "name": "Flite Test Simple Cub · high-wing trainer",
+    "description": "Published 956 mm span; fuselage and section shapes are approximate.",
+    "parameters": {
+      "length": 775,
+      "bodyWidth": 75,
+      "bodyHeight": 100,
+      "wall": 2,
+      "span": 956,
+      "rootChord": 190,
+      "tipChord": 190,
+      "sweep": 0,
+      "dihedral": 3,
+      "tail": "conventional",
+      "tailSpan": 300,
+      "tailChord": 105,
+      "finHeight": 135,
+      "layout": "conventional",
+      "wingMount": "high",
+      "wingStation": 34,
+      "wingThickness": 12,
+      "wingControl": "none",
+      "controlChord": 26,
+      "hingeGap": 0.4,
+      "winglets": true,
+      "foreplaneControl": true
+    },
+    "catalog": {
+      "designation": "Flite Test Simple Cub · high-wing trainer",
+      "manufacturer": "Flite Test",
+      "sourceName": "Flite Test · published dimensions",
+      "sourceUrl": "https://www.flitetest.com/simplecub",
+      "verifiedParameters": ["span"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Published 956 mm span; fuselage and section shapes are approximate.",
+        "limitations": "Only the listed overall dimensions are verified. Body contours, sections, wing stations, control shapes, tail dimensions, hatch and wall thickness are editable design assumptions. No manufacturer CAD or exact replacement fit is claimed. Propellers, landing gear, hardware and linkages are omitted; published overall length is used as the body envelope.",
+        "sourceUrl": "https://www.flitetest.com/simplecub"
+      },
+      "specifications": [
+        {
+          "label": "Verified reference dimensions",
+          "value": "span: 956 mm"
+        },
+        {
+          "label": "Layout and controls",
+          "value": "Published 956 mm span; fuselage and section shapes are approximate."
+        },
+        {
+          "label": "Geometry scope",
+          "value": "Approximate editable hobby airframe; separate neutral control surfaces, no flight-performance model."
+        }
+      ]
+    }
+  },
+  {
+    "id": "atomrc-dolphin",
+    "name": "ATOMRC Dolphin · forward-swept V-tail",
+    "description": "Published length and span; forward-swept wing and V-tail reference.",
+    "parameters": {
+      "length": 710,
+      "bodyWidth": 115,
+      "bodyHeight": 100,
+      "wall": 2,
+      "span": 845,
+      "rootChord": 230,
+      "tipChord": 140,
+      "sweep": -12,
+      "dihedral": 3,
+      "tail": "v-tail",
+      "tailSpan": 260,
+      "tailChord": 100,
+      "finHeight": 135,
+      "layout": "conventional",
+      "wingMount": "mid",
+      "wingStation": 34,
+      "wingThickness": 12,
+      "wingControl": "ailerons",
+      "controlChord": 26,
+      "hingeGap": 0.4,
+      "winglets": true,
+      "foreplaneControl": true
+    },
+    "catalog": {
+      "designation": "ATOMRC Dolphin · forward-swept V-tail",
+      "manufacturer": "ATOMRC",
+      "sourceName": "ATOMRC · published dimensions",
+      "sourceUrl": "https://atomrc.com/products/atomrc-dolphin-overseas-fpv-rc-plane-fixed-wing",
+      "verifiedParameters": ["length", "span"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Published length and span; forward-swept wing and V-tail reference.",
+        "limitations": "Only the listed overall dimensions are verified. Body contours, sections, wing stations, control shapes, tail dimensions, hatch and wall thickness are editable design assumptions. No manufacturer CAD or exact replacement fit is claimed. Propellers, landing gear, hardware and linkages are omitted; published overall length is used as the body envelope.",
+        "sourceUrl": "https://atomrc.com/products/atomrc-dolphin-overseas-fpv-rc-plane-fixed-wing"
+      },
+      "specifications": [
+        {
+          "label": "Verified reference dimensions",
+          "value": "length: 710 mm, span: 845 mm"
+        },
+        {
+          "label": "Layout and controls",
+          "value": "Published length and span; forward-swept wing and V-tail reference."
+        },
+        {
+          "label": "Geometry scope",
+          "value": "Approximate editable hobby airframe; separate neutral control surfaces, no flight-performance model."
+        }
+      ]
+    }
+  },
+  {
+    "id": "fms-asw17",
+    "name": "FMS ASW-17 · 2.5 m glider",
+    "description": "Published span and overall length; low-tail sailplane with flaps and ailerons. Tail arrangement checked against the official manual.",
+    "parameters": {
+      "length": 1390,
+      "bodyWidth": 90,
+      "bodyHeight": 115,
+      "wall": 2,
+      "span": 2500,
+      "rootChord": 245,
+      "tipChord": 100,
+      "sweep": 3,
+      "dihedral": 4,
+      "tail": "conventional",
+      "tailSpan": 440,
+      "tailChord": 135,
+      "finHeight": 180,
+      "layout": "glider",
+      "wingMount": "mid",
+      "wingStation": 33,
+      "wingThickness": 12,
+      "wingControl": "flaps-ailerons",
+      "controlChord": 26,
+      "hingeGap": 0.4,
+      "winglets": true,
+      "foreplaneControl": true
+    },
+    "catalog": {
+      "designation": "FMS ASW-17 · 2.5 m glider",
+      "manufacturer": "FMS",
+      "sourceName": "FMS · published dimensions",
+      "sourceUrl": "https://www.fmshobby.com/products/fms-2500mm-asw-17-ep-glider-pnp",
+      "verifiedParameters": ["span", "length"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Published span and overall length; low-tail sailplane with flaps and ailerons. Tail arrangement checked against the official manual.",
+        "limitations": "Only the listed overall dimensions are verified. Body contours, sections, wing stations, control shapes, tail dimensions, hatch and wall thickness are editable design assumptions. No manufacturer CAD or exact replacement fit is claimed. Propellers, landing gear, hardware and linkages are omitted; published overall length is used as the body envelope.",
+        "sourceUrl": "https://www.horizonhobby.com/on/demandware.static/-/Sites-horizon-master/default/Manuals/FMM129P-Manual-MULTI.pdf"
+      },
+      "specifications": [
+        {
+          "label": "Verified reference dimensions",
+          "value": "span: 2500 mm, length: 1390 mm"
+        },
+        {
+          "label": "Layout and controls",
+          "value": "Published span and overall length; low-tail sailplane with flaps and ailerons. Tail arrangement checked against the official manual."
+        },
+        {
+          "label": "Geometry scope",
+          "value": "Approximate editable hobby airframe; separate neutral control surfaces, no flight-performance model."
+        },
+        {
+          "label": "Airframe illustration",
+          "value": "Official FMS ASW-17 manual, pages 1 and 4: horizontal stabilizer at the fin base, not a T-tail."
+        }
+      ]
+    }
+  },
+  {
+    "id": "ft-versa-wing",
+    "name": "Flite Test Versa Wing · flying wing",
+    "description": "Published 965 mm span; simplified swept flying wing with elevons and winglets.",
+    "parameters": {
+      "length": 400,
+      "bodyWidth": 130,
+      "bodyHeight": 60,
+      "wall": 2,
+      "span": 965,
+      "rootChord": 285,
+      "tipChord": 135,
+      "sweep": 26,
+      "dihedral": 0,
+      "tail": "none",
+      "tailSpan": 380,
+      "tailChord": 135,
+      "finHeight": 75,
+      "layout": "flying-wing",
+      "wingMount": "mid",
+      "wingStation": 34,
+      "wingThickness": 12,
+      "wingControl": "elevons",
+      "controlChord": 26,
+      "hingeGap": 0.4,
+      "winglets": true,
+      "foreplaneControl": true
+    },
+    "catalog": {
+      "designation": "Flite Test Versa Wing · flying wing",
+      "manufacturer": "Flite Test",
+      "sourceName": "Flite Test · published dimensions",
+      "sourceUrl": "https://s3.amazonaws.com/plans.flitetest.com/stonekap/FT-Versa-plans.pdf",
+      "verifiedParameters": ["span"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Published 965 mm span; simplified swept flying wing with elevons and winglets.",
+        "limitations": "Only the listed overall dimensions are verified. Body contours, sections, wing stations, control shapes, tail dimensions, hatch and wall thickness are editable design assumptions. No manufacturer CAD or exact replacement fit is claimed. Propellers, landing gear, hardware and linkages are omitted; published overall length is used as the body envelope.",
+        "sourceUrl": "https://s3.amazonaws.com/plans.flitetest.com/stonekap/FT-Versa-plans.pdf"
+      },
+      "specifications": [
+        {
+          "label": "Verified reference dimensions",
+          "value": "span: 965 mm"
+        },
+        {
+          "label": "Layout and controls",
+          "value": "Published 965 mm span; simplified swept flying wing with elevons and winglets."
+        },
+        {
+          "label": "Geometry scope",
+          "value": "Approximate editable hobby airframe; separate neutral control surfaces, no flight-performance model."
+        }
+      ]
+    }
+  },
+  {
+    "id": "ft-viggen-v2",
+    "name": "Flite Test Viggen V2 · delta / fixed canards",
+    "description": "Published 25.25 in span and 39 in length; approximate delta with elevons and fixed foreplanes.",
+    "parameters": {
+      "length": 990.6,
+      "bodyWidth": 90,
+      "bodyHeight": 110,
+      "wall": 2,
+      "span": 641.35,
+      "rootChord": 495,
+      "tipChord": 35,
+      "sweep": 55,
+      "dihedral": 0,
+      "tail": "conventional",
+      "tailSpan": 280,
+      "tailChord": 85,
+      "finHeight": 160,
+      "layout": "canard",
+      "wingMount": "mid",
+      "wingStation": 36,
+      "wingThickness": 8,
+      "wingControl": "elevons",
+      "controlChord": 26,
+      "hingeGap": 0.4,
+      "winglets": true,
+      "foreplaneControl": false
+    },
+    "catalog": {
+      "designation": "Flite Test Viggen V2 · delta / fixed canards",
+      "manufacturer": "Flite Test",
+      "sourceName": "Flite Test · published dimensions",
+      "sourceUrl": "https://www.flitetest.com/articles/ft-viggen-v2-build-supplemental",
+      "verifiedParameters": ["span", "length"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Published 25.25 in span and 39 in length; approximate delta with elevons and fixed foreplanes.",
+        "limitations": "Only the listed overall dimensions are verified. Body contours, sections, wing stations, control shapes, tail dimensions, hatch and wall thickness are editable design assumptions. No manufacturer CAD or exact replacement fit is claimed. Propellers, landing gear, hardware and linkages are omitted; published overall length is used as the body envelope.",
+        "sourceUrl": "https://www.flitetest.com/articles/ft-viggen-v2-build-supplemental"
+      },
+      "specifications": [
+        {
+          "label": "Verified reference dimensions",
+          "value": "span: 641.35 mm, length: 990.6 mm"
+        },
+        {
+          "label": "Layout and controls",
+          "value": "Published 25.25 in span and 39 in length; approximate delta with elevons and fixed foreplanes."
+        },
+        {
+          "label": "Geometry scope",
+          "value": "Approximate editable hobby airframe; separate neutral control surfaces, no flight-performance model."
+        }
+      ]
+    }
+  },
+  {
+    "id": "ft-bronco",
+    "name": "Flite Test Bronco · twin-boom H-tail",
+    "description": "Published 1086 mm span; simplified short pod and twin booms with H-tail.",
+    "parameters": {
+      "length": 820,
+      "bodyWidth": 85,
+      "bodyHeight": 90,
+      "wall": 2,
+      "span": 1086,
+      "rootChord": 230,
+      "tipChord": 185,
+      "sweep": 0,
+      "dihedral": 0,
+      "tail": "conventional",
+      "tailSpan": 460,
+      "tailChord": 130,
+      "finHeight": 140,
+      "layout": "twin-boom",
+      "wingMount": "mid",
+      "wingStation": 25,
+      "wingThickness": 12,
+      "wingControl": "ailerons",
+      "controlChord": 26,
+      "hingeGap": 0.4,
+      "winglets": true,
+      "foreplaneControl": true
+    },
+    "catalog": {
+      "designation": "Flite Test Bronco · twin-boom H-tail",
+      "manufacturer": "Flite Test",
+      "sourceName": "Flite Test · published dimensions",
+      "sourceUrl": "https://www.flitetest.com/articles/ft-bronco-build",
+      "verifiedParameters": ["span"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Published 1086 mm span; simplified short pod and twin booms with H-tail.",
+        "limitations": "Only the listed overall dimensions are verified. Body contours, sections, wing stations, control shapes, tail dimensions, hatch and wall thickness are editable design assumptions. No manufacturer CAD or exact replacement fit is claimed. Propellers, landing gear, hardware and linkages are omitted; published overall length is used as the body envelope.",
+        "sourceUrl": "https://www.flitetest.com/articles/ft-bronco-build"
+      },
+      "specifications": [
+        {
+          "label": "Verified reference dimensions",
+          "value": "span: 1086 mm"
+        },
+        {
+          "label": "Layout and controls",
+          "value": "Published 1086 mm span; simplified short pod and twin booms with H-tail."
+        },
+        {
+          "label": "Geometry scope",
+          "value": "Approximate editable hobby airframe; separate neutral control surfaces, no flight-performance model."
+        }
+      ]
+    }
+  }
+]

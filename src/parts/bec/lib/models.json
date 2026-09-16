@@ -1,0 +1,84 @@
+[
+  {
+    "id": "hobbywing-ubec-3a",
+    "name": "Hobbywing UBEC 3 A · 2–6S",
+    "manufacturer": "Hobbywing",
+    "width": 17,
+    "length": 43,
+    "board": 1.6,
+    "color": 2435116,
+    "construction": "Enclosed regulator",
+    "source": "https://www.hobbywingdirect.com/products/ubec-3a-2-6s-lipo-input",
+    "holes": [],
+    "details": [],
+    "attributes": {
+      "inputMin": 5.5,
+      "inputMax": 26,
+      "outputMin": 5,
+      "outputMax": 6,
+      "outputCurrent": 3,
+      "connection": "Flying leads",
+      "topology": "Buck",
+      "height": 7
+    },
+    "scope": "43 × 17 × 7 mm insulated body. Output selectable 5/6 V. Flexible input/output leads and ferrite ring excluded.",
+    "references": [],
+    "height": 7
+  },
+  {
+    "id": "hobbywing-ubec-5a-2-8s",
+    "name": "Hobbywing UBEC 5 A · 2–8S",
+    "manufacturer": "Hobbywing",
+    "width": 17,
+    "length": 50,
+    "board": 1.6,
+    "color": 2435116,
+    "construction": "Enclosed regulator",
+    "source": "https://oss.hobbywing.com/pdf/pdfen/UBEC5A.pdf",
+    "holes": [],
+    "details": [],
+    "attributes": {
+      "cellsMin": 2,
+      "cellsMax": 8,
+      "outputMin": 5,
+      "outputMax": 7.4,
+      "outputCurrent": 5,
+      "connection": "Flying leads",
+      "topology": "Buck",
+      "height": 10
+    },
+    "scope": "PDF revision: 50 × 17 × 10 mm, selectable 5/6/7.4 V, 15 A peak. Not the older 48 × 27 × 9 mm version. Leads, jumper and ferrite excluded.",
+    "references": [
+      "ubec5.pdf"
+    ],
+    "height": 10
+  },
+  {
+    "id": "hobbywing-ubec-10a-car",
+    "name": "Hobbywing UBEC 10 A · car",
+    "manufacturer": "Hobbywing",
+    "width": 20,
+    "length": 45,
+    "board": 1.6,
+    "color": 2435116,
+    "construction": "Enclosed regulator",
+    "source": "https://hobbywing.oss-cn-shenzhen.aliyuncs.com/pdf/pdfen/UBEC10ACar.pdf",
+    "holes": [],
+    "details": [],
+    "attributes": {
+      "cellsMin": 2,
+      "cellsMax": 6,
+      "outputMin": 6,
+      "outputMax": 8.4,
+      "outputCurrent": 10,
+      "connection": "Flying leads",
+      "topology": "Buck",
+      "height": 16.2
+    },
+    "scope": "Car PDF revision: 45 × 20 × 16.2 mm, selectable 6/7.4/8.4 V, 15 A peak. Not the 43.1 × 32.3 mm UBEC. Leads, switch and jumper excluded.",
+    "references": [
+      "ubec10.pdf"
+    ],
+    "height": 16.2
+  }
+]

@@ -114,8 +114,8 @@ const defaults = {
 
 const part: PartDefinition = {
   id: 'double-row-angular-contact-bearing',
-  name: 'Double-row angular contact bearing',
-  category: 'BEARINGS',
+  name: 'Double-row angular contact ball bearing',
+  category: 'BEARINGS & SEALS',
   subgroup: 'BALL BEARINGS',
   icon: 'bearing',
   complexity: 'Opposed angular contact rows',

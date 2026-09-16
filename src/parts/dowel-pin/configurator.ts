@@ -1,0 +1,60 @@
+import type { Parameters, ParameterDefinition } from '../../core/types';
+export const defaults: Parameters = {
+  form: 'straight',
+  diameter: 6,
+  length: 30,
+  taper: 0.02,
+  chamfer: 0.4,
+};
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'form',
+    label: 'Pin form',
+    type: 'select',
+    group: 'Configuration',
+    options: [
+      { value: 'straight', label: 'Cylindrical' },
+      { value: 'taper', label: 'Tapered' },
+    ],
+  },
+  {
+    key: 'diameter',
+    label: 'Large-end diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'length',
+    label: 'Pin length',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'taper',
+    label: 'Diameter taper / length',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0,
+    max: 0.2,
+    step: 0.1,
+    unit: 'ratio',
+  },
+  {
+    key: 'chamfer',
+    label: 'End chamfer',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0,
+    max: 3,
+    step: 0.1,
+    unit: 'mm',
+  },
+];

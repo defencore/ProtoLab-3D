@@ -220,7 +220,7 @@ const defaults = {
 const part: PartDefinition = {
   id: 'csk-clutch',
   name: 'Ball-bearing sprag clutch',
-  category: 'BEARINGS',
+  category: 'TRANSMISSION & LINKAGES',
   subgroup: 'ONE-WAY CLUTCHES',
   icon: 'bearing',
   complexity: 'Ball bearing + sprag set',

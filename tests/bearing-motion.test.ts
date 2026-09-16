@@ -33,7 +33,18 @@ const families = [
 ];
 for (const part of families) {
   test(`${part.id}: all preset states preserve their envelope and closed outward component meshes`, () => {
-    for (const parameters of [part.defaults, ...part.presets.map((preset) => preset.parameters)]) {
+    const customKP =
+      part.id === 'pillow-block-bearing'
+        ? [
+            { ...part.defaults, insertOffset: 0 },
+            { ...part.defaults, slotLength: 9 },
+          ]
+        : [];
+    for (const parameters of [
+      part.defaults,
+      ...part.presets.map((preset) => preset.parameters),
+      ...customKP,
+    ]) {
       for (const state of part.states?.map((state) => state.id) ?? ['default']) {
         const label = `${part.id}/${state}/${JSON.stringify(parameters)}`;
         assert.deepEqual(validateParameters(part, parameters, state), [], label);
@@ -106,7 +117,21 @@ test('curated motion product identities retain audited supplier data across elev
       const registered = part.presets.find((entry) => entry.id === preset.id);
       assert.ok(registered, `${part.id}/${preset.id}: missing supplier preset`);
       // Retain local IDs while using the complete dimensions and metadata from the source audit.
-      assert.deepEqual(registered, { ...audited, id: preset.id });
+      assert.deepEqual(registered, {
+        ...audited,
+        id: preset.id,
+        catalog:
+          part.id === 'pillow-block-bearing'
+            ? {
+                ...audited.catalog,
+                verifiedParameters: [...audited.catalog!.verifiedParameters, 'housingStyle'],
+              }
+            : audited.catalog,
+        parameters:
+          part.id === 'pillow-block-bearing'
+            ? { ...audited.parameters, housingStyle: 'ucp', insertOffset: 0 }
+            : audited.parameters,
+      });
       for (const key of part.presetMatchKeys ?? [])
         assert.ok(
           registered.catalog!.verifiedParameters.includes(key),

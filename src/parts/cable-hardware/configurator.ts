@@ -1,0 +1,60 @@
+import type { Parameters, ParameterDefinition } from '../../core/types';
+export const defaults: Parameters = {
+  form: 'sheave',
+  diameter: 40,
+  bore: 8,
+  length: 12,
+  groove: 3,
+};
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'form',
+    label: 'Hardware type',
+    type: 'select',
+    group: 'Configuration',
+    options: [
+      { value: 'sheave', label: 'Cable sheave' },
+      { value: 'turnbuckle', label: 'Turnbuckle' },
+    ],
+  },
+  {
+    key: 'diameter',
+    label: 'Sheave diameter / body width',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'bore',
+    label: 'Axle / eye bore',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'length',
+    label: 'Sheave width / body length',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'groove',
+    label: 'Groove depth / eye extension',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+];

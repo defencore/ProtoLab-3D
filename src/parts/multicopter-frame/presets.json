@@ -1,0 +1,529 @@
+[
+  {
+    "id": "layout-quad-plus",
+    "name": "Custom Quad + · 500 mm",
+    "description": "Editable frame topology from Figure 4 (Takva & İlerisoy, 2023). Dimensions are design examples, not dimensions from the diagram.",
+    "parameters": {
+      "armStyle": "flat",
+      "wheelbase": 500,
+      "bodyLength": 130,
+      "bodyWidth": 100,
+      "plate": 2.5,
+      "gap": 30,
+      "armThickness": 4,
+      "armWidth": 14,
+      "armAngle": 45,
+      "tubeWall": 1,
+      "stackPitch": 30.5,
+      "motorPitch": 16,
+      "hole": 3.2,
+      "shaftClearance": 8,
+      "spacerDiameter": 5,
+      "layout": "quad-plus",
+      "rearAngle": 35,
+      "coaxialGap": 35
+    }
+  },
+  {
+    "id": "layout-quad-x",
+    "name": "Custom Quad X · 500 mm",
+    "description": "Editable frame topology from Figure 4 (Takva & İlerisoy, 2023). Dimensions are design examples, not dimensions from the diagram.",
+    "parameters": {
+      "armStyle": "flat",
+      "wheelbase": 500,
+      "bodyLength": 130,
+      "bodyWidth": 100,
+      "plate": 2.5,
+      "gap": 30,
+      "armThickness": 4,
+      "armWidth": 14,
+      "armAngle": 45,
+      "tubeWall": 1,
+      "stackPitch": 30.5,
+      "motorPitch": 16,
+      "hole": 3.2,
+      "shaftClearance": 8,
+      "spacerDiameter": 5,
+      "layout": "quad-x",
+      "rearAngle": 35,
+      "coaxialGap": 35
+    }
+  },
+  {
+    "id": "layout-quad-h",
+    "name": "Custom Quad H · 500 mm",
+    "description": "Editable frame topology from Figure 4 (Takva & İlerisoy, 2023). Dimensions are design examples, not dimensions from the diagram.",
+    "parameters": {
+      "armStyle": "flat",
+      "wheelbase": 500,
+      "bodyLength": 130,
+      "bodyWidth": 100,
+      "plate": 2.5,
+      "gap": 30,
+      "armThickness": 4,
+      "armWidth": 14,
+      "armAngle": 45,
+      "tubeWall": 1,
+      "stackPitch": 30.5,
+      "motorPitch": 16,
+      "hole": 3.2,
+      "shaftClearance": 8,
+      "spacerDiameter": 5,
+      "layout": "quad-h",
+      "rearAngle": 35,
+      "coaxialGap": 35
+    }
+  },
+  {
+    "id": "layout-quad-v",
+    "name": "Custom Quad V · 500 mm",
+    "description": "Editable frame topology from Figure 4 (Takva & İlerisoy, 2023). Dimensions are design examples, not dimensions from the diagram.",
+    "parameters": {
+      "armStyle": "flat",
+      "wheelbase": 500,
+      "bodyLength": 130,
+      "bodyWidth": 100,
+      "plate": 2.5,
+      "gap": 30,
+      "armThickness": 4,
+      "armWidth": 14,
+      "armAngle": 55,
+      "tubeWall": 1,
+      "stackPitch": 30.5,
+      "motorPitch": 16,
+      "hole": 3.2,
+      "shaftClearance": 8,
+      "spacerDiameter": 5,
+      "layout": "quad-v",
+      "rearAngle": 35,
+      "coaxialGap": 35
+    }
+  },
+  {
+    "id": "layout-quad-y",
+    "name": "Custom Quad Y · 500 mm",
+    "description": "Editable frame topology from Figure 4 (Takva & İlerisoy, 2023). Dimensions are design examples, not dimensions from the diagram.",
+    "parameters": {
+      "armStyle": "flat",
+      "wheelbase": 500,
+      "bodyLength": 130,
+      "bodyWidth": 100,
+      "plate": 2.5,
+      "gap": 30,
+      "armThickness": 4,
+      "armWidth": 14,
+      "armAngle": 45,
+      "tubeWall": 1,
+      "stackPitch": 30.5,
+      "motorPitch": 16,
+      "hole": 3.2,
+      "shaftClearance": 8,
+      "spacerDiameter": 5,
+      "layout": "quad-y",
+      "rearAngle": 35,
+      "coaxialGap": 35
+    }
+  },
+  {
+    "id": "layout-hexa-plus",
+    "name": "Custom Hexa + · 500 mm",
+    "description": "Editable frame topology from Figure 4 (Takva & İlerisoy, 2023). Dimensions are design examples, not dimensions from the diagram.",
+    "parameters": {
+      "armStyle": "flat",
+      "wheelbase": 500,
+      "bodyLength": 130,
+      "bodyWidth": 100,
+      "plate": 2.5,
+      "gap": 30,
+      "armThickness": 4,
+      "armWidth": 14,
+      "armAngle": 45,
+      "tubeWall": 1,
+      "stackPitch": 30.5,
+      "motorPitch": 16,
+      "hole": 3.2,
+      "shaftClearance": 8,
+      "spacerDiameter": 5,
+      "layout": "hexa-plus",
+      "rearAngle": 35,
+      "coaxialGap": 35
+    }
+  },
+  {
+    "id": "layout-hexa-x",
+    "name": "Custom Hexa X · 500 mm",
+    "description": "Editable frame topology from Figure 4 (Takva & İlerisoy, 2023). Dimensions are design examples, not dimensions from the diagram.",
+    "parameters": {
+      "armStyle": "flat",
+      "wheelbase": 500,
+      "bodyLength": 130,
+      "bodyWidth": 100,
+      "plate": 2.5,
+      "gap": 30,
+      "armThickness": 4,
+      "armWidth": 14,
+      "armAngle": 45,
+      "tubeWall": 1,
+      "stackPitch": 30.5,
+      "motorPitch": 16,
+      "hole": 3.2,
+      "shaftClearance": 8,
+      "spacerDiameter": 5,
+      "layout": "hexa-x",
+      "rearAngle": 35,
+      "coaxialGap": 35
+    }
+  },
+  {
+    "id": "layout-hexa-y6",
+    "name": "Custom Hexa Y6 · 500 mm",
+    "description": "Editable frame topology from Figure 4 (Takva & İlerisoy, 2023). Dimensions are design examples, not dimensions from the diagram.",
+    "parameters": {
+      "armStyle": "flat",
+      "wheelbase": 500,
+      "bodyLength": 130,
+      "bodyWidth": 100,
+      "plate": 2.5,
+      "gap": 30,
+      "armThickness": 4,
+      "armWidth": 14,
+      "armAngle": 45,
+      "tubeWall": 1,
+      "stackPitch": 30.5,
+      "motorPitch": 16,
+      "hole": 3.2,
+      "shaftClearance": 8,
+      "spacerDiameter": 5,
+      "layout": "hexa-y6",
+      "rearAngle": 35,
+      "coaxialGap": 35
+    }
+  },
+  {
+    "id": "layout-hexa-ly",
+    "name": "Custom Hexa LY · 500 mm",
+    "description": "Editable frame topology from Figure 4 (Takva & İlerisoy, 2023). Dimensions are design examples, not dimensions from the diagram.",
+    "parameters": {
+      "armStyle": "flat",
+      "wheelbase": 500,
+      "bodyLength": 130,
+      "bodyWidth": 100,
+      "plate": 2.5,
+      "gap": 30,
+      "armThickness": 4,
+      "armWidth": 14,
+      "armAngle": 45,
+      "tubeWall": 1,
+      "stackPitch": 30.5,
+      "motorPitch": 16,
+      "hole": 3.2,
+      "shaftClearance": 8,
+      "spacerDiameter": 5,
+      "layout": "hexa-ly",
+      "rearAngle": 35,
+      "coaxialGap": 35
+    }
+  },
+  {
+    "id": "layout-octa-plus",
+    "name": "Custom Octa + · 500 mm",
+    "description": "Editable frame topology from Figure 4 (Takva & İlerisoy, 2023). Dimensions are design examples, not dimensions from the diagram.",
+    "parameters": {
+      "armStyle": "flat",
+      "wheelbase": 500,
+      "bodyLength": 130,
+      "bodyWidth": 100,
+      "plate": 2.5,
+      "gap": 30,
+      "armThickness": 4,
+      "armWidth": 14,
+      "armAngle": 45,
+      "tubeWall": 1,
+      "stackPitch": 30.5,
+      "motorPitch": 16,
+      "hole": 3.2,
+      "shaftClearance": 8,
+      "spacerDiameter": 5,
+      "layout": "octa-plus",
+      "rearAngle": 35,
+      "coaxialGap": 35
+    }
+  },
+  {
+    "id": "layout-octa-x",
+    "name": "Custom Octa X · 500 mm",
+    "description": "Editable frame topology from Figure 4 (Takva & İlerisoy, 2023). Dimensions are design examples, not dimensions from the diagram.",
+    "parameters": {
+      "armStyle": "flat",
+      "wheelbase": 500,
+      "bodyLength": 130,
+      "bodyWidth": 100,
+      "plate": 2.5,
+      "gap": 30,
+      "armThickness": 4,
+      "armWidth": 14,
+      "armAngle": 45,
+      "tubeWall": 1,
+      "stackPitch": 30.5,
+      "motorPitch": 16,
+      "hole": 3.2,
+      "shaftClearance": 8,
+      "spacerDiameter": 5,
+      "layout": "octa-x",
+      "rearAngle": 35,
+      "coaxialGap": 35
+    }
+  },
+  {
+    "id": "layout-octa-x8",
+    "name": "Custom Octa X8 · 500 mm",
+    "description": "Editable frame topology from Figure 4 (Takva & İlerisoy, 2023). Dimensions are design examples, not dimensions from the diagram.",
+    "parameters": {
+      "armStyle": "flat",
+      "wheelbase": 500,
+      "bodyLength": 130,
+      "bodyWidth": 100,
+      "plate": 2.5,
+      "gap": 30,
+      "armThickness": 4,
+      "armWidth": 14,
+      "armAngle": 45,
+      "tubeWall": 1,
+      "stackPitch": 30.5,
+      "motorPitch": 16,
+      "hole": 3.2,
+      "shaftClearance": 8,
+      "spacerDiameter": 5,
+      "layout": "octa-x8",
+      "rearAngle": 35,
+      "coaxialGap": 35
+    }
+  },
+  {
+    "id": "custom-micro",
+    "name": "Custom Quad X · 100 mm",
+    "description": "Editable design example · lightweight geometry",
+    "parameters": {
+      "armStyle": "flat",
+      "wheelbase": 100,
+      "bodyLength": 38,
+      "bodyWidth": 32,
+      "plate": 1.5,
+      "gap": 15,
+      "armThickness": 2,
+      "armWidth": 8,
+      "armAngle": 35,
+      "tubeWall": 1,
+      "stackPitch": 20,
+      "motorPitch": 9,
+      "hole": 2.2,
+      "shaftClearance": 3,
+      "spacerDiameter": 3,
+      "layout": "quad-x",
+      "rearAngle": 35,
+      "coaxialGap": 35
+    }
+  },
+  {
+    "id": "custom-hex",
+    "name": "Custom Hexa X · 650 mm",
+    "description": "Editable design example · lightweight geometry",
+    "parameters": {
+      "armStyle": "tube",
+      "wheelbase": 650,
+      "bodyLength": 160,
+      "bodyWidth": 160,
+      "plate": 2.5,
+      "gap": 35,
+      "armThickness": 5,
+      "armWidth": 20,
+      "armAngle": 35,
+      "tubeWall": 1,
+      "stackPitch": 45,
+      "motorPitch": 25,
+      "hole": 3.2,
+      "shaftClearance": 10,
+      "spacerDiameter": 5,
+      "layout": "hexa-x",
+      "rearAngle": 35,
+      "coaxialGap": 35
+    }
+  },
+  {
+    "id": "custom-octo",
+    "name": "Custom Octa X · 900 mm",
+    "description": "Editable design example · lightweight geometry",
+    "parameters": {
+      "armStyle": "tube",
+      "wheelbase": 900,
+      "bodyLength": 200,
+      "bodyWidth": 200,
+      "plate": 3,
+      "gap": 45,
+      "armThickness": 5,
+      "armWidth": 25,
+      "armAngle": 35,
+      "tubeWall": 1,
+      "stackPitch": 45,
+      "motorPitch": 25,
+      "hole": 3.2,
+      "shaftClearance": 10,
+      "spacerDiameter": 5,
+      "layout": "octa-x",
+      "rearAngle": 35,
+      "coaxialGap": 35
+    }
+  },
+  {
+    "id": "geprc-mark5",
+    "name": "GEPRC MARK5",
+    "description": "225 mm motor diagonal, 2.5 mm plates, 5 mm arms, 30.5 mm controller and 16 mm motor pitch; approximate outlines.",
+    "parameters": {
+      "armStyle": "flat",
+      "wheelbase": 225,
+      "bodyLength": 100,
+      "bodyWidth": 42,
+      "plate": 2.5,
+      "gap": 27,
+      "armThickness": 5,
+      "armWidth": 14,
+      "armAngle": 35,
+      "tubeWall": 1,
+      "stackPitch": 30.5,
+      "motorPitch": 16,
+      "hole": 3.2,
+      "shaftClearance": 8,
+      "spacerDiameter": 5,
+      "layout": "quad-x",
+      "rearAngle": 35,
+      "coaxialGap": 35
+    },
+    "catalog": {
+      "designation": "GEPRC MARK5",
+      "manufacturer": "GEPRC",
+      "sourceName": "GEPRC · dimensions",
+      "sourceUrl": "https://geprc.com/product/geprc-gep-mk5-frame/",
+      "verifiedParameters": ["wheelbase", "plate", "armThickness", "stackPitch", "motorPitch"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "225 mm motor diagonal, 2.5 mm plates, 5 mm arms, 30.5 mm controller and 16 mm motor pitch; approximate outlines.",
+        "limitations": "Lightweight frame assembly with separate plates, arms, motor pads and spacers. Z is up. The wheelbase is the diameter of the motor-centre circle (opposite motor centres); 4-arm mode permits a squashed-X angle, while 6/8 arms are evenly spaced. Named references preserve only the listed dimensions. Plate outlines, arm roots, clamp joints, spacer locations, hole diameters and unlisted hole coordinates are generic. Only one selected motor pattern and one controller pattern are drilled. No hardware, arm clamps, landing gear, motors, propellers or electronic boards are included. These are layout references, not interchangeable replacement frame parts.",
+        "sourceUrl": "https://geprc.com/product/geprc-gep-mk5-frame/"
+      },
+      "specifications": [
+        {
+          "label": "Reference dimensions",
+          "value": "wheelbase: 225 mm, plate: 2.5 mm, armThickness: 5 mm, stackPitch: 30.5 mm, motorPitch: 16 mm"
+        },
+        {
+          "label": "Geometry scope",
+          "value": "Simplified editable reference; unlisted dimensions and fittings are design assumptions, not manufacturer CAD."
+        }
+      ]
+    }
+  },
+  {
+    "id": "holybro-x500",
+    "name": "Holybro X500 V2",
+    "description": "500 mm diagonal; 144 × 144 × 2 mm plates, 28 mm gap and Ø16 mm arms. Simplified frame without landing gear.",
+    "parameters": {
+      "armStyle": "tube",
+      "wheelbase": 500,
+      "bodyLength": 144,
+      "bodyWidth": 144,
+      "plate": 2,
+      "gap": 28,
+      "armThickness": 5,
+      "armWidth": 16,
+      "armAngle": 45,
+      "tubeWall": 1,
+      "stackPitch": 45,
+      "motorPitch": 16,
+      "hole": 3.2,
+      "shaftClearance": 8,
+      "spacerDiameter": 5,
+      "layout": "quad-x",
+      "rearAngle": 35,
+      "coaxialGap": 35
+    },
+    "catalog": {
+      "designation": "Holybro X500 V2",
+      "manufacturer": "Holybro",
+      "sourceName": "Holybro · dimensions",
+      "sourceUrl": "https://holybro.com/products/x500-v2-kits",
+      "verifiedParameters": [
+        "wheelbase",
+        "bodyLength",
+        "bodyWidth",
+        "plate",
+        "gap",
+        "armWidth",
+        "motorPitch"
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "500 mm diagonal; 144 × 144 × 2 mm plates, 28 mm gap and Ø16 mm arms. Simplified frame without landing gear.",
+        "limitations": "Lightweight frame assembly with separate plates, arms, motor pads and spacers. Z is up. The wheelbase is the diameter of the motor-centre circle (opposite motor centres); 4-arm mode permits a squashed-X angle, while 6/8 arms are evenly spaced. Named references preserve only the listed dimensions. Plate outlines, arm roots, clamp joints, spacer locations, hole diameters and unlisted hole coordinates are generic. Only one selected motor pattern and one controller pattern are drilled. No hardware, arm clamps, landing gear, motors, propellers or electronic boards are included. These are layout references, not interchangeable replacement frame parts.",
+        "sourceUrl": "https://holybro.com/products/x500-v2-kits"
+      },
+      "specifications": [
+        {
+          "label": "Reference dimensions",
+          "value": "wheelbase: 500 mm, bodyLength: 144 mm, bodyWidth: 144 mm, plate: 2 mm, gap: 28 mm, armWidth: 16 mm, motorPitch: 16 mm"
+        },
+        {
+          "label": "Geometry scope",
+          "value": "Simplified editable reference; unlisted dimensions and fittings are design assumptions, not manufacturer CAD."
+        }
+      ]
+    }
+  },
+  {
+    "id": "holybro-x650",
+    "name": "Holybro X650 V2",
+    "description": "650 mm diagonal; 160 × 160 × 2 mm plates and Ø20 mm arms. Gap, holes and fittings are assumptions.",
+    "parameters": {
+      "armStyle": "tube",
+      "wheelbase": 650,
+      "bodyLength": 160,
+      "bodyWidth": 160,
+      "plate": 2,
+      "gap": 35,
+      "armThickness": 5,
+      "armWidth": 20,
+      "armAngle": 45,
+      "tubeWall": 1,
+      "stackPitch": 45,
+      "motorPitch": 25,
+      "hole": 3.2,
+      "shaftClearance": 8,
+      "spacerDiameter": 5,
+      "layout": "quad-x",
+      "rearAngle": 35,
+      "coaxialGap": 35
+    },
+    "catalog": {
+      "designation": "Holybro X650 V2",
+      "manufacturer": "Holybro",
+      "sourceName": "Holybro · dimensions",
+      "sourceUrl": "https://holybro.com/products/x650-kits",
+      "verifiedParameters": ["wheelbase", "bodyLength", "bodyWidth", "plate", "armWidth"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "650 mm diagonal; 160 × 160 × 2 mm plates and Ø20 mm arms. Gap, holes and fittings are assumptions.",
+        "limitations": "Lightweight frame assembly with separate plates, arms, motor pads and spacers. Z is up. The wheelbase is the diameter of the motor-centre circle (opposite motor centres); 4-arm mode permits a squashed-X angle, while 6/8 arms are evenly spaced. Named references preserve only the listed dimensions. Plate outlines, arm roots, clamp joints, spacer locations, hole diameters and unlisted hole coordinates are generic. Only one selected motor pattern and one controller pattern are drilled. No hardware, arm clamps, landing gear, motors, propellers or electronic boards are included. These are layout references, not interchangeable replacement frame parts.",
+        "sourceUrl": "https://holybro.com/products/x650-kits"
+      },
+      "specifications": [
+        {
+          "label": "Reference dimensions",
+          "value": "wheelbase: 650 mm, bodyLength: 160 mm, bodyWidth: 160 mm, plate: 2 mm, armWidth: 20 mm"
+        },
+        {
+          "label": "Geometry scope",
+          "value": "Simplified editable reference; unlisted dimensions and fittings are design assumptions, not manufacturer CAD."
+        }
+      ]
+    }
+  }
+]

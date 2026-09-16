@@ -21,7 +21,13 @@ const repository = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '.
 async function fixture() {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), 'protolab-modules-'));
   await fs.mkdir(path.join(root, 'src/core'), { recursive: true });
-  for (const name of [...SDK_FILES, 'freecad.ts', 'validation.ts', 'catalog-models.ts'])
+  for (const name of [
+    ...SDK_FILES,
+    'freecad.ts',
+    'validation.ts',
+    'catalog-models.ts',
+    'model-evidence.ts',
+  ])
     await fs.copyFile(path.join(repository, 'src/core', name), path.join(root, 'src/core', name));
   await fs.copyFile(path.join(repository, 'package.json'), path.join(root, 'package.json'));
   await addStarter(root, 'first-spacer', 20);

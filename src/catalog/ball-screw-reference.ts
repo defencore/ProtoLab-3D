@@ -68,7 +68,7 @@ function row(
       designation: `${family}${code}`,
       sourceName,
       sourceUrl: source,
-      ...(source.startsWith('references/')
+      ...(!source
         ? { sourceKind: 'attachment' as const }
         : { manufacturer: sourceName }),
       verifiedParameters: Object.keys(parameters).filter(
@@ -98,7 +98,7 @@ function row(
 }
 
 const sfu = (code: string, values: number[]) =>
-  row('SFU', code, values, 'references/sfu-dimensions.png', 'User-supplied reference');
+  row('SFU', code, values, '', 'User-supplied reference');
 
 /** Every row of the user's SFU table, including its original load and stiffness values. */
 export const sfuReferences = [
@@ -180,7 +180,7 @@ for (const reference of sfsReferences) {
   );
   reference.catalog!.alternateSourceUrls = [
     limonBallScrewReference + '#page=7',
-    'references/ball-nut-options.png',
+    '',
   ];
 }
 

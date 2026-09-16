@@ -23,7 +23,7 @@ const defaults = {
 const part: PartDefinition = {
   id: 'self-aligning-bearing',
   name: 'Self-aligning ball bearing',
-  category: 'BEARINGS',
+  category: 'BEARINGS & SEALS',
   subgroup: 'BALL BEARINGS',
   description: 'Two ball rows and a curved outer race envelope for self-aligning bearing layouts.',
   keywords: ['1201', '1205', '1206', 'spherical', 'self-aligning'],

@@ -1,0 +1,60 @@
+import type { Parameters, ParameterDefinition } from '../../core/types';
+export const defaults: Parameters = {
+  form: 'disc',
+  diameter: 80,
+  bore: 12,
+  thickness: 5,
+  depth: 30,
+};
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'form',
+    label: 'Brake type',
+    type: 'select',
+    group: 'Configuration',
+    options: [
+      { value: 'disc', label: 'Disc brake' },
+      { value: 'drum', label: 'Drum brake' },
+    ],
+  },
+  {
+    key: 'diameter',
+    label: 'Rotor / drum diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'bore',
+    label: 'Shaft bore',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'thickness',
+    label: 'Rotor thickness',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'depth',
+    label: 'Assembly depth',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+];

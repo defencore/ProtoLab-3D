@@ -1,0 +1,41 @@
+[
+  {
+    "id": "disc40",
+    "name": "Disc spring \u00b7 \u00d840 / \u00d820 mm",
+    "description": "Conical disc springs, wave washers and curved leaf springs. Editable prototype dimensions.",
+    "parameters": {
+      "form": "disc",
+      "diameter": 40,
+      "bore": 20,
+      "height": 3,
+      "thickness": 1,
+      "waves": 3
+    }
+  },
+  {
+    "id": "wave40",
+    "name": "Wave washer \u00b7 \u00d840 / \u00d820 mm",
+    "description": "Conical disc springs, wave washers and curved leaf springs. Editable prototype dimensions.",
+    "parameters": {
+      "form": "wave",
+      "diameter": 40,
+      "bore": 20,
+      "height": 3,
+      "thickness": 1,
+      "waves": 3
+    }
+  },
+  {
+    "id": "leaf120",
+    "name": "Leaf spring \u00b7 120 \u00d7 20 mm",
+    "description": "Conical disc springs, wave washers and curved leaf springs. Editable prototype dimensions.",
+    "parameters": {
+      "form": "leaf",
+      "diameter": 120,
+      "bore": 20,
+      "height": 8,
+      "thickness": 1,
+      "waves": 3
+    }
+  }
+]

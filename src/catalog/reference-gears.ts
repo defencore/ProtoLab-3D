@@ -1,8 +1,8 @@
 import type { Parameters, Preset } from '../core/types';
 
 export const gearReferenceFiles = {
-  spur: 'references/spur-pinion-options.png',
-  bevel: 'references/bevel-gear-dimensions.png',
+  spur: '',
+  bevel: '',
 };
 
 export function miniaturePinionPresets(defaults: Parameters): Preset[] {

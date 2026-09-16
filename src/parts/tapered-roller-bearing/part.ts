@@ -16,7 +16,7 @@ const defaults = { bore: 17, outer: 40, width: 13.25, elements: 12 };
 const part: PartDefinition = {
   id: 'tapered-roller-bearing',
   name: 'Tapered roller bearing',
-  category: 'BEARINGS',
+  category: 'BEARINGS & SEALS',
   subgroup: 'ROLLER BEARINGS',
   description: 'Conical rollers and tapered race envelopes using the total assembly width T.',
   keywords: ['30202', '30203', '30205', 'tapered', 'conical'],

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "parallel",
+    "name": "Reducer \u00b7 parallel shafts",
+    "description": "Editable gearbox housings, mounting holes and input/output shafts for integration. Editable prototype dimensions.",
+    "parameters": {
+      "form": "parallel",
+      "diameter": 80,
+      "length": 90,
+      "shaft": 12,
+      "shaftLength": 25,
+      "mountPitch": 60,
+      "mountHole": 5,
+      "stages": 1,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "worm",
+    "name": "Reducer \u00b7 right-angle shafts",
+    "description": "Editable gearbox housings, mounting holes and input/output shafts for integration. Editable prototype dimensions.",
+    "parameters": {
+      "form": "worm",
+      "diameter": 80,
+      "length": 90,
+      "shaft": 12,
+      "shaftLength": 25,
+      "mountPitch": 60,
+      "mountHole": 5,
+      "stages": 1,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "planetary",
+    "name": "Reducer \u00b7 coaxial shafts",
+    "description": "Editable gearbox housings, mounting holes and input/output shafts for integration. Editable prototype dimensions.",
+    "parameters": {
+      "form": "planetary",
+      "diameter": 80,
+      "length": 90,
+      "shaft": 12,
+      "shaftLength": 25,
+      "mountPitch": 60,
+      "mountHole": 5,
+      "stages": 1,
+      "detail": "envelope"
+    }
+  }
+]

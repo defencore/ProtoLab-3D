@@ -33,7 +33,7 @@ const defaults = {
 const part: PartDefinition = {
   id: 'spring-pin',
   name: 'Slotted spring pin',
-  category: 'FASTENERS',
+  category: 'FASTENERS & THREADS',
   subgroup: 'PINS & DOWELS',
   icon: 'bolt',
   complexity: 'Slotted tube',

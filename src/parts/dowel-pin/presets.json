@@ -1,0 +1,26 @@
+[
+  {
+    "id": "straight-6",
+    "name": "Cylindrical pin \u00b7 \u00d86 \u00d7 30 mm",
+    "description": "Straight and tapered locating pins with editable end chamfers. Editable prototype dimensions.",
+    "parameters": {
+      "form": "straight",
+      "diameter": 6,
+      "length": 30,
+      "taper": 0.02,
+      "chamfer": 0.4
+    }
+  },
+  {
+    "id": "taper-6",
+    "name": "Taper pin \u00b7 \u00d86 \u00d7 30 mm",
+    "description": "Straight and tapered locating pins with editable end chamfers. Editable prototype dimensions.",
+    "parameters": {
+      "form": "taper",
+      "diameter": 6,
+      "length": 30,
+      "taper": 0.02,
+      "chamfer": 0.4
+    }
+  }
+]

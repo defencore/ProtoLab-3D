@@ -17,7 +17,7 @@ import Part
 import MeshPart
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / 'public/references/st3215-hs-manufacturer.step'
+SOURCE = Path(sys.argv[1]) if len(sys.argv) > 1 else Path('st3215-hs-manufacturer.step')
 OUTPUT = ROOT / 'src/parts/servo-motor/lib/waveshare/native.json'
 SOURCE_SHA = '58e38e4dc49f97df738c5f229f9aa8a7dce64a0a1d01335486a52d53e6017e8a'
 assert hashlib.sha256(SOURCE.read_bytes()).hexdigest() == SOURCE_SHA

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "18650-2",
+    "name": "Holder \u00b7 2 \u00d7 18650",
+    "description": "Open tray for 18650, 21700, AA or AAA cells with configurable count and clearance. Editable prototype dimensions.",
+    "parameters": {
+      "diameter": 18.6,
+      "length": 65.5,
+      "count": 2,
+      "wall": 2,
+      "clearance": 0.4
+    }
+  },
+  {
+    "id": "21700-2",
+    "name": "Holder \u00b7 2 \u00d7 21700",
+    "description": "Open tray for 18650, 21700, AA or AAA cells with configurable count and clearance. Editable prototype dimensions.",
+    "parameters": {
+      "diameter": 21.5,
+      "length": 70.5,
+      "count": 2,
+      "wall": 2,
+      "clearance": 0.4
+    }
+  },
+  {
+    "id": "aa-4",
+    "name": "Holder \u00b7 4 \u00d7 AA",
+    "description": "Open tray for 18650, 21700, AA or AAA cells with configurable count and clearance. Editable prototype dimensions.",
+    "parameters": {
+      "diameter": 14.5,
+      "length": 50.5,
+      "count": 4,
+      "wall": 2,
+      "clearance": 0.4
+    }
+  },
+  {
+    "id": "aaa-2",
+    "name": "Holder \u00b7 2 \u00d7 AAA",
+    "description": "Open tray for 18650, 21700, AA or AAA cells with configurable count and clearance. Editable prototype dimensions.",
+    "parameters": {
+      "diameter": 10.5,
+      "length": 44.5,
+      "count": 2,
+      "wall": 2,
+      "clearance": 0.4
+    }
+  }
+]

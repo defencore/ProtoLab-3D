@@ -200,8 +200,8 @@ const defaults = {
 };
 const part: PartDefinition = {
   id: 'zarn-bearing',
-  name: 'Combined needle / axial roller bearing',
-  category: 'BEARINGS',
+  name: 'Combined needle and thrust roller bearing',
+  category: 'BEARINGS & SEALS',
   subgroup: 'COMBINED BEARINGS',
   icon: 'bearing',
   complexity: 'Radial needles + two thrust rows',

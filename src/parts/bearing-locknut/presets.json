@@ -1,0 +1,26 @@
+[
+  {
+    "id": "lock25",
+    "name": "Locknut and tab washer \u00b7 \u00d825 thread",
+    "description": "Slotted bearing locknut with an independent tab-lock washer. Editable prototype dimensions.",
+    "parameters": {
+      "diameter": 38,
+      "bore": 25,
+      "height": 7,
+      "washer": 42,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "lock40",
+    "name": "Locknut and tab washer \u00b7 \u00d840 thread",
+    "description": "Slotted bearing locknut with an independent tab-lock washer. Editable prototype dimensions.",
+    "parameters": {
+      "diameter": 58,
+      "bore": 40,
+      "height": 9,
+      "washer": 62,
+      "detail": "envelope"
+    }
+  }
+]

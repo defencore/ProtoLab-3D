@@ -1,0 +1,26 @@
+[
+  {
+    "id": "bobbin25",
+    "name": "Rubber bobbin \u00b7 \u00d825 \u00d7 20 mm",
+    "description": "Rubber bobbin mounts and bonded sleeve bushings with separate metal components. Editable prototype dimensions.",
+    "parameters": {
+      "form": "bobbin",
+      "diameter": 25,
+      "height": 20,
+      "bore": 6,
+      "stud": 12
+    }
+  },
+  {
+    "id": "sleeve25",
+    "name": "Rubber sleeve mount \u00b7 \u00d825",
+    "description": "Rubber bobbin mounts and bonded sleeve bushings with separate metal components. Editable prototype dimensions.",
+    "parameters": {
+      "form": "sleeve",
+      "diameter": 25,
+      "height": 20,
+      "bore": 6,
+      "stud": 12
+    }
+  }
+]

@@ -1,0 +1,67 @@
+[
+  {
+    "id": "rigid",
+    "name": "Rigid coupling",
+    "description": "Rigid, Oldham, bellows, slotted-beam and flange coupling forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "rigid",
+      "diameter": 30,
+      "bore": 8,
+      "length": 40,
+      "gap": 10,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "oldham",
+    "name": "Oldham coupling",
+    "description": "Rigid, Oldham, bellows, slotted-beam and flange coupling forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "oldham",
+      "diameter": 30,
+      "bore": 8,
+      "length": 40,
+      "gap": 10,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "bellows",
+    "name": "Bellows coupling",
+    "description": "Rigid, Oldham, bellows, slotted-beam and flange coupling forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "bellows",
+      "diameter": 30,
+      "bore": 8,
+      "length": 40,
+      "gap": 10,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "beam",
+    "name": "Beam coupling",
+    "description": "Rigid, Oldham, bellows, slotted-beam and flange coupling forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "beam",
+      "diameter": 30,
+      "bore": 8,
+      "length": 40,
+      "gap": 10,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "flange",
+    "name": "Flange coupling",
+    "description": "Rigid, Oldham, bellows, slotted-beam and flange coupling forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "flange",
+      "diameter": 30,
+      "bore": 8,
+      "length": 40,
+      "gap": 10,
+      "detail": "envelope"
+    }
+  }
+]

@@ -84,6 +84,87 @@ import module80 from './holding-electromagnet/index';
 import module81 from './tubular-solenoid/index';
 import module82 from './open-frame-solenoid/index';
 import module83 from './servo-motor/index';
+import module84 from './lifting-surface/index';
+import module85 from './stepper-motor/index';
+import module86 from './bldc-motor/index';
+import module87 from './camera/index';
+import module88 from './flight-controller/index';
+import module89 from './bec/index';
+import module90 from './esc/index';
+import module91 from './dc-dc-converter/index';
+import module92 from './raspberry-pi/index';
+import module93 from './nanopi/index';
+import module94 from './esp32/index';
+import module95 from './nrf52840/index';
+import module96 from './lora-module/index';
+import module97 from './rp-microcontroller/index';
+import module98 from './arduino/index';
+import module99 from './srs-connector/index';
+import module100 from './lipo-battery/index';
+import module101 from './li-ion-cell/index';
+import module102 from './standard-battery/index';
+import module103 from './thread-tool/index';
+import module104 from './co2-cartridge/index';
+import module105 from './srs-igniter/index';
+import module106 from './srs-retainer/index';
+import module107 from './aircraft-airframe/index';
+import module108 from './model-rocket-airframe/index';
+import module109 from './boat-hull/index';
+import module110 from './multicopter-frame/index';
+import module111 from './dowel-pin/index';
+import module112 from './t-slot-nut/index';
+import module113 from './threaded-insert/index';
+import module114 from './blind-rivet/index';
+import module115 from './shaft-key/index';
+import module116 from './shaft/index';
+import module117 from './shaft-collar/index';
+import module118 from './plain-bushing/index';
+import module119 from './o-ring/index';
+import module120 from './seal-profile/index';
+import module121 from './vibration-mount/index';
+import module122 from './shaft-coupling/index';
+import module123 from './universal-joint/index';
+import module124 from './bearing-locknut/index';
+import module125 from './disc-wave-spring/index';
+import module126 from './strut/index';
+import module127 from './gearbox/index';
+import module128 from './differential/index';
+import module129 from './belt-drive/index';
+import module130 from './chain-drive/index';
+import module131 from './cable-hardware/index';
+import module132 from './shaft-support/index';
+import module133 from './lead-screw-axis/index';
+import module134 from './linear-stage/index';
+import module135 from './industrial-motor/index';
+import module136 from './linear-actuator/index';
+import module137 from './structural-section/index';
+import module138 from './slot-profile/index';
+import module139 from './sheet-bracket/index';
+import module140 from './fluid-cylinder/index';
+import module141 from './fluid-fitting/index';
+import module142 from './fluid-valve/index';
+import module143 from './fluid-pump/index';
+import module144 from './fluid-hose/index';
+import module145 from './vacuum-cup/index';
+import module146 from './machine-hardware/index';
+import module147 from './cable-carrier/index';
+import module148 from './cooling-fan/index';
+import module149 from './heat-sink/index';
+import module150 from './din-rail/index';
+import module151 from './battery-holder/index';
+import module152 from './industrial-sensor/index';
+import module153 from './panel-control/index';
+import module154 from './electrical-connector/index';
+import module155 from './cable-gland/index';
+import module156 from './propeller/index';
+import module157 from './duct/index';
+import module158 from './landing-gear/index';
+import module159 from './robot-wheel/index';
+import module160 from './track-drive/index';
+import module161 from './brake/index';
+import module162 from './parallel-gripper/index';
+import module163 from './slewing-bearing/index';
+import module164 from './linkage-mechanism/index';
 
 export const parts = registerPartModules([
   module0,
@@ -170,4 +251,85 @@ export const parts = registerPartModules([
   module81,
   module82,
   module83,
+  module84,
+  module85,
+  module86,
+  module87,
+  module88,
+  module89,
+  module90,
+  module91,
+  module92,
+  module93,
+  module94,
+  module95,
+  module96,
+  module97,
+  module98,
+  module99,
+  module100,
+  module101,
+  module102,
+  module103,
+  module104,
+  module105,
+  module106,
+  module107,
+  module108,
+  module109,
+  module110,
+  module111,
+  module112,
+  module113,
+  module114,
+  module115,
+  module116,
+  module117,
+  module118,
+  module119,
+  module120,
+  module121,
+  module122,
+  module123,
+  module124,
+  module125,
+  module126,
+  module127,
+  module128,
+  module129,
+  module130,
+  module131,
+  module132,
+  module133,
+  module134,
+  module135,
+  module136,
+  module137,
+  module138,
+  module139,
+  module140,
+  module141,
+  module142,
+  module143,
+  module144,
+  module145,
+  module146,
+  module147,
+  module148,
+  module149,
+  module150,
+  module151,
+  module152,
+  module153,
+  module154,
+  module155,
+  module156,
+  module157,
+  module158,
+  module159,
+  module160,
+  module161,
+  module162,
+  module163,
+  module164,
 ]);

@@ -1,0 +1,2451 @@
+[
+  {
+    "id": "metric-m1x0.25",
+    "name": "M1 × 0.25",
+    "description": "1 mm major diameter · 0.25 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 1,
+      "pitchUnit": "mm",
+      "pitch": 0.25,
+      "tpi": 101.6,
+      "length": 3,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M1 × 0.25",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m1.2x0.25",
+    "name": "M1.2 × 0.25",
+    "description": "1.2 mm major diameter · 0.25 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 1.2,
+      "pitchUnit": "mm",
+      "pitch": 0.25,
+      "tpi": 101.6,
+      "length": 3,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M1.2 × 0.25",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m1.4x0.3",
+    "name": "M1.4 × 0.3",
+    "description": "1.4 mm major diameter · 0.3 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 1.4,
+      "pitchUnit": "mm",
+      "pitch": 0.3,
+      "tpi": 84.66666666666667,
+      "length": 3,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M1.4 × 0.3",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m1.6x0.35",
+    "name": "M1.6 × 0.35",
+    "description": "1.6 mm major diameter · 0.35 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 1.6,
+      "pitchUnit": "mm",
+      "pitch": 0.35,
+      "tpi": 72.57142857142857,
+      "length": 3,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M1.6 × 0.35",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m1.8x0.35",
+    "name": "M1.8 × 0.35",
+    "description": "1.8 mm major diameter · 0.35 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 1.8,
+      "pitchUnit": "mm",
+      "pitch": 0.35,
+      "tpi": 72.57142857142857,
+      "length": 3,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M1.8 × 0.35",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m2x0.4",
+    "name": "M2 × 0.4",
+    "description": "2 mm major diameter · 0.4 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 2,
+      "pitchUnit": "mm",
+      "pitch": 0.4,
+      "tpi": 63.49999999999999,
+      "length": 3.2,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M2 × 0.4",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m2.5x0.45",
+    "name": "M2.5 × 0.45",
+    "description": "2.5 mm major diameter · 0.45 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 2.5,
+      "pitchUnit": "mm",
+      "pitch": 0.45,
+      "tpi": 56.44444444444444,
+      "length": 3.6,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M2.5 × 0.45",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m3x0.5",
+    "name": "M3 × 0.5",
+    "description": "3 mm major diameter · 0.5 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 3,
+      "pitchUnit": "mm",
+      "pitch": 0.5,
+      "tpi": 50.8,
+      "length": 4.0,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M3 × 0.5",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m3.5x0.6",
+    "name": "M3.5 × 0.6",
+    "description": "3.5 mm major diameter · 0.6 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 3.5,
+      "pitchUnit": "mm",
+      "pitch": 0.6,
+      "tpi": 42.333333333333336,
+      "length": 4.8,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M3.5 × 0.6",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m4x0.7",
+    "name": "M4 × 0.7",
+    "description": "4 mm major diameter · 0.7 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 4,
+      "pitchUnit": "mm",
+      "pitch": 0.7,
+      "tpi": 36.285714285714285,
+      "length": 5.6,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M4 × 0.7",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m5x0.8",
+    "name": "M5 × 0.8",
+    "description": "5 mm major diameter · 0.8 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 5,
+      "pitchUnit": "mm",
+      "pitch": 0.8,
+      "tpi": 31.749999999999996,
+      "length": 6.4,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M5 × 0.8",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m6x1",
+    "name": "M6 × 1",
+    "description": "6 mm major diameter · 1 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 6,
+      "pitchUnit": "mm",
+      "pitch": 1,
+      "tpi": 25.4,
+      "length": 8,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M6 × 1",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m8x1.25",
+    "name": "M8 × 1.25",
+    "description": "8 mm major diameter · 1.25 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 8,
+      "pitchUnit": "mm",
+      "pitch": 1.25,
+      "tpi": 20.32,
+      "length": 10.0,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M8 × 1.25",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m10x1.5",
+    "name": "M10 × 1.5",
+    "description": "10 mm major diameter · 1.5 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 10,
+      "pitchUnit": "mm",
+      "pitch": 1.5,
+      "tpi": 16.933333333333334,
+      "length": 12.0,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M10 × 1.5",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m12x1.75",
+    "name": "M12 × 1.75",
+    "description": "12 mm major diameter · 1.75 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 12,
+      "pitchUnit": "mm",
+      "pitch": 1.75,
+      "tpi": 14.514285714285714,
+      "length": 14.0,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M12 × 1.75",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m14x2",
+    "name": "M14 × 2",
+    "description": "14 mm major diameter · 2 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 14,
+      "pitchUnit": "mm",
+      "pitch": 2,
+      "tpi": 12.7,
+      "length": 16,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M14 × 2",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m16x2",
+    "name": "M16 × 2",
+    "description": "16 mm major diameter · 2 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 16,
+      "pitchUnit": "mm",
+      "pitch": 2,
+      "tpi": 12.7,
+      "length": 16,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M16 × 2",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m18x2.5",
+    "name": "M18 × 2.5",
+    "description": "18 mm major diameter · 2.5 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 18,
+      "pitchUnit": "mm",
+      "pitch": 2.5,
+      "tpi": 10.16,
+      "length": 20.0,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M18 × 2.5",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m20x2.5",
+    "name": "M20 × 2.5",
+    "description": "20 mm major diameter · 2.5 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 20,
+      "pitchUnit": "mm",
+      "pitch": 2.5,
+      "tpi": 10.16,
+      "length": 20.0,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M20 × 2.5",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m22x2.5",
+    "name": "M22 × 2.5",
+    "description": "22 mm major diameter · 2.5 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 22,
+      "pitchUnit": "mm",
+      "pitch": 2.5,
+      "tpi": 10.16,
+      "length": 20.0,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M22 × 2.5",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m24x3",
+    "name": "M24 × 3",
+    "description": "24 mm major diameter · 3 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 24,
+      "pitchUnit": "mm",
+      "pitch": 3,
+      "tpi": 8.466666666666667,
+      "length": 24,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M24 × 3",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m27x3",
+    "name": "M27 × 3",
+    "description": "27 mm major diameter · 3 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 27,
+      "pitchUnit": "mm",
+      "pitch": 3,
+      "tpi": 8.466666666666667,
+      "length": 24,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M27 × 3",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m30x3.5",
+    "name": "M30 × 3.5",
+    "description": "30 mm major diameter · 3.5 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 30,
+      "pitchUnit": "mm",
+      "pitch": 3.5,
+      "tpi": 7.257142857142857,
+      "length": 24,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M30 × 3.5",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m36x4",
+    "name": "M36 × 4",
+    "description": "36 mm major diameter · 4 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 36,
+      "pitchUnit": "mm",
+      "pitch": 4,
+      "tpi": 6.35,
+      "length": 24,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M36 × 4",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m42x4.5",
+    "name": "M42 × 4.5",
+    "description": "42 mm major diameter · 4.5 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 42,
+      "pitchUnit": "mm",
+      "pitch": 4.5,
+      "tpi": 5.644444444444444,
+      "length": 24,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M42 × 4.5",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m48x5",
+    "name": "M48 × 5",
+    "description": "48 mm major diameter · 5 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 48,
+      "pitchUnit": "mm",
+      "pitch": 5,
+      "tpi": 5.08,
+      "length": 24,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M48 × 5",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m60x5.5",
+    "name": "M60 × 5.5",
+    "description": "60 mm major diameter · 5.5 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 60,
+      "pitchUnit": "mm",
+      "pitch": 5.5,
+      "tpi": 4.618181818181818,
+      "length": 24,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M60 × 5.5",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m68x6",
+    "name": "M68 × 6",
+    "description": "68 mm major diameter · 6 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 68,
+      "pitchUnit": "mm",
+      "pitch": 6,
+      "tpi": 4.233333333333333,
+      "length": 24,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M68 × 6",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m2x0.25-·-fine",
+    "name": "M2 × 0.25 · fine",
+    "description": "2 mm major diameter · 0.25 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 2,
+      "pitchUnit": "mm",
+      "pitch": 0.25,
+      "tpi": 101.6,
+      "length": 3,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M2 × 0.25 · fine",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m3x0.35-·-fine",
+    "name": "M3 × 0.35 · fine",
+    "description": "3 mm major diameter · 0.35 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 3,
+      "pitchUnit": "mm",
+      "pitch": 0.35,
+      "tpi": 72.57142857142857,
+      "length": 3,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M3 × 0.35 · fine",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m4x0.5-·-fine",
+    "name": "M4 × 0.5 · fine",
+    "description": "4 mm major diameter · 0.5 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 4,
+      "pitchUnit": "mm",
+      "pitch": 0.5,
+      "tpi": 50.8,
+      "length": 4.0,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M4 × 0.5 · fine",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m5x0.5-·-fine",
+    "name": "M5 × 0.5 · fine",
+    "description": "5 mm major diameter · 0.5 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 5,
+      "pitchUnit": "mm",
+      "pitch": 0.5,
+      "tpi": 50.8,
+      "length": 4.0,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M5 × 0.5 · fine",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m6x0.5-·-fine",
+    "name": "M6 × 0.5 · fine",
+    "description": "6 mm major diameter · 0.5 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 6,
+      "pitchUnit": "mm",
+      "pitch": 0.5,
+      "tpi": 50.8,
+      "length": 4.0,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M6 × 0.5 · fine",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m6x0.75-·-fine",
+    "name": "M6 × 0.75 · fine",
+    "description": "6 mm major diameter · 0.75 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 6,
+      "pitchUnit": "mm",
+      "pitch": 0.75,
+      "tpi": 33.86666666666667,
+      "length": 6.0,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M6 × 0.75 · fine",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m8x1-·-fine",
+    "name": "M8 × 1 · fine",
+    "description": "8 mm major diameter · 1 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 8,
+      "pitchUnit": "mm",
+      "pitch": 1,
+      "tpi": 25.4,
+      "length": 8,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M8 × 1 · fine",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m10x1-·-fine",
+    "name": "M10 × 1 · fine",
+    "description": "10 mm major diameter · 1 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 10,
+      "pitchUnit": "mm",
+      "pitch": 1,
+      "tpi": 25.4,
+      "length": 8,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M10 × 1 · fine",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m10x1.25-·-fine",
+    "name": "M10 × 1.25 · fine",
+    "description": "10 mm major diameter · 1.25 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 10,
+      "pitchUnit": "mm",
+      "pitch": 1.25,
+      "tpi": 20.32,
+      "length": 10.0,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M10 × 1.25 · fine",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m12x1-·-fine",
+    "name": "M12 × 1 · fine",
+    "description": "12 mm major diameter · 1 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 12,
+      "pitchUnit": "mm",
+      "pitch": 1,
+      "tpi": 25.4,
+      "length": 8,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M12 × 1 · fine",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m12x1.5-·-fine",
+    "name": "M12 × 1.5 · fine",
+    "description": "12 mm major diameter · 1.5 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 12,
+      "pitchUnit": "mm",
+      "pitch": 1.5,
+      "tpi": 16.933333333333334,
+      "length": 12.0,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M12 × 1.5 · fine",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m16x1.5-·-fine",
+    "name": "M16 × 1.5 · fine",
+    "description": "16 mm major diameter · 1.5 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 16,
+      "pitchUnit": "mm",
+      "pitch": 1.5,
+      "tpi": 16.933333333333334,
+      "length": 12.0,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M16 × 1.5 · fine",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m20x1.5-·-fine",
+    "name": "M20 × 1.5 · fine",
+    "description": "20 mm major diameter · 1.5 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 20,
+      "pitchUnit": "mm",
+      "pitch": 1.5,
+      "tpi": 16.933333333333334,
+      "length": 12.0,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M20 × 1.5 · fine",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread"
+      }
+    }
+  },
+  {
+    "id": "metric-m24x2-·-fine",
+    "name": "M24 × 2 · fine",
+    "description": "24 mm major diameter · 2 mm pitch",
+    "parameters": {
+      "family": "metric",
+      "diameter": 24,
+      "pitchUnit": "mm",
+      "pitch": 2,
+      "tpi": 12.7,
+      "length": 16,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "M24 × 2 · fine",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread"
+      }
+    }
+  },
+  {
+    "id": "unc-no2-56-unc",
+    "name": "#2-56 UNC",
+    "description": "2.1844 mm major diameter · 56 TPI",
+    "parameters": {
+      "family": "unc",
+      "diameter": 2.1844,
+      "pitchUnit": "tpi",
+      "pitch": 0.45357142857142857,
+      "tpi": 56,
+      "length": 3.6286,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "#2-56 UNC",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc"
+      }
+    }
+  },
+  {
+    "id": "unc-no4-40-unc",
+    "name": "#4-40 UNC",
+    "description": "2.8448 mm major diameter · 40 TPI",
+    "parameters": {
+      "family": "unc",
+      "diameter": 2.8448,
+      "pitchUnit": "tpi",
+      "pitch": 0.635,
+      "tpi": 40,
+      "length": 5.08,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "#4-40 UNC",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc"
+      }
+    }
+  },
+  {
+    "id": "unc-no6-32-unc",
+    "name": "#6-32 UNC",
+    "description": "3.5052 mm major diameter · 32 TPI",
+    "parameters": {
+      "family": "unc",
+      "diameter": 3.5052,
+      "pitchUnit": "tpi",
+      "pitch": 0.79375,
+      "tpi": 32,
+      "length": 6.35,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "#6-32 UNC",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc"
+      }
+    }
+  },
+  {
+    "id": "unc-no8-32-unc",
+    "name": "#8-32 UNC",
+    "description": "4.1656 mm major diameter · 32 TPI",
+    "parameters": {
+      "family": "unc",
+      "diameter": 4.1656,
+      "pitchUnit": "tpi",
+      "pitch": 0.79375,
+      "tpi": 32,
+      "length": 6.35,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "#8-32 UNC",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc"
+      }
+    }
+  },
+  {
+    "id": "unc-no10-24-unc",
+    "name": "#10-24 UNC",
+    "description": "4.826 mm major diameter · 24 TPI",
+    "parameters": {
+      "family": "unc",
+      "diameter": 4.826,
+      "pitchUnit": "tpi",
+      "pitch": 1.0583333333333333,
+      "tpi": 24,
+      "length": 8.4667,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "#10-24 UNC",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc"
+      }
+    }
+  },
+  {
+    "id": "unc-1-4-20-unc",
+    "name": "1/4″-20 UNC",
+    "description": "6.35 mm major diameter · 20 TPI",
+    "parameters": {
+      "family": "unc",
+      "diameter": 6.35,
+      "pitchUnit": "tpi",
+      "pitch": 1.27,
+      "tpi": 20,
+      "length": 10.16,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "1/4″-20 UNC",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc"
+      }
+    }
+  },
+  {
+    "id": "unc-5-16-18-unc",
+    "name": "5/16″-18 UNC",
+    "description": "7.9375 mm major diameter · 18 TPI",
+    "parameters": {
+      "family": "unc",
+      "diameter": 7.9375,
+      "pitchUnit": "tpi",
+      "pitch": 1.411111111111111,
+      "tpi": 18,
+      "length": 11.2889,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "5/16″-18 UNC",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc"
+      }
+    }
+  },
+  {
+    "id": "unc-3-8-16-unc",
+    "name": "3/8″-16 UNC",
+    "description": "9.525 mm major diameter · 16 TPI",
+    "parameters": {
+      "family": "unc",
+      "diameter": 9.525,
+      "pitchUnit": "tpi",
+      "pitch": 1.5875,
+      "tpi": 16,
+      "length": 12.7,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "3/8″-16 UNC",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc"
+      }
+    }
+  },
+  {
+    "id": "unc-1-2-13-unc",
+    "name": "1/2″-13 UNC",
+    "description": "12.7 mm major diameter · 13 TPI",
+    "parameters": {
+      "family": "unc",
+      "diameter": 12.7,
+      "pitchUnit": "tpi",
+      "pitch": 1.9538461538461538,
+      "tpi": 13,
+      "length": 15.6308,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "1/2″-13 UNC",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc"
+      }
+    }
+  },
+  {
+    "id": "unc-5-8-11-unc",
+    "name": "5/8″-11 UNC",
+    "description": "15.875 mm major diameter · 11 TPI",
+    "parameters": {
+      "family": "unc",
+      "diameter": 15.875,
+      "pitchUnit": "tpi",
+      "pitch": 2.309090909090909,
+      "tpi": 11,
+      "length": 18.4727,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "5/8″-11 UNC",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc"
+      }
+    }
+  },
+  {
+    "id": "unc-3-4-10-unc",
+    "name": "3/4″-10 UNC",
+    "description": "19.05 mm major diameter · 10 TPI",
+    "parameters": {
+      "family": "unc",
+      "diameter": 19.05,
+      "pitchUnit": "tpi",
+      "pitch": 2.54,
+      "tpi": 10,
+      "length": 20.32,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "3/4″-10 UNC",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc"
+      }
+    }
+  },
+  {
+    "id": "unc-1-8-unc",
+    "name": "1″-8 UNC",
+    "description": "25.4 mm major diameter · 8 TPI",
+    "parameters": {
+      "family": "unc",
+      "diameter": 25.4,
+      "pitchUnit": "tpi",
+      "pitch": 3.175,
+      "tpi": 8,
+      "length": 24,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "1″-8 UNC",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc"
+      }
+    }
+  },
+  {
+    "id": "unf-no0-80-unf",
+    "name": "#0-80 UNF",
+    "description": "1.524 mm major diameter · 80 TPI",
+    "parameters": {
+      "family": "unf",
+      "diameter": 1.524,
+      "pitchUnit": "tpi",
+      "pitch": 0.3175,
+      "tpi": 80,
+      "length": 3,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "#0-80 UNF",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf"
+      }
+    }
+  },
+  {
+    "id": "unf-no2-64-unf",
+    "name": "#2-64 UNF",
+    "description": "2.1844 mm major diameter · 64 TPI",
+    "parameters": {
+      "family": "unf",
+      "diameter": 2.1844,
+      "pitchUnit": "tpi",
+      "pitch": 0.396875,
+      "tpi": 64,
+      "length": 3.175,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "#2-64 UNF",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf"
+      }
+    }
+  },
+  {
+    "id": "unf-no4-48-unf",
+    "name": "#4-48 UNF",
+    "description": "2.8448 mm major diameter · 48 TPI",
+    "parameters": {
+      "family": "unf",
+      "diameter": 2.8448,
+      "pitchUnit": "tpi",
+      "pitch": 0.5291666666666667,
+      "tpi": 48,
+      "length": 4.2333,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "#4-48 UNF",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf"
+      }
+    }
+  },
+  {
+    "id": "unf-no6-40-unf",
+    "name": "#6-40 UNF",
+    "description": "3.5052 mm major diameter · 40 TPI",
+    "parameters": {
+      "family": "unf",
+      "diameter": 3.5052,
+      "pitchUnit": "tpi",
+      "pitch": 0.635,
+      "tpi": 40,
+      "length": 5.08,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "#6-40 UNF",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf"
+      }
+    }
+  },
+  {
+    "id": "unf-no8-36-unf",
+    "name": "#8-36 UNF",
+    "description": "4.1656 mm major diameter · 36 TPI",
+    "parameters": {
+      "family": "unf",
+      "diameter": 4.1656,
+      "pitchUnit": "tpi",
+      "pitch": 0.7055555555555555,
+      "tpi": 36,
+      "length": 5.6444,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "#8-36 UNF",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf"
+      }
+    }
+  },
+  {
+    "id": "unf-no10-32-unf",
+    "name": "#10-32 UNF",
+    "description": "4.826 mm major diameter · 32 TPI",
+    "parameters": {
+      "family": "unf",
+      "diameter": 4.826,
+      "pitchUnit": "tpi",
+      "pitch": 0.79375,
+      "tpi": 32,
+      "length": 6.35,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "#10-32 UNF",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf"
+      }
+    }
+  },
+  {
+    "id": "unf-1-4-28-unf",
+    "name": "1/4″-28 UNF",
+    "description": "6.35 mm major diameter · 28 TPI",
+    "parameters": {
+      "family": "unf",
+      "diameter": 6.35,
+      "pitchUnit": "tpi",
+      "pitch": 0.9071428571428571,
+      "tpi": 28,
+      "length": 7.2571,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "1/4″-28 UNF",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf"
+      }
+    }
+  },
+  {
+    "id": "unf-5-16-24-unf",
+    "name": "5/16″-24 UNF",
+    "description": "7.9375 mm major diameter · 24 TPI",
+    "parameters": {
+      "family": "unf",
+      "diameter": 7.9375,
+      "pitchUnit": "tpi",
+      "pitch": 1.0583333333333333,
+      "tpi": 24,
+      "length": 8.4667,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "5/16″-24 UNF",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf"
+      }
+    }
+  },
+  {
+    "id": "unf-3-8-24-unf",
+    "name": "3/8″-24 UNF",
+    "description": "9.525 mm major diameter · 24 TPI",
+    "parameters": {
+      "family": "unf",
+      "diameter": 9.525,
+      "pitchUnit": "tpi",
+      "pitch": 1.0583333333333333,
+      "tpi": 24,
+      "length": 8.4667,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "3/8″-24 UNF",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf"
+      }
+    }
+  },
+  {
+    "id": "unf-1-2-20-unf",
+    "name": "1/2″-20 UNF",
+    "description": "12.7 mm major diameter · 20 TPI",
+    "parameters": {
+      "family": "unf",
+      "diameter": 12.7,
+      "pitchUnit": "tpi",
+      "pitch": 1.27,
+      "tpi": 20,
+      "length": 10.16,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "1/2″-20 UNF",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf"
+      }
+    }
+  },
+  {
+    "id": "unf-3-4-16-unf",
+    "name": "3/4″-16 UNF",
+    "description": "19.05 mm major diameter · 16 TPI",
+    "parameters": {
+      "family": "unf",
+      "diameter": 19.05,
+      "pitchUnit": "tpi",
+      "pitch": 1.5875,
+      "tpi": 16,
+      "length": 12.7,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "3/4″-16 UNF",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf"
+      }
+    }
+  },
+  {
+    "id": "unf-1-12-unf",
+    "name": "1″-12 UNF",
+    "description": "25.4 mm major diameter · 12 TPI",
+    "parameters": {
+      "family": "unf",
+      "diameter": 25.4,
+      "pitchUnit": "tpi",
+      "pitch": 2.1166666666666667,
+      "tpi": 12,
+      "length": 16.9333,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "1″-12 UNF",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf"
+      }
+    }
+  },
+  {
+    "id": "unef-1-4-32-unef",
+    "name": "1/4″-32 UNEF",
+    "description": "6.35 mm major diameter · 32 TPI",
+    "parameters": {
+      "family": "unef",
+      "diameter": 6.35,
+      "pitchUnit": "tpi",
+      "pitch": 0.79375,
+      "tpi": 32,
+      "length": 6.35,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "1/4″-32 UNEF",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadart-unef",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadart-unef"
+      }
+    }
+  },
+  {
+    "id": "unef-3-8-32-unef",
+    "name": "3/8″-32 UNEF",
+    "description": "9.525 mm major diameter · 32 TPI",
+    "parameters": {
+      "family": "unef",
+      "diameter": 9.525,
+      "pitchUnit": "tpi",
+      "pitch": 0.79375,
+      "tpi": 32,
+      "length": 6.35,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "3/8″-32 UNEF",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadart-unef",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadart-unef"
+      }
+    }
+  },
+  {
+    "id": "unef-1-2-28-unef",
+    "name": "1/2″-28 UNEF",
+    "description": "12.7 mm major diameter · 28 TPI",
+    "parameters": {
+      "family": "unef",
+      "diameter": 12.7,
+      "pitchUnit": "tpi",
+      "pitch": 0.9071428571428571,
+      "tpi": 28,
+      "length": 7.2571,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "1/2″-28 UNEF",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadart-unef",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadart-unef"
+      }
+    }
+  },
+  {
+    "id": "unef-3-4-20-unef",
+    "name": "3/4″-20 UNEF",
+    "description": "19.05 mm major diameter · 20 TPI",
+    "parameters": {
+      "family": "unef",
+      "diameter": 19.05,
+      "pitchUnit": "tpi",
+      "pitch": 1.27,
+      "tpi": 20,
+      "length": 10.16,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "3/4″-20 UNEF",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadart-unef",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadart-unef"
+      }
+    }
+  },
+  {
+    "id": "acme-1-4-16-acme-·-basic",
+    "name": "1/4″-16 ACME · basic",
+    "description": "6.35 mm major diameter · 16 TPI",
+    "parameters": {
+      "family": "acme",
+      "diameter": 6.35,
+      "pitchUnit": "tpi",
+      "pitch": 1.5875,
+      "tpi": 16,
+      "length": 12.7,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "1/4″-16 ACME · basic",
+      "sourceName": "Roton — thread size reference",
+      "sourceUrl": "https://www.roton.com/product-search/",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.roton.com/product-search/"
+      }
+    }
+  },
+  {
+    "id": "acme-3-8-12-acme-·-basic",
+    "name": "3/8″-12 ACME · basic",
+    "description": "9.525 mm major diameter · 12 TPI",
+    "parameters": {
+      "family": "acme",
+      "diameter": 9.525,
+      "pitchUnit": "tpi",
+      "pitch": 2.1166666666666667,
+      "tpi": 12,
+      "length": 16.9333,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "3/8″-12 ACME · basic",
+      "sourceName": "Roton — thread size reference",
+      "sourceUrl": "https://www.roton.com/product-search/",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.roton.com/product-search/"
+      }
+    }
+  },
+  {
+    "id": "acme-1-2-10-acme-·-basic",
+    "name": "1/2″-10 ACME · basic",
+    "description": "12.7 mm major diameter · 10 TPI",
+    "parameters": {
+      "family": "acme",
+      "diameter": 12.7,
+      "pitchUnit": "tpi",
+      "pitch": 2.54,
+      "tpi": 10,
+      "length": 20.32,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "1/2″-10 ACME · basic",
+      "sourceName": "Roton — thread size reference",
+      "sourceUrl": "https://www.roton.com/product-search/",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.roton.com/product-search/"
+      }
+    }
+  },
+  {
+    "id": "acme-1-2-8-acme-·-basic",
+    "name": "1/2″-8 ACME · basic",
+    "description": "12.7 mm major diameter · 8 TPI",
+    "parameters": {
+      "family": "acme",
+      "diameter": 12.7,
+      "pitchUnit": "tpi",
+      "pitch": 3.175,
+      "tpi": 8,
+      "length": 24,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "1/2″-8 ACME · basic",
+      "sourceName": "Roton — thread size reference",
+      "sourceUrl": "https://www.roton.com/product-search/",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.roton.com/product-search/"
+      }
+    }
+  },
+  {
+    "id": "tr-tr10x2-·-basic",
+    "name": "Tr10 × 2 · basic",
+    "description": "10 mm major diameter · 2 mm pitch",
+    "parameters": {
+      "family": "tr",
+      "diameter": 10,
+      "pitchUnit": "mm",
+      "pitch": 2,
+      "tpi": 12.7,
+      "length": 16,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "Tr10 × 2 · basic",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/thread-standards/trapezoidal-thread-standard-din-103",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/thread-standards/trapezoidal-thread-standard-din-103"
+      }
+    }
+  },
+  {
+    "id": "tr-tr12x3-·-basic",
+    "name": "Tr12 × 3 · basic",
+    "description": "12 mm major diameter · 3 mm pitch",
+    "parameters": {
+      "family": "tr",
+      "diameter": 12,
+      "pitchUnit": "mm",
+      "pitch": 3,
+      "tpi": 8.466666666666667,
+      "length": 24,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "Tr12 × 3 · basic",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/thread-standards/trapezoidal-thread-standard-din-103",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/thread-standards/trapezoidal-thread-standard-din-103"
+      }
+    }
+  },
+  {
+    "id": "tr-tr16x4-·-basic",
+    "name": "Tr16 × 4 · basic",
+    "description": "16 mm major diameter · 4 mm pitch",
+    "parameters": {
+      "family": "tr",
+      "diameter": 16,
+      "pitchUnit": "mm",
+      "pitch": 4,
+      "tpi": 6.35,
+      "length": 24,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "Tr16 × 4 · basic",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/thread-standards/trapezoidal-thread-standard-din-103",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/thread-standards/trapezoidal-thread-standard-din-103"
+      }
+    }
+  },
+  {
+    "id": "tr-tr20x4-·-basic",
+    "name": "Tr20 × 4 · basic",
+    "description": "20 mm major diameter · 4 mm pitch",
+    "parameters": {
+      "family": "tr",
+      "diameter": 20,
+      "pitchUnit": "mm",
+      "pitch": 4,
+      "tpi": 6.35,
+      "length": 24,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "Tr20 × 4 · basic",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/thread-standards/trapezoidal-thread-standard-din-103",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/thread-standards/trapezoidal-thread-standard-din-103"
+      }
+    }
+  },
+  {
+    "id": "tr-tr30x6-·-basic",
+    "name": "Tr30 × 6 · basic",
+    "description": "30 mm major diameter · 6 mm pitch",
+    "parameters": {
+      "family": "tr",
+      "diameter": 30,
+      "pitchUnit": "mm",
+      "pitch": 6,
+      "tpi": 4.233333333333333,
+      "length": 24,
+      "handedness": "right",
+      "starts": 1,
+      "clearance": 0,
+      "angle": 60,
+      "depth": 0.5,
+      "crest": 0.125
+    },
+    "catalog": {
+      "designation": "Tr30 × 6 · basic",
+      "sourceName": "BAER — thread size table",
+      "sourceUrl": "https://www.gewindebohrer.de/en/service/thread-standards/trapezoidal-thread-standard-din-103",
+      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
+        "limitations": "Basic nominal profile only. Flat roots; no fit class, rounded root, runout or pipe taper. Tr/ACME omit standard root clearance. Length, starts, handedness and radial adjustment are user design choices.",
+        "sourceUrl": "https://www.gewindebohrer.de/en/service/thread-standards/trapezoidal-thread-standard-din-103"
+      }
+    }
+  }
+]

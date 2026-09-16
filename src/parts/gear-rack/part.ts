@@ -46,8 +46,8 @@ const defaults = {
 const part: PartDefinition = {
   id: 'gear-rack',
   name: 'Straight gear rack',
-  category: 'MOTION',
-  subgroup: 'GEARS & RACKS',
+  category: 'LINEAR MOTION',
+  subgroup: 'GEAR RACKS',
   icon: 'gear',
   complexity: 'Linear motion',
   description: 'A rack with straight pressure-angle tooth flanks for an involute spur pinion.',

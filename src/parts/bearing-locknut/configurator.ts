@@ -1,0 +1,60 @@
+import type { Parameters, ParameterDefinition } from '../../core/types';
+export const defaults: Parameters = {
+  diameter: 38,
+  bore: 25,
+  height: 7,
+  washer: 42,
+  detail: 'envelope',
+};
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'diameter',
+    label: 'Nut outside diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'bore',
+    label: 'Nominal shaft thread diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'height',
+    label: 'Nut thickness',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'washer',
+    label: 'Washer outside diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'detail',
+    label: 'Model detail',
+    type: 'select',
+    group: 'Configuration',
+    options: [
+      { value: 'envelope', label: 'Envelope \u00b7 assembly fit' },
+      { value: 'detailed', label: 'Detailed \u00b7 visible construction' },
+    ],
+  },
+];

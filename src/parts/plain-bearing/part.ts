@@ -39,7 +39,7 @@ function profiles(p: Parameters): TurnedProfile[] {
 const part: PartDefinition = {
   id: 'plain-bearing',
   name: 'Spherical plain bearing',
-  category: 'BEARINGS',
+  category: 'BEARINGS & SEALS',
   subgroup: 'PLAIN BEARINGS',
   icon: 'bearing',
   complexity: 'Spherical sliding seat',

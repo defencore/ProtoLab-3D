@@ -44,8 +44,8 @@ const defaults = {
 };
 const part: PartDefinition = {
   id: 'e-ring',
-  name: 'E-ring / three-lug retaining washer',
-  category: 'FASTENERS',
+  name: 'E-type retaining ring',
+  category: 'FASTENERS & THREADS',
   subgroup: 'RETAINING RINGS',
   icon: 'bearing',
   complexity: 'Stamped open profile',

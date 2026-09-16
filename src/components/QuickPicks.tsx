@@ -116,12 +116,14 @@ export default function QuickPicks({ part, parameters, presetId, onSelect, onBro
                   .join(' · ') || preset.catalog?.sourceName}
               </small>
             </button>
-            <a href={preset.catalog!.sourceUrl} target="_blank" rel="noreferrer">
-              {preset.catalog!.sourceKind === 'attachment'
-                ? 'Reference drawing'
-                : `${preset.catalog!.sourceName} listing`}
-              <ExternalLink size={11} />
-            </a>
+            {preset.catalog?.sourceUrl && (
+              <a href={preset.catalog.sourceUrl} target="_blank" rel="noreferrer">
+                {preset.catalog!.sourceKind === 'attachment'
+                  ? 'Reference drawing'
+                  : `${preset.catalog!.sourceName} listing`}
+                <ExternalLink size={11} />
+              </a>
+            )}
           </article>
         ))}
         {!matches.length && (

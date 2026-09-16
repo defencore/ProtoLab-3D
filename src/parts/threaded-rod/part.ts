@@ -27,8 +27,8 @@ const expanded = (p: Parameters): Parameters => ({
 });
 const part: PartDefinition = {
   id: 'threaded-rod',
-  name: 'Threaded rod / stud',
-  category: 'FASTENERS',
+  name: 'Threaded rod and stud',
+  category: 'FASTENERS & THREADS',
   subgroup: 'STUDS & RODS',
   icon: 'bolt',
   complexity: 'Continuous metric thread',

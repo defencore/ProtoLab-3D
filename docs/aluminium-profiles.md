@@ -1,6 +1,6 @@
 # Aluminium profiles
 
-Open **STRUCTURAL → ALUMINIUM PROFILES → Aluminium extrusion / T-slot profile**. Select a **Profile section**, then a **Cut length**. **Custom dimensions** exposes the cut length, slot dimensions, bore sizes and internal cavity settings. Changing the section resets its cross-section dimensions while retaining the current length. **Top** camera view looks down the extrusion axis to inspect the cross section.
+Open **STRUCTURES → ALUMINIUM PROFILES → Aluminium extrusion / T-slot profile**. Select a **Profile section**, then a **Cut length**. **Custom dimensions** exposes the cut length, slot dimensions, bore sizes and internal cavity settings. Changing the section resets its cross-section dimensions while retaining the current length. **Top** camera view looks down the extrusion axis to inspect the cross section.
 
 ![Modelled aluminium profile cross sections](aluminium-profile-sections.svg)
 

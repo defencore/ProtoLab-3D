@@ -1,0 +1,28 @@
+[
+  {
+    "id": "100",
+    "name": "Electric actuator \u00b7 100 mm stroke",
+    "description": "Motor-and-screw actuator envelope with adjustable stroke and rod extension. Editable prototype dimensions.",
+    "parameters": {
+      "diameter": 30,
+      "bodyLength": 180,
+      "rod": 12,
+      "stroke": 100,
+      "extension": 50,
+      "motor": 40
+    }
+  },
+  {
+    "id": "200",
+    "name": "Electric actuator \u00b7 200 mm stroke",
+    "description": "Motor-and-screw actuator envelope with adjustable stroke and rod extension. Editable prototype dimensions.",
+    "parameters": {
+      "diameter": 30,
+      "bodyLength": 300,
+      "rod": 12,
+      "stroke": 200,
+      "extension": 100,
+      "motor": 40
+    }
+  }
+]

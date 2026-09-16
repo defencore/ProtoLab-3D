@@ -15,8 +15,8 @@ import {
 const defaults = { bore: 6, outer: 10, width: 8, elements: 12, seals: 'open' };
 const part: PartDefinition = {
   id: 'needle-bearing',
-  name: 'Drawn cup needle bearing',
-  category: 'BEARINGS',
+  name: 'Drawn-cup needle roller bearing',
+  category: 'BEARINGS & SEALS',
   subgroup: 'ROLLER BEARINGS',
   description:
     'Thin drawn cup with open ends or two retained lip seals; the shaft acts as the inner race.',

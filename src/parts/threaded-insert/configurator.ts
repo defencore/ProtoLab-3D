@@ -1,0 +1,73 @@
+import type { Parameters, ParameterDefinition } from '../../core/types';
+export const defaults: Parameters = {
+  form: 'heat',
+  diameter: 6,
+  bore: 3,
+  length: 6,
+  flange: 8,
+  detail: 'envelope',
+};
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'form',
+    label: 'Insert form',
+    type: 'select',
+    group: 'Configuration',
+    options: [
+      { value: 'heat', label: 'Heat-set insert' },
+      { value: 'press', label: 'Flanged press-fit insert' },
+      { value: 'rivnut', label: 'Rivet nut' },
+      { value: 'clinch', label: 'Self-clinching nut' },
+    ],
+  },
+  {
+    key: 'diameter',
+    label: 'Body diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'bore',
+    label: 'Thread nominal diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'length',
+    label: 'Body length',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'flange',
+    label: 'Flange diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'detail',
+    label: 'Model detail',
+    type: 'select',
+    group: 'Configuration',
+    options: [
+      { value: 'envelope', label: 'Envelope \u00b7 assembly fit' },
+      { value: 'detailed', label: 'Detailed \u00b7 visible construction' },
+    ],
+  },
+];

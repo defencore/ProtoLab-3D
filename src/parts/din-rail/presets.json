@@ -1,0 +1,44 @@
+[
+  {
+    "id": "rail35",
+    "name": "Top-hat rail \u00b7 35 \u00d7 7.5 mm",
+    "description": "Top-hat rail with adjustable section and slotted mounting holes. Editable prototype dimensions.",
+    "parameters": {
+      "width": 35,
+      "height": 7.5,
+      "length": 150,
+      "wall": 1,
+      "pitch": 25,
+      "hole": 5.2,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "rail35deep",
+    "name": "Top-hat rail \u00b7 35 \u00d7 15 mm",
+    "description": "Top-hat rail with adjustable section and slotted mounting holes. Editable prototype dimensions.",
+    "parameters": {
+      "width": 35,
+      "height": 15,
+      "length": 150,
+      "wall": 1,
+      "pitch": 25,
+      "hole": 5.2,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "rail15",
+    "name": "Mini top-hat rail \u00b7 15 mm",
+    "description": "Top-hat rail with adjustable section and slotted mounting holes. Editable prototype dimensions.",
+    "parameters": {
+      "width": 15,
+      "height": 5.5,
+      "length": 150,
+      "wall": 1,
+      "pitch": 25,
+      "hole": 3,
+      "detail": "envelope"
+    }
+  }
+]

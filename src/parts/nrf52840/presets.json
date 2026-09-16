@@ -1,0 +1,166 @@
+[
+  {
+    "id": "xiao-nrf52840",
+    "name": "Seeed XIAO nRF52840 · basic",
+    "description": "17.8 × 21 mm · 14 castellated pads",
+    "parameters": {
+      "model": "xiao-nrf52840"
+    },
+    "catalog": {
+      "designation": "Seeed XIAO nRF52840 — basic",
+      "manufacturer": "Seeed Studio",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://wiki.seeedstudio.com/XIAO_BLE/",
+      "alternateSourceUrls": [],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Seeed Studio",
+        "construction": "Bare PCB",
+        "width": 17.8,
+        "length": 21,
+        "usb": "USB-C",
+        "connection": "14 castellated pads",
+        "interface": "BLE / Thread / NFC",
+        "headerPitch": 2.54
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "17.8 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "21 mm"
+        },
+        {
+          "label": "Header pitch",
+          "value": "2.54 mm"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Seeed Studio"
+        },
+        {
+          "label": "Construction",
+          "value": "Bare PCB"
+        },
+        {
+          "label": "USB connector",
+          "value": "USB-C"
+        },
+        {
+          "label": "Physical connection",
+          "value": "14 castellated pads"
+        },
+        {
+          "label": "Interface",
+          "value": "BLE / Thread / NFC"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "17.8 × 21 mm basic XIAO PCB, without Sense IMU/microphone or headers. Onboard antenna; no external antenna lead."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout."
+        }
+      ]
+    }
+  },
+  {
+    "id": "adafruit-feather-nrf52840",
+    "name": "Adafruit Feather nRF52840 Express · Rev D",
+    "description": "22.86 × 50.8 mm PCB · manufacturer STEP",
+    "parameters": {
+      "model": "adafruit-feather-nrf52840"
+    },
+    "catalog": {
+      "designation": "Adafruit Feather nRF52840 Express — Rev D CAD",
+      "manufacturer": "Adafruit",
+      "sourceName": "Manufacturer STEP and product specifications",
+      "sourceUrl": "https://www.adafruit.com/product/4062",
+      "alternateSourceUrls": [
+        "https://www.adafruit.com/product/4062",
+        "https://github.com/adafruit/Adafruit_CAD_Parts/tree/main/4062%20nRF52840%20Feather"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Adafruit",
+        "construction": "Bare PCB",
+        "width": 22.86,
+        "length": 50.8,
+        "usb": "Micro USB",
+        "connection": "Feather pads + JST battery",
+        "interface": "BLE / Thread / NFC",
+        "height": 6.99,
+        "headerPitch": 2.54
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded.",
+        "height": "Exact Rev D CAD envelope; product page gives rounded 7.2 mm. Later revisions are not implied."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "22.86 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "50.8 mm"
+        },
+        {
+          "label": "Published height",
+          "value": "6.99 mm in Rev D CAD; product page rounds to 7.2 mm"
+        },
+        {
+          "label": "Header pitch",
+          "value": "2.54 mm"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Adafruit"
+        },
+        {
+          "label": "Construction",
+          "value": "Bare PCB"
+        },
+        {
+          "label": "USB connector",
+          "value": "Micro USB"
+        },
+        {
+          "label": "Physical connection",
+          "value": "Feather pads + JST battery"
+        },
+        {
+          "label": "Interface",
+          "value": "BLE / Thread / NFC"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "Original Adafruit 4062 STEP, Feather nRF52840 Express Rev D. CAD PCB 50.8 × 22.86 mm; assembled height 6.99 mm, Micro USB overhang 0.655 mm. Product-page dimensions 51 × 23 × 7.2 mm are rounded and differ from this CAD revision. No optional headers, battery or cable. Colors illustrative."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Original Adafruit 4062 STEP, Feather nRF52840 Express Rev D. CAD PCB 50.8 × 22.86 mm; assembled height 6.99 mm, Micro USB overhang 0.655 mm. Product-page dimensions 51 × 23 × 7.2 mm are rounded and differ from this CAD revision. No optional headers, battery or cable. Colors illustrative."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original Adafruit 4062 STEP, Feather nRF52840 Express Rev D. CAD PCB 50.8 × 22.86 mm; assembled height 6.99 mm, Micro USB overhang 0.655 mm. Product-page dimensions 51 × 23 × 7.2 mm are rounded and differ from this CAD revision. No optional headers, battery or cable. Colors illustrative.",
+        "limitations": "Original CAD surfaces retained in FreeCAD/STEP exports. Browser preview is a triangulation; tiny meshing gaps are patched only within the recorded tolerance. Colors are illustrative. Manufacturer CAD does not establish production tolerances or validate other product revisions.",
+        "sourceUrl": "https://github.com/adafruit/Adafruit_CAD_Parts/tree/main/4062%20nRF52840%20Feather",
+        "sourceSha256": "77f9e8d9deba17aee67a93ea8fe38eb4aea36aa4d70febbff5465d9b83be4975"
+      }
+    }
+  }
+]

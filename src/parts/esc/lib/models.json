@@ -1,0 +1,531 @@
+[
+  {
+    "id": "speedybee-bls35-mini-v2",
+    "name": "SpeedyBee BLS 35 A Mini V2",
+    "manufacturer": "SpeedyBee",
+    "width": 30,
+    "length": 35,
+    "board": 1.6,
+    "color": 2435116,
+    "construction": "Bare PCB",
+    "source": "https://www.speedybee.com/speedybee-f405-mini-bls-35a-20x20-stack/",
+    "holes": [
+      [
+        -10.0,
+        -10.0,
+        3.6
+      ],
+      [
+        -10.0,
+        10.0,
+        3.6
+      ],
+      [
+        10.0,
+        -10.0,
+        3.6
+      ],
+      [
+        10.0,
+        10.0,
+        3.6
+      ]
+    ],
+    "details": [
+      {
+        "kind": "chip",
+        "name": "MOSFET -11.0/0",
+        "x": -11.0,
+        "y": -6.5,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET -11.0/1",
+        "x": -11.0,
+        "y": -3.9,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET -11.0/2",
+        "x": -11.0,
+        "y": -1.2999999999999998,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET -11.0/3",
+        "x": -11.0,
+        "y": 1.3000000000000007,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET -11.0/4",
+        "x": -11.0,
+        "y": 3.9000000000000004,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET -11.0/5",
+        "x": -11.0,
+        "y": 6.5,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "pads",
+        "name": "Motor pads -11.0",
+        "x": -14.1,
+        "y": 0,
+        "z": 1.6,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 6,
+        "rows": 1,
+        "dir": "vertical",
+        "pitch": 3,
+        "bore": 1.2
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET 11.0/0",
+        "x": 11.0,
+        "y": -6.5,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET 11.0/1",
+        "x": 11.0,
+        "y": -3.9,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET 11.0/2",
+        "x": 11.0,
+        "y": -1.2999999999999998,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET 11.0/3",
+        "x": 11.0,
+        "y": 1.3000000000000007,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET 11.0/4",
+        "x": 11.0,
+        "y": 3.9000000000000004,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET 11.0/5",
+        "x": 11.0,
+        "y": 6.5,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "pads",
+        "name": "Motor pads 11.0",
+        "x": 14.1,
+        "y": 0,
+        "z": 1.6,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 6,
+        "rows": 1,
+        "dir": "vertical",
+        "pitch": 3,
+        "bore": 1.2
+      },
+      {
+        "kind": "chip",
+        "name": "Gate drivers",
+        "x": 0,
+        "y": 0,
+        "z": 1.6,
+        "w": 7,
+        "l": 7,
+        "h": 1,
+        "color": 2435116
+      },
+      {
+        "kind": "socket",
+        "name": "FC harness",
+        "x": 0,
+        "y": 14.5,
+        "z": 1.6,
+        "w": 10,
+        "l": 4,
+        "h": 3.9,
+        "dir": "north",
+        "count": 8,
+        "color": 14209987
+      },
+      {
+        "kind": "pads",
+        "name": "Battery terminals",
+        "x": 0,
+        "y": -16.0,
+        "z": 1.6,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 2,
+        "rows": 1,
+        "dir": "horizontal",
+        "pitch": 5,
+        "bore": 2
+      }
+    ],
+    "attributes": {
+      "mountX": 20,
+      "mountY": 20,
+      "hole": 3.6,
+      "cellsMin": 3,
+      "cellsMax": 6,
+      "motorCurrent": 35,
+      "motors": 4,
+      "connection": "Solder pads + FC socket",
+      "interface": "DSHOT300/600",
+      "height": 5.5
+    },
+    "scope": "Page 2 drawing: 30 × 35 mm and Ø3.6 mm; specification table conflicts (35 × 35, Ø3.5). Drawing used. Bare four-in-one ESC. External capacitor, wires, dampers and FC excluded. Height is supplier envelope; undimensioned components are illustrative.",
+    "references": [
+      "../flight-controllers/speedybee-mini.pdf"
+    ]
+  },
+  {
+    "id": "speedybee-bls55-v4",
+    "name": "SpeedyBee BLS 55 A · V4 stack ESC",
+    "manufacturer": "SpeedyBee",
+    "width": 44,
+    "length": 45.6,
+    "board": 1.6,
+    "color": 2435116,
+    "construction": "Bare PCB",
+    "source": "https://www.speedybee.com/speedybee-f405-v4-bls-55a-30x30-fc-esc-stack/",
+    "holes": [
+      [
+        -15.25,
+        -15.25,
+        4
+      ],
+      [
+        -15.25,
+        15.25,
+        4
+      ],
+      [
+        15.25,
+        -15.25,
+        4
+      ],
+      [
+        15.25,
+        15.25,
+        4
+      ]
+    ],
+    "details": [
+      {
+        "kind": "chip",
+        "name": "MOSFET -18.0/0",
+        "x": -18.0,
+        "y": -6.5,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET -18.0/1",
+        "x": -18.0,
+        "y": -3.9,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET -18.0/2",
+        "x": -18.0,
+        "y": -1.2999999999999998,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET -18.0/3",
+        "x": -18.0,
+        "y": 1.3000000000000007,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET -18.0/4",
+        "x": -18.0,
+        "y": 3.9000000000000004,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET -18.0/5",
+        "x": -18.0,
+        "y": 6.5,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "pads",
+        "name": "Motor pads -18.0",
+        "x": -21.1,
+        "y": 0,
+        "z": 1.6,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 6,
+        "rows": 1,
+        "dir": "vertical",
+        "pitch": 3,
+        "bore": 1.2
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET 18.0/0",
+        "x": 18.0,
+        "y": -6.5,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET 18.0/1",
+        "x": 18.0,
+        "y": -3.9,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET 18.0/2",
+        "x": 18.0,
+        "y": -1.2999999999999998,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET 18.0/3",
+        "x": 18.0,
+        "y": 1.3000000000000007,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET 18.0/4",
+        "x": 18.0,
+        "y": 3.9000000000000004,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "chip",
+        "name": "MOSFET 18.0/5",
+        "x": 18.0,
+        "y": 6.5,
+        "z": 1.6,
+        "w": 4,
+        "l": 2,
+        "h": 1.2,
+        "color": 2435116
+      },
+      {
+        "kind": "pads",
+        "name": "Motor pads 18.0",
+        "x": 21.1,
+        "y": 0,
+        "z": 1.6,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 6,
+        "rows": 1,
+        "dir": "vertical",
+        "pitch": 3,
+        "bore": 1.2
+      },
+      {
+        "kind": "chip",
+        "name": "Gate drivers",
+        "x": 0,
+        "y": 0,
+        "z": 1.6,
+        "w": 7,
+        "l": 7,
+        "h": 1,
+        "color": 2435116
+      },
+      {
+        "kind": "socket",
+        "name": "FC harness",
+        "x": 0,
+        "y": 19.8,
+        "z": 1.6,
+        "w": 10,
+        "l": 4,
+        "h": 6.4,
+        "dir": "north",
+        "count": 8,
+        "color": 14209987
+      },
+      {
+        "kind": "pads",
+        "name": "Battery terminals",
+        "x": 0,
+        "y": -21.3,
+        "z": 1.6,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 2,
+        "rows": 1,
+        "dir": "horizontal",
+        "pitch": 5,
+        "bore": 2
+      }
+    ],
+    "attributes": {
+      "mountX": 30.5,
+      "mountY": 30.5,
+      "hole": 4,
+      "cellsMin": 3,
+      "cellsMax": 6,
+      "motorCurrent": 55,
+      "motors": 4,
+      "connection": "Solder pads + FC socket",
+      "interface": "DSHOT300/600",
+      "height": 8
+    },
+    "scope": "Bare four-in-one ESC. External capacitor, wires, dampers and FC excluded. Height is supplier envelope; undimensioned components are illustrative.",
+    "references": [
+      "../flight-controllers/speedybee-v4.pdf"
+    ]
+  },
+  {
+    "id": "hobbywing-skywalker-40a-ubec",
+    "name": "Hobbywing Skywalker 40 A UBEC · original",
+    "manufacturer": "Hobbywing",
+    "width": 25,
+    "length": 65,
+    "board": 1.6,
+    "color": 2435116,
+    "construction": "Wrapped ESC",
+    "source": "https://www.hobbywing.com/uploads/file/20220817/ee56cf6f456a13158aa869683033fb98.pdf",
+    "holes": [],
+    "details": [],
+    "attributes": {
+      "cellsMin": 2,
+      "cellsMax": 4,
+      "motorCurrent": 40,
+      "motors": 1,
+      "connection": "Flying leads",
+      "interface": "PWM",
+      "height": 12
+    },
+    "scope": "Original Skywalker 40A UBEC, 65 × 25 × 12 mm body. Integrated 5 V / 3 A BEC; 55 A peak motor current. Not V2. Flexible battery, receiver and motor leads excluded.",
+    "references": [],
+    "height": 12
+  }
+]

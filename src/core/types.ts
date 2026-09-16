@@ -33,6 +33,14 @@ export interface Preset {
     sourceUrl: string;
     sourceKind?: 'attachment';
     verifiedParameters: string[];
+    /** Evidence for physical geometry, independent of SKU identity and valid CAD topology. */
+    geometryEvidence?: {
+      kind: 'manufacturer-cad' | 'source-dimensions' | 'envelope';
+      summary: string;
+      limitations: string;
+      sourceUrl: string;
+      sourceSha256?: string;
+    };
     parameterRanges?: Record<string, { min: number; max: number }>;
     productCodes?: string[];
     alternateSourceUrls?: string[];
@@ -51,7 +59,19 @@ export interface PartDefinition {
   subgroup: string;
   description: string;
   keywords: string[];
-  icon: 'bearing' | 'bolt' | 'spring' | 'box' | 'bracket' | 'wheel' | 'gear' | 'rail' | 'magnet';
+  icon:
+    | 'bearing'
+    | 'bolt'
+    | 'spring'
+    | 'box'
+    | 'bracket'
+    | 'wheel'
+    | 'gear'
+    | 'rail'
+    | 'magnet'
+    | 'wing'
+    | 'camera'
+    | 'circuit';
   standard?: string;
   complexity: string;
   parameters: ParameterDefinition[];

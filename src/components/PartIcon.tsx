@@ -1,11 +1,14 @@
 import {
   Box,
+  Camera,
   CircleDot,
+  CircuitBoard,
   Cog,
   Disc3,
   Layers3,
   Magnet,
   Nut,
+  Plane,
   Rotate3D,
   Route,
   Workflow,
@@ -25,6 +28,9 @@ export function PartIcon({ type, size = 18 }: { type: string; size?: number }) {
         gear: Cog,
         rail: Route,
         magnet: Magnet,
+        wing: Plane,
+        camera: Camera,
+        circuit: CircuitBoard,
       } as Record<string, typeof Box>
     )[type] ?? Wrench;
   return <Icon size={size} strokeWidth={1.65} />;

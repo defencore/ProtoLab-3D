@@ -45,7 +45,7 @@ node --import tsx --test tests/electromagnetics.test.ts
 npm run build
 ```
 
-The [recorded native audit](../data/electromagnetics-native-validation.json) passed **63/63 cases** in FreeCAD **1.0.2** on **2026-09-14**. It covers defaults and every preset in every state: 18 holding electromagnet cases, 21 tubular solenoid cases and 24 open-frame solenoid cases.
+The recorded native audit (generated local report) passed **63/63 cases** in FreeCAD **1.0.2** on **2026-09-14**. It covers defaults and every preset in every state: 18 holding electromagnet cases, 21 tubular solenoid cases and 24 open-frame solenoid cases.
 
 - All **378 component instances** are valid, closed and contain exactly one positive-volume solid.
 - Component envelopes and volumes agree with the preview. The maximum coordinate discrepancy is **0.000201 mm** when rounded upward; the maximum relative volume discrepancy is **0.1614%** when rounded upward. The assertions allow less than 0.05 mm and 1.5%, respectively.

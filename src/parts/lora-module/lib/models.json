@@ -1,0 +1,230 @@
+[
+  {
+    "id": "ai-thinker-ra02",
+    "name": "Ai-Thinker Ra-02 · SX1278",
+    "manufacturer": "Ai-Thinker",
+    "width": 17,
+    "length": 16,
+    "board": 0.8,
+    "color": 2313328,
+    "construction": "Bare PCB",
+    "source": "https://docs.ai-thinker.com/en/Ra-02/index.html",
+    "holes": [],
+    "details": [
+      {
+        "kind": "pads",
+        "name": "Castellated I/O -7.5",
+        "x": -7.5,
+        "y": 0,
+        "z": 0.8,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 8,
+        "rows": 1,
+        "dir": "vertical",
+        "pitch": 2,
+        "bore": 0.7,
+        "castellated": true
+      },
+      {
+        "kind": "pads",
+        "name": "Castellated I/O 7.5",
+        "x": 7.5,
+        "y": 0,
+        "z": 0.8,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 8,
+        "rows": 1,
+        "dir": "vertical",
+        "pitch": 2,
+        "bore": 0.7,
+        "castellated": true
+      },
+      {
+        "kind": "chip",
+        "name": "RF shield",
+        "x": 0,
+        "y": 1,
+        "z": 0.8,
+        "w": 11,
+        "l": 12,
+        "h": 2,
+        "color": 11187388
+      },
+      {
+        "kind": "cylinder",
+        "name": "U.FL",
+        "x": 0,
+        "y": -6.5,
+        "z": 0.8,
+        "w": 2,
+        "l": 2,
+        "h": 1,
+        "color": 11187388
+      }
+    ],
+    "attributes": {
+      "usb": "None",
+      "connection": "16 castellated pads + U.FL",
+      "interface": "SPI",
+      "chip": "SX1278"
+    },
+    "scope": "17 × 16 mm module PCB. SX1278 LoRa radio, U.FL antenna socket. External antenna excluded. RF shield and pad offsets approximate.",
+    "references": []
+  },
+  {
+    "id": "waveshare-core1262-hf",
+    "name": "Waveshare Core1262-HF · SX1262",
+    "manufacturer": "Waveshare",
+    "width": 19,
+    "length": 22,
+    "board": 1,
+    "color": 2313328,
+    "construction": "Bare PCB",
+    "source": "https://www.waveshare.com/wiki/Core1262-868M",
+    "holes": [],
+    "details": [
+      {
+        "kind": "pads",
+        "name": "I/O -8.5",
+        "x": -8.5,
+        "y": 0,
+        "z": 1,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 8,
+        "rows": 1,
+        "dir": "vertical",
+        "pitch": 2.54,
+        "bore": 0.8,
+        "castellated": true
+      },
+      {
+        "kind": "pads",
+        "name": "I/O 8.5",
+        "x": 8.5,
+        "y": 0,
+        "z": 1,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 8,
+        "rows": 1,
+        "dir": "vertical",
+        "pitch": 2.54,
+        "bore": 0.8,
+        "castellated": true
+      },
+      {
+        "kind": "chip",
+        "name": "SX1262 RF shield",
+        "x": 0,
+        "y": 0,
+        "z": 1,
+        "w": 13,
+        "l": 15,
+        "h": 2,
+        "color": 11187388
+      },
+      {
+        "kind": "chip",
+        "name": "ANT contact",
+        "x": 0,
+        "y": -9,
+        "z": 1,
+        "w": 2,
+        "l": 2,
+        "h": 0.08,
+        "color": 13020008
+      }
+    ],
+    "attributes": {
+      "usb": "None",
+      "connection": "Castellated pads + ANT pad",
+      "interface": "SPI",
+      "chip": "SX1262"
+    },
+    "scope": "19 × 22 mm core module, HF radio revision. This is not the larger Raspberry Pi LoRa HAT. Antenna not fitted; no SMA socket.",
+    "references": []
+  },
+  {
+    "id": "ebyte-e22-900m30s",
+    "name": "Ebyte E22-900M30S · SX1262",
+    "manufacturer": "Ebyte",
+    "width": 24,
+    "length": 38.5,
+    "board": 1,
+    "color": 2313328,
+    "construction": "Bare PCB",
+    "source": "https://www.ebyte.com/product/451.html",
+    "holes": [],
+    "details": [
+      {
+        "kind": "pads",
+        "name": "I/O -11",
+        "x": -11,
+        "y": -4,
+        "z": 1,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 9,
+        "rows": 1,
+        "dir": "vertical",
+        "pitch": 2.54,
+        "bore": 0.8,
+        "castellated": true
+      },
+      {
+        "kind": "pads",
+        "name": "I/O 11",
+        "x": 11,
+        "y": -4,
+        "z": 1,
+        "w": 1,
+        "l": 1,
+        "h": 8,
+        "count": 9,
+        "rows": 1,
+        "dir": "vertical",
+        "pitch": 2.54,
+        "bore": 0.8,
+        "castellated": true
+      },
+      {
+        "kind": "chip",
+        "name": "Radio shield",
+        "x": 0,
+        "y": 0,
+        "z": 1,
+        "w": 17,
+        "l": 22,
+        "h": 2.5,
+        "color": 11187388
+      },
+      {
+        "kind": "cylinder",
+        "name": "Antenna socket",
+        "x": 0,
+        "y": 15,
+        "z": 1,
+        "w": 2.5,
+        "l": 2.5,
+        "h": 1.4,
+        "color": 11187388
+      }
+    ],
+    "attributes": {
+      "usb": "None",
+      "connection": "Castellated pads + antenna socket",
+      "interface": "SPI",
+      "chip": "SX1262"
+    },
+    "scope": "24 × 38.5 mm module. 30 dBm PA version, SPI host interface; not the UART T-series. Antenna and carrier excluded. RF shield, contacts and component offsets approximate.",
+    "references": []
+  }
+]

@@ -4,10 +4,17 @@ import { Mesh, Raycaster, Vector3 } from 'three';
 import { parts } from '../src/parts';
 import type { Parameters } from '../src/core/types';
 import { disposeModel } from '../src/core/mechanical';
-import { internalMinorDiameter, nutCoarsePitch } from "../src/parts/hex-nut/lib/core/internal-thread";
+import {
+  internalMinorDiameter,
+  nutCoarsePitch,
+} from '../src/parts/hex-nut/lib/core/internal-thread';
 import { validateParameters } from '../src/core/validation';
 
-const nuts = parts.filter((p) => p.subgroup === 'NUTS');
+// Lifting eye nuts live with lifting hardware; UI taxonomy must not exclude
+// their internal threads from the geometry regression suite.
+const nuts = parts.filter(
+  (p) => (p.subgroup === 'NUTS' && p.id !== 't-slot-nut') || p.id === 'lifting-eye-nut',
+);
 function assertClosed(model: ReturnType<(typeof nuts)[number]['buildGeometry']>) {
   model.traverse((child) => {
     if (!(child instanceof Mesh)) return;

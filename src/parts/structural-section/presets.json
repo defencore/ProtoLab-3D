@@ -1,0 +1,50 @@
+[
+  {
+    "id": "i",
+    "name": "I-beam \u00b7 40 \u00d7 60 mm",
+    "description": "I-beam, channel, angle and rectangular hollow sections with editable wall thickness. Editable prototype dimensions.",
+    "parameters": {
+      "form": "i",
+      "width": 40,
+      "height": 60,
+      "wall": 3,
+      "length": 200
+    }
+  },
+  {
+    "id": "c",
+    "name": "C channel \u00b7 40 \u00d7 60 mm",
+    "description": "I-beam, channel, angle and rectangular hollow sections with editable wall thickness. Editable prototype dimensions.",
+    "parameters": {
+      "form": "c",
+      "width": 40,
+      "height": 60,
+      "wall": 3,
+      "length": 200
+    }
+  },
+  {
+    "id": "l",
+    "name": "Angle \u00b7 40 \u00d7 60 mm",
+    "description": "I-beam, channel, angle and rectangular hollow sections with editable wall thickness. Editable prototype dimensions.",
+    "parameters": {
+      "form": "l",
+      "width": 40,
+      "height": 60,
+      "wall": 3,
+      "length": 200
+    }
+  },
+  {
+    "id": "tube",
+    "name": "Rectangular tube \u00b7 40 \u00d7 60 mm",
+    "description": "I-beam, channel, angle and rectangular hollow sections with editable wall thickness. Editable prototype dimensions.",
+    "parameters": {
+      "form": "tube",
+      "width": 40,
+      "height": 60,
+      "wall": 3,
+      "length": 200
+    }
+  }
+]

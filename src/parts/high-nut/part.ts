@@ -4,7 +4,7 @@ const modulePresets = presetData as ModulePreset[];
 import { nutDefinition } from './lib/core/nuts';
 
 export default {
-  ...nutDefinition('high-nut', 'High hex nut', 'DIN 6330', 'hex', {
+  ...nutDefinition('high-nut', 'High hexagon nut', 'DIN 6330', 'hex', {
     bore: 6,
     acrossFlats: 10,
     height: 9,

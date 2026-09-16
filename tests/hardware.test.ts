@@ -73,7 +73,7 @@ test('duplicate supplier finishes remain searchable by their original SKU', () =
 
 test('supplier washer clearance is not mistaken for the nominal screw diameter', () => {
   const part = parts.find((p) => p.id === 'washer')!;
-  const preset = part.presets.find((p) => p.name === 'DIN 125 M6')!;
+  const preset = part.presets.find((p) => p.catalog?.designation === 'DIN 125 M6')!;
   assert.deepEqual(preset.parameters, { bore: 6.4, outerDiameter: 12, thickness: 1.6 });
 });
 
@@ -86,8 +86,8 @@ test('fine-pitch stock rods keep the 1000 mm length and the actual pitch', () =>
 
 test('ordinary internal circlips do not inherit the thicker table variant', () => {
   const part = parts.find((p) => p.id === 'retaining-ring')!;
-  const ring40 = part.presets.find((p) => p.name === 'DIN 472 M40')!;
-  const ring50 = part.presets.find((p) => p.name === 'DIN 472 M50')!;
+  const ring40 = part.presets.find((p) => p.catalog?.designation === 'DIN 472 M40')!;
+  const ring50 = part.presets.find((p) => p.catalog?.designation === 'DIN 472 M50')!;
   assert.equal(ring40.parameters.thickness, 1.75);
   assert.equal(ring40.parameters.outerDiameter, 43.5);
   assert.equal(ring50.parameters.thickness, 2);

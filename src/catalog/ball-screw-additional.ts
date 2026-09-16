@@ -40,7 +40,7 @@ export function getSfeReferences(row: RowFactory) {
     reference.catalog!.verifiedParameters = reference.catalog!.verifiedParameters.filter(
       (key) => key !== 'starts',
     );
-    reference.catalog!.alternateSourceUrls = ['references/ball-nut-options.png'];
+    reference.catalog!.alternateSourceUrls = [''];
     return reference;
   });
 }

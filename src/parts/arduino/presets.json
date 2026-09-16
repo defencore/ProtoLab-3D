@@ -1,0 +1,145 @@
+[
+  {
+    "id": "arduino-uno-r3",
+    "name": "Arduino UNO R3 · DIP",
+    "description": "68.6 × 53.4 mm · Female shield headers",
+    "parameters": {
+      "model": "arduino-uno-r3"
+    },
+    "catalog": {
+      "designation": "Arduino UNO R3 — DIP",
+      "manufacturer": "Arduino",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://store.arduino.cc/products/arduino-uno-rev3",
+      "alternateSourceUrls": [],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Arduino",
+        "construction": "Bare PCB",
+        "width": 68.6,
+        "length": 53.4,
+        "usb": "USB-B",
+        "connection": "Female shield headers",
+        "interface": "UART / SPI / I2C"
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "68.6 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "53.4 mm"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Arduino"
+        },
+        {
+          "label": "Construction",
+          "value": "Bare PCB"
+        },
+        {
+          "label": "USB connector",
+          "value": "USB-B"
+        },
+        {
+          "label": "Physical connection",
+          "value": "Female shield headers"
+        },
+        {
+          "label": "Interface",
+          "value": "UART / SPI / I2C"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "68.6 × 53.4 mm PCB. USB-B and DC barrel power connectors. Rounded outline and undimensioned header offsets approximate; not a shield drilling template."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout."
+        }
+      ]
+    }
+  },
+  {
+    "id": "arduino-nano-classic",
+    "name": "Arduino Nano · classic, headers fitted",
+    "description": "18 × 45 mm · 30-pin headers",
+    "parameters": {
+      "model": "arduino-nano-classic"
+    },
+    "catalog": {
+      "designation": "Arduino Nano — classic, headers fitted",
+      "manufacturer": "Arduino",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://docs.arduino.cc/hardware/nano",
+      "alternateSourceUrls": [],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Arduino",
+        "construction": "Bare PCB",
+        "width": 18,
+        "length": 45,
+        "usb": "Mini USB",
+        "connection": "30-pin headers",
+        "interface": "UART / SPI / I2C",
+        "headerPitch": 2.54
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "18 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "45 mm"
+        },
+        {
+          "label": "Header pitch",
+          "value": "2.54 mm"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Arduino"
+        },
+        {
+          "label": "Construction",
+          "value": "Bare PCB"
+        },
+        {
+          "label": "USB connector",
+          "value": "Mini USB"
+        },
+        {
+          "label": "Physical connection",
+          "value": "30-pin headers"
+        },
+        {
+          "label": "Interface",
+          "value": "UART / SPI / I2C"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "18 × 45 mm PCB with Mini-B USB and two 15-pin headers. Not Nano Every or Nano ESP32. Header heights and mounting offsets approximate."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout."
+        }
+      ]
+    }
+  }
+]

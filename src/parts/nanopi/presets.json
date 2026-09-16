@@ -1,0 +1,140 @@
+[
+  {
+    "id": "nanopi-neo-air",
+    "name": "FriendlyELEC NanoPi NEO Air v1.1",
+    "description": "40 × 40 mm · 24-pin + 12-pin footprints",
+    "parameters": {
+      "model": "nanopi-neo-air"
+    },
+    "catalog": {
+      "designation": "NanoPi NEO Air v1.1",
+      "manufacturer": "FriendlyELEC",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_NEO_Air",
+      "alternateSourceUrls": [],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "FriendlyELEC",
+        "construction": "Bare PCB",
+        "width": 40,
+        "length": 40,
+        "usb": "Micro USB",
+        "connection": "24-pin + 12-pin footprints",
+        "interface": "CSI / Wi-Fi / microSD"
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "40 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "40 mm"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "FriendlyELEC"
+        },
+        {
+          "label": "Construction",
+          "value": "Bare PCB"
+        },
+        {
+          "label": "USB connector",
+          "value": "Micro USB"
+        },
+        {
+          "label": "Physical connection",
+          "value": "24-pin + 12-pin footprints"
+        },
+        {
+          "label": "Interface",
+          "value": "CSI / Wi-Fi / microSD"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "40 × 40 mm bare PCB. V1.1 microSD position; unpopulated GPIO footprints. No heatsink or external antenna. Hole and component offsets are approximate."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout."
+        }
+      ]
+    }
+  },
+  {
+    "id": "nanopi-r4s",
+    "name": "FriendlyELEC NanoPi R4S · bare board",
+    "description": "66 × 66 mm · 10-pin GPIO",
+    "parameters": {
+      "model": "nanopi-r4s"
+    },
+    "catalog": {
+      "designation": "NanoPi R4S — bare board",
+      "manufacturer": "FriendlyELEC",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_R4S",
+      "alternateSourceUrls": [],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "FriendlyELEC",
+        "construction": "Bare PCB",
+        "width": 66,
+        "length": 66,
+        "usb": "USB-C power + 2 USB-A",
+        "connection": "10-pin GPIO",
+        "interface": "Dual GbE / microSD"
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "66 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "66 mm"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "FriendlyELEC"
+        },
+        {
+          "label": "Construction",
+          "value": "Bare PCB"
+        },
+        {
+          "label": "USB connector",
+          "value": "USB-C power + 2 USB-A"
+        },
+        {
+          "label": "Physical connection",
+          "value": "10-pin GPIO"
+        },
+        {
+          "label": "Interface",
+          "value": "Dual GbE / microSD"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "66 × 66 mm bare PCB. Dual RJ45, two USB 3 Type-A and USB-C power. Metal enclosure and heatsink excluded. Undimensioned mounting/connector offsets are approximate."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout."
+        }
+      ]
+    }
+  }
+]

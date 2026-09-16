@@ -41,13 +41,13 @@ Stock presets match these exact bore values. The keyway depth defaults to **2 mm
 
 ## Validation
 
-The end-face repair has a [17-case native FreeCAD audit](../data/bevel-pair-native-validation.json). It covers all six catalog pairs, all four display states on the first two pairs, hex/D/keyway bores, maximum bores at 37° rotation, and 128 inside/outside root-plane probes. All checked assemblies have zero measured component intersection. Every case preserves valid separate solids through STEP and FCStd round trips. Preview tests additionally sample both planar annuli on both gears for every preset and check closed, consistently oriented triangles for all seven shaft profiles.
+The end-face repair has a 17-case native FreeCAD audit (generated local report). It covers all six catalog pairs, all four display states on the first two pairs, hex/D/keyway bores, maximum bores at 37° rotation, and 128 inside/outside root-plane probes. All checked assemblies have zero measured component intersection. Every case preserves valid separate solids through STEP and FCStd round trips. Preview tests additionally sample both planar annuli on both gears for every preset and check closed, consistently oriented triangles for all seven shaft profiles.
 
 To reproduce a small native smoke check, run `node --import tsx scripts/verify-bevel-pair.ts`, then run `scripts/verify-bevel-pair.py --intersections` using a FreeCAD-enabled Python. The preparer's optional `--matrix` expands to every catalog state and all seven bore shapes.
 
 Use `--stock-bores` instead of `--matrix` to prepare five assembled pairs covering every listed pinion and wheel bore. This batch additionally probes the round openings and keyway walls at three axial positions, then checks STEP and FCStd round trips.
 
-The [stock-bore native audit](../data/bevel-pair-stock-native-validation.json) passed all five pairs in FreeCAD 1.0.2, including 150 bore/keyway probes and independent component movement. All measured pair intersections were zero. Maximum preview/native differences were **0.0475%** in volume and **0.000409 mm** in bounds.
+The stock-bore native audit (generated local report) passed all five pairs in FreeCAD 1.0.2, including 150 bore/keyway probes and independent component movement. All measured pair intersections were zero. Maximum preview/native differences were **0.0475%** in volume and **0.000409 mm** in bounds.
 
 The reference expansion was checked in native FreeCAD using 46 cases: all assembly and separated states, both bore endpoints for each individual bevel gear, linked 37° rotation, and the four miniature spur pinions. All generated solids and STEP round trips were valid. The maximum preview/native volume difference was 0.067%; all checked pair positions had zero component intersection. This sampled geometry check does not establish continuous conjugate contact or a load rating.
 

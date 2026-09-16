@@ -4,7 +4,7 @@ const modulePresets = presetData as ModulePreset[];
 import { nutDefinition } from './lib/core/nuts';
 
 export default {
-  ...nutDefinition('cap-nut', 'Domed cap nut', 'DIN 1587', 'cap', {
+  ...nutDefinition('cap-nut', 'Cap nut', 'DIN 1587', 'cap', {
     bore: 6,
     acrossFlats: 10,
     height: 12,

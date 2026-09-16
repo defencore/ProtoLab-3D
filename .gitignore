@@ -13,6 +13,11 @@ __pycache__/
 .part-module-staging-*/
 
 data/*
-!data/*validation.json
 !data/promtehimport-import-report.json
 !data/promtehimport-inventory.json
+
+!data/library-expansion.json
+
+
+# Source archives are linked remotely, never bundled.
+/public/references/

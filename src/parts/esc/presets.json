@@ -1,0 +1,315 @@
+[
+  {
+    "id": "speedybee-bls35-mini-v2",
+    "name": "SpeedyBee BLS 35 A Mini V2",
+    "description": "30 × 35 mm · Solder pads + FC socket",
+    "parameters": {
+      "model": "speedybee-bls35-mini-v2"
+    },
+    "catalog": {
+      "designation": "SpeedyBee BLS 35A Mini V2",
+      "manufacturer": "SpeedyBee",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://www.speedybee.com/speedybee-f405-mini-bls-35a-20x20-stack/",
+      "alternateSourceUrls": [
+        "https://www.speedybee.com/speedybee-f405-mini-bls-35a-20x20-stack/"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "SpeedyBee",
+        "construction": "Bare PCB",
+        "width": 30,
+        "length": 35,
+        "mountX": 20,
+        "mountY": 20,
+        "hole": 3.6,
+        "cellsMin": 3,
+        "cellsMax": 6,
+        "motorCurrent": 35,
+        "motors": 4,
+        "connection": "Solder pads + FC socket",
+        "interface": "DSHOT300/600",
+        "height": 5.5
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded.",
+        "height": "Published supplier envelope for this revision; undimensioned component heights are reconstructed.",
+        "motorCurrent": "Continuous current per motor channel. Not total board consumption or BEC output."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "30 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "35 mm"
+        },
+        {
+          "label": "Mounting pitch X",
+          "value": "20 mm"
+        },
+        {
+          "label": "Mounting pitch Y",
+          "value": "20 mm"
+        },
+        {
+          "label": "Mounting bore",
+          "value": "3.6 mm"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "3 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "6 S"
+        },
+        {
+          "label": "Continuous current per motor",
+          "value": "35 A"
+        },
+        {
+          "label": "Motor channels",
+          "value": "4"
+        },
+        {
+          "label": "Published height",
+          "value": "5.5 mm"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "SpeedyBee"
+        },
+        {
+          "label": "Construction",
+          "value": "Bare PCB"
+        },
+        {
+          "label": "Physical connection",
+          "value": "Solder pads + FC socket"
+        },
+        {
+          "label": "Interface",
+          "value": "DSHOT300/600"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "Page 2 drawing: 30 × 35 mm and Ø3.6 mm; specification table conflicts (35 × 35, Ø3.5). Drawing used. Bare four-in-one ESC. External capacitor, wires, dampers and FC excluded. Height is supplier envelope; undimensioned components are illustrative."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout."
+        }
+      ]
+    }
+  },
+  {
+    "id": "speedybee-bls55-v4",
+    "name": "SpeedyBee BLS 55 A · V4 stack ESC",
+    "description": "44 × 45.6 mm · Solder pads + FC socket",
+    "parameters": {
+      "model": "speedybee-bls55-v4"
+    },
+    "catalog": {
+      "designation": "SpeedyBee BLS 55A — V4 stack ESC",
+      "manufacturer": "SpeedyBee",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://www.speedybee.com/speedybee-f405-v4-bls-55a-30x30-fc-esc-stack/",
+      "alternateSourceUrls": [
+        "https://www.speedybee.com/speedybee-f405-v4-bls-55a-30x30-fc-esc-stack/"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "SpeedyBee",
+        "construction": "Bare PCB",
+        "width": 44,
+        "length": 45.6,
+        "mountX": 30.5,
+        "mountY": 30.5,
+        "hole": 4,
+        "cellsMin": 3,
+        "cellsMax": 6,
+        "motorCurrent": 55,
+        "motors": 4,
+        "connection": "Solder pads + FC socket",
+        "interface": "DSHOT300/600",
+        "height": 8
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded.",
+        "height": "Published supplier envelope for this revision; undimensioned component heights are reconstructed.",
+        "motorCurrent": "Continuous current per motor channel. Not total board consumption or BEC output."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "44 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "45.6 mm"
+        },
+        {
+          "label": "Mounting pitch X",
+          "value": "30.5 mm"
+        },
+        {
+          "label": "Mounting pitch Y",
+          "value": "30.5 mm"
+        },
+        {
+          "label": "Mounting bore",
+          "value": "4 mm"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "3 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "6 S"
+        },
+        {
+          "label": "Continuous current per motor",
+          "value": "55 A"
+        },
+        {
+          "label": "Motor channels",
+          "value": "4"
+        },
+        {
+          "label": "Published height",
+          "value": "8 mm"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "SpeedyBee"
+        },
+        {
+          "label": "Construction",
+          "value": "Bare PCB"
+        },
+        {
+          "label": "Physical connection",
+          "value": "Solder pads + FC socket"
+        },
+        {
+          "label": "Interface",
+          "value": "DSHOT300/600"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "Bare four-in-one ESC. External capacitor, wires, dampers and FC excluded. Height is supplier envelope; undimensioned components are illustrative."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout."
+        }
+      ]
+    }
+  },
+  {
+    "id": "hobbywing-skywalker-40a-ubec",
+    "name": "Hobbywing Skywalker 40 A UBEC · original",
+    "description": "25 × 65 mm · Flying leads",
+    "parameters": {
+      "model": "hobbywing-skywalker-40a-ubec"
+    },
+    "catalog": {
+      "designation": "Hobbywing Skywalker 40A UBEC — original",
+      "manufacturer": "Hobbywing",
+      "sourceName": "Manufacturer specifications / mechanical drawing",
+      "sourceUrl": "https://www.hobbywing.com/uploads/file/20220817/ee56cf6f456a13158aa869683033fb98.pdf",
+      "alternateSourceUrls": [],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Hobbywing",
+        "construction": "Wrapped ESC",
+        "width": 25,
+        "length": 65,
+        "cellsMin": 2,
+        "cellsMax": 4,
+        "motorCurrent": 40,
+        "motors": 1,
+        "connection": "Flying leads",
+        "interface": "PWM",
+        "height": 12
+      },
+      "attributeConditions": {
+        "width": "PCB/body only; connector overhangs excluded.",
+        "length": "PCB/body only; connector overhangs excluded.",
+        "height": "Published supplier envelope for this revision; undimensioned component heights are reconstructed.",
+        "motorCurrent": "Continuous current per motor channel. Not total board consumption or BEC output."
+      },
+      "specifications": [
+        {
+          "label": "PCB / body width (X)",
+          "value": "25 mm"
+        },
+        {
+          "label": "PCB / body length (Y)",
+          "value": "65 mm"
+        },
+        {
+          "label": "Minimum LiPo cells",
+          "value": "2 S"
+        },
+        {
+          "label": "Maximum LiPo cells",
+          "value": "4 S"
+        },
+        {
+          "label": "Continuous current per motor",
+          "value": "40 A"
+        },
+        {
+          "label": "Motor channels",
+          "value": "1"
+        },
+        {
+          "label": "Published height",
+          "value": "12 mm"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Hobbywing"
+        },
+        {
+          "label": "Construction",
+          "value": "Wrapped ESC"
+        },
+        {
+          "label": "Physical connection",
+          "value": "Flying leads"
+        },
+        {
+          "label": "Interface",
+          "value": "PWM"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "Original Skywalker 40A UBEC, 65 × 25 × 12 mm body. Integrated 5 V / 3 A BEC; 55 A peak motor current. Not V2. Flexible battery, receiver and motor leads excluded."
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Published external body dimensions; simplified insulated casing.",
+        "limitations": "Cable exits, lead lengths, heat-shrink contours, labels and internal electronics are not reproduced. Do not use the simplified shell as an exact enclosure or connector model.",
+        "sourceUrl": "https://www.hobbywing.com/uploads/file/20220817/ee56cf6f456a13158aa869683033fb98.pdf"
+      }
+    }
+  }
+]

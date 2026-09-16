@@ -1,0 +1,44 @@
+[
+  {
+    "id": "sk",
+    "name": "Split shaft support \u00b7 \u00d812",
+    "description": "Pillow and flange supports for round shafts and screw ends, with through bores and mounting holes. Editable prototype dimensions.",
+    "parameters": {
+      "form": "sk",
+      "bore": 12,
+      "width": 50,
+      "height": 25,
+      "depth": 20,
+      "mountPitch": 36,
+      "mountHole": 5
+    }
+  },
+  {
+    "id": "shf",
+    "name": "Flange shaft support \u00b7 \u00d812",
+    "description": "Pillow and flange supports for round shafts and screw ends, with through bores and mounting holes. Editable prototype dimensions.",
+    "parameters": {
+      "form": "shf",
+      "bore": 12,
+      "width": 50,
+      "height": 25,
+      "depth": 20,
+      "mountPitch": 36,
+      "mountHole": 5
+    }
+  },
+  {
+    "id": "bk",
+    "name": "Fixed screw-end support \u00b7 \u00d812",
+    "description": "Pillow and flange supports for round shafts and screw ends, with through bores and mounting holes. Editable prototype dimensions.",
+    "parameters": {
+      "form": "bk",
+      "bore": 12,
+      "width": 50,
+      "height": 25,
+      "depth": 20,
+      "mountPitch": 36,
+      "mountHole": 5
+    }
+  }
+]

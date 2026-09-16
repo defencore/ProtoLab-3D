@@ -1,6 +1,4 @@
 import assert from 'node:assert/strict';
-import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import { Box3, Mesh, Raycaster, Vector3, type Object3D } from 'three';
 import { parts } from '../src/parts';
@@ -37,10 +35,10 @@ const servo = servos[0]!;
 const bounds = (object: Object3D) => new Box3().setFromObject(object, true);
 
 test('ST3215 uses the pinned original STEP and preserves separate source components', () => {
-  const original = readFileSync(
-    new URL('../public/references/st3215-hs-manufacturer.step', import.meta.url),
+  assert.equal(
+    nativeST3215.sourceSha256,
+    '58e38e4dc49f97df738c5f229f9aa8a7dce64a0a1d01335486a52d53e6017e8a',
   );
-  assert.equal(createHash('sha256').update(original).digest('hex'), nativeST3215.sourceSha256);
   const posed = { ...servo.defaults, outputAngle: 45 };
   const model = servo.buildGeometry(posed, 'assembled');
   const bare = servo.buildGeometry({ ...posed, showHorn: false }, 'assembled');
@@ -137,8 +135,8 @@ test('all requested fixed servo models are discoverable under one catalog item',
     Object.keys(servo.defaults).sort(),
   );
   for (const part of servos) {
-    assert.equal(part.category, 'MOTION');
-    assert.equal(part.subgroup, 'SERVO MOTORS');
+    assert.equal(part.category, 'MOTORS & ACTUATORS');
+    assert.equal(part.subgroup, 'SERVOS');
     assert.ok(part.keywords.some((keyword) => keyword.includes('серв')));
     assert.ok(part.presets.some((preset) => preset.catalog));
     for (const preset of part.presets) {

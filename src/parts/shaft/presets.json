@@ -1,0 +1,53 @@
+[
+  {
+    "id": "shaft20",
+    "name": "Stepped shaft \u00b7 \u00d820 / \u00d812 \u00d7 150 mm",
+    "description": "Three journals with optional keyway, retaining grooves or straight-sided splines. Editable prototype dimensions.",
+    "parameters": {
+      "form": "stepped",
+      "diameter": 20,
+      "endDiameter": 12,
+      "length": 150,
+      "endLength": 30,
+      "keyWidth": 6,
+      "keyDepth": 3,
+      "groove": 1.2,
+      "teeth": 8,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "shaft-taper",
+    "name": "Shaft with tapered end",
+    "description": "Three journals with optional keyway, retaining grooves or straight-sided splines. Editable prototype dimensions.",
+    "parameters": {
+      "form": "taper",
+      "diameter": 20,
+      "endDiameter": 12,
+      "length": 150,
+      "endLength": 30,
+      "keyWidth": 6,
+      "keyDepth": 3,
+      "groove": 1.2,
+      "teeth": 8,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "shaft-spline",
+    "name": "Straight-sided splined shaft",
+    "description": "Three journals with optional keyway, retaining grooves or straight-sided splines. Editable prototype dimensions.",
+    "parameters": {
+      "form": "spline",
+      "diameter": 20,
+      "endDiameter": 12,
+      "length": 150,
+      "endLength": 30,
+      "keyWidth": 6,
+      "keyDepth": 3,
+      "groove": 1.2,
+      "teeth": 8,
+      "detail": "envelope"
+    }
+  }
+]

@@ -46,7 +46,7 @@ function outline(p: Parameters): [number, number][] {
 const part: PartDefinition = {
   id: 'wing-nut',
   name: 'Wing nut',
-  category: 'FASTENERS',
+  category: 'FASTENERS & THREADS',
   subgroup: 'NUTS',
   icon: 'bolt',
   complexity: 'Hand tightened',

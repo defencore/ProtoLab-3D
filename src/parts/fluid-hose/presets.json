@@ -1,0 +1,26 @@
+[
+  {
+    "id": "tube10",
+    "name": "Straight tube \u00b7 \u00d810 / \u00d86 mm",
+    "description": "Straight or bent hollow tube for cable, pneumatic and hydraulic routing. Editable prototype dimensions.",
+    "parameters": {
+      "form": "straight",
+      "diameter": 10,
+      "bore": 6,
+      "length": 100,
+      "radius": 30
+    }
+  },
+  {
+    "id": "elbow10",
+    "name": "Tube elbow \u00b7 \u00d810 / \u00d86 mm",
+    "description": "Straight or bent hollow tube for cable, pneumatic and hydraulic routing. Editable prototype dimensions.",
+    "parameters": {
+      "form": "elbow",
+      "diameter": 10,
+      "bore": 6,
+      "length": 100,
+      "radius": 30
+    }
+  }
+]

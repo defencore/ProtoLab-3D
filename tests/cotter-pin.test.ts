@@ -70,7 +70,7 @@ test('cotter pin size boundaries and bent legs keep one closed outward shell', (
 });
 
 test('cotter pin dimensions distinguish nominal hole and actual shank', () => {
-  const preset = part.presets.find((candidate) => candidate.name === 'DIN 94 4 × 32')!;
+  const preset = part.presets.find((candidate) => candidate.catalog?.designation === 'DIN 94 4 × 32')!;
   assert.equal(preset.parameters.shankDiameter, 3.7);
   assert.equal(preset.parameters.eyeLength, 8);
   assert.equal(preset.parameters.eyeWidth, 7.4);

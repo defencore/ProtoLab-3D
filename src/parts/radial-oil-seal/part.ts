@@ -35,7 +35,7 @@ function values(p: Parameters) {
 const part: PartDefinition = {
   id: 'radial-oil-seal',
   name: 'Radial shaft oil seal',
-  category: 'BEARINGS',
+  category: 'BEARINGS & SEALS',
   subgroup: 'SHAFT SEALS',
   icon: 'bearing',
   complexity: 'Case + sealing lip',

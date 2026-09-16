@@ -1,0 +1,980 @@
+[
+  {
+    "id": "phoenix2-spv5",
+    "name": "RunCam Phoenix 2 SPV5",
+    "manufacturer": "RunCam",
+    "kind": "fpv-analog",
+    "form": "fpv",
+    "width": 19,
+    "height": 19,
+    "depth": 19,
+    "interface": "cvbs",
+    "source": "https://shop.runcam.com/runcam-phoenix-2-spv5/",
+    "notes": "SPV5 revision. Side M2 hole positions, lens barrel profile and body/lens depth split are reconstructed. PAL/NTSC CVBS; TVL is not a pixel count.",
+    "geometry": {
+      "projection": 7,
+      "lensDiameter": 12,
+      "sideHole": 2,
+      "color": 14190129
+    },
+    "tvl": 1200,
+    "weight": 7.5,
+    "voltageMin": 5,
+    "voltageMax": 36,
+    "current": 0.095,
+    "hfov": 123,
+    "dfov": 155,
+    "sensor": "1/3-inch BSI CMOS",
+    "shutter": "rolling",
+    "conditions": {
+      "current": "95 mA at 5 V; also specified as 45 mA at 12 V.",
+      "hfov": "4:3 format; H 123°, V 96°, D 155°.",
+      "weight": "Without cable."
+    }
+  },
+  {
+    "id": "ratel2",
+    "name": "Caddx Ratel 2",
+    "manufacturer": "Caddx",
+    "kind": "fpv-analog",
+    "form": "fpv",
+    "width": 19,
+    "height": 19,
+    "depth": 20,
+    "interface": "cvbs",
+    "source": "https://en.caddxfpv.com.cn/products/ratel-2.html",
+    "notes": "Manufacturer specifies 19 × 19 mm; the 20 mm axial depth is an illustrative assumption and excluded from filters. FoV 165° / 160°, axis not stated. Published masses vary (5.9 / 8.5 g), so no single mass is assigned. PAL/NTSC CVBS; mounting offsets are reconstructed.",
+    "geometry": {
+      "projection": 8,
+      "lensDiameter": 12,
+      "sideHole": 2,
+      "color": 12027976
+    },
+    "tvl": 1200,
+    "voltageMin": 4.5,
+    "voltageMax": 36,
+    "sensor": "1/1.8-inch",
+    "unknownDimensions": [
+      "depth"
+    ]
+  },
+  {
+    "id": "baby-ratel2",
+    "name": "Caddx Baby Ratel 2",
+    "manufacturer": "Caddx",
+    "kind": "fpv-analog",
+    "form": "fpv",
+    "width": 14,
+    "height": 14,
+    "depth": 20.5,
+    "interface": "cvbs",
+    "source": "https://en.caddxfpv.com.cn/products/baby-ratel.html",
+    "notes": "Drawing gives 14 mm body, Ø9 mm lens and 11.5 + 9 mm axial extent including the rear connector. M2 side mount datum lies 9 mm behind the lens tip; remaining body profile is reconstructed. FoV 165° with axis unspecified. PAL/NTSC CVBS.",
+    "geometry": {
+      "projection": 5,
+      "lensDiameter": 9,
+      "sideHole": 2,
+      "color": 3290682
+    },
+    "tvl": 1200,
+    "weight": 3,
+    "voltageMin": 4.5,
+    "voltageMax": 26,
+    "sensor": "1/1.8-inch",
+    "drawing": "https://en.caddxfpv.com.cn/app/template/images/product_baby_ratel/img10.webp"
+  },
+  {
+    "id": "dji-o4",
+    "name": "DJI O4 camera module",
+    "manufacturer": "DJI",
+    "kind": "fpv-digital",
+    "form": "fpv",
+    "width": 12.36,
+    "height": 16.5,
+    "depth": 13.44,
+    "interface": "dji-o4",
+    "source": "https://www.dji.com/o4-air-unit/specs",
+    "notes": "Camera only; transmitter, coax cable and separate lens mount excluded. Supplier L×W×H is mapped to axial depth × width × height. FOV 117.6° as stated, axis unspecified. Camera-only supply and mass are not inferred from air-unit specifications. External shell and mounting details are approximate.",
+    "geometry": {
+      "projection": 5.5,
+      "lensDiameter": 8,
+      "color": 3422267
+    },
+    "pixelsX": 3840,
+    "pixelsY": 2880,
+    "fps": 120,
+    "sensor": "1/2-inch CMOS",
+    "channel": "colour",
+    "conditions": {
+      "fps": "120 fps at 1080p; 3840 × 2880 up to 60 fps. Recording requires the matching O4 Air Unit.",
+      "pixelsX": "Maximum recording dimensions; see frame-rate condition.",
+      "pixelsY": "Maximum recording dimensions; see frame-rate condition."
+    }
+  },
+  {
+    "id": "dji-o4-pro",
+    "name": "DJI O4 Pro camera module",
+    "manufacturer": "DJI",
+    "kind": "fpv-digital",
+    "form": "fpv",
+    "width": 20,
+    "height": 23.3,
+    "depth": 25.55,
+    "interface": "dji-o4",
+    "source": "https://www.dji.com/o4-air-unit/specs",
+    "notes": "Camera only; transmitter, coax cable and separate lens mount excluded. Supplier L×W×H is mapped to axial depth × width × height. FOV 155° as stated, axis unspecified. Camera-only supply and mass are not inferred from air-unit specifications. External shell and mounting details are approximate.",
+    "geometry": {
+      "projection": 10,
+      "lensDiameter": 16,
+      "color": 3422267
+    },
+    "pixelsX": 3840,
+    "pixelsY": 2880,
+    "fps": 120,
+    "sensor": "1/1.3-inch CMOS",
+    "channel": "colour",
+    "conditions": {
+      "fps": "120 fps at 3840 × 2160; 3840 × 2880 up to 60 fps. Recording requires the matching O4 Pro Air Unit.",
+      "pixelsX": "Maximum recording dimensions; see frame-rate condition.",
+      "pixelsY": "Maximum recording dimensions; see frame-rate condition."
+    }
+  },
+  {
+    "id": "lepton35",
+    "name": "FLIR Lepton 3.5 + socket",
+    "manufacturer": "Teledyne FLIR",
+    "kind": "thermal",
+    "form": "lepton",
+    "width": 11.8,
+    "height": 12.7,
+    "depth": 7.2,
+    "interface": "spi",
+    "source": "https://www.oem.flir.com/en-150/products/lepton/?model=500-0771-01",
+    "notes": "500-0771-01. Envelope includes the socket; 0.9 g mass is for the module without socket and is not used as assembly mass. Separate 2.8 V and 1.2 V rails plus 2.5–3.1 V IO; not a single-supply camera. Video SPI, control CCI/I²C-like. 8–14 µm. Socket pins, lens bezel and shutter housing are reconstructed.",
+    "geometry": {
+      "lensDiameter": 5.8,
+      "color": 7831431
+    },
+    "pixelsX": 160,
+    "pixelsY": 120,
+    "fps": 8.6,
+    "hfov": 57,
+    "dfov": 71,
+    "radiometric": true,
+    "power": 0.15,
+    "sensor": "Uncooled LWIR microbolometer",
+    "channel": "thermal",
+    "conditions": {
+      "power": "150 mW operating; 650 mW shutter event; 5 mW standby. Module only."
+    }
+  },
+  {
+    "id": "lepton31r",
+    "name": "FLIR Lepton 3.1R + socket",
+    "manufacturer": "Teledyne FLIR",
+    "kind": "thermal",
+    "form": "lepton",
+    "width": 11.8,
+    "height": 12.7,
+    "depth": 7.2,
+    "interface": "spi",
+    "source": "https://www.oem.flir.com/en-150/products/lepton/?model=500-0758-03",
+    "notes": "500-0758-03. Envelope includes the socket; 0.9 g mass is for the module without socket and is not used as assembly mass. Separate 2.8 V and 1.2 V rails plus 2.5–3.1 V IO; not a single-supply camera. Video SPI, control CCI/I²C-like. 8–14 µm. Socket pins, lens bezel and shutter housing are reconstructed.",
+    "geometry": {
+      "lensDiameter": 5.8,
+      "color": 7831431
+    },
+    "pixelsX": 160,
+    "pixelsY": 120,
+    "fps": 8.6,
+    "hfov": 95,
+    "dfov": 119,
+    "radiometric": true,
+    "power": 0.15,
+    "sensor": "Uncooled LWIR microbolometer",
+    "channel": "thermal",
+    "conditions": {
+      "power": "150 mW operating; 650 mW shutter event; 5 mW standby. Module only."
+    }
+  },
+  {
+    "id": "mlx90640-55",
+    "name": "Adafruit MLX90640 55°",
+    "manufacturer": "Adafruit",
+    "kind": "thermal",
+    "form": "thermal-board",
+    "width": 25.7,
+    "height": 17.7,
+    "depth": 16,
+    "interface": "i2c",
+    "source": "https://www.adafruit.com/product/4407",
+    "notes": "Breakout-board revision with STEMMA QT connectors. Array has 32 × 24 actual pixels; no interpolation counted as resolution. PCB hole positions and component layout are reconstructed; this is not a drilling template.",
+    "geometry": {
+      "lensDiameter": 9,
+      "color": 2435889
+    },
+    "pixelsX": 32,
+    "pixelsY": 24,
+    "fps": 16,
+    "hfov": 55,
+    "weight": 3.5,
+    "voltageMin": 3.3,
+    "voltageMax": 5,
+    "current": 0.023,
+    "radiometric": true,
+    "sensor": "MLX90640 thermopile array",
+    "channel": "thermal",
+    "conditions": {
+      "fps": "16 complete frames/s reported as practical by Adafruit; 32 FPS theoretical. Subpage refresh rate is not full-frame rate.",
+      "current": "Less than 23 mA; published upper bound.",
+      "hfov": "H 55° × V 35°."
+    }
+  },
+  {
+    "id": "mlx90640-110",
+    "name": "Adafruit MLX90640 110°",
+    "manufacturer": "Adafruit",
+    "kind": "thermal",
+    "form": "thermal-board",
+    "width": 25.8,
+    "height": 17.8,
+    "depth": 10.5,
+    "interface": "i2c",
+    "source": "https://www.adafruit.com/product/4469",
+    "notes": "Breakout-board revision with STEMMA QT connectors. Array has 32 × 24 actual pixels; no interpolation counted as resolution. PCB hole positions and component layout are reconstructed; this is not a drilling template.",
+    "geometry": {
+      "lensDiameter": 9,
+      "color": 2435889
+    },
+    "pixelsX": 32,
+    "pixelsY": 24,
+    "fps": 16,
+    "hfov": 110,
+    "weight": 3,
+    "voltageMin": 3.3,
+    "voltageMax": 5,
+    "current": 0.023,
+    "radiometric": true,
+    "sensor": "MLX90640 thermopile array",
+    "channel": "thermal",
+    "conditions": {
+      "fps": "16 complete frames/s reported as practical by Adafruit; 32 FPS theoretical. Subpage refresh rate is not full-frame rate.",
+      "current": "Less than 23 mA; published upper bound.",
+      "hfov": "H 110° × V 75°."
+    }
+  },
+  {
+    "id": "rlc510a",
+    "name": "Reolink RLC-510A (5 MP, 4 mm)",
+    "manufacturer": "Reolink",
+    "kind": "ip",
+    "form": "ip-bullet",
+    "width": 67,
+    "height": 67,
+    "depth": 186,
+    "interface": "ethernet",
+    "source": "https://cdn.reolink.com/files/docs/specs/RLC-510A-IP-Camera-Specifications.pdf",
+    "notes": "Specific 5 MP / 4 mm data-sheet version; later lens/sensor revisions may differ. RJ45 10/100 Ethernet, RTSP, H.264; IP66. Ø67 × 186 mm overall with mount aligned. Camera/mount length split, joint and hood are approximate; no unverified mounting-hole pattern supplied.",
+    "geometry": {
+      "lensDiameter": 18,
+      "color": 14211801
+    },
+    "pixelsX": 2560,
+    "pixelsY": 1920,
+    "fps": 30,
+    "hfov": 80,
+    "weight": 415,
+    "voltageMin": 12,
+    "voltageMax": 12,
+    "power": 12,
+    "poe": true,
+    "sensor": "1/2.7-inch CMOS",
+    "channel": "colour",
+    "conditions": {
+      "power": "Less than 12 W; stated upper bound.",
+      "voltageMin": "12 V DC input. Alternatively IEEE 802.3af active PoE, nominal 48 V.",
+      "voltageMax": "12 V DC input only; PoE is a separate interface.",
+      "fps": "2560 × 1920 at 30 fps."
+    }
+  },
+  {
+    "id": "rlc520a",
+    "name": "Reolink RLC-520A (5 MP, 4 mm)",
+    "manufacturer": "Reolink",
+    "kind": "ip",
+    "form": "ip-turret",
+    "width": 105,
+    "height": 105,
+    "depth": 95,
+    "interface": "ethernet",
+    "source": "https://cdn.reolink.com/files/docs/specs/RLC-520A-IP-Camera-Specifications.pdf",
+    "notes": "Specific 5 MP / 4 mm data-sheet version; later lens/sensor revisions may differ. RJ45 10/100 Ethernet, RTSP, H.264; IP66. Entire enclosure envelope, including aligned mount/base. Housing shape, mount profile and internal details are approximate; no unverified mounting holes are supplied. Turret is represented in its axial home orientation.",
+    "geometry": {
+      "lensDiameter": 18,
+      "color": 14211801
+    },
+    "pixelsX": 2560,
+    "pixelsY": 1920,
+    "fps": 30,
+    "hfov": 80,
+    "weight": 467.5,
+    "voltageMin": 12,
+    "voltageMax": 12,
+    "power": 12,
+    "poe": true,
+    "sensor": "1/2.7-inch CMOS",
+    "channel": "colour",
+    "conditions": {
+      "power": "Less than 12 W; stated upper bound.",
+      "voltageMin": "12 V DC input. Alternatively IEEE 802.3af active PoE, nominal 48 V.",
+      "voltageMax": "12 V DC input only; PoE is a separate interface.",
+      "fps": "2560 × 1920 at 30 fps."
+    }
+  },
+  {
+    "id": "pi3-standard",
+    "name": "Raspberry Pi Camera Module 3",
+    "manufacturer": "Raspberry Pi",
+    "kind": "board",
+    "form": "pi-board",
+    "width": 25,
+    "height": 23.862,
+    "depth": 11.3,
+    "interface": "csi2",
+    "source": "https://www.raspberrypi.com/products/camera-module-3/",
+    "notes": "PDAF autofocus, 15-pin CSI-2 FPC. Four Ø2.2 mm holes: X ±10.5 mm; Y 2 and 14.5 mm from bottom. Published drawing dimensions take precedence over rounded product-table dimensions. Lens support outline and rear connector profile are simplified.",
+    "geometry": {
+      "lensDiameter": 5.75,
+      "projection": 2.75,
+      "pcb": 1.12,
+      "rear": 3.2,
+      "centerY": 2.569000000000001,
+      "mountHoles": [
+        {
+          "x": -10.5,
+          "y": -9.931,
+          "diameter": 2.2
+        },
+        {
+          "x": -10.5,
+          "y": 2.569000000000001,
+          "diameter": 2.2
+        },
+        {
+          "x": 10.5,
+          "y": -9.931,
+          "diameter": 2.2
+        },
+        {
+          "x": 10.5,
+          "y": 2.569000000000001,
+          "diameter": 2.2
+        }
+      ],
+      "color": 2389582
+    },
+    "pixelsX": 4608,
+    "pixelsY": 2592,
+    "fps": 120,
+    "hfov": 66,
+    "dfov": 75,
+    "weight": 4,
+    "shutter": "rolling",
+    "sensor": "Sony IMX708",
+    "channel": "colour",
+    "drawing": "https://www.raspberrypi.com/products/camera-module-3/",
+    "conditions": {
+      "fps": "1536 × 864 at 120 fps; maximum-resolution still output is separate.",
+      "width": "Mechanical drawing values; product nominal envelope is 25 × 24 × 11.5 mm (12.4 mm Wide).",
+      "height": "23.862 mm from mechanical drawing; nominal 24 mm.",
+      "depth": "Drawing axial envelope; nominal product height is rounded."
+    }
+  },
+  {
+    "id": "pi3-wide",
+    "name": "Raspberry Pi Camera Module 3 Wide",
+    "manufacturer": "Raspberry Pi",
+    "kind": "board",
+    "form": "pi-board",
+    "width": 25,
+    "height": 23.862,
+    "depth": 12,
+    "interface": "csi2",
+    "source": "https://www.raspberrypi.com/products/camera-module-3/",
+    "notes": "PDAF autofocus, 15-pin CSI-2 FPC. Four Ø2.2 mm holes: X ±10.5 mm; Y 2 and 14.5 mm from bottom. Published drawing dimensions take precedence over rounded product-table dimensions. Lens support outline and rear connector profile are simplified.",
+    "geometry": {
+      "lensDiameter": 6.95,
+      "projection": 2.75,
+      "pcb": 1.12,
+      "rear": 3.2,
+      "centerY": 2.569000000000001,
+      "mountHoles": [
+        {
+          "x": -10.5,
+          "y": -9.931,
+          "diameter": 2.2
+        },
+        {
+          "x": -10.5,
+          "y": 2.569000000000001,
+          "diameter": 2.2
+        },
+        {
+          "x": 10.5,
+          "y": -9.931,
+          "diameter": 2.2
+        },
+        {
+          "x": 10.5,
+          "y": 2.569000000000001,
+          "diameter": 2.2
+        }
+      ],
+      "color": 2389582
+    },
+    "pixelsX": 4608,
+    "pixelsY": 2592,
+    "fps": 120,
+    "hfov": 102,
+    "dfov": 120,
+    "weight": 4,
+    "shutter": "rolling",
+    "sensor": "Sony IMX708",
+    "channel": "colour",
+    "drawing": "https://www.raspberrypi.com/products/camera-module-3/",
+    "conditions": {
+      "fps": "1536 × 864 at 120 fps; maximum-resolution still output is separate.",
+      "width": "Mechanical drawing values; product nominal envelope is 25 × 24 × 11.5 mm (12.4 mm Wide).",
+      "height": "23.862 mm from mechanical drawing; nominal 24 mm.",
+      "depth": "Drawing axial envelope; nominal product height is rounded."
+    }
+  },
+  {
+    "id": "pi-ai",
+    "name": "Raspberry Pi AI Camera",
+    "manufacturer": "Raspberry Pi",
+    "kind": "board-ai",
+    "form": "pi-board",
+    "width": 25,
+    "height": 24,
+    "depth": 11.9,
+    "interface": "csi2",
+    "source": "https://www.raspberrypi.com/products/ai-camera/",
+    "notes": "On-sensor neural-network processing; manual focus. FOV 78.3° ±3° as stated. Mounting layout follows the Pi camera form factor; connector and lens envelope are approximate.",
+    "geometry": {
+      "lensDiameter": 8,
+      "projection": 3,
+      "pcb": 1.12,
+      "rear": 2.5,
+      "centerY": 2.5,
+      "mountHoles": [
+        {
+          "x": -10.5,
+          "y": -10.0,
+          "diameter": 2.2
+        },
+        {
+          "x": -10.5,
+          "y": 2.5,
+          "diameter": 2.2
+        },
+        {
+          "x": 10.5,
+          "y": -10.0,
+          "diameter": 2.2
+        },
+        {
+          "x": 10.5,
+          "y": 2.5,
+          "diameter": 2.2
+        }
+      ],
+      "color": 2389582
+    },
+    "pixelsX": 4056,
+    "pixelsY": 3040,
+    "fps": 30,
+    "weight": 6,
+    "shutter": "rolling",
+    "sensor": "Sony IMX500",
+    "channel": "colour",
+    "conditions": {
+      "fps": "2028 × 1520 at 30 fps; 4056 × 3040 at 10 fps."
+    }
+  },
+  {
+    "id": "pi-global-shutter",
+    "name": "Raspberry Pi Global Shutter · bare CS body",
+    "manufacturer": "Raspberry Pi",
+    "kind": "machine-vision",
+    "form": "cs-board",
+    "width": 38,
+    "height": 38,
+    "depth": 19.8,
+    "interface": "csi2",
+    "source": "https://datasheets.raspberrypi.com/gs-camera/gs-camera-product-brief.pdf",
+    "notes": "Bare board and CS lens mount only. Lens, C/CS adapter, cap, 39.5 mm protective rear cover and protruding tripod foot are excluded. Four Ø2.5 mm holes on 30 × 30 mm centers. Mount opening and internal sensor plane reconstructed. No FOV without a selected lens.",
+    "geometry": {
+      "lensDiameter": 36,
+      "pcb": 1.2,
+      "rear": 0,
+      "centerY": 0,
+      "mountHoles": [
+        {
+          "x": -15,
+          "y": -15,
+          "diameter": 2.5
+        },
+        {
+          "x": -15,
+          "y": 15,
+          "diameter": 2.5
+        },
+        {
+          "x": 15,
+          "y": -15,
+          "diameter": 2.5
+        },
+        {
+          "x": 15,
+          "y": 15,
+          "diameter": 2.5
+        }
+      ],
+      "color": 3159352
+    },
+    "pixelsX": 1456,
+    "pixelsY": 1088,
+    "fps": 60,
+    "shutter": "global",
+    "sensor": "Sony IMX296",
+    "channel": "colour",
+    "drawing": "https://datasheets.raspberrypi.com/gs-camera/gs-camera-product-brief.pdf",
+    "conditions": {
+      "width": "Bare 38 mm board/CS body; excludes wider rear protective cover and tripod foot.",
+      "height": "Bare board/CS body; tripod foot excluded.",
+      "depth": "Bare CS body; lens, adapter and dust cap excluded."
+    }
+  },
+  {
+    "id": "d435i",
+    "name": "RealSense D435i",
+    "manufacturer": "RealSense",
+    "kind": "depth",
+    "form": "stereo",
+    "width": 90,
+    "height": 25,
+    "depth": 25,
+    "interface": "usb3",
+    "source": "https://www.realsenseai.com/products/depth-camera-d435i/",
+    "notes": "USB-C 3.1 Gen 1, active stereo depth and IMU. Depth cameras have global shutters; RGB uses rolling shutter. 50 mm stereo baseline. Connector, optical-window outlines and shell profile are reconstructed; mounts omitted pending exact drawing integration.",
+    "geometry": {
+      "lenses": [
+        -30,
+        -1,
+        20,
+        31.5
+      ],
+      "lensDiameter": 9,
+      "color": 11384253
+    },
+    "pixelsX": 1280,
+    "pixelsY": 720,
+    "fps": 90,
+    "hfov": 87,
+    "shutter": "mixed",
+    "sensor": "D430 stereo + RGB + IMU",
+    "channel": "depth",
+    "conditions": {
+      "fps": "Depth up to 90 fps, depending on resolution and stream configuration; RGB 1920 × 1080 at 30 fps.",
+      "hfov": "Depth H87° × V58°. RGB H69° × V42°.",
+      "pixelsX": "Maximum depth resolution; RGB channel has separate resolution.",
+      "pixelsY": "Maximum depth resolution; RGB channel has separate resolution."
+    }
+  },
+  {
+    "id": "oak-d-lite-af",
+    "name": "Luxonis OAK-D Lite AF",
+    "manufacturer": "Luxonis",
+    "kind": "depth-ai",
+    "form": "stereo",
+    "width": 91,
+    "height": 28,
+    "depth": 17.5,
+    "interface": "usb3",
+    "source": "https://checkout.luxonis.com/products/oak-d-lite-1",
+    "notes": "USB stereo depth with on-device neural inference, autofocus colour variant. RGB rolling shutter; stereo global shutters. 75 mm stereo baseline. 1/4-inch tripod and 75 mm M4 mounting mentioned by manufacturer; hole depths/positions omitted pending drawing integration. Optical-window and connector profiles reconstructed.",
+    "geometry": {
+      "lenses": [
+        -37.5,
+        0,
+        37.5
+      ],
+      "lensDiameter": 9,
+      "color": 11450045
+    },
+    "pixelsX": 4208,
+    "pixelsY": 3120,
+    "fps": 35,
+    "hfov": 69,
+    "weight": 61,
+    "power": 5,
+    "shutter": "mixed",
+    "sensor": "IMX214 RGB + 2 × OV7251",
+    "channel": "colour",
+    "conditions": {
+      "fps": "Colour-camera maximum 35 fps; stereo sensor 640 × 480 up to 117 fps. Actual depth/AI throughput depends on the pipeline.",
+      "hfov": "RGB H69°. Stereo H73°.",
+      "power": "Up to 5 W for the camera system."
+    }
+  },
+  {
+    "id": "dm256-4mm",
+    "name": "DM256 · 4 mm",
+    "width": 21,
+    "height": 21,
+    "weight": 22,
+    "pixelsX": 256,
+    "pixelsY": 192,
+    "focalLength": 4,
+    "hfov": 40.1,
+    "pixelPitch": 12,
+    "netd": 35,
+    "detectorRate": 50,
+    "power": 0.6,
+    "voltageMin": 4.5,
+    "voltageMax": 18,
+    "kind": "thermal",
+    "interface": "cvbs",
+    "channel": "thermal",
+    "manufacturer": "Unspecified (supplied reference)",
+    "vfov": 30.3,
+    "form": "thermal-stack",
+    "depth": 36.4,
+    "source": "",
+    "sourceKind": "attachment",
+    "notes": "The supplied dimensional drawing is labeled CV256-4MM, not DM256. Its 31.7 mm body and 36.4 mm overall envelope are used only as an illustrative reconstruction for this DM256 4 mm selection; correspondence is unconfirmed and axial depth is excluded from filters. Eight smooth Ø2 mm, 2 mm-deep side-hole envelopes use the separate CV256-4MM drawing as a shape reference. Their applicability to DM models is unconfirmed; axial offset and internal stack are approximate.",
+    "unknownDimensions": [
+      "depth"
+    ],
+    "geometry": {
+      "stack": {
+        "bodyDepth": 31.7,
+        "projection": 12.4,
+        "lensDiameter": 19.8,
+        "focusRingDepth": 6,
+        "mountDepth": 2,
+        "usb": false
+      }
+    },
+    "conditions": {
+      "depth": "The supplied dimensional drawing is labeled CV256-4MM, not DM256. Its 31.7 mm body and 36.4 mm overall envelope are used only as an illustrative reconstruction for this DM256 4 mm selection; correspondence is unconfirmed and axial depth is excluded from filters.",
+      "weight": "Listed module mass; the supplied table does not distinguish lens/connector revisions.",
+      "detectorRate": "Source lists frame rate 50 Hz alongside PAL/CVBS. It does not establish 50 progressive output frames per second.",
+      "netd": "Source upper bound ≤35 mK; measurement conditions are not stated.",
+      "power": "Listed consumption; conditions unspecified.",
+      "hfov": "First angle in the supplied H×V / field-angle pair for this lens.",
+      "voltageMin": "4.5–18 V on the five-pin connector; this range is not a USB-C input rating.",
+      "voltageMax": "4.5–18 V on the five-pin connector; this range is not a USB-C input rating."
+    }
+  },
+  {
+    "id": "dm256-10mm",
+    "name": "DM256 · 10 mm",
+    "width": 21,
+    "height": 21,
+    "weight": 22,
+    "pixelsX": 256,
+    "pixelsY": 192,
+    "focalLength": 10,
+    "hfov": 17.6,
+    "pixelPitch": 12,
+    "netd": 35,
+    "detectorRate": 50,
+    "power": 0.6,
+    "voltageMin": 4.5,
+    "voltageMax": 18,
+    "kind": "thermal",
+    "interface": "cvbs",
+    "channel": "thermal",
+    "manufacturer": "Unspecified (supplied reference)",
+    "form": "thermal-stack",
+    "depth": 31.7,
+    "source": "",
+    "sourceKind": "attachment",
+    "notes": "Only 21 × 21 mm is unambiguously specified. A photo caption reads 27 × 27 mm along the side; it does not establish the complete axial envelope for this lens variant. Model uses an illustrative 27 mm body plus 4.7 mm connector projection, excluded from dimension filters. Eight smooth Ø2 mm, 2 mm-deep side-hole envelopes use the separate CV256-4MM drawing as a shape reference. Their applicability to DM models is unconfirmed; axial offset and internal stack are approximate.",
+    "unknownDimensions": [
+      "depth"
+    ],
+    "geometry": {
+      "stack": {
+        "bodyDepth": 27,
+        "projection": 8,
+        "lensDiameter": 20,
+        "focusRingDepth": 2.8,
+        "mountDepth": 2,
+        "usb": false
+      }
+    },
+    "conditions": {
+      "depth": "Only 21 × 21 mm is unambiguously specified. A photo caption reads 27 × 27 mm along the side; it does not establish the complete axial envelope for this lens variant. Model uses an illustrative 27 mm body plus 4.7 mm connector projection, excluded from dimension filters.",
+      "weight": "Listed module mass; the supplied table does not distinguish lens/connector revisions.",
+      "detectorRate": "Source lists frame rate 50 Hz alongside PAL/CVBS. It does not establish 50 progressive output frames per second.",
+      "netd": "Source upper bound ≤35 mK; measurement conditions are not stated.",
+      "power": "Listed consumption; conditions unspecified.",
+      "hfov": "First angle in the supplied H×V / field-angle pair for this lens.",
+      "voltageMin": "4.5–18 V on the five-pin connector; this range is not a USB-C input rating.",
+      "voltageMax": "4.5–18 V on the five-pin connector; this range is not a USB-C input rating."
+    }
+  },
+  {
+    "id": "dm384-9-1mm",
+    "name": "DM384 · 9.1 mm",
+    "width": 21,
+    "height": 21,
+    "weight": 22,
+    "pixelsX": 384,
+    "pixelsY": 288,
+    "focalLength": 9.1,
+    "hfov": 29.3,
+    "pixelPitch": 12,
+    "netd": 35,
+    "detectorRate": 50,
+    "power": 1,
+    "voltageMin": 4.5,
+    "voltageMax": 18,
+    "kind": "thermal",
+    "interface": "cvbs",
+    "channel": "thermal",
+    "manufacturer": "Unspecified (supplied reference)",
+    "vfov": 22,
+    "form": "thermal-stack",
+    "depth": 31.7,
+    "source": "",
+    "sourceKind": "attachment",
+    "notes": "Only 21 × 21 mm is unambiguously specified. A photo caption reads 27 × 27 mm along the side; it does not establish the complete axial envelope for this lens variant. Model uses an illustrative 27 mm body plus 4.7 mm connector projection, excluded from dimension filters. Eight smooth Ø2 mm, 2 mm-deep side-hole envelopes use the separate CV256-4MM drawing as a shape reference. Their applicability to DM models is unconfirmed; axial offset and internal stack are approximate.",
+    "unknownDimensions": [
+      "depth"
+    ],
+    "geometry": {
+      "stack": {
+        "bodyDepth": 27,
+        "projection": 8,
+        "lensDiameter": 20,
+        "focusRingDepth": 2.8,
+        "mountDepth": 2,
+        "usb": false
+      }
+    },
+    "conditions": {
+      "depth": "Only 21 × 21 mm is unambiguously specified. A photo caption reads 27 × 27 mm along the side; it does not establish the complete axial envelope for this lens variant. Model uses an illustrative 27 mm body plus 4.7 mm connector projection, excluded from dimension filters.",
+      "weight": "Listed module mass; the supplied table does not distinguish lens/connector revisions.",
+      "detectorRate": "Source lists frame rate 50 Hz alongside PAL/CVBS. It does not establish 50 progressive output frames per second.",
+      "netd": "Source upper bound ≤35 mK; measurement conditions are not stated.",
+      "power": "Listed consumption; conditions unspecified.",
+      "hfov": "First angle in the supplied H×V / field-angle pair for this lens.",
+      "voltageMin": "4.5–18 V on the five-pin connector; this range is not a USB-C input rating.",
+      "voltageMax": "4.5–18 V on the five-pin connector; this range is not a USB-C input rating."
+    }
+  },
+  {
+    "id": "dm640-9mm",
+    "name": "DM640 · 9 mm",
+    "width": 21,
+    "height": 21,
+    "weight": 22,
+    "pixelsX": 640,
+    "pixelsY": 512,
+    "focalLength": 9,
+    "hfov": 48.9,
+    "pixelPitch": 12,
+    "netd": 35,
+    "detectorRate": 50,
+    "power": 1,
+    "voltageMin": 4.5,
+    "voltageMax": 18,
+    "kind": "thermal",
+    "interface": "cvbs",
+    "channel": "thermal",
+    "manufacturer": "Unspecified (supplied reference)",
+    "vfov": 39.1,
+    "form": "thermal-stack",
+    "depth": 31.7,
+    "source": "",
+    "sourceKind": "attachment",
+    "notes": "Only 21 × 21 mm is unambiguously specified. A photo caption reads 27 × 27 mm along the side; it does not establish the complete axial envelope for this lens variant. Model uses an illustrative 27 mm body plus 4.7 mm connector projection, excluded from dimension filters. Eight smooth Ø2 mm, 2 mm-deep side-hole envelopes use the separate CV256-4MM drawing as a shape reference. Their applicability to DM models is unconfirmed; axial offset and internal stack are approximate.",
+    "unknownDimensions": [
+      "depth"
+    ],
+    "geometry": {
+      "stack": {
+        "bodyDepth": 27,
+        "projection": 8,
+        "lensDiameter": 20,
+        "focusRingDepth": 2.8,
+        "mountDepth": 2,
+        "usb": false
+      }
+    },
+    "conditions": {
+      "depth": "Only 21 × 21 mm is unambiguously specified. A photo caption reads 27 × 27 mm along the side; it does not establish the complete axial envelope for this lens variant. Model uses an illustrative 27 mm body plus 4.7 mm connector projection, excluded from dimension filters.",
+      "weight": "Listed module mass; the supplied table does not distinguish lens/connector revisions.",
+      "detectorRate": "Source lists frame rate 50 Hz alongside PAL/CVBS. It does not establish 50 progressive output frames per second.",
+      "netd": "Source upper bound ≤35 mK; measurement conditions are not stated.",
+      "power": "Listed consumption; conditions unspecified.",
+      "hfov": "First angle in the supplied H×V / field-angle pair for this lens.",
+      "voltageMin": "4.5–18 V on the five-pin connector; this range is not a USB-C input rating.",
+      "voltageMax": "4.5–18 V on the five-pin connector; this range is not a USB-C input rating."
+    }
+  },
+  {
+    "id": "uc256-9mm",
+    "name": "UC256 · 9 mm · USB/UVC",
+    "width": 21,
+    "height": 21,
+    "weight": 23,
+    "pixelsX": 256,
+    "pixelsY": 192,
+    "focalLength": 9,
+    "hfov": 19.4,
+    "pixelPitch": 12,
+    "netd": 25,
+    "detectorRate": 50,
+    "power": 0.8,
+    "voltageMin": 5,
+    "voltageMax": 5,
+    "kind": "thermal",
+    "interface": "usb-uvc",
+    "channel": "thermal",
+    "manufacturer": "Unspecified (supplied reference)",
+    "vfov": 14.6,
+    "form": "thermal-stack",
+    "depth": 34.5,
+    "source": "",
+    "sourceKind": "attachment",
+    "notes": "UC table specifies 21 × 21 × 29.8 mm without interface; supplied drawing also marks 27 ± 0.5 mm. The reference does not reconcile these revisions. Model uses a 29.8 mm body plus an assumed 4.7 mm connector projection; total 34.5 mm is illustrative and excluded from dimension filters. Eight M2 mounting-hole envelopes, 2.5 mm deep, with 12 mm pitch on each side; smooth bores represent the nominal thread envelope. The axial hole offset, board thicknesses, screw heads, connector dimensions and housing split are reconstructed.",
+    "unknownDimensions": [
+      "depth"
+    ],
+    "geometry": {
+      "stack": {
+        "bodyDepth": 29.8,
+        "projection": 8.8,
+        "lensDiameter": 20,
+        "focusRingDepth": 2.8,
+        "mountDepth": 2.5,
+        "usb": true
+      }
+    },
+    "conditions": {
+      "depth": "UC table specifies 21 × 21 × 29.8 mm without interface; supplied drawing also marks 27 ± 0.5 mm. The reference does not reconcile these revisions. Model uses a 29.8 mm body plus an assumed 4.7 mm connector projection; total 34.5 mm is illustrative and excluded from dimension filters.",
+      "weight": "Listed module mass; the supplied table does not distinguish lens/connector revisions.",
+      "detectorRate": "Detector frame rate, as labeled in the UC table; USB streaming throughput and progressive CVBS frame rate are not established.",
+      "netd": "Source upper bound ≤25 mK at f/1.0, 50 Hz, 300 K.",
+      "power": "Source upper bound ≤0.8 W; conditions unspecified.",
+      "hfov": "First angle in the supplied H×V / field-angle pair for this lens.",
+      "voltageMin": "USB 5 V supply.",
+      "voltageMax": "USB 5 V supply."
+    }
+  },
+  {
+    "id": "uc384-9mm",
+    "name": "UC384 · 9 mm · USB/UVC",
+    "width": 21,
+    "height": 21,
+    "weight": 23,
+    "pixelsX": 384,
+    "pixelsY": 288,
+    "focalLength": 9,
+    "hfov": 28.7,
+    "pixelPitch": 12,
+    "netd": 25,
+    "detectorRate": 50,
+    "power": 0.8,
+    "voltageMin": 5,
+    "voltageMax": 5,
+    "kind": "thermal",
+    "interface": "usb-uvc",
+    "channel": "thermal",
+    "manufacturer": "Unspecified (supplied reference)",
+    "vfov": 21.7,
+    "form": "thermal-stack",
+    "depth": 34.5,
+    "source": "",
+    "sourceKind": "attachment",
+    "notes": "UC table specifies 21 × 21 × 29.8 mm without interface; supplied drawing also marks 27 ± 0.5 mm. The reference does not reconcile these revisions. Model uses a 29.8 mm body plus an assumed 4.7 mm connector projection; total 34.5 mm is illustrative and excluded from dimension filters. Eight M2 mounting-hole envelopes, 2.5 mm deep, with 12 mm pitch on each side; smooth bores represent the nominal thread envelope. The axial hole offset, board thicknesses, screw heads, connector dimensions and housing split are reconstructed.",
+    "unknownDimensions": [
+      "depth"
+    ],
+    "geometry": {
+      "stack": {
+        "bodyDepth": 29.8,
+        "projection": 8.8,
+        "lensDiameter": 20,
+        "focusRingDepth": 2.8,
+        "mountDepth": 2.5,
+        "usb": true
+      }
+    },
+    "conditions": {
+      "depth": "UC table specifies 21 × 21 × 29.8 mm without interface; supplied drawing also marks 27 ± 0.5 mm. The reference does not reconcile these revisions. Model uses a 29.8 mm body plus an assumed 4.7 mm connector projection; total 34.5 mm is illustrative and excluded from dimension filters.",
+      "weight": "Listed module mass; the supplied table does not distinguish lens/connector revisions.",
+      "detectorRate": "Detector frame rate, as labeled in the UC table; USB streaming throughput and progressive CVBS frame rate are not established.",
+      "netd": "Source upper bound ≤25 mK at f/1.0, 50 Hz, 300 K.",
+      "power": "Source upper bound ≤0.8 W; conditions unspecified.",
+      "hfov": "First angle in the supplied H×V / field-angle pair for this lens.",
+      "voltageMin": "USB 5 V supply.",
+      "voltageMax": "USB 5 V supply."
+    }
+  },
+  {
+    "id": "uc640-9mm",
+    "name": "UC640 · 9 mm · CVBS",
+    "width": 21,
+    "height": 21,
+    "weight": 23,
+    "pixelsX": 640,
+    "pixelsY": 512,
+    "focalLength": 9,
+    "hfov": 46.2,
+    "pixelPitch": 12,
+    "netd": 25,
+    "detectorRate": 50,
+    "power": 0.8,
+    "voltageMin": 4.5,
+    "voltageMax": 18,
+    "kind": "thermal",
+    "interface": "cvbs",
+    "channel": "thermal",
+    "manufacturer": "Unspecified (supplied reference)",
+    "vfov": 37.7,
+    "form": "thermal-stack",
+    "depth": 34.5,
+    "source": "",
+    "sourceKind": "attachment",
+    "notes": "UC table specifies 21 × 21 × 29.8 mm without interface; supplied drawing also marks 27 ± 0.5 mm. The reference does not reconcile these revisions. Model uses a 29.8 mm body plus an assumed 4.7 mm connector projection; total 34.5 mm is illustrative and excluded from dimension filters. Eight M2 mounting-hole envelopes, 2.5 mm deep, with 12 mm pitch on each side; smooth bores represent the nominal thread envelope. The axial hole offset, board thicknesses, screw heads, connector dimensions and housing split are reconstructed.",
+    "unknownDimensions": [
+      "depth"
+    ],
+    "geometry": {
+      "stack": {
+        "bodyDepth": 29.8,
+        "projection": 8.8,
+        "lensDiameter": 20,
+        "focusRingDepth": 2.8,
+        "mountDepth": 2.5,
+        "usb": false
+      }
+    },
+    "conditions": {
+      "depth": "UC table specifies 21 × 21 × 29.8 mm without interface; supplied drawing also marks 27 ± 0.5 mm. The reference does not reconcile these revisions. Model uses a 29.8 mm body plus an assumed 4.7 mm connector projection; total 34.5 mm is illustrative and excluded from dimension filters.",
+      "weight": "Listed module mass; the supplied table does not distinguish lens/connector revisions.",
+      "detectorRate": "Detector frame rate, as labeled in the UC table; USB streaming throughput and progressive CVBS frame rate are not established.",
+      "netd": "Source upper bound ≤25 mK at f/1.0, 50 Hz, 300 K.",
+      "power": "Source upper bound ≤0.8 W; conditions unspecified.",
+      "hfov": "First angle in the supplied H×V / field-angle pair for this lens.",
+      "voltageMin": "4.5–18 V on the five-pin connector; this range is not a USB-C input rating.",
+      "voltageMax": "4.5–18 V on the five-pin connector; this range is not a USB-C input rating."
+    }
+  }
+]

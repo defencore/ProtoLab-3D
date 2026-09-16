@@ -17,7 +17,7 @@ const defaults = { bore: 25, outer: 52, width: 18, elements: 12, boreType: 'stra
 const part: PartDefinition = {
   id: 'spherical-roller-bearing',
   name: 'Spherical roller bearing',
-  category: 'BEARINGS',
+  category: 'BEARINGS & SEALS',
   subgroup: 'ROLLER BEARINGS',
   description: 'Two rows of inclined barrel rollers inside a curved outer race envelope.',
   keywords: ['22205', '22206', '22207', '22208', 'barrel', 'spherical'],

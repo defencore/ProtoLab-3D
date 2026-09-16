@@ -29,9 +29,9 @@ function innerProfile(p: PartDefinition['defaults']): TurnedProfile {
 }
 const part: PartDefinition = {
   id: 'rod-end-bearing',
-  name: 'Rod end bearing',
-  category: 'BEARINGS',
-  subgroup: 'ROD END BEARINGS',
+  name: 'Rod-end bearing',
+  category: 'TRANSMISSION & LINKAGES',
+  subgroup: 'JOINTS & ROD ENDS',
   description: 'Eye bearing and a male shank for linkages, steering and actuator layouts.',
   keywords: ['heim', 'rose joint', 'linkage', 'eye', 'rod', 'male'],
   icon: 'bearing',

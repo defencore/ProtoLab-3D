@@ -1,0 +1,438 @@
+[
+  {
+    "id": "energizer-e96",
+    "name": "Energizer E96 · AAAA",
+    "description": "8.3 × 8.3 × 42.5 mm · 1.5 V",
+    "parameters": {
+      "model": "energizer-e96"
+    },
+    "catalog": {
+      "designation": "Energizer E96 · AAAA",
+      "manufacturer": "Energizer",
+      "sourceName": "Energizer — dimensions and specifications",
+      "sourceUrl": "https://data.energizer.com/pdfs/e96.pdf",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External geometry follows the published envelope; undimensioned details are approximate.",
+        "limitations": "Maximum industry-standard envelopes from Energizer drawings. Button diameters use published maxima and projections use published minima; other rim and gasket details are approximate. The 9V snap center spacing is 12.7 mm (midpoint of 12.45–12.95); undimensioned snap diameters are illustrative. No holders or internal chemistry geometry are modeled.",
+        "sourceUrl": "https://data.energizer.com/pdfs/e96.pdf"
+      },
+      "attributes": {
+        "manufacturer": "Energizer",
+        "format": "AAAA",
+        "chemistry": "Alkaline",
+        "connection": "Button top",
+        "voltage": 1.5,
+        "width": 8.3,
+        "length": 8.3,
+        "height": 42.5,
+        "diameter": 8.3,
+        "weight": 6.5
+      },
+      "attributeConditions": {
+        "width": "Maximum envelope from manufacturer dimensional specification.",
+        "length": "Maximum envelope from manufacturer dimensional specification.",
+        "height": "Maximum envelope from manufacturer dimensional specification.",
+        "diameter": "Maximum diameter, not nominal format code."
+      },
+      "specifications": [
+        {
+          "label": "Geometry basis",
+          "value": "Maximum manufacturer envelope"
+        },
+        {
+          "label": "Mechanical detail limits",
+          "value": "Maximum industry-standard envelopes from Energizer drawings. Button diameters use published maxima and projections use published minima; other rim and gasket details are approximate. The 9V snap center spacing is 12.7 mm (midpoint of 12.45–12.95); undimensioned snap diameters are illustrative. No holders or internal chemistry geometry are modeled."
+        },
+        {
+          "label": "Capacity / discharge current",
+          "value": "Load-dependent curves only; no single capacity or maximum-current value entered."
+        }
+      ]
+    }
+  },
+  {
+    "id": "energizer-e92",
+    "name": "Energizer E92 · AAA",
+    "description": "10.5 × 10.5 × 44.5 mm · 1.5 V",
+    "parameters": {
+      "model": "energizer-e92"
+    },
+    "catalog": {
+      "designation": "Energizer E92 · AAA",
+      "manufacturer": "Energizer",
+      "sourceName": "Energizer — dimensions and specifications",
+      "sourceUrl": "https://data.energizer.com/pdfs/e92.pdf",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External geometry follows the published envelope; undimensioned details are approximate.",
+        "limitations": "Maximum industry-standard envelopes from Energizer drawings. Button diameters use published maxima and projections use published minima; other rim and gasket details are approximate. The 9V snap center spacing is 12.7 mm (midpoint of 12.45–12.95); undimensioned snap diameters are illustrative. No holders or internal chemistry geometry are modeled.",
+        "sourceUrl": "https://data.energizer.com/pdfs/e92.pdf"
+      },
+      "attributes": {
+        "manufacturer": "Energizer",
+        "format": "AAA",
+        "chemistry": "Alkaline",
+        "connection": "Button top",
+        "voltage": 1.5,
+        "width": 10.5,
+        "length": 10.5,
+        "height": 44.5,
+        "diameter": 10.5,
+        "weight": 11.5
+      },
+      "attributeConditions": {
+        "width": "Maximum envelope from manufacturer dimensional specification.",
+        "length": "Maximum envelope from manufacturer dimensional specification.",
+        "height": "Maximum envelope from manufacturer dimensional specification.",
+        "diameter": "Maximum diameter, not nominal format code."
+      },
+      "specifications": [
+        {
+          "label": "Geometry basis",
+          "value": "Maximum manufacturer envelope"
+        },
+        {
+          "label": "Mechanical detail limits",
+          "value": "Maximum industry-standard envelopes from Energizer drawings. Button diameters use published maxima and projections use published minima; other rim and gasket details are approximate. The 9V snap center spacing is 12.7 mm (midpoint of 12.45–12.95); undimensioned snap diameters are illustrative. No holders or internal chemistry geometry are modeled."
+        },
+        {
+          "label": "Capacity / discharge current",
+          "value": "Load-dependent curves only; no single capacity or maximum-current value entered."
+        }
+      ]
+    }
+  },
+  {
+    "id": "energizer-e91",
+    "name": "Energizer E91 · AA",
+    "description": "14.5 × 14.5 × 50.5 mm · 1.5 V",
+    "parameters": {
+      "model": "energizer-e91"
+    },
+    "catalog": {
+      "designation": "Energizer E91 · AA",
+      "manufacturer": "Energizer",
+      "sourceName": "Energizer — dimensions and specifications",
+      "sourceUrl": "https://data.energizer.com/pdfs/e91.pdf",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External geometry follows the published envelope; undimensioned details are approximate.",
+        "limitations": "Maximum industry-standard envelopes from Energizer drawings. Button diameters use published maxima and projections use published minima; other rim and gasket details are approximate. The 9V snap center spacing is 12.7 mm (midpoint of 12.45–12.95); undimensioned snap diameters are illustrative. No holders or internal chemistry geometry are modeled.",
+        "sourceUrl": "https://data.energizer.com/pdfs/e91.pdf"
+      },
+      "attributes": {
+        "manufacturer": "Energizer",
+        "format": "AA",
+        "chemistry": "Alkaline",
+        "connection": "Button top",
+        "voltage": 1.5,
+        "width": 14.5,
+        "length": 14.5,
+        "height": 50.5,
+        "diameter": 14.5,
+        "weight": 23
+      },
+      "attributeConditions": {
+        "width": "Maximum envelope from manufacturer dimensional specification.",
+        "length": "Maximum envelope from manufacturer dimensional specification.",
+        "height": "Maximum envelope from manufacturer dimensional specification.",
+        "diameter": "Maximum diameter, not nominal format code."
+      },
+      "specifications": [
+        {
+          "label": "Geometry basis",
+          "value": "Maximum manufacturer envelope"
+        },
+        {
+          "label": "Mechanical detail limits",
+          "value": "Maximum industry-standard envelopes from Energizer drawings. Button diameters use published maxima and projections use published minima; other rim and gasket details are approximate. The 9V snap center spacing is 12.7 mm (midpoint of 12.45–12.95); undimensioned snap diameters are illustrative. No holders or internal chemistry geometry are modeled."
+        },
+        {
+          "label": "Capacity / discharge current",
+          "value": "Load-dependent curves only; no single capacity or maximum-current value entered."
+        }
+      ]
+    }
+  },
+  {
+    "id": "energizer-123",
+    "name": "Energizer 123 · CR123A",
+    "description": "17 × 17 × 34.5 mm · 3 V",
+    "parameters": {
+      "model": "energizer-123"
+    },
+    "catalog": {
+      "designation": "Energizer 123 · CR123A",
+      "manufacturer": "Energizer",
+      "sourceName": "Energizer — dimensions and specifications",
+      "sourceUrl": "https://data.energizer.com/pdfs/123_eu.pdf",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External geometry follows the published envelope; undimensioned details are approximate.",
+        "limitations": "Maximum industry-standard envelopes from Energizer drawings. Button diameters use published maxima and projections use published minima; other rim and gasket details are approximate. The 9V snap center spacing is 12.7 mm (midpoint of 12.45–12.95); undimensioned snap diameters are illustrative. No holders or internal chemistry geometry are modeled.",
+        "sourceUrl": "https://data.energizer.com/pdfs/123_eu.pdf"
+      },
+      "attributes": {
+        "manufacturer": "Energizer",
+        "format": "CR123A",
+        "chemistry": "Lithium primary",
+        "connection": "Button top",
+        "capacity": 1500,
+        "voltage": 3,
+        "current": 1.5,
+        "width": 17,
+        "length": 17,
+        "height": 34.5,
+        "diameter": 17,
+        "weight": 16.5
+      },
+      "attributeConditions": {
+        "width": "Maximum envelope from manufacturer dimensional specification.",
+        "length": "Maximum envelope from manufacturer dimensional specification.",
+        "height": "Maximum envelope from manufacturer dimensional specification.",
+        "diameter": "Maximum diameter, not nominal format code.",
+        "capacity": "Typical: 100 ohm load, 21 °C, discharge to 2.0 V.",
+        "current": "Manufacturer maximum continuous discharge; pulse rating is excluded."
+      },
+      "specifications": [
+        {
+          "label": "Geometry basis",
+          "value": "Maximum manufacturer envelope"
+        },
+        {
+          "label": "Mechanical detail limits",
+          "value": "Maximum industry-standard envelopes from Energizer drawings. Button diameters use published maxima and projections use published minima; other rim and gasket details are approximate. The 9V snap center spacing is 12.7 mm (midpoint of 12.45–12.95); undimensioned snap diameters are illustrative. No holders or internal chemistry geometry are modeled."
+        }
+      ]
+    }
+  },
+  {
+    "id": "energizer-e93",
+    "name": "Energizer E93 · C",
+    "description": "26.2 × 26.2 × 50 mm · 1.5 V",
+    "parameters": {
+      "model": "energizer-e93"
+    },
+    "catalog": {
+      "designation": "Energizer E93 · C",
+      "manufacturer": "Energizer",
+      "sourceName": "Energizer — dimensions and specifications",
+      "sourceUrl": "https://data.energizer.com/pdfs/e93.pdf",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External geometry follows the published envelope; undimensioned details are approximate.",
+        "limitations": "Maximum industry-standard envelopes from Energizer drawings. Button diameters use published maxima and projections use published minima; other rim and gasket details are approximate. The 9V snap center spacing is 12.7 mm (midpoint of 12.45–12.95); undimensioned snap diameters are illustrative. No holders or internal chemistry geometry are modeled.",
+        "sourceUrl": "https://data.energizer.com/pdfs/e93.pdf"
+      },
+      "attributes": {
+        "manufacturer": "Energizer",
+        "format": "C",
+        "chemistry": "Alkaline",
+        "connection": "Button top",
+        "voltage": 1.5,
+        "width": 26.2,
+        "length": 26.2,
+        "height": 50,
+        "diameter": 26.2,
+        "weight": 66
+      },
+      "attributeConditions": {
+        "width": "Maximum envelope from manufacturer dimensional specification.",
+        "length": "Maximum envelope from manufacturer dimensional specification.",
+        "height": "Maximum envelope from manufacturer dimensional specification.",
+        "diameter": "Maximum diameter, not nominal format code."
+      },
+      "specifications": [
+        {
+          "label": "Geometry basis",
+          "value": "Maximum manufacturer envelope"
+        },
+        {
+          "label": "Mechanical detail limits",
+          "value": "Maximum industry-standard envelopes from Energizer drawings. Button diameters use published maxima and projections use published minima; other rim and gasket details are approximate. The 9V snap center spacing is 12.7 mm (midpoint of 12.45–12.95); undimensioned snap diameters are illustrative. No holders or internal chemistry geometry are modeled."
+        },
+        {
+          "label": "Capacity / discharge current",
+          "value": "Load-dependent curves only; no single capacity or maximum-current value entered."
+        }
+      ]
+    }
+  },
+  {
+    "id": "energizer-e95",
+    "name": "Energizer E95 · D",
+    "description": "34.2 × 34.2 × 61.5 mm · 1.5 V",
+    "parameters": {
+      "model": "energizer-e95"
+    },
+    "catalog": {
+      "designation": "Energizer E95 · D",
+      "manufacturer": "Energizer",
+      "sourceName": "Energizer — dimensions and specifications",
+      "sourceUrl": "https://data.energizer.com/pdfs/e95.pdf",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External geometry follows the published envelope; undimensioned details are approximate.",
+        "limitations": "Maximum industry-standard envelopes from Energizer drawings. Button diameters use published maxima and projections use published minima; other rim and gasket details are approximate. The 9V snap center spacing is 12.7 mm (midpoint of 12.45–12.95); undimensioned snap diameters are illustrative. No holders or internal chemistry geometry are modeled.",
+        "sourceUrl": "https://data.energizer.com/pdfs/e95.pdf"
+      },
+      "attributes": {
+        "manufacturer": "Energizer",
+        "format": "D",
+        "chemistry": "Alkaline",
+        "connection": "Button top",
+        "voltage": 1.5,
+        "width": 34.2,
+        "length": 34.2,
+        "height": 61.5,
+        "diameter": 34.2,
+        "weight": 139
+      },
+      "attributeConditions": {
+        "width": "Maximum envelope from manufacturer dimensional specification.",
+        "length": "Maximum envelope from manufacturer dimensional specification.",
+        "height": "Maximum envelope from manufacturer dimensional specification.",
+        "diameter": "Maximum diameter, not nominal format code."
+      },
+      "specifications": [
+        {
+          "label": "Geometry basis",
+          "value": "Maximum manufacturer envelope"
+        },
+        {
+          "label": "Mechanical detail limits",
+          "value": "Maximum industry-standard envelopes from Energizer drawings. Button diameters use published maxima and projections use published minima; other rim and gasket details are approximate. The 9V snap center spacing is 12.7 mm (midpoint of 12.45–12.95); undimensioned snap diameters are illustrative. No holders or internal chemistry geometry are modeled."
+        },
+        {
+          "label": "Capacity / discharge current",
+          "value": "Load-dependent curves only; no single capacity or maximum-current value entered."
+        }
+      ]
+    }
+  },
+  {
+    "id": "energizer-522",
+    "name": "Energizer 522 · 9 V PP3",
+    "description": "26.5 × 17.5 × 48.5 mm · 9 V",
+    "parameters": {
+      "model": "energizer-522"
+    },
+    "catalog": {
+      "designation": "Energizer 522 · 9V PP3",
+      "manufacturer": "Energizer",
+      "sourceName": "Energizer — dimensions and specifications",
+      "sourceUrl": "https://data.energizer.com/pdfs/522.pdf",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External geometry follows the published envelope; undimensioned details are approximate.",
+        "limitations": "Maximum industry-standard envelopes from Energizer drawings. Button diameters use published maxima and projections use published minima; other rim and gasket details are approximate. The 9V snap center spacing is 12.7 mm (midpoint of 12.45–12.95); undimensioned snap diameters are illustrative. No holders or internal chemistry geometry are modeled.",
+        "sourceUrl": "https://data.energizer.com/pdfs/522.pdf"
+      },
+      "attributes": {
+        "manufacturer": "Energizer",
+        "format": "9V PP3",
+        "chemistry": "Alkaline",
+        "connection": "Miniature snap",
+        "voltage": 9,
+        "width": 26.5,
+        "length": 17.5,
+        "height": 48.5,
+        "weight": 45
+      },
+      "attributeConditions": {
+        "width": "Maximum envelope from manufacturer dimensional specification.",
+        "length": "Maximum envelope from manufacturer dimensional specification.",
+        "height": "Maximum envelope from manufacturer dimensional specification."
+      },
+      "specifications": [
+        {
+          "label": "Geometry basis",
+          "value": "Maximum manufacturer envelope"
+        },
+        {
+          "label": "Mechanical detail limits",
+          "value": "Maximum industry-standard envelopes from Energizer drawings. Button diameters use published maxima and projections use published minima; other rim and gasket details are approximate. The 9V snap center spacing is 12.7 mm (midpoint of 12.45–12.95); undimensioned snap diameters are illustrative. No holders or internal chemistry geometry are modeled."
+        },
+        {
+          "label": "Capacity / discharge current",
+          "value": "Load-dependent curves only; no single capacity or maximum-current value entered."
+        }
+      ]
+    }
+  },
+  {
+    "id": "energizer-cr2032",
+    "name": "Energizer CR2032",
+    "description": "20 × 20 × 3.2 mm · 3 V",
+    "parameters": {
+      "model": "energizer-cr2032"
+    },
+    "catalog": {
+      "designation": "Energizer CR2032",
+      "manufacturer": "Energizer",
+      "sourceName": "Energizer — dimensions and specifications",
+      "sourceUrl": "https://data.energizer.com/pdfs/cr2032.pdf",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External geometry follows the published envelope; undimensioned details are approximate.",
+        "limitations": "Maximum industry-standard envelopes from Energizer drawings. Button diameters use published maxima and projections use published minima; other rim and gasket details are approximate. The 9V snap center spacing is 12.7 mm (midpoint of 12.45–12.95); undimensioned snap diameters are illustrative. No holders or internal chemistry geometry are modeled.",
+        "sourceUrl": "https://data.energizer.com/pdfs/cr2032.pdf"
+      },
+      "attributes": {
+        "manufacturer": "Energizer",
+        "format": "CR2032",
+        "chemistry": "Lithium primary",
+        "connection": "Coin contacts",
+        "capacity": 235,
+        "voltage": 3,
+        "width": 20,
+        "length": 20,
+        "height": 3.2,
+        "diameter": 20,
+        "weight": 3
+      },
+      "attributeConditions": {
+        "width": "Maximum envelope from manufacturer dimensional specification.",
+        "length": "Maximum envelope from manufacturer dimensional specification.",
+        "height": "Maximum envelope from manufacturer dimensional specification.",
+        "diameter": "Maximum diameter, not nominal format code.",
+        "capacity": "Typical: 15 kΩ load, 21 °C, discharge to 2.0 V. Test drain is not a maximum current rating."
+      },
+      "specifications": [
+        {
+          "label": "Geometry basis",
+          "value": "Maximum manufacturer envelope"
+        },
+        {
+          "label": "Mechanical detail limits",
+          "value": "Maximum industry-standard envelopes from Energizer drawings. Button diameters use published maxima and projections use published minima; other rim and gasket details are approximate. The 9V snap center spacing is 12.7 mm (midpoint of 12.45–12.95); undimensioned snap diameters are illustrative. No holders or internal chemistry geometry are modeled."
+        }
+      ]
+    }
+  }
+]

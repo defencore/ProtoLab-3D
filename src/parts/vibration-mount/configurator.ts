@@ -1,0 +1,54 @@
+import type { Parameters, ParameterDefinition } from '../../core/types';
+export const defaults: Parameters = { form: 'bobbin', diameter: 25, height: 20, bore: 6, stud: 12 };
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'form',
+    label: 'Isolator form',
+    type: 'select',
+    group: 'Configuration',
+    options: [
+      { value: 'bobbin', label: 'Stud bobbin mount' },
+      { value: 'sleeve', label: 'Bonded sleeve bushing' },
+    ],
+  },
+  {
+    key: 'diameter',
+    label: 'Rubber diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'height',
+    label: 'Rubber length',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'bore',
+    label: 'Bore / stud diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+  {
+    key: 'stud',
+    label: 'Stud projection',
+    type: 'number',
+    group: 'Dimensions',
+    min: 0.1,
+    max: 2000,
+    step: 0.1,
+    unit: 'mm',
+  },
+];

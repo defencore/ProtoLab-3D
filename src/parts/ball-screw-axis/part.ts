@@ -371,7 +371,7 @@ function build(p: Parameters, state: string) {
 }
 const part: PartDefinition = {
   id: 'ball-screw-axis',
-  name: 'Ball screw linear axis',
+  name: 'Ball screw linear actuator',
   category: 'LINEAR MOTION',
   subgroup: 'BALL SCREWS',
   icon: 'rail',
@@ -516,7 +516,7 @@ const part: PartDefinition = {
     return chunks.join('\n');
   },
   sources: [
-    { label: 'Supplied SFU dimensions', url: 'references/sfu-dimensions.png' },
+    { label: 'Supplied SFU dimensions', url: '' },
     ...(guide.sources ?? []),
   ],
   notes:

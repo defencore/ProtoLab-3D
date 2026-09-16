@@ -105,7 +105,7 @@ export function nutDefinition(
     id,
     name,
     standard,
-    category: 'FASTENERS',
+    category: 'FASTENERS & THREADS',
     subgroup: 'NUTS',
     icon: 'bolt',
     complexity: 'Standard nut profiles',

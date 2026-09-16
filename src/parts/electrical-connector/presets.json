@@ -1,0 +1,494 @@
+[
+  {
+    "id": "xt30u-m",
+    "name": "AMASS XT30U-M · Male pins",
+    "description": "2 contacts · 10.2 × 5.6 × 13.7 mm",
+    "parameters": {
+      "model": "xt30u-m",
+      "detail": "envelope"
+    },
+    "catalog": {
+      "designation": "XT30U-M",
+      "manufacturer": "AMASS",
+      "sourceName": "AMASS 2024 catalog · page 7",
+      "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
+      "productCodes": ["XT30U-M"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Manufacturer outline dimensions; reconstructed contact and housing details.",
+        "limitations": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry.",
+        "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf"
+      },
+      "attributes": {
+        "family": "XT30U",
+        "sex": "M",
+        "pins": 2,
+        "width": 10.2,
+        "height": 5.6,
+        "length": 13.7
+      },
+      "specifications": [
+        {
+          "label": "Included rear cover",
+          "value": "No"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xt30u-f",
+    "name": "AMASS XT30U-F · Female sockets",
+    "description": "2 contacts · 10.2 × 5.6 × 12.4 mm",
+    "parameters": {
+      "model": "xt30u-f",
+      "detail": "envelope"
+    },
+    "catalog": {
+      "designation": "XT30U-F",
+      "manufacturer": "AMASS",
+      "sourceName": "AMASS 2024 catalog · page 7",
+      "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
+      "productCodes": ["XT30U-F"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Manufacturer outline dimensions; reconstructed contact and housing details.",
+        "limitations": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry.",
+        "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf"
+      },
+      "attributes": {
+        "family": "XT30U",
+        "sex": "F",
+        "pins": 2,
+        "width": 10.2,
+        "height": 5.6,
+        "length": 12.4
+      },
+      "specifications": [
+        {
+          "label": "Included rear cover",
+          "value": "No"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xt60-m",
+    "name": "AMASS XT60-M · Male pins",
+    "description": "2 contacts · 16 × 8.1 × 20.5 mm",
+    "parameters": {
+      "model": "xt60-m",
+      "detail": "envelope"
+    },
+    "catalog": {
+      "designation": "XT60-M",
+      "manufacturer": "AMASS",
+      "sourceName": "AMASS 2024 catalog · page 13",
+      "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
+      "productCodes": ["XT60-M"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Manufacturer outline dimensions; reconstructed contact and housing details.",
+        "limitations": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry.",
+        "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf"
+      },
+      "attributes": {
+        "family": "XT60",
+        "sex": "M",
+        "pins": 2,
+        "width": 16,
+        "height": 8.1,
+        "length": 20.5
+      },
+      "specifications": [
+        {
+          "label": "Included rear cover",
+          "value": "No"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xt60-f",
+    "name": "AMASS XT60-F · Female sockets",
+    "description": "2 contacts · 15.5 × 8.1 × 21.3 mm",
+    "parameters": {
+      "model": "xt60-f",
+      "detail": "envelope"
+    },
+    "catalog": {
+      "designation": "XT60-F",
+      "manufacturer": "AMASS",
+      "sourceName": "AMASS XT60-F specification · 2025V0",
+      "sourceUrl": "https://www.china-amass.net/uploads/57.XT60-F-SPEC-2025V0.pdf",
+      "productCodes": ["XT60-F"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Manufacturer outline dimensions; reconstructed contact and housing details.",
+        "limitations": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry.",
+        "sourceUrl": "https://www.china-amass.net/uploads/57.XT60-F-SPEC-2025V0.pdf"
+      },
+      "attributes": {
+        "family": "XT60",
+        "sex": "F",
+        "pins": 2,
+        "width": 15.5,
+        "height": 8.1,
+        "length": 21.3
+      },
+      "specifications": [
+        {
+          "label": "Included rear cover",
+          "value": "No"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xt60u-m",
+    "name": "AMASS XT60U-M · Male pins",
+    "description": "2 contacts · 15.35 × 8.3 × 17.2 mm",
+    "parameters": {
+      "model": "xt60u-m",
+      "detail": "envelope"
+    },
+    "catalog": {
+      "designation": "XT60U-M",
+      "manufacturer": "AMASS",
+      "sourceName": "AMASS 2024 catalog · page 13",
+      "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
+      "productCodes": ["XT60U-M"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Manufacturer outline dimensions; reconstructed contact and housing details.",
+        "limitations": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry.",
+        "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf"
+      },
+      "attributes": {
+        "family": "XT60U",
+        "sex": "M",
+        "pins": 2,
+        "width": 15.35,
+        "height": 8.3,
+        "length": 17.2
+      },
+      "specifications": [
+        {
+          "label": "Included rear cover",
+          "value": "No"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xt60u-f",
+    "name": "AMASS XT60U-F · Female sockets",
+    "description": "2 contacts · 15.3 × 8.3 × 17.4 mm",
+    "parameters": {
+      "model": "xt60u-f",
+      "detail": "envelope"
+    },
+    "catalog": {
+      "designation": "XT60U-F",
+      "manufacturer": "AMASS",
+      "sourceName": "AMASS 2024 catalog · page 13",
+      "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
+      "productCodes": ["XT60U-F"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Manufacturer outline dimensions; reconstructed contact and housing details.",
+        "limitations": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry.",
+        "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf"
+      },
+      "attributes": {
+        "family": "XT60U",
+        "sex": "F",
+        "pins": 2,
+        "width": 15.3,
+        "height": 8.3,
+        "length": 17.4
+      },
+      "specifications": [
+        {
+          "label": "Included rear cover",
+          "value": "No"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xt60h-m",
+    "name": "AMASS XT60H-M · Male pins",
+    "description": "2 contacts · 16.4 × 9.2 × 23.85 mm · with rear cover",
+    "parameters": {
+      "model": "xt60h-m",
+      "detail": "envelope"
+    },
+    "catalog": {
+      "designation": "XT60H-M",
+      "manufacturer": "AMASS",
+      "sourceName": "AMASS 2024 catalog · page 13",
+      "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
+      "productCodes": ["XT60H-M"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Manufacturer outline dimensions; reconstructed contact and housing details.",
+        "limitations": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry.",
+        "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf"
+      },
+      "attributes": {
+        "family": "XT60H",
+        "sex": "M",
+        "pins": 2,
+        "width": 16.4,
+        "height": 9.2,
+        "length": 23.85
+      },
+      "specifications": [
+        {
+          "label": "Included rear cover",
+          "value": "Yes"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xt60h-f",
+    "name": "AMASS XT60H-F · Female sockets",
+    "description": "2 contacts · 16.4 × 9.2 × 24.95 mm · with rear cover",
+    "parameters": {
+      "model": "xt60h-f",
+      "detail": "envelope"
+    },
+    "catalog": {
+      "designation": "XT60H-F",
+      "manufacturer": "AMASS",
+      "sourceName": "AMASS 2024 catalog · page 13",
+      "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
+      "productCodes": ["XT60H-F"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Manufacturer outline dimensions; reconstructed contact and housing details.",
+        "limitations": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry.",
+        "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf"
+      },
+      "attributes": {
+        "family": "XT60H",
+        "sex": "F",
+        "pins": 2,
+        "width": 16.4,
+        "height": 9.2,
+        "length": 24.95
+      },
+      "specifications": [
+        {
+          "label": "Included rear cover",
+          "value": "Yes"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xt90h-m",
+    "name": "AMASS XT90H-M · Male pins",
+    "description": "2 contacts · 21.3 × 10.7 × 30.7 mm · with rear cover",
+    "parameters": {
+      "model": "xt90h-m",
+      "detail": "envelope"
+    },
+    "catalog": {
+      "designation": "XT90H-M",
+      "manufacturer": "AMASS",
+      "sourceName": "AMASS 2024 catalog · page 21",
+      "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
+      "productCodes": ["XT90H-M"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Manufacturer outline dimensions; reconstructed contact and housing details.",
+        "limitations": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry.",
+        "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf"
+      },
+      "attributes": {
+        "family": "XT90H",
+        "sex": "M",
+        "pins": 2,
+        "width": 21.3,
+        "height": 10.7,
+        "length": 30.7
+      },
+      "specifications": [
+        {
+          "label": "Included rear cover",
+          "value": "Yes"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xt90h-f",
+    "name": "AMASS XT90H-F · Female sockets",
+    "description": "2 contacts · 21.3 × 10.9 × 29.7 mm · with rear cover",
+    "parameters": {
+      "model": "xt90h-f",
+      "detail": "envelope"
+    },
+    "catalog": {
+      "designation": "XT90H-F",
+      "manufacturer": "AMASS",
+      "sourceName": "AMASS 2024 catalog · page 21",
+      "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
+      "productCodes": ["XT90H-F"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Manufacturer outline dimensions; reconstructed contact and housing details.",
+        "limitations": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry.",
+        "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf"
+      },
+      "attributes": {
+        "family": "XT90H",
+        "sex": "F",
+        "pins": 2,
+        "width": 21.3,
+        "height": 10.9,
+        "length": 29.7
+      },
+      "specifications": [
+        {
+          "label": "Included rear cover",
+          "value": "Yes"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry."
+        }
+      ]
+    }
+  },
+  {
+    "id": "mr60-m",
+    "name": "AMASS MR60-M · Male pins",
+    "description": "3 contacts · 20.2 × 9.8 × 21.6 mm · with rear cover",
+    "parameters": {
+      "model": "mr60-m",
+      "detail": "envelope"
+    },
+    "catalog": {
+      "designation": "MR60-M",
+      "manufacturer": "AMASS",
+      "sourceName": "AMASS 2024 catalog · page 16",
+      "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
+      "productCodes": ["MR60-M"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Manufacturer outline dimensions; reconstructed contact and housing details.",
+        "limitations": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry.",
+        "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf"
+      },
+      "attributes": {
+        "family": "MR60",
+        "sex": "M",
+        "pins": 3,
+        "width": 20.2,
+        "height": 9.8,
+        "length": 21.6
+      },
+      "specifications": [
+        {
+          "label": "Included rear cover",
+          "value": "Yes"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry."
+        }
+      ]
+    }
+  },
+  {
+    "id": "mr60-f",
+    "name": "AMASS MR60-F · Female sockets",
+    "description": "3 contacts · 20.2 × 9.8 × 21.1 mm · with rear cover",
+    "parameters": {
+      "model": "mr60-f",
+      "detail": "envelope"
+    },
+    "catalog": {
+      "designation": "MR60-F",
+      "manufacturer": "AMASS",
+      "sourceName": "AMASS 2024 catalog · page 16",
+      "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
+      "productCodes": ["MR60-F"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Manufacturer outline dimensions; reconstructed contact and housing details.",
+        "limitations": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry.",
+        "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf"
+      },
+      "attributes": {
+        "family": "MR60",
+        "sex": "F",
+        "pins": 3,
+        "width": 20.2,
+        "height": 9.8,
+        "length": 21.1
+      },
+      "specifications": [
+        {
+          "label": "Included rear cover",
+          "value": "Yes"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry."
+        }
+      ]
+    }
+  }
+]

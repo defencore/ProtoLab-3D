@@ -6,9 +6,9 @@ import { armDirections, buildHorn, hornDimensions, hornPython } from './lib/geom
 
 const part: PartDefinition = {
   id: 'servo-arm',
-  name: 'Servo arm / horn',
-  category: 'MOTION',
-  subgroup: 'SERVO LINKAGES',
+  name: 'Servo horn',
+  category: 'MOTORS & ACTUATORS',
+  subgroup: 'SERVO ACCESSORIES',
   icon: 'bracket',
   complexity: 'Serrated socket, linkage holes and optional split clamp',
   description:
@@ -148,10 +148,10 @@ const part: PartDefinition = {
   notes:
     'All dimensions are millimetres. Socket tooth count and both diameters are independent; a 23T, 24T or 25T label does not guarantee fit. Straight-flank socket serrations are a prototype approximation, not a manufacturer spline specification. Linkage and clamp bores are smooth; drawing thread callouts are recorded in source details. Only explicitly listed source dimensions are verified; other preset dimensions are editable prototype values. Clamp screws export as separate FreeCAD components.',
   sources: [
-    { label: 'Supplied anodized arm examples', url: 'references/servo-arm-colours.png' },
-    { label: 'Supplied servo horn set dimensions', url: 'references/servo-horn-6mm-set.png' },
-    { label: 'Supplied PDRS60 15T drawing', url: 'references/servo-arm-pdrs60-15t.png' },
-    { label: 'Supplied 25T clamping arm drawing', url: 'references/servo-arm-clamping-25t.png' },
+    { label: 'Supplied anodized arm examples', url: '' },
+    { label: 'Supplied servo horn set dimensions', url: '' },
+    { label: 'Supplied PDRS60 15T drawing', url: '' },
+    { label: 'Supplied 25T clamping arm drawing', url: '' },
   ],
 };
 export default part;

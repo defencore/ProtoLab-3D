@@ -1,0 +1,53 @@
+[
+  {
+    "id": "variant-2",
+    "name": "SRS igniter · Type 2 · Ø11 × 22.5 mm",
+    "description": "User drawing · total height includes 7.3 mm reference pins. Exterior layout only.",
+    "parameters": {
+      "bodyDiameter": 11,
+      "overallHeight": 22.5,
+      "capDiameter": 7.6,
+      "capHeight": 6.6,
+      "collarDiameter": 8.2,
+      "baseDiameter": 6.5
+    },
+    "catalog": {
+      "designation": "SRS Igniter · variant 2 exterior",
+      "sourceName": "User-supplied variant 2 drawing",
+      "sourceUrl": "",
+      "sourceKind": "attachment",
+      "verifiedParameters": [
+        "bodyDiameter",
+        "overallHeight"
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Adjustable exterior silhouette with three dimensioned drawing values; remaining details are approximate.",
+        "limitations": "Only body diameter, overall height and pin length are dimensioned in the supplied drawing. The cap diameter comes from an earlier user description; other proportions and pin diameter are approximate. Pin spacing follows the existing CA281A library reconstruction, not a verified terminal drawing. No connector keys, retainer, latch seats or internal geometry. Real mating compatibility is unverified.",
+        "sourceUrl": ""
+      },
+      "specifications": [
+        {
+          "label": "Drawing diameter",
+          "value": "11 ±0.1 mm"
+        },
+        {
+          "label": "Drawing total height, including pins",
+          "value": "22.5 ±0.2 mm"
+        },
+        {
+          "label": "Exposed pin length",
+          "value": "7.3 mm · fixed"
+        },
+        {
+          "label": "Contact reference",
+          "value": "CA281A library layout · fixed 4 mm pitch / Ø1 mm approximate pins"
+        },
+        {
+          "label": "Connector compatibility",
+          "value": "Not verified; interface and retainer geometry omitted"
+        }
+      ]
+    }
+  }
+]

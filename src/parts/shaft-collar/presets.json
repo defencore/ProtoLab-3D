@@ -1,0 +1,28 @@
+[
+  {
+    "id": "set12",
+    "name": "Set-screw collar \u00b7 \u00d812 bore",
+    "description": "Set-screw and split-clamp shaft collars with editable axial bore. Editable prototype dimensions.",
+    "parameters": {
+      "form": "set",
+      "diameter": 28,
+      "bore": 12,
+      "length": 12,
+      "screw": 4,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "split12",
+    "name": "Split collar \u00b7 \u00d812 bore",
+    "description": "Set-screw and split-clamp shaft collars with editable axial bore. Editable prototype dimensions.",
+    "parameters": {
+      "form": "split",
+      "diameter": 28,
+      "bore": 12,
+      "length": 12,
+      "screw": 4,
+      "detail": "envelope"
+    }
+  }
+]

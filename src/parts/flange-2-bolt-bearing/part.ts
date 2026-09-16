@@ -22,8 +22,8 @@ const defaults = {
 const part: PartDefinition = {
   id: 'flange-2-bolt-bearing',
   name: 'Two-bolt flange bearing',
-  category: 'BEARINGS',
-  subgroup: 'PILLOW & FLANGE BLOCK BEARINGS',
+  category: 'BEARINGS & SEALS',
+  subgroup: 'MOUNTED BEARINGS',
   icon: 'bearing',
   complexity: 'Oval flange unit',
   description:

@@ -32,9 +32,9 @@ const defaults = {
 };
 const part: PartDefinition = {
   id: 'helical-gear',
-  name: 'Helical & herringbone gear',
-  category: 'MOTION',
-  subgroup: 'GEARS & RACKS',
+  name: 'Helical and herringbone gear',
+  category: 'TRANSMISSION & LINKAGES',
+  subgroup: 'GEARS & GEAR DRIVES',
   icon: 'gear',
   complexity: '2 tooth arrangements',
   description:

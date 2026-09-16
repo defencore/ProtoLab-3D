@@ -1,0 +1,54 @@
+[
+  {
+    "id": "heat-m3",
+    "name": "Heat-set insert \u00b7 M3",
+    "description": "Heat-set, flanged insert, rivet nut and self-clinching nut forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "heat",
+      "diameter": 6,
+      "bore": 3,
+      "length": 6,
+      "flange": 8,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "press-m4",
+    "name": "Press-fit insert \u00b7 M4",
+    "description": "Heat-set, flanged insert, rivet nut and self-clinching nut forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "press",
+      "diameter": 8,
+      "bore": 4,
+      "length": 10,
+      "flange": 10,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "rivnut-m6",
+    "name": "Rivet nut \u00b7 M6",
+    "description": "Heat-set, flanged insert, rivet nut and self-clinching nut forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "rivnut",
+      "diameter": 9,
+      "bore": 6,
+      "length": 15,
+      "flange": 13,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "clinch-m3",
+    "name": "Self-clinching nut \u00b7 M3",
+    "description": "Heat-set, flanged insert, rivet nut and self-clinching nut forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "clinch",
+      "diameter": 6,
+      "bore": 3,
+      "length": 3,
+      "flange": 8,
+      "detail": "envelope"
+    }
+  }
+]

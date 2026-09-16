@@ -31,8 +31,8 @@ function presets(defaults: Parameters, standalone: boolean): Preset[] {
               ...(reference.catalog.alternateSourceUrls ?? []),
               ...(miniature
                 ? [
-                    'references/ball-screw-mini-options.png',
-                    'references/ball-screw-mini-c7-options.png',
+                    '',
+                    '',
                   ]
                 : []),
             ],

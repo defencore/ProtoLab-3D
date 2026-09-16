@@ -17,11 +17,13 @@
       "alternateSourceUrls": [
         "https://files.waveshare.com/upload/0/08/ST3215-2D.zip",
         "https://files.waveshare.com/upload/5/59/ST3215-3D.zip",
-        "references/st3215-hs-drawing.png",
+        "https://www.waveshare.com/wiki/ST3215-HS_Servo_Motor",
         "https://www.waveshare.com/product/modules/motors-servos/st3215-hs-servo-motor.htm",
-        "references/st3215-hs-manufacturer.step"
+        "https://www.waveshare.com/wiki/ST3215-HS_Servo_Motor"
       ],
-      "verifiedParameters": ["model"],
+      "verifiedParameters": [
+        "model"
+      ],
       "specifications": [
         {
           "label": "Supply",
@@ -99,6 +101,13 @@
         "stallCurrent": "Current test voltage not stated by manufacturer.",
         "weight": "Manufacturer product-listing weight; accessory inclusion not specified.",
         "mountPitch": "Front-face longitudinal pitch; rear-face pitch is 24.45 mm."
+      },
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Servo body and supplied discs imported from the original eight-solid ST3215 STEP.",
+        "limitations": "Rear cover internal void moved 0.00001 mm to repair source topology; external surfaces unchanged. Source overlaps preserved. The optional single arm is a constructed accessory, not manufacturer CAD. This is the ST3215 mechanical file linked for ST3215-HS, not a separate HS-specific CAD revision.",
+        "sourceUrl": "https://files.waveshare.com/upload/5/59/ST3215-3D.zip",
+        "sourceSha256": "58e38e4dc49f97df738c5f229f9aa8a7dce64a0a1d01335486a52d53e6017e8a"
       }
     }
   },
@@ -119,11 +128,15 @@
       "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
       "alternateSourceUrls": [
         "https://kstservos.com/products/x10-mini-pro-digital-metal-gear-servo-8-0kgf-cm-0-08sec-for-competition-gliders-and-large-scale-gliders",
-        "references/kst-x10-mini-pro.pdf",
-        "references/kst-x10-mini-pro.png"
+        "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+        "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183"
       ],
-      "verifiedParameters": ["model"],
-      "productCodes": ["BR0023.0230-A"],
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "BR0023.0230-A"
+      ],
       "specifications": [
         {
           "label": "Case envelope",
@@ -232,11 +245,15 @@
       "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
       "alternateSourceUrls": [
         "https://kstservos.com/products/x10-mini-pro-digital-metal-gear-servo-8-0kgf-cm-0-08sec-for-competition-gliders-and-large-scale-gliders",
-        "references/kst-x10-mini-pro.pdf",
-        "references/kst-x10-mini-pro.png"
+        "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
+        "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183"
       ],
-      "verifiedParameters": ["model"],
-      "productCodes": ["BR0023.0230-B"],
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "BR0023.0230-B"
+      ],
       "specifications": [
         {
           "label": "Case envelope",
@@ -345,11 +362,15 @@
       "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839",
       "alternateSourceUrls": [
         "https://kstservos.com/products/x10-10-8kg-torque-servo-micro-digital-metal-gear-glider-servo-motor",
-        "references/kst-x10-v8.pdf",
-        "references/kst-x10-v8.png"
+        "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839",
+        "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839"
       ],
-      "verifiedParameters": ["model"],
-      "productCodes": ["BR0023.0008-V8"],
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "BR0023.0008-V8"
+      ],
       "specifications": [
         {
           "label": "Dimension basis",
@@ -439,11 +460,15 @@
       "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
       "alternateSourceUrls": [
         "https://kstservos.com/products/x10-pro-digital-metal-gear-servo-11-5kgf-cm-0-10sec-for-f5j-competition-gliders-and-large-scale-gliders",
-        "references/kst-x10-pro.pdf",
-        "references/kst-x10-pro.png"
+        "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+        "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163"
       ],
-      "verifiedParameters": ["model"],
-      "productCodes": ["BR0023.0229-A"],
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "BR0023.0229-A"
+      ],
       "specifications": [
         {
           "label": "Dimension basis",
@@ -533,11 +558,15 @@
       "sourceUrl": "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
       "alternateSourceUrls": [
         "https://kstservos.com/products/x10-pro-digital-metal-gear-servo-11-5kgf-cm-0-10sec-for-f5j-competition-gliders-and-large-scale-gliders",
-        "references/kst-x10-pro.pdf",
-        "references/kst-x10-pro.png"
+        "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
+        "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163"
       ],
-      "verifiedParameters": ["model"],
-      "productCodes": ["BR0023.0229-B"],
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "BR0023.0229-B"
+      ],
       "specifications": [
         {
           "label": "Dimension basis",
@@ -626,10 +655,12 @@
       "sourceName": "Power-HD T60-BHV specification V1, pages 2–3; reviewed 2026-09-14",
       "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2025041613344325.pdf",
       "alternateSourceUrls": [
-        "references/power-hd-t60-bhv-dimensions.png",
+        "https://www.chd.hk/UploadFiles/Att/2025041613344325.pdf",
         "https://www.chd.hk/Product_Detail.aspx?id=256"
       ],
-      "verifiedParameters": ["model"],
+      "verifiedParameters": [
+        "model"
+      ],
       "specifications": [
         {
           "label": "Motor",
@@ -732,10 +763,12 @@
       "sourceName": "Power-HD TDS-2 specification V1, pages 2–3; reviewed 2026-09-14",
       "sourceUrl": "https://www.chd.hk/UploadFiles/Att/2024111314082653.pdf",
       "alternateSourceUrls": [
-        "references/power-hd-tds-2-dimensions.png",
+        "https://www.chd.hk/UploadFiles/Att/2024111314082653.pdf",
         "https://www.chd.hk/Product_Detail.aspx?id=238"
       ],
-      "verifiedParameters": ["model"],
+      "verifiedParameters": [
+        "model"
+      ],
       "specifications": [
         {
           "label": "Operating voltage",

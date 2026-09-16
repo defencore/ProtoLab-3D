@@ -1,0 +1,125 @@
+import type { ParameterDefinition, Parameters, PartDefinition } from '../../core/types';
+import models from './lib/models.json';
+export const defaults: Parameters = { model: 'pi3-standard' };
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'model',
+    label: 'Camera model',
+    type: 'select',
+    group: 'Model',
+    options: models.map((m) => ({ value: m.id, label: m.name })),
+    description:
+      'Fixed manufactured camera or module. Check the integration notes for included components.',
+  },
+];
+export const catalogSelection: NonNullable<PartDefinition['catalogSelection']> = [{ key: 'model' }];
+const number = (
+  key: string,
+  label: string,
+  unit: string,
+  max: number,
+  group: string,
+  summary = false,
+): ParameterDefinition => ({
+  key,
+  label,
+  unit,
+  type: 'number',
+  group,
+  min: 0,
+  max,
+  step: 0.1,
+  catalogSummary: summary,
+});
+export const catalogFilterFields: ParameterDefinition[] = [
+  {
+    key: 'kind',
+    label: 'Camera class',
+    type: 'select',
+    group: 'Model',
+    catalogSummary: true,
+    options: [
+      { value: 'fpv-analog', label: 'Analog FPV' },
+      { value: 'fpv-digital', label: 'Digital FPV' },
+      { value: 'thermal', label: 'Thermal / LWIR' },
+      { value: 'ip', label: 'IP / network' },
+      { value: 'board', label: 'Board camera' },
+      { value: 'board-ai', label: 'AI board camera' },
+      { value: 'machine-vision', label: 'Machine vision / global shutter' },
+      { value: 'depth', label: 'Stereo depth' },
+      { value: 'depth-ai', label: 'Stereo depth + AI' },
+    ],
+  },
+  {
+    key: 'interface',
+    label: 'Data interface',
+    type: 'select',
+    group: 'Model',
+    catalogSummary: true,
+    options: [
+      { value: 'cvbs', label: 'Analog CVBS' },
+      { value: 'dji-o4', label: 'DJI O4 proprietary link' },
+      { value: 'spi', label: 'SPI video + CCI control' },
+      { value: 'i2c', label: 'I²C' },
+      { value: 'csi2', label: 'MIPI CSI-2' },
+      { value: 'usb3', label: 'USB 3' },
+      { value: 'usb-uvc', label: 'USB / UVC (speed unspecified)' },
+      { value: 'ethernet', label: 'Ethernet / IP' },
+    ],
+  },
+  {
+    key: 'manufacturer',
+    label: 'Manufacturer',
+    type: 'select',
+    group: 'Model',
+    options: [...new Set(models.map((m) => m.manufacturer))].map((value) => ({
+      value,
+      label: value,
+    })),
+  },
+  number('width', 'Width', 'mm', 200, 'Dimensions', true),
+  number('height', 'Height', 'mm', 200, 'Dimensions', true),
+  number('depth', 'Axial depth', 'mm', 300, 'Dimensions', true),
+  number('weight', 'Mass', 'g', 2000, 'Dimensions'),
+  {
+    key: 'channel',
+    label: 'Primary image channel',
+    type: 'select',
+    group: 'Imaging',
+    options: [
+      { value: 'colour', label: 'Colour / RGB' },
+      { value: 'thermal', label: 'Thermal' },
+      { value: 'depth', label: 'Depth' },
+    ],
+    description:
+      'Pixel resolution and frame-rate filters refer to this channel; modes and secondary cameras are listed in the details.',
+  },
+  number('pixelsX', 'Primary image width', 'px', 10000, 'Imaging'),
+  number('pixelsY', 'Primary image height', 'px', 10000, 'Imaging'),
+  number('fps', 'Maximum frame rate', 'fps', 240, 'Imaging', true),
+  number('tvl', 'Analog resolution', 'TVL', 2000, 'Imaging'),
+  number('hfov', 'Horizontal FoV', '°', 180, 'Imaging'),
+  number('vfov', 'Vertical FoV', '°', 180, 'Imaging'),
+  number('dfov', 'Diagonal FoV', '°', 180, 'Imaging'),
+  number('focalLength', 'Lens focal length', 'mm', 200, 'Imaging'),
+  number('pixelPitch', 'Detector pixel pitch', 'µm', 100, 'Thermal'),
+  number('netd', 'NETD upper bound', 'mK', 200, 'Thermal'),
+  number('detectorRate', 'Reported detector / thermal rate', 'Hz', 240, 'Thermal'),
+  {
+    key: 'shutter',
+    label: 'Shutter',
+    type: 'select',
+    group: 'Imaging',
+    options: [
+      { value: 'rolling', label: 'Rolling' },
+      { value: 'global', label: 'Global' },
+      { value: 'mixed', label: 'Global depth + rolling RGB' },
+    ],
+  },
+  { key: 'radiometric', label: 'Radiometric thermal output', type: 'boolean', group: 'Imaging' },
+  number('voltageMin', 'Minimum DC supply', 'V', 60, 'Electrical'),
+  number('voltageMax', 'Maximum DC supply', 'V', 60, 'Electrical'),
+  number('current', 'Published current', 'A', 5, 'Electrical'),
+  number('power', 'Published power', 'W', 30, 'Electrical'),
+  { key: 'poe', label: 'PoE supported', type: 'boolean', group: 'Electrical' },
+];

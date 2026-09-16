@@ -466,6 +466,12 @@ kbd {
 }
 .category-button > span {
   text-transform: capitalize;
+  min-width: 0;
+  line-height: 1.35;
+}
+.category-button > svg,
+.subgroup-button > svg {
+  flex-shrink: 0;
 }
 .category-button svg:first-child {
   color: #737b86;
@@ -2439,4 +2445,27 @@ kbd {
   margin: 0;
   text-align: right;
   color: var(--text);
+}
+
+.model-evidence {
+  margin: 12px 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.model-evidence summary {
+  cursor: pointer;
+  color: var(--orange);
+  line-height: 1.5;
+}
+.model-evidence p {
+  line-height: 1.6;
+}
+.model-evidence a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--orange);
 }

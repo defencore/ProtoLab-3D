@@ -1,0 +1,499 @@
+[
+  {
+    "id": "jst-sqxw-i",
+    "name": "JST SQXW · 2-way · 90° · key I",
+    "description": "Right angle 2-contact SRS pigtail; ISO 19072-4.",
+    "parameters": {
+      "model": "jst-sqxw-i",
+      "leadLength": 25,
+      "wireDiameter": 1.4
+    },
+    "catalog": {
+      "designation": "SQXR-02H-2A-K",
+      "manufacturer": "JST",
+      "sourceName": "JST public catalog drawing",
+      "sourceUrl": "https://www.jst-mfg.com/product/pdf/eng/eSQXW.pdf",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed from dimensioned manufacturer drawings and product views.",
+        "limitations": "Undimensioned radii, wall thicknesses, key/notch tolerances, latch flexures, contact interiors and wire routing are reconstructed. Leads are illustrative, without polarity or pinout. This is a packaging reference, not a manufacturing or SRS compatibility certification. JST publishes separate component dimensions; assembled offsets and total height are estimated. Key I/II/III silhouettes follow the catalog illustrations, not a tolerance-controlled interface drawing.",
+        "sourceUrl": "https://www.jst-mfg.com/product/pdf/eng/eSQXW.pdf"
+      },
+      "attributes": {
+        "manufacturer": "JST",
+        "orientation": "Right angle",
+        "interface": "ISO 19072-4",
+        "key": "I",
+        "width": 13,
+        "length": 26.05,
+        "circuits": 2
+      },
+      "attributeConditions": {
+        "width": "Maximum published housing/CPA width; excludes leads.",
+        "length": "JST female housing or Amphenol connector axial envelope; excludes leads."
+      },
+      "specifications": [
+        {
+          "label": "Circuits",
+          "value": "2"
+        },
+        {
+          "label": "Female housing",
+          "value": "26.05 × 13 × 10.55 mm · Black"
+        },
+        {
+          "label": "Cover",
+          "value": "SQXL-02H-1W-Y · 26.05 × 13 × 6 mm"
+        },
+        {
+          "label": "CPA",
+          "value": "SQXC-02H-1W-D · 12 × 8 × 11.5 mm · 4 mm stroke"
+        },
+        {
+          "label": "Ferrite",
+          "value": "SQXF-02-1A · 8.4 × 4.4 × 8 mm · 2 × Ø2.1 mm at 4 mm pitch"
+        },
+        {
+          "label": "Contacts",
+          "value": "SSQSK-A03GJ-P-R / -L · 10 × 8.9 mm, Ø1.9 mm socket section"
+        },
+        {
+          "label": "Wire",
+          "value": "0.3–0.5 mm² · insulation Ø1.0–1.6 mm"
+        },
+        {
+          "label": "Rating",
+          "value": "3 A AC/DC · −40 to +85 °C"
+        }
+      ],
+      "alternateSourceUrls": ["https://www.jst-mfg.com/product/pdf/eng/eSQXW.pdf"]
+    }
+  },
+  {
+    "id": "jst-sqxw-ii",
+    "name": "JST SQXW · 2-way · 90° · key II",
+    "description": "Right angle 2-contact SRS pigtail; ISO 19072-4.",
+    "parameters": {
+      "model": "jst-sqxw-ii",
+      "leadLength": 25,
+      "wireDiameter": 1.4
+    },
+    "catalog": {
+      "designation": "SQXR-02H-2B-LM",
+      "manufacturer": "JST",
+      "sourceName": "JST public catalog drawing",
+      "sourceUrl": "https://www.jst-mfg.com/product/pdf/eng/eSQXW.pdf",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed from dimensioned manufacturer drawings and product views.",
+        "limitations": "Undimensioned radii, wall thicknesses, key/notch tolerances, latch flexures, contact interiors and wire routing are reconstructed. Leads are illustrative, without polarity or pinout. This is a packaging reference, not a manufacturing or SRS compatibility certification. JST publishes separate component dimensions; assembled offsets and total height are estimated. Key I/II/III silhouettes follow the catalog illustrations, not a tolerance-controlled interface drawing.",
+        "sourceUrl": "https://www.jst-mfg.com/product/pdf/eng/eSQXW.pdf"
+      },
+      "attributes": {
+        "manufacturer": "JST",
+        "orientation": "Right angle",
+        "interface": "ISO 19072-4",
+        "key": "II",
+        "width": 13,
+        "length": 26.05,
+        "circuits": 2
+      },
+      "attributeConditions": {
+        "width": "Maximum published housing/CPA width; excludes leads.",
+        "length": "JST female housing or Amphenol connector axial envelope; excludes leads."
+      },
+      "specifications": [
+        {
+          "label": "Circuits",
+          "value": "2"
+        },
+        {
+          "label": "Female housing",
+          "value": "26.05 × 13 × 10.55 mm · Light green"
+        },
+        {
+          "label": "Cover",
+          "value": "SQXL-02H-1W-Y · 26.05 × 13 × 6 mm"
+        },
+        {
+          "label": "CPA",
+          "value": "SQXC-02H-1W-D · 12 × 8 × 11.5 mm · 4 mm stroke"
+        },
+        {
+          "label": "Ferrite",
+          "value": "SQXF-02-1A · 8.4 × 4.4 × 8 mm · 2 × Ø2.1 mm at 4 mm pitch"
+        },
+        {
+          "label": "Contacts",
+          "value": "SSQSK-A03GJ-P-R / -L · 10 × 8.9 mm, Ø1.9 mm socket section"
+        },
+        {
+          "label": "Wire",
+          "value": "0.3–0.5 mm² · insulation Ø1.0–1.6 mm"
+        },
+        {
+          "label": "Rating",
+          "value": "3 A AC/DC · −40 to +85 °C"
+        }
+      ],
+      "alternateSourceUrls": ["https://www.jst-mfg.com/product/pdf/eng/eSQXW.pdf"]
+    }
+  },
+  {
+    "id": "jst-sqxw-iii",
+    "name": "JST SQXW · 2-way · 90° · key III",
+    "description": "Right angle 2-contact SRS pigtail; ISO 19072-4.",
+    "parameters": {
+      "model": "jst-sqxw-iii",
+      "leadLength": 25,
+      "wireDiameter": 1.4
+    },
+    "catalog": {
+      "designation": "SQXR-02H-2C-Y",
+      "manufacturer": "JST",
+      "sourceName": "JST public catalog drawing",
+      "sourceUrl": "https://www.jst-mfg.com/product/pdf/eng/eSQXW.pdf",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed from dimensioned manufacturer drawings and product views.",
+        "limitations": "Undimensioned radii, wall thicknesses, key/notch tolerances, latch flexures, contact interiors and wire routing are reconstructed. Leads are illustrative, without polarity or pinout. This is a packaging reference, not a manufacturing or SRS compatibility certification. JST publishes separate component dimensions; assembled offsets and total height are estimated. Key I/II/III silhouettes follow the catalog illustrations, not a tolerance-controlled interface drawing.",
+        "sourceUrl": "https://www.jst-mfg.com/product/pdf/eng/eSQXW.pdf"
+      },
+      "attributes": {
+        "manufacturer": "JST",
+        "orientation": "Right angle",
+        "interface": "ISO 19072-4",
+        "key": "III",
+        "width": 13,
+        "length": 26.05,
+        "circuits": 2
+      },
+      "attributeConditions": {
+        "width": "Maximum published housing/CPA width; excludes leads.",
+        "length": "JST female housing or Amphenol connector axial envelope; excludes leads."
+      },
+      "specifications": [
+        {
+          "label": "Circuits",
+          "value": "2"
+        },
+        {
+          "label": "Female housing",
+          "value": "26.05 × 13 × 10.55 mm · Yellow"
+        },
+        {
+          "label": "Cover",
+          "value": "SQXL-02H-1W-Y · 26.05 × 13 × 6 mm"
+        },
+        {
+          "label": "CPA",
+          "value": "SQXC-02H-1W-D · 12 × 8 × 11.5 mm · 4 mm stroke"
+        },
+        {
+          "label": "Ferrite",
+          "value": "SQXF-02-1A · 8.4 × 4.4 × 8 mm · 2 × Ø2.1 mm at 4 mm pitch"
+        },
+        {
+          "label": "Contacts",
+          "value": "SSQSK-A03GJ-P-R / -L · 10 × 8.9 mm, Ø1.9 mm socket section"
+        },
+        {
+          "label": "Wire",
+          "value": "0.3–0.5 mm² · insulation Ø1.0–1.6 mm"
+        },
+        {
+          "label": "Rating",
+          "value": "3 A AC/DC · −40 to +85 °C"
+        }
+      ],
+      "alternateSourceUrls": ["https://www.jst-mfg.com/product/pdf/eng/eSQXW.pdf"]
+    }
+  },
+  {
+    "id": "amphenol-ca281a",
+    "name": "Amphenol CA281A · 2-way · 90°",
+    "description": "Right angle 2-contact SRS pigtail; Ø11 mm VDA-AK1 / NFR 13-483.",
+    "parameters": {
+      "model": "amphenol-ca281a",
+      "leadLength": 25,
+      "wireDiameter": 1.4
+    },
+    "catalog": {
+      "designation": "CA281A XXXX XXXX",
+      "manufacturer": "Amphenol",
+      "sourceName": "Amphenol public catalog drawing",
+      "sourceUrl": "https://www.amphenol-auto.com/Uploads/file/20201019/1603095217709849.pdf",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed from dimensioned manufacturer drawings and product views.",
+        "limitations": "Undimensioned radii, wall thicknesses, key/notch tolerances, latch flexures, contact interiors and wire routing are reconstructed. Leads are illustrative, without polarity or pinout. This is a packaging reference, not a manufacturing or SRS compatibility certification. Amphenol family sheet does not resolve ordering suffixes or exact key code. Interior suppression components are omitted; the family model does not imply a fully specified orderable SKU.",
+        "sourceUrl": "https://www.amphenol-auto.com/Uploads/file/20201019/1603095217709849.pdf"
+      },
+      "attributes": {
+        "manufacturer": "Amphenol",
+        "orientation": "Right angle",
+        "interface": "Ø11 mm VDA-AK1 / NFR 13-483",
+        "key": "Family reference",
+        "width": 12.8,
+        "length": 27.5,
+        "circuits": 2
+      },
+      "attributeConditions": {
+        "width": "Maximum published housing/CPA width; excludes leads.",
+        "length": "JST female housing or Amphenol connector axial envelope; excludes leads."
+      },
+      "specifications": [
+        {
+          "label": "Circuits",
+          "value": "2"
+        },
+        {
+          "label": "Drawing envelope",
+          "value": "27.5 mm (5.2 + 22.3) × 12.8 × 13.2 mm (6.5 + 6.7)"
+        },
+        {
+          "label": "Rear body width",
+          "value": "11.6 mm"
+        },
+        {
+          "label": "Nozzle axis setback",
+          "value": "5.2 mm from front edge"
+        },
+        {
+          "label": "Construction",
+          "value": "PBT GF · CuSn · monoblock ferrite · crimp termination"
+        },
+        {
+          "label": "Wire",
+          "value": "0.35–0.8 mm²"
+        },
+        {
+          "label": "Temperature",
+          "value": "−40 to +90 °C"
+        },
+        {
+          "label": "Key codes",
+          "value": "A blue/purple, B green, C orange; exact key profiles not dimensioned"
+        }
+      ],
+      "alternateSourceUrls": ["https://www.amphenol-auto.com/Uploads/file/20201019/1603095217709849.pdf"]
+    }
+  },
+  {
+    "id": "amphenol-ca282b",
+    "name": "Amphenol CA282B · 2-way · 180°",
+    "description": "Straight 2-contact SRS pigtail; Ø11 mm VDA-AK1.",
+    "parameters": {
+      "model": "amphenol-ca282b",
+      "leadLength": 25,
+      "wireDiameter": 1.4
+    },
+    "catalog": {
+      "designation": "CA282B XXXX XXXX",
+      "manufacturer": "Amphenol",
+      "sourceName": "Amphenol public catalog drawing",
+      "sourceUrl": "https://www.amphenol-auto.com/Uploads/file/20201019/1603095304291915.pdf",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed from dimensioned manufacturer drawings and product views.",
+        "limitations": "Undimensioned radii, wall thicknesses, key/notch tolerances, latch flexures, contact interiors and wire routing are reconstructed. Leads are illustrative, without polarity or pinout. This is a packaging reference, not a manufacturing or SRS compatibility certification. Amphenol family sheet does not resolve ordering suffixes or exact key code. Interior suppression components are omitted; the family model does not imply a fully specified orderable SKU.",
+        "sourceUrl": "https://www.amphenol-auto.com/Uploads/file/20201019/1603095304291915.pdf"
+      },
+      "attributes": {
+        "manufacturer": "Amphenol",
+        "orientation": "Straight",
+        "interface": "Ø11 mm VDA-AK1",
+        "key": "Family reference",
+        "width": 14.9,
+        "length": 24.2,
+        "circuits": 2
+      },
+      "attributeConditions": {
+        "width": "Maximum published housing/CPA width; excludes leads.",
+        "length": "JST female housing or Amphenol connector axial envelope; excludes leads."
+      },
+      "specifications": [
+        {
+          "label": "Circuits",
+          "value": "2"
+        },
+        {
+          "label": "Drawing envelope",
+          "value": "24.2 mm (6.7 + 17.5) × 14.9 × 16.3 mm (8.3 + 8)"
+        },
+        {
+          "label": "Body height",
+          "value": "12.3 mm (8.3 + 4); CPA rises to 8 mm above nozzle axis"
+        },
+        {
+          "label": "Construction",
+          "value": "PBT · CuSn · coil stock · welded termination"
+        },
+        {
+          "label": "Wire",
+          "value": "0.35–0.8 mm²"
+        },
+        {
+          "label": "Temperature",
+          "value": "−40 to +90 °C"
+        },
+        {
+          "label": "Key codes",
+          "value": "A blue, B green, C orange; exact key profiles not dimensioned"
+        }
+      ],
+      "alternateSourceUrls": ["https://www.amphenol-auto.com/Uploads/file/20201019/1603095304291915.pdf"]
+    }
+  },
+  {
+    "id": "te-akii-2way",
+    "name": "TE Connectivity AK II · 2-way · 90°",
+    "description": "2-way right-angle squib connector; 21 × 13 × 14.9 mm housing, excluding leads.",
+    "parameters": {
+      "model": "te-akii-2way",
+      "leadLength": 25,
+      "wireDiameter": 1.4
+    },
+    "catalog": {
+      "designation": "AK II 2-way 90°",
+      "manufacturer": "TE Connectivity",
+      "sourceName": "TE Connectivity brochure 1-1773944-9 · 06-2018",
+      "sourceUrl": "https://www.te.com/content/dam/te-com/documents/automotive/global/1-1773944-9-akii-akii%2B-squib-2-3w-90deg.pdf",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published outer dimensions; reconstructed exterior from brochure views.",
+        "limitations": "Published overall dimensions follow TE brochure 1-1773944-9 (06-2018). Molded curves, nozzle, CPA, latch silhouette, contact positions and interiors are reconstructed from the illustrations, not tolerance-controlled mating drawings. The 3-way contact arrangement is illustrative. Wire colors have no pinout meaning. AK II+ is the brochure family heading, not a separately dimensioned variant. No exact key code, orderable connector part number or certified mating compatibility is supplied.",
+        "sourceUrl": "https://www.te.com/content/dam/te-com/documents/automotive/global/1-1773944-9-akii-akii%2B-squib-2-3w-90deg.pdf"
+      },
+      "attributes": {
+        "manufacturer": "TE Connectivity",
+        "orientation": "Right angle",
+        "interface": "AK II / AK II+ · ISO 19072",
+        "key": "Family reference",
+        "width": 13,
+        "length": 21,
+        "circuits": 2
+      },
+      "specifications": [
+        {
+          "label": "Circuits",
+          "value": "2"
+        },
+        {
+          "label": "Housing dimensions (L × W × H)",
+          "value": "21 × 13 × 14.9 mm"
+        },
+        {
+          "label": "Wire cross section",
+          "value": "0.35–0.50 mm²"
+        },
+        {
+          "label": "Interface family",
+          "value": "AK II / AK II+ · ISO 19072"
+        },
+        {
+          "label": "Locking",
+          "value": "CPA"
+        },
+        {
+          "label": "EMI suppression",
+          "value": "Ferrite (not modeled internally)"
+        },
+        {
+          "label": "Product specification",
+          "value": "108-15435"
+        },
+        {
+          "label": "Ordering code",
+          "value": "Depends on key coding, harness length, wire type and OEM; not specified in this brochure"
+        },
+        {
+          "label": "Socket specification",
+          "value": "108-94209 · for Ø1 mm pin"
+        },
+        {
+          "label": "Application specification",
+          "value": "114-18972"
+        }
+      ]
+    }
+  },
+  {
+    "id": "te-akii-3way",
+    "name": "TE Connectivity AK II · 3-way · 90°",
+    "description": "3-way right-angle squib connector; 21.5 × 15 × 15.4 mm housing, excluding leads.",
+    "parameters": {
+      "model": "te-akii-3way",
+      "leadLength": 25,
+      "wireDiameter": 1.4
+    },
+    "catalog": {
+      "designation": "AK II 3-way 90°",
+      "manufacturer": "TE Connectivity",
+      "sourceName": "TE Connectivity brochure 1-1773944-9 · 06-2018",
+      "sourceUrl": "https://www.te.com/content/dam/te-com/documents/automotive/global/1-1773944-9-akii-akii%2B-squib-2-3w-90deg.pdf",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published outer dimensions; reconstructed exterior from brochure views.",
+        "limitations": "Published overall dimensions follow TE brochure 1-1773944-9 (06-2018). Molded curves, nozzle, CPA, latch silhouette, contact positions and interiors are reconstructed from the illustrations, not tolerance-controlled mating drawings. The 3-way contact arrangement is illustrative. Wire colors have no pinout meaning. AK II+ is the brochure family heading, not a separately dimensioned variant. No exact key code, orderable connector part number or certified mating compatibility is supplied.",
+        "sourceUrl": "https://www.te.com/content/dam/te-com/documents/automotive/global/1-1773944-9-akii-akii%2B-squib-2-3w-90deg.pdf"
+      },
+      "attributes": {
+        "manufacturer": "TE Connectivity",
+        "orientation": "Right angle",
+        "interface": "AK II / AK II+ · ISO 19072",
+        "key": "Family reference",
+        "width": 15,
+        "length": 21.5,
+        "circuits": 3
+      },
+      "specifications": [
+        {
+          "label": "Circuits",
+          "value": "3"
+        },
+        {
+          "label": "Housing dimensions (L × W × H)",
+          "value": "21.5 × 15 × 15.4 mm"
+        },
+        {
+          "label": "Wire cross section",
+          "value": "0.35–0.50 mm²"
+        },
+        {
+          "label": "Interface family",
+          "value": "AK II / AK II+ · ISO 19072"
+        },
+        {
+          "label": "Locking",
+          "value": "CPA"
+        },
+        {
+          "label": "EMI suppression",
+          "value": "Ferrite (not modeled internally)"
+        },
+        {
+          "label": "Product specification",
+          "value": "108-15437"
+        },
+        {
+          "label": "Ordering code",
+          "value": "Depends on key coding, harness length, wire type and OEM; not specified in this brochure"
+        },
+        {
+          "label": "Application specification",
+          "value": "408-15018"
+        }
+      ]
+    }
+  }
+]

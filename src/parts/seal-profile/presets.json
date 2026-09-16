@@ -1,0 +1,38 @@
+[
+  {
+    "id": "gasket",
+    "name": "Flat annular gasket",
+    "description": "Rod seals, piston cups, wipers and flat annular gaskets. Editable prototype dimensions.",
+    "parameters": {
+      "form": "gasket",
+      "diameter": 30,
+      "bore": 20,
+      "height": 2,
+      "lip": 1
+    }
+  },
+  {
+    "id": "rod",
+    "name": "U-cup seal",
+    "description": "Rod seals, piston cups, wipers and flat annular gaskets. Editable prototype dimensions.",
+    "parameters": {
+      "form": "rod",
+      "diameter": 30,
+      "bore": 20,
+      "height": 6,
+      "lip": 1
+    }
+  },
+  {
+    "id": "wiper",
+    "name": "Rod wiper",
+    "description": "Rod seals, piston cups, wipers and flat annular gaskets. Editable prototype dimensions.",
+    "parameters": {
+      "form": "wiper",
+      "diameter": 30,
+      "bore": 20,
+      "height": 6,
+      "lip": 1
+    }
+  }
+]

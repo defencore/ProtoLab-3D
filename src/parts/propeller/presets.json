@@ -1,0 +1,104 @@
+[
+  {
+    "id": "air2",
+    "name": "Air propeller \u00b7 2 blades",
+    "description": "Twisted air and marine propellers, axial fans and centrifugal impeller forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "air",
+      "diameter": 120,
+      "hub": 22,
+      "bore": 5,
+      "hubHeight": 12,
+      "blades": 2,
+      "chord": 20,
+      "thickness": 12,
+      "rootAngle": 30,
+      "tipAngle": 12
+    }
+  },
+  {
+    "id": "air3",
+    "name": "Air propeller \u00b7 3 blades",
+    "description": "Twisted air and marine propellers, axial fans and centrifugal impeller forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "air",
+      "diameter": 120,
+      "hub": 22,
+      "bore": 5,
+      "hubHeight": 12,
+      "blades": 3,
+      "chord": 20,
+      "thickness": 12,
+      "rootAngle": 30,
+      "tipAngle": 12
+    }
+  },
+  {
+    "id": "air4",
+    "name": "Air propeller \u00b7 4 blades",
+    "description": "Twisted air and marine propellers, axial fans and centrifugal impeller forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "air",
+      "diameter": 120,
+      "hub": 22,
+      "bore": 5,
+      "hubHeight": 12,
+      "blades": 4,
+      "chord": 20,
+      "thickness": 12,
+      "rootAngle": 30,
+      "tipAngle": 12
+    }
+  },
+  {
+    "id": "marine3",
+    "name": "Marine propeller \u00b7 3 blades",
+    "description": "Twisted air and marine propellers, axial fans and centrifugal impeller forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "marine",
+      "diameter": 60,
+      "hub": 16,
+      "bore": 5,
+      "hubHeight": 16,
+      "blades": 3,
+      "chord": 18,
+      "thickness": 12,
+      "rootAngle": 45,
+      "tipAngle": 25
+    }
+  },
+  {
+    "id": "axial7",
+    "name": "Axial impeller \u00b7 7 blades",
+    "description": "Twisted air and marine propellers, axial fans and centrifugal impeller forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "axial",
+      "diameter": 120,
+      "hub": 22,
+      "bore": 5,
+      "hubHeight": 12,
+      "blades": 7,
+      "chord": 14,
+      "thickness": 12,
+      "rootAngle": 30,
+      "tipAngle": 12
+    }
+  },
+  {
+    "id": "centrifugal",
+    "name": "Centrifugal impeller \u00b7 12 vanes",
+    "description": "Twisted air and marine propellers, axial fans and centrifugal impeller forms. Editable prototype dimensions.",
+    "parameters": {
+      "form": "centrifugal",
+      "diameter": 100,
+      "hub": 22,
+      "bore": 5,
+      "hubHeight": 12,
+      "blades": 12,
+      "chord": 12,
+      "thickness": 12,
+      "rootAngle": 30,
+      "tipAngle": 12
+    }
+  }
+]

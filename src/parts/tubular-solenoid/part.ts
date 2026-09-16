@@ -7,7 +7,7 @@ import presetData from './presets.json';
 const part: PartDefinition = {
   id: 'tubular-solenoid',
   name: 'Tubular solenoid',
-  category: 'ELECTROMAGNETICS',
+  category: 'MOTORS & ACTUATORS',
   subgroup: 'SOLENOIDS',
   description:
     'Parametric tubular linear solenoid with pull or push output, guided armature, coil envelope and insulated terminals.',

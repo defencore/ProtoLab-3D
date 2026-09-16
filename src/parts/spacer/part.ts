@@ -12,7 +12,7 @@ const values = (p: Parameters) => ({
 const part: PartDefinition = {
   id: 'spacer',
   name: 'Round spacer',
-  category: 'STRUCTURAL',
+  category: 'FASTENERS & THREADS',
   subgroup: 'SPACERS & STANDOFFS',
   icon: 'bolt',
   complexity: '3 parameters',

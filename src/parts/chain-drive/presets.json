@@ -1,0 +1,54 @@
+[
+  {
+    "id": "08b",
+    "name": "Roller chain drive \u00b7 12.7 mm pitch",
+    "description": "Two equal sprockets and a separate roller-chain path reference. Editable prototype dimensions.",
+    "parameters": {
+      "pitch": 12.7,
+      "teeth": 16,
+      "centres": 200,
+      "width": 12,
+      "bore": 12,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "10b",
+    "name": "Roller chain drive \u00b7 15.875 mm pitch",
+    "description": "Two equal sprockets and a separate roller-chain path reference. Editable prototype dimensions.",
+    "parameters": {
+      "pitch": 15.875,
+      "teeth": 16,
+      "centres": 250,
+      "width": 16,
+      "bore": 12,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "12b",
+    "name": "Roller chain drive \u00b7 19.05 mm pitch",
+    "description": "Two equal sprockets and a separate roller-chain path reference. Editable prototype dimensions.",
+    "parameters": {
+      "pitch": 19.05,
+      "teeth": 16,
+      "centres": 300,
+      "width": 20,
+      "bore": 12,
+      "detail": "envelope"
+    }
+  },
+  {
+    "id": "16b",
+    "name": "Roller chain drive \u00b7 25.4 mm pitch",
+    "description": "Two equal sprockets and a separate roller-chain path reference. Editable prototype dimensions.",
+    "parameters": {
+      "pitch": 25.4,
+      "teeth": 16,
+      "centres": 400,
+      "width": 28,
+      "bore": 12,
+      "detail": "envelope"
+    }
+  }
+]

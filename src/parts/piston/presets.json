@@ -44,9 +44,12 @@
     "catalog": {
       "designation": "Compressor piston · nominal 42 mm",
       "sourceName": "User-supplied compressor piston size choices",
-      "sourceUrl": "references/piston-compressor-sizes.png",
+      "sourceUrl": "",
       "sourceKind": "attachment",
-      "verifiedParameters": ["variant", "nominalBore"],
+      "verifiedParameters": [
+        "variant",
+        "nominalBore"
+      ],
       "specifications": [
         {
           "label": "Nominal size",
@@ -104,9 +107,12 @@
     "catalog": {
       "designation": "Compressor piston · nominal 47 mm",
       "sourceName": "User-supplied compressor piston size choices",
-      "sourceUrl": "references/piston-compressor-sizes.png",
+      "sourceUrl": "",
       "sourceKind": "attachment",
-      "verifiedParameters": ["variant", "nominalBore"],
+      "verifiedParameters": [
+        "variant",
+        "nominalBore"
+      ],
       "specifications": [
         {
           "label": "Nominal size",
@@ -164,9 +170,12 @@
     "catalog": {
       "designation": "Compressor piston · nominal 48 mm",
       "sourceName": "User-supplied compressor piston size choices",
-      "sourceUrl": "references/piston-compressor-sizes.png",
+      "sourceUrl": "",
       "sourceKind": "attachment",
-      "verifiedParameters": ["variant", "nominalBore"],
+      "verifiedParameters": [
+        "variant",
+        "nominalBore"
+      ],
       "specifications": [
         {
           "label": "Nominal size",
@@ -224,9 +233,12 @@
     "catalog": {
       "designation": "Compressor piston · nominal 51 mm",
       "sourceName": "User-supplied compressor piston size choices",
-      "sourceUrl": "references/piston-compressor-sizes.png",
+      "sourceUrl": "",
       "sourceKind": "attachment",
-      "verifiedParameters": ["variant", "nominalBore"],
+      "verifiedParameters": [
+        "variant",
+        "nominalBore"
+      ],
       "specifications": [
         {
           "label": "Nominal size",
@@ -284,9 +296,12 @@
     "catalog": {
       "designation": "Compressor piston · nominal 65 mm",
       "sourceName": "User-supplied compressor piston size choices",
-      "sourceUrl": "references/piston-compressor-sizes.png",
+      "sourceUrl": "",
       "sourceKind": "attachment",
-      "verifiedParameters": ["variant", "nominalBore"],
+      "verifiedParameters": [
+        "variant",
+        "nominalBore"
+      ],
       "specifications": [
         {
           "label": "Nominal size",
@@ -344,9 +359,12 @@
     "catalog": {
       "designation": "Compressor piston · nominal 70 mm",
       "sourceName": "User-supplied compressor piston size choices",
-      "sourceUrl": "references/piston-compressor-sizes.png",
+      "sourceUrl": "",
       "sourceKind": "attachment",
-      "verifiedParameters": ["variant", "nominalBore"],
+      "verifiedParameters": [
+        "variant",
+        "nominalBore"
+      ],
       "specifications": [
         {
           "label": "Nominal size",
@@ -404,9 +422,12 @@
     "catalog": {
       "designation": "Compressor piston · nominal 80 mm",
       "sourceName": "User-supplied compressor piston size choices",
-      "sourceUrl": "references/piston-compressor-sizes.png",
+      "sourceUrl": "",
       "sourceKind": "attachment",
-      "verifiedParameters": ["variant", "nominalBore"],
+      "verifiedParameters": [
+        "variant",
+        "nominalBore"
+      ],
       "specifications": [
         {
           "label": "Nominal size",
@@ -464,9 +485,12 @@
     "catalog": {
       "designation": "Compressor piston · nominal 90 mm",
       "sourceName": "User-supplied compressor piston size choices",
-      "sourceUrl": "references/piston-compressor-sizes.png",
+      "sourceUrl": "",
       "sourceKind": "attachment",
-      "verifiedParameters": ["variant", "nominalBore"],
+      "verifiedParameters": [
+        "variant",
+        "nominalBore"
+      ],
       "specifications": [
         {
           "label": "Nominal size",
