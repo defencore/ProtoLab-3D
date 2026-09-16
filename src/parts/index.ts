@@ -166,6 +166,7 @@ import module162 from './brake/index';
 import module163 from './parallel-gripper/index';
 import module164 from './slewing-bearing/index';
 import module165 from './linkage-mechanism/index';
+import module166 from './tracked-chassis/index';
 
 export const parts = registerPartModules([
   module0,
@@ -334,4 +335,5 @@ export const parts = registerPartModules([
   module163,
   module164,
   module165,
+  module166,
 ]);

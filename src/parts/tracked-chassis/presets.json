@@ -1,0 +1,112 @@
+[
+  {
+    "id": "hiwonder-single",
+    "name": "Hiwonder · Standard · single deck · 270 × 194 mm",
+    "description": "Source-sized chassis with reconstructed suspension and running gear.",
+    "parameters": {
+      "length": 270,
+      "width": 194,
+      "deckWidth": 143,
+      "plateThickness": 2,
+      "layers": "single",
+      "upperDeckGap": 32,
+      "trackWidth": 24,
+      "driveDiameter": 58,
+      "roadDiameter": 29,
+      "roadCount": 4,
+      "leftAngle": 0,
+      "rightAngle": 0,
+      "idlerAdjustment": 0,
+      "detail": "detailed"
+    },
+    "catalog": {
+      "designation": "Suspended shock-absorbing tracked chassis · Standard · single deck",
+      "manufacturer": "Hiwonder",
+      "sourceName": "Hiwonder product page and motor/deck drawings",
+      "sourceUrl": "https://www.hiwonder.com/products/suspended-shock-absorbing-tracked-chassis",
+      "verifiedParameters": [
+        "length",
+        "width",
+        "deckWidth",
+        "plateThickness",
+        "layers",
+        "roadCount"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "270 × 194 mm chassis, 270 × 143 × 2 mm deck, eight suspension stations; motor envelope from the published drawing.",
+        "limitations": "Wheel sizes, deck gap, arm geometry, springs, bearing choices and mounting coordinates are reconstructed. No manufacturer CAD or verified bearing BOM. Tracks use a continuous belt approximation.",
+        "sourceUrl": "https://www.hiwonder.com/products/suspended-shock-absorbing-tracked-chassis"
+      },
+      "specifications": [
+        {
+          "label": "Drive motor",
+          "value": "2 × JGB3865-520R45-12 · 12 V · 45:1"
+        },
+        {
+          "label": "Suspension",
+          "value": "8 tension springs with microbearings"
+        },
+        {
+          "label": "Published mass",
+          "value": "1.4 kg"
+        }
+      ]
+    }
+  },
+  {
+    "id": "hiwonder-double",
+    "name": "Hiwonder · Advanced · two decks · 270 × 194 mm",
+    "description": "Source-sized chassis with reconstructed suspension and running gear.",
+    "parameters": {
+      "length": 270,
+      "width": 194,
+      "deckWidth": 143,
+      "plateThickness": 2,
+      "layers": "double",
+      "upperDeckGap": 32,
+      "trackWidth": 24,
+      "driveDiameter": 58,
+      "roadDiameter": 29,
+      "roadCount": 4,
+      "leftAngle": 0,
+      "rightAngle": 0,
+      "idlerAdjustment": 0,
+      "detail": "detailed"
+    },
+    "catalog": {
+      "designation": "Suspended shock-absorbing tracked chassis · Advanced · two decks",
+      "manufacturer": "Hiwonder",
+      "sourceName": "Hiwonder product page and motor/deck drawings",
+      "sourceUrl": "https://www.hiwonder.com/products/suspended-shock-absorbing-tracked-chassis",
+      "verifiedParameters": [
+        "length",
+        "width",
+        "deckWidth",
+        "plateThickness",
+        "layers",
+        "roadCount"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "270 × 194 mm chassis, 270 × 143 × 2 mm deck, eight suspension stations; motor envelope from the published drawing.",
+        "limitations": "Wheel sizes, deck gap, arm geometry, springs, bearing choices and mounting coordinates are reconstructed. No manufacturer CAD or verified bearing BOM. Tracks use a continuous belt approximation.",
+        "sourceUrl": "https://www.hiwonder.com/products/suspended-shock-absorbing-tracked-chassis"
+      },
+      "specifications": [
+        {
+          "label": "Drive motor",
+          "value": "2 × JGB3865-520R45-12 · 12 V · 45:1"
+        },
+        {
+          "label": "Suspension",
+          "value": "8 tension springs with microbearings"
+        },
+        {
+          "label": "Published mass",
+          "value": "1.6 kg"
+        }
+      ]
+    }
+  }
+]
