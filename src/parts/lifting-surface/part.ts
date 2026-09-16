@@ -1,3 +1,4 @@
+import { withParameterStates } from '../../core/parameter-states';
 import type { PartDefinition, Preset } from '../../core/types';
 import { n } from '../../core/geometry';
 import { defaults, parameters } from './configurator';
@@ -109,4 +110,33 @@ const part: PartDefinition = {
     },
   ],
 };
-export default part;
+export default withParameterStates(part, {
+  'root-section': [
+    'layout',
+    'orientation',
+    'planform',
+    'semiSpan',
+    'tipChord',
+    'rootGap',
+    'sweep',
+    'dihedral',
+    'incidence',
+    'twist',
+    'tipProfile',
+    'spanSegments',
+  ],
+  'tip-section': [
+    'layout',
+    'orientation',
+    'planform',
+    'semiSpan',
+    'rootChord',
+    'rootGap',
+    'sweep',
+    'dihedral',
+    'incidence',
+    'twist',
+    'rootProfile',
+    'spanSegments',
+  ],
+});

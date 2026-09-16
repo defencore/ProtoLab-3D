@@ -52,6 +52,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'depth',
+    visibleWhen: (p) => p.form !== 'knob',
     label: 'Rear body depth',
     type: 'number',
     group: 'Dimensions',
@@ -62,6 +63,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'segments',
+    visibleWhen: (p) => p.form === 'beacon',
     label: 'Beacon lens segments',
     type: 'number',
     group: 'Dimensions',
@@ -72,6 +74,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'detail',
+    visibleWhen: (p) => p.form === 'knob',
     label: 'Model detail',
     type: 'select',
     group: 'Configuration',

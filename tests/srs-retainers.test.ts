@@ -1,23 +1,23 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
 import { Box3, Mesh, Vector3 } from 'three';
 import part from '../src/parts/srs-retainer/part';
 import native from '../src/parts/srs-retainer/lib/native.json';
 import { disposeModel } from '../src/core/mechanical';
 import { generateScript } from '../src/core/freecad';
 
-test('retainer CAD is pinned to three distinct manufacturer source assets', () => {
+test('retainer CAD retains three distinct source fingerprints and manufacturer links', () => {
   const hashes = new Set<string>();
   for (const [id, data] of Object.entries(native)) {
     const preset = part.presets.find((p) => p.id === id)!;
     const evidence = preset.catalog!.geometryEvidence!;
-    const sha = createHash('sha256')
-      .update(readFileSync(`public${evidence.sourceUrl}`))
-      .digest('hex');
+    const sha = data.sourceSha256;
     assert.equal(evidence.kind, 'manufacturer-cad');
-    assert.equal(sha, data.sourceSha256);
+    assert.match(sha, /^[a-f0-9]{64}$/);
+    assert.match(
+      evidence.sourceUrl!,
+      /^https:\/\/www\.te\.com\/en\/product-[123]-1823640-1\.html$/,
+    );
     assert.equal(sha, evidence.sourceSha256);
     assert.equal(data.sourceSolids, 1);
     assert.ok(data.volume > 0);

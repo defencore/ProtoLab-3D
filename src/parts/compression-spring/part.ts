@@ -104,7 +104,10 @@ const part: PartDefinition = {
       ['closed', 'Reduced pitch at both ends'],
     ]),
     numberParameter('freeLength', 'Free length', 'L', 'Travel', 5, 300),
-    numberParameter('compression', 'Compression travel', 'x', 'Travel', 0, 250),
+    {
+      ...numberParameter('compression', 'Compression travel', 'x', 'Travel', 0, 250),
+      visibleWhen: (_, state) => state === undefined || state === 'compressed',
+    },
   ],
   presetMatchKeys: ['profile', 'outerDiameter', 'wireDiameter'],
   defaults,

@@ -187,9 +187,19 @@ export function unionPolygons(polygons: Vector2[][]): Vector2[] {
           const c = other[j],
             edge = other[(j + 1) % other.length].clone().sub(c),
             divisor = cross(direction, edge);
-          if (Math.abs(divisor) < epsilon) continue;
-          const offset = c.clone().sub(a),
-            t = cross(offset, edge) / divisor,
+          const offset = c.clone().sub(a);
+          if (Math.abs(divisor) < epsilon) {
+            // Adjacent arms can share only part of an edge. Split that overlap
+            // before classifying it; a midpoint test on the unsplit edge loses it.
+            if (Math.abs(cross(offset, direction)) < epsilon) {
+              for (const point of [c, other[(j + 1) % other.length]]) {
+                const t = point.clone().sub(a).dot(direction) / direction.lengthSq();
+                if (t > epsilon && t < 1 - epsilon) cuts.push(t);
+              }
+            }
+            continue;
+          }
+          const t = cross(offset, edge) / divisor,
             u = cross(offset, direction) / divisor;
           if (t > epsilon && t < 1 - epsilon && u >= -epsilon && u <= 1 + epsilon) cuts.push(t);
         }
@@ -198,11 +208,21 @@ export function unionPolygons(polygons: Vector2[][]): Vector2[] {
       const unique = cuts.filter((value, i) => !i || value - cuts[i - 1] > epsilon);
       for (let j = 1; j < unique.length; j++) {
         const midpoint = a.clone().addScaledVector(direction, (unique[j - 1] + unique[j]) / 2);
-        if (!polygons.some((other, index) => index !== polygonIndex && inside(midpoint, other)))
-          edges.push([
-            a.clone().addScaledVector(direction, unique[j - 1]),
-            a.clone().addScaledVector(direction, unique[j]),
-          ]);
+        const outside = midpoint
+          .clone()
+          .add(new Vector2(direction.y, -direction.x).normalize().multiplyScalar(epsilon));
+        if (!polygons.some((other) => inside(outside, other))) {
+          const first = a.clone().addScaledVector(direction, unique[j - 1]);
+          const last = a.clone().addScaledVector(direction, unique[j]);
+          if (
+            !edges.some(
+              ([u, v]) =>
+                u.distanceToSquared(first) < epsilon * epsilon &&
+                v.distanceToSquared(last) < epsilon * epsilon,
+            )
+          )
+            edges.push([first, last]);
+        }
       }
     }
   }

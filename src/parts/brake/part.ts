@@ -11,7 +11,7 @@ const part: PartDefinition = {
   subgroup: 'BRAKES & GRIPPERS',
   icon: 'gear',
   description:
-    'Disc and drum brake mounting forms with separate rotating and stationary bodies.',
+    'Disc caliper with friction pads and piston, or open drum with shoes, anchors and backing plate.',
   complexity: 'Parametric prototype',
   keywords: [
     'brake assembly',
@@ -50,7 +50,7 @@ const part: PartDefinition = {
   dimensions: (p, s) => assembly.dimensions(pieces(p, s)),
   python: (p, s) => assembly.python(pieces(p, s)),
   notes:
-    'No braking torque, coil or friction model; caliper pads and actuators are omitted. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.',
+    'Separate rotor, friction and support components with running clearances. Drum actuation and return springs are not modeled; no braking-torque or friction simulation. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.',
   sources: [],
 };
 export default part;

@@ -22,8 +22,8 @@ export const parameters: ParameterDefinition[] = [
       { value: 'slider', label: 'Slider-crank' },
       { value: 'yoke', label: 'Scotch yoke' },
       { value: 'scissor', label: 'Scissor lift' },
-      { value: 'pantograph', label: 'Pantograph' },
-      { value: 'eccentric', label: 'Eccentric clamp' },
+      { value: 'pantograph', label: 'Parallelogram' },
+      { value: 'eccentric', label: 'Eccentric cam' },
       { value: 'cam', label: 'Circular eccentric cam and roller' },
       { value: 'ratchet', label: 'Ratchet and pawl' },
       { value: 'geneva', label: 'Geneva indexer' },
@@ -31,6 +31,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'ground',
+    visibleWhen: (p) => ['fourbar', 'geneva'].includes(String(p.form)),
     label: 'Fixed pivot spacing',
     type: 'number',
     group: 'Dimensions',
@@ -41,6 +42,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'crank',
+    visibleWhen: (p) => ['fourbar', 'slider', 'yoke', 'cam', 'eccentric'].includes(String(p.form)),
     label: 'Crank radius',
     type: 'number',
     group: 'Dimensions',
@@ -51,6 +53,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'rod',
+    visibleWhen: (p) => p.form !== 'geneva',
     label: 'Coupler / link length',
     type: 'number',
     group: 'Dimensions',
@@ -61,6 +64,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'output',
+    visibleWhen: (p) => ['fourbar', 'pantograph', 'ratchet'].includes(String(p.form)),
     label: 'Output link length',
     type: 'number',
     group: 'Dimensions',
@@ -111,6 +115,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'slots',
+    visibleWhen: (p) => ['ratchet', 'geneva'].includes(String(p.form)),
     label: 'Index positions / ratchet teeth',
     type: 'number',
     group: 'Dimensions',

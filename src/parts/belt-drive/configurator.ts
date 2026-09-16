@@ -2,6 +2,8 @@ import type { Parameters, ParameterDefinition } from '../../core/types';
 export const defaults: Parameters = {
   form: 'gt2',
   pitch: 2,
+  pulleyDiameter: 32,
+  ribs: 4,
   teeth: 20,
   centres: 80,
   width: 6,
@@ -10,6 +12,28 @@ export const defaults: Parameters = {
   detail: 'envelope',
 };
 export const parameters: ParameterDefinition[] = [
+  {
+    key: 'pulleyDiameter',
+    label: 'Sheave running diameter',
+    type: 'number',
+    group: 'Dimensions',
+    min: 5,
+    max: 1000,
+    step: 0.1,
+    unit: 'mm',
+    visibleWhen: (p) => ['v', 'poly'].includes(String(p.form)),
+  },
+  {
+    key: 'ribs',
+    label: 'Belt ribs',
+    type: 'number',
+    group: 'Dimensions',
+    min: 2,
+    max: 12,
+    step: 1,
+    unit: '',
+    visibleWhen: (p) => p.form === 'poly',
+  },
   {
     key: 'form',
     label: 'Belt family',
@@ -28,6 +52,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'pitch',
+    visibleWhen: (p) => !['v', 'poly'].includes(String(p.form)),
     label: 'Tooth pitch',
     type: 'number',
     group: 'Dimensions',
@@ -38,6 +63,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'teeth',
+    visibleWhen: (p) => !['v', 'poly'].includes(String(p.form)),
     label: 'Pulley tooth count',
     type: 'number',
     group: 'Dimensions',
@@ -69,6 +95,8 @@ export const parameters: ParameterDefinition[] = [
   {
     key: 'thickness',
     label: 'Belt radial thickness',
+    description:
+      'Nominal thickness outward from the pulley reference circle. Poly-V reserves 35% for continuous backing within this dimension.',
     type: 'number',
     group: 'Dimensions',
     min: 0.1,
@@ -88,6 +116,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'detail',
+    visibleWhen: (p) => !['v', 'poly'].includes(String(p.form)),
     label: 'Model detail',
     type: 'select',
     group: 'Configuration',

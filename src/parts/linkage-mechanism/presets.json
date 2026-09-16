@@ -2,7 +2,7 @@
   {
     "id": "fourbar",
     "name": "Four-bar linkage",
-    "description": "Four-bar, slider-crank, Scotch yoke, scissor, pantograph, cam and indexing mechanism geometry. Editable prototype dimensions.",
+    "description": "Four-bar, slider-crank, Scotch yoke, scissor, parallelogram, cam and indexing mechanism geometry. Editable prototype dimensions.",
     "parameters": {
       "form": "fourbar",
       "ground": 120,
@@ -19,7 +19,7 @@
   {
     "id": "slider",
     "name": "Slider-crank mechanism",
-    "description": "Four-bar, slider-crank, Scotch yoke, scissor, pantograph, cam and indexing mechanism geometry. Editable prototype dimensions.",
+    "description": "Four-bar, slider-crank, Scotch yoke, scissor, parallelogram, cam and indexing mechanism geometry. Editable prototype dimensions.",
     "parameters": {
       "form": "slider",
       "ground": 120,
@@ -36,7 +36,7 @@
   {
     "id": "yoke",
     "name": "Scotch yoke",
-    "description": "Four-bar, slider-crank, Scotch yoke, scissor, pantograph, cam and indexing mechanism geometry. Editable prototype dimensions.",
+    "description": "Four-bar, slider-crank, Scotch yoke, scissor, parallelogram, cam and indexing mechanism geometry. Editable prototype dimensions.",
     "parameters": {
       "form": "yoke",
       "ground": 120,
@@ -53,7 +53,7 @@
   {
     "id": "scissor",
     "name": "Scissor lift",
-    "description": "Four-bar, slider-crank, Scotch yoke, scissor, pantograph, cam and indexing mechanism geometry. Editable prototype dimensions.",
+    "description": "Four-bar, slider-crank, Scotch yoke, scissor, parallelogram, cam and indexing mechanism geometry. Editable prototype dimensions.",
     "parameters": {
       "form": "scissor",
       "ground": 120,
@@ -69,8 +69,8 @@
   },
   {
     "id": "pantograph",
-    "name": "Pantograph linkage",
-    "description": "Four-bar, slider-crank, Scotch yoke, scissor, pantograph, cam and indexing mechanism geometry. Editable prototype dimensions.",
+    "name": "Parallelogram linkage",
+    "description": "Four-bar, slider-crank, Scotch yoke, scissor, parallelogram, cam and indexing mechanism geometry. Editable prototype dimensions.",
     "parameters": {
       "form": "pantograph",
       "ground": 120,
@@ -86,8 +86,8 @@
   },
   {
     "id": "eccentric",
-    "name": "Eccentric clamp",
-    "description": "Four-bar, slider-crank, Scotch yoke, scissor, pantograph, cam and indexing mechanism geometry. Editable prototype dimensions.",
+    "name": "Eccentric cam",
+    "description": "Four-bar, slider-crank, Scotch yoke, scissor, parallelogram, cam and indexing mechanism geometry. Editable prototype dimensions.",
     "parameters": {
       "form": "eccentric",
       "ground": 120,
@@ -104,7 +104,7 @@
   {
     "id": "cam",
     "name": "Eccentric cam with roller follower",
-    "description": "Four-bar, slider-crank, Scotch yoke, scissor, pantograph, cam and indexing mechanism geometry. Editable prototype dimensions.",
+    "description": "Four-bar, slider-crank, Scotch yoke, scissor, parallelogram, cam and indexing mechanism geometry. Editable prototype dimensions.",
     "parameters": {
       "form": "cam",
       "ground": 120,
@@ -121,7 +121,7 @@
   {
     "id": "ratchet",
     "name": "Ratchet and pawl",
-    "description": "Four-bar, slider-crank, Scotch yoke, scissor, pantograph, cam and indexing mechanism geometry. Editable prototype dimensions.",
+    "description": "Four-bar, slider-crank, Scotch yoke, scissor, parallelogram, cam and indexing mechanism geometry. Editable prototype dimensions.",
     "parameters": {
       "form": "ratchet",
       "ground": 120,
@@ -138,7 +138,7 @@
   {
     "id": "geneva",
     "name": "Geneva indexer",
-    "description": "Four-bar, slider-crank, Scotch yoke, scissor, pantograph, cam and indexing mechanism geometry. Editable prototype dimensions.",
+    "description": "Four-bar, slider-crank, Scotch yoke, scissor, parallelogram, cam and indexing mechanism geometry. Editable prototype dimensions.",
     "parameters": {
       "form": "geneva",
       "ground": 120,

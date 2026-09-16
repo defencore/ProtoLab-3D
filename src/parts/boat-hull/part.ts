@@ -1,3 +1,4 @@
+import { withParameterStates } from '../../core/parameter-states';
 import type { PartDefinition, Preset } from '../../core/types';
 import { n } from '../../core/geometry';
 import { defaults, parameters, catalogSelection, updateParameters } from './configurator';
@@ -110,4 +111,6 @@ const part: PartDefinition = {
   notes:
     'Geometric hull templates, not a buoyancy or planing prediction. X runs bow to stern, Y across the beam and Z upward. Z=0 is the midship sheer reference before sheer rise; it is not a waterline. Select flat, single/double-chine V, round, arched or soft-chine sections independently of the longitudinal hull form. Deadrise controls the symmetric parent section; asymmetric outer hulls shift the keel toward the tunnel. Rocker, sheer, maximum-beam station, stem and transom setbacks change the ruled hull lines. Wall inset is not constant normal thickness. Covers have 0.2 mm illustrative clearance; crossbeams clear the highest local sheer by 0.2 mm. These major solids omit hardware, sealed joints, propulsion, rudders, sailing rigs and keels. Branded presets verify only published length/beam; all other dimensions and contours are editable approximations.',
 };
-export default part;
+export default withParameterStates(part, {
+  body: ['cover', 'bridge', 'crossbeam', 'bridgeCurve'],
+});

@@ -26,6 +26,11 @@ const part: PartDefinition = {
   defaults,
   parameters,
   presets: presets as Preset[],
+  updateParameters(p, key) {
+    if (key !== 'form') return p;
+    const preset = presets.find((item) => item.parameters.form === p.form);
+    return preset ? { ...p, ...preset.parameters } : p;
+  },
   states: [
     { id: 'assembled', label: 'Assembly', description: 'Separate physical components.' },
     {

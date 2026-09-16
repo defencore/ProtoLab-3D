@@ -176,7 +176,7 @@ function renderFields() {
   parent.replaceChildren();
   let group = '';
   for (const field of part.parameters) {
-    if (field.visibleWhen && !field.visibleWhen(parameters)) continue;
+    if (field.visibleWhen && !field.visibleWhen(parameters, state)) continue;
     if (field.group !== group) { const heading = document.createElement('h3'); heading.textContent = field.group; parent.append(heading); group = field.group; }
     const label = document.createElement('label');
     const title = document.createElement('span'); title.textContent = field.label + (field.unit ? ' (' + field.unit + ')' : ''); label.append(title);

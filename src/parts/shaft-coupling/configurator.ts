@@ -5,7 +5,7 @@ export const defaults: Parameters = {
   bore: 8,
   length: 40,
   gap: 10,
-  detail: 'envelope',
+  detail: 'detailed',
 };
 export const parameters: ParameterDefinition[] = [
   {
@@ -53,6 +53,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'gap',
+    visibleWhen: (p) => p.form !== 'rigid',
     label: 'Hub separation',
     type: 'number',
     group: 'Dimensions',
@@ -63,6 +64,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'detail',
+    visibleWhen: (p) => !['oldham', 'flange'].includes(String(p.form)),
     label: 'Model detail',
     type: 'select',
     group: 'Configuration',

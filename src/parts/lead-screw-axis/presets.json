@@ -10,7 +10,8 @@
       "pitch": 2,
       "nutLength": 20,
       "nutDiameter": 28,
-      "position": 100
+      "position": 100,
+      "turns": 50.0
     }
   },
   {
@@ -24,7 +25,8 @@
       "pitch": 2.54,
       "nutLength": 20,
       "nutDiameter": 35,
-      "position": 100
+      "position": 100,
+      "turns": 39.37007874015748
     }
   }
 ]

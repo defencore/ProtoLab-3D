@@ -40,6 +40,8 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'stroke',
+    description:
+      'Maximum travel limit. Change extension to move the mechanism; changing this limit alone preserves its current position.',
     label: 'Stroke',
     type: 'number',
     group: 'Dimensions',

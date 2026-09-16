@@ -61,6 +61,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'links',
+    visibleWhen: (p) => p.form === 'chain',
     label: 'Link count',
     type: 'number',
     group: 'Dimensions',
@@ -71,6 +72,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'detail',
+    visibleWhen: (p) => p.form === 'chain',
     label: 'Model detail',
     type: 'select',
     group: 'Configuration',

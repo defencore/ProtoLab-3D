@@ -38,7 +38,7 @@ export function pieces(p: Parameters, state: string): Piece[] {
       for (let j = 0; j < 5; j++) {
         const u = j / 4,
           x = H * 0.8 + (R - H * 0.8) * u,
-          c = chord * (1 - 0.65 * u),
+          c = chord * (1 - (p.form === 'axial' ? 0.15 : p.form === 'marine' ? 0.4 : 0.65) * u),
           a = ((n(p, 'rootAngle') * (1 - u) + n(p, 'tipAngle') * u) * Math.PI) / 180,
           t = (c * n(p, 'thickness')) / 100;
         const section: [[number, number], [number, number], [number, number], [number, number]] = [

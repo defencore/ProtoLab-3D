@@ -23,6 +23,11 @@ const part: PartDefinition = {
   states: [
     { id: 'assembled', label: 'Assembly', description: 'Separate physical components.' },
     {
+      id: 'internals',
+      label: 'Gears & shafts',
+      description: 'Inspect transmission components with the casing removed.',
+    },
+    {
       id: 'exploded',
       label: 'Exploded',
       description: 'Axially separated components for inspection.',
@@ -39,7 +44,10 @@ const part: PartDefinition = {
       )
         errors.push(field.label + ' must be a whole number.');
     }
-    if (!['assembled', 'exploded'].includes(state)) errors.push('Choose a valid model state.');
+    if (!['assembled', 'internals', 'exploded'].includes(state))
+      errors.push('Choose a valid model state.');
+    if (n(p, 'shaft') > Math.min(n(p, 'diameter') * 0.27, n(p, 'length') * 0.36) * 1.1)
+      errors.push('Half-shaft bore must fit inside the bevel gear small end.');
     if (n(p, 'shaft') >= n(p, 'diameter') * 0.35)
       errors.push('Carrier must leave room around the half-shaft.');
     return errors;
@@ -48,7 +56,7 @@ const part: PartDefinition = {
   dimensions: (p, s) => assembly.dimensions(pieces(p, s)),
   python: (p, s) => assembly.python(pieces(p, s)),
   notes:
-    'Carrier geometry only; internal differential gears, lockers and limited-slip mechanisms are not included. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.',
+    'Detailed construction includes two bevel side gears, two spider pinions, a cross pin and a driven carrier. Teeth are sampled conical reference profiles; tooth contact, spline fits, bearing and strength design require separate engineering. Prototype dimensions are not a manufacturer catalog specification.',
   sources: [],
 };
 export default part;

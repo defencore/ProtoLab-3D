@@ -50,7 +50,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'screw',
-    label: 'Radial screw clearance',
+    label: 'Fastening screw diameter',
     type: 'number',
     group: 'Dimensions',
     min: 0.1,

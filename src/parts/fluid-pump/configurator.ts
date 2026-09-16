@@ -4,6 +4,8 @@ export const parameters: ParameterDefinition[] = [
   {
     key: 'form',
     label: 'Unit family',
+    description:
+      'External packaging model. Vane pump and hydraulic motor use the same round housing envelope; internal rotors are not modeled.',
     type: 'select',
     group: 'Configuration',
     options: [

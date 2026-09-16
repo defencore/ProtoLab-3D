@@ -1,0 +1,402 @@
+[
+  {
+    "id": "two-d-8",
+    "name": "42 mm · 2 gears · D bore 8 mm",
+    "parameters": {
+      "layout": "two",
+      "bore": "8",
+      "socket": "d",
+      "inputAngle": 0,
+      "sweep": 8
+    },
+    "catalog": {
+      "designation": "42 mm M1 Z20 1:1 · two ports · D bore 8",
+      "sourceName": "Seller photos, drawing and user STEP",
+      "sourceKind": "attachment",
+      "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html",
+      "verifiedParameters": ["bore", "socket"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "42 mm exterior from user STEP; M1, 20T, 1:1, 8/10 mm sockets from supplied images.",
+        "limitations": "Corrected internal seats; inferred 61802 bearing and standard circlips. Spiral flanks, axial fits and ring shape are reconstruction, not manufacturer CAD.",
+        "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html"
+      }
+    },
+    "description": "Source housing with reconstructed spiral gears; one 15×24×5 bearing and two circlips per gear."
+  },
+  {
+    "id": "two-hex-8",
+    "name": "42 mm · 2 gears · Hex bore 8 mm",
+    "parameters": {
+      "layout": "two",
+      "bore": "8",
+      "socket": "hex",
+      "inputAngle": 0,
+      "sweep": 8
+    },
+    "catalog": {
+      "designation": "42 mm M1 Z20 1:1 · two ports · Hex bore 8",
+      "sourceName": "Seller photos, drawing and user STEP",
+      "sourceKind": "attachment",
+      "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html",
+      "verifiedParameters": ["bore", "socket"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "42 mm exterior from user STEP; M1, 20T, 1:1, 8/10 mm sockets from supplied images.",
+        "limitations": "Corrected internal seats; inferred 61802 bearing and standard circlips. Spiral flanks, axial fits and ring shape are reconstruction, not manufacturer CAD.",
+        "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html"
+      }
+    },
+    "description": "Source housing with reconstructed spiral gears; one 15×24×5 bearing and two circlips per gear."
+  },
+  {
+    "id": "two-keyway-8",
+    "name": "42 mm · 2 gears · Keyway 8 mm",
+    "parameters": {
+      "layout": "two",
+      "bore": "8",
+      "socket": "keyway",
+      "inputAngle": 0,
+      "sweep": 8
+    },
+    "catalog": {
+      "designation": "42 mm M1 Z20 1:1 · two ports · Keyway 8",
+      "sourceName": "Seller photos, drawing and user STEP",
+      "sourceKind": "attachment",
+      "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html",
+      "verifiedParameters": ["bore", "socket"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "42 mm exterior from user STEP; M1, 20T, 1:1, 8/10 mm sockets from supplied images.",
+        "limitations": "Corrected internal seats; inferred 61802 bearing and standard circlips. Spiral flanks, axial fits and ring shape are reconstruction, not manufacturer CAD.",
+        "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html"
+      }
+    },
+    "description": "Source housing with reconstructed spiral gears; one 15×24×5 bearing and two circlips per gear."
+  },
+  {
+    "id": "two-tongue-8",
+    "name": "42 mm · 2 gears · Internal key 8 mm",
+    "parameters": {
+      "layout": "two",
+      "bore": "8",
+      "socket": "tongue",
+      "inputAngle": 0,
+      "sweep": 8
+    },
+    "catalog": {
+      "designation": "42 mm M1 Z20 1:1 · two ports · Internal key 8",
+      "sourceName": "Seller photos, drawing and user STEP",
+      "sourceKind": "attachment",
+      "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html",
+      "verifiedParameters": ["bore", "socket"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "42 mm exterior from user STEP; M1, 20T, 1:1, 8/10 mm sockets from supplied images.",
+        "limitations": "Corrected internal seats; inferred 61802 bearing and standard circlips. Spiral flanks, axial fits and ring shape are reconstruction, not manufacturer CAD.",
+        "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html"
+      }
+    },
+    "description": "Source housing with reconstructed spiral gears; one 15×24×5 bearing and two circlips per gear."
+  },
+  {
+    "id": "two-d-10",
+    "name": "42 mm · 2 gears · D bore 10 mm",
+    "parameters": {
+      "layout": "two",
+      "bore": "10",
+      "socket": "d",
+      "inputAngle": 0,
+      "sweep": 8
+    },
+    "catalog": {
+      "designation": "42 mm M1 Z20 1:1 · two ports · D bore 10",
+      "sourceName": "Seller photos, drawing and user STEP",
+      "sourceKind": "attachment",
+      "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html",
+      "verifiedParameters": ["bore", "socket"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "42 mm exterior from user STEP; M1, 20T, 1:1, 8/10 mm sockets from supplied images.",
+        "limitations": "Corrected internal seats; inferred 61802 bearing and standard circlips. Spiral flanks, axial fits and ring shape are reconstruction, not manufacturer CAD.",
+        "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html"
+      }
+    },
+    "description": "Source housing with reconstructed spiral gears; one 15×24×5 bearing and two circlips per gear."
+  },
+  {
+    "id": "two-hex-10",
+    "name": "42 mm · 2 gears · Hex bore 10 mm",
+    "parameters": {
+      "layout": "two",
+      "bore": "10",
+      "socket": "hex",
+      "inputAngle": 0,
+      "sweep": 8
+    },
+    "catalog": {
+      "designation": "42 mm M1 Z20 1:1 · two ports · Hex bore 10",
+      "sourceName": "Seller photos, drawing and user STEP",
+      "sourceKind": "attachment",
+      "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html",
+      "verifiedParameters": ["bore", "socket"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "42 mm exterior from user STEP; M1, 20T, 1:1, 8/10 mm sockets from supplied images.",
+        "limitations": "Corrected internal seats; inferred 61802 bearing and standard circlips. Spiral flanks, axial fits and ring shape are reconstruction, not manufacturer CAD.",
+        "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html"
+      }
+    },
+    "description": "Source housing with reconstructed spiral gears; one 15×24×5 bearing and two circlips per gear."
+  },
+  {
+    "id": "two-keyway-10",
+    "name": "42 mm · 2 gears · Keyway 10 mm",
+    "parameters": {
+      "layout": "two",
+      "bore": "10",
+      "socket": "keyway",
+      "inputAngle": 0,
+      "sweep": 8
+    },
+    "catalog": {
+      "designation": "42 mm M1 Z20 1:1 · two ports · Keyway 10",
+      "sourceName": "Seller photos, drawing and user STEP",
+      "sourceKind": "attachment",
+      "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html",
+      "verifiedParameters": ["bore", "socket"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "42 mm exterior from user STEP; M1, 20T, 1:1, 8/10 mm sockets from supplied images.",
+        "limitations": "Corrected internal seats; inferred 61802 bearing and standard circlips. Spiral flanks, axial fits and ring shape are reconstruction, not manufacturer CAD.",
+        "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html"
+      }
+    },
+    "description": "Source housing with reconstructed spiral gears; one 15×24×5 bearing and two circlips per gear."
+  },
+  {
+    "id": "two-tongue-10",
+    "name": "42 mm · 2 gears · Internal key 10 mm",
+    "parameters": {
+      "layout": "two",
+      "bore": "10",
+      "socket": "tongue",
+      "inputAngle": 0,
+      "sweep": 8
+    },
+    "catalog": {
+      "designation": "42 mm M1 Z20 1:1 · two ports · Internal key 10",
+      "sourceName": "Seller photos, drawing and user STEP",
+      "sourceKind": "attachment",
+      "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html",
+      "verifiedParameters": ["bore", "socket"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "42 mm exterior from user STEP; M1, 20T, 1:1, 8/10 mm sockets from supplied images.",
+        "limitations": "Corrected internal seats; inferred 61802 bearing and standard circlips. Spiral flanks, axial fits and ring shape are reconstruction, not manufacturer CAD.",
+        "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html"
+      }
+    },
+    "description": "Source housing with reconstructed spiral gears; one 15×24×5 bearing and two circlips per gear."
+  },
+  {
+    "id": "three-d-8",
+    "name": "42 mm · 3 gears · D bore 8 mm",
+    "parameters": {
+      "layout": "three",
+      "bore": "8",
+      "socket": "d",
+      "inputAngle": 0,
+      "sweep": 8
+    },
+    "catalog": {
+      "designation": "42 mm M1 Z20 1:1 · three ports · D bore 8",
+      "sourceName": "Seller photos, drawing and user STEP",
+      "sourceKind": "attachment",
+      "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html",
+      "verifiedParameters": ["bore", "socket"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "42 mm exterior from user STEP; M1, 20T, 1:1, 8/10 mm sockets from supplied images.",
+        "limitations": "Corrected internal seats; inferred 61802 bearing and standard circlips. Spiral flanks, axial fits and ring shape are reconstruction, not manufacturer CAD.",
+        "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html"
+      }
+    },
+    "description": "Source housing with reconstructed spiral gears; one 15×24×5 bearing and two circlips per gear."
+  },
+  {
+    "id": "three-hex-8",
+    "name": "42 mm · 3 gears · Hex bore 8 mm",
+    "parameters": {
+      "layout": "three",
+      "bore": "8",
+      "socket": "hex",
+      "inputAngle": 0,
+      "sweep": 8
+    },
+    "catalog": {
+      "designation": "42 mm M1 Z20 1:1 · three ports · Hex bore 8",
+      "sourceName": "Seller photos, drawing and user STEP",
+      "sourceKind": "attachment",
+      "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html",
+      "verifiedParameters": ["bore", "socket"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "42 mm exterior from user STEP; M1, 20T, 1:1, 8/10 mm sockets from supplied images.",
+        "limitations": "Corrected internal seats; inferred 61802 bearing and standard circlips. Spiral flanks, axial fits and ring shape are reconstruction, not manufacturer CAD.",
+        "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html"
+      }
+    },
+    "description": "Source housing with reconstructed spiral gears; one 15×24×5 bearing and two circlips per gear."
+  },
+  {
+    "id": "three-keyway-8",
+    "name": "42 mm · 3 gears · Keyway 8 mm",
+    "parameters": {
+      "layout": "three",
+      "bore": "8",
+      "socket": "keyway",
+      "inputAngle": 0,
+      "sweep": 8
+    },
+    "catalog": {
+      "designation": "42 mm M1 Z20 1:1 · three ports · Keyway 8",
+      "sourceName": "Seller photos, drawing and user STEP",
+      "sourceKind": "attachment",
+      "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html",
+      "verifiedParameters": ["bore", "socket"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "42 mm exterior from user STEP; M1, 20T, 1:1, 8/10 mm sockets from supplied images.",
+        "limitations": "Corrected internal seats; inferred 61802 bearing and standard circlips. Spiral flanks, axial fits and ring shape are reconstruction, not manufacturer CAD.",
+        "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html"
+      }
+    },
+    "description": "Source housing with reconstructed spiral gears; one 15×24×5 bearing and two circlips per gear."
+  },
+  {
+    "id": "three-tongue-8",
+    "name": "42 mm · 3 gears · Internal key 8 mm",
+    "parameters": {
+      "layout": "three",
+      "bore": "8",
+      "socket": "tongue",
+      "inputAngle": 0,
+      "sweep": 8
+    },
+    "catalog": {
+      "designation": "42 mm M1 Z20 1:1 · three ports · Internal key 8",
+      "sourceName": "Seller photos, drawing and user STEP",
+      "sourceKind": "attachment",
+      "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html",
+      "verifiedParameters": ["bore", "socket"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "42 mm exterior from user STEP; M1, 20T, 1:1, 8/10 mm sockets from supplied images.",
+        "limitations": "Corrected internal seats; inferred 61802 bearing and standard circlips. Spiral flanks, axial fits and ring shape are reconstruction, not manufacturer CAD.",
+        "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html"
+      }
+    },
+    "description": "Source housing with reconstructed spiral gears; one 15×24×5 bearing and two circlips per gear."
+  },
+  {
+    "id": "three-d-10",
+    "name": "42 mm · 3 gears · D bore 10 mm",
+    "parameters": {
+      "layout": "three",
+      "bore": "10",
+      "socket": "d",
+      "inputAngle": 0,
+      "sweep": 8
+    },
+    "catalog": {
+      "designation": "42 mm M1 Z20 1:1 · three ports · D bore 10",
+      "sourceName": "Seller photos, drawing and user STEP",
+      "sourceKind": "attachment",
+      "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html",
+      "verifiedParameters": ["bore", "socket"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "42 mm exterior from user STEP; M1, 20T, 1:1, 8/10 mm sockets from supplied images.",
+        "limitations": "Corrected internal seats; inferred 61802 bearing and standard circlips. Spiral flanks, axial fits and ring shape are reconstruction, not manufacturer CAD.",
+        "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html"
+      }
+    },
+    "description": "Source housing with reconstructed spiral gears; one 15×24×5 bearing and two circlips per gear."
+  },
+  {
+    "id": "three-hex-10",
+    "name": "42 mm · 3 gears · Hex bore 10 mm",
+    "parameters": {
+      "layout": "three",
+      "bore": "10",
+      "socket": "hex",
+      "inputAngle": 0,
+      "sweep": 8
+    },
+    "catalog": {
+      "designation": "42 mm M1 Z20 1:1 · three ports · Hex bore 10",
+      "sourceName": "Seller photos, drawing and user STEP",
+      "sourceKind": "attachment",
+      "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html",
+      "verifiedParameters": ["bore", "socket"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "42 mm exterior from user STEP; M1, 20T, 1:1, 8/10 mm sockets from supplied images.",
+        "limitations": "Corrected internal seats; inferred 61802 bearing and standard circlips. Spiral flanks, axial fits and ring shape are reconstruction, not manufacturer CAD.",
+        "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html"
+      }
+    },
+    "description": "Source housing with reconstructed spiral gears; one 15×24×5 bearing and two circlips per gear."
+  },
+  {
+    "id": "three-keyway-10",
+    "name": "42 mm · 3 gears · Keyway 10 mm",
+    "parameters": {
+      "layout": "three",
+      "bore": "10",
+      "socket": "keyway",
+      "inputAngle": 0,
+      "sweep": 8
+    },
+    "catalog": {
+      "designation": "42 mm M1 Z20 1:1 · three ports · Keyway 10",
+      "sourceName": "Seller photos, drawing and user STEP",
+      "sourceKind": "attachment",
+      "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html",
+      "verifiedParameters": ["bore", "socket"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "42 mm exterior from user STEP; M1, 20T, 1:1, 8/10 mm sockets from supplied images.",
+        "limitations": "Corrected internal seats; inferred 61802 bearing and standard circlips. Spiral flanks, axial fits and ring shape are reconstruction, not manufacturer CAD.",
+        "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html"
+      }
+    },
+    "description": "Source housing with reconstructed spiral gears; one 15×24×5 bearing and two circlips per gear."
+  },
+  {
+    "id": "three-tongue-10",
+    "name": "42 mm · 3 gears · Internal key 10 mm",
+    "parameters": {
+      "layout": "three",
+      "bore": "10",
+      "socket": "tongue",
+      "inputAngle": 0,
+      "sweep": 8
+    },
+    "catalog": {
+      "designation": "42 mm M1 Z20 1:1 · three ports · Internal key 10",
+      "sourceName": "Seller photos, drawing and user STEP",
+      "sourceKind": "attachment",
+      "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html",
+      "verifiedParameters": ["bore", "socket"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "42 mm exterior from user STEP; M1, 20T, 1:1, 8/10 mm sockets from supplied images.",
+        "limitations": "Corrected internal seats; inferred 61802 bearing and standard circlips. Spiral flanks, axial fits and ring shape are reconstruction, not manufacturer CAD.",
+        "sourceUrl": "https://www.aliexpress.com/item/1005006771991196.html"
+      }
+    },
+    "description": "Source housing with reconstructed spiral gears; one 15×24×5 bearing and two circlips per gear."
+  }
+]

@@ -39,6 +39,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'taper',
+    visibleWhen: (p) => p.form === 'taper',
     label: 'Diameter taper / length',
     type: 'number',
     group: 'Dimensions',

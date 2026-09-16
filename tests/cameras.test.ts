@@ -58,8 +58,7 @@ test('camera catalog has fixed models and source-aware filters', () => {
     assert.ok(camera.validate({ ...preset.parameters, width: 100 }, 'assembled').length);
     assert.ok(
       preset.catalog?.sourceUrl.startsWith('https://') ||
-        (preset.catalog?.sourceKind === 'attachment' &&
-          preset.catalog.sourceUrl === ''),
+        (preset.catalog?.sourceKind === 'attachment' && preset.catalog.sourceUrl === ''),
     );
   }
   assert.ok(camera.validate({ model: 'unknown' }, 'assembled').length);
@@ -175,7 +174,13 @@ test('DM and UC references retain separate optics, power interfaces and rate sem
     assert.equal(a.detectorRate, 50);
     assert.equal(a.radiometric, undefined);
     assert.equal(p.catalog!.sourceKind, 'attachment');
-    assert.ok(p.catalog!.alternateSourceUrls!.some((u) => u.endsWith('-drawing.png')));
+    assert.match(p.catalog!.sourceName, /supplied/i);
+    assert.ok(
+      [p.catalog!.sourceUrl, ...(p.catalog!.alternateSourceUrls ?? [])].every(
+        (url) => !url.startsWith('/references/') && !url.startsWith('file:'),
+      ),
+      'attachment provenance must not restore deleted bundled reference assets',
+    );
   }
   const filters = emptyPresetFilters(camera);
   filters.parameters[fieldId(camera.catalogFilterFields!.find((f) => f.key === 'focalLength')!)] = {

@@ -46,10 +46,17 @@ export const parameters: ParameterDefinition[] = [
   dimension('mountingBoreDepth', 'Rear mounting bore depth', 'Mounting', 1, 60),
   {
     ...dimension('armatureDiameter', 'Armature diameter', 'Armature plate', 12, 180),
+    visibleWhen: (_, state) => state !== 'magnet-only',
     description: 'The removable plate is included in the assembled and exploded states.',
   },
-  dimension('armatureThickness', 'Armature thickness', 'Armature plate', 0.8, 30),
-  dimension('airGap', 'Working air gap', 'Armature plate', 0, 20, 0.05),
+  {
+    ...dimension('armatureThickness', 'Armature thickness', 'Armature plate', 0.8, 30),
+    visibleWhen: (_, state) => state !== 'magnet-only',
+  },
+  {
+    ...dimension('airGap', 'Working air gap', 'Armature plate', 0, 20, 0.05),
+    visibleWhen: (_, state) => state !== 'magnet-only',
+  },
   {
     key: 'showLeads',
     label: 'Include paired rear leads',

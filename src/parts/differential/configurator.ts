@@ -4,7 +4,7 @@ export const defaults: Parameters = {
   length: 60,
   shaft: 16,
   projection: 35,
-  detail: 'envelope',
+  detail: 'detailed',
 };
 export const parameters: ParameterDefinition[] = [
   {
@@ -49,6 +49,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'detail',
+    visibleWhen: (_, state) => state !== 'internals',
     label: 'Model detail',
     type: 'select',
     group: 'Configuration',

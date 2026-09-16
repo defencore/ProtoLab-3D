@@ -42,6 +42,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'height',
+    visibleWhen: (p) => p.form !== 'shf',
     label: 'Axis height',
     type: 'number',
     group: 'Dimensions',

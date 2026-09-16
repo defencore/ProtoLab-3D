@@ -21,7 +21,10 @@ export const parameters: ParameterDefinition[] = [
   numberParameter('plungerDiameter', 'Armature diameter', 'd', 'Motion', 3, 70, 0.5),
   numberParameter('plungerLength', 'Armature length', 'a', 'Motion', 5, 180, 1),
   numberParameter('rodDiameter', 'Output rod diameter', 'dr', 'Motion', 1, 40, 0.5),
-  numberParameter('stroke', 'Stroke', 's', 'Motion', 0.5, 70, 0.5),
+  {
+    ...numberParameter('stroke', 'Stroke', 's', 'Motion', 0.5, 70, 0.5),
+    visibleWhen: (_, state) => state === undefined || state !== 'retracted',
+  },
   {
     ...numberParameter('extension', 'Retracted rod protrusion', 'p', 'Motion', 1, 80, 0.5),
     description:

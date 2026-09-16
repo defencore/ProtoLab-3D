@@ -36,7 +36,11 @@ test('bevel presets preserve every row, mounting datum and continuous bore inter
   assert.equal(bevelReferenceRows.length, 12);
   assert.equal(mountingPresets.length, 6);
   for (const [index, preset] of mountingPresets.entries()) {
-    assert.ok(!preset.catalog!.verifiedParameters.some((key) => /Bore(?:Shape|Angle|FlatDepth|Sides|KeyWidth|KeyDepth)$/.test(key)));
+    assert.ok(
+      !preset.catalog!.verifiedParameters.some((key) =>
+        /Bore(?:Shape|Angle|FlatDepth|Sides|KeyWidth|KeyDepth)$/.test(key),
+      ),
+    );
     for (const [offset, side] of ['pinion', 'wheel'].entries()) {
       const row = bevelReferenceRows[index * 2 + offset],
         p = preset.parameters;
@@ -96,12 +100,32 @@ test('m2 15/30 stock configurations preserve the listed bores and keyway widths 
       assert.deepEqual(validateParameters(bevel, p, 'assembled'), []);
       const catalog = preset.catalog!;
       assert.equal(catalog.parameterRanges, undefined);
-      for (const key of ['pinionBore', 'wheelBore', 'pinionBoreShape', 'wheelBoreShape', 'wheelBoreKeyWidth'])
+      for (const key of [
+        'pinionBore',
+        'wheelBore',
+        'pinionBoreShape',
+        'wheelBoreShape',
+        'wheelBoreKeyWidth',
+      ])
         assert.ok(catalog.verifiedParameters.includes(key), `${preset.id}: ${key}`);
-      for (const key of ['pinionBoreKeyWidth', 'pinionBoreKeyDepth', 'wheelBoreKeyDepth', 'pinionBoreAngle', 'wheelBoreAngle', 'pressureAngle', 'backlash', 'setScrewDiameter'])
+      for (const key of [
+        'pinionBoreKeyWidth',
+        'pinionBoreKeyDepth',
+        'wheelBoreKeyDepth',
+        'pinionBoreAngle',
+        'wheelBoreAngle',
+        'pressureAngle',
+        'backlash',
+        'setScrewDiameter',
+      ])
         assert.ok(!catalog.verifiedParameters.includes(key), `${preset.id}: prototype ${key}`);
-      assert.match(catalog.sourceUrl, /bevel-gear-m2-15-30-bore-options\.png$/);
-      assert.ok(catalog.alternateSourceUrls?.some((url) => url.endsWith('bevel-gear-mounting-table.png')));
+      assert.equal(catalog.sourceKind, 'attachment');
+      assert.equal(catalog.sourceName, 'User-supplied m2 15T / 30T listing');
+      assert.ok(
+        ![catalog.sourceUrl, ...(catalog.alternateSourceUrls ?? [])].some((url) =>
+          /\/references\/|^file:/.test(url),
+        ),
+      );
       assert.ok(catalog.specifications?.some((item) => /sold separately/.test(item.value)));
       assert.ok(catalog.specifications?.some((item) => item.value === '45# steel'));
     }
@@ -116,7 +140,9 @@ test('m2 15/30 stock configurations preserve the listed bores and keyway widths 
     pinionBores,
   );
   assert.deepEqual(
-    quickPickOptions(bevel.presets, fields, { ...filters, pinionBore: '8' }, wheelIndex).map((item) => Number(item.value)),
+    quickPickOptions(bevel.presets, fields, { ...filters, pinionBore: '8' }, wheelIndex).map(
+      (item) => Number(item.value),
+    ),
     wheelBores,
   );
 });

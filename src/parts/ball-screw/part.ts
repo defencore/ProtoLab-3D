@@ -1,3 +1,4 @@
+import { withParameterStates } from '../../core/parameter-states';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -45,6 +46,16 @@ const part: PartDefinition = {
   parameters: ballScrewParameters,
   defaults: ballScrewDefaults,
   presets: modulePresets,
+  updateParameters(p, key) {
+    if (key !== 'family') return p;
+    const choices = part.presets.filter((item) => item.parameters.family === p.family);
+    const selected =
+      choices.find(
+        (item) =>
+          item.parameters.shaftDiameter === p.shaftDiameter && item.parameters.lead === p.lead,
+      ) ?? choices[0];
+    return selected ? { ...p, ...selected.parameters } : p;
+  },
   presetMatchKeys: ['family', 'shaftDiameter', 'lead', 'nutLength', 'nutDiameter'],
   states: [
     {
@@ -84,4 +95,34 @@ const part: PartDefinition = {
   notes:
     'Catalog dimensions apply only to the fields marked by each preset. Circular raceway clearance, loaded ball spacing, deflectors, return covers, preload spacer and lubrication pilot bore are representative prototype geometry. C5/C7 is requested accuracy metadata, not a manufacturing certificate. Overall shaft length includes machined journals; their dimensions are editable custom values. Positive rotation translates the nut by one lead per revolution. Continuous return routing and production contact profiles are not modeled. The inspection cutaway is offset by 0.001 mm to keep periodic CAD faces robust.',
 };
-export default { ...part, presets: modulePresets };
+export default withParameterStates(
+  { ...part, presets: modulePresets },
+  {
+    screw: [
+      'circuitTurns',
+      'circuits',
+      'nutDiameter',
+      'nutLength',
+      'flangeDiameter',
+      'flangeWidth',
+      'flangeThickness',
+      'flangeOffset',
+      'mountCircle',
+      'mountHoleDiameter',
+      'mountHoleCount',
+      'oilHoleDiameter',
+      'nutPosition',
+    ],
+    nut: [
+      'length',
+      'endMachining',
+      'fixedJournalDiameter',
+      'fixedJournalLength',
+      'driveJournalDiameter',
+      'driveJournalLength',
+      'supportJournalDiameter',
+      'supportJournalLength',
+      'nutPosition',
+    ],
+  },
+);

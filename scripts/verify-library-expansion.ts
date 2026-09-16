@@ -55,6 +55,12 @@ const fixtures: Record<string, Parameters[]> = {
     },
   ],
   gearbox: [{ stages: 3, detail: 'detailed', form: 'planetary' }],
+  'robot-wheel': [
+    { form: 'omni', rollers: 16, detail: 'detailed' },
+    { form: 'mecanum', rollers: 12, width: 45, detail: 'detailed' },
+  ],
+  'shaft-coupling': [{ form: 'oldham', gap: 14, detail: 'detailed' }],
+  'cable-carrier': [{ form: 'chain', links: 12, detail: 'detailed' }],
   'fluid-cylinder': [{ extension: 0 }, { extension: 100, detail: 'detailed' }],
   'linkage-mechanism': [
     { phase: 135 },
@@ -75,6 +81,13 @@ for (const part of selections) {
     })),
   );
   examples.push({ name: 'default', parameters: part.defaults, state: 'exploded' });
+  if (['gearbox', 'differential'].includes(part.id))
+    for (const preset of part.presets)
+      examples.push({
+        name: preset.id + '/inspection',
+        parameters: preset.parameters,
+        state: 'internals',
+      });
   for (const [index, patch] of (fixtures[part.id] ?? []).entries())
     examples.push({
       name: `custom-${index}`,

@@ -96,7 +96,11 @@ const part: PartDefinition = {
     numberParameter('bridgeLength', 'Bridge straight reach', 'U', 'Bridge', 3, 150),
     numberParameter('legLengthA', 'First outer leg', 'A', 'Legs', 3, 200),
     numberParameter('legLengthB', 'Second outer leg', 'B', 'Legs', 3, 200),
-    { ...numberParameter('deflection', 'Winding per coil', 'θ', 'Travel', 5, 180, 5), unit: '°' },
+    {
+      ...numberParameter('deflection', 'Winding per coil', 'θ', 'Travel', 5, 180, 5),
+      visibleWhen: (_, state) => state === undefined || state !== 'relaxed',
+      unit: '°',
+    },
   ],
   presetMatchKeys: ['outerDiameter', 'wireDiameter'],
   defaults,

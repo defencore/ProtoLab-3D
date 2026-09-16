@@ -10,7 +10,8 @@ const part: PartDefinition = {
   category: 'TRANSMISSION & LINKAGES',
   subgroup: 'REDUCERS & DIFFERENTIALS',
   icon: 'gear',
-  description: 'Editable gearbox housings, mounting holes and input/output shafts for integration.',
+  description:
+    'Parallel spur reduction, stacked planetary stages and a right-angle miter pair, with separate gears, shafts and covers.',
   complexity: 'Parametric prototype',
   keywords: [
     'gear reducer',
@@ -24,6 +25,11 @@ const part: PartDefinition = {
   presets: presets as Preset[],
   states: [
     { id: 'assembled', label: 'Assembly', description: 'Separate physical components.' },
+    {
+      id: 'internals',
+      label: 'Gears & shafts',
+      description: 'Inspect transmission components with the casing removed.',
+    },
     {
       id: 'exploded',
       label: 'Exploded',
@@ -41,7 +47,10 @@ const part: PartDefinition = {
       )
         errors.push(field.label + ' must be a whole number.');
     }
-    if (!['assembled', 'exploded'].includes(state)) errors.push('Choose a valid model state.');
+    if (!['assembled', 'internals', 'exploded'].includes(state))
+      errors.push('Choose a valid model state.');
+    if (n(p, 'length') < n(p, 'diameter') * 0.55 || n(p, 'shaft') > n(p, 'diameter') * 0.17)
+      errors.push('Housing length and shaft bore must leave space for the gears.');
     if (
       n(p, 'mountPitch') + n(p, 'mountHole') >= n(p, 'diameter') ||
       n(p, 'mountPitch') <= n(p, 'shaft') * 2 ||
@@ -54,7 +63,12 @@ const part: PartDefinition = {
   dimensions: (p, s) => assembly.dimensions(pieces(p, s)),
   python: (p, s) => assembly.python(pieces(p, s)),
   notes:
-    'External mounting model only. Detailed mode adds external stage covers, not operating gear internals. Ratios, backlash, self-locking and supplier interchangeability are not inferred. Stage covers are inspection components; use exploded state to view them. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.',
-  sources: [],
+    'Detailed mode contains a 20:40 spur pair, 18:18:54 planetary stages (4:1 each), or a 1:1 miter pair. Involutes are sampled; conical teeth are reference lofts, not manufactured bevel flanks. Cutter fillets, bearings and load ratings require separate engineering. Use exploded state to inspect the transmission. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.',
+  sources: [
+    {
+      label: 'KHK · gear geometry reference',
+      url: 'https://khkgears.net/new/gear_knowledge/gear_technical_reference/calculation_gear_dimensions.html',
+    },
+  ],
 };
 export default part;

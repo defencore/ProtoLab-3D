@@ -52,6 +52,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'flange',
+    visibleWhen: (p) => p.form !== 'heat',
     label: 'Flange diameter',
     type: 'number',
     group: 'Dimensions',

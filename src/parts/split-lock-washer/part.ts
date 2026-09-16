@@ -1,3 +1,4 @@
+import { withParameterStates } from '../../core/parameter-states';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -114,4 +115,9 @@ const part: PartDefinition = {
     { label: 'Güde DIN127-B reference dimensional ranges', url: retentionWasherSources.split },
   ],
 };
-export default { ...part, presets: modulePresets };
+export default withParameterStates(
+  { ...part, presets: modulePresets },
+  {
+    flattened: ['freeHeight'],
+  },
+);

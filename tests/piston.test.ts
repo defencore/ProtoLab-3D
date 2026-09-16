@@ -195,8 +195,7 @@ test('piston type transitions initialize coherent dimensions and seals remain en
       'assembled',
     ).some((error) => error.includes('engagement')),
   );
-  assert.equal(
-    part.parameters.find((p) => p.key === 'ringRadialClearance')!.visibleWhen,
-    undefined,
-  );
+  const ringClearance = part.parameters.find((p) => p.key === 'ringRadialClearance')!;
+  assert.equal(ringClearance.visibleWhen!(pneumatic, 'assembled'), true);
+  assert.equal(ringClearance.visibleWhen!(pneumatic, 'body'), false);
 });

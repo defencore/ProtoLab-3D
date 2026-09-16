@@ -166,11 +166,14 @@ for (const part of parts) {
   });
 
   test(`${part.name}: invalid parameter inputs cannot generate a CAD macro`, () => {
-    const field =
-      part.parameters.find((parameter) => parameter.type === 'number') ??
-      part.parameters.find((parameter) => parameter.type === 'select');
-    assert.ok(field);
     const state = stateIds(part)[0];
+    const active = part.parameters.filter(
+      (parameter) => !parameter.visibleWhen || parameter.visibleWhen(part.defaults, state),
+    );
+    const field =
+      active.find((parameter) => parameter.type === 'number') ??
+      active.find((parameter) => parameter.type === 'select');
+    assert.ok(field);
     const badValues =
       field.type === 'number'
         ? [NaN, Infinity, -Infinity, '12', (field.min ?? 0) - 1]

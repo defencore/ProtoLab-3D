@@ -1,3 +1,4 @@
+import { withParameterStates } from '../../core/parameter-states';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -479,4 +480,34 @@ const part: PartDefinition = {
     { label: 'm2 15T / 30T · bore and keyway options', url: gearReferenceFiles.m2Options },
   ],
 };
-export default { ...part, presets: modulePresets };
+export default withParameterStates(
+  { ...part, presets: modulePresets },
+  {
+    pinion: [
+      'pinionMounting',
+      'wheelBore',
+      'wheelBoreShape',
+      'wheelOuter',
+      'wheelMounting',
+      'wheelOverall',
+      'wheelLargeTip',
+      'wheelFace',
+      'wheelHub',
+      'wheelHubLength',
+      'wheelBodyLength',
+    ],
+    wheel: [
+      'wheelMounting',
+      'pinionBore',
+      'pinionBoreShape',
+      'pinionOuter',
+      'pinionMounting',
+      'pinionOverall',
+      'pinionLargeTip',
+      'pinionFace',
+      'pinionHub',
+      'pinionHubLength',
+      'pinionBodyLength',
+    ],
+  },
+);

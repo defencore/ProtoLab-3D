@@ -44,6 +44,16 @@ const part: PartDefinition = {
   ],
   defaults: ballScrewDefaults,
   presets: modulePresets,
+  updateParameters(p, key) {
+    if (key !== 'family') return p;
+    const choices = part.presets.filter((item) => item.parameters.family === p.family);
+    const selected =
+      choices.find(
+        (item) =>
+          item.parameters.shaftDiameter === p.shaftDiameter && item.parameters.lead === p.lead,
+      ) ?? choices[0];
+    return selected ? { ...p, ...selected.parameters } : p;
+  },
   presetMatchKeys: ['family', 'shaftDiameter', 'lead', 'nutLength', 'nutDiameter'],
   states: [
     {

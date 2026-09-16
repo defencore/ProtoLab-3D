@@ -195,7 +195,11 @@ export const parameters: ParameterDefinition[] = [
     description:
       'Circular prototype seal section. This model does not simulate squeeze, a pressure lip or seal selection.',
   },
-  { ...n('explodedGap', 'Exploded component spacing', 'Display', 3, 80), filterable: false },
+  {
+    ...n('explodedGap', 'Exploded component spacing', 'Display', 3, 80),
+    filterable: false,
+    visibleWhen: (_, state) => state === undefined || state === 'exploded',
+  },
 ];
 export const catalogSelection: NonNullable<PartDefinition['catalogSelection']> = [
   { key: 'variant', label: 'Piston type' },

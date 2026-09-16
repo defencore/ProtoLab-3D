@@ -51,6 +51,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'flange',
+    visibleWhen: (p) => p.form !== 'sleeve',
     label: 'Flange diameter',
     type: 'number',
     group: 'Dimensions',
@@ -61,6 +62,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'flangeHeight',
+    visibleWhen: (p) => p.form !== 'sleeve',
     label: 'Flange thickness',
     type: 'number',
     group: 'Dimensions',

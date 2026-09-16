@@ -76,6 +76,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'chord',
+    visibleWhen: (p) => p.form !== 'centrifugal',
     label: 'Root chord',
     type: 'number',
     group: 'Dimensions',
@@ -86,6 +87,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'thickness',
+    visibleWhen: (p) => p.form !== 'centrifugal',
     label: 'Blade thickness ratio',
     type: 'number',
     group: 'Dimensions',
@@ -96,6 +98,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'rootAngle',
+    visibleWhen: (p) => p.form !== 'centrifugal',
     label: 'Root blade angle',
     type: 'number',
     group: 'Dimensions',
@@ -106,6 +109,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'tipAngle',
+    visibleWhen: (p) => p.form !== 'centrifugal',
     label: 'Tip blade angle',
     type: 'number',
     group: 'Dimensions',

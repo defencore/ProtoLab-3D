@@ -41,6 +41,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'shaft',
+    visibleWhen: (p) => p.form !== 'limit',
     label: 'Encoder shaft / cable diameter',
     type: 'number',
     group: 'Dimensions',
@@ -51,6 +52,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'projection',
+    visibleWhen: (p) => p.form !== 'limit',
     label: 'Shaft / cable projection',
     type: 'number',
     group: 'Dimensions',
@@ -61,6 +63,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'detail',
+    visibleWhen: (p) => p.form !== 'limit',
     label: 'Model detail',
     type: 'select',
     group: 'Configuration',

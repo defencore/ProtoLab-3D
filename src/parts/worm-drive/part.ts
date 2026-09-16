@@ -1,3 +1,4 @@
+import { withParameterStates } from '../../core/parameter-states';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -298,4 +299,10 @@ const part: PartDefinition = {
     },
   ],
 };
-export default { ...part, presets: modulePresets };
+export default withParameterStates(
+  { ...part, presets: modulePresets },
+  {
+    worm: ['teeth', 'wheelWidth', 'bore', 'boreShape', 'centerClearance'],
+    wheel: ['wormLength', 'centerClearance'],
+  },
+);

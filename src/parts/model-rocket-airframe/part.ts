@@ -1,3 +1,4 @@
+import { withParameterStates } from '../../core/parameter-states';
 import type { PartDefinition, Preset } from '../../core/types';
 import { n } from '../../core/geometry';
 import { defaults, parameters, catalogSelection } from './configurator';
@@ -67,4 +68,6 @@ const part: PartDefinition = {
   notes:
     'External airframe reference for educational model rockets: open tube, hollow nose and separate fins. Z is the longitudinal axis. No motor mount, motor, igniter, propellant or deployment mechanism. Published product dimensions are rounded; tube wall, nose profile/length and fin shapes are editable assumptions, not traced factory parts. The nose sits at the tube end without a modeled retention joint. These are layout solids, not flight-ready kits.',
 };
-export default part;
+export default withParameterStates(part, {
+  body: ['nose', 'finCount', 'finRoot', 'finTip', 'finSpan', 'finSweep', 'finThickness'],
+});

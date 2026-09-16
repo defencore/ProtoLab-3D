@@ -44,6 +44,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'lip',
+    visibleWhen: (p) => p.form !== 'gasket',
     label: 'Lip thickness',
     type: 'number',
     group: 'Dimensions',

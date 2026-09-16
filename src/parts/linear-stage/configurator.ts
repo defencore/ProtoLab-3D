@@ -83,6 +83,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'detail',
+    visibleWhen: (p) => !['dovetail', 'telescopic'].includes(String(p.form)),
     label: 'Model detail',
     type: 'select',
     group: 'Configuration',

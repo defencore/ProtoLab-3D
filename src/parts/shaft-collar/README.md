@@ -11,10 +11,10 @@ Find **TRANSMISSION & LINKAGES → SHAFTS & KEYS → Shaft collar**.
 
 ## Controls
 
-Collar form; Outside diameter; Shaft bore; Axial length; Radial screw clearance; Model detail.
+Collar form; Outside diameter; Shaft bore; Axial length; Fastening screw diameter; Model detail. Controls for other construction types or absent components are hidden.
 
 ## Scope
 
 Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.
 
-Separate named components are exported to FreeCAD; the exploded state separates them along Z. The preview and native export share the same shape recipe. This is an independent, editable package.
+Separate physical components are exported to FreeCAD. The preview and native export share geometry definitions. This is an independent, editable prototype package; examples without catalog evidence are not manufactured product SKUs.

@@ -12,10 +12,10 @@ Find **STRUCTURAL PARTS → WHEELS & ROLLERS → Robot and pneumatic wheel**.
 
 ## Controls
 
-Wheel type; Wheel diameter; Wheel width; Axle bore; Peripheral roller count; Model detail.
+Wheel type; Wheel diameter; Wheel width; Axle bore; Peripheral roller count; Model detail. Controls for other construction types or absent components are hidden.
 
 ## Scope
 
-Omni/mecanum rollers are cylindrical visual references with no load/contact simulation or roller mounting hardware. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.
+Omni/mecanum rollers run on bored axles with supporting forks. The fixed hub, forks and axles form one rigid CAD component; rollers remain independent. No roller contact or load simulation. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.
 
-Separate named components are exported to FreeCAD; the exploded state separates them along Z. The preview and native export share the same shape recipe. This is an independent, editable package.
+Separate physical components are exported to FreeCAD. The preview and native export share geometry definitions. This is an independent, editable prototype package; examples without catalog evidence are not manufactured product SKUs.

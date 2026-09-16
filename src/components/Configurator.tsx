@@ -126,7 +126,7 @@ export default function Configurator({
   const selectedPreset = part.presets.find((preset) => preset.id === presetId);
   const visibleFields = part.parameters.filter(
     (field) =>
-      (!field.visibleWhen || field.visibleWhen(parameters)) &&
+      (!field.visibleWhen || field.visibleWhen(parameters, modelState)) &&
       (!part.catalogSelectionOnly ||
         !part.catalogSelection?.some((selection) => selection.key === field.key)) &&
       (part.catalogSelectionOnly ||
@@ -162,6 +162,44 @@ export default function Configurator({
               <BookmarkPlus size={17} />
             </button>
           </div>
+          {!part.catalogSelectionOnly && part.presets.length > 0 && (
+            <div className="preset-finder-actions">
+              <button onClick={() => onBrowse()}>
+                <Search size={14} />
+                {part.presets.some((preset) => preset.catalog)
+                  ? 'Choose a catalog preset'
+                  : 'Choose a prototype preset'}
+              </button>
+            </div>
+          )}
+          {!part.catalogSelectionOnly &&
+            pickFields.length === 0 &&
+            part.presets.length > 0 &&
+            part.presets.length <= 100 && (
+              <div className="parameter-field select-field">
+                <label htmlFor="part-preset">Starting configuration</label>
+                <div className="select-wrap">
+                  <select
+                    id="part-preset"
+                    value={selectedPreset?.id ?? ''}
+                    onChange={(event) => {
+                      const preset = part.presets.find((item) => item.id === event.target.value);
+                      if (preset) onPreset(preset);
+                    }}
+                  >
+                    <option value="" disabled>
+                      Custom configuration
+                    </option>
+                    {part.presets.map((preset) => (
+                      <option key={preset.id} value={preset.id}>
+                        {preset.name}
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDown size={14} />
+                </div>
+              </div>
+            )}
           {!part.catalogSelectionOnly && pickFields.length > 0 && (
             <div className="configuration-mode" aria-label="Configuration mode">
               <button

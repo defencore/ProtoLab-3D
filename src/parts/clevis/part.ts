@@ -1,3 +1,4 @@
+import { withParameterStates } from '../../core/parameter-states';
 import { Group } from 'three';
 import type { Parameters, PartDefinition, Preset } from '../../core/types';
 import { n, num } from '../../core/geometry';
@@ -343,4 +344,6 @@ const part: PartDefinition = {
     },
   ],
 };
-export default part;
+export default withParameterStates(part, {
+  body: ['includeHardware'],
+});

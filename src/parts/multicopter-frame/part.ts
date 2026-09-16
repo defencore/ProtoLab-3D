@@ -1,3 +1,4 @@
+import { withParameterStates } from '../../core/parameter-states';
 import type { PartDefinition, Preset } from '../../core/types';
 import { n } from '../../core/geometry';
 import { defaults, parameters, catalogSelection } from './configurator';
@@ -120,4 +121,19 @@ const part: PartDefinition = {
   notes:
     'Frame configurations follow Figure 4 in Takva & İlerisoy (2023), DOI 10.2478/acee-2023-0004. +X is the nose, +Y is left, +Z is up. Motor circle diameter is twice the distance from the origin to a motor axis, including Y layouts without opposite motors. Quad V has separate front/rear angles. Quad Y has a rear coaxial pair; Y6 and inverted-Y LY have three pairs; X8 has four pairs. Coaxial gap is the clear distance between mounting plates, not rotor spacing. H beams form one structural component. Arm numbers are geometry labels, not flight-controller motor numbers. Dimensions and joints are editable design examples; the source diagram provides topology only. Product presets verify only their listed dimensions. No motors, propellers, tilt mechanisms, hardware or electronics are included. These are layout references, not interchangeable replacement frame parts.',
 };
-export default part;
+export default withParameterStates(part, {
+  body: [
+    'layout',
+    'armStyle',
+    'wheelbase',
+    'gap',
+    'armThickness',
+    'armWidth',
+    'armAngle',
+    'motorPitch',
+    'shaftClearance',
+    'spacerDiameter',
+    'rearAngle',
+    'coaxialGap',
+  ],
+});

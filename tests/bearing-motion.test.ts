@@ -116,9 +116,17 @@ test('curated motion product identities retain audited supplier data across elev
       assert.ok(audited, `${part.id}/${preset.id}: missing audited supplier record`);
       const registered = part.presets.find((entry) => entry.id === preset.id);
       assert.ok(registered, `${part.id}/${preset.id}: missing supplier preset`);
-      // Retain local IDs while using the complete dimensions and metadata from the source audit.
-      assert.deepEqual(registered, {
-        ...audited,
+      // Display names are normalized by the library; supplier identity and dimensions stay exact.
+      const { name: auditedName, ...auditedData } = audited;
+      const { name: registeredName, ...registeredData } = registered;
+      const identity = (value: string) =>
+        value.toLowerCase().replace(/[×х*]/g, 'x').replace(/\s+/g, '');
+      assert.ok(
+        identity(registeredName).includes(identity(audited.catalog!.designation)),
+        auditedName,
+      );
+      assert.deepEqual(registeredData, {
+        ...auditedData,
         id: preset.id,
         catalog:
           part.id === 'pillow-block-bearing'

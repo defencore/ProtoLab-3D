@@ -18,7 +18,7 @@ test('servo gear catalog keeps external and spline teeth distinct and records pa
     assert.equal(preset.parameters.screwBore, 3);
     assert.ok(preset.catalog!.verifiedParameters.includes('faceWidth'));
     assert.ok(!preset.catalog!.verifiedParameters.includes('splineMajor'));
-    assert.match(preset.catalog!.sourceUrl, /references\/servo-gear-/);
+    assert.match(preset.catalog!.sourceUrl, /^https:\/\/www\.servocity\.com\/2305-series-/);
   }
 });
 

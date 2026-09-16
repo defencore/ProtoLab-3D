@@ -11,7 +11,9 @@
       "width": 6,
       "thickness": 1.5,
       "bore": 5,
-      "detail": "envelope"
+      "detail": "envelope",
+      "pulleyDiameter": 32,
+      "ribs": 4
     }
   },
   {
@@ -26,7 +28,9 @@
       "width": 6,
       "thickness": 1.5,
       "bore": 5,
-      "detail": "envelope"
+      "detail": "envelope",
+      "pulleyDiameter": 32,
+      "ribs": 4
     }
   },
   {
@@ -41,7 +45,9 @@
       "width": 6,
       "thickness": 1.5,
       "bore": 8,
-      "detail": "envelope"
+      "detail": "envelope",
+      "pulleyDiameter": 32,
+      "ribs": 4
     }
   },
   {
@@ -56,7 +62,9 @@
       "width": 6,
       "thickness": 1.5,
       "bore": 12,
-      "detail": "envelope"
+      "detail": "envelope",
+      "pulleyDiameter": 32,
+      "ribs": 4
     }
   },
   {
@@ -71,7 +79,9 @@
       "width": 6,
       "thickness": 1.5,
       "bore": 5,
-      "detail": "envelope"
+      "detail": "envelope",
+      "pulleyDiameter": 32,
+      "ribs": 4
     }
   },
   {
@@ -86,7 +96,9 @@
       "width": 6,
       "thickness": 1.5,
       "bore": 5,
-      "detail": "envelope"
+      "detail": "envelope",
+      "pulleyDiameter": 32,
+      "ribs": 4
     }
   },
   {
@@ -101,7 +113,9 @@
       "width": 10,
       "thickness": 1.5,
       "bore": 5,
-      "detail": "envelope"
+      "detail": "envelope",
+      "pulleyDiameter": 32,
+      "ribs": 4
     }
   },
   {
@@ -116,7 +130,9 @@
       "width": 12,
       "thickness": 1.5,
       "bore": 5,
-      "detail": "envelope"
+      "detail": "envelope",
+      "pulleyDiameter": 32,
+      "ribs": 4
     }
   }
 ]

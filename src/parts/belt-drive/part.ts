@@ -27,6 +27,13 @@ const part: PartDefinition = {
   defaults,
   parameters,
   presets: presets as Preset[],
+  updateParameters(p, key) {
+    if (key !== 'form') return p;
+    const preset = presets.find((item) => item.parameters.form === p.form);
+    return preset
+      ? { ...p, ...preset.parameters, ...(p.detail === undefined ? {} : { detail: p.detail }) }
+      : p;
+  },
   states: [
     { id: 'assembled', label: 'Assembly', description: 'Separate physical components.' },
     {
@@ -47,7 +54,9 @@ const part: PartDefinition = {
         errors.push(field.label + ' must be a whole number.');
     }
     if (!['assembled', 'exploded'].includes(state)) errors.push('Choose a valid model state.');
-    const r = (n(p, 'pitch') * n(p, 'teeth')) / (2 * Math.PI);
+    const r = ['v', 'poly'].includes(String(p.form))
+      ? n(p, 'pulleyDiameter') / 2
+      : (n(p, 'pitch') * n(p, 'teeth')) / (2 * Math.PI);
     if (
       n(p, 'bore') >= 2 * r - 3 ||
       n(p, 'centres') < 2 * (r + n(p, 'thickness') + 2) ||
@@ -60,7 +69,7 @@ const part: PartDefinition = {
   dimensions: (p, s) => assembly.dimensions(pieces(p, s)),
   python: (p, s) => assembly.python(pieces(p, s)),
   notes:
-    'Both pulleys have equal tooth count. Belt path uses the entered centre distance; it is not snapped to a stock belt length. Detailed teeth are illustrative trapezoids, not GT/HTD production profiles. V/poly-V variants are smooth running envelopes. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.',
+    'Both pulleys have equal tooth count. Belt path uses the entered centre distance; it is not snapped to a stock belt length. Detailed timing variants include tooth spaces and mating pulleys with clearances; rounded and trapezoidal profiles are approximations, not GT/HTD production tooling. V/poly-V variants have matching wedge/rib sections and sheave grooves. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.',
   sources: [
     {
       label: 'SDP/SI belt and pulley families',

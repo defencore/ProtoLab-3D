@@ -7,8 +7,20 @@ export const defaults: Parameters = {
   nutLength: 20,
   nutDiameter: 28,
   position: 100,
+  turns: 50,
 };
 export const parameters: ParameterDefinition[] = [
+  {
+    key: 'turns',
+    label: 'Input revolutions from origin',
+    type: 'number',
+    group: 'Travel',
+    min: 0,
+    max: 4000,
+    step: 0.1,
+    unit: 'rev',
+    description: 'Nut travel = revolutions × lead. Editing travel updates the input revolutions.',
+  },
   {
     key: 'form',
     label: 'Thread system',
@@ -41,7 +53,9 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'pitch',
-    label: 'Thread lead',
+    description:
+      'Changes travel for the current input revolutions. The screw uses a smooth thread envelope; use Thread tool for a helical Boolean solid.',
+    label: 'Lead per revolution',
     type: 'number',
     group: 'Dimensions',
     min: 0.5,

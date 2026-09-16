@@ -85,6 +85,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'detail',
+    visibleWhen: (p) => p.form !== 'rodless',
     label: 'Model detail',
     type: 'select',
     group: 'Configuration',

@@ -51,6 +51,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'rollers',
+    visibleWhen: (p) => p.form !== 'pneumatic',
     label: 'Peripheral roller count',
     type: 'number',
     group: 'Dimensions',
@@ -61,6 +62,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'detail',
+    visibleWhen: (p) => p.form !== 'pneumatic',
     label: 'Model detail',
     type: 'select',
     group: 'Configuration',

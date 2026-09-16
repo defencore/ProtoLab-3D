@@ -1,8 +1,8 @@
 [
   {
     "id": "parallel",
-    "name": "Reducer \u00b7 parallel shafts",
-    "description": "Editable gearbox housings, mounting holes and input/output shafts for integration. Editable prototype dimensions.",
+    "name": "Spur reducer \u00b7 parallel \u00b7 2:1",
+    "description": "Editable transmission prototype with separate gears, shafts and mounting covers. Inspect the transmission in Gears & shafts view.",
     "parameters": {
       "form": "parallel",
       "diameter": 80,
@@ -12,13 +12,13 @@
       "mountPitch": 60,
       "mountHole": 5,
       "stages": 1,
-      "detail": "envelope"
+      "detail": "detailed"
     }
   },
   {
     "id": "worm",
-    "name": "Reducer \u00b7 right-angle shafts",
-    "description": "Editable gearbox housings, mounting holes and input/output shafts for integration. Editable prototype dimensions.",
+    "name": "Miter gearbox \u00b7 right angle \u00b7 1:1",
+    "description": "Editable transmission prototype with separate gears, shafts and mounting covers. Inspect the transmission in Gears & shafts view.",
     "parameters": {
       "form": "worm",
       "diameter": 80,
@@ -28,13 +28,13 @@
       "mountPitch": 60,
       "mountHole": 5,
       "stages": 1,
-      "detail": "envelope"
+      "detail": "detailed"
     }
   },
   {
     "id": "planetary",
-    "name": "Reducer \u00b7 coaxial shafts",
-    "description": "Editable gearbox housings, mounting holes and input/output shafts for integration. Editable prototype dimensions.",
+    "name": "Planetary reducer \u00b7 coaxial \u00b7 4:1",
+    "description": "Editable transmission prototype with separate gears, shafts and mounting covers. Inspect the transmission in Gears & shafts view.",
     "parameters": {
       "form": "planetary",
       "diameter": 80,
@@ -44,7 +44,7 @@
       "mountPitch": 60,
       "mountHole": 5,
       "stages": 1,
-      "detail": "envelope"
+      "detail": "detailed"
     }
   }
 ]

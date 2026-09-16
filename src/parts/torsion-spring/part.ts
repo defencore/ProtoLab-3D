@@ -150,7 +150,11 @@ const part: PartDefinition = {
       ...numberParameter('tipLength', 'Bent tip length', 'C', 'Legs', 2, 80),
       visibleWhen: hasBends,
     },
-    { ...numberParameter('deflection', 'State deflection', 'θ', 'Travel', 5, 270, 5), unit: '°' },
+    {
+      ...numberParameter('deflection', 'State deflection', 'θ', 'Travel', 5, 270, 5),
+      visibleWhen: (_, state) => state === undefined || state !== 'relaxed',
+      unit: '°',
+    },
   ],
   presetMatchKeys: ['outerDiameter', 'wireDiameter'],
   defaults,

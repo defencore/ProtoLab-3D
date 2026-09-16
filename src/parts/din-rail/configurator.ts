@@ -51,6 +51,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'pitch',
+    visibleWhen: (p) => p.detail === 'detailed',
     label: 'Mounting slot pitch',
     type: 'number',
     group: 'Dimensions',
@@ -61,6 +62,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'hole',
+    visibleWhen: (p) => p.detail === 'detailed',
     label: 'Slot width',
     type: 'number',
     group: 'Dimensions',

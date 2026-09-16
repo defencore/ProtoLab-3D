@@ -1,3 +1,4 @@
+import { withParameterStates } from '../../core/parameter-states';
 import { Group } from 'three';
 import type { Parameters, PartDefinition, Preset } from '../../core/types';
 import { n, num } from '../../core/geometry';
@@ -254,4 +255,16 @@ const part: PartDefinition = {
   notes:
     'Prototype mechanical envelopes. The winding is a solid annulus, not individual insulated turns. Presets are design examples without manufacturer, voltage, force or thermal ratings. The fixed pole retains a positive gap from the retracted plunger; the extended plunger remains engaged in the guide. Mounting holes are plain through holes. The optional rod is fused to the moving plunger. The model does not predict electrical performance.',
 };
-export default part;
+export default withParameterStates(part, {
+  retracted: ['stroke'],
+  body: [
+    'coilDiameter',
+    'bobbinWall',
+    'flangeThickness',
+    'plungerLength',
+    'poleLength',
+    'residualGap',
+    'stroke',
+    'includePushRod',
+  ],
+});

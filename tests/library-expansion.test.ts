@@ -92,3 +92,19 @@ for (const part of selections) {
       });
     }
 }
+
+for (const part of selections.filter((part) =>
+  part.states?.some((state) => state.id === 'internals'),
+))
+  for (const preset of part.presets)
+    test(`${part.id}/${preset.id}: internal inspection retains closed physical components`, () => {
+      const model = part.buildGeometry(preset.parameters, 'internals');
+      try {
+        assert.deepEqual(validateParameters(part, preset.parameters, 'internals'), []);
+        model.traverse((object) => {
+          if (object instanceof Mesh) checkMesh(object, `${part.id}/${preset.id}/${object.name}`);
+        });
+      } finally {
+        disposeModel(model);
+      }
+    });

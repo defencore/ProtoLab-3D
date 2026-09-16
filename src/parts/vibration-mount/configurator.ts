@@ -43,6 +43,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'stud',
+    visibleWhen: (p) => p.form !== 'sleeve',
     label: 'Stud projection',
     type: 'number',
     group: 'Dimensions',

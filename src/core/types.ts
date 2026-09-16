@@ -14,7 +14,7 @@ export interface ParameterDefinition {
   group: string;
   description?: string;
   options?: { label: string; value: string }[];
-  visibleWhen?: (parameters: Parameters) => boolean;
+  visibleWhen?: (parameters: Parameters, state?: string) => boolean;
   filterable?: boolean;
   catalogSummary?: boolean;
   catalogCondition?: boolean;

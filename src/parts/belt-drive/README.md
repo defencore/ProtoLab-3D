@@ -17,10 +17,10 @@ Find **TRANSMISSION & LINKAGES → BELTS CHAINS & CABLES → Belt and pulley dri
 
 ## Controls
 
-Belt family; Tooth pitch; Pulley tooth count; Shaft centre distance; Belt width; Belt radial thickness; Pulley shaft bore; Model detail.
+Sheave running diameter; Belt ribs; Belt family; Tooth pitch; Pulley tooth count; Shaft centre distance; Belt width; Belt radial thickness; Pulley shaft bore; Model detail. Controls for other construction types or absent components are hidden.
 
 ## Scope
 
-Both pulleys have equal tooth count. Belt path uses the entered centre distance; it is not snapped to a stock belt length. Detailed teeth are illustrative trapezoids, not GT/HTD production profiles. V/poly-V variants are smooth running envelopes. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.
+Both pulleys have equal tooth count. Belt path uses the entered centre distance; it is not snapped to a stock belt length. Detailed timing variants include tooth spaces and mating pulleys with clearances; rounded and trapezoidal profiles are approximations, not GT/HTD production tooling. V/poly-V variants have matching wedge/rib sections and sheave grooves. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.
 
-Separate named components are exported to FreeCAD; the exploded state separates them along Z. The preview and native export share the same shape recipe. This is an independent, editable package.
+Separate physical components are exported to FreeCAD. The preview and native export share geometry definitions. This is an independent, editable prototype package; examples without catalog evidence are not manufactured product SKUs.

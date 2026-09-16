@@ -65,6 +65,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'keyWidth',
+    visibleWhen: (p) => p.form !== 'spline',
     label: 'Keyway width',
     type: 'number',
     group: 'Dimensions',
@@ -75,6 +76,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'keyDepth',
+    visibleWhen: (p) => p.form !== 'spline',
     label: 'Keyway depth',
     type: 'number',
     group: 'Dimensions',
@@ -85,6 +87,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'groove',
+    visibleWhen: (p) => p.detail === 'detailed',
     label: 'Retaining groove width',
     type: 'number',
     group: 'Dimensions',
@@ -95,6 +98,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'teeth',
+    visibleWhen: (p) => p.form === 'spline',
     label: 'Spline tooth count',
     type: 'number',
     group: 'Dimensions',

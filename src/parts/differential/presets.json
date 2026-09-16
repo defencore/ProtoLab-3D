@@ -1,14 +1,14 @@
 [
   {
     "id": "carrier80",
-    "name": "Differential carrier \u00b7 \u00d880 \u00d7 60 mm",
-    "description": "Editable carrier and opposed half-shafts for differential packaging. Editable prototype dimensions.",
+    "name": "Bevel differential · Ø80 × 60 mm",
+    "description": "Editable bevel differential with carrier, side gears, spider pinions and half-shafts. Prototype dimensions.",
     "parameters": {
       "diameter": 80,
       "length": 60,
       "shaft": 16,
       "projection": 35,
-      "detail": "envelope"
+      "detail": "detailed"
     }
   }
 ]

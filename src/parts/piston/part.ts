@@ -1,3 +1,4 @@
+import { withParameterStates } from '../../core/parameter-states';
 import type { PartDefinition, Preset } from '../../core/types';
 import { n } from '../../core/geometry';
 import { defaults, parameters } from './configurator';
@@ -173,4 +174,16 @@ const part: PartDefinition = {
     { label: 'Supplied piston / rod assembly anatomy', url: '' },
   ],
 };
-export default part;
+export default withParameterStates(part, {
+  body: [
+    'showRings',
+    'ringSideClearance',
+    'ringRadialClearance',
+    'ringProtrusion',
+    'ringGap',
+    'pinInnerDiameter',
+    'showPin',
+    'clipGap',
+    'showClips',
+  ],
+});

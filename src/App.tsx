@@ -605,7 +605,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
                   if (
                     field.type === 'number' &&
                     field.visibleWhen &&
-                    !field.visibleWhen(next) &&
+                    !field.visibleWhen(next, modelState) &&
                     (typeof next[field.key] !== 'number' || !Number.isFinite(next[field.key]))
                   ) {
                     next[field.key] = part.defaults[field.key];

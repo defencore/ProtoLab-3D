@@ -165,5 +165,8 @@ export const parameters: ParameterDefinition[] = [
   },
   number('spanSegments', 'Span divisions', 'Ns', 'Model quality', 2, 40, '', 1),
   number('profileSegments', 'Chord divisions per side', 'Nc', 'Model quality', 12, 96, '', 1),
-  number('sectionDepth', 'Profile sample depth', 'b', 'Model quality', 0.5, 50),
+  {
+    ...number('sectionDepth', 'Profile sample depth', 'b', 'Model quality', 0.5, 50),
+    visibleWhen: (_, state) => state === undefined || state !== 'surface',
+  },
 ];

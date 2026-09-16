@@ -7,6 +7,7 @@ export type Vec = [number, number, number];
 export type Shape =
   | { kind: 'transform'; child: Shape; translation: Vec; rotation: Vec }
   | { kind: 'loft'; rings: Vec[][] }
+  | { kind: 'boundary'; points: Vec[]; faces: number[][] }
   | { kind: 'revolve'; profile: [number, number][] }
   | { kind: 'box'; size: Vec; origin: Vec }
   | {
@@ -72,6 +73,12 @@ function solid(s: Shape): Geom3 {
           solid(s.child),
         ),
       );
+    case 'boundary':
+      return modeling.primitives.polyhedron({
+        points: s.points,
+        faces: s.faces,
+        orientation: 'outward',
+      });
     case 'loft': {
       const points = s.rings.flat(),
         stride = s.rings[0].length;
@@ -252,6 +259,8 @@ export function pythonShape(s: Shape): string {
   switch (s.kind) {
     case 'transform':
       return `_pl_transform(${pythonShape(s.child)},${JSON.stringify(s.translation)},${JSON.stringify(s.rotation)})`;
+    case 'boundary':
+      return `Part.makeSolid(Part.makeShell([Part.Face(Part.makePolygon([App.Vector(*pts[i]) for i in face + [face[0]]])) for pts in [${JSON.stringify(s.points)}] for face in ${JSON.stringify(s.faces)}]))`;
     case 'loft': {
       const points = s.rings.flat(),
         n = s.rings[0].length,

@@ -5,6 +5,7 @@ import { PART_ID_PATTERN, PART_MODULE_API_VERSION } from '../../src/core/part-mo
 
 export const SDK_FILES = [
   'types.ts',
+  'parameter-states.ts',
   'geometry.ts',
   'mechanical.ts',
   'solid-union.ts',

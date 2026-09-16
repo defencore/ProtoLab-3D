@@ -52,7 +52,7 @@ const part: PartDefinition = {
   dimensions: (p, s) => assembly.dimensions(pieces(p, s)),
   python: (p, s) => assembly.python(pieces(p, s)),
   notes:
-    'Straight carrier only; link hinges, bend stops and minimum bend radius are not defined. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.',
+    'Straight articulated carrier with alternating hinge ears and bores; detailed mode includes integral hinge pins. Bend stops and minimum bend radius are not defined. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.',
   sources: [],
 };
 export default part;

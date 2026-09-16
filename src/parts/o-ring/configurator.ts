@@ -40,6 +40,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'grooveWidth',
+    visibleWhen: (p) => p.mode !== 'seal',
     label: 'Groove width',
     type: 'number',
     group: 'Dimensions',
@@ -50,6 +51,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'grooveDepth',
+    visibleWhen: (p) => p.mode !== 'seal',
     label: 'Groove depth',
     type: 'number',
     group: 'Dimensions',

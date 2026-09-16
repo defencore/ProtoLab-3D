@@ -7,7 +7,7 @@ export function validateParameters(
 ): string[] {
   const errors: string[] = [];
   for (const field of part.parameters) {
-    const visible = !field.visibleWhen || field.visibleWhen(values);
+    const visible = !field.visibleWhen || field.visibleWhen(values, state);
     const value = values[field.key];
     if (field.type === 'number') {
       if (typeof value !== 'number' || !Number.isFinite(value))

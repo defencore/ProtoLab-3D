@@ -128,7 +128,10 @@ const part: PartDefinition = {
       description: '0° aligns the end planes; 90° makes them perpendicular.',
     },
     numberParameter('bodyLength', 'Free body length', 'L', 'Travel', 5, 250),
-    numberParameter('extension', 'Extension travel', 'x', 'Travel', 0, 250),
+    {
+      ...numberParameter('extension', 'Extension travel', 'x', 'Travel', 0, 250),
+      visibleWhen: (_, state) => state === undefined || state === 'extended',
+    },
   ],
   presetMatchKeys: ['outerDiameter', 'wireDiameter', 'endA', 'endB'],
   defaults,

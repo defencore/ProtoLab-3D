@@ -8,7 +8,7 @@ export const defaults: Parameters = {
   mountPitch: 60,
   mountHole: 5,
   stages: 1,
-  detail: 'envelope',
+  detail: 'detailed',
 };
 export const parameters: ParameterDefinition[] = [
   {
@@ -17,9 +17,9 @@ export const parameters: ParameterDefinition[] = [
     type: 'select',
     group: 'Configuration',
     options: [
-      { value: 'parallel', label: 'Parallel shafts' },
-      { value: 'worm', label: 'Right-angle shafts' },
-      { value: 'planetary', label: 'Coaxial shafts' },
+      { value: 'parallel', label: 'Spur reducer · parallel · 2:1' },
+      { value: 'worm', label: 'Miter gearbox · right angle · 1:1' },
+      { value: 'planetary', label: 'Planetary reducer · coaxial · 4:1 per stage' },
     ],
   },
   {
@@ -64,6 +64,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'mountPitch',
+    visibleWhen: (_, state) => state !== 'internals',
     label: 'Mounting bolt circle',
     type: 'number',
     group: 'Dimensions',
@@ -74,6 +75,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'mountHole',
+    visibleWhen: (_, state) => state !== 'internals',
     label: 'Mounting hole diameter',
     type: 'number',
     group: 'Dimensions',
@@ -84,6 +86,8 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'stages',
+    visibleWhen: (p, state) =>
+      p.form === 'planetary' && (p.detail === 'detailed' || state === 'internals'),
     label: 'Number of stages',
     type: 'number',
     group: 'Dimensions',
@@ -94,6 +98,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'detail',
+    visibleWhen: (_, state) => state !== 'internals',
     label: 'Model detail',
     type: 'select',
     group: 'Configuration',

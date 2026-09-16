@@ -128,43 +128,44 @@ import module124 from './bearing-locknut/index';
 import module125 from './disc-wave-spring/index';
 import module126 from './strut/index';
 import module127 from './gearbox/index';
-import module128 from './differential/index';
-import module129 from './belt-drive/index';
-import module130 from './chain-drive/index';
-import module131 from './cable-hardware/index';
-import module132 from './shaft-support/index';
-import module133 from './lead-screw-axis/index';
-import module134 from './linear-stage/index';
-import module135 from './industrial-motor/index';
-import module136 from './linear-actuator/index';
-import module137 from './structural-section/index';
-import module138 from './slot-profile/index';
-import module139 from './sheet-bracket/index';
-import module140 from './fluid-cylinder/index';
-import module141 from './fluid-fitting/index';
-import module142 from './fluid-valve/index';
-import module143 from './fluid-pump/index';
-import module144 from './fluid-hose/index';
-import module145 from './vacuum-cup/index';
-import module146 from './machine-hardware/index';
-import module147 from './cable-carrier/index';
-import module148 from './cooling-fan/index';
-import module149 from './heat-sink/index';
-import module150 from './din-rail/index';
-import module151 from './battery-holder/index';
-import module152 from './industrial-sensor/index';
-import module153 from './panel-control/index';
-import module154 from './electrical-connector/index';
-import module155 from './cable-gland/index';
-import module156 from './propeller/index';
-import module157 from './duct/index';
-import module158 from './landing-gear/index';
-import module159 from './robot-wheel/index';
-import module160 from './track-drive/index';
-import module161 from './brake/index';
-import module162 from './parallel-gripper/index';
-import module163 from './slewing-bearing/index';
-import module164 from './linkage-mechanism/index';
+import module128 from './bevel-gearbox-42/index';
+import module129 from './differential/index';
+import module130 from './belt-drive/index';
+import module131 from './chain-drive/index';
+import module132 from './cable-hardware/index';
+import module133 from './shaft-support/index';
+import module134 from './lead-screw-axis/index';
+import module135 from './linear-stage/index';
+import module136 from './industrial-motor/index';
+import module137 from './linear-actuator/index';
+import module138 from './structural-section/index';
+import module139 from './slot-profile/index';
+import module140 from './sheet-bracket/index';
+import module141 from './fluid-cylinder/index';
+import module142 from './fluid-fitting/index';
+import module143 from './fluid-valve/index';
+import module144 from './fluid-pump/index';
+import module145 from './fluid-hose/index';
+import module146 from './vacuum-cup/index';
+import module147 from './machine-hardware/index';
+import module148 from './cable-carrier/index';
+import module149 from './cooling-fan/index';
+import module150 from './heat-sink/index';
+import module151 from './din-rail/index';
+import module152 from './battery-holder/index';
+import module153 from './industrial-sensor/index';
+import module154 from './panel-control/index';
+import module155 from './electrical-connector/index';
+import module156 from './cable-gland/index';
+import module157 from './propeller/index';
+import module158 from './duct/index';
+import module159 from './landing-gear/index';
+import module160 from './robot-wheel/index';
+import module161 from './track-drive/index';
+import module162 from './brake/index';
+import module163 from './parallel-gripper/index';
+import module164 from './slewing-bearing/index';
+import module165 from './linkage-mechanism/index';
 
 export const parts = registerPartModules([
   module0,
@@ -332,4 +333,5 @@ export const parts = registerPartModules([
   module162,
   module163,
   module164,
+  module165,
 ]);

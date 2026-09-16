@@ -22,6 +22,16 @@ const part: PartDefinition = {
   defaults,
   parameters,
   presets: presets as Preset[],
+  updateParameters(p, key) {
+    if (key === 'form') {
+      const preset = presets.find((item) => item.parameters.form === p.form);
+      return preset ? { ...p, ...preset.parameters } : p;
+    }
+    if (key === 'position') return { ...p, turns: n(p, 'position') / n(p, 'pitch') };
+    if (key === 'pitch' || key === 'turns')
+      return { ...p, position: n(p, 'turns') * n(p, 'pitch') };
+    return p;
+  },
   states: [
     { id: 'assembled', label: 'Assembly', description: 'Separate physical components.' },
     {
@@ -53,7 +63,7 @@ const part: PartDefinition = {
   dimensions: (p, s) => assembly.dimensions(pieces(p, s)),
   python: (p, s) => assembly.python(pieces(p, s)),
   notes:
-    'Screw remains a smooth nominal thread envelope in both modes. Use the existing Thread tool for explicit helical cut/union geometry. Nut position is geometric travel, not a backlash or efficiency simulation. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.',
+    'Screw remains a smooth nominal thread envelope in both modes. Use the existing Thread tool for explicit helical cut/union geometry. Input revolutions and nut travel are coupled by the selected lead; no backlash or efficiency simulation. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.',
   sources: [],
 };
 export default part;

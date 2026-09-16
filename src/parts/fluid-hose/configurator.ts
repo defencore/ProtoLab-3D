@@ -39,6 +39,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'length',
+    visibleWhen: (p) => p.form !== 'elbow',
     label: 'Straight length',
     type: 'number',
     group: 'Dimensions',
@@ -49,6 +50,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'radius',
+    visibleWhen: (p) => p.form !== 'straight',
     label: 'Bend centreline radius',
     type: 'number',
     group: 'Dimensions',

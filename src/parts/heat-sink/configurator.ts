@@ -51,6 +51,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'fins',
+    visibleWhen: (p) => p.detail === 'detailed',
     label: 'Number of fins',
     type: 'number',
     group: 'Dimensions',
@@ -61,6 +62,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'fin',
+    visibleWhen: (p) => p.detail === 'detailed',
     label: 'Fin thickness',
     type: 'number',
     group: 'Dimensions',

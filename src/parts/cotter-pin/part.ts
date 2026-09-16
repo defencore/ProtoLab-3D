@@ -146,6 +146,7 @@ const part: PartDefinition = {
     },
     {
       ...numberParameter('bendAngle', 'Leg bend angle', 'β', 'Installation', 5, 100, 1),
+      visibleWhen: (_, state) => state === undefined || state === 'bent',
       unit: '°',
     },
     {
@@ -158,9 +159,13 @@ const part: PartDefinition = {
         90,
         1,
       ),
+      visibleWhen: (_, state) => state === undefined || state === 'bent',
       unit: '%',
     },
-    numberParameter('bendRadius', 'Bend radius at flat surface', 'R', 'Installation', 0.1, 30),
+    {
+      ...numberParameter('bendRadius', 'Bend radius at flat surface', 'R', 'Installation', 0.1, 30),
+      visibleWhen: (_, state) => state === undefined || state === 'bent',
+    },
   ],
   presets: modulePresets,
   presetMatchKeys: ['diameter', 'length'],

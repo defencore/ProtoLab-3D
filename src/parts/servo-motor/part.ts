@@ -1,3 +1,4 @@
+import { withParameterStates } from '../../core/parameter-states';
 import type { Parameters, PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters, catalogFilterFields } from './configurator';
 import presetData from './presets.json';
@@ -139,4 +140,6 @@ const part: PartDefinition = {
     ).values(),
   ],
 };
-export default part;
+export default withParameterStates(part, {
+  body: ['outputAngle', 'showHorn', 'hornStyle'],
+});

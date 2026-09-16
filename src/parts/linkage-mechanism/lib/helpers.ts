@@ -71,13 +71,29 @@ export function link(
   h: number,
   z: number,
   hole = 0,
+  centreHole = false,
 ): Shape {
   const dx = b[0] - a[0],
     dy = b[1] - a[1],
     L = Math.hypot(dx, dy),
     angle = (Math.atan2(dy, dx) * 180) / Math.PI;
-  let s = union(B(L, width, h, L / 2, 0, z), C(width, h, z), C(width, h, z, L));
-  if (hole) s = cut(s, C(hole, h + 2, z - 1), C(hole, h + 2, z - 1, L));
+  const points: [number, number][] = [];
+  for (let i = 0; i <= 24; i++) {
+    const a = -Math.PI / 2 + (i * Math.PI) / 24;
+    points.push([L + (width / 2) * Math.cos(a), (width / 2) * Math.sin(a)]);
+  }
+  for (let i = 0; i <= 24; i++) {
+    const a = Math.PI / 2 + (i * Math.PI) / 24;
+    points.push([(width / 2) * Math.cos(a), (width / 2) * Math.sin(a)]);
+  }
+  let s = poly(points, h, z);
+  if (hole)
+    s = cut(
+      s,
+      C(hole, h + 2, z - 1),
+      C(hole, h + 2, z - 1, L),
+      ...(centreHole ? [C(hole, h + 2, z - 1, L / 2)] : []),
+    );
   return move(rotate(s, 0, 0, angle), a[0], a[1]);
 }
 export function arcBand(r: number, t: number, h: number, start: number, end: number, z = 0): Shape {

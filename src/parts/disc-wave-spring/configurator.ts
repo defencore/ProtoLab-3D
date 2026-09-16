@@ -61,6 +61,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'waves',
+    visibleWhen: (p) => p.form === 'wave',
     label: 'Wave count',
     type: 'number',
     group: 'Dimensions',

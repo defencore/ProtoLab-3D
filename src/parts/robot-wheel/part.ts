@@ -50,7 +50,7 @@ const part: PartDefinition = {
   dimensions: (p, s) => assembly.dimensions(pieces(p, s)),
   python: (p, s) => assembly.python(pieces(p, s)),
   notes:
-    'Omni/mecanum rollers are cylindrical visual references with no load/contact simulation or roller mounting hardware. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.',
+    'Omni/mecanum rollers run on bored axles with supporting forks. The fixed hub, forks and axles form one rigid CAD component; rollers remain independent. No roller contact or load simulation. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.',
   sources: [],
 };
 export default part;

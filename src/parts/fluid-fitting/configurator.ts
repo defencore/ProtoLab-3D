@@ -6,7 +6,7 @@ export const defaults: Parameters = {
   passage: 6,
   length: 28,
   connectionDiameter: 10,
-  detail: 'envelope',
+  detail: 'detailed',
 };
 export const parameters: ParameterDefinition[] = [
   {
@@ -24,6 +24,8 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'connection',
+    description:
+      'BSP and metric are nominal thread envelopes: equal entered diameters can produce the same exterior. Helical thread flanks are not represented.',
     label: 'Connection style',
     type: 'select',
     group: 'Configuration',
@@ -77,6 +79,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'detail',
+    visibleWhen: (p) => p.connection === 'push',
     label: 'Model detail',
     type: 'select',
     group: 'Configuration',

@@ -47,10 +47,17 @@ export function pieces(p: Parameters, state: string): Piece[] {
     );
   if (p.connection === 'orfs') cuts.push(ring(c - 1, b + 1, 1, l - 0.7));
   add('Fitting body', cut(s, ...cuts), 0xb6a16c);
-  if (detailed && p.connection === 'push') {
+  const release = () => {
+    let collar = ring(c + 3, c + 0.2, 2);
+    if (detailed)
+      for (let i = 0; i < 8; i++)
+        collar = cut(collar, rotate(B(0.6, 1, 4, 0, (c + 3) / 2, -1), 0, 0, i * 45));
+    return collar;
+  };
+  if (p.connection === 'push') {
     if (p.form === 'elbow')
-      add('Release collar', move(rotate(ring(c + 3, c + 0.2, 2), 0, 90), l * 0.55 - 2, 0, l * 0.5));
-    else add('Release collar', ring(c + 3, c + 0.2, 2, l - 2));
+      add('Release collar', move(rotate(release(), 0, 90), l * 0.55 - 2, 0, l * 0.5));
+    else add('Release collar', move(release(), 0, 0, l - 2));
   }
 
   return finish(out, state);

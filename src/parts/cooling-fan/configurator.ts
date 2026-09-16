@@ -50,6 +50,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'blades',
+    visibleWhen: (p) => p.detail === 'detailed',
     label: 'Blade count',
     type: 'number',
     group: 'Dimensions',
