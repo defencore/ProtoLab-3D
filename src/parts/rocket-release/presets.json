@@ -1,0 +1,130 @@
+[
+  {
+    "id": "tube-80-76",
+    "name": "Ø80/76 mm · 4 gearmotors / 8 locks",
+    "description": "Parametric reconstruction; motor and spring installation geometry is not a vendor CAD model.",
+    "parameters": {
+      "tubeOD": 80,
+      "tubeID": 76,
+      "release": 0,
+      "unlockAngle": 14,
+      "separation": 28,
+      "springTravel": 8,
+      "motor": "12",
+      "fitClearance": 0.5,
+      "drive": "four-motors"
+    }
+  },
+  {
+    "id": "tube-90-86",
+    "name": "Ø90/86 mm · 4 gearmotors / 8 locks",
+    "description": "Parametric reconstruction; motor and spring installation geometry is not a vendor CAD model.",
+    "parameters": {
+      "tubeOD": 90,
+      "tubeID": 86,
+      "release": 0,
+      "unlockAngle": 14,
+      "separation": 28,
+      "springTravel": 8,
+      "motor": "12",
+      "fitClearance": 0.5,
+      "drive": "four-motors"
+    }
+  },
+  {
+    "id": "tube-100-96",
+    "name": "Ø100/96 mm · 4 gearmotors / 8 locks",
+    "description": "Parametric reconstruction; motor and spring installation geometry is not a vendor CAD model.",
+    "parameters": {
+      "tubeOD": 100,
+      "tubeID": 96,
+      "release": 0,
+      "unlockAngle": 14,
+      "separation": 28,
+      "springTravel": 8,
+      "motor": "16",
+      "fitClearance": 0.5,
+      "drive": "four-motors"
+    }
+  },
+  {
+    "id": "tube-150-146",
+    "name": "Ø150/146 mm · 4 gearmotors / 8 locks",
+    "description": "Parametric reconstruction; motor and spring installation geometry is not a vendor CAD model.",
+    "parameters": {
+      "tubeOD": 150,
+      "tubeID": 146,
+      "release": 0,
+      "unlockAngle": 14,
+      "separation": 28,
+      "springTravel": 8,
+      "motor": "16",
+      "fitClearance": 0.5,
+      "drive": "four-motors"
+    }
+  },
+  {
+    "id": "tube-80-76-servo",
+    "name": "Ø80/76 mm · 1 servo + 4 idlers / 8 locks",
+    "description": "Single central servo with a 20:40:100 gear set; MG90S nominal body envelope and reconstructed mount.",
+    "parameters": {
+      "tubeOD": 80,
+      "tubeID": 76,
+      "release": 0,
+      "unlockAngle": 14,
+      "separation": 28,
+      "springTravel": 8,
+      "motor": "12",
+      "fitClearance": 0.5,
+      "drive": "central-servo"
+    }
+  },
+  {
+    "id": "tube-90-86-servo",
+    "name": "Ø90/86 mm · 1 servo + 4 idlers / 8 locks",
+    "description": "Single central servo with a 20:40:100 gear set; MG90S nominal body envelope and reconstructed mount.",
+    "parameters": {
+      "tubeOD": 90,
+      "tubeID": 86,
+      "release": 0,
+      "unlockAngle": 14,
+      "separation": 28,
+      "springTravel": 8,
+      "motor": "12",
+      "fitClearance": 0.5,
+      "drive": "central-servo"
+    }
+  },
+  {
+    "id": "tube-100-96-servo",
+    "name": "Ø100/96 mm · 1 servo + 4 idlers / 8 locks",
+    "description": "Single central servo with a 20:40:100 gear set; MG90S nominal body envelope and reconstructed mount.",
+    "parameters": {
+      "tubeOD": 100,
+      "tubeID": 96,
+      "release": 0,
+      "unlockAngle": 14,
+      "separation": 28,
+      "springTravel": 8,
+      "motor": "16",
+      "fitClearance": 0.5,
+      "drive": "central-servo"
+    }
+  },
+  {
+    "id": "tube-150-146-servo",
+    "name": "Ø150/146 mm · 1 servo + 4 idlers / 8 locks",
+    "description": "Single central servo with a 20:40:100 gear set; MG90S nominal body envelope and reconstructed mount.",
+    "parameters": {
+      "tubeOD": 150,
+      "tubeID": 146,
+      "release": 0,
+      "unlockAngle": 14,
+      "separation": 28,
+      "springTravel": 8,
+      "motor": "16",
+      "fitClearance": 0.5,
+      "drive": "central-servo"
+    }
+  }
+]

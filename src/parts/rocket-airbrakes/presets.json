@@ -1,0 +1,257 @@
+[
+  {
+    "id": "tube-80-76",
+    "name": "Ø80/76 mm · micro servo",
+    "description": "Default compact tube; 8 mm travel with a 60° servo sweep.",
+    "parameters": {
+      "tubeOD": 80,
+      "tubeID": 76,
+      "height": 96,
+      "stroke": 8,
+      "deployment": 50,
+      "sweep": 60,
+      "bladeWidth": 22,
+      "fitClearance": 0.5,
+      "servo": "micro",
+      "mechanism": "spiral"
+    }
+  },
+  {
+    "id": "tube-90-86",
+    "name": "Ø90/86 mm · standard servo",
+    "description": "Editable design preset; dimensions are an adaptation, not original author CAD.",
+    "parameters": {
+      "tubeOD": 90,
+      "tubeID": 86,
+      "height": 96,
+      "stroke": 10,
+      "deployment": 50,
+      "sweep": 80,
+      "bladeWidth": 22,
+      "fitClearance": 0.5,
+      "servo": "standard",
+      "mechanism": "spiral"
+    }
+  },
+  {
+    "id": "tube-90-86-micro",
+    "name": "Ø90/86 mm · micro servo",
+    "description": "Editable design preset; dimensions are an adaptation, not original author CAD.",
+    "parameters": {
+      "tubeOD": 90,
+      "tubeID": 86,
+      "height": 80,
+      "stroke": 10,
+      "deployment": 50,
+      "sweep": 80,
+      "bladeWidth": 22,
+      "fitClearance": 0.5,
+      "servo": "micro",
+      "mechanism": "spiral"
+    }
+  },
+  {
+    "id": "tube-100-96",
+    "name": "Ø100/96 mm · 12 mm travel",
+    "description": "Editable design preset; dimensions are an adaptation, not original author CAD.",
+    "parameters": {
+      "tubeOD": 100,
+      "tubeID": 96,
+      "height": 100,
+      "stroke": 12,
+      "deployment": 50,
+      "sweep": 80,
+      "bladeWidth": 26,
+      "fitClearance": 0.5,
+      "servo": "standard",
+      "mechanism": "spiral"
+    }
+  },
+  {
+    "id": "tube-150-146",
+    "name": "Ø150/146 mm · 26 mm travel",
+    "description": "Editable design preset; dimensions are an adaptation, not original author CAD.",
+    "parameters": {
+      "tubeOD": 150,
+      "tubeID": 146,
+      "height": 110,
+      "stroke": 26,
+      "deployment": 50,
+      "sweep": 80,
+      "bladeWidth": 32,
+      "fitClearance": 0.5,
+      "servo": "standard",
+      "mechanism": "spiral"
+    }
+  },
+  {
+    "id": "sculpted-cam-90",
+    "name": "UGA / WPI · sculpted cam · Ø90/86 mm",
+    "description": "Parametric mechanism adaptation; not original source CAD.",
+    "parameters": {
+      "tubeOD": 90,
+      "tubeID": 86,
+      "height": 96,
+      "stroke": 10,
+      "deployment": 50,
+      "sweep": 80,
+      "bladeWidth": 22,
+      "fitClearance": 0.5,
+      "servo": "standard",
+      "mechanism": "sculpted-cam"
+    }
+  },
+  {
+    "id": "sculpted-cam-100",
+    "name": "UGA / WPI · sculpted cam · Ø100/96 mm",
+    "description": "Parametric mechanism adaptation; not original source CAD.",
+    "parameters": {
+      "tubeOD": 100,
+      "tubeID": 96,
+      "height": 96,
+      "stroke": 10,
+      "deployment": 50,
+      "sweep": 80,
+      "bladeWidth": 22,
+      "fitClearance": 0.5,
+      "servo": "standard",
+      "mechanism": "sculpted-cam"
+    }
+  },
+  {
+    "id": "curved-link-90",
+    "name": "UGA · curved links · Ø90/86 mm",
+    "description": "Parametric mechanism adaptation; not original source CAD.",
+    "parameters": {
+      "tubeOD": 90,
+      "tubeID": 86,
+      "height": 96,
+      "stroke": 10,
+      "deployment": 50,
+      "sweep": 80,
+      "bladeWidth": 22,
+      "fitClearance": 0.5,
+      "servo": "standard",
+      "mechanism": "curved-link"
+    }
+  },
+  {
+    "id": "curved-link-100",
+    "name": "UGA · curved links · Ø100/96 mm",
+    "description": "Parametric mechanism adaptation; not original source CAD.",
+    "parameters": {
+      "tubeOD": 100,
+      "tubeID": 96,
+      "height": 96,
+      "stroke": 10,
+      "deployment": 50,
+      "sweep": 80,
+      "bladeWidth": 22,
+      "fitClearance": 0.5,
+      "servo": "standard",
+      "mechanism": "curved-link"
+    }
+  },
+  {
+    "id": "mit-link-90",
+    "name": "MIT · four sliding leaves · Ø90/86 mm",
+    "description": "Parametric mechanism adaptation; not original source CAD.",
+    "parameters": {
+      "tubeOD": 90,
+      "tubeID": 86,
+      "height": 110,
+      "stroke": 10,
+      "deployment": 50,
+      "sweep": 80,
+      "bladeWidth": 22,
+      "fitClearance": 0.5,
+      "servo": "standard",
+      "mechanism": "mit-link"
+    }
+  },
+  {
+    "id": "mit-link-100",
+    "name": "MIT · four sliding leaves · Ø100/96 mm",
+    "description": "Parametric mechanism adaptation; not original source CAD.",
+    "parameters": {
+      "tubeOD": 100,
+      "tubeID": 96,
+      "height": 110,
+      "stroke": 10,
+      "deployment": 50,
+      "sweep": 80,
+      "bladeWidth": 22,
+      "fitClearance": 0.5,
+      "servo": "standard",
+      "mechanism": "mit-link"
+    }
+  },
+  {
+    "id": "rack-pinion-90",
+    "name": "Sprague · four racks · Ø90/86 mm",
+    "description": "Parametric mechanism adaptation; not original source CAD.",
+    "parameters": {
+      "tubeOD": 90,
+      "tubeID": 86,
+      "height": 110,
+      "stroke": 10,
+      "deployment": 50,
+      "sweep": 80,
+      "bladeWidth": 22,
+      "fitClearance": 0.5,
+      "servo": "standard",
+      "mechanism": "rack-pinion"
+    }
+  },
+  {
+    "id": "rack-pinion-100",
+    "name": "Sprague · four racks · Ø100/96 mm",
+    "description": "Parametric mechanism adaptation; not original source CAD.",
+    "parameters": {
+      "tubeOD": 100,
+      "tubeID": 96,
+      "height": 110,
+      "stroke": 10,
+      "deployment": 50,
+      "sweep": 80,
+      "bladeWidth": 22,
+      "fitClearance": 0.5,
+      "servo": "standard",
+      "mechanism": "rack-pinion"
+    }
+  },
+  {
+    "id": "geared-petal-90",
+    "name": "Geared pivoting petals · Ø90/86 mm",
+    "description": "Parametric mechanism adaptation; not original source CAD.",
+    "parameters": {
+      "tubeOD": 90,
+      "tubeID": 86,
+      "height": 96,
+      "stroke": 10,
+      "deployment": 50,
+      "sweep": 80,
+      "bladeWidth": 22,
+      "fitClearance": 0.5,
+      "servo": "standard",
+      "mechanism": "geared-petal"
+    }
+  },
+  {
+    "id": "geared-petal-100",
+    "name": "Geared pivoting petals · Ø100/96 mm",
+    "description": "Parametric mechanism adaptation; not original source CAD.",
+    "parameters": {
+      "tubeOD": 100,
+      "tubeID": 96,
+      "height": 96,
+      "stroke": 10,
+      "deployment": 50,
+      "sweep": 80,
+      "bladeWidth": 22,
+      "fitClearance": 0.5,
+      "servo": "standard",
+      "mechanism": "geared-petal"
+    }
+  }
+]
