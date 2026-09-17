@@ -1,0 +1,380 @@
+[
+  {
+    "id": "eccb6-5",
+    "name": "MISUMI ECCB6-5 \u00b7 \u00d86 \u00d7 5 \u00b7 e 0.3 mm",
+    "description": "Eccentric plain-bore bushing for 696ZZ; shaft bore \u00d83 mm.",
+    "parameters": {
+      "seat": 6,
+      "bore": 3,
+      "length": 5,
+      "acrossFlats": 10,
+      "head": 3,
+      "eccentricity": 0.3,
+      "angle": 0
+    },
+    "catalog": {
+      "designation": "ECCB6-5",
+      "manufacturer": "MISUMI",
+      "sourceName": "MISUMI product dimensions",
+      "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf",
+      "verifiedParameters": ["seat", "bore", "length", "acrossFlats", "head", "eccentricity"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Eccentric plain-bore bushing for 696ZZ; shaft bore \u00d83 mm.",
+        "limitations": "Nominal geometry; tolerance bands and unspecified edge breaks are not modelled.",
+        "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf"
+      }
+    }
+  },
+  {
+    "id": "eccb6-6",
+    "name": "MISUMI ECCB6-6 \u00b7 \u00d86 \u00d7 6 \u00b7 e 0.3 mm",
+    "description": "Eccentric plain-bore bushing for 606ZZ / 626ZZ; shaft bore \u00d83 mm.",
+    "parameters": {
+      "seat": 6,
+      "bore": 3,
+      "length": 6,
+      "acrossFlats": 10,
+      "head": 3,
+      "eccentricity": 0.3,
+      "angle": 0
+    },
+    "catalog": {
+      "designation": "ECCB6-6",
+      "manufacturer": "MISUMI",
+      "sourceName": "MISUMI product dimensions",
+      "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf",
+      "verifiedParameters": ["seat", "bore", "length", "acrossFlats", "head", "eccentricity"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Eccentric plain-bore bushing for 606ZZ / 626ZZ; shaft bore \u00d83 mm.",
+        "limitations": "Nominal geometry; tolerance bands and unspecified edge breaks are not modelled.",
+        "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf"
+      }
+    }
+  },
+  {
+    "id": "eccb8-6",
+    "name": "MISUMI ECCB8-6 \u00b7 \u00d88 \u00d7 6 \u00b7 e 0.5 mm",
+    "description": "Eccentric plain-bore bushing for 698ZZ; shaft bore \u00d84 mm.",
+    "parameters": {
+      "seat": 8,
+      "bore": 4,
+      "length": 6,
+      "acrossFlats": 12,
+      "head": 3,
+      "eccentricity": 0.5,
+      "angle": 0
+    },
+    "catalog": {
+      "designation": "ECCB8-6",
+      "manufacturer": "MISUMI",
+      "sourceName": "MISUMI product dimensions",
+      "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf",
+      "verifiedParameters": ["seat", "bore", "length", "acrossFlats", "head", "eccentricity"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Eccentric plain-bore bushing for 698ZZ; shaft bore \u00d84 mm.",
+        "limitations": "Nominal geometry; tolerance bands and unspecified edge breaks are not modelled.",
+        "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf"
+      }
+    }
+  },
+  {
+    "id": "eccb8-7",
+    "name": "MISUMI ECCB8-7 \u00b7 \u00d88 \u00d7 7 \u00b7 e 0.5 mm",
+    "description": "Eccentric plain-bore bushing for 608ZZ; shaft bore \u00d84 mm.",
+    "parameters": {
+      "seat": 8,
+      "bore": 4,
+      "length": 7,
+      "acrossFlats": 12,
+      "head": 3,
+      "eccentricity": 0.5,
+      "angle": 0
+    },
+    "catalog": {
+      "designation": "ECCB8-7",
+      "manufacturer": "MISUMI",
+      "sourceName": "MISUMI product dimensions",
+      "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf",
+      "verifiedParameters": ["seat", "bore", "length", "acrossFlats", "head", "eccentricity"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Eccentric plain-bore bushing for 608ZZ; shaft bore \u00d84 mm.",
+        "limitations": "Nominal geometry; tolerance bands and unspecified edge breaks are not modelled.",
+        "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf"
+      }
+    }
+  },
+  {
+    "id": "eccb8-8",
+    "name": "MISUMI ECCB8-8 \u00b7 \u00d88 \u00d7 8 \u00b7 e 0.5 mm",
+    "description": "Eccentric plain-bore bushing for 628ZZ; shaft bore \u00d84 mm.",
+    "parameters": {
+      "seat": 8,
+      "bore": 4,
+      "length": 8,
+      "acrossFlats": 12,
+      "head": 3,
+      "eccentricity": 0.5,
+      "angle": 0
+    },
+    "catalog": {
+      "designation": "ECCB8-8",
+      "manufacturer": "MISUMI",
+      "sourceName": "MISUMI product dimensions",
+      "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf",
+      "verifiedParameters": ["seat", "bore", "length", "acrossFlats", "head", "eccentricity"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Eccentric plain-bore bushing for 628ZZ; shaft bore \u00d84 mm.",
+        "limitations": "Nominal geometry; tolerance bands and unspecified edge breaks are not modelled.",
+        "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf"
+      }
+    }
+  },
+  {
+    "id": "eccb10-6",
+    "name": "MISUMI ECCB10-6 \u00b7 \u00d810 \u00d7 6 \u00b7 e 1 mm",
+    "description": "Eccentric plain-bore bushing for 6900ZZ; shaft bore \u00d85 mm.",
+    "parameters": {
+      "seat": 10,
+      "bore": 5,
+      "length": 6,
+      "acrossFlats": 14,
+      "head": 3,
+      "eccentricity": 1,
+      "angle": 0
+    },
+    "catalog": {
+      "designation": "ECCB10-6",
+      "manufacturer": "MISUMI",
+      "sourceName": "MISUMI product dimensions",
+      "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf",
+      "verifiedParameters": ["seat", "bore", "length", "acrossFlats", "head", "eccentricity"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Eccentric plain-bore bushing for 6900ZZ; shaft bore \u00d85 mm.",
+        "limitations": "Nominal geometry; tolerance bands and unspecified edge breaks are not modelled.",
+        "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf"
+      }
+    }
+  },
+  {
+    "id": "eccb10-8",
+    "name": "MISUMI ECCB10-8 \u00b7 \u00d810 \u00d7 8 \u00b7 e 1 mm",
+    "description": "Eccentric plain-bore bushing for 6000ZZ; shaft bore \u00d85 mm.",
+    "parameters": {
+      "seat": 10,
+      "bore": 5,
+      "length": 8,
+      "acrossFlats": 14,
+      "head": 3,
+      "eccentricity": 1,
+      "angle": 0
+    },
+    "catalog": {
+      "designation": "ECCB10-8",
+      "manufacturer": "MISUMI",
+      "sourceName": "MISUMI product dimensions",
+      "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf",
+      "verifiedParameters": ["seat", "bore", "length", "acrossFlats", "head", "eccentricity"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Eccentric plain-bore bushing for 6000ZZ; shaft bore \u00d85 mm.",
+        "limitations": "Nominal geometry; tolerance bands and unspecified edge breaks are not modelled.",
+        "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf"
+      }
+    }
+  },
+  {
+    "id": "eccb10-9",
+    "name": "MISUMI ECCB10-9 \u00b7 \u00d810 \u00d7 9 \u00b7 e 1 mm",
+    "description": "Eccentric plain-bore bushing for 6200ZZ; shaft bore \u00d85 mm.",
+    "parameters": {
+      "seat": 10,
+      "bore": 5,
+      "length": 9,
+      "acrossFlats": 14,
+      "head": 3,
+      "eccentricity": 1,
+      "angle": 0
+    },
+    "catalog": {
+      "designation": "ECCB10-9",
+      "manufacturer": "MISUMI",
+      "sourceName": "MISUMI product dimensions",
+      "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf",
+      "verifiedParameters": ["seat", "bore", "length", "acrossFlats", "head", "eccentricity"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Eccentric plain-bore bushing for 6200ZZ; shaft bore \u00d85 mm.",
+        "limitations": "Nominal geometry; tolerance bands and unspecified edge breaks are not modelled.",
+        "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf"
+      }
+    }
+  },
+  {
+    "id": "eccb12-6",
+    "name": "MISUMI ECCB12-6 \u00b7 \u00d812 \u00d7 6 \u00b7 e 1.2 mm",
+    "description": "Eccentric plain-bore bushing for 6901ZZ; shaft bore \u00d86 mm.",
+    "parameters": {
+      "seat": 12,
+      "bore": 6,
+      "length": 6,
+      "acrossFlats": 17,
+      "head": 3,
+      "eccentricity": 1.2,
+      "angle": 0
+    },
+    "catalog": {
+      "designation": "ECCB12-6",
+      "manufacturer": "MISUMI",
+      "sourceName": "MISUMI product dimensions",
+      "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf",
+      "verifiedParameters": ["seat", "bore", "length", "acrossFlats", "head", "eccentricity"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Eccentric plain-bore bushing for 6901ZZ; shaft bore \u00d86 mm.",
+        "limitations": "Nominal geometry; tolerance bands and unspecified edge breaks are not modelled.",
+        "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf"
+      }
+    }
+  },
+  {
+    "id": "eccb12-8",
+    "name": "MISUMI ECCB12-8 \u00b7 \u00d812 \u00d7 8 \u00b7 e 1.2 mm",
+    "description": "Eccentric plain-bore bushing for 6001ZZ; shaft bore \u00d86 mm.",
+    "parameters": {
+      "seat": 12,
+      "bore": 6,
+      "length": 8,
+      "acrossFlats": 17,
+      "head": 3,
+      "eccentricity": 1.2,
+      "angle": 0
+    },
+    "catalog": {
+      "designation": "ECCB12-8",
+      "manufacturer": "MISUMI",
+      "sourceName": "MISUMI product dimensions",
+      "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf",
+      "verifiedParameters": ["seat", "bore", "length", "acrossFlats", "head", "eccentricity"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Eccentric plain-bore bushing for 6001ZZ; shaft bore \u00d86 mm.",
+        "limitations": "Nominal geometry; tolerance bands and unspecified edge breaks are not modelled.",
+        "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf"
+      }
+    }
+  },
+  {
+    "id": "eccb12-10",
+    "name": "MISUMI ECCB12-10 \u00b7 \u00d812 \u00d7 10 \u00b7 e 1.2 mm",
+    "description": "Eccentric plain-bore bushing for 6201ZZ; shaft bore \u00d86 mm.",
+    "parameters": {
+      "seat": 12,
+      "bore": 6,
+      "length": 10,
+      "acrossFlats": 17,
+      "head": 3,
+      "eccentricity": 1.2,
+      "angle": 0
+    },
+    "catalog": {
+      "designation": "ECCB12-10",
+      "manufacturer": "MISUMI",
+      "sourceName": "MISUMI product dimensions",
+      "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf",
+      "verifiedParameters": ["seat", "bore", "length", "acrossFlats", "head", "eccentricity"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Eccentric plain-bore bushing for 6201ZZ; shaft bore \u00d86 mm.",
+        "limitations": "Nominal geometry; tolerance bands and unspecified edge breaks are not modelled.",
+        "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf"
+      }
+    }
+  },
+  {
+    "id": "eccb15-7",
+    "name": "MISUMI ECCB15-7 \u00b7 \u00d815 \u00d7 7 \u00b7 e 1.5 mm",
+    "description": "Eccentric plain-bore bushing for 6902ZZ; shaft bore \u00d88 mm.",
+    "parameters": {
+      "seat": 15,
+      "bore": 8,
+      "length": 7,
+      "acrossFlats": 19,
+      "head": 3,
+      "eccentricity": 1.5,
+      "angle": 0
+    },
+    "catalog": {
+      "designation": "ECCB15-7",
+      "manufacturer": "MISUMI",
+      "sourceName": "MISUMI product dimensions",
+      "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf",
+      "verifiedParameters": ["seat", "bore", "length", "acrossFlats", "head", "eccentricity"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Eccentric plain-bore bushing for 6902ZZ; shaft bore \u00d88 mm.",
+        "limitations": "Nominal geometry; tolerance bands and unspecified edge breaks are not modelled.",
+        "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf"
+      }
+    }
+  },
+  {
+    "id": "eccb15-9",
+    "name": "MISUMI ECCB15-9 \u00b7 \u00d815 \u00d7 9 \u00b7 e 1.5 mm",
+    "description": "Eccentric plain-bore bushing for 6002ZZ; shaft bore \u00d88 mm.",
+    "parameters": {
+      "seat": 15,
+      "bore": 8,
+      "length": 9,
+      "acrossFlats": 19,
+      "head": 3,
+      "eccentricity": 1.5,
+      "angle": 0
+    },
+    "catalog": {
+      "designation": "ECCB15-9",
+      "manufacturer": "MISUMI",
+      "sourceName": "MISUMI product dimensions",
+      "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf",
+      "verifiedParameters": ["seat", "bore", "length", "acrossFlats", "head", "eccentricity"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Eccentric plain-bore bushing for 6002ZZ; shaft bore \u00d88 mm.",
+        "limitations": "Nominal geometry; tolerance bands and unspecified edge breaks are not modelled.",
+        "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf"
+      }
+    }
+  },
+  {
+    "id": "eccb15-11",
+    "name": "MISUMI ECCB15-11 \u00b7 \u00d815 \u00d7 11 \u00b7 e 1.5 mm",
+    "description": "Eccentric plain-bore bushing for 6202ZZ; shaft bore \u00d88 mm.",
+    "parameters": {
+      "seat": 15,
+      "bore": 8,
+      "length": 11,
+      "acrossFlats": 19,
+      "head": 3,
+      "eccentricity": 1.5,
+      "angle": 0
+    },
+    "catalog": {
+      "designation": "ECCB15-11",
+      "manufacturer": "MISUMI",
+      "sourceName": "MISUMI product dimensions",
+      "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf",
+      "verifiedParameters": ["seat", "bore", "length", "acrossFlats", "head", "eccentricity"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Eccentric plain-bore bushing for 6202ZZ; shaft bore \u00d88 mm.",
+        "limitations": "Nominal geometry; tolerance bands and unspecified edge breaks are not modelled.",
+        "sourceUrl": "https://es.misumi-ec.com/pdf/fa/2014/P1_1155-1156_F16_EN.pdf"
+      }
+    }
+  }
+]

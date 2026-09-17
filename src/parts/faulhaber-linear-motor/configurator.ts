@@ -1,0 +1,133 @@
+import type { Parameters, ParameterDefinition } from '../../core/types';
+import models from './lib/models.json';
+export const defaults: Parameters = { model: 'LM 0830-015-01', position: 50 };
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'model',
+    label: 'Manufacturer model',
+    type: 'select',
+    group: 'Catalogue',
+    options: models.map((m) => ({ value: m.model, label: m.model })),
+  },
+  {
+    key: 'position',
+    label: 'Rod position',
+    description: '0–100% of the selected motor stroke; 50% is centered.',
+    type: 'number',
+    group: 'Pose',
+    min: 0,
+    max: 100,
+    step: 1,
+    unit: '%',
+  },
+];
+export const catalogFilterFields: ParameterDefinition[] = [
+  {
+    key: 'series',
+    label: 'Series',
+    group: 'Specifications',
+    catalogSummary: true,
+    type: 'select',
+    options: [
+      {
+        value: 'LM 0830',
+        label: 'LM 0830',
+      },
+      {
+        value: 'LM 1247',
+        label: 'LM 1247',
+      },
+      {
+        value: 'LM 1483',
+        label: 'LM 1483',
+      },
+      {
+        value: 'LM 2070',
+        label: 'LM 2070',
+      },
+    ],
+  },
+  {
+    key: 'bodyLength',
+    label: 'Catalog body length',
+    group: 'Specifications',
+    catalogSummary: false,
+    type: 'number',
+    min: 0,
+    max: 100000,
+    step: 0.001,
+    unit: 'mm',
+  },
+  {
+    key: 'bodyWidth',
+    label: 'Body width',
+    group: 'Specifications',
+    catalogSummary: false,
+    type: 'number',
+    min: 0,
+    max: 100000,
+    step: 0.001,
+    unit: 'mm',
+  },
+  {
+    key: 'bodyHeight',
+    label: 'Body height',
+    group: 'Specifications',
+    catalogSummary: false,
+    type: 'number',
+    min: 0,
+    max: 100000,
+    step: 0.001,
+    unit: 'mm',
+  },
+  {
+    key: 'stroke',
+    label: 'Stroke',
+    group: 'Specifications',
+    catalogSummary: true,
+    type: 'number',
+    min: 0,
+    max: 100000,
+    step: 0.001,
+    unit: 'mm',
+  },
+  {
+    key: 'continuousForce',
+    label: 'Continuous force up to',
+    group: 'Specifications',
+    catalogSummary: true,
+    type: 'number',
+    min: 0,
+    max: 100000,
+    step: 0.001,
+    unit: 'N',
+  },
+  {
+    key: 'sensor',
+    label: 'Position sensor',
+    group: 'Specifications',
+    catalogSummary: true,
+    type: 'select',
+    options: [
+      {
+        value: 'Analog Hall',
+        label: 'Analog Hall',
+      },
+      {
+        value: 'Sin/cos',
+        label: 'Sin/cos',
+      },
+    ],
+  },
+  {
+    key: 'rodLength',
+    label: 'Rod length',
+    group: 'Specifications',
+    catalogSummary: false,
+    type: 'number',
+    min: 0,
+    max: 100000,
+    step: 0.001,
+    unit: 'mm',
+  },
+];

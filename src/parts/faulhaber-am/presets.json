@@ -1,0 +1,1817 @@
+[
+  {
+    "id": "am08202r008001",
+    "name": "AM08202R008001",
+    "description": "FAULHABER AM0820 \u00b7 8.0 \u00d7 13.8 mm",
+    "parameters": {
+      "model": "AM08202R008001"
+    },
+    "catalog": {
+      "designation": "AM08202R008001",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746899ff7857656e510b09aae31787",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/af/40/c5/1775629802/EN_AM0820_FPS.pdf",
+        "https://eshop.faulhaber.com/media/cc/2a/b7/1755622812/AM0820_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 8.0,
+        "bodyLength": 13.8,
+        "phaseCurrent": 0.08,
+        "phaseResistance": 56.0,
+        "phaseInductance": 12.6,
+        "holdingTorque": 0.65,
+        "boostedTorque": 1.0,
+        "stepAngle": 18.0,
+        "phaseVoltage": 5.0,
+        "shaftDiameter": 1,
+        "shaftProjection": 6
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "8.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "13.8 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "1 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "6 mm"
+        },
+        {
+          "label": "Nominal current per phase",
+          "value": "0.08 A"
+        },
+        {
+          "label": "Nominal voltage per phase",
+          "value": "5.0 V"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "56.0 \u03a9"
+        },
+        {
+          "label": "Phase inductance at 1 kHz",
+          "value": "12.6 mH"
+        },
+        {
+          "label": "Holding torque \u00b7 nominal current",
+          "value": "0.65 mNm"
+        },
+        {
+          "label": "Holding torque \u00b7 boosted current",
+          "value": "1.0 mNm"
+        },
+        {
+          "label": "Full-step angle",
+          "value": "18.0 \u00b0"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "01 \u00b7 single front shaft, solder pads"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/cc/2a/b7/1755622812/AM0820_3D-CAD.zip",
+        "sourceSha256": "e19b62280bbc9c6a93e3db2a9fb2ad1176c2c9e26f75375abdb414c171c1e8b0"
+      }
+    }
+  },
+  {
+    "id": "am08202r015001",
+    "name": "AM08202R015001",
+    "description": "FAULHABER AM0820 \u00b7 8.0 \u00d7 13.8 mm",
+    "parameters": {
+      "model": "AM08202R015001"
+    },
+    "catalog": {
+      "designation": "AM08202R015001",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468b0fea4afa9c15f0e4ea0099512",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/af/40/c5/1775629802/EN_AM0820_FPS.pdf",
+        "https://eshop.faulhaber.com/media/cc/2a/b7/1755622812/AM0820_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 8.0,
+        "bodyLength": 13.8,
+        "phaseCurrent": 0.15,
+        "phaseResistance": 18.0,
+        "phaseInductance": 3.9,
+        "holdingTorque": 0.65,
+        "boostedTorque": 1.0,
+        "stepAngle": 18.0,
+        "phaseVoltage": 3.0,
+        "shaftDiameter": 1,
+        "shaftProjection": 6
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "8.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "13.8 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "1 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "6 mm"
+        },
+        {
+          "label": "Nominal current per phase",
+          "value": "0.15 A"
+        },
+        {
+          "label": "Nominal voltage per phase",
+          "value": "3.0 V"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "18.0 \u03a9"
+        },
+        {
+          "label": "Phase inductance at 1 kHz",
+          "value": "3.9 mH"
+        },
+        {
+          "label": "Holding torque \u00b7 nominal current",
+          "value": "0.65 mNm"
+        },
+        {
+          "label": "Holding torque \u00b7 boosted current",
+          "value": "1.0 mNm"
+        },
+        {
+          "label": "Full-step angle",
+          "value": "18.0 \u00b0"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "01 \u00b7 single front shaft, solder pads"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/cc/2a/b7/1755622812/AM0820_3D-CAD.zip",
+        "sourceSha256": "e19b62280bbc9c6a93e3db2a9fb2ad1176c2c9e26f75375abdb414c171c1e8b0"
+      }
+    }
+  },
+  {
+    "id": "am08202r022501",
+    "name": "AM08202R022501",
+    "description": "FAULHABER AM0820 \u00b7 8.0 \u00d7 13.8 mm",
+    "parameters": {
+      "model": "AM08202R022501"
+    },
+    "catalog": {
+      "designation": "AM08202R022501",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468142ea7902178948f617c792c19",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/af/40/c5/1775629802/EN_AM0820_FPS.pdf",
+        "https://eshop.faulhaber.com/media/cc/2a/b7/1755622812/AM0820_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 8.0,
+        "bodyLength": 13.8,
+        "phaseCurrent": 0.225,
+        "phaseResistance": 7.3,
+        "phaseInductance": 1.4,
+        "holdingTorque": 0.65,
+        "boostedTorque": 1.0,
+        "stepAngle": 18.0,
+        "phaseVoltage": 2.0,
+        "shaftDiameter": 1,
+        "shaftProjection": 6
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "8.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "13.8 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "1 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "6 mm"
+        },
+        {
+          "label": "Nominal current per phase",
+          "value": "0.225 A"
+        },
+        {
+          "label": "Nominal voltage per phase",
+          "value": "2.0 V"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "7.3 \u03a9"
+        },
+        {
+          "label": "Phase inductance at 1 kHz",
+          "value": "1.4 mH"
+        },
+        {
+          "label": "Holding torque \u00b7 nominal current",
+          "value": "0.65 mNm"
+        },
+        {
+          "label": "Holding torque \u00b7 boosted current",
+          "value": "1.0 mNm"
+        },
+        {
+          "label": "Full-step angle",
+          "value": "18.0 \u00b0"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "01 \u00b7 single front shaft, solder pads"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/cc/2a/b7/1755622812/AM0820_3D-CAD.zip",
+        "sourceSha256": "e19b62280bbc9c6a93e3db2a9fb2ad1176c2c9e26f75375abdb414c171c1e8b0"
+      }
+    }
+  },
+  {
+    "id": "am10202r004501",
+    "name": "AM10202R004501",
+    "description": "FAULHABER AM1020 \u00b7 10.0 \u00d7 15.9 mm",
+    "parameters": {
+      "model": "AM10202R004501"
+    },
+    "catalog": {
+      "designation": "AM10202R004501",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774686b87822d87c65053b977b89e5d",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/aa/a1/54/1775629804/EN_AM1020_FPS.pdf",
+        "https://eshop.faulhaber.com/media/5d/7b/fe/1755622935/AM1020_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 10.0,
+        "bodyLength": 15.9,
+        "phaseCurrent": 0.045,
+        "phaseResistance": 250.0,
+        "phaseInductance": 80.1,
+        "holdingTorque": 1.6,
+        "boostedTorque": 2.4,
+        "stepAngle": 18.0,
+        "phaseVoltage": 12.0,
+        "shaftDiameter": 1.2,
+        "shaftProjection": 6.5
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "10.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "15.9 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "1.2 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "6.5 mm"
+        },
+        {
+          "label": "Nominal current per phase",
+          "value": "0.045 A"
+        },
+        {
+          "label": "Nominal voltage per phase",
+          "value": "12.0 V"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "250.0 \u03a9"
+        },
+        {
+          "label": "Phase inductance at 1 kHz",
+          "value": "80.1 mH"
+        },
+        {
+          "label": "Holding torque \u00b7 nominal current",
+          "value": "1.6 mNm"
+        },
+        {
+          "label": "Holding torque \u00b7 boosted current",
+          "value": "2.4 mNm"
+        },
+        {
+          "label": "Full-step angle",
+          "value": "18.0 \u00b0"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "01 \u00b7 single front shaft, solder pads"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/5d/7b/fe/1755622935/AM1020_3D-CAD.zip",
+        "sourceSha256": "685270c575cfb9e95a21892ad0ee4f118e160e07c46ab8087153c30faa8b49be"
+      }
+    }
+  },
+  {
+    "id": "am10202r009001",
+    "name": "AM10202R009001",
+    "description": "FAULHABER AM1020 \u00b7 10.0 \u00d7 15.9 mm",
+    "parameters": {
+      "model": "AM10202R009001"
+    },
+    "catalog": {
+      "designation": "AM10202R009001",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468c6af919242394b61cdf4ba96af",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/aa/a1/54/1775629804/EN_AM1020_FPS.pdf",
+        "https://eshop.faulhaber.com/media/5d/7b/fe/1755622935/AM1020_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 10.0,
+        "bodyLength": 15.9,
+        "phaseCurrent": 0.09,
+        "phaseResistance": 65.0,
+        "phaseInductance": 21.4,
+        "holdingTorque": 1.6,
+        "boostedTorque": 2.4,
+        "stepAngle": 18.0,
+        "phaseVoltage": 6.0,
+        "shaftDiameter": 1.2,
+        "shaftProjection": 6.5
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "10.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "15.9 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "1.2 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "6.5 mm"
+        },
+        {
+          "label": "Nominal current per phase",
+          "value": "0.09 A"
+        },
+        {
+          "label": "Nominal voltage per phase",
+          "value": "6.0 V"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "65.0 \u03a9"
+        },
+        {
+          "label": "Phase inductance at 1 kHz",
+          "value": "21.4 mH"
+        },
+        {
+          "label": "Holding torque \u00b7 nominal current",
+          "value": "1.6 mNm"
+        },
+        {
+          "label": "Holding torque \u00b7 boosted current",
+          "value": "2.4 mNm"
+        },
+        {
+          "label": "Full-step angle",
+          "value": "18.0 \u00b0"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "01 \u00b7 single front shaft, solder pads"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/5d/7b/fe/1755622935/AM1020_3D-CAD.zip",
+        "sourceSha256": "685270c575cfb9e95a21892ad0ee4f118e160e07c46ab8087153c30faa8b49be"
+      }
+    }
+  },
+  {
+    "id": "am10202r018001",
+    "name": "AM10202R018001",
+    "description": "FAULHABER AM1020 \u00b7 10.0 \u00d7 15.9 mm",
+    "parameters": {
+      "model": "AM10202R018001"
+    },
+    "catalog": {
+      "designation": "AM10202R018001",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468e255eef69483987dc4742ae76c",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/aa/a1/54/1775629804/EN_AM1020_FPS.pdf",
+        "https://eshop.faulhaber.com/media/5d/7b/fe/1755622935/AM1020_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 10.0,
+        "bodyLength": 15.9,
+        "phaseCurrent": 0.18,
+        "phaseResistance": 16.0,
+        "phaseInductance": 5.2,
+        "holdingTorque": 1.6,
+        "boostedTorque": 2.4,
+        "stepAngle": 18.0,
+        "phaseVoltage": 3.0,
+        "shaftDiameter": 1.2,
+        "shaftProjection": 6.5
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "10.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "15.9 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "1.2 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "6.5 mm"
+        },
+        {
+          "label": "Nominal current per phase",
+          "value": "0.18 A"
+        },
+        {
+          "label": "Nominal voltage per phase",
+          "value": "3.0 V"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "16.0 \u03a9"
+        },
+        {
+          "label": "Phase inductance at 1 kHz",
+          "value": "5.2 mH"
+        },
+        {
+          "label": "Holding torque \u00b7 nominal current",
+          "value": "1.6 mNm"
+        },
+        {
+          "label": "Holding torque \u00b7 boosted current",
+          "value": "2.4 mNm"
+        },
+        {
+          "label": "Full-step angle",
+          "value": "18.0 \u00b0"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "01 \u00b7 single front shaft, solder pads"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/5d/7b/fe/1755622935/AM1020_3D-CAD.zip",
+        "sourceSha256": "685270c575cfb9e95a21892ad0ee4f118e160e07c46ab8087153c30faa8b49be"
+      }
+    }
+  },
+  {
+    "id": "am10202r025001",
+    "name": "AM10202R025001",
+    "description": "FAULHABER AM1020 \u00b7 10.0 \u00d7 15.9 mm",
+    "parameters": {
+      "model": "AM10202R025001"
+    },
+    "catalog": {
+      "designation": "AM10202R025001",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774681ec3b52cb16351d3e4b9a9ffd2",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/aa/a1/54/1775629804/EN_AM1020_FPS.pdf",
+        "https://eshop.faulhaber.com/media/5d/7b/fe/1755622935/AM1020_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 10.0,
+        "bodyLength": 15.9,
+        "phaseCurrent": 0.25,
+        "phaseResistance": 8.0,
+        "phaseInductance": 2.4,
+        "holdingTorque": 1.6,
+        "boostedTorque": 2.4,
+        "stepAngle": 18.0,
+        "phaseVoltage": 2.0,
+        "shaftDiameter": 1.2,
+        "shaftProjection": 6.5
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "10.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "15.9 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "1.2 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "6.5 mm"
+        },
+        {
+          "label": "Nominal current per phase",
+          "value": "0.25 A"
+        },
+        {
+          "label": "Nominal voltage per phase",
+          "value": "2.0 V"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "8.0 \u03a9"
+        },
+        {
+          "label": "Phase inductance at 1 kHz",
+          "value": "2.4 mH"
+        },
+        {
+          "label": "Holding torque \u00b7 nominal current",
+          "value": "1.6 mNm"
+        },
+        {
+          "label": "Holding torque \u00b7 boosted current",
+          "value": "2.4 mNm"
+        },
+        {
+          "label": "Full-step angle",
+          "value": "18.0 \u00b0"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "01 \u00b7 single front shaft, solder pads"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/5d/7b/fe/1755622935/AM1020_3D-CAD.zip",
+        "sourceSha256": "685270c575cfb9e95a21892ad0ee4f118e160e07c46ab8087153c30faa8b49be"
+      }
+    }
+  },
+  {
+    "id": "am15242r007555",
+    "name": "AM15242R007555",
+    "description": "FAULHABER AM1524 \u00b7 15.0 \u00d7 16.4 mm",
+    "parameters": {
+      "model": "AM15242R007555"
+    },
+    "catalog": {
+      "designation": "AM15242R007555",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774680f451e061f5400460c4e476c49",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/b7/de/bb/1775629808/EN_AM1524_FPS.pdf",
+        "https://eshop.faulhaber.com/media/ed/f0/fa/1755623214/AM1524_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 15.0,
+        "bodyLength": 16.4,
+        "phaseCurrent": 0.075,
+        "phaseResistance": 145.0,
+        "phaseInductance": 70.6,
+        "holdingTorque": 6.0,
+        "boostedTorque": 10.0,
+        "stepAngle": 15.0,
+        "phaseVoltage": 12.0,
+        "shaftDiameter": 1.5,
+        "shaftProjection": 8.1
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "15.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "16.4 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "1.5 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "8.1 mm"
+        },
+        {
+          "label": "Nominal current per phase",
+          "value": "0.075 A"
+        },
+        {
+          "label": "Nominal voltage per phase",
+          "value": "12.0 V"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "145.0 \u03a9"
+        },
+        {
+          "label": "Phase inductance at 1 kHz",
+          "value": "70.6 mH"
+        },
+        {
+          "label": "Holding torque \u00b7 nominal current",
+          "value": "6.0 mNm"
+        },
+        {
+          "label": "Holding torque \u00b7 boosted current",
+          "value": "10.0 mNm"
+        },
+        {
+          "label": "Full-step angle",
+          "value": "15.0 \u00b0"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "55 \u00b7 single front shaft, round PCB"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/ed/f0/fa/1755623214/AM1524_3D-CAD.zip",
+        "sourceSha256": "93af0e895a96d42d1dd28e8dfe59960d614d0a2e5137e98871a3e18a923e5d1a"
+      }
+    }
+  },
+  {
+    "id": "am15242r015055",
+    "name": "AM15242R015055",
+    "description": "FAULHABER AM1524 \u00b7 15.0 \u00d7 16.4 mm",
+    "parameters": {
+      "model": "AM15242R015055"
+    },
+    "catalog": {
+      "designation": "AM15242R015055",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746858d0971edee09909435a06efab",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/b7/de/bb/1775629808/EN_AM1524_FPS.pdf",
+        "https://eshop.faulhaber.com/media/ed/f0/fa/1755623214/AM1524_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 15.0,
+        "bodyLength": 16.4,
+        "phaseCurrent": 0.15,
+        "phaseResistance": 35.0,
+        "phaseInductance": 16.5,
+        "holdingTorque": 6.0,
+        "boostedTorque": 10.0,
+        "stepAngle": 15.0,
+        "phaseVoltage": 6.0,
+        "shaftDiameter": 1.5,
+        "shaftProjection": 8.1
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "15.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "16.4 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "1.5 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "8.1 mm"
+        },
+        {
+          "label": "Nominal current per phase",
+          "value": "0.15 A"
+        },
+        {
+          "label": "Nominal voltage per phase",
+          "value": "6.0 V"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "35.0 \u03a9"
+        },
+        {
+          "label": "Phase inductance at 1 kHz",
+          "value": "16.5 mH"
+        },
+        {
+          "label": "Holding torque \u00b7 nominal current",
+          "value": "6.0 mNm"
+        },
+        {
+          "label": "Holding torque \u00b7 boosted current",
+          "value": "10.0 mNm"
+        },
+        {
+          "label": "Full-step angle",
+          "value": "15.0 \u00b0"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "55 \u00b7 single front shaft, round PCB"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/ed/f0/fa/1755623214/AM1524_3D-CAD.zip",
+        "sourceSha256": "93af0e895a96d42d1dd28e8dfe59960d614d0a2e5137e98871a3e18a923e5d1a"
+      }
+    }
+  },
+  {
+    "id": "am15242r025055",
+    "name": "AM15242R025055",
+    "description": "FAULHABER AM1524 \u00b7 15.0 \u00d7 16.4 mm",
+    "parameters": {
+      "model": "AM15242R025055"
+    },
+    "catalog": {
+      "designation": "AM15242R025055",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468f695c61046528787a1b7967b19",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/b7/de/bb/1775629808/EN_AM1524_FPS.pdf",
+        "https://eshop.faulhaber.com/media/ed/f0/fa/1755623214/AM1524_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 15.0,
+        "bodyLength": 16.4,
+        "phaseCurrent": 0.25,
+        "phaseResistance": 12.5,
+        "phaseInductance": 6.3,
+        "holdingTorque": 6.0,
+        "boostedTorque": 10.0,
+        "stepAngle": 15.0,
+        "phaseVoltage": 3.5,
+        "shaftDiameter": 1.5,
+        "shaftProjection": 8.1
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "15.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "16.4 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "1.5 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "8.1 mm"
+        },
+        {
+          "label": "Nominal current per phase",
+          "value": "0.25 A"
+        },
+        {
+          "label": "Nominal voltage per phase",
+          "value": "3.5 V"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "12.5 \u03a9"
+        },
+        {
+          "label": "Phase inductance at 1 kHz",
+          "value": "6.3 mH"
+        },
+        {
+          "label": "Holding torque \u00b7 nominal current",
+          "value": "6.0 mNm"
+        },
+        {
+          "label": "Holding torque \u00b7 boosted current",
+          "value": "10.0 mNm"
+        },
+        {
+          "label": "Full-step angle",
+          "value": "15.0 \u00b0"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "55 \u00b7 single front shaft, round PCB"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/ed/f0/fa/1755623214/AM1524_3D-CAD.zip",
+        "sourceSha256": "93af0e895a96d42d1dd28e8dfe59960d614d0a2e5137e98871a3e18a923e5d1a"
+      }
+    }
+  },
+  {
+    "id": "am15242r045055",
+    "name": "AM15242R045055",
+    "description": "FAULHABER AM1524 \u00b7 15.0 \u00d7 16.4 mm",
+    "parameters": {
+      "model": "AM15242R045055"
+    },
+    "catalog": {
+      "designation": "AM15242R045055",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468fdc4ccbeb65182bf61671cf339",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/b7/de/bb/1775629808/EN_AM1524_FPS.pdf",
+        "https://eshop.faulhaber.com/media/ed/f0/fa/1755623214/AM1524_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 15.0,
+        "bodyLength": 16.4,
+        "phaseCurrent": 0.45,
+        "phaseResistance": 3.6,
+        "phaseInductance": 1.9,
+        "holdingTorque": 6.0,
+        "boostedTorque": 10.0,
+        "stepAngle": 15.0,
+        "phaseVoltage": 2.0,
+        "shaftDiameter": 1.5,
+        "shaftProjection": 8.1
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "15.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "16.4 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "1.5 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "8.1 mm"
+        },
+        {
+          "label": "Nominal current per phase",
+          "value": "0.45 A"
+        },
+        {
+          "label": "Nominal voltage per phase",
+          "value": "2.0 V"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "3.6 \u03a9"
+        },
+        {
+          "label": "Phase inductance at 1 kHz",
+          "value": "1.9 mH"
+        },
+        {
+          "label": "Holding torque \u00b7 nominal current",
+          "value": "6.0 mNm"
+        },
+        {
+          "label": "Holding torque \u00b7 boosted current",
+          "value": "10.0 mNm"
+        },
+        {
+          "label": "Full-step angle",
+          "value": "15.0 \u00b0"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "55 \u00b7 single front shaft, round PCB"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/ed/f0/fa/1755623214/AM1524_3D-CAD.zip",
+        "sourceSha256": "93af0e895a96d42d1dd28e8dfe59960d614d0a2e5137e98871a3e18a923e5d1a"
+      }
+    }
+  },
+  {
+    "id": "am22242r012510",
+    "name": "AM22242R012510",
+    "description": "FAULHABER AM2224 \u00b7 22.0 \u00d7 27.7 mm",
+    "parameters": {
+      "model": "AM22242R012510"
+    },
+    "catalog": {
+      "designation": "AM22242R012510",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468dcc0daa0cd5d0e55ded8813dac",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/5b/ab/1a/1775629810/EN_AM2224_FPS.pdf",
+        "https://eshop.faulhaber.com/media/74/bf/ec/1755623336/AM2224_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 22.0,
+        "bodyLength": 27.7,
+        "phaseCurrent": 0.125,
+        "phaseResistance": 75.0,
+        "phaseInductance": 65.6,
+        "holdingTorque": 22.0,
+        "boostedTorque": 37.0,
+        "stepAngle": 15.0,
+        "phaseVoltage": 12.0,
+        "shaftDiameter": 2,
+        "shaftProjection": 8.1
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "22.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "27.7 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "2 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "8.1 mm"
+        },
+        {
+          "label": "Nominal current per phase",
+          "value": "0.125 A"
+        },
+        {
+          "label": "Nominal voltage per phase",
+          "value": "12.0 V"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "75.0 \u03a9"
+        },
+        {
+          "label": "Phase inductance at 1 kHz",
+          "value": "65.6 mH"
+        },
+        {
+          "label": "Holding torque \u00b7 nominal current",
+          "value": "22.0 mNm"
+        },
+        {
+          "label": "Holding torque \u00b7 boosted current",
+          "value": "37.0 mNm"
+        },
+        {
+          "label": "Full-step angle",
+          "value": "15.0 \u00b0"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "10 \u00b7 single front shaft"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/74/bf/ec/1755623336/AM2224_3D-CAD.zip",
+        "sourceSha256": "f3154ca62a0626e40c97c4cb514d55625a1091cc0aaa43562dc46f3b4ef1560b"
+      }
+    }
+  },
+  {
+    "id": "am22242r025010",
+    "name": "AM22242R025010",
+    "description": "FAULHABER AM2224 \u00b7 22.0 \u00d7 27.7 mm",
+    "parameters": {
+      "model": "AM22242R025010"
+    },
+    "catalog": {
+      "designation": "AM22242R025010",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774689c3447ca0cfd67e7e9a91fcbdf",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/5b/ab/1a/1775629810/EN_AM2224_FPS.pdf",
+        "https://eshop.faulhaber.com/media/74/bf/ec/1755623336/AM2224_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 22.0,
+        "bodyLength": 27.7,
+        "phaseCurrent": 0.25,
+        "phaseResistance": 18.0,
+        "phaseInductance": 16.3,
+        "holdingTorque": 22.0,
+        "boostedTorque": 37.0,
+        "stepAngle": 15.0,
+        "phaseVoltage": 6.0,
+        "shaftDiameter": 2,
+        "shaftProjection": 8.1
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "22.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "27.7 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "2 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "8.1 mm"
+        },
+        {
+          "label": "Nominal current per phase",
+          "value": "0.25 A"
+        },
+        {
+          "label": "Nominal voltage per phase",
+          "value": "6.0 V"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "18.0 \u03a9"
+        },
+        {
+          "label": "Phase inductance at 1 kHz",
+          "value": "16.3 mH"
+        },
+        {
+          "label": "Holding torque \u00b7 nominal current",
+          "value": "22.0 mNm"
+        },
+        {
+          "label": "Holding torque \u00b7 boosted current",
+          "value": "37.0 mNm"
+        },
+        {
+          "label": "Full-step angle",
+          "value": "15.0 \u00b0"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "10 \u00b7 single front shaft"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/74/bf/ec/1755623336/AM2224_3D-CAD.zip",
+        "sourceSha256": "f3154ca62a0626e40c97c4cb514d55625a1091cc0aaa43562dc46f3b4ef1560b"
+      }
+    }
+  },
+  {
+    "id": "am22242r050010",
+    "name": "AM22242R050010",
+    "description": "FAULHABER AM2224 \u00b7 22.0 \u00d7 27.7 mm",
+    "parameters": {
+      "model": "AM22242R050010"
+    },
+    "catalog": {
+      "designation": "AM22242R050010",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746839db8bc92efbb2f0bf34a7e30a",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/5b/ab/1a/1775629810/EN_AM2224_FPS.pdf",
+        "https://eshop.faulhaber.com/media/74/bf/ec/1755623336/AM2224_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 22.0,
+        "bodyLength": 27.7,
+        "phaseCurrent": 0.5,
+        "phaseResistance": 4.8,
+        "phaseInductance": 4.3,
+        "holdingTorque": 22.0,
+        "boostedTorque": 37.0,
+        "stepAngle": 15.0,
+        "phaseVoltage": 3.0,
+        "shaftDiameter": 2,
+        "shaftProjection": 8.1
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "22.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "27.7 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "2 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "8.1 mm"
+        },
+        {
+          "label": "Nominal current per phase",
+          "value": "0.5 A"
+        },
+        {
+          "label": "Nominal voltage per phase",
+          "value": "3.0 V"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "4.8 \u03a9"
+        },
+        {
+          "label": "Phase inductance at 1 kHz",
+          "value": "4.3 mH"
+        },
+        {
+          "label": "Holding torque \u00b7 nominal current",
+          "value": "22.0 mNm"
+        },
+        {
+          "label": "Holding torque \u00b7 boosted current",
+          "value": "37.0 mNm"
+        },
+        {
+          "label": "Full-step angle",
+          "value": "15.0 \u00b0"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "10 \u00b7 single front shaft"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/74/bf/ec/1755623336/AM2224_3D-CAD.zip",
+        "sourceSha256": "f3154ca62a0626e40c97c4cb514d55625a1091cc0aaa43562dc46f3b4ef1560b"
+      }
+    }
+  },
+  {
+    "id": "am22242r100010",
+    "name": "AM22242R100010",
+    "description": "FAULHABER AM2224 \u00b7 22.0 \u00d7 27.7 mm",
+    "parameters": {
+      "model": "AM22242R100010"
+    },
+    "catalog": {
+      "designation": "AM22242R100010",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468b5b23d8dbdec835c24e1548d13",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/5b/ab/1a/1775629810/EN_AM2224_FPS.pdf",
+        "https://eshop.faulhaber.com/media/74/bf/ec/1755623336/AM2224_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 22.0,
+        "bodyLength": 27.7,
+        "phaseCurrent": 1.0,
+        "phaseResistance": 0.9,
+        "phaseInductance": 0.9,
+        "holdingTorque": 22.0,
+        "boostedTorque": 37.0,
+        "stepAngle": 15.0,
+        "phaseVoltage": 1.4,
+        "shaftDiameter": 2,
+        "shaftProjection": 8.1
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "22.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "27.7 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "2 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "8.1 mm"
+        },
+        {
+          "label": "Nominal current per phase",
+          "value": "1.0 A"
+        },
+        {
+          "label": "Nominal voltage per phase",
+          "value": "1.4 V"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "0.9 \u03a9"
+        },
+        {
+          "label": "Phase inductance at 1 kHz",
+          "value": "0.9 mH"
+        },
+        {
+          "label": "Holding torque \u00b7 nominal current",
+          "value": "22.0 mNm"
+        },
+        {
+          "label": "Holding torque \u00b7 boosted current",
+          "value": "37.0 mNm"
+        },
+        {
+          "label": "Full-step angle",
+          "value": "15.0 \u00b0"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "10 \u00b7 single front shaft"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/74/bf/ec/1755623336/AM2224_3D-CAD.zip",
+        "sourceSha256": "f3154ca62a0626e40c97c4cb514d55625a1091cc0aaa43562dc46f3b4ef1560b"
+      }
+    }
+  },
+  {
+    "id": "am2224r3012530",
+    "name": "AM2224R3012530",
+    "description": "FAULHABER AM2224R3 \u00b7 22.0 \u00d7 30.9 mm",
+    "parameters": {
+      "model": "AM2224R3012530"
+    },
+    "catalog": {
+      "designation": "AM2224R3012530",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468530e45079509275c7430a8ab5e",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/82/d1/3b/1775629811/EN_AM2224R3_FPS.pdf",
+        "https://eshop.faulhaber.com/media/73/73/5e/1755623476/AM2224R3_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 22.0,
+        "bodyLength": 30.9,
+        "phaseCurrent": 0.125,
+        "phaseResistance": 75.0,
+        "phaseInductance": 65.6,
+        "holdingTorque": 22.0,
+        "boostedTorque": 37.0,
+        "stepAngle": 15.0,
+        "phaseVoltage": 12.0,
+        "shaftDiameter": 3,
+        "shaftProjection": 12.5
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "22.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "30.9 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "3 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "12.5 mm"
+        },
+        {
+          "label": "Nominal current per phase",
+          "value": "0.125 A"
+        },
+        {
+          "label": "Nominal voltage per phase",
+          "value": "12.0 V"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "75.0 \u03a9"
+        },
+        {
+          "label": "Phase inductance at 1 kHz",
+          "value": "65.6 mH"
+        },
+        {
+          "label": "Holding torque \u00b7 nominal current",
+          "value": "22.0 mNm"
+        },
+        {
+          "label": "Holding torque \u00b7 boosted current",
+          "value": "37.0 mNm"
+        },
+        {
+          "label": "Full-step angle",
+          "value": "15.0 \u00b0"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "30 \u00b7 single front shaft"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/73/73/5e/1755623476/AM2224R3_3D-CAD.zip",
+        "sourceSha256": "912c1befc60f41c3bf5229977cba062fa909c20fbb7fd671c789a1255700220d"
+      }
+    }
+  },
+  {
+    "id": "am2224r3025030",
+    "name": "AM2224R3025030",
+    "description": "FAULHABER AM2224R3 \u00b7 22.0 \u00d7 30.9 mm",
+    "parameters": {
+      "model": "AM2224R3025030"
+    },
+    "catalog": {
+      "designation": "AM2224R3025030",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774680eb488be2241d9fb971069d932",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/82/d1/3b/1775629811/EN_AM2224R3_FPS.pdf",
+        "https://eshop.faulhaber.com/media/73/73/5e/1755623476/AM2224R3_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 22.0,
+        "bodyLength": 30.9,
+        "phaseCurrent": 0.25,
+        "phaseResistance": 18.0,
+        "phaseInductance": 16.3,
+        "holdingTorque": 22.0,
+        "boostedTorque": 37.0,
+        "stepAngle": 15.0,
+        "phaseVoltage": 6.0,
+        "shaftDiameter": 3,
+        "shaftProjection": 12.5
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "22.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "30.9 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "3 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "12.5 mm"
+        },
+        {
+          "label": "Nominal current per phase",
+          "value": "0.25 A"
+        },
+        {
+          "label": "Nominal voltage per phase",
+          "value": "6.0 V"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "18.0 \u03a9"
+        },
+        {
+          "label": "Phase inductance at 1 kHz",
+          "value": "16.3 mH"
+        },
+        {
+          "label": "Holding torque \u00b7 nominal current",
+          "value": "22.0 mNm"
+        },
+        {
+          "label": "Holding torque \u00b7 boosted current",
+          "value": "37.0 mNm"
+        },
+        {
+          "label": "Full-step angle",
+          "value": "15.0 \u00b0"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "30 \u00b7 single front shaft"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/73/73/5e/1755623476/AM2224R3_3D-CAD.zip",
+        "sourceSha256": "912c1befc60f41c3bf5229977cba062fa909c20fbb7fd671c789a1255700220d"
+      }
+    }
+  },
+  {
+    "id": "am2224r3050030",
+    "name": "AM2224R3050030",
+    "description": "FAULHABER AM2224R3 \u00b7 22.0 \u00d7 30.9 mm",
+    "parameters": {
+      "model": "AM2224R3050030"
+    },
+    "catalog": {
+      "designation": "AM2224R3050030",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468068e3b95fb7738dd7aae38a117",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/82/d1/3b/1775629811/EN_AM2224R3_FPS.pdf",
+        "https://eshop.faulhaber.com/media/73/73/5e/1755623476/AM2224R3_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 22.0,
+        "bodyLength": 30.9,
+        "phaseCurrent": 0.5,
+        "phaseResistance": 4.8,
+        "phaseInductance": 4.3,
+        "holdingTorque": 22.0,
+        "boostedTorque": 37.0,
+        "stepAngle": 15.0,
+        "phaseVoltage": 3.0,
+        "shaftDiameter": 3,
+        "shaftProjection": 12.5
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "22.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "30.9 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "3 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "12.5 mm"
+        },
+        {
+          "label": "Nominal current per phase",
+          "value": "0.5 A"
+        },
+        {
+          "label": "Nominal voltage per phase",
+          "value": "3.0 V"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "4.8 \u03a9"
+        },
+        {
+          "label": "Phase inductance at 1 kHz",
+          "value": "4.3 mH"
+        },
+        {
+          "label": "Holding torque \u00b7 nominal current",
+          "value": "22.0 mNm"
+        },
+        {
+          "label": "Holding torque \u00b7 boosted current",
+          "value": "37.0 mNm"
+        },
+        {
+          "label": "Full-step angle",
+          "value": "15.0 \u00b0"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "30 \u00b7 single front shaft"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/73/73/5e/1755623476/AM2224R3_3D-CAD.zip",
+        "sourceSha256": "912c1befc60f41c3bf5229977cba062fa909c20fbb7fd671c789a1255700220d"
+      }
+    }
+  },
+  {
+    "id": "am2224r3100030",
+    "name": "AM2224R3100030",
+    "description": "FAULHABER AM2224R3 \u00b7 22.0 \u00d7 30.9 mm",
+    "parameters": {
+      "model": "AM2224R3100030"
+    },
+    "catalog": {
+      "designation": "AM2224R3100030",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468aa8e1e9fd2b3a06cabf685253e",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/82/d1/3b/1775629811/EN_AM2224R3_FPS.pdf",
+        "https://eshop.faulhaber.com/media/73/73/5e/1755623476/AM2224R3_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 22.0,
+        "bodyLength": 30.9,
+        "phaseCurrent": 1.0,
+        "phaseResistance": 0.9,
+        "phaseInductance": 0.9,
+        "holdingTorque": 22.0,
+        "boostedTorque": 37.0,
+        "stepAngle": 15.0,
+        "phaseVoltage": 1.4,
+        "shaftDiameter": 3,
+        "shaftProjection": 12.5
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "22.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "30.9 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "3 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "12.5 mm"
+        },
+        {
+          "label": "Nominal current per phase",
+          "value": "1.0 A"
+        },
+        {
+          "label": "Nominal voltage per phase",
+          "value": "1.4 V"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "0.9 \u03a9"
+        },
+        {
+          "label": "Phase inductance at 1 kHz",
+          "value": "0.9 mH"
+        },
+        {
+          "label": "Holding torque \u00b7 nominal current",
+          "value": "22.0 mNm"
+        },
+        {
+          "label": "Holding torque \u00b7 boosted current",
+          "value": "37.0 mNm"
+        },
+        {
+          "label": "Full-step angle",
+          "value": "15.0 \u00b0"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "30 \u00b7 single front shaft"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/73/73/5e/1755623476/AM2224R3_3D-CAD.zip",
+        "sourceSha256": "912c1befc60f41c3bf5229977cba062fa909c20fbb7fd671c789a1255700220d"
+      }
+    }
+  },
+  {
+    "id": "am32482r070000",
+    "name": "AM32482R070000",
+    "description": "FAULHABER AM3248 \u00b7 32.0 \u00d7 42.0 mm",
+    "parameters": {
+      "model": "AM32482R070000"
+    },
+    "catalog": {
+      "designation": "AM32482R070000",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774682f5f8ab9d45ccdda252b6be74e",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/78/b3/06/1775630001/EN_AM3248_FPS.pdf",
+        "https://eshop.faulhaber.com/media/78/7c/44/1755628966/AM3248_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 32.0,
+        "bodyLength": 42.0,
+        "phaseCurrent": 0.7,
+        "phaseResistance": 1.9,
+        "phaseInductance": 5.2,
+        "holdingTorque": 85.0,
+        "boostedTorque": 152.0,
+        "stepAngle": 7.5,
+        "shaftDiameter": 5,
+        "shaftProjection": 13
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "32.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "42.0 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "13 mm"
+        },
+        {
+          "label": "Nominal current per phase",
+          "value": "0.7 A"
+        },
+        {
+          "label": "Phase resistance",
+          "value": "1.9 \u03a9"
+        },
+        {
+          "label": "Phase inductance at 1 kHz",
+          "value": "5.2 mH"
+        },
+        {
+          "label": "Holding torque \u00b7 nominal current",
+          "value": "85.0 mNm"
+        },
+        {
+          "label": "Holding torque \u00b7 boosted current",
+          "value": "152.0 mNm"
+        },
+        {
+          "label": "Full-step angle",
+          "value": "7.5 \u00b0"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "00 \u00b7 plain shaft"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/78/7c/44/1755628966/AM3248_3D-CAD.zip",
+        "sourceSha256": "0dbc12090e202570611fd94866f752d11b7ddb9dafc8b2e411708cf0cd1000e6"
+      }
+    }
+  }
+]

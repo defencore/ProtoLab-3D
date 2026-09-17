@@ -49,11 +49,35 @@ test('sourced presets have auditable dimensions and complete valid configuration
     }
   }
   assert.ok(count >= 3500, 'The supplier catalog must retain the full imported geometry range.');
-  const bearingParts = parts.filter(
-    (part) => part.category === 'BEARINGS & SEALS' && part.presets.some((p) => p.catalog),
-  );
-  assert.ok(bearingParts.length >= 19);
-  for (const part of bearingParts) {
+  // Preserve the imported supplier families without imposing that supplier on
+  // later additions sourced from other manufacturers (e.g. IKO eccentric rollers).
+  const importedBearingIds = [
+    'ball-bearing',
+    'self-aligning-bearing',
+    'angular-contact-bearing',
+    'double-row-bearing',
+    'double-row-angular-contact-bearing',
+    'roller-bearing',
+    'spherical-roller-bearing',
+    'tapered-roller-bearing',
+    'needle-bearing',
+    'thrust-bearing',
+    'flange-2-bolt-bearing',
+    'flange-4-bolt-bearing',
+    'pillow-block-bearing',
+    'insert-bearing',
+    'thrust-roller-bearing',
+    'spherical-thrust-bearing',
+    'combined-bearing',
+    'zarn-bearing',
+    'plain-bearing',
+    'adapter-sleeve',
+    'radial-oil-seal',
+  ];
+  for (const id of importedBearingIds) {
+    const part = parts.find((part) => part.id === id);
+    assert.ok(part, `${id}: imported bearing family must remain registered`);
+    assert.equal(part.category, 'BEARINGS & SEALS');
     assert.ok(
       part.presets.some((preset) => preset.catalog?.sourceName === 'Promtehimport'),
       `${part.id}: each requested bearing family has supplier presets`,

@@ -1,0 +1,31 @@
+[
+  {
+    "id": "mochu-524806k",
+    "name": "MOCHU 524806K / NA4206X3A \u00b7 30 \u00d7 70 \u00d7 16 / 18.5 mm",
+    "description": "Requested ball-series eccentric bearing with keyed bore and two rubber seals.",
+    "parameters": {
+      "bore": 30,
+      "outer": 70,
+      "outerWidth": 16,
+      "innerWidth": 18.5,
+      "eccentricity": 4.5,
+      "keyWidth": 8,
+      "keyDepth": 2,
+      "angle": 0,
+      "closure": "sealed"
+    },
+    "catalog": {
+      "designation": "524806K / NA4206X3A",
+      "manufacturer": "MOCHU",
+      "sourceName": "MOCHU product dimensions",
+      "sourceUrl": "https://www.aliexpress.com/item/1005003592030441.html",
+      "verifiedParameters": ["bore", "outer", "outerWidth", "innerWidth"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Requested ball-series eccentric bearing with keyed bore and two rubber seals.",
+        "limitations": "Only envelope dimensions are sourced. The 4.5 mm eccentricity, keyway, raceways, ball count and cage are editable/reconstructed layout geometry, not manufacturer CAD.",
+        "sourceUrl": "https://www.aliexpress.com/item/1005003592030441.html"
+      }
+    }
+  }
+]

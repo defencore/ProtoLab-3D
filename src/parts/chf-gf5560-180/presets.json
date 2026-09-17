@@ -1,0 +1,1674 @@
+[
+  {
+    "id": "12v-high-torque-1400",
+    "name": "CHIHAI GF5560-180 \u00b7 12 V High Torque \u00b7 1:1400 \u00b7 11 rpm",
+    "description": "12 V High Torque, 11 rpm no load / 9 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 12 V High Torque / 1:1400",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 12,
+        "ratio": 1400,
+        "noLoadRpm": 11,
+        "ratedRpm": 9,
+        "ratedTorqueKgfCm": 25,
+        "winding": "12 V High Torque"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "12 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:1400"
+        },
+        {
+          "label": "No-load speed",
+          "value": "11 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "9 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "25 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.8 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "3.3 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "4.2 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  },
+  {
+    "id": "12v-high-torque-26p9",
+    "name": "CHIHAI GF5560-180 \u00b7 12 V High Torque \u00b7 1:26.9 \u00b7 590 rpm",
+    "description": "12 V High Torque, 590 rpm no load / 460 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 12 V High Torque / 1:26.9",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 12,
+        "ratio": 26.9,
+        "noLoadRpm": 590,
+        "ratedRpm": 460,
+        "ratedTorqueKgfCm": 0.5,
+        "winding": "12 V High Torque"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "12 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:26.9"
+        },
+        {
+          "label": "No-load speed",
+          "value": "590 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "460 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "0.5 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.8 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "3.3 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "4.2 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  },
+  {
+    "id": "12v-high-torque-53p8",
+    "name": "CHIHAI GF5560-180 \u00b7 12 V High Torque \u00b7 1:53.8 \u00b7 295 rpm",
+    "description": "12 V High Torque, 295 rpm no load / 230 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 12 V High Torque / 1:53.8",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 12,
+        "ratio": 53.8,
+        "noLoadRpm": 295,
+        "ratedRpm": 230,
+        "ratedTorqueKgfCm": 1,
+        "winding": "12 V High Torque"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "12 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:53.8"
+        },
+        {
+          "label": "No-load speed",
+          "value": "295 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "230 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "1 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.8 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "3.3 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "4.2 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  },
+  {
+    "id": "12v-high-torque-161",
+    "name": "CHIHAI GF5560-180 \u00b7 12 V High Torque \u00b7 1:161 \u00b7 100 rpm",
+    "description": "12 V High Torque, 100 rpm no load / 78 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 12 V High Torque / 1:161",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 12,
+        "ratio": 161,
+        "noLoadRpm": 100,
+        "ratedRpm": 78,
+        "ratedTorqueKgfCm": 3,
+        "winding": "12 V High Torque"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "12 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:161"
+        },
+        {
+          "label": "No-load speed",
+          "value": "100 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "78 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "3 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.8 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "3.3 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "4.2 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  },
+  {
+    "id": "12v-high-torque-322",
+    "name": "CHIHAI GF5560-180 \u00b7 12 V High Torque \u00b7 1:322 \u00b7 50 rpm",
+    "description": "12 V High Torque, 50 rpm no load / 39 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 12 V High Torque / 1:322",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 12,
+        "ratio": 322,
+        "noLoadRpm": 50,
+        "ratedRpm": 39,
+        "ratedTorqueKgfCm": 6,
+        "winding": "12 V High Torque"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "12 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:322"
+        },
+        {
+          "label": "No-load speed",
+          "value": "50 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "39 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "6 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.8 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "3.3 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "4.2 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  },
+  {
+    "id": "12v-high-torque-700",
+    "name": "CHIHAI GF5560-180 \u00b7 12 V High Torque \u00b7 1:700 \u00b7 23 rpm",
+    "description": "12 V High Torque, 23 rpm no load / 18 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 12 V High Torque / 1:700",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 12,
+        "ratio": 700,
+        "noLoadRpm": 23,
+        "ratedRpm": 18,
+        "ratedTorqueKgfCm": 13,
+        "winding": "12 V High Torque"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "12 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:700"
+        },
+        {
+          "label": "No-load speed",
+          "value": "23 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "18 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "13 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.8 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "3.3 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "4.2 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  },
+  {
+    "id": "6v-high-torque-26p9",
+    "name": "CHIHAI GF5560-180 \u00b7 6 V High Torque \u00b7 1:26.9 \u00b7 290 rpm",
+    "description": "6 V High Torque, 290 rpm no load / 230 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 6 V High Torque / 1:26.9",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 6,
+        "ratio": 26.9,
+        "noLoadRpm": 290,
+        "ratedRpm": 230,
+        "ratedTorqueKgfCm": 0.25,
+        "winding": "6 V High Torque"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "6 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:26.9"
+        },
+        {
+          "label": "No-load speed",
+          "value": "290 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "230 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "0.25 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.6 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "1.8 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "1 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  },
+  {
+    "id": "6v-high-torque-53p8",
+    "name": "CHIHAI GF5560-180 \u00b7 6 V High Torque \u00b7 1:53.8 \u00b7 145 rpm",
+    "description": "6 V High Torque, 145 rpm no load / 110 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 6 V High Torque / 1:53.8",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 6,
+        "ratio": 53.8,
+        "noLoadRpm": 145,
+        "ratedRpm": 110,
+        "ratedTorqueKgfCm": 0.5,
+        "winding": "6 V High Torque"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "6 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:53.8"
+        },
+        {
+          "label": "No-load speed",
+          "value": "145 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "110 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "0.5 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.6 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "1.8 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "1 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  },
+  {
+    "id": "6v-high-torque-161",
+    "name": "CHIHAI GF5560-180 \u00b7 6 V High Torque \u00b7 1:161 \u00b7 50 rpm",
+    "description": "6 V High Torque, 50 rpm no load / 40 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 6 V High Torque / 1:161",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 6,
+        "ratio": 161,
+        "noLoadRpm": 50,
+        "ratedRpm": 40,
+        "ratedTorqueKgfCm": 1.6,
+        "winding": "6 V High Torque"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "6 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:161"
+        },
+        {
+          "label": "No-load speed",
+          "value": "50 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "40 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "1.6 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.6 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "1.8 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "1 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  },
+  {
+    "id": "6v-high-torque-322",
+    "name": "CHIHAI GF5560-180 \u00b7 6 V High Torque \u00b7 1:322 \u00b7 25 rpm",
+    "description": "6 V High Torque, 25 rpm no load / 19 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 6 V High Torque / 1:322",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 6,
+        "ratio": 322,
+        "noLoadRpm": 25,
+        "ratedRpm": 19,
+        "ratedTorqueKgfCm": 3,
+        "winding": "6 V High Torque"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "6 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:322"
+        },
+        {
+          "label": "No-load speed",
+          "value": "25 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "19 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "3 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.6 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "1.8 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "1 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  },
+  {
+    "id": "6v-high-torque-700",
+    "name": "CHIHAI GF5560-180 \u00b7 6 V High Torque \u00b7 1:700 \u00b7 11 rpm",
+    "description": "6 V High Torque, 11 rpm no load / 9 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 6 V High Torque / 1:700",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 6,
+        "ratio": 700,
+        "noLoadRpm": 11,
+        "ratedRpm": 9,
+        "ratedTorqueKgfCm": 6.5,
+        "winding": "6 V High Torque"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "6 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:700"
+        },
+        {
+          "label": "No-load speed",
+          "value": "11 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "9 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "6.5 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.6 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "1.8 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "1 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  },
+  {
+    "id": "6v-high-torque-1400",
+    "name": "CHIHAI GF5560-180 \u00b7 6 V High Torque \u00b7 1:1400 \u00b7 5.5 rpm",
+    "description": "6 V High Torque, 5.5 rpm no load / 4.5 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 6 V High Torque / 1:1400",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 6,
+        "ratio": 1400,
+        "noLoadRpm": 5.5,
+        "ratedRpm": 4.5,
+        "ratedTorqueKgfCm": 12.5,
+        "winding": "6 V High Torque"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "6 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:1400"
+        },
+        {
+          "label": "No-load speed",
+          "value": "5.5 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "4.5 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "12.5 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.6 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "1.8 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "1 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  },
+  {
+    "id": "12v-standard-53p8",
+    "name": "CHIHAI GF5560-180 \u00b7 12 V Standard \u00b7 1:53.8 \u00b7 135 rpm",
+    "description": "12 V Standard, 135 rpm no load / 100 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 12 V Standard / 1:53.8",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 12,
+        "ratio": 53.8,
+        "noLoadRpm": 135,
+        "ratedRpm": 100,
+        "ratedTorqueKgfCm": 0.5,
+        "winding": "12 V Standard"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "12 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:53.8"
+        },
+        {
+          "label": "No-load speed",
+          "value": "135 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "100 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "0.5 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.35 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "1.25 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "1 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  },
+  {
+    "id": "12v-standard-161",
+    "name": "CHIHAI GF5560-180 \u00b7 12 V Standard \u00b7 1:161 \u00b7 45 rpm",
+    "description": "12 V Standard, 45 rpm no load / 33 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 12 V Standard / 1:161",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 12,
+        "ratio": 161,
+        "noLoadRpm": 45,
+        "ratedRpm": 33,
+        "ratedTorqueKgfCm": 1.5,
+        "winding": "12 V Standard"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "12 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:161"
+        },
+        {
+          "label": "No-load speed",
+          "value": "45 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "33 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "1.5 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.35 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "1.25 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "1 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  },
+  {
+    "id": "12v-standard-322",
+    "name": "CHIHAI GF5560-180 \u00b7 12 V Standard \u00b7 1:322 \u00b7 23 rpm",
+    "description": "12 V Standard, 23 rpm no load / 17 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 12 V Standard / 1:322",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 12,
+        "ratio": 322,
+        "noLoadRpm": 23,
+        "ratedRpm": 17,
+        "ratedTorqueKgfCm": 3,
+        "winding": "12 V Standard"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "12 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:322"
+        },
+        {
+          "label": "No-load speed",
+          "value": "23 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "17 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "3 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.35 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "1.25 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "1 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  },
+  {
+    "id": "12v-standard-700",
+    "name": "CHIHAI GF5560-180 \u00b7 12 V Standard \u00b7 1:700 \u00b7 10 rpm",
+    "description": "12 V Standard, 10 rpm no load / 8 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 12 V Standard / 1:700",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 12,
+        "ratio": 700,
+        "noLoadRpm": 10,
+        "ratedRpm": 8,
+        "ratedTorqueKgfCm": 6,
+        "winding": "12 V Standard"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "12 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:700"
+        },
+        {
+          "label": "No-load speed",
+          "value": "10 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "8 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "6 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.35 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "1.25 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "1 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  },
+  {
+    "id": "12v-standard-1400",
+    "name": "CHIHAI GF5560-180 \u00b7 12 V Standard \u00b7 1:1400 \u00b7 5 rpm",
+    "description": "12 V Standard, 5 rpm no load / 4 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 12 V Standard / 1:1400",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 12,
+        "ratio": 1400,
+        "noLoadRpm": 5,
+        "ratedRpm": 4,
+        "ratedTorqueKgfCm": 12,
+        "winding": "12 V Standard"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "12 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:1400"
+        },
+        {
+          "label": "No-load speed",
+          "value": "5 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "4 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "12 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.35 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "1.25 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "1 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  },
+  {
+    "id": "24v-standard-53p8",
+    "name": "CHIHAI GF5560-180 \u00b7 24 V Standard \u00b7 1:53.8 \u00b7 278 rpm",
+    "description": "24 V Standard, 278 rpm no load / 200 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 24 V Standard / 1:53.8",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 24,
+        "ratio": 53.8,
+        "noLoadRpm": 278,
+        "ratedRpm": 200,
+        "ratedTorqueKgfCm": 0.8,
+        "winding": "24 V Standard"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "24 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:53.8"
+        },
+        {
+          "label": "No-load speed",
+          "value": "278 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "200 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "0.8 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.55 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "2.3 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "3 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  },
+  {
+    "id": "24v-standard-161",
+    "name": "CHIHAI GF5560-180 \u00b7 24 V Standard \u00b7 1:161 \u00b7 93 rpm",
+    "description": "24 V Standard, 93 rpm no load / 70 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 24 V Standard / 1:161",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 24,
+        "ratio": 161,
+        "noLoadRpm": 93,
+        "ratedRpm": 70,
+        "ratedTorqueKgfCm": 2.5,
+        "winding": "24 V Standard"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "24 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:161"
+        },
+        {
+          "label": "No-load speed",
+          "value": "93 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "70 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "2.5 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.55 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "2.3 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "3 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  },
+  {
+    "id": "24v-standard-322",
+    "name": "CHIHAI GF5560-180 \u00b7 24 V Standard \u00b7 1:322 \u00b7 47 rpm",
+    "description": "24 V Standard, 47 rpm no load / 36 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 24 V Standard / 1:322",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 24,
+        "ratio": 322,
+        "noLoadRpm": 47,
+        "ratedRpm": 36,
+        "ratedTorqueKgfCm": 5,
+        "winding": "24 V Standard"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "24 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:322"
+        },
+        {
+          "label": "No-load speed",
+          "value": "47 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "36 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "5 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.55 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "2.3 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "3 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  },
+  {
+    "id": "24v-standard-700",
+    "name": "CHIHAI GF5560-180 \u00b7 24 V Standard \u00b7 1:700 \u00b7 21 rpm",
+    "description": "24 V Standard, 21 rpm no load / 16 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 24 V Standard / 1:700",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 24,
+        "ratio": 700,
+        "noLoadRpm": 21,
+        "ratedRpm": 16,
+        "ratedTorqueKgfCm": 10,
+        "winding": "24 V Standard"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "24 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:700"
+        },
+        {
+          "label": "No-load speed",
+          "value": "21 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "16 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "10 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.55 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "2.3 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "3 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  },
+  {
+    "id": "24v-standard-1400",
+    "name": "CHIHAI GF5560-180 \u00b7 24 V Standard \u00b7 1:1400 \u00b7 10.5 rpm",
+    "description": "24 V Standard, 10.5 rpm no load / 8 rpm rated. Published dimensions: 55 \u00d7 60 \u00d7 19 mm; \u00d88 output shaft, 21 mm projection. Gear tooth counts are not published.",
+    "parameters": {
+      "shaftProfile": "shouldered-d",
+      "shaftDiameter": 8,
+      "shaftLength": 21,
+      "flatThickness": 7,
+      "flatLength": 15,
+      "shaftAngle": 0,
+      "detail": "complete"
+    },
+    "catalog": {
+      "designation": "CHF-GF5560-180 / 24 V Standard / 1:1400",
+      "manufacturer": "CHIHAI MOTOR",
+      "sourceName": "CHIHAI drawings and performance tables supplied with the listing",
+      "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005006022832826.html"],
+      "verifiedParameters": [
+        "shaftProfile",
+        "shaftDiameter",
+        "shaftLength",
+        "flatThickness",
+        "flatLength"
+      ],
+      "attributes": {
+        "voltage": 24,
+        "ratio": 1400,
+        "noLoadRpm": 10.5,
+        "ratedRpm": 8,
+        "ratedTorqueKgfCm": 20,
+        "winding": "24 V Standard"
+      },
+      "specifications": [
+        {
+          "label": "Supply",
+          "value": "24 V DC"
+        },
+        {
+          "label": "Reduction ratio",
+          "value": "1:1400"
+        },
+        {
+          "label": "No-load speed",
+          "value": "10.5 rpm"
+        },
+        {
+          "label": "Rated speed",
+          "value": "8 rpm"
+        },
+        {
+          "label": "Rated torque \u00b7 source kgf\u00b7cm",
+          "value": "20 kgf\u00b7cm"
+        },
+        {
+          "label": "Rated current \u00b7 maximum",
+          "value": "0.55 A"
+        },
+        {
+          "label": "Stall current \u00b7 maximum",
+          "value": "2.3 A"
+        },
+        {
+          "label": "Advertised maximum power",
+          "value": "3 W"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "55 \u00d7 60 \u00d7 19 mm housing, \u00d88 / 7 mm D-shaft with 21 mm projection and 15 mm flat, four \u00d83.6 mounting holes from supplied drawings.",
+        "limitations": "Housing wall thickness, fasteners, journals, motor cross-section and the representative four-stage worm/spur train are reconstructed. Internal tooth counts are not tied to catalog ratio. Published variants can share external geometry. The supplier torque-unit columns disagree; original kgf\u00b7cm values are retained without copying inconsistent N\u00b7m values.",
+        "sourceUrl": "https://www.chihaimotor.com/wgjs/765.html"
+      }
+    }
+  }
+]

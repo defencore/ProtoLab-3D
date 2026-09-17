@@ -1,0 +1,2626 @@
+[
+  {
+    "id": "lm-0830-015-01",
+    "name": "LM 0830-015-01",
+    "description": "Series LM 0830 · Stroke 15 mm · Continuous force up to 1.03 N · Position sensor Analog Hall",
+    "parameters": {
+      "model": "LM 0830-015-01",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 0830-015-01",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468cd66c940b22b499e2b5535bf09",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/a7/8f/23/1775629813/EN_LM0830_01_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/d8/6b/b6/1755623540/LM0830_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 0830",
+        "bodyLength": 33.0,
+        "bodyWidth": 8.0,
+        "bodyHeight": 12.0,
+        "stroke": 15,
+        "continuousForce": 1.03,
+        "sensor": "Analog Hall",
+        "rodLength": 58.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 0830"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "33.0 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "8.0 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "12.0 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "15 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "1.03 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Analog Hall"
+        },
+        {
+          "label": "Rod length",
+          "value": "58.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM0830_01.stp; LM0830-015-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/d8/6b/b6/1755623540/LM0830_3D-CAD.zip",
+        "sourceSha256": "d9514149dd0196da2c424fcc6cc2e0d1b233cfe813ac3e5628c1d5a4736cf7d5"
+      }
+    }
+  },
+  {
+    "id": "lm-0830-040-01",
+    "name": "LM 0830-040-01",
+    "description": "Series LM 0830 · Stroke 40 mm · Continuous force up to 1.03 N · Position sensor Analog Hall",
+    "parameters": {
+      "model": "LM 0830-040-01",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 0830-040-01",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774683c619774c942b7eab8dca4117a",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/a7/8f/23/1775629813/EN_LM0830_01_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/d8/6b/b6/1755623540/LM0830_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 0830",
+        "bodyLength": 33.0,
+        "bodyWidth": 8.0,
+        "bodyHeight": 12.0,
+        "stroke": 40,
+        "continuousForce": 1.03,
+        "sensor": "Analog Hall",
+        "rodLength": 82.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 0830"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "33.0 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "8.0 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "12.0 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "40 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "1.03 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Analog Hall"
+        },
+        {
+          "label": "Rod length",
+          "value": "82.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM0830_01.stp; LM0830-040-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/d8/6b/b6/1755623540/LM0830_3D-CAD.zip",
+        "sourceSha256": "d9514149dd0196da2c424fcc6cc2e0d1b233cfe813ac3e5628c1d5a4736cf7d5"
+      }
+    }
+  },
+  {
+    "id": "lm-1247-020-11",
+    "name": "LM 1247-020-11",
+    "description": "Series LM 1247 · Stroke 20 mm · Continuous force up to 3.6 N · Position sensor Analog Hall",
+    "parameters": {
+      "model": "LM 1247-020-11",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 1247-020-11",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468101b678be9e2a323ac54293490",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/71/d1/43/1775629815/EN_LM1247_11_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 1247",
+        "bodyLength": 49.4,
+        "bodyWidth": 12.5,
+        "bodyHeight": 19.1,
+        "stroke": 20,
+        "continuousForce": 3.6,
+        "sensor": "Analog Hall",
+        "rodLength": 82.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 1247"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "49.4 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "12.5 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "19.1 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "20 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "3.6 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Analog Hall"
+        },
+        {
+          "label": "Rod length",
+          "value": "82.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM1247_1X.stp; LM1247-020-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip",
+        "sourceSha256": "f0913355b34446785217227fa62c103d004fcc000c66549043384edb14a4daf6"
+      }
+    }
+  },
+  {
+    "id": "lm-1247-020-12",
+    "name": "LM 1247-020-12",
+    "description": "Series LM 1247 · Stroke 20 mm · Continuous force up to 3.6 N · Position sensor Sin/cos",
+    "parameters": {
+      "model": "LM 1247-020-12",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 1247-020-12",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774681e370924d0a5fe67648c9cb64a",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/d2/fe/f5/1775629816/EN_LM1247_12_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 1247",
+        "bodyLength": 49.4,
+        "bodyWidth": 12.5,
+        "bodyHeight": 19.1,
+        "stroke": 20,
+        "continuousForce": 3.6,
+        "sensor": "Sin/cos",
+        "rodLength": 82.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 1247"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "49.4 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "12.5 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "19.1 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "20 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "3.6 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Sin/cos"
+        },
+        {
+          "label": "Rod length",
+          "value": "82.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM1247_1X.stp; LM1247-020-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip",
+        "sourceSha256": "f0913355b34446785217227fa62c103d004fcc000c66549043384edb14a4daf6"
+      }
+    }
+  },
+  {
+    "id": "lm-1247-040-11",
+    "name": "LM 1247-040-11",
+    "description": "Series LM 1247 · Stroke 40 mm · Continuous force up to 3.6 N · Position sensor Analog Hall",
+    "parameters": {
+      "model": "LM 1247-040-11",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 1247-040-11",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468ffbb331ebdce2dde4172dfa395",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/71/d1/43/1775629815/EN_LM1247_11_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 1247",
+        "bodyLength": 49.4,
+        "bodyWidth": 12.5,
+        "bodyHeight": 19.1,
+        "stroke": 40,
+        "continuousForce": 3.6,
+        "sensor": "Analog Hall",
+        "rodLength": 109.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 1247"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "49.4 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "12.5 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "19.1 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "40 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "3.6 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Analog Hall"
+        },
+        {
+          "label": "Rod length",
+          "value": "109.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM1247_1X.stp; LM1247-040-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip",
+        "sourceSha256": "f0913355b34446785217227fa62c103d004fcc000c66549043384edb14a4daf6"
+      }
+    }
+  },
+  {
+    "id": "lm-1247-040-12",
+    "name": "LM 1247-040-12",
+    "description": "Series LM 1247 · Stroke 40 mm · Continuous force up to 3.6 N · Position sensor Sin/cos",
+    "parameters": {
+      "model": "LM 1247-040-12",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 1247-040-12",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468513a959c41de9dc299d24e8c1b",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/d2/fe/f5/1775629816/EN_LM1247_12_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 1247",
+        "bodyLength": 49.4,
+        "bodyWidth": 12.5,
+        "bodyHeight": 19.1,
+        "stroke": 40,
+        "continuousForce": 3.6,
+        "sensor": "Sin/cos",
+        "rodLength": 109.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 1247"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "49.4 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "12.5 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "19.1 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "40 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "3.6 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Sin/cos"
+        },
+        {
+          "label": "Rod length",
+          "value": "109.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM1247_1X.stp; LM1247-040-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip",
+        "sourceSha256": "f0913355b34446785217227fa62c103d004fcc000c66549043384edb14a4daf6"
+      }
+    }
+  },
+  {
+    "id": "lm-1247-060-11",
+    "name": "LM 1247-060-11",
+    "description": "Series LM 1247 · Stroke 60 mm · Continuous force up to 3.6 N · Position sensor Analog Hall",
+    "parameters": {
+      "model": "LM 1247-060-11",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 1247-060-11",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468b9255aa4651a092a64364e4885",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/71/d1/43/1775629815/EN_LM1247_11_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 1247",
+        "bodyLength": 49.4,
+        "bodyWidth": 12.5,
+        "bodyHeight": 19.1,
+        "stroke": 60,
+        "continuousForce": 3.6,
+        "sensor": "Analog Hall",
+        "rodLength": 127.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 1247"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "49.4 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "12.5 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "19.1 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "60 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "3.6 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Analog Hall"
+        },
+        {
+          "label": "Rod length",
+          "value": "127.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM1247_1X.stp; LM1247-060-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip",
+        "sourceSha256": "f0913355b34446785217227fa62c103d004fcc000c66549043384edb14a4daf6"
+      }
+    }
+  },
+  {
+    "id": "lm-1247-060-12",
+    "name": "LM 1247-060-12",
+    "description": "Series LM 1247 · Stroke 60 mm · Continuous force up to 3.6 N · Position sensor Sin/cos",
+    "parameters": {
+      "model": "LM 1247-060-12",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 1247-060-12",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746882ab9ef5788ddcbbabd31e5c53",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/d2/fe/f5/1775629816/EN_LM1247_12_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 1247",
+        "bodyLength": 49.4,
+        "bodyWidth": 12.5,
+        "bodyHeight": 19.1,
+        "stroke": 60,
+        "continuousForce": 3.6,
+        "sensor": "Sin/cos",
+        "rodLength": 127.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 1247"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "49.4 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "12.5 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "19.1 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "60 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "3.6 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Sin/cos"
+        },
+        {
+          "label": "Rod length",
+          "value": "127.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM1247_1X.stp; LM1247-060-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip",
+        "sourceSha256": "f0913355b34446785217227fa62c103d004fcc000c66549043384edb14a4daf6"
+      }
+    }
+  },
+  {
+    "id": "lm-1247-080-11",
+    "name": "LM 1247-080-11",
+    "description": "Series LM 1247 · Stroke 80 mm · Continuous force up to 3.6 N · Position sensor Analog Hall",
+    "parameters": {
+      "model": "LM 1247-080-11",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 1247-080-11",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468eee7bcdea0890f5969cfc0723c",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/71/d1/43/1775629815/EN_LM1247_11_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 1247",
+        "bodyLength": 49.4,
+        "bodyWidth": 12.5,
+        "bodyHeight": 19.1,
+        "stroke": 80,
+        "continuousForce": 3.6,
+        "sensor": "Analog Hall",
+        "rodLength": 154.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 1247"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "49.4 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "12.5 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "19.1 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "80 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "3.6 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Analog Hall"
+        },
+        {
+          "label": "Rod length",
+          "value": "154.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM1247_1X.stp; LM1247-080-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip",
+        "sourceSha256": "f0913355b34446785217227fa62c103d004fcc000c66549043384edb14a4daf6"
+      }
+    }
+  },
+  {
+    "id": "lm-1247-080-12",
+    "name": "LM 1247-080-12",
+    "description": "Series LM 1247 · Stroke 80 mm · Continuous force up to 3.6 N · Position sensor Sin/cos",
+    "parameters": {
+      "model": "LM 1247-080-12",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 1247-080-12",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468ea792940489ea5a600149f6aca",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/d2/fe/f5/1775629816/EN_LM1247_12_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 1247",
+        "bodyLength": 49.4,
+        "bodyWidth": 12.5,
+        "bodyHeight": 19.1,
+        "stroke": 80,
+        "continuousForce": 3.6,
+        "sensor": "Sin/cos",
+        "rodLength": 154.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 1247"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "49.4 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "12.5 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "19.1 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "80 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "3.6 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Sin/cos"
+        },
+        {
+          "label": "Rod length",
+          "value": "154.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM1247_1X.stp; LM1247-080-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip",
+        "sourceSha256": "f0913355b34446785217227fa62c103d004fcc000c66549043384edb14a4daf6"
+      }
+    }
+  },
+  {
+    "id": "lm-1247-100-11",
+    "name": "LM 1247-100-11",
+    "description": "Series LM 1247 · Stroke 100 mm · Continuous force up to 3.6 N · Position sensor Analog Hall",
+    "parameters": {
+      "model": "LM 1247-100-11",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 1247-100-11",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468e86ff02d94789c656734d153a4",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/71/d1/43/1775629815/EN_LM1247_11_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 1247",
+        "bodyLength": 49.4,
+        "bodyWidth": 12.5,
+        "bodyHeight": 19.1,
+        "stroke": 100,
+        "continuousForce": 3.6,
+        "sensor": "Analog Hall",
+        "rodLength": 172.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 1247"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "49.4 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "12.5 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "19.1 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "100 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "3.6 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Analog Hall"
+        },
+        {
+          "label": "Rod length",
+          "value": "172.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM1247_1X.stp; LM1247-100-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip",
+        "sourceSha256": "f0913355b34446785217227fa62c103d004fcc000c66549043384edb14a4daf6"
+      }
+    }
+  },
+  {
+    "id": "lm-1247-100-12",
+    "name": "LM 1247-100-12",
+    "description": "Series LM 1247 · Stroke 100 mm · Continuous force up to 3.6 N · Position sensor Sin/cos",
+    "parameters": {
+      "model": "LM 1247-100-12",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 1247-100-12",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774685defaf6722984ce5791ba4ddd2",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/d2/fe/f5/1775629816/EN_LM1247_12_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 1247",
+        "bodyLength": 49.4,
+        "bodyWidth": 12.5,
+        "bodyHeight": 19.1,
+        "stroke": 100,
+        "continuousForce": 3.6,
+        "sensor": "Sin/cos",
+        "rodLength": 172.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 1247"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "49.4 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "12.5 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "19.1 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "100 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "3.6 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Sin/cos"
+        },
+        {
+          "label": "Rod length",
+          "value": "172.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM1247_1X.stp; LM1247-100-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip",
+        "sourceSha256": "f0913355b34446785217227fa62c103d004fcc000c66549043384edb14a4daf6"
+      }
+    }
+  },
+  {
+    "id": "lm-1247-120-11",
+    "name": "LM 1247-120-11",
+    "description": "Series LM 1247 · Stroke 120 mm · Continuous force up to 3.6 N · Position sensor Analog Hall",
+    "parameters": {
+      "model": "LM 1247-120-11",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 1247-120-11",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468ba9bab16fde76c88b29776dd4b",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/71/d1/43/1775629815/EN_LM1247_11_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 1247",
+        "bodyLength": 49.4,
+        "bodyWidth": 12.5,
+        "bodyHeight": 19.1,
+        "stroke": 120,
+        "continuousForce": 3.6,
+        "sensor": "Analog Hall",
+        "rodLength": 190.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 1247"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "49.4 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "12.5 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "19.1 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "120 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "3.6 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Analog Hall"
+        },
+        {
+          "label": "Rod length",
+          "value": "190.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM1247_1X.stp; LM1247-120-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip",
+        "sourceSha256": "f0913355b34446785217227fa62c103d004fcc000c66549043384edb14a4daf6"
+      }
+    }
+  },
+  {
+    "id": "lm-1247-120-12",
+    "name": "LM 1247-120-12",
+    "description": "Series LM 1247 · Stroke 120 mm · Continuous force up to 3.6 N · Position sensor Sin/cos",
+    "parameters": {
+      "model": "LM 1247-120-12",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 1247-120-12",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746828291a55a35049e440f052b2ad",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/d2/fe/f5/1775629816/EN_LM1247_12_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 1247",
+        "bodyLength": 49.4,
+        "bodyWidth": 12.5,
+        "bodyHeight": 19.1,
+        "stroke": 120,
+        "continuousForce": 3.6,
+        "sensor": "Sin/cos",
+        "rodLength": 190.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 1247"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "49.4 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "12.5 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "19.1 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "120 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "3.6 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Sin/cos"
+        },
+        {
+          "label": "Rod length",
+          "value": "190.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM1247_1X.stp; LM1247-120-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip",
+        "sourceSha256": "f0913355b34446785217227fa62c103d004fcc000c66549043384edb14a4daf6"
+      }
+    }
+  },
+  {
+    "id": "lm-1483-020-11",
+    "name": "LM 1483-020-11",
+    "description": "Series LM 1483 · Stroke 20 mm · Continuous force up to 6.2 N · Position sensor Analog Hall",
+    "parameters": {
+      "model": "LM 1483-020-11",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 1483-020-11",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468437e18d90a0001f9c4180f6ebb",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/cb/ba/a6/1775629817/EN_LM1483_11_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 1483",
+        "bodyLength": 85.5,
+        "bodyWidth": 14.0,
+        "bodyHeight": 19.9,
+        "stroke": 20,
+        "continuousForce": 6.2,
+        "sensor": "Analog Hall",
+        "rodLength": 127.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 1483"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "85.5 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "14.0 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "19.9 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "20 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "6.2 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Analog Hall"
+        },
+        {
+          "label": "Rod length",
+          "value": "127.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM1483_1X.stp; LM1483-020-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip",
+        "sourceSha256": "8369787245a802be895ef2d285d9952ec9ed66da6cc75bcfefd66a41a412df58"
+      }
+    }
+  },
+  {
+    "id": "lm-1483-020-12",
+    "name": "LM 1483-020-12",
+    "description": "Series LM 1483 · Stroke 20 mm · Continuous force up to 6.2 N · Position sensor Sin/cos",
+    "parameters": {
+      "model": "LM 1483-020-12",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 1483-020-12",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468eb5fdb8e2f6def8c6a7da95930",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/46/83/b5/1775629818/EN_LM1483_12_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 1483",
+        "bodyLength": 85.5,
+        "bodyWidth": 14.0,
+        "bodyHeight": 19.9,
+        "stroke": 20,
+        "continuousForce": 6.2,
+        "sensor": "Sin/cos",
+        "rodLength": 127.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 1483"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "85.5 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "14.0 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "19.9 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "20 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "6.2 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Sin/cos"
+        },
+        {
+          "label": "Rod length",
+          "value": "127.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM1483_1X.stp; LM1483-020-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip",
+        "sourceSha256": "8369787245a802be895ef2d285d9952ec9ed66da6cc75bcfefd66a41a412df58"
+      }
+    }
+  },
+  {
+    "id": "lm-1483-040-11",
+    "name": "LM 1483-040-11",
+    "description": "Series LM 1483 · Stroke 40 mm · Continuous force up to 6.2 N · Position sensor Analog Hall",
+    "parameters": {
+      "model": "LM 1483-040-11",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 1483-040-11",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774682708b0b5e5c80742b7f578065a",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/cb/ba/a6/1775629817/EN_LM1483_11_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 1483",
+        "bodyLength": 85.5,
+        "bodyWidth": 14.0,
+        "bodyHeight": 19.9,
+        "stroke": 40,
+        "continuousForce": 6.2,
+        "sensor": "Analog Hall",
+        "rodLength": 154.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 1483"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "85.5 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "14.0 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "19.9 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "40 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "6.2 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Analog Hall"
+        },
+        {
+          "label": "Rod length",
+          "value": "154.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM1483_1X.stp; LM1483-040-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip",
+        "sourceSha256": "8369787245a802be895ef2d285d9952ec9ed66da6cc75bcfefd66a41a412df58"
+      }
+    }
+  },
+  {
+    "id": "lm-1483-040-12",
+    "name": "LM 1483-040-12",
+    "description": "Series LM 1483 · Stroke 40 mm · Continuous force up to 6.2 N · Position sensor Sin/cos",
+    "parameters": {
+      "model": "LM 1483-040-12",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 1483-040-12",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468ce3fcac1664f8918482fcf636f",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/46/83/b5/1775629818/EN_LM1483_12_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 1483",
+        "bodyLength": 85.5,
+        "bodyWidth": 14.0,
+        "bodyHeight": 19.9,
+        "stroke": 40,
+        "continuousForce": 6.2,
+        "sensor": "Sin/cos",
+        "rodLength": 154.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 1483"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "85.5 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "14.0 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "19.9 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "40 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "6.2 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Sin/cos"
+        },
+        {
+          "label": "Rod length",
+          "value": "154.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM1483_1X.stp; LM1483-040-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip",
+        "sourceSha256": "8369787245a802be895ef2d285d9952ec9ed66da6cc75bcfefd66a41a412df58"
+      }
+    }
+  },
+  {
+    "id": "lm-1483-060-11",
+    "name": "LM 1483-060-11",
+    "description": "Series LM 1483 · Stroke 60 mm · Continuous force up to 6.2 N · Position sensor Analog Hall",
+    "parameters": {
+      "model": "LM 1483-060-11",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 1483-060-11",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774683763ad8b7a2748755ed2c49ddd",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/cb/ba/a6/1775629817/EN_LM1483_11_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 1483",
+        "bodyLength": 85.5,
+        "bodyWidth": 14.0,
+        "bodyHeight": 19.9,
+        "stroke": 60,
+        "continuousForce": 6.2,
+        "sensor": "Analog Hall",
+        "rodLength": 172.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 1483"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "85.5 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "14.0 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "19.9 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "60 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "6.2 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Analog Hall"
+        },
+        {
+          "label": "Rod length",
+          "value": "172.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM1483_1X.stp; LM1483-060-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip",
+        "sourceSha256": "8369787245a802be895ef2d285d9952ec9ed66da6cc75bcfefd66a41a412df58"
+      }
+    }
+  },
+  {
+    "id": "lm-1483-060-12",
+    "name": "LM 1483-060-12",
+    "description": "Series LM 1483 · Stroke 60 mm · Continuous force up to 6.2 N · Position sensor Sin/cos",
+    "parameters": {
+      "model": "LM 1483-060-12",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 1483-060-12",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746896bc4a31e5d8fd4201372b1bad",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/46/83/b5/1775629818/EN_LM1483_12_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 1483",
+        "bodyLength": 85.5,
+        "bodyWidth": 14.0,
+        "bodyHeight": 19.9,
+        "stroke": 60,
+        "continuousForce": 6.2,
+        "sensor": "Sin/cos",
+        "rodLength": 172.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 1483"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "85.5 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "14.0 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "19.9 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "60 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "6.2 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Sin/cos"
+        },
+        {
+          "label": "Rod length",
+          "value": "172.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM1483_1X.stp; LM1483-060-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip",
+        "sourceSha256": "8369787245a802be895ef2d285d9952ec9ed66da6cc75bcfefd66a41a412df58"
+      }
+    }
+  },
+  {
+    "id": "lm-1483-080-11",
+    "name": "LM 1483-080-11",
+    "description": "Series LM 1483 · Stroke 80 mm · Continuous force up to 6.2 N · Position sensor Analog Hall",
+    "parameters": {
+      "model": "LM 1483-080-11",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 1483-080-11",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746837cfaf0392bca95d77a11b66fc",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/cb/ba/a6/1775629817/EN_LM1483_11_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 1483",
+        "bodyLength": 85.5,
+        "bodyWidth": 14.0,
+        "bodyHeight": 19.9,
+        "stroke": 80,
+        "continuousForce": 6.2,
+        "sensor": "Analog Hall",
+        "rodLength": 190.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 1483"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "85.5 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "14.0 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "19.9 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "80 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "6.2 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Analog Hall"
+        },
+        {
+          "label": "Rod length",
+          "value": "190.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM1483_1X.stp; LM1483-080-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip",
+        "sourceSha256": "8369787245a802be895ef2d285d9952ec9ed66da6cc75bcfefd66a41a412df58"
+      }
+    }
+  },
+  {
+    "id": "lm-1483-080-12",
+    "name": "LM 1483-080-12",
+    "description": "Series LM 1483 · Stroke 80 mm · Continuous force up to 6.2 N · Position sensor Sin/cos",
+    "parameters": {
+      "model": "LM 1483-080-12",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 1483-080-12",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746812c43c818bc8ef51088964c257",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/46/83/b5/1775629818/EN_LM1483_12_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 1483",
+        "bodyLength": 85.5,
+        "bodyWidth": 14.0,
+        "bodyHeight": 19.9,
+        "stroke": 80,
+        "continuousForce": 6.2,
+        "sensor": "Sin/cos",
+        "rodLength": 190.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 1483"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "85.5 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "14.0 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "19.9 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "80 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "6.2 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Sin/cos"
+        },
+        {
+          "label": "Rod length",
+          "value": "190.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM1483_1X.stp; LM1483-080-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip",
+        "sourceSha256": "8369787245a802be895ef2d285d9952ec9ed66da6cc75bcfefd66a41a412df58"
+      }
+    }
+  },
+  {
+    "id": "lm-2070-040-11",
+    "name": "LM 2070-040-11",
+    "description": "Series LM 2070 · Stroke 40 mm · Continuous force up to 9.2 N · Position sensor Analog Hall",
+    "parameters": {
+      "model": "LM 2070-040-11",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 2070-040-11",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746874d45fb5f680bba0b169a35347",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/33/f1/24/1775629820/EN_LM2070_11_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 2070",
+        "bodyLength": 74.0,
+        "bodyWidth": 20.0,
+        "bodyHeight": 27.4,
+        "stroke": 40,
+        "continuousForce": 9.2,
+        "sensor": "Analog Hall",
+        "rodLength": 134.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 2070"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "74.0 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "20.0 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "27.4 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "40 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "9.2 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Analog Hall"
+        },
+        {
+          "label": "Rod length",
+          "value": "134.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM2070_1X.stp; LM2070-040-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip",
+        "sourceSha256": "112ccfd8268436617def430390b23bcf1a1655a4fc0fde0947a8cdda25335ae3"
+      }
+    }
+  },
+  {
+    "id": "lm-2070-040-12",
+    "name": "LM 2070-040-12",
+    "description": "Series LM 2070 · Stroke 40 mm · Continuous force up to 9.2 N · Position sensor Sin/cos",
+    "parameters": {
+      "model": "LM 2070-040-12",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 2070-040-12",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746859b0fe86197821ea95719a0ea0",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/41/16/cc/1775629821/EN_LM2070_12_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 2070",
+        "bodyLength": 74.0,
+        "bodyWidth": 20.0,
+        "bodyHeight": 27.4,
+        "stroke": 40,
+        "continuousForce": 9.2,
+        "sensor": "Sin/cos",
+        "rodLength": 134.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 2070"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "74.0 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "20.0 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "27.4 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "40 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "9.2 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Sin/cos"
+        },
+        {
+          "label": "Rod length",
+          "value": "134.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM2070_1X.stp; LM2070-040-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip",
+        "sourceSha256": "112ccfd8268436617def430390b23bcf1a1655a4fc0fde0947a8cdda25335ae3"
+      }
+    }
+  },
+  {
+    "id": "lm-2070-080-11",
+    "name": "LM 2070-080-11",
+    "description": "Series LM 2070 · Stroke 80 mm · Continuous force up to 9.2 N · Position sensor Analog Hall",
+    "parameters": {
+      "model": "LM 2070-080-11",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 2070-080-11",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468b681cca0a393a913a1921f0515",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/33/f1/24/1775629820/EN_LM2070_11_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 2070",
+        "bodyLength": 74.0,
+        "bodyWidth": 20.0,
+        "bodyHeight": 27.4,
+        "stroke": 80,
+        "continuousForce": 9.2,
+        "sensor": "Analog Hall",
+        "rodLength": 182.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 2070"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "74.0 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "20.0 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "27.4 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "80 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "9.2 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Analog Hall"
+        },
+        {
+          "label": "Rod length",
+          "value": "182.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM2070_1X.stp; LM2070-080-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip",
+        "sourceSha256": "112ccfd8268436617def430390b23bcf1a1655a4fc0fde0947a8cdda25335ae3"
+      }
+    }
+  },
+  {
+    "id": "lm-2070-080-12",
+    "name": "LM 2070-080-12",
+    "description": "Series LM 2070 · Stroke 80 mm · Continuous force up to 9.2 N · Position sensor Sin/cos",
+    "parameters": {
+      "model": "LM 2070-080-12",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 2070-080-12",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746870d0f9b2ef742188322f80ae74",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/41/16/cc/1775629821/EN_LM2070_12_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 2070",
+        "bodyLength": 74.0,
+        "bodyWidth": 20.0,
+        "bodyHeight": 27.4,
+        "stroke": 80,
+        "continuousForce": 9.2,
+        "sensor": "Sin/cos",
+        "rodLength": 182.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 2070"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "74.0 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "20.0 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "27.4 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "80 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "9.2 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Sin/cos"
+        },
+        {
+          "label": "Rod length",
+          "value": "182.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM2070_1X.stp; LM2070-080-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip",
+        "sourceSha256": "112ccfd8268436617def430390b23bcf1a1655a4fc0fde0947a8cdda25335ae3"
+      }
+    }
+  },
+  {
+    "id": "lm-2070-120-11",
+    "name": "LM 2070-120-11",
+    "description": "Series LM 2070 · Stroke 120 mm · Continuous force up to 9.2 N · Position sensor Analog Hall",
+    "parameters": {
+      "model": "LM 2070-120-11",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 2070-120-11",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468f7c11d9a93397d90ae2878e1b5",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/33/f1/24/1775629820/EN_LM2070_11_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 2070",
+        "bodyLength": 74.0,
+        "bodyWidth": 20.0,
+        "bodyHeight": 27.4,
+        "stroke": 120,
+        "continuousForce": 9.2,
+        "sensor": "Analog Hall",
+        "rodLength": 218.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 2070"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "74.0 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "20.0 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "27.4 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "120 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "9.2 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Analog Hall"
+        },
+        {
+          "label": "Rod length",
+          "value": "218.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM2070_1X.stp; LM2070-120-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip",
+        "sourceSha256": "112ccfd8268436617def430390b23bcf1a1655a4fc0fde0947a8cdda25335ae3"
+      }
+    }
+  },
+  {
+    "id": "lm-2070-120-12",
+    "name": "LM 2070-120-12",
+    "description": "Series LM 2070 · Stroke 120 mm · Continuous force up to 9.2 N · Position sensor Sin/cos",
+    "parameters": {
+      "model": "LM 2070-120-12",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 2070-120-12",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774689085e8ba96f2b726ecf11f27ee",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/41/16/cc/1775629821/EN_LM2070_12_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 2070",
+        "bodyLength": 74.0,
+        "bodyWidth": 20.0,
+        "bodyHeight": 27.4,
+        "stroke": 120,
+        "continuousForce": 9.2,
+        "sensor": "Sin/cos",
+        "rodLength": 218.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 2070"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "74.0 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "20.0 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "27.4 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "120 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "9.2 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Sin/cos"
+        },
+        {
+          "label": "Rod length",
+          "value": "218.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM2070_1X.stp; LM2070-120-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip",
+        "sourceSha256": "112ccfd8268436617def430390b23bcf1a1655a4fc0fde0947a8cdda25335ae3"
+      }
+    }
+  },
+  {
+    "id": "lm-2070-160-11",
+    "name": "LM 2070-160-11",
+    "description": "Series LM 2070 · Stroke 160 mm · Continuous force up to 9.2 N · Position sensor Analog Hall",
+    "parameters": {
+      "model": "LM 2070-160-11",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 2070-160-11",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774687544e8b3913e66fabc2e783340",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/33/f1/24/1775629820/EN_LM2070_11_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 2070",
+        "bodyLength": 74.0,
+        "bodyWidth": 20.0,
+        "bodyHeight": 27.4,
+        "stroke": 160,
+        "continuousForce": 9.2,
+        "sensor": "Analog Hall",
+        "rodLength": 254.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 2070"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "74.0 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "20.0 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "27.4 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "160 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "9.2 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Analog Hall"
+        },
+        {
+          "label": "Rod length",
+          "value": "254.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM2070_1X.stp; LM2070-160-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip",
+        "sourceSha256": "112ccfd8268436617def430390b23bcf1a1655a4fc0fde0947a8cdda25335ae3"
+      }
+    }
+  },
+  {
+    "id": "lm-2070-160-12",
+    "name": "LM 2070-160-12",
+    "description": "Series LM 2070 · Stroke 160 mm · Continuous force up to 9.2 N · Position sensor Sin/cos",
+    "parameters": {
+      "model": "LM 2070-160-12",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 2070-160-12",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746834df29e9bf26cab33a70d161f5",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/41/16/cc/1775629821/EN_LM2070_12_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 2070",
+        "bodyLength": 74.0,
+        "bodyWidth": 20.0,
+        "bodyHeight": 27.4,
+        "stroke": 160,
+        "continuousForce": 9.2,
+        "sensor": "Sin/cos",
+        "rodLength": 254.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 2070"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "74.0 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "20.0 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "27.4 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "160 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "9.2 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Sin/cos"
+        },
+        {
+          "label": "Rod length",
+          "value": "254.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM2070_1X.stp; LM2070-160-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip",
+        "sourceSha256": "112ccfd8268436617def430390b23bcf1a1655a4fc0fde0947a8cdda25335ae3"
+      }
+    }
+  },
+  {
+    "id": "lm-2070-220-11",
+    "name": "LM 2070-220-11",
+    "description": "Series LM 2070 · Stroke 220 mm · Continuous force up to 9.2 N · Position sensor Analog Hall",
+    "parameters": {
+      "model": "LM 2070-220-11",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 2070-220-11",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774683ff1cc219ead824d1c20ced2bd",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/33/f1/24/1775629820/EN_LM2070_11_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 2070",
+        "bodyLength": 74.0,
+        "bodyWidth": 20.0,
+        "bodyHeight": 27.4,
+        "stroke": 220,
+        "continuousForce": 9.2,
+        "sensor": "Analog Hall",
+        "rodLength": 314.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 2070"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "74.0 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "20.0 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "27.4 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "220 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "9.2 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Analog Hall"
+        },
+        {
+          "label": "Rod length",
+          "value": "314.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM2070_1X.stp; LM2070-220-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip",
+        "sourceSha256": "112ccfd8268436617def430390b23bcf1a1655a4fc0fde0947a8cdda25335ae3"
+      }
+    }
+  },
+  {
+    "id": "lm-2070-220-12",
+    "name": "LM 2070-220-12",
+    "description": "Series LM 2070 · Stroke 220 mm · Continuous force up to 9.2 N · Position sensor Sin/cos",
+    "parameters": {
+      "model": "LM 2070-220-12",
+      "position": 50
+    },
+    "catalog": {
+      "designation": "LM 2070-220-12",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official catalogue, dimensional drawing and CAD",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774688134cb5056a1ebbca4c0569d8f",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/41/16/cc/1775629821/EN_LM2070_12_FMM.pdf",
+        "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+        "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip"
+      ],
+      "attributes": {
+        "series": "LM 2070",
+        "bodyLength": 74.0,
+        "bodyWidth": 20.0,
+        "bodyHeight": 27.4,
+        "stroke": 220,
+        "continuousForce": 9.2,
+        "sensor": "Sin/cos",
+        "rodLength": 314.0
+      },
+      "specifications": [
+        {
+          "label": "Series",
+          "value": "LM 2070"
+        },
+        {
+          "label": "Catalog body length",
+          "value": "74.0 mm"
+        },
+        {
+          "label": "Body width",
+          "value": "20.0 mm"
+        },
+        {
+          "label": "Body height",
+          "value": "27.4 mm"
+        },
+        {
+          "label": "Stroke",
+          "value": "220 mm"
+        },
+        {
+          "label": "Continuous force up to",
+          "value": "9.2 N"
+        },
+        {
+          "label": "Position sensor",
+          "value": "Sin/cos"
+        },
+        {
+          "label": "Rod length",
+          "value": "314.0 mm"
+        },
+        {
+          "label": "CAD execution",
+          "value": "LM2070_1X.stp; LM2070-220-Rod.stp"
+        },
+        {
+          "label": "Model scope",
+          "value": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Selected original supplier STEP solids; see CAD execution and model scope for included components.",
+        "limitations": "Original FAULHABER housing and stroke-specific rod CAD assembled on their common Z axis. Position is a percentage of nominal stroke, from 0% to 100%, with 50% at the center of the catalog body. It translates only the rod and is not an electrical simulation. The 11 (analog Hall) and 12 (sin/cos) sensor versions share the same 1X mechanical housing. LM0830 includes the separate terminal foil provided in supplier CAD. Rod length is not stroke; mounting dimensions and terminal projections follow supplier CAD. Optional guides, cables and controllers are excluded. The supplier installation models do not resolve internal magnets, coils or sensors.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip",
+        "sourceSha256": "112ccfd8268436617def430390b23bcf1a1655a4fc0fde0947a8cdda25335ae3"
+      }
+    }
+  }
+]

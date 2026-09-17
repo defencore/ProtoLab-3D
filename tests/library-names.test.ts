@@ -58,6 +58,7 @@ test('each built-in part has a unique name and one registered, populated library
     'MULTICOPTERS',
     'MODEL ROCKETS',
     'BOAT HULLS',
+    'GROUND VEHICLES',
     'WINGS & CONTROL SURFACES',
     'PROPELLERS & ROTORS',
     'DUCTS & LANDING GEAR',

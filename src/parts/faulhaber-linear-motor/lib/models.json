@@ -1,0 +1,1314 @@
+[
+  {
+    "model": "LM 0830-015-01",
+    "series": "LM 0830",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468cd66c940b22b499e2b5535bf09",
+    "sources": [
+      "https://eshop.faulhaber.com/media/a7/8f/23/1775629813/EN_LM0830_01_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/d8/6b/b6/1755623540/LM0830_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM0830_01",
+        "label": "LM 0830-015-01 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM0830-015-Rod",
+        "label": "LM 0830-015-01 rod",
+        "translation": [
+          0,
+          0,
+          -45.5
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 0830",
+      "bodyLength": 33.0,
+      "bodyWidth": 8.0,
+      "bodyHeight": 12.0,
+      "stroke": 15,
+      "continuousForce": 1.03,
+      "sensor": "Analog Hall",
+      "rodLength": 58.0
+    }
+  },
+  {
+    "model": "LM 0830-040-01",
+    "series": "LM 0830",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774683c619774c942b7eab8dca4117a",
+    "sources": [
+      "https://eshop.faulhaber.com/media/a7/8f/23/1775629813/EN_LM0830_01_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/d8/6b/b6/1755623540/LM0830_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM0830_01",
+        "label": "LM 0830-040-01 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM0830-040-Rod",
+        "label": "LM 0830-040-01 rod",
+        "translation": [
+          0,
+          0,
+          -57.5
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 0830",
+      "bodyLength": 33.0,
+      "bodyWidth": 8.0,
+      "bodyHeight": 12.0,
+      "stroke": 40,
+      "continuousForce": 1.03,
+      "sensor": "Analog Hall",
+      "rodLength": 82.0
+    }
+  },
+  {
+    "model": "LM 1247-020-11",
+    "series": "LM 1247",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468101b678be9e2a323ac54293490",
+    "sources": [
+      "https://eshop.faulhaber.com/media/71/d1/43/1775629815/EN_LM1247_11_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM1247_1X",
+        "label": "LM 1247-020-11 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM1247-020-Rod",
+        "label": "LM 1247-020-11 rod",
+        "translation": [
+          0,
+          0,
+          -65.7
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 1247",
+      "bodyLength": 49.4,
+      "bodyWidth": 12.5,
+      "bodyHeight": 19.1,
+      "stroke": 20,
+      "continuousForce": 3.6,
+      "sensor": "Analog Hall",
+      "rodLength": 82.0
+    }
+  },
+  {
+    "model": "LM 1247-020-12",
+    "series": "LM 1247",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774681e370924d0a5fe67648c9cb64a",
+    "sources": [
+      "https://eshop.faulhaber.com/media/d2/fe/f5/1775629816/EN_LM1247_12_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM1247_1X",
+        "label": "LM 1247-020-12 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM1247-020-Rod",
+        "label": "LM 1247-020-12 rod",
+        "translation": [
+          0,
+          0,
+          -65.7
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 1247",
+      "bodyLength": 49.4,
+      "bodyWidth": 12.5,
+      "bodyHeight": 19.1,
+      "stroke": 20,
+      "continuousForce": 3.6,
+      "sensor": "Sin/cos",
+      "rodLength": 82.0
+    }
+  },
+  {
+    "model": "LM 1247-040-11",
+    "series": "LM 1247",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468ffbb331ebdce2dde4172dfa395",
+    "sources": [
+      "https://eshop.faulhaber.com/media/71/d1/43/1775629815/EN_LM1247_11_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM1247_1X",
+        "label": "LM 1247-040-11 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM1247-040-Rod",
+        "label": "LM 1247-040-11 rod",
+        "translation": [
+          0,
+          0,
+          -79.2
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 1247",
+      "bodyLength": 49.4,
+      "bodyWidth": 12.5,
+      "bodyHeight": 19.1,
+      "stroke": 40,
+      "continuousForce": 3.6,
+      "sensor": "Analog Hall",
+      "rodLength": 109.0
+    }
+  },
+  {
+    "model": "LM 1247-040-12",
+    "series": "LM 1247",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468513a959c41de9dc299d24e8c1b",
+    "sources": [
+      "https://eshop.faulhaber.com/media/d2/fe/f5/1775629816/EN_LM1247_12_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM1247_1X",
+        "label": "LM 1247-040-12 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM1247-040-Rod",
+        "label": "LM 1247-040-12 rod",
+        "translation": [
+          0,
+          0,
+          -79.2
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 1247",
+      "bodyLength": 49.4,
+      "bodyWidth": 12.5,
+      "bodyHeight": 19.1,
+      "stroke": 40,
+      "continuousForce": 3.6,
+      "sensor": "Sin/cos",
+      "rodLength": 109.0
+    }
+  },
+  {
+    "model": "LM 1247-060-11",
+    "series": "LM 1247",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468b9255aa4651a092a64364e4885",
+    "sources": [
+      "https://eshop.faulhaber.com/media/71/d1/43/1775629815/EN_LM1247_11_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM1247_1X",
+        "label": "LM 1247-060-11 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM1247-060-Rod",
+        "label": "LM 1247-060-11 rod",
+        "translation": [
+          0,
+          0,
+          -88.2
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 1247",
+      "bodyLength": 49.4,
+      "bodyWidth": 12.5,
+      "bodyHeight": 19.1,
+      "stroke": 60,
+      "continuousForce": 3.6,
+      "sensor": "Analog Hall",
+      "rodLength": 127.0
+    }
+  },
+  {
+    "model": "LM 1247-060-12",
+    "series": "LM 1247",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746882ab9ef5788ddcbbabd31e5c53",
+    "sources": [
+      "https://eshop.faulhaber.com/media/d2/fe/f5/1775629816/EN_LM1247_12_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM1247_1X",
+        "label": "LM 1247-060-12 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM1247-060-Rod",
+        "label": "LM 1247-060-12 rod",
+        "translation": [
+          0,
+          0,
+          -88.2
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 1247",
+      "bodyLength": 49.4,
+      "bodyWidth": 12.5,
+      "bodyHeight": 19.1,
+      "stroke": 60,
+      "continuousForce": 3.6,
+      "sensor": "Sin/cos",
+      "rodLength": 127.0
+    }
+  },
+  {
+    "model": "LM 1247-080-11",
+    "series": "LM 1247",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468eee7bcdea0890f5969cfc0723c",
+    "sources": [
+      "https://eshop.faulhaber.com/media/71/d1/43/1775629815/EN_LM1247_11_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM1247_1X",
+        "label": "LM 1247-080-11 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM1247-080-Rod",
+        "label": "LM 1247-080-11 rod",
+        "translation": [
+          0,
+          0,
+          -101.7
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 1247",
+      "bodyLength": 49.4,
+      "bodyWidth": 12.5,
+      "bodyHeight": 19.1,
+      "stroke": 80,
+      "continuousForce": 3.6,
+      "sensor": "Analog Hall",
+      "rodLength": 154.0
+    }
+  },
+  {
+    "model": "LM 1247-080-12",
+    "series": "LM 1247",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468ea792940489ea5a600149f6aca",
+    "sources": [
+      "https://eshop.faulhaber.com/media/d2/fe/f5/1775629816/EN_LM1247_12_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM1247_1X",
+        "label": "LM 1247-080-12 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM1247-080-Rod",
+        "label": "LM 1247-080-12 rod",
+        "translation": [
+          0,
+          0,
+          -101.7
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 1247",
+      "bodyLength": 49.4,
+      "bodyWidth": 12.5,
+      "bodyHeight": 19.1,
+      "stroke": 80,
+      "continuousForce": 3.6,
+      "sensor": "Sin/cos",
+      "rodLength": 154.0
+    }
+  },
+  {
+    "model": "LM 1247-100-11",
+    "series": "LM 1247",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468e86ff02d94789c656734d153a4",
+    "sources": [
+      "https://eshop.faulhaber.com/media/71/d1/43/1775629815/EN_LM1247_11_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM1247_1X",
+        "label": "LM 1247-100-11 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM1247-100-Rod",
+        "label": "LM 1247-100-11 rod",
+        "translation": [
+          0,
+          0,
+          -110.7
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 1247",
+      "bodyLength": 49.4,
+      "bodyWidth": 12.5,
+      "bodyHeight": 19.1,
+      "stroke": 100,
+      "continuousForce": 3.6,
+      "sensor": "Analog Hall",
+      "rodLength": 172.0
+    }
+  },
+  {
+    "model": "LM 1247-100-12",
+    "series": "LM 1247",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774685defaf6722984ce5791ba4ddd2",
+    "sources": [
+      "https://eshop.faulhaber.com/media/d2/fe/f5/1775629816/EN_LM1247_12_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM1247_1X",
+        "label": "LM 1247-100-12 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM1247-100-Rod",
+        "label": "LM 1247-100-12 rod",
+        "translation": [
+          0,
+          0,
+          -110.7
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 1247",
+      "bodyLength": 49.4,
+      "bodyWidth": 12.5,
+      "bodyHeight": 19.1,
+      "stroke": 100,
+      "continuousForce": 3.6,
+      "sensor": "Sin/cos",
+      "rodLength": 172.0
+    }
+  },
+  {
+    "model": "LM 1247-120-11",
+    "series": "LM 1247",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468ba9bab16fde76c88b29776dd4b",
+    "sources": [
+      "https://eshop.faulhaber.com/media/71/d1/43/1775629815/EN_LM1247_11_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM1247_1X",
+        "label": "LM 1247-120-11 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM1247-120-Rod",
+        "label": "LM 1247-120-11 rod",
+        "translation": [
+          0,
+          0,
+          -119.7
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 1247",
+      "bodyLength": 49.4,
+      "bodyWidth": 12.5,
+      "bodyHeight": 19.1,
+      "stroke": 120,
+      "continuousForce": 3.6,
+      "sensor": "Analog Hall",
+      "rodLength": 190.0
+    }
+  },
+  {
+    "model": "LM 1247-120-12",
+    "series": "LM 1247",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746828291a55a35049e440f052b2ad",
+    "sources": [
+      "https://eshop.faulhaber.com/media/d2/fe/f5/1775629816/EN_LM1247_12_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/28/84/c3/1755605899/LM1247_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM1247_1X",
+        "label": "LM 1247-120-12 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM1247-120-Rod",
+        "label": "LM 1247-120-12 rod",
+        "translation": [
+          0,
+          0,
+          -119.7
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 1247",
+      "bodyLength": 49.4,
+      "bodyWidth": 12.5,
+      "bodyHeight": 19.1,
+      "stroke": 120,
+      "continuousForce": 3.6,
+      "sensor": "Sin/cos",
+      "rodLength": 190.0
+    }
+  },
+  {
+    "model": "LM 1483-020-11",
+    "series": "LM 1483",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468437e18d90a0001f9c4180f6ebb",
+    "sources": [
+      "https://eshop.faulhaber.com/media/cb/ba/a6/1775629817/EN_LM1483_11_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM1483_1X",
+        "label": "LM 1483-020-11 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM1483-020-Rod",
+        "label": "LM 1483-020-11 rod",
+        "translation": [
+          0,
+          0,
+          -106.25
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 1483",
+      "bodyLength": 85.5,
+      "bodyWidth": 14.0,
+      "bodyHeight": 19.9,
+      "stroke": 20,
+      "continuousForce": 6.2,
+      "sensor": "Analog Hall",
+      "rodLength": 127.0
+    }
+  },
+  {
+    "model": "LM 1483-020-12",
+    "series": "LM 1483",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468eb5fdb8e2f6def8c6a7da95930",
+    "sources": [
+      "https://eshop.faulhaber.com/media/46/83/b5/1775629818/EN_LM1483_12_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM1483_1X",
+        "label": "LM 1483-020-12 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM1483-020-Rod",
+        "label": "LM 1483-020-12 rod",
+        "translation": [
+          0,
+          0,
+          -106.25
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 1483",
+      "bodyLength": 85.5,
+      "bodyWidth": 14.0,
+      "bodyHeight": 19.9,
+      "stroke": 20,
+      "continuousForce": 6.2,
+      "sensor": "Sin/cos",
+      "rodLength": 127.0
+    }
+  },
+  {
+    "model": "LM 1483-040-11",
+    "series": "LM 1483",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774682708b0b5e5c80742b7f578065a",
+    "sources": [
+      "https://eshop.faulhaber.com/media/cb/ba/a6/1775629817/EN_LM1483_11_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM1483_1X",
+        "label": "LM 1483-040-11 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM1483-040-Rod",
+        "label": "LM 1483-040-11 rod",
+        "translation": [
+          0,
+          0,
+          -119.75
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 1483",
+      "bodyLength": 85.5,
+      "bodyWidth": 14.0,
+      "bodyHeight": 19.9,
+      "stroke": 40,
+      "continuousForce": 6.2,
+      "sensor": "Analog Hall",
+      "rodLength": 154.0
+    }
+  },
+  {
+    "model": "LM 1483-040-12",
+    "series": "LM 1483",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468ce3fcac1664f8918482fcf636f",
+    "sources": [
+      "https://eshop.faulhaber.com/media/46/83/b5/1775629818/EN_LM1483_12_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM1483_1X",
+        "label": "LM 1483-040-12 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM1483-040-Rod",
+        "label": "LM 1483-040-12 rod",
+        "translation": [
+          0,
+          0,
+          -119.75
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 1483",
+      "bodyLength": 85.5,
+      "bodyWidth": 14.0,
+      "bodyHeight": 19.9,
+      "stroke": 40,
+      "continuousForce": 6.2,
+      "sensor": "Sin/cos",
+      "rodLength": 154.0
+    }
+  },
+  {
+    "model": "LM 1483-060-11",
+    "series": "LM 1483",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774683763ad8b7a2748755ed2c49ddd",
+    "sources": [
+      "https://eshop.faulhaber.com/media/cb/ba/a6/1775629817/EN_LM1483_11_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM1483_1X",
+        "label": "LM 1483-060-11 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM1483-060-Rod",
+        "label": "LM 1483-060-11 rod",
+        "translation": [
+          0,
+          0,
+          -128.75
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 1483",
+      "bodyLength": 85.5,
+      "bodyWidth": 14.0,
+      "bodyHeight": 19.9,
+      "stroke": 60,
+      "continuousForce": 6.2,
+      "sensor": "Analog Hall",
+      "rodLength": 172.0
+    }
+  },
+  {
+    "model": "LM 1483-060-12",
+    "series": "LM 1483",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746896bc4a31e5d8fd4201372b1bad",
+    "sources": [
+      "https://eshop.faulhaber.com/media/46/83/b5/1775629818/EN_LM1483_12_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM1483_1X",
+        "label": "LM 1483-060-12 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM1483-060-Rod",
+        "label": "LM 1483-060-12 rod",
+        "translation": [
+          0,
+          0,
+          -128.75
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 1483",
+      "bodyLength": 85.5,
+      "bodyWidth": 14.0,
+      "bodyHeight": 19.9,
+      "stroke": 60,
+      "continuousForce": 6.2,
+      "sensor": "Sin/cos",
+      "rodLength": 172.0
+    }
+  },
+  {
+    "model": "LM 1483-080-11",
+    "series": "LM 1483",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746837cfaf0392bca95d77a11b66fc",
+    "sources": [
+      "https://eshop.faulhaber.com/media/cb/ba/a6/1775629817/EN_LM1483_11_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM1483_1X",
+        "label": "LM 1483-080-11 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM1483-080-Rod",
+        "label": "LM 1483-080-11 rod",
+        "translation": [
+          0,
+          0,
+          -137.75
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 1483",
+      "bodyLength": 85.5,
+      "bodyWidth": 14.0,
+      "bodyHeight": 19.9,
+      "stroke": 80,
+      "continuousForce": 6.2,
+      "sensor": "Analog Hall",
+      "rodLength": 190.0
+    }
+  },
+  {
+    "model": "LM 1483-080-12",
+    "series": "LM 1483",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746812c43c818bc8ef51088964c257",
+    "sources": [
+      "https://eshop.faulhaber.com/media/46/83/b5/1775629818/EN_LM1483_12_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/9f/65/db/1755623636/LM1483_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM1483_1X",
+        "label": "LM 1483-080-12 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM1483-080-Rod",
+        "label": "LM 1483-080-12 rod",
+        "translation": [
+          0,
+          0,
+          -137.75
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 1483",
+      "bodyLength": 85.5,
+      "bodyWidth": 14.0,
+      "bodyHeight": 19.9,
+      "stroke": 80,
+      "continuousForce": 6.2,
+      "sensor": "Sin/cos",
+      "rodLength": 190.0
+    }
+  },
+  {
+    "model": "LM 2070-040-11",
+    "series": "LM 2070",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746874d45fb5f680bba0b169a35347",
+    "sources": [
+      "https://eshop.faulhaber.com/media/33/f1/24/1775629820/EN_LM2070_11_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM2070_1X",
+        "label": "LM 2070-040-11 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM2070-040-Rod",
+        "label": "LM 2070-040-11 rod",
+        "translation": [
+          0,
+          0,
+          -104.0
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 2070",
+      "bodyLength": 74.0,
+      "bodyWidth": 20.0,
+      "bodyHeight": 27.4,
+      "stroke": 40,
+      "continuousForce": 9.2,
+      "sensor": "Analog Hall",
+      "rodLength": 134.0
+    }
+  },
+  {
+    "model": "LM 2070-040-12",
+    "series": "LM 2070",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746859b0fe86197821ea95719a0ea0",
+    "sources": [
+      "https://eshop.faulhaber.com/media/41/16/cc/1775629821/EN_LM2070_12_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM2070_1X",
+        "label": "LM 2070-040-12 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM2070-040-Rod",
+        "label": "LM 2070-040-12 rod",
+        "translation": [
+          0,
+          0,
+          -104.0
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 2070",
+      "bodyLength": 74.0,
+      "bodyWidth": 20.0,
+      "bodyHeight": 27.4,
+      "stroke": 40,
+      "continuousForce": 9.2,
+      "sensor": "Sin/cos",
+      "rodLength": 134.0
+    }
+  },
+  {
+    "model": "LM 2070-080-11",
+    "series": "LM 2070",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468b681cca0a393a913a1921f0515",
+    "sources": [
+      "https://eshop.faulhaber.com/media/33/f1/24/1775629820/EN_LM2070_11_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM2070_1X",
+        "label": "LM 2070-080-11 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM2070-080-Rod",
+        "label": "LM 2070-080-11 rod",
+        "translation": [
+          0,
+          0,
+          -128.0
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 2070",
+      "bodyLength": 74.0,
+      "bodyWidth": 20.0,
+      "bodyHeight": 27.4,
+      "stroke": 80,
+      "continuousForce": 9.2,
+      "sensor": "Analog Hall",
+      "rodLength": 182.0
+    }
+  },
+  {
+    "model": "LM 2070-080-12",
+    "series": "LM 2070",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746870d0f9b2ef742188322f80ae74",
+    "sources": [
+      "https://eshop.faulhaber.com/media/41/16/cc/1775629821/EN_LM2070_12_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM2070_1X",
+        "label": "LM 2070-080-12 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM2070-080-Rod",
+        "label": "LM 2070-080-12 rod",
+        "translation": [
+          0,
+          0,
+          -128.0
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 2070",
+      "bodyLength": 74.0,
+      "bodyWidth": 20.0,
+      "bodyHeight": 27.4,
+      "stroke": 80,
+      "continuousForce": 9.2,
+      "sensor": "Sin/cos",
+      "rodLength": 182.0
+    }
+  },
+  {
+    "model": "LM 2070-120-11",
+    "series": "LM 2070",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468f7c11d9a93397d90ae2878e1b5",
+    "sources": [
+      "https://eshop.faulhaber.com/media/33/f1/24/1775629820/EN_LM2070_11_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM2070_1X",
+        "label": "LM 2070-120-11 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM2070-120-Rod",
+        "label": "LM 2070-120-11 rod",
+        "translation": [
+          0,
+          0,
+          -146.0
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 2070",
+      "bodyLength": 74.0,
+      "bodyWidth": 20.0,
+      "bodyHeight": 27.4,
+      "stroke": 120,
+      "continuousForce": 9.2,
+      "sensor": "Analog Hall",
+      "rodLength": 218.0
+    }
+  },
+  {
+    "model": "LM 2070-120-12",
+    "series": "LM 2070",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774689085e8ba96f2b726ecf11f27ee",
+    "sources": [
+      "https://eshop.faulhaber.com/media/41/16/cc/1775629821/EN_LM2070_12_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM2070_1X",
+        "label": "LM 2070-120-12 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM2070-120-Rod",
+        "label": "LM 2070-120-12 rod",
+        "translation": [
+          0,
+          0,
+          -146.0
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 2070",
+      "bodyLength": 74.0,
+      "bodyWidth": 20.0,
+      "bodyHeight": 27.4,
+      "stroke": 120,
+      "continuousForce": 9.2,
+      "sensor": "Sin/cos",
+      "rodLength": 218.0
+    }
+  },
+  {
+    "model": "LM 2070-160-11",
+    "series": "LM 2070",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774687544e8b3913e66fabc2e783340",
+    "sources": [
+      "https://eshop.faulhaber.com/media/33/f1/24/1775629820/EN_LM2070_11_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM2070_1X",
+        "label": "LM 2070-160-11 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM2070-160-Rod",
+        "label": "LM 2070-160-11 rod",
+        "translation": [
+          0,
+          0,
+          -164.0
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 2070",
+      "bodyLength": 74.0,
+      "bodyWidth": 20.0,
+      "bodyHeight": 27.4,
+      "stroke": 160,
+      "continuousForce": 9.2,
+      "sensor": "Analog Hall",
+      "rodLength": 254.0
+    }
+  },
+  {
+    "model": "LM 2070-160-12",
+    "series": "LM 2070",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746834df29e9bf26cab33a70d161f5",
+    "sources": [
+      "https://eshop.faulhaber.com/media/41/16/cc/1775629821/EN_LM2070_12_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM2070_1X",
+        "label": "LM 2070-160-12 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM2070-160-Rod",
+        "label": "LM 2070-160-12 rod",
+        "translation": [
+          0,
+          0,
+          -164.0
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 2070",
+      "bodyLength": 74.0,
+      "bodyWidth": 20.0,
+      "bodyHeight": 27.4,
+      "stroke": 160,
+      "continuousForce": 9.2,
+      "sensor": "Sin/cos",
+      "rodLength": 254.0
+    }
+  },
+  {
+    "model": "LM 2070-220-11",
+    "series": "LM 2070",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774683ff1cc219ead824d1c20ced2bd",
+    "sources": [
+      "https://eshop.faulhaber.com/media/33/f1/24/1775629820/EN_LM2070_11_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM2070_1X",
+        "label": "LM 2070-220-11 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM2070-220-Rod",
+        "label": "LM 2070-220-11 rod",
+        "translation": [
+          0,
+          0,
+          -194.0
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 2070",
+      "bodyLength": 74.0,
+      "bodyWidth": 20.0,
+      "bodyHeight": 27.4,
+      "stroke": 220,
+      "continuousForce": 9.2,
+      "sensor": "Analog Hall",
+      "rodLength": 314.0
+    }
+  },
+  {
+    "model": "LM 2070-220-12",
+    "series": "LM 2070",
+    "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774688134cb5056a1ebbca4c0569d8f",
+    "sources": [
+      "https://eshop.faulhaber.com/media/41/16/cc/1775629821/EN_LM2070_12_FMM.pdf",
+      "https://eshop.faulhaber.com/media/9f/91/a9/1775629814/EN_7000_05042.pdf",
+      "https://eshop.faulhaber.com/media/ec/76/c6/1755623676/LM2070_3D-CAD.zip"
+    ],
+    "assets": [
+      {
+        "key": "LM2070_1X",
+        "label": "LM 2070-220-12 housing",
+        "translation": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "LM2070-220-Rod",
+        "label": "LM 2070-220-12 rod",
+        "translation": [
+          0,
+          0,
+          -194.0
+        ],
+        "moving": true
+      }
+    ],
+    "attributes": {
+      "series": "LM 2070",
+      "bodyLength": 74.0,
+      "bodyWidth": 20.0,
+      "bodyHeight": 27.4,
+      "stroke": 220,
+      "continuousForce": 9.2,
+      "sensor": "Sin/cos",
+      "rodLength": 314.0
+    }
+  }
+]

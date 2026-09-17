@@ -167,6 +167,15 @@ import module163 from './parallel-gripper/index';
 import module164 from './slewing-bearing/index';
 import module165 from './linkage-mechanism/index';
 import module166 from './tracked-chassis/index';
+import module167 from './eccentric-bearing/index';
+import module168 from './eccentric-bushing/index';
+import module169 from './eccentric-cam-follower/index';
+import module170 from './chf-gf5560-180/index';
+import module171 from './faulhaber-bx4/index';
+import module172 from './faulhaber-am/index';
+import module173 from './faulhaber-planetary/index';
+import module174 from './faulhaber-linear-actuator/index';
+import module175 from './faulhaber-linear-motor/index';
 
 export const parts = registerPartModules([
   module0,
@@ -336,4 +345,13 @@ export const parts = registerPartModules([
   module164,
   module165,
   module166,
+  module167,
+  module168,
+  module169,
+  module170,
+  module171,
+  module172,
+  module173,
+  module174,
+  module175,
 ]);

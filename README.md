@@ -166,6 +166,7 @@ src/
     part-modules.ts             Versioned package contract and validation
     geometry.ts                 Generic mesh primitives
     mechanical.ts               Generic boundary meshes and section construction
+    manufacturer-cad.ts         Compressed supplier meshes, placements and native BREP export
     solid-union.ts              Generic mesh boolean operations
     freecad.ts                  Application export wrapper
   parts/

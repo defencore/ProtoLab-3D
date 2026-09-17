@@ -9,6 +9,7 @@ export const SDK_FILES = [
   'geometry.ts',
   'mechanical.ts',
   'solid-union.ts',
+  'manufacturer-cad.ts',
   'part-modules.ts',
 ] as const;
 export const REQUIRED_FILES = [

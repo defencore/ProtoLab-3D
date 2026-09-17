@@ -1,0 +1,386 @@
+[
+  {
+    "id": "cfe6buu",
+    "name": "IKO CFE6BUU \u00b7 \u00d816 \u00d7 11 \u00b7 e 0.4 mm",
+    "description": "Cylindrical cam follower with eccentric mounting collar and hex socket.",
+    "parameters": {
+      "outer": 16,
+      "width": 11,
+      "stud": 6,
+      "collar": 9,
+      "collarLength": 7.5,
+      "studLength": 16,
+      "lip": 0.6,
+      "hex": 3,
+      "eccentricity": 0.4,
+      "angle": 0,
+      "closure": "sealed"
+    },
+    "catalog": {
+      "designation": "CFE6BUU",
+      "manufacturer": "IKO",
+      "sourceName": "IKO product dimensions",
+      "sourceUrl": "https://ikont.com/catalogs/other/1569E.pdf",
+      "verifiedParameters": [
+        "outer",
+        "width",
+        "stud",
+        "collar",
+        "collarLength",
+        "studLength",
+        "lip",
+        "hex",
+        "eccentricity",
+        "closure"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Cylindrical cam follower with eccentric mounting collar and hex socket.",
+        "limitations": "Envelope, collar offset and external dimensions follow IKO pp. 51\u201352. Internal needle/race geometry is reconstructed. Threads are smooth nominal cylinders. Nuts and washers are not included.",
+        "sourceUrl": "https://ikont.com/catalogs/other/1569E.pdf"
+      },
+      "specifications": [
+        {
+          "label": "Stud thread",
+          "value": "M6 \u00d7 1"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cfe6b",
+    "name": "IKO CFE6B \u00b7 \u00d816 \u00d7 11 \u00b7 e 0.4 mm",
+    "description": "Cylindrical cam follower with eccentric mounting collar and hex socket.",
+    "parameters": {
+      "outer": 16,
+      "width": 11,
+      "stud": 6,
+      "collar": 9,
+      "collarLength": 7.5,
+      "studLength": 16,
+      "lip": 0.6,
+      "hex": 3,
+      "eccentricity": 0.4,
+      "angle": 0,
+      "closure": "shielded"
+    },
+    "catalog": {
+      "designation": "CFE6B",
+      "manufacturer": "IKO",
+      "sourceName": "IKO product dimensions",
+      "sourceUrl": "https://ikont.com/catalogs/other/1569E.pdf",
+      "verifiedParameters": [
+        "outer",
+        "width",
+        "stud",
+        "collar",
+        "collarLength",
+        "studLength",
+        "lip",
+        "hex",
+        "eccentricity",
+        "closure"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Cylindrical cam follower with eccentric mounting collar and hex socket.",
+        "limitations": "Envelope, collar offset and external dimensions follow IKO pp. 51\u201352. Internal needle/race geometry is reconstructed. Threads are smooth nominal cylinders. Nuts and washers are not included.",
+        "sourceUrl": "https://ikont.com/catalogs/other/1569E.pdf"
+      },
+      "specifications": [
+        {
+          "label": "Stud thread",
+          "value": "M6 \u00d7 1"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cfe8buu",
+    "name": "IKO CFE8BUU \u00b7 \u00d819 \u00d7 11 \u00b7 e 0.4 mm",
+    "description": "Cylindrical cam follower with eccentric mounting collar and hex socket.",
+    "parameters": {
+      "outer": 19,
+      "width": 11,
+      "stud": 8,
+      "collar": 11,
+      "collarLength": 9.5,
+      "studLength": 20,
+      "lip": 0.6,
+      "hex": 4,
+      "eccentricity": 0.4,
+      "angle": 0,
+      "closure": "sealed"
+    },
+    "catalog": {
+      "designation": "CFE8BUU",
+      "manufacturer": "IKO",
+      "sourceName": "IKO product dimensions",
+      "sourceUrl": "https://ikont.com/catalogs/other/1569E.pdf",
+      "verifiedParameters": [
+        "outer",
+        "width",
+        "stud",
+        "collar",
+        "collarLength",
+        "studLength",
+        "lip",
+        "hex",
+        "eccentricity",
+        "closure"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Cylindrical cam follower with eccentric mounting collar and hex socket.",
+        "limitations": "Envelope, collar offset and external dimensions follow IKO pp. 51\u201352. Internal needle/race geometry is reconstructed. Threads are smooth nominal cylinders. Nuts and washers are not included.",
+        "sourceUrl": "https://ikont.com/catalogs/other/1569E.pdf"
+      },
+      "specifications": [
+        {
+          "label": "Stud thread",
+          "value": "M8 \u00d7 1.25"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cfe8b",
+    "name": "IKO CFE8B \u00b7 \u00d819 \u00d7 11 \u00b7 e 0.4 mm",
+    "description": "Cylindrical cam follower with eccentric mounting collar and hex socket.",
+    "parameters": {
+      "outer": 19,
+      "width": 11,
+      "stud": 8,
+      "collar": 11,
+      "collarLength": 9.5,
+      "studLength": 20,
+      "lip": 0.6,
+      "hex": 4,
+      "eccentricity": 0.4,
+      "angle": 0,
+      "closure": "shielded"
+    },
+    "catalog": {
+      "designation": "CFE8B",
+      "manufacturer": "IKO",
+      "sourceName": "IKO product dimensions",
+      "sourceUrl": "https://ikont.com/catalogs/other/1569E.pdf",
+      "verifiedParameters": [
+        "outer",
+        "width",
+        "stud",
+        "collar",
+        "collarLength",
+        "studLength",
+        "lip",
+        "hex",
+        "eccentricity",
+        "closure"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Cylindrical cam follower with eccentric mounting collar and hex socket.",
+        "limitations": "Envelope, collar offset and external dimensions follow IKO pp. 51\u201352. Internal needle/race geometry is reconstructed. Threads are smooth nominal cylinders. Nuts and washers are not included.",
+        "sourceUrl": "https://ikont.com/catalogs/other/1569E.pdf"
+      },
+      "specifications": [
+        {
+          "label": "Stud thread",
+          "value": "M8 \u00d7 1.25"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cfe10buu",
+    "name": "IKO CFE10BUU \u00b7 \u00d822 \u00d7 12 \u00b7 e 0.4 mm",
+    "description": "Cylindrical cam follower with eccentric mounting collar and hex socket.",
+    "parameters": {
+      "outer": 22,
+      "width": 12,
+      "stud": 10,
+      "collar": 13,
+      "collarLength": 10.5,
+      "studLength": 23,
+      "lip": 0.6,
+      "hex": 4,
+      "eccentricity": 0.4,
+      "angle": 0,
+      "closure": "sealed"
+    },
+    "catalog": {
+      "designation": "CFE10BUU",
+      "manufacturer": "IKO",
+      "sourceName": "IKO product dimensions",
+      "sourceUrl": "https://ikont.com/catalogs/other/1569E.pdf",
+      "verifiedParameters": [
+        "outer",
+        "width",
+        "stud",
+        "collar",
+        "collarLength",
+        "studLength",
+        "lip",
+        "hex",
+        "eccentricity",
+        "closure"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Cylindrical cam follower with eccentric mounting collar and hex socket.",
+        "limitations": "Envelope, collar offset and external dimensions follow IKO pp. 51\u201352. Internal needle/race geometry is reconstructed. Threads are smooth nominal cylinders. Nuts and washers are not included.",
+        "sourceUrl": "https://ikont.com/catalogs/other/1569E.pdf"
+      },
+      "specifications": [
+        {
+          "label": "Stud thread",
+          "value": "M10 \u00d7 1.25"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cfe10b",
+    "name": "IKO CFE10B \u00b7 \u00d822 \u00d7 12 \u00b7 e 0.4 mm",
+    "description": "Cylindrical cam follower with eccentric mounting collar and hex socket.",
+    "parameters": {
+      "outer": 22,
+      "width": 12,
+      "stud": 10,
+      "collar": 13,
+      "collarLength": 10.5,
+      "studLength": 23,
+      "lip": 0.6,
+      "hex": 4,
+      "eccentricity": 0.4,
+      "angle": 0,
+      "closure": "shielded"
+    },
+    "catalog": {
+      "designation": "CFE10B",
+      "manufacturer": "IKO",
+      "sourceName": "IKO product dimensions",
+      "sourceUrl": "https://ikont.com/catalogs/other/1569E.pdf",
+      "verifiedParameters": [
+        "outer",
+        "width",
+        "stud",
+        "collar",
+        "collarLength",
+        "studLength",
+        "lip",
+        "hex",
+        "eccentricity",
+        "closure"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Cylindrical cam follower with eccentric mounting collar and hex socket.",
+        "limitations": "Envelope, collar offset and external dimensions follow IKO pp. 51\u201352. Internal needle/race geometry is reconstructed. Threads are smooth nominal cylinders. Nuts and washers are not included.",
+        "sourceUrl": "https://ikont.com/catalogs/other/1569E.pdf"
+      },
+      "specifications": [
+        {
+          "label": "Stud thread",
+          "value": "M10 \u00d7 1.25"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cfe10-1buu",
+    "name": "IKO CFE10-1BUU \u00b7 \u00d826 \u00d7 12 \u00b7 e 0.4 mm",
+    "description": "Cylindrical cam follower with eccentric mounting collar and hex socket.",
+    "parameters": {
+      "outer": 26,
+      "width": 12,
+      "stud": 10,
+      "collar": 13,
+      "collarLength": 10.5,
+      "studLength": 23,
+      "lip": 0.6,
+      "hex": 4,
+      "eccentricity": 0.4,
+      "angle": 0,
+      "closure": "sealed"
+    },
+    "catalog": {
+      "designation": "CFE10-1BUU",
+      "manufacturer": "IKO",
+      "sourceName": "IKO product dimensions",
+      "sourceUrl": "https://ikont.com/catalogs/other/1569E.pdf",
+      "verifiedParameters": [
+        "outer",
+        "width",
+        "stud",
+        "collar",
+        "collarLength",
+        "studLength",
+        "lip",
+        "hex",
+        "eccentricity",
+        "closure"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Cylindrical cam follower with eccentric mounting collar and hex socket.",
+        "limitations": "Envelope, collar offset and external dimensions follow IKO pp. 51\u201352. Internal needle/race geometry is reconstructed. Threads are smooth nominal cylinders. Nuts and washers are not included.",
+        "sourceUrl": "https://ikont.com/catalogs/other/1569E.pdf"
+      },
+      "specifications": [
+        {
+          "label": "Stud thread",
+          "value": "M10 \u00d7 1.25"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cfe10-1b",
+    "name": "IKO CFE10-1B \u00b7 \u00d826 \u00d7 12 \u00b7 e 0.4 mm",
+    "description": "Cylindrical cam follower with eccentric mounting collar and hex socket.",
+    "parameters": {
+      "outer": 26,
+      "width": 12,
+      "stud": 10,
+      "collar": 13,
+      "collarLength": 10.5,
+      "studLength": 23,
+      "lip": 0.6,
+      "hex": 4,
+      "eccentricity": 0.4,
+      "angle": 0,
+      "closure": "shielded"
+    },
+    "catalog": {
+      "designation": "CFE10-1B",
+      "manufacturer": "IKO",
+      "sourceName": "IKO product dimensions",
+      "sourceUrl": "https://ikont.com/catalogs/other/1569E.pdf",
+      "verifiedParameters": [
+        "outer",
+        "width",
+        "stud",
+        "collar",
+        "collarLength",
+        "studLength",
+        "lip",
+        "hex",
+        "eccentricity",
+        "closure"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Cylindrical cam follower with eccentric mounting collar and hex socket.",
+        "limitations": "Envelope, collar offset and external dimensions follow IKO pp. 51\u201352. Internal needle/race geometry is reconstructed. Threads are smooth nominal cylinders. Nuts and washers are not included.",
+        "sourceUrl": "https://ikont.com/catalogs/other/1569E.pdf"
+      },
+      "specifications": [
+        {
+          "label": "Stud thread",
+          "value": "M10 \u00d7 1.25"
+        }
+      ]
+    }
+  }
+]

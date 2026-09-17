@@ -1,0 +1,1522 @@
+[
+  {
+    "id": "2232s006bx4",
+    "name": "2232S006BX4",
+    "description": "FAULHABER 2232 \u00b7 22.0 \u00d7 33.8 mm",
+    "parameters": {
+      "model": "2232S006BX4"
+    },
+    "catalog": {
+      "designation": "2232S006BX4",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468b83f2310cd8e3ac0a96cbc3f53",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/9b/d5/75/1775629744/EN_2232_BX4_DFF.pdf",
+        "https://eshop.faulhaber.com/media/a9/73/c1/1755094023/2232_BX4_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 22.0,
+        "bodyLength": 33.8,
+        "voltage": 6.0,
+        "noLoadSpeed": 7100.0,
+        "ratedTorque": 14.8,
+        "stallTorque": 64.7,
+        "shaftDiameter": 3,
+        "shaftProjection": 12.2
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "22.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "33.8 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "3 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "12.2 mm"
+        },
+        {
+          "label": "Nominal voltage",
+          "value": "6.0 V"
+        },
+        {
+          "label": "No-load speed",
+          "value": "7100.0 rpm"
+        },
+        {
+          "label": "Rated torque",
+          "value": "14.8 mNm"
+        },
+        {
+          "label": "Stall torque",
+          "value": "64.7 mNm"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "Standard S \u00b7 plain output shaft, digital Hall sensors"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/a9/73/c1/1755094023/2232_BX4_3D-CAD.zip",
+        "sourceSha256": "aafd6a76faa1d45cc86bf0c091160cab389d9ab4344950fae20764fd92a6b614"
+      }
+    }
+  },
+  {
+    "id": "2232s012bx4",
+    "name": "2232S012BX4",
+    "description": "FAULHABER 2232 \u00b7 22.0 \u00d7 33.8 mm",
+    "parameters": {
+      "model": "2232S012BX4"
+    },
+    "catalog": {
+      "designation": "2232S012BX4",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468ba645fe7c73512c071ad649968",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/9b/d5/75/1775629744/EN_2232_BX4_DFF.pdf",
+        "https://eshop.faulhaber.com/media/a9/73/c1/1755094023/2232_BX4_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 22.0,
+        "bodyLength": 33.8,
+        "voltage": 12.0,
+        "noLoadSpeed": 6700.0,
+        "ratedTorque": 14.7,
+        "stallTorque": 58.7,
+        "shaftDiameter": 3,
+        "shaftProjection": 12.2
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "22.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "33.8 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "3 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "12.2 mm"
+        },
+        {
+          "label": "Nominal voltage",
+          "value": "12.0 V"
+        },
+        {
+          "label": "No-load speed",
+          "value": "6700.0 rpm"
+        },
+        {
+          "label": "Rated torque",
+          "value": "14.7 mNm"
+        },
+        {
+          "label": "Stall torque",
+          "value": "58.7 mNm"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "Standard S \u00b7 plain output shaft, digital Hall sensors"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/a9/73/c1/1755094023/2232_BX4_3D-CAD.zip",
+        "sourceSha256": "aafd6a76faa1d45cc86bf0c091160cab389d9ab4344950fae20764fd92a6b614"
+      }
+    }
+  },
+  {
+    "id": "2232s015bx4",
+    "name": "2232S015BX4",
+    "description": "FAULHABER 2232 \u00b7 22.0 \u00d7 33.8 mm",
+    "parameters": {
+      "model": "2232S015BX4"
+    },
+    "catalog": {
+      "designation": "2232S015BX4",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774686df858fa408ef9cb1f2dd5343f",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/9b/d5/75/1775629744/EN_2232_BX4_DFF.pdf",
+        "https://eshop.faulhaber.com/media/a9/73/c1/1755094023/2232_BX4_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 22.0,
+        "bodyLength": 33.8,
+        "voltage": 15.0,
+        "noLoadSpeed": 7100.0,
+        "ratedTorque": 14.8,
+        "stallTorque": 64.0,
+        "shaftDiameter": 3,
+        "shaftProjection": 12.2
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "22.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "33.8 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "3 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "12.2 mm"
+        },
+        {
+          "label": "Nominal voltage",
+          "value": "15.0 V"
+        },
+        {
+          "label": "No-load speed",
+          "value": "7100.0 rpm"
+        },
+        {
+          "label": "Rated torque",
+          "value": "14.8 mNm"
+        },
+        {
+          "label": "Stall torque",
+          "value": "64.0 mNm"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "Standard S \u00b7 plain output shaft, digital Hall sensors"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/a9/73/c1/1755094023/2232_BX4_3D-CAD.zip",
+        "sourceSha256": "aafd6a76faa1d45cc86bf0c091160cab389d9ab4344950fae20764fd92a6b614"
+      }
+    }
+  },
+  {
+    "id": "2232s018bx4",
+    "name": "2232S018BX4",
+    "description": "FAULHABER 2232 \u00b7 22.0 \u00d7 33.8 mm",
+    "parameters": {
+      "model": "2232S018BX4"
+    },
+    "catalog": {
+      "designation": "2232S018BX4",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746878dcd820abc40d1b0857bd3704",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/9b/d5/75/1775629744/EN_2232_BX4_DFF.pdf",
+        "https://eshop.faulhaber.com/media/a9/73/c1/1755094023/2232_BX4_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 22.0,
+        "bodyLength": 33.8,
+        "voltage": 18.0,
+        "noLoadSpeed": 7100.0,
+        "ratedTorque": 14.3,
+        "stallTorque": 60.7,
+        "shaftDiameter": 3,
+        "shaftProjection": 12.2
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "22.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "33.8 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "3 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "12.2 mm"
+        },
+        {
+          "label": "Nominal voltage",
+          "value": "18.0 V"
+        },
+        {
+          "label": "No-load speed",
+          "value": "7100.0 rpm"
+        },
+        {
+          "label": "Rated torque",
+          "value": "14.3 mNm"
+        },
+        {
+          "label": "Stall torque",
+          "value": "60.7 mNm"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "Standard S \u00b7 plain output shaft, digital Hall sensors"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/a9/73/c1/1755094023/2232_BX4_3D-CAD.zip",
+        "sourceSha256": "aafd6a76faa1d45cc86bf0c091160cab389d9ab4344950fae20764fd92a6b614"
+      }
+    }
+  },
+  {
+    "id": "2232s024bx4",
+    "name": "2232S024BX4",
+    "description": "FAULHABER 2232 \u00b7 22.0 \u00d7 33.8 mm",
+    "parameters": {
+      "model": "2232S024BX4"
+    },
+    "catalog": {
+      "designation": "2232S024BX4",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774689352114bd34f8687aedbe0dbc7",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/9b/d5/75/1775629744/EN_2232_BX4_DFF.pdf",
+        "https://eshop.faulhaber.com/media/a9/73/c1/1755094023/2232_BX4_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 22.0,
+        "bodyLength": 33.8,
+        "voltage": 24.0,
+        "noLoadSpeed": 7100.0,
+        "ratedTorque": 14.6,
+        "stallTorque": 61.7,
+        "shaftDiameter": 3,
+        "shaftProjection": 12.2
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "22.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "33.8 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "3 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "12.2 mm"
+        },
+        {
+          "label": "Nominal voltage",
+          "value": "24.0 V"
+        },
+        {
+          "label": "No-load speed",
+          "value": "7100.0 rpm"
+        },
+        {
+          "label": "Rated torque",
+          "value": "14.6 mNm"
+        },
+        {
+          "label": "Stall torque",
+          "value": "61.7 mNm"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "Standard S \u00b7 plain output shaft, digital Hall sensors"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/a9/73/c1/1755094023/2232_BX4_3D-CAD.zip",
+        "sourceSha256": "aafd6a76faa1d45cc86bf0c091160cab389d9ab4344950fae20764fd92a6b614"
+      }
+    }
+  },
+  {
+    "id": "2250s012bx4",
+    "name": "2250S012BX4",
+    "description": "FAULHABER 2250 \u00b7 22.0 \u00d7 51.8 mm",
+    "parameters": {
+      "model": "2250S012BX4"
+    },
+    "catalog": {
+      "designation": "2250S012BX4",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746879901f850b4866e282b560dc04",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/cd/65/80/1775629746/EN_2250_BX4_DFF.pdf",
+        "https://eshop.faulhaber.com/media/e2/g0/85/1755618901/2250_BX4_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 22.0,
+        "bodyLength": 51.8,
+        "voltage": 12.0,
+        "noLoadSpeed": 6000.0,
+        "ratedTorque": 26.2,
+        "stallTorque": 147.0,
+        "shaftDiameter": 3,
+        "shaftProjection": 12.2
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "22.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "51.8 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "3 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "12.2 mm"
+        },
+        {
+          "label": "Nominal voltage",
+          "value": "12.0 V"
+        },
+        {
+          "label": "No-load speed",
+          "value": "6000.0 rpm"
+        },
+        {
+          "label": "Rated torque",
+          "value": "26.2 mNm"
+        },
+        {
+          "label": "Stall torque",
+          "value": "147.0 mNm"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "Standard S \u00b7 plain output shaft, digital Hall sensors"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/e2/g0/85/1755618901/2250_BX4_3D-CAD.zip",
+        "sourceSha256": "6b45e62b98198243e0b174761c382a56ced7a54dc219587f902a8f222071f6a8"
+      }
+    }
+  },
+  {
+    "id": "2250s018bx4",
+    "name": "2250S018BX4",
+    "description": "FAULHABER 2250 \u00b7 22.0 \u00d7 51.8 mm",
+    "parameters": {
+      "model": "2250S018BX4"
+    },
+    "catalog": {
+      "designation": "2250S018BX4",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468e41605461ee4037f25fcb22348",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/cd/65/80/1775629746/EN_2250_BX4_DFF.pdf",
+        "https://eshop.faulhaber.com/media/e2/g0/85/1755618901/2250_BX4_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 22.0,
+        "bodyLength": 51.8,
+        "voltage": 18.0,
+        "noLoadSpeed": 6400.0,
+        "ratedTorque": 25.5,
+        "stallTorque": 152.0,
+        "shaftDiameter": 3,
+        "shaftProjection": 12.2
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "22.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "51.8 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "3 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "12.2 mm"
+        },
+        {
+          "label": "Nominal voltage",
+          "value": "18.0 V"
+        },
+        {
+          "label": "No-load speed",
+          "value": "6400.0 rpm"
+        },
+        {
+          "label": "Rated torque",
+          "value": "25.5 mNm"
+        },
+        {
+          "label": "Stall torque",
+          "value": "152.0 mNm"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "Standard S \u00b7 plain output shaft, digital Hall sensors"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/e2/g0/85/1755618901/2250_BX4_3D-CAD.zip",
+        "sourceSha256": "6b45e62b98198243e0b174761c382a56ced7a54dc219587f902a8f222071f6a8"
+      }
+    }
+  },
+  {
+    "id": "2250s024bx4",
+    "name": "2250S024BX4",
+    "description": "FAULHABER 2250 \u00b7 22.0 \u00d7 51.8 mm",
+    "parameters": {
+      "model": "2250S024BX4"
+    },
+    "catalog": {
+      "designation": "2250S024BX4",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468b6f2f28039e30e50982a876368",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/cd/65/80/1775629746/EN_2250_BX4_DFF.pdf",
+        "https://eshop.faulhaber.com/media/e2/g0/85/1755618901/2250_BX4_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 22.0,
+        "bodyLength": 51.8,
+        "voltage": 24.0,
+        "noLoadSpeed": 6200.0,
+        "ratedTorque": 26.2,
+        "stallTorque": 151.0,
+        "shaftDiameter": 3,
+        "shaftProjection": 12.2
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "22.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "51.8 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "3 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "12.2 mm"
+        },
+        {
+          "label": "Nominal voltage",
+          "value": "24.0 V"
+        },
+        {
+          "label": "No-load speed",
+          "value": "6200.0 rpm"
+        },
+        {
+          "label": "Rated torque",
+          "value": "26.2 mNm"
+        },
+        {
+          "label": "Stall torque",
+          "value": "151.0 mNm"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "Standard S \u00b7 plain output shaft, digital Hall sensors"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/e2/g0/85/1755618901/2250_BX4_3D-CAD.zip",
+        "sourceSha256": "6b45e62b98198243e0b174761c382a56ced7a54dc219587f902a8f222071f6a8"
+      }
+    }
+  },
+  {
+    "id": "3242g012bx4",
+    "name": "3242G012BX4",
+    "description": "FAULHABER 3242 \u00b7 32.0 \u00d7 44.2 mm",
+    "parameters": {
+      "model": "3242G012BX4"
+    },
+    "catalog": {
+      "designation": "3242G012BX4",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774683551d7c7fbfbc678ad5e43e4c8",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/16/8c/8f/1775629753/EN_3242_BX4_DFF.pdf",
+        "https://eshop.faulhaber.com/media/18/79/9e/1755619531/3242_BX4_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 32.0,
+        "bodyLength": 44.2,
+        "voltage": 12.0,
+        "noLoadSpeed": 5600.0,
+        "ratedTorque": 41.8,
+        "stallTorque": 268.7,
+        "shaftDiameter": 5,
+        "shaftProjection": 13
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "32.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "44.2 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "13 mm"
+        },
+        {
+          "label": "Nominal voltage",
+          "value": "12.0 V"
+        },
+        {
+          "label": "No-load speed",
+          "value": "5600.0 rpm"
+        },
+        {
+          "label": "Rated torque",
+          "value": "41.8 mNm"
+        },
+        {
+          "label": "Stall torque",
+          "value": "268.7 mNm"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "Standard G \u00b7 plain output shaft, digital Hall sensors"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/18/79/9e/1755619531/3242_BX4_3D-CAD.zip",
+        "sourceSha256": "daa9a4c9a4601c51d05896ca6a9ef38f5621fb4a8556604a91d3e2a6c9388a89"
+      }
+    }
+  },
+  {
+    "id": "3242g018bx4",
+    "name": "3242G018BX4",
+    "description": "FAULHABER 3242 \u00b7 32.0 \u00d7 44.2 mm",
+    "parameters": {
+      "model": "3242G018BX4"
+    },
+    "catalog": {
+      "designation": "3242G018BX4",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468a4ba01c4df1c13c6c8847b16b1",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/16/8c/8f/1775629753/EN_3242_BX4_DFF.pdf",
+        "https://eshop.faulhaber.com/media/18/79/9e/1755619531/3242_BX4_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 32.0,
+        "bodyLength": 44.2,
+        "voltage": 18.0,
+        "noLoadSpeed": 5500.0,
+        "ratedTorque": 43.0,
+        "stallTorque": 280.0,
+        "shaftDiameter": 5,
+        "shaftProjection": 13
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "32.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "44.2 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "13 mm"
+        },
+        {
+          "label": "Nominal voltage",
+          "value": "18.0 V"
+        },
+        {
+          "label": "No-load speed",
+          "value": "5500.0 rpm"
+        },
+        {
+          "label": "Rated torque",
+          "value": "43.0 mNm"
+        },
+        {
+          "label": "Stall torque",
+          "value": "280.0 mNm"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "Standard G \u00b7 plain output shaft, digital Hall sensors"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/18/79/9e/1755619531/3242_BX4_3D-CAD.zip",
+        "sourceSha256": "daa9a4c9a4601c51d05896ca6a9ef38f5621fb4a8556604a91d3e2a6c9388a89"
+      }
+    }
+  },
+  {
+    "id": "3242g024bx4",
+    "name": "3242G024BX4",
+    "description": "FAULHABER 3242 \u00b7 32.0 \u00d7 44.2 mm",
+    "parameters": {
+      "model": "3242G024BX4"
+    },
+    "catalog": {
+      "designation": "3242G024BX4",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468ec47438cf9a7565aa5a9050b9e",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/16/8c/8f/1775629753/EN_3242_BX4_DFF.pdf",
+        "https://eshop.faulhaber.com/media/18/79/9e/1755619531/3242_BX4_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 32.0,
+        "bodyLength": 44.2,
+        "voltage": 24.0,
+        "noLoadSpeed": 5600.0,
+        "ratedTorque": 41.8,
+        "stallTorque": 269.4,
+        "shaftDiameter": 5,
+        "shaftProjection": 13
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "32.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "44.2 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "13 mm"
+        },
+        {
+          "label": "Nominal voltage",
+          "value": "24.0 V"
+        },
+        {
+          "label": "No-load speed",
+          "value": "5600.0 rpm"
+        },
+        {
+          "label": "Rated torque",
+          "value": "41.8 mNm"
+        },
+        {
+          "label": "Stall torque",
+          "value": "269.4 mNm"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "Standard G \u00b7 plain output shaft, digital Hall sensors"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/18/79/9e/1755619531/3242_BX4_3D-CAD.zip",
+        "sourceSha256": "daa9a4c9a4601c51d05896ca6a9ef38f5621fb4a8556604a91d3e2a6c9388a89"
+      }
+    }
+  },
+  {
+    "id": "3242g036bx4",
+    "name": "3242G036BX4",
+    "description": "FAULHABER 3242 \u00b7 32.0 \u00d7 44.2 mm",
+    "parameters": {
+      "model": "3242G036BX4"
+    },
+    "catalog": {
+      "designation": "3242G036BX4",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/3774689dc8650768457bf993e1da424a",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/16/8c/8f/1775629753/EN_3242_BX4_DFF.pdf",
+        "https://eshop.faulhaber.com/media/18/79/9e/1755619531/3242_BX4_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 32.0,
+        "bodyLength": 44.2,
+        "voltage": 36.0,
+        "noLoadSpeed": 5500.0,
+        "ratedTorque": 40.7,
+        "stallTorque": 251.0,
+        "shaftDiameter": 5,
+        "shaftProjection": 13
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "32.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "44.2 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "13 mm"
+        },
+        {
+          "label": "Nominal voltage",
+          "value": "36.0 V"
+        },
+        {
+          "label": "No-load speed",
+          "value": "5500.0 rpm"
+        },
+        {
+          "label": "Rated torque",
+          "value": "40.7 mNm"
+        },
+        {
+          "label": "Stall torque",
+          "value": "251.0 mNm"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "Standard G \u00b7 plain output shaft, digital Hall sensors"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/18/79/9e/1755619531/3242_BX4_3D-CAD.zip",
+        "sourceSha256": "daa9a4c9a4601c51d05896ca6a9ef38f5621fb4a8556604a91d3e2a6c9388a89"
+      }
+    }
+  },
+  {
+    "id": "3242g042bx4",
+    "name": "3242G042BX4",
+    "description": "FAULHABER 3242 \u00b7 32.0 \u00d7 44.2 mm",
+    "parameters": {
+      "model": "3242G042BX4"
+    },
+    "catalog": {
+      "designation": "3242G042BX4",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746812001cda656c6b429238e64045",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/16/8c/8f/1775629753/EN_3242_BX4_DFF.pdf",
+        "https://eshop.faulhaber.com/media/18/79/9e/1755619531/3242_BX4_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 32.0,
+        "bodyLength": 44.2,
+        "voltage": 42.0,
+        "noLoadSpeed": 5500.0,
+        "ratedTorque": 41.6,
+        "stallTorque": 262.0,
+        "shaftDiameter": 5,
+        "shaftProjection": 13
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "32.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "44.2 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "13 mm"
+        },
+        {
+          "label": "Nominal voltage",
+          "value": "42.0 V"
+        },
+        {
+          "label": "No-load speed",
+          "value": "5500.0 rpm"
+        },
+        {
+          "label": "Rated torque",
+          "value": "41.6 mNm"
+        },
+        {
+          "label": "Stall torque",
+          "value": "262.0 mNm"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "Standard G \u00b7 plain output shaft, digital Hall sensors"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/18/79/9e/1755619531/3242_BX4_3D-CAD.zip",
+        "sourceSha256": "daa9a4c9a4601c51d05896ca6a9ef38f5621fb4a8556604a91d3e2a6c9388a89"
+      }
+    }
+  },
+  {
+    "id": "3242g048bx4",
+    "name": "3242G048BX4",
+    "description": "FAULHABER 3242 \u00b7 32.0 \u00d7 44.2 mm",
+    "parameters": {
+      "model": "3242G048BX4"
+    },
+    "catalog": {
+      "designation": "3242G048BX4",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/37746812c150bd5b72dc5a67a2bc1f28",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/16/8c/8f/1775629753/EN_3242_BX4_DFF.pdf",
+        "https://eshop.faulhaber.com/media/18/79/9e/1755619531/3242_BX4_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 32.0,
+        "bodyLength": 44.2,
+        "voltage": 48.0,
+        "noLoadSpeed": 5500.0,
+        "ratedTorque": 41.8,
+        "stallTorque": 265.0,
+        "shaftDiameter": 5,
+        "shaftProjection": 13
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "32.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "44.2 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "13 mm"
+        },
+        {
+          "label": "Nominal voltage",
+          "value": "48.0 V"
+        },
+        {
+          "label": "No-load speed",
+          "value": "5500.0 rpm"
+        },
+        {
+          "label": "Rated torque",
+          "value": "41.8 mNm"
+        },
+        {
+          "label": "Stall torque",
+          "value": "265.0 mNm"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "Standard G \u00b7 plain output shaft, digital Hall sensors"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/18/79/9e/1755619531/3242_BX4_3D-CAD.zip",
+        "sourceSha256": "daa9a4c9a4601c51d05896ca6a9ef38f5621fb4a8556604a91d3e2a6c9388a89"
+      }
+    }
+  },
+  {
+    "id": "3268g018bx4",
+    "name": "3268G018BX4",
+    "description": "FAULHABER 3268 \u00b7 32.0 \u00d7 70.2 mm",
+    "parameters": {
+      "model": "3268G018BX4"
+    },
+    "catalog": {
+      "designation": "3268G018BX4",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468316a7f00636203aa2647075722",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/7f/7a/cd/1775629754/EN_3268_BX4_DFF.pdf",
+        "https://eshop.faulhaber.com/media/44/04/6c/1755619834/3268_BX4_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 32.0,
+        "bodyLength": 70.2,
+        "voltage": 18.0,
+        "noLoadSpeed": 5100.0,
+        "ratedTorque": 74.5,
+        "stallTorque": 670.0,
+        "shaftDiameter": 5,
+        "shaftProjection": 13
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "32.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "70.2 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "13 mm"
+        },
+        {
+          "label": "Nominal voltage",
+          "value": "18.0 V"
+        },
+        {
+          "label": "No-load speed",
+          "value": "5100.0 rpm"
+        },
+        {
+          "label": "Rated torque",
+          "value": "74.5 mNm"
+        },
+        {
+          "label": "Stall torque",
+          "value": "670.0 mNm"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "Standard G \u00b7 plain output shaft, digital Hall sensors"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/44/04/6c/1755619834/3268_BX4_3D-CAD.zip",
+        "sourceSha256": "73a86a0fe526bf492e79ec37848b9e6b3738fb91e1463af577045d3d8bda62e5"
+      }
+    }
+  },
+  {
+    "id": "3268g024bx4",
+    "name": "3268G024BX4",
+    "description": "FAULHABER 3268 \u00b7 32.0 \u00d7 70.2 mm",
+    "parameters": {
+      "model": "3268G024BX4"
+    },
+    "catalog": {
+      "designation": "3268G024BX4",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468c15260cdd00eda6ba508672ab3",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/7f/7a/cd/1775629754/EN_3268_BX4_DFF.pdf",
+        "https://eshop.faulhaber.com/media/44/04/6c/1755619834/3268_BX4_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 32.0,
+        "bodyLength": 70.2,
+        "voltage": 24.0,
+        "noLoadSpeed": 5500.0,
+        "ratedTorque": 72.0,
+        "stallTorque": 705.0,
+        "shaftDiameter": 5,
+        "shaftProjection": 13
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "32.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "70.2 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "13 mm"
+        },
+        {
+          "label": "Nominal voltage",
+          "value": "24.0 V"
+        },
+        {
+          "label": "No-load speed",
+          "value": "5500.0 rpm"
+        },
+        {
+          "label": "Rated torque",
+          "value": "72.0 mNm"
+        },
+        {
+          "label": "Stall torque",
+          "value": "705.0 mNm"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "Standard G \u00b7 plain output shaft, digital Hall sensors"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/44/04/6c/1755619834/3268_BX4_3D-CAD.zip",
+        "sourceSha256": "73a86a0fe526bf492e79ec37848b9e6b3738fb91e1463af577045d3d8bda62e5"
+      }
+    }
+  },
+  {
+    "id": "3268g030bx4",
+    "name": "3268G030BX4",
+    "description": "FAULHABER 3268 \u00b7 32.0 \u00d7 70.2 mm",
+    "parameters": {
+      "model": "3268G030BX4"
+    },
+    "catalog": {
+      "designation": "3268G030BX4",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468b457b34cbad0535c9fb9e8d833",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/7f/7a/cd/1775629754/EN_3268_BX4_DFF.pdf",
+        "https://eshop.faulhaber.com/media/44/04/6c/1755619834/3268_BX4_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 32.0,
+        "bodyLength": 70.2,
+        "voltage": 30.0,
+        "noLoadSpeed": 5700.0,
+        "ratedTorque": 69.8,
+        "stallTorque": 742.0,
+        "shaftDiameter": 5,
+        "shaftProjection": 13
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "32.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "70.2 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "13 mm"
+        },
+        {
+          "label": "Nominal voltage",
+          "value": "30.0 V"
+        },
+        {
+          "label": "No-load speed",
+          "value": "5700.0 rpm"
+        },
+        {
+          "label": "Rated torque",
+          "value": "69.8 mNm"
+        },
+        {
+          "label": "Stall torque",
+          "value": "742.0 mNm"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "Standard G \u00b7 plain output shaft, digital Hall sensors"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/44/04/6c/1755619834/3268_BX4_3D-CAD.zip",
+        "sourceSha256": "73a86a0fe526bf492e79ec37848b9e6b3738fb91e1463af577045d3d8bda62e5"
+      }
+    }
+  },
+  {
+    "id": "3268g036bx4",
+    "name": "3268G036BX4",
+    "description": "FAULHABER 3268 \u00b7 32.0 \u00d7 70.2 mm",
+    "parameters": {
+      "model": "3268G036BX4"
+    },
+    "catalog": {
+      "designation": "3268G036BX4",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468f38d8305ea182448b1c1a0ad0b",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/7f/7a/cd/1775629754/EN_3268_BX4_DFF.pdf",
+        "https://eshop.faulhaber.com/media/44/04/6c/1755619834/3268_BX4_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 32.0,
+        "bodyLength": 70.2,
+        "voltage": 36.0,
+        "noLoadSpeed": 5500.0,
+        "ratedTorque": 71.9,
+        "stallTorque": 716.0,
+        "shaftDiameter": 5,
+        "shaftProjection": 13
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "32.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "70.2 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "13 mm"
+        },
+        {
+          "label": "Nominal voltage",
+          "value": "36.0 V"
+        },
+        {
+          "label": "No-load speed",
+          "value": "5500.0 rpm"
+        },
+        {
+          "label": "Rated torque",
+          "value": "71.9 mNm"
+        },
+        {
+          "label": "Stall torque",
+          "value": "716.0 mNm"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "Standard G \u00b7 plain output shaft, digital Hall sensors"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/44/04/6c/1755619834/3268_BX4_3D-CAD.zip",
+        "sourceSha256": "73a86a0fe526bf492e79ec37848b9e6b3738fb91e1463af577045d3d8bda62e5"
+      }
+    }
+  },
+  {
+    "id": "3268g042bx4",
+    "name": "3268G042BX4",
+    "description": "FAULHABER 3268 \u00b7 32.0 \u00d7 70.2 mm",
+    "parameters": {
+      "model": "3268G042BX4"
+    },
+    "catalog": {
+      "designation": "3268G042BX4",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468b72d74a7aac0968a5ae270adee",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/7f/7a/cd/1775629754/EN_3268_BX4_DFF.pdf",
+        "https://eshop.faulhaber.com/media/44/04/6c/1755619834/3268_BX4_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 32.0,
+        "bodyLength": 70.2,
+        "voltage": 42.0,
+        "noLoadSpeed": 5300.0,
+        "ratedTorque": 71.7,
+        "stallTorque": 670.0,
+        "shaftDiameter": 5,
+        "shaftProjection": 13
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "32.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "70.2 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "13 mm"
+        },
+        {
+          "label": "Nominal voltage",
+          "value": "42.0 V"
+        },
+        {
+          "label": "No-load speed",
+          "value": "5300.0 rpm"
+        },
+        {
+          "label": "Rated torque",
+          "value": "71.7 mNm"
+        },
+        {
+          "label": "Stall torque",
+          "value": "670.0 mNm"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "Standard G \u00b7 plain output shaft, digital Hall sensors"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/44/04/6c/1755619834/3268_BX4_3D-CAD.zip",
+        "sourceSha256": "73a86a0fe526bf492e79ec37848b9e6b3738fb91e1463af577045d3d8bda62e5"
+      }
+    }
+  },
+  {
+    "id": "3268g048bx4",
+    "name": "3268G048BX4",
+    "description": "FAULHABER 3268 \u00b7 32.0 \u00d7 70.2 mm",
+    "parameters": {
+      "model": "3268G048BX4"
+    },
+    "catalog": {
+      "designation": "3268G048BX4",
+      "manufacturer": "FAULHABER",
+      "sourceName": "FAULHABER official product catalogue and dimensional drawing",
+      "sourceUrl": "https://eshop.faulhaber.com/en/combination/377468b231d0b7290f9020f1dfe1f20f",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://eshop.faulhaber.com/media/7f/7a/cd/1775629754/EN_3268_BX4_DFF.pdf",
+        "https://eshop.faulhaber.com/media/44/04/6c/1755619834/3268_BX4_3D-CAD.zip"
+      ],
+      "attributes": {
+        "bodyDiameter": 32.0,
+        "bodyLength": 70.2,
+        "voltage": 48.0,
+        "noLoadSpeed": 5500.0,
+        "ratedTorque": 70.0,
+        "stallTorque": 678.0,
+        "shaftDiameter": 5,
+        "shaftProjection": 13
+      },
+      "specifications": [
+        {
+          "label": "Body diameter",
+          "value": "32.0 mm"
+        },
+        {
+          "label": "Body length",
+          "value": "70.2 mm"
+        },
+        {
+          "label": "Shaft diameter",
+          "value": "5 mm"
+        },
+        {
+          "label": "Front shaft projection",
+          "value": "13 mm"
+        },
+        {
+          "label": "Nominal voltage",
+          "value": "48.0 V"
+        },
+        {
+          "label": "No-load speed",
+          "value": "5500.0 rpm"
+        },
+        {
+          "label": "Rated torque",
+          "value": "70.0 mNm"
+        },
+        {
+          "label": "Stall torque",
+          "value": "678.0 mNm"
+        },
+        {
+          "label": "Mechanical execution",
+          "value": "Standard G \u00b7 plain output shaft, digital Hall sensors"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original FAULHABER STEP solid for the selected standard mechanical execution, including mounting interface and shaft.",
+        "limitations": "Supplier external installation model, not an internal mechanism. Cable runs, rotor, windings and bearings are not separately modelled. Threads retain the simplified manufacturer CAD representation. Winding variants share mechanical geometry; electrical ratings do not resize the motor. Colors are illustrative.",
+        "sourceUrl": "https://eshop.faulhaber.com/media/44/04/6c/1755619834/3268_BX4_3D-CAD.zip",
+        "sourceSha256": "73a86a0fe526bf492e79ec37848b9e6b3738fb91e1463af577045d3d8bda62e5"
+      }
+    }
+  }
+]
