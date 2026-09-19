@@ -1,0 +1,60 @@
+[
+  {
+    "id": "waveshare-hat-a",
+    "name": "Waveshare Bus Servo Driver HAT (A) \u00b7 27577",
+    "description": "ESP32 \u00b7 9\u201325 V \u00b7 57\u00d765 mm \u00b7 4\u00d7\u00d83 / 49\u00d758 mm",
+    "parameters": {
+      "model": "waveshare-hat-a"
+    },
+    "catalog": {
+      "designation": "Bus Servo Driver HAT (A) \u00b7 SKU 27577",
+      "manufacturer": "Waveshare",
+      "sourceName": "Official product, drawing and STEP",
+      "sourceUrl": "https://www.waveshare.com/bus-servo-driver-hat-a.htm",
+      "alternateSourceUrls": ["https://www.waveshare.com/wiki/Bus_Servo_Driver_HAT_(A)"],
+      "verifiedParameters": ["model"],
+      "specifications": [
+        {
+          "label": "PCB",
+          "value": "57\u00d765\u00d71.6 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "4\u00d7\u00d83 mm \u00b7 49\u00d758 mm"
+        },
+        {
+          "label": "Supply",
+          "value": "9\u201325 V, must match servo voltage"
+        },
+        {
+          "label": "Controller",
+          "value": "ESP32-WROOM-32"
+        },
+        {
+          "label": "Interfaces",
+          "value": "USB-C / UART / Wi-Fi"
+        },
+        {
+          "label": "Power connection",
+          "value": "XT60 / DC 5.5\u00d72.5 mm"
+        },
+        {
+          "label": "Geometry",
+          "value": "Official STEP; two small invalid ICs replaced by measured envelopes. See package notes."
+        }
+      ],
+      "attributes": {
+        "manufacturer": "Waveshare",
+        "supplyMin": 9,
+        "supplyMax": 25
+      },
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "sourceUrl": "https://files.waveshare.com/wiki/Bus-Servo-Driver-HAT-(A)/Bus_Servo_Driver_HAT_(A)_3D.zip",
+        "sourceSha256": "8dbc5bba5ab37e277100603814fc4562ea61c2ae9a40b18bf843de5a770ba4e0",
+        "summary": "361 supplier STEP solids with recorded topology repairs, PCB, connectors and underside parts retained.",
+        "limitations": "Two invalid small underside ICs replaced by their measured envelopes. Source solid 144 topology repaired without volume change. Colours illustrative. Flexible leads and mating plugs excluded."
+      }
+    }
+  }
+]

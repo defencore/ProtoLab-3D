@@ -1,23 +1,35 @@
-# Pneumatic and hydraulic cylinder
+# ProtoLab part package
 
-Round, tie-rod, compact, hydraulic and rodless actuator construction forms.
+This package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.
 
-Find **PNEUMATICS & GAS → CYLINDERS → Pneumatic and hydraulic cylinder**.
+## Package files
 
-## Variants
+- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.
+- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.
+- `presets.json`: complete preset parameters and source evidence.
+- `lib/`: optional private geometry, reference data, and domain helpers.
+- `index.ts`: stable package ID, API version, and display order.
+- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.
 
-- Round pneumatic cylinder · Ø25 × 100 mm
-- Tie-rod cylinder · Ø32 × 100 mm
-- Compact cylinder · Ø25 × 25 mm
-- Hydraulic cylinder · Ø40 × 100 mm
-- Rodless cylinder · 100 mm travel
+## Edit and verify
 
-## Controls
+Run commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.
 
-Cylinder form; Cylinder bore; Rod diameter; Rated geometric stroke; Rod extension; Tube wall thickness; Port nominal diameter; Model detail. Controls for other construction types or absent components are hidden.
+```sh
+npm run parts:check -- <part-id>
+npm run typecheck
+npm run dev
+npm run build
+```
 
-## Scope
+Keep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.
 
-Cylinder styles are inspired by common ISO construction families, but mounting dimensions are custom and not certified to ISO 6432/15552/21287. No pressure calculation or sealing design. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.
+## Export and handoff
 
-Separate physical components are exported to FreeCAD. The preview and native export share geometry definitions. This is an independent, editable prototype package; examples without catalog evidence are not manufactured product SKUs.
+```sh
+npm run parts:export -- <part-id> <output-folder>
+```
+
+The handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.
+
+Write instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.

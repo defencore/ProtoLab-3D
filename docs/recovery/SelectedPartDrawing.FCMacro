@@ -1,0 +1,66 @@
+# Select ONE manufactured Part::Feature in the exported assembly, then run.
+# Creates a separate drawing document. The original assembly remains intact.
+import FreeCAD as App
+import Part
+import os
+
+if App.GuiUp:
+    import FreeCADGui as Gui
+    selected = Gui.Selection.getSelection()
+else:
+    selected = [globals().get('_drawing_source')] if globals().get('_drawing_source') else []
+if len(selected) != 1 or not hasattr(selected[0], 'Shape'):
+    raise ValueError('Select one solid component in the assembly tree.')
+source = selected[0]
+if len(source.Shape.Solids) != 1:
+    raise ValueError('Select a single component, not the whole assembly.')
+shape = source.Shape.copy()
+center = shape.BoundBox.Center
+shape.translate(-center)
+doc = App.newDocument('PartDrawing')
+if not doc.TransientDir:
+    import tempfile
+    doc.TransientDir = tempfile.mkdtemp(prefix='protolab-drawing-') + os.sep
+obj = doc.addObject('Part::Feature', 'DrawingPart')
+obj.Label = source.Label
+obj.Shape = shape
+for prop in ['PartNumber', 'Material', 'ThreadCallouts', 'ShapeDigest', 'DrawingStatus']:
+    if hasattr(source, prop):
+        obj.addProperty('App::PropertyString', prop, 'Manufacturing')
+        setattr(obj, prop, getattr(source, prop))
+page = doc.addObject('TechDraw::DrawPage', 'Drawing')
+template = doc.addObject('TechDraw::DrawSVGTemplate', 'Template')
+template.Template = os.path.join(App.getResourceDir(), 'Mod', 'TechDraw', 'Templates', 'A4_Landscape_blank.svg')
+page.Template = template
+span = max(shape.BoundBox.XLength, shape.BoundBox.YLength, shape.BoundBox.ZLength)
+scale = min(2, 70 / max(span, 1))
+for name, direction, x, y in [('Front', (0,-1,0), 65,145), ('Top', (0,0,1),65,65), ('Right',(1,0,0),160,145)]:
+    view = doc.addObject('TechDraw::DrawViewPart', name)
+    page.addView(view)
+    view.Source = [obj]
+    view.Direction = App.Vector(*direction)
+    view.ScaleType = 'Custom'
+    view.Scale = scale
+    view.X, view.Y = x, y
+    # Drawing widths are paper millimetres, not 3D viewport pixel widths.
+    # FreeCAD's default 0.7 mm stroke obscures small modeled threads.
+    view.CoarseView = False
+    view.SmoothVisible = False
+    view.SeamVisible = False
+    view.IsoVisible = False
+    if App.GuiUp:
+        view.ViewObject.LineWidth = 0.18
+        view.ViewObject.HiddenWidth = 0.13
+        view.ViewObject.IsoWidth = 0.13
+note = doc.addObject('TechDraw::DrawViewAnnotation', 'DraftNotice')
+page.addView(note)
+note.Text = ['DRAFT / NOT FOR MANUFACTURE', getattr(source, 'PartNumber', source.Name),
+             getattr(source, 'Material', ''), 'Add datums, dimensions, fits, threads and surface finish.',
+             'Thread details are in component Manufacturing properties.']
+note.X, note.Y, note.TextSize = 180, 55, 3
+if App.GuiUp:
+    obj.ViewObject.Visibility = False
+doc.recompute()
+if App.GuiUp:
+    App.setActiveDocument(doc.Name)
+    Gui.getDocument(doc.Name).getObject(page.Name).show()

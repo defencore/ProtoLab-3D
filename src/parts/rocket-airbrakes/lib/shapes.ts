@@ -5,11 +5,14 @@ import { solidUnionMesh } from '../../../core/solid-union';
 export type Vec = [number, number, number];
 export type Point = [number, number];
 export type Shape =
+  | { kind: 'sphere'; radius: number; origin: Vec }
   | { kind: 'box'; size: Vec; origin: Vec }
   | { kind: 'cylinder'; radius: number; height: number; origin: Vec; axis: 'x' | 'z' }
   | { kind: 'plate'; outline: Point[]; holes: Point[][]; z: number; height: number }
   | { kind: 'subtract' | 'union'; children: Shape[] }
-  | { kind: 'transform'; child: Shape; angle: number; offset: Vec };
+  | { kind: 'transform'; child: Shape; angle: number; offset: Vec }
+  | { kind: 'rotate'; child: Shape; angle: number; axis: 'x' | 'y' };
+export const sphere = (radius: number, origin: Vec): Shape => ({ kind: 'sphere', radius, origin });
 export const box = (size: Vec, origin: Vec): Shape => ({ kind: 'box', size, origin });
 export const cylinder = (
   radius: number,
@@ -24,6 +27,12 @@ export const transform = (child: Shape, angle: number, offset: Vec = [0, 0, 0]):
   child,
   angle,
   offset,
+});
+export const rotate = (child: Shape, angle: number, axis: 'x' | 'y'): Shape => ({
+  kind: 'rotate',
+  child,
+  angle,
+  axis,
 });
 export const circle = (radius: number, x = 0, y = 0, count = 120): Point[] =>
   Array.from({ length: count }, (_, i) => [
@@ -56,6 +65,8 @@ export const ring = (
 function solid(s: Shape): Geom3 {
   const { primitives: p, transforms: t, booleans: b, extrusions: e } = modeling;
   switch (s.kind) {
+    case 'sphere':
+      return p.sphere({ radius: s.radius, center: s.origin, segments: 48 });
     case 'box':
       return p.cuboid({ size: s.size, center: s.origin.map((v, i) => v + s.size[i] / 2) as Vec });
     case 'cylinder': {
@@ -71,6 +82,8 @@ function solid(s: Shape): Geom3 {
         section = b.subtract(section, ...s.holes.map((points) => p.polygon({ points })));
       return t.translate([0, 0, s.z], e.extrudeLinear({ height: s.height }, section));
     }
+    case 'rotate':
+      return (s.axis === 'x' ? t.rotateX : t.rotateY)((s.angle * Math.PI) / 180, solid(s.child));
     case 'transform':
       return t.translate(s.offset, t.rotateZ((s.angle * Math.PI) / 180, solid(s.child)));
     case 'subtract':
@@ -127,12 +140,16 @@ function wire(points: Point[], z: number): string {
 }
 export function pythonShape(s: Shape): string {
   switch (s.kind) {
+    case 'sphere':
+      return `Part.makeSphere(${s.radius},${vector(s.origin)})`;
     case 'box':
       return `Part.makeBox(${s.size.join(',')},${vector(s.origin)})`;
     case 'cylinder':
       return `Part.makeCylinder(${s.radius},${s.height},${vector(s.origin)},${vector(s.axis === 'x' ? [1, 0, 0] : [0, 0, 1])})`;
     case 'plate':
       return `${s.holes.reduce((v, hole) => `${v}.cut(Part.Face(${wire(hole, s.z)}))`, `Part.Face(${wire(s.outline, s.z)})`)}.extrude(App.Vector(0,0,${s.height}))`;
+    case 'rotate':
+      return `_air_tilt(${pythonShape(s.child)},${s.angle},${JSON.stringify(s.axis)})`;
     case 'transform':
       return `_air_place(${pythonShape(s.child)},${s.angle},${JSON.stringify(s.offset)})`;
     default:

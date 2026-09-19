@@ -67,6 +67,25 @@ export async function exportPackage(projectRoot: string, id: string, destination
   }
   try {
     await copyPackage(module, path.join(destination, 'src/parts', id));
+    const copied = new Set([id]);
+    async function copyDependencies(parent: typeof module) {
+      for (const dependency of parent.dependencies) {
+        if (copied.has(dependency)) continue;
+        copied.add(dependency);
+        const pkg = await inspectPackage(
+          path.join(projectRoot, 'src/parts', dependency),
+          projectRoot,
+        );
+        await copyPackage(pkg, path.join(destination, 'src/parts', dependency));
+        for (const ref of pkg.references) {
+          const target = path.join(destination, 'public', ref);
+          await fs.mkdir(path.dirname(target), { recursive: true });
+          await fs.copyFile(path.join(projectRoot, 'public', ref), target);
+        }
+        await copyDependencies(pkg);
+      }
+    }
+    await copyDependencies(module);
     for (const name of [
       ...SDK_FILES,
       'freecad.ts',
@@ -118,7 +137,7 @@ export async function exportPackage(projectRoot: string, id: string, destination
           2,
         ) + '\n',
       '.gitignore': 'node_modules/\ndist/\n',
-      'README.md': `# ${id} — isolated ProtoLab part\n\n## Run the workbench\n\n1. Run \`npm install\`.\n2. Run \`npm run dev\` and open the printed local URL.\n3. Edit \`src/parts/${id}/\`. The browser reloads as the module changes.\n4. Run \`npm run build\` before returning the package.\n\nThe workbench shows the configurator, presets, states, Three.js preview and generated FreeCAD macro. The same part code is used by the main application.\n\n## Editing boundary\n\nReturn the complete folder with \`part-module.json\` intact. Keep all part-specific code in \`src/parts/${id}/\`: \`part.ts\` defines geometry/export/validation and the numeric or conditional parameter schema, directly or through a private factory in \`lib/\`. \`configurator.ts\` declares ordered catalog-selection controls; newly scaffolded parts also keep their fields and defaults there. \`presets.json\` stores complete presets, and \`lib/\` contains private helpers. \`index.ts\` declares the stable ID and API version.\n\nThe SDK in \`src/core/\` is supplied for running this workbench. SDK edits are not imported back into ProtoLab. A part may import only package-local files, the documented geometry/type SDK, Three.js, and JSCAD. Copy any new domain helpers into the part's \`lib/\` folder. Keep the existing ID for an update.\n\nLocal source illustrations are included in \`public/references/\`. Existing shared reference files are not overwritten on import; use a new unique filename for an edited illustration.\n\n## Return to ProtoLab\n\nFrom the main ProtoLab project, run:\n\n\`\`\`sh\nnpm run parts:import -- /path/to/this-handoff --replace\nnpm run typecheck\nnpm run build\n\`\`\`\n\nImport validates the package statically before replacing only \`src/parts/${id}/\`, and saves its previous version outside the part registry under \`.part-module-backups/\`. Omit \`--replace\` when importing a new ID. No manual registration is needed.\n\nFreeCAD geometry must remain consistent with the preview and dimension function. Compound children become independent assembly components; provide matching \`component_labels\` and optional \`component_colors\`.\n`,
+      'README.md': `# ProtoLab part workbench\n\n## Run the workbench\n\nUse the ID and packageDirectory recorded in \`part-module.json\` wherever \`<part-id>\` appears below.\n\n1. Run \`npm install\`.\n2. Run \`npm run dev\` and open the printed local URL.\n3. Edit \`src/parts/<part-id>/\`. The browser reloads as the module changes.\n4. Run \`npm run build\` before returning the package.\n\nThe workbench shows the configurator, presets, states, Three.js preview and generated FreeCAD macro. The same part code is used by the main application.\n\n## Editing boundary\n\nReturn the complete folder with \`part-module.json\` intact. Keep all part-specific code in \`src/parts/<part-id>/\`: \`part.ts\` defines geometry/export/validation and the numeric or conditional parameter schema, directly or through a private factory in \`lib/\`. \`configurator.ts\` declares ordered catalog-selection controls; newly scaffolded parts also keep their fields and defaults there. \`presets.json\` stores complete presets, and \`lib/\` contains private helpers. \`index.ts\` declares the stable ID and API version.\n\nThe SDK in \`src/core/\` is supplied for running this workbench. SDK edits are not imported back into ProtoLab. A part may import package-local files, the documented geometry/type SDK, Three.js, JSCAD, and library packages explicitly listed in its index.ts dependencies. Dependencies are bundled for preview; importing an assembly requires matching installed dependencies and never replaces them implicitly. Copy any new domain helpers into the part's \`lib/\` folder. Keep the existing ID for an update.\n\nLocal source illustrations are included in \`public/references/\`. Existing shared reference files are not overwritten on import; use a new unique filename for an edited illustration.\n\n## Return to ProtoLab\n\nFrom the main ProtoLab project, run:\n\n\`\`\`sh\nnpm run parts:import -- /path/to/this-handoff --replace\nnpm run typecheck\nnpm run build\n\`\`\`\n\nImport validates the package statically before replacing only \`src/parts/<part-id>/\`, and saves its previous version outside the part registry under \`.part-module-backups/\`. Omit \`--replace\` when importing a new ID. No manual registration is needed.\n\nFreeCAD geometry must remain consistent with the preview and dimension function. Compound children become independent assembly components; provide matching \`component_labels\` and optional \`component_colors\`.\n`,
     });
     await inspectPackage(path.join(destination, 'src/parts', id), destination);
   } catch (error) {
@@ -143,6 +162,33 @@ export async function importPackage(projectRoot: string, source: string, replace
     throw new Error('Unexpected handoff package directory.');
   const module = await inspectPackage(path.join(source, manifest.packageDirectory), source);
   if (module.id !== manifest.id) throw new Error('The manifest ID does not match the part ID.');
+  // Dependencies are installed library packages, not implicit replacements.
+  // Reject a handoff that silently changes a dependency the assembly was checked against.
+  async function verifyDependencies(parent: typeof module, seen = new Set<string>()) {
+    for (const id of parent.dependencies) {
+      if (seen.has(id)) continue;
+      seen.add(id);
+      const supplied = await inspectPackage(path.join(source, 'src/parts', id), source);
+      const installed = await inspectPackage(path.join(projectRoot, 'src/parts', id), projectRoot);
+      const relative = (pkg: typeof module) =>
+        pkg.files.map((f) => path.relative(pkg.directory, f));
+      if (JSON.stringify(relative(supplied)) !== JSON.stringify(relative(installed)))
+        throw new Error('Dependency differs from installed library: ' + id);
+      for (const file of relative(supplied))
+        if (
+          !(await fs.readFile(path.join(supplied.directory, file))).equals(
+            await fs.readFile(path.join(installed.directory, file)),
+          )
+        )
+          throw new Error(
+            'Dependency differs from installed library: ' +
+              id +
+              '. Import that package separately first.',
+          );
+      await verifyDependencies(supplied, seen);
+    }
+  }
+  await verifyDependencies(module);
   const destination = path.join(projectRoot, 'src/parts', module.id);
   let current = false;
   try {

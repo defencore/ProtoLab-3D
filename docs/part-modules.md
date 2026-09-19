@@ -11,7 +11,7 @@ The development unit is `src/parts/<part-id>/`. Keep the part's controls, defaul
 | `configurator.ts` | The migrated packages' ordered catalog selectors. In newly generated packages, this file also owns the full parameter schema and defaults.                                                       |
 | `presets.json`    | Complete preset configurations, stable IDs, labels and source evidence. It includes both catalog records and prototype examples.                                                                 |
 | `lib/`            | Private domain helpers and reference values. Editing these affects this package only.                                                                                                            |
-| `README.md`       | Instructions for this particular package.                                                                                                                                                        |
+| `README.md`       | Shared workflow applicable to every package; component-specific notes belong in `GUIDE.md`.                                                                                                      |
 
 For example, `hex-nut/part.ts` uses its own nut factory under `hex-nut/lib/`; its thread implementation is private to that folder. An assembly can include private implementations of its components. Editing the standalone component does not silently change the assembly. To make the same improvement in several packages, update and verify those packages explicitly.
 
@@ -164,7 +164,7 @@ The supported outside-package imports are the generic SDK modules `types.ts`, `g
 
 The generic `catalog-models.ts` helper belongs to the host. It centralizes attribute lookup, inclusive model filters and source-identity matching for the application catalog and export wrappers. Runnable handoffs must carry this helper with the host files that import it, so fixed-model source metadata behaves consistently outside the main app. A standalone workbench can select the same model through its schema controls without reproducing the full library's filter UI; the package's fixed geometry and published attributes remain intact.
 
-Domain-specific algorithms belong under the part's own `lib/`. Imports from another part, `src/catalog`, UI components or arbitrary dependencies are rejected by package inspection. Copy a needed domain helper into the package instead of linking across that boundary. The deliberate duplication allows a developer to improve one part without altering its siblings. A change to the shared SDK is an application-wide change and needs broader verification.
+Domain-specific algorithms belong under the part's own `lib/`. Assemblies may reuse another part through an explicit package dependency declared in `index.ts`; see the dependency workflow below. Imports from undeclared parts, `src/catalog`, UI components or arbitrary dependencies are rejected by package inspection. A change to a shared package or the SDK requires verification of its consumers.
 
 ## Export a runnable handoff
 
@@ -223,3 +223,9 @@ The sync uses Gvyntok bolt/set-screw, special fastener, hand-nut, hardware and c
 Every resulting preset is validated against the package's current schema before any file is written. If an independent part change makes an upstream row incompatible, sync stops with the part/preset ID; adapt the offline mapping or the local data explicitly. Applying a refresh replaces source-owned fields in matching records, so review deliberate local changes before opting in. Previous `presets.json` contents are saved under a `.catalog-snapshot-backup-*` directory outside `src/parts`.
 
 This explicit synchronization keeps catalog maintenance available while preserving the package as the independent unit of development and handoff.
+
+## Assemblies with library dependencies
+
+A module may declare literal `dependencies: ['package-id']` in its `index.ts`. Direct relative imports from those packages reuse their geometry and metadata. Static preflight and runtime registration reject missing dependencies, duplicate IDs and cycles. Undeclared cross-package imports remain invalid.
+
+Portable export includes the dependency tree and its reference assets. Import validates that bundled dependencies match the installed library byte for byte, then replaces only the selected package. It never implicitly updates shared dependencies. Import any intentional dependency update separately before importing its consumer.

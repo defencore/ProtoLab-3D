@@ -15,8 +15,6 @@ const part: PartDefinition = {
     'FAULHABER',
     'AM',
     'motor',
-    'двигун',
-    'мотор',
     'brushless',
     'stepper',
     ...presets.map((p) => p.name),

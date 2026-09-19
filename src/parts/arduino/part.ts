@@ -12,7 +12,7 @@ const part: PartDefinition = {
   icon: 'circuit',
   complexity: 'Fixed supplier models',
   description: 'Classic UNO and Nano development boards with different USB and header formats.',
-  keywords: ['Arduino', 'ATmega328P', 'UNO', 'Nano', 'мікроконтролер'],
+  keywords: ['Arduino', 'ATmega328P', 'UNO', 'Nano', 'microcontroller'],
   parameters,
   defaults,
   presets: presets as unknown as Preset[],

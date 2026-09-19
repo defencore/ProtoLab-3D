@@ -55,6 +55,7 @@ def _protolab_create():
     try:
         component_labels = None
         component_colors = None
+        component_metadata = None
 ${body}
         if shape.isNull() or not shape.isValid():
             raise ValueError("The generated CAD shape is invalid.")
@@ -78,6 +79,8 @@ ${body}
             raise ValueError("Component labels do not match the generated assembly.")
         if component_colors is not None and len(component_colors) != len(component_shapes):
             raise ValueError("Component colors do not match the generated assembly.")
+        if component_metadata is not None and len(component_metadata) != len(component_shapes):
+            raise ValueError("Component manufacturing metadata does not match the assembly.")
         display_objects = []
         if len(component_shapes) > 1:
             obj = doc.addObject("App::Part", ${JSON.stringify(featureName)})
@@ -91,6 +94,12 @@ ${body}
                 child.Shape = component_shape
                 child.addProperty("App::PropertyInteger", "ComponentIndex", "ProtoLab")
                 child.ComponentIndex = index + 1
+                if component_metadata is not None:
+                    for key, value in component_metadata[index].items():
+                        child.addProperty("App::PropertyString", key, "Manufacturing")
+                        setattr(child, key, str(value))
+                child.addProperty("App::PropertyPlacement", "AssemblyPlacement", "ProtoLab")
+                child.AssemblyPlacement = child.Placement
                 obj.addObject(child)
                 display_objects.append(child)
         else:

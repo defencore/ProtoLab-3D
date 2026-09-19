@@ -1,12 +1,35 @@
-# Eccentric ball bearing
+# ProtoLab part package
 
-MOCHU 524806K / NA4206X3A keyed eccentric ball bearing with separate races, balls, cage and seals.
+This package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.
 
-Find **BEARINGS & SEALS → ECCENTRICS & FOLLOWERS → Eccentric ball bearing**.
+## Package files
 
-524806K dimensions 30 × 70 × 16 / 18.5 mm follow the supplied listing. NA4206X3A is the seller’s alternate designation, not a verified interchange standard. Eccentricity 4.5 mm, keyway 8 × 2 mm, raceways, ten balls and cage are reconstruction choices. Bore axis stays fixed while the bearing centre orbits by the eccentricity. The model describes packaging and mechanism layout, not a manufacturing drawing or a load-rated bearing.
+- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.
+- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.
+- `presets.json`: complete preset parameters and source evidence.
+- `lib/`: optional private geometry, reference data, and domain helpers.
+- `index.ts`: stable package ID, API version, and display order.
+- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.
 
-Preview and FreeCAD export share a solid geometry recipe. Every physical component exports separately; eccentric orientation changes the actual bore or roller position. Catalog presets remain editable. Sources are external links; no reference PDFs are bundled.
+## Edit and verify
 
-- [MOCHU · requested 524806K listing](https://www.aliexpress.com/item/1005003592030441.html)
-- [WXING · 524806K · 30 × 70 × 18.5 mm](https://www.wxingbearing.com/524806k-deep-groove-eccentric-shaft-bearing-30-70-18-5mm-use-for-the-car)
+Run commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.
+
+```sh
+npm run parts:check -- <part-id>
+npm run typecheck
+npm run dev
+npm run build
+```
+
+Keep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.
+
+## Export and handoff
+
+```sh
+npm run parts:export -- <part-id> <output-folder>
+```
+
+The handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.
+
+Write instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.

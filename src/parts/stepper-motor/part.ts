@@ -15,11 +15,9 @@ const part: PartDefinition = {
   keywords: [
     'motor',
     'electric',
-    'двигун',
-    'електродвигун',
+    'electric motor',
     'stepper',
     'NEMA',
-    'кроковий',
     '8HS12-0506S',
     '11HS12-0674S',
     '14HS10-0404S',

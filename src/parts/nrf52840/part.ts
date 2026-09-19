@@ -13,7 +13,7 @@ const part: PartDefinition = {
   icon: 'circuit',
   complexity: 'Fixed supplier models',
   description: 'Nordic nRF52840 boards in XIAO and Feather formats.',
-  keywords: ['Nordic', 'nrf52840', 'BLE', 'Bluetooth', 'Thread', 'мікроконтролер'],
+  keywords: ['Nordic', 'nrf52840', 'BLE', 'Bluetooth', 'Thread', 'microcontroller'],
   parameters,
   defaults,
   presets: presets as unknown as Preset[],

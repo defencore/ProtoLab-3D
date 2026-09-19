@@ -1,21 +1,35 @@
-# Gear reducer
+# ProtoLab part package
 
-Parallel spur reduction, stacked planetary stages and a right-angle miter pair, with separate gears, shafts and covers.
+This package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.
 
-Find **TRANSMISSION & LINKAGES → REDUCERS & DIFFERENTIALS → Gear reducer**.
+## Package files
 
-## Variants
+- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.
+- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.
+- `presets.json`: complete preset parameters and source evidence.
+- `lib/`: optional private geometry, reference data, and domain helpers.
+- `index.ts`: stable package ID, API version, and display order.
+- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.
 
-- Spur reducer · parallel · 2:1
-- Miter gearbox · right angle · 1:1
-- Planetary reducer · coaxial · 4:1
+## Edit and verify
 
-## Controls
+Run commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.
 
-Shaft arrangement; Housing width / diameter; Housing length; Shaft diameter; Shaft projection; Mounting bolt circle; Mounting hole diameter; Number of stages; Model detail. Controls for other construction types or absent components are hidden.
+```sh
+npm run parts:check -- <part-id>
+npm run typecheck
+npm run dev
+npm run build
+```
 
-## Scope
+Keep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.
 
-Detailed mode contains a 20:40 spur pair, 18:18:54 planetary stages (4:1 each), or a 1:1 miter pair. Involutes are sampled; conical teeth are reference lofts, not manufactured bevel flanks. Cutter fillets, bearings and load ratings require separate engineering. Use exploded state to inspect the transmission. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.
+## Export and handoff
 
-Separate physical components are exported to FreeCAD. The preview and native export share geometry definitions. This is an independent, editable prototype package; examples without catalog evidence are not manufactured product SKUs.
+```sh
+npm run parts:export -- <part-id> <output-folder>
+```
+
+The handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.
+
+Write instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.

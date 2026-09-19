@@ -1,0 +1,44 @@
+[
+  {
+    "id": "band-90",
+    "name": "V-clamp band \u00b7 90/86 mm",
+    "description": "Compact reference-inspired split band with sixteen clamp blocks; illustrative dimensions.",
+    "parameters": {
+      "layout": "band",
+      "diameter": 90,
+      "bore": 86,
+      "segments": 16,
+      "release": 0,
+      "separation": 25,
+      "springs": true
+    }
+  },
+  {
+    "id": "band-160",
+    "name": "V-clamp band \u00b7 160/150 mm",
+    "description": "Larger illustrative interface with twenty clamp blocks.",
+    "parameters": {
+      "layout": "band",
+      "diameter": 160,
+      "bore": 150,
+      "segments": 20,
+      "release": 0,
+      "separation": 40,
+      "springs": true
+    }
+  },
+  {
+    "id": "pivot-90",
+    "name": "Captive clamp jaws \u00b7 90/86 mm",
+    "description": "Alternative reference topology with pivoting jaws and a split inner actuation ring; conceptual linkage.",
+    "parameters": {
+      "layout": "pivot",
+      "diameter": 90,
+      "bore": 86,
+      "segments": 16,
+      "release": 0,
+      "separation": 25,
+      "springs": true
+    }
+  }
+]

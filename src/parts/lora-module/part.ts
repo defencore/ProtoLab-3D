@@ -12,7 +12,7 @@ const part: PartDefinition = {
   icon: 'circuit',
   complexity: 'Fixed supplier models',
   description: 'SX1278 and SX1262 radio modules from Ai-Thinker, Waveshare and Ebyte.',
-  keywords: ['Semtech', 'LoRa', 'SX1262', 'SX1278', 'радіомодуль'],
+  keywords: ['Semtech', 'LoRa', 'SX1262', 'SX1278', 'radio module'],
   parameters,
   defaults,
   presets: presets as unknown as Preset[],

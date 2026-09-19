@@ -12,7 +12,7 @@ const part: PartDefinition = {
   icon: 'circuit',
   complexity: 'Fixed supplier models',
   description: 'ESP32 development boards: full-size headers, compact castellated and XIAO formats.',
-  keywords: ['Espressif', 'ESP32', 'S3', 'C3', 'Wi-Fi', 'мікроконтролер'],
+  keywords: ['Espressif', 'ESP32', 'S3', 'C3', 'Wi-Fi', 'microcontroller'],
   parameters,
   defaults,
   presets: presets as unknown as Preset[],

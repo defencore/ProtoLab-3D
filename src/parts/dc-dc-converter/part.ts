@@ -12,7 +12,7 @@ const part: PartDefinition = {
   icon: 'circuit',
   complexity: 'Fixed supplier models',
   description: 'Buck, boost and buck-boost converter boards with sourced input and output ratings.',
-  keywords: ['buck', 'boost', 'DC DC', 'перетворювач', 'напруга'],
+  keywords: ['buck', 'boost', 'DC DC', 'converter', 'voltage'],
   parameters,
   defaults,
   presets: presets as unknown as Preset[],

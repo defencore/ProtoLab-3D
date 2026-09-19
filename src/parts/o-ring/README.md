@@ -1,21 +1,35 @@
-# O-ring and groove tool
+# ProtoLab part package
 
-Round elastomer seal and separate face or radial groove cutter for CAD cut operations.
+This package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.
 
-Find **BEARINGS & SEALS → STATIC SEALS → O-ring and groove tool**.
+## Package files
 
-## Variants
+- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.
+- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.
+- `presets.json`: complete preset parameters and source evidence.
+- `lib/`: optional private geometry, reference data, and domain helpers.
+- `index.ts`: stable package ID, API version, and display order.
+- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.
 
-- O-ring · 15 × 2 mm
-- Face groove tool · for 15 × 2 mm ring
-- Radial groove tool · for 15 × 2 mm ring
+## Edit and verify
 
-## Controls
+Run commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.
 
-Output; Seal inside diameter; Seal cross-section diameter; Groove width; Groove depth.
+```sh
+npm run parts:check -- <part-id>
+npm run typecheck
+npm run dev
+npm run build
+```
 
-## Scope
+Keep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.
 
-Groove depth and width are explicit user inputs; there is no automatic squeeze, stretch or pressure qualification. Face groove is centred at the free ring mean diameter. Radial cutter spans the entered inside diameter outward by groove depth. Place cutter relative to the actual shaft/bore before Cut. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.
+## Export and handoff
 
-Separate named components are exported to FreeCAD; the exploded state separates them along Z. The preview and native export share the same shape recipe. This is an independent, editable package.
+```sh
+npm run parts:export -- <part-id> <output-folder>
+```
+
+The handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.
+
+Write instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.

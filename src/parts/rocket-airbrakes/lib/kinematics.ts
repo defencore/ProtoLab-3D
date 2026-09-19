@@ -1,6 +1,15 @@
 import type { Parameters } from '../../../core/types';
 import type { Point } from './shapes';
+export const jaynesHinged = (p: Parameters) =>
+  ['jaynes-v1', 'jaynes-v2', 'jaynes-v5'].includes(String(p.mechanism));
+export const rotating = (p: Parameters) =>
+  p.mechanism === 'geared-petal' || p.mechanism === 'jaynes-v4' || jaynesHinged(p);
 export const mechanismOptions = [
+  { value: 'jaynes-v1', label: 'Ben Jaynes V1 · transverse servo / hinged flaps' },
+  { value: 'jaynes-v2', label: 'Ben Jaynes V2 · vertical servo / articulated flaps' },
+  { value: 'jaynes-v3', label: 'Ben Jaynes V3 · Archimedean sliding leaves' },
+  { value: 'jaynes-v4', label: 'Ben Jaynes V4 · geared rotating leaves' },
+  { value: 'jaynes-v5', label: 'Ben Jaynes V5 · central servo / geared flaps' },
   { value: 'spiral', label: 'Waterloo · three-slot spiral cam' },
   { value: 'sculpted-cam', label: 'UGA / WPI · sculpted slot cam' },
   { value: 'curved-link', label: 'UGA · three curved links' },
@@ -13,7 +22,8 @@ export const paired = (p: Parameters) =>
 export const linked = (p: Parameters) =>
   p.mechanism === 'curved-link' || p.mechanism === 'mit-link';
 export const layer = (p: Parameters, i: number) => (paired(p) ? (i % 2) * 20 : 0);
-export const phases = (p: Parameters) => (paired(p) ? [0, 90, 180, 270] : [0, 120, 240]);
+export const phases = (p: Parameters) =>
+  jaynesHinged(p) ? [0, 180] : paired(p) ? [0, 90, 180, 270] : [0, 120, 240];
 export const camLift = (p: Parameters, f: number) =>
   p.mechanism === 'sculpted-cam' ? f * f * (3 - 2 * f) : f;
 export function linkage(p: Parameters) {

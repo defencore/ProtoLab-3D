@@ -1,3 +1,5 @@
+import { jaynesHinged, rotating } from './lib/kinematics';
+import { jaynesLayout, jaynesLinkage } from './lib/jaynes';
 import { mechanismOptions, linked, paired, linkage } from './lib/kinematics';
 import { withParameterStates } from '../../core/parameter-states';
 import type { PartDefinition, Preset } from '../../core/types';
@@ -12,21 +14,20 @@ const part: PartDefinition = {
   subgroup: 'MODEL ROCKETS',
   icon: 'gear',
   description:
-    'Six airbrake mechanisms: spiral and sculpted cams, curved links, MIT sliding leaves, rack drives and geared pivoting petals. Ø80/76 default, larger presets and editable tube sizes.',
-  complexity: 'Six mechanisms · synchronized deployment',
+    'Eleven airbrake variants, including Ben Jaynes V1–V5: hinged flaps, articulated links, sliding cams and rotating leaves. Ø80/76 default, larger presets and editable tube sizes.',
+  complexity: 'Eleven variants · synchronized deployment',
   keywords: [
     'rocket',
     'airbrakes',
     'air brakes',
     'Waterloo',
+    'Ben Jaynes',
+    'V1 V2 V3 V4 V5',
     'Armaan Sengupta',
     'spiral cam',
     '80/76',
     '90/86',
-    'аерогальма',
-    'повітряні гальма',
-    'ракета',
-    'кулачок',
+    'cam',
   ],
   defaults,
   parameters,
@@ -63,6 +64,28 @@ const part: PartDefinition = {
       errors.push('Tube wall thickness must be between 0.5 and 6 mm.');
     if (!mechanismOptions.some((v) => v.value === p.mechanism))
       return [...errors, 'Select a valid airbrake mechanism.'];
+    if (jaynesHinged(p)) {
+      const j = jaynesLayout(p);
+      if (j.z - j.length < 5 || j.z + j.radius - j.hinge + 12 > +p.height)
+        errors.push('Increase module height or shorten the flaps to clear the end bulkheads.');
+      if (+p.bladeWidth + 16 > +p.tubeID) errors.push('Reduce flap width to clear hinge hardware.');
+      const gearY = j.v1 ? +p.bladeWidth + 8 : +p.bladeWidth / 2 + 9;
+      if (!j.v2 && (j.hinge < 8 || Math.hypot(j.hinge * (2 + 2 / 24), gearY) > j.radius))
+        errors.push('Reduce flap width or increase tube diameter to clear the transverse gears.');
+      if (j.v1 && p.servo !== 'micro')
+        errors.push('V1 uses the transverse micro-servo installation.');
+      if (j.v2 && j.z - 26 - j.servo[2] < 5)
+        errors.push('Increase height to clear the vertical servo.');
+      if (j.v2 && jaynesLinkage({ ...p, deployment: 100 }).error > 1e-6)
+        errors.push('The requested sweep exceeds the articulated linkage reach.');
+      if (
+        !j.v2 &&
+        Math.hypot((j.v1 ? j.hinge : 0) + j.servo[1] / 2, j.servo[2] - (j.v1 ? 0 : 8)) >
+          j.radius - 1
+      )
+        errors.push('The transverse servo envelope does not fit inside the tube.');
+      return errors;
+    }
     const m = layout(p);
     if (linked(p) && (linkage(p).crank < 8.05 || linkage(p).crank > m.followerStart - 6.3))
       errors.push(
@@ -81,16 +104,13 @@ const part: PartDefinition = {
     }
     if (state !== 'mechanism' && +p.height < m.deck + 25)
       errors.push('Increase module height to clear the cam and follower hardware.');
-    if (p.mechanism !== 'geared-petal' && m.followerStart + +p.stroke + 5 > m.railEnd - 3.5)
+    if (!rotating(p) && m.followerStart + +p.stroke + 5 > m.railEnd - 3.5)
       errors.push(
         'Blade travel exceeds the supported guide length; increase tube diameter or reduce travel.',
       );
-    if (p.mechanism !== 'geared-petal' && m.followerStart + +p.stroke + 5 > m.camRadius)
+    if (!rotating(p) && m.followerStart + +p.stroke + 5 > m.camRadius)
       errors.push('Leave at least 1.35 mm of material outside the cam slot.');
-    if (
-      p.mechanism !== 'geared-petal' &&
-      +p.bladeWidth / 2 > (m.followerStart - 6) * Math.tan(Math.PI / 3) - 2
-    )
+    if (!rotating(p) && +p.bladeWidth / 2 > (m.followerStart - 6) * Math.tan(Math.PI / 3) - 2)
       errors.push('Blades are too wide and would collide near the hub.');
     if (Math.hypot(m.servoLength - m.servoWidth / 2 + 6, m.servoWidth / 2) > m.radius - 1)
       errors.push('Servo mounting ears do not fit inside this tube.');
@@ -98,14 +118,28 @@ const part: PartDefinition = {
   },
   updateParameters(p, key) {
     if (key !== 'mechanism' && key !== 'servo') return p;
+    if (jaynesHinged(p))
+      return {
+        ...p,
+        servo: p.mechanism === 'jaynes-v1' ? 'micro' : p.servo,
+        height: Math.max(
+          +p.height,
+          Math.ceil((+p.tubeOD / 2 - jaynesLayout(p).hinge + 12) / 0.32),
+          120,
+        ),
+      };
     return { ...p, height: Math.max(+p.height, Math.ceil(layout(p).deck + (paired(p) ? 45 : 25))) };
   },
   buildGeometry: (p, s) => assembly.geometry(pieces(p, s)),
   dimensions: (p, s) => assembly.dimensions(pieces(p, s)),
   python: (p, s) => assembly.python(pieces(p, s)),
   notes:
-    'Parametric adaptations of the linked mechanisms and supplied images, not original author CAD. Waterloo uses linear Archimedean slots; the UGA/WPI-style sculpted cam uses an explicitly reconstructed smoothstep lift with tangential ends, not the article’s dimensional polynomial. Curved links use exact slider-crank closure, giving nonlinear radial travel. MIT uses two opposed pairs of straight links and resin sliding trays on two levels. Sprague uses two 20-tooth pinions and four involute-compatible racks. Geared petals pivot on fixed axes with an 18:42 gear ratio; their extension follows rotation, so radial-travel and blade-width controls are hidden. The tube windows, guides, drive shaft and hardware change with the mechanism. Threads, servo internals and bearing races are simplified; servo envelopes use Tower Pro nominal body sizes. Tube Ø80/76 and the remaining preset dimensions are custom adaptations. Aerodynamic loads, torque suitability, structural strength and flight performance are not established by this model.',
+    'Parametric adaptations of the linked mechanisms and supplied images, not original author CAD. Jaynes V1/V5 use reconstructed opposed geared flaps; V5 adds a second gear plane for a centered input. V2 uses rigid spatial crank links with solved closure. V3/V4 reuse the corresponding spiral/petal topology with the servo above the mechanism. Source tooth counts, dimensions, printed ball-bearing races and electronics are not reproduced. Waterloo uses linear Archimedean slots; the UGA/WPI-style sculpted cam uses an explicitly reconstructed smoothstep lift with tangential ends, not the article’s dimensional polynomial. Curved links use exact slider-crank closure, giving nonlinear radial travel. MIT uses two opposed pairs of straight links and resin sliding trays on two levels. Sprague uses two 20-tooth pinions and four involute-compatible racks. Geared petals pivot on fixed axes with an 18:42 gear ratio; their extension follows rotation, so radial-travel and blade-width controls are hidden. The tube windows, guides, drive shaft and hardware change with the mechanism. Threads, servo internals and bearing races are simplified; servo envelopes use Tower Pro nominal body sizes. Tube Ø80/76 and the remaining preset dimensions are custom adaptations. Aerodynamic loads, torque suitability, structural strength and flight performance are not established by this model.',
   sources: [
+    {
+      label: 'Ben Jaynes · 3D Printed Airbrakes for a Model Rocket · V1–V5',
+      url: 'https://www.benjaynes.com/projects/airbrakes/',
+    },
     {
       label: 'MIT Rocket Team · sliding leaves and trays',
       url: 'https://wikis.mit.edu/confluence/display/RocketTeam/Air+Brakes',

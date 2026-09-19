@@ -117,8 +117,6 @@ const part: PartDefinition = {
     'keeper',
     'armature',
     'magnetic clamp',
-    'електромагніт',
-    'электромагнит',
   ],
   parameters,
   defaults,

@@ -16,9 +16,8 @@ const part: PartDefinition = {
   keywords: [
     'battery',
     'batteries',
-    'акумулятор',
-    'батарея',
-    'батарейки',
+    'rechargeable battery',
+    'cells',
     '18650',
     '21700',
     'Molicel',

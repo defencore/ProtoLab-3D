@@ -41,19 +41,19 @@ def clean(value):
 def source_features(description):
  result={}
  text=description.lower()
- if re.search(r'кульков[а-яіїє\s,]*одноряд|кульков[а-яіїє\s,]*радіальн[а-яіїє\s,]*одноряд|кульков[а-яіїє\s,]*радіальн[а-яіїє\s,]*одноряд',text):result['type']='single-row ball'
- seal=re.search(r'ущільнювач підшипника:\s*([^:]+?)(?=внутрішній|зовнішній|ширина|аналоги|технічні|$)',text)
- implicit=re.search(r'ущільнен[^.]{0,100}(?:гуми|каучук|пластмас)[^.]{0,25}',text)
+ if re.search(r'\u043a\u0443\u043b\u044c\u043a\u043e\u0432[\u0430-\u044f\u0456\u0457\u0454\s,]*\u043e\u0434\u043d\u043e\u0440\u044f\u0434|\u043a\u0443\u043b\u044c\u043a\u043e\u0432[\u0430-\u044f\u0456\u0457\u0454\s,]*\u0440\u0430\u0434\u0456\u0430\u043b\u044c\u043d[\u0430-\u044f\u0456\u0457\u0454\s,]*\u043e\u0434\u043d\u043e\u0440\u044f\u0434|\u043a\u0443\u043b\u044c\u043a\u043e\u0432[\u0430-\u044f\u0456\u0457\u0454\s,]*\u0440\u0430\u0434\u0456\u0430\u043b\u044c\u043d[\u0430-\u044f\u0456\u0457\u0454\s,]*\u043e\u0434\u043d\u043e\u0440\u044f\u0434',text):result['type']='single-row ball'
+ seal=re.search(r'\u0443\u0449\u0456\u043b\u044c\u043d\u044e\u0432\u0430\u0447 \u043f\u0456\u0434\u0448\u0438\u043f\u043d\u0438\u043a\u0430:\s*([^:]+?)(?=\u0432\u043d\u0443\u0442\u0440\u0456\u0448\u043d\u0456\u0439|\u0437\u043e\u0432\u043d\u0456\u0448\u043d\u0456\u0439|\u0448\u0438\u0440\u0438\u043d\u0430|\u0430\u043d\u0430\u043b\u043e\u0433\u0438|\u0442\u0435\u0445\u043d\u0456\u0447\u043d\u0456|$)',text)
+ implicit=re.search(r'\u0443\u0449\u0456\u043b\u044c\u043d\u0435\u043d[^.]{0,100}(?:\u0433\u0443\u043c\u0438|\u043a\u0430\u0443\u0447\u0443\u043a|\u043f\u043b\u0430\u0441\u0442\u043c\u0430\u0441)[^.]{0,25}',text)
  label=seal.group(1).strip() if seal else (implicit.group(0) if implicit else '')
- if re.search(r'каучук|гуми|гумов|резин|пластмас',label):result['closure']='rubber-one' if re.search(r'односторон|однобіч',label) else 'rubber'
- elif re.search(r'метал|захисн[а-яіїє]* шайб',label):result['closure']='metal-one' if re.search(r'односторон|однобіч',label) else 'metal'
- elif seal and re.search(r'відкрит',label):result['closure']='open'
+ if re.search(r'\u043a\u0430\u0443\u0447\u0443\u043a|\u0433\u0443\u043c\u0438|\u0433\u0443\u043c\u043e\u0432|\u0440\u0435\u0437\u0438\u043d|\u043f\u043b\u0430\u0441\u0442\u043c\u0430\u0441',label):result['closure']='rubber-one' if re.search(r'\u043e\u0434\u043d\u043e\u0441\u0442\u043e\u0440\u043e\u043d|\u043e\u0434\u043d\u043e\u0431\u0456\u0447',label) else 'rubber'
+ elif re.search(r'\u043c\u0435\u0442\u0430\u043b|\u0437\u0430\u0445\u0438\u0441\u043d[\u0430-\u044f\u0456\u0457\u0454]* \u0448\u0430\u0439\u0431',label):result['closure']='metal-one' if re.search(r'\u043e\u0434\u043d\u043e\u0441\u0442\u043e\u0440\u043e\u043d|\u043e\u0434\u043d\u043e\u0431\u0456\u0447',label) else 'metal'
+ elif seal and re.search(r'\u0432\u0456\u0434\u043a\u0440\u0438\u0442',label):result['closure']='open'
  return result
 
 def atomic_json(path, value):
  path.parent.mkdir(parents=True, exist_ok=True)
  temporary = path.with_suffix(path.suffix + '.tmp')
- temporary.write_text(json.dumps(value, ensure_ascii=False, separators=(',', ':')))
+ temporary.write_text(json.dumps(value, ensure_ascii=True, separators=(',', ':')))
  temporary.replace(path)
 
 def fetch(url, retries=3):
@@ -73,7 +73,7 @@ def fetch(url, retries=3):
 def parse_category(source, url):
  links = sorted(set(re.findall(r'href=["\'](/offer/[^"\']+)["\']', source)))
  pages = [int(value) for value in re.findall(r'pageNumber(?:=|%3D)(\d+)', source)]
- counts = re.findall(r'Товарів:\s*(?:<[^>]+>\s*)*(\d[\d\s]*)', source)
+ counts = re.findall(r'\u0422\u043e\u0432\u0430\u0440\u0456\u0432:\s*(?:<[^>]+>\s*)*(\d[\d\s]*)', source)
  return {'url': url, 'pages': max(pages or [1]), 'reportedCount': max((int(re.sub(r'\s','',count)) for count in counts), default=None), 'products': links}
 
 def parse_product(source, url):

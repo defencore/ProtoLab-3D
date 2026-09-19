@@ -1,17 +1,35 @@
-# Set screw / grub screw
+# ProtoLab part package
 
-This folder owns this part's parameter schema, defaults, preview, FreeCAD recipe, validation and catalog presets. Edit or replace the folder without changing another part.
+This package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.
 
-- `part.ts`: definition and local model behavior. Factory-based definitions use private helpers under `lib/`.
-- `configurator.ts`: ordered catalog size selectors. The numeric/conditional parameter schema belongs to the definition in `part.ts` or its private factory.
-- `presets.json`: complete catalog and example parameters, IDs and source metadata.
-- `lib/`: private domain helpers and reference values. Edits here affect this package only.
-- `index.ts`: API version, stable part ID and display order.
+## Package files
 
-Only the generic geometry SDK under `src/core` is shared. Run `npm run parts:check -- set-screw` to check this package and `npm run parts:export -- set-screw <output-folder>` to prepare a runnable handoff with the SDK and reference assets.
+- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.
+- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.
+- `presets.json`: complete preset parameters and source evidence.
+- `lib/`: optional private geometry, reference data, and domain helpers.
+- `index.ts`: stable package ID, API version, and display order.
+- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.
 
-## DIN 915 references
+## Edit and verify
 
-The 11 **black 12.9** presets retain the supplied M2–M16 table in `lib/catalog/din915.ts`. `tipLength` is the full cylindrical dog length Z; `dogShoulderLength` follows it within overall L. The table does not supply L or the shoulder chamfer, so their initial values are editable prototype choices and are not marked as verified stock dimensions. `finish` changes preview and FreeCAD display color. Existing supplier presets retain their original dimensions and square shoulder.
+Run commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.
 
-Run `node --import tsx --test tests/din915.test.ts` from the app root for the focused geometry checks. See `docs/din915.md` for source scope and the optional native FreeCAD check.
+```sh
+npm run parts:check -- <part-id>
+npm run typecheck
+npm run dev
+npm run build
+```
+
+Keep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.
+
+## Export and handoff
+
+```sh
+npm run parts:export -- <part-id> <output-folder>
+```
+
+The handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.
+
+Write instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.

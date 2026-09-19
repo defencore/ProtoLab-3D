@@ -1,7 +1,8 @@
-import { mechanismOptions } from './lib/kinematics';
+import { mechanismOptions, rotating, jaynesHinged } from './lib/kinematics';
 import type { Parameters, ParameterDefinition } from '../../core/types';
 export const defaults: Parameters = {
   mechanism: 'spiral',
+  flapLength: 30,
   tubeOD: 80,
   tubeID: 76,
   height: 96,
@@ -74,7 +75,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'stroke',
-    visibleWhen: (p) => p.mechanism !== 'geared-petal',
+    visibleWhen: (p) => !rotating(p),
     label: 'Blade radial travel',
     type: 'number',
     group: 'Mechanism',
@@ -95,7 +96,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'bladeWidth',
-    visibleWhen: (p) => p.mechanism !== 'geared-petal',
+    visibleWhen: (p) => jaynesHinged(p) || !rotating(p),
     label: 'Blade tangential width',
     type: 'number',
     group: 'Mechanism',
@@ -103,6 +104,17 @@ export const parameters: ParameterDefinition[] = [
     max: 36,
     step: 1,
     unit: 'mm',
+  },
+  {
+    key: 'flapLength',
+    label: 'Hinged flap length',
+    type: 'number',
+    group: 'Mechanism',
+    min: 20,
+    max: 60,
+    step: 1,
+    unit: 'mm',
+    visibleWhen: jaynesHinged,
   },
   {
     key: 'servo',

@@ -1,7 +1,35 @@
-# FAULHABER BX4 brushless motors
+# ProtoLab part package
 
-20 buyable winding presets. Geometry is baked from the official FAULHABER STEP archives. See each preset for product, drawing, CAD URL and SHA-256. Only runtime BREP/mesh data is bundled; reference PDFs and original STEP archives remain external.
+This package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.
 
-Mounting plane Z=0, front shaft +Z. Manufacturer dimensions are fixed. The supplier models are installation solids, not exploded internal mechanisms. Electrical variants reuse their exact mechanical execution.
+## Package files
 
-Rebuild with FreeCAD Python: `scripts/import-faulhaber.py <download-directory>`. The importer selects one execution from archives containing multiple side-by-side alternatives.
+- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.
+- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.
+- `presets.json`: complete preset parameters and source evidence.
+- `lib/`: optional private geometry, reference data, and domain helpers.
+- `index.ts`: stable package ID, API version, and display order.
+- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.
+
+## Edit and verify
+
+Run commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.
+
+```sh
+npm run parts:check -- <part-id>
+npm run typecheck
+npm run dev
+npm run build
+```
+
+Keep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.
+
+## Export and handoff
+
+```sh
+npm run parts:export -- <part-id> <output-folder>
+```
+
+The handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.
+
+Write instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.

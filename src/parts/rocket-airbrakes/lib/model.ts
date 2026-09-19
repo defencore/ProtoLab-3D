@@ -1,3 +1,5 @@
+import { hingedJaynes } from './jaynes';
+import { jaynesHinged } from './kinematics';
 import { motion, phases as mechanismPhases, layer, paired, linked, camLift } from './kinematics';
 import { alternativeDrive, sculptedCam, gearedPetals, rackDrive, tray } from './variants';
 import type { Parameters } from '../../../core/types';
@@ -11,6 +13,7 @@ import {
   subtract,
   union,
   transform,
+  rotate,
   type Shape,
   type Point,
 } from './shapes';
@@ -76,6 +79,15 @@ export function slotOutline(p: Parameters, phase: number): Point[] {
   ];
 }
 export function pieces(p: Parameters, state: string): Piece[] {
+  if (jaynesHinged(p)) return hingedJaynes(p, state);
+  if (p.mechanism === 'jaynes-v3' || p.mechanism === 'jaynes-v4') {
+    const v3 = p.mechanism === 'jaynes-v3';
+    return pieces({ ...p, mechanism: v3 ? 'spiral' : 'geared-petal' }, state).map((piece) => ({
+      ...piece,
+      label: `Jaynes ${v3 ? 'V3' : 'V4'} · ${piece.label}`,
+      shape: transform(rotate(piece.shape, 180, 'x'), 0, [0, 0, +p.height]),
+    }));
+  }
   const m = layout(p),
     d = m.deck,
     h = +p.height;

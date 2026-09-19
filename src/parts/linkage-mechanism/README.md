@@ -1,27 +1,35 @@
-# Linkage and indexing mechanism
+# ProtoLab part package
 
-Four-bar, slider-crank, Scotch yoke, scissor, parallelogram, cam and indexing mechanism geometry.
+This package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.
 
-Find **TRANSMISSION & LINKAGES → MOTION MECHANISMS → Linkage and indexing mechanism**.
+## Package files
 
-## Variants
+- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.
+- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.
+- `presets.json`: complete preset parameters and source evidence.
+- `lib/`: optional private geometry, reference data, and domain helpers.
+- `index.ts`: stable package ID, API version, and display order.
+- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.
 
-- Four-bar linkage
-- Slider-crank mechanism
-- Scotch yoke
-- Scissor lift
-- Parallelogram linkage
-- Eccentric cam
-- Eccentric cam with roller follower
-- Ratchet and pawl
-- Geneva indexer
+## Edit and verify
 
-## Controls
+Run commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.
 
-Mechanism; Fixed pivot spacing; Crank radius; Coupler / link length; Output link length; Input phase; Link width; Link thickness; Pivot bore; Index positions / ratchet teeth. Controls for other construction types or absent components are hidden.
+```sh
+npm run parts:check -- <part-id>
+npm run typecheck
+npm run dev
+npm run build
+```
 
-## Scope
+Keep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.
 
-Four-bar and slider-crank poses are solved from link lengths; scissor height and parallelogram pose are parameterized. Links have separate joining pins and pedestals; slider and yoke variants include guides. Cam is circular eccentric, not a programmed lift law. Geneva wheel pose follows the driver during engagement and dwells outside it; a locking disc is not included. Ratchet pawl is positioned next to the outermost tooth. Contact loads, return springs and ratchet dynamics are not simulated. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.
+## Export and handoff
 
-Separate physical components are exported to FreeCAD. The preview and native export share geometry definitions. This is an independent, editable prototype package; examples without catalog evidence are not manufactured product SKUs.
+```sh
+npm run parts:export -- <part-id> <output-folder>
+```
+
+The handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.
+
+Write instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.

@@ -12,7 +12,7 @@ const part: PartDefinition = {
   icon: 'circuit',
   complexity: 'Fixed supplier models',
   description: 'RP2040 boards with USB, castellated I/O and optional onboard wireless hardware.',
-  keywords: ['Pico', 'RP2040', 'RPi', 'мікроконтролер'],
+  keywords: ['Pico', 'RP2040', 'RPi', 'microcontroller'],
   parameters,
   defaults,
   presets: presets as unknown as Preset[],

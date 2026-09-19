@@ -1,0 +1,51 @@
+"""Use thin paper-space strokes on existing TechDraw part views.
+
+Select views, projection groups, or pages. With no selection, update all part
+views in the active document. Source solids, scale, dimensions, placements,
+hidden-line visibility, and application preferences are left unchanged.
+"""
+import FreeCAD as App
+import FreeCADGui as Gui
+
+
+def fix_drawing_lines():
+    doc = App.ActiveDocument
+    if doc is None:
+        raise ValueError('Open a drawing document first.')
+    selection = Gui.Selection.getSelection()
+    if any(obj.Document != doc for obj in selection):
+        raise ValueError('Select drawing views from the active document only.')
+    candidates = list(selection) if selection else list(doc.Objects)
+    views = {}
+    visited = set()
+    while candidates:
+        obj = candidates.pop()
+        if obj.Name in visited:
+            continue
+        visited.add(obj.Name)
+        if obj.isDerivedFrom('TechDraw::DrawViewPart'):
+            views[obj.Name] = obj
+        elif obj.isDerivedFrom('TechDraw::DrawPage'):
+            candidates.extend(obj.Views)
+        elif obj.isDerivedFrom('TechDraw::DrawProjGroup'):
+            candidates.extend(obj.Views)
+    if not views:
+        raise ValueError('Select a TechDraw view, projection group, or drawing page.')
+    doc.openTransaction('Use thin TechDraw lines')
+    try:
+        for view in views.values():
+            view.ViewObject.LineWidth = 0.18
+            view.ViewObject.HiddenWidth = 0.13
+            view.ViewObject.IsoWidth = 0.13
+            view.SmoothVisible = False
+            view.SeamVisible = False
+            view.IsoVisible = False
+        doc.recompute()
+        doc.commitTransaction()
+    except Exception:
+        doc.abortTransaction()
+        raise
+    App.Console.PrintMessage('Updated %d TechDraw view(s); visible lines 0.18 mm, thin lines 0.13 mm.\n' % len(views))
+
+
+fix_drawing_lines()

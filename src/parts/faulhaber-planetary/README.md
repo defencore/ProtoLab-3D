@@ -1,7 +1,35 @@
-# FAULHABER planetary
+# ProtoLab part package
 
-623 catalog presets with product, drawing and CAD source links. Only compressed runtime meshes and native BREP are bundled; original STEP/ZIP/PDF files stay external.
+This package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.
 
-Original manufacturer external installation solids for the standard output-shaft execution and the selected number of gear stages. Shafts, pilots and mounting holes follow supplier CAD. Gear teeth, bearings and internal stages are not separate parts in these files. Ratios within the same stage count can legitimately share the same external geometry; their ratio and torque ratings remain distinct. Ratios are rounded catalogue values. The selected gearhead excludes the motor and motor-specific input adapter flanges supplied separately in the CAD archives. Catalogue L2 and the bare CAD body can consequently differ (notably the 22/32 mm GPT families). CAD bounds include the output shaft and all supplied projections. The 22GPT HT L2 values follow the dimensional drawing, which resolves duplicate shop length fields. No arbitrary scaling, gearbox simulation or load calculation.
+## Package files
 
-Runtime meshes use lossless zlib compression. Regenerate with FreeCAD Python: `scripts/import-faulhaber-drives.py manifest.json models.json`. The manifest explicitly selects supplier solid indices from each archive execution. Selected file names, indices and SHA-256 hashes are preserved in every native asset.
+- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.
+- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.
+- `presets.json`: complete preset parameters and source evidence.
+- `lib/`: optional private geometry, reference data, and domain helpers.
+- `index.ts`: stable package ID, API version, and display order.
+- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.
+
+## Edit and verify
+
+Run commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.
+
+```sh
+npm run parts:check -- <part-id>
+npm run typecheck
+npm run dev
+npm run build
+```
+
+Keep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.
+
+## Export and handoff
+
+```sh
+npm run parts:export -- <part-id> <output-folder>
+```
+
+The handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.
+
+Write instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.

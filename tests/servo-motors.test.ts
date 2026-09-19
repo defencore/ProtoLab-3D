@@ -137,7 +137,7 @@ test('all requested fixed servo models are discoverable under one catalog item',
   for (const part of servos) {
     assert.equal(part.category, 'MOTORS & ACTUATORS');
     assert.equal(part.subgroup, 'SERVOS');
-    assert.ok(part.keywords.some((keyword) => keyword.includes('серв')));
+    assert.ok(part.keywords.some((keyword) => keyword.toLowerCase().includes('servo')));
     assert.ok(part.presets.some((preset) => preset.catalog));
     for (const preset of part.presets) {
       assert.deepEqual(Object.keys(preset.parameters).sort(), Object.keys(part.defaults).sort());

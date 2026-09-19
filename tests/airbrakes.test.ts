@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
+  jaynesHinged,
   camLift,
   linkage,
   phases,
@@ -85,7 +86,15 @@ test('AirBrakes actual blades move equally, guides stay fixed and cam changes an
     const delta = b.getCenter(new Vector3()).sub(a.getCenter(new Vector3()));
     assert.ok(Math.abs(delta.length() - +part.defaults.stroke) < 1e-4);
     const phase = ((i - 1) * 2 * Math.PI) / 3;
-    assert.ok(delta.distanceTo(new Vector3(+part.defaults.stroke * Math.cos(phase), +part.defaults.stroke * Math.sin(phase), 0)) < 1e-4);
+    assert.ok(
+      delta.distanceTo(
+        new Vector3(
+          +part.defaults.stroke * Math.cos(phase),
+          +part.defaults.stroke * Math.sin(phase),
+          0,
+        ),
+      ) < 1e-4,
+    );
   }
   assert.deepEqual(
     closed.filter((p) => p.label.startsWith('Ø3 guide')),
@@ -149,8 +158,12 @@ test('AirBrakes mechanism selector changes the actual drive and two-level shaft'
     const assembly = pieces(p, 'mechanism');
     assert.equal(
       assembly.filter((v) =>
-        v.label.startsWith(
-          option.value === 'geared-petal' ? 'Geared pivoting petal' : 'Curved airbrake blade',
+        v.label.includes(
+          jaynesHinged(p)
+            ? 'Jaynes hinged flap'
+            : ['geared-petal', 'jaynes-v4'].includes(option.value)
+              ? 'Geared pivoting petal'
+              : 'Curved airbrake blade',
         ),
       ).length,
       phases(p).length,
@@ -162,7 +175,7 @@ test('AirBrakes mechanism selector changes the actual drive and two-level shaft'
       assert.ok(!assembly.some((v) => v.label.startsWith('Ø3 guide rod')));
     }
   }
-  assert.equal(signatures.size, 6);
+  assert.equal(signatures.size, 11);
   const gear = { ...part.defaults, mechanism: 'geared-petal' };
   for (const key of ['stroke', 'bladeWidth'])
     assert.equal(
@@ -172,4 +185,49 @@ test('AirBrakes mechanism selector changes the actual drive and two-level shaft'
   const rack = pieces({ ...part.defaults, mechanism: 'rack-pinion' }, 'mechanism');
   assert.equal(rack.filter((v) => v.label.startsWith('Drive pinion')).length, 2);
   assert.equal(rack.filter((v) => v.label.startsWith('Radial rack')).length, 4);
+});
+
+test('Jaynes V1–V5 have named presets, separate motion controls and source attribution', () => {
+  const presets = part.presets.filter((p) => p.id.startsWith('jaynes-'));
+  assert.equal(presets.length, 5);
+  assert.ok(part.sources?.some((s) => s.url === 'https://www.benjaynes.com/projects/airbrakes/'));
+  for (const preset of presets) {
+    const p = preset.parameters;
+    const closed = part.python({ ...p, deployment: 0 }, 'mechanism');
+    assert.notEqual(closed, part.python({ ...p, deployment: 100 }, 'mechanism'));
+    assert.equal(
+      part.parameters.find((v) => v.key === 'flapLength')!.visibleWhen!(p, 'assembled'),
+      jaynesHinged(p),
+    );
+    if (jaynesHinged(p)) {
+      assert.notEqual(closed, part.python({ ...p, deployment: 0, flapLength: 35 }, 'mechanism'));
+      assert.equal(
+        part.parameters.find((v) => v.key === 'stroke')!.visibleWhen!(p, 'assembled'),
+        false,
+      );
+    }
+  }
+});
+
+test('Jaynes V2 spatial links close through every deployment step and reachable sweep', async () => {
+  const { jaynesLinkage, jaynesLayout } = await import('../src/parts/rocket-airbrakes/lib/jaynes');
+  const reference = part.presets.find((p) => p.id === 'jaynes-v2-90')!.parameters;
+  assert.ok(
+    validateParameters(part, { ...reference, sweep: 90, deployment: 0 }, 'assembled').length,
+  );
+  for (const sweep of [45, 60]) {
+    let previous = -1;
+    let length = 0;
+    for (let deployment = 0; deployment <= 100; deployment++) {
+      const p = { ...reference, sweep, deployment },
+        q = jaynesLinkage(p),
+        j = jaynesLayout(p);
+      if (!deployment) length = q.rod;
+      assert.ok(q.error < 1e-8);
+      assert.equal(q.rod, length);
+      assert.ok(q.angle >= previous);
+      assert.ok(Math.abs(Math.hypot(q.B[0] - j.hinge, q.B[2] - j.z) - 14) < 1e-9);
+      previous = q.angle;
+    }
+  }
 });

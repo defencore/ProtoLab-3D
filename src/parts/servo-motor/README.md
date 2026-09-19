@@ -1,17 +1,35 @@
-# Servo motor
+# ProtoLab part package
 
-One catalog selector for eight fixed supplier configurations: Waveshare ST3215-HS, KST X10 Mini Pro-A and Pro-B, KST X10 V8.0, KST X10 Pro-A and Pro-B, Power-HD T60-BHV, and Power-HD TDS-2. `presets.json` owns the complete catalog, source evidence and read-only search attributes. Numeric characteristics filter models; they are not editable geometry.
+This package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.
 
-`catalogSelectionOnly` enables the manufactured-model picker. `lib/catalog-fields.ts` declares 16 `catalogFilterFields` for dimensions, torque, speed, current, voltage and construction. Numeric filters use inclusive bounds; selecting a result loads its stored model, while changing filters alone leaves the preview unchanged. Field summaries and measurement conditions come from catalog attributes, not geometry parameters.
+## Package files
 
-The only public parameters are `model`, `outputAngle`, `showHorn`, and `hornStyle` (the ST3215 single arm or supplied disc pair). States are `assembled`, `exploded`, and `body`. Model changes constrain the output angle to the selected servo's published travel. Case, shaft and mounting dimensions are fixed per model. Unknown retired dimensional parameters fail validation.
+- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.
+- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.
+- `presets.json`: complete preset parameters and source evidence.
+- `lib/`: optional private geometry, reference data, and domain helpers.
+- `index.ts`: stable package ID, API version, and display order.
+- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.
 
-Private `lib/catalog-models.json` records each fixed geometry input and source evidence, including approximations for undimensioned details. `lib/models.ts` dispatches to private Waveshare, KST and Power-HD geometry families. Both Power-HD servos use the same geometry implementation with different fixed records. JavaScript meshes and FreeCAD shapes use the same dimensions and placements.
+## Edit and verify
 
-The Waveshare case has unequal front/rear mounting patterns and an optional supplied disc pair. KST A/B retain their distinct side/flat mounting arrangements and 25-tooth shaft geometry. Power-HD uses smooth shaft envelopes and illustrative mounting cutout diameters. Optional single arms are fixed illustrative accessories. These external installation models do not simulate internal mechanisms, torque or electrical operation.
+Run commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.
 
-Published torque and speed values are associated with a reference voltage. Current attributes carry their own test conditions, since the source may not state a voltage. Missing or ambiguous current values remain unknown and are excluded by a numeric current filter. All primary sources and discrepancies remain in the catalog specifications and geometry evidence.
+```sh
+npm run parts:check -- <part-id>
+npm run typecheck
+npm run dev
+npm run build
+```
 
-Power-HD numeric currents use the 7.4 V datasheet column. Waveshare publishes current without a test voltage; its 12 V torque/speed reference is not assigned to current. KST has no numeric current ratings used here, and TDS-2 stall current is omitted because its V1 sheet uses the charge unit mAh. `verifiedParameters: ['model']` preserves manufacturer identity after pose, horn or state changes without certifying illustrative geometry details.
+Keep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.
 
-ST3215 uses `lib/waveshare/native.json`, baked from the unchanged manufacturer STEP by `scripts/import-st3215.py`. Eight native solids replace the former constructed casing/shaft/discs. Preview meshes and embedded compressed BREP share the same source and coordinates. A 0.00001 mm internal cavity repair makes the rear cover valid without changing external surfaces. Original overlapping components are preserved; validation distinguishes those source overlaps from new interference. The default ST3215 selection shows both supplied discs.
+## Export and handoff
+
+```sh
+npm run parts:export -- <part-id> <output-folder>
+```
+
+The handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.
+
+Write instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.

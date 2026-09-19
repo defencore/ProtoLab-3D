@@ -16,9 +16,8 @@ const part: PartDefinition = {
   keywords: [
     'battery',
     'batteries',
-    'акумулятор',
-    'батарея',
-    'батарейки',
+    'rechargeable battery',
+    'cells',
     'AAAA',
     'AAA',
     'AA',

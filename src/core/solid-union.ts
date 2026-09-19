@@ -6,7 +6,13 @@ import { material } from './geometry';
 /** Resolve primitive intersections and conform shared edges before STL export. */
 export function solidUnionMesh(
   solid: Geom3,
-  options: { minimumTriangleArea?: number } = {},
+  options: {
+    minimumTriangleArea?: number;
+    alreadyTriangulated?: boolean;
+    edgeTolerance?: number;
+    vertexTolerance?: number;
+    preserveOrigin?: boolean;
+  } = {},
 ): Group {
   const minimumCrossProductSquared = (2 * (options.minimumTriangleArea ?? 5e-8)) ** 2;
   // Upstream 2.13 declares generalize as a module although its runtime export is callable.
@@ -14,13 +20,15 @@ export function solidUnionMesh(
     options: { triangulate: boolean },
     value: Geom3,
   ) => Geom3;
-  const boundary = generalize({ triangulate: true }, solid);
+  const boundary = options.alreadyTriangulated ? solid : generalize({ triangulate: true }, solid);
   const vertices: Vector3[] = [],
     vertexIds = new Map<string, number>();
   const rawTriangles: number[][] = [];
   for (const polygon of modeling.geometries.geom3.toPolygons(boundary)) {
     const triangle = polygon.vertices.map((point) => {
-      const key = point.map((value) => Math.round(value * 1e8)).join(',');
+      const key = point
+        .map((value) => Math.round(value / (options.vertexTolerance ?? 1e-8)))
+        .join(',');
       let index = vertexIds.get(key);
       if (index === undefined) {
         index = vertices.length;
@@ -75,7 +83,12 @@ export function solidUnionMesh(
           t = offset.dot(direction) / lengthSq;
         return { index, t, distance: offset.addScaledVector(direction, -t).lengthSq() };
       })
-      .filter((point) => point.t > 1e-7 && point.t < 1 - 1e-7 && point.distance < 1e-12)
+      .filter(
+        (point) =>
+          point.t > 1e-7 &&
+          point.t < 1 - 1e-7 &&
+          point.distance < (options.edgeTolerance ?? 1e-6) ** 2,
+      )
       .sort((a, b) => a.t - b.t);
     if (points.length)
       refinements.set(edgeKey(first, last), [first, ...points.map((point) => point.index), last]);
@@ -114,6 +127,8 @@ export function solidUnionMesh(
   const centre = geometry.boundingBox!.getCenter(new Vector3());
   geometry.translate(-centre.x, -centre.y, -centre.z);
   geometry.computeVertexNormals();
-  return new Group().add(new Mesh(geometry, material(0x85898e)));
+  const result = new Group().add(new Mesh(geometry, material(0x85898e)));
+  if (options.preserveOrigin) result.position.copy(centre);
+  return result;
 }
 export const { booleans, primitives, transforms } = modeling;

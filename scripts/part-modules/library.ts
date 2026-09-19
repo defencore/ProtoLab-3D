@@ -30,6 +30,7 @@ export interface PackageInspection {
   directory: string;
   files: string[];
   references: string[];
+  dependencies: string[];
 }
 
 async function exists(file: string): Promise<boolean> {
@@ -87,7 +88,11 @@ function objectProperty(
   return result;
 }
 
-function staticDescriptor(source: ts.SourceFile): { id: string; order: number } {
+function staticDescriptor(source: ts.SourceFile): {
+  id: string;
+  order: number;
+  dependencies: string[];
+} {
   const bindings = new Map<string, ts.Expression>();
   for (const statement of source.statements)
     if (ts.isVariableStatement(statement))
@@ -140,7 +145,23 @@ function staticDescriptor(source: ts.SourceFile): { id: string; order: number } 
     throw new Error(
       'Declare the explicit part id after object spreads so another object cannot override it.',
     );
-  return { id: id.text, order: Number(order.text) };
+  const dependencyNode = resolve(objectProperty(descriptor, 'dependencies'));
+  const dependencies: string[] = [];
+  if (dependencyNode) {
+    if (!ts.isArrayLiteralExpression(dependencyNode))
+      throw new Error('Dependencies must be a literal array of package IDs.');
+    for (const node of dependencyNode.elements) {
+      if (
+        !ts.isStringLiteral(node) ||
+        !PART_ID_PATTERN.test(node.text) ||
+        node.text === id.text ||
+        dependencies.includes(node.text)
+      )
+        throw new Error('Invalid or duplicate package dependency.');
+      dependencies.push(node.text);
+    }
+  }
+  return { id: id.text, order: Number(order.text), dependencies };
 }
 
 function moduleSpecifiers(source: ts.SourceFile): string[] {
@@ -200,6 +221,7 @@ async function resolveImport(file: string, specifier: string): Promise<string> {
 export async function inspectPackage(
   directory: string,
   projectRoot: string,
+  ancestors: string[] = [],
 ): Promise<PackageInspection> {
   directory = path.resolve(directory);
   projectRoot = path.resolve(projectRoot);
@@ -216,6 +238,16 @@ export async function inspectPackage(
   const descriptor = staticDescriptor(source);
   if (path.basename(directory) !== descriptor.id)
     throw new Error(`Folder ${path.basename(directory)} does not match part ID ${descriptor.id}.`);
+  if (ancestors.includes(descriptor.id))
+    throw new Error('Cyclic package dependency: ' + [...ancestors, descriptor.id].join(' -> '));
+  const dependencies = await Promise.all(
+    descriptor.dependencies.map((id) =>
+      inspectPackage(path.join(projectRoot, 'src/parts', id), projectRoot, [
+        ...ancestors,
+        descriptor.id,
+      ]),
+    ),
+  );
   const sdk = new Set(SDK_FILES.map((name) => path.join(projectRoot, 'src/core', name)));
   const references = new Set<string>();
   for (const file of files) {
@@ -248,9 +280,13 @@ export async function inspectPackage(
             `${normalize(path.relative(directory, file))}: unsupported dependency ${specifier}.`,
           );
         const imported = await resolveImport(file, specifier);
-        if (!inside(directory, imported) && !sdk.has(imported))
+        if (
+          !inside(directory, imported) &&
+          !sdk.has(imported) &&
+          !dependencies.some((d) => inside(d.directory, imported))
+        )
           throw new Error(
-            `${normalize(path.relative(directory, file))}: ${specifier} crosses the part boundary. Copy domain helpers into this package's lib folder.`,
+            `${normalize(path.relative(directory, file))}: ${specifier} crosses the part boundary. Declare a library dependency or keep the helper package-local.`,
           );
       }
     }

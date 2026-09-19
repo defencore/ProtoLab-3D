@@ -218,3 +218,39 @@ test('runtime registration reports duplicates and malformed configurators before
     /Unsupported part module API/,
   );
 });
+
+test('declared library dependencies are portable and cannot silently overwrite shared packages', async (context) => {
+  const root = await fixture();
+  context.after(() => fs.rm(root, { recursive: true, force: true }));
+  const own = path.join(root, 'src/parts/first-spacer'),
+    other = await addStarter(root, 'other-spacer', 30);
+  const index = path.join(own, 'index.ts');
+  await fs.writeFile(
+    index,
+    (await fs.readFile(index, 'utf8')).replace(
+      'apiVersion: 1',
+      "apiVersion: 1, dependencies: ['other-spacer']",
+    ),
+  );
+  await fs.appendFile(path.join(own, 'part.ts'), "\nimport other from '../other-spacer/part';\n");
+  assert.deepEqual((await inspectPackage(own, root)).dependencies, ['other-spacer']);
+  const handoff = await exportPackage(root, 'first-spacer', path.join(root, 'handoff'));
+  const dependency = path.join(handoff, 'src/parts/other-spacer/part.ts');
+  assert.equal(
+    await fs.readFile(dependency, 'utf8'),
+    await fs.readFile(path.join(other, 'part.ts'), 'utf8'),
+  );
+  await importPackage(root, handoff, true);
+  await fs.appendFile(dependency, '\n// changed dependency\n');
+  await assert.rejects(importPackage(root, handoff, true), /differs|match|changed|different/i);
+  assert.doesNotMatch(await fs.readFile(path.join(other, 'part.ts'), 'utf8'), /changed dependency/);
+  const otherIndex = path.join(other, 'index.ts');
+  await fs.writeFile(
+    otherIndex,
+    (await fs.readFile(otherIndex, 'utf8')).replace(
+      'apiVersion: 1',
+      "apiVersion: 1, dependencies: ['first-spacer']",
+    ),
+  );
+  await assert.rejects(inspectPackage(own, root), /Cyclic package dependency/);
+});

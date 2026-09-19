@@ -15,6 +15,9 @@ export function python(pieces: Piece[]): string {
     '    shape.rotate(App.Vector(0,0,0),App.Vector(0,0,1),angle)',
     '    shape.translate(App.Vector(*offset))',
     '    return shape',
+    'def _air_tilt(shape, angle, axis):',
+    "    shape.rotate(App.Vector(0,0,0),App.Vector(1,0,0) if axis=='x' else App.Vector(0,1,0),angle)",
+    '    return shape',
     'components = []',
   ];
   for (const p of pieces)

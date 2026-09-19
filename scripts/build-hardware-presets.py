@@ -113,5 +113,5 @@ for entry in presets.values():output.setdefault(entry.pop('partId'),[]).append(e
 folder=ROOT/'src/catalog/generated';folder.mkdir(exist_ok=True)
 (folder/'gvyntok-hardware-presets.json').write_text(json.dumps(output,separators=(',',':'))+'\n')
 report={'importedProductRows':len(imported),'geometryPresets':len(presets),'byPart':{k:len(v) for k,v in output.items()},'excludedProducts':excluded}
-(DATA/'gvyntok-hardware-mapping-coverage.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+(DATA/'gvyntok-hardware-mapping-coverage.json').write_text(json.dumps(report,ensure_ascii=True,indent=2)+'\n')
 print(json.dumps({k:v for k,v in report.items() if k!='excludedProducts'},indent=2));print('Excluded',len(excluded))

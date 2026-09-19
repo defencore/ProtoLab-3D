@@ -158,6 +158,13 @@ export const librarySections: { name: string; icon: PartDefinition['icon']; grou
 // Lead with the primary component, then its mating parts and accessories.
 // IDs are stable across renames and independent package exports.
 const componentOrder: Record<string, string[]> = {
+  'MODEL ROCKETS': [
+    'model-rocket-airframe',
+    'rocket-parachute-recovery',
+    'rocket-airbrakes',
+    'rocket-release',
+    'clamp-band-release',
+  ],
   'SRS AIRBAG': ['srs-connector', 'srs-retainer', 'srs-igniter'],
   'SINGLE-BOARD COMPUTERS': ['raspberry-pi', 'nanopi'],
   'MICROCONTROLLER BOARDS': ['esp32', 'nrf52840', 'rp-microcontroller', 'arduino'],

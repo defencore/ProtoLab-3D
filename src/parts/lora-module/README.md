@@ -1,15 +1,35 @@
-# Semtech / LoRa modules
+# ProtoLab part package
 
-ELECTRONICS & VISION → RADIO MODULES. Variants are selected inside one fixed-dimension part.
+This package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.
 
-| Model                                                                          | PCB/body X × Y, mm | Scope                                                                                                                                                                   |
-| ------------------------------------------------------------------------------ | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Ai-Thinker Ra-02 — SX1278](https://docs.ai-thinker.com/en/Ra-02/index.html)   | 17 × 16            | 17 × 16 mm module PCB. SX1278 LoRa radio, U.FL antenna socket. External antenna excluded. RF shield and pad offsets approximate.                                        |
-| [Waveshare Core1262-HF — SX1262](https://www.waveshare.com/wiki/Core1262-868M) | 19 × 22            | 19 × 22 mm core module, HF radio revision. This is not the larger Raspberry Pi LoRa HAT. Antenna not fitted; no SMA socket.                                             |
-| [Ebyte E22-900M30S — SX1262](https://www.ebyte.com/product/451.html)           | 24 × 38.5          | 24 × 38.5 mm module. 30 dBm PA version, SPI host interface; not the UART T-series. Antenna and carrier excluded. RF shield, contacts and component offsets approximate. |
+## Package files
 
-PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout.
+- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.
+- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.
+- `presets.json`: complete preset parameters and source evidence.
+- `lib/`: optional private geometry, reference data, and domain helpers.
+- `index.ts`: stable package ID, API version, and display order.
+- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.
 
-Numeric filters omit unknown dimensions and ratings. Input-current, output-current and per-motor ESC ratings are distinct. Memory/firmware-only alternatives do not generate additional models. Semtech is the radio chip supplier, not the manufacturer of every LoRa board.
+## Edit and verify
 
-Preview and FreeCAD use the same independently movable colored solids. Package-private geometry helpers keep this part independently exportable. Validate with `npm run parts:check`, `npm run typecheck:tests`, `tests/electronics.test.ts` and `scripts/verify-electronics.ts` / `scripts/verify-electronics.py`.
+Run commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.
+
+```sh
+npm run parts:check -- <part-id>
+npm run typecheck
+npm run dev
+npm run build
+```
+
+Keep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.
+
+## Export and handoff
+
+```sh
+npm run parts:export -- <part-id> <output-folder>
+```
+
+The handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.
+
+Write instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.

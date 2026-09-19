@@ -345,6 +345,13 @@ export default function Configurator({
             )}
           </section>
         ))}
+        {!errors.length && !!part.assessment?.(parameters).length && (
+          <section className="config-note" aria-label="Design assessment">
+            {part.assessment(parameters).map((line) => (
+              <p key={line}>{line}</p>
+            ))}
+          </section>
+        )}
         {errors.length > 0 ? (
           <div className="validation-error" role="alert">
             <AlertCircle size={16} />

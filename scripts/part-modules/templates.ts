@@ -1,3 +1,6 @@
+export const PACKAGE_README =
+  '# ProtoLab part package\n\nThis package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.\n\n## Package files\n\n- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.\n- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.\n- `presets.json`: complete preset parameters and source evidence.\n- `lib/`: optional private geometry, reference data, and domain helpers.\n- `index.ts`: stable package ID, API version, and display order.\n- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.\n\n## Edit and verify\n\nRun commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.\n\n```sh\nnpm run parts:check -- <part-id>\nnpm run typecheck\nnpm run dev\nnpm run build\n```\n\nKeep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.\n\n## Export and handoff\n\n```sh\nnpm run parts:export -- <part-id> <output-folder>\n```\n\nThe handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.\n\nWrite instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.\n';
+
 export function starterFiles(id: string, name: string, order: number): Record<string, string> {
   return {
     'index.ts': `import type { PartModule } from '../../core/part-modules';
@@ -64,7 +67,8 @@ const part: PartDefinition = {
 };
 export default part;
 `,
-    'README.md': `# ${name}\n\nThis folder is the complete editable part package.\n\n- \`part.ts\`: metadata, validation, Three.js preview, FreeCAD geometry and dimensions.\n- \`configurator.ts\`: parameter controls and default values.\n- \`presets.json\`: complete preset parameters and optional source evidence.\n- \`lib/\`: optional private geometry and domain helpers.\n- \`index.ts\`: package ID, API version and catalog order.\n\nKeep preview geometry, FreeCAD geometry and reported dimensions consistent. A FreeCAD generator must assign \`shape\`; use a compound plus \`component_labels\` for separately movable assembly components.\n\nKeep domain-specific helpers inside this folder. Imports outside it may only use the documented core SDK and Three.js or JSCAD. No registry or interface edits are needed when this folder changes.\n\nRun \`npm run parts:check\` and \`npm run typecheck\` from the project root. To hand this part to another developer, run \`npm run parts:export -- ${id} /tmp/${id}-handoff\`.\n`,
+    'README.md': PACKAGE_README,
+    'GUIDE.md': `# ${name}\n\nDocument this component's sources, geometry scope, and engineering limitations here.\n`,
   };
 }
 

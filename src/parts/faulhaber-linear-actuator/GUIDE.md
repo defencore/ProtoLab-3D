@@ -1,0 +1,7 @@
+# FAULHABER linear actuator
+
+255 catalog presets with product, drawing and CAD source links. Only compressed runtime meshes and native BREP are bundled; original STEP/ZIP/PDF files stay external.
+
+Manufacturer external installation models with the standard cylindrical nut and screw length; no drive motor or motor-specific input adapter flange. FAULHABER supplies these actuator modules with a matched motor mounted; select the motor combination with the manufacturer. CAD archives combine alternative nuts and shaft ends side by side; only the centered standard execution is selected. Supplier CAD represents screw threads and ball recirculation as smooth installation surfaces and joins the nut, screw and housing into one solid. ML, SB, PB and TL variants with the same outside dimensions therefore share this simplified external solid; thread specification, lead/precision and force ratings remain distinct catalogue characteristics. This model does not expose a fictitious moving nut or internal mechanism. Catalogue body lengths are from the current dimensional drawings and can differ from the archived bare CAD body/flange execution. Check the linked drawing for the chosen motor combination; bounds include the supplied screw and nut.
+
+Runtime meshes use lossless zlib compression. Regenerate with FreeCAD Python: `scripts/import-faulhaber-drives.py manifest.json models.json`. The manifest explicitly selects supplier solid indices from each archive execution. Selected file names, indices and SHA-256 hashes are preserved in every native asset.

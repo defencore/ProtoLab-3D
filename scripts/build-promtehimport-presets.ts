@@ -60,7 +60,7 @@ const checkedGeometry = new Map<string, string | null>();
 const number = (raw: string): number | undefined => {
   const value = raw.trim().replace(',', '.');
   if (/[≈~<>±]|min|max/i.test(value)) return undefined;
-  const match = value.match(/^(-?\d+(?:\.\d+)?)\s*(?:mm|мм|°)?$/i);
+  const match = value.match(/^(-?\d+(?:\.\d+)?)\s*(?:mm|\u043c\u043c|°)?$/i);
   return match && Number.isFinite(+match[1]) ? +match[1] : undefined;
 };
 const key = (raw: string) => raw.replace(/[\s_{}]/g, '');
@@ -77,58 +77,116 @@ function fields(product: Product) {
     let symbol = key(cells[0]);
     const raw = cells.slice(1).find((cell) => number(cell) !== undefined);
     const metric =
-      cells.slice(1).some((cell) => /^(?:mm|мм)$/i.test(cell)) || !!raw?.match(/(?:mm|мм)/i);
+      cells.slice(1).some((cell) => /^(?:mm|\u043c\u043c)$/i.test(cell)) ||
+      !!raw?.match(/(?:mm|\u043c\u043c)/i);
     if (
       /^[a-zA-Zα][a-zA-Z\d,.]*$/.test(symbol) &&
       (metric ||
         cells.length === 2 ||
-        cells.slice(1).some((cell) => /діаметр|ширина|висота|довжина|diameter|width/i.test(cell)))
+        cells
+          .slice(1)
+          .some((cell) =>
+            /\u0434\u0456\u0430\u043c\u0435\u0442\u0440|\u0448\u0438\u0440\u0438\u043d\u0430|\u0432\u0438\u0441\u043e\u0442\u0430|\u0434\u043e\u0432\u0436\u0438\u043d\u0430|diameter|width/i.test(
+              cell,
+            ),
+          ))
     ) {
       if (cells.slice(1).some((cell) => /\bkN\b|\bN\b|r\/min|kg|1\/min/i.test(cell))) continue;
       add(symbol, raw ? number(raw) : undefined, cells.join(' | '));
     }
     const normalized = cells[0].toLowerCase();
     const captionSymbol = cells[0].match(
-      /(?:^|\s)([A-Za-z][A-Za-z\d_{}]*)\s*,?\s*(?:mm|мм)\.?$/i,
+      /(?:^|\s)([A-Za-z][A-Za-z\d_{}]*)\s*,?\s*(?:mm|\u043c\u043c)\.?$/i,
     )?.[1];
     if (captionSymbol) add(key(captionSymbol), raw ? number(raw) : undefined, cells.join(' | '));
     const leadingSymbol = cells[0].match(/^([A-Za-z][A-Za-z\d_{}]*)\s*[—–-]\s*/)?.[1];
-    const trailingSymbol = cells[0].match(/(?:mm|мм)\s*\)?\s*([A-Za-z][A-Za-z\d_{}]*)$/i)?.[1];
+    const trailingSymbol = cells[0].match(
+      /(?:mm|\u043c\u043c)\s*\)?\s*([A-Za-z][A-Za-z\d_{}]*)$/i,
+    )?.[1];
     if (!cells.slice(1).some((cell) => /\bkN\b|\bN\b|r\/min|kg|1\/min/i.test(cell)))
       for (const symbol of [leadingSymbol, trailingSymbol])
         if (symbol) add(key(symbol), raw ? number(raw) : undefined, cells.join(' | '));
-    if (/ширина зовнішнього кільця/.test(normalized))
+    if (
+      /\u0448\u0438\u0440\u0438\u043d\u0430 \u0437\u043e\u0432\u043d\u0456\u0448\u043d\u044c\u043e\u0433\u043e \u043a\u0456\u043b\u044c\u0446\u044f/.test(
+        normalized,
+      )
+    )
       add('C', raw ? number(raw) : undefined, cells.join(' | '));
-    if (/^(?:діаметр отвору)$/.test(normalized))
+    if (
+      /^(?:\u0434\u0456\u0430\u043c\u0435\u0442\u0440 \u043e\u0442\u0432\u043e\u0440\u0443)$/.test(
+        normalized,
+      )
+    )
       add('d', raw ? number(raw) : undefined, cells.join(' | '));
-    if (/^загальна ширина$/.test(normalized))
+    if (
+      /^\u0437\u0430\u0433\u0430\u043b\u044c\u043d\u0430 \u0448\u0438\u0440\u0438\u043d\u0430$/.test(
+        normalized,
+      )
+    )
       add('T', raw ? number(raw) : undefined, cells.join(' | '));
-    if (/^ширина,? внутрішнє кільце$/.test(normalized))
+    if (
+      /^\u0448\u0438\u0440\u0438\u043d\u0430,? \u0432\u043d\u0443\u0442\u0440\u0456\u0448\u043d\u0454 \u043a\u0456\u043b\u044c\u0446\u0435$/.test(
+        normalized,
+      )
+    )
       add('B', raw ? number(raw) : undefined, cells.join(' | '));
-    if (/^ширина,? зовнішнє кільце$/.test(normalized))
+    if (
+      /^\u0448\u0438\u0440\u0438\u043d\u0430,? \u0437\u043e\u0432\u043d\u0456\u0448\u043d\u0454 \u043a\u0456\u043b\u044c\u0446\u0435$/.test(
+        normalized,
+      )
+    )
       add('C', raw ? number(raw) : undefined, cells.join(' | '));
-    if (/загальна висота/.test(normalized))
+    if (
+      /\u0437\u0430\u0433\u0430\u043b\u044c\u043d\u0430 \u0432\u0438\u0441\u043e\u0442\u0430/.test(
+        normalized,
+      )
+    )
       add('@totalHeight', raw ? number(raw) : undefined, cells.join(' | '));
-    if (/висота осі вала/.test(normalized))
+    if (
+      /\u0432\u0438\u0441\u043e\u0442\u0430 \u043e\u0441\u0456 \u0432\u0430\u043b\u0430/.test(
+        normalized,
+      )
+    )
       add('@centerHeight', raw ? number(raw) : undefined, cells.join(' | '));
-    if (/довжина l/.test(normalized)) add('L', raw ? number(raw) : undefined, cells.join(' | '));
-    if (/ширина підошви/.test(normalized))
+    if (/\u0434\u043e\u0432\u0436\u0438\u043d\u0430 l/.test(normalized))
+      add('L', raw ? number(raw) : undefined, cells.join(' | '));
+    if (
+      /\u0448\u0438\u0440\u0438\u043d\u0430 \u043f\u0456\u0434\u043e\u0448\u0432\u0438/.test(
+        normalized,
+      )
+    )
       add('A', raw ? number(raw) : undefined, cells.join(' | '));
-    if (/центрами кріпильних отворів/.test(normalized))
+    if (
+      /\u0446\u0435\u043d\u0442\u0440\u0430\u043c\u0438 \u043a\u0440\u0456\u043f\u0438\u043b\u044c\u043d\u0438\u0445 \u043e\u0442\u0432\u043e\u0440\u0456\u0432/.test(
+        normalized,
+      )
+    )
       add('J', raw ? number(raw) : undefined, cells.join(' | '));
     if (
-      /внутрішній діаметр|внутр\. діаметр|внутренний диаметр/.test(normalized) &&
+      /\u0432\u043d\u0443\u0442\u0440\u0456\u0448\u043d\u0456\u0439 \u0434\u0456\u0430\u043c\u0435\u0442\u0440|\u0432\u043d\u0443\u0442\u0440\. \u0434\u0456\u0430\u043c\u0435\u0442\u0440|\u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0439 \u0434\u0438\u0430\u043c\u0435\u0442\u0440/.test(
+        normalized,
+      ) &&
       !/[a-z]\d/.test(normalized)
     )
       symbol = '@bore';
-    else if (/зовнішній діаметр|наружный диаметр/.test(normalized) && !/[a-z]\d/.test(normalized))
+    else if (
+      /\u0437\u043e\u0432\u043d\u0456\u0448\u043d\u0456\u0439 \u0434\u0456\u0430\u043c\u0435\u0442\u0440|\u043d\u0430\u0440\u0443\u0436\u043d\u044b\u0439 \u0434\u0438\u0430\u043c\u0435\u0442\u0440/.test(
+        normalized,
+      ) &&
+      !/[a-z]\d/.test(normalized)
+    )
       symbol = '@outer';
-    else if (/^(висота|высота|ширина)$|^ширина b,/.test(normalized)) symbol = '@width';
+    else if (
+      /^(\u0432\u0438\u0441\u043e\u0442\u0430|\u0432\u044b\u0441\u043e\u0442\u0430|\u0448\u0438\u0440\u0438\u043d\u0430)$|^\u0448\u0438\u0440\u0438\u043d\u0430 b,/.test(
+        normalized,
+      )
+    )
+      symbol = '@width';
     else continue;
     add(symbol, raw ? number(raw) : undefined, cells.join(' | '));
   }
   const triplet = product.name?.match(
-    /\(\s*(\d+(?:[.,]\d+)?)\s*[xх×*]\s*(\d+(?:[.,]\d+)?)\s*[xх×*]\s*(\d+(?:[.,]\d+)?)/i,
+    /\(\s*(\d+(?:[.,]\d+)?)\s*[x\u0445×*]\s*(\d+(?:[.,]\d+)?)\s*[x\u0445×*]\s*(\d+(?:[.,]\d+)?)/i,
   );
   if (triplet)
     ['@bore', '@outer', '@width'].forEach((name, index) =>
@@ -138,48 +196,51 @@ function fields(product: Product) {
 }
 
 function designation(product: Product) {
-  let title = (product.name ?? '').replace(/(?<=\d)[×х](?=\d)/g, 'x');
-  const cyrillic: Record<string, string> = {
-    А: 'A',
-    Б: 'B',
-    В: 'V',
-    Г: 'G',
-    Д: 'D',
-    Е: 'E',
-    Ё: 'E',
-    Ж: 'Zh',
-    З: 'Z',
-    И: 'I',
-    Й: 'Y',
-    К: 'K',
-    Л: 'L',
-    М: 'M',
-    Н: 'N',
-    О: 'O',
-    П: 'P',
-    Р: 'R',
-    С: 'S',
-    Т: 'T',
-    У: 'U',
-    Ф: 'F',
-    Х: 'X',
-    Ц: 'Ts',
-    Ч: 'Ch',
-    Ш: 'Sh',
-    Щ: 'Shch',
-    Ъ: '',
-    Ы: 'Y',
-    Ь: '',
-    Э: 'E',
-    Ю: 'Yu',
-    Я: 'Ya',
-    І: 'I',
-    Ї: 'Yi',
-    Є: 'Ye',
+  let title = (product.name ?? '').replace(/(?<=\d)[×\u0445](?=\d)/g, 'x');
+  const cyrillic: Record<number, string> = {
+    0x0410: 'A',
+    0x0411: 'B',
+    0x0412: 'V',
+    0x0413: 'G',
+    0x0414: 'D',
+    0x0415: 'E',
+    0x0401: 'E',
+    0x0416: 'Zh',
+    0x0417: 'Z',
+    0x0418: 'I',
+    0x0419: 'Y',
+    0x041a: 'K',
+    0x041b: 'L',
+    0x041c: 'M',
+    0x041d: 'N',
+    0x041e: 'O',
+    0x041f: 'P',
+    0x0420: 'R',
+    0x0421: 'S',
+    0x0422: 'T',
+    0x0423: 'U',
+    0x0424: 'F',
+    0x0425: 'X',
+    0x0426: 'Ts',
+    0x0427: 'Ch',
+    0x0428: 'Sh',
+    0x0429: 'Shch',
+    0x042a: '',
+    0x042b: 'Y',
+    0x042c: '',
+    0x042d: 'E',
+    0x042e: 'Yu',
+    0x042f: 'Ya',
+    0x0406: 'I',
+    0x0407: 'Yi',
+    0x0404: 'Ye',
   };
   title = title.replace(/\S+/g, (token) =>
-    /\d/.test(token) || /^[А-ЯІЇЄ]{1,2}$/.test(token)
-      ? token.replace(/[А-ЯІЇЄ]/g, (character) => cyrillic[character] ?? character)
+    /\d/.test(token) || /^[\u0410-\u042f\u0406\u0407\u0404]{1,2}$/.test(token)
+      ? token.replace(
+          /[\u0410-\u042f\u0406\u0407\u0404]/g,
+          (character) => cyrillic[character.charCodeAt(0)] ?? character,
+        )
       : token,
   );
   // Preserve the complete supplier designation, including prefixes, suffixes and aliases.
@@ -240,7 +301,8 @@ function classify(product: Product, name: string, alias = false): string | undef
   const code = name.split('(')[0].replace(/[\s-]/g, '').toUpperCase();
   const numericCode = name.split('(')[0].trim().match(/^\d+/)?.[0] ?? '';
   const title = (product.name ?? '').toLowerCase();
-  if (/\+\s*H\s*\d/i.test(name) || /з\s+втулк/.test(title)) return undefined;
+  if (/\+\s*H\s*\d/i.test(name) || /\u0437\s+\u0432\u0442\u0443\u043b\u043a/.test(title))
+    return undefined;
   if (product.categories.includes('c34') && /(?:\d|Z|RS)N(?:R)?(?=C[234]|$|[/])/.test(code))
     return undefined;
   if (/^AS\d{4}(?:\/|$)/.test(code) && product.categories.includes('c44')) return 'washer';
@@ -248,12 +310,18 @@ function classify(product: Product, name: string, alias = false): string | undef
   if (/^(NF|NCL)\d/i.test(code)) return undefined;
   if (
     /N2-SC|KRR|KYY|KYP|KRRA|KRP|BBAR|RY|NPP|JD|^203KR|205GP|^1726|^15802/i.test(code) ||
-    /шестигран|кожусі/.test(title)
+    /\u0448\u0435\u0441\u0442\u0438\u0433\u0440\u0430\u043d|\u043a\u043e\u0436\u0443\u0441\u0456/.test(
+      title,
+    )
   )
     return undefined;
   if (
-    /корпус(?!ний)|кільце|шайба|вал |направляюч|каретка|гайка|сепаратор/.test(title) &&
-    !/підшипник корпусний/.test(title)
+    /\u043a\u043e\u0440\u043f\u0443\u0441(?!\u043d\u0438\u0439)|\u043a\u0456\u043b\u044c\u0446\u0435|\u0448\u0430\u0439\u0431\u0430|\u0432\u0430\u043b |\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u044f\u044e\u0447|\u043a\u0430\u0440\u0435\u0442\u043a\u0430|\u0433\u0430\u0439\u043a\u0430|\u0441\u0435\u043f\u0430\u0440\u0430\u0442\u043e\u0440/.test(
+      title,
+    ) &&
+    !/\u043f\u0456\u0434\u0448\u0438\u043f\u043d\u0438\u043a \u043a\u043e\u0440\u043f\u0443\u0441\u043d\u0438\u0439/.test(
+      title,
+    )
   )
     return undefined;
   if (/^UCFL\d/.test(code)) return 'flange-2-bolt-bearing';
@@ -312,7 +380,13 @@ function classify(product: Product, name: string, alias = false): string | undef
     product.features?.type === 'single-row ball'
   )
     return 'ball-bearing';
-  if (product.categories.includes('c54') && /сальник|манжета/.test(title)) return 'radial-oil-seal';
+  if (
+    product.categories.includes('c54') &&
+    /\u0441\u0430\u043b\u044c\u043d\u0438\u043a|\u043c\u0430\u043d\u0436\u0435\u0442\u0430/.test(
+      title,
+    )
+  )
+    return 'radial-oil-seal';
   if (!alias)
     for (const alternative of name.matchAll(/\(([^)]+)\)/g)) {
       if (/\d\s*[x*]\s*\d/i.test(alternative[1])) continue;
@@ -482,13 +556,17 @@ function modelParameters(
     parameters.keyways = suffix ?? 'none';
     const keywayDescription =
       (product.tables ?? [])
-        .find((row) => /шпонковий паз/i.test(row[0]))
+        .find((row) =>
+          /\u0448\u043f\u043e\u043d\u043a\u043e\u0432\u0438\u0439 \u043f\u0430\u0437/i.test(row[0]),
+        )
         ?.slice(1)
         .join(' ') ?? '';
     if (
       suffix === 'PP' &&
-      /внутрішньому/.test(keywayDescription) &&
-      !/зовнішньому/.test(keywayDescription)
+      /\u0432\u043d\u0443\u0442\u0440\u0456\u0448\u043d\u044c\u043e\u043c\u0443/.test(
+        keywayDescription,
+      ) &&
+      !/\u0437\u043e\u0432\u043d\u0456\u0448\u043d\u044c\u043e\u043c\u0443/.test(keywayDescription)
     )
       throw new Error(
         'Conflicting keyway construction: PP designation but supplier describes an inner-only keyway',
@@ -522,7 +600,7 @@ function modelParameters(
       '@width',
       (values.get('@width') ?? []).filter(
         (item) =>
-          !/^Висота\s*\|/.test(item.source) ||
+          !/^\u0412\u0438\u0441\u043e\u0442\u0430\s*\|/.test(item.source) ||
           !(values.get('C1') ?? []).some((head) => head.value === item.value),
       ),
     );
@@ -787,11 +865,11 @@ for (const product of Object.values(inventory.products)) {
     }
     const rawManufacturer = product.manufacturer ?? '';
     const cleanedManufacturer =
-      rawManufacturer === 'ГПЗ'
+      rawManufacturer === '\u0413\u041f\u0417'
         ? 'GPZ'
-        : rawManufacturer === 'ХАРП'
+        : rawManufacturer === '\u0425\u0410\u0420\u041f'
           ? 'HARP'
-          : /Без бренду/i.test(rawManufacturer)
+          : /\u0411\u0435\u0437 \u0431\u0440\u0435\u043d\u0434\u0443/i.test(rawManufacturer)
             ? undefined
             : rawManufacturer.replace(/[^A-Za-z0-9 &.,/-]/g, '').trim() || undefined;
     const manufacturer = /^(?:FO|FO\s*Bearings)$/i.test(cleanedManufacturer ?? '')
@@ -843,7 +921,15 @@ for (const product of Object.values(inventory.products)) {
 }
 for (const presets of Object.values(generated))
   presets.sort((a, b) => String(a.name).localeCompare(b.name, 'en', { numeric: true }));
-fs.writeFileSync('src/catalog/generated/promtehimport-presets.json', JSON.stringify(generated));
+// Preserve exact supplier evidence using machine escapes in repository snapshots.
+function sourceJson(value: unknown): string {
+  return JSON.stringify(value).replace(
+    /\p{Script=Cyrillic}/gu,
+    (character) => `\\u${character.charCodeAt(0).toString(16).padStart(4, '0')}`,
+  );
+}
+
+fs.writeFileSync('src/catalog/generated/promtehimport-presets.json', sourceJson(generated));
 const counts: Record<string, number> = {};
 const processedProducts = results.length;
 const membership = new Map<string, string[]>();
@@ -908,7 +994,7 @@ const report = {
   unsupportedGroups,
   results,
 };
-fs.writeFileSync('data/promtehimport-import-report.json', JSON.stringify(report));
+fs.writeFileSync('data/promtehimport-import-report.json', sourceJson(report));
 fs.writeFileSync(
   'src/catalog/generated/promtehimport-coverage.json',
   JSON.stringify({

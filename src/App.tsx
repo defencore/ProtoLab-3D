@@ -30,6 +30,7 @@ import {
 import Catalog from './components/Catalog';
 import Configurator from './components/Configurator';
 import ModelViewer from './components/ModelViewer';
+import { useRecoveryPreview } from './components/useRecoveryPreview';
 import Modal from './components/Modal';
 import PresetBrowser from './components/PresetBrowser';
 import { Brand, PartIcon } from './components/PartIcon';
@@ -124,13 +125,29 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
   const validPreview = useRef({ part, parameters, modelState });
   if (!errors.length) validPreview.current = { part, parameters, modelState };
   const preview = validPreview.current;
+  const recovery = useRecoveryPreview(
+    preview.part.id === 'rocket-release' || preview.part.id === 'rocket-parachute-recovery'
+      ? preview.part.id
+      : undefined,
+    preview.parameters,
+    preview.modelState,
+    presetId,
+  );
   const dimensions = useMemo(
-    () => preview.part.dimensions(preview.parameters, preview.modelState),
-    [preview.part, preview.parameters, preview.modelState],
+    () =>
+      recovery.enabled
+        ? (recovery.dimensions ?? [0, 0, 0])
+        : preview.part.dimensions(preview.parameters, preview.modelState),
+    [preview.part, preview.parameters, preview.modelState, recovery.dimensions],
   );
   const script = useMemo(
-    () => (errors.length ? '' : generateScript(part, parameters, modelState, presetId)),
-    [part, parameters, modelState, presetId, errors.length],
+    () =>
+      errors.length
+        ? ''
+        : recovery.enabled
+          ? (recovery.script ?? '')
+          : generateScript(part, parameters, modelState, presetId),
+    [part, parameters, modelState, presetId, errors.length, recovery.script],
   );
 
   useEffect(() => {
@@ -198,7 +215,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
     setMobilePanel(panel);
   }
   async function copyScript() {
-    if (errors.length) return;
+    if (errors.length || (recovery.enabled && !recovery.script)) return;
     try {
       await navigator.clipboard.writeText(consoleCommand(script));
       setToast('Script copied. Paste into the FreeCAD Python console.');
@@ -208,10 +225,14 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
     }
   }
   function exportPart(format: 'macro' | 'stl' | 'json') {
-    if (errors.length) return;
+    if (errors.length || (recovery.enabled && !recovery.script)) return;
     try {
       if (format === 'macro') downloadFile(script, `${part.id}.FCMacro`, 'text/x-python');
-      if (format === 'stl') downloadStl(part, parameters, modelState);
+      if (format === 'stl') {
+        if (recovery.enabled && recovery.stl)
+          downloadFile(recovery.stl, `${part.id}-${modelState}.stl`, 'model/stl');
+        else downloadStl(part, parameters, modelState);
+      }
       if (format === 'json')
         downloadFile(
           JSON.stringify(
@@ -342,12 +363,16 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
           <button
             className="secondary-button script-button"
             onClick={() => setDialog('script')}
-            disabled={!!errors.length}
+            disabled={!!errors.length || (recovery.enabled && !recovery.script)}
           >
             <Code2 size={16} />
             <span>View script</span>
           </button>
-          <button className="primary-button" onClick={copyScript} disabled={!!errors.length}>
+          <button
+            className="primary-button"
+            onClick={copyScript}
+            disabled={!!errors.length || (recovery.enabled && !recovery.script)}
+          >
             <Copy size={15} />
             <span>Copy Python</span>
           </button>
@@ -356,7 +381,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
               className={`secondary-button export-button ${exportOpen ? 'pressed' : ''}`}
               onClick={() => setExportOpen(!exportOpen)}
               aria-expanded={exportOpen}
-              disabled={!!errors.length}
+              disabled={!!errors.length || (recovery.enabled && !recovery.script)}
             >
               <ArrowDownToLine size={16} />
               <span>Download</span>
@@ -444,6 +469,10 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
           </div>
           <div className="viewport-area">
             <ModelViewer
+              preparedModel={recovery.enabled ? (recovery.model ?? null) : undefined}
+              preparedDimensions={recovery.dimensions}
+              pending={recovery.pending}
+              loadError={recovery.error}
               part={preview.part}
               parameters={preview.parameters}
               modelState={preview.modelState}
@@ -549,7 +578,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
             <div className="summary-item">
               <span>BOUNDING SIZE</span>
               <strong>
-                {dimensions.map(formatDimension).join(' × ')}
+                {recovery.pending ? 'Building…' : dimensions.map(formatDimension).join(' × ')}
                 <small> mm</small>
               </strong>
             </div>
@@ -799,7 +828,9 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
               <PartIcon type={part.icon} size={25} />
               <div>
                 <strong>{part.name}</strong>
-                <p>{dimensions.map(formatDimension).join(' × ')} mm</p>
+                <p>
+                  {recovery.pending ? 'Building…' : dimensions.map(formatDimension).join(' × ')} mm
+                </p>
               </div>
             </div>
             <div className="modal-actions">

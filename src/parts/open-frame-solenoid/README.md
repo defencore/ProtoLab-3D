@@ -1,11 +1,35 @@
-# Open-frame solenoid
+# ProtoLab part package
 
-An editable prototype solenoid with a connected steel C-frame, two or four real rear mounting holes, bobbin, copper winding envelope, guide sleeve, fixed pole and sliding plunger. The optional push rod belongs to the moving plunger as one solid. The copper is an envelope rather than a modeled wire winding.
+This package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.
 
-The frame uses a stationary datum at `z=0`, with its axis along Z and rear web at negative Y. Frame length extends to positive Z; the fixed-pole shoulder extends below the datum by one frame-wall thickness. Extended and retracted states move only the plunger. Retraction leaves the chosen positive pole gap; extension adds exactly `stroke` and must retain at least one plunger diameter (minimum 2 mm) of guide engagement. Dimensions include all visible geometry in the selected state.
+## Package files
 
-`body` exports the frame alone. `exploded` separates the six physical components without cutting them. Every component exports as one valid independent FreeCAD solid with matching preview and native positions, labels and colors. All geometry uses package-local helpers and the generic SDK.
+- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.
+- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.
+- `presets.json`: complete preset parameters and source evidence.
+- `lib/`: optional private geometry, reference data, and domain helpers.
+- `index.ts`: stable package ID, API version, and display order.
+- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.
 
-Five complete prototype presets show small, standard, long-stroke, push-rod and four-hole mounting variants. No preset claims a supplier match or electrical, force or thermal ratings. Manufacturing tolerances, winding specification, electrical connections, return spring and fastening details are outside this envelope model.
+## Edit and verify
 
-Edit numeric controls and defaults in `configurator.ts`, geometry and relational validation in `part.ts`, primitive conversion in `lib/shapes.ts`, and examples in `presets.json`. Run `npm run parts:check -- open-frame-solenoid`, appropriate geometry tests, and native FreeCAD verification before handing off geometry changes.
+Run commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.
+
+```sh
+npm run parts:check -- <part-id>
+npm run typecheck
+npm run dev
+npm run build
+```
+
+Keep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.
+
+## Export and handoff
+
+```sh
+npm run parts:export -- <part-id> <output-folder>
+```
+
+The handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.
+
+Write instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.

@@ -24,7 +24,7 @@ def parse(text, members):
   lines = [line.strip() for line in section.splitlines() if line.strip()]
   title = next((line.lstrip('# ').strip() for line in lines if line.startswith('# ')), '')
   if not title:
-   title = re.sub(r'^Купити\s+|^Купить\s+|\s+[зс] доставк.*$', '', lines[0])
+   title = re.sub(r'^\u041a\u0443\u043f\u0438\u0442\u0438\s+|^\u041a\u0443\u043f\u0438\u0442\u044c\s+|\s+[\u0437\u0441] \u0434\u043e\u0441\u0442\u0430\u0432\u043a.*$', '', lines[0])
   rows = []
   for line in lines:
    if '|' in line:
@@ -32,22 +32,22 @@ def parse(text, members):
     if len(cells) >= 2 and re.search(r'\d', ''.join(cells[1:])): rows.append(cells)
   assigned_rows=[]
   for i, line in enumerate(lines):
-   assigned=re.match(r'^(d|D|B|C|Fw|T)\s*=\s*(\d+(?:[.,]\d+)?)\s*(?:mm|мм)',line)
+   assigned=re.match(r'^(d|D|B|C|Fw|T)\s*=\s*(\d+(?:[.,]\d+)?)\s*(?:mm|\u043c\u043c)',line)
    if assigned:assigned_rows.append([assigned.group(1),assigned.group(2)+' mm'])
    if i+1>=len(lines):continue
    if re.match(r'^[a-zA-Z][a-zA-Z0-9_{}]*$', line):
     at=i+1;symbol=line
-    if at+1<len(lines) and re.match(r'^[a-zA-Z0-9]{1,3}$',lines[at]) and re.match(r'^(?:\d+(?:[.,]\d+)?(?:\s*(?:mm|мм))?|M\s*\d.*)$',lines[at+1]):symbol+=lines[at];at+=1
-    if at<len(lines) and re.match(r'^\d+(?:[.,]\d+)?$',lines[at]) and at+1<len(lines) and lines[at+1] in ('mm','мм'): rows.append([symbol,lines[at]+' '+lines[at+1]])
-    elif at<len(lines) and re.match(r'^(?:\d+(?:[.,]\d+)?\s*(mm|мм)|M\s*\d[^\n]*)$',lines[at]):rows.append([symbol,lines[at]])
-   if re.search(r'діаметр|ширина|висота|довжина|отворами|отворів',line,re.I) and re.match(r'^\d+(?:[.,]\d+)?(?:\s*(?:mm|мм))?$',lines[i+1],re.I):rows.append([line,lines[i+1]])
+    if at+1<len(lines) and re.match(r'^[a-zA-Z0-9]{1,3}$',lines[at]) and re.match(r'^(?:\d+(?:[.,]\d+)?(?:\s*(?:mm|\u043c\u043c))?|M\s*\d.*)$',lines[at+1]):symbol+=lines[at];at+=1
+    if at<len(lines) and re.match(r'^\d+(?:[.,]\d+)?$',lines[at]) and at+1<len(lines) and lines[at+1] in ('mm','\u043c\u043c'): rows.append([symbol,lines[at]+' '+lines[at+1]])
+    elif at<len(lines) and re.match(r'^(?:\d+(?:[.,]\d+)?\s*(mm|\u043c\u043c)|M\s*\d[^\n]*)$',lines[at]):rows.append([symbol,lines[at]])
+   if re.search(r'\u0434\u0456\u0430\u043c\u0435\u0442\u0440|\u0448\u0438\u0440\u0438\u043d\u0430|\u0432\u0438\u0441\u043e\u0442\u0430|\u0434\u043e\u0432\u0436\u0438\u043d\u0430|\u043e\u0442\u0432\u043e\u0440\u0430\u043c\u0438|\u043e\u0442\u0432\u043e\u0440\u0456\u0432',line,re.I) and re.match(r'^\d+(?:[.,]\d+)?(?:\s*(?:mm|\u043c\u043c))?$',lines[i+1],re.I):rows.append([line,lines[i+1]])
   symbols={row[0] for row in rows}
   rows.extend(row for row in assigned_rows if row[0] not in symbols)
   numeric = [row for row in rows if re.search(r'\d', row[1])]
   if len(numeric)<3: continue
-  brand = re.search(r'(?:Виробник|Производитель):\s*([^\n]+)', section)
-  if not brand: brand = re.search(r'Бренд\s*\|\s*([^\n|]+)', section)
-  if not brand: brand = re.search(r'Бренд\s*\n+\s*([^\n]+)', section)
+  brand = re.search(r'(?:\u0412\u0438\u0440\u043e\u0431\u043d\u0438\u043a|\u041f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044c):\s*([^\n]+)', section)
+  if not brand: brand = re.search(r'\u0411\u0440\u0435\u043d\u0434\s*\|\s*([^\n|]+)', section)
+  if not brand: brand = re.search(r'\u0411\u0440\u0435\u043d\u0434\s*\n+\s*([^\n]+)', section)
   yield {'url':url,'sourceUrl':source_url,'name':title,'manufacturer':brand.group(1).strip() if brand else '', 'tables':rows,'description':'','checkedAt':datetime.now(timezone.utc).date().isoformat(),'retrieval':'public-web-cache'}
 
 def main():
@@ -63,7 +63,7 @@ def main():
   for product in parse(path.read_text(),members):
    target=args.cache/(hashlib.sha256(product['url'].encode()).hexdigest()[:24]+'.json')
    if target.exists():continue
-   target.write_text(json.dumps(product,ensure_ascii=False,separators=(',',':')));added.append(product['url'])
+   target.write_text(json.dumps(product,ensure_ascii=True,separators=(',',':')));added.append(product['url'])
  print(json.dumps({'added':len(added),'urls':added}))
 
 if __name__=='__main__':main()

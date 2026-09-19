@@ -1,16 +1,35 @@
-# Model rocket airframe
+# ProtoLab part package
 
-External airframe reference for educational model rockets: open tube, hollow nose and separate fins. Z is the longitudinal axis. No motor mount, motor, igniter, propellant or deployment mechanism. Published product dimensions are rounded; tube wall, nose profile/length and fin shapes are editable assumptions, not traced factory parts. The nose sits at the tube end without a modeled retention joint. These are layout solids, not flight-ready kits.
+This package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.
 
-## Presets
+## Package files
 
-- Custom model rocket · Ø40 × 500 mm
-- Custom model rocket · Ø66 × 900 mm
-- Estes Alpha III
-- Estes Big Bertha
+- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.
+- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.
+- `presets.json`: complete preset parameters and source evidence.
+- `lib/`: optional private geometry, reference data, and domain helpers.
+- `index.ts`: stable package ID, API version, and display order.
+- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.
 
-## Geometry and export
+## Edit and verify
 
-Dimensions are in millimetres. Separate named FreeCAD solids preserve the main assembly components. Assembly, body-only and exploded states share the same geometry in the preview and Python export. These are geometric layout references; material strength, flight behaviour, buoyancy and manufacturing tolerances have not been qualified.
+Run commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.
 
-Source-backed presets list only the explicitly verified dimensions; all other dimensions are editable assumptions. Modifying those dimensions creates a custom configuration.
+```sh
+npm run parts:check -- <part-id>
+npm run typecheck
+npm run dev
+npm run build
+```
+
+Keep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.
+
+## Export and handoff
+
+```sh
+npm run parts:export -- <part-id> <output-folder>
+```
+
+The handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.
+
+Write instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.

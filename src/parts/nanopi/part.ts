@@ -12,7 +12,7 @@ const part: PartDefinition = {
   icon: 'circuit',
   complexity: 'Fixed supplier models',
   description: 'FriendlyELEC compact computers and router boards.',
-  keywords: ['Nano PI', 'FriendlyElec', 'SBC', 'міні компʼютер'],
+  keywords: ['Nano PI', 'FriendlyElec', 'SBC', 'mini computer'],
   parameters,
   defaults,
   presets: presets as unknown as Preset[],

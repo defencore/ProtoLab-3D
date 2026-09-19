@@ -1,19 +1,35 @@
-# Suspended tracked chassis
+# ProtoLab part package
 
-Complete Hiwonder-style suspended robot chassis, distinct from the single `track-drive` module. Standard single-deck and advanced two-deck presets use the published 270 × 194 mm chassis and 270 × 143 × 2 mm mounting plates. Eight trailing-arm stations, tension springs, wheel-bearing cartridges, slotted idler adjustment and two JGB3865-520R45-12 motor envelopes are individually exportable FreeCAD components.
+This package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.
 
-Source: https://www.hiwonder.com/products/suspended-shock-absorbing-tracked-chassis
+## Package files
 
-The public page supplies overall/deck dimensions and a motor drawing, but no open manufacturing CAD. Wheel sizes, spring geometry, arm pivots, bearing choices, deck separation, bracket layout and mounting coordinates are reconstruction. Bearings are simplified cartridges; motor internals and screw threads are omitted. This is a configurable layout model, not a manufacturing-ready copy or a verified Hiwonder parts list. No source PDF, STEP or image archive is included.
+- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.
+- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.
+- `presets.json`: complete preset parameters and source evidence.
+- `lib/`: optional private geometry, reference data, and domain helpers.
+- `index.ts`: stable package ID, API version, and display order.
+- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.
 
-Left and right suspension angles rotate the arms and relocate wheels, spring eyes, axles and springs. The taut belt outline is recomputed from the wheel envelope. Idler travel also changes its axle and belt outline. The continuous belts have integral tread ribs; individual articulated links, sprocket pitch engagement and elastic tension are not simulated. Lightweight mode replaces helical coils with their central envelopes and uses smooth belts, while retaining mechanical layout.
+## Edit and verify
 
-Inspect the assembly without tracks, separate it along assembly axes, or export just the frame/decks. Invalid width and wheel-spacing combinations are rejected before generation.
+Run commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.
 
-## Verification
+```sh
+npm run parts:check -- <part-id>
+npm run typecheck
+npm run dev
+npm run build
+```
 
-The targeted tests cover both presets, every visible geometry control, independent left/right poses, inspection states, invalid combinations, STL records and FreeCAD macro generation. Production build and package/type checks pass.
+Keep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.
 
-Eleven native FreeCAD configurations cover both decks, all inspection states, ±8° suspension travel, full idler adjustment, six wheels per side, lightweight detail, larger/thicker chassis dimensions and minimum wheel sizes. Every physical component is one valid closed solid, without volumetric intersections. Preview/native bounds agree within 0.003 mm and volumes within 0.65%. Independent movement and STEP/FCStd roundtrips pass. These checks validate geometry and export, not manufacturing tolerances, fatigue or load capacity.
+## Export and handoff
 
-Reproduce with `FULL=1 node --import tsx scripts/verify-tracked-chassis.ts`, then run `scripts/verify-electronics.py /tmp/protolab-tracked-chassis-cases.json` with a FreeCAD-enabled Python.
+```sh
+npm run parts:export -- <part-id> <output-folder>
+```
+
+The handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.
+
+Write instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.

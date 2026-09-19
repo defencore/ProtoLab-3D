@@ -12,7 +12,7 @@ const part: PartDefinition = {
   icon: 'circuit',
   complexity: 'Fixed supplier models',
   description: 'Receiver and servo power regulators with fixed supplier envelopes.',
-  keywords: ['UBEC', 'BEC', 'живлення', 'стабілізатор'],
+  keywords: ['UBEC', 'BEC', 'power supply', 'regulator'],
   parameters,
   defaults,
   presets: presets as unknown as Preset[],

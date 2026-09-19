@@ -1,23 +1,35 @@
-# Connecting rod
+# ProtoLab part package
 
-This independent package models a rod between two parallel Y-axis bores. The big-eye center is at the origin and the small-eye center is at Z = `centerDistance`. Center distance is independent of the outer length. Preview and FreeCAD retain this same origin and component order.
+This package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.
 
-`configurator.ts` owns controls/defaults, `presets.json` owns prototype examples, `part.ts` owns assembly layout/validation and `lib/shapes.ts` owns private shape recipes. The package imports only the public SDK and installed modeling libraries. Copy this whole directory for a handoff.
+## Package files
 
-The big end can be a one-piece eye or a removable split cap. Shank construction is solid, I-beam with front/back pockets, or H-beam with side pockets. The pockets stop short of both eye housings. Eye widths and wall thicknesses are independently editable.
+- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.
+- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.
+- `presets.json`: complete preset parameters and source evidence.
+- `lib/`: optional private geometry, reference data, and domain helpers.
+- `index.ts`: stable package ID, API version, and display order.
+- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.
 
-`smallBore` and `bigBore` are the **finished working bores**. With inserts enabled, housing diameter is working diameter plus twice insert thickness and twice `fitClearance`. Removing inserts from the construction produces a plain working bore. The small-end bushing and upper/lower big-end bearing shells are independent physical components.
+## Edit and verify
 
-For split rods, cap bolt lugs, through bores and recessed seating faces are part of the manufactured rod/cap. Bolts and nuts remain separate components. Their threads are smooth envelopes. In assembled state, clearances avoid overlapping component volumes; exploded state separates the same items without changing their geometry. Body-only state exports only the manufactured rod body, so a split big eye is open.
-
-The supplied anatomy and exploded illustrations contain no dimensions. Every preset is an editable **prototype example**, without catalog metadata or verified size claims. There are no oil channels, bearing locating tangs, forged blends, balancing targets or strength certifications.
-
-Geometry caching is bounded and private; each displayed component receives its own mesh/material to keep state changes responsive and avoid disposal side effects.
+Run commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.
 
 ```sh
-npm run parts:check -- connecting-rod
-node --import tsx --test tests/connecting-rod.test.ts
-npm run typecheck:tests
+npm run parts:check -- <part-id>
+npm run typecheck
+npm run dev
+npm run build
 ```
 
-Execute the emitted macro in FreeCAD after changing shape construction; a browser mesh test alone does not validate the CAD kernel.
+Keep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.
+
+## Export and handoff
+
+```sh
+npm run parts:export -- <part-id> <output-folder>
+```
+
+The handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.
+
+Write instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.

@@ -14,7 +14,7 @@ const part: PartDefinition = {
   icon: 'circuit',
   complexity: 'Fixed supplier models',
   description: 'Raspberry Pi computers and compute modules in distinct mechanical formats.',
-  keywords: ['RPi', 'SBC', 'міні компʼютер', 'одноплатний'],
+  keywords: ['RPi', 'SBC', 'mini computer', 'single board'],
   parameters,
   defaults,
   presets: presets as unknown as Preset[],

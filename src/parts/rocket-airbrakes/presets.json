@@ -1,8 +1,8 @@
 [
   {
     "id": "tube-80-76",
-    "name": "Ø80/76 mm · micro servo",
-    "description": "Default compact tube; 8 mm travel with a 60° servo sweep.",
+    "name": "\u00d880/76 mm \u00b7 micro servo",
+    "description": "Default compact tube; 8 mm travel with a 60\u00b0 servo sweep.",
     "parameters": {
       "tubeOD": 80,
       "tubeID": 76,
@@ -13,12 +13,13 @@
       "bladeWidth": 22,
       "fitClearance": 0.5,
       "servo": "micro",
-      "mechanism": "spiral"
+      "mechanism": "spiral",
+      "flapLength": 30
     }
   },
   {
     "id": "tube-90-86",
-    "name": "Ø90/86 mm · standard servo",
+    "name": "\u00d890/86 mm \u00b7 standard servo",
     "description": "Editable design preset; dimensions are an adaptation, not original author CAD.",
     "parameters": {
       "tubeOD": 90,
@@ -30,12 +31,13 @@
       "bladeWidth": 22,
       "fitClearance": 0.5,
       "servo": "standard",
-      "mechanism": "spiral"
+      "mechanism": "spiral",
+      "flapLength": 30
     }
   },
   {
     "id": "tube-90-86-micro",
-    "name": "Ø90/86 mm · micro servo",
+    "name": "\u00d890/86 mm \u00b7 micro servo",
     "description": "Editable design preset; dimensions are an adaptation, not original author CAD.",
     "parameters": {
       "tubeOD": 90,
@@ -47,12 +49,13 @@
       "bladeWidth": 22,
       "fitClearance": 0.5,
       "servo": "micro",
-      "mechanism": "spiral"
+      "mechanism": "spiral",
+      "flapLength": 30
     }
   },
   {
     "id": "tube-100-96",
-    "name": "Ø100/96 mm · 12 mm travel",
+    "name": "\u00d8100/96 mm \u00b7 12 mm travel",
     "description": "Editable design preset; dimensions are an adaptation, not original author CAD.",
     "parameters": {
       "tubeOD": 100,
@@ -64,12 +67,13 @@
       "bladeWidth": 26,
       "fitClearance": 0.5,
       "servo": "standard",
-      "mechanism": "spiral"
+      "mechanism": "spiral",
+      "flapLength": 30
     }
   },
   {
     "id": "tube-150-146",
-    "name": "Ø150/146 mm · 26 mm travel",
+    "name": "\u00d8150/146 mm \u00b7 26 mm travel",
     "description": "Editable design preset; dimensions are an adaptation, not original author CAD.",
     "parameters": {
       "tubeOD": 150,
@@ -81,12 +85,13 @@
       "bladeWidth": 32,
       "fitClearance": 0.5,
       "servo": "standard",
-      "mechanism": "spiral"
+      "mechanism": "spiral",
+      "flapLength": 30
     }
   },
   {
     "id": "sculpted-cam-90",
-    "name": "UGA / WPI · sculpted cam · Ø90/86 mm",
+    "name": "UGA / WPI \u00b7 sculpted cam \u00b7 \u00d890/86 mm",
     "description": "Parametric mechanism adaptation; not original source CAD.",
     "parameters": {
       "tubeOD": 90,
@@ -98,12 +103,13 @@
       "bladeWidth": 22,
       "fitClearance": 0.5,
       "servo": "standard",
-      "mechanism": "sculpted-cam"
+      "mechanism": "sculpted-cam",
+      "flapLength": 30
     }
   },
   {
     "id": "sculpted-cam-100",
-    "name": "UGA / WPI · sculpted cam · Ø100/96 mm",
+    "name": "UGA / WPI \u00b7 sculpted cam \u00b7 \u00d8100/96 mm",
     "description": "Parametric mechanism adaptation; not original source CAD.",
     "parameters": {
       "tubeOD": 100,
@@ -115,12 +121,13 @@
       "bladeWidth": 22,
       "fitClearance": 0.5,
       "servo": "standard",
-      "mechanism": "sculpted-cam"
+      "mechanism": "sculpted-cam",
+      "flapLength": 30
     }
   },
   {
     "id": "curved-link-90",
-    "name": "UGA · curved links · Ø90/86 mm",
+    "name": "UGA \u00b7 curved links \u00b7 \u00d890/86 mm",
     "description": "Parametric mechanism adaptation; not original source CAD.",
     "parameters": {
       "tubeOD": 90,
@@ -132,12 +139,13 @@
       "bladeWidth": 22,
       "fitClearance": 0.5,
       "servo": "standard",
-      "mechanism": "curved-link"
+      "mechanism": "curved-link",
+      "flapLength": 30
     }
   },
   {
     "id": "curved-link-100",
-    "name": "UGA · curved links · Ø100/96 mm",
+    "name": "UGA \u00b7 curved links \u00b7 \u00d8100/96 mm",
     "description": "Parametric mechanism adaptation; not original source CAD.",
     "parameters": {
       "tubeOD": 100,
@@ -149,12 +157,13 @@
       "bladeWidth": 22,
       "fitClearance": 0.5,
       "servo": "standard",
-      "mechanism": "curved-link"
+      "mechanism": "curved-link",
+      "flapLength": 30
     }
   },
   {
     "id": "mit-link-90",
-    "name": "MIT · four sliding leaves · Ø90/86 mm",
+    "name": "MIT \u00b7 four sliding leaves \u00b7 \u00d890/86 mm",
     "description": "Parametric mechanism adaptation; not original source CAD.",
     "parameters": {
       "tubeOD": 90,
@@ -166,12 +175,13 @@
       "bladeWidth": 22,
       "fitClearance": 0.5,
       "servo": "standard",
-      "mechanism": "mit-link"
+      "mechanism": "mit-link",
+      "flapLength": 30
     }
   },
   {
     "id": "mit-link-100",
-    "name": "MIT · four sliding leaves · Ø100/96 mm",
+    "name": "MIT \u00b7 four sliding leaves \u00b7 \u00d8100/96 mm",
     "description": "Parametric mechanism adaptation; not original source CAD.",
     "parameters": {
       "tubeOD": 100,
@@ -183,12 +193,13 @@
       "bladeWidth": 22,
       "fitClearance": 0.5,
       "servo": "standard",
-      "mechanism": "mit-link"
+      "mechanism": "mit-link",
+      "flapLength": 30
     }
   },
   {
     "id": "rack-pinion-90",
-    "name": "Sprague · four racks · Ø90/86 mm",
+    "name": "Sprague \u00b7 four racks \u00b7 \u00d890/86 mm",
     "description": "Parametric mechanism adaptation; not original source CAD.",
     "parameters": {
       "tubeOD": 90,
@@ -200,12 +211,13 @@
       "bladeWidth": 22,
       "fitClearance": 0.5,
       "servo": "standard",
-      "mechanism": "rack-pinion"
+      "mechanism": "rack-pinion",
+      "flapLength": 30
     }
   },
   {
     "id": "rack-pinion-100",
-    "name": "Sprague · four racks · Ø100/96 mm",
+    "name": "Sprague \u00b7 four racks \u00b7 \u00d8100/96 mm",
     "description": "Parametric mechanism adaptation; not original source CAD.",
     "parameters": {
       "tubeOD": 100,
@@ -217,12 +229,13 @@
       "bladeWidth": 22,
       "fitClearance": 0.5,
       "servo": "standard",
-      "mechanism": "rack-pinion"
+      "mechanism": "rack-pinion",
+      "flapLength": 30
     }
   },
   {
     "id": "geared-petal-90",
-    "name": "Geared pivoting petals · Ø90/86 mm",
+    "name": "Geared pivoting petals \u00b7 \u00d890/86 mm",
     "description": "Parametric mechanism adaptation; not original source CAD.",
     "parameters": {
       "tubeOD": 90,
@@ -234,12 +247,13 @@
       "bladeWidth": 22,
       "fitClearance": 0.5,
       "servo": "standard",
-      "mechanism": "geared-petal"
+      "mechanism": "geared-petal",
+      "flapLength": 30
     }
   },
   {
     "id": "geared-petal-100",
-    "name": "Geared pivoting petals · Ø100/96 mm",
+    "name": "Geared pivoting petals \u00b7 \u00d8100/96 mm",
     "description": "Parametric mechanism adaptation; not original source CAD.",
     "parameters": {
       "tubeOD": 100,
@@ -251,7 +265,98 @@
       "bladeWidth": 22,
       "fitClearance": 0.5,
       "servo": "standard",
-      "mechanism": "geared-petal"
+      "mechanism": "geared-petal",
+      "flapLength": 30
+    }
+  },
+  {
+    "id": "jaynes-v1-90",
+    "name": "Ben Jaynes V1 \u00b7 Transverse hinged flaps \u00b7 \u00d890/86",
+    "description": "Reference-inspired adaptation; dimensions and transmission details reconstructed. See Ben Jaynes source and modeling notes.",
+    "parameters": {
+      "mechanism": "jaynes-v1",
+      "tubeOD": 90,
+      "tubeID": 86,
+      "height": 136,
+      "stroke": 10,
+      "deployment": 50,
+      "sweep": 60,
+      "bladeWidth": 22,
+      "fitClearance": 0.5,
+      "servo": "micro",
+      "flapLength": 30
+    }
+  },
+  {
+    "id": "jaynes-v2-90",
+    "name": "Ben Jaynes V2 \u00b7 Vertical servo and articulated flaps \u00b7 \u00d890/86",
+    "description": "Reference-inspired adaptation; dimensions and transmission details reconstructed. See Ben Jaynes source and modeling notes.",
+    "parameters": {
+      "mechanism": "jaynes-v2",
+      "tubeOD": 90,
+      "tubeID": 86,
+      "height": 120,
+      "stroke": 10,
+      "deployment": 50,
+      "sweep": 60,
+      "bladeWidth": 22,
+      "fitClearance": 0.5,
+      "servo": "standard",
+      "flapLength": 30
+    }
+  },
+  {
+    "id": "jaynes-v3-90",
+    "name": "Ben Jaynes V3 \u00b7 Archimedean sliding leaves \u00b7 \u00d890/86",
+    "description": "Reference-inspired adaptation; dimensions and transmission details reconstructed. See Ben Jaynes source and modeling notes.",
+    "parameters": {
+      "mechanism": "jaynes-v3",
+      "tubeOD": 90,
+      "tubeID": 86,
+      "height": 120,
+      "stroke": 10,
+      "deployment": 50,
+      "sweep": 60,
+      "bladeWidth": 22,
+      "fitClearance": 0.5,
+      "servo": "standard",
+      "flapLength": 30
+    }
+  },
+  {
+    "id": "jaynes-v4-90",
+    "name": "Ben Jaynes V4 \u00b7 Geared rotating leaves \u00b7 \u00d890/86",
+    "description": "Reference-inspired adaptation; dimensions and transmission details reconstructed. See Ben Jaynes source and modeling notes.",
+    "parameters": {
+      "mechanism": "jaynes-v4",
+      "tubeOD": 90,
+      "tubeID": 86,
+      "height": 120,
+      "stroke": 10,
+      "deployment": 50,
+      "sweep": 60,
+      "bladeWidth": 22,
+      "fitClearance": 0.5,
+      "servo": "standard",
+      "flapLength": 30
+    }
+  },
+  {
+    "id": "jaynes-v5-90",
+    "name": "Ben Jaynes V5 \u00b7 Centered servo and geared flaps \u00b7 \u00d890/86",
+    "description": "Reference-inspired adaptation; dimensions and transmission details reconstructed. See Ben Jaynes source and modeling notes.",
+    "parameters": {
+      "mechanism": "jaynes-v5",
+      "tubeOD": 90,
+      "tubeID": 86,
+      "height": 120,
+      "stroke": 10,
+      "deployment": 50,
+      "sweep": 60,
+      "bladeWidth": 22,
+      "fitClearance": 0.5,
+      "servo": "standard",
+      "flapLength": 30
     }
   }
 ]

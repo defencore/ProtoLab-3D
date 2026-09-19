@@ -120,7 +120,7 @@ test('curated motion product identities retain audited supplier data across elev
       const { name: auditedName, ...auditedData } = audited;
       const { name: registeredName, ...registeredData } = registered;
       const identity = (value: string) =>
-        value.toLowerCase().replace(/[×х*]/g, 'x').replace(/\s+/g, '');
+        value.toLowerCase().replace(/[×\u0445*]/g, 'x').replace(/\s+/g, '');
       assert.ok(
         identity(registeredName).includes(identity(audited.catalog!.designation)),
         auditedName,

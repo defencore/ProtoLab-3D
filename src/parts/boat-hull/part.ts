@@ -28,8 +28,6 @@ const part: PartDefinition = {
     'planing',
     'pontoon',
     'canoe',
-    'тримаран',
-    'лодка',
     'USV',
     'Recoil',
     'DragonForce',

@@ -1,12 +1,35 @@
-# Squib retainer
+# ProtoLab part package
 
-**Electronics & vision → SRS Airbag → Squib retainer** contains device-side keyed inserts:
+This package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.
 
-- TE 1-1823640-1, 2-1823640-1 and 3-1823640-1: original customer-view STEP solids for AK II keys I/II/III.
-- Aptiv AK-1: reconstructed dimensional sample for the AK-1 family used by CA281A/CA282B; exact key tolerances are not supplied.
+## Package files
 
-These are retainers, not complete holders or initiators. TE states the 1823640 family is for two-way connectors. No pairing is asserted for the three-way TE connector or JST SQXW. Read `public/references/srs-retainers/interfaces.md` for the standard map, source revisions and compatibility limitations.
+- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.
+- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.
+- `presets.json`: complete preset parameters and source evidence.
+- `lib/`: optional private geometry, reference data, and domain helpers.
+- `index.ts`: stable package ID, API version, and display order.
+- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.
 
-`scripts/import-srs-retainers.py` imports three pinned public STEP assets, translates them +7.5 mm in Z, and bakes preview tessellations plus compressed BREP into `lib/native.json`. Each source is one valid solid. The model preserves all source surfaces; preview colors are illustrative. Source hashes are included in preset metadata and FreeCAD exports. The native height is 7.85 mm and nominal body diameter is 11 mm; ears extend beyond it.
+## Edit and verify
 
-The full supplied ISO 19072-2 PDF is not published in the repository. It specifies tests. A dimensioned holder requires the relevant part 1/4 drawings or supplier CAD, which were not available for this addition.
+Run commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.
+
+```sh
+npm run parts:check -- <part-id>
+npm run typecheck
+npm run dev
+npm run build
+```
+
+Keep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.
+
+## Export and handoff
+
+```sh
+npm run parts:export -- <part-id> <output-folder>
+```
+
+The handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.
+
+Write instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.

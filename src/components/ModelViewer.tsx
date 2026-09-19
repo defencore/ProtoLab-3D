@@ -38,6 +38,10 @@ type CameraView = 'isometric' | 'front' | 'top' | 'right';
 type DisplayMode = 'solid' | 'wireframe' | 'xray';
 
 interface ModelViewerProps {
+  preparedModel?: Group | null;
+  preparedDimensions?: [number, number, number];
+  pending?: boolean;
+  loadError?: string;
   part: PartDefinition;
   parameters: Parameters;
   modelState: string;
@@ -246,6 +250,10 @@ function setCameraView(runtime: ViewerRuntime, view: CameraView) {
 }
 
 export default function ModelViewer({
+  preparedModel,
+  preparedDimensions,
+  pending,
+  loadError,
   part,
   parameters,
   modelState,
@@ -508,7 +516,9 @@ export default function ModelViewer({
     try {
       const issues = part.validate(parameters, modelState);
       if (issues.length) throw new Error(issues[0]);
-      model = part.buildGeometry(parameters, modelState);
+      if (loadError) throw new Error(loadError);
+      if (preparedModel === null) return;
+      model = preparedModel ?? part.buildGeometry(parameters, modelState);
       const displayRoot = new Group();
       // FreeCAD models stay in native Z-up coordinates. Only the preview rotates them.
       displayRoot.rotation.x = -Math.PI / 2;
@@ -538,6 +548,11 @@ export default function ModelViewer({
       displayRoot.traverse((child) => {
         if (child instanceof Mesh) meshes.push(child);
       });
+      const triangleCount = meshes.reduce(
+        (n, m) => n + (m.geometry.index?.count ?? m.geometry.getAttribute('position').count) / 3,
+        0,
+      );
+      const detailedEdges = triangleCount < 300000;
       const edgeGeometries = new Map<BufferGeometry, EdgesGeometry>();
       meshes.forEach((mesh) => {
         mesh.castShadow = true;
@@ -556,6 +571,7 @@ export default function ModelViewer({
             wireframe: 'wireframe' in material ? Boolean(material.wireframe) : undefined,
           });
         });
+        if (!detailedEdges) return;
         if (!edgeGeometries.has(mesh.geometry))
           edgeGeometries.set(mesh.geometry, new EdgesGeometry(mesh.geometry, 35));
         const edges = new LineSegments(
@@ -594,7 +610,11 @@ export default function ModelViewer({
       });
       runtime.keyLight.shadow.camera.updateProjectionMatrix();
       runtime.keyLight.shadow.normalBias = extent * 0.001;
-      updateDimensions(runtime, worldBounds, part.dimensions(parameters, modelState));
+      updateDimensions(
+        runtime,
+        worldBounds,
+        preparedDimensions ?? part.dimensions(parameters, modelState),
+      );
       applyDisplayMode(runtime, displayModeRef.current);
       if (runtime.currentPart !== part.id) runtime.fit(currentViewRef.current);
       else if (extent / previousExtent > 1.6 || extent / previousExtent < 0.6) runtime.fit();
@@ -611,7 +631,7 @@ export default function ModelViewer({
       setError(message);
       onErrorRef.current?.(message);
     }
-  }, [part, parameters, modelState]);
+  }, [part, parameters, modelState, preparedModel, loadError]);
 
   useEffect(() => {
     const runtime = runtimeRef.current;
@@ -650,7 +670,13 @@ export default function ModelViewer({
   return (
     <div className="model-viewer" ref={containerRef} aria-label={`${part.name} 3D workspace`}>
       <div className="model-viewer__labels" ref={labelLayerRef} aria-hidden="true" />
-      {error && (
+      {pending && (
+        <div className="model-viewer__error" role="status">
+          <strong>Building model…</strong>
+          <p>You can continue changing the configuration.</p>
+        </div>
+      )}
+      {!pending && error && (
         <div className="model-viewer__error" role="status">
           <span className="model-viewer__error-icon" aria-hidden="true">
             !

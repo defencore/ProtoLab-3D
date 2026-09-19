@@ -1,12 +1,35 @@
-# nRF52840 boards
+# ProtoLab part package
 
-Fixed models, selected by board format and source revision.
+This package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.
 
-| Model | PCB X × Y, mm | Geometry scope |
-| --- | --- | --- |
-| [Seeed XIAO nRF52840 — basic](https://wiki.seeedstudio.com/XIAO_BLE/) | 17.8 × 21 | 17.8 × 21 mm basic XIAO PCB, without Sense IMU/microphone or headers. Onboard antenna; no external antenna lead. |
-| [Adafruit Feather nRF52840 Express — Rev D CAD](https://www.adafruit.com/product/4062) | 22.86 × 50.8 | Original Adafruit 4062 STEP, Feather nRF52840 Express Rev D. CAD PCB 50.8 × 22.86 mm; assembled height 6.99 mm, Micro USB overhang 0.655 mm. Product-page dimensions 51 × 23 × 7.2 mm are rounded and differ from this CAD revision. No optional headers, battery or cable. Colors illustrative. |
+## Package files
 
-Native models use manufacturer CAD, preserving source surfaces in FreeCAD exports. Other models remain dimension-based reconstructions with approximate undimensioned components and connectors. See [manufacturer CAD sources and limitations](../../../docs/manufacturer-cad.md).
+- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.
+- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.
+- `presets.json`: complete preset parameters and source evidence.
+- `lib/`: optional private geometry, reference data, and domain helpers.
+- `index.ts`: stable package ID, API version, and display order.
+- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.
 
-Preview templates are shared by repeated instances; each CAD component retains an independent transform. Source models, licences, importer and validation reports are documented in the linked audit. Source CAD is revision-specific and does not certify manufacturing tolerances.
+## Edit and verify
+
+Run commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.
+
+```sh
+npm run parts:check -- <part-id>
+npm run typecheck
+npm run dev
+npm run build
+```
+
+Keep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.
+
+## Export and handoff
+
+```sh
+npm run parts:export -- <part-id> <output-folder>
+```
+
+The handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.
+
+Write instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.

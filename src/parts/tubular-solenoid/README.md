@@ -1,15 +1,35 @@
-# Tubular solenoid
+# ProtoLab part package
 
-Self-contained prototype package for a tubular linear electromagnetic actuator.
+This package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.
 
-The steel housing is centered at `(0, 0, 0)` with its length along Z. The rear pole is at negative Z. Pull action places the output rod through the front plate at positive Z; push action places it through the rear pole at negative Z. In both constructions magnetic attraction would move the armature toward the rear pole. No force or electrical performance is calculated.
+## Package files
 
-`retracted` and `extended` describe the output rod. In the extended state its protrusion is `extension + stroke`; only the single moving armature/rod solid translates, by exactly `stroke`. In the exploded state the retracted components are separated along X for inspection, and the housing origin stays fixed.
+- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.
+- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.
+- `presets.json`: complete preset parameters and source evidence.
+- `lib/`: optional private geometry, reference data, and domain helpers.
+- `index.ts`: stable package ID, API version, and display order.
+- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.
 
-The package creates independent housing, rear pole, front plate, guide sleeve, coil envelope and one-piece armature/rod solids. Enabling terminals adds two insulated feedthrough sleeves and two copper pins. Pin ends meet the coil envelope; no electrical circuit or individual windings are represented. Native FreeCAD component labels and colors match the preview order.
+## Edit and verify
 
-All supplied presets are complete fictional prototype dimensions, not sourced commercial products. They span pull/push actions, two connection styles and several body sizes. There are no claims about voltage, current, force, duty cycle or performance. The design does not include a return spring.
+Run commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.
 
-Validation checks positive housing/coil space, full-stroke axial room, armature guide engagement, output shaft clearance and terminal positions inside the coil annulus. `clearance` sets radial running clearance and the minimum axial end gaps. All hidden terminal values remain required finite parameters. Reported dimensions include every protrusion in each state.
+```sh
+npm run parts:check -- <part-id>
+npm run typecheck
+npm run dev
+npm run build
+```
 
-Use `npm run parts:check -- tubular-solenoid` to check the package contract and presets. Native geometry should also be verified with the application's FreeCAD export checks after editing the solids.
+Keep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.
+
+## Export and handoff
+
+```sh
+npm run parts:export -- <part-id> <output-folder>
+```
+
+The handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.
+
+Write instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.

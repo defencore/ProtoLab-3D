@@ -6,6 +6,8 @@ export const PART_MODULE_API_VERSION = 1;
 export interface PartModule {
   apiVersion: typeof PART_MODULE_API_VERSION;
   order: number;
+  /** Explicit library packages reused by this assembly; included in portable exports. */
+  dependencies?: string[];
   part: PartDefinition;
 }
 
@@ -111,6 +113,24 @@ export function registerPartModules(modules: readonly PartModule[]): PartDefinit
       if (!keys.has(selection.key))
         fail(`Catalog selection refers to unknown parameter ${selection.key}.`);
   }
+  const byId = new Map(modules.map((module) => [module.part.id, module]));
+  const complete = new Set<string>();
+  const visit = (id: string, ancestors: string[] = []) => {
+    if (ancestors.includes(id))
+      throw new Error(`Cyclic part dependency: ${[...ancestors, id].join(' -> ')}`);
+    if (complete.has(id)) return;
+    const module = byId.get(id);
+    if (!module) throw new Error(`Missing library dependency: ${id}.`);
+    const dependencies = module.dependencies ?? [];
+    if (!Array.isArray(dependencies) || new Set(dependencies).size !== dependencies.length)
+      throw new Error(`Invalid dependencies in ${id}.`);
+    for (const dependency of dependencies) {
+      if (!PART_ID_PATTERN.test(dependency)) throw new Error(`Invalid dependency in ${id}.`);
+      visit(dependency, [...ancestors, id]);
+    }
+    complete.add(id);
+  };
+  for (const id of byId.keys()) visit(id);
   return [...modules]
     .sort((a, b) => a.order - b.order || a.part.id.localeCompare(b.part.id))
     .map((module) => module.part);

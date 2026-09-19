@@ -13,7 +13,7 @@ const part: PartDefinition = {
   complexity: 'Fixed supplier models',
   description:
     'Single-motor and four-in-one brushless controllers, selected by mounting and connections.',
-  keywords: ['ESC', 'BLHeli', 'регулятор обертів', '4-in-1'],
+  keywords: ['ESC', 'BLHeli', 'speed controller', '4-in-1'],
   parameters,
   defaults,
   presets: presets as unknown as Preset[],

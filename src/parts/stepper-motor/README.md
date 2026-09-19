@@ -1,13 +1,35 @@
-# NEMA stepper motor
+# ProtoLab part package
 
-Fixed STEPPERONLINE motors: NEMA 8, 11, 14, 17 (short and standard), 23, 24, 34 and 42. Select by frame width, body length, shaft, mounting pitch, holding torque, phase current, mass, resistance and inductance. The catalog spans 20.3–110 mm frames and 0.012–30 N·m holding torque.
+This package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.
 
-The mounting face is Z=0, the body extends toward −Z, and the output shaft toward +Z. Shaft extension includes the locating pilot. Drawing dimensions take precedence over rounded nominal product-page sizes. The NEMA 42 pilot really is Ø55.5 mm; it is not inferred from frame size. NEMA 8 is a six-wire unipolar model, the others are four-wire bipolar models.
+## Package files
 
-The assembly contains a chamfered lamination stack, front flange and pilot, rear cover, recessed screws, bearing races, rotor and shaft. NEMA 34/42 have separate keys; other shafts have the drawn D-flat or round section. Mounting holes are nominal threaded bores or through clearances as specified by the source. Lamination grouping, cover outlines/thicknesses without dimensions, rotor and bearing internals, cable outlets and lead routing are approximate. Holding torque is a static rating at rated phase current, not available torque at arbitrary speed.
+- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.
+- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.
+- `presets.json`: complete preset parameters and source evidence.
+- `lib/`: optional private geometry, reference data, and domain helpers.
+- `index.ts`: stable package ID, API version, and display order.
+- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.
 
-## Package layout and checks
+## Edit and verify
 
-`lib/models.json` contains fixed source data; `presets.json` exposes read-only catalog attributes and conditions. `lib/model.ts` produces the same component descriptions for Three.js and native FreeCAD via private `lib/shapes.ts` and `lib/assembly.ts`. Only model selection, geometric shaft angle and optional short leads are editable. Assembled and exploded states preserve component identities and colors.
+Run commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.
 
-Run `node --import tsx --test tests/motors.test.ts`, `npm run parts:check`, and `npm run typecheck:tests`. Generate native verification cases with `node --import tsx scripts/verify-motors.ts`, then run `scripts/verify-motors.py` using FreeCAD's Python. The audit checks valid closed individual solids, bounds/volume agreement, component intersections, independent movement, and STEP/FCStd round trips for every model, both states, and an additional 90° shaft pose with cables.
+```sh
+npm run parts:check -- <part-id>
+npm run typecheck
+npm run dev
+npm run build
+```
+
+Keep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.
+
+## Export and handoff
+
+```sh
+npm run parts:export -- <part-id> <output-folder>
+```
+
+The handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.
+
+Write instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.

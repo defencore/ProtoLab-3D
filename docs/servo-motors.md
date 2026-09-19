@@ -1,6 +1,6 @@
 # Servo motor catalog
 
-**MOTORS & ACTUATORS → SERVOS → Servo motor** is one library item with eight fixed supplier configurations: Waveshare ST3215-HS, KST X10 Mini Pro-A and Pro-B, KST X10 V8.0, KST X10 Pro-A and Pro-B, Power-HD T60-BHV and Power-HD TDS-2. Search the library for **servo**, **сервопривід** or a model name.
+**MOTORS & ACTUATORS → SERVOS → Servo motor** is one library item with eight fixed supplier configurations: Waveshare ST3215-HS, KST X10 Mini Pro-A and Pro-B, KST X10 V8.0, KST X10 Pro-A and Pro-B, Power-HD T60-BHV and Power-HD TDS-2. Search the library for **servo**, **servo drive** or a model name.
 
 The configurator selects a manufactured servo by published characteristics. It does not resize the case, change mounting dimensions or adjust an electrical rating. **Model catalog** initially shows all eight models. Search by model or manufacturer, then use the **Dimensions**, **Electrical performance** and **Construction** filters to narrow the choices. Select a result to load its fixed geometry. Filtering alone keeps the current preview; **Clear filters** restores all choices.
 
@@ -88,7 +88,7 @@ All eight models provide:
 - **Exploded**: separate components for inspection; ST3215 separates all eight original parts, including the covers, motor and circuit board.
 - **Case only**: the case and mounting features; ST3215 retains its three original housing solids and rear pivot.
 
-Preview and FreeCAD use the same private geometry descriptions in the [Servo motor package](../src/parts/servo-motor/README.md). Named direct children become separate solid components in an `App::Part`; changing a component's Placement does not move its neighbours. STL exports the selected preview. **Copy Python** and `.FCMacro` create native shapes; export STEP or save FCStd from FreeCAD. The selected model, state and pose apply to every export.
+Preview and FreeCAD use the same private geometry descriptions in the [Servo motor package](../src/parts/servo-motor/GUIDE.md). Named direct children become separate solid components in an `App::Part`; changing a component's Placement does not move its neighbours. STL exports the selected preview. **Copy Python** and `.FCMacro` create native shapes; export STEP or save FCStd from FreeCAD. The selected model, state and pose apply to every export.
 
 These models support installation layout, envelope comparison and mechanical prototyping. ST3215 preserves the supplied STEP internals and external mouldings; no missing parts or cables are invented. The KST and Power-HD models remain external layout approximations, with omitted internals and simplified spline geometry. No electrical simulation is supplied.
 

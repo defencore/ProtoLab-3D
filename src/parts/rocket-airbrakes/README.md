@@ -1,18 +1,35 @@
-# Rocket AirBrakes
+# ProtoLab part package
 
-Six independently modeled drive mechanisms share editable tube OD/ID, module height, insert clearance and servo installation sizes. The default is an OD80 / ID76 mm tube with a micro servo, 8 mm radial travel and a 60° servo sweep. The library includes 15 starting configurations, including OD90 / ID86, OD100 / ID96 and a larger OD150 / ID146 spiral design.
+This package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.
 
-| Mechanism           | Motion                                                                      | Source / adaptation                                                                                                                                        |
-| ------------------- | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Waterloo spiral cam | Three radial leaves; displacement proportional to shaft angle               | [Armaan Sengupta](https://www.armaansengupta.ca/rocketry); reconstructed Archimedean slots                                                                 |
-| Sculpted cam        | Three radial leaves; smoothstep displacement and tangential slot ends       | [Schnupp et al. 2025](https://doi.org/10.2514/6.2025-98650), Figure 2, inspired by WPI; our normalized lift law replaces the source dimensional polynomial |
-| Curved links        | Three slider-cranks; nonlinear displacement                                 | Schnupp Figure 1; exact fixed-length joint closure and curved link bodies                                                                                  |
-| MIT sliding leaves  | Four leaves in two opposed pairs; two levels of resin trays and crank links | [MIT Rocket Team](https://wikis.mit.edu/confluence/display/RocketTeam/Air+Brakes); reconstructed dimensions and mounting                                   |
-| Rack and pinion     | Four translating leaves; two 20-tooth pinions and four racks                | [Sprague et al. 2024](https://doi.org/10.2514/6.2024-85628), Figure 2; rack geometry reconstructed                                                         |
-| Geared petals       | Three fixed pivots; central 18-tooth pinion drives 42-tooth petal sectors   | User-supplied geared-petal image; reconstructed involute gearing and blade shape                                                                           |
+## Package files
 
-The deployment parameter actuates the selected mechanism, including its drive parts and hardware. A linkage is not presented as linear travel. Pivoting petals do not use the radial travel or tangential blade-width controls. Two-level drives include an extended shaft, upper tray supports and windows at different axial heights. Tube, bulkheads, support collars, servo installation body, bearings/bushings, guides and fasteners are individually named export components; rod seats are integral bosses in the guide deck.
+- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.
+- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.
+- `presets.json`: complete preset parameters and source evidence.
+- `lib/`: optional private geometry, reference data, and domain helpers.
+- `index.ts`: stable package ID, API version, and display order.
+- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.
 
-Assembly, quarter cutaway, tube removed and mechanism-only states are available. The preview and FreeCAD output use the same shape recipes. `tests/airbrakes.test.ts` checks geometry effects and kinematic constraints. `scripts/verify-airbrakes.ts` generates representative cases for `scripts/verify-electronics.py`, which checks valid independent solids, component intersections, preview dimensions/volumes and STEP/FCStd roundtrips.
+## Edit and verify
 
-These are parametric adaptations, not original author CAD or validated aerodynamic designs. The default 80/76 dimensions come from the user's request. Servo bodies use Tower Pro nominal MG996R/MG90S size references; mounting, sleeves, gear tooth fillets and threads are simplified. Servo torque suitability, structural strength, loads and flight performance are not established. PDFs and source models remain outside the repository; the preview links to external sources.
+Run commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.
+
+```sh
+npm run parts:check -- <part-id>
+npm run typecheck
+npm run dev
+npm run build
+```
+
+Keep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.
+
+## Export and handoff
+
+```sh
+npm run parts:export -- <part-id> <output-folder>
+```
+
+The handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.
+
+Write instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.

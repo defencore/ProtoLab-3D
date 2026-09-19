@@ -1,93 +1,56 @@
 import type { Parameters } from '../../../core/types';
 import type { Piece } from './assembly';
-import {
-  box,
-  cylinder,
-  ring,
-  union,
-  subtract,
-  transform,
-  plate,
-  circle,
-  type Shape,
-} from './shapes';
+import { cylinder, union, subtract, transform, plate, type Shape } from './shapes';
 import { profile } from './gears';
-import { at, layout } from './motion';
+import { layout } from './motion';
 
-/** MG90S nominal body 22.8 × 12.2 × 28.5 mm; ears and adaptor reconstructed. */
-const earOffsets = [-18.7, 8.1];
-// Put the mounting ears between the cardinal idler axes at every tube size.
-export const servoMounts = earOffsets.map((x) => at(x, 45));
-const steel = 0x929eac,
-  brass = 0xb99450;
-export function dBore(z: number, height: number): Shape {
-  return subtract(cylinder(1.55, height, [0, 0, z]), box([3, 4, height + 2], [1.15, -2, z - 1]));
-}
-export function spindle(shoulder: boolean): Shape {
-  const shaft = subtract(cylinder(1.5, 51.15 - 42.5, [0, 0, 42.5]), box([3, 4, 10], [1.1, -2, 42]));
-  return subtract(
-    shoulder ? union(shaft, cylinder(2.2, 0.7, [0, 0, 43.1])) : shaft,
-    cylinder(0.55, 4, [0, 0, 48.15]),
-  );
-}
-export function spindleScrew(): Shape {
-  return union(
-    cylinder(0.5, 3, [0, 0, 48.15]),
-    subtract(cylinder(2.2, 0.8, [0, 0, 51.15]), plate(circle(0.7, 0, 0, 6), [], 51.55, 1)),
-  );
-}
+import native from './st3215-native.json';
+import splinePoints from './st3215-spline.json';
+const steel = 0x929eac;
+/** Source front-face hole coordinates: longitudinal pitch 20.7, row pitch 20.5 mm. */
+export const servoMounts: [number, number][] = [
+  [8.3, -10.25],
+  [8.3, 10.25],
+  [29, -10.25],
+  [29, 10.25],
+];
 export function servoPieces(p: Parameters): Piece[] {
   const m = layout(p),
-    angle = 9 + m.servoAngle;
-  const caseShape = subtract(
-    union(
-      box([22.8, 12.2, 28.5], [-16.7, -6.1, 14]),
-      box([30.8, 12.2, 2], [-20.7, -6.1, 39.5]),
-      ring(3, 1.55, 42.5, 1.3),
-    ),
-    ...earOffsets.map((x) => cylinder(1.05, 4, [x, 0, 38.5])),
+    angle = m.servoAngle,
+    z = m.stackOffset;
+  // Raised face at local Z44; front pillars locate in the stock pilot holes without modifying the case.
+  // The OEM horn is replaced by the pinion itself.
+  const out: Piece[] = [0, 1, 2, 3, 4, 5].map((index) => ({
+    label: `ST3215 · ${native.components[index].label} · supplier CAD`,
+    color: Number.parseInt(native.components[index].color.slice(1), 16),
+    shape: transform({ kind: 'native', index }, index === 5 ? angle : 0, [0, 0, m.servoZ]),
+  }));
+  servoMounts.forEach(([x, y], i) =>
+    out.push({
+      label: `ST3215 front support pillar ${i + 1} · Al6061 Ø3.4×3.1 · locating pins Ø1.5×1`,
+      shape: union(cylinder(1.7, 3.1, [x, y, 40.9 + z]), cylinder(0.75, 5.1, [x, y, 39.9 + z])),
+      color: 0xc6cdd5,
+    }),
   );
-  const parts: Piece[] = [
-    {
-      label: 'Central micro servo · MG90S body envelope',
-      shape: transform(caseShape, 45),
-      color: 0x303a47,
-    },
-    { label: 'Servo D-shaft adaptor', shape: transform(spindle(false), angle), color: steel },
-    {
-      label: 'Central shaft bushing',
-      shape: union(ring(3, 1.55, 44, 2), ring(3.6, 1.55, 46, 1.8)),
-      color: brass,
-    },
-    {
-      label: 'Servo input pinion · 20 teeth',
-      shape: transform(subtract(plate(profile(m.module, 20), [], 48, 3), dBore(47, 5)), angle),
-      color: 0xc36d4c,
-    },
-    {
-      label: 'Servo input pinion retaining screw',
-      shape: transform(spindleScrew(), angle),
-      color: steel,
-    },
-  ];
-  for (const [i, [x, y]] of servoMounts.entries()) {
-    parts.push(
-      {
-        label: `Servo mounting spacer ${i + 1}`,
-        shape: ring(2, 1.05, 41.5, 2.5, x, y),
-        color: brass,
-      },
-      {
-        label: `Servo mounting screw ${i + 1}`,
-        shape: union(cylinder(1, 6.5, [x, y, 39]), cylinder(1.8, 1.2, [x, y, 37.8])),
-        color: steel,
-      },
-      {
-        label: `Servo mounting washer ${i + 1}`,
-        shape: ring(1.8, 1.05, 39, 0.5, x, y),
-        color: steel,
-      },
-    );
-  }
-  return parts;
+  const spline = splinePoints as [number, number][];
+  const gear = subtract(
+    union(
+      transform(plate(profile(m.module, 20), [], 48 + z, 3), 9),
+      cylinder(4, 8.3, [0, 0, 39.7 + z]),
+    ),
+    plate(spline, [], 39.6 + z, 3.15),
+    cylinder(1.6, 9, [0, 0, 42.6 + z]),
+    cylinder(2.6, 8, [0, 0, 43.2 + z]),
+  );
+  out.push({
+    label: `Servo input pinion · 20 teeth · m${m.module.toFixed(4)} · 20° · Al7075 · t3 · integral Ø8 hub · ST3215 25T spline Ø6 +0.04 radial`,
+    shape: transform(gear, angle),
+    color: 0xc36d4c,
+  });
+  out.push({
+    label: 'BUY ST3215 output retaining screw · CAD-fit reference · assumed head Ø5×1',
+    shape: transform({ kind: 'native', index: 8 }, angle, [0, 0, m.servoZ]),
+    color: steel,
+  });
+  return out;
 }

@@ -1,6 +1,6 @@
 # Electromagnets and solenoids
 
-Three independent packages appear in the **ELECTROMAGNETICS** category. Search for their English names, **електромагніт**, **соленоїд**, **электромагнит** or **соленоид**, or choose the corresponding subgroup. All **16 presets** are complete editable prototype examples; none claims a manufacturer, catalog source or electrical rating.
+Three independent packages appear in the **ELECTROMAGNETICS** category. Search for **electromagnet** or **solenoid**, or choose the corresponding subgroup. All **16 presets** are complete editable prototype examples; none claims a manufacturer, catalog source or electrical rating.
 
 | Component             | Subgroup       | Presets | States                                        |
 | --------------------- | -------------- | ------: | --------------------------------------------- |
@@ -67,8 +67,8 @@ Use a FreeCAD-enabled Python on other platforms; `FREECAD_LIB` overrides the Pyt
 
 Each package owns its parameters, presets, geometry and validation. Its README gives the component contract and editing entry points:
 
-- [Holding electromagnet](../src/parts/holding-electromagnet/README.md)
-- [Tubular solenoid](../src/parts/tubular-solenoid/README.md)
-- [Open-frame solenoid](../src/parts/open-frame-solenoid/README.md)
+- [Holding electromagnet](../src/parts/holding-electromagnet/GUIDE.md)
+- [Tubular solenoid](../src/parts/tubular-solenoid/GUIDE.md)
+- [Open-frame solenoid](../src/parts/open-frame-solenoid/GUIDE.md)
 
 Use the [part package workflow](part-modules.md) to export or import one complete module without coupling it to the other electromagnetic packages.

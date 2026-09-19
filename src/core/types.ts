@@ -83,6 +83,7 @@ export interface PartDefinition {
   python: (parameters: Parameters, state: string) => string;
   dimensions: (parameters: Parameters, state: string) => [number, number, number];
   notes?: string;
+  assessment?: (parameters: Parameters) => string[];
   sources?: { label: string; url: string }[];
   updateParameters?: (parameters: Parameters, changedKey: string) => Parameters;
   presetMatchKeys?: string[];

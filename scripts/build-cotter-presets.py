@@ -62,7 +62,7 @@ def build():
             },
         })
     target = ROOT / 'src/catalog/generated/gvyntok-cotter-presets.json'
-    target.write_text(json.dumps(presets, ensure_ascii=False, separators=(',', ':')) + '\n')
+    target.write_text(json.dumps(presets, ensure_ascii=True, separators=(',', ':')) + '\n')
     print(f'Imported {len(presets)} DIN 94 presets representing {len(records)} supplier SKUs.')
 
 
