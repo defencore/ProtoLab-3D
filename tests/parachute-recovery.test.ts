@@ -106,7 +106,15 @@ test('unlock precedes lift; captive stroke cannot continue during extraction', (
   }
 });
 test('energy includes a full bag-clearance path, gravity, friction and terminal velocity', () => {
-  const p: Parameters = { ...part.defaults, mechanism: 'rotary-ring' },
+  const p: Parameters = {
+      ...part.defaults,
+      mechanism: 'rotary-ring',
+      cassetteHeight: 71,
+      packLength: 60,
+      springTravel: 60,
+      springCoils: 24,
+      cassetteMass: 0.2,
+    },
     a = assessment(p);
   assert.equal(a.extractionDistance, 79.15);
   assert.ok(Math.abs(a.rate - 0.6800730010609569) < 1e-10);
@@ -136,6 +144,10 @@ test('invalid fit and nonphysical inputs are rejected', () => {
     { bayLength: 120, packLength: 90 },
     { mechanism: 'spiral', packDiameter: 56 },
     { packDiameter: 51 },
+    { cassetteHeight: 250, packLength: 240 },
+    { cassetteHeight: 250, springTravel: 60 },
+    { cassetteHeight: 250, bayLength: 300 },
+    { cassetteHeight: 250, separation: 300 },
   ] as Parameters[])
     assert.ok(part.validate({ ...part.defaults, ...delta }, 'assembled').length);
 });
@@ -156,7 +168,7 @@ test('shared detailed parts and new cams render finite geometry with unique comp
 
 test(
   'native countersinks and captive ejector interfaces remain clear at both stroke limits',
-  { skip: !process.env.FREECAD_PYTHON, timeout: 240_000 },
+  { skip: !process.env.FREECAD_PYTHON, timeout: 600_000 },
   async () => {
     const { spawnSync } = await import('node:child_process');
     const { python } = await import('../src/parts/rocket-release/lib/assembly');
@@ -194,7 +206,7 @@ for job in json.load(sys.stdin):
     print(job['id']+': clear',flush=True)
 `,
       ],
-      { input: JSON.stringify(jobs), encoding: 'utf8', timeout: 230_000, maxBuffer: 1024 * 1024 },
+      { input: JSON.stringify(jobs), encoding: 'utf8', timeout: 590_000, maxBuffer: 1024 * 1024 },
     );
     assert.equal(result.status, 0, result.stdout + result.stderr + String(result.error ?? ''));
   },
@@ -325,4 +337,38 @@ test('double-shear screening separates external retention load from ejection ene
   assert.ok(heavy.bladeShear > base.bladeShear && heavy.bladeBending > base.bladeBending);
   assert.equal(base.eyeBearing, 2 * base.cheekBearing);
   assert.ok(part.assessment!(part.defaults).some((x) => x.includes('No strength PASS')));
+});
+
+test('250 mm cassette is measured floor-to-rim and remains independent of packed fabric length', async () => {
+  const { geometry } = await import('../src/parts/rocket-release/lib/assembly');
+  for (const preset of part.presets) {
+    const p = preset.parameters;
+    assert.equal(p.cassetteHeight, 250);
+    assert.deepEqual(part.validate(p, 'assembled'), []);
+    const a = assessment(p);
+    assert.ok(a.forcePass && a.energyPass && a.torquePass);
+    assert.ok(a.extractionDistance > 250 && a.extractionDistance < 270);
+    assert.ok(a.seat - 12 >= -Number(p.bayLength));
+    for (const [sequence, travel] of [
+      [0, 0],
+      [55, 240],
+      [80, 420],
+    ]) {
+      const cup = pieces({ ...p, sequence }, 'assembled').rigid.find((x) =>
+        x.label.startsWith('Ejected parachute cassette'),
+      )!;
+      const bounds = new Box3().setFromObject(geometry([cup]), true);
+      assert.ok(Math.abs(bounds.max.z - bounds.min.z - 250) < 1e-4);
+      assert.ok(Math.abs(bounds.min.z - (springDimensions(p).cassetteBottom + travel)) < 1e-4);
+      if (sequence === 80)
+        assert.ok(bounds.min.z > 9.5, 'entire cassette clears the fixed receiver');
+    }
+    const shortPack = { ...p, packLength: 100 };
+    assert.equal(springDimensions(shortPack).cassetteBottom, a.cassetteBottom);
+    assert.equal(assessment(shortPack).extractionDistance, a.extractionDistance);
+  }
+  const a = assessment(part.defaults);
+  assert.ok(Math.abs(a.rate - 0.17001825026523923) < 1e-10);
+  assert.ok(Math.abs(a.required - (a.resistance * 0.2649 + 1.45 / 2) * 1.5) < 1e-10);
+  assert.ok(!assessment({ ...part.defaults, extractionForce: 40 }).energyPass);
 });

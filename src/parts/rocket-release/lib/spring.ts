@@ -66,10 +66,21 @@ export function springMesh(radius: number, wire: number, height: number, turns: 
 }
 export const springPython = [
   'def _release_spring(radius, wire, height, turns, origin):',
-  '    path = Part.Wire(Part.makeHelix(height / turns, height, radius).Edges)',
+  // OCCT cannot reliably cap a single helix sweep with many turns. Join shorter
+  // tangent-continuous sweeps into one solid; retain the exact pitch and wire.
+  '    count = max(1, math.ceil(turns / 32))',
+  '    segment_height = height / count',
+  '    path = Part.Wire(Part.makeHelix(height / turns, segment_height, radius).Edges)',
   '    edge = path.Edges[0]',
   '    profile = Part.Wire([Part.makeCircle(wire / 2, edge.valueAt(edge.FirstParameter), edge.tangentAt(edge.FirstParameter))])',
-  '    spring = path.makePipeShell([profile], True, True)',
+  '    segment = path.makePipeShell([profile], True, True)',
+  '    segments = []',
+  '    for i in range(count):',
+  '        item = segment.copy()',
+  '        item.rotate(App.Vector(0,0,0), App.Vector(0,0,1), i * turns / count * 360)',
+  '        item.translate(App.Vector(0,0,i * segment_height))',
+  '        segments.append(item)',
+  '    spring = segments[0].multiFuse(segments[1:]).removeSplitter() if count > 1 else segments[0]',
   '    spring.translate(App.Vector(*origin))',
   '    return spring',
 ];

@@ -61,7 +61,7 @@ export const cassetteTop = (p: Parameters) => (p.mechanism === 'rotary-ring' ? 2
 export function springDimensions(p: Parameters) {
   const solid = (+p.springCoils + 2) * +p.springWire,
     closed = solid + 3;
-  const cassetteBottom = cassetteTop(p) - +p.packLength - 14;
+  const cassetteBottom = cassetteTop(p) - 3 - +p.cassetteHeight;
   const seat = cassetteBottom - 3 - closed;
   return { solid, closed, free: closed + +p.springTravel + +p.springPreload, seat, cassetteBottom };
 }

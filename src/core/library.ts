@@ -119,6 +119,7 @@ export const librarySections: { name: string; icon: PartDefinition['icon']; grou
       'BEC REGULATORS',
       'DC-DC CONVERTERS',
       'SPEED CONTROLLERS',
+      'SERVO CONTROLLERS',
     ],
   },
   {

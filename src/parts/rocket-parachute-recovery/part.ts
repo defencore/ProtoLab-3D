@@ -87,15 +87,17 @@ const part: PartDefinition = {
       errors.push('Provide at least 0.5 mm radial cassette clearance including its 2.5 mm wall.');
     if (+p.packDiameter / 2 + 3 + 2 + 0.3 > 31.5)
       errors.push('Cassette wall requires 0.3 mm clearance from the D4 ejector guide rods.');
-    if (+p.packLength + 50 > +p.bayLength)
-      errors.push('Recovery bay is too short for the bag and lines.');
-    if (+p.separation < +p.packLength + 110)
+    if (+p.packLength + 11 > +p.cassetteHeight)
+      errors.push(
+        'Cassette height must include the pack, 4 mm floor and 7 mm total end clearance.',
+      );
+    if (+p.separation < +p.cassetteHeight + 99)
       errors.push('Extraction travel is too short for bag clearance and line payout.');
     if (springDimensions(p).seat - 12 < -+p.bayLength)
       errors.push('Extend the recovery bay to contain the ejector bulkhead.');
     if (springDimensions(p).cassetteBottom + +p.springTravel < -25)
       errors.push(
-        'The upper guide disk must remain inside the 30 mm body locking rim. Adjust stroke or pack length.',
+        'The upper guide disk must remain inside the 30 mm body locking rim. Adjust stroke or cassette height.',
       );
     if (springDimensions(p).cassetteBottom + +p.springTravel + 6.9 > 5)
       errors.push(
@@ -135,7 +137,7 @@ const part: PartDefinition = {
       `Three matched guide-rod springs push an open-mouth PTFE cassette out through the ring. Nose electronics separate together. Nose mass ${p.noseMass} kg + cassette/parachutes ${p.cassetteMass} kg = ${a.movingMass.toFixed(2)} kg moving mass.`,
       `Four short seam-assist cartridges add ${a.assistForce.toFixed(1)} N at the locked joint; total initial lock load ${a.lockLoad.toFixed(1)} N. Their energy is excluded from the three-spring budget.`,
       `Drogue deploys after cassette exit; the main canopy remains bundled until an external chute-release controller reaches the target ${p.mainReleaseAltitude} m. This target is documentation, not implemented flight logic.`,
-      `Clear body passage D${layout(p).passage.toFixed(1)}; bag D${p.packDiameter} x ${p.packLength}. Sequence 0-30% unlock, 30-55% spring stroke ${p.springTravel} mm, 55-80% extraction, 80-100% schematic inflation.`,
+      `Cassette overall height ${p.cassetteHeight} mm, including 4 mm floor; clear body passage D${layout(p).passage.toFixed(1)}; bag D${p.packDiameter} x ${p.packLength}. Sequence 0-30% unlock, 30-55% spring stroke ${p.springTravel} mm, 55-80% extraction, 80-100% schematic inflation.`,
       `Three guide-rod springs at 120 degrees: each mean D12, wire ${p.springWire}, ${p.springCoils} active coils plus 2 end coils; G=79 GPa assumed. each k=${a.rate.toFixed(3)} N/mm, combined k=${a.systemRate.toFixed(3)} N/mm; L0=${a.free.toFixed(1)} mm, closed ${a.closed.toFixed(1)} mm, solid estimate ${a.solid.toFixed(1)} mm.`,
       `Combined ejection force ${a.startForce.toFixed(1)} -> ${a.endForce.toFixed(1)} N; opposing load ${a.resistance.toFixed(1)} N including ${p.axialGravity} g axial gravity and ${p.guideForce} N guide friction. Initial force: ${a.forcePass ? 'PASS' : 'FAIL'}.`,
       `Available spring work ${a.energy.toFixed(3)} J; required ${a.required.toFixed(3)} J including ${p.energyFactor}x allowance and ${p.exitSpeed} m/s target after ${a.extractionDistance} mm extraction. Energy: ${a.energyPass ? 'PASS' : 'FAIL'}, margin ${a.energyMargin.toFixed(2)}x. Ideal exit speed ${a.speed.toFixed(2)} m/s.`,

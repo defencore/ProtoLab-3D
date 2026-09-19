@@ -111,7 +111,15 @@ export function pieces(p: Parameters, state: string) {
   bolts.forEach((b, i) => add(`Nose X-crossmember screw ${i + 1} · ISO 10642 M2x8`, noseMove(b)));
   const noseTop = 56 - wingLayout(rp).noseBottom;
   const cut = (shape: Shape) =>
-    state === 'cutaway' ? subtract(shape, box([50, 50, 600], [0, -50, -250])) : shape;
+    state === 'cutaway'
+      ? subtract(
+          shape,
+          box(
+            [50, 50, +p.bayLength + noseTop + +p.noseLength + +p.separation + 2],
+            [0, -50, -+p.bayLength - 1],
+          ),
+        )
+      : shape;
   const shell = rigid.find((x) => x.label.startsWith('Main body tube section'))!;
   shell.shape = cut(
     subtract(

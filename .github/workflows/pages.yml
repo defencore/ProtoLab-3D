@@ -50,8 +50,25 @@ jobs:
           path: .cache/ci-tests/passed
           key: geometry-tests-v1-${{ steps.test-inputs.outputs.key }}
       - name: Verify geometry and generators
+        id: geometry-tests
         if: inputs.full_tests || steps.test-cache.outputs.cache-hit != 'true'
-        run: npm test
+        run: |
+          set -o pipefail
+          mkdir -p .cache/ci-tests
+          npm test 2>&1 | tee .cache/ci-tests/test-output.log
+      - name: Summarize failed tests
+        if: failure() && steps.geometry-tests.outcome == 'failure'
+        run: |
+          echo '### Failed geometry tests' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Full assertion details are in the geometry-test-log artifact.' >> "$GITHUB_STEP_SUMMARY"
+          grep '^not ok ' .cache/ci-tests/test-output.log >> "$GITHUB_STEP_SUMMARY" || true
+      - name: Upload failed test log
+        if: failure() && steps.geometry-tests.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: geometry-test-log
+          path: .cache/ci-tests/test-output.log
+          retention-days: 7
       - name: Record successful test result
         if: success() && (inputs.full_tests || steps.test-cache.outputs.cache-hit != 'true')
         env:

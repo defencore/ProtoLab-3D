@@ -145,7 +145,7 @@ export function cassettePieces(p: Parameters, state: string): Piece[] {
   );
   add('Cassette central fairlead · PTFE · D8 bore · R1 lips', fairlead(bottom, 4), 0xe8e4d9);
   add(
-    'Ejected parachute cassette · PTFE · open mouth · integral floor4 wall2.5 · rounded rim R0.5 · central D8 fairlead',
+    `Ejected parachute cassette · PTFE · H${p.cassetteHeight} overall · open mouth · integral floor4 wall2.5 · rounded rim R0.5 · central D8 fairlead`,
     subtract(
       shell,
 
