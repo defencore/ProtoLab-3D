@@ -11,7 +11,7 @@ import {
   internalThreadErrors,
   internalThreadCutter,
   internalThreadPython,
-  internalMinorDiameter,
+  nominalThreadDiameter,
   nutCoarsePitch,
 } from './lib/core/internal-thread';
 import { booleans, primitives, transforms, solidUnionMesh } from '../../core/solid-union';
@@ -114,7 +114,7 @@ const part: PartDefinition = {
       t = Number(p.wingThickness),
       h = Number(p.height);
     const points = outline(p).map(([x, z]) => `App.Vector(${num(x)},${num(-t / 2)},${num(z)})`);
-    return `# Forged wing outline with a basic metric internal helical thread.\nshape = Part.makeCone(${num(r)},${num(r * 0.8)},${num(Number(p.baseHeight))})\npoints = [${points.join(',')}]\nwing = Part.Face(Part.makePolygon(points+[points[0]])).extrude(App.Vector(0,${num(t)},0))\nother_wing = wing.copy()\nother_wing.rotate(App.Vector(0,0,0),App.Vector(0,0,1),180)\nshape = shape.fuse(wing).fuse(other_wing)\nshape = shape.cut(Part.makeCylinder(${num(internalMinorDiameter(p, Number(p.diameter)) / 2)},${num(h + 2)},App.Vector(0,0,-1)))\n${internalThreadPython(p, Number(p.diameter), h)}\nif len(shape.Solids) != 1: raise ValueError("The wings and bored body must form one solid.")\nshape.translate(App.Vector(0,0,-${num(h / 2)}))`;
+    return `# Forged wing outline with a labeled smooth nominal thread bore.\nshape = Part.makeCone(${num(r)},${num(r * 0.8)},${num(Number(p.baseHeight))})\npoints = [${points.join(',')}]\nwing = Part.Face(Part.makePolygon(points+[points[0]])).extrude(App.Vector(0,${num(t)},0))\nother_wing = wing.copy()\nother_wing.rotate(App.Vector(0,0,0),App.Vector(0,0,1),180)\nshape = shape.fuse(wing).fuse(other_wing)\nshape = shape.cut(Part.makeCylinder(${num(nominalThreadDiameter(p, Number(p.diameter)) / 2)},${num(h + 2)},App.Vector(0,0,-1)))\n${internalThreadPython(p, Number(p.diameter), h)}\nif len(shape.Solids) != 1: raise ValueError("The wings and bored body must form one solid.")\nshape.translate(App.Vector(0,0,-${num(h / 2)}))`;
   },
   notes:
     'DIN 315 American-form outline. Supplier presets use the published maximum d2/e/h/m envelope; material variants share that dimensional preset. Wing thickness, faceted curvature and body taper are representative. Internal threads use a truncated 60° basic metric profile without fit tolerances. Smooth envelope mode is available for fast layout.',

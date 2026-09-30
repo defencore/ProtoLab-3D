@@ -1,11 +1,23 @@
-# Thread tools · internal / external
+# Thread tools, caps and plugs
 
-Standalone, closed helical solids for FreeCAD Boolean operations. Select **FASTENERS & THREADS → THREAD GEOMETRY**. Includes M1–M68 coarse and selected fine metric sizes, UNC, UNF (including 3/8″-24), UNEF, basic Tr and ACME profiles. Use **Custom dimensions** to change nominal diameter, pitch in mm or TPI, length, handedness, starts and radial allowance; the custom profile adds angle, depth and crest width.
+Standalone helical Boolean tools and finished threaded caps or plugs, each exported as one closed solid. Select **FASTENERS & THREADS → THREAD GEOMETRY**. Includes M1–M68 coarse and selected fine metric sizes, UNC, UNF (including 3/8″-24), UNEF, basic Tr and ACME profiles. Use **Custom dimensions** to change nominal diameter, pitch in mm or TPI, length, handedness, starts and radial allowance; the custom profile adds angle, depth and crest width.
 
-- **External · Union**: the tool is a solid threaded rod. Fuse it into a base with a positive overlap. Do not fuse a nominal-diameter shaft along its whole length: that fills the grooves. A supporting shaft along the thread must fit inside the tool's minor diameter.
-- **Internal · Cut**: the tool is the positive volume removed to create the threaded bore, including its core. Select the target first and tool second, then Part → Boolean → Cut. No pilot hole is necessary. For through holes, extend the cutter beyond both target faces.
+- **External thread · tool / plug**, with **Threaded body / Boolean tool** selected: the tool is a solid threaded rod. Fuse it into a base with a positive overlap. Do not fuse a nominal-diameter shaft along its whole length: that fills the grooves. A supporting shaft along the thread must fit inside the tool's minor diameter.
+- **Internal thread · cutter / cap**, with **Threaded body / Boolean tool** selected: the tool is the positive volume removed to create the threaded bore, including its core. Select the target first and tool second, then Part → Boolean → Cut. No pilot hole is necessary. For through holes, extend the cutter beyond both target faces.
 
 Use Placement to position and rotate the tool. Its axis is +Z; its lower end is at Z=0. Python/FCMacro adds one Part::Feature to the active document without changing existing objects. STEP preserves a CAD solid; STL is a mesh and should not be used directly for Part Booleans.
+
+## Body forms and central holes
+
+**Body form** offers a plain threaded body, a round cap/plug and a hexagonal cap/plug. Catalog entries continue to specify nominal thread size; the body form and its dimensions are custom design choices, not standard cap or fastener specifications.
+
+- In external mode, a cap form makes a threaded plug with an integral head. Thread runs from Z=0 to **Threaded length / cap cavity depth**; the head starts there and adds **Cap end thickness**.
+- In internal mode, a cap form makes a finished female threaded cap. The cavity opens at Z=0 and ends at the threaded depth; a solid end of the chosen thickness closes it. This is the finished part, not a positive cutter to subtract from another part.
+- **Cap diameter / hex across flats** sets the round outside diameter or the wrench size of a regular hexagon. Hex vertices lie at 0, 60, ... degrees; X extent is across-flats × 2/√3 and Y extent equals across-flats. The smallest outside radius must leave more than 0.1 mm radial stock beyond the adjusted thread crest. This is only a geometric minimum, not a strength requirement.
+- **Central through hole** enables an axial bore. On a threaded body or plug it passes through the complete part; on a female cap it passes through the end into the threaded cavity. Disable it for a solid plug or closed cap. Its radius must remain at least 0.1 mm below the thread root, preserving an unbroken thread wall or end annulus.
+- A hollow **Internal Cut tool** removes an annular threaded volume and leaves a central post in the target. Keep its hole disabled when making an ordinary threaded bore.
+
+The defaults preserve the plain tool without a hole. All forms share thread direction, pitch, starts and radial adjustment. Ends and head transitions are sharp; machining fillets, thread runout, engagement, sealing surfaces and load capacity must be specified for the intended part.
 
 ## Geometry contract
 
@@ -19,7 +31,7 @@ Sources: manufacturer BAER metric/UNC/UNF/UNEF/Tr tables and Roton ACME size ref
 
 ## Verification
 
-`tests/thread-tools.test.ts` checks all 79 presets in both modes for finite, closed, consistently oriented preview meshes and expected bounds, plus pitch conversion, handedness, lead, clearance and rejected inputs (163 tests). Generic module tests cover STL, macro export and parameter boundaries.
+`tests/thread-tools.test.ts` checks all 79 presets in both modes for finite, closed, consistently oriented preview meshes and expected bounds, plus pitch conversion, handedness, lead, clearance and rejected inputs. Additional cases cover both cap shapes, both thread modes and holes on/off; the optional `FREECAD_PYTHON` test validates native solid topology, cavity and roof occupancy, full through holes, bounds and preview/native volume agreement. Generic module tests cover STL, macro export and parameter boundaries.
 
 `scripts/verify-thread-tools.ts` prepares 24 representative native cases: M1, M2, each thread family, 3/8″-24 UNF, left-hand and multi-start threads, and a custom profile with clearance. `scripts/verify-thread-tools.py` runs their complete macros using FreeCAD, checks the radial profile against the preview, performs actual Cut/Union operations, and round-trips STEP and FCStd. Results are recorded in `data/thread-tools-native-validation.json`. This samples supported geometries; it is not certification of every arbitrary custom combination or manufactured fit.
 
@@ -29,3 +41,7 @@ node --import tsx scripts/verify-thread-tools.ts /tmp/protolab-thread-cases.json
 # Run with a FreeCAD-enabled Python (FREECAD_LIB may override the default macOS library path):
 python scripts/verify-thread-tools.py /tmp/protolab-thread-cases.json data/thread-tools-native-validation.json
 ```
+
+## Manufacturing method
+
+Choose **Machined metal** for a smooth nominal-diameter tool, cap or plug with drawing callouts. It creates no helical faces and applies no print-fit allowance. Choose **3D printed** when the exported mesh must contain the real thread flanks. Printed thread tools and their presets use this explicit mode. Thread size, pitch, handedness and length remain available in FreeCAD manufacturing properties in either mode.

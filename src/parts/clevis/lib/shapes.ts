@@ -1,3 +1,4 @@
+import { showThreads, type VisualThread } from '../../../core/thread-visual';
 import modeling from '@jscad/modeling';
 import type { Geom3 } from '@jscad/modeling/src/geometries/types';
 import { Group, Mesh, MeshStandardMaterial } from 'three';
@@ -46,37 +47,6 @@ export const thread = (
   internal: boolean,
 ): Thread => ({ kind: 'thread', radius, height, origin, pitch, hand, internal });
 
-/** The same truncated 60-degree radial profile drives the mesh and CAD sweep. */
-function threadSolid(s: Thread): Geom3 {
-  const segments = 40,
-    levels = Math.max(1, Math.ceil((s.height / s.pitch) * 12));
-  const depth = (((s.internal ? 5 : 17 / 3) * Math.sqrt(3)) / 16) * s.pitch;
-  const rings = Array.from({ length: levels + 1 }, (_, level) => {
-    const z = (s.height * level) / levels;
-    return Array.from({ length: segments }, (_, i): Vec => {
-      const a = (2 * Math.PI * i) / segments;
-      const phase = z / s.pitch - (s.hand * a) / (2 * Math.PI);
-      const distance = Math.abs(phase - Math.round(phase));
-      const high = 1 / 16;
-      const width = depth / (Math.sqrt(3) * s.pitch);
-      const f = Math.max(0, Math.min(1, (high + width - distance) / width));
-      const r = s.radius - depth * (1 - f);
-      return [s.origin[0] + r * Math.cos(a), s.origin[1] + r * Math.sin(a), s.origin[2] + z];
-    });
-  });
-  const faces: number[][] = [];
-  for (let j = 0; j < levels; j++)
-    for (let i = 0; i < segments; i++) {
-      const a = j * segments + i,
-        b = j * segments + ((i + 1) % segments),
-        c = a + segments,
-        d = b + segments;
-      faces.push([a, b, c], [b, d, c]);
-    }
-  faces.push(Array.from({ length: segments }, (_, i) => segments - i - 1));
-  faces.push(Array.from({ length: segments }, (_, i) => levels * segments + i));
-  return modeling.primitives.polyhedron({ points: rings.flat(), faces, orientation: 'outward' });
-}
 export function toSolid(s: Shape): Geom3 {
   switch (s.kind) {
     case 'cylinder': {
@@ -96,7 +66,7 @@ export function toSolid(s: Shape): Geom3 {
         center: s.origin.map((v, i) => v + s.size[i] / 2) as Vec,
       });
     case 'thread':
-      return threadSolid(s);
+      return toSolid(cylinder(s.radius, s.height, s.origin, 'z', 64));
     case 'union':
       return modeling.booleans.union(...s.children.map(toSolid));
     case 'subtract':
@@ -137,6 +107,22 @@ export function component(s: Shape, label: string, color: number): Group {
     child.geometry = child.geometry.clone();
     child.material = (child.material as MeshStandardMaterial).clone();
     (child.material as MeshStandardMaterial).color.setHex(color);
+    const threads: VisualThread[] = [];
+    const walk = (s: Shape) => {
+      if (s.kind === 'thread')
+        threads.push({
+          origin: s.origin.map((v, i) => v - cached!.position.getComponent(i)) as Vec,
+          axis: [0, 0, 1],
+          diameter: 2 * s.radius,
+          pitch: s.pitch,
+          length: s.height,
+          internal: s.internal,
+          left: s.hand < 0,
+        });
+      else if ('children' in s) s.children.forEach(walk);
+    };
+    walk(s);
+    if (threads.length) showThreads(child, threads);
   });
   return group;
 }
@@ -150,7 +136,7 @@ export function pythonShape(s: Shape): string {
     case 'box':
       return `Part.makeBox(${s.size.map(num).join(',')},${vector(s.origin)})`;
     case 'thread':
-      return `clevis_thread(${num(s.radius)},${num(s.height)},${vector(s.origin)},${num(s.pitch)},${s.hand < 0 ? 'True' : 'False'},${s.internal ? 'True' : 'False'})`;
+      return `Part.makeCylinder(${num(s.radius)},${num(s.height)},${vector(s.origin)})`;
     default: {
       const method = s.kind === 'union' ? 'fuse' : s.kind === 'subtract' ? 'cut' : 'common';
       return s.children
@@ -167,20 +153,4 @@ export const pythonHelpers = `def clevis_hex(radius, height, origin, along_y):
     solid = Part.Face(Part.makePolygon(points+[points[0]])).extrude(App.Vector(0,0,height))
     if along_y: solid.rotate(App.Vector(0,0,0),App.Vector(1,0,0),-90)
     solid.translate(origin)
-    return solid
-
-def clevis_thread(radius, height, origin, pitch, left, internal):
-    depth = (5 if internal else 17/3)*math.sqrt(3)*pitch/16
-    minor = radius-depth
-    overlap = pitch*0.08
-    root_half_width = pitch/2-pitch/16-depth/math.sqrt(3)
-    crest_half_width = 7*pitch/16+overlap/math.sqrt(3)
-    points = [App.Vector(minor,0,-root_half_width),App.Vector(radius+overlap,0,-crest_half_width),App.Vector(radius+overlap,0,crest_half_width),App.Vector(minor,0,root_half_width)]
-    profile = Part.Wire(Part.makePolygon(points+[points[0]]).Edges)
-    path = Part.Wire(Part.makeLongHelix(pitch,height+2*pitch,minor,0,left).Edges)
-    groove = path.makePipeShell([profile],True,True)
-    groove.translate(App.Vector(0,0,-pitch/2))
-    solid = Part.makeCylinder(radius,height).cut(groove).removeSplitter()
-    solid.translate(origin)
-    if solid.isNull() or not solid.isValid(): raise ValueError("Clevis thread construction failed.")
     return solid`;

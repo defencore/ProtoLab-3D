@@ -1,9 +1,9 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { Box3, Mesh, Vector3 } from 'three';
+import { Box3, Mesh, Vector3, Raycaster } from 'three';
 import part from '../src/parts/co2-cartridge/part';
 import models from '../src/parts/co2-cartridge/lib/models.json';
-import { dimensions, threadRadius } from '../src/parts/co2-cartridge/lib/model';
+import { dimensions, threadCallouts } from '../src/parts/co2-cartridge/lib/model';
 import { disposeModel } from '../src/core/mechanical';
 import { validateParameters } from '../src/core/validation';
 function checkMesh(mesh: Mesh, label: string) {
@@ -69,14 +69,16 @@ for (const preset of part.presets)
       assert.equal(preset.catalog!.attributes!.gasMass, v.m.gasMass);
       if (v.pitch) {
         assert.equal(v.pitch, 25.4 / v.m.tpi);
-        assert.equal(threadRadius(p, v.start, 0), v.neck);
-        assert.ok(threadRadius(p, v.start + v.pitch / 2, 0) < v.neck - 0.5 * v.pitch);
-        assert.ok(
-          Math.abs(
-            threadRadius(p, v.start + 0.37 * v.pitch, 0.81) -
-              threadRadius(p, v.start + 1.37 * v.pitch, 0.81),
-          ) < 1e-12,
-        );
+        assert.equal(threadCallouts(p)[0].nominalDiameter, v.m.neckDiameter);
+        assert.equal(threadCallouts(p)[0].pitch, v.pitch);
+        assert.equal(threadCallouts(p)[0].representation, 'nominal-cylinder');
+        g.updateMatrixWorld(true);
+        for (const z of [v.start, (v.start + v.end) / 2, v.end]) {
+          const ray = new Raycaster(new Vector3(v.neck + 2, 0, z), new Vector3(-1, 0, 0));
+          assert.ok(Math.abs(ray.intersectObject(g, true)[0].point.x - v.neck) < 1e-5);
+        }
+        assert.doesNotMatch(part.python(p, 'sealed'), /makeLongHelix|makePipeShell/);
+        assert.match(part.python(p, 'sealed'), /ThreadCallouts/);
       }
     } finally {
       disposeModel(g);

@@ -43,12 +43,15 @@ source_exploded = [(0, 0, 0), (0, 0, 25), (0, 0, -25), (55, 0, 0),
                    (0, -40, 0), (0, 0, 45), (0, 0, 60), (0, 0, -45)]
 
 def source_component(label, case):
+    label = label.split(' · threads: ')[0]
     if case['parameters']['model'] != 'waveshare-st3215-hs' or label not in source_labels:
         return None
     index = source_labels.index(label)
     shape = source_solids[index].copy()
     shape.rotate(App.Vector(), App.Vector(1, 0, 0), 90)
     shape.translate(App.Vector(25.5, 0, 24.1))
+    if index == 5:
+        shape = shape.cut(Part.makeCylinder(1.6, 8.4, App.Vector(0, 0, 23.8))).removeSplitter()
     if index in (5, 6):
         shape.rotate(App.Vector(), App.Vector(0, 0, 1), case['parameters']['outputAngle'])
     if case['state'] == 'exploded':
@@ -97,7 +100,7 @@ with tempfile.TemporaryDirectory(prefix='protolab-servo-motors-') as directory:
                     for key in ['XMin', 'YMin', 'ZMin', 'XMax', 'YMax', 'ZMax']:
                         assert abs(getattr(expected_box, key) - getattr(actual_box, key)) < 1e-5
                 if len(children) > 1:
-                    assert child.Label == expected['name'], 'Preview/CAD component label mismatch'
+                    assert child.Label.split(' · threads: ')[0] == expected['name'], 'Preview/CAD component label mismatch'
                 b = child.Shape.optimalBoundingBox(False, False)
                 for actual, wanted in zip([b.XMin, b.YMin, b.ZMin, b.XMax, b.YMax, b.ZMax], expected['min'] + expected['max']):
                     bound_errors.append(abs(actual - wanted))

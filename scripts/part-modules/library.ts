@@ -7,6 +7,8 @@ export const SDK_FILES = [
   'types.ts',
   'parameter-states.ts',
   'geometry.ts',
+  'thread-callouts.ts',
+  'thread-visual.ts',
   'mechanical.ts',
   'solid-union.ts',
   'manufacturer-cad.ts',

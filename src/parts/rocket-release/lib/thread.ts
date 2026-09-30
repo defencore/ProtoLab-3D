@@ -7,13 +7,17 @@ export interface Thread {
   length: number;
   clearance: number;
   internal: boolean;
+  /** Only additive-manufactured threads need a helical solid. */
+  process?: 'printed';
+  designation?: string;
 }
 export function threadGeometry(t: Thread, segments = 64, samples = 24): BufferGeometry {
-  const levels = Math.ceil((t.length / t.pitch) * samples),
+  const printed = t.process === 'printed';
+  const levels = printed ? Math.ceil((t.length / t.pitch) * samples) : 1,
     a: number[] = [],
     ids: number[] = [];
-  const major = t.diameter / 2 + t.clearance,
-    depth = t.pitch * Math.sqrt(3) * (t.internal ? 5 / 16 : 17 / 48);
+  const major = t.diameter / 2 + (printed ? t.clearance : 0),
+    depth = printed ? t.pitch * Math.sqrt(3) * (t.internal ? 5 / 16 : 17 / 48) : 0;
   for (let j = 0; j <= levels; j++)
     for (let i = 0; i < segments; i++) {
       const z = (t.length * j) / levels,
@@ -44,6 +48,13 @@ export function threadGeometry(t: Thread, segments = 64, samples = 24): BufferGe
   return g;
 }
 export function threadSolid(t: Thread): Geom3 {
+  if (t.process !== 'printed')
+    return modeling.primitives.cylinder({
+      radius: t.diameter / 2,
+      height: t.length,
+      center: [0, 0, t.length / 2],
+      segments: 64,
+    });
   const g = threadGeometry(
       t,
       t.diameter >= 4 || !t.internal ? 24 : 12,
@@ -65,7 +76,7 @@ export function threadSolid(t: Thread): Geom3 {
   return modeling.geometries.geom3.create(polygons);
 }
 export const threadPython = [
-  'def _release_thread(d,p,h,c,internal):',
+  'def _printed_thread(d,p,h,c,internal):',
   '    key=(d,p,h,c,internal)',
   '    if key in _release_thread_cache: return _release_thread_cache[key].copy()',
   '    major=d/2+c',

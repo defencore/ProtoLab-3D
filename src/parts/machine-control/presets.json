@@ -1,0 +1,170 @@
+[
+  {
+    "id": "atv12hu22m2",
+    "name": "Schneider ATV12HU22M2 \u00b7 2.2 kW \u00b7 230 V",
+    "description": "Single-phase 200-240 V input; 10 A continuous output at 4 kHz. Input line current 20.2 A at 240 V. No safety-rated STO assumed.",
+    "parameters": {
+      "model": "atv12hu22m2"
+    },
+    "catalog": {
+      "designation": "Schneider ATV12HU22M2 \u00b7 2.2 kW \u00b7 230 V",
+      "manufacturer": "Schneider Electric",
+      "sourceName": "Manufacturer datasheet",
+      "sourceUrl": "https://www.se.com/us/en/product/ATV12HU22M2/",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Published external width, height and depth.",
+        "limitations": "Mounting details not verified; terminal positions and decorative fascia simplified.",
+        "sourceUrl": "https://www.se.com/us/en/product/ATV12HU22M2/"
+      },
+      "attributes": {
+        "width": 105
+      }
+    }
+  },
+  {
+    "id": "dvp14ss211t",
+    "name": "Delta DVP14SS211T \u00b7 transistor PLC",
+    "description": "24 VDC PLC; 8 DI and 6 transistor DO. Add I/O expansion after completing the machine I/O schedule; this PLC is not a safety controller.",
+    "parameters": {
+      "model": "dvp14ss211t"
+    },
+    "catalog": {
+      "designation": "Delta DVP14SS211T \u00b7 transistor PLC",
+      "manufacturer": "Delta",
+      "sourceName": "Manufacturer datasheet",
+      "sourceUrl": "https://filecenter.deltaww.com/Products/download/06/060301/Manual/DELTA_IA-PLC_DVP-StarterKit-UT-14SS2-A1_OM_EN_20240812.pdf",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Published external width, height and depth.",
+        "limitations": "Mounting details not verified; terminal positions and decorative fascia simplified.",
+        "sourceUrl": "https://filecenter.deltaww.com/Products/download/06/060301/Manual/DELTA_IA-PLC_DVP-StarterKit-UT-14SS2-A1_OM_EN_20240812.pdf"
+      },
+      "attributes": {
+        "width": 25.2
+      }
+    }
+  },
+  {
+    "id": "cl57t-v3",
+    "name": "STEPPERONLINE CL57T V3 \u00b7 closed-loop driver",
+    "description": "V3.0 enclosure only; 24-48 VDC. Verify delivered revision and encoder compatibility before ordering.",
+    "parameters": {
+      "model": "cl57t-v3"
+    },
+    "catalog": {
+      "designation": "STEPPERONLINE CL57T V3 \u00b7 closed-loop driver",
+      "manufacturer": "STEPPERONLINE",
+      "sourceName": "Manufacturer datasheet",
+      "sourceUrl": "https://www.omc-stepperonline.com/download/CL57T.pdf",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Published external width, height and depth.",
+        "limitations": "Mounting details not verified; terminal positions and decorative fascia simplified.",
+        "sourceUrl": "https://www.omc-stepperonline.com/download/CL57T.pdf"
+      },
+      "attributes": {
+        "width": 116
+      }
+    }
+  },
+  {
+    "id": "lrs15024",
+    "name": "MEAN WELL LRS-150-24 \u00b7 24 V / 6.5 A",
+    "description": "156 W, 24 VDC, 6.5 A. Set input selector to 230 V; verify total simultaneous solenoid and motor load.",
+    "parameters": {
+      "model": "lrs15024"
+    },
+    "catalog": {
+      "designation": "MEAN WELL LRS-150-24 \u00b7 24 V / 6.5 A",
+      "manufacturer": "MEAN WELL",
+      "sourceName": "Manufacturer datasheet",
+      "sourceUrl": "https://www.meanwell.com/Upload/PDF/LRS-150/LRS-150-SPEC.PDF",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Published external width, height and depth.",
+        "limitations": "Mounting details not verified; terminal positions and decorative fascia simplified.",
+        "sourceUrl": "https://www.meanwell.com/Upload/PDF/LRS-150/LRS-150-SPEC.PDF"
+      },
+      "attributes": {
+        "width": 159
+      }
+    }
+  },
+  {
+    "id": "pnozx3",
+    "name": "Pilz PNOZ X3 \u00b7 774310 \u00b7 24 V",
+    "description": "24 VAC/DC safety relay; three N/O safety outputs. Requires a designed and validated safety circuit; relay presence alone does not establish a performance level.",
+    "parameters": {
+      "model": "pnozx3"
+    },
+    "catalog": {
+      "designation": "Pilz PNOZ X3 \u00b7 774310 \u00b7 24 V",
+      "manufacturer": "Pilz",
+      "sourceName": "Manufacturer datasheet",
+      "sourceUrl": "https://www.pilz.com/download/open/PNOZ_X3_Operating_Manual_20547-EN-10.pdf",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Published external width, height and depth.",
+        "limitations": "Mounting details not verified; terminal positions and decorative fascia simplified.",
+        "sourceUrl": "https://www.pilz.com/download/open/PNOZ_X3_Operating_Manual_20547-EN-10.pdf"
+      },
+      "attributes": {
+        "width": 45
+      }
+    }
+  },
+  {
+    "id": "ddcs-v4-1",
+    "name": "Digital Dream DDCS v4.1 \u00b7 4-axis motion controller",
+    "description": "24 V system and isolated I/O supplies; 18 inputs, three 50 mA sinking outputs and 0\u201310 V spindle command. X feed / Z saw; process PLC handles stock identity and valves. Panel cutout requires checking the delivered unit: manual text and drawing conflict.",
+    "parameters": {
+      "model": "ddcs-v4-1"
+    },
+    "catalog": {
+      "designation": "Digital Dream DDCS v4.1 \u00b7 4-axis motion controller",
+      "manufacturer": "Digital Dream",
+      "sourceName": "Manufacturer manual / product data",
+      "sourceUrl": "https://cncmaster.org/files/DDCS-V4.1-Users-manual-in-English-V1-20220914.pdf",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Published front and overall envelope; recognizable fascia and contacts.",
+        "limitations": "Connector contours and installation cutout require delivered-unit checks.",
+        "sourceUrl": "https://cncmaster.org/files/DDCS-V4.1-Users-manual-in-English-V1-20220914.pdf"
+      },
+      "attributes": {
+        "width": 237
+      }
+    }
+  },
+  {
+    "id": "xb5as8444",
+    "name": "Schneider XB5AS8444 \u00b7 D40 emergency stop \u00b7 2 NC",
+    "description": "D22 panel mounting; D40 latching red mushroom, twist release, two NC contacts. Contact body contours are simplified. Connect both channels to the independent safety circuit; reset must not restart motion.",
+    "parameters": {
+      "model": "xb5as8444"
+    },
+    "catalog": {
+      "designation": "Schneider XB5AS8444 \u00b7 D40 emergency stop \u00b7 2 NC",
+      "manufacturer": "Schneider Electric",
+      "sourceName": "Manufacturer manual / product data",
+      "sourceUrl": "https://www.se.com/us/en/product/XB5AS8444/",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Published front and overall envelope; recognizable fascia and contacts.",
+        "limitations": "Connector contours and installation cutout require delivered-unit checks.",
+        "sourceUrl": "https://www.se.com/us/en/product/XB5AS8444/"
+      },
+      "attributes": {
+        "width": 40
+      }
+    }
+  }
+]

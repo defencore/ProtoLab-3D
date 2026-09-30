@@ -1,0 +1,10 @@
+[
+  {
+    "id": "lch7-v3-2",
+    "name": "LCH7 v3.2",
+    "description": "LCH7 v3.2 controller with FR4 PCB, mounting holes, major components, connector housings and contacts.",
+    "parameters": {
+      "model": "lch7-v3-2"
+    }
+  }
+]

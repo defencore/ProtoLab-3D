@@ -17,6 +17,7 @@ import {
   Material,
   Mesh,
   MeshStandardMaterial,
+  MOUSE,
   Object3D,
   OrthographicCamera,
   PCFShadowMap,
@@ -25,6 +26,7 @@ import {
   Scene,
   ShadowMaterial,
   SRGBColorSpace,
+  TOUCH,
   Vector3,
   WebGLRenderer,
   type WebGLRenderTarget,
@@ -36,6 +38,7 @@ import './viewer/viewer.css';
 
 type CameraView = 'isometric' | 'front' | 'top' | 'right';
 type DisplayMode = 'solid' | 'wireframe' | 'xray';
+export type NavigationMode = 'orbit' | 'pan';
 
 interface ModelViewerProps {
   preparedModel?: Group | null;
@@ -46,12 +49,14 @@ interface ModelViewerProps {
   parameters: Parameters;
   modelState: string;
   displayMode: DisplayMode;
+  navigationMode: NavigationMode;
   showGrid: boolean;
   showDimensions: boolean;
   view: CameraView;
   fitToken: number;
   onError?: (message: string) => void;
   onViewChange?: (view: CameraView) => void;
+  onNavigationModeChange: (mode: NavigationMode) => void;
 }
 
 interface MaterialAppearance {
@@ -258,12 +263,14 @@ export default function ModelViewer({
   parameters,
   modelState,
   displayMode,
+  navigationMode,
   showGrid,
   showDimensions,
   view,
   fitToken,
   onError,
   onViewChange,
+  onNavigationModeChange,
 }: ModelViewerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const labelLayerRef = useRef<HTMLDivElement>(null);
@@ -271,10 +278,12 @@ export default function ModelViewer({
   const onErrorRef = useRef(onError);
   const currentViewRef = useRef(view);
   const displayModeRef = useRef(displayMode);
+  const onNavigationModeChangeRef = useRef(onNavigationModeChange);
   const [error, setError] = useState<string | null>(null);
   onErrorRef.current = onError;
   currentViewRef.current = view;
   displayModeRef.current = displayMode;
+  onNavigationModeChangeRef.current = onNavigationModeChange;
 
   useEffect(() => {
     const container = containerRef.current;
@@ -303,10 +312,6 @@ export default function ModelViewer({
     renderer.shadowMap.type = PCFShadowMap;
     renderer.setClearColor(0x000000, 0);
     renderer.domElement.className = 'model-viewer__canvas';
-    renderer.domElement.setAttribute(
-      'aria-label',
-      'Interactive 3D part preview. Drag to rotate, scroll to zoom, and right-drag to pan.',
-    );
     renderer.domElement.setAttribute('role', 'img');
     renderer.domElement.tabIndex = 0;
     container.prepend(renderer.domElement);
@@ -480,6 +485,11 @@ export default function ModelViewer({
     };
     const handleDoubleClick = () => runtime.fit();
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.ctrlKey || event.metaKey || event.altKey) return;
+      if (event.key.toLowerCase() === 'p' || event.key.toLowerCase() === 'o') {
+        event.preventDefault();
+        onNavigationModeChangeRef.current(event.key.toLowerCase() === 'p' ? 'pan' : 'orbit');
+      }
       if (event.key.toLowerCase() === 'f') {
         event.preventDefault();
         runtime.fit();
@@ -641,6 +651,17 @@ export default function ModelViewer({
   useEffect(() => {
     const runtime = runtimeRef.current;
     if (!runtime) return;
+    runtime.controls.mouseButtons.LEFT = navigationMode === 'pan' ? MOUSE.PAN : MOUSE.ROTATE;
+    runtime.controls.touches.ONE = navigationMode === 'pan' ? TOUCH.PAN : TOUCH.ROTATE;
+    runtime.renderer.domElement.setAttribute(
+      'aria-label',
+      `Interactive 3D part preview. Drag to ${navigationMode === 'pan' ? 'pan' : 'rotate'}, scroll to zoom, and right-drag to pan. P: pan, O: orbit, F: fit.`,
+    );
+  }, [navigationMode]);
+
+  useEffect(() => {
+    const runtime = runtimeRef.current;
+    if (!runtime) return;
     runtime.grid.visible = showGrid;
     runtime.requestRender();
   }, [showGrid]);
@@ -668,7 +689,11 @@ export default function ModelViewer({
   };
 
   return (
-    <div className="model-viewer" ref={containerRef} aria-label={`${part.name} 3D workspace`}>
+    <div
+      className={`model-viewer model-viewer--${navigationMode}`}
+      ref={containerRef}
+      aria-label={`${part.name} 3D workspace`}
+    >
       <div className="model-viewer__labels" ref={labelLayerRef} aria-hidden="true" />
       {pending && (
         <div className="model-viewer__error" role="status">

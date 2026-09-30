@@ -1,0 +1,54 @@
+[
+  {
+    "id": "bevi90l2",
+    "name": "BEVI 4A3 90L-2 \u00b7 2.2 kW \u00b7 B3",
+    "description": "Purchased motor. Confirm delivered dimensions before machining mating components.",
+    "parameters": {
+      "model": "bevi90l2"
+    },
+    "catalog": {
+      "designation": "BEVI 4A3 90L-2 \u00b7 2.2 kW \u00b7 B3",
+      "manufacturer": "BEVI",
+      "sourceName": "Manufacturer product data",
+      "sourceUrl": "https://www.bevi.com/electric-motors/three-phase-standard-motors/electric-motor-4a3-90l-2-121116",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External body and shaft dimensions from manufacturer; BEVI foot pattern also published.",
+        "limitations": "Housing contours simplified. Stepper pilot and mounting-hole pattern require dimensional drawing confirmation.",
+        "sourceUrl": "https://www.bevi.com/electric-motors/three-phase-standard-motors/electric-motor-4a3-90l-2-121116"
+      },
+      "attributes": {
+        "shaftDiameter": 24
+      }
+    }
+  },
+  {
+    "id": "23hs30-2804-me1k",
+    "name": "STEPPERONLINE 23HS30-2804-ME1K \u00b7 encoder",
+    "description": "Purchased motor. Confirm delivered dimensions before machining mating components.",
+    "parameters": {
+      "model": "23hs30-2804-me1k"
+    },
+    "catalog": {
+      "designation": "STEPPERONLINE 23HS30-2804-ME1K \u00b7 encoder",
+      "manufacturer": "STEPPERONLINE",
+      "sourceName": "Manufacturer product data",
+      "sourceUrl": "https://www.omc-stepperonline.com/de/nema-23-schrittmotor-mit-geschlossener-regelkreis-1-85nm-256-9oz-in-mit-magnetischem-geber-1000ppr-4000cpr-23hs30-2804-me1k",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External body and shaft dimensions from manufacturer; BEVI foot pattern also published.",
+        "limitations": "Housing contours simplified. Stepper pilot and mounting-hole pattern require dimensional drawing confirmation.",
+        "sourceUrl": "https://www.omc-stepperonline.com/de/nema-23-schrittmotor-mit-geschlossener-regelkreis-1-85nm-256-9oz-in-mit-magnetischem-geber-1000ppr-4000cpr-23hs30-2804-me1k"
+      },
+      "attributes": {
+        "shaftDiameter": 6.35
+      }
+    }
+  }
+]

@@ -1,8 +1,8 @@
 [
   {
     "id": "8hs12-0506s",
-    "name": "STEPPERONLINE NEMA 8 · 8HS12-0506S",
-    "description": "20.3 mm frame · 28.3 mm body · 0.012 N·m holding · 0.5 A/phase",
+    "name": "STEPPERONLINE NEMA 8 \u00b7 8HS12-0506S",
+    "description": "20.3 mm frame \u00b7 28.3 mm body \u00b7 0.012 N\u00b7m holding \u00b7 0.5 A/phase",
     "parameters": {
       "model": "8hs12-0506s",
       "outputAngle": 0,
@@ -13,12 +13,8 @@
       "manufacturer": "STEPPERONLINE",
       "sourceName": "STEPPERONLINE drawing and specifications",
       "sourceUrl": "https://www.omc-stepperonline.com/nema-8-unipolar-1-8deg-1-2ncm-1-70oz-in-0-5a-20x20x28mm-6-wires-8hs12-0506s",
-      "verifiedParameters": [
-        "model"
-      ],
-      "productCodes": [
-        "8HS12-0506S"
-      ],
+      "verifiedParameters": ["model"],
+      "productCodes": ["8HS12-0506S"],
       "alternateSourceUrls": [
         "https://www.omc-stepperonline.com/image/catalog/dimensions/8HS12-0506S_Dimension.svg"
       ],
@@ -69,7 +65,7 @@
         },
         {
           "label": "Holding torque",
-          "value": "0.012 N·m"
+          "value": "0.012 N\u00b7m"
         },
         {
           "label": "Rated phase current",
@@ -81,7 +77,7 @@
         },
         {
           "label": "Phase resistance",
-          "value": "11.5 Ω"
+          "value": "11.5 \u03a9"
         },
         {
           "label": "Phase inductance",
@@ -89,11 +85,11 @@
         },
         {
           "label": "Step angle",
-          "value": "1.8°"
+          "value": "1.8\u00b0"
         },
         {
           "label": "Mounting holes",
-          "value": "4 × M2; minimum depth 2.5 mm"
+          "value": "4 \u00d7 M2; minimum depth 2.5 mm"
         },
         {
           "label": "Leads",
@@ -108,8 +104,8 @@
   },
   {
     "id": "11hs12-0674s",
-    "name": "STEPPERONLINE NEMA 11 · 11HS12-0674S",
-    "description": "28.3 mm frame · 33 mm body · 0.07 N·m holding · 0.67 A/phase",
+    "name": "STEPPERONLINE NEMA 11 \u00b7 11HS12-0674S",
+    "description": "28.3 mm frame \u00b7 33 mm body \u00b7 0.07 N\u00b7m holding \u00b7 0.67 A/phase",
     "parameters": {
       "model": "11hs12-0674s",
       "outputAngle": 0,
@@ -120,12 +116,8 @@
       "manufacturer": "STEPPERONLINE",
       "sourceName": "STEPPERONLINE drawing and specifications",
       "sourceUrl": "https://www.omc-stepperonline.com/nema-11-bipolar-1-8deg-7ncm-9-91oz-in-0-67a-3-8v-28x28x31mm-4-wires-11hs12-0674s",
-      "verifiedParameters": [
-        "model"
-      ],
-      "productCodes": [
-        "11HS12-0674S"
-      ],
+      "verifiedParameters": ["model"],
+      "productCodes": ["11HS12-0674S"],
       "alternateSourceUrls": [
         "https://www.omc-stepperonline.com/image/catalog/dimensions/11HS12-0674S_Dimension-1.svg"
       ],
@@ -176,7 +168,7 @@
         },
         {
           "label": "Holding torque",
-          "value": "0.07 N·m"
+          "value": "0.07 N\u00b7m"
         },
         {
           "label": "Rated phase current",
@@ -188,7 +180,7 @@
         },
         {
           "label": "Phase resistance",
-          "value": "5.6 Ω"
+          "value": "5.6 \u03a9"
         },
         {
           "label": "Phase inductance",
@@ -196,11 +188,11 @@
         },
         {
           "label": "Step angle",
-          "value": "1.8°"
+          "value": "1.8\u00b0"
         },
         {
           "label": "Mounting holes",
-          "value": "4 × M2.5; minimum depth 3.5 mm"
+          "value": "4 \u00d7 M2.5; minimum depth 3.5 mm"
         },
         {
           "label": "Leads",
@@ -215,8 +207,8 @@
   },
   {
     "id": "14hs10-0404s",
-    "name": "STEPPERONLINE NEMA 14 · 14HS10-0404S",
-    "description": "35.2 mm frame · 26 mm body · 0.14 N·m holding · 0.4 A/phase",
+    "name": "STEPPERONLINE NEMA 14 \u00b7 14HS10-0404S",
+    "description": "35.2 mm frame \u00b7 26 mm body \u00b7 0.14 N\u00b7m holding \u00b7 0.4 A/phase",
     "parameters": {
       "model": "14hs10-0404s",
       "outputAngle": 0,
@@ -227,12 +219,8 @@
       "manufacturer": "STEPPERONLINE",
       "sourceName": "STEPPERONLINE drawing and specifications",
       "sourceUrl": "https://www.omc-stepperonline.com/nema-14-bipolar-1-8deg-14ncm-20oz-in-0-4a-12v-35x35x26mm-4-wires-14hs10-0404s",
-      "verifiedParameters": [
-        "model"
-      ],
-      "productCodes": [
-        "14HS10-0404S"
-      ],
+      "verifiedParameters": ["model"],
+      "productCodes": ["14HS10-0404S"],
       "alternateSourceUrls": [
         "https://www.omc-stepperonline.com/image/catalog/dimensions/14HS10-0404S_Dimension.svg"
       ],
@@ -283,7 +271,7 @@
         },
         {
           "label": "Holding torque",
-          "value": "0.14 N·m"
+          "value": "0.14 N\u00b7m"
         },
         {
           "label": "Rated phase current",
@@ -295,7 +283,7 @@
         },
         {
           "label": "Phase resistance",
-          "value": "30 Ω"
+          "value": "30 \u03a9"
         },
         {
           "label": "Phase inductance",
@@ -303,11 +291,11 @@
         },
         {
           "label": "Step angle",
-          "value": "1.8°"
+          "value": "1.8\u00b0"
         },
         {
           "label": "Mounting holes",
-          "value": "4 × M3; minimum depth 3 mm"
+          "value": "4 \u00d7 M3; minimum depth 3 mm"
         },
         {
           "label": "Leads",
@@ -322,8 +310,8 @@
   },
   {
     "id": "17hs08-1004s",
-    "name": "STEPPERONLINE NEMA 17 · 17HS08-1004S",
-    "description": "42.3 mm frame · 21.5 mm body · 0.16 N·m holding · 1 A/phase",
+    "name": "STEPPERONLINE NEMA 17 \u00b7 17HS08-1004S",
+    "description": "42.3 mm frame \u00b7 21.5 mm body \u00b7 0.16 N\u00b7m holding \u00b7 1 A/phase",
     "parameters": {
       "model": "17hs08-1004s",
       "outputAngle": 0,
@@ -334,12 +322,8 @@
       "manufacturer": "STEPPERONLINE",
       "sourceName": "STEPPERONLINE drawing and specifications",
       "sourceUrl": "https://www.omc-stepperonline.com/nema-17-bipolar-1-8deg-16ncm-22-6oz-in-1a-3-7v-42x42x20mm-4-wires-17hs08-1004s",
-      "verifiedParameters": [
-        "model"
-      ],
-      "productCodes": [
-        "17HS08-1004S"
-      ],
+      "verifiedParameters": ["model"],
+      "productCodes": ["17HS08-1004S"],
       "alternateSourceUrls": [
         "https://www.omc-stepperonline.com/image/catalog/dimensions/17HS08-1004S_Dimension-2.svg"
       ],
@@ -390,7 +374,7 @@
         },
         {
           "label": "Holding torque",
-          "value": "0.16 N·m"
+          "value": "0.16 N\u00b7m"
         },
         {
           "label": "Rated phase current",
@@ -402,7 +386,7 @@
         },
         {
           "label": "Phase resistance",
-          "value": "3.7 Ω"
+          "value": "3.7 \u03a9"
         },
         {
           "label": "Phase inductance",
@@ -410,11 +394,11 @@
         },
         {
           "label": "Step angle",
-          "value": "1.8°"
+          "value": "1.8\u00b0"
         },
         {
           "label": "Mounting holes",
-          "value": "4 × M3; minimum depth 2.5 mm"
+          "value": "4 \u00d7 M3; minimum depth 2.5 mm"
         },
         {
           "label": "Leads",
@@ -429,8 +413,8 @@
   },
   {
     "id": "17hs19-2004s1",
-    "name": "STEPPERONLINE NEMA 17 · 17HS19-2004S1",
-    "description": "42.3 mm frame · 48 mm body · 0.59 N·m holding · 2 A/phase",
+    "name": "STEPPERONLINE NEMA 17 \u00b7 17HS19-2004S1",
+    "description": "42.3 mm frame \u00b7 48 mm body \u00b7 0.59 N\u00b7m holding \u00b7 2 A/phase",
     "parameters": {
       "model": "17hs19-2004s1",
       "outputAngle": 0,
@@ -441,12 +425,8 @@
       "manufacturer": "STEPPERONLINE",
       "sourceName": "STEPPERONLINE drawing and specifications",
       "sourceUrl": "https://www.omc-stepperonline.com/nema-17-bipolar-59ncm-84oz-in-2a-42x48mm-4-wires-w-1m-cable-connector-17hs19-2004s1",
-      "verifiedParameters": [
-        "model"
-      ],
-      "productCodes": [
-        "17HS19-2004S1"
-      ],
+      "verifiedParameters": ["model"],
+      "productCodes": ["17HS19-2004S1"],
       "alternateSourceUrls": [
         "https://www.omc-stepperonline.com/image/catalog/dimensions/17HS19-2004S1_Dimension-2.svg"
       ],
@@ -497,7 +477,7 @@
         },
         {
           "label": "Holding torque",
-          "value": "0.59 N·m"
+          "value": "0.59 N\u00b7m"
         },
         {
           "label": "Rated phase current",
@@ -509,7 +489,7 @@
         },
         {
           "label": "Phase resistance",
-          "value": "1.6 Ω"
+          "value": "1.6 \u03a9"
         },
         {
           "label": "Phase inductance",
@@ -517,11 +497,11 @@
         },
         {
           "label": "Step angle",
-          "value": "1.8°"
+          "value": "1.8\u00b0"
         },
         {
           "label": "Mounting holes",
-          "value": "4 × M3; minimum depth 4.5 mm"
+          "value": "4 \u00d7 M3; minimum depth 4.5 mm"
         },
         {
           "label": "Leads",
@@ -536,8 +516,8 @@
   },
   {
     "id": "23hs30-2804s2",
-    "name": "STEPPERONLINE NEMA 23 · 23HS30-2804S2",
-    "description": "56.4 mm frame · 76.5 mm body · 1.9 N·m holding · 2.8 A/phase",
+    "name": "STEPPERONLINE NEMA 23 \u00b7 23HS30-2804S2",
+    "description": "56.4 mm frame \u00b7 76.5 mm body \u00b7 1.9 N\u00b7m holding \u00b7 2.8 A/phase",
     "parameters": {
       "model": "23hs30-2804s2",
       "outputAngle": 0,
@@ -548,12 +528,8 @@
       "manufacturer": "STEPPERONLINE",
       "sourceName": "STEPPERONLINE drawing and specifications",
       "sourceUrl": "https://www.omc-stepperonline.com/nema-23-bipolar-1-9nm-269-06oz-in-2-8a-57x57x76mm-4-wires-8mm-shaft-23hs30-2804s2",
-      "verifiedParameters": [
-        "model"
-      ],
-      "productCodes": [
-        "23HS30-2804S2"
-      ],
+      "verifiedParameters": ["model"],
+      "productCodes": ["23HS30-2804S2"],
       "alternateSourceUrls": [
         "https://www.omc-stepperonline.com/image/catalog/dimensions/23HS30-2804S2_Dimension.svg"
       ],
@@ -603,7 +579,7 @@
         },
         {
           "label": "Holding torque",
-          "value": "1.9 N·m"
+          "value": "1.9 N\u00b7m"
         },
         {
           "label": "Rated phase current",
@@ -611,7 +587,7 @@
         },
         {
           "label": "Phase resistance",
-          "value": "1.13 Ω"
+          "value": "1.13 \u03a9"
         },
         {
           "label": "Phase inductance",
@@ -619,11 +595,11 @@
         },
         {
           "label": "Step angle",
-          "value": "1.8°"
+          "value": "1.8\u00b0"
         },
         {
           "label": "Mounting holes",
-          "value": "4 × Ø5; clearance"
+          "value": "4 \u00d7 \u00d85; clearance"
         },
         {
           "label": "Leads",
@@ -638,8 +614,8 @@
   },
   {
     "id": "24hs40-4204s",
-    "name": "STEPPERONLINE NEMA 24 · 24HS40-4204S",
-    "description": "60 mm frame · 100 mm body · 4.2 N·m holding · 4.2 A/phase",
+    "name": "STEPPERONLINE NEMA 24 \u00b7 24HS40-4204S",
+    "description": "60 mm frame \u00b7 100 mm body \u00b7 4.2 N\u00b7m holding \u00b7 4.2 A/phase",
     "parameters": {
       "model": "24hs40-4204s",
       "outputAngle": 0,
@@ -650,12 +626,8 @@
       "manufacturer": "STEPPERONLINE",
       "sourceName": "STEPPERONLINE drawing and specifications",
       "sourceUrl": "https://www.omc-stepperonline.com/s-series-nema-24-bipolar-1-8deg-4-2nm-594-77oz-in-4-2a-60x60x100mm-4-wires-24hs40-4204s",
-      "verifiedParameters": [
-        "model"
-      ],
-      "productCodes": [
-        "24HS40-4204S"
-      ],
+      "verifiedParameters": ["model"],
+      "productCodes": ["24HS40-4204S"],
       "alternateSourceUrls": [
         "https://www.omc-stepperonline.com/image/catalog/dimensions/24HS40-4204S_Dimension.svg"
       ],
@@ -706,7 +678,7 @@
         },
         {
           "label": "Holding torque",
-          "value": "4.2 N·m"
+          "value": "4.2 N\u00b7m"
         },
         {
           "label": "Rated phase current",
@@ -718,7 +690,7 @@
         },
         {
           "label": "Phase resistance",
-          "value": "0.9 Ω"
+          "value": "0.9 \u03a9"
         },
         {
           "label": "Phase inductance",
@@ -726,11 +698,11 @@
         },
         {
           "label": "Step angle",
-          "value": "1.8°"
+          "value": "1.8\u00b0"
         },
         {
           "label": "Mounting holes",
-          "value": "4 × Ø5.1; clearance"
+          "value": "4 \u00d7 \u00d85.1; clearance"
         },
         {
           "label": "Leads",
@@ -745,8 +717,8 @@
   },
   {
     "id": "34he45-6004s",
-    "name": "STEPPERONLINE NEMA 34 · 34HE45-6004S",
-    "description": "86 mm frame · 114 mm body · 8.2 N·m holding · 6 A/phase",
+    "name": "STEPPERONLINE NEMA 34 \u00b7 34HE45-6004S",
+    "description": "86 mm frame \u00b7 114 mm body \u00b7 8.2 N\u00b7m holding \u00b7 6 A/phase",
     "parameters": {
       "model": "34he45-6004s",
       "outputAngle": 0,
@@ -757,12 +729,8 @@
       "manufacturer": "STEPPERONLINE",
       "sourceName": "STEPPERONLINE drawing and specifications",
       "sourceUrl": "https://www.omc-stepperonline.com/e-series-nema-34-stepper-motor-bipolar-1-8deg-8-2-nm-1161-45oz-in-6-0a-86x86x114mm-4-wires-34he45-6004s",
-      "verifiedParameters": [
-        "model"
-      ],
-      "productCodes": [
-        "34HE45-6004S"
-      ],
+      "verifiedParameters": ["model"],
+      "productCodes": ["34HE45-6004S"],
       "alternateSourceUrls": [
         "https://www.omc-stepperonline.com/image/catalog/dimensions/34HE45-6004S_Dimension-2.svg"
       ],
@@ -813,7 +781,7 @@
         },
         {
           "label": "Holding torque",
-          "value": "8.2 N·m"
+          "value": "8.2 N\u00b7m"
         },
         {
           "label": "Rated phase current",
@@ -825,7 +793,7 @@
         },
         {
           "label": "Phase resistance",
-          "value": "0.51 Ω"
+          "value": "0.51 \u03a9"
         },
         {
           "label": "Phase inductance",
@@ -833,11 +801,11 @@
         },
         {
           "label": "Step angle",
-          "value": "1.8°"
+          "value": "1.8\u00b0"
         },
         {
           "label": "Mounting holes",
-          "value": "4 × Ø6.5; clearance"
+          "value": "4 \u00d7 \u00d86.5; clearance"
         },
         {
           "label": "Leads",
@@ -852,8 +820,8 @@
   },
   {
     "id": "42hs79-8004s",
-    "name": "STEPPERONLINE NEMA 42 · 42HS79-8004S",
-    "description": "110 mm frame · 201 mm body · 30 N·m holding · 8 A/phase",
+    "name": "STEPPERONLINE NEMA 42 \u00b7 42HS79-8004S",
+    "description": "110 mm frame \u00b7 201 mm body \u00b7 30 N\u00b7m holding \u00b7 8 A/phase",
     "parameters": {
       "model": "42hs79-8004s",
       "outputAngle": 0,
@@ -864,12 +832,8 @@
       "manufacturer": "STEPPERONLINE",
       "sourceName": "STEPPERONLINE drawing and specifications",
       "sourceUrl": "https://www.omc-stepperonline.com/nema-42-cnc-stepper-motor-bipolar-30nm-4248oz-in-8a-110x201mm-4-wires-42hs79-8004s",
-      "verifiedParameters": [
-        "model"
-      ],
-      "productCodes": [
-        "42HS79-8004S"
-      ],
+      "verifiedParameters": ["model"],
+      "productCodes": ["42HS79-8004S"],
       "alternateSourceUrls": [
         "https://www.omc-stepperonline.com/image/catalog/dimensions/42HS79-8004S_Dimension-2.svg"
       ],
@@ -920,7 +884,7 @@
         },
         {
           "label": "Holding torque",
-          "value": "30 N·m"
+          "value": "30 N\u00b7m"
         },
         {
           "label": "Rated phase current",
@@ -932,7 +896,7 @@
         },
         {
           "label": "Phase resistance",
-          "value": "1 Ω"
+          "value": "1 \u03a9"
         },
         {
           "label": "Phase inductance",
@@ -940,11 +904,11 @@
         },
         {
           "label": "Step angle",
-          "value": "1.8°"
+          "value": "1.8\u00b0"
         },
         {
           "label": "Mounting holes",
-          "value": "4 × Ø8.5; clearance"
+          "value": "4 \u00d7 \u00d88.5; clearance"
         },
         {
           "label": "Leads",
@@ -953,6 +917,57 @@
         {
           "label": "CAD detail",
           "value": "Dimensions and mounting follow the supplier drawing. Cosmetic details and internal clearances are reconstructed; threads are represented by nominal holes."
+        }
+      ]
+    }
+  },
+  {
+    "id": "23hs30-2804-me1k",
+    "name": "STEPPERONLINE NEMA 23 \u00b7 23HS30-2804-ME1K \u00b7 encoder",
+    "description": "57 mm frame \u00b7 80 mm motor body \u00b7 1.85 N\u00b7m holding \u00b7 2.8 A/phase \u00b7 1000 PPR encoder; encoder cover and pilot are mounting envelopes.",
+    "parameters": {
+      "model": "23hs30-2804-me1k",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "23HS30-2804-ME1K",
+      "manufacturer": "STEPPERONLINE",
+      "sourceName": "STEPPERONLINE drawing and specifications",
+      "sourceUrl": "https://www.omc-stepperonline.com/de/nema-23-schrittmotor-mit-geschlossener-regelkreis-1-85nm-256-9oz-in-mit-magnetischem-geber-1000ppr-4000cpr-23hs30-2804-me1k",
+      "verifiedParameters": ["model"],
+      "productCodes": ["23HS30-2804-ME1K"],
+      "alternateSourceUrls": [
+        "https://www.omc-stepperonline.com/image/catalog/dimensions/23HS30-2804-ME1K_Dimension.svg"
+      ],
+      "attributes": {
+        "width": 57,
+        "length": 80,
+        "shaft": 6.35,
+        "extension": 21,
+        "pilot": 38.1,
+        "pitch": 47.14,
+        "torque": 1.85,
+        "current": 2.8,
+        "resistance": 1.13,
+        "inductance": 4.8,
+        "nema": "23",
+        "winding": "bipolar",
+        "shaftType": "D",
+        "weight": 1000
+      },
+      "attributeConditions": {
+        "torque": "Static holding torque at rated phase current; not running torque.",
+        "current": "Rated current per phase."
+      },
+      "specifications": [
+        {
+          "label": "Encoder",
+          "value": "1000 PPR / 4000 CPR"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Motor body dimensions verified from product table; encoder cover and mounting pilot require drawing confirmation."
         }
       ]
     }

@@ -178,5 +178,14 @@ export function pieces(p: Parameters, state: string): Piece[] {
         [0x22262a, 0xb3423f, 0x4d875f, 0x486eae, 0xe9c569, 0xe6e3d6][i],
         -gap,
       );
+  if (m.id === '23hs30-2804-me1k') {
+    add(
+      '1000 ppr rear encoder cover · mounting envelope',
+      subtract(prism(outline(45, 4), 20, -L - 20), box([39, 39, 17], [-19.5, -19.5, -L - 17])),
+      0x263d50,
+    );
+    add('Encoder end cap', prism(outline(45, 4), 2, -L - 22), 0x344b5f);
+    add('Encoder cable connector', box([14, 7, 10], [-7, 22.5, -L - 17]), 0x202a32);
+  }
   return result;
 }

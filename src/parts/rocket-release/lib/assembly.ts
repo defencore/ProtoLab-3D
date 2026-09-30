@@ -2,7 +2,7 @@ import { Group, Box3, Vector3, Mesh, MeshStandardMaterial } from 'three';
 import { component, pythonShape, type Shape, type Vec } from './shapes';
 import { num } from '../../../core/geometry';
 import { manufactured, material } from './names';
-import { manufacturingMetadata } from './manufacturing';
+import { manufacturingMetadata, threadFeatures, threadLabel } from './manufacturing';
 import native from './st3215-native.json';
 import { hatPython } from './hat';
 import { threadPython } from './thread';
@@ -14,13 +14,17 @@ export interface Piece {
   metadata?: Record<string, string>;
 }
 export function geometry(pieces: Piece[]): Group {
-  return new Group().add(...pieces.map((p) => component(p.shape, p.label, p.color)));
+  return new Group().add(...pieces.map((p) => component(p.shape, threadLabel(p), p.color)));
 }
 export function python(pieces: Piece[]): string {
   const lines = [
     ...(pieces.some((p) => p.label.startsWith('BUY Waveshare Bus Servo')) ? hatPython : []),
     ...springPython,
-    ...threadPython,
+    ...(pieces.some((p) =>
+      threadFeatures(p.shape).some((t) => t.representation === 'printed-helix'),
+    )
+      ? threadPython
+      : []),
     'import base64,zlib',
     '_release_native_data=' + JSON.stringify(native.components.map((c) => c.brep)),
     '_release_fastener_cache={}',

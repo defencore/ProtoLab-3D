@@ -1,0 +1,10 @@
+[
+  {
+    "id": "jhe20b",
+    "name": "Recovery buzzer JHE20B",
+    "description": "Self-powered finder buzzer with battery, sound outlet, connector, LED and button.",
+    "parameters": {
+      "model": "jhe20b"
+    }
+  }
+]

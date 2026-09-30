@@ -27,7 +27,6 @@ export const defaults: Parameters = {
   rodDiameter: 2,
   rodDepth: 15,
   threadPitch: 0.5,
-  threadMode: 'modeled',
   handedness: 'right',
   maleLength: 12,
   setScrewDiameter: 3,
@@ -87,13 +86,6 @@ export const parameters: ParameterDefinition[] = [
     visibleWhen: (p) => p.variant === 'male-threaded',
   },
   {
-    ...select('threadMode', 'Rod thread geometry', 'Rod connection', [
-      ['modeled', 'Modeled helical thread'],
-      ['envelope', 'Smooth nominal envelope'],
-    ]),
-    visibleWhen: threaded,
-  },
-  {
     ...numberParameter('threadPitch', 'Rod thread pitch', 'P', 'Rod connection', 0.2, 4, 0.05),
     visibleWhen: threaded,
   },
@@ -102,7 +94,7 @@ export const parameters: ParameterDefinition[] = [
       ['right', 'Right hand'],
       ['left', 'Left hand'],
     ]),
-    visibleWhen: (p) => threaded(p) && p.threadMode === 'modeled',
+    visibleWhen: threaded,
   },
   {
     ...numberParameter(

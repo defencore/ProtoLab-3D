@@ -21,7 +21,7 @@ const defaults: Parameters = {
   driveThickness: 0.4,
   driveDepth: 1.2,
   driveSides: 5,
-  threadMode: 'modeled',
+  threadMode: 'envelope',
   threadSpan: 'full',
   pitch: 0.45,
   handedness: 'right',
@@ -67,7 +67,7 @@ const part: PartDefinition = {
   python: (p) => fastenerPython(p, true),
   dimensions: (p) => fastenerDimensions(p, true),
   notes:
-    'Prototype reference, not a certified DIN 914 / ISO 4027 fastener. M2.5 × 8 uses the requested cone-point format, 0.45 mm pitch and a 1.3 mm hex socket. Material grade is not modeled. The thread is a truncated single-start 60° reference with no fit tolerances; cross and six-lobe drive forms are dimensional approximations. Overall length includes the point. Cup recesses are conical.',
+    'Prototype reference, not a certified DIN 914 / ISO 4027 fastener. M2.5 × 8 uses the requested cone-point format, 0.45 mm pitch and a 1.3 mm hex socket. Material grade is not modeled. The thread uses a smooth nominal-diameter envelope and drawing callouts; cross and six-lobe drive forms are dimensional approximations. Overall length includes the point. Cup recesses are conical.',
   sources: [
     {
       label: 'Gvyntok cone-point set-screw dimensional grid',

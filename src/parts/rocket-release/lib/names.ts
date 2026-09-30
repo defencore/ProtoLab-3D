@@ -28,8 +28,11 @@ export function material(piece: Piece): string {
   if (piece.label.startsWith('BUY SpeedyBee')) return 'FR4 / electronic assembly';
   if (piece.label.includes('nylon hook-and-loop')) return 'nylon';
   const spec = fastenerCatalog(piece.shape, piece.label);
-  if (spec?.procurement.startsWith('BUY_'))
-    return spec.designation.includes('; A4;') ? 'stainless steel A4' : 'stainless steel A2';
+  if (spec?.procurement.startsWith('BUY_')) {
+    if (/\bPA66\b/.test(spec.designation)) return 'PA66 nylon';
+    const grade = spec.designation.match(/\bA[24](?:-\d+)?\b/)?.[0];
+    return grade ? `stainless steel ${grade}` : 'steel - grade to specify';
+  }
   if (fastener(piece.shape) || piece.label.includes('steel')) return 'steel - grade to specify';
   if (piece.label.includes('copper')) return 'copper';
   if (piece.label.includes('brass')) return 'brass';

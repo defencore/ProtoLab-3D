@@ -3,6 +3,17 @@ import type { PartDefinition } from './types';
 /** Navigation order is independent of package registration and the current search. */
 export const librarySections: { name: string; icon: PartDefinition['icon']; groups: string[] }[] = [
   {
+    name: 'MACHINE TOOLS',
+    icon: 'gear',
+    groups: [
+      'CUTTING MACHINES',
+      'SAW BLADES',
+      'MATERIAL HANDLING',
+      'DRIVES & CONTROLS',
+      'MEASUREMENT & SENSORS',
+    ],
+  },
+  {
     name: 'STRUCTURAL PARTS',
     icon: 'bracket',
     groups: [
@@ -120,6 +131,7 @@ export const librarySections: { name: string; icon: PartDefinition['icon']; grou
       'DC-DC CONVERTERS',
       'SPEED CONTROLLERS',
       'SERVO CONTROLLERS',
+      'POWER SWITCHES',
     ],
   },
   {
@@ -162,6 +174,7 @@ const componentOrder: Record<string, string[]> = {
   'MODEL ROCKETS': [
     'model-rocket-airframe',
     'rocket-parachute-recovery',
+    'rocket-co2-recovery',
     'rocket-airbrakes',
     'rocket-release',
     'clamp-band-release',

@@ -19,6 +19,9 @@
 .model-viewer__canvas:active {
   cursor: grabbing;
 }
+.model-viewer--pan .model-viewer__canvas {
+  cursor: move;
+}
 .model-viewer__canvas:focus-visible {
   outline: 1px solid #a4ba6b;
   outline-offset: -3px;

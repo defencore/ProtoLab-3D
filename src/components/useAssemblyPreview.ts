@@ -11,8 +11,14 @@ interface Result {
   error?: string;
 }
 /** Each build has an isolated lifetime: cancelled jobs and their caches are released. */
-export function useRecoveryPreview(
-  partId: 'rocket-release' | 'rocket-parachute-recovery' | undefined,
+export function useAssemblyPreview(
+  partId:
+    | 'rocket-release'
+    | 'rocket-parachute-recovery'
+    | 'rocket-co2-recovery'
+    | 'automatic-tube-saw'
+    | 'automatic-band-saw'
+    | undefined,
   parameters: Parameters,
   state: string,
   presetId?: string,
@@ -29,7 +35,7 @@ export function useRecoveryPreview(
     let worker: Worker | undefined;
     // Coalesce slider input; termination cancels obsolete synchronous worker jobs.
     const timer = setTimeout(() => {
-      worker = new Worker(new URL('../workers/recovery.worker.ts', import.meta.url), {
+      worker = new Worker(new URL('../workers/assembly.worker.ts', import.meta.url), {
         type: 'module',
       });
       worker.onmessage = (

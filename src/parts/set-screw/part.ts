@@ -24,7 +24,7 @@ const defaults: Parameters = {
   driveThickness: 0.4,
   driveDepth: 1.2,
   driveSides: 5,
-  threadMode: 'modeled',
+  threadMode: 'envelope',
   threadSpan: 'full',
   pitch: 0.45,
   handedness: 'right',
@@ -113,7 +113,7 @@ const part: PartDefinition = {
     (p.finish === 'black' ? '\ncomponent_colors = [(0.204, 0.212, 0.231)]' : ''),
   dimensions: (p) => fastenerDimensions(p, true),
   notes:
-    'Prototype reference, not a certified fastener. M2.5 × 8 uses the requested DIN 914 cone-point format. DIN 915 black steel references retain the supplied M2–M16 dimension rows and stated grade 12.9. Their overall lengths and shoulder chamfers are editable prototype choices; the image supplies no stock lengths. Socket nominal sizes and printed tolerance intervals are retained separately, including source inconsistencies. Material strength is not modeled. The thread is a truncated single-start 60° reference with no fit tolerances. Overall length includes the point and its shoulder transition. Cup recesses are conical.',
+    'Prototype reference, not a certified fastener. M2.5 × 8 uses the requested DIN 914 cone-point format. DIN 915 black steel references retain the supplied M2–M16 dimension rows and stated grade 12.9. Their overall lengths and shoulder chamfers are editable prototype choices; the image supplies no stock lengths. Socket nominal sizes and printed tolerance intervals are retained separately, including source inconsistencies. Material strength is not modeled. The thread uses a smooth nominal-diameter envelope and drawing callouts; fit tolerances must be specified separately. Overall length includes the point and its shoulder transition. Cup recesses are conical.',
   sources: [
     { label: 'User-supplied DIN 915 dimension table', url: din915ReferenceFiles.dimensions },
     { label: 'User-supplied DIN 915 black steel example', url: din915ReferenceFiles.photo },

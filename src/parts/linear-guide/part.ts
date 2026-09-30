@@ -1,3 +1,4 @@
+import { showThreads } from '../../core/thread-visual';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -175,7 +176,28 @@ function makeBlock(p: Parameters, cutaway = false): Mesh {
     top[1].y = 0;
   }
   mesh.face(top, holes, new Vector3(0, 0, 1));
-  return mesh.build(DARK_STEEL);
+  const result = mesh.build(DARK_STEEL);
+  const diameter = n(p, 'blockHole');
+  const pitch =
+    diameter <= 2 ? 0.4 : diameter <= 3 ? 0.5 : diameter <= 4 ? 0.7 : diameter <= 5 ? 0.8 : 1;
+  showThreads(
+    result,
+    [-1, 1].flatMap((sx) =>
+      (cutaway ? [1] : [-1, 1]).map((sy) => ({
+        origin: [
+          x + (sx * n(p, 'blockPitchX')) / 2,
+          (sy * n(p, 'blockPitchY')) / 2,
+          h - n(p, 'holeDepth'),
+        ] as [number, number, number],
+        axis: [0, 0, 1] as [number, number, number],
+        diameter,
+        pitch,
+        length: n(p, 'holeDepth'),
+        internal: true,
+      })),
+    ),
+  );
+  return result;
 }
 const part: PartDefinition = {
   id: 'linear-guide',

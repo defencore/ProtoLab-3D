@@ -28,7 +28,7 @@ test('DIN 915 retains every supplied size without claiming an unlisted stock len
       ],
     );
     assert.equal(p.tip, 'dog');
-    assert.equal(p.threadMode, 'modeled');
+    assert.equal(p.threadMode, 'envelope');
     assert.equal(p.finish, 'black');
     assert.ok(!preset.catalog?.verifiedParameters?.includes('length'));
     assert.ok(!preset.catalog?.verifiedParameters?.includes('dogShoulderLength'));

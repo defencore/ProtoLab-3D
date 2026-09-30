@@ -2,7 +2,7 @@
   {
     "id": "8hs12-0506s",
     "code": "8HS12-0506S",
-    "name": "STEPPERONLINE NEMA 8 · 8HS12-0506S",
+    "name": "STEPPERONLINE NEMA 8 \u00b7 8HS12-0506S",
     "manufacturer": "STEPPERONLINE",
     "nema": 8,
     "width": 20.3,
@@ -32,7 +32,7 @@
   {
     "id": "11hs12-0674s",
     "code": "11HS12-0674S",
-    "name": "STEPPERONLINE NEMA 11 · 11HS12-0674S",
+    "name": "STEPPERONLINE NEMA 11 \u00b7 11HS12-0674S",
     "manufacturer": "STEPPERONLINE",
     "nema": 11,
     "width": 28.3,
@@ -62,7 +62,7 @@
   {
     "id": "14hs10-0404s",
     "code": "14HS10-0404S",
-    "name": "STEPPERONLINE NEMA 14 · 14HS10-0404S",
+    "name": "STEPPERONLINE NEMA 14 \u00b7 14HS10-0404S",
     "manufacturer": "STEPPERONLINE",
     "nema": 14,
     "width": 35.2,
@@ -92,7 +92,7 @@
   {
     "id": "17hs08-1004s",
     "code": "17HS08-1004S",
-    "name": "STEPPERONLINE NEMA 17 · 17HS08-1004S",
+    "name": "STEPPERONLINE NEMA 17 \u00b7 17HS08-1004S",
     "manufacturer": "STEPPERONLINE",
     "nema": 17,
     "width": 42.3,
@@ -122,7 +122,7 @@
   {
     "id": "17hs19-2004s1",
     "code": "17HS19-2004S1",
-    "name": "STEPPERONLINE NEMA 17 · 17HS19-2004S1",
+    "name": "STEPPERONLINE NEMA 17 \u00b7 17HS19-2004S1",
     "manufacturer": "STEPPERONLINE",
     "nema": 17,
     "width": 42.3,
@@ -152,7 +152,7 @@
   {
     "id": "23hs30-2804s2",
     "code": "23HS30-2804S2",
-    "name": "STEPPERONLINE NEMA 23 · 23HS30-2804S2",
+    "name": "STEPPERONLINE NEMA 23 \u00b7 23HS30-2804S2",
     "manufacturer": "STEPPERONLINE",
     "nema": 23,
     "width": 56.4,
@@ -182,7 +182,7 @@
   {
     "id": "24hs40-4204s",
     "code": "24HS40-4204S",
-    "name": "STEPPERONLINE NEMA 24 · 24HS40-4204S",
+    "name": "STEPPERONLINE NEMA 24 \u00b7 24HS40-4204S",
     "manufacturer": "STEPPERONLINE",
     "nema": 24,
     "width": 60,
@@ -212,7 +212,7 @@
   {
     "id": "34he45-6004s",
     "code": "34HE45-6004S",
-    "name": "STEPPERONLINE NEMA 34 · 34HE45-6004S",
+    "name": "STEPPERONLINE NEMA 34 \u00b7 34HE45-6004S",
     "manufacturer": "STEPPERONLINE",
     "nema": 34,
     "width": 86,
@@ -242,7 +242,7 @@
   {
     "id": "42hs79-8004s",
     "code": "42HS79-8004S",
-    "name": "STEPPERONLINE NEMA 42 · 42HS79-8004S",
+    "name": "STEPPERONLINE NEMA 42 \u00b7 42HS79-8004S",
     "manufacturer": "STEPPERONLINE",
     "nema": 42,
     "width": 110,
@@ -268,5 +268,35 @@
     "winding": "bipolar",
     "source": "https://www.omc-stepperonline.com/nema-42-cnc-stepper-motor-bipolar-30nm-4248oz-in-8a-110x201mm-4-wires-42hs79-8004s",
     "drawing": "https://www.omc-stepperonline.com/image/catalog/dimensions/42HS79-8004S_Dimension-2.svg"
+  },
+  {
+    "id": "23hs30-2804-me1k",
+    "code": "23HS30-2804-ME1K",
+    "name": "STEPPERONLINE NEMA 23 \u00b7 23HS30-2804-ME1K \u00b7 encoder",
+    "manufacturer": "STEPPERONLINE",
+    "nema": 23,
+    "width": 57,
+    "length": 80,
+    "shaft": 6.35,
+    "extension": 21,
+    "pilot": 38.1,
+    "pilotHeight": 1.6,
+    "pitch": 47.14,
+    "hole": 5,
+    "holeDepth": 0,
+    "flatLength": 15,
+    "flatDepth": 0.5,
+    "shaftType": "D",
+    "keyWidth": 0,
+    "torque": 1.85,
+    "current": 2.8,
+    "resistance": 1.13,
+    "inductance": 4.8,
+    "weight": 1000,
+    "wires": 4,
+    "stepAngle": 1.8,
+    "winding": "bipolar",
+    "source": "https://www.omc-stepperonline.com/de/nema-23-schrittmotor-mit-geschlossener-regelkreis-1-85nm-256-9oz-in-mit-magnetischem-geber-1000ppr-4000cpr-23hs30-2804-me1k",
+    "drawing": "https://www.omc-stepperonline.com/image/catalog/dimensions/23HS30-2804-ME1K_Dimension.svg"
   }
 ]

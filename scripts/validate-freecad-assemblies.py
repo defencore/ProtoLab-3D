@@ -12,6 +12,13 @@ import Import
 
 payload = json.load(open(sys.argv[1], encoding="utf-8"))
 results = []
+def component_leaves(parent):
+    if parent.TypeId != "App::Part":
+        yield parent
+    else:
+        for child in parent.Group:
+            yield from component_leaves(child)
+
 with tempfile.TemporaryDirectory(prefix="protolab-assembly-") as directory:
     for case in payload["cases"]:
         doc = App.newDocument("AssemblyExportAudit")
@@ -25,7 +32,7 @@ with tempfile.TemporaryDirectory(prefix="protolab-assembly-") as directory:
             root = roots[0]
             assert root.PartId == case["id"] and root.ModelState == case["state"]
             assert json.loads(root.Configuration) == case["parameters"]
-            children = list(root.Group) if root.TypeId == "App::Part" else [root]
+            children = sorted(component_leaves(root), key=lambda o: getattr(o, "ComponentIndex", 0))
             if case["id"] in ["bolt-screw", "hex-nut", "flange-nut"] or case["state"] in ["spider", "screw", "pinion", "wheel", "shaft", "rail"]:
                 assert root.TypeId == "Part::Feature", "A physical single part was split."
             else:
@@ -71,7 +78,7 @@ with tempfile.TemporaryDirectory(prefix="protolab-assembly-") as directory:
             App.closeDocument(doc.Name)
             doc = App.openDocument(save_path)
             restored = doc.getObject(root_name)
-            saved_children = list(restored.Group) if restored.TypeId == "App::Part" else [restored]
+            saved_children = sorted(component_leaves(restored), key=lambda o: getattr(o, "ComponentIndex", 0))
             assert [(obj.Name, obj.Label) for obj in saved_children] == original_names, "FCStd lost component identities."
             results.append({"name": case["name"], "type": restored.TypeId, "components": len(children), "solids": solids, "independentPlacement": len(children) > 1, "stepRoundTrip": True, "fcstdRoundTrip": True})
             with open(sys.argv[2], "w", encoding="utf-8") as progress:

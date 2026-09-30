@@ -1,0 +1,140 @@
+[
+  {
+    "id": "ace32-25",
+    "name": "AirTAC ACE32X25SG",
+    "description": "Commercial double-acting cylinder; magnetic piston, female rod thread and G ports. Match these order options.",
+    "parameters": {
+      "stroke": "25",
+      "extension": 25,
+      "bore": "32"
+    },
+    "catalog": {
+      "designation": "ACE32X25SG",
+      "manufacturer": "AirTAC",
+      "sourceName": "ACE catalog, p110",
+      "sourceUrl": "https://as-en.airtac.com/upload/TACE-202003240444019596.PDF",
+      "verifiedParameters": ["bore", "stroke"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External dimensions, stroke, rod and mounting pitch from ACE manufacturer table p110.",
+        "limitations": "Internal seals, cap profiles and mounting fastener arrangement simplified; check ordered options.",
+        "sourceUrl": "https://as-en.airtac.com/upload/TACE-202003240444019596.PDF"
+      }
+    }
+  },
+  {
+    "id": "ace32-50",
+    "name": "AirTAC ACE32X50SG",
+    "description": "Commercial double-acting cylinder; magnetic piston, female rod thread and G ports. Match these order options.",
+    "parameters": {
+      "stroke": "50",
+      "extension": 50,
+      "bore": "32"
+    },
+    "catalog": {
+      "designation": "ACE32X50SG",
+      "manufacturer": "AirTAC",
+      "sourceName": "ACE catalog, p110",
+      "sourceUrl": "https://as-en.airtac.com/upload/TACE-202003240444019596.PDF",
+      "verifiedParameters": ["bore", "stroke"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External dimensions, stroke, rod and mounting pitch from ACE manufacturer table p110.",
+        "limitations": "Internal seals, cap profiles and mounting fastener arrangement simplified; check ordered options.",
+        "sourceUrl": "https://as-en.airtac.com/upload/TACE-202003240444019596.PDF"
+      }
+    }
+  },
+  {
+    "id": "ace50-25",
+    "name": "AirTAC ACE50X25SG",
+    "description": "Commercial double-acting cylinder; magnetic piston, female rod thread and G ports. Match these order options.",
+    "parameters": {
+      "stroke": "25",
+      "extension": 25,
+      "bore": "50"
+    },
+    "catalog": {
+      "designation": "ACE50X25SG",
+      "manufacturer": "AirTAC",
+      "sourceName": "ACE catalog, p110",
+      "sourceUrl": "https://as-en.airtac.com/upload/TACE-202003240444019596.PDF",
+      "verifiedParameters": ["bore", "stroke"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External dimensions, stroke, rod and mounting pitch from ACE manufacturer table p110.",
+        "limitations": "Internal seals, cap profiles and mounting fastener arrangement simplified; check ordered options.",
+        "sourceUrl": "https://as-en.airtac.com/upload/TACE-202003240444019596.PDF"
+      }
+    }
+  },
+  {
+    "id": "ace50-50",
+    "name": "AirTAC ACE50X50SG",
+    "description": "Commercial double-acting cylinder; magnetic piston, female rod thread and G ports. Match these order options.",
+    "parameters": {
+      "stroke": "50",
+      "extension": 50,
+      "bore": "50"
+    },
+    "catalog": {
+      "designation": "ACE50X50SG",
+      "manufacturer": "AirTAC",
+      "sourceName": "ACE catalog, p110",
+      "sourceUrl": "https://as-en.airtac.com/upload/TACE-202003240444019596.PDF",
+      "verifiedParameters": ["bore", "stroke"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External dimensions, stroke, rod and mounting pitch from ACE manufacturer table p110.",
+        "limitations": "Internal seals, cap profiles and mounting fastener arrangement simplified; check ordered options.",
+        "sourceUrl": "https://as-en.airtac.com/upload/TACE-202003240444019596.PDF"
+      }
+    }
+  },
+  {
+    "id": "ace50-200",
+    "name": "AirTAC ACE50X200SG",
+    "description": "Commercial double-acting cylinder; magnetic piston, female rod thread and G ports. Match these order options.",
+    "parameters": {
+      "bore": "50",
+      "stroke": "200",
+      "extension": 140
+    },
+    "catalog": {
+      "designation": "ACE50X200SG",
+      "manufacturer": "AirTAC",
+      "sourceName": "ACE catalog, p110",
+      "sourceUrl": "https://as-en.airtac.com/upload/TACE-202003240444019596.PDF",
+      "verifiedParameters": ["bore", "stroke"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External dimensions, stroke, rod and mounting pitch from ACE manufacturer table p110.",
+        "limitations": "Internal seals, cap profiles and mounting fastener arrangement simplified; check ordered options.",
+        "sourceUrl": "https://as-en.airtac.com/upload/TACE-202003240444019596.PDF"
+      }
+    }
+  },
+  {
+    "id": "ace50-100",
+    "name": "AirTAC ACE50X100SG",
+    "description": "Commercial double-acting cylinder; magnetic piston, female rod thread and G ports. Match these order options.",
+    "parameters": {
+      "bore": "50",
+      "stroke": "100",
+      "extension": 40
+    },
+    "catalog": {
+      "designation": "ACE50X100SG",
+      "manufacturer": "AirTAC",
+      "sourceName": "ACE catalog, p110",
+      "sourceUrl": "https://as-en.airtac.com/upload/TACE-202003240444019596.PDF",
+      "verifiedParameters": ["bore", "stroke"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "External dimensions, stroke, rod and mounting pitch from ACE manufacturer table p110.",
+        "limitations": "Internal seals, cap profiles and mounting fastener arrangement simplified; check ordered options.",
+        "sourceUrl": "https://as-en.airtac.com/upload/TACE-202003240444019596.PDF"
+      }
+    }
+  }
+]

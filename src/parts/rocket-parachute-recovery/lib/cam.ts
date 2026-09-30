@@ -219,7 +219,7 @@ export function camPieces(p: Parameters, state: string): Piece[] {
     ),
   );
   thrustBolts.forEach((shape, i) =>
-    add(`Cam thrust plate screw ${i + 1} · DIN 7991 M3x8`, shape, 0x929eac),
+    add(`Cam thrust plate screw ${i + 1} · DIN 7991 M3x8 · A4 · Bossard 1019163`, shape, 0x929eac),
   );
   return out;
 }

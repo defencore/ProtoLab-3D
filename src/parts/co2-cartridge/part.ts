@@ -11,7 +11,7 @@ const part: PartDefinition = {
   icon: 'box',
   complexity: 'Fixed manufacturer dimensions',
   description:
-    'CO₂ cartridges from 8 to 45 g, including threaded and smooth-neck 16 g versions. Rounded steel body, sealed cap and modeled UNF neck thread.',
+    'CO₂ cartridges from 8 to 45 g, including threaded and smooth-neck 16 g versions. Rounded steel body, sealed cap and labeled smooth UNF neck envelope.',
   keywords: [
     'CO2',
     'CO₂',
@@ -48,7 +48,7 @@ const part: PartDefinition = {
       id: 'sealed',
       label: 'Sealed cartridge',
       description:
-        'Closed external body for assembly layout, with a modeled neck thread where specified.',
+        'Closed external body for assembly layout, with a smooth neck thread envelope and callout where specified.',
     },
   ],
   validate(p, state) {
@@ -66,7 +66,7 @@ const part: PartDefinition = {
     return [m.diameter, m.diameter, m.length];
   },
   notes:
-    'Fixed dimensions from Leland specification tables Rev 14.0 (inches converted to mm). Fill mass is CO₂ content, not gross cartridge weight. Rounded base, shoulder, cap and thread coverage are reconstructed where undimensioned. UNF is a nominal 60° profile, without the source’s 1A/2A tolerance allowance. One closed external CAD solid for placement and clearance studies; the pressure cavity, wall thickness and puncture mechanism are not modeled. Matching gas mass does not imply matching connection or dimensions.',
+    'Fixed dimensions from Leland specification tables Rev 14.0 (inches converted to mm). Fill mass is CO₂ content, not gross cartridge weight. Rounded base, shoulder, cap and thread coverage are reconstructed where undimensioned. UNF thread geometry is a smooth nominal-diameter envelope; callouts retain the source connection, pitch and nominal span. The source’s 1A/2A tolerance allowance is not modeled. One closed external CAD solid for placement and clearance studies; the pressure cavity, wall thickness and puncture mechanism are not modeled. Matching gas mass does not imply matching connection or dimensions.',
   sources: [...new Set(models.map((m) => m.source))].map((url) => ({
     label: 'Leland — body and neck dimensions (Rev 14.0)',
     url,

@@ -2,14 +2,14 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { geometrySamples } from './catalog-samples';
 import * as THREE from 'three';
-import bolt from "../src/parts/bolt-screw/part";
-import setScrew from "../src/parts/set-screw/part";
-import wingScrew from "../src/parts/wing-screw/part";
-import swingEyeBolt from "../src/parts/swing-eye-bolt/part";
-import liftingEyeBolt from "../src/parts/lifting-eye-bolt/part";
+import bolt from '../src/parts/bolt-screw/part';
+import setScrew from '../src/parts/set-screw/part';
+import wingScrew from '../src/parts/wing-screw/part';
+import swingEyeBolt from '../src/parts/swing-eye-bolt/part';
+import liftingEyeBolt from '../src/parts/lifting-eye-bolt/part';
 import sourceInventory from '../src/catalog/data/gvyntok-fasteners.json';
 import { supplierFasteners, supplierFamily } from '../src/catalog/fasteners';
-import { fastenerValues } from "../src/parts/bolt-screw/lib/core/fasteners";
+import { fastenerValues } from '../src/parts/bolt-screw/lib/core/fasteners';
 import { validateParameters } from '../src/core/validation';
 import type { Parameters } from '../src/core/types';
 
@@ -132,7 +132,7 @@ test('countersunk length includes the head while raised heads use under-head len
   assert.equal(bolt.dimensions({ ...countersunk, head: 'socket-cap' }, 'default')[2], 23);
 });
 
-test('partial threads keep the specified smooth shoulders and have helical rather than stacked ridges', () => {
+test('partial threads keep smooth shoulders, nominal shaft diameter and thread span callouts', () => {
   const parameters = {
     ...bolt.defaults,
     tip: 'flat',
@@ -144,7 +144,7 @@ test('partial threads keep the specified smooth shoulders and have helical rathe
   const model = bolt.buildGeometry(parameters, 'default');
   try {
     model.updateMatrixWorld(true);
-    const { total, rootR } = fastenerValues(parameters);
+    const { total } = fastenerValues(parameters);
     const radialHit = (z: number, a: number) => {
       const direction = new THREE.Vector3(-Math.cos(a), -Math.sin(a), 0);
       const ray = new THREE.Raycaster(
@@ -157,12 +157,17 @@ test('partial threads keep the specified smooth shoulders and have helical rathe
     };
     assert.ok(Math.abs(radialHit(2, 0) - 4) < 1e-5, 'Smooth tip-side shoulder');
     assert.ok(Math.abs(radialHit(20, 0) - 4) < 1e-5, 'Smooth head-side shoulder');
-    assert.ok(Math.abs(radialHit(8, 0) - 3) < 0.02, 'Thread crest');
+    assert.ok(Math.abs(radialHit(8, 0) - 3) < 0.02, 'Nominal thread diameter');
     assert.ok(
-      Math.abs(radialHit(8, Math.PI) - rootR) < 0.02,
-      'Half a turn changes the crest to a root',
+      Math.abs(radialHit(8, Math.PI) - 3) < 0.02,
+      'Opposite side has the same nominal radius',
     );
-    assert.ok(Math.abs(radialHit(8.5, Math.PI) - 3) < 0.02, 'Helix advances by half a pitch');
+    assert.ok(
+      Math.abs(radialHit(8.5, Math.PI) - 3) < 0.02,
+      'Radius is constant along the threaded band',
+    );
+    assert.doesNotMatch(bolt.python(parameters, 'default'), /makeLongHelix|makePipeShell/);
+    assert.match(bolt.python(parameters, 'default'), /M6×1 RH; nominal span 10 mm/);
   } finally {
     dispose(model);
   }
@@ -171,7 +176,6 @@ test('partial threads keep the specified smooth shoulders and have helical rathe
 test('impossible thread, drive, shoulder and point combinations are rejected', () => {
   const invalid: Parameters[] = [
     { pitch: 4 },
-    { length: 100, pitch: 0.5 },
     { threadSpan: 'partial', threadStart: 20, threadLength: 10 },
     { threadSpan: 'partial', shankDiameter: 5 },
     { drive: 'hex', driveWidth: 10 },

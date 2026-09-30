@@ -15,13 +15,14 @@ export type ThreadedPlate = {
   plate: Extract<Shape, { kind: 'plate' }>;
   holes: (Thread & { x: number; y: number; z: number })[];
 };
-/** Through threads are meshed directly, avoiding a whole-disk CSG split for every helix. */
+/** Metal taps use nominal cylindrical bores; printed threads retain their flanks. */
 export function threadedPlateMesh(s: ThreadedPlate): Group {
   const positions: number[] = [];
   const segments = 48,
     samples = 12,
     base = s.plate;
   const radius = (t: ThreadedPlate['holes'][number], z: number, i: number) => {
+    if (t.process !== 'printed') return t.diameter / 2;
     const phase = (z - t.z) / t.pitch - i / segments;
     const d = Math.abs(phase - Math.round(phase)) * t.pitch;
     const depth = t.pitch * Math.sqrt(3) * (t.internal ? 5 / 16 : 17 / 48);
@@ -137,7 +138,7 @@ export function threadedPlateMesh(s: ThreadedPlate): Group {
   wall(base.outline, base.outline, base.z, base.z + base.height, false);
   base.holes.forEach((h) => wall(h, h, base.z, base.z + base.height, true));
   for (const t of s.holes) {
-    const n = Math.ceil((base.height / t.pitch) * samples);
+    const n = t.process === 'printed' ? Math.ceil((base.height / t.pitch) * samples) : 1;
     for (let j = 0; j < n; j++) {
       const z0 = base.z + (base.height * j) / n,
         z1 = base.z + (base.height * (j + 1)) / n;

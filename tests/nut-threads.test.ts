@@ -5,7 +5,7 @@ import { parts } from '../src/parts';
 import type { Parameters } from '../src/core/types';
 import { disposeModel } from '../src/core/mechanical';
 import {
-  internalMinorDiameter,
+  nominalThreadDiameter,
   nutCoarsePitch,
 } from '../src/parts/hex-nut/lib/core/internal-thread';
 import { validateParameters } from '../src/core/validation';
@@ -42,12 +42,12 @@ function assertClosed(model: ReturnType<(typeof nuts)[number]['buildGeometry']>)
   });
 }
 
-test('all nut families and stock presets default to modeled threads with valid size-specific pitches', () => {
+test('all nut families and stock presets use smooth named bores with valid size-specific pitches', () => {
   assert.equal(nuts.length, 11);
   for (const part of nuts) {
-    assert.equal(part.defaults.threadMode, 'modeled', part.id);
+    assert.ok(!part.parameters.some((p) => p.key === 'threadMode'), part.id);
     for (const preset of part.presets) {
-      assert.equal(preset.parameters.threadMode, 'modeled', preset.id);
+      assert.equal(preset.parameters.threadMode, undefined, preset.id);
       assert.deepEqual(validateParameters(part, preset.parameters, 'default'), [], preset.id);
     }
   }
@@ -65,33 +65,30 @@ test('all nut families and stock presets default to modeled threads with valid s
   assert.equal(hex.presets.find((p) => Number(p.parameters.bore) === 2)!.parameters.pitch, 0.4);
 });
 
-test('hex nut bore has helical flanks, the correct minor diameter, and selectable handedness', () => {
+test('hex nut bore stays cylindrical at every height and angle; handedness is metadata', () => {
   const part = nuts.find((p) => p.id === 'hex-nut')!;
   for (const handedness of ['right', 'left']) {
     const p: Parameters = { ...part.defaults, handedness };
     const model = part.buildGeometry(p, 'default');
     model.updateMatrixWorld(true);
-    const hit = (z: number, angle: number) => {
-      const ray = new Raycaster(
-        new Vector3(0, 0, z),
-        new Vector3(Math.cos(angle), Math.sin(angle), 0),
-      );
-      return ray.intersectObject(model, true)[0]?.distance;
-    };
-    const min = internalMinorDiameter(p, Number(p.bore)) / 2;
-    assert.ok(Math.abs(hit(2, 0)! - 3) < 0.025);
-    assert.ok(Math.abs(hit(2, Math.PI)! - min) < 0.025);
-    const angle = handedness === 'left' ? -Math.PI / 2 : Math.PI / 2;
-    assert.ok(Math.abs(hit(2.25, angle)! - 3) < 0.035);
-    assert.ok(Math.abs(hit(2.5, 0)! - min) < 0.025);
+    for (const z of [1, 2, 2.25, 2.5, 3])
+      for (const angle of [0, Math.PI / 2, Math.PI]) {
+        const ray = new Raycaster(
+          new Vector3(0, 0, z),
+          new Vector3(Math.cos(angle), Math.sin(angle), 0),
+        );
+        assert.ok(
+          Math.abs(ray.intersectObject(model, true)[0].distance - Number(p.bore) / 2) < 1e-5,
+        );
+      }
+    assert.equal(nominalThreadDiameter(p, Number(p.bore)), Number(p.bore));
+    assert.match(
+      part.python(p, 'default'),
+      new RegExp(`M6×1 ${handedness === 'left' ? 'LH' : 'RH'}`),
+    );
     assertClosed(model);
     disposeModel(model);
   }
-  const smooth = part.buildGeometry({ ...part.defaults, threadMode: 'envelope' }, 'default');
-  smooth.updateMatrixWorld(true);
-  const ray = new Raycaster(new Vector3(0, 0, 2.5), new Vector3(1, 0, 0));
-  assert.ok(Math.abs(ray.intersectObject(smooth, true)[0].distance - 3) < 0.001);
-  disposeModel(smooth);
 });
 
 test('hand nut Boolean previews retain closed shells with internal threads', () => {
@@ -116,11 +113,12 @@ test('hand nut Boolean previews retain closed shells with internal threads', () 
   }
 });
 
-test('nut exports cut helical grooves and separate only the nylon insert', () => {
+test('nut exports preserve thread callouts without helices and separate the nylon insert', () => {
   for (const part of nuts) {
     const python = part.python(part.defaults, 'default');
-    assert.match(python, /makeLongHelix/);
-    assert.match(python, /\.cut\(nut_groove\)/);
+    assert.doesNotMatch(python, /makeLongHelix|makePipeShell|nut_groove/);
+    assert.match(python, /ThreadCallouts/);
+    assert.match(python, /nominal-cylinder/);
     assert.equal(
       python.includes("component_labels = ['Nut body', 'Nylon insert']"),
       part.id === 'nyloc-nut',

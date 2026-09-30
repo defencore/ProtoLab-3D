@@ -2,8 +2,6 @@ import { n } from '../../core/geometry';
 import type { Parameters } from '../../core/types';
 
 // Offline adapter reference calculations are independent of editable part packages.
-export const MAX_THREAD_TURNS = 80;
-const THREAD_DEPTH = (17 * Math.sqrt(3)) / 48;
 
 export function fastenerValues(p: Parameters, headless = false) {
   const h = headless ? 0 : n(p, 'headHeight');
@@ -15,12 +13,11 @@ export function fastenerValues(p: Parameters, headless = false) {
   const r = n(p, 'diameter') / 2;
   const smoothR = n(p, 'shankDiameter') / 2;
   const pitch = n(p, 'pitch');
-  const modeled = p.threadMode === 'modeled';
   const threaded = p.threadMode !== 'none';
   const start = p.threadSpan === 'full' ? 0 : n(p, 'threadStart');
   const threadLength = p.threadSpan === 'full' ? shaftLength - neckHeight : n(p, 'threadLength');
   const end = start + threadLength;
-  const rootR = modeled ? r - THREAD_DEPTH * pitch : r;
+  const rootR = r - ((17 * Math.sqrt(3)) / 48) * pitch;
   const total = shaftLength + h;
   const bodyR = threaded && p.threadSpan === 'full' ? r : smoothR;
   return {
@@ -32,7 +29,6 @@ export function fastenerValues(p: Parameters, headless = false) {
     r,
     smoothR,
     pitch,
-    modeled,
     threaded,
     start,
     end,

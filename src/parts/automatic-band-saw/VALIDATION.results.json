@@ -1,0 +1,418 @@
+{
+  "date": "2026-09-26",
+  "design": "Carriage-mounted BGS nose scan; encoder feed; six-foot common frame and bolted joints; fixed-height adjustable clamp posts",
+  "native": {
+    "cases": 75,
+    "interferences": 0,
+    "volumeThresholdMm3": 0.05,
+    "excludedPair": ["Blade", "Workpiece"],
+    "results": [
+      {
+        "case": "ready",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "load-open",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "tube120-50-optical-scan",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "tube120-30-optical-scan",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "square80-100-optical-scan",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "rect100x60-75-optical-scan",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "triangular-50-optical-scan",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "oval-50-optical-scan",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "independent-0-25",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "independent-0-75",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "independent-50-25",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "independent-50-75",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "independent-100-25",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "independent-100-75",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "head-feed-0",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "head-feed-1",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "head-feed-2",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "head-feed-3",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "head-feed-4",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "head-feed-5",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "head-feed-6",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "head-feed-7",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "head-feed-8",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "tube120-50-feeding",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "tube120-50-bottom",
+        "components": 1019,
+        "clashes": []
+      },
+      {
+        "case": "tube120-30-feeding",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "tube120-30-bottom",
+        "components": 1019,
+        "clashes": []
+      },
+      {
+        "case": "square80-100-feeding",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "square80-100-bottom",
+        "components": 1019,
+        "clashes": []
+      },
+      {
+        "case": "rect100x60-75-feeding",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "rect100x60-75-bottom",
+        "components": 1019,
+        "clashes": []
+      },
+      {
+        "case": "triangular-50-feeding",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "triangular-50-bottom",
+        "components": 1019,
+        "clashes": []
+      },
+      {
+        "case": "oval-50-feeding",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "oval-50-bottom",
+        "components": 1019,
+        "clashes": []
+      },
+      {
+        "case": "small-round-feeding",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "small-round-bottom",
+        "components": 1019,
+        "clashes": []
+      },
+      {
+        "case": "small-square-feeding",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "small-square-bottom",
+        "components": 1019,
+        "clashes": []
+      },
+      {
+        "case": "small-rectangular-feeding",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "small-rectangular-bottom",
+        "components": 1019,
+        "clashes": []
+      },
+      {
+        "case": "small-triangular-feeding",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "small-triangular-bottom",
+        "components": 1019,
+        "clashes": []
+      },
+      {
+        "case": "small-oval-feeding",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "small-oval-bottom",
+        "components": 1019,
+        "clashes": []
+      },
+      {
+        "case": "shelf-30-0",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-30-1",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-30-2",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-30-3",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-30-4",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-30-5",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-30-6",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-30-7",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-30-8",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-30-9",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-30-10",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-30-11",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-30-12",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-30-13",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-30-14",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-120-0",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-120-1",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-120-2",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-120-3",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-120-4",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-120-5",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-120-6",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-120-7",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-120-8",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-120-9",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-120-10",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-120-11",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-120-12",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-120-13",
+        "components": 1018,
+        "clashes": []
+      },
+      {
+        "case": "shelf-120-14",
+        "components": 1018,
+        "clashes": []
+      }
+    ]
+  },
+  "software": {
+    "bandSawAndThreadsPassed": 10,
+    "focusedControlKinematicsPassed": 6,
+    "nativeTestExecutedSeparately": true,
+    "typescript": "passed",
+    "productionBuild": "passed",
+    "partPackagesChecked": 194,
+    "presetsChecked": 14369,
+    "presetStateValidations": 84,
+    "renderedConfigurations": 19
+  },
+  "sha256": {
+    "src/parts/automatic-band-saw/lib/assembly.ts": "e1da0116461522b84a1e573e9d101cde95da5bbfd15f423877cf5ccef2e106de",
+    "src/parts/automatic-band-saw/lib/clamps.ts": "4841a5c98ee9066371ab7f9b9a19917cd5f78ee0eef69f979c11cd61b2c2f2db",
+    "src/parts/automatic-band-saw/lib/cycle.ts": "0c022aab833cfc0dee46d453ef5d5f9f444121c0271b67ab6dbec0c8716ea17f",
+    "src/parts/automatic-band-saw/lib/feed-axis.ts": "86b419909d41c51dd057014c65be17af7762cf09c51378a85547a5c88baf347b",
+    "src/parts/automatic-band-saw/lib/hardware.ts": "15e268c4dd081c19ba38709467ad2b0a66da85c9b7e9054550ba8ddee29a6b20",
+    "src/parts/automatic-band-saw/lib/layout.ts": "ff53ec5262312e86f4c2e949b6c12cc2289d74bebdab433b10dab3c4c43e2ab8",
+    "src/parts/automatic-band-saw/lib/mesh.ts": "2ab194b7eab0e21a7f602525bedee0ef3c2be0a3d20d55dacc9d70c0a8cb97f9",
+    "src/parts/automatic-band-saw/lib/model.ts": "ba5ee1a7797f5bd7ccd168b297d59d0a897a3872cc0d9de49fd35983eba2a165",
+    "src/parts/automatic-band-saw/lib/pivot-head.ts": "50293c972efdf750bfb76ab69d0abce56f6dd43b32a13a55c14f985d8f766699",
+    "src/parts/automatic-band-saw/lib/procurement.ts": "566c1b271bdf56b9d2932afd00cccbe9f0269fdd776d7de3e52836a5480a4b43",
+    "src/parts/automatic-band-saw/lib/profiles.ts": "e65f8155f2cfff73cd3bce84ea04eb29e9384e6c06be982c14ae6e4c39a582ef",
+    "src/parts/automatic-band-saw/lib/shapes.ts": "60981050da3c239ae1f234e45c8ef301877b38e5aa021cceed42a2a336b1e5e2",
+    "src/parts/automatic-band-saw/part.ts": "c2fed115b40ba5032c749fec939b7ed73547083981fe28a86657f79e0cc53844",
+    "src/parts/automatic-band-saw/configurator.ts": "ea6d81b1efd216a316dab8703e1e5fb8ad5e1917c85eb45631be083e91203bef",
+    "src/parts/automatic-band-saw/presets.json": "d3cdd41533d0aa5b69a36190bffbb05bdd69a5107c61a6768e56e5f6439bbd18",
+    "tests/helpers/bandsaw-fit.ts": "800ac0104d9c3ef0b219580a9f5ea76f34da20cc6e283923b39bad361029915d",
+    "tests/automatic-band-saw.test.ts": "1b6c37962055555be3f7dfc1b2e550f35fd630a2ccaa93080913ba6ae59d8784",
+    "tests/thread-preview.test.ts": "c04f233b42eeeab682086ca2f1d0bc12188e116507d4e3e9e30ba329e7321a23"
+  }
+}

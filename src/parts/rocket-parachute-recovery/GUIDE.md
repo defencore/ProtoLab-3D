@@ -1,6 +1,6 @@
 # Parachute Recovery Assembly
 
-The default is **AirBrakes linear spiral / three retracting hooks**, with **MG996R / tube 90–86 / 2x18650 2S1P / F405 WING-MINI** avionics. The eased spiral and geared release remain selectable alternatives. It imports the detailed Rocket Release geometry, including servo capture frame, cell seats, power contacts, dampers, PCB stack, modeled threads and manufacturing metadata. It does not substitute generic avionics boxes. Existing Rocket Release presets are unchanged.
+The default is **AirBrakes linear spiral / three retracting hooks**, with **MG996R / tube 90–86 / 2x18650 2S1P / F405 WING-MINI** avionics. The eased spiral and geared release remain selectable alternatives. It imports the detailed Rocket Release geometry, including servo capture frame, cell seats, power contacts, dampers, PCB stack, smooth metal thread envelopes and manufacturing callouts. It does not substitute generic avionics boxes. Existing Rocket Release presets are unchanged.
 
 ## Assembly and load path
 

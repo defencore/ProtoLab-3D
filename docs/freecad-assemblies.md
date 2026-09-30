@@ -1,6 +1,6 @@
 # FreeCAD assembly export
 
-A single manufactured body creates one `Part::Feature`. A multi-component model creates an `App::Part` containing separate component features. Expand the parent in FreeCAD's model tree, select a component and change its **Placement**, or use Space to hide it. Moving the parent moves the full assembly. Rings, cages, rolling elements, shafts, nut bodies, seals, coupler hubs and gears retain their physical boundaries.
+A single manufactured body creates one `Part::Feature`. A multi-component model creates an `App::Part` containing separate component features, organized into nested subassemblies when the model supplies groups. Expand the parent in FreeCAD's model tree, select a component and change its **Placement**, or use Space to hide it. Select a group and press Space to hide or show that entire subassembly. Moving a group moves its descendants; moving the parent moves the full assembly. Rings, cages, rolling elements, shafts, nut bodies, seals, coupler hubs and gears retain their physical boundaries.
 
 The parent stores the part identifier, parameters, selected display state and exact catalog attribution when applicable. Its geometry is static: edit dimensions in ProtoLab and generate another assembly. The export does not create assembly constraints or simulate motion inside FreeCAD.
 
@@ -9,6 +9,8 @@ Use **File → Save** for an FCStd document with the component tree. Select the 
 ## Generator contract
 
 A part's Python recipe assigns `shape`. For an assembly, construct a `Part.makeCompound` with one direct child per physical component. Fuse surfaces or portions of the same manufactured body first. Nested compounds stay one logical component. Optional `component_labels` and `component_colors` lists must match those direct children in order. Colors are RGB triples from 0 to 1.
+
+Optional `component_groups` supplies one list of group labels per component, for example `[["Airframe", "Upper"], ["Electronics", "Battery"]]`. An empty path places the component directly in the assembly. Shared path prefixes create one shared `App::Part`; unused groups are not created. Components keep their global `ComponentIndex`, original `AssemblyPlacement` and an `AssemblyGroup` path. Group placements start at identity, so grouping does not move geometry. Scripts that enumerate components must traverse nested groups and select the leaf `Part::Feature` objects. Descriptive manufacturing metadata cannot overwrite native properties or these assembly properties.
 
 The wrapper preserves final component placements rather than reconstructing shapes from preview meshes. It validates geometry and dimensions before creating objects. Trimmed helical faces occasionally produce conservative analytical bounding boxes; a 0.005 mm tessellation refines a mismatched bound before the wrapper accepts or rejects it. Failed creation aborts the transaction and removes only objects created by that macro, including in headless documents with undo disabled.
 

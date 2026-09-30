@@ -40,8 +40,8 @@ const exploded: Vec[] = [
   [0, 0, -45],
 ];
 
-// Only the optional illustrative single arm is constructed. The servo itself
-// and both supplied discs come directly from the manufacturer's native solids.
+// The optional arm is constructed; supplier solids preserve their geometry
+// except for the repaired cover and simplified output retaining-thread bore.
 function prototypeArm(p: Parameters): Shape {
   const r = n(p, 'hornDiameter') / 2,
     t = n(p, 'hornThickness');
@@ -157,6 +157,19 @@ export function python(p: Parameters, state: string): string {
     ]),
     `shape = Part.makeCompound([${entries.map((_, i) => `component_${i}`).join(',')}])`,
     `component_labels = ${JSON.stringify(entries.map((entry) => entry.label))}`,
+    `component_metadata = ${JSON.stringify(
+      entries.map((entry) =>
+        entry.source === 5
+          ? {
+              ThreadLabels: 'internal OEM retaining thread (verify diameter/pitch)',
+              ThreadCallouts:
+                'OEM retaining thread; D3.2 x8.4 smooth CAD bore at local Z23.8. Source CAD is nonstandard; measure the supplied screw before specifying a thread.',
+              ThreadModel:
+                'Smooth cylindrical envelope; no helical fastening surfaces. Original output spline and gears retained.',
+            }
+          : {},
+      ),
+    )}`,
     `component_colors = ${JSON.stringify(entries.map((entry) => [1, 3, 5].map((offset) => Number.parseInt(entry.color.slice(offset, offset + 2), 16) / 255)))}`,
   ].join('\n');
 }

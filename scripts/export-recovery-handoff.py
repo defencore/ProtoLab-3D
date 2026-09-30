@@ -16,7 +16,14 @@ args = parser.parse_args()
 args.output.mkdir(parents=True, exist_ok=True)
 doc = App.openDocument(str(args.document.resolve()))
 assembly = next(o for o in doc.RootObjects if o.TypeId == 'App::Part')
-parts = list(assembly.Group)
+def component_leaves(parent):
+    for child in parent.Group:
+        if child.TypeId == 'App::Part':
+            yield from component_leaves(child)
+        else:
+            yield child
+
+parts = sorted(component_leaves(assembly), key=lambda o: o.ComponentIndex)
 assert parts and all(o.TypeId == 'Part::Feature' for o in parts)
 assert all(o.Shape.isValid() and o.Shape.isClosed() and len(o.Shape.Solids) == 1 for o in parts)
 

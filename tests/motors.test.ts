@@ -53,8 +53,8 @@ function checkMesh(mesh: Mesh, label: string) {
     assert.deepEqual(edge, { count: 2, winding: 0 }, `${label}: closed oriented boundary`);
 }
 
-test('fixed catalog covers nine NEMA and twenty-four BLDC models with explicit current conditions', () => {
-  assert.equal(stepper.presets.length, 9);
+test('fixed catalog covers ten NEMA and twenty-four BLDC models with explicit current conditions', () => {
+  assert.equal(stepper.presets.length, 10);
   assert.equal(bldc.presets.length, 24);
   for (const part of [stepper, bldc]) {
     assert.equal(part.category, 'MOTORS & ACTUATORS');

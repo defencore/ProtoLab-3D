@@ -737,20 +737,71 @@ kbd {
 .view-select option {
   background: #22272d;
 }
-.viewport-label {
-  font: 9px var(--mono);
-  letter-spacing: 1px;
-  color: #697582;
+.preview-actions,
+.navigation-switch {
   display: flex;
   align-items: center;
   gap: 6px;
 }
-.viewport-label > span {
-  width: 4px;
-  height: 4px;
-  background: #8da781;
-  border-radius: 50%;
-  box-shadow: 0 0 6px #8aa27855;
+.preview-actions {
+  pointer-events: auto;
+}
+.navigation-switch,
+.preview-fullscreen-toggle {
+  border: 1px solid #41474e;
+  border-radius: 6px;
+  background: #26292df2;
+}
+.navigation-switch {
+  gap: 2px;
+  padding: 2px;
+}
+.navigation-switch button,
+.preview-fullscreen-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 30px;
+  padding: 0 8px;
+  color: #aeb8c4;
+  border-radius: 4px;
+  font-size: 11px;
+}
+.preview-fullscreen-toggle {
+  height: 36px;
+  width: 36px;
+  padding: 0;
+}
+.navigation-switch button:hover,
+.preview-fullscreen-toggle:hover {
+  color: #fff;
+  background: #3c424a;
+}
+.navigation-switch button[aria-pressed='true'] {
+  background: #4a423a;
+  color: #edb385;
+}
+.preview-navigation-hint {
+  position: absolute;
+  top: 62px;
+  right: 27px;
+  font-size: 11px;
+  color: #929daa;
+  pointer-events: none;
+}
+.viewport-area.viewport-area--expanded {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  min-height: 0;
+  z-index: 120;
+  background: #17191c;
+}
+.viewport-area::backdrop {
+  background: #17191c;
 }
 .viewport-toolbar {
   position: relative;
@@ -1866,10 +1917,6 @@ kbd {
   .viewport-top {
     left: 20px;
     right: 20px;
-  }
-  .viewport-label {
-    font-size: 8px;
-    letter-spacing: 0.5px;
   }
   .summary-state {
     display: none;

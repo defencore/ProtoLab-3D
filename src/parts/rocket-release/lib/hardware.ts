@@ -3,7 +3,7 @@ import type { Shape } from './shapes';
 import { transform, rotate, union, cylinder } from './shapes';
 export const pitchFor = (d: number) =>
   d === 1.6 ? 0.35 : d === 2 ? 0.4 : d === 2.5 ? 0.45 : d === 3 ? 0.5 : 0.7;
-/** Tip at origin, head above the shaft; a genuine single-start RH thread. */
+/** Tip at origin, head above the shaft; smooth RH thread envelope with a callout. */
 export function screw(
   d: number,
   length: number,
@@ -37,7 +37,7 @@ export function screw(
     driveThickness: d * 0.2,
     driveDepth: d === 3 ? 1.3 : d === 2.5 ? 1.1 : d === 2 ? 1 : 0.7,
     driveSides: 6,
-    threadMode: 'modeled',
+    threadMode: 'envelope',
     threadSpan: options.threadLength ? 'partial' : 'full',
     pitch,
     handedness: 'right',

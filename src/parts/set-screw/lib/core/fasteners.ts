@@ -1,14 +1,12 @@
+import { showThreads } from '../../../../core/thread-visual';
+import { metricThreadCallout, threadMetadataPython } from '../../../../core/thread-callouts';
 import * as THREE from 'three';
 import { toCreasedNormals } from 'three/addons/utils/BufferGeometryUtils.js';
 import { material, n, num, numberParameter } from '../../../../core/geometry';
 import type { ParameterDefinition, Parameters } from '../../../../core/types';
 
 type RadialRing = { z: number; radius: number | ((angle: number) => number) };
-export const MAX_THREAD_TURNS = 80;
 const TAU = 2 * Math.PI;
-const THREAD_DEPTH = (17 * Math.sqrt(3)) / 48;
-const THREAD_HALF_BASE = 5 / 12;
-const THREAD_HALF_CREST = 1 / 16;
 
 export function selectParameter(
   key: string,
@@ -48,8 +46,7 @@ export function fastenerParameters(headless: boolean): ParameterDefinition[] {
       description: 'The unthreaded shoulder must be at least as wide as the thread major diameter.',
     },
     selectParameter('threadMode', 'Thread geometry', 'Thread', [
-      ['modeled', 'Modeled helical thread'],
-      ['envelope', 'Smooth thread envelope'],
+      ['envelope', 'Visible thread / smooth export'],
       ['none', 'No thread'],
     ]),
     {
@@ -71,14 +68,15 @@ export function fastenerParameters(headless: boolean): ParameterDefinition[] {
     {
       ...numberParameter('pitch', 'Thread pitch', 'P', 'Thread', 0.15, 8, 0.05),
       visibleWhen: (p) => p.threadMode !== 'none',
-      description: 'Single-start, truncated 60° reference thread; at most 80 turns.',
+      description:
+        'Nominal thread pitch for the drawing callout. Helical flanks are visible in preview; exports use smooth envelopes.',
     },
     {
       ...selectParameter('handedness', 'Thread direction', 'Thread', [
         ['right', 'Right hand'],
         ['left', 'Left hand'],
       ]),
-      visibleWhen: (p) => p.threadMode === 'modeled',
+      visibleWhen: (p) => p.threadMode !== 'none',
     },
     selectParameter('drive', 'Drive type', 'Drive', [
       ['none', 'None'],
@@ -140,12 +138,11 @@ export function fastenerValues(p: Parameters, headless = false) {
   const r = n(p, 'diameter') / 2;
   const smoothR = n(p, 'shankDiameter') / 2;
   const pitch = n(p, 'pitch');
-  const modeled = p.threadMode === 'modeled';
   const threaded = p.threadMode !== 'none';
   const start = p.threadSpan === 'full' ? 0 : n(p, 'threadStart');
   const threadLength = p.threadSpan === 'full' ? shaftLength - neckHeight : n(p, 'threadLength');
   const end = start + threadLength;
-  const rootR = modeled ? r - THREAD_DEPTH * pitch : r;
+  const rootR = r - ((17 * Math.sqrt(3)) / 48) * pitch;
   const total = shaftLength + h;
   const bodyR = threaded && p.threadSpan === 'full' ? r : smoothR;
   return {
@@ -157,7 +154,6 @@ export function fastenerValues(p: Parameters, headless = false) {
     r,
     smoothR,
     pitch,
-    modeled,
     threaded,
     start,
     end,
@@ -307,16 +303,8 @@ export function validateFastener(p: Parameters, headless = false): string[] {
     (v.start < 0 || v.threadLength <= 0 || v.end > v.shaftLength - v.neckHeight + 1e-8)
   )
     errors.push('The threaded band must fit entirely inside the body length.');
-  if (v.modeled && v.rootR <= v.r * 0.25)
-    errors.push(
-      'The thread pitch is too large for the diameter; increase the diameter or reduce the pitch.',
-    );
-  if (v.modeled && v.threadLength / v.pitch > MAX_THREAD_TURNS)
-    errors.push(
-      'Modeled threads are limited to 80 turns. Shorten the threaded band, increase pitch, or select the smooth envelope.',
-    );
-  if (v.modeled && v.threadLength < v.pitch)
-    errors.push('A modeled threaded band must be at least one pitch long.');
+  if (v.threaded && (!(v.pitch > 0) || v.r - ((17 * Math.sqrt(3)) / 48) * v.pitch <= v.r * 0.25))
+    errors.push('Thread pitch must leave a positive load-bearing core.');
   if (p.tip !== 'flat') {
     const tipLength = n(p, 'tipLength'),
       tipR = n(p, 'tipDiameter') / 2;
@@ -495,17 +483,7 @@ export function buildFastenerGeometry(p: Parameters, headless = false): THREE.Gr
   if (v.squareNeck) for (let i = 0; i < 4; i++) angles.push(((2 * i + 1) * Math.PI) / 4);
   angles.sort((a, b) => a - b);
   const uniqueAngles = angles.filter((angle, i) => i === 0 || angle - angles[i - 1] > 1e-8);
-  const rawRadius = (z: number, a: number, region: 'thread' | 'smooth') => {
-    if (region === 'smooth') return v.smoothR;
-    if (!v.modeled) return v.r;
-    const phase = (z - v.start) / v.pitch - ((p.handedness === 'left' ? -1 : 1) * a) / TAU;
-    const distance = Math.abs(phase - Math.round(phase));
-    const ridge = Math.max(
-      0,
-      Math.min(1, (THREAD_HALF_BASE - distance) / (THREAD_HALF_BASE - THREAD_HALF_CREST)),
-    );
-    return v.rootR + (v.r - v.rootR) * ridge;
-  };
+  const rawRadius = (region: 'thread' | 'smooth') => (region === 'smooth' ? v.smoothR : v.r);
   const firstRegion = v.threaded && v.start === 0 ? 'thread' : 'smooth';
   const tipOuter = firstRegion === 'thread' ? v.r : v.smoothR;
   const clippedRadius = (
@@ -514,7 +492,7 @@ export function buildFastenerGeometry(p: Parameters, headless = false): THREE.Gr
     region: 'thread' | 'smooth',
     dogShoulder = false,
   ) => {
-    let result = rawRadius(z, a, region);
+    let result = rawRadius(region);
     if (tipLength > 0 && z <= tipLength && !dogShoulder) {
       const envelope = p.tip === 'dog' ? tipR : tipR + ((tipOuter - tipR) * z) / tipLength;
       result = Math.min(result, envelope);
@@ -533,10 +511,7 @@ export function buildFastenerGeometry(p: Parameters, headless = false): THREE.Gr
     if (v.end < v.shaftLength) regions.push({ start: v.end, end: v.shaftLength, kind: 'smooth' });
   }
   for (const region of regions) {
-    const count =
-      v.modeled && region.kind === 'thread'
-        ? Math.max(2, Math.ceil(((region.end - region.start) / v.pitch) * 16))
-        : 1;
+    const count = 1;
     const heights = Array.from(
       { length: count + 1 },
       (_, i) => region.start + ((region.end - region.start) * i) / count,
@@ -589,6 +564,10 @@ export function buildFastenerGeometry(p: Parameters, headless = false): THREE.Gr
   );
   const group = new THREE.Group();
   const mesh = new THREE.Mesh(ringMesh(noncoincident, uniqueAngles), material());
+  mesh.name = v.threaded
+    ? `External M${2 * v.r}×${v.pitch} ${p.handedness === 'left' ? 'LH' : 'RH'} · L${v.threadLength}`
+    : 'Unthreaded shank';
+  if (v.threaded) showThreads(mesh, [{ origin: [0,0,v.start], axis:[0,0,1], diameter:2*v.r, pitch:v.pitch, length:v.threadLength, left:p.handedness==='left' }]);
   mesh.position.z = -v.total / 2;
   group.add(mesh);
   return group;
@@ -618,7 +597,6 @@ export function fastenerPython(p: Parameters, headless = false): string {
   const lines = [
     `# Length is measured from the point; the result is centered on its total height.`,
     `radius = ${num(v.r)}`,
-    `root_radius = ${v.modeled ? `radius - (17 * math.sqrt(3) / 48) * ${num(v.pitch)}` : 'radius'}`,
     `body_length = ${num(v.shaftLength)}`,
   ];
   if (!v.threaded) lines.push(`shape = Part.makeCylinder(${num(v.smoothR)}, body_length)`);
@@ -654,30 +632,6 @@ export function fastenerPython(p: Parameters, headless = false): string {
     lines.push(
       `shape = shape.cut(Part.makeCone(${num(n(p, 'tipDiameter') / 2)}, 0, ${num(n(p, 'tipLength'))}))`,
     );
-  if (v.modeled) {
-    lines.push(
-      `pitch = ${num(v.pitch)}`,
-      `# Cut a helical groove from a solid blank. The blank already includes its point.`,
-      `blank = shape`,
-      `# Separate helix edges keep long thread sweeps numerically stable.`,
-      `path = Part.Wire(Part.makeLongHelix(pitch, ${num(v.threadLength + 2 * v.pitch)}, root_radius, 0, ${p.handedness === 'left' ? 'True' : 'False'}).Edges)`,
-      `groove_half_width = (7 / 16 + 0.08 / math.sqrt(3)) * pitch`,
-      `groove_points = [App.Vector(root_radius, 0, -pitch / 12), App.Vector(radius + 0.08 * pitch, 0, -groove_half_width), App.Vector(radius + 0.08 * pitch, 0, groove_half_width), App.Vector(root_radius, 0, pitch / 12)]`,
-      `groove = path.makePipeShell([Part.makePolygon(groove_points + [groove_points[0]])], True, True)`,
-      `groove.translate(App.Vector(0, 0, ${num(v.start - v.pitch / 2)}))`,
-      `shape = shape.cut(groove)`,
-    );
-    if (v.start > 0)
-      lines.push(
-        `lower_shoulder = blank.common(Part.makeCylinder(${num(v.bodyR + 0.1)}, ${num(v.start)}))`,
-        `shape = shape.fuse(lower_shoulder)`,
-      );
-    if (v.end < v.shaftLength)
-      lines.push(
-        `upper_shoulder = blank.common(Part.makeCylinder(${num(v.bodyR + 0.1)}, ${num(v.shaftLength - v.end)}, App.Vector(0, 0, ${num(v.end)})))`,
-        `shape = shape.fuse(upper_shoulder)`,
-      );
-  }
   if (v.squareNeck) {
     const neck = n(p, 'neckSize');
     lines.push(
@@ -734,5 +688,15 @@ export function fastenerPython(p: Parameters, headless = false): string {
     '    raise ValueError("The fastener must be one connected solid.")',
     `shape.translate(App.Vector(0, 0, ${num(-v.total / 2)}))`,
   );
+  if (v.threaded)
+    lines.push(
+      threadMetadataPython([
+        {
+          ...metricThreadCallout(2 * v.r, v.pitch, v.threadLength, false, p.handedness),
+          origin: [0, 0, v.start - v.total / 2],
+          axis: [0, 0, 1],
+        },
+      ]),
+    );
   return lines.join('\n');
 }

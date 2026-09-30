@@ -1,0 +1,26 @@
+[
+  {
+    "id": "mwe21-200",
+    "name": "Kuebler MWE21 \u00b7 C200 \u00b7 encoder1000 ppr",
+    "parameters": {
+      "model": "mwe21"
+    },
+    "description": "Contact wheel and rotary encoder for material travel."
+  },
+  {
+    "id": "e3z-t81",
+    "name": "OMRON E3Z-T81 \u00b7 PNP through-beam pair",
+    "parameters": {
+      "model": "e3z-t81"
+    },
+    "description": "PNP through-beam emitter/receiver package envelope."
+  },
+  {
+    "id": "e2b-m12",
+    "name": "OMRON E2B-M12KS04-WP-B1 2M",
+    "parameters": {
+      "model": "e2b-m12"
+    },
+    "description": "M12 PNP inductive end-position sensor."
+  }
+]

@@ -17,6 +17,8 @@ import {
   Keyboard,
   Layers3,
   Menu,
+  Maximize2,
+  Minimize2,
   MousePointer2,
   Move,
   Rotate3D,
@@ -29,8 +31,9 @@ import {
 } from 'lucide-react';
 import Catalog from './components/Catalog';
 import Configurator from './components/Configurator';
-import ModelViewer from './components/ModelViewer';
-import { useRecoveryPreview } from './components/useRecoveryPreview';
+import ModelViewer, { type NavigationMode } from './components/ModelViewer';
+import { useAssemblyPreview } from './components/useAssemblyPreview';
+import { usePreviewFullscreen } from './components/usePreviewFullscreen';
 import Modal from './components/Modal';
 import PresetBrowser from './components/PresetBrowser';
 import { Brand, PartIcon } from './components/PartIcon';
@@ -99,6 +102,8 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
     setPresetId(presetId);
   }
   const [displayMode, setDisplayMode] = useState<DisplayMode>('solid');
+  const [navigationMode, setNavigationMode] = useState<NavigationMode>('orbit');
+  const { previewRef, expanded: previewExpanded, toggle: togglePreview } = usePreviewFullscreen();
   const [view, setView] = useState<View>('isometric');
   const [showGrid, setShowGrid] = useState(true);
   const [showDimensions, setShowDimensions] = useState(false);
@@ -125,8 +130,12 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
   const validPreview = useRef({ part, parameters, modelState });
   if (!errors.length) validPreview.current = { part, parameters, modelState };
   const preview = validPreview.current;
-  const recovery = useRecoveryPreview(
-    preview.part.id === 'rocket-release' || preview.part.id === 'rocket-parachute-recovery'
+  const assembly = useAssemblyPreview(
+    preview.part.id === 'rocket-release' ||
+      preview.part.id === 'rocket-parachute-recovery' ||
+      preview.part.id === 'rocket-co2-recovery' ||
+      preview.part.id === 'automatic-tube-saw' ||
+      preview.part.id === 'automatic-band-saw'
       ? preview.part.id
       : undefined,
     preview.parameters,
@@ -135,19 +144,19 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
   );
   const dimensions = useMemo(
     () =>
-      recovery.enabled
-        ? (recovery.dimensions ?? [0, 0, 0])
+      assembly.enabled
+        ? (assembly.dimensions ?? [0, 0, 0])
         : preview.part.dimensions(preview.parameters, preview.modelState),
-    [preview.part, preview.parameters, preview.modelState, recovery.dimensions],
+    [preview.part, preview.parameters, preview.modelState, assembly.dimensions],
   );
   const script = useMemo(
     () =>
       errors.length
         ? ''
-        : recovery.enabled
-          ? (recovery.script ?? '')
+        : assembly.enabled
+          ? (assembly.script ?? '')
           : generateScript(part, parameters, modelState, presetId),
-    [part, parameters, modelState, presetId, errors.length, recovery.script],
+    [part, parameters, modelState, presetId, errors.length, assembly.script],
   );
 
   useEffect(() => {
@@ -215,7 +224,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
     setMobilePanel(panel);
   }
   async function copyScript() {
-    if (errors.length || (recovery.enabled && !recovery.script)) return;
+    if (errors.length || (assembly.enabled && !assembly.script)) return;
     try {
       await navigator.clipboard.writeText(consoleCommand(script));
       setToast('Script copied. Paste into the FreeCAD Python console.');
@@ -225,12 +234,12 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
     }
   }
   function exportPart(format: 'macro' | 'stl' | 'json') {
-    if (errors.length || (recovery.enabled && !recovery.script)) return;
+    if (errors.length || (assembly.enabled && !assembly.script)) return;
     try {
       if (format === 'macro') downloadFile(script, `${part.id}.FCMacro`, 'text/x-python');
       if (format === 'stl') {
-        if (recovery.enabled && recovery.stl)
-          downloadFile(recovery.stl, `${part.id}-${modelState}.stl`, 'model/stl');
+        if (assembly.enabled && assembly.stl)
+          downloadFile(assembly.stl, `${part.id}-${modelState}.stl`, 'model/stl');
         else downloadStl(part, parameters, modelState);
       }
       if (format === 'json')
@@ -363,7 +372,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
           <button
             className="secondary-button script-button"
             onClick={() => setDialog('script')}
-            disabled={!!errors.length || (recovery.enabled && !recovery.script)}
+            disabled={!!errors.length || (assembly.enabled && !assembly.script)}
           >
             <Code2 size={16} />
             <span>View script</span>
@@ -371,7 +380,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
           <button
             className="primary-button"
             onClick={copyScript}
-            disabled={!!errors.length || (recovery.enabled && !recovery.script)}
+            disabled={!!errors.length || (assembly.enabled && !assembly.script)}
           >
             <Copy size={15} />
             <span>Copy Python</span>
@@ -381,7 +390,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
               className={`secondary-button export-button ${exportOpen ? 'pressed' : ''}`}
               onClick={() => setExportOpen(!exportOpen)}
               aria-expanded={exportOpen}
-              disabled={!!errors.length || (recovery.enabled && !recovery.script)}
+              disabled={!!errors.length || (assembly.enabled && !assembly.script)}
             >
               <ArrowDownToLine size={16} />
               <span>Download</span>
@@ -467,22 +476,30 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
               <span>mm</span>
             </div>
           </div>
-          <div className="viewport-area">
+          <div
+            ref={previewRef}
+            className={`viewport-area${previewExpanded ? ' viewport-area--expanded' : ''}`}
+            role={previewExpanded ? 'dialog' : 'region'}
+            aria-modal={previewExpanded || undefined}
+            aria-label={`${part.name} model preview`}
+          >
             <ModelViewer
-              preparedModel={recovery.enabled ? (recovery.model ?? null) : undefined}
-              preparedDimensions={recovery.dimensions}
-              pending={recovery.pending}
-              loadError={recovery.error}
+              preparedModel={assembly.enabled ? (assembly.model ?? null) : undefined}
+              preparedDimensions={assembly.dimensions}
+              pending={assembly.pending}
+              loadError={assembly.error}
               part={preview.part}
               parameters={preview.parameters}
               modelState={preview.modelState}
               displayMode={displayMode}
+              navigationMode={navigationMode}
               showGrid={showGrid}
               showDimensions={showDimensions}
               view={view}
               fitToken={fitToken}
               onError={setViewerError}
               onViewChange={setView}
+              onNavigationModeChange={setNavigationMode}
             />
             <div className="viewport-top">
               <div className="view-select">
@@ -502,11 +519,43 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
                 </select>
                 <ChevronDown size={12} />
               </div>
-              <div className="viewport-label">
-                <span />
-                LIVE PREVIEW
+              <div className="preview-actions">
+                <div className="navigation-switch" role="group" aria-label="Mouse navigation">
+                  <button
+                    title="Orbit: drag to rotate (O)"
+                    aria-label="Orbit mode"
+                    aria-pressed={navigationMode === 'orbit'}
+                    onClick={() => setNavigationMode('orbit')}
+                  >
+                    <Rotate3D size={15} />
+                    <span>Orbit</span>
+                  </button>
+                  <button
+                    title="Pan: drag to move (P)"
+                    aria-label="Pan mode"
+                    aria-pressed={navigationMode === 'pan'}
+                    onClick={() => setNavigationMode('pan')}
+                  >
+                    <Move size={15} />
+                    <span>Pan</span>
+                  </button>
+                </div>
+                <button
+                  className="preview-fullscreen-toggle"
+                  title={previewExpanded ? 'Exit full screen (Esc)' : 'Full screen preview'}
+                  aria-label={previewExpanded ? 'Exit full screen preview' : 'Full screen preview'}
+                  aria-expanded={previewExpanded}
+                  onClick={() => void togglePreview()}
+                >
+                  {previewExpanded ? <Minimize2 size={17} /> : <Maximize2 size={17} />}
+                </button>
               </div>
             </div>
+            {previewExpanded && (
+              <div className="preview-navigation-hint">
+                Drag to {navigationMode === 'pan' ? 'pan' : 'orbit'} · Scroll to zoom · Esc to exit
+              </div>
+            )}
             {errors.length > 0 && (
               <div className="preview-warning">Showing last valid configuration</div>
             )}
@@ -578,7 +627,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
             <div className="summary-item">
               <span>BOUNDING SIZE</span>
               <strong>
-                {recovery.pending ? 'Building…' : dimensions.map(formatDimension).join(' × ')}
+                {assembly.pending ? 'Building…' : dimensions.map(formatDimension).join(' × ')}
                 <small> mm</small>
               </strong>
             </div>
@@ -601,7 +650,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
           <footer className="viewport-footer">
             <span>
               <MousePointer2 size={13} />
-              Drag to orbit
+              Drag to {navigationMode === 'pan' ? 'pan' : 'orbit'}
             </span>
             <span>
               <Move size={13} />
@@ -787,7 +836,10 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
               <kbd>/</kbd> Search
             </span>
             <span>
-              <kbd>Esc</kbd> Close panels
+              <kbd>P</kbd> Pan · <kbd>O</kbd> Orbit · <kbd>F</kbd> Fit (preview focused)
+            </span>
+            <span>
+              <kbd>Esc</kbd> Exit full screen / close panels
             </span>
           </div>
           <div className="modal-note">
@@ -829,7 +881,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
               <div>
                 <strong>{part.name}</strong>
                 <p>
-                  {recovery.pending ? 'Building…' : dimensions.map(formatDimension).join(' × ')} mm
+                  {assembly.pending ? 'Building…' : dimensions.map(formatDimension).join(' × ')} mm
                 </p>
               </div>
             </div>

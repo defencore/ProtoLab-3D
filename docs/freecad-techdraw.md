@@ -1,6 +1,6 @@
 # Readable TechDraw views
 
-TechDraw line widths are measured in millimetres on the drawing sheet. They are independent of the source object's 3D viewport line width. A 0.7 mm stroke can fill the spaces between the projected edges of a small modeled thread, even though the exported BRep is valid.
+TechDraw line widths are measured in millimetres on the drawing sheet. They are independent of the source object's 3D viewport line width. New metal-thread exports use smooth nominal envelopes to keep projected edge counts small. Detailed helices remain only on explicitly printed threads.
 
 ## Existing drawings
 
@@ -16,6 +16,6 @@ To make the same change manually, select the drawing view in the tree. In the pr
 
 For views created manually with FreeCAD's Insert View command, choose a thinner **Line Group** under **Preferences → TechDraw → Annotation**, such as **FC 0.25mm**, or edit each view as above. Existing views retain their own settings. Reloading the ProtoLab solid does not set drawing preferences.
 
-For dense modeled threads, increase the view scale or use a detail view. Thin strokes improve readability but do not convert a modeled helix into a conventional drafting thread representation. Manufacturing drawings still require thread callouts, datums, dimensions, and tolerances.
+Regenerate previously exported parts to replace old metal helices: existing FreeCAD documents are not modified automatically. Each affected part carries a thread designation in its label plus `ThreadCallouts` and `ThreadFeaturesJSON` manufacturing properties. Nominal bores represent the thread major diameter, not a tap-drill or clearance-hole instruction. Use the callout and any full-depth / drill-depth notes when dimensioning a drawing. Printed threads still benefit from a detail view; drawings require datums, tolerances and process-specific dimensions.
 
 Property definitions: [official FreeCAD TechDraw View documentation](https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/TechDraw_View.md), [line groups](https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/TechDraw_LineGroup.md).

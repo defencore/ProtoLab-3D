@@ -9,6 +9,7 @@ export const families = [
   ['custom', 'Custom symmetric profile'],
 ];
 export const defaults: Parameters = {
+  manufacturing: 'printed',
   family: 'metric',
   diameter: 6,
   pitchUnit: 'mm',
@@ -21,6 +22,11 @@ export const defaults: Parameters = {
   angle: 60,
   depth: 0.5,
   crest: 0.125,
+  form: 'tool',
+  boreEnabled: false,
+  boreDiameter: 2,
+  capSize: 10,
+  capThickness: 3,
 };
 const number = (
   key: string,
@@ -32,6 +38,44 @@ const number = (
   group = 'Dimensions',
 ): ParameterDefinition => ({ key, label, type: 'number', min, max, step, unit, group });
 export const parameters: ParameterDefinition[] = [
+  {
+    key: 'manufacturing',
+    label: 'Manufacturing method',
+    type: 'select',
+    group: 'Thread',
+    options: [
+      { value: 'machined', label: 'Machined metal · smooth with callout' },
+      { value: 'printed', label: '3D printed · modeled thread' },
+    ],
+    description:
+      'Machined threads use nominal cylinders for drawings. Only printed threads retain helical faces and print fit allowance.',
+  },
+  {
+    key: 'form',
+    label: 'Body form',
+    type: 'select',
+    group: 'Body',
+    options: [
+      { value: 'tool', label: 'Threaded body / Boolean tool' },
+      { value: 'round-cap', label: 'Round cap / plug' },
+      { value: 'hex-cap', label: 'Hexagonal cap / plug' },
+    ],
+    description:
+      'Caps are finished parts: external mode makes a headed plug; internal mode makes a female threaded cap.',
+  },
+  { key: 'boreEnabled', label: 'Central through hole', type: 'boolean', group: 'Body' },
+  {
+    ...number('boreDiameter', 'Through-hole diameter', 0.1, 190, 0.1, 'mm', 'Body'),
+    visibleWhen: (p) => p.boreEnabled === true,
+  },
+  {
+    ...number('capSize', 'Cap diameter / hex across flats', 1, 240, 0.1, 'mm', 'Body'),
+    visibleWhen: (p) => p.form !== 'tool',
+  },
+  {
+    ...number('capThickness', 'Cap end thickness', 0.2, 100, 0.1, 'mm', 'Body'),
+    visibleWhen: (p) => p.form !== 'tool',
+  },
   {
     key: 'family',
     label: 'Thread family',
@@ -56,7 +100,10 @@ export const parameters: ParameterDefinition[] = [
     visibleWhen: (p) => p.pitchUnit === 'tpi',
     description: 'Pitch = 25.4 / TPI. Do not enter the multi-start lead here.',
   },
-  number('length', 'Tool length', 0.1, 500, 0.1, 'mm'),
+  {
+    ...number('length', 'Threaded length / cap cavity depth', 0.1, 500, 0.1, 'mm'),
+    description: 'Cap end thickness is additional to this length.',
+  },
   {
     key: 'handedness',
     label: 'Thread direction',
@@ -73,6 +120,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     ...number('clearance', 'Radial fit adjustment', 0, 2, 0.01, 'mm', 'Fit'),
+    visibleWhen: (p) => p.manufacturing === 'printed',
     description:
       'Per side: enlarges the Internal Cut tool, reduces the External Union tool. Applying it to both halves doubles the radial gap. This is not an ISO/ASME tolerance class.',
   },

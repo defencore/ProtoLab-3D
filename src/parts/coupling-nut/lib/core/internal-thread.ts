@@ -1,13 +1,12 @@
+import { showThreads } from '../../../../core/thread-visual';
+import { metricThreadCallout, threadMetadataPython } from '../../../../core/thread-callouts';
 import modeling from '@jscad/modeling';
 import { Float32BufferAttribute, Vector3 } from 'three';
-import { numberParameter, num } from '../../../../core/geometry';
+import { numberParameter } from '../../../../core/geometry';
 import { selectParameter } from './fasteners';
 import { BoundaryMesh } from '../../../../core/mechanical';
 import { outline, type ShellSection } from './hardware';
 import type { Parameters } from '../../../../core/types';
-
-const TAU = Math.PI * 2;
-const DEPTH = (5 * Math.sqrt(3)) / 16;
 
 /** ISO metric coarse pitches; nonstandard diameters use the next larger preferred size. */
 const COARSE_PITCH: [number, number][] = [
@@ -66,140 +65,70 @@ export function nutCoarsePitch(diameter: number): number {
 }
 
 export const internalThreadParameters = [
-  selectParameter('threadMode', 'Thread geometry', 'Thread', [
-    ['modeled', 'Modeled helical thread'],
-    ['envelope', 'Smooth nominal envelope'],
-  ]),
   {
     ...numberParameter('pitch', 'Thread pitch', 'P', 'Thread', 0.1, 12, 0.05),
-    description: 'Coarse metric pitch is selected with the diameter. Fine pitches remain editable.',
+    description:
+      'Nominal pitch for the drawing callout; the bore is a smooth nominal-diameter envelope.',
   },
-  {
-    ...selectParameter('handedness', 'Thread direction', 'Thread', [
-      ['right', 'Right hand'],
-      ['left', 'Left hand'],
-    ]),
-    visibleWhen: (p: Parameters) => p.threadMode === 'modeled',
-  },
+  selectParameter('handedness', 'Thread direction', 'Thread', [
+    ['right', 'Right hand'],
+    ['left', 'Left hand'],
+  ]),
 ];
 
 export function internalThreadDefaults(diameter: number): Parameters {
-  return { pitch: nutCoarsePitch(diameter), threadMode: 'modeled', handedness: 'right' };
+  return { pitch: nutCoarsePitch(diameter), handedness: 'right' };
 }
 
-export function internalThreadErrors(p: Parameters, diameter: number, height: number): string[] {
-  if (p.threadMode !== 'modeled') return [];
+export function internalThreadErrors(p: Parameters, diameter: number, _height: number): string[] {
   const pitch = Number(p.pitch);
-  const errors: string[] = [];
-  if (!(pitch > 0) || diameter / 2 - DEPTH * pitch < diameter * 0.12)
-    errors.push('Thread pitch must leave a positive internal minor diameter.');
-  if (height / pitch > 100)
-    errors.push(
-      'Modeled internal threads are limited to 100 turns. Increase pitch or use the smooth envelope.',
-    );
-  return errors;
+  return !(pitch > 0) || diameter - (5 * Math.sqrt(3) * pitch) / 8 <= diameter * 0.12
+    ? ['Thread pitch must leave a positive internal minor diameter.']
+    : [];
 }
 
-export function internalThreadRadius(
-  p: Parameters,
-  diameter: number,
-  z: number,
-  angle: number,
-): number {
-  if (p.threadMode !== 'modeled') return diameter / 2;
-  const pitch = Number(p.pitch);
-  const phase = z / pitch - ((p.handedness === 'left' ? -1 : 1) * angle) / TAU;
-  const distance = Math.abs(phase - Math.round(phase));
-  const groove = Math.max(0, Math.min(1, (3 / 8 - distance) / (5 / 16)));
-  return diameter / 2 - DEPTH * pitch * (1 - groove);
+/** Nominal-diameter drawing envelope, not the tap-drill diameter. */
+export function nominalThreadDiameter(_p: Parameters, diameter: number): number {
+  return diameter;
 }
 
-/** Sample a genuine single-start helical bore while retaining the source outer envelope. */
 export function threadedShellMesh(
   sections: ShellSection[],
   p: Parameters,
   diameter: number,
   color?: number,
 ) {
-  const samples: ShellSection[] = [];
-  for (let level = 1; level < sections.length; level++) {
-    const a = sections[level - 1],
-      b = sections[level];
-    const count =
-      p.threadMode === 'modeled' ? Math.max(1, Math.ceil(((b.z - a.z) / Number(p.pitch)) * 24)) : 1;
-    if (level === 1) samples.push(a);
-    for (let i = 1; i <= count; i++) {
-      const t = i / count;
-      samples.push({
-        z: a.z + (b.z - a.z) * t,
-        bore: a.bore + (b.bore - a.bore) * t,
-        outer: a.outer.map((v, j) => v.clone().lerp(b.outer[j], t)),
-      });
-    }
-  }
   const mesh = new BoundaryMesh();
-  const outer = samples.map((s) => s.outer.map((v) => new Vector3(v.x, v.y, s.z)));
-  const inner = samples.map((s) =>
-    outline(1).map((_, i) => {
-      const angle = (i * TAU) / 96;
-      // The supplied bore envelope encodes the entrance chamfers above the minor diameter.
-      const radius = Math.max(s.bore / 2, internalThreadRadius(p, diameter, s.z, angle));
-      return new Vector3(radius * Math.cos(angle), radius * Math.sin(angle), s.z);
-    }),
+  const outer = sections.map((s) => s.outer.map((v) => new Vector3(v.x, v.y, s.z)));
+  const inner = sections.map((s) =>
+    outline(Math.max(s.bore, diameter) / 2).map((v) => new Vector3(v.x, v.y, s.z)),
   );
-  for (let i = 1; i < samples.length; i++) {
+  for (let i = 1; i < sections.length; i++) {
     mesh.bridge(outer[i - 1], outer[i]);
     mesh.bridge(inner[i - 1], inner[i], true);
   }
   mesh.face(outer[0], [inner[0]], new Vector3(0, 0, -1));
   mesh.face(outer.at(-1)!, [inner.at(-1)!], new Vector3(0, 0, 1));
-  return mesh.build(color);
+  const result = mesh.build(color);
+  showThreads(result, [{origin:[0,0,sections[0].z],axis:[0,0,1],diameter,pitch:Number(p.pitch),length:sections.at(-1)!.z-sections[0].z,internal:true,left:p.handedness==='left'}]);
+  result.name = `Internal M${diameter}×${p.pitch} ${p.handedness === 'left' ? 'LH' : 'RH'}`;
+  return result;
 }
 
-export function internalMinorDiameter(p: Parameters, diameter: number): number {
-  return p.threadMode === 'modeled' ? diameter - 2 * DEPTH * Number(p.pitch) : diameter;
-}
-
-/** Closed bore cutter for Boolean-built hand nuts, using the same sampled thread surface. */
-export function internalThreadCutter(p: Parameters, diameter: number, height: number) {
-  const segments = 64;
-  const count = p.threadMode === 'modeled' ? Math.ceil(((height + 2) / Number(p.pitch)) * 16) : 1;
-  const rings = Array.from({ length: count + 1 }, (_, level) => {
-    const z = -1 + ((height + 2) * level) / count;
-    return Array.from({ length: segments }, (_, i): [number, number, number] => {
-      const angle = (TAU * i) / segments;
-      const radius = internalThreadRadius(p, diameter, z, angle);
-      return [radius * Math.cos(angle), radius * Math.sin(angle), z];
-    });
+export function internalThreadCutter(_p: Parameters, diameter: number, height: number) {
+  return modeling.primitives.cylinder({
+    radius: diameter / 2,
+    height: height + 2,
+    center: [0, 0, height / 2],
+    segments: 64,
   });
-  const points = rings.flat();
-  const faces: number[][] = [];
-  for (let j = 1; j <= count; j++)
-    for (let i = 0; i < segments; i++) {
-      const next = (i + 1) % segments;
-      const a = (j - 1) * segments + i,
-        b = (j - 1) * segments + next;
-      const c = j * segments + i,
-        d = j * segments + next;
-      faces.push([a, b, c], [b, d, c]);
-    }
-  faces.push(Array.from({ length: segments }, (_, i) => segments - 1 - i));
-  faces.push(Array.from({ length: segments }, (_, i) => count * segments + i));
-  return modeling.primitives.polyhedron({ points, faces, orientation: 'outward' });
 }
 
-/** Cut the reference 60-degree profile; this is a basic profile without fit allowances. */
-export function internalThreadPython(
-  p: Parameters,
-  diameter: number,
-  height: number,
-  target = 'shape',
-): string {
-  if (p.threadMode !== 'modeled') return '';
-  const pitch = Number(p.pitch),
-    major = diameter / 2,
-    minor = internalMinorDiameter(p, diameter) / 2;
-  return `# Basic ISO metric internal profile: D1 = D - 5*sqrt(3)*P/8; no fit tolerance.\nnut_pitch = ${num(pitch)}\nnut_major = ${num(major)}\nnut_minor = ${num(minor)}\nnut_overlap = nut_pitch * 0.05\nnut_half_width = nut_pitch * 3/8 + nut_overlap / math.sqrt(3)\nnut_points = [App.Vector(nut_minor-nut_overlap,0,-nut_half_width), App.Vector(nut_major,0,-nut_pitch/16), App.Vector(nut_major,0,nut_pitch/16), App.Vector(nut_minor-nut_overlap,0,nut_half_width)]\nnut_profile = Part.Wire(Part.makePolygon(nut_points + [nut_points[0]]).Edges)\nnut_path = Part.Wire(Part.makeLongHelix(nut_pitch,${num(height + 2 * pitch)},nut_major,0,${p.handedness === 'left' ? 'True' : 'False'}).Edges)\nnut_groove = nut_path.makePipeShell([nut_profile],True,True)\nnut_groove.translate(App.Vector(0,0,-nut_pitch))\n${target} = ${target}.cut(nut_groove)\nif ${target}.isNull() or not ${target}.isValid(): raise ValueError("Internal thread Boolean failed.")`;
+/** Record machining intent without adding helical BRep faces. */
+export function internalThreadPython(p: Parameters, diameter: number, height: number): string {
+  return threadMetadataPython([
+    metricThreadCallout(diameter, Number(p.pitch), height, true, p.handedness),
+  ]);
 }
 
 /** Conform tiny Boolean junctions before Float32 mesh output; the tolerance is 0.2 micrometre. */

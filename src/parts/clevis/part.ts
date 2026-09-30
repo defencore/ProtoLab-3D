@@ -1,3 +1,4 @@
+import { metricThreadCallout, threadMetadata } from '../../core/thread-callouts';
 import { withParameterStates } from '../../core/parameter-states';
 import { Group } from 'three';
 import type { Parameters, PartDefinition, Preset } from '../../core/types';
@@ -53,7 +54,7 @@ function bodyShape(p: Parameters): Shape {
   if (p.variant !== 'male-threaded') {
     const depth = n(p, 'rodDepth');
     cuts.push(
-      p.variant === 'female-threaded' && p.threadMode === 'modeled'
+      p.variant === 'female-threaded'
         ? thread(
             n(p, 'rodDiameter') / 2,
             depth + 0.1,
@@ -71,17 +72,14 @@ function bodyShape(p: Parameters): Shape {
   let body: Shape = subtract(intersect(cylinder(v.R, v.L, [0, 0, 0]), roundTip), ...cuts);
   if (p.variant === 'male-threaded') {
     const h = n(p, 'maleLength');
-    const shank =
-      p.threadMode === 'modeled'
-        ? thread(
-            n(p, 'rodDiameter') / 2,
-            h + 0.1,
-            [0, 0, -h],
-            n(p, 'threadPitch'),
-            p.handedness === 'left' ? -1 : 1,
-            false,
-          )
-        : cylinder(n(p, 'rodDiameter') / 2, h + 0.1, [0, 0, -h]);
+    const shank = thread(
+      n(p, 'rodDiameter') / 2,
+      h + 0.1,
+      [0, 0, -h],
+      n(p, 'threadPitch'),
+      p.handedness === 'left' ? -1 : 1,
+      false,
+    );
     body = union(body, shank);
   }
   return body;
@@ -240,15 +238,10 @@ const part: PartDefinition = {
       if (n(p, 'setScrewCount') > 1 && n(p, 'setScrewSpacing') <= d + 2 * v.c + 0.3)
         errors.push('Set screw holes need separate walls between adjacent positions.');
     }
-    if (isThreaded(p) && p.threadMode === 'modeled') {
-      const pitch = n(p, 'threadPitch'),
-        h = n(p, p.variant === 'male-threaded' ? 'maleLength' : 'rodDepth');
+    if (isThreaded(p)) {
+      const pitch = n(p, 'threadPitch');
       if (rod / 2 - 0.62 * pitch < 0.3)
         errors.push('Thread pitch must leave a positive thread core.');
-      if (h / pitch > 70)
-        errors.push(
-          'Modeled rod threads are limited to 70 turns; increase pitch or choose the smooth envelope.',
-        );
     }
     return errors;
   },
@@ -266,11 +259,12 @@ const part: PartDefinition = {
   python(p, state) {
     const lines = [
       '# Clevis assembly. All removable hardware is exported as independent components.',
-      '# Hardware threads use smooth envelopes. Only the optional rod thread is helical.',
+      '# Hardware threads use smooth envelopes. Rod threads retain nominal size and depth callouts.',
       pythonHelpers,
       'components = []',
       'component_labels = []',
       'component_colors = []',
+      'component_metadata = []',
     ];
     for (const c of assembly(p, state)) {
       lines.push(`item = ${pythonShape(c.shape)}.removeSplitter()`);
@@ -279,6 +273,7 @@ const part: PartDefinition = {
       lines.push(
         'if item.isNull() or not item.isValid() or len(item.Solids) != 1: raise ValueError("A clevis component failed solid validation.")',
         'components.append(item)',
+        `component_metadata.append(${JSON.stringify(c.label === 'Clevis body' && isThreaded(p) ? threadMetadata([metricThreadCallout(n(p, 'rodDiameter'), n(p, 'threadPitch'), n(p, p.variant === 'female-threaded' ? 'rodDepth' : 'maleLength'), p.variant === 'female-threaded', p.handedness)]) : {})})`,
         `component_labels.append(${JSON.stringify(c.label)})`,
         `component_colors.append((${[(c.color >> 16) & 255, (c.color >> 8) & 255, c.color & 255].map((v) => num(v / 255)).join(',')}))`,
       );
@@ -327,7 +322,7 @@ const part: PartDefinition = {
     return p;
   },
   notes:
-    'The 25 × 7 mm pushrod reference verifies its 3 mm fork gap, 2 mm rod bore, M2.5 pin screw and M3 set screws. Fork depth, pin setback, clearances and hardware sizes are editable prototype assumptions. Cable presets verify only the listed cable diameter. Threaded variants are prototype examples, not a named standard. Modeled rod threads use an untoleranced basic 60-degree profile; pin, nut and set-screw threads remain smooth envelopes. The cable terminal is a simplified fixed fork with a set-screw barrel; no swivel, swage qualification or rated load is modeled.',
+    'The 25 × 7 mm pushrod reference verifies its 3 mm fork gap, 2 mm rod bore, M2.5 pin screw and M3 set screws. Fork depth, pin setback, clearances and hardware sizes are editable prototype assumptions. Cable presets verify only the listed cable diameter. Threaded variants are prototype examples, not a named standard. All metal threads use smooth nominal envelopes with drawing callouts for the rod connection. The cable terminal is a simplified fixed fork with a set-screw barrel; no swivel, swage qualification or rated load is modeled.',
   sources: [
     {
       label: 'Supplied pushrod clevis dimensions',

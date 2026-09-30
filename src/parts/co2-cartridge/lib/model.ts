@@ -1,3 +1,5 @@
+import { showThreads } from '../../../core/thread-visual';
+import { threadMetadataPython, type ThreadCallout } from '../../../core/thread-callouts';
 import { BufferGeometry, Float32BufferAttribute, Group, Mesh, Vector3 } from 'three';
 import { material } from '../../../core/geometry';
 import type { Parameters } from '../../../core/types';
@@ -26,16 +28,26 @@ export function dimensions(p: Parameters) {
     recess: 0.12,
   };
 }
-export function threadRadius(p: Parameters, z: number, angle: number) {
-  const v = dimensions(p),
-    depth = ((17 * Math.sqrt(3)) / 48) * v.pitch;
-  const phase = (z - v.start) / v.pitch - angle / (2 * Math.PI);
-  const distance = Math.abs(phase - Math.round(phase)) * v.pitch;
-  return v.neck - Math.max(0, Math.min(depth, (distance - v.pitch / 16) / Math.tan(Math.PI / 6)));
+export function threadCallouts(p: Parameters): ThreadCallout[] {
+  const v = dimensions(p);
+  return v.pitch
+    ? [
+        {
+          designation: `${v.m.connection} RH`,
+          internal: false,
+          nominalDiameter: v.m.neckDiameter,
+          pitch: v.pitch,
+          length: v.end - v.start,
+          origin: [0, 0, v.start],
+          axis: [0, 0, 1],
+          representation: 'nominal-cylinder',
+        },
+      ]
+    : [];
 }
 export function geometry(p: Parameters): Group {
   const v = dimensions(p),
-    rings: { r: number; z: number; thread?: boolean }[] = [];
+    rings: { r: number; z: number }[] = [];
   // Reconstructed hemispherical base and cubic shoulder, with source A/B/C/D fixed.
   rings.push({ r: 0, z: 0 });
   for (let i = 1; i <= 32; i++) {
@@ -47,13 +59,6 @@ export function geometry(p: Parameters): Group {
     const t = i / 32,
       s = t * t * (3 - 2 * t);
     rings.push({ r: v.r + (v.neck - v.r) * s, z: v.shoulder + (v.neckBase - v.shoulder) * t });
-  }
-  if (v.pitch) {
-    rings.push({ r: v.neck, z: v.start });
-    const levels = Math.ceil(((v.end - v.start) / v.pitch) * 48);
-    for (let i = 0; i <= levels; i++)
-      rings.push({ r: v.neck, z: v.start + ((v.end - v.start) * i) / levels, thread: true });
-    rings.push({ r: v.neck, z: v.end });
   }
   rings.push(
     { r: v.neck, z: v.m.length - v.chamfer },
@@ -69,7 +74,7 @@ export function geometry(p: Parameters): Group {
   const ringIndices = rings.map((ring) =>
     Array.from({ length: segments }, (_, i) => {
       const a = (i * 2 * Math.PI) / segments,
-        r = ring.thread ? threadRadius(p, ring.z, a) : ring.r;
+        r = ring.r;
       const xyz = [r * Math.cos(a), r * Math.sin(a), ring.z];
       const key = xyz.map((v) => Math.round(v * 1e8)).join(',');
       const existing = vertices.get(key);
@@ -103,7 +108,17 @@ export function geometry(p: Parameters): Group {
   g.setIndex(indices);
   g.computeVertexNormals();
   const mesh = new Mesh(g, material(0xb9c2c9));
-  mesh.name = v.m.name;
+  mesh.name = v.m.name + (v.pitch ? ` · ${v.m.connection} RH · nominal envelope` : '');
+  if (v.pitch)
+    showThreads(mesh, [
+      {
+        origin: [0, 0, v.start],
+        axis: [0, 0, 1],
+        diameter: v.m.neckDiameter,
+        pitch: v.pitch,
+        length: v.end - v.start,
+      },
+    ]);
   return new Group().add(mesh);
 }
 export function python(p: Parameters): string {
@@ -135,24 +150,7 @@ export function python(p: Parameters): string {
       ),
     'shape = Part.Face(Part.Wire(edges)).revolve(App.Vector(0,0,0),App.Vector(0,0,1),360)',
   ];
-  if (v.pitch) {
-    const root = v.neck - ((17 * Math.sqrt(3)) / 48) * v.pitch;
-    const halfRoot = v.pitch / 12,
-      overlap = 0.08 * v.pitch,
-      halfOuter = (7 * v.pitch) / 16 + overlap * Math.tan(Math.PI / 6);
-    lines.push(
-      `# Nominal ${v.m.connection}; coverage and terminal collars are reconstructed.`,
-      `profile_points=[${point(root, -halfRoot)},${point(v.neck + overlap, -halfOuter)},${point(v.neck + overlap, halfOuter)},${point(root, halfRoot)}]`,
-      'profile=Part.Wire(Part.makePolygon(profile_points+[profile_points[0]]).Edges)',
-      `path=Part.Wire(Part.makeLongHelix(${n(v.pitch)},${n(v.end - v.start + 2 * v.pitch)},${n(root)},0,False).Edges)`,
-      'groove=path.makePipeShell([profile],True,True)',
-      'if groove.Volume < 0: groove.reverse()',
-      `groove.translate(App.Vector(0,0,${n(v.start - v.pitch / 2)}))`,
-      `band=Part.makeCylinder(${n(v.neck + overlap * 2)},${n(v.end - v.start)},App.Vector(0,0,${n(v.start)}))`,
-      'shape=shape.cut(groove.common(band))',
-      '# Preserve sweep patches: refinement can harm subsequent CAD Booleans.',
-    );
-  }
+  lines.push(threadMetadataPython(threadCallouts(p)));
   lines.push(
     'if shape.isNull() or not shape.isValid() or not shape.isClosed() or len(shape.Solids)!=1:',
     '    raise ValueError("CO2 cartridge must be one valid closed external solid.")',

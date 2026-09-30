@@ -27,5 +27,6 @@ export function recoverySolidMesh(solid: Geom3) {
     // Merge numerical CSG slivers at 1e-5 mm before edge counting; otherwise a
     // countersink can emit triangles with coincident endpoints after Float32 storage.
     vertexTolerance: 1e-5,
+    edgeTolerance: 1e-5,
   });
 }

@@ -1,3 +1,6 @@
+import { Vector3 } from 'three';
+import { showThreads } from '../../../core/thread-visual';
+import { threadFeatures } from './manufacturing';
 import modeling from '@jscad/modeling';
 import { fusedLayersMesh, type FusedLayers } from './fused-layers';
 import { barrelMesh, barrelShape, plugMesh, plugShape } from './barrel';
@@ -191,7 +194,7 @@ export function component(shape: Shape, label: string, color: number, cloneGeome
     }
     // Threaded fasteners and machined plates otherwise repeat each triangle's
     // vertices. Index identical attributes before caching/cloning the assembly.
-    // This preserves sharp normals and full thread detail while reducing memory.
+    // This preserves sharp normals and printed thread detail while reducing memory.
     template.traverse((object) => {
       if (!(object instanceof Mesh) || object.geometry.index) return;
       const previous = object.geometry;
@@ -212,12 +215,31 @@ export function component(shape: Shape, label: string, color: number, cloneGeome
   }
   const result = template.clone(true);
   result.name = label;
+  result.updateMatrixWorld(true);
+  const visibleThreads = threadFeatures(shape).filter(
+    (t) => t.representation === 'nominal-cylinder',
+  );
   result.traverse((o) => {
     if (o instanceof Mesh) {
       if (cloneGeometry) o.geometry = o.geometry.clone();
       o.material = (o.material as MeshStandardMaterial).clone();
       if (shape.kind !== 'hat') (o.material as MeshStandardMaterial).color.setHex(color);
       o.name = label;
+      if (visibleThreads.length) {
+        const inverse = o.matrixWorld.clone().invert();
+        showThreads(
+          o,
+          visibleThreads.map((t) => ({
+            origin: new Vector3(...(t.origin as Vec)).applyMatrix4(inverse).toArray() as Vec,
+            axis: new Vector3(...(t.axis as Vec)).transformDirection(inverse).toArray() as Vec,
+            diameter: t.nominalDiameter,
+            pitch: t.pitch,
+            length: t.length,
+            internal: t.internal,
+            left: t.designation.includes('LH'),
+          })),
+        );
+      }
     }
   });
   const group = new Group().add(result);
@@ -259,7 +281,9 @@ export function pythonShape(s: Shape): string {
     case 'fastener':
       return `_release_fastener(${JSON.stringify(fastenerPython(s.parameters))},${fastenerValues(s.parameters).total / 2})`;
     case 'thread':
-      return `_release_thread(${s.diameter},${s.pitch},${s.length},${s.clearance},${s.internal ? 'True' : 'False'})`;
+      return s.process === 'printed'
+        ? `_printed_thread(${s.diameter},${s.pitch},${s.length},${s.clearance},${s.internal ? 'True' : 'False'})`
+        : `Part.makeCylinder(${s.diameter / 2},${s.length})`;
     case 'rotate':
       return `_release_rotate(${pythonShape(s.child)},${s.angle},${JSON.stringify(s.axis)})`;
     case 'spring':

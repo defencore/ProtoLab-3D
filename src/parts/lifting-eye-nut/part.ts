@@ -10,7 +10,7 @@ import {
   internalThreadErrors,
   internalThreadCutter,
   internalThreadPython,
-  internalMinorDiameter,
+  nominalThreadDiameter,
   nutCoarsePitch,
 } from './lib/core/internal-thread';
 import { booleans, primitives, transforms, solidUnionMesh } from '../../core/solid-union';
@@ -133,10 +133,10 @@ const part: PartDefinition = {
   python: (p) => {
     const v = values(p),
       r = Number(p.collarDiameter) / 2;
-    return `# Joined ring and bored female-thread base; local forging transitions are representative.\nshape=Part.makeCone(${num(r)},${num(r * 0.9)},${num(Number(p.collarHeight))})\nsection=Part.Ellipse(App.Vector(0,0,0),${num(Math.max(v.tube, Number(p.eyeThickness) / 2))},${num(Math.min(v.tube, Number(p.eyeThickness) / 2))}).toShape()\n${Number(p.eyeThickness) / 2 > v.tube ? 'section.rotate(App.Vector(0,0,0),App.Vector(0,0,1),90)\n' : ''}section.translate(App.Vector(${num(v.radius)},0,0))\neye = Part.Face(Part.Wire([section])).revolve(App.Vector(0,0,0),App.Vector(0,1,0),360)\neye.translate(App.Vector(0,0,${num(v.center)}))\nshape=shape.fuse(eye)\nshape=shape.common(Part.makeBox(${num(Math.max(v.outer, 2 * r) + 2)},${num(Math.max(2 * r, Number(p.eyeThickness)) + 2)},${num(v.height)},App.Vector(-${num(Math.max(v.outer, 2 * r) / 2 + 1)},-${num(Math.max(2 * r, Number(p.eyeThickness)) / 2 + 1)},0)))\nshape=shape.cut(Part.makeCylinder(${num(internalMinorDiameter(p, Number(p.diameter)) / 2)},${num(v.boreDepth + 1)},App.Vector(0,0,-1)))\n${internalThreadPython(p, Number(p.diameter), v.boreDepth)}\nif len(shape.Solids) != 1: raise ValueError("The eye and bored nut base must form one solid.")\nshape.translate(App.Vector(0,0,-${num(v.height / 2)}))`;
+    return `# Joined ring and bored female-thread base; local forging transitions are representative.\nshape=Part.makeCone(${num(r)},${num(r * 0.9)},${num(Number(p.collarHeight))})\nsection=Part.Ellipse(App.Vector(0,0,0),${num(Math.max(v.tube, Number(p.eyeThickness) / 2))},${num(Math.min(v.tube, Number(p.eyeThickness) / 2))}).toShape()\n${Number(p.eyeThickness) / 2 > v.tube ? 'section.rotate(App.Vector(0,0,0),App.Vector(0,0,1),90)\n' : ''}section.translate(App.Vector(${num(v.radius)},0,0))\neye = Part.Face(Part.Wire([section])).revolve(App.Vector(0,0,0),App.Vector(0,1,0),360)\neye.translate(App.Vector(0,0,${num(v.center)}))\nshape=shape.fuse(eye)\nshape=shape.common(Part.makeBox(${num(Math.max(v.outer, 2 * r) + 2)},${num(Math.max(2 * r, Number(p.eyeThickness)) + 2)},${num(v.height)},App.Vector(-${num(Math.max(v.outer, 2 * r) / 2 + 1)},-${num(Math.max(2 * r, Number(p.eyeThickness)) / 2 + 1)},0)))\nshape=shape.cut(Part.makeCylinder(${num(nominalThreadDiameter(p, Number(p.diameter)) / 2)},${num(v.boreDepth + 1)},App.Vector(0,0,-1)))\n${internalThreadPython(p, Number(p.diameter), v.boreDepth)}\nif len(shape.Solids) != 1: raise ValueError("The eye and bored nut base must form one solid.")\nshape.translate(App.Vector(0,0,-${num(v.height / 2)}))`;
   },
   notes:
-    'Supplier nominal d2/d3/d4/e/h/k dimensions define the envelope. M6 is explicitly marked non-standard in the source drawing. The ring section, tapered nut base and forged transitions are simplified. A modeled basic metric internal thread opens through the nut base into the eye. Fit tolerances and forging details are not specified by this model. This geometry does not establish a lifting capacity.',
+    'Supplier nominal d2/d3/d4/e/h/k dimensions define the envelope. M6 is explicitly marked non-standard in the source drawing. The ring section, tapered nut base and forged transitions are simplified. A smooth nominal-diameter thread bore opens through the nut base into the eye. Fit tolerances and forging details are not specified by this model. This geometry does not establish a lifting capacity.',
   sources: [{ label: 'Gvyntok DIN 582 drawing and nominal dimensions', url: handNutDrawings.eye }],
 };
 export default { ...part, presets: modulePresets };

@@ -56,6 +56,7 @@ def _protolab_create():
         component_labels = None
         component_colors = None
         component_metadata = None
+        component_groups = None
 ${body}
         if shape.isNull() or not shape.isValid():
             raise ValueError("The generated CAD shape is invalid.")
@@ -81,26 +82,43 @@ ${body}
             raise ValueError("Component colors do not match the generated assembly.")
         if component_metadata is not None and len(component_metadata) != len(component_shapes):
             raise ValueError("Component manufacturing metadata does not match the assembly.")
+        if component_groups is not None:
+            if len(component_groups) != len(component_shapes):
+                raise ValueError("Component groups do not match the generated assembly.")
+            if any(not isinstance(path, (list, tuple)) or any(not isinstance(label, str) or not label.strip() for label in path) for path in component_groups):
+                raise ValueError("Each component group must be a path of non-empty labels.")
         display_objects = []
         if len(component_shapes) > 1:
             obj = doc.addObject("App::Part", ${JSON.stringify(featureName)})
             created_objects.append(obj.Name)
+            assembly_groups = {}
             for index, component_shape in enumerate(component_shapes):
                 if component_shape.isNull() or not component_shape.isValid() or not component_shape.Solids or component_shape.Volume <= 0:
                     raise ValueError("An assembly component has no valid solid volume.")
+                parent = obj
+                group_path = component_groups[index] if component_groups is not None else []
+                for depth, label in enumerate(group_path):
+                    path = tuple(group_path[:depth + 1])
+                    if path not in assembly_groups:
+                        group = doc.addObject("App::Part", ${JSON.stringify(featureName + '_Group')} + str(len(assembly_groups) + 1))
+                        created_objects.append(group.Name)
+                        group.Label = label
+                        group.addProperty("App::PropertyStringList", "AssemblyGroup", "ProtoLab")
+                        group.AssemblyGroup = list(path)
+                        parent.addObject(group)
+                        assembly_groups[path] = group
+                    parent = assembly_groups[path]
                 child = doc.addObject("Part::Feature", ${JSON.stringify(featureName + '_Component')} + str(index + 1))
                 created_objects.append(child.Name)
                 child.Label = component_labels[index] if component_labels is not None else "Component %02d" % (index + 1)
                 child.Shape = component_shape
                 child.addProperty("App::PropertyInteger", "ComponentIndex", "ProtoLab")
                 child.ComponentIndex = index + 1
-                if component_metadata is not None:
-                    for key, value in component_metadata[index].items():
-                        child.addProperty("App::PropertyString", key, "Manufacturing")
-                        setattr(child, key, str(value))
                 child.addProperty("App::PropertyPlacement", "AssemblyPlacement", "ProtoLab")
                 child.AssemblyPlacement = child.Placement
-                obj.addObject(child)
+                child.addProperty("App::PropertyStringList", "AssemblyGroup", "ProtoLab")
+                child.AssemblyGroup = list(group_path)
+                parent.addObject(child)
                 display_objects.append(child)
         else:
             obj = doc.addObject("Part::Feature", ${JSON.stringify(featureName)})
@@ -108,6 +126,19 @@ ${body}
             obj.Shape = shape
             display_objects.append(obj)
         obj.Label = ${JSON.stringify(part.name)}
+        # Apply the same manufacturing annotations to standalone parts and assemblies.
+        # A thread name belongs to its physical part, never to a floating cutter solid.
+        if component_metadata is not None:
+            for index, display_object in enumerate(display_objects):
+                metadata = component_metadata[index]
+                for key, value in metadata.items():
+                    property_name = key
+                    while hasattr(display_object, property_name):
+                        property_name = "Manufacturing" + property_name
+                    display_object.addProperty("App::PropertyString", property_name, "Manufacturing")
+                    setattr(display_object, property_name, str(value))
+                if metadata.get("ThreadLabels"):
+                    display_object.Label += " · threads: " + metadata["ThreadLabels"]
         obj.addProperty("App::PropertyString", "Generator", "ProtoLab")
         obj.Generator = "ProtoLab 3D"
         obj.addProperty("App::PropertyString", "PartId", "ProtoLab")

@@ -24,6 +24,16 @@ export function servoPieces(p: Parameters): Piece[] {
     label: `ST3215 · ${native.components[index].label} · supplier CAD`,
     color: Number.parseInt(native.components[index].color.slice(1), 16),
     shape: transform({ kind: 'native', index }, index === 5 ? angle : 0, [0, 0, m.servoZ]),
+    ...(index === 5
+      ? {
+          metadata: {
+            ThreadLabels: 'internal OEM retaining thread (verify diameter/pitch)',
+            ThreadCallouts:
+              'OEM retaining thread; D3.2 x8.4 smooth CAD bore. Source CAD is nonstandard; measure the supplied screw before specifying a thread.',
+            ThreadModel: 'Smooth nominal cavity; output spline and gears retained.',
+          },
+        }
+      : {}),
   }));
   servoMounts.forEach(([x, y], i) =>
     out.push({
@@ -51,6 +61,12 @@ export function servoPieces(p: Parameters): Piece[] {
     label: 'BUY ST3215 output retaining screw · CAD-fit reference · assumed head Ø5×1',
     shape: transform({ kind: 'native', index: 8 }, angle, [0, 0, m.servoZ]),
     color: steel,
+    metadata: {
+      ThreadLabels: 'external OEM retaining thread (verify diameter/pitch)',
+      ThreadCallouts:
+        'D2.88 x3.2 smooth CAD shaft; OEM retaining thread is unverified. Measure the supplied screw; no ISO designation is inferred.',
+      ThreadModel: 'Smooth cylindrical thread envelope without helical faces.',
+    },
   });
   return out;
 }

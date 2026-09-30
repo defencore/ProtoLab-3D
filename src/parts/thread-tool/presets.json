@@ -4,6 +4,7 @@
     "name": "M1 × 0.25",
     "description": "1 mm major diameter · 0.25 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 1,
       "pitchUnit": "mm",
@@ -15,13 +16,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 0.3,
+      "capSize": 1.6,
+      "capThickness": 0.5
     },
     "catalog": {
       "designation": "M1 × 0.25",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -35,6 +46,7 @@
     "name": "M1.2 × 0.25",
     "description": "1.2 mm major diameter · 0.25 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 1.2,
       "pitchUnit": "mm",
@@ -46,13 +58,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 0.36,
+      "capSize": 1.92,
+      "capThickness": 0.5
     },
     "catalog": {
       "designation": "M1.2 × 0.25",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -66,6 +88,7 @@
     "name": "M1.4 × 0.3",
     "description": "1.4 mm major diameter · 0.3 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 1.4,
       "pitchUnit": "mm",
@@ -77,13 +100,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 0.42,
+      "capSize": 2.24,
+      "capThickness": 0.6
     },
     "catalog": {
       "designation": "M1.4 × 0.3",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -97,6 +130,7 @@
     "name": "M1.6 × 0.35",
     "description": "1.6 mm major diameter · 0.35 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 1.6,
       "pitchUnit": "mm",
@@ -108,13 +142,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 0.48,
+      "capSize": 2.56,
+      "capThickness": 0.7
     },
     "catalog": {
       "designation": "M1.6 × 0.35",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -128,6 +172,7 @@
     "name": "M1.8 × 0.35",
     "description": "1.8 mm major diameter · 0.35 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 1.8,
       "pitchUnit": "mm",
@@ -139,13 +184,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 0.54,
+      "capSize": 2.88,
+      "capThickness": 0.7
     },
     "catalog": {
       "designation": "M1.8 × 0.35",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -159,6 +214,7 @@
     "name": "M2 × 0.4",
     "description": "2 mm major diameter · 0.4 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 2,
       "pitchUnit": "mm",
@@ -170,13 +226,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 0.6,
+      "capSize": 3.2,
+      "capThickness": 0.8
     },
     "catalog": {
       "designation": "M2 × 0.4",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -190,6 +256,7 @@
     "name": "M2.5 × 0.45",
     "description": "2.5 mm major diameter · 0.45 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 2.5,
       "pitchUnit": "mm",
@@ -201,13 +268,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 0.75,
+      "capSize": 4.0,
+      "capThickness": 0.9
     },
     "catalog": {
       "designation": "M2.5 × 0.45",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -221,6 +298,7 @@
     "name": "M3 × 0.5",
     "description": "3 mm major diameter · 0.5 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 3,
       "pitchUnit": "mm",
@@ -232,13 +310,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 0.9,
+      "capSize": 4.8,
+      "capThickness": 1.0
     },
     "catalog": {
       "designation": "M3 × 0.5",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -252,6 +340,7 @@
     "name": "M3.5 × 0.6",
     "description": "3.5 mm major diameter · 0.6 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 3.5,
       "pitchUnit": "mm",
@@ -263,13 +352,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 1.05,
+      "capSize": 5.6,
+      "capThickness": 1.2
     },
     "catalog": {
       "designation": "M3.5 × 0.6",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -283,6 +382,7 @@
     "name": "M4 × 0.7",
     "description": "4 mm major diameter · 0.7 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 4,
       "pitchUnit": "mm",
@@ -294,13 +394,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 1.2,
+      "capSize": 6.4,
+      "capThickness": 1.4
     },
     "catalog": {
       "designation": "M4 × 0.7",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -314,6 +424,7 @@
     "name": "M5 × 0.8",
     "description": "5 mm major diameter · 0.8 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 5,
       "pitchUnit": "mm",
@@ -325,13 +436,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 1.5,
+      "capSize": 8.0,
+      "capThickness": 1.6
     },
     "catalog": {
       "designation": "M5 × 0.8",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -345,6 +466,7 @@
     "name": "M6 × 1",
     "description": "6 mm major diameter · 1 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 6,
       "pitchUnit": "mm",
@@ -356,13 +478,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 1.8,
+      "capSize": 9.6,
+      "capThickness": 2
     },
     "catalog": {
       "designation": "M6 × 1",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -376,6 +508,7 @@
     "name": "M8 × 1.25",
     "description": "8 mm major diameter · 1.25 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 8,
       "pitchUnit": "mm",
@@ -387,13 +520,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 2.4,
+      "capSize": 12.8,
+      "capThickness": 2.5
     },
     "catalog": {
       "designation": "M8 × 1.25",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -407,6 +550,7 @@
     "name": "M10 × 1.5",
     "description": "10 mm major diameter · 1.5 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 10,
       "pitchUnit": "mm",
@@ -418,13 +562,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 3.0,
+      "capSize": 16.0,
+      "capThickness": 3.0
     },
     "catalog": {
       "designation": "M10 × 1.5",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -438,6 +592,7 @@
     "name": "M12 × 1.75",
     "description": "12 mm major diameter · 1.75 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 12,
       "pitchUnit": "mm",
@@ -449,13 +604,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 3.6,
+      "capSize": 19.2,
+      "capThickness": 3.5
     },
     "catalog": {
       "designation": "M12 × 1.75",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -469,6 +634,7 @@
     "name": "M14 × 2",
     "description": "14 mm major diameter · 2 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 14,
       "pitchUnit": "mm",
@@ -480,13 +646,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 4.2,
+      "capSize": 22.4,
+      "capThickness": 4
     },
     "catalog": {
       "designation": "M14 × 2",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -500,6 +676,7 @@
     "name": "M16 × 2",
     "description": "16 mm major diameter · 2 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 16,
       "pitchUnit": "mm",
@@ -511,13 +688,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 4.8,
+      "capSize": 25.6,
+      "capThickness": 4
     },
     "catalog": {
       "designation": "M16 × 2",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -531,6 +718,7 @@
     "name": "M18 × 2.5",
     "description": "18 mm major diameter · 2.5 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 18,
       "pitchUnit": "mm",
@@ -542,13 +730,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 5.4,
+      "capSize": 28.8,
+      "capThickness": 5.0
     },
     "catalog": {
       "designation": "M18 × 2.5",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -562,6 +760,7 @@
     "name": "M20 × 2.5",
     "description": "20 mm major diameter · 2.5 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 20,
       "pitchUnit": "mm",
@@ -573,13 +772,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 6.0,
+      "capSize": 32.0,
+      "capThickness": 5.0
     },
     "catalog": {
       "designation": "M20 × 2.5",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -593,6 +802,7 @@
     "name": "M22 × 2.5",
     "description": "22 mm major diameter · 2.5 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 22,
       "pitchUnit": "mm",
@@ -604,13 +814,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 6.6,
+      "capSize": 35.2,
+      "capThickness": 5.0
     },
     "catalog": {
       "designation": "M22 × 2.5",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -624,6 +844,7 @@
     "name": "M24 × 3",
     "description": "24 mm major diameter · 3 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 24,
       "pitchUnit": "mm",
@@ -635,13 +856,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 7.2,
+      "capSize": 38.4,
+      "capThickness": 6
     },
     "catalog": {
       "designation": "M24 × 3",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -655,6 +886,7 @@
     "name": "M27 × 3",
     "description": "27 mm major diameter · 3 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 27,
       "pitchUnit": "mm",
@@ -666,13 +898,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 8.1,
+      "capSize": 43.2,
+      "capThickness": 6
     },
     "catalog": {
       "designation": "M27 × 3",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -686,6 +928,7 @@
     "name": "M30 × 3.5",
     "description": "30 mm major diameter · 3.5 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 30,
       "pitchUnit": "mm",
@@ -697,13 +940,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 9.0,
+      "capSize": 48.0,
+      "capThickness": 7.0
     },
     "catalog": {
       "designation": "M30 × 3.5",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -717,6 +970,7 @@
     "name": "M36 × 4",
     "description": "36 mm major diameter · 4 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 36,
       "pitchUnit": "mm",
@@ -728,13 +982,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 10.8,
+      "capSize": 57.6,
+      "capThickness": 8
     },
     "catalog": {
       "designation": "M36 × 4",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -748,6 +1012,7 @@
     "name": "M42 × 4.5",
     "description": "42 mm major diameter · 4.5 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 42,
       "pitchUnit": "mm",
@@ -759,13 +1024,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 12.6,
+      "capSize": 67.2,
+      "capThickness": 9.0
     },
     "catalog": {
       "designation": "M42 × 4.5",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -779,6 +1054,7 @@
     "name": "M48 × 5",
     "description": "48 mm major diameter · 5 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 48,
       "pitchUnit": "mm",
@@ -790,13 +1066,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 14.4,
+      "capSize": 76.8,
+      "capThickness": 10
     },
     "catalog": {
       "designation": "M48 × 5",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -810,6 +1096,7 @@
     "name": "M60 × 5.5",
     "description": "60 mm major diameter · 5.5 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 60,
       "pitchUnit": "mm",
@@ -821,13 +1108,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 18.0,
+      "capSize": 96.0,
+      "capThickness": 11.0
     },
     "catalog": {
       "designation": "M60 × 5.5",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -841,6 +1138,7 @@
     "name": "M68 × 6",
     "description": "68 mm major diameter · 6 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 68,
       "pitchUnit": "mm",
@@ -852,13 +1150,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 20.4,
+      "capSize": 108.8,
+      "capThickness": 12
     },
     "catalog": {
       "designation": "M68 × 6",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -872,6 +1180,7 @@
     "name": "M2 × 0.25 · fine",
     "description": "2 mm major diameter · 0.25 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 2,
       "pitchUnit": "mm",
@@ -883,13 +1192,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 0.6,
+      "capSize": 3.2,
+      "capThickness": 0.5
     },
     "catalog": {
       "designation": "M2 × 0.25 · fine",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -903,6 +1222,7 @@
     "name": "M3 × 0.35 · fine",
     "description": "3 mm major diameter · 0.35 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 3,
       "pitchUnit": "mm",
@@ -914,13 +1234,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 0.9,
+      "capSize": 4.8,
+      "capThickness": 0.7
     },
     "catalog": {
       "designation": "M3 × 0.35 · fine",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -934,6 +1264,7 @@
     "name": "M4 × 0.5 · fine",
     "description": "4 mm major diameter · 0.5 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 4,
       "pitchUnit": "mm",
@@ -945,13 +1276,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 1.2,
+      "capSize": 6.4,
+      "capThickness": 1.0
     },
     "catalog": {
       "designation": "M4 × 0.5 · fine",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -965,6 +1306,7 @@
     "name": "M5 × 0.5 · fine",
     "description": "5 mm major diameter · 0.5 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 5,
       "pitchUnit": "mm",
@@ -976,13 +1318,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 1.5,
+      "capSize": 8.0,
+      "capThickness": 1.0
     },
     "catalog": {
       "designation": "M5 × 0.5 · fine",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -996,6 +1348,7 @@
     "name": "M6 × 0.5 · fine",
     "description": "6 mm major diameter · 0.5 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 6,
       "pitchUnit": "mm",
@@ -1007,13 +1360,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 1.8,
+      "capSize": 9.6,
+      "capThickness": 1.0
     },
     "catalog": {
       "designation": "M6 × 0.5 · fine",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1027,6 +1390,7 @@
     "name": "M6 × 0.75 · fine",
     "description": "6 mm major diameter · 0.75 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 6,
       "pitchUnit": "mm",
@@ -1038,13 +1402,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 1.8,
+      "capSize": 9.6,
+      "capThickness": 1.5
     },
     "catalog": {
       "designation": "M6 × 0.75 · fine",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1058,6 +1432,7 @@
     "name": "M8 × 1 · fine",
     "description": "8 mm major diameter · 1 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 8,
       "pitchUnit": "mm",
@@ -1069,13 +1444,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 2.4,
+      "capSize": 12.8,
+      "capThickness": 2
     },
     "catalog": {
       "designation": "M8 × 1 · fine",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1089,6 +1474,7 @@
     "name": "M10 × 1 · fine",
     "description": "10 mm major diameter · 1 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 10,
       "pitchUnit": "mm",
@@ -1100,13 +1486,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 3.0,
+      "capSize": 16.0,
+      "capThickness": 2
     },
     "catalog": {
       "designation": "M10 × 1 · fine",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1120,6 +1516,7 @@
     "name": "M10 × 1.25 · fine",
     "description": "10 mm major diameter · 1.25 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 10,
       "pitchUnit": "mm",
@@ -1131,13 +1528,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 3.0,
+      "capSize": 16.0,
+      "capThickness": 2.5
     },
     "catalog": {
       "designation": "M10 × 1.25 · fine",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1151,6 +1558,7 @@
     "name": "M12 × 1 · fine",
     "description": "12 mm major diameter · 1 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 12,
       "pitchUnit": "mm",
@@ -1162,13 +1570,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 3.6,
+      "capSize": 19.2,
+      "capThickness": 2
     },
     "catalog": {
       "designation": "M12 × 1 · fine",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1182,6 +1600,7 @@
     "name": "M12 × 1.5 · fine",
     "description": "12 mm major diameter · 1.5 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 12,
       "pitchUnit": "mm",
@@ -1193,13 +1612,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 3.6,
+      "capSize": 19.2,
+      "capThickness": 3.0
     },
     "catalog": {
       "designation": "M12 × 1.5 · fine",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1213,6 +1642,7 @@
     "name": "M16 × 1.5 · fine",
     "description": "16 mm major diameter · 1.5 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 16,
       "pitchUnit": "mm",
@@ -1224,13 +1654,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 4.8,
+      "capSize": 25.6,
+      "capThickness": 3.0
     },
     "catalog": {
       "designation": "M16 × 1.5 · fine",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1244,6 +1684,7 @@
     "name": "M20 × 1.5 · fine",
     "description": "20 mm major diameter · 1.5 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 20,
       "pitchUnit": "mm",
@@ -1255,13 +1696,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 6.0,
+      "capSize": 32.0,
+      "capThickness": 3.0
     },
     "catalog": {
       "designation": "M20 × 1.5 · fine",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1275,6 +1726,7 @@
     "name": "M24 × 2 · fine",
     "description": "24 mm major diameter · 2 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "metric",
       "diameter": 24,
       "pitchUnit": "mm",
@@ -1286,13 +1738,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 7.2,
+      "capSize": 38.4,
+      "capThickness": 4
     },
     "catalog": {
       "designation": "M24 × 2 · fine",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-metric-fine-thread",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1306,6 +1768,7 @@
     "name": "#2-56 UNC",
     "description": "2.1844 mm major diameter · 56 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unc",
       "diameter": 2.1844,
       "pitchUnit": "tpi",
@@ -1317,13 +1780,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 0.6553,
+      "capSize": 3.495,
+      "capThickness": 0.9071
     },
     "catalog": {
       "designation": "#2-56 UNC",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1337,6 +1810,7 @@
     "name": "#4-40 UNC",
     "description": "2.8448 mm major diameter · 40 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unc",
       "diameter": 2.8448,
       "pitchUnit": "tpi",
@@ -1348,13 +1822,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 0.8534,
+      "capSize": 4.5517,
+      "capThickness": 1.27
     },
     "catalog": {
       "designation": "#4-40 UNC",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1368,6 +1852,7 @@
     "name": "#6-32 UNC",
     "description": "3.5052 mm major diameter · 32 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unc",
       "diameter": 3.5052,
       "pitchUnit": "tpi",
@@ -1379,13 +1864,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 1.0516,
+      "capSize": 5.6083,
+      "capThickness": 1.5875
     },
     "catalog": {
       "designation": "#6-32 UNC",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1399,6 +1894,7 @@
     "name": "#8-32 UNC",
     "description": "4.1656 mm major diameter · 32 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unc",
       "diameter": 4.1656,
       "pitchUnit": "tpi",
@@ -1410,13 +1906,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 1.2497,
+      "capSize": 6.665,
+      "capThickness": 1.5875
     },
     "catalog": {
       "designation": "#8-32 UNC",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1430,6 +1936,7 @@
     "name": "#10-24 UNC",
     "description": "4.826 mm major diameter · 24 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unc",
       "diameter": 4.826,
       "pitchUnit": "tpi",
@@ -1441,13 +1948,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 1.4478,
+      "capSize": 7.7216,
+      "capThickness": 2.1167
     },
     "catalog": {
       "designation": "#10-24 UNC",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1461,6 +1978,7 @@
     "name": "1/4″-20 UNC",
     "description": "6.35 mm major diameter · 20 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unc",
       "diameter": 6.35,
       "pitchUnit": "tpi",
@@ -1472,13 +1990,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 1.905,
+      "capSize": 10.16,
+      "capThickness": 2.54
     },
     "catalog": {
       "designation": "1/4″-20 UNC",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1492,6 +2020,7 @@
     "name": "5/16″-18 UNC",
     "description": "7.9375 mm major diameter · 18 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unc",
       "diameter": 7.9375,
       "pitchUnit": "tpi",
@@ -1503,13 +2032,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 2.3813,
+      "capSize": 12.7,
+      "capThickness": 2.8222
     },
     "catalog": {
       "designation": "5/16″-18 UNC",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1523,6 +2062,7 @@
     "name": "3/8″-16 UNC",
     "description": "9.525 mm major diameter · 16 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unc",
       "diameter": 9.525,
       "pitchUnit": "tpi",
@@ -1534,13 +2074,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 2.8575,
+      "capSize": 15.24,
+      "capThickness": 3.175
     },
     "catalog": {
       "designation": "3/8″-16 UNC",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1554,6 +2104,7 @@
     "name": "1/2″-13 UNC",
     "description": "12.7 mm major diameter · 13 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unc",
       "diameter": 12.7,
       "pitchUnit": "tpi",
@@ -1565,13 +2116,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 3.81,
+      "capSize": 20.32,
+      "capThickness": 3.9077
     },
     "catalog": {
       "designation": "1/2″-13 UNC",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1585,6 +2146,7 @@
     "name": "5/8″-11 UNC",
     "description": "15.875 mm major diameter · 11 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unc",
       "diameter": 15.875,
       "pitchUnit": "tpi",
@@ -1596,13 +2158,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 4.7625,
+      "capSize": 25.4,
+      "capThickness": 4.6182
     },
     "catalog": {
       "designation": "5/8″-11 UNC",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1616,6 +2188,7 @@
     "name": "3/4″-10 UNC",
     "description": "19.05 mm major diameter · 10 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unc",
       "diameter": 19.05,
       "pitchUnit": "tpi",
@@ -1627,13 +2200,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 5.715,
+      "capSize": 30.48,
+      "capThickness": 5.08
     },
     "catalog": {
       "designation": "3/4″-10 UNC",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1647,6 +2230,7 @@
     "name": "1″-8 UNC",
     "description": "25.4 mm major diameter · 8 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unc",
       "diameter": 25.4,
       "pitchUnit": "tpi",
@@ -1658,13 +2242,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 7.62,
+      "capSize": 40.64,
+      "capThickness": 6.35
     },
     "catalog": {
       "designation": "1″-8 UNC",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/thread-type-unc",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1678,6 +2272,7 @@
     "name": "#0-80 UNF",
     "description": "1.524 mm major diameter · 80 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unf",
       "diameter": 1.524,
       "pitchUnit": "tpi",
@@ -1689,13 +2284,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 0.4572,
+      "capSize": 2.4384,
+      "capThickness": 0.635
     },
     "catalog": {
       "designation": "#0-80 UNF",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1709,6 +2314,7 @@
     "name": "#2-64 UNF",
     "description": "2.1844 mm major diameter · 64 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unf",
       "diameter": 2.1844,
       "pitchUnit": "tpi",
@@ -1720,13 +2326,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 0.6553,
+      "capSize": 3.495,
+      "capThickness": 0.7937
     },
     "catalog": {
       "designation": "#2-64 UNF",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1740,6 +2356,7 @@
     "name": "#4-48 UNF",
     "description": "2.8448 mm major diameter · 48 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unf",
       "diameter": 2.8448,
       "pitchUnit": "tpi",
@@ -1751,13 +2368,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 0.8534,
+      "capSize": 4.5517,
+      "capThickness": 1.0583
     },
     "catalog": {
       "designation": "#4-48 UNF",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1771,6 +2398,7 @@
     "name": "#6-40 UNF",
     "description": "3.5052 mm major diameter · 40 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unf",
       "diameter": 3.5052,
       "pitchUnit": "tpi",
@@ -1782,13 +2410,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 1.0516,
+      "capSize": 5.6083,
+      "capThickness": 1.27
     },
     "catalog": {
       "designation": "#6-40 UNF",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1802,6 +2440,7 @@
     "name": "#8-36 UNF",
     "description": "4.1656 mm major diameter · 36 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unf",
       "diameter": 4.1656,
       "pitchUnit": "tpi",
@@ -1813,13 +2452,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 1.2497,
+      "capSize": 6.665,
+      "capThickness": 1.4111
     },
     "catalog": {
       "designation": "#8-36 UNF",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1833,6 +2482,7 @@
     "name": "#10-32 UNF",
     "description": "4.826 mm major diameter · 32 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unf",
       "diameter": 4.826,
       "pitchUnit": "tpi",
@@ -1844,13 +2494,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 1.4478,
+      "capSize": 7.7216,
+      "capThickness": 1.5875
     },
     "catalog": {
       "designation": "#10-32 UNF",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1864,6 +2524,7 @@
     "name": "1/4″-28 UNF",
     "description": "6.35 mm major diameter · 28 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unf",
       "diameter": 6.35,
       "pitchUnit": "tpi",
@@ -1875,13 +2536,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 1.905,
+      "capSize": 10.16,
+      "capThickness": 1.8143
     },
     "catalog": {
       "designation": "1/4″-28 UNF",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1895,6 +2566,7 @@
     "name": "5/16″-24 UNF",
     "description": "7.9375 mm major diameter · 24 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unf",
       "diameter": 7.9375,
       "pitchUnit": "tpi",
@@ -1906,13 +2578,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 2.3813,
+      "capSize": 12.7,
+      "capThickness": 2.1167
     },
     "catalog": {
       "designation": "5/16″-24 UNF",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1926,6 +2608,7 @@
     "name": "3/8″-24 UNF",
     "description": "9.525 mm major diameter · 24 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unf",
       "diameter": 9.525,
       "pitchUnit": "tpi",
@@ -1937,13 +2620,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 2.8575,
+      "capSize": 15.24,
+      "capThickness": 2.1167
     },
     "catalog": {
       "designation": "3/8″-24 UNF",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1957,6 +2650,7 @@
     "name": "1/2″-20 UNF",
     "description": "12.7 mm major diameter · 20 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unf",
       "diameter": 12.7,
       "pitchUnit": "tpi",
@@ -1968,13 +2662,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 3.81,
+      "capSize": 20.32,
+      "capThickness": 2.54
     },
     "catalog": {
       "designation": "1/2″-20 UNF",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -1988,6 +2692,7 @@
     "name": "3/4″-16 UNF",
     "description": "19.05 mm major diameter · 16 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unf",
       "diameter": 19.05,
       "pitchUnit": "tpi",
@@ -1999,13 +2704,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 5.715,
+      "capSize": 30.48,
+      "capThickness": 3.175
     },
     "catalog": {
       "designation": "3/4″-16 UNF",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -2019,6 +2734,7 @@
     "name": "1″-12 UNF",
     "description": "25.4 mm major diameter · 12 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unf",
       "diameter": 25.4,
       "pitchUnit": "tpi",
@@ -2030,13 +2746,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 7.62,
+      "capSize": 40.64,
+      "capThickness": 4.2333
     },
     "catalog": {
       "designation": "1″-12 UNF",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadtype-unf",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -2050,6 +2776,7 @@
     "name": "1/4″-32 UNEF",
     "description": "6.35 mm major diameter · 32 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unef",
       "diameter": 6.35,
       "pitchUnit": "tpi",
@@ -2061,13 +2788,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 1.905,
+      "capSize": 10.16,
+      "capThickness": 1.5875
     },
     "catalog": {
       "designation": "1/4″-32 UNEF",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadart-unef",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -2081,6 +2818,7 @@
     "name": "3/8″-32 UNEF",
     "description": "9.525 mm major diameter · 32 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unef",
       "diameter": 9.525,
       "pitchUnit": "tpi",
@@ -2092,13 +2830,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 2.8575,
+      "capSize": 15.24,
+      "capThickness": 1.5875
     },
     "catalog": {
       "designation": "3/8″-32 UNEF",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadart-unef",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -2112,6 +2860,7 @@
     "name": "1/2″-28 UNEF",
     "description": "12.7 mm major diameter · 28 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unef",
       "diameter": 12.7,
       "pitchUnit": "tpi",
@@ -2123,13 +2872,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 3.81,
+      "capSize": 20.32,
+      "capThickness": 1.8143
     },
     "catalog": {
       "designation": "1/2″-28 UNEF",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadart-unef",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -2143,6 +2902,7 @@
     "name": "3/4″-20 UNEF",
     "description": "19.05 mm major diameter · 20 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "unef",
       "diameter": 19.05,
       "pitchUnit": "tpi",
@@ -2154,13 +2914,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 5.715,
+      "capSize": 30.48,
+      "capThickness": 2.54
     },
     "catalog": {
       "designation": "3/4″-20 UNEF",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/technische-daten/threadart-unef",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -2174,6 +2944,7 @@
     "name": "1/4″-16 ACME · basic",
     "description": "6.35 mm major diameter · 16 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "acme",
       "diameter": 6.35,
       "pitchUnit": "tpi",
@@ -2185,13 +2956,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 1.905,
+      "capSize": 10.16,
+      "capThickness": 3.175
     },
     "catalog": {
       "designation": "1/4″-16 ACME · basic",
       "sourceName": "Roton — thread size reference",
       "sourceUrl": "https://www.roton.com/product-search/",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -2205,6 +2986,7 @@
     "name": "3/8″-12 ACME · basic",
     "description": "9.525 mm major diameter · 12 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "acme",
       "diameter": 9.525,
       "pitchUnit": "tpi",
@@ -2216,13 +2998,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 2.8575,
+      "capSize": 15.24,
+      "capThickness": 4.2333
     },
     "catalog": {
       "designation": "3/8″-12 ACME · basic",
       "sourceName": "Roton — thread size reference",
       "sourceUrl": "https://www.roton.com/product-search/",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -2236,6 +3028,7 @@
     "name": "1/2″-10 ACME · basic",
     "description": "12.7 mm major diameter · 10 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "acme",
       "diameter": 12.7,
       "pitchUnit": "tpi",
@@ -2247,13 +3040,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 3.81,
+      "capSize": 20.32,
+      "capThickness": 5.08
     },
     "catalog": {
       "designation": "1/2″-10 ACME · basic",
       "sourceName": "Roton — thread size reference",
       "sourceUrl": "https://www.roton.com/product-search/",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -2267,6 +3070,7 @@
     "name": "1/2″-8 ACME · basic",
     "description": "12.7 mm major diameter · 8 TPI",
     "parameters": {
+      "manufacturing": "printed",
       "family": "acme",
       "diameter": 12.7,
       "pitchUnit": "tpi",
@@ -2278,13 +3082,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 3.81,
+      "capSize": 20.32,
+      "capThickness": 6.35
     },
     "catalog": {
       "designation": "1/2″-8 ACME · basic",
       "sourceName": "Roton — thread size reference",
       "sourceUrl": "https://www.roton.com/product-search/",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -2298,6 +3112,7 @@
     "name": "Tr10 × 2 · basic",
     "description": "10 mm major diameter · 2 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "tr",
       "diameter": 10,
       "pitchUnit": "mm",
@@ -2309,13 +3124,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 3.0,
+      "capSize": 16.0,
+      "capThickness": 4
     },
     "catalog": {
       "designation": "Tr10 × 2 · basic",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/thread-standards/trapezoidal-thread-standard-din-103",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -2329,6 +3154,7 @@
     "name": "Tr12 × 3 · basic",
     "description": "12 mm major diameter · 3 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "tr",
       "diameter": 12,
       "pitchUnit": "mm",
@@ -2340,13 +3166,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 3.6,
+      "capSize": 19.2,
+      "capThickness": 6
     },
     "catalog": {
       "designation": "Tr12 × 3 · basic",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/thread-standards/trapezoidal-thread-standard-din-103",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -2360,6 +3196,7 @@
     "name": "Tr16 × 4 · basic",
     "description": "16 mm major diameter · 4 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "tr",
       "diameter": 16,
       "pitchUnit": "mm",
@@ -2371,13 +3208,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 4.8,
+      "capSize": 25.6,
+      "capThickness": 8
     },
     "catalog": {
       "designation": "Tr16 × 4 · basic",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/thread-standards/trapezoidal-thread-standard-din-103",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -2391,6 +3238,7 @@
     "name": "Tr20 × 4 · basic",
     "description": "20 mm major diameter · 4 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "tr",
       "diameter": 20,
       "pitchUnit": "mm",
@@ -2402,13 +3250,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 6.0,
+      "capSize": 32.0,
+      "capThickness": 8
     },
     "catalog": {
       "designation": "Tr20 × 4 · basic",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/thread-standards/trapezoidal-thread-standard-din-103",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",
@@ -2422,6 +3280,7 @@
     "name": "Tr30 × 6 · basic",
     "description": "30 mm major diameter · 6 mm pitch",
     "parameters": {
+      "manufacturing": "printed",
       "family": "tr",
       "diameter": 30,
       "pitchUnit": "mm",
@@ -2433,13 +3292,23 @@
       "clearance": 0,
       "angle": 60,
       "depth": 0.5,
-      "crest": 0.125
+      "crest": 0.125,
+      "form": "tool",
+      "boreEnabled": false,
+      "boreDiameter": 9.0,
+      "capSize": 48.0,
+      "capThickness": 12
     },
     "catalog": {
       "designation": "Tr30 × 6 · basic",
       "sourceName": "BAER — thread size table",
       "sourceUrl": "https://www.gewindebohrer.de/en/service/thread-standards/trapezoidal-thread-standard-din-103",
-      "verifiedParameters": ["family", "diameter", "pitch", "tpi"],
+      "verifiedParameters": [
+        "family",
+        "diameter",
+        "pitch",
+        "tpi"
+      ],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "Reference helical Boolean tool from nominal diameter, pitch and family profile.",

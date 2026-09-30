@@ -1,0 +1,10 @@
+[
+  {
+    "id": "zx908",
+    "name": "GPS tracker ZX908",
+    "description": "Bare tracker PCB with patch antenna, SIM holder, RF shield and service components.",
+    "parameters": {
+      "model": "zx908"
+    }
+  }
+]

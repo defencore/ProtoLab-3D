@@ -51,6 +51,10 @@ for index, solid in enumerate(solids):
     solid = solid.copy()
     solid.rotate(App.Vector(), App.Vector(1, 0, 0), 90)
     solid.translate(App.Vector(25.5, 0, 24.1))
+    if index == 5:
+        # Remove only the supplier's nonstandard internal helix. Preserve the
+        # output spline and gears; the OEM thread needs physical identification.
+        solid = solid.cut(Part.makeCylinder(1.6, 8.4, App.Vector(0, 0, 23.8))).removeSplitter()
     assert solid.isValid() and solid.isClosed() and len(solid.Solids) == 1
     mesh = MeshPart.meshFromShape(Shape=solid, LinearDeflection=0.02,
                                   AngularDeflection=0.15, Relative=False)
@@ -70,7 +74,7 @@ for index, solid in enumerate(solids):
 OUTPUT.write_text(json.dumps(dict(
     sourceSha256=SOURCE_SHA,
     transform='X=x+25.5, Y=-z, Z=y+24.1',
-    repair='Rear cover internal annular void translated -0.00001 mm on source Y; external surfaces unchanged.',
+    repair='Rear cover internal annular void translated -0.00001 mm on source Y; output retaining thread simplified to D3.2 x8.4 smooth bore at Z23.8. OEM diameter/pitch unverified; gears and spline preserved.',
     linearDeflection=0.02, angularDeflection=0.15,
     components=records,
 ), separators=(',', ':')) + '\n')

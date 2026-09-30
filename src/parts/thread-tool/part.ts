@@ -1,7 +1,7 @@
 import type { PartDefinition, Preset } from '../../core/types';
 import { parameters, defaults, updateParameters, catalogSelection } from './configurator';
 import presets from './presets.json';
-import { geometry, python, values, errors } from './lib/thread';
+import { geometry, python, dimensions, errors } from './lib/thread';
 const part: PartDefinition = {
   id: 'thread-tool',
   name: 'Thread tool for cut or union',
@@ -10,7 +10,7 @@ const part: PartDefinition = {
   icon: 'bolt',
   complexity: 'Boolean Cut / Union',
   description:
-    'Closed helical solids for FreeCAD: fuse an external thread onto a part or subtract an internal-thread cutter. Choose a catalog size or enter custom dimensions.',
+    'Helical Boolean tools and finished round or hexagonal threaded caps and plugs, with an optional central through hole. Choose a thread size or enter custom dimensions.',
   keywords: [
     'thread',
     'threading',
@@ -34,6 +34,11 @@ const part: PartDefinition = {
     'ACME',
     'multi-start',
     'left hand',
+    'cap',
+    'plug',
+    'hollow',
+    'bore',
+    'hexagonal',
   ],
   parameters,
   defaults,
@@ -44,26 +49,23 @@ const part: PartDefinition = {
   states: [
     {
       id: 'external',
-      label: 'External · Union',
+      label: 'External thread · tool / plug',
       description:
-        'Fuse this threaded solid into your part with a positive volume overlap. It does not cut an existing oversized shaft.',
+        'Threaded body: a Union tool. Round/hex form: a finished externally threaded plug with a head.',
     },
     {
       id: 'internal',
-      label: 'Internal · Cut',
+      label: 'Internal thread · cutter / cap',
       description:
-        'Subtract this positive cutter from your part to make a threaded hole. Both the core bore and helical groove are removed.',
+        'Threaded body: a positive Cut tool. Round/hex form: a finished female threaded cap with a closed or drilled end.',
     },
   ],
   validate: errors,
   buildGeometry: geometry,
   python,
-  dimensions(p, state) {
-    const v = values(p, state);
-    return [v.major * 2, v.major * 2, v.length];
-  },
+  dimensions,
   notes:
-    'Export is one solid tool, not a screw assembly or a finished nut. Axis +Z, lower end Z=0. In FreeCAD place it with Placement; for a hole select the target first, tool second, then Part → Boolean → Cut. For an external thread use Part → Boolean → Union with a positive overlap at the base; a full-size shaft through the thread would fill its grooves. Extend a through-hole cutter beyond both target faces. Metric/UN profiles have flat root truncations; Tr/ACME use basic profiles without standard root clearance. No ISO 6g/6H or ASME 2A/2B fit class, rounded roots, runout or tapered pipe threads are implied. Radial fit adjustment is a per-tool design allowance. Use Python/FCMacro or STEP for CAD Booleans; STL is a tessellated mesh.',
+    'Export is one solid. Threaded-body form produces a Boolean tool; round/hex forms produce a finished cap (internal) or headed plug (external). Axis +Z, lower end Z=0. Cap end thickness adds to threaded length. The optional hole is axial: in a hollow Cut tool it leaves a central post in the target. For a normal threaded bore, disable the tool hole. Cap size is round diameter or hex across flats. No standard cap dimensions, fit class, rounded thread roots, runout or pipe taper are implied. Use Python/FCMacro or STEP for CAD Booleans; STL is a tessellated mesh.',
   sources: [
     ...new Map(
       presets.map((p) => [

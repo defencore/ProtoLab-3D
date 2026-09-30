@@ -1,0 +1,54 @@
+[
+  {
+    "id": "lu5h50001",
+    "name": "Freud LU5H50001 \u00b7 500\u00d74\u00d730 \u00b7 Z120",
+    "description": "500 mm non-ferrous cutting blade; confirm saw feed direction and maximum RPM with the supplier.",
+    "parameters": {
+      "model": "lu5h50001"
+    },
+    "catalog": {
+      "designation": "LU5H50001",
+      "manufacturer": "Freud",
+      "sourceName": "LU5H manufacturer flyer",
+      "sourceUrl": "https://www.freudtools.com/worldwide/media/downloads/product_finders/csb/fr_k_csb_flyer_lu5h_mkfrm_255_eng_low_psw.pdf",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "D500, kerf4, body3.4, Z120 and bore are supplier dimensions.",
+        "limitations": "Tooth outline and relative clocking of pin-hole pairs are illustrative; not blade manufacturing geometry.",
+        "sourceUrl": "https://www.freudtools.com/worldwide/media/downloads/product_finders/csb/fr_k_csb_flyer_lu5h_mkfrm_255_eng_low_psw.pdf"
+      },
+      "attributes": {
+        "bore": 30
+      }
+    }
+  },
+  {
+    "id": "lu5h50002",
+    "name": "Freud LU5H50002 \u00b7 500\u00d74\u00d732 \u00b7 Z120",
+    "description": "500 mm non-ferrous cutting blade; confirm saw feed direction and maximum RPM with the supplier.",
+    "parameters": {
+      "model": "lu5h50002"
+    },
+    "catalog": {
+      "designation": "LU5H50002",
+      "manufacturer": "Freud",
+      "sourceName": "LU5H manufacturer flyer",
+      "sourceUrl": "https://www.freudtools.com/worldwide/media/downloads/product_finders/csb/fr_k_csb_flyer_lu5h_mkfrm_255_eng_low_psw.pdf",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "D500, kerf4, body3.4, Z120 and bore are supplier dimensions.",
+        "limitations": "Tooth outline and relative clocking of pin-hole pairs are illustrative; not blade manufacturing geometry.",
+        "sourceUrl": "https://www.freudtools.com/worldwide/media/downloads/product_finders/csb/fr_k_csb_flyer_lu5h_mkfrm_255_eng_low_psw.pdf"
+      },
+      "attributes": {
+        "bore": 32
+      }
+    }
+  }
+]

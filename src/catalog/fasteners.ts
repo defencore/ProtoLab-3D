@@ -1,7 +1,6 @@
 import type { Parameters, Preset } from '../core/types';
 import sourceData from './data/gvyntok-fasteners-runtime.json';
 import { coarsePitch, dogPointLength, fastenerDrawings } from './fastener-dimensions';
-import { fastenerValues, MAX_THREAD_TURNS } from './lib/fastener-sizing';
 
 export const nutDrawingUrl = 'https://gvyntok.com/wp-content/uploads/2024/06/050-010-001.pdf';
 export const socketCapDrawingUrl = 'https://gvyntok.com/wp-content/uploads/2024/06/040-190-001.pdf';
@@ -210,11 +209,7 @@ export function sourceBoltPresets(defaults: Parameters): Preset[] {
       p.flangeDiameter = d * 2.4;
     }
     if (head === 'carriage') p.headSize = Math.max(Number(p.headSize), Number(p.neckSize) * 1.6);
-    const thread = fastenerValues(p);
-    p.threadMode =
-      thread.threadLength >= thread.pitch && thread.threadLength / thread.pitch <= MAX_THREAD_TURNS
-        ? 'modeled'
-        : 'envelope';
+    p.threadMode = 'envelope';
     const verified = ['diameter', 'length', 'head', 'drive', ...Object.keys(dimensions)];
     if (row.pitch !== null) verified.push('pitch');
     return {

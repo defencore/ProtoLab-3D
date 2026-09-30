@@ -72,7 +72,7 @@ test('M2 to length to head to drive narrows actual supplier listings without a d
   const cross = quickPickMatches(bolt.presets, { ...filters, head: 'countersunk', drive: 'cross' });
   assert.equal(cross.length, 1);
   assert.equal(cross[0].catalog!.standard, 'DIN 965');
-  assert.equal(cross[0].parameters.threadMode, 'modeled');
+  assert.equal(cross[0].parameters.threadMode, 'envelope');
   assert.deepEqual(validateParameters(bolt, cross[0].parameters, 'default'), []);
 });
 test('changing an upstream size clears incompatible later choices and picks a complete valid preview', () => {

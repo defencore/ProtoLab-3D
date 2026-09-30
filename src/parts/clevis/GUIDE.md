@@ -13,7 +13,7 @@ Assembled, exploded and body-only states use identical components. `includeHardw
 
 The supplied 25 × 7 mm pushrod image establishes body length, body diameter, 3 mm fork gap, 2 mm rod bore, M2.5 pin and two M3 set screws. Cable records establish only bore choices 1.5, 2, 3, 4, 5, 6, 8, 10 and 12 mm. Other dimensions are editable assumptions and are excluded from `verifiedParameters`. Threaded examples are unsourced prototype configurations.
 
-Rod threads can be modeled or use a nominal envelope. The modeled option uses a sampled truncated 60-degree mesh and a matching FreeCAD helical sweep; it carries no thread-fit class. Hardware threads are smooth envelopes. Cable geometry is a fixed fork and barrel; the reference's swivel/adjuster and load rating are not reproduced. Color is a preview finish.
+Rod threads use smooth nominal-diameter bores or shafts. FreeCAD labels and manufacturing properties record diameter, pitch, handedness and span; no thread-fit class is implied. Hardware threads are smooth envelopes. Cable geometry is a fixed fork and barrel; the reference's swivel/adjuster and load rating are not reproduced. Color is a preview finish.
 
 Validate after editing:
 

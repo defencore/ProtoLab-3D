@@ -1,0 +1,10 @@
+[
+  {
+    "id": "pwm-switch-17x13",
+    "name": "PWM electronic switch",
+    "description": "Selected 17x13x10 mm switch with rounded sleeve, terminal exits and signal connection.",
+    "parameters": {
+      "model": "pwm-switch-17x13"
+    }
+  }
+]

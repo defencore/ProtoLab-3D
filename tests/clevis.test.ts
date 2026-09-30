@@ -117,7 +117,7 @@ test('fork slot, rod bore and transverse holes are physically open', () => {
   }
 });
 
-test('male and female helical connections build valid dimensions and preserve requested hand', () => {
+test('male and female symbolic connections build valid dimensions and preserve requested hand', () => {
   for (const variant of ['female-threaded', 'male-threaded']) {
     const p: Parameters = {
       ...part.defaults,
@@ -134,7 +134,8 @@ test('male and female helical connections build valid dimensions and preserve re
     try {
       const actual = new Box3().setFromObject(model, true).getSize(new Vector3()).toArray();
       part.dimensions(p, 'body').forEach((d, i) => assert.ok(Math.abs(actual[i] - d) < 0.02));
-      assert.ok(part.python(p, 'body').includes(',0.5,True,'));
+      assert.match(part.python(p, 'body'), /M3×0.5 LH/);
+      assert.doesNotMatch(part.python(p, 'body'), /makeLongHelix|makePipeShell/);
       model.traverse((child) => {
         if (child instanceof Mesh) checkMesh(child, variant);
       });

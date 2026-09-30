@@ -1,3 +1,5 @@
+import { restoreThreadMaterial } from './thread-visual';
+import { MeshStandardMaterial } from 'three';
 import {
   BufferAttribute,
   BufferGeometry,
@@ -64,7 +66,11 @@ export function unpackModel(model: PackedModel): Group {
     return geometry;
   });
   const loader = new MaterialLoader(),
-    materials = model.materials.map((m) => loader.parse(m));
+    materials = model.materials.map((m) => {
+      const material = loader.parse(m);
+      if (material instanceof MeshStandardMaterial) restoreThreadMaterial(material);
+      return material;
+    });
   return new Group().add(
     ...model.meshes.map((m) => {
       const selected = m.materials.map((i) => materials[i]);

@@ -1,0 +1,55 @@
+[
+  {
+    "id": "el300",
+    "name": "Interroll 1700 \u00b7 D50 \u00b7 EL300",
+    "description": "Steel tube; D12 shaft with female-thread ends.",
+    "parameters": {
+      "installationLength": 300,
+      "model": "1700"
+    },
+    "catalog": {
+      "designation": "Series 1700 D50x1.5 D12 female thread RL290",
+      "manufacturer": "Interroll",
+      "sourceName": "Series 1700, January 2026",
+      "sourceUrl": "https://www.interroll.com/fileadmin/products/product_data/Roller-series-1700/Series_1700_EN.pdf",
+      "verifiedParameters": ["installationLength"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Tube and shaft diameters and length relations follow manufacturer tables.",
+        "limitations": "Internal bearing housing shape simplified; confirm shaft option on order.",
+        "sourceUrl": "https://www.interroll.com/fileadmin/products/product_data/Roller-series-1700/Series_1700_EN.pdf"
+      }
+    }
+  },
+  {
+    "id": "el600",
+    "name": "Interroll 1700 \u00b7 D50 \u00b7 EL600",
+    "description": "Steel tube; D12 shaft with female-thread ends.",
+    "parameters": {
+      "installationLength": 600,
+      "model": "1700"
+    },
+    "catalog": {
+      "designation": "Series 1700 D50x1.5 D12 female thread RL590",
+      "manufacturer": "Interroll",
+      "sourceName": "Series 1700, January 2026",
+      "sourceUrl": "https://www.interroll.com/fileadmin/products/product_data/Roller-series-1700/Series_1700_EN.pdf",
+      "verifiedParameters": ["installationLength"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Tube and shaft diameters and length relations follow manufacturer tables.",
+        "limitations": "Internal bearing housing shape simplified; confirm shaft option on order.",
+        "sourceUrl": "https://www.interroll.com/fileadmin/products/product_data/Roller-series-1700/Series_1700_EN.pdf"
+      }
+    }
+  },
+  {
+    "id": "ec5000-24v",
+    "name": "Interroll EC5000 \u00b7 crowned D50 \u00b7 24 V 35 W",
+    "description": "Powered belt roller; supplier shaft, crown and installed-length interfaces require confirmation.",
+    "parameters": {
+      "model": "ec5000",
+      "installationLength": 300
+    }
+  }
+]

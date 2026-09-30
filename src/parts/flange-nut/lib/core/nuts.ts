@@ -1,8 +1,8 @@
-import { Group } from 'three';
+import { Group, Vector2 } from 'three';
 import { n, numberParameter, ring, num } from '../../../../core/geometry';
 import {
   outline,
-  shellPython,
+  polygonPython,
   type ShellSection,
   modelBounds,
   removeDegenerateTriangles,
@@ -13,7 +13,7 @@ import {
   internalThreadDefaults,
   internalThreadParameters,
   internalThreadErrors,
-  internalMinorDiameter,
+  nominalThreadDiameter,
   threadedShellMesh,
   internalThreadPython,
   nutCoarsePitch,
@@ -31,7 +31,6 @@ export function nutDefinition(
   defaults = { ...internalThreadDefaults(Number(defaults.bore)), ...defaults };
   const sections = (p: Parameters): ShellSection[] => {
     const d = n(p, 'bore'),
-      minor = internalMinorDiameter(p, d),
       s = n(p, 'acrossFlats'),
       h = n(p, 'height');
     const sides = style === 'square' ? 4 : 6;
@@ -39,12 +38,19 @@ export function nutDefinition(
     const bottom = style === 'flange' ? n(p, 'flangeThickness') : 0;
     const top = style === 'nyloc' || style === 'cap' ? n(p, 'bodyHeight') : h;
     const c = Math.min((s - d) / 8, (top - bottom) / 5);
-    const chamfer = Math.min((d + c - minor) / 2, (top - bottom) / 3);
+    const chamfer = Math.min(c / 2, (top - bottom) / 3);
+    // Sample the same conical edge chamfers used by the analytic CAD solid.
+    const flats = outline(r, sides);
+    const edge = (fraction: number, z: number): ShellSection => ({
+      z,
+      outer: flats.map((v) =>
+        v.clone().setLength(Math.min(v.length(), s / 2 + (r - s / 2) * fraction)),
+      ),
+      bore: d + c * (1 - fraction),
+    });
     return [
-      { z: bottom, outer: outline(s / 2), bore: d + c },
-      { z: bottom + chamfer, outer: outline(r, sides), bore: minor },
-      { z: top - chamfer, outer: outline(r, sides), bore: minor },
-      { z: top, outer: outline(s / 2), bore: d + c },
+      ...Array.from({ length: 5 }, (_, i) => edge(i / 4, bottom + (chamfer * i) / 4)),
+      ...Array.from({ length: 5 }, (_, i) => edge(1 - i / 4, top - chamfer + (chamfer * i) / 4)),
     ];
   };
   const cap = (p: Parameters): TurnedProfile => {
@@ -70,12 +76,12 @@ export function nutDefinition(
           {
             z: 0,
             outer: outline(n(p, 'flangeDiameter') / 2),
-            bore: internalMinorDiameter(p, n(p, 'bore')),
+            bore: nominalThreadDiameter(p, n(p, 'bore')),
           },
           {
             z: n(p, 'flangeThickness'),
             outer: outline(n(p, 'flangeDiameter') / 2),
-            bore: internalMinorDiameter(p, n(p, 'bore')),
+            bore: nominalThreadDiameter(p, n(p, 'bore')),
           },
         ],
         p,
@@ -109,7 +115,7 @@ export function nutDefinition(
     subgroup: 'NUTS',
     icon: 'bolt',
     complexity: 'Standard nut profiles',
-    description: `${name} with chamfered wrench flats and a modeled internal helical thread.`,
+    description: `${name} with chamfered wrench flats and a labeled nominal-diameter thread bore.`,
     keywords: [name, standard, 'nut', 'thread', 'fastener'],
     defaults,
     presets: [],
@@ -151,8 +157,31 @@ export function nutDefinition(
     buildGeometry: build,
     python(p) {
       const d = n(p, 'bore'),
-        minor = internalMinorDiameter(p, d);
-      const metalBodies = [shellPython(sections(p))];
+        minor = nominalThreadDiameter(p, d);
+      const profile = sections(p).filter((_, i) => [0, 4, 5, 9].includes(i)),
+        bottom = profile[0],
+        top = profile.at(-1)!;
+      const sides = style === 'square' ? 4 : 6;
+      const radius = n(p, 'acrossFlats') / (2 * Math.cos(Math.PI / sides));
+      const vertices = Array.from({ length: sides }, (_, i) => {
+        const angle = ((i + 0.5) * 2 * Math.PI) / sides;
+        return new Vector2(radius * Math.cos(angle), radius * Math.sin(angle));
+      });
+      const outer: TurnedProfile = [
+        [0, bottom.z],
+        ...profile.map((s): [number, number] => [Math.max(...s.outer.map((v) => v.length())), s.z]),
+        [0, top.z],
+        [0, bottom.z],
+      ];
+      const bore: TurnedProfile = [
+        [0, bottom.z],
+        ...profile.map((s): [number, number] => [s.bore / 2, s.z]),
+        [0, top.z],
+        [0, bottom.z],
+      ];
+      const metalBodies = [
+        `${polygonPython(vertices, top.z - bottom.z, bottom.z)}.common(${turnedPython(outer)}).cut(${turnedPython(bore)}).removeSplitter()`,
+      ];
       const annulus = (ro: number, ri: number, height: number, z: number) =>
         `Part.makeCylinder(${num(ro)},${num(height)},App.Vector(0,0,${num(z)})).cut(Part.makeCylinder(${num(ri)},${num(height)},App.Vector(0,0,${num(z)})))`;
       if (style === 'flange')
@@ -182,6 +211,7 @@ export function nutDefinition(
           `nylon_insert = ${annulus((d + s) / 4, d / 2, (h - b) * 0.85, b)}`,
           'shape = Part.makeCompound([shape, nylon_insert])',
           "component_labels = ['Nut body', 'Nylon insert']",
+          'component_metadata.append({})',
           'component_colors = [(0.62,0.70,0.78),(0.15,0.30,0.44)]',
         );
       }
@@ -191,6 +221,6 @@ export function nutDefinition(
       return modelBounds(build(p));
     },
     notes:
-      'Supplier presets preserve the listed envelope dimensions. Edge chamfers and unspecified collar details are editable prototype geometry. Internal threads use a truncated 60° basic metric profile without fit tolerances or runout. Smooth envelope mode is available for fast layout. Nylon inserts retain their undeformed smooth bore; the metal body carries the modeled thread.',
+      'Supplier presets preserve the listed envelope dimensions. Edge chamfers and unspecified collar details are editable prototype geometry. Metal threads use smooth nominal-diameter bores with diameter, pitch, direction and span callouts. Nominal bore geometry is not a tap-drill specification. Specify fit class and machining depths on the drawing. Nylon inserts retain their undeformed smooth bore.',
   };
 }

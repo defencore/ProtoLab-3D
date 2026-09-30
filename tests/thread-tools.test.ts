@@ -140,3 +140,114 @@ test('switching pitch units preserves physical geometry', () => {
   const custom = updateParameters({ ...tpi, tpi: 24 }, 'tpi');
   assert.equal(custom.pitch, 25.4 / 24);
 });
+
+for (const form of ['tool', 'round-cap', 'hex-cap'])
+  for (const state of ['external', 'internal'])
+    for (const boreEnabled of [false, true])
+      test(`${form}/${state}/hole=${boreEnabled}: closed material boundary and actual cap envelope`, () => {
+        const p = { ...part.defaults, form, boreEnabled, length: 4 };
+        assert.deepEqual(validateParameters(part, p, state), []);
+        const model = part.buildGeometry(p, state);
+        try {
+          model.traverse((o) => {
+            if (o instanceof Mesh) checkMesh(o, `${form}/${state}`);
+          });
+          const bounds = new Box3().setFromObject(model, true);
+          bounds
+            .getSize(new Vector3())
+            .toArray()
+            .forEach((n, i) => assert.ok(Math.abs(n - part.dimensions(p, state)[i]) < 0.03));
+          assert.equal(bounds.min.z, 0);
+          const mesh = model.children[0] as Mesh;
+          const positions = mesh.geometry.getAttribute('position');
+          let minRadius = Infinity;
+          for (let i = 0; i < positions.count; i++)
+            minRadius = Math.min(minRadius, Math.hypot(positions.getX(i), positions.getY(i)));
+          assert.ok(Math.abs(minRadius - (boreEnabled ? 1 : 0)) < 1e-6);
+        } finally {
+          disposeModel(model);
+        }
+      });
+
+test('holes cannot break through thread roots and cap walls cannot vanish', () => {
+  for (const state of ['external', 'internal'])
+    for (const delta of [
+      { boreEnabled: true, boreDiameter: 5 },
+      { form: 'round-cap', capSize: 6 },
+      { form: 'hex-cap', capSize: 6.2 },
+      { form: 'round-cap', capThickness: 0 },
+      { form: 'hex-cap', clearance: 0.2, capSize: 6.3 },
+    ] as Parameters[]) {
+      const p = { ...part.defaults, ...delta };
+      // External fit adjustment shrinks a plug; the same cap remains thick enough there.
+      if (state === 'external' && delta.clearance) continue;
+      assert.ok(validateParameters(part, p, state).length, JSON.stringify({ state, delta }));
+      assert.throws(() => generateScript(part, p, state));
+    }
+});
+
+test(
+  'native caps and hollow tools preserve cavities, roofs, holes and preview volume',
+  { skip: !process.env.FREECAD_PYTHON, timeout: 180_000 },
+  async () => {
+    const { spawnSync } = await import('node:child_process');
+    const cases = [];
+    for (const form of ['tool', 'round-cap', 'hex-cap'])
+      for (const state of ['external', 'internal'])
+        for (const boreEnabled of [false, true]) {
+          const p = { ...part.defaults, form, boreEnabled, length: 4 };
+          const model = part.buildGeometry(p, state);
+          let volume = 0;
+          model.traverse((o) => {
+            if (!(o instanceof Mesh)) return;
+            const g = o.geometry,
+              a = g.getAttribute('position'),
+              ix = g.index;
+            for (let i = 0; i < (ix?.count ?? a.count); i += 3) {
+              const [x, y, z] = [0, 1, 2].map((j) =>
+                new Vector3().fromBufferAttribute(a, ix ? ix.getX(i + j) : i + j),
+              );
+              volume += x.dot(y.cross(z)) / 6;
+            }
+          });
+          disposeModel(model);
+          cases.push({
+            form,
+            state,
+            hole: boreEnabled,
+            code: part.python(p, state),
+            volume,
+            dimensions: part.dimensions(p, state),
+          });
+        }
+    const result = spawnSync(
+      process.env.FREECAD_PYTHON!,
+      [
+        '-c',
+        `
+import FreeCAD as App, Part, math, json, sys
+for c in json.load(sys.stdin):
+    e=dict(App=App, Part=Part, math=math)
+    exec(c['code'],e)
+    s=e['shape']; tag=(c['form'],c['state'],c['hole'])
+    assert s.isValid() and s.isClosed() and len(s.Solids)==1,tag
+    assert abs(s.Volume/c['volume']-1)<.015,(tag,s.Volume,c['volume'])
+    b=s.optimalBoundingBox(False,False)
+    assert all(abs(a-v)<.03 for a,v in zip([b.XLength,b.YLength,b.ZLength],c['dimensions'])),(tag,[b.XLength,b.YLength,b.ZLength],c['dimensions'])
+    inside=lambda x,z: s.isInside(App.Vector(x,0,z),1e-7,False)
+    cap=c['form']!='tool'
+    assert inside(0,2)==(not c['hole'] and not(cap and c['state']=='internal')),tag
+    if cap:
+        assert inside(0,5)==(not c['hole']),tag
+        assert inside(2,5),tag
+        assert inside(4,2)==(c['state']=='internal'),tag
+    if c['hole']:
+        assert s.common(Part.makeCylinder(.95,c['dimensions'][2]+2,App.Vector(0,0,-1))).Volume<1e-8,tag
+    print(tag,'valid',flush=True)
+`,
+      ],
+      { input: JSON.stringify(cases), encoding: 'utf8', timeout: 170_000 },
+    );
+    assert.equal(result.status, 0, result.stdout + result.stderr + String(result.error ?? ''));
+  },
+);

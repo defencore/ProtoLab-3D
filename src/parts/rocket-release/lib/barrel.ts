@@ -28,27 +28,11 @@ export function plugMesh(travel: number): Group {
   const hex = (i: number) =>
     3.5 / Math.cos((((i / 96) * 2 * Math.PI) % (Math.PI / 3)) - Math.PI / 6);
   loops.push({ z: seat - 2.8, r: hex }, { z: seat - 2, r: hex });
-  for (let j = 0; j <= 96; j++)
-    loops.push(threadLoop(seat - 2 + (2 * j) / 96, seat, 7, 0.5, false));
+  loops.push({ z: seat - 2, r: () => 3.5 }, { z: seat, r: () => 3.5 });
   loops.push({ z: seat, r: () => 1.1 }, { z: seat - 2.8, r: () => 1.1 });
   return loopMesh(loops);
 }
 type Loop = { z: number; r: (i: number) => number };
-function threadLoop(z: number, origin: number, d: number, p: number, internal: boolean): Loop {
-  return {
-    z,
-    r: (i) => {
-      const phase = (z - origin) / p - i / 96,
-        delta = Math.abs(phase - Math.round(phase)) * p;
-      const depth = p * Math.sqrt(3) * (internal ? 5 / 16 : 17 / 48);
-      return (
-        d / 2 +
-        (internal ? 0.04 : 0) -
-        Math.max(0, Math.min(depth, (delta - p / 16) * Math.sqrt(3)))
-      );
-    },
-  };
-}
 export function barrelShape(travel: number): Shape {
   const seat = 34.5 - travel;
   return subtract(
@@ -75,25 +59,25 @@ export function barrelShape(travel: number): Shape {
     ),
   );
 }
-/** One closed ring strip: no CSG splits or floating-point cracks at the two helices. */
+/** Closed turned section with smooth nominal diameters for both metal threads. */
 export function barrelMesh(travel: number): Group {
   const seat = 34.5 - travel,
     loops: { z: number; r: (i: number) => number }[] = [];
   const circle = (z: number, r: number) => loops.push({ z, r: () => r });
-  const thread = (z: number, origin: number, d: number, p: number, internal: boolean) =>
-    loops.push(threadLoop(z, origin, d, p, internal));
   circle(seat - 2, 4);
   circle(42.8, 4);
   circle(42.8, 5);
   circle(44, 5);
-  for (let j = 0; j <= 112; j++) thread(44 + (3.5 * j) / 112, 44, 8, 0.75, false);
+  circle(44, 4);
+  circle(47.5, 4);
   circle(47.5, 3.2);
   circle(46.5, 3.2);
   circle(46.5, 2);
   circle(44.5, 2);
   circle(44.5, 3);
   circle(seat, 3);
-  for (let j = 0; j <= 96; j++) thread(seat - (2 * j) / 96, seat, 7, 0.5, true);
+  circle(seat, 3.5);
+  circle(seat - 2, 3.5);
   return loopMesh(loops);
 }
 function loopMesh(loops: Loop[]): Group {

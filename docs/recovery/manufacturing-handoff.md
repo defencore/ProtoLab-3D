@@ -38,7 +38,23 @@ The 2S controller uses four provisional custom Ø6 × 4 mm bonded silicone/metal
 
 ## Threads and drawings
 
-CAD includes right-handed helical surfaces, including internal threads: M2×0.4, M2.5×0.45, M3×0.5, M7×0.5 (plugs), and M8×0.75 (barrels). `threads.csv` lists each axis and nominal tool length in assembly coordinates. This is **not an automatically measured engagement length**: tools may extend beyond the part. The 0.04 mm radial internal CAD clearance does not establish a 6H tolerance class.
+For every new or revised recovery mechanism, distinguish full-profile thread
+length from tool length. Provide an entry chamfer, accessible tool approach and
+runout or relief at each shoulder. A blind hole needs separate dimensions for
+useful thread depth, the selected tap's incomplete lead, chip space, cylindrical
+drill depth and drill-point depth. The screw must clamp the mating faces before
+its tip reaches the unfinished end. Check remaining wall/web thickness, actual
+engagement after chamfers, head/washer seats and assembly-tool access. Prefer a
+through-thread when the pressure boundary and load path allow it. A printed
+thread fit uses separate process allowances from a cut metal thread.
+
+The CO2 assembly applies these checks to its M4 spacer tiers, M3 finder posts
+and through-tapped plates; dimensions and process assumptions are recorded in
+its [package guide](../../src/parts/rocket-co2-recovery/GUIDE.md#machining-access-and-thread-ends)
+and exported component metadata. This does not certify the other library
+mechanisms as having completed the same review.
+
+CAD represents machined threads with smooth nominal-diameter holes and shafts: M2×0.4, M2.5×0.45, M3×0.5, M7×0.5 (plugs), and M8×0.75 (barrels). Part labels and manufacturing properties retain their thread callouts. Only explicitly printed threads retain helical geometry. `threads.csv` lists each axis and nominal tool length in assembly coordinates. This is **not an automatically measured engagement length**: tools may extend beyond the part. Nominal hole geometry is not a tap-drill size or a 6H tolerance specification.
 
 To prepare drawings:
 

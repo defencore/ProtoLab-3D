@@ -32,7 +32,7 @@ const defaults: Parameters = {
   driveThickness: 0.9,
   driveDepth: 2,
   driveSides: 5,
-  threadMode: 'modeled',
+  threadMode: 'envelope',
   threadSpan: 'full',
   pitch: 1,
   handedness: 'right',
@@ -155,7 +155,7 @@ const part: PartDefinition = {
   python: (p) => fastenerPython(p),
   dimensions: (p) => fastenerDimensions(p),
   notes:
-    'Prototype geometry, not a DIN/ISO certification. Modeled threads use a truncated single-start 60° reference profile without fit tolerances or runout. Cross and six-lobe recesses are dimensional approximations, not certified Phillips or Torx tooling profiles. Rounded heads use a sampled dome profile. Slotted drives are closed pockets. Countersunk length includes the head; other bolt lengths are measured under the head. STL is a closed tessellation; FreeCAD cuts a swept helical groove into a solid blank.',
+    'Prototype geometry, not a DIN/ISO certification. Metal threads use smooth nominal-diameter envelopes with drawing callouts for diameter, pitch, direction and length. Cross and six-lobe recesses are dimensional approximations, not certified Phillips or Torx tooling profiles. Rounded heads use a sampled dome profile. Slotted drives are closed pockets. Countersunk length includes the head; other bolt lengths are measured under the head. STL is a closed tessellation; FreeCAD exports smooth thread envelopes with manufacturing properties.',
   sources: [
     {
       label: 'Gvyntok socket-cap dimensional grid',

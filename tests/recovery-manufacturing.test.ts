@@ -12,6 +12,35 @@ import { screw, matingHole } from '../src/parts/rocket-release/lib/hardware';
 
 const p = part.presets.find((x) => x.id === 'nose-90-86-mg996r-18650-2s-wing-mini')!.parameters;
 
+test('catalog classification checks geometry even when a label claims a standard screw', () => {
+  const make = () => {
+    const shape = screw(4, 16, { headDiameter: 7, headHeight: 4 });
+    assert.equal(shape.kind, 'fastener');
+    if (shape.kind !== 'fastener') throw new Error('Expected screw');
+    Object.assign(shape.parameters, { driveWidth: 3, driveDepth: 2 });
+    return shape;
+  };
+  const label = 'BUY module mounting screw · ISO 4762 M4x16 · A2-70';
+  assert.equal(fastenerCatalog(make(), label)!.procurement, 'BUY_STANDARD');
+  assert.equal(
+    manufacturingMetadata({ shape: make(), label: label.replace('A2-70', 'A4-80'), color: 0 })
+      .Material,
+    'stainless steel A4-80',
+  );
+  for (const changed of [
+    { headSize: 7.9 },
+    { shankDiameter: 5 },
+    { pitch: 0.5 },
+    { handedness: 'left' },
+    { threadMode: 'none' },
+    { length: 15 },
+  ]) {
+    const shape = make();
+    Object.assign(shape.parameters, changed);
+    assert.equal(fastenerCatalog(shape, label)!.procurement, 'MAKE_CUSTOM_FASTENER');
+  }
+});
+
 test('2S nose uses catalog screws, identifies OEM hardware and never disguises custom studs as stock', () => {
   const model = pieces(p, 'assembled');
   const screws = model.filter((x) => fastener(x.shape));
