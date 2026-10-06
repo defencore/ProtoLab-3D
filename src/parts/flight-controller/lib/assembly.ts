@@ -67,10 +67,8 @@ function bounds(s: Shape): [Vec, Vec] {
 export function dimensions(pieces: Piece[]): Vec {
   // Inspection offsets separate components along the optical axis (+Z).
   const b = pieces.map((p) => {
-    const v = bounds(p.shape);
-    v[0][2] += p.z ?? 0;
-    v[1][2] += p.z ?? 0;
-    return v;
+    // Bounds can reference a catalog component's origin; never move that source data.
+    return bounds(p.shape).map(([x, y, z]) => [x, y, z + (p.z ?? 0)]) as [Vec, Vec];
   });
   return [0, 1, 2].map(
     (a) => Math.max(...b.map((v) => v[1][a])) - Math.min(...b.map((v) => v[0][a])),

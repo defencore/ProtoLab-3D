@@ -3,6 +3,7 @@ import test from 'node:test';
 import { spawnSync } from 'node:child_process';
 import { Box3, Mesh, Vector3 } from 'three';
 import { disposeModel } from '../src/core/mechanical';
+import { generateScript } from '../src/core/freecad';
 import lch7 from '../src/parts/lch7-controller/part';
 import tracker from '../src/parts/gps-tracker/part';
 import buzzer from '../src/parts/recovery-buzzer/part';
@@ -13,6 +14,25 @@ const modules = [
   { part: buzzer, size: [20, 10, 8] },
   { part: pwm, size: [17, 13, 10] },
 ];
+test('LCH7 dimensions and repeated exports preserve the assembled and exploded source geometry', () => {
+  const states = ['assembled', 'exploded'];
+  const recipes = states.map((state) => lch7.python(lch7.defaults, state));
+  for (const selected of ['exploded', 'assembled', 'exploded', 'assembled']) {
+    const size = lch7.dimensions(lch7.defaults, selected);
+    assert.ok(Math.abs(size[2] - (selected === 'exploded' ? 25.48268 : 7.48268)) < 1e-6);
+    const script = generateScript(lch7, lch7.defaults, selected);
+    assert.ok(
+      script.includes(
+        recipes[states.indexOf(selected)]
+          .split('\n')
+          .map((line) => `        ${line}`)
+          .join('\n'),
+      ),
+      'Export must contain the original component recipe after measuring bounds.',
+    );
+    states.forEach((state, i) => assert.equal(lch7.python(lch7.defaults, state), recipes[i]));
+  }
+});
 for (const { part, size } of modules)
   test(`${part.id}: library body dimensions, detailed bounded meshes and export`, () => {
     assert.deepEqual(part.validate(part.defaults, 'assembled'), []);
