@@ -56,7 +56,15 @@ for (const part of selections) {
     for (const preset of part.presets) {
       if (part.id === 'electrical-connector') {
         assert.equal(preset.catalog?.geometryEvidence?.kind, 'source-dimensions');
-        assert.ok(preset.catalog?.sourceUrl?.startsWith('https://www.china-amass'));
+        const sourceUrl = preset.catalog?.sourceUrl;
+        const source = new URL(sourceUrl ?? '');
+        const officialSource =
+          source.protocol === 'https:' &&
+          ['www.china-amass.com', 'www.china-amass.net'].includes(source.hostname);
+        const mirroredDrawing =
+          preset.id === 'xt60e-f' && sourceUrl === 'http://pliki.aksotronik.pl/pdf/012682.pdf';
+        assert.ok(officialSource || mirroredDrawing, `${preset.id}: documented AMASS source`);
+        assert.equal(preset.catalog?.geometryEvidence?.sourceUrl, sourceUrl);
       } else assert.equal(preset.catalog, undefined);
       assert.deepEqual(validateParameters(part, preset.parameters, 'assembled'), [], preset.id);
     }

@@ -334,3 +334,65 @@ test('PCB socket mouths and male shrouds remain open along the shared +Z mating 
     }
   }
 });
+
+test('PW elbow passages retain closed oriented preview boundaries in both detail and inspection modes', () => {
+  for (const model of ['xt60pw-m30', 'xt60pw-f30'])
+    for (const detail of ['envelope', 'detailed'])
+      for (const state of ['assembled', 'exploded']) {
+        const group = part.buildGeometry({ model, detail }, state);
+        try {
+          group.traverse((mesh) => {
+            if (!(mesh instanceof Mesh)) return;
+            const positions = mesh.geometry.getAttribute('position'),
+              index = mesh.geometry.index,
+              edges = new Map<string, { count: number; winding: number }>();
+            let volume = 0;
+            for (let triangle = 0; triangle < (index?.count ?? positions.count); triangle += 3) {
+              const points = [0, 1, 2].map((j) =>
+                new Vector3().fromBufferAttribute(
+                  positions,
+                  index ? index.getX(triangle + j) : triangle + j,
+                ),
+              );
+              assert.ok(
+                points.every((point) => point.toArray().every(Number.isFinite)),
+                mesh.name,
+              );
+              assert.ok(
+                points[1]
+                  .clone()
+                  .sub(points[0])
+                  .cross(points[2].clone().sub(points[0]))
+                  .lengthSq() > 1e-18,
+                mesh.name,
+              );
+              volume += points[0].dot(points[1].clone().cross(points[2])) / 6;
+              const keys = points.map((point) =>
+                point
+                  .toArray()
+                  .map((v) => Math.round(v * 1e5))
+                  .join(','),
+              );
+              for (let side = 0; side < 3; side++) {
+                const a = keys[side],
+                  b = keys[(side + 1) % 3],
+                  key = [a, b].sort().join('|'),
+                  edge = edges.get(key) ?? { count: 0, winding: 0 };
+                edge.count++;
+                edge.winding += a < b ? 1 : -1;
+                edges.set(key, edge);
+              }
+            }
+            assert.ok(volume > 0, mesh.name + ': outward volume');
+            for (const edge of edges.values())
+              assert.deepEqual(
+                edge,
+                { count: 2, winding: 0 },
+                `${model}/${detail}/${state}/${mesh.name}: closed oriented boundary`,
+              );
+          });
+        } finally {
+          disposeModel(group);
+        }
+      }
+});

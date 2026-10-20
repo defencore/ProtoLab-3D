@@ -94,7 +94,19 @@ export function pcbPieces(m: PcbModel, p: Parameters, state: string): Piece[] {
   if (rightAngle) {
     housing = cut(
       housing,
-      ...points.map((x) => cylinder((pinDiameter + gap) / 2, axisY + 0.2, [x, -0.1, pinRowZ], 'y')),
+      // The undimensioned internal elbow clearance is a square pocket around
+      // the round tail. Flat walls avoid sub-0.01 mm slivers where perpendicular
+      // tessellated bores intersect, while retaining the same pin clearance.
+      ...points.map((x) =>
+        B(
+          pinDiameter + gap,
+          axisY + 0.2,
+          pinDiameter + gap,
+          x,
+          axisY / 2,
+          pinRowZ - (pinDiameter + gap) / 2,
+        ),
+      ),
       ...[-1, 1].map((side) =>
         B(0.5 + gap, 1.7, 1.6 + gap, (side * m.pcbHoldPitch!) / 2, 0.75, -0.8 - gap / 2),
       ),
