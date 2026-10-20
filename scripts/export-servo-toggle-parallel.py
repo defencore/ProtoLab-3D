@@ -28,7 +28,7 @@ expected_solids = sum(len(obj.Shape.Solids) for obj in children)
 assert len(children) == expected_components
 dual = case['parameters']['mechanism'] == 'parallel-dual'
 assert expected_components == (30 if dual else 24)
-assert expected_solids == (61 if dual else 42)
+assert expected_solids == (59 if dual else 40)
 assembly_stem = case['assemblyFileStem']
 installation_stem = case['installationFileStem']
 print_ids = {meta['id'] for meta in case['components'] if meta['supply'] == 'manufactured'}
@@ -119,7 +119,7 @@ reference.Shape = plate
 reference.addProperty('App::PropertyString', 'Role')
 reference.Role = 'Reference only; select the actual panel material, thickness and M4 mounting hardware.'
 reference.addProperty('App::PropertyString', 'Cutout')
-notch_side = 'positive-Y terminal notches' if dual else 'left terminal notch'
+notch_side = 'negative-Y terminal notches' if dual else 'right terminal notch'
 reference.Cutout = f'{width} x {height} R{radius} THROUGH plus {notch_side}; mounting plane at upper face Z0'
 doc.recompute()
 Part.export(children + [reference], str(output / (installation_stem + '.step')))

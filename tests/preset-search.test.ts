@@ -572,6 +572,55 @@ test('metric size queries join whitespace and multiplication signs without match
   );
 });
 
+test('an exact source designation can contain a size without publishing dimension characteristics', () => {
+  const component: ParameterDefinition = {
+    key: 'component',
+    label: 'Component',
+    type: 'select',
+    group: 'Model',
+    options: [{ value: 'source-component', label: 'Source component' }],
+  };
+  const preset: Preset = {
+    id: 'source-component',
+    name: 'Source component',
+    description: 'Fixed upstream component with no published thread or length characteristics.',
+    parameters: { component: 'source-component' },
+    catalog: {
+      ...source,
+      designation: 'V4 M3 x 30 standoff 1',
+      verifiedParameters: ['component'],
+      attributes: { width: 5 },
+    },
+  };
+  const fixed: PartDefinition = {
+    ...part('fixed-source-component', [component], [preset]),
+    defaults: { ...preset.parameters },
+    catalogSelectionOnly: true,
+    catalogFilterFields: [
+      width,
+      { key: 'length', label: 'Length', type: 'number', unit: 'mm', group: 'Size' },
+    ],
+    presetMatchKeys: ['component'],
+  };
+  const index = buildPresetIndex([fixed]);
+  const seeded = seedCurrentFilters(fixed, preset.parameters);
+  assert.equal(filterPresets(index, seeded).items[0]?.preset.id, preset.id);
+  assert.equal(
+    filterPresets(index, { ...seeded, query: '  v4   m3 X 30 Standoff 1  ' }).items[0]?.preset.id,
+    preset.id,
+  );
+  for (const query of ['M3x30', 'M3 x 30', 'V4 M3 x 30', 'M3 x 30 standoff'])
+    assert.deepEqual(filterPresets(index, { ...seeded, query }).items, [], query);
+  for (const parameters of [
+    { [fieldId(width)]: { max: '4' } },
+    { [fieldId(fixed.catalogFilterFields![1])]: { min: '30', max: '30' } },
+  ]) {
+    const result = filterPresets(index, { ...seeded, parameters });
+    assert.deepEqual(result.errors, []);
+    assert.deepEqual(result.items, [], 'an exact identifier never bypasses a dimension filter');
+  }
+});
+
 test('decimal-comma source intervals work without an assumed chosen scalar and invalid control payloads never become unfiltered results', () => {
   const ranged = {
     ...part(

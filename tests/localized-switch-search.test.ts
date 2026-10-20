@@ -135,7 +135,11 @@ test('unknown terms, unrecognized linking words, supplier SKUs and metric querie
     const compiled = compilePresetQuery(query);
     assert.equal(translateSearchQuery(query), query);
     if (query === 'M3 × 10' || query === 'M3x10') {
-      assert.deepEqual(compiled, { tokens: [], metricSize: { diameter: 3, length: 10 } });
+      assert.deepEqual(compiled, {
+        normalizedText: query === 'M3 × 10' ? 'm3 x 10' : 'm3x10',
+        tokens: [],
+        metricSize: { diameter: 3, length: 10 },
+      });
     } else assert.equal(compiled.tokens.length, 1);
   }
   const query = '\u0442\u0443\u043c\u0431\u043b\u0435\u0440 90C46';

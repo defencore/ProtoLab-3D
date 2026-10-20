@@ -1,5 +1,10 @@
 # Multicopter frames and fabrication references
 
+The runtime catalog is the package's local `presets.json`. After changing pinned source metadata,
+refresh both frame catalogs offline with `node --import tsx scripts/sync-frame-presets.ts`.
+Use `--check` to report stale snapshots without writing. Geometry and catalog IDs are preserved;
+review generated source evidence before accepting an intentional metadata change.
+
 Find **Vehicles > Multicopter frames**. The previous 21 generated frames were removed. Their CAD topology and DXF checks did not establish structural reliability. In particular, printed primary arms and tube saddles had no qualified material, joint-slip or fatigue data. They are no longer offered as fabrication starting points.
 
 The SOURCE ONE preset instantiates the original **SOURCE ONE V5 IGES** at the pinned revision `07a8690c6bd73e1300197845eda2ebe547c3a158`. It contains 57 independent source solids. It retains the source lower clamp plate, main plate, keyed cross plate between the arm roots, four 6 mm arms, camera cheeks, standoffs, screws and press inserts. Arm sections and plate outlines are preserved. There is no arbitrary arm-length/thickness scaling and no PETG substitution for a structural carbon part. For SOURCE ONE, printing is limited to its source camera-mount accessory; COMET is a separate printed design.

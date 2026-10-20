@@ -67,3 +67,8 @@ export function buildLibraryOutput(part: PartDefinition, request: LibraryOutputR
 }
 
 export type LibraryOutput = ReturnType<typeof buildLibraryOutput>;
+
+type WithoutTransferBuffers<T> = T extends unknown ? Omit<T, 'buffers'> : never;
+
+/** Transfer lists belong to postMessage options, not to the receiving message. */
+export type LibraryWorkerOutput = WithoutTransferBuffers<LibraryOutput>;

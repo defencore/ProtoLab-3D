@@ -69,6 +69,7 @@ The library covers mechanical parts, fasteners, motion systems, actuators, elect
 - [Product classification, specification sections and release requirements](docs/product-library.md)
 - [Engineering projects, enterprise documentation rules and project CAD](docs/engineering-projects.md)
 - [Part package contract and handoff](docs/part-modules.md)
+- [Application architecture and build measurements](docs/architecture.md)
 - [Catalog coverage](CATALOG_COVERAGE.md) and [engineering coverage](docs/engineering-library-coverage.md)
 - [Geometry fidelity](docs/model-fidelity-audit.md) and [manufacturer CAD evidence](docs/manufacturer-cad.md)
 - [Complete library macro verification and measured coverage](docs/library-script-audit.md)
@@ -84,13 +85,17 @@ Each product family lives in one folder under `src/parts/<part-id>/`. That folde
 ```text
 src/
   App.tsx                       Application state and commands
-  components/                   Generic library, configurator, viewer and preset browser
+  components/                   Generic controls, views and React state hooks
+    usePresetBrowser.ts         Memoized catalog results, facets and navigation
+    requestWorkerOutput.ts      Shared preview/export worker lifecycle
   core/
     types.ts                    Parameter and PartDefinition contracts
     product-types.ts            Product, occurrence and design-project contracts
     product-library.ts          Classification, grouping and specification sections
     design-project.ts           Product structure, manufacturing, procurement and release checks
     part-modules.ts             Versioned package contract and validation
+    preset-browser.ts           Scope changes, field presentation and result pagination
+    preset-resolution.ts        Source identity and explicit supplier selection
     assembly/                   Shared physical geometry and library instance rendering
     hardware/                   Shared fastener, nut, washer, bearing, gear and spring utilities
     component-recipes.ts         Structured local fabrication geometry and component definitions
@@ -112,6 +117,7 @@ src/
       GUIDE.md                  Component-specific scope and sources
   catalog/                      Offline supplier inputs and refresh adapters
 scripts/
+  build/                        Native CAD asset handling and startup dependency report
   parts.ts                      Create, check, export, import and registry tools
   sync-package-catalogs.ts       Explicit offline supplier-to-package refresh
 ```

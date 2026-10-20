@@ -43,10 +43,36 @@ test('configuration import discards fields outside the part schema', () => {
   assert.deepEqual(restored.parameters, part.defaults);
 });
 
+test('configuration import preserves the absence of optional hidden mechanism controls', () => {
+  const actuator = parts.find((item) => item.id === 'servo-toggle-actuator')!;
+  for (const mechanism of ['rocker', 'parallel-dual']) {
+    const preset = actuator.presets.find((item) => item.parameters.mechanism === mechanism)!;
+    const restored = parseConfiguration(
+      JSON.stringify({
+        version: 1,
+        units: 'mm',
+        part: actuator.id,
+        state: 'assembled',
+        parameters: preset.parameters,
+      }),
+      parts,
+    );
+    assert.deepEqual(restored.parameters, preset.parameters);
+    assert.equal(Object.hasOwn(restored.parameters, 'manualState'), mechanism === 'parallel-dual');
+  }
+});
+
 test('every catalog preset round-trips all conditional parameters without losing configuration', () => {
   for (const item of parts) {
     for (const values of [item.defaults, ...item.presets.map((preset) => preset.parameters)]) {
-      for (const state of item.states?.map((option) => option.id) ?? ['default']) {
+      const states = item.states
+        ?.filter((option) => !option.availableWhen || option.availableWhen(values))
+        .map((option) => option.id) ?? ['default'];
+      assert.ok(
+        states.length > 0,
+        `${item.id}: a configuration must have an available model state`,
+      );
+      for (const state of states) {
         const restored = parseConfiguration(
           JSON.stringify({ version: 1, units: 'mm', part: item.id, state, parameters: values }),
           parts,

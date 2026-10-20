@@ -409,7 +409,10 @@ test('manual module removes powered feed and side gripper; flat bed remains', ()
       ['Powered outfeed', 'Stock separation module', 'Tilting receiver'].includes(q.group),
     ),
   );
-  assert.ok(pieces.some((q) => q.label.includes('DDCS v4.1 fascia')));
+  assert.equal(
+    pieces.filter((q) => q.procurement === 'BUY' && /DDCS v4\.1.*\bfascia$/.test(q.label)).length,
+    1,
+  );
   assert.equal(pieces.filter((q) => q.label.includes('latching emergency mushroom')).length, 1);
   assert.ok(
     !machinePieces(part.defaults, 'assembled').some((q) => q.label.includes('lower radius insert')),

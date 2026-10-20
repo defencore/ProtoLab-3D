@@ -82,21 +82,23 @@ function purchased(p: Parameters): ConfiguredPiece[] {
       guard: 'closed',
       colour: 'red',
       panelThickness: 3,
+      ...(parallel ? { panelThickness: 3.8, mountingHardware: 'upper-only' } : {}),
     },
     state: 'assembled',
     quantity: 1,
     supply: 'purchased',
     placement: {
       translation: [simple || parallel ? 0 : m.switchX, 0, parallel ? v.switchZ : m.switchZ],
-      rotation: [0, 0, 0],
+      rotation: [0, 0, parallel ? 180 : 0],
     },
     procurement: {
       designation: 'ASW-07D',
       manufacturer: 'DAIER',
       source: 'https://www.chinadaier.com/wp-content/uploads/2018/05/ASW-07D-1.pdf',
     },
-    notes:
-      'Bare maintained toggle. Its installed 3 mm panel occupies local Z3…6; the lever force and true internal pivot require measurement.',
+    notes: parallel
+      ? 'Bare maintained toggle with the removable lower washer and nut omitted. The 6 mm flat carrier and nominal 0.8 mm case gasket meet the upper nut at Z6.8; measure the delivered bushing and trip force.'
+      : 'Bare maintained toggle. Its installed 3 mm panel occupies local Z3…6; the lever force and true internal pivot require measurement.',
   };
   const manualComponent: AssemblyComponent = {
     id: 'manual-toggle-switch',
@@ -112,7 +114,7 @@ function purchased(p: Parameters): ConfiguredPiece[] {
     state: 'assembled',
     quantity: 1,
     supply: 'purchased',
-    placement: { translation: [0, -90, 0], rotation: [0, 0, 0] },
+    placement: { translation: [0, -90, 0], rotation: [0, 0, 180] },
     procurement: {
       designation: 'ASW-07D + SAC-01',
       manufacturer: 'DAIER',
@@ -205,13 +207,13 @@ export function composition(p: Parameters): AssemblyDefinition {
     issues: isDual(p)
       ? [
           'The horizontal panel places manual ARM 1 with SAC-01 on the left and servo-operated ARM 2 on the right, with both legends engraved 0.6 mm into the upper carrier. Four PETG parts and three nominal 0.8 mm TPU frames form seven prints.',
-          'Four M3 × 30 servo ties and two staggered M3 × 20 rear ties clamp the located lower cradle. The rear full-height keyed seat reacts between the source case face and the lower guard adjustment nut at Z6.8; fit the illustrative source stack to the purchased switch.',
-          'The rear cover opens sideways clear of the servo. Manual cover and toggle positions are independent inspection controls; no wiring, electrical interlock or safety function is specified. Check actual guard travel, insertion access and switch trip loads.',
+          'The 6 mm mounting flange has one flat underside at Z0.8. Three nominal 0.8 mm TPU frames sit outside the PETG, without gasket pockets or blind locating sockets. Four M3 × 30 servo ties and two staggered M3 × 20 rear ties clamp the lower cradle against flat rigid shoulders.',
+          'Both switches are clocked with OFF toward the engraved-label edge and the manual cover hinge behind the toggle. The cover opens away from the operator, clear of the servo. Manual cover and toggle positions are independent inspection controls; check actual guard travel, insertion access and trip loads.',
         ]
       : p.mechanism === 'parallel'
         ? [
-            'Four PETG parts form the upper flange, removable lower servo/switch cradle, lid and opposed rocker. Two nominal 0.8 mm TPU gaskets fit flush into shallow recesses; rigid seating lands preserve alignment.',
-            'Four M3 through-bolts clamp the located split housing. Fit the servo and switch body pockets, verify nut engagement and keep the bottom cable and side terminal paths clear.',
+            'Four PETG parts form the upper flange, removable lower servo/switch cradle, lid and opposed rocker. Two nominal 0.8 mm TPU sheets sit beneath the flat 6 mm flange, with no gasket pockets or blind locating sockets.',
+            'Four M3 through-bolts clamp flat rigid shoulders at Z0.8. The bare toggle omits its removable lower washer and nut; the upper nut meets Z6.8. Fit the body pockets and keep the bottom cable and side terminal paths clear.',
             'Measure the actual switch trip force and pivot, calibrate low speed and torque limit and return to neutral after each push. Neither nominal gasket contact nor the body register establishes a physical load or sealing rating.',
           ]
         : p.mechanism !== 'guided'

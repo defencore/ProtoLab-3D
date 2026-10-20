@@ -54,7 +54,10 @@ writeFileSync(
 
 const { width, height, radius, centre, terminalNotch, additionalTerminalNotches } =
     canonicalInstallation.cutout,
-  notches = [terminalNotch, ...additionalTerminalNotches].sort((a, b) => b.centre[1] - a.centre[1]),
+  // Walk a left-edge construction profile, then reflect it into the actual right-side opening.
+  notches = [terminalNotch, ...additionalTerminalNotches]
+    .map((notch) => ({ ...notch, centre: [-notch.centre[0], notch.centre[1]] }))
+    .sort((a, b) => b.centre[1] - a.centre[1]),
   x0 = centre[0] - width / 2,
   x1 = centre[0] + width / 2,
   y0 = centre[1] - height / 2,
@@ -92,7 +95,7 @@ const dxf: (string | number)[] = [
   2,
   'ENTITIES',
 ];
-const panelPoint = ([x, y]: readonly number[]) => (dual ? [y, -x] : [x, y]);
+const panelPoint = ([x, y]: readonly number[]) => (dual ? [y, x] : [-x, y]);
 const line = (layer: string, colour: number, from: number[], to: number[]) => {
   const a = panelPoint(from),
     b = panelPoint(to);
@@ -107,7 +110,8 @@ const arc = (
   layer = 'CUTOUT',
   colour = 1,
 ) => {
-  const [px, py] = panelPoint([x, y]);
+  const [px, py] = panelPoint([x, y]),
+    reflectedAngle = (angle: number) => (540 - angle + (dual ? 270 : 0)) % 360;
   dxf.push(
     0,
     'ARC',
@@ -124,9 +128,9 @@ const arc = (
     40,
     r,
     50,
-    dual ? (start + 270) % 360 : start,
+    reflectedAngle(end),
     51,
-    dual ? (end + 270) % 360 : end,
+    reflectedAngle(start),
   );
 };
 line('CUTOUT', 1, [x0 + radius, y0], [x1 - radius, y0]);
@@ -222,7 +226,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${paperWidth}mm" hei
 <text x="${paperWidth / 2}" y="8" font-size="4">ST3215 / ASW-07D ${dual ? 'dual-switch ' : ''}panel template</text>
 <text x="${paperWidth / 2}" y="14" font-size="2.6">${installedWidth} x ${installedHeight} mm PETG carrier - millimetres - print at 100%</text>
 </g>
-<g transform="translate(${paperX} ${paperY}) scale(1 -1)${dual ? ' rotate(-90)' : ''}" fill="none" stroke-width="0.3">
+<g transform="translate(${paperX} ${paperY}) scale(1 -1)${dual ? ' rotate(-90)' : ''} scale(-1 1)" fill="none" stroke-width="0.3">
 <rect x="${fx0}" y="${fy0}" width="${flangeLength}" height="${flangeWidth}" rx="4" stroke="#999" stroke-dasharray="2 1"/>
 <path d="${cutoutPath}" stroke="#c11"/>
 ${canonicalInstallation.mountingHoles.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="${installation.holeDiameter / 2}" stroke="#1457ac"/>`).join('\n')}
@@ -230,7 +234,7 @@ ${canonicalInstallation.mountingHoles.map(([x, y]) => `<circle cx="${x}" cy="${y
 </g>
 ${legends.map((legend) => `<text x="${legend.centre[0] + paperX}" y="${paperY - legend.centre[1] + 1.2}" text-anchor="middle" font-family="sans-serif" font-size="3.5" fill="#777">${legend.text}</text>`).join('\n')}
 <g font-family="sans-serif" font-size="2.5" fill="#111">
-<text x="8" y="20" fill="#c11">Red: ${installation.cutout.width} x ${installation.cutout.height} R${radius} THROUGH cutout + ${dual ? 'two upper terminal notches' : 'left terminal notch'}</text>
+<text x="8" y="20" fill="#c11">Red: ${installation.cutout.width} x ${installation.cutout.height} R${radius} THROUGH cutout + ${dual ? 'two lower terminal notches' : 'right terminal notch'}</text>
 <text x="8" y="25" fill="#1457ac">Blue: four diameter 4.5 mm mounting holes</text>
 <text x="8" y="30" fill="#777">Grey: carrier outline${dual ? ', legends' : ''} and axes, reference only</text>
 <path d="M${paperWidth - 60} ${paperHeight - 11}H${paperWidth - 10}M${paperWidth - 60} ${paperHeight - 13}V${paperHeight - 9}M${paperWidth - 10} ${paperHeight - 13}V${paperHeight - 9}" fill="none" stroke="#111" stroke-width="0.3"/>

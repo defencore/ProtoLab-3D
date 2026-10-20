@@ -1,14 +1,14 @@
 {
-  "checkedAt": "2026-10-20T00:20:10.839769+00:00",
+  "checkedAt": "2026-10-20T01:49:03.514346+00:00",
   "freecad": "1.1.4",
-  "scope": "Twenty-one previous rocker, guided and single-switch parallel native proofs are retained only with exact macro and installation-fixture hashes. Seven horizontal dual-switch variants are freshly audited: four PETG parts, three nominal 0.8 mm TPU gaskets, retained ST3215 and ASW-07D source units, manual ARM 1 on the left and servo-operated ARM 2 on the right. Every new variant retains 30 components and 61 valid closed solids through STEP and FCStd roundtrips without external component interference. Actual world geometry proves source orientation, a 150 by 100 mm default flange and both engraved legends with 0.6 mm depth, Z5.4 floor, stroke/counter/space probes and exact removed volumes. Only cloned geometry is rotated back for existing mechanical fixtures: through-tie engagement, rigid shoulders, gasket/guard-nut contact, body-pocket antirotation controls, ground-clip approaches, straight underside cable approach, external 1/3/6 mm host panels and cover/manual-lever sweeps remain checked. Rear right straight-key service requires guard removal. TPU compression, actual electrical plugs, delivered guard seating, force and material performance remain unverified.",
-  "manifestSha256": "8cbb098412c0256d3afab1d722628438878b56edcc086b1a34aa7942b7eb4e6b",
+  "scope": "All 28 current rocker, guided, single-switch parallel and dual-switch parallel macro/fixture variants pass native geometry, external component interference, independent occurrence movement and STEP/FCStd roundtrips. Fourteen unchanged nonparallel proofs are retained only with exact macro and fixture hashes; all fourteen changed parallel variants are checked with the corrected source orientation. Both parallel ASW-07D sources rotate 180 degrees in the construction frame (90 degrees in the final dual world frame), preserving body centres while placing their horizontal ground terminals and matching open cradle channels on positive construction X. Ground-clip fixtures and host-panel branches check the positive-X approach, which becomes the negative-Y operator edge on the dual plate. Servo and rocker press-ON use positive 76.336799815 degrees and press-OFF negative, with inherited source first/last OFF/ON mapping. The single parallel assembly retains 24 components and 40 native solids; the dual retains 30 components and 59. All installed parallel presets prove common PETG flange bottom Z0.8 and top Z6.8, all flange volume supported by its actual first-layer footprint, zero interior downward ceilings and a detected blind-pocket negative control. Nominal 0.8 mm TPU sheets remain outside the flat flange and clear the cradle. Split shoulders, through-tie engagement, antirotation pockets, ground/cable approaches and 1/3/6 mm host panels remain checked. The dual preserves manual ARM 1 on the left and servo ARM 2 on the right, with 0.6 mm legends at Z6.2 floor. Rotated SAC and manual-lever sweeps pass. A diameter 3 mm straight-key approach clears all fixed hardware at both rear ties; the removable cover obstructs tie 1 at actual world [-101,+22] in open and closed modeled poses, while tie 2 at [-79,-22] clears. Fit tie 1 before the cover or remove the cover for straight-key service. Actual plugs, delivered guard adjustment, electrical behavior, force, printed strength, TPU compression and material performance remain unverified.",
+  "manifestSha256": "1c2de18d68efe1e3da1a099f6ee77df7acb8d21d71fb3b1435c87d5073399328",
   "cases": [
     {
       "name": "servo-toggle-actuator/rocker-off/assembled",
       "mechanism": "rocker",
       "passed": true,
-      "codeSha256": "057e8fd4eb72d8d1f1e90f850adc25b80417bdc87931afafd751b9f56bde9666",
+      "codeSha256": "75d6f9f2bd42ae035bdd09b7a088f4b7e50df38208260ae595707c2618b60452",
       "externalInterferences": [],
       "components": 17,
       "solids": 35,
@@ -27,7 +27,7 @@
       "name": "servo-toggle-actuator/rocker-press-on/assembled",
       "mechanism": "rocker",
       "passed": true,
-      "codeSha256": "b4261d1ddcc0bc91d7299e01ea9ad99013d612bf5b5cd31609848b9f9da38fcf",
+      "codeSha256": "1d6a734a8bb01a3d0631c27cd7836231b1aa6722ed82bd863e94f910bda436b7",
       "externalInterferences": [],
       "components": 17,
       "solids": 35,
@@ -46,7 +46,7 @@
       "name": "servo-toggle-actuator/rocker-on/assembled",
       "mechanism": "rocker",
       "passed": true,
-      "codeSha256": "61e451751a7a94825321e74da14994589a31686259a9ad350a2990416b1979b5",
+      "codeSha256": "ef8d35036c6154fc38201b3b183cea4702d806d877cde352de4dc9a0ed148693",
       "externalInterferences": [],
       "components": 17,
       "solids": 35,
@@ -65,7 +65,7 @@
       "name": "servo-toggle-actuator/rocker-press-off/assembled",
       "mechanism": "rocker",
       "passed": true,
-      "codeSha256": "6696a2873f4dab9f10f77d30084372faf6513f1d7a0ee9ac35877be7876f420b",
+      "codeSha256": "802116b7adf599798391f2a89aa6277476ee6325d5bfe219303f129150669349",
       "externalInterferences": [],
       "components": 17,
       "solids": 35,
@@ -84,7 +84,7 @@
       "name": "servo-toggle-actuator/rocker-separated/exploded",
       "mechanism": "rocker",
       "passed": true,
-      "codeSha256": "51da9464cece51c808e4b91cbb6d1ed003d3cc2011b7e6d89f7c61082eaa1ec9",
+      "codeSha256": "299beec02d23fb67e49b0dadafe4cfea79c298d05b0b5fcc61ce08382f7c272f",
       "externalInterferences": [],
       "components": 17,
       "solids": 35,
@@ -103,7 +103,7 @@
       "name": "servo-toggle-actuator/guided-off/assembled",
       "mechanism": "guided",
       "passed": true,
-      "codeSha256": "410e84ea34d2f86cbc6802be472673481d99d57888bb05c7ebeaff51582cd6d4",
+      "codeSha256": "f0c1d25de0bf15ee5d4346681800e389ec63e77ada3eaaaff307cd01c7d54bfe",
       "externalInterferences": [],
       "components": 65,
       "solids": 83,
@@ -122,7 +122,7 @@
       "name": "servo-toggle-actuator/guided-press-on/assembled",
       "mechanism": "guided",
       "passed": true,
-      "codeSha256": "625c5191ae5f0b36638d35d9b6608c1e0b34fcd89bea3feac928c0f1130058be",
+      "codeSha256": "308a2155572941f6d5bca7a112282ef2c02876c02ed8dd74293d3f73c7bb7fd1",
       "externalInterferences": [],
       "components": 65,
       "solids": 83,
@@ -141,7 +141,7 @@
       "name": "servo-toggle-actuator/guided-on/assembled",
       "mechanism": "guided",
       "passed": true,
-      "codeSha256": "789b1c5433c6e2ebbff36d5a8101181bd8b5bf1b9818d9b5ac3f2565b8dc31f8",
+      "codeSha256": "62f77b057ffab6078153892306c33bfa979f1f87bd5b61a12697961cab9155f9",
       "externalInterferences": [],
       "components": 65,
       "solids": 83,
@@ -160,7 +160,7 @@
       "name": "servo-toggle-actuator/guided-press-off/assembled",
       "mechanism": "guided",
       "passed": true,
-      "codeSha256": "0b5c61ce14740ce908b3523428f1ac961db7210708bb7e79824703b19f7422e9",
+      "codeSha256": "8054d6be81c6caae58aae94d3743ad03c7a61495da567277096e2ada1373d8e2",
       "externalInterferences": [],
       "components": 65,
       "solids": 83,
@@ -179,7 +179,7 @@
       "name": "servo-toggle-actuator/guided-separated/exploded",
       "mechanism": "guided",
       "passed": true,
-      "codeSha256": "d244e9e1d54af3257227cc764c50044edc9a2f1eccc0aa2ddb941c5c0d38b81c",
+      "codeSha256": "8b95da7644cb16281f419e8410d2321b4ecac26b619b2afe8dfd1db6061f1b90",
       "externalInterferences": [],
       "components": 65,
       "solids": 83,
@@ -198,44 +198,44 @@
       "name": "servo-toggle-actuator/parallel-off/assembled",
       "mechanism": "parallel",
       "passed": true,
-      "codeSha256": "183bde400ef9e6d97111317139a1120c81c4138b49c0c8785226cb85b683e3c2",
-      "installationFixtureSha256": "d0e13686bc74eada14e2c6f0dd5d1072ca24cae2d7ff1b10b6da90a0998d0add",
+      "codeSha256": "7251f009f7be1b290d9585e48611149639cda2526012472e04ad701859343915",
+      "installationFixtureSha256": "70af9e12ef6b9aa0a8cd7695202871e0fe73386815f64114c9180375f3127865",
       "externalInterferences": [],
-      "rigidShoulderContactMm2": 1071.1292138920478,
+      "rigidShoulderContactMm2": 1541.04848889722,
       "throughTieStacks": [
         {
           "id": "parallel-clamp-screw--10--20",
           "nutEngagementMm": 2.4000000000000004,
           "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
+          "tipAboveOpenRimMm": 4.0
         },
         {
           "id": "parallel-clamp-screw--10-20",
           "nutEngagementMm": 2.4000000000000004,
           "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
+          "tipAboveOpenRimMm": 4.0
         },
         {
           "id": "parallel-clamp-screw-35--20",
           "nutEngagementMm": 2.4000000000000004,
           "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
+          "tipAboveOpenRimMm": 4.0
         },
         {
           "id": "parallel-clamp-screw-35-20",
           "nutEngagementMm": 2.4000000000000004,
           "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
+          "tipAboveOpenRimMm": 4.0
         }
       ],
       "caseYawNegativeControls": [
         {
           "yawDegrees": -3,
-          "interferenceMm3": 34.41426724018326
+          "interferenceMm3": 34.41426724018276
         },
         {
           "yawDegrees": 3,
-          "interferenceMm3": 34.414267240182724
+          "interferenceMm3": 34.414267240182866
         }
       ],
       "groundClipAuthoredApproachClear": true,
@@ -244,22 +244,22 @@
         {
           "id": "parallel-switch-gasket",
           "thicknessMm": 0.8,
-          "flatAreaMm2": 411.5770200570098,
-          "upperSeatContactMm2": 411.5770200570099,
-          "caseContactMm2": 144.5482067253766
+          "flatAreaMm2": 322.45178023261076,
+          "upperSeatContactMm2": 322.4517802326109,
+          "caseContactMm2": 322.45178023261076
         },
         {
           "id": "parallel-panel-gasket",
           "thicknessMm": 0.8,
-          "flatAreaMm2": 3028.183757991876,
-          "upperSeatContactMm2": 3028.1837579918783
+          "flatAreaMm2": 3402.0332837690653,
+          "upperSeatContactMm2": 3402.033283769065
         }
       ],
       "flatPrintFaces": [
         {
           "id": "parallel-base",
-          "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 3308.4302818408078
+          "bedFaceInstalledZ": 0.8,
+          "flatAreaMm2": 7393.17337444735
         },
         {
           "id": "parallel-cradle",
@@ -279,32 +279,52 @@
         {
           "id": "parallel-switch-gasket",
           "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 411.5770200570098
+          "flatAreaMm2": 322.45178023261076
         },
         {
           "id": "parallel-panel-gasket",
           "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 3028.183757991876
+          "flatAreaMm2": 3402.0332837690653
         }
       ],
+      "flatFlangeManufacturability": {
+        "flangeBottomZ": 0.8,
+        "flangeTopZ": 6.8,
+        "flangeThicknessMm": 6,
+        "externalTpuThicknessMm": 0.8,
+        "firstLayerFaceAreaMm2": 7393.17337444735,
+        "unsupportedVolumeMm3": 0,
+        "internalDownwardCeilings": [],
+        "blindPocketNegativeControl": {
+          "firstLayerFaceAreaMm2": 7390.031781793761,
+          "unsupportedVolumeMm3": 16.964600329384883,
+          "internalDownwardCeilings": [
+            {
+              "heightZ": 1.4,
+              "areaMm2": 3.1415926535897922
+            }
+          ]
+        },
+        "scope": "All PETG material within the 6 mm flange is supported by its real common bottom face; upper sleeve and lower cradle print features are audited separately."
+      },
       "hostPlateInstallation": [
         {
           "thicknessMm": 1,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 1891.7128663866645,
+          "uncutNegativeControlMm3": 1891.7128663866627,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 109.35000000000004,
-          "panelGasketContactMm2": 3028.183757991876,
-          "hardLandContactMm2": 659.8408854640434
+          "panelGasketContactMm2": 3402.0332837690653,
+          "petgHostContactMm2": 0
         },
         {
           "thicknessMm": 3,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 6398.942417148398,
+          "uncutNegativeControlMm3": 6398.942417148397,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 352.3500000000001,
-          "panelGasketContactMm2": 3028.183757991876,
-          "hardLandContactMm2": 659.8408854640434
+          "panelGasketContactMm2": 3402.0332837690653,
+          "petgHostContactMm2": 0
         },
         {
           "thicknessMm": 6,
@@ -312,68 +332,68 @@
           "uncutNegativeControlMm3": 13770.649671746105,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 607.5,
-          "panelGasketContactMm2": 3028.183757991876,
-          "hardLandContactMm2": 659.8408854640434
+          "panelGasketContactMm2": 3402.0332837690653,
+          "petgHostContactMm2": 0
         }
       ],
       "authoredCableApproachClear": true,
       "cableScope": "Authored mounting clearance before the source rear face; actual sockets and mating plugs are absent from the source CAD.",
       "fullSweepMountClearanceMm": 0.9999999999999964,
       "components": 24,
-      "solids": 42,
+      "solids": 40,
       "manufacturedComponents": 6,
       "maxBoundsError": 0.0003631372953236678,
       "maxRelativeVolumeError": 0.0030303644484114965,
       "independentMovement": true,
       "stepRoundtrip": true,
-      "stepRelativeVolumeError": 1.6478402256819096e-6,
+      "stepRelativeVolumeError": 1.6068051416872615e-6,
       "fcstdRoundtrip": true,
       "inheritedServoInternalContactChecked": false,
       "cachedNativeValidation": true,
-      "cachedReport": "data/servo-toggle-actuator-validation.json"
+      "cachedReport": "/tmp/protolab-upright-failfast-report-1.json"
     },
     {
       "name": "servo-toggle-actuator/parallel-press-on/assembled",
       "mechanism": "parallel",
       "passed": true,
-      "codeSha256": "f10a0ca120b99b1b85bcc0c4eb4c4bd32e001e4683a3eb3f45afeeafdae0723a",
-      "installationFixtureSha256": "d0e13686bc74eada14e2c6f0dd5d1072ca24cae2d7ff1b10b6da90a0998d0add",
+      "codeSha256": "d6afd9bdb915aef682083df490cff42bead26d4eea32c82e6b5a6cc6027a3721",
+      "installationFixtureSha256": "70af9e12ef6b9aa0a8cd7695202871e0fe73386815f64114c9180375f3127865",
       "externalInterferences": [],
-      "rigidShoulderContactMm2": 1071.1292138920478,
+      "rigidShoulderContactMm2": 1541.04848889722,
       "throughTieStacks": [
         {
           "id": "parallel-clamp-screw--10--20",
           "nutEngagementMm": 2.4000000000000004,
           "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
+          "tipAboveOpenRimMm": 4.0
         },
         {
           "id": "parallel-clamp-screw--10-20",
           "nutEngagementMm": 2.4000000000000004,
           "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
+          "tipAboveOpenRimMm": 4.0
         },
         {
           "id": "parallel-clamp-screw-35--20",
           "nutEngagementMm": 2.4000000000000004,
           "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
+          "tipAboveOpenRimMm": 4.0
         },
         {
           "id": "parallel-clamp-screw-35-20",
           "nutEngagementMm": 2.4000000000000004,
           "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
+          "tipAboveOpenRimMm": 4.0
         }
       ],
       "caseYawNegativeControls": [
         {
           "yawDegrees": -3,
-          "interferenceMm3": 34.41426724018326
+          "interferenceMm3": 34.41426724018276
         },
         {
           "yawDegrees": 3,
-          "interferenceMm3": 34.414267240182724
+          "interferenceMm3": 34.414267240182866
         }
       ],
       "groundClipAuthoredApproachClear": true,
@@ -382,22 +402,22 @@
         {
           "id": "parallel-switch-gasket",
           "thicknessMm": 0.8,
-          "flatAreaMm2": 411.5770200570098,
-          "upperSeatContactMm2": 411.5770200570099,
-          "caseContactMm2": 144.5482067253766
+          "flatAreaMm2": 322.45178023261076,
+          "upperSeatContactMm2": 322.4517802326109,
+          "caseContactMm2": 322.45178023261076
         },
         {
           "id": "parallel-panel-gasket",
           "thicknessMm": 0.8,
-          "flatAreaMm2": 3028.183757991876,
-          "upperSeatContactMm2": 3028.1837579918783
+          "flatAreaMm2": 3402.0332837690653,
+          "upperSeatContactMm2": 3402.033283769065
         }
       ],
       "flatPrintFaces": [
         {
           "id": "parallel-base",
-          "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 3308.4302818408078
+          "bedFaceInstalledZ": 0.8,
+          "flatAreaMm2": 7393.17337444735
         },
         {
           "id": "parallel-cradle",
@@ -417,308 +437,52 @@
         {
           "id": "parallel-switch-gasket",
           "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 411.5770200570098
+          "flatAreaMm2": 322.45178023261076
         },
         {
           "id": "parallel-panel-gasket",
           "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 3028.183757991876
+          "flatAreaMm2": 3402.0332837690653
         }
       ],
+      "flatFlangeManufacturability": {
+        "flangeBottomZ": 0.8,
+        "flangeTopZ": 6.8,
+        "flangeThicknessMm": 6,
+        "externalTpuThicknessMm": 0.8,
+        "firstLayerFaceAreaMm2": 7393.17337444735,
+        "unsupportedVolumeMm3": 0,
+        "internalDownwardCeilings": [],
+        "blindPocketNegativeControl": {
+          "firstLayerFaceAreaMm2": 7390.031781793761,
+          "unsupportedVolumeMm3": 16.964600329384883,
+          "internalDownwardCeilings": [
+            {
+              "heightZ": 1.4,
+              "areaMm2": 3.1415926535897922
+            }
+          ]
+        },
+        "scope": "All PETG material within the 6 mm flange is supported by its real common bottom face; upper sleeve and lower cradle print features are audited separately."
+      },
       "hostPlateInstallation": [
         {
           "thicknessMm": 1,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 1891.7128632394817,
+          "uncutNegativeControlMm3": 1891.712863240214,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 109.35000000000004,
-          "panelGasketContactMm2": 3028.183757991876,
-          "hardLandContactMm2": 659.8408854640434
+          "panelGasketContactMm2": 3402.0332837690653,
+          "petgHostContactMm2": 0
         },
         {
           "thicknessMm": 3,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 6398.942414868705,
+          "uncutNegativeControlMm3": 6398.942414869108,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 352.3500000000001,
-          "panelGasketContactMm2": 3028.183757991876,
-          "hardLandContactMm2": 659.8408854640434
-        },
-        {
-          "thicknessMm": 6,
-          "externalInterferences": 0,
-          "uncutNegativeControlMm3": 13770.649669466413,
-          "cableInterferenceMm3": 0,
-          "terminalNotchNegativeControlMm3": 607.5,
-          "panelGasketContactMm2": 3028.183757991876,
-          "hardLandContactMm2": 659.8408854640434
-        }
-      ],
-      "authoredCableApproachClear": true,
-      "cableScope": "Authored mounting clearance before the source rear face; actual sockets and mating plugs are absent from the source CAD.",
-      "fullSweepMountClearanceMm": 0.9999999999999964,
-      "components": 24,
-      "solids": 42,
-      "manufacturedComponents": 6,
-      "maxBoundsError": 0.004144824023512683,
-      "maxRelativeVolumeError": 0.003030364448410926,
-      "independentMovement": true,
-      "stepRoundtrip": true,
-      "stepRelativeVolumeError": 1.6478402368274046e-6,
-      "fcstdRoundtrip": true,
-      "inheritedServoInternalContactChecked": false,
-      "cachedNativeValidation": true,
-      "cachedReport": "data/servo-toggle-actuator-validation.json"
-    },
-    {
-      "name": "servo-toggle-actuator/parallel-on/assembled",
-      "mechanism": "parallel",
-      "passed": true,
-      "codeSha256": "7389e3db182d780a7cd12d83266f67f00691af321aa3139b4fe93fb690a2a38d",
-      "installationFixtureSha256": "d0e13686bc74eada14e2c6f0dd5d1072ca24cae2d7ff1b10b6da90a0998d0add",
-      "externalInterferences": [],
-      "rigidShoulderContactMm2": 1071.1292138920478,
-      "throughTieStacks": [
-        {
-          "id": "parallel-clamp-screw--10--20",
-          "nutEngagementMm": 2.4000000000000004,
-          "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
-        },
-        {
-          "id": "parallel-clamp-screw--10-20",
-          "nutEngagementMm": 2.4000000000000004,
-          "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
-        },
-        {
-          "id": "parallel-clamp-screw-35--20",
-          "nutEngagementMm": 2.4000000000000004,
-          "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
-        },
-        {
-          "id": "parallel-clamp-screw-35-20",
-          "nutEngagementMm": 2.4000000000000004,
-          "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
-        }
-      ],
-      "caseYawNegativeControls": [
-        {
-          "yawDegrees": -3,
-          "interferenceMm3": 34.41426724018326
-        },
-        {
-          "yawDegrees": 3,
-          "interferenceMm3": 34.414267240182724
-        }
-      ],
-      "groundClipAuthoredApproachClear": true,
-      "groundClipScope": "Authored17\u00d79\u00d75mm envelope and10mm straight insertion stroke; actual mating-terminal tolerances require fitting.",
-      "nominalGaskets": [
-        {
-          "id": "parallel-switch-gasket",
-          "thicknessMm": 0.8,
-          "flatAreaMm2": 411.5770200570098,
-          "upperSeatContactMm2": 411.5770200570099,
-          "caseContactMm2": 144.5482067253766
-        },
-        {
-          "id": "parallel-panel-gasket",
-          "thicknessMm": 0.8,
-          "flatAreaMm2": 3028.183757991876,
-          "upperSeatContactMm2": 3028.1837579918783
-        }
-      ],
-      "flatPrintFaces": [
-        {
-          "id": "parallel-base",
-          "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 3308.4302818408078
-        },
-        {
-          "id": "parallel-cradle",
-          "bedFaceInstalledZ": -19.7,
-          "flatAreaMm2": 1538.8133868564048
-        },
-        {
-          "id": "parallel-clamp",
-          "bedFaceInstalledZ": 17.5,
-          "flatAreaMm2": 1762.2516782532557
-        },
-        {
-          "id": "parallel-rocker",
-          "bedFaceInstalledZ": 18.5,
-          "flatAreaMm2": 678.9927523068145
-        },
-        {
-          "id": "parallel-switch-gasket",
-          "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 411.5770200570098
-        },
-        {
-          "id": "parallel-panel-gasket",
-          "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 3028.183757991876
-        }
-      ],
-      "hostPlateInstallation": [
-        {
-          "thicknessMm": 1,
-          "externalInterferences": 0,
-          "uncutNegativeControlMm3": 1891.7128663866645,
-          "cableInterferenceMm3": 0,
-          "terminalNotchNegativeControlMm3": 109.35000000000004,
-          "panelGasketContactMm2": 3028.183757991876,
-          "hardLandContactMm2": 659.8408854640434
-        },
-        {
-          "thicknessMm": 3,
-          "externalInterferences": 0,
-          "uncutNegativeControlMm3": 6398.942417148398,
-          "cableInterferenceMm3": 0,
-          "terminalNotchNegativeControlMm3": 352.3500000000001,
-          "panelGasketContactMm2": 3028.183757991876,
-          "hardLandContactMm2": 659.8408854640434
-        },
-        {
-          "thicknessMm": 6,
-          "externalInterferences": 0,
-          "uncutNegativeControlMm3": 13770.649671746105,
-          "cableInterferenceMm3": 0,
-          "terminalNotchNegativeControlMm3": 607.5,
-          "panelGasketContactMm2": 3028.183757991876,
-          "hardLandContactMm2": 659.8408854640434
-        }
-      ],
-      "authoredCableApproachClear": true,
-      "cableScope": "Authored mounting clearance before the source rear face; actual sockets and mating plugs are absent from the source CAD.",
-      "fullSweepMountClearanceMm": 0.9999999999999964,
-      "components": 24,
-      "solids": 42,
-      "manufacturedComponents": 6,
-      "maxBoundsError": 0.0003631372953236678,
-      "maxRelativeVolumeError": 0.0030303644484114965,
-      "independentMovement": true,
-      "stepRoundtrip": true,
-      "stepRelativeVolumeError": 1.6478402256819096e-6,
-      "fcstdRoundtrip": true,
-      "inheritedServoInternalContactChecked": false,
-      "cachedNativeValidation": true,
-      "cachedReport": "data/servo-toggle-actuator-validation.json"
-    },
-    {
-      "name": "servo-toggle-actuator/parallel-press-off/assembled",
-      "mechanism": "parallel",
-      "passed": true,
-      "codeSha256": "f3c1ce5a18c7a341e9cec599b99164efef9666531c2be5a2669bcc8619a81306",
-      "installationFixtureSha256": "d0e13686bc74eada14e2c6f0dd5d1072ca24cae2d7ff1b10b6da90a0998d0add",
-      "externalInterferences": [],
-      "rigidShoulderContactMm2": 1071.1292138920478,
-      "throughTieStacks": [
-        {
-          "id": "parallel-clamp-screw--10--20",
-          "nutEngagementMm": 2.4000000000000004,
-          "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
-        },
-        {
-          "id": "parallel-clamp-screw--10-20",
-          "nutEngagementMm": 2.4000000000000004,
-          "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
-        },
-        {
-          "id": "parallel-clamp-screw-35--20",
-          "nutEngagementMm": 2.4000000000000004,
-          "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
-        },
-        {
-          "id": "parallel-clamp-screw-35-20",
-          "nutEngagementMm": 2.4000000000000004,
-          "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
-        }
-      ],
-      "caseYawNegativeControls": [
-        {
-          "yawDegrees": -3,
-          "interferenceMm3": 34.41426724018326
-        },
-        {
-          "yawDegrees": 3,
-          "interferenceMm3": 34.414267240182724
-        }
-      ],
-      "groundClipAuthoredApproachClear": true,
-      "groundClipScope": "Authored17\u00d79\u00d75mm envelope and10mm straight insertion stroke; actual mating-terminal tolerances require fitting.",
-      "nominalGaskets": [
-        {
-          "id": "parallel-switch-gasket",
-          "thicknessMm": 0.8,
-          "flatAreaMm2": 411.5770200570098,
-          "upperSeatContactMm2": 411.5770200570099,
-          "caseContactMm2": 144.5482067253766
-        },
-        {
-          "id": "parallel-panel-gasket",
-          "thicknessMm": 0.8,
-          "flatAreaMm2": 3028.183757991876,
-          "upperSeatContactMm2": 3028.1837579918783
-        }
-      ],
-      "flatPrintFaces": [
-        {
-          "id": "parallel-base",
-          "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 3308.4302818408078
-        },
-        {
-          "id": "parallel-cradle",
-          "bedFaceInstalledZ": -19.7,
-          "flatAreaMm2": 1538.8133868564048
-        },
-        {
-          "id": "parallel-clamp",
-          "bedFaceInstalledZ": 17.5,
-          "flatAreaMm2": 1762.2516782532557
-        },
-        {
-          "id": "parallel-rocker",
-          "bedFaceInstalledZ": 18.5,
-          "flatAreaMm2": 678.9927523068149
-        },
-        {
-          "id": "parallel-switch-gasket",
-          "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 411.5770200570098
-        },
-        {
-          "id": "parallel-panel-gasket",
-          "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 3028.183757991876
-        }
-      ],
-      "hostPlateInstallation": [
-        {
-          "thicknessMm": 1,
-          "externalInterferences": 0,
-          "uncutNegativeControlMm3": 1891.7128632402157,
-          "cableInterferenceMm3": 0,
-          "terminalNotchNegativeControlMm3": 109.35000000000004,
-          "panelGasketContactMm2": 3028.183757991876,
-          "hardLandContactMm2": 659.8408854640434
-        },
-        {
-          "thicknessMm": 3,
-          "externalInterferences": 0,
-          "uncutNegativeControlMm3": 6398.942414869109,
-          "cableInterferenceMm3": 0,
-          "terminalNotchNegativeControlMm3": 352.3500000000001,
-          "panelGasketContactMm2": 3028.183757991876,
-          "hardLandContactMm2": 659.8408854640434
+          "panelGasketContactMm2": 3402.0332837690653,
+          "petgHostContactMm2": 0
         },
         {
           "thicknessMm": 6,
@@ -726,50 +490,358 @@
           "uncutNegativeControlMm3": 13770.649669466817,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 607.5,
-          "panelGasketContactMm2": 3028.183757991876,
-          "hardLandContactMm2": 659.8408854640434
+          "panelGasketContactMm2": 3402.0332837690653,
+          "petgHostContactMm2": 0
         }
       ],
       "authoredCableApproachClear": true,
       "cableScope": "Authored mounting clearance before the source rear face; actual sockets and mating plugs are absent from the source CAD.",
       "fullSweepMountClearanceMm": 0.9999999999999964,
       "components": 24,
-      "solids": 42,
+      "solids": 40,
       "manufacturedComponents": 6,
       "maxBoundsError": 0.004144824023512683,
       "maxRelativeVolumeError": 0.003030364448411921,
       "independentMovement": true,
       "stepRoundtrip": true,
-      "stepRelativeVolumeError": 1.6478402378050797e-6,
+      "stepRelativeVolumeError": 1.6068051535085376e-6,
       "fcstdRoundtrip": true,
-      "inheritedServoInternalContactChecked": false,
-      "cachedNativeValidation": true,
-      "cachedReport": "data/servo-toggle-actuator-validation.json"
+      "inheritedServoInternalContactChecked": false
+    },
+    {
+      "name": "servo-toggle-actuator/parallel-on/assembled",
+      "mechanism": "parallel",
+      "passed": true,
+      "codeSha256": "915422b7d7ffa4ebb4739eed67bcebec9d99be990fb26f93d38f0bcb66b827f4",
+      "installationFixtureSha256": "70af9e12ef6b9aa0a8cd7695202871e0fe73386815f64114c9180375f3127865",
+      "externalInterferences": [],
+      "rigidShoulderContactMm2": 1541.04848889722,
+      "throughTieStacks": [
+        {
+          "id": "parallel-clamp-screw--10--20",
+          "nutEngagementMm": 2.4000000000000004,
+          "tipProtrusionMm": 1.6999999999999993,
+          "tipAboveOpenRimMm": 4.0
+        },
+        {
+          "id": "parallel-clamp-screw--10-20",
+          "nutEngagementMm": 2.4000000000000004,
+          "tipProtrusionMm": 1.6999999999999993,
+          "tipAboveOpenRimMm": 4.0
+        },
+        {
+          "id": "parallel-clamp-screw-35--20",
+          "nutEngagementMm": 2.4000000000000004,
+          "tipProtrusionMm": 1.6999999999999993,
+          "tipAboveOpenRimMm": 4.0
+        },
+        {
+          "id": "parallel-clamp-screw-35-20",
+          "nutEngagementMm": 2.4000000000000004,
+          "tipProtrusionMm": 1.6999999999999993,
+          "tipAboveOpenRimMm": 4.0
+        }
+      ],
+      "caseYawNegativeControls": [
+        {
+          "yawDegrees": -3,
+          "interferenceMm3": 34.41426724018276
+        },
+        {
+          "yawDegrees": 3,
+          "interferenceMm3": 34.414267240182866
+        }
+      ],
+      "groundClipAuthoredApproachClear": true,
+      "groundClipScope": "Authored17\u00d79\u00d75mm envelope and10mm straight insertion stroke; actual mating-terminal tolerances require fitting.",
+      "nominalGaskets": [
+        {
+          "id": "parallel-switch-gasket",
+          "thicknessMm": 0.8,
+          "flatAreaMm2": 322.45178023261076,
+          "upperSeatContactMm2": 322.4517802326109,
+          "caseContactMm2": 322.45178023261076
+        },
+        {
+          "id": "parallel-panel-gasket",
+          "thicknessMm": 0.8,
+          "flatAreaMm2": 3402.0332837690653,
+          "upperSeatContactMm2": 3402.033283769065
+        }
+      ],
+      "flatPrintFaces": [
+        {
+          "id": "parallel-base",
+          "bedFaceInstalledZ": 0.8,
+          "flatAreaMm2": 7393.17337444735
+        },
+        {
+          "id": "parallel-cradle",
+          "bedFaceInstalledZ": -19.7,
+          "flatAreaMm2": 1538.8133868564048
+        },
+        {
+          "id": "parallel-clamp",
+          "bedFaceInstalledZ": 17.5,
+          "flatAreaMm2": 1762.2516782532557
+        },
+        {
+          "id": "parallel-rocker",
+          "bedFaceInstalledZ": 18.5,
+          "flatAreaMm2": 678.9927523068145
+        },
+        {
+          "id": "parallel-switch-gasket",
+          "bedFaceInstalledZ": 0,
+          "flatAreaMm2": 322.45178023261076
+        },
+        {
+          "id": "parallel-panel-gasket",
+          "bedFaceInstalledZ": 0,
+          "flatAreaMm2": 3402.0332837690653
+        }
+      ],
+      "flatFlangeManufacturability": {
+        "flangeBottomZ": 0.8,
+        "flangeTopZ": 6.8,
+        "flangeThicknessMm": 6,
+        "externalTpuThicknessMm": 0.8,
+        "firstLayerFaceAreaMm2": 7393.17337444735,
+        "unsupportedVolumeMm3": 0,
+        "internalDownwardCeilings": [],
+        "blindPocketNegativeControl": {
+          "firstLayerFaceAreaMm2": 7390.031781793761,
+          "unsupportedVolumeMm3": 16.964600329384883,
+          "internalDownwardCeilings": [
+            {
+              "heightZ": 1.4,
+              "areaMm2": 3.1415926535897922
+            }
+          ]
+        },
+        "scope": "All PETG material within the 6 mm flange is supported by its real common bottom face; upper sleeve and lower cradle print features are audited separately."
+      },
+      "hostPlateInstallation": [
+        {
+          "thicknessMm": 1,
+          "externalInterferences": 0,
+          "uncutNegativeControlMm3": 1891.7128663866627,
+          "cableInterferenceMm3": 0,
+          "terminalNotchNegativeControlMm3": 109.35000000000004,
+          "panelGasketContactMm2": 3402.0332837690653,
+          "petgHostContactMm2": 0
+        },
+        {
+          "thicknessMm": 3,
+          "externalInterferences": 0,
+          "uncutNegativeControlMm3": 6398.942417148397,
+          "cableInterferenceMm3": 0,
+          "terminalNotchNegativeControlMm3": 352.3500000000001,
+          "panelGasketContactMm2": 3402.0332837690653,
+          "petgHostContactMm2": 0
+        },
+        {
+          "thicknessMm": 6,
+          "externalInterferences": 0,
+          "uncutNegativeControlMm3": 13770.649671746105,
+          "cableInterferenceMm3": 0,
+          "terminalNotchNegativeControlMm3": 607.5,
+          "panelGasketContactMm2": 3402.0332837690653,
+          "petgHostContactMm2": 0
+        }
+      ],
+      "authoredCableApproachClear": true,
+      "cableScope": "Authored mounting clearance before the source rear face; actual sockets and mating plugs are absent from the source CAD.",
+      "fullSweepMountClearanceMm": 0.9999999999999964,
+      "components": 24,
+      "solids": 40,
+      "manufacturedComponents": 6,
+      "maxBoundsError": 0.0003631372953236678,
+      "maxRelativeVolumeError": 0.0030303644484114965,
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "stepRelativeVolumeError": 1.6068051416872615e-6,
+      "fcstdRoundtrip": true,
+      "inheritedServoInternalContactChecked": false
+    },
+    {
+      "name": "servo-toggle-actuator/parallel-press-off/assembled",
+      "mechanism": "parallel",
+      "passed": true,
+      "codeSha256": "a1e48fe676b0bf538be42b23aa6d3dd25b2ad08e5fff924446b2b7456c0136e2",
+      "installationFixtureSha256": "70af9e12ef6b9aa0a8cd7695202871e0fe73386815f64114c9180375f3127865",
+      "externalInterferences": [],
+      "rigidShoulderContactMm2": 1541.04848889722,
+      "throughTieStacks": [
+        {
+          "id": "parallel-clamp-screw--10--20",
+          "nutEngagementMm": 2.4000000000000004,
+          "tipProtrusionMm": 1.6999999999999993,
+          "tipAboveOpenRimMm": 4.0
+        },
+        {
+          "id": "parallel-clamp-screw--10-20",
+          "nutEngagementMm": 2.4000000000000004,
+          "tipProtrusionMm": 1.6999999999999993,
+          "tipAboveOpenRimMm": 4.0
+        },
+        {
+          "id": "parallel-clamp-screw-35--20",
+          "nutEngagementMm": 2.4000000000000004,
+          "tipProtrusionMm": 1.6999999999999993,
+          "tipAboveOpenRimMm": 4.0
+        },
+        {
+          "id": "parallel-clamp-screw-35-20",
+          "nutEngagementMm": 2.4000000000000004,
+          "tipProtrusionMm": 1.6999999999999993,
+          "tipAboveOpenRimMm": 4.0
+        }
+      ],
+      "caseYawNegativeControls": [
+        {
+          "yawDegrees": -3,
+          "interferenceMm3": 34.41426724018276
+        },
+        {
+          "yawDegrees": 3,
+          "interferenceMm3": 34.414267240182866
+        }
+      ],
+      "groundClipAuthoredApproachClear": true,
+      "groundClipScope": "Authored17\u00d79\u00d75mm envelope and10mm straight insertion stroke; actual mating-terminal tolerances require fitting.",
+      "nominalGaskets": [
+        {
+          "id": "parallel-switch-gasket",
+          "thicknessMm": 0.8,
+          "flatAreaMm2": 322.45178023261076,
+          "upperSeatContactMm2": 322.4517802326109,
+          "caseContactMm2": 322.45178023261076
+        },
+        {
+          "id": "parallel-panel-gasket",
+          "thicknessMm": 0.8,
+          "flatAreaMm2": 3402.0332837690653,
+          "upperSeatContactMm2": 3402.033283769065
+        }
+      ],
+      "flatPrintFaces": [
+        {
+          "id": "parallel-base",
+          "bedFaceInstalledZ": 0.8,
+          "flatAreaMm2": 7393.17337444735
+        },
+        {
+          "id": "parallel-cradle",
+          "bedFaceInstalledZ": -19.7,
+          "flatAreaMm2": 1538.8133868564048
+        },
+        {
+          "id": "parallel-clamp",
+          "bedFaceInstalledZ": 17.5,
+          "flatAreaMm2": 1762.2516782532557
+        },
+        {
+          "id": "parallel-rocker",
+          "bedFaceInstalledZ": 18.5,
+          "flatAreaMm2": 678.9927523068149
+        },
+        {
+          "id": "parallel-switch-gasket",
+          "bedFaceInstalledZ": 0,
+          "flatAreaMm2": 322.45178023261076
+        },
+        {
+          "id": "parallel-panel-gasket",
+          "bedFaceInstalledZ": 0,
+          "flatAreaMm2": 3402.0332837690653
+        }
+      ],
+      "flatFlangeManufacturability": {
+        "flangeBottomZ": 0.8,
+        "flangeTopZ": 6.8,
+        "flangeThicknessMm": 6,
+        "externalTpuThicknessMm": 0.8,
+        "firstLayerFaceAreaMm2": 7393.17337444735,
+        "unsupportedVolumeMm3": 0,
+        "internalDownwardCeilings": [],
+        "blindPocketNegativeControl": {
+          "firstLayerFaceAreaMm2": 7390.031781793761,
+          "unsupportedVolumeMm3": 16.964600329384883,
+          "internalDownwardCeilings": [
+            {
+              "heightZ": 1.4,
+              "areaMm2": 3.1415926535897922
+            }
+          ]
+        },
+        "scope": "All PETG material within the 6 mm flange is supported by its real common bottom face; upper sleeve and lower cradle print features are audited separately."
+      },
+      "hostPlateInstallation": [
+        {
+          "thicknessMm": 1,
+          "externalInterferences": 0,
+          "uncutNegativeControlMm3": 1891.71286323948,
+          "cableInterferenceMm3": 0,
+          "terminalNotchNegativeControlMm3": 109.35000000000004,
+          "panelGasketContactMm2": 3402.0332837690653,
+          "petgHostContactMm2": 0
+        },
+        {
+          "thicknessMm": 3,
+          "externalInterferences": 0,
+          "uncutNegativeControlMm3": 6398.942414868704,
+          "cableInterferenceMm3": 0,
+          "terminalNotchNegativeControlMm3": 352.3500000000001,
+          "panelGasketContactMm2": 3402.0332837690653,
+          "petgHostContactMm2": 0
+        },
+        {
+          "thicknessMm": 6,
+          "externalInterferences": 0,
+          "uncutNegativeControlMm3": 13770.649669466413,
+          "cableInterferenceMm3": 0,
+          "terminalNotchNegativeControlMm3": 607.5,
+          "panelGasketContactMm2": 3402.0332837690653,
+          "petgHostContactMm2": 0
+        }
+      ],
+      "authoredCableApproachClear": true,
+      "cableScope": "Authored mounting clearance before the source rear face; actual sockets and mating plugs are absent from the source CAD.",
+      "fullSweepMountClearanceMm": 0.9999999999999964,
+      "components": 24,
+      "solids": 40,
+      "manufacturedComponents": 6,
+      "maxBoundsError": 0.004144824023512683,
+      "maxRelativeVolumeError": 0.003030364448410926,
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "stepRelativeVolumeError": 1.6068051527458746e-6,
+      "fcstdRoundtrip": true,
+      "inheritedServoInternalContactChecked": false
     },
     {
       "name": "servo-toggle-actuator/parallel-separated/exploded",
       "mechanism": "parallel",
       "passed": true,
-      "codeSha256": "6f3aed03ca74c034da89c60bd101d6b28ab571334b4cc8b13305eac3e8d8616a",
+      "codeSha256": "36cb43d6357ac65f6728d369ab42a3af6ff78520df0ad33602bd5fc2607efbb4",
       "externalInterferences": [],
       "components": 24,
-      "solids": 42,
+      "solids": 40,
       "manufacturedComponents": 6,
       "maxBoundsError": 0.0003631372953236678,
       "maxRelativeVolumeError": 0.00303036444840709,
       "independentMovement": true,
       "stepRoundtrip": true,
-      "stepRelativeVolumeError": 1.6478402254863746e-6,
+      "stepRelativeVolumeError": 1.6068051414965956e-6,
       "fcstdRoundtrip": true,
-      "inheritedServoInternalContactChecked": false,
-      "cachedNativeValidation": true,
-      "cachedReport": "data/servo-toggle-actuator-validation.json"
+      "inheritedServoInternalContactChecked": false
     },
     {
       "name": "servo-toggle-actuator/rocker-larger-base/assembled",
       "mechanism": "rocker",
       "passed": true,
-      "codeSha256": "6f3708a22852dec419cd5834a42f143fc2a118026a825e236270f8f962b55d2f",
+      "codeSha256": "b9b980e186ff1ed82485deaa7976ae47187a31940c62492cbc13196b6c804bf9",
       "externalInterferences": [],
       "components": 17,
       "solids": 35,
@@ -788,44 +860,44 @@
       "name": "servo-toggle-actuator/parallel-larger-base/assembled",
       "mechanism": "parallel",
       "passed": true,
-      "codeSha256": "595c06dfbdd9212c8e95db0dbfaf38982758b615945c17176c038ae206c94651",
-      "installationFixtureSha256": "8ab6d0fd781e897415a0c321bac99aae0f7e05685276d990682c8feed551f7d4",
+      "codeSha256": "498c64f9da0a1dac507381e56277ec531e7a8902fc633bd4b856cbae398c90d6",
+      "installationFixtureSha256": "2225fe20a56537e50d9c58ed82b2e1b11e5d9117072ef15ba28a90049ea8f13b",
       "externalInterferences": [],
-      "rigidShoulderContactMm2": 1071.1292138920453,
+      "rigidShoulderContactMm2": 1541.0484888972203,
       "throughTieStacks": [
         {
           "id": "parallel-clamp-screw--10--20",
           "nutEngagementMm": 2.4000000000000004,
           "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
+          "tipAboveOpenRimMm": 4.0
         },
         {
           "id": "parallel-clamp-screw--10-20",
           "nutEngagementMm": 2.4000000000000004,
           "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
+          "tipAboveOpenRimMm": 4.0
         },
         {
           "id": "parallel-clamp-screw-35--20",
           "nutEngagementMm": 2.4000000000000004,
           "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
+          "tipAboveOpenRimMm": 4.0
         },
         {
           "id": "parallel-clamp-screw-35-20",
           "nutEngagementMm": 2.4000000000000004,
           "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
+          "tipAboveOpenRimMm": 4.0
         }
       ],
       "caseYawNegativeControls": [
         {
           "yawDegrees": -3,
-          "interferenceMm3": 34.41426724018326
+          "interferenceMm3": 34.41426724018276
         },
         {
           "yawDegrees": 3,
-          "interferenceMm3": 34.414267240182724
+          "interferenceMm3": 34.414267240182866
         }
       ],
       "groundClipAuthoredApproachClear": true,
@@ -834,22 +906,22 @@
         {
           "id": "parallel-switch-gasket",
           "thicknessMm": 0.8,
-          "flatAreaMm2": 411.5770200570098,
-          "upperSeatContactMm2": 411.5770200570099,
-          "caseContactMm2": 144.5482067253766
+          "flatAreaMm2": 322.45178023261076,
+          "upperSeatContactMm2": 322.4517802326109,
+          "caseContactMm2": 322.45178023261076
         },
         {
           "id": "parallel-panel-gasket",
           "thicknessMm": 0.8,
-          "flatAreaMm2": 5827.135971149538,
-          "upperSeatContactMm2": 5827.135971149544
+          "flatAreaMm2": 6200.9854969267235,
+          "upperSeatContactMm2": 6200.985496926728
         }
       ],
       "flatPrintFaces": [
         {
           "id": "parallel-base",
-          "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 3391.5529360624982
+          "bedFaceInstalledZ": 0.8,
+          "flatAreaMm2": 10293.173374447357
         },
         {
           "id": "parallel-cradle",
@@ -869,65 +941,83 @@
         {
           "id": "parallel-switch-gasket",
           "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 411.5770200570098
+          "flatAreaMm2": 322.45178023261076
         },
         {
           "id": "parallel-panel-gasket",
           "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 5827.135971149538
+          "flatAreaMm2": 6200.9854969267235
         }
       ],
+      "flatFlangeManufacturability": {
+        "flangeBottomZ": 0.8,
+        "flangeTopZ": 6.8,
+        "flangeThicknessMm": 6,
+        "externalTpuThicknessMm": 0.8,
+        "firstLayerFaceAreaMm2": 10293.173374447357,
+        "unsupportedVolumeMm3": 0,
+        "internalDownwardCeilings": [],
+        "blindPocketNegativeControl": {
+          "firstLayerFaceAreaMm2": 10290.031781793768,
+          "unsupportedVolumeMm3": 16.964600329384886,
+          "internalDownwardCeilings": [
+            {
+              "heightZ": 1.4,
+              "areaMm2": 3.1415926535897922
+            }
+          ]
+        },
+        "scope": "All PETG material within the 6 mm flange is supported by its real common bottom face; upper sleeve and lower cradle print features are audited separately."
+      },
       "hostPlateInstallation": [
         {
           "thicknessMm": 1,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 1891.7128663866638,
+          "uncutNegativeControlMm3": 1891.7128663866624,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 109.35000000000004,
-          "panelGasketContactMm2": 5827.135971149538,
-          "hardLandContactMm2": 720.6803543785533
+          "panelGasketContactMm2": 6200.9854969267235,
+          "petgHostContactMm2": 0
         },
         {
           "thicknessMm": 3,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 6398.942417148398,
+          "uncutNegativeControlMm3": 6398.942417148396,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 352.3500000000001,
-          "panelGasketContactMm2": 5827.135971149538,
-          "hardLandContactMm2": 720.6803543785533
+          "panelGasketContactMm2": 6200.9854969267235,
+          "petgHostContactMm2": 0
         },
         {
           "thicknessMm": 6,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 13770.649671746109,
+          "uncutNegativeControlMm3": 13770.649671746105,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 607.5,
-          "panelGasketContactMm2": 5827.135971149538,
-          "hardLandContactMm2": 720.6803543785533
+          "panelGasketContactMm2": 6200.9854969267235,
+          "petgHostContactMm2": 0
         }
       ],
       "authoredCableApproachClear": true,
       "cableScope": "Authored mounting clearance before the source rear face; actual sockets and mating plugs are absent from the source CAD.",
       "fullSweepMountClearanceMm": 0.9999999999999964,
       "components": 24,
-      "solids": 42,
+      "solids": 40,
       "manufacturedComponents": 6,
       "maxBoundsError": 0.0003631372953236678,
       "maxRelativeVolumeError": 0.0030303644484114965,
       "independentMovement": true,
       "stepRoundtrip": true,
-      "stepRelativeVolumeError": 1.4754935986334008e-6,
+      "stepRelativeVolumeError": 1.4236389427677424e-6,
       "fcstdRoundtrip": true,
-      "inheritedServoInternalContactChecked": false,
-      "cachedNativeValidation": true,
-      "cachedReport": "data/servo-toggle-actuator-validation.json"
+      "inheritedServoInternalContactChecked": false
     },
     {
       "name": "servo-toggle-actuator/parallel-dual-off/assembled",
       "mechanism": "parallel-dual",
       "passed": true,
-      "codeSha256": "9e05d93359dbfc378dcb0b8d5483867ca67b5a2d4e4ed8da380a9ee1335626be",
-      "installationFixtureSha256": "96420bbc040b0eb42a52bae6eb00608191757c1e1bb3ce7c5a062aa288985847",
+      "codeSha256": "74f5d28994c086e08f14ca434ba1e302d13d5507dbf2535148d5f5cb9eeb0c42",
+      "installationFixtureSha256": "27157a8d9b238cd8195d5930713e4c3de41990d94a0f8acf63c36e59f6e27c80",
       "externalInterferences": [],
       "worldLayout": {
         "manualCentre": [-90, 0, 0],
@@ -941,20 +1031,20 @@
           "text": "ARM 1",
           "centre": [-90, -36],
           "depthMm": 0.6,
-          "absoluteFloorZ": 5.4,
-          "removedVolumeMm3": 29.548499999999947,
+          "absoluteFloorZ": 6.2,
+          "removedVolumeMm3": 29.548499999999933,
           "strokeCounterAndSpaceProbes": 8
         },
         {
           "text": "ARM 2",
           "centre": [0, -36],
           "depthMm": 0.6,
-          "absoluteFloorZ": 5.4,
-          "removedVolumeMm3": 31.310249999999954,
+          "absoluteFloorZ": 6.2,
+          "removedVolumeMm3": 31.31024999999994,
           "strokeCounterAndSpaceProbes": 8
         }
       ],
-      "rigidShoulderContactMm2": 1600.831432545915,
+      "rigidShoulderContactMm2": 2447.9929992753705,
       "throughTieStacks": [
         {
           "id": "parallel-clamp-screw--10--20",
@@ -984,11 +1074,11 @@
       "caseYawNegativeControls": [
         {
           "yawDegrees": -3,
-          "interferenceMm3": 34.41426724018313
+          "interferenceMm3": 34.414267240183825
         },
         {
           "yawDegrees": 3,
-          "interferenceMm3": 34.414267240182824
+          "interferenceMm3": 34.414267240181964
         }
       ],
       "groundClipAuthoredApproachClear": true,
@@ -997,22 +1087,22 @@
         {
           "id": "parallel-switch-gasket",
           "thicknessMm": 0.8,
-          "flatAreaMm2": 411.5770200570098,
-          "upperSeatContactMm2": 411.5770200570099,
-          "caseContactMm2": 144.54820672537662
+          "flatAreaMm2": 322.45178023261076,
+          "upperSeatContactMm2": 322.4517802326109,
+          "caseContactMm2": 322.45178023261076
         },
         {
           "id": "parallel-panel-gasket",
           "thicknessMm": 0.8,
-          "flatAreaMm2": 6618.408184307196,
-          "upperSeatContactMm2": 6618.4081843072
+          "flatAreaMm2": 6992.257710084383,
+          "upperSeatContactMm2": 6992.257710084382
         }
       ],
       "flatPrintFaces": [
         {
           "id": "parallel-base",
-          "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 4969.834893022163
+          "bedFaceInstalledZ": 0.8,
+          "flatAreaMm2": 13459.779283231912
         },
         {
           "id": "parallel-cradle",
@@ -1032,17 +1122,37 @@
         {
           "id": "parallel-switch-gasket",
           "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 411.5770200570098
+          "flatAreaMm2": 322.45178023261076
         },
         {
           "id": "parallel-panel-gasket",
           "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 6618.408184307196
+          "flatAreaMm2": 6992.257710084383
         }
       ],
+      "flatFlangeManufacturability": {
+        "flangeBottomZ": 0.8,
+        "flangeTopZ": 6.8,
+        "flangeThicknessMm": 6,
+        "externalTpuThicknessMm": 0.8,
+        "firstLayerFaceAreaMm2": 13459.779283231912,
+        "unsupportedVolumeMm3": 0,
+        "internalDownwardCeilings": [],
+        "blindPocketNegativeControl": {
+          "firstLayerFaceAreaMm2": 13456.637690578325,
+          "unsupportedVolumeMm3": 16.964600329384876,
+          "internalDownwardCeilings": [
+            {
+              "heightZ": 1.4,
+              "areaMm2": 3.1415926535897922
+            }
+          ]
+        },
+        "scope": "All PETG material within the 6 mm flange is supported by its real common bottom face; upper sleeve and lower cradle print features are audited separately."
+      },
       "manualSourceRetained": true,
-      "manualGuardNutContactMm2": 91.25933214241893,
-      "manualRigidShoulderMm2": 554.5782106022797,
+      "manualGuardNutContactMm2": 91.259332142414,
+      "manualRigidShoulderMm2": 931.820502326558,
       "manualThroughStacks": [
         {
           "id": "manual-clamp-screw-1",
@@ -1060,46 +1170,68 @@
       "manualCaseYawControls": [
         {
           "yawDegrees": -3,
-          "interferenceMm3": 34.41426724018258
+          "interferenceMm3": 34.41426724018331
         },
         {
           "yawDegrees": 3,
-          "interferenceMm3": 34.41426724018257
+          "interferenceMm3": 34.41426724018149
         }
       ],
       "manualGasket": {
         "thicknessMm": 0.8,
-        "upperSeatContactMm2": 639.8765581933802,
-        "caseContactMm2": 323.3101875790209
+        "upperSeatContactMm2": 322.4517802326109,
+        "caseContactMm2": 322.45178023261076
       },
       "manualGroundClipApproachClear": true,
+      "manualTieToolAccess": [
+        {
+          "id": "manual-clamp-screw-1",
+          "canonicalAxis": [-22, -101],
+          "toolDiameterMm": 3,
+          "toolBottomZ": 6.01,
+          "toolHeightMm": 54,
+          "fixedInterferenceMm3": 0,
+          "coverInterferenceMm3": 0.9582836904486712,
+          "requiresCoverRemovalForThisModeledPose": true
+        },
+        {
+          "id": "manual-clamp-screw-2",
+          "canonicalAxis": [22, -79],
+          "toolDiameterMm": 3,
+          "toolBottomZ": 6.01,
+          "toolHeightMm": 54,
+          "fixedInterferenceMm3": 0,
+          "coverInterferenceMm3": 0,
+          "requiresCoverRemovalForThisModeledPose": false
+        }
+      ],
       "hostPlateInstallation": [
         {
           "thicknessMm": 1,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 2899.514543705965,
+          "uncutNegativeControlMm3": 2899.5145437059678,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 109.35000000000004,
-          "panelGasketContactMm2": 6618.408184307196,
-          "hardLandContactMm2": 789.9198232930592
+          "panelGasketContactMm2": 6992.257710084383,
+          "petgHostContactMm2": 0
         },
         {
           "thicknessMm": 3,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 10158.954174983433,
+          "uncutNegativeControlMm3": 10158.954174983439,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 352.3500000000001,
-          "panelGasketContactMm2": 6618.408184307196,
-          "hardLandContactMm2": 789.9198232930592
+          "panelGasketContactMm2": 6992.257710084383,
+          "petgHostContactMm2": 0
         },
         {
           "thicknessMm": 6,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 21594.706461539055,
+          "uncutNegativeControlMm3": 21594.706461539066,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 607.5,
-          "panelGasketContactMm2": 6618.408184307196,
-          "hardLandContactMm2": 789.9198232930592
+          "panelGasketContactMm2": 6992.257710084383,
+          "petgHostContactMm2": 0
         }
       ],
       "authoredCableApproachClear": true,
@@ -1110,13 +1242,13 @@
         "worldGeometryUntouched": true
       },
       "components": 30,
-      "solids": 61,
+      "solids": 59,
       "manufacturedComponents": 7,
       "maxBoundsError": 0.0003631372953236678,
       "maxRelativeVolumeError": 0.0030303644484129186,
       "independentMovement": true,
       "stepRoundtrip": true,
-      "stepRelativeVolumeError": 1.2005310108187954e-6,
+      "stepRelativeVolumeError": 1.1609211359834394e-6,
       "fcstdRoundtrip": true,
       "inheritedServoInternalContactChecked": false
     },
@@ -1124,8 +1256,8 @@
       "name": "servo-toggle-actuator/parallel-dual-press-on/assembled",
       "mechanism": "parallel-dual",
       "passed": true,
-      "codeSha256": "6af7c92e7da8e26d3c392df4f5c3d8747a3978beaaa615546b24c3db6b9fe2b3",
-      "installationFixtureSha256": "96420bbc040b0eb42a52bae6eb00608191757c1e1bb3ce7c5a062aa288985847",
+      "codeSha256": "706afae85aec23fa0a7f4a5b6d1ed3c4e9f08013c7f83c9e1b50b8ed824c9e18",
+      "installationFixtureSha256": "27157a8d9b238cd8195d5930713e4c3de41990d94a0f8acf63c36e59f6e27c80",
       "externalInterferences": [],
       "worldLayout": {
         "manualCentre": [-90, 0, 0],
@@ -1139,20 +1271,20 @@
           "text": "ARM 1",
           "centre": [-90, -36],
           "depthMm": 0.6,
-          "absoluteFloorZ": 5.4,
-          "removedVolumeMm3": 29.548499999999947,
+          "absoluteFloorZ": 6.2,
+          "removedVolumeMm3": 29.548499999999933,
           "strokeCounterAndSpaceProbes": 8
         },
         {
           "text": "ARM 2",
           "centre": [0, -36],
           "depthMm": 0.6,
-          "absoluteFloorZ": 5.4,
-          "removedVolumeMm3": 31.310249999999954,
+          "absoluteFloorZ": 6.2,
+          "removedVolumeMm3": 31.31024999999994,
           "strokeCounterAndSpaceProbes": 8
         }
       ],
-      "rigidShoulderContactMm2": 1600.831432545915,
+      "rigidShoulderContactMm2": 2447.9929992753705,
       "throughTieStacks": [
         {
           "id": "parallel-clamp-screw--10--20",
@@ -1182,11 +1314,11 @@
       "caseYawNegativeControls": [
         {
           "yawDegrees": -3,
-          "interferenceMm3": 34.41426724018313
+          "interferenceMm3": 34.414267240183825
         },
         {
           "yawDegrees": 3,
-          "interferenceMm3": 34.414267240182824
+          "interferenceMm3": 34.414267240181964
         }
       ],
       "groundClipAuthoredApproachClear": true,
@@ -1195,418 +1327,22 @@
         {
           "id": "parallel-switch-gasket",
           "thicknessMm": 0.8,
-          "flatAreaMm2": 411.5770200570098,
-          "upperSeatContactMm2": 411.5770200570099,
-          "caseContactMm2": 144.54820672537662
+          "flatAreaMm2": 322.45178023261076,
+          "upperSeatContactMm2": 322.4517802326109,
+          "caseContactMm2": 322.45178023261076
         },
         {
           "id": "parallel-panel-gasket",
           "thicknessMm": 0.8,
-          "flatAreaMm2": 6618.408184307196,
-          "upperSeatContactMm2": 6618.4081843072
+          "flatAreaMm2": 6992.257710084383,
+          "upperSeatContactMm2": 6992.257710084382
         }
       ],
       "flatPrintFaces": [
         {
           "id": "parallel-base",
-          "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 4969.834893022163
-        },
-        {
-          "id": "parallel-cradle",
-          "bedFaceInstalledZ": -19.7,
-          "flatAreaMm2": 2390.722795193735
-        },
-        {
-          "id": "parallel-clamp",
-          "bedFaceInstalledZ": 17.5,
-          "flatAreaMm2": 1762.2516782532557
-        },
-        {
-          "id": "parallel-rocker",
-          "bedFaceInstalledZ": 18.5,
-          "flatAreaMm2": 678.9927523068145
-        },
-        {
-          "id": "parallel-switch-gasket",
-          "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 411.5770200570098
-        },
-        {
-          "id": "parallel-panel-gasket",
-          "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 6618.408184307196
-        }
-      ],
-      "manualSourceRetained": true,
-      "manualGuardNutContactMm2": 91.25933214241893,
-      "manualRigidShoulderMm2": 554.5782106022797,
-      "manualThroughStacks": [
-        {
-          "id": "manual-clamp-screw-1",
-          "nutEngagementMm": 2.4,
-          "tipProtrusionMm": 3,
-          "tipAboveOpenRimMm": 2.7
-        },
-        {
-          "id": "manual-clamp-screw-2",
-          "nutEngagementMm": 2.4,
-          "tipProtrusionMm": 3,
-          "tipAboveOpenRimMm": 2.7
-        }
-      ],
-      "manualCaseYawControls": [
-        {
-          "yawDegrees": -3,
-          "interferenceMm3": 34.41426724018258
-        },
-        {
-          "yawDegrees": 3,
-          "interferenceMm3": 34.41426724018257
-        }
-      ],
-      "manualGasket": {
-        "thicknessMm": 0.8,
-        "upperSeatContactMm2": 639.8765581933802,
-        "caseContactMm2": 323.3101875790209
-      },
-      "manualGroundClipApproachClear": true,
-      "hostPlateInstallation": [
-        {
-          "thicknessMm": 1,
-          "externalInterferences": 0,
-          "uncutNegativeControlMm3": 2899.5145405587823,
-          "cableInterferenceMm3": 0,
-          "terminalNotchNegativeControlMm3": 109.35000000000004,
-          "panelGasketContactMm2": 6618.408184307196,
-          "hardLandContactMm2": 789.9198232930592
-        },
-        {
-          "thicknessMm": 3,
-          "externalInterferences": 0,
-          "uncutNegativeControlMm3": 10158.954172703741,
-          "cableInterferenceMm3": 0,
-          "terminalNotchNegativeControlMm3": 352.3500000000001,
-          "panelGasketContactMm2": 6618.408184307196,
-          "hardLandContactMm2": 789.9198232930592
-        },
-        {
-          "thicknessMm": 6,
-          "externalInterferences": 0,
-          "uncutNegativeControlMm3": 21594.706459259363,
-          "cableInterferenceMm3": 0,
-          "terminalNotchNegativeControlMm3": 607.5,
-          "panelGasketContactMm2": 6618.408184307196,
-          "hardLandContactMm2": 789.9198232930592
-        }
-      ],
-      "authoredCableApproachClear": true,
-      "cableScope": "Authored mounting clearance before the source rear face; actual sockets and mating plugs are absent from the source CAD.",
-      "fullSweepMountClearanceMm": 1.0,
-      "fixtureFrame": {
-        "canonicalRotationZ": 90,
-        "worldGeometryUntouched": true
-      },
-      "components": 30,
-      "solids": 61,
-      "manufacturedComponents": 7,
-      "maxBoundsError": 0.0041448239774126705,
-      "maxRelativeVolumeError": 0.0030303644484089365,
-      "independentMovement": true,
-      "stepRoundtrip": true,
-      "stepRelativeVolumeError": 1.200531016951635e-6,
-      "fcstdRoundtrip": true,
-      "inheritedServoInternalContactChecked": false
-    },
-    {
-      "name": "servo-toggle-actuator/parallel-dual-on/assembled",
-      "mechanism": "parallel-dual",
-      "passed": true,
-      "codeSha256": "ea90038d0104b131dfa4492516171666e979f635158f106b1183a0205cf6ce2d",
-      "installationFixtureSha256": "96420bbc040b0eb42a52bae6eb00608191757c1e1bb3ce7c5a062aa288985847",
-      "externalInterferences": [],
-      "worldLayout": {
-        "manualCentre": [-90, 0, 0],
-        "servoCentre": [-28, 0, -15.2],
-        "drivenCentre": [0, 0, 0],
-        "plateCentre": [-47, 0],
-        "rigidRotationZ": -90
-      },
-      "engravedLegends": [
-        {
-          "text": "ARM 1",
-          "centre": [-90, -36],
-          "depthMm": 0.6,
-          "absoluteFloorZ": 5.4,
-          "removedVolumeMm3": 29.548499999999947,
-          "strokeCounterAndSpaceProbes": 8
-        },
-        {
-          "text": "ARM 2",
-          "centre": [0, -36],
-          "depthMm": 0.6,
-          "absoluteFloorZ": 5.4,
-          "removedVolumeMm3": 31.310249999999954,
-          "strokeCounterAndSpaceProbes": 8
-        }
-      ],
-      "rigidShoulderContactMm2": 1600.831432545915,
-      "throughTieStacks": [
-        {
-          "id": "parallel-clamp-screw--10--20",
-          "nutEngagementMm": 2.400000218015405,
-          "tipProtrusionMm": 1.6999998909922969,
-          "tipAboveOpenRimMm": 4.0
-        },
-        {
-          "id": "parallel-clamp-screw--10-20",
-          "nutEngagementMm": 2.400000218015405,
-          "tipProtrusionMm": 1.6999998909922969,
-          "tipAboveOpenRimMm": 4.0
-        },
-        {
-          "id": "parallel-clamp-screw-35--20",
-          "nutEngagementMm": 2.400000218015405,
-          "tipProtrusionMm": 1.6999998909922969,
-          "tipAboveOpenRimMm": 4.0
-        },
-        {
-          "id": "parallel-clamp-screw-35-20",
-          "nutEngagementMm": 2.400000218015405,
-          "tipProtrusionMm": 1.6999998909922969,
-          "tipAboveOpenRimMm": 4.0
-        }
-      ],
-      "caseYawNegativeControls": [
-        {
-          "yawDegrees": -3,
-          "interferenceMm3": 34.41426724018313
-        },
-        {
-          "yawDegrees": 3,
-          "interferenceMm3": 34.414267240182824
-        }
-      ],
-      "groundClipAuthoredApproachClear": true,
-      "groundClipScope": "Authored17\u00d79\u00d75mm envelope and10mm straight insertion stroke; actual mating-terminal tolerances require fitting.",
-      "nominalGaskets": [
-        {
-          "id": "parallel-switch-gasket",
-          "thicknessMm": 0.8,
-          "flatAreaMm2": 411.5770200570098,
-          "upperSeatContactMm2": 411.5770200570099,
-          "caseContactMm2": 144.54820672537662
-        },
-        {
-          "id": "parallel-panel-gasket",
-          "thicknessMm": 0.8,
-          "flatAreaMm2": 6618.408184307196,
-          "upperSeatContactMm2": 6618.4081843072
-        }
-      ],
-      "flatPrintFaces": [
-        {
-          "id": "parallel-base",
-          "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 4969.834893022163
-        },
-        {
-          "id": "parallel-cradle",
-          "bedFaceInstalledZ": -19.7,
-          "flatAreaMm2": 2390.722795193735
-        },
-        {
-          "id": "parallel-clamp",
-          "bedFaceInstalledZ": 17.5,
-          "flatAreaMm2": 1762.2516782532557
-        },
-        {
-          "id": "parallel-rocker",
-          "bedFaceInstalledZ": 18.5,
-          "flatAreaMm2": 678.9927523068145
-        },
-        {
-          "id": "parallel-switch-gasket",
-          "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 411.5770200570098
-        },
-        {
-          "id": "parallel-panel-gasket",
-          "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 6618.408184307196
-        }
-      ],
-      "manualSourceRetained": true,
-      "manualGuardNutContactMm2": 91.25933214241893,
-      "manualRigidShoulderMm2": 554.5782106022797,
-      "manualThroughStacks": [
-        {
-          "id": "manual-clamp-screw-1",
-          "nutEngagementMm": 2.4,
-          "tipProtrusionMm": 3,
-          "tipAboveOpenRimMm": 2.7
-        },
-        {
-          "id": "manual-clamp-screw-2",
-          "nutEngagementMm": 2.4,
-          "tipProtrusionMm": 3,
-          "tipAboveOpenRimMm": 2.7
-        }
-      ],
-      "manualCaseYawControls": [
-        {
-          "yawDegrees": -3,
-          "interferenceMm3": 34.41426724018258
-        },
-        {
-          "yawDegrees": 3,
-          "interferenceMm3": 34.41426724018257
-        }
-      ],
-      "manualGasket": {
-        "thicknessMm": 0.8,
-        "upperSeatContactMm2": 639.8765581933802,
-        "caseContactMm2": 323.3101875790209
-      },
-      "manualGroundClipApproachClear": true,
-      "hostPlateInstallation": [
-        {
-          "thicknessMm": 1,
-          "externalInterferences": 0,
-          "uncutNegativeControlMm3": 2899.514543705965,
-          "cableInterferenceMm3": 0,
-          "terminalNotchNegativeControlMm3": 109.35000000000004,
-          "panelGasketContactMm2": 6618.408184307196,
-          "hardLandContactMm2": 789.9198232930592
-        },
-        {
-          "thicknessMm": 3,
-          "externalInterferences": 0,
-          "uncutNegativeControlMm3": 10158.954174983433,
-          "cableInterferenceMm3": 0,
-          "terminalNotchNegativeControlMm3": 352.3500000000001,
-          "panelGasketContactMm2": 6618.408184307196,
-          "hardLandContactMm2": 789.9198232930592
-        },
-        {
-          "thicknessMm": 6,
-          "externalInterferences": 0,
-          "uncutNegativeControlMm3": 21594.706461539055,
-          "cableInterferenceMm3": 0,
-          "terminalNotchNegativeControlMm3": 607.5,
-          "panelGasketContactMm2": 6618.408184307196,
-          "hardLandContactMm2": 789.9198232930592
-        }
-      ],
-      "authoredCableApproachClear": true,
-      "cableScope": "Authored mounting clearance before the source rear face; actual sockets and mating plugs are absent from the source CAD.",
-      "fullSweepMountClearanceMm": 1.0,
-      "fixtureFrame": {
-        "canonicalRotationZ": 90,
-        "worldGeometryUntouched": true
-      },
-      "components": 30,
-      "solids": 61,
-      "manufacturedComponents": 7,
-      "maxBoundsError": 0.0003631372953236678,
-      "maxRelativeVolumeError": 0.0030303644484129186,
-      "independentMovement": true,
-      "stepRoundtrip": true,
-      "stepRelativeVolumeError": 1.2005310108187954e-6,
-      "fcstdRoundtrip": true,
-      "inheritedServoInternalContactChecked": false
-    },
-    {
-      "name": "servo-toggle-actuator/parallel-dual-press-off/assembled",
-      "mechanism": "parallel-dual",
-      "passed": true,
-      "codeSha256": "f3036d18c32c6f07d9961f7a47bed7bb5feb7a1bb21f9fbb9b1446634ec92008",
-      "installationFixtureSha256": "96420bbc040b0eb42a52bae6eb00608191757c1e1bb3ce7c5a062aa288985847",
-      "externalInterferences": [],
-      "worldLayout": {
-        "manualCentre": [-90, 0, 0],
-        "servoCentre": [-28, 0, -15.2],
-        "drivenCentre": [0, 0, 0],
-        "plateCentre": [-47, 0],
-        "rigidRotationZ": -90
-      },
-      "engravedLegends": [
-        {
-          "text": "ARM 1",
-          "centre": [-90, -36],
-          "depthMm": 0.6,
-          "absoluteFloorZ": 5.4,
-          "removedVolumeMm3": 29.548499999999947,
-          "strokeCounterAndSpaceProbes": 8
-        },
-        {
-          "text": "ARM 2",
-          "centre": [0, -36],
-          "depthMm": 0.6,
-          "absoluteFloorZ": 5.4,
-          "removedVolumeMm3": 31.310249999999954,
-          "strokeCounterAndSpaceProbes": 8
-        }
-      ],
-      "rigidShoulderContactMm2": 1600.831432545915,
-      "throughTieStacks": [
-        {
-          "id": "parallel-clamp-screw--10--20",
-          "nutEngagementMm": 2.400000218015405,
-          "tipProtrusionMm": 1.6999998909922969,
-          "tipAboveOpenRimMm": 4.0
-        },
-        {
-          "id": "parallel-clamp-screw--10-20",
-          "nutEngagementMm": 2.400000218015405,
-          "tipProtrusionMm": 1.6999998909922969,
-          "tipAboveOpenRimMm": 4.0
-        },
-        {
-          "id": "parallel-clamp-screw-35--20",
-          "nutEngagementMm": 2.400000218015405,
-          "tipProtrusionMm": 1.6999998909922969,
-          "tipAboveOpenRimMm": 4.0
-        },
-        {
-          "id": "parallel-clamp-screw-35-20",
-          "nutEngagementMm": 2.400000218015405,
-          "tipProtrusionMm": 1.6999998909922969,
-          "tipAboveOpenRimMm": 4.0
-        }
-      ],
-      "caseYawNegativeControls": [
-        {
-          "yawDegrees": -3,
-          "interferenceMm3": 34.41426724018313
-        },
-        {
-          "yawDegrees": 3,
-          "interferenceMm3": 34.414267240182824
-        }
-      ],
-      "groundClipAuthoredApproachClear": true,
-      "groundClipScope": "Authored17\u00d79\u00d75mm envelope and10mm straight insertion stroke; actual mating-terminal tolerances require fitting.",
-      "nominalGaskets": [
-        {
-          "id": "parallel-switch-gasket",
-          "thicknessMm": 0.8,
-          "flatAreaMm2": 411.5770200570098,
-          "upperSeatContactMm2": 411.5770200570099,
-          "caseContactMm2": 144.54820672537662
-        },
-        {
-          "id": "parallel-panel-gasket",
-          "thicknessMm": 0.8,
-          "flatAreaMm2": 6618.408184307196,
-          "upperSeatContactMm2": 6618.4081843072
-        }
-      ],
-      "flatPrintFaces": [
-        {
-          "id": "parallel-base",
-          "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 4969.834893022163
+          "bedFaceInstalledZ": 0.8,
+          "flatAreaMm2": 13459.779283231912
         },
         {
           "id": "parallel-cradle",
@@ -1626,17 +1362,37 @@
         {
           "id": "parallel-switch-gasket",
           "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 411.5770200570098
+          "flatAreaMm2": 322.45178023261076
         },
         {
           "id": "parallel-panel-gasket",
           "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 6618.408184307196
+          "flatAreaMm2": 6992.257710084383
         }
       ],
+      "flatFlangeManufacturability": {
+        "flangeBottomZ": 0.8,
+        "flangeTopZ": 6.8,
+        "flangeThicknessMm": 6,
+        "externalTpuThicknessMm": 0.8,
+        "firstLayerFaceAreaMm2": 13459.779283231912,
+        "unsupportedVolumeMm3": 0,
+        "internalDownwardCeilings": [],
+        "blindPocketNegativeControl": {
+          "firstLayerFaceAreaMm2": 13456.637690578325,
+          "unsupportedVolumeMm3": 16.964600329384876,
+          "internalDownwardCeilings": [
+            {
+              "heightZ": 1.4,
+              "areaMm2": 3.1415926535897922
+            }
+          ]
+        },
+        "scope": "All PETG material within the 6 mm flange is supported by its real common bottom face; upper sleeve and lower cradle print features are audited separately."
+      },
       "manualSourceRetained": true,
-      "manualGuardNutContactMm2": 91.25933214241893,
-      "manualRigidShoulderMm2": 554.5782106022797,
+      "manualGuardNutContactMm2": 91.259332142414,
+      "manualRigidShoulderMm2": 931.820502326558,
       "manualThroughStacks": [
         {
           "id": "manual-clamp-screw-1",
@@ -1654,46 +1410,68 @@
       "manualCaseYawControls": [
         {
           "yawDegrees": -3,
-          "interferenceMm3": 34.41426724018258
+          "interferenceMm3": 34.41426724018331
         },
         {
           "yawDegrees": 3,
-          "interferenceMm3": 34.41426724018257
+          "interferenceMm3": 34.41426724018149
         }
       ],
       "manualGasket": {
         "thicknessMm": 0.8,
-        "upperSeatContactMm2": 639.8765581933802,
-        "caseContactMm2": 323.3101875790209
+        "upperSeatContactMm2": 322.4517802326109,
+        "caseContactMm2": 322.45178023261076
       },
       "manualGroundClipApproachClear": true,
+      "manualTieToolAccess": [
+        {
+          "id": "manual-clamp-screw-1",
+          "canonicalAxis": [-22, -101],
+          "toolDiameterMm": 3,
+          "toolBottomZ": 6.01,
+          "toolHeightMm": 54,
+          "fixedInterferenceMm3": 0,
+          "coverInterferenceMm3": 0.9582836904486712,
+          "requiresCoverRemovalForThisModeledPose": true
+        },
+        {
+          "id": "manual-clamp-screw-2",
+          "canonicalAxis": [22, -79],
+          "toolDiameterMm": 3,
+          "toolBottomZ": 6.01,
+          "toolHeightMm": 54,
+          "fixedInterferenceMm3": 0,
+          "coverInterferenceMm3": 0,
+          "requiresCoverRemovalForThisModeledPose": false
+        }
+      ],
       "hostPlateInstallation": [
         {
           "thicknessMm": 1,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 2899.5145405595163,
+          "uncutNegativeControlMm3": 2899.514540559519,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 109.35000000000004,
-          "panelGasketContactMm2": 6618.408184307196,
-          "hardLandContactMm2": 789.9198232930592
+          "panelGasketContactMm2": 6992.257710084383,
+          "petgHostContactMm2": 0
         },
         {
           "thicknessMm": 3,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 10158.954172704145,
+          "uncutNegativeControlMm3": 10158.954172704149,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 352.3500000000001,
-          "panelGasketContactMm2": 6618.408184307196,
-          "hardLandContactMm2": 789.9198232930592
+          "panelGasketContactMm2": 6992.257710084383,
+          "petgHostContactMm2": 0
         },
         {
           "thicknessMm": 6,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 21594.706459259767,
+          "uncutNegativeControlMm3": 21594.706459259778,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 607.5,
-          "panelGasketContactMm2": 6618.408184307196,
-          "hardLandContactMm2": 789.9198232930592
+          "panelGasketContactMm2": 6992.257710084383,
+          "petgHostContactMm2": 0
         }
       ],
       "authoredCableApproachClear": true,
@@ -1704,21 +1482,22 @@
         "worldGeometryUntouched": true
       },
       "components": 30,
-      "solids": 61,
+      "solids": 59,
       "manufacturedComponents": 7,
       "maxBoundsError": 0.004144824023498472,
       "maxRelativeVolumeError": 0.003030364448412492,
       "independentMovement": true,
       "stepRoundtrip": true,
-      "stepRelativeVolumeError": 1.2005310193514418e-6,
+      "stepRelativeVolumeError": 1.160921144234563e-6,
       "fcstdRoundtrip": true,
       "inheritedServoInternalContactChecked": false
     },
     {
-      "name": "servo-toggle-actuator/parallel-dual-separated/exploded",
+      "name": "servo-toggle-actuator/parallel-dual-on/assembled",
       "mechanism": "parallel-dual",
       "passed": true,
-      "codeSha256": "0831bb2b282e3e79ad69be699c88658a9b7f88952876fb01ce4c790d1cc09dbe",
+      "codeSha256": "c5fbcd76e248abee2c403de42716160995cedf39fdb7c5870ff8d4c8e9195ce2",
+      "installationFixtureSha256": "27157a8d9b238cd8195d5930713e4c3de41990d94a0f8acf63c36e59f6e27c80",
       "externalInterferences": [],
       "worldLayout": {
         "manualCentre": [-90, 0, 0],
@@ -1732,63 +1511,20 @@
           "text": "ARM 1",
           "centre": [-90, -36],
           "depthMm": 0.6,
-          "absoluteFloorZ": 5.4,
-          "removedVolumeMm3": 29.548499999999947,
+          "absoluteFloorZ": 6.2,
+          "removedVolumeMm3": 29.548499999999933,
           "strokeCounterAndSpaceProbes": 8
         },
         {
           "text": "ARM 2",
           "centre": [0, -36],
           "depthMm": 0.6,
-          "absoluteFloorZ": 5.4,
-          "removedVolumeMm3": 31.310249999999954,
+          "absoluteFloorZ": 6.2,
+          "removedVolumeMm3": 31.31024999999994,
           "strokeCounterAndSpaceProbes": 8
         }
       ],
-      "components": 30,
-      "solids": 61,
-      "manufacturedComponents": 7,
-      "maxBoundsError": 0.0003631372953236678,
-      "maxRelativeVolumeError": 0.0030303644484207383,
-      "independentMovement": true,
-      "stepRoundtrip": true,
-      "stepRelativeVolumeError": 1.20053101055215e-6,
-      "fcstdRoundtrip": true,
-      "inheritedServoInternalContactChecked": false
-    },
-    {
-      "name": "servo-toggle-actuator/parallel-dual-open-off/assembled",
-      "mechanism": "parallel-dual",
-      "passed": true,
-      "codeSha256": "6e842a076dde18f25a9ae1b2496b897a29bee5b7fd81415eb6a436f8cc10f891",
-      "installationFixtureSha256": "77c5778046dd3a42d9b673c8e816411102ddde63ead90d9ea44e4fc0b0d33819",
-      "externalInterferences": [],
-      "worldLayout": {
-        "manualCentre": [-90, 0, 0],
-        "servoCentre": [-28, 0, -15.2],
-        "drivenCentre": [0, 0, 0],
-        "plateCentre": [-47, 0],
-        "rigidRotationZ": -90
-      },
-      "engravedLegends": [
-        {
-          "text": "ARM 1",
-          "centre": [-90, -36],
-          "depthMm": 0.6,
-          "absoluteFloorZ": 5.4,
-          "removedVolumeMm3": 29.548499999999947,
-          "strokeCounterAndSpaceProbes": 8
-        },
-        {
-          "text": "ARM 2",
-          "centre": [0, -36],
-          "depthMm": 0.6,
-          "absoluteFloorZ": 5.4,
-          "removedVolumeMm3": 31.310249999999954,
-          "strokeCounterAndSpaceProbes": 8
-        }
-      ],
-      "rigidShoulderContactMm2": 1600.831432545915,
+      "rigidShoulderContactMm2": 2447.9929992753705,
       "throughTieStacks": [
         {
           "id": "parallel-clamp-screw--10--20",
@@ -1818,11 +1554,11 @@
       "caseYawNegativeControls": [
         {
           "yawDegrees": -3,
-          "interferenceMm3": 34.41426724018313
+          "interferenceMm3": 34.414267240183825
         },
         {
           "yawDegrees": 3,
-          "interferenceMm3": 34.414267240182824
+          "interferenceMm3": 34.414267240181964
         }
       ],
       "groundClipAuthoredApproachClear": true,
@@ -1831,22 +1567,22 @@
         {
           "id": "parallel-switch-gasket",
           "thicknessMm": 0.8,
-          "flatAreaMm2": 411.5770200570098,
-          "upperSeatContactMm2": 411.5770200570099,
-          "caseContactMm2": 144.54820672537662
+          "flatAreaMm2": 322.45178023261076,
+          "upperSeatContactMm2": 322.4517802326109,
+          "caseContactMm2": 322.45178023261076
         },
         {
           "id": "parallel-panel-gasket",
           "thicknessMm": 0.8,
-          "flatAreaMm2": 6618.408184307196,
-          "upperSeatContactMm2": 6618.4081843072
+          "flatAreaMm2": 6992.257710084383,
+          "upperSeatContactMm2": 6992.257710084382
         }
       ],
       "flatPrintFaces": [
         {
           "id": "parallel-base",
-          "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 4969.834893022163
+          "bedFaceInstalledZ": 0.8,
+          "flatAreaMm2": 13459.779283231912
         },
         {
           "id": "parallel-cradle",
@@ -1866,17 +1602,37 @@
         {
           "id": "parallel-switch-gasket",
           "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 411.5770200570098
+          "flatAreaMm2": 322.45178023261076
         },
         {
           "id": "parallel-panel-gasket",
           "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 6618.408184307196
+          "flatAreaMm2": 6992.257710084383
         }
       ],
+      "flatFlangeManufacturability": {
+        "flangeBottomZ": 0.8,
+        "flangeTopZ": 6.8,
+        "flangeThicknessMm": 6,
+        "externalTpuThicknessMm": 0.8,
+        "firstLayerFaceAreaMm2": 13459.779283231912,
+        "unsupportedVolumeMm3": 0,
+        "internalDownwardCeilings": [],
+        "blindPocketNegativeControl": {
+          "firstLayerFaceAreaMm2": 13456.637690578325,
+          "unsupportedVolumeMm3": 16.964600329384876,
+          "internalDownwardCeilings": [
+            {
+              "heightZ": 1.4,
+              "areaMm2": 3.1415926535897922
+            }
+          ]
+        },
+        "scope": "All PETG material within the 6 mm flange is supported by its real common bottom face; upper sleeve and lower cradle print features are audited separately."
+      },
       "manualSourceRetained": true,
-      "manualGuardNutContactMm2": 91.25933214241893,
-      "manualRigidShoulderMm2": 554.5782106022797,
+      "manualGuardNutContactMm2": 91.259332142414,
+      "manualRigidShoulderMm2": 931.820502326558,
       "manualThroughStacks": [
         {
           "id": "manual-clamp-screw-1",
@@ -1894,23 +1650,567 @@
       "manualCaseYawControls": [
         {
           "yawDegrees": -3,
-          "interferenceMm3": 34.41426724018258
+          "interferenceMm3": 34.41426724018331
         },
         {
           "yawDegrees": 3,
-          "interferenceMm3": 34.41426724018257
+          "interferenceMm3": 34.41426724018149
         }
       ],
       "manualGasket": {
         "thicknessMm": 0.8,
-        "upperSeatContactMm2": 639.8765581933802,
-        "caseContactMm2": 323.3101875790209
+        "upperSeatContactMm2": 322.4517802326109,
+        "caseContactMm2": 322.45178023261076
       },
       "manualGroundClipApproachClear": true,
+      "manualTieToolAccess": [
+        {
+          "id": "manual-clamp-screw-1",
+          "canonicalAxis": [-22, -101],
+          "toolDiameterMm": 3,
+          "toolBottomZ": 6.01,
+          "toolHeightMm": 54,
+          "fixedInterferenceMm3": 0,
+          "coverInterferenceMm3": 0.9582836904486712,
+          "requiresCoverRemovalForThisModeledPose": true
+        },
+        {
+          "id": "manual-clamp-screw-2",
+          "canonicalAxis": [22, -79],
+          "toolDiameterMm": 3,
+          "toolBottomZ": 6.01,
+          "toolHeightMm": 54,
+          "fixedInterferenceMm3": 0,
+          "coverInterferenceMm3": 0,
+          "requiresCoverRemovalForThisModeledPose": false
+        }
+      ],
+      "hostPlateInstallation": [
+        {
+          "thicknessMm": 1,
+          "externalInterferences": 0,
+          "uncutNegativeControlMm3": 2899.5145437059678,
+          "cableInterferenceMm3": 0,
+          "terminalNotchNegativeControlMm3": 109.35000000000004,
+          "panelGasketContactMm2": 6992.257710084383,
+          "petgHostContactMm2": 0
+        },
+        {
+          "thicknessMm": 3,
+          "externalInterferences": 0,
+          "uncutNegativeControlMm3": 10158.954174983439,
+          "cableInterferenceMm3": 0,
+          "terminalNotchNegativeControlMm3": 352.3500000000001,
+          "panelGasketContactMm2": 6992.257710084383,
+          "petgHostContactMm2": 0
+        },
+        {
+          "thicknessMm": 6,
+          "externalInterferences": 0,
+          "uncutNegativeControlMm3": 21594.706461539066,
+          "cableInterferenceMm3": 0,
+          "terminalNotchNegativeControlMm3": 607.5,
+          "panelGasketContactMm2": 6992.257710084383,
+          "petgHostContactMm2": 0
+        }
+      ],
+      "authoredCableApproachClear": true,
+      "cableScope": "Authored mounting clearance before the source rear face; actual sockets and mating plugs are absent from the source CAD.",
+      "fullSweepMountClearanceMm": 1.0,
+      "fixtureFrame": {
+        "canonicalRotationZ": 90,
+        "worldGeometryUntouched": true
+      },
+      "components": 30,
+      "solids": 59,
+      "manufacturedComponents": 7,
+      "maxBoundsError": 0.0003631372953236678,
+      "maxRelativeVolumeError": 0.0030303644484129186,
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "stepRelativeVolumeError": 1.1609211359834394e-6,
+      "fcstdRoundtrip": true,
+      "inheritedServoInternalContactChecked": false
+    },
+    {
+      "name": "servo-toggle-actuator/parallel-dual-press-off/assembled",
+      "mechanism": "parallel-dual",
+      "passed": true,
+      "codeSha256": "1550084ca27bd0c4f8930cad16b6d07cf201238b181770af7681c811563e9cb7",
+      "installationFixtureSha256": "27157a8d9b238cd8195d5930713e4c3de41990d94a0f8acf63c36e59f6e27c80",
+      "externalInterferences": [],
+      "worldLayout": {
+        "manualCentre": [-90, 0, 0],
+        "servoCentre": [-28, 0, -15.2],
+        "drivenCentre": [0, 0, 0],
+        "plateCentre": [-47, 0],
+        "rigidRotationZ": -90
+      },
+      "engravedLegends": [
+        {
+          "text": "ARM 1",
+          "centre": [-90, -36],
+          "depthMm": 0.6,
+          "absoluteFloorZ": 6.2,
+          "removedVolumeMm3": 29.548499999999933,
+          "strokeCounterAndSpaceProbes": 8
+        },
+        {
+          "text": "ARM 2",
+          "centre": [0, -36],
+          "depthMm": 0.6,
+          "absoluteFloorZ": 6.2,
+          "removedVolumeMm3": 31.31024999999994,
+          "strokeCounterAndSpaceProbes": 8
+        }
+      ],
+      "rigidShoulderContactMm2": 2447.9929992753705,
+      "throughTieStacks": [
+        {
+          "id": "parallel-clamp-screw--10--20",
+          "nutEngagementMm": 2.400000218015405,
+          "tipProtrusionMm": 1.6999998909922969,
+          "tipAboveOpenRimMm": 4.0
+        },
+        {
+          "id": "parallel-clamp-screw--10-20",
+          "nutEngagementMm": 2.400000218015405,
+          "tipProtrusionMm": 1.6999998909922969,
+          "tipAboveOpenRimMm": 4.0
+        },
+        {
+          "id": "parallel-clamp-screw-35--20",
+          "nutEngagementMm": 2.400000218015405,
+          "tipProtrusionMm": 1.6999998909922969,
+          "tipAboveOpenRimMm": 4.0
+        },
+        {
+          "id": "parallel-clamp-screw-35-20",
+          "nutEngagementMm": 2.400000218015405,
+          "tipProtrusionMm": 1.6999998909922969,
+          "tipAboveOpenRimMm": 4.0
+        }
+      ],
+      "caseYawNegativeControls": [
+        {
+          "yawDegrees": -3,
+          "interferenceMm3": 34.414267240183825
+        },
+        {
+          "yawDegrees": 3,
+          "interferenceMm3": 34.414267240181964
+        }
+      ],
+      "groundClipAuthoredApproachClear": true,
+      "groundClipScope": "Authored17\u00d79\u00d75mm envelope and10mm straight insertion stroke; actual mating-terminal tolerances require fitting.",
+      "nominalGaskets": [
+        {
+          "id": "parallel-switch-gasket",
+          "thicknessMm": 0.8,
+          "flatAreaMm2": 322.45178023261076,
+          "upperSeatContactMm2": 322.4517802326109,
+          "caseContactMm2": 322.45178023261076
+        },
+        {
+          "id": "parallel-panel-gasket",
+          "thicknessMm": 0.8,
+          "flatAreaMm2": 6992.257710084383,
+          "upperSeatContactMm2": 6992.257710084382
+        }
+      ],
+      "flatPrintFaces": [
+        {
+          "id": "parallel-base",
+          "bedFaceInstalledZ": 0.8,
+          "flatAreaMm2": 13459.779283231912
+        },
+        {
+          "id": "parallel-cradle",
+          "bedFaceInstalledZ": -19.7,
+          "flatAreaMm2": 2390.722795193735
+        },
+        {
+          "id": "parallel-clamp",
+          "bedFaceInstalledZ": 17.5,
+          "flatAreaMm2": 1762.2516782532557
+        },
+        {
+          "id": "parallel-rocker",
+          "bedFaceInstalledZ": 18.5,
+          "flatAreaMm2": 678.9927523068145
+        },
+        {
+          "id": "parallel-switch-gasket",
+          "bedFaceInstalledZ": 0,
+          "flatAreaMm2": 322.45178023261076
+        },
+        {
+          "id": "parallel-panel-gasket",
+          "bedFaceInstalledZ": 0,
+          "flatAreaMm2": 6992.257710084383
+        }
+      ],
+      "flatFlangeManufacturability": {
+        "flangeBottomZ": 0.8,
+        "flangeTopZ": 6.8,
+        "flangeThicknessMm": 6,
+        "externalTpuThicknessMm": 0.8,
+        "firstLayerFaceAreaMm2": 13459.779283231912,
+        "unsupportedVolumeMm3": 0,
+        "internalDownwardCeilings": [],
+        "blindPocketNegativeControl": {
+          "firstLayerFaceAreaMm2": 13456.637690578325,
+          "unsupportedVolumeMm3": 16.964600329384876,
+          "internalDownwardCeilings": [
+            {
+              "heightZ": 1.4,
+              "areaMm2": 3.1415926535897922
+            }
+          ]
+        },
+        "scope": "All PETG material within the 6 mm flange is supported by its real common bottom face; upper sleeve and lower cradle print features are audited separately."
+      },
+      "manualSourceRetained": true,
+      "manualGuardNutContactMm2": 91.259332142414,
+      "manualRigidShoulderMm2": 931.820502326558,
+      "manualThroughStacks": [
+        {
+          "id": "manual-clamp-screw-1",
+          "nutEngagementMm": 2.4,
+          "tipProtrusionMm": 3,
+          "tipAboveOpenRimMm": 2.7
+        },
+        {
+          "id": "manual-clamp-screw-2",
+          "nutEngagementMm": 2.4,
+          "tipProtrusionMm": 3,
+          "tipAboveOpenRimMm": 2.7
+        }
+      ],
+      "manualCaseYawControls": [
+        {
+          "yawDegrees": -3,
+          "interferenceMm3": 34.41426724018331
+        },
+        {
+          "yawDegrees": 3,
+          "interferenceMm3": 34.41426724018149
+        }
+      ],
+      "manualGasket": {
+        "thicknessMm": 0.8,
+        "upperSeatContactMm2": 322.4517802326109,
+        "caseContactMm2": 322.45178023261076
+      },
+      "manualGroundClipApproachClear": true,
+      "manualTieToolAccess": [
+        {
+          "id": "manual-clamp-screw-1",
+          "canonicalAxis": [-22, -101],
+          "toolDiameterMm": 3,
+          "toolBottomZ": 6.01,
+          "toolHeightMm": 54,
+          "fixedInterferenceMm3": 0,
+          "coverInterferenceMm3": 0.9582836904486712,
+          "requiresCoverRemovalForThisModeledPose": true
+        },
+        {
+          "id": "manual-clamp-screw-2",
+          "canonicalAxis": [22, -79],
+          "toolDiameterMm": 3,
+          "toolBottomZ": 6.01,
+          "toolHeightMm": 54,
+          "fixedInterferenceMm3": 0,
+          "coverInterferenceMm3": 0,
+          "requiresCoverRemovalForThisModeledPose": false
+        }
+      ],
+      "hostPlateInstallation": [
+        {
+          "thicknessMm": 1,
+          "externalInterferences": 0,
+          "uncutNegativeControlMm3": 2899.514540558785,
+          "cableInterferenceMm3": 0,
+          "terminalNotchNegativeControlMm3": 109.35000000000004,
+          "panelGasketContactMm2": 6992.257710084383,
+          "petgHostContactMm2": 0
+        },
+        {
+          "thicknessMm": 3,
+          "externalInterferences": 0,
+          "uncutNegativeControlMm3": 10158.954172703745,
+          "cableInterferenceMm3": 0,
+          "terminalNotchNegativeControlMm3": 352.3500000000001,
+          "panelGasketContactMm2": 6992.257710084383,
+          "petgHostContactMm2": 0
+        },
+        {
+          "thicknessMm": 6,
+          "externalInterferences": 0,
+          "uncutNegativeControlMm3": 21594.706459259374,
+          "cableInterferenceMm3": 0,
+          "terminalNotchNegativeControlMm3": 607.5,
+          "panelGasketContactMm2": 6992.257710084383,
+          "petgHostContactMm2": 0
+        }
+      ],
+      "authoredCableApproachClear": true,
+      "cableScope": "Authored mounting clearance before the source rear face; actual sockets and mating plugs are absent from the source CAD.",
+      "fullSweepMountClearanceMm": 1.0,
+      "fixtureFrame": {
+        "canonicalRotationZ": 90,
+        "worldGeometryUntouched": true
+      },
+      "components": 30,
+      "solids": 59,
+      "manufacturedComponents": 7,
+      "maxBoundsError": 0.0041448239774126705,
+      "maxRelativeVolumeError": 0.0030303644484089365,
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "stepRelativeVolumeError": 1.1609211419139345e-6,
+      "fcstdRoundtrip": true,
+      "inheritedServoInternalContactChecked": false
+    },
+    {
+      "name": "servo-toggle-actuator/parallel-dual-separated/exploded",
+      "mechanism": "parallel-dual",
+      "passed": true,
+      "codeSha256": "8530a6f1bef4c313d7c8f9e00ec16f9381c32f9b54b5b53c325e0537582533b6",
+      "externalInterferences": [],
+      "worldLayout": {
+        "manualCentre": [-90, 0, 0],
+        "servoCentre": [-28, 0, -15.2],
+        "drivenCentre": [0, 0, 0],
+        "plateCentre": [-47, 0],
+        "rigidRotationZ": -90
+      },
+      "engravedLegends": [
+        {
+          "text": "ARM 1",
+          "centre": [-90, -36],
+          "depthMm": 0.6,
+          "absoluteFloorZ": 6.2,
+          "removedVolumeMm3": 29.548499999999933,
+          "strokeCounterAndSpaceProbes": 8
+        },
+        {
+          "text": "ARM 2",
+          "centre": [0, -36],
+          "depthMm": 0.6,
+          "absoluteFloorZ": 6.2,
+          "removedVolumeMm3": 31.31024999999994,
+          "strokeCounterAndSpaceProbes": 8
+        }
+      ],
+      "components": 30,
+      "solids": 59,
+      "manufacturedComponents": 7,
+      "maxBoundsError": 0.0003631372953236678,
+      "maxRelativeVolumeError": 0.0030303644484207383,
+      "independentMovement": true,
+      "stepRoundtrip": true,
+      "stepRelativeVolumeError": 1.1609211358545155e-6,
+      "fcstdRoundtrip": true,
+      "inheritedServoInternalContactChecked": false
+    },
+    {
+      "name": "servo-toggle-actuator/parallel-dual-open-off/assembled",
+      "mechanism": "parallel-dual",
+      "passed": true,
+      "codeSha256": "68cd61bcea1f253d4c9830d5ab5c339a4a55863392742119e980a79219186a8f",
+      "installationFixtureSha256": "498612c4f6582146b8b1c9711babdb2d441caa91cd759790cad9b78fc97f4f49",
+      "externalInterferences": [],
+      "worldLayout": {
+        "manualCentre": [-90, 0, 0],
+        "servoCentre": [-28, 0, -15.2],
+        "drivenCentre": [0, 0, 0],
+        "plateCentre": [-47, 0],
+        "rigidRotationZ": -90
+      },
+      "engravedLegends": [
+        {
+          "text": "ARM 1",
+          "centre": [-90, -36],
+          "depthMm": 0.6,
+          "absoluteFloorZ": 6.2,
+          "removedVolumeMm3": 29.548499999999933,
+          "strokeCounterAndSpaceProbes": 8
+        },
+        {
+          "text": "ARM 2",
+          "centre": [0, -36],
+          "depthMm": 0.6,
+          "absoluteFloorZ": 6.2,
+          "removedVolumeMm3": 31.31024999999994,
+          "strokeCounterAndSpaceProbes": 8
+        }
+      ],
+      "rigidShoulderContactMm2": 2447.9929992753705,
+      "throughTieStacks": [
+        {
+          "id": "parallel-clamp-screw--10--20",
+          "nutEngagementMm": 2.400000218015405,
+          "tipProtrusionMm": 1.6999998909922969,
+          "tipAboveOpenRimMm": 4.0
+        },
+        {
+          "id": "parallel-clamp-screw--10-20",
+          "nutEngagementMm": 2.400000218015405,
+          "tipProtrusionMm": 1.6999998909922969,
+          "tipAboveOpenRimMm": 4.0
+        },
+        {
+          "id": "parallel-clamp-screw-35--20",
+          "nutEngagementMm": 2.400000218015405,
+          "tipProtrusionMm": 1.6999998909922969,
+          "tipAboveOpenRimMm": 4.0
+        },
+        {
+          "id": "parallel-clamp-screw-35-20",
+          "nutEngagementMm": 2.400000218015405,
+          "tipProtrusionMm": 1.6999998909922969,
+          "tipAboveOpenRimMm": 4.0
+        }
+      ],
+      "caseYawNegativeControls": [
+        {
+          "yawDegrees": -3,
+          "interferenceMm3": 34.414267240183825
+        },
+        {
+          "yawDegrees": 3,
+          "interferenceMm3": 34.414267240181964
+        }
+      ],
+      "groundClipAuthoredApproachClear": true,
+      "groundClipScope": "Authored17\u00d79\u00d75mm envelope and10mm straight insertion stroke; actual mating-terminal tolerances require fitting.",
+      "nominalGaskets": [
+        {
+          "id": "parallel-switch-gasket",
+          "thicknessMm": 0.8,
+          "flatAreaMm2": 322.45178023261076,
+          "upperSeatContactMm2": 322.4517802326109,
+          "caseContactMm2": 322.45178023261076
+        },
+        {
+          "id": "parallel-panel-gasket",
+          "thicknessMm": 0.8,
+          "flatAreaMm2": 6992.257710084383,
+          "upperSeatContactMm2": 6992.257710084382
+        }
+      ],
+      "flatPrintFaces": [
+        {
+          "id": "parallel-base",
+          "bedFaceInstalledZ": 0.8,
+          "flatAreaMm2": 13459.779283231912
+        },
+        {
+          "id": "parallel-cradle",
+          "bedFaceInstalledZ": -19.7,
+          "flatAreaMm2": 2390.722795193735
+        },
+        {
+          "id": "parallel-clamp",
+          "bedFaceInstalledZ": 17.5,
+          "flatAreaMm2": 1762.2516782532557
+        },
+        {
+          "id": "parallel-rocker",
+          "bedFaceInstalledZ": 18.5,
+          "flatAreaMm2": 678.9927523068145
+        },
+        {
+          "id": "parallel-switch-gasket",
+          "bedFaceInstalledZ": 0,
+          "flatAreaMm2": 322.45178023261076
+        },
+        {
+          "id": "parallel-panel-gasket",
+          "bedFaceInstalledZ": 0,
+          "flatAreaMm2": 6992.257710084383
+        }
+      ],
+      "flatFlangeManufacturability": {
+        "flangeBottomZ": 0.8,
+        "flangeTopZ": 6.8,
+        "flangeThicknessMm": 6,
+        "externalTpuThicknessMm": 0.8,
+        "firstLayerFaceAreaMm2": 13459.779283231912,
+        "unsupportedVolumeMm3": 0,
+        "internalDownwardCeilings": [],
+        "blindPocketNegativeControl": {
+          "firstLayerFaceAreaMm2": 13456.637690578325,
+          "unsupportedVolumeMm3": 16.964600329384876,
+          "internalDownwardCeilings": [
+            {
+              "heightZ": 1.4,
+              "areaMm2": 3.1415926535897922
+            }
+          ]
+        },
+        "scope": "All PETG material within the 6 mm flange is supported by its real common bottom face; upper sleeve and lower cradle print features are audited separately."
+      },
+      "manualSourceRetained": true,
+      "manualGuardNutContactMm2": 91.259332142414,
+      "manualRigidShoulderMm2": 931.820502326558,
+      "manualThroughStacks": [
+        {
+          "id": "manual-clamp-screw-1",
+          "nutEngagementMm": 2.4,
+          "tipProtrusionMm": 3,
+          "tipAboveOpenRimMm": 2.7
+        },
+        {
+          "id": "manual-clamp-screw-2",
+          "nutEngagementMm": 2.4,
+          "tipProtrusionMm": 3,
+          "tipAboveOpenRimMm": 2.7
+        }
+      ],
+      "manualCaseYawControls": [
+        {
+          "yawDegrees": -3,
+          "interferenceMm3": 34.41426724018331
+        },
+        {
+          "yawDegrees": 3,
+          "interferenceMm3": 34.41426724018149
+        }
+      ],
+      "manualGasket": {
+        "thicknessMm": 0.8,
+        "upperSeatContactMm2": 322.4517802326109,
+        "caseContactMm2": 322.45178023261076
+      },
+      "manualGroundClipApproachClear": true,
+      "manualTieToolAccess": [
+        {
+          "id": "manual-clamp-screw-1",
+          "canonicalAxis": [-22, -101],
+          "toolDiameterMm": 3,
+          "toolBottomZ": 6.01,
+          "toolHeightMm": 54,
+          "fixedInterferenceMm3": 0,
+          "coverInterferenceMm3": 32.65352439547632,
+          "requiresCoverRemovalForThisModeledPose": true
+        },
+        {
+          "id": "manual-clamp-screw-2",
+          "canonicalAxis": [22, -79],
+          "toolDiameterMm": 3,
+          "toolBottomZ": 6.01,
+          "toolHeightMm": 54,
+          "fixedInterferenceMm3": 0,
+          "coverInterferenceMm3": 0,
+          "requiresCoverRemovalForThisModeledPose": false
+        }
+      ],
       "modeledGuardSweep": {
         "rangeDegrees": [0, 69],
         "poses": 24,
-        "minimumClearanceMm": 4.245227278524748,
+        "minimumClearanceMm": 3.445227278524748,
         "betweenSampleMotionBoundMm": 1.0862944877752767,
         "continuousExternalClearanceProved": true,
         "scope": "Modeled catalog69-degree opening; hinge/angle/seat are illustrative, not verified hardware stops or interlock performance."
@@ -1918,7 +2218,7 @@
       "modeledManualLeverSweep": {
         "rangeDegrees": [-12, 12],
         "poses": 13,
-        "minimumClearanceMm": 5.280127921713719,
+        "minimumClearanceMm": 5.280127921713728,
         "betweenSampleMotionBoundMm": 0.3700819782670303,
         "continuousExternalClearanceProved": true,
         "guard": "fully open"
@@ -1927,29 +2227,29 @@
         {
           "thicknessMm": 1,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 2899.514543705965,
+          "uncutNegativeControlMm3": 2899.5145437059678,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 109.35000000000004,
-          "panelGasketContactMm2": 6618.408184307196,
-          "hardLandContactMm2": 789.9198232930592
+          "panelGasketContactMm2": 6992.257710084383,
+          "petgHostContactMm2": 0
         },
         {
           "thicknessMm": 3,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 10158.954174983433,
+          "uncutNegativeControlMm3": 10158.954174983439,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 352.3500000000001,
-          "panelGasketContactMm2": 6618.408184307196,
-          "hardLandContactMm2": 789.9198232930592
+          "panelGasketContactMm2": 6992.257710084383,
+          "petgHostContactMm2": 0
         },
         {
           "thicknessMm": 6,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 21594.706461539055,
+          "uncutNegativeControlMm3": 21594.706461539066,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 607.5,
-          "panelGasketContactMm2": 6618.408184307196,
-          "hardLandContactMm2": 789.9198232930592
+          "panelGasketContactMm2": 6992.257710084383,
+          "petgHostContactMm2": 0
         }
       ],
       "authoredCableApproachClear": true,
@@ -1960,22 +2260,24 @@
         "worldGeometryUntouched": true
       },
       "components": 30,
-      "solids": 61,
+      "solids": 59,
       "manufacturedComponents": 7,
       "maxBoundsError": 0.0003631372953236678,
       "maxRelativeVolumeError": 0.0030303644484129186,
       "independentMovement": true,
       "stepRoundtrip": true,
-      "stepRelativeVolumeError": 1.2005310257509267e-6,
+      "stepRelativeVolumeError": 1.1609211488758196e-6,
       "fcstdRoundtrip": true,
-      "inheritedServoInternalContactChecked": false
+      "inheritedServoInternalContactChecked": false,
+      "cachedNativeValidation": true,
+      "cachedReport": "/tmp/protolab-upright-failfast-report-2.json"
     },
     {
       "name": "servo-toggle-actuator/parallel-dual-open-on-large/assembled",
       "mechanism": "parallel-dual",
       "passed": true,
-      "codeSha256": "0915aacaf026485e9d3a092ab9e13689a397e789c1e66965f850cca664d16cb1",
-      "installationFixtureSha256": "db076753a9a26f00468dd1c97185e64f3cb0df2651c979ad8d5f1efe1be775f0",
+      "codeSha256": "7d5d2cc7e35b3b141f2417839d1c00ef733a1986d1756f6a20c66fd575304245",
+      "installationFixtureSha256": "725b947615e50ffc8906227e90fd8610233abe809b937f52c44e0df16c7bd2cf",
       "externalInterferences": [],
       "worldLayout": {
         "manualCentre": [-90, 0, 0],
@@ -1989,20 +2291,20 @@
           "text": "ARM 1",
           "centre": [-90, -36],
           "depthMm": 0.6,
-          "absoluteFloorZ": 5.4,
-          "removedVolumeMm3": 29.548499999999933,
+          "absoluteFloorZ": 6.2,
+          "removedVolumeMm3": 29.548499999999905,
           "strokeCounterAndSpaceProbes": 8
         },
         {
           "text": "ARM 2",
           "centre": [0, -36],
           "depthMm": 0.6,
-          "absoluteFloorZ": 5.4,
-          "removedVolumeMm3": 31.31024999999994,
+          "absoluteFloorZ": 6.2,
+          "removedVolumeMm3": 31.31024999999991,
           "strokeCounterAndSpaceProbes": 8
         }
       ],
-      "rigidShoulderContactMm2": 1600.831432545916,
+      "rigidShoulderContactMm2": 2447.99299927537,
       "throughTieStacks": [
         {
           "id": "parallel-clamp-screw--10--20",
@@ -2032,11 +2334,11 @@
       "caseYawNegativeControls": [
         {
           "yawDegrees": -3,
-          "interferenceMm3": 34.41426724018313
+          "interferenceMm3": 34.414267240183825
         },
         {
           "yawDegrees": 3,
-          "interferenceMm3": 34.414267240182824
+          "interferenceMm3": 34.414267240181964
         }
       ],
       "groundClipAuthoredApproachClear": true,
@@ -2045,22 +2347,22 @@
         {
           "id": "parallel-switch-gasket",
           "thicknessMm": 0.8,
-          "flatAreaMm2": 411.5770200570098,
-          "upperSeatContactMm2": 411.5770200570099,
-          "caseContactMm2": 144.54820672537662
+          "flatAreaMm2": 322.45178023261076,
+          "upperSeatContactMm2": 322.4517802326109,
+          "caseContactMm2": 322.45178023261076
         },
         {
           "id": "parallel-panel-gasket",
           "thicknessMm": 0.8,
-          "flatAreaMm2": 9178.408184307198,
-          "upperSeatContactMm2": 9178.408184307196
+          "flatAreaMm2": 9552.257710084381,
+          "upperSeatContactMm2": 9552.25771008438
         }
       ],
       "flatPrintFaces": [
         {
           "id": "parallel-base",
-          "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 5001.834893022154
+          "bedFaceInstalledZ": 0.8,
+          "flatAreaMm2": 16059.77928323191
         },
         {
           "id": "parallel-cradle",
@@ -2080,17 +2382,37 @@
         {
           "id": "parallel-switch-gasket",
           "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 411.5770200570098
+          "flatAreaMm2": 322.45178023261076
         },
         {
           "id": "parallel-panel-gasket",
           "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 9178.408184307198
+          "flatAreaMm2": 9552.257710084381
         }
       ],
+      "flatFlangeManufacturability": {
+        "flangeBottomZ": 0.8,
+        "flangeTopZ": 6.8,
+        "flangeThicknessMm": 6,
+        "externalTpuThicknessMm": 0.8,
+        "firstLayerFaceAreaMm2": 16059.77928323191,
+        "unsupportedVolumeMm3": 0,
+        "internalDownwardCeilings": [],
+        "blindPocketNegativeControl": {
+          "firstLayerFaceAreaMm2": 16056.637690578333,
+          "unsupportedVolumeMm3": 16.964600329384876,
+          "internalDownwardCeilings": [
+            {
+              "heightZ": 1.4,
+              "areaMm2": 3.1415926535897922
+            }
+          ]
+        },
+        "scope": "All PETG material within the 6 mm flange is supported by its real common bottom face; upper sleeve and lower cradle print features are audited separately."
+      },
       "manualSourceRetained": true,
-      "manualGuardNutContactMm2": 91.25933214241893,
-      "manualRigidShoulderMm2": 554.5782106022796,
+      "manualGuardNutContactMm2": 91.25933214241397,
+      "manualRigidShoulderMm2": 931.8205023265582,
       "manualThroughStacks": [
         {
           "id": "manual-clamp-screw-1",
@@ -2108,46 +2430,68 @@
       "manualCaseYawControls": [
         {
           "yawDegrees": -3,
-          "interferenceMm3": 34.41426724018258
+          "interferenceMm3": 34.41426724018331
         },
         {
           "yawDegrees": 3,
-          "interferenceMm3": 34.41426724018257
+          "interferenceMm3": 34.41426724018149
         }
       ],
       "manualGasket": {
         "thicknessMm": 0.8,
-        "upperSeatContactMm2": 639.8765581933802,
-        "caseContactMm2": 323.3101875790209
+        "upperSeatContactMm2": 322.4517802326109,
+        "caseContactMm2": 322.45178023261076
       },
       "manualGroundClipApproachClear": true,
+      "manualTieToolAccess": [
+        {
+          "id": "manual-clamp-screw-1",
+          "canonicalAxis": [-22, -101],
+          "toolDiameterMm": 3,
+          "toolBottomZ": 6.01,
+          "toolHeightMm": 54,
+          "fixedInterferenceMm3": 0,
+          "coverInterferenceMm3": 32.65352439547632,
+          "requiresCoverRemovalForThisModeledPose": true
+        },
+        {
+          "id": "manual-clamp-screw-2",
+          "canonicalAxis": [22, -79],
+          "toolDiameterMm": 3,
+          "toolBottomZ": 6.01,
+          "toolHeightMm": 54,
+          "fixedInterferenceMm3": 0,
+          "coverInterferenceMm3": 0,
+          "requiresCoverRemovalForThisModeledPose": false
+        }
+      ],
       "hostPlateInstallation": [
         {
           "thicknessMm": 1,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 2899.514543705965,
+          "uncutNegativeControlMm3": 2899.5145437059678,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 109.35000000000004,
-          "panelGasketContactMm2": 9178.408184307198,
-          "hardLandContactMm2": 821.9198232930498
+          "panelGasketContactMm2": 9552.257710084381,
+          "petgHostContactMm2": 0
         },
         {
           "thicknessMm": 3,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 10158.954174983433,
+          "uncutNegativeControlMm3": 10158.954174983437,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 352.3500000000001,
-          "panelGasketContactMm2": 9178.408184307198,
-          "hardLandContactMm2": 821.9198232930498
+          "panelGasketContactMm2": 9552.257710084381,
+          "petgHostContactMm2": 0
         },
         {
           "thicknessMm": 6,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 21594.706461539055,
+          "uncutNegativeControlMm3": 21594.706461539063,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 607.5,
-          "panelGasketContactMm2": 9178.408184307198,
-          "hardLandContactMm2": 821.9198232930498
+          "panelGasketContactMm2": 9552.257710084381,
+          "petgHostContactMm2": 0
         }
       ],
       "authoredCableApproachClear": true,
@@ -2158,13 +2502,13 @@
         "worldGeometryUntouched": true
       },
       "components": 30,
-      "solids": 61,
+      "solids": 59,
       "manufacturedComponents": 7,
       "maxBoundsError": 0.0003631372953236678,
       "maxRelativeVolumeError": 0.0030303644484129186,
       "independentMovement": true,
       "stepRoundtrip": true,
-      "stepRelativeVolumeError": 1.1204907992475628e-6,
+      "stepRelativeVolumeError": 1.0767445925397093e-6,
       "fcstdRoundtrip": true,
       "inheritedServoInternalContactChecked": false
     },
@@ -2172,7 +2516,7 @@
       "name": "servo-toggle-actuator/printed-rocker-wide-on/assembled",
       "mechanism": "rocker",
       "passed": true,
-      "codeSha256": "75056684e997e6e1ffb255eb5564673a9f881f52ebb9964a71d9acc67d9aba06",
+      "codeSha256": "bf82f04fe3ec4abd312caa600e0fcac1f69135975ff0369ad0204287997f9d71",
       "externalInterferences": [],
       "components": 17,
       "solids": 35,
@@ -2191,7 +2535,7 @@
       "name": "servo-toggle-actuator/wide-enclosure/assembled",
       "mechanism": "guided",
       "passed": true,
-      "codeSha256": "605822273be2fa12eb304654a80d195bccd69431e89b73cf66f4a9363ad71e4c",
+      "codeSha256": "7bcad5bb3c67f21fd7c666155da3a34d059c7898d96f712de11ca59fe1f5c71c",
       "externalInterferences": [],
       "components": 65,
       "solids": 83,
@@ -2210,7 +2554,7 @@
       "name": "servo-toggle-actuator/raised-platform/assembled",
       "mechanism": "guided",
       "passed": true,
-      "codeSha256": "854d38f7f9684b815a565c04d3b74179638abf552eed8176780826e08c2dca75",
+      "codeSha256": "d177657c9d0af36719d3ed9ee90914a52d2913002ecb9448d050ca56aed9e7f4",
       "externalInterferences": [],
       "components": 65,
       "solids": 83,
@@ -2229,44 +2573,44 @@
       "name": "servo-toggle-actuator/parallel-shaft-large-flange-off/assembled",
       "mechanism": "parallel",
       "passed": true,
-      "codeSha256": "ebb96ee00854534fe0c547aaae457592bfbab136ef8a9596845be4e81ca4fcd6",
-      "installationFixtureSha256": "aa63e0475faab1a95fc903c3aa0685ae927707993c30a01230f98c02e1e5188f",
+      "codeSha256": "261d4775b73fbb523374b89d616494665bd41e053974d3d44d13792a5eb9c4cb",
+      "installationFixtureSha256": "7ce444e51fe218e3558ddee6de59c415d23a21ec0c73db9377e8d21706be1de2",
       "externalInterferences": [],
-      "rigidShoulderContactMm2": 1071.1292138920453,
+      "rigidShoulderContactMm2": 1541.04848889722,
       "throughTieStacks": [
         {
           "id": "parallel-clamp-screw--10--20",
           "nutEngagementMm": 2.4000000000000004,
           "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
+          "tipAboveOpenRimMm": 4.0
         },
         {
           "id": "parallel-clamp-screw--10-20",
           "nutEngagementMm": 2.4000000000000004,
           "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
+          "tipAboveOpenRimMm": 4.0
         },
         {
           "id": "parallel-clamp-screw-35--20",
           "nutEngagementMm": 2.4000000000000004,
           "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
+          "tipAboveOpenRimMm": 4.0
         },
         {
           "id": "parallel-clamp-screw-35-20",
           "nutEngagementMm": 2.4000000000000004,
           "tipProtrusionMm": 1.6999999999999993,
-          "tipAboveOpenRimMm": 4
+          "tipAboveOpenRimMm": 4.0
         }
       ],
       "caseYawNegativeControls": [
         {
           "yawDegrees": -3,
-          "interferenceMm3": 34.41426724018326
+          "interferenceMm3": 34.41426724018276
         },
         {
           "yawDegrees": 3,
-          "interferenceMm3": 34.414267240182724
+          "interferenceMm3": 34.414267240182866
         }
       ],
       "groundClipAuthoredApproachClear": true,
@@ -2275,22 +2619,22 @@
         {
           "id": "parallel-switch-gasket",
           "thicknessMm": 0.8,
-          "flatAreaMm2": 411.5770200570098,
-          "upperSeatContactMm2": 411.5770200570099,
-          "caseContactMm2": 144.5482067253766
+          "flatAreaMm2": 322.45178023261076,
+          "upperSeatContactMm2": 322.4517802326109,
+          "caseContactMm2": 322.45178023261076
         },
         {
           "id": "parallel-panel-gasket",
           "thicknessMm": 0.8,
-          "flatAreaMm2": 6127.135971149536,
-          "upperSeatContactMm2": 6127.135971149539
+          "flatAreaMm2": 6500.985496926723,
+          "upperSeatContactMm2": 6500.985496926722
         }
       ],
       "flatPrintFaces": [
         {
           "id": "parallel-base",
-          "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 3391.5529360624987
+          "bedFaceInstalledZ": 0.8,
+          "flatAreaMm2": 10593.173374447357
         },
         {
           "id": "parallel-cradle",
@@ -2310,64 +2654,82 @@
         {
           "id": "parallel-switch-gasket",
           "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 411.5770200570098
+          "flatAreaMm2": 322.45178023261076
         },
         {
           "id": "parallel-panel-gasket",
           "bedFaceInstalledZ": 0,
-          "flatAreaMm2": 6127.135971149536
+          "flatAreaMm2": 6500.985496926723
         }
       ],
+      "flatFlangeManufacturability": {
+        "flangeBottomZ": 0.8,
+        "flangeTopZ": 6.8,
+        "flangeThicknessMm": 6,
+        "externalTpuThicknessMm": 0.8,
+        "firstLayerFaceAreaMm2": 10593.173374447357,
+        "unsupportedVolumeMm3": 0,
+        "internalDownwardCeilings": [],
+        "blindPocketNegativeControl": {
+          "firstLayerFaceAreaMm2": 10590.031781793768,
+          "unsupportedVolumeMm3": 16.964600329384886,
+          "internalDownwardCeilings": [
+            {
+              "heightZ": 1.4,
+              "areaMm2": 3.1415926535897922
+            }
+          ]
+        },
+        "scope": "All PETG material within the 6 mm flange is supported by its real common bottom face; upper sleeve and lower cradle print features are audited separately."
+      },
       "hostPlateInstallation": [
         {
           "thicknessMm": 1,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 1891.7128663866642,
+          "uncutNegativeControlMm3": 1891.7128663866624,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 109.35000000000004,
-          "panelGasketContactMm2": 6127.135971149536,
-          "hardLandContactMm2": 720.6803543785542
+          "panelGasketContactMm2": 6500.985496926723,
+          "petgHostContactMm2": 0
         },
         {
           "thicknessMm": 3,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 6398.942417148398,
+          "uncutNegativeControlMm3": 6398.942417148396,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 352.3500000000001,
-          "panelGasketContactMm2": 6127.135971149536,
-          "hardLandContactMm2": 720.6803543785542
+          "panelGasketContactMm2": 6500.985496926723,
+          "petgHostContactMm2": 0
         },
         {
           "thicknessMm": 6,
           "externalInterferences": 0,
-          "uncutNegativeControlMm3": 13770.649671746109,
+          "uncutNegativeControlMm3": 13770.649671746105,
           "cableInterferenceMm3": 0,
           "terminalNotchNegativeControlMm3": 607.5,
-          "panelGasketContactMm2": 6127.135971149536,
-          "hardLandContactMm2": 720.6803543785542
+          "panelGasketContactMm2": 6500.985496926723,
+          "petgHostContactMm2": 0
         }
       ],
       "authoredCableApproachClear": true,
       "cableScope": "Authored mounting clearance before the source rear face; actual sockets and mating plugs are absent from the source CAD.",
       "fullSweepMountClearanceMm": 0.9999999999999964,
       "components": 24,
-      "solids": 42,
+      "solids": 40,
       "manufacturedComponents": 6,
       "maxBoundsError": 0.0003631372953236678,
       "maxRelativeVolumeError": 0.0030303644484114965,
       "independentMovement": true,
       "stepRoundtrip": true,
-      "stepRelativeVolumeError": 1.4596873390864409e-6,
+      "stepRelativeVolumeError": 1.4069788692184845e-6,
       "fcstdRoundtrip": true,
-      "inheritedServoInternalContactChecked": false,
-      "cachedNativeValidation": true,
-      "cachedReport": "data/servo-toggle-actuator-validation.json"
+      "inheritedServoInternalContactChecked": false
     }
   ],
   "passed": 28,
   "failed": 0,
   "componentOccurrences": 952,
-  "solidOccurrences": 1547,
+  "solidOccurrences": 1519,
   "printMeshExports": [
     {
       "file": "printed-base.stl",
@@ -2399,21 +2761,21 @@
     {
       "file": "parallel-base.stl",
       "closed": true,
-      "facets": 11044,
-      "dimensionsMm": [80.0, 110.0, 13.5],
+      "facets": 5836,
+      "dimensionsMm": [80.0, 110.0, 12.699999809265137],
       "min": [0.0, 0.0, 0.0],
-      "sha256": "79ed05a5f5b59f2836b6acc8a7bd70075ad9c0334f81cc8232018a029478b360",
-      "sourceCodeSha256": "183bde400ef9e6d97111317139a1120c81c4138b49c0c8785226cb85b683e3c2",
+      "sha256": "25a225cd39931de113cf13eb741ebcb316e74459711f2e02bafaf89debc0bbd5",
+      "sourceCodeSha256": "7251f009f7be1b290d9585e48611149639cda2526012472e04ad701859343915",
       "artifactDirectory": "test-results/servo-toggle-parallel"
     },
     {
       "file": "parallel-cradle.stl",
       "closed": true,
-      "facets": 6902,
-      "dimensionsMm": [52.0, 81.99955723120365, 20.700000762939453],
+      "facets": 5208,
+      "dimensionsMm": [52.0, 81.99955723120365, 20.5],
       "min": [0.0, 0.00044276879634708166, 0.0],
-      "sha256": "4871dd12617da9489ccf8ed9caedce04f791bed5524427606b45f1c27bc3b397",
-      "sourceCodeSha256": "183bde400ef9e6d97111317139a1120c81c4138b49c0c8785226cb85b683e3c2",
+      "sha256": "b00faa885d071ff8a6baf9b92fa671d446b017a0d34036f53c8afac236d8aab0",
+      "sourceCodeSha256": "7251f009f7be1b290d9585e48611149639cda2526012472e04ad701859343915",
       "artifactDirectory": "test-results/servo-toggle-parallel"
     },
     {
@@ -2423,7 +2785,7 @@
       "dimensionsMm": [49.999334892461775, 56.0, 5.699999809265139],
       "min": [0.00033322887611575425, -3.552713678800501e-15, -2.6645352591003757e-15],
       "sha256": "792b478575ea04a67cba186c5f54464254d902988cbcce3e3901302506c34878",
-      "sourceCodeSha256": "183bde400ef9e6d97111317139a1120c81c4138b49c0c8785226cb85b683e3c2",
+      "sourceCodeSha256": "7251f009f7be1b290d9585e48611149639cda2526012472e04ad701859343915",
       "artifactDirectory": "test-results/servo-toggle-parallel"
     },
     {
@@ -2433,47 +2795,47 @@
       "dimensionsMm": [65.99370144959539, 25.98850964428857, 8.0],
       "min": [0.004063137806952, 0.005745421629399061, 0.0],
       "sha256": "2f58bbe09db196e2f59b5ceb04aa79039573d2bb92367e93509c3d233e1ce455",
-      "sourceCodeSha256": "183bde400ef9e6d97111317139a1120c81c4138b49c0c8785226cb85b683e3c2",
+      "sourceCodeSha256": "7251f009f7be1b290d9585e48611149639cda2526012472e04ad701859343915",
       "artifactDirectory": "test-results/servo-toggle-parallel"
     },
     {
       "file": "parallel-switch-gasket.stl",
       "closed": true,
-      "facets": 880,
-      "dimensionsMm": [32.0, 24.0, 0.800000011920929],
+      "facets": 868,
+      "dimensionsMm": [28.0, 16.0, 0.800000011920929],
       "min": [0.0, 0.0, 0.0],
-      "sha256": "d7db3d81f2d6ad6fee79867a8a2a1c3bea2af42f79404224192fddf8658af3a4",
-      "sourceCodeSha256": "183bde400ef9e6d97111317139a1120c81c4138b49c0c8785226cb85b683e3c2",
+      "sha256": "0272b122abe9f9f525f5d446879ad11f29e242e0004dc20d8f447e612d3eda02",
+      "sourceCodeSha256": "7251f009f7be1b290d9585e48611149639cda2526012472e04ad701859343915",
       "artifactDirectory": "test-results/servo-toggle-parallel"
     },
     {
       "file": "parallel-panel-gasket.stl",
       "closed": true,
-      "facets": 2668,
+      "facets": 2604,
       "dimensionsMm": [78.0, 108.0, 0.800000011920929],
       "min": [0.0, 0.0, 0.0],
-      "sha256": "aa696f35ebeea67058c9326021db436bce2f986361ea84de1908a1c52aa2c393",
-      "sourceCodeSha256": "183bde400ef9e6d97111317139a1120c81c4138b49c0c8785226cb85b683e3c2",
+      "sha256": "f76e9ae0a0421846f279128a7106760e94a33a8c4c5ebb736325d77d621e3f97",
+      "sourceCodeSha256": "7251f009f7be1b290d9585e48611149639cda2526012472e04ad701859343915",
       "artifactDirectory": "test-results/servo-toggle-parallel"
     },
     {
       "file": "parallel-base.stl",
       "closed": true,
-      "facets": 15776,
-      "dimensionsMm": [150.0, 100.0, 13.5],
+      "facets": 8412,
+      "dimensionsMm": [150.0, 100.0, 12.699999809265137],
       "min": [0.0, 0.0, 0.0],
-      "sha256": "80fae1b73c203ded852a2796565607e280f9c37cfcc20fe0f0c9d5e51ce4d3ee",
-      "sourceCodeSha256": "9e05d93359dbfc378dcb0b8d5483867ca67b5a2d4e4ed8da380a9ee1335626be",
+      "sha256": "fd9662adef52218062ca86d3863f524a7348250f2c8781856831a8a576052fb4",
+      "sourceCodeSha256": "74f5d28994c086e08f14ca434ba1e302d13d5507dbf2535148d5f5cb9eeb0c42",
       "artifactDirectory": "test-results/servo-toggle-dual"
     },
     {
       "file": "parallel-cradle.stl",
       "closed": true,
-      "facets": 10512,
-      "dimensionsMm": [119.49778469582088, 54.99999999999999, 20.700000762939453],
+      "facets": 7968,
+      "dimensionsMm": [119.49778469582088, 54.99999999999999, 20.5],
       "min": [0.0022153041791170835, 5.329070518200751e-15, 0.0],
-      "sha256": "437452ee2904b0773d1f91d57e6f93c1a0a713f861c85c8567bbade24982c34a",
-      "sourceCodeSha256": "9e05d93359dbfc378dcb0b8d5483867ca67b5a2d4e4ed8da380a9ee1335626be",
+      "sha256": "d276e2df177cc43dd76000865eb665794ff9e211ed6f282bdfd206f61fdafd7b",
+      "sourceCodeSha256": "74f5d28994c086e08f14ca434ba1e302d13d5507dbf2535148d5f5cb9eeb0c42",
       "artifactDirectory": "test-results/servo-toggle-dual"
     },
     {
@@ -2483,7 +2845,7 @@
       "dimensionsMm": [56.0, 49.999334892461775, 5.699999809265137],
       "min": [0.0, 0.00033322887611575425, 0.0],
       "sha256": "6afa2e10acfb9b111803f1c66ca0db477bc7aaed05c68aec7534974b37a429ab",
-      "sourceCodeSha256": "9e05d93359dbfc378dcb0b8d5483867ca67b5a2d4e4ed8da380a9ee1335626be",
+      "sourceCodeSha256": "74f5d28994c086e08f14ca434ba1e302d13d5507dbf2535148d5f5cb9eeb0c42",
       "artifactDirectory": "test-results/servo-toggle-dual"
     },
     {
@@ -2493,52 +2855,52 @@
       "dimensionsMm": [25.98850964428857, 65.99369676806964, 8.0],
       "min": [0.005745421629399061, 0.002236764645203948, 0.0],
       "sha256": "de93407cbce46c2b26734f5b7376f6d82a0a7a76d212efb85cecb35bff257e2a",
-      "sourceCodeSha256": "9e05d93359dbfc378dcb0b8d5483867ca67b5a2d4e4ed8da380a9ee1335626be",
+      "sourceCodeSha256": "74f5d28994c086e08f14ca434ba1e302d13d5507dbf2535148d5f5cb9eeb0c42",
       "artifactDirectory": "test-results/servo-toggle-dual"
     },
     {
       "file": "parallel-switch-gasket.stl",
       "closed": true,
-      "facets": 880,
-      "dimensionsMm": [24.0, 32.0, 0.800000011920929],
+      "facets": 868,
+      "dimensionsMm": [16.0, 28.0, 0.800000011920929],
       "min": [0.0, 0.0, 0.0],
-      "sha256": "97bf5b6ba04b2f0cf1a458b6f55dfbe46604a1ac23b9201978167c88e8185196",
-      "sourceCodeSha256": "9e05d93359dbfc378dcb0b8d5483867ca67b5a2d4e4ed8da380a9ee1335626be",
+      "sha256": "8fab3794ccdea5618eed032383f4c2922d9e7db28f0c9c3e9fabbe7d841a734b",
+      "sourceCodeSha256": "74f5d28994c086e08f14ca434ba1e302d13d5507dbf2535148d5f5cb9eeb0c42",
       "artifactDirectory": "test-results/servo-toggle-dual"
     },
     {
       "file": "parallel-panel-gasket.stl",
       "closed": true,
-      "facets": 3120,
+      "facets": 3056,
       "dimensionsMm": [148.0, 98.0, 0.800000011920929],
       "min": [0.0, 0.0, 0.0],
-      "sha256": "9219aeaabd34ff00dd2c06983febbc61528d11d8cf46f69d034e3fad9146e315",
-      "sourceCodeSha256": "9e05d93359dbfc378dcb0b8d5483867ca67b5a2d4e4ed8da380a9ee1335626be",
+      "sha256": "4780f3f8236972bd4b00ab07ad8742064b52479613b4973081eeed21f1052f1a",
+      "sourceCodeSha256": "74f5d28994c086e08f14ca434ba1e302d13d5507dbf2535148d5f5cb9eeb0c42",
       "artifactDirectory": "test-results/servo-toggle-dual"
     },
     {
       "file": "parallel-manual-gasket.stl",
       "closed": true,
       "facets": 868,
-      "dimensionsMm": [24.0, 32.0, 0.800000011920929],
+      "dimensionsMm": [16.0, 28.0, 0.800000011920929],
       "min": [0.0, 0.0, 0.0],
-      "sha256": "e22cddf332273d421c32915a3a83f055f4a3c41788f95d591e2ae0b677250022",
-      "sourceCodeSha256": "9e05d93359dbfc378dcb0b8d5483867ca67b5a2d4e4ed8da380a9ee1335626be",
+      "sha256": "e6e656420514dcd3daf6e2255b9de89b1f58e05fdbaae1037c245dc1f9d0c669",
+      "sourceCodeSha256": "74f5d28994c086e08f14ca434ba1e302d13d5507dbf2535148d5f5cb9eeb0c42",
       "artifactDirectory": "test-results/servo-toggle-dual"
     }
   ],
-  "cachedNativeCases": 21,
-  "freshNativeCases": 7,
+  "cachedNativeCases": 16,
+  "freshNativeCases": 12,
   "nativeAuditReports": [
-    "/tmp/protolab-labelled-final-a-report.json",
-    "/tmp/protolab-labelled-final-b-report.json"
+    "/tmp/protolab-upright-final-report-1.json",
+    "/tmp/protolab-upright-final-report-2.json"
   ],
   "panelMountExport": {
     "artifactDirectory": "test-results/servo-toggle-parallel",
-    "sourceCodeSha256": "183bde400ef9e6d97111317139a1120c81c4138b49c0c8785226cb85b683e3c2",
+    "sourceCodeSha256": "7251f009f7be1b290d9585e48611149639cda2526012472e04ad701859343915",
     "physicalAssemblyComponents": 24,
-    "physicalAssemblySolids": 42,
-    "exampleInstallationSolids": 43,
+    "physicalAssemblySolids": 40,
+    "exampleInstallationSolids": 41,
     "hostPlateReferenceThicknessMm": 3,
     "hostMountingPlaneZ": 0,
     "petgPrints": 4,
@@ -2550,52 +2912,68 @@
     "files": [
       {
         "file": "README.txt",
-        "sha256": "1cd21305337c39af1c953e5154206c2d4ec1d6821c184e131561eb924d618e93"
+        "sha256": "6724c0253fbe38d2dba494899013e28e8a727bf496767f1c864e0f4b5cdeaae2"
       },
       {
         "file": "print-mesh-validation.json",
-        "sha256": "b9174f55c10423bdaf1bd915b031c1cc17c29a5712c7193382fa303d821dc8e7"
+        "sha256": "a091e9155bbe4cb82589d8f6c15839ef62962281a77873ce6035bbd0dd6a306c"
       },
       {
         "file": "panel-installation.json",
-        "sha256": "c637005423421ba9abcde190315292cb598c30a5ebd44282b70e42913969f9d3"
+        "sha256": "ad9dd0f6a3627fa6eac298ff71b61e198dbca2b5e2b64c750ade9a324aa55dea"
       },
       {
         "file": "panel-cutout-template.dxf",
-        "sha256": "8b37f9ef7d790140fd22c228d6df71fc81f1d5ef93183812b26af176c7a6870d"
+        "sha256": "afdebce600ba3cdc29b6ca08341b1882e7e656cceab984442834a7379de90bc2"
       },
       {
         "file": "panel-cutout-template.svg",
-        "sha256": "3b0b5f1f096456e6205cac807902dde30d2e9171f53f8bf517d08024333b5baf"
+        "sha256": "a6d29c848f40c6517429609adbc54b59926f3c7346ff53f0c2590cb45cb35a81"
       },
       {
         "file": "servo-toggle-parallel.FCStd",
-        "sha256": "64fa86ddc2484ff4d2fa65bc2f89876c08eed41335a44e2ef440a08d2be07119"
+        "sha256": "34010497209df4e80895ac0c65960f0b20f15d565ffb81a6a8efdbfbd641d521"
       },
       {
         "file": "servo-toggle-parallel.step",
-        "sha256": "16c5904d7996156f5200bf33ccd56ca331197f1f3ee19de28e933084cc1e2082"
+        "sha256": "0150642f29c5a373b1207e1bdea598f88f9505260efe137f7e82d4045d5a8ed7"
       },
       {
         "file": "servo-toggle-panel-installation.FCStd",
-        "sha256": "e863e73eedcd899b81da55db5270429eb397218eaf9baf820f25fe8885ecf234"
+        "sha256": "09f940d5c3dd3ccc3dd552b8630d9b375d81c016b4366b8dc42dcb88c773783a"
       },
       {
         "file": "servo-toggle-panel-installation.step",
-        "sha256": "acfdda9e5c85efb3ffdc884b297189ce937e9ba9d17d4699169896d315693fa1"
+        "sha256": "2d7c6f311975f4035b4f02120c9ae6c99f13775e05b45bad5f956d515bff4d2b"
       },
       {
         "file": "servo-toggle-parallel.zip",
-        "sha256": "89fa99c6f52ace5d70243c853cc4930eabb315d76d51a19ef6f4353cb5c2ce53"
+        "sha256": "893a02f9960a8d34df9c0281b4b046978611b0abf1e1e1086460b1e2581abb5b"
       }
-    ]
+    ],
+    "flangeUndersideZ": 0.8,
+    "flangeTopZ": 6.8,
+    "flangeThicknessMm": 6,
+    "flatPrintBedPlaneZ": 0,
+    "blindGasketPockets": false,
+    "blindLocatorSockets": false,
+    "lowerNutCounterbore": false,
+    "downwardCeilingsWithinFlange": 0,
+    "panelGasketM4HoleDiameterMm": 5,
+    "panelM4RigidLands": false,
+    "caseGasketLocalOutlineMm": [28, 16],
+    "caseGasketOuterRadiusMm": 1,
+    "bareSwitchMountingHardware": "upper-only",
+    "switchClockingZ": 180,
+    "installedSwitchRotationZ": 180,
+    "terminalApproachSide": "positive-x"
   },
   "dualMountExport": {
     "artifactDirectory": "test-results/servo-toggle-dual",
-    "sourceCodeSha256": "9e05d93359dbfc378dcb0b8d5483867ca67b5a2d4e4ed8da380a9ee1335626be",
+    "sourceCodeSha256": "74f5d28994c086e08f14ca434ba1e302d13d5507dbf2535148d5f5cb9eeb0c42",
     "physicalAssemblyComponents": 30,
-    "physicalAssemblySolids": 61,
-    "exampleInstallationSolids": 62,
+    "physicalAssemblySolids": 59,
+    "exampleInstallationSolids": 60,
     "hostPlateReferenceThicknessMm": 3,
     "hostMountingPlaneZ": 0,
     "petgPrints": 4,
@@ -2604,51 +2982,67 @@
     "gasketCompressionModeled": false,
     "rearGuardSeatVerifiedOnPurchasedUnit": false,
     "actualPlugGeometryVerified": false,
-    "rearFastenerToolAccess": "Tighten the two ARM 1 M3 x 20 ties before installing SAC-01; remove the guard for straight-key service.",
+    "rearFastenerToolAccess": "Fit both manual M3 x 20 ties before SAC-01. The leftmost tie at (-101,+22) requires guard removal for straight-key service in both cover positions; the other tie clears the modeled tool envelope.",
     "files": [
       {
         "file": "README.txt",
-        "sha256": "2be6fb60414abafac99015598964265931ef4a2a54a839f43fb424c5255f4491"
+        "sha256": "6662b565fa0b29544bc7f14a7c81c405e898875d71d12074a4ad34724dea4ed3"
       },
       {
         "file": "print-mesh-validation.json",
-        "sha256": "436008f34fc0cd4dbafc8a583a4bfcead4b770e66357c9e4f1dcfbf8f109b659"
+        "sha256": "647b4764dc5bb041fc10f2507254f066886f9de188e1a70c64325d5b007629ef"
       },
       {
         "file": "panel-installation.json",
-        "sha256": "6a67c921ce13276d3689909b1b22243ef2d809e1f5cbb6dd7f65f5ddf0d6e5a6"
+        "sha256": "e6b2161813b791ad2dab38f24a8174dd0d07d3bce19b986c96e4be48c36d652c"
       },
       {
         "file": "panel-cutout-template.dxf",
-        "sha256": "70bed6b0dbffffe5f8a2158dc2957e8ae0cecb86f2726c84bf80fe38c9173d90"
+        "sha256": "3f027010fa6a3def4ffceeac0a210d707101e25d91998119135b44d78f417a27"
       },
       {
         "file": "panel-cutout-template.svg",
-        "sha256": "d127d5c8c62530c7955aaa3dc42fbe1999df3a9cbf7cea093bd6c030dde2d1f0"
+        "sha256": "86fd3aef80524516940d2e16e9ed6aedaa3a00bf0d6686b434ac3577a5fdf21b"
       },
       {
         "file": "servo-toggle-dual.FCStd",
-        "sha256": "b4cbd418221d2762b8182db105071ffc65537eea359dc134455f039d1307ec33"
+        "sha256": "fa4d142d05f4c7ac68cb00916903d30f7fe76bade746f6e11382d8fd291c7770"
       },
       {
         "file": "servo-toggle-dual.step",
-        "sha256": "29b73ad6b3e023c89c57ce0e02ce7058030986f69b680e62818306cb30ba1c38"
+        "sha256": "3e0e5bd2e47f4d538c7617d13e0d677eb06d8d5d79a201002d82a07a52f47549"
       },
       {
         "file": "servo-toggle-dual-installation.FCStd",
-        "sha256": "edfb1370d75573e1f2703ea966a66f222eed9e75d4d88cff967bce41d54143a9"
+        "sha256": "fc890a6bd4eae30c5d609efd5a00ce761783b311d47bdddb6ba30da4699ceaee"
       },
       {
         "file": "servo-toggle-dual-installation.step",
-        "sha256": "5b961b3f8cf501c1fc1163901f194fe4dc36737d8724a860723130ff80a391d9"
+        "sha256": "f46b04730cd04cb0a48e7ab6a9e9bf16e5073daf39f899961ee66e9b91ed569d"
       },
       {
         "file": "servo-toggle-dual.zip",
-        "sha256": "421c6b5c67c9c71a40502a037cd783e20bced364f72bf4e5d233373e60d3f951"
+        "sha256": "f5214d0cb5200de9fba04cdeeef000ddb01ba90f3c22b4ac4d760acb8687e698"
       }
     ],
     "installationRotationZ": -90,
     "legends": ["ARM 1", "ARM 2"],
-    "engravingDepthMm": 0.6
+    "engravingDepthMm": 0.6,
+    "flangeUndersideZ": 0.8,
+    "flangeTopZ": 6.8,
+    "flangeThicknessMm": 6,
+    "flatPrintBedPlaneZ": 0,
+    "blindGasketPockets": false,
+    "blindLocatorSockets": false,
+    "lowerNutCounterbore": false,
+    "downwardCeilingsWithinFlange": 0,
+    "panelGasketM4HoleDiameterMm": 5,
+    "panelM4RigidLands": false,
+    "caseGasketLocalOutlineMm": [28, 16],
+    "caseGasketOuterRadiusMm": 1,
+    "bareSwitchMountingHardware": "upper-only",
+    "switchClockingZ": 180,
+    "installedSwitchRotationZ": 90,
+    "terminalApproachSide": "negative-y"
   }
 }

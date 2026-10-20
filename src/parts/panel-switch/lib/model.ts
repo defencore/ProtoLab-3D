@@ -139,8 +139,10 @@ function illuminatedToggle(
     add('Lower guard adjustment nut · illustrative position', hex(15.5, 12.1, 2.4, 6.8));
     add('Guard seat washer', ring(16, 12.1, 0.3, 9.2));
   } else {
-    add('Panel washer', ring(16, 12.1, 0.5, 0.1));
-    add('Panel retaining nut', hex(15.5, 12.1, 2.4, 0.6));
+    if (p.mountingHardware !== 'upper-only') {
+      add('Panel washer', ring(16, 12.1, 0.5, 0.1));
+      add('Panel retaining nut', hex(15.5, 12.1, 2.4, 0.6));
+    }
     add('Panel locking nut', hex(15.5, 12.1, 2.4, 3 + Number(p.panelThickness)));
   }
   const dome: [number, number][] = [];

@@ -45,7 +45,9 @@ export function parallelPanelInterface(p: Parameters) {
     flangeY = dual ? -47 : -27;
   return {
     mountingPlane: 0,
+    flangeBottom: 0.8,
     flangeThickness: 6,
+    flangeTop: 6.8,
     flangeCornerRadius: 4,
     gasketThickness: 0.8,
     flangeCentre: [0, flangeY] as const,
@@ -64,9 +66,9 @@ export function parallelPanelInterface(p: Parameters) {
       height: dual ? 124 : 84,
       radius: 4,
       centre: [0, dual ? -48 : -28] as const,
-      terminalNotch: { width: 16, height: 12, radius: 2, centre: [-34, 0] as const },
+      terminalNotch: { width: 16, height: 12, radius: 2, centre: [34, 0] as const },
       additionalTerminalNotches: dual
-        ? [{ width: 16, height: 12, radius: 2, centre: [-34, -90] as const }]
+        ? [{ width: 16, height: 12, radius: 2, centre: [34, -90] as const }]
         : [],
     },
     mountingHoles: [-1, 1].flatMap((side) =>
@@ -76,14 +78,15 @@ export function parallelPanelInterface(p: Parameters) {
     // A straight approach to 0.1 mm before the source rear cover, not an inferred port.
     cableApproach: { nativeMin: [-10, -9, -35] as const, nativeMax: [35, 9, -4.2] as const },
     groundClip: {
-      min: [-31.5, -4.5, -5.1] as const,
+      min: [14.5, -4.5, -5.1] as const,
       size: [17, 9, 5] as const,
       insertionStroke: 10,
+      approachSide: 'positive-x',
     },
   };
 }
 
-/** The union's left branch provides horizontal ground-terminal clip approach space. */
+/** The union's right branch provides horizontal ground-terminal clip approach space. */
 export function parallelHostOpening(
   p: Parameters,
   z: number,
@@ -159,9 +162,10 @@ export function installedPanelInterface(p: Parameters) {
     mountingHoles: panel.mountingHoles.map(point),
     groundClip: {
       ...panel.groundClip,
-      min: [-4.5, 14.5, -5.1],
+      min: [-4.5, -31.5, -5.1],
       size: [9, 17, 5],
       insertionAxis: 'y',
+      approachSide: 'negative-y',
     },
     legends: [
       { text: 'ARM 1', switch: 'manual-toggle-switch', centre: [-90, -36], depth: 0.6 },

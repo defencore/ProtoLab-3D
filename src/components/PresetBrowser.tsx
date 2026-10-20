@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ReferenceSpecifications } from './ReferenceSpecifications';
 import {
   ArrowRight,
@@ -14,32 +14,22 @@ import {
   X,
 } from 'lucide-react';
 import type { Parameters, PartDefinition, Preset } from '../core/types';
-import { libraryCategories, sortLibraryParts } from '../core/library';
-import { libraryAreas, libraryArea, libraryLabel } from '../core/library-navigation';
-import { groupBrowseFamilies } from '../core/browse-families';
+import { libraryLabel } from '../core/library-navigation';
+import { changePresetBrowserScope } from '../core/preset-browser';
+import { usePresetBrowser } from './usePresetBrowser';
+import { isPublishedValue, presetValue, searchableFields } from '../core/catalog-models';
 import {
-  isPublishedValue,
-  presetMatchesConfiguration,
-  presetValue,
-  searchableFields,
-} from '../core/catalog-models';
-import {
-  buildPresetIndex,
   emptyPresetFilters,
   fieldId,
-  filterPresets,
   formatPresetValue,
   formatPresetRange,
   getPresetParameterRange,
-  getFilterFields,
   isActiveParameterFilter,
   seedCurrentFilters,
-  presetFacetOptions,
   type ParameterFilter,
   type PresetEntry,
   type PresetFilterField,
   type PresetFilters,
-  matchesPresetPartScope,
 } from '../core/preset-search';
 import './PresetBrowser.css';
 import NumericRangeFilter from './NumericRangeFilter';
@@ -58,10 +48,6 @@ export interface PresetBrowserProps {
   onApply: (part: PartDefinition, preset: Preset) => void;
   onClose: () => void;
 }
-
-const PAGE_SIZE = 12;
-const sortedUnique = (values: (string | undefined)[]) =>
-  [...new Set(values.filter((value): value is string => !!value))].sort();
 
 function DimensionSummary({ entry }: { entry: PresetEntry }) {
   const primary = entry.part.presetMatchKeys ?? ['bore', 'outer', 'width', 'diameter', 'length'];
@@ -239,122 +225,37 @@ export default function PresetBrowser({
       !!filters.manufacturer,
   );
   const searchInput = useRef<HTMLInputElement>(null);
-  const orderedParts = useMemo(() => sortLibraryParts(parts), [parts]);
-  const index = useMemo(() => buildPresetIndex(orderedParts), [orderedParts]);
-  const scopeParts = useMemo(
-    () =>
-      parts.filter(
-        (part) =>
-          (!filters.category || part.category === filters.category) &&
-          matchesPresetPartScope(part, filters.partId),
-      ),
-    [parts, filters.category, filters.partId],
-  );
-  const groupedScope =
-    !!filters.partId && scopeParts.some((part) => part.browseFamily?.id === filters.partId);
-  const broadScope = !filters.partId && scopeParts.length > 1;
-  const fields = useMemo(() => {
-    const labels: Record<string, string> = {
-      bore: 'Bore diameter',
-      outer: 'Outside diameter',
-      diameter: 'Nominal diameter',
-      length: 'Length',
-      width: 'Width',
-      height: 'Height',
-    };
-    const available = getFilterFields(scopeParts);
-    const separateBodyLengths =
-      groupedScope && available.some((field) => field.key === 'catalogBodyLength');
-    return available.map((field) => {
-      if (separateBodyLengths && field.key === 'length')
-        return { ...field, label: 'Plain spacer / sleeve length' };
-      if (separateBodyLengths && field.key === 'catalogBodyLength')
-        return { ...field, label: 'Catalog body length' };
-      return broadScope && labels[field.key] ? { ...field, label: labels[field.key] } : field;
-    });
-  }, [scopeParts, groupedScope, broadScope]);
-  const { primaryFields, additionalFields } = useMemo(() => {
-    const commonBearingScope = filters.category === 'BEARINGS & SEALS' && broadScope;
-    const isPrimary = (field: PresetFilterField) =>
-      groupedScope
-        ? field.primary || field.catalogSummary === true
-        : commonBearingScope
-          ? ['bore', 'outer', 'width'].includes(field.key)
-          : !filters.category
-            ? ['bore', 'diameter', 'length', 'width', 'height'].includes(field.key)
-            : field.primary;
-    return {
-      primaryFields: fields.filter(isPrimary),
-      additionalFields: fields.filter((field) => !isPrimary(field)),
-    };
-  }, [fields, groupedScope, broadScope, filters.category]);
-  const renderedFilterFields = useMemo(
-    () => (showFilters ? (broadScope ? primaryFields : fields) : []),
-    [showFilters, broadScope, primaryFields, fields],
-  );
-  const results = useMemo(() => filterPresets(index, filters), [index, filters]);
-  const selected = index.find(
-    (entry) =>
-      entry.part.id === currentPart.id &&
-      entry.preset.id === currentPresetId &&
-      presetMatchesConfiguration(currentPart, entry.preset, currentParameters),
-  );
-  const selectedOutsideResults =
-    selected && !results.items.some((entry) => entry.id === selected.id);
-  const reviewParameters: Parameters = selected?.part.catalogSelectionOnly
-    ? currentParameters
-    : (selected?.preset.parameters ?? {});
-  const reviewValues: Parameters = {
-    ...reviewParameters,
-    ...selected?.preset.catalog?.attributes,
-  };
-  const selectedId = selected?.id ?? '';
-  const categories = libraryCategories(orderedParts);
-  const categoryCollections = libraryAreas
-    .map((area) => ({
-      ...area,
-      categories: categories.filter((category) => libraryArea(category) === area.id),
-    }))
-    .filter((area) => area.categories.length > 0);
-  const categoryFamilies = useMemo(
-    () =>
-      groupBrowseFamilies(
-        orderedParts.filter((part) => !filters.category || part.category === filters.category),
-      ),
-    [orderedParts, filters.category],
-  );
-  const scopeEntries = useMemo(
-    () => index.filter((entry) => scopeParts.some((part) => part.id === entry.part.id)),
-    [index, scopeParts],
-  );
-  const facetOptions = useMemo(
-    () =>
-      new Map(
-        renderedFilterFields
-          .filter((field) => field.type !== 'number')
-          .map((field) => [field.id, presetFacetOptions(scopeEntries, filters, field)]),
-      ),
-    [scopeEntries, filters, renderedFilterFields],
-  );
-  const sources = sortedUnique(scopeEntries.map((entry) => entry.preset.catalog?.sourceName));
-  const manufacturers = sortedUnique(
-    scopeEntries.map((entry) => entry.preset.catalog?.manufacturer),
-  );
-  const pageCount = Math.max(1, Math.ceil(results.items.length / PAGE_SIZE));
-  const displayedPage = Math.min(page, pageCount - 1);
-  const visibleItems = results.items.slice(
-    displayedPage * PAGE_SIZE,
-    (displayedPage + 1) * PAGE_SIZE,
-  );
-  const activeParameters = Object.entries(filters.parameters).filter(([, filter]) =>
-    isActiveParameterFilter(filter),
-  );
-  const activeCount =
-    activeParameters.length +
-    Number(!!filters.query) +
-    Number(!!filters.sourceName) +
-    Number(!!filters.manufacturer) +
-    Number(filters.kind !== 'all');
+  const {
+    broadScope,
+    fields,
+    primaryFields,
+    additionalFields,
+    results,
+    selected,
+    selectedId,
+    selectedOutsideResults,
+    reviewParameters,
+    reviewValues,
+    categoryCollections,
+    categoryFamilies,
+    facetOptions,
+    sources,
+    manufacturers,
+    pageCount,
+    displayedPage,
+    visibleItems,
+    hasPages,
+    activeParameters,
+    activeCount,
+  } = usePresetBrowser({
+    parts,
+    currentPart,
+    currentParameters,
+    currentPresetId,
+    filters,
+    showFilters,
+    page,
+  });
   useEffect(() => {
     setPage(0);
   }, [filters]);
@@ -363,28 +264,7 @@ export default function PresetBrowser({
   }, []);
 
   function setScope(category: string, partId: string) {
-    const nextParts = parts.filter(
-      (part) => (!category || part.category === category) && matchesPresetPartScope(part, partId),
-    );
-    const available = new Set(getFilterFields(nextParts).map((field) => field.id));
-    setFilters({
-      ...filters,
-      category,
-      partId,
-      sourceName: nextParts.some((part) =>
-        part.presets.some((preset) => preset.catalog?.sourceName === filters.sourceName),
-      )
-        ? filters.sourceName
-        : '',
-      manufacturer: nextParts.some((part) =>
-        part.presets.some((preset) => preset.catalog?.manufacturer === filters.manufacturer),
-      )
-        ? filters.manufacturer
-        : '',
-      parameters: Object.fromEntries(
-        Object.entries(filters.parameters).filter(([id]) => available.has(id)),
-      ),
-    });
+    setFilters(changePresetBrowserScope(parts, filters, category, partId));
   }
 
   function updateParameter(id: string, value: ParameterFilter) {
@@ -760,7 +640,7 @@ export default function PresetBrowser({
                 ))}
               </div>
             )}
-            {results.items.length > PAGE_SIZE && (
+            {hasPages && (
               <nav className="pb-pagination" aria-label="Preset result pages">
                 <button
                   className="icon-button"

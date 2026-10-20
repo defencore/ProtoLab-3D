@@ -36,6 +36,7 @@
     "@types/react-dom": "^19.0.0",
     "@types/three": "^0.183.0",
     "@vitejs/plugin-react": "^4.4.1",
+    "magic-string": "0.30.21",
     "prettier": "^3.9.6",
     "tsx": "^4.19.0",
     "typescript": "~5.7.2",

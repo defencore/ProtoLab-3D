@@ -2,11 +2,11 @@ import { translateSearchQuery } from './search-query';
 import type { ParameterDefinition, Parameters, PartDefinition, Preset } from './types';
 import {
   isPublishedValue,
-  presetMatchesConfiguration,
   presetValue,
   searchableFields,
   fieldFilterErrors,
 } from './catalog-models';
+import { matchingPreset } from './preset-resolution';
 import {
   matchesNumericRange,
   parseNumericRange,
@@ -51,6 +51,7 @@ export interface PresetFilterError {
 }
 
 export interface PresetQuery {
+  normalizedText: string;
   tokens: string[];
   metricSize?: { diameter: number; length: number };
 }
@@ -90,6 +91,7 @@ export function compilePresetQuery(query: string): PresetQuery {
     ? query.slice(0, size.index) + ' ' + query.slice(size.index + size[0].length)
     : query;
   return {
+    normalizedText: normalized(query),
     tokens: remaining.split(/\s+/).map(normalized).filter(Boolean),
     ...(size
       ? {
@@ -144,6 +146,9 @@ function matchesMetricSize(
 }
 
 export function matchesPresetQuery(entry: PresetEntry, query: PresetQuery): boolean {
+  // A published identifier remains searchable even when it includes an undocumented size.
+  const designation = entry.preset.catalog?.designation;
+  if (designation && normalized(designation) === query.normalizedText) return true;
   if (query.metricSize && !matchesMetricSize(entry, query.metricSize)) return false;
   return query.tokens.every((token) => {
     if (
@@ -274,11 +279,12 @@ export function getFilterFields(parts: PartDefinition[]): PresetFilterField[] {
 
 export function seedCurrentFilters(part: PartDefinition, parameters: Parameters): PresetFilters {
   const filters = emptyPresetFilters(part);
-  const currentPreset =
-    part.presets.find((preset) => preset.catalog && preset.parameters === parameters) ??
-    part.presets.find(
-      (preset) => preset.catalog && presetMatchesConfiguration(part, preset, parameters),
-    );
+  const catalogPresets = part.presets.filter((preset) => preset.catalog);
+  const currentPreset = matchingPreset(
+    { ...part, presets: catalogPresets },
+    parameters,
+    catalogPresets.find((preset) => preset.parameters === parameters)?.id,
+  );
   if (part.catalogSelectionOnly && currentPreset)
     filters.query = currentPreset.catalog?.designation ?? currentPreset.name;
   const keys =

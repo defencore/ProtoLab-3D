@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { LibraryOutput, LibraryOutputRequest } from '../core/library-output';
+import type { LibraryWorkerOutput, LibraryOutputRequest } from '../core/library-output';
 
 import { requestLibraryOutput } from './requestWorkerOutput';
 
 type ExportKind = 'script' | 'stl';
-type Output = LibraryOutput;
+type Output = LibraryWorkerOutput;
 
 /** Cache only this configured item's requested exports. Cancel stale jobs on selection changes. */
 export function useLibraryOutputs(

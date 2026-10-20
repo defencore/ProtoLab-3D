@@ -19,6 +19,8 @@ First, center and last describe mechanical positions. Two-position switches reje
 
 For the bare ASW-07D, **Panel thickness** adjusts the installation from 0.3 to 4 mm. The lower nut stays at Z=0.6–3.0 mm, the panel occupies Z=3.0 to Z=3.0 plus its thickness, and the upper locking nut starts at the panel's front face. A 3 mm panel therefore occupies Z=3–6 mm, with the upper nut at Z=6–8.4 mm. The default 0.3 mm retains the original nut placement. This control moves the upper nut only: the case, bushing, actuator, terminals and purchased model identity stay fixed. The guarded variant retains its separate fixed guard-adjustment stack.
 
+**Mounting hardware** defaults to both nuts and the lower washer. The bare ASW-07D also offers **Upper nut only**, representing removal of those two loose lower pieces for a carrier that supports the switch case directly. The upper nut still starts at Z=3 mm plus the installation adjustment. For example, adjustment 3.8 mm places its seat at Z=6.8 mm, allowing a flat 6 mm carrier at Z=0.8–6.8 above a separate 0.8 mm case gasket. This changes the installation hardware only; the purchased case, bushing, actuator and terminals remain unchanged. Other switch models use their standard hardware, and selecting another model restores that choice.
+
 ## Protective cover
 
 DAIER ASW-07D + SAC-01 is the rounded transparent flip-cover assembly. Select red, green, yellow or blue to match the manufacturer's paired SKUs **ASW-07D+SAC-01-TR**, **-TG**, **-TY** and **-TBL**. The colour changes the LED lens and transparent cap; dimensions stay fixed. The first position is OFF. Opening the cap permits either toggle position; closing returns it to OFF.

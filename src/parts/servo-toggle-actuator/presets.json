@@ -107,7 +107,7 @@
   {
     "id": "parallel-shaft-off",
     "name": "Parallel-shaft rocker · OFF",
-    "description": "80 × 110 mm panel-mounted assembly with four PETG parts, including a separate lower servo and switch cradle, and two thin TPU frames. The opposed bar rests across the servo, leaving the toggle free for manual operation.",
+    "description": "80 × 110 mm panel-mounted assembly with four PETG parts, including a separate lower servo and switch cradle, and two external thin TPU frames beneath a flat flange without gasket recesses. The opposed bar rests across the servo, leaving the toggle free for manual operation.",
     "parameters": {
       "mechanism": "parallel",
       "phase": "off",
@@ -122,7 +122,7 @@
   {
     "id": "parallel-shaft-press-on",
     "name": "Parallel-shaft rocker · Press ON",
-    "description": "80 × 110 mm panel-mounted assembly with four PETG parts, including a separate lower servo and switch cradle, and two thin TPU frames. Inspect one end of the opposed bar at its calculated ON contact.",
+    "description": "80 × 110 mm panel-mounted assembly with four PETG parts, including a separate lower servo and switch cradle, and two external thin TPU frames beneath a flat flange without gasket recesses. Inspect one end of the opposed bar at its calculated ON contact.",
     "parameters": {
       "mechanism": "parallel",
       "phase": "press-on",
@@ -137,7 +137,7 @@
   {
     "id": "parallel-shaft-large-flange-off",
     "name": "Parallel-shaft rocker · Larger flange · OFF",
-    "description": "100 × 120 mm panel-mounted assembly with four PETG parts, including a separate lower servo and switch cradle, and two thin TPU frames. The larger flange provides more space for the enclosure mounting.",
+    "description": "100 × 120 mm panel-mounted assembly with four PETG parts, including a separate lower servo and switch cradle, and two external thin TPU frames beneath a flat flange without gasket recesses. The larger flange provides more space for the enclosure mounting.",
     "parameters": {
       "mechanism": "parallel",
       "phase": "off",
@@ -152,7 +152,7 @@
   {
     "id": "parallel-dual-guarded-off",
     "name": "Two switches · ARM 1 OFF · cover closed",
-    "description": "150 × 100 mm flange along X/Y, with ARM 1 manual on the left and ARM 2 servo-operated on the right. Four PETG parts and three thin TPU frames; ARM 2 is OFF at rest.",
+    "description": "150 × 100 mm flange along X/Y, with ARM 1 manual on the left and ARM 2 servo-operated on the right. OFF leans toward the labels; the cover opens away. Four PETG parts with a flat flange underside and three external thin TPU frames; ARM 2 is OFF at rest.",
     "parameters": {
       "mechanism": "parallel-dual",
       "phase": "off",
@@ -168,7 +168,7 @@
   {
     "id": "parallel-dual-open-off",
     "name": "Two switches · ARM 1 OFF · cover open",
-    "description": "150 × 100 mm flange along X/Y, with ARM 1 manual on the left and ARM 2 servo-operated on the right. Four PETG parts and three thin TPU frames; ARM 2 is OFF at rest.",
+    "description": "150 × 100 mm flange along X/Y, with ARM 1 manual on the left and ARM 2 servo-operated on the right. OFF leans toward the labels; the cover opens away. Four PETG parts with a flat flange underside and three external thin TPU frames; ARM 2 is OFF at rest.",
     "parameters": {
       "mechanism": "parallel-dual",
       "phase": "off",
@@ -184,7 +184,7 @@
   {
     "id": "parallel-dual-open-on",
     "name": "Two switches · ARM 1 ON · cover open",
-    "description": "160 × 110 mm flange along X/Y, with ARM 1 manual on the left and ARM 2 servo-operated on the right. Four PETG parts and three thin TPU frames; ARM 2 is OFF at rest.",
+    "description": "160 × 110 mm flange along X/Y, with ARM 1 manual on the left and ARM 2 servo-operated on the right. OFF leans toward the labels; the cover opens away. Four PETG parts with a flat flange underside and three external thin TPU frames; ARM 2 is OFF at rest.",
     "parameters": {
       "mechanism": "parallel-dual",
       "phase": "off",

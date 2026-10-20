@@ -1,5 +1,9 @@
 # Frame components
 
+The runtime catalog is the package's local `presets.json`. Refresh it together with the frame
+assembly catalog using `node --import tsx scripts/sync-frame-presets.ts`; `--check` checks freshness
+without writing. This explicit offline step reads the pinned local CAD metadata and fetches no files.
+
 This module contains 152 physical source occurrences from SOURCE ONE V5, SOURCE TWO V0.1, SOURCE V V1 upgraded arms, SOURCE PODRACER V1, COMET Y6 and SOURCE ONE V4 X8. They share the **Multicopter frames** browse family. Filter by **Frame project** when choosing an individual component.
 
 Shapes retain native BRep, fixed thicknesses and original curves. SOURCE V publishes closed shells; each is wrapped as a solid without sewing or contour repair. Browser tessellation has a 0.025 mm chord tolerance. Source component geometry is independent of assembly corrections and inspection poses.

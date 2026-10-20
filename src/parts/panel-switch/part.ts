@@ -93,6 +93,8 @@ const part: PartDefinition = {
     if (!['assembled', 'exploded'].includes(state)) errors.push('Choose a supported switch state.');
     if (errors.length) return errors;
     const m = selected(p.model);
+    if (p.mountingHardware === 'upper-only' && m.id !== 'daier-asw-07d')
+      errors.push('Upper-nut-only mounting is available for the bare ASW-07D.');
     if (m.positions === 2 && p.position === 'center')
       errors.push('This switch has two positions; choose first or last.');
     if (m.guarded && p.guard === 'closed' && p.position !== 'first')
@@ -102,14 +104,17 @@ const part: PartDefinition = {
     return errors;
   },
   updateParameters(p, key) {
-    const m = selected(p.model);
+    const next =
+      key === 'model' && p.model !== 'daier-asw-07d' ? { ...p, mountingHardware: 'standard' } : p;
+    const m = selected(next.model);
     if (
-      (key === 'guard' && p.guard === 'closed' && m.guarded) ||
+      (key === 'guard' && next.guard === 'closed' && m.guarded) ||
       (key === 'model' && (m.positions === 2 || m.guarded))
     )
-      return { ...p, position: 'first' };
-    if (key === 'position' && m.guarded && p.position !== 'first') return { ...p, guard: 'open' };
-    return p;
+      return { ...next, position: 'first' };
+    if (key === 'position' && m.guarded && next.position !== 'first')
+      return { ...next, guard: 'open' };
+    return next;
   },
   buildGeometry: geometry,
   dimensions: (p, state) => assembly.dimensions(pieces(p, state)),

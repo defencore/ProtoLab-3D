@@ -1,13 +1,9 @@
 import type { Parameters, PartDefinition, Preset } from './types';
-import { presetMatchesConfiguration } from './catalog-models';
+import { matchingPreset } from './preset-resolution';
 
 /** Source provenance is separate from mesh validity and catalog identity. */
 export function modelEvidence(part: PartDefinition, parameters: Parameters, presetId?: string) {
-  const selected = part.presets.find(
-    (p) => p.id === presetId && presetMatchesConfiguration(part, p, parameters),
-  );
-  const preset =
-    selected ?? part.presets.find((p) => presetMatchesConfiguration(part, p, parameters));
+  const preset = matchingPreset(part, parameters, presetId);
   const catalog = preset?.catalog;
   const evidence = catalog?.geometryEvidence;
   const kind = evidence?.kind ?? (catalog ? 'source-dimensions' : 'parametric');

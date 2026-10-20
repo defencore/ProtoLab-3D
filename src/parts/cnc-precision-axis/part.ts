@@ -77,7 +77,10 @@ const part: PartDefinition = {
   keywords: ['HIWIN', 'FDI', 'matched set', 'ground screw', 'C3 order', 'precision axis'],
   defaults: precisionAxisParameters(),
   parameters: [
-    ...screw.parameters,
+    ...screw.parameters.map((field) => ({
+      ...field,
+      ...(field.options ? { options: field.options.map((option) => ({ ...option })) } : {}),
+    })),
     {
       key: 'nutFlangePosition',
       label: 'Installed flange mating coordinate',

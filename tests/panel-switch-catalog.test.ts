@@ -70,8 +70,10 @@ test('24 fixed switch configurations cover separate functions and retain source 
       'guard',
       'colour',
       'panelThickness',
+      'mountingHardware',
     ]);
     assert.equal(preset.parameters.panelThickness, 0.3);
+    assert.equal(preset.parameters.mountingHardware, 'standard');
     assert.deepEqual(preset.catalog!.verifiedParameters, ['model']);
     assert.equal(
       preset.catalog!.geometryEvidence!.kind,
@@ -157,6 +159,53 @@ test('bare ASW-07D installation leaves the selected panel thickness between its 
       'Hidden installation control does not change other models',
     );
   dispose(baseline);
+});
+
+test('bare ASW-07D upper-nut-only mounting clears a flat support without changing the switch', () => {
+  const field = part.parameters.find((field) => field.key === 'mountingHardware')!;
+  assert.equal(part.defaults.mountingHardware, 'standard');
+  assert.equal(field.filterable, false);
+  for (const model of models) {
+    assert.equal(field.visibleWhen!(p(model.id)), model.id === 'daier-asw-07d');
+    if (model.id !== 'daier-asw-07d') {
+      const unsupported = p(model.id, { mountingHardware: 'upper-only' });
+      assert.ok(part.validate(unsupported, 'assembled').length);
+      assert.equal(part.updateParameters!(unsupported, 'model').mountingHardware, 'standard');
+    }
+  }
+  const params = p('daier-asw-07d', { mountingHardware: 'upper-only', panelThickness: 3.8 }),
+    standard = { ...params, mountingHardware: 'standard' };
+  assert.deepEqual(part.validate(params, 'assembled'), []);
+  assert.ok(part.validate({ ...params, mountingHardware: 'none' }, 'assembled').length);
+  assert.deepEqual(
+    pieces(params, 'assembled'),
+    pieces(standard, 'assembled').filter(
+      (piece) => !['Panel washer', 'Panel retaining nut'].includes(piece.label),
+    ),
+    'Only the two removable lower hardware pieces are omitted; retained supplier geometry is exact',
+  );
+  const group = part.buildGeometry(params, 'assembled'),
+    full = part.buildGeometry(standard, 'assembled'),
+    upper = group.children.find((child) => child.name === 'Panel locking nut')!;
+  assert.ok(Math.abs(new Box3().setFromObject(upper).min.z - 6.8) < 0.001);
+  assert.ok(Math.abs(new Box3().setFromObject(upper).max.z - 9.2) < 0.001);
+  for (const z of [0.81, 2.9, 4, 6.79])
+    assert.equal(
+      contains(group, [7, 0, z]),
+      false,
+      'The flat Z0.8–6.8 support clears the hardware',
+    );
+  assert.equal(
+    contains(full, [7, 0, 0.81]),
+    true,
+    'The standard lower nut needs its own clearance',
+  );
+  assert.equal(contains(group, [5.8, 0, 1]), true, 'The original mounting bushing is retained');
+  assert.equal(contains(group, [12, 7.8, -10]), true, 'The original antirotation case is retained');
+  const preset = part.presets.find((preset) => preset.id === 'daier-asw-07d')!;
+  assert.equal(presetMatchesConfiguration(part, preset, params), true);
+  dispose(group);
+  dispose(full);
 });
 
 test('ASW-07D follows its linked drawing execution and retains three distinct blade interfaces', () => {

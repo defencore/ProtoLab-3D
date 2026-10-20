@@ -7,43 +7,7 @@ import { frames, sourceFrame, assemblyPlacement } from '../multicopter-frame-com
 import { engineering } from './lib/engineering';
 import cutting from './lib/cutting-native.json';
 import originalCutting from './lib/cutting.json';
-
-const presets: Preset[] = frames.map((f) => ({
-  id: f.id,
-  name: f.name,
-  description: f.description,
-  parameters: {
-    ...defaults,
-    model: f.id,
-    mass: f.mass,
-    motorThrust: f.motorThrust,
-    rotorHeight: f.rotorHeight,
-    propDiameter: f.propDiameter,
-  },
-  catalog: {
-    designation: f.name + ' · pinned source CAD',
-    manufacturer: f.name + ' project',
-    sourceName: 'Original project CAD',
-    sourceUrl: f.source.url,
-    verifiedParameters: ['model'],
-    attributes: {
-      motorCount: String(f.motorCount),
-      armCount: f.arms.length,
-      construction: f.id === 'comet-y6' ? 'Printed PC/CF' : 'Carbon sheets',
-    },
-    geometryEvidence: {
-      kind: 'manufacturer-cad',
-      summary: `${f.parts.length} native source components. Fixed contours and thicknesses; no geometric scaling.`,
-      limitations: [
-        ...f.hardware,
-        ...f.changes,
-        'Local materials and complete-aircraft flight qualification still require verification.',
-      ].join(' '),
-      sourceUrl: f.source.url,
-      sourceSha256: f.source.sha256,
-    },
-  },
-}));
+import presets from './presets.json';
 const part: PartDefinition = {
   id: 'multicopter-frame',
   name: 'Multicopter frame',
@@ -80,7 +44,7 @@ const part: PartDefinition = {
   ],
   defaults,
   parameters,
-  presets,
+  presets: presets as Preset[],
   presetMatchKeys: ['model'],
   catalogSelection: [],
   catalogFilterFields: [

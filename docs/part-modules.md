@@ -71,14 +71,14 @@ const part = {
   catalogSelection,
 };
 
-export default { apiVersion: 1, order: 800, part } satisfies PartModule;
+export default { apiVersion: 2, order: 800, part } satisfies PartModule;
 ```
 
 The folder name must match the literal lowercase, hyphen-separated ID. IDs must be unique. `order` is a finite numeric display order, with ID used to break ties. Optional `part.defaultSelection: true` selects the initial part; only one package in the library may declare it. New packages should normally omit that preference. The API version identifies the supported package contract.
 
 ## Configurator contract
 
-The final `PartDefinition` owns its parameter schema and defaults. The generic configurator supports numeric, select and boolean fields. `category` and `subgroup` locate the component in the library; each field's `group` arranges its controls.
+The final `PartDefinition` owns its parameter schema and defaults. The generic configurator supports numeric, select, boolean and structured text fields. `category` and `subgroup` locate the component in the library; each field's `group` arranges its controls.
 
 Optional `browseFamily: { id, label, primary? }` groups related definitions into one navigation entry while keeping their physical IDs, product classifications, dependencies and exports separate. Members must share the family label, category and subgroup; at most one is primary. A family ID must not collide with an unrelated physical product ID. The spacer/standoff family uses one shared chooser for ordinary articles, bought units with metal inserts, custom-order sleeves and editable plain-spacer designs. Browsing groups are not synthetic assembly products or new specification positions.
 
@@ -164,7 +164,7 @@ For an assembly, return `Part.makeCompound` with direct children representing in
 
 The supported outside-package imports are the documented SDK modules under `src/core`, including `types.ts`, `geometry.ts`, `mechanical.ts`, `solid-union.ts`, `part-modules.ts`, `geometry-mode.ts` and the thread helpers, plus the installed Three.js and JSCAD packages. Package inspection maintains the complete allowlist. The SDK provides contracts and generic primitives; application export and validation wrappers are supplied to the workbench by its host. Fixed-model packages declare catalog data through these contracts, without importing application UI components.
 
-The generic `catalog-models.ts` helper belongs to the host. It centralizes attribute lookup, inclusive model filters and source-identity matching for the application catalog and export wrappers. Runnable handoffs must carry this helper with the host files that import it, so fixed-model source metadata behaves consistently outside the main app. A standalone workbench can select the same model through its schema controls without reproducing the full library's filter UI; the package's fixed geometry and published attributes remain intact.
+The generic `catalog-models.ts` and `preset-resolution.ts` helpers belong to the host. They centralize attribute lookup, inclusive model filters, source-identity matching and explicit supplier selection for the application catalog and export wrappers. Runnable handoffs carry these helpers with the host files that import them, so fixed-model source metadata behaves consistently outside the main app. A standalone workbench can select the same model through its schema controls without reproducing the full library's filter UI; the package's fixed geometry and published attributes remain intact.
 
 Domain-specific algorithms belong under the part's own `lib/`. Assemblies may reuse another part through an explicit package dependency declared in `index.ts`; see the dependency workflow below. Imports from undeclared parts, `src/catalog`, UI components or arbitrary dependencies are rejected by package inspection. A change to a shared package or the SDK requires verification of its consumers.
 

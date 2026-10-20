@@ -161,7 +161,7 @@ test('functional collections split components by use and retain imported categor
   assert.ok(libraryAreas.every((area) => area.description.length > 10));
 });
 
-test('switches lead Electronics with both plain-name control families directly accessible', () => {
+test('switches lead Electronics with control families and their servo actuator directly accessible', () => {
   const groups = libraryNavigationGroups(
     entries.filter((entry) => libraryArea(entry.category) === 'electronics'),
     'engineering',
@@ -170,7 +170,7 @@ test('switches lead Electronics with both plain-name control families directly a
   assert.equal(groups[0].label, 'Switches & buttons');
   assert.deepEqual(
     groups[0].entries.map((entry) => entry.primary.id),
-    ['panel-switch', 'panel-control'],
+    ['panel-switch', 'panel-control', 'servo-toggle-actuator'],
   );
   assert.equal(part('panel-switch').name, 'Toggle switches & buttons');
   const previousSession = Object.getOwnPropertyDescriptor(globalThis, 'sessionStorage');
@@ -185,6 +185,7 @@ test('switches lead Electronics with both plain-name control families directly a
     const html = render('panel-switch');
     assert.match(html, /<span>Toggle switches &amp; buttons<\/span>/);
     assert.match(html, /<span>Panel button, knob and beacon<\/span>/);
+    assert.match(html, /<span>Servo toggle actuator<\/span>/);
     assert.doesNotMatch(html, /class="subgroup-button"/);
   } finally {
     if (previousSession) Object.defineProperty(globalThis, 'sessionStorage', previousSession);

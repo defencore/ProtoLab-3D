@@ -25,7 +25,9 @@ export function parseConfiguration(
   const issues = validateParameters(part, config.parameters, config.state);
   if (issues.length) throw new Error(issues[0]);
   const parameters = Object.fromEntries(
-    part.parameters.map((field) => [field.key, config.parameters[field.key]]),
+    part.parameters
+      .filter((field) => Object.hasOwn(config.parameters, field.key))
+      .map((field) => [field.key, config.parameters[field.key]]),
   );
   return { part, parameters, state: config.state };
 }

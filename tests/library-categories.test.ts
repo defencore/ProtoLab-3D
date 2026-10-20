@@ -133,7 +133,7 @@ test('electrical catalogs are discoverable by workshop terminology and supplier 
     sortLibraryParts(parts.filter((definition) => definition.subgroup === 'PANEL CONTROLS')).map(
       (definition) => definition.id,
     ),
-    ['panel-switch', 'panel-control'],
+    ['panel-switch', 'panel-control', 'servo-toggle-actuator'],
   );
 });
 

@@ -8,7 +8,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "7101SYZQE",
@@ -46,7 +47,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "7103SYZQE",
@@ -84,7 +86,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "7105SYZQE",
@@ -122,7 +125,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "7108SYZQE",
@@ -160,7 +164,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "7201SYZQE",
@@ -198,7 +203,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "7203SYZQE",
@@ -236,7 +242,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "7205SYZQE",
@@ -274,7 +281,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "7207SYZQE",
@@ -312,7 +320,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "R1966ABLKBLKFF",
@@ -353,7 +362,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "R1966FBLKBLKAF",
@@ -394,7 +404,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "R1966DBLKBLKAF",
@@ -435,7 +446,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "A10303RNZQ",
@@ -473,7 +485,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "A10603RNZQ",
@@ -511,7 +524,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "A11203RNZQ",
@@ -549,7 +563,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "PVA6FE24S41",
@@ -587,7 +602,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "PVA6LRE21231",
@@ -625,7 +641,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "B3F-1000",
@@ -662,7 +679,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "B3F-1020",
@@ -699,7 +717,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "B3F-1050",
@@ -736,7 +755,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "B3F-4000",
@@ -773,7 +793,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "12146AK",
@@ -811,7 +832,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "12146AK + 90C46",
@@ -849,7 +871,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "ASW-07D",
@@ -901,7 +924,8 @@
       "position": "first",
       "guard": "closed",
       "colour": "red",
-      "panelThickness": 0.3
+      "panelThickness": 0.3,
+      "mountingHardware": "standard"
     },
     "catalog": {
       "designation": "ASW-07D + SAC-01",

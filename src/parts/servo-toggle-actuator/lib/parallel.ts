@@ -67,8 +67,9 @@ const contactAngle = tangentAngle();
 export function parallelKinematics(p: Parameters) {
   const direction = p.phase === 'press-on' ? 1 : p.phase === 'press-off' ? -1 : 0;
   return {
-    servoAngle: direction ? -direction * contactAngle : 0,
-    rockerAngle: direction ? -direction * contactAngle : 0,
+    // The installed switch turns 180 degrees about Z, reversing its physical lever tilt.
+    servoAngle: direction ? direction * contactAngle : 0,
+    rockerAngle: direction ? direction * contactAngle : 0,
     contactAngle,
     direction,
     slide: 0,

@@ -23,6 +23,7 @@ import {
   validateProject,
 } from '../src/core/design-project';
 import { readProjects, storeProjects } from '../src/core/project-storage';
+import { generateProjectScript } from '../src/core/project-freecad';
 
 function part(
   id: string,
@@ -364,7 +365,7 @@ test('CSV preserves specification columns, quoting and spreadsheet-safe text', (
   assert.ok(csv.includes('"Line 1\nLine 2"'));
 });
 
-test('catalog procurement is copied only for an exact selected catalog configuration', () => {
+test('editable catalog procurement is copied only for an exact selected catalog configuration', () => {
   const catalog = {
     ...fastener,
     presets: [
@@ -391,6 +392,119 @@ test('catalog procurement is copied only for an exact selected catalog configura
     presetId: 'supplier-part',
   });
   assert.equal(modified.procurement?.designation, '');
+});
+
+test('fixed model pose changes keep the selected supplier in an engineering project', () => {
+  const preset = {
+    id: 'source-a',
+    name: 'Motor A',
+    description: 'Published motor identity.',
+    parameters: { model: 'motor-a', outputAngle: 0 },
+    product: { supply: 'purchased' as const },
+    catalog: {
+      designation: 'MOTOR-A',
+      manufacturer: 'Supplier A',
+      sourceName: 'Supplier A catalog',
+      sourceUrl: 'https://example.test/motor-a',
+      verifiedParameters: ['model'],
+    },
+  };
+  const alternative = {
+    ...preset,
+    id: 'source-b',
+    catalog: {
+      ...preset.catalog,
+      manufacturer: 'Supplier B',
+      sourceName: 'Supplier B catalog',
+      sourceUrl: 'https://example.test/motor-b',
+    },
+  };
+  const motor: PartDefinition = {
+    ...plate,
+    id: 'fixed-motor',
+    catalogSelectionOnly: true,
+    parameters: [
+      {
+        key: 'model',
+        label: 'Model',
+        type: 'select',
+        group: 'Model',
+        options: [
+          { label: 'Motor A', value: 'motor-a' },
+          { label: 'Motor B', value: 'motor-b' },
+        ],
+      },
+      { key: 'outputAngle', label: 'Output angle', type: 'number', group: 'Pose' },
+    ],
+    defaults: { ...preset.parameters },
+    presets: [preset, alternative],
+    python: (parameters) =>
+      `shape = Part.makeBox(1, 1, 1)\nshape.rotate(App.Vector(0,0,0), App.Vector(0,0,1), ${parameters.outputAngle})`,
+  };
+  const configured = {
+    part: motor,
+    parameters: { ...preset.parameters, outputAngle: 45 },
+    state: 'default',
+    presetId: alternative.id,
+  };
+  const product = configureProduct(configured);
+  assert.equal(product.designation, preset.catalog.designation);
+  assert.equal(product.name, preset.name);
+  assert.equal(product.supply, 'purchased');
+  assert.deepEqual(product.procurement, {
+    designation: alternative.catalog.designation,
+    manufacturer: alternative.catalog.manufacturer,
+    source: alternative.catalog.sourceUrl,
+  });
+  assert.equal(product.manufacturing, undefined);
+  const project = addProduct(createProject(), [motor], configured).project;
+  assert.deepEqual(parseProject(serializeProject(project, [motor]), [motor]), project);
+
+  const secondPose = addProduct(project, [motor], {
+    ...configured,
+    parameters: { ...configured.parameters, outputAngle: 90 },
+  }).project;
+  assert.deepEqual(validateProject(secondPose, [motor]), []);
+  assert.equal(secondPose.configurations.length, 2, 'each physical pose keeps its geometry');
+  assert.deepEqual(
+    secondPose.configurations.map((item) => item.parameters.outputAngle),
+    [45, 90],
+  );
+  assert.equal(secondPose.occurrences.length, 2);
+  assert.deepEqual(parseProject(serializeProject(secondPose, [motor]), [motor]), secondPose);
+  const script = generateProjectScript(secondPose, [motor]);
+  assert.match(script, /shape\.rotate\(App.Vector\(0,0,0\), App.Vector\(0,0,1\), 45\)/);
+  assert.match(script, /shape\.rotate\(App.Vector\(0,0,0\), App.Vector\(0,0,1\), 90\)/);
+  assert.ok(script.includes(alternative.catalog.sourceUrl));
+  const differentIdentity = structuredClone(secondPose);
+  differentIdentity.configurations[1].parameters.model = 'motor-b';
+  assert.match(validateProject(differentIdentity, [motor]).join(' '), /conflicting designs/);
+  const otherModel = {
+    ...alternative,
+    id: 'other-model',
+    parameters: { ...alternative.parameters, model: 'motor-b' },
+  };
+  differentIdentity.configurations[1].presetId = otherModel.id;
+  assert.match(
+    validateProject(differentIdentity, [
+      { ...motor, presets: [...motor.presets, otherModel] },
+    ]).join(' '),
+    /conflicting designs/,
+    'two valid fixed supplier identities cannot share a contradictory designation',
+  );
+
+  for (const presetId of [undefined, '', 'custom', 'removed-source']) {
+    const custom = configureProduct({ ...configured, presetId });
+    assert.equal(custom.designation, '');
+    assert.equal(custom.supply, 'manufactured');
+    assert.equal(custom.procurement, undefined);
+  }
+  const differentModel = configureProduct({
+    ...configured,
+    parameters: { ...configured.parameters, model: 'motor-b' },
+  });
+  assert.equal(differentModel.designation, '');
+  assert.equal(differentModel.supply, 'manufactured');
 });
 
 test('explicit supplier presets remain opaque units while custom configurations use authored components', () => {

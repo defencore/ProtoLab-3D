@@ -12,7 +12,6 @@ import {
 } from '../../../core/assembly/boundary/shapes';
 import { screw, hexNut } from './hardware';
 import { parallelPanelInterface } from './parallel-installation';
-import { parallelPanelGasketPocket, parallelSwitchGasketPocket } from './parallel-gaskets';
 import { dualParallelMountDetails, dualParallelMountHardware } from './parallel-dual-mount';
 import type { DetailSpec } from './types';
 
@@ -61,11 +60,11 @@ export function parallelMountDetails(p: Parameters, m: ParallelMountLayout): Det
     union(
       {
         kind: 'transform',
-        child: roundedRect(56, 35.6, 3, 15.2, 13.5),
+        child: roundedRect(56, 35.6, 3, 16, 12.7),
         translation: [12.5, 0, 0],
         rotation: [0, 0, 0],
       } as Shape,
-      ...earAxes.map(([x, y]) => cylinder(6, 11.8, [x, y, 15.2])),
+      ...earAxes.map(([x, y]) => cylinder(6, 11, [x, y, 16])),
       ...[-2, 13, 28].flatMap((x) =>
         [-1, 1].map((side): Shape => ({
           kind: 'transform',
@@ -87,25 +86,21 @@ export function parallelMountDetails(p: Parameters, m: ParallelMountLayout): Det
     // Relieve the nearby wall where the lid's lower locating bosses nest into the rim.
     ...earAxes.map(([x, y]) => cylinder(5.2, 5, [x, y, 27])),
   );
-  const panelHole = subtract(cylinder(6.1, 8, [0, 0, -1]), box([1, 1.9, 8], [-6.2, -0.95, -1]));
+  const panelHole = subtract(cylinder(6.1, 8, [0, 0, -1]), box([1, 1.9, 8], [5.2, -0.95, -1]));
   const base = subtract(
     union(
       {
         kind: 'transform',
-        child: roundedRect(length, width, 4, 0, panel.flangeThickness),
+        child: roundedRect(length, width, 4, panel.flangeBottom, panel.flangeThickness),
         translation: [0, panel.flangeCentre[1], 0],
         rotation: [0, 0, 0],
       },
       pose(upperSleeve, m),
     ),
     panelHole,
-    cylinder(10.5, 4, [0, 0, -1]),
-    parallelSwitchGasketPocket(),
-    parallelPanelGasketPocket(p),
     // Continue the servo cavity and screw passages through the mounting flange itself.
     pose(box([46, 25.6, 8], [-10.5, -12.8, -m.servoZ - 1]), m),
     ...earAxes.map(([x, y]) => pose(cylinder(1.7, 24, [x, y, 14.2]), m)),
-    ...worldAxes.map(([x, y]) => cylinder(4.2, 1.3, [x, y, -0.1])),
     ...panel.mountingHoles.map(([x, y]) =>
       cylinder(panel.holeDiameter / 2, panel.flangeThickness + 2, [x, y, -1]),
     ),
@@ -133,24 +128,21 @@ export function parallelMountDetails(p: Parameters, m: ParallelMountLayout): Det
         pose(
           {
             kind: 'transform',
-            child: roundedRect(56, 35.6, 3, -4.5, 19.7),
+            child: roundedRect(56, 35.6, 3, -4.5, 20.5),
             translation: [12.5, 0, 0],
             rotation: [0, 0, 0],
           },
           m,
         ),
-        roundedRect(38, 26, 3, -19.7, 19.7),
-        box([36, 9, 19.7], [-18, -17, -19.7]),
-        ...worldAxes.flatMap(([x, y]) => [
-          cylinder(6, 19.7, [x, y, -19.7]),
-          cylinder(4, 1.1, [x, y, -0.1]),
-        ]),
+        roundedRect(38, 26, 3, -19.7, 20.5),
+        box([36, 9, 20.5], [-18, -17, -19.7]),
+        ...worldAxes.map(([x, y]) => cylinder(6, 20.5, [x, y, -19.7])),
       ),
       pose(box([46, 25.6, 22], [-10.5, -12.8, -5]), m),
       box([28.8, 16.8, 18.1], [-14.4, -8.4, -17.01]),
       switchFlare,
-      // The lamp-ground blade exits horizontally; this side opening is open to the split face.
-      box([12, 10, 6.1], [-25, -5, -6]),
+      // The clocked lamp-ground blade exits right; the window is open to the split face.
+      box([12, 10, 6.9], [13, -5, -6]),
       ...nutCuts.map((cut) => pose(cut, m)),
       ...worldAxes.map(([x, y]) => cylinder(1.7, 24, [x, y, -21])),
     ),
@@ -207,27 +199,27 @@ export function parallelMountDetails(p: Parameters, m: ParallelMountLayout): Det
       `${length} × ${width} × 6 mm flange; integral 5 mm housing walls and upper gussets`,
       0x526477,
       [
-        'Print the flange underside flat on the bed. The upper sleeve and six gussets rise above it; clear the underside gasket recesses and locating pockets after printing.',
+        'Print the continuous flat underside at Z0.8 on the bed. The upper sleeve and six gussets rise above the 6 mm plate; no gasket recesses, blind locating sockets or lower nut counterbore are present.',
         'The nominal housing cavity is 46 × 25.6 mm. Fit it to the delivered case and printed dimensions; use fitted shims where needed so case torque reacts against broad walls without excessive play.',
-        'The lower cradle meets the hard shoulder lands at Z0. Four diameter 8.4 mm locating pockets, 1.2 mm deep, receive its diameter 8 × 1 mm collars without carrying the axial clamp load.',
-        'The two nominal 0.8 mm TPU gaskets fit flush underside recesses. Keep the rigid mounting lands and PETG split shoulders seated; no gasket compression or material rating is modeled.',
-        'Mount the flange underside at Z0 on a panel with the shared rounded opening and left terminal-access branch. Its four diameter 4.5 mm holes take separate enclosure fasteners selected for the actual panel thickness.',
-        'The underside diameter 21 mm relief clears the switch lower nut and washer to Z3. The keyed diameter 12.2 mm opening retains a 3 mm web at Z3-6 between the source M12 nuts.',
+        'The lower cradle meets the rigid split face at Z0.8. The flat parts have no locating collars or blind sockets; the through-bolts and fitted case walls locate the assembly.',
+        'Nominal 0.8 mm TPU sheets lie against the flat underside, outside the PETG. No gasket compression or material rating is modeled.',
+        'The host top remains Z0 beneath the nominal 0.8 mm panel sheet. Four diameter 4.5 mm through-holes and the right terminal-access branch follow the matching enclosure template.',
+        'The keyed diameter 12.2 mm opening passes through the full 6 mm carrier. Omit the removable lower ASW washer and nut, and set its upper retaining nut against Z6.8; the case-seat TPU occupies Z0-0.8.',
       ],
     ),
     make(
       'parallel-cradle',
       'Printed lower servo and switch cradle',
       cradle,
-      'Open-bottom 19.7 mm deep cradle with rounded case pockets, four nut lands and locating collars',
+      'Open-bottom 20.5 mm deep cradle with rounded case pockets and four captured-nut lands',
       0x60758a,
       [
-        'Print the common open lower rim flat on the bed, locating collars upward. Qualify the small retention-ledger overhangs and nut-slot bridges; the broad upper mounting flange is a separate print.',
+        'Print the common open lower rim flat on the bed. Qualify the small retention-ledger overhangs and nut-slot bridges; the broad upper mounting flange is a separate print.',
         'The servo cavity remains 46 × 25.6 mm. Two side-connected retention ledges meet measured rear case faces at native Z -1.5 mm; the OEM pilot holes remain unused.',
         'The switch cavity is 28.8 × 16.8 mm around the 28 × 16 mm case. Fit its walls to prevent case rotation without squeezing the body. The lower 2.7 mm mouth flares to 32 × 18.4 mm for terminal access.',
-        'The left window is open to the split face for the horizontal ground blade. Verify the selected 6.3 mm receptacles and boots through the host-panel branch and the open underside.',
+        'The right window is open to the split face for the clocked switch ground blade. Verify the selected 6.3 mm receptacles and boots through the host-panel branch and open underside.',
         'Insert ordinary M3 AF5.5 × 2.4 mm nuts from the outer sides into AF5.8 pockets at Z -14 to -11.6 mm. Clear the 6.5 × 2.5 mm entry slots before fitting four M3 × 30 mm through ties.',
-        'The four diameter 8 × 1 mm collars locate the upper flange. Keep the flat shoulder lands at Z0 free of support residue and TPU so tightening preserves the purchased-unit positions.',
+        'The flat rim ends at Z0.8 and meets the upper flange directly. Keep this rigid split face free of TPU and printing residue; all switch and servo contact faces retain their original positions.',
         'The authored 45 × 18 mm straight underside approach stops 0.1 mm before the supplier rear-cover envelope. It is a mounting-clearance study; actual connector ports, plug insertion and cable bends remain to be checked on the delivered servo.',
       ],
     ),
@@ -266,5 +258,7 @@ export function parallelMountHardware(p: Parameters, m: ParallelMountLayout): Co
       installed(capturedNut),
     ];
   });
-  return p.mechanism === 'parallel-dual' ? [...hardware, ...dualParallelMountHardware(p)] : hardware;
+  return p.mechanism === 'parallel-dual'
+    ? [...hardware, ...dualParallelMountHardware(p)]
+    : hardware;
 }

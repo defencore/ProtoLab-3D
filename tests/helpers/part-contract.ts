@@ -8,8 +8,12 @@ import type { PartDefinition } from '../../src/core/types';
 import { validateParameters } from '../../src/core/validation';
 import { geometrySamples } from '../catalog-samples';
 
-function stateIds(part: PartDefinition): string[] {
-  return part.states?.map((state) => state.id) ?? ['default'];
+function stateIds(part: PartDefinition, parameters = part.defaults): string[] {
+  const states = part.states
+    ?.filter((state) => !state.availableWhen || state.availableWhen(parameters))
+    .map((state) => state.id) ?? ['default'];
+  assert.ok(states.length > 0, `${part.id}: a configuration must have an available model state`);
+  return states;
 }
 
 function dispose(group: THREE.Group): void {
@@ -27,9 +31,9 @@ export const catalogShardCount = 8;
 export function registerPartContractTests(shard: number) {
   assert.ok(Number.isInteger(shard) && shard >= 0 && shard < catalogShardCount);
   for (const part of parts.filter((_, index) => index % catalogShardCount === shard)) {
-    test(`${part.name}: every preset validates in every state`, () => {
+    test(`${part.name}: every preset validates in every available state`, () => {
       for (const preset of part.presets)
-        for (const state of stateIds(part))
+        for (const state of stateIds(part, preset.parameters))
           assert.deepEqual(
             validateParameters(part, preset.parameters, state),
             [],
@@ -38,7 +42,7 @@ export function registerPartContractTests(shard: number) {
     });
     test(`${part.name}: every shape variant and stock size boundary has matching dimensions`, () => {
       for (const preset of geometrySamples(part)) {
-        for (const state of stateIds(part)) {
+        for (const state of stateIds(part, preset.parameters)) {
           const label = `${part.id}/${preset.id}/${state}`;
           assert.deepEqual(validateParameters(part, preset.parameters, state), [], label);
           const model = part.buildGeometry(preset.parameters, state);
@@ -115,7 +119,7 @@ export function registerPartContractTests(shard: number) {
 
     test(`${part.name}: console command preserves the complete FreeCAD macro`, () => {
       for (const preset of geometrySamples(part)) {
-        for (const state of stateIds(part)) {
+        for (const state of stateIds(part, preset.parameters)) {
           const script = generateScript(part, preset.parameters, state);
           assert.match(script, /import FreeCAD as App/);
           assert.match(script, /doc\.openTransaction\(/);

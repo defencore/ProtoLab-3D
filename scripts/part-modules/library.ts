@@ -7,6 +7,7 @@ import { PART_ID_PATTERN, PART_MODULE_API_VERSION } from '../../src/core/part-mo
 export const SDK_FILES = [
   'numeric-range.ts',
   'catalog-models.ts',
+  'preset-resolution.ts',
   'recovery-component-recipes.ts',
   'assembly/recovery/python.ts',
   'assembly/recovery/shapes.ts',

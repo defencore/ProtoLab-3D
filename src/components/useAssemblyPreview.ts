@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { unpackModel, type PackedModel } from '../core/mesh-transfer';
+import { unpackModel } from '../core/mesh-transfer';
 import type { Parameters } from '../core/types';
 import type { Group } from 'three';
 import { withGeometryMode, type GeometryMode } from '../core/geometry-mode';
+import { requestPreviewOutput } from './requestWorkerOutput';
 interface Result {
   key: string;
   model?: Group;
@@ -34,51 +35,21 @@ export function useAssemblyPreview(
       return;
     }
     let active = true;
-    let worker: Worker | undefined;
-    let deadline: ReturnType<typeof setTimeout> | undefined;
-    const finish = () => {
-      clearTimeout(deadline);
-      worker?.terminate();
-    };
+    const controller = new AbortController();
     // Coalesce slider input; termination cancels obsolete synchronous worker jobs.
-    const timer = setTimeout(() => {
+    const timer = setTimeout(async () => {
       try {
-        worker = new Worker(new URL('../workers/assembly.worker.ts', import.meta.url), {
-          type: 'module',
+        const output = await requestPreviewOutput(
+          { partId: partId!, parameters, state, presetId, geometryMode },
+          controller.signal,
+        );
+        if (!active) return;
+        setResult({
+          key,
+          dimensions: output.dimensions,
+          model: withGeometryMode(geometryMode, () => unpackModel(output.model)),
         });
-        deadline = setTimeout(() => {
-          finish();
-          if (active)
-            setResult({
-              key,
-              error: 'The preview took too long. Try Simple mode or a smaller assembly.',
-            });
-        }, 120_000);
-        worker.onmessage = (
-          event: MessageEvent<Omit<Result, 'key' | 'model'> & { model?: PackedModel }>,
-        ) => {
-          if (!active) return;
-          try {
-            setResult({
-              ...event.data,
-              key,
-              model: event.data.model
-                ? withGeometryMode(geometryMode, () => unpackModel(event.data.model!))
-                : undefined,
-            });
-          } catch (error) {
-            setResult({ key, error: String(error) });
-          }
-          finish();
-        };
-        worker.onerror = (event) => {
-          if (!active) return;
-          setResult({ key, error: event.message || 'Model worker failed.' });
-          finish();
-        };
-        worker.postMessage({ kind: 'preview', partId, parameters, state, presetId, geometryMode });
       } catch (cause) {
-        finish();
         if (active)
           setResult({ key, error: cause instanceof Error ? cause.message : String(cause) });
       }
@@ -86,7 +57,7 @@ export function useAssemblyPreview(
     return () => {
       active = false;
       clearTimeout(timer);
-      finish();
+      controller.abort();
     };
   }, [key]);
   const current = result?.key === key ? result : undefined;

@@ -1,39 +1,8 @@
 import type { PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters } from './configurator';
-import { models, frames, sourceFrame, selected, geometry, python } from './lib/model';
+import { models, frames, selected, geometry, python } from './lib/model';
+import presets from './presets.json';
 export { frames, models, sourceFrame, assemblyPlacement, sheetFabrication } from './lib/frames';
-const presets: Preset[] = models.map((m) => ({
-  id: m.id,
-  name: sourceFrame(m.frameId).name + ' · ' + m.label,
-  description: 'Fixed upstream CAD component. No stretching or material substitution.',
-  parameters: { component: m.id },
-  product: { supply: m.route === 'purchase' ? 'purchased' : 'manufactured' },
-  catalog: {
-    designation: m.label,
-    manufacturer: sourceFrame(m.frameId).name + ' project',
-    sourceName: 'Pinned upstream CAD',
-    sourceUrl: m.sourceFile?.url ?? sourceFrame(m.frameId).source.url,
-    verifiedParameters: ['component'],
-    geometryEvidence: {
-      kind: 'manufacturer-cad',
-      summary:
-        'Native BRep extracted from pinned original project CAD; preview tessellated at 0.025 mm chord tolerance.',
-      limitations:
-        'Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained. ' +
-        (m.previewNotes?.join(' ') ?? ''),
-      sourceUrl: m.sourceFile?.url ?? sourceFrame(m.frameId).source.url,
-      sourceSha256: m.sourceFile?.sha256 ?? sourceFrame(m.frameId).source.sha256,
-    },
-    attributes: {
-      width: m.dimensions[0],
-      depth: m.dimensions[1],
-      height: m.dimensions[2],
-      volume: m.volume,
-      route: m.route,
-      frame: sourceFrame(m.frameId).name,
-    },
-  },
-}));
 const part: PartDefinition = {
   id: 'multicopter-frame-component',
   name: 'Multicopter frame component',
@@ -72,7 +41,7 @@ const part: PartDefinition = {
   ],
   defaults,
   parameters,
-  presets,
+  presets: presets as Preset[],
   catalogSelection: [],
   catalogSelectionOnly: true,
   catalogFilterFields: [

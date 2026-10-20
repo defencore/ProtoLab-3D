@@ -12,6 +12,7 @@ import type {
 import { createPresetId } from './storage';
 import { validateParameters } from './validation';
 import { specificationSection } from './product-library';
+import { selectedMatchingPreset } from './preset-resolution';
 
 export interface ProductSelection {
   part: PartDefinition;
@@ -188,11 +189,8 @@ export function configureProduct(selection: ProductSelection): ProductConfigurat
   const { part, parameters, state, presetId } = selection;
   const errors = validateParameters(part, parameters, state);
   if (errors.length) throw new Error(`${part.name}: ${errors.join(' ')}`);
-  const preset = part.presets.find((item) => item.id === presetId);
-  const catalog =
-    preset && Object.entries(preset.parameters).every(([key, value]) => parameters[key] === value)
-      ? preset.catalog
-      : undefined;
+  const preset = selectedMatchingPreset(part, parameters, presetId);
+  const catalog = preset?.catalog;
   const configuration: ProductConfiguration = {
     id: identity('configuration'),
     libraryId: part.id,
@@ -221,15 +219,36 @@ export function configureProduct(selection: ProductSelection): ProductConfigurat
   return configuration;
 }
 
-function designIdentity(configuration: ProductConfiguration): string {
+function designIdentity(
+  configuration: ProductConfiguration,
+  parameters = configuration.parameters,
+): string {
   return stable({
     libraryId: configuration.libraryId,
-    parameters: configuration.parameters,
+    parameters,
     state: configuration.state,
     supply: configuration.supply,
     manufacturing: configuration.manufacturing,
     procurement: configuration.procurement,
   });
+}
+
+/** Poses remain separate geometry configurations of one fixed purchased product. */
+function designationIdentity(
+  configuration: ProductConfiguration,
+  part: PartDefinition | undefined,
+): string {
+  const preset =
+    part?.catalogSelectionOnly && ['purchased', 'standard'].includes(configuration.supply)
+      ? selectedMatchingPreset(part, configuration.parameters, configuration.presetId)
+      : undefined;
+  const keys = preset?.catalog?.verifiedParameters;
+  return designIdentity(
+    configuration,
+    keys?.length
+      ? Object.fromEntries(keys.map((key) => [key, configuration.parameters[key]]))
+      : configuration.parameters,
+  );
 }
 
 function physicalState(part: PartDefinition, selected: string): string {
@@ -454,7 +473,7 @@ export function validateProject(
       errors.push(`${configuration.name}: manufacturing processes must be known and unique.`);
     if (configuration.designation.trim()) {
       const key = `${configuration.designation.trim()}@${configuration.revision.trim()}`;
-      const definition = designIdentity(configuration);
+      const definition = designationIdentity(configuration, part);
       if (designations.has(key) && designations.get(key) !== definition)
         errors.push(
           `Designation ${configuration.designation}, revision ${configuration.revision} identifies conflicting designs.`,

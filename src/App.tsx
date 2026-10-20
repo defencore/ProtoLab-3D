@@ -115,7 +115,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
     if (storedModelState !== modelState) setModelState(modelState);
   }, [storedModelState, modelState]);
   const presetId = part.catalogSelectionOnly
-    ? matchingPresetId(part, parameters)
+    ? matchingPresetId(part, parameters, selection.presetId)
     : selection.presetId;
   if (moduleChanged) {
     definitionVersion.current++;
@@ -878,7 +878,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
                   ? part.updateParameters(next, key)
                   : next;
               });
-              setPresetId('custom');
+              if (!part.catalogSelectionOnly) setPresetId('custom');
             }}
             onState={setModelState}
             onBrowse={(filters, query) => openPresetBrowser('browse', filters, query)}

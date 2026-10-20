@@ -521,7 +521,7 @@ test('rocker inspection separates instances without altering physical roots or s
   }
 });
 
-test('parallel shafts use four PETG details and two separate TPU gaskets with unchanged purchased interfaces', () => {
+test('parallel shafts retain source body poses and clamp the full flange with upper-only switch hardware', () => {
   assert.equal(part.defaults.mechanism, 'rocker', 'The existing default remains selected.');
   const input = parallel(),
     children = part.composition!(input).components,
@@ -544,12 +544,13 @@ test('parallel shafts use four PETG details and two separate TPU gaskets with un
     assert.doesNotMatch(item.id + ' ' + item.name, /slider|guide rod|scotch/i);
   }
   assert.deepEqual(servo.placement, { translation: [0, -28, -15.2], rotation: [0, 0, -90] });
-  assert.deepEqual(toggle.placement, { translation: [0, 0, 0], rotation: [0, 0, 0] });
+  assert.deepEqual(toggle.placement, { translation: [0, 0, 0], rotation: [0, 0, 180] });
   near(servo.placement!.translation[2] + 33.7, 18.5);
   assert.equal(servo.parameters.model, 'st3215-12v');
   assert.equal(servo.parameters.showHorn, true);
   assert.equal(toggle.parameters.model, 'daier-asw-07d');
-  assert.equal(toggle.parameters.panelThickness, 3);
+  assert.equal(toggle.parameters.panelThickness, 3.8);
+  assert.equal(toggle.parameters.mountingHardware, 'upper-only');
   assert.equal(children.length, 24);
   assert.equal(printed.filter((c) => /PETG/.test(c.manufacturing!.material)).length, 4);
   assert.equal(printed.filter((c) => /TPU/.test(c.manufacturing!.material)).length, 2);
@@ -654,15 +655,16 @@ test('the parallel mounting interface has a fixed top datum, a rounded host open
       height: 84,
       radius: 4,
       centre: [0, -28],
-      terminalNotch: { width: 16, height: 12, radius: 2, centre: [-34, 0] },
+      terminalNotch: { width: 16, height: 12, radius: 2, centre: [34, 0] },
       additionalTerminalNotches: [],
     });
     assert.equal(actual.gasketThickness, 0.8);
     assert.equal(actual.flangeCornerRadius, 4);
     assert.deepEqual(actual.groundClip, {
-      min: [-31.5, -4.5, -5.1],
+      min: [14.5, -4.5, -5.1],
       size: [17, 9, 5],
       insertionStroke: 10,
+      approachSide: 'positive-x',
     });
     assert.equal(actual.holeDiameter, 4.5);
     assert.deepEqual(
@@ -719,8 +721,8 @@ test('parallel pushes reach tangency on the finite arm and physical lever with o
   for (const phase of ['press-on', 'press-off']) {
     const input = parallel({ phase }),
       motion = kinematics(input),
-      side = phase === 'press-on' ? -1 : 1,
-      tilt = phase === 'press-on' ? 12 : -12,
+      side = phase === 'press-on' ? 1 : -1,
+      tilt = phase === 'press-on' ? -12 : 12,
       result = armDistance(motion.servoAngle, tilt, side);
     near(Math.abs(motion.servoAngle), 76.336799815, 1e-7);
     assert.equal(Math.sign(motion.servoAngle), side);
@@ -881,7 +883,7 @@ test('the second guarded switch stays mechanically independent of every front se
         manual.placement!.translation.map((v) => (v === 0 ? 0 : v)),
         [-90, 0, 0],
       );
-      assert.deepEqual(manual.placement!.rotation, [0, 0, -90]);
+      assert.deepEqual(manual.placement!.rotation, [0, 0, 90]);
       assert.match(manual.name, /^ARM 1/);
       assert.ok(
         configured(input, 'assembled').find((piece) => piece.component.id === manual.id)!
@@ -1044,16 +1046,15 @@ test('assembled and separated previews have positive component volumes and consi
         );
         assert.ok(
           containsPoint(base, new Vector3(30, 0, 3)),
-          'The integrated 6 mm flange supports the mounting plane at Z0.',
+          'The integrated 6 mm flange starts above the external TPU sheet at Z0.8.',
         );
         assert.ok(
-          containsPoint(base, new Vector3(-5.6, 0, 4)),
+          containsPoint(base, new Vector3(5.6, 0, 4)),
           'The upper switch web retains its anti-rotation key.',
         );
-        assert.equal(
+        assert.ok(
           containsPoint(base, new Vector3(8, 0, 1)),
-          false,
-          'The lower switch nut and washer have a separate diameter 21 mm relief.',
+          'The keyed switch bore has a full-height flange web without a lower-nut counterbore.',
         );
         for (const [x, y] of [
           [-20, -18],
@@ -1063,20 +1064,15 @@ test('assembled and separated previews have positive component volumes and consi
         ]) {
           assert.ok(
             containsPoint(cradle, new Vector3(x + 3, y, 0.5)),
-            'A real male collar locates the split.',
+            'The lower cradle has a broad flat rim up to Z0.8.',
           );
           assert.equal(containsPoint(base, new Vector3(x + 3, y, 0.5)), false);
-          assert.equal(
-            containsPoint(base, new Vector3(x + 4.1, y, 0.5)),
-            false,
-            'Diameter8.4 socket leaves radial clearance around the diameter8 collar.',
-          );
-          assert.equal(containsPoint(cradle, new Vector3(x + 3, y, 1.1)), false);
-          assert.equal(
-            containsPoint(base, new Vector3(x + 3, y, 1.1)),
-            false,
-            'The1.2mm socket retains0.2mm depth clearance above the1mm collar.',
-          );
+          for (const z of [0.9, 1.9, 3.9, 6.7])
+            assert.ok(
+              containsPoint(base, new Vector3(x + 3, y, z)),
+              'Through M3 screws align flat shoulders without blind underside locating pockets.',
+            );
+          assert.equal(containsPoint(cradle, new Vector3(x + 3, y, 0.9)), false);
         }
         for (const point of [new Vector3(16, 0, -10), new Vector3(0, 11, -10)])
           assert.ok(containsPoint(cradle, point), 'Rigid flats enclose the actual ASW case.');
@@ -1086,7 +1082,7 @@ test('assembled and separated previews have positive component volumes and consi
           'The16.8mm cavity retains0.4mm nominal case clearance on each side.',
         );
         assert.equal(
-          containsPoint(cradle, new Vector3(-16, 0, -3)),
+          containsPoint(cradle, new Vector3(16, 0, -3)),
           false,
           'The side ground blade and clip have an open-top channel.',
         );
@@ -1103,20 +1099,21 @@ test('assembled and separated previews have positive component volumes and consi
           assert.equal(
             containsPoint(base, point),
             false,
-            'Nominal TPU is recessed, without a synthetic compression overlap.',
+            'The external TPU sheet lies entirely below the flat PETG flange.',
           );
           assert.ok(
             containsPoint(base, point.clone().setZ(0.9)),
-            'The gasket seats against a real pocket ceiling.',
+            'The gasket seats against the common flat flange underside at Z0.8.',
           );
         }
         assert.equal(containsPoint(switchGasket, new Vector3(0, 0, 0.4)), false);
-        assert.equal(
+        assert.ok(
           containsPoint(panelGasket, new Vector3(36, 20, 0.4)),
-          false,
-          'The panel gasket clears hard M4 seating lands.',
+          'The panel sheet retains material around its diameter 5 mm M4 holes.',
         );
-        assert.ok(containsPoint(base, new Vector3(36, 20, 0.4)));
+        assert.equal(containsPoint(panelGasket, new Vector3(32, 20, 0.4)), false);
+        assert.equal(containsPoint(base, new Vector3(36, 20, 0.4)), false);
+        assert.ok(containsPoint(base, new Vector3(36, 20, 0.9)));
         assert.equal(
           containsPoint(base, new Vector3(39, 27, 3)),
           false,
@@ -1175,7 +1172,7 @@ test('assembled and separated previews have positive component volumes and consi
         assert.ok(containsPoint(base, dualWorldPoint(8, -90, 0.9)));
         assert.ok(
           containsPoint(base, dualWorldPoint(8, -90, 6.4)),
-          'The guarded-source lower nut seats on the raised6.8mm web.',
+          'The guarded-source lower nut seats on the common flat Z6.8 flange top.',
         );
         assert.deepEqual(
           parallelLegendLayout.map((legend) => legend.text),
@@ -1194,26 +1191,26 @@ test('assembled and separated previews have positive component volumes and consi
           ];
           for (const [x, y, retained] of probes) {
             assert.equal(
-              containsPoint(base, new Vector3(x, y, 5.7)),
+              containsPoint(base, new Vector3(x, y, 6.5)),
               retained,
               `${index === 0 ? 'ARM 1' : 'ARM 2'} stroke/counter/space content at ${x}, ${y}`,
             );
             assert.ok(
-              containsPoint(base, new Vector3(x, y, 5.39)),
-              'Engraving retains the carrier below Z5.4.',
+              containsPoint(base, new Vector3(x, y, 6.19)),
+              'Engraving retains the carrier below Z6.2.',
             );
             if (!retained)
               assert.equal(
-                containsPoint(base, new Vector3(x, y, 5.41)),
+                containsPoint(base, new Vector3(x, y, 6.21)),
                 false,
-                'The absolute engraving floor is Z5.4.',
+                'The absolute engraving floor is Z6.2.',
               );
           }
         }
         assert.ok(containsPoint(lower, dualWorldPoint(16, -90, -10)));
         assert.equal(containsPoint(lower, dualWorldPoint(0, -81.8, -10)), false);
         assert.equal(
-          containsPoint(lower, dualWorldPoint(-16, -90, -3)),
+          containsPoint(lower, dualWorldPoint(16, -90, -3)),
           false,
           'The rear ground-blade channel stays open.',
         );

@@ -1,6 +1,6 @@
 import type { ParameterDefinition, Parameters, PartDefinition, Preset } from './types';
 import { validateParameters } from './validation';
-import { presetMatchesConfiguration } from './catalog-models';
+import { matchingPreset } from './preset-resolution';
 
 export interface PartSelection {
   partId: string;
@@ -13,11 +13,12 @@ function matchesParameters(part: PartDefinition, left: Parameters, right: Parame
   return part.parameters.every((field) => left[field.key] === right[field.key]);
 }
 
-export function matchingPresetId(part: PartDefinition, parameters: Parameters): string {
-  return (
-    part.presets.find((preset) => presetMatchesConfiguration(part, preset, parameters))?.id ??
-    'custom'
-  );
+export function matchingPresetId(
+  part: PartDefinition,
+  parameters: Parameters,
+  preferredId?: string,
+): string {
+  return matchingPreset(part, parameters, preferredId)?.id ?? 'custom';
 }
 
 /** Selecting another fixed source model keeps the user's independent order and placement inputs. */
@@ -46,6 +47,7 @@ export function defaultPartSelection(part: PartDefinition): PartSelection {
 function acceptsValue(field: ParameterDefinition, value: Parameters[string]): boolean {
   if (field.type === 'number') return typeof value === 'number' && Number.isFinite(value);
   if (field.type === 'boolean') return typeof value === 'boolean';
+  if (field.type === 'text') return typeof value === 'string';
   return field.options?.some((option) => option.value === value) ?? false;
 }
 
@@ -115,7 +117,7 @@ export function reconcilePartSelection(
     partId: part.id,
     parameters: retained,
     modelState: state,
-    presetId: matchingPresetId(part, retained),
+    presetId: matchingPresetId(part, retained, selection.presetId),
   };
 }
 

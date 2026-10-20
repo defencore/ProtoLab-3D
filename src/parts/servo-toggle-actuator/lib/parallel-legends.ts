@@ -131,7 +131,7 @@ export function parallelLegendCutters(): Shape[] {
           kind: 'plate',
           outline: glyph.outline.map(move),
           holes: (glyph.holes ?? []).map((hole) => hole.map(move)),
-          z: 6 - legend.depth,
+          z: 6.8 - legend.depth,
           height: legend.depth + 0.1,
         },
         translation: [legend.centre[0], legend.centre[1], 0],

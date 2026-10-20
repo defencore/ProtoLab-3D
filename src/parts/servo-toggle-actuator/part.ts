@@ -201,21 +201,21 @@ const part: PartDefinition = {
         manualDescriptions[String(p.manualState)],
         'Seven prints: four PETG parts form the flange, extended lower cradle, lid and opposed bar; three separate 0.8 mm TPU frames cushion the two switch seats and host-plate interface.',
         `Current servo angle ${motion.servoAngle.toFixed(2)}°. The ARM 2 rotor leaves at least ${motion.neutralClearance.toFixed(2)} mm clearance at neutral for manual OFF. ARM 1 is operated by hand and has no servo linkage.`,
-        'ARM 1 sits 90 mm to the left of ARM 2. Its guarded toggle uses the unchanged ASW-07D and SAC-01 library assembly; the reconstructed cover seat and travel need a check on the delivered pair.',
+        'ARM 1 sits 90 mm to the left of ARM 2. Both toggles lean toward the labels in OFF and away in ON; the SAC-01 hinge is behind ARM 1 and the cover opens away. The reconstructed cover seat and travel need a check on the delivered pair.',
         'Four M3×30 through-bolts join the servo housing; two additional M3×20 bolts retain the ARM 1 end of the cradle. Four M1.6×12 fasteners retain the rotor on the supplied disc.',
-        'Use the two-switch mounting template, including both terminal-access branches. Select M4 hardware for the actual host plate and keep space below for plugs, receptacles and cable bends. Read the ARM 1 and ARM 2 labels from the marked edge.',
-        'Use PETG and print the three TPU frames flat at nominal 0.8 mm. The ARM 2 mounting web and M4 lands provide rigid references; fit the ARM 1 guard stack to the actual TPU thickness. No gasket compression, sealing or force rating is assigned. Calibrate the ARM 2 drive on the purchased parts.',
+        'Use the two-switch mounting template, including both negative-Y terminal-access branches. Select M4 hardware for the actual host plate and keep space below for plugs, receptacles and cable bends. Read the ARM 1 and ARM 2 labels from the marked edge.',
+        'Print the full 6 mm PETG flange with its flat underside down; there are no gasket recesses or locator pockets. The three nominal 0.8 mm TPU frames sit externally below it. ARM 2 uses its upper nut only, with the lower washer and nut removed. Fit both switch nut stacks and the M4 installation to actual TPU thickness. No gasket compression, sealing or force rating is assigned. Calibrate the ARM 2 drive on the purchased parts.',
       ];
     if (p.mechanism === 'parallel')
       return [
         parallelPhases[String(p.phase)],
         'Six prints: four PETG parts form the upper flange, lower servo and switch cradle, lid and opposed bar; two separate 0.8 mm TPU frames cushion the switch and host-plate interfaces.',
         `Current servo angle ${motion.servoAngle.toFixed(2)}°. At neutral, the rotor leaves at least ${motion.neutralClearance.toFixed(2)} mm clearance across the full manual toggle travel. You can switch OFF by hand without moving the servo.`,
-        'The flat 6 mm flange sits on the host plate. Its underside is the mounting datum; use the matching template including the left terminal opening, and select M4 hardware for the actual plate thickness.',
+        'The full 6 mm flange has a flat underside at Z0.8 above the host plate top at Z0, separated by the external 0.8 mm TPU frame. Use the matching template including the right terminal opening, and select M4 hardware for the actual installation stack.',
         'The underside is open for control leads. Reserve at least 25 mm below the servo face for the selected plug and wire bend; mating plugs and source ports require a check on the delivered unit.',
         'The lower cradle fits the servo and the switch-body flats to resist rotation. Four M3×30 through-bolts join it to the upper flange and lid; four M1.6×12 fasteners retain the 8 mm rotor hub on the supplied disc.',
-        'Both TPU frames sit flush in 0.8 mm recesses. The rigid switch mounting web and M4 seating lands preserve alignment; the model assigns no gasket compression or sealing rating.',
-        'Use PETG with approximately five to six walls as a starting print setup. Measure the purchased switch pivot and trip force, then calibrate push endpoints, speed and torque limit. The contact positions describe geometry rather than firmware settings or a force rating.',
+        'Both nominal 0.8 mm TPU frames sit externally beneath the flat flange without recesses or M4 hard lands. The bare switch uses its upper nut only; remove the lower washer and nut, then fit the nut stack to actual TPU thickness. The model assigns no gasket compression or sealing rating.',
+        'Print the broad, flat flange underside down. Use PETG with approximately five to six walls as a starting setup; qualify the separate cradle retention ledges and nut-slot bridges. Measure the purchased switch pivot and trip force, then calibrate push endpoints, speed and torque limit. The contact positions describe geometry rather than firmware settings or a force rating.',
       ];
     if (p.mechanism === 'rocker')
       return [

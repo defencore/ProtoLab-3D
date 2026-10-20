@@ -183,9 +183,9 @@ const cases = planned
                     centre: [0, isDual ? -48 : -28],
                     radius: 4,
                   },
-                  sideBranch: { size: [16, 12], centre: [-34, 0], radius: 2 },
+                  sideBranch: { size: [16, 12], centre: [34, 0], radius: 2 },
                   ...(isDual
-                    ? { rearSideBranch: { size: [16, 12], centre: [-34, -90], radius: 2 } }
+                    ? { rearSideBranch: { size: [16, 12], centre: [34, -90], radius: 2 } }
                     : {}),
                   holes: [-1, 1].flatMap((side) =>
                     [-1, 1].map((end) => [
@@ -205,8 +205,8 @@ const cases = planned
                     'Authored mounting clearance before the source rear face; actual sockets and mating plugs are absent from the source CAD.',
                 },
                 groundClip: {
-                  finalMin: [-31.5, -4.5, -5.1],
-                  finalMax: [-14.5, 4.5, -0.1],
+                  finalMin: [14.5, -4.5, -5.1],
+                  finalMax: [31.5, 4.5, -0.1],
                   approachStroke: 10,
                 },
                 switchCase: {
@@ -215,7 +215,9 @@ const cases = planned
                   pocketSize: [28.8, 16.8],
                   yawNegativeControls: [-3, 3],
                 },
-                splitPlane: 0,
+                splitPlane: 0.8,
+                flangeBottom: 0.8,
+                flangeTop: 6.8,
                 gasketThickness: 0.8,
                 minimumRotorClearance: 1,
                 ...(isDual
@@ -234,13 +236,14 @@ const cases = planned
                         gasketId: 'parallel-manual-gasket',
                         gasketBore: 12.6,
                         groundClip: {
-                          finalMin: [-31.5, -94.5, -5.1],
-                          finalMax: [-14.5, -85.5, -0.1],
+                          finalMin: [14.5, -94.5, -5.1],
+                          finalMax: [31.5, -85.5, -0.1],
                           approachStroke: 10,
                         },
                         guard: {
-                          pivot: [15.5, -90, 14.7],
-                          axis: [0, 1, 0],
+                          pivot: [-15.5, -90, 14.7],
+                          axis: [0, -1, 0],
+                          sourceRotationZ: 180,
                           opening: 69,
                           sampleStep: 3,
                           closedExpression: pythonShape(sac01Cover(false)),

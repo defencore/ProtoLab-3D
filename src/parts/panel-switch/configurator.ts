@@ -6,6 +6,7 @@ export const defaults: Parameters = {
   guard: 'closed',
   colour: 'red',
   panelThickness: 0.3,
+  mountingHardware: 'standard',
 };
 export const parameters: ParameterDefinition[] = [
   {
@@ -27,6 +28,20 @@ export const parameters: ParameterDefinition[] = [
       'Manufacturer-listed red, green, yellow or blue LED. The SAC-01 transparent plastic has the same colour on the paired product.',
   },
   {
+    key: 'mountingHardware',
+    label: 'Mounting hardware',
+    type: 'select',
+    group: 'Mounting',
+    filterable: false,
+    options: [
+      { value: 'standard', label: 'Both nuts and lower washer' },
+      { value: 'upper-only', label: 'Upper nut only' },
+    ],
+    visibleWhen: (p) => p.model === 'daier-asw-07d',
+    description:
+      'Upper nut only removes the loose lower washer and retaining nut for assemblies with their own supporting case seat. The switch case, bushing, actuator and terminals remain fixed.',
+  },
+  {
     key: 'panelThickness',
     label: 'Panel thickness',
     type: 'number',
@@ -38,7 +53,7 @@ export const parameters: ParameterDefinition[] = [
     filterable: false,
     visibleWhen: (p) => p.model === 'daier-asw-07d',
     description:
-      'Installation pose for the bare ASW-07D. The panel sits above the lower nut at Z=3 mm; the upper nut follows the panel front face.',
+      'Sets the upper nut seat to Z = 3 mm + this value. With standard hardware, the panel rear face sits above the lower nut at Z = 3 mm. Upper-nut-only assemblies provide their own supporting seat.',
   },
   {
     key: 'position',

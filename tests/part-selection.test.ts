@@ -11,7 +11,13 @@ function moduleDefinition(overrides: Partial<PartDefinition> = {}): PartDefiniti
     category: 'TEST',
     subgroup: 'MODULES',
     description: 'A replaceable part module.',
-    product: { kind: 'detail', supply: 'manufactured', description: 'Manufactured test fixture.', processes: ['milling'], releaseRequirements: ['Review the configured fixture drawing.'] },
+    product: {
+      kind: 'detail',
+      supply: 'manufactured',
+      description: 'Manufactured test fixture.',
+      processes: ['milling'],
+      releaseRequirements: ['Review the configured fixture drawing.'],
+    },
     keywords: [],
     icon: 'box',
     complexity: 'Simple',
@@ -124,5 +130,57 @@ test('removing the selected module resets to the replacement module instead of r
   assert.deepEqual(
     reconcilePartSelection(replacement, previous, defaultPartSelection(previous)),
     defaultPartSelection(replacement),
+  );
+});
+
+test('module replacement keeps edited text and follows untouched text defaults', () => {
+  const previous = moduleDefinition({
+    parameters: [
+      ...moduleDefinition().parameters,
+      { key: 'recipe', label: 'Recipe', type: 'text', group: 'Definition' },
+    ],
+    defaults: { ...moduleDefinition().defaults, recipe: 'original recipe' },
+  });
+  const next = {
+    ...previous,
+    defaults: { ...previous.defaults, recipe: 'updated recipe' },
+  };
+  const selection = defaultPartSelection(previous);
+  assert.equal(
+    reconcilePartSelection(next, previous, selection).parameters.recipe,
+    'updated recipe',
+  );
+  selection.parameters.recipe = 'custom recipe\nwith independent text';
+  assert.equal(
+    reconcilePartSelection(next, previous, selection).parameters.recipe,
+    selection.parameters.recipe,
+  );
+  selection.parameters.recipe = 123;
+  assert.equal(
+    reconcilePartSelection(next, previous, selection).parameters.recipe,
+    'updated recipe',
+  );
+});
+
+test('module replacement preserves the selected source when multiple presets share dimensions', () => {
+  const first = {
+    id: 'source-a',
+    name: 'Source A',
+    description: 'Same physical identity from a different source.',
+    parameters: { width: 15, length: 40, style: 'plain' },
+  };
+  const second = { ...first, id: 'source-b', name: 'Source B' };
+  const previous = moduleDefinition({ presets: [first, second] });
+  const selected = {
+    partId: previous.id,
+    parameters: { ...second.parameters },
+    modelState: 'default',
+    presetId: second.id,
+  };
+  const replacement = { ...previous, description: 'Updated metadata.' };
+  assert.equal(reconcilePartSelection(replacement, previous, selected).presetId, second.id);
+  assert.equal(
+    reconcilePartSelection({ ...replacement, presets: [first] }, previous, selected).presetId,
+    first.id,
   );
 });

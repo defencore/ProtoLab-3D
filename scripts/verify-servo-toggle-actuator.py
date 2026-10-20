@@ -28,7 +28,7 @@ cases = json.loads(Path(sys.argv[1] if len(sys.argv) > 1 else '/tmp/protolab-ser
 output = Path(sys.argv[2] if len(sys.argv) > 2 else '/tmp/protolab-servo-toggle-actuator-results.json')
 started = time.perf_counter()
 report = {'checkedAt': datetime.now(timezone.utc).isoformat(), 'freecad': '.'.join(App.Version()[:3]),
-          'scope': 'Printed rocker, single/dual parallel-shaft rotors and guided linkage: OFF/ON rest, both push phases, inspection separation, retained source units, custom mounting details, external host-plate cutouts, authored cable/terminal approaches, guarded-switch travel and rotated left/right dual installation with engraved ARM 1 / ARM 2 legends; unchanged previous native proofs reused only with exact script and fixture hashes; no force or material-performance certification.', 'cases': []}
+          'scope': 'Printed rocker, single/dual parallel-shaft rotors and guided linkage: OFF/ON rest, both push phases, inspection separation, retained source units, custom mounting details, external host-plate cutouts, authored cable/terminal approaches, guarded-switch travel and rotated left/right dual installation with engraved ARM 1 / ARM 2 legends, and flat supported PETG flange undersides with external TPU sheets; unchanged previous native proofs reused only with exact script and fixture hashes; no force or material-performance certification.', 'cases': []}
 
 
 def save_row(row):
@@ -99,24 +99,61 @@ def plane_contact_area(first, second, z):
 
 def ground_clip_fixtures(fixtures):
     clip = fixtures['groundClip']
-    assert clip == {'finalMin':[-31.5,-4.5,-5.1], 'finalMax':[-14.5,4.5,-0.1], 'approachStroke':10}
+    assert clip == {'finalMin':[14.5,-4.5,-5.1], 'finalMax':[31.5,4.5,-0.1], 'approachStroke':10}
     low,high = clip['finalMin'],clip['finalMax']
     final = Part.makeBox(*(b-a for a,b in zip(low,high)),App.Vector(*low))
-    sweep = Part.makeBox(high[0]-low[0]+clip['approachStroke'],high[1]-low[1],high[2]-low[2],App.Vector(low[0]-clip['approachStroke'],low[1],low[2]))
+    sweep = Part.makeBox(high[0]-low[0]+clip['approachStroke'],high[1]-low[1],high[2]-low[2],App.Vector(*low))
     return final,sweep
+
+
+def flange_support_metrics(base,bottom,top):
+    faces=[face for face in base.Faces if face.Vertexes and all(abs(vertex.Point.z-bottom)<1e-7 for vertex in face.Vertexes)]
+    assert faces, 'Flange has no actual planar first-layer face'
+    envelope=Part.makeCompound([face.extrude(App.Vector(0,0,top-bottom)) for face in faces])
+    bounds=base.BoundBox
+    slab=Part.makeBox(bounds.XLength+2,bounds.YLength+2,top-bottom,App.Vector(bounds.XMin-1,bounds.YMin-1,bottom))
+    flange=base.common(slab)
+    unsupported=volume(flange.cut(envelope))
+    ceilings=[]
+    for face in base.Faces:
+        if not face.Vertexes:continue
+        z=face.Vertexes[0].Point.z
+        if not bottom+1e-6<z<top-1e-6 or not all(abs(vertex.Point.z-z)<1e-7 for vertex in face.Vertexes):continue
+        low_u,high_u,low_v,high_v=face.ParameterRange
+        if face.normalAt((low_u+high_u)/2,(low_v+high_v)/2).z < -0.999:
+            ceilings.append({'heightZ':z,'areaMm2':face.Area})
+    return {'firstLayerFaceAreaMm2':sum(face.Area for face in faces),'unsupportedVolumeMm3':unsupported,'internalDownwardCeilings':ceilings}
+
+
+def check_flat_flange(case,base,fixtures):
+    bottom,top=fixtures['flangeBottom'],fixtures['flangeTop']
+    assert bottom==0.8 and top==6.8 and abs(top-bottom-6)<1e-9
+    assert abs(base.BoundBox.ZMin-bottom)<1e-7, 'PETG flange must start on one common flat Z0.8 plane'
+    metrics=flange_support_metrics(base,bottom,top)
+    assert metrics['firstLayerFaceAreaMm2']>500, ('Flange first layer lacks its broad mounting footprint',metrics)
+    assert metrics['unsupportedVolumeMm3']<1e-5, ('Flange material overhangs its actual first-layer footprint',metrics)
+    assert not metrics['internalDownwardCeilings'], ('Blind underside pocket creates a support ceiling within the flange',metrics)
+    # A real blind underside pocket must be rejected by both independent criteria.
+    x=case['parameters']['baseLength']/2-4
+    y=-47 if case['mechanism']=='parallel-dual' else -27
+    negative=base.cut(Part.makeCylinder(1,0.7,App.Vector(x,y,bottom-0.1)))
+    control=flange_support_metrics(negative,bottom,top)
+    assert control['unsupportedVolumeMm3']>1 and len(control['internalDownwardCeilings'])>=1, ('Blind-pocket negative control failed to detect an unsupported roof',control)
+    return {'flangeBottomZ':bottom,'flangeTopZ':top,'flangeThicknessMm':6,'externalTpuThicknessMm':0.8,**metrics,'blindPocketNegativeControl':control,'scope':'All PETG material within the 6 mm flange is supported by its real common bottom face; upper sleeve and lower cradle print features are audited separately.'}
 
 
 def check_split_mount(case,children,fixtures,by_id):
     base,cradle,toggle = (by_id[name].Shape for name in ('parallel-base','parallel-cradle','toggle-switch'))
-    assert fixtures['splitPlane'] == 0 and fixtures['gasketThickness'] == 0.8
-    shoulder_area = plane_contact_area(base,cradle,0)
-    assert shoulder_area > 10, ('Upper and lower parts need true rigid shoulders at Z0',shoulder_area)
+    assert fixtures['splitPlane'] == 0.8 and fixtures['gasketThickness'] == 0.8
+    shoulder_area = plane_contact_area(base,cradle,0.8)
+    assert shoulder_area > 10, ('Upper and lower parts need true rigid shoulders at Z0.8',shoulder_area)
     for x in (-20,20):
         for y in (-18,-63):
-            collar_point = App.Vector(x+3,y,0.5)
-            assert cradle.isInside(collar_point,1e-7,True) and not base.isInside(collar_point,1e-7,True), 'Male collar does not fit the upper socket'
-            assert not base.isInside(App.Vector(x+4.1,y,0.5),1e-7,True), 'Diameter8.4 socket radial clearance lost'
-            assert not base.isInside(App.Vector(x+3,y,1.1),1e-7,True), 'Socket depth must exceed the1mm collar by0.2mm'
+            assert cradle.isInside(App.Vector(x+3,y,0.5),1e-7,True) and not base.isInside(App.Vector(x+3,y,0.5),1e-7,True), 'Cradle must rise to a flat Z0.8 shoulder'
+            assert not cradle.isInside(App.Vector(x+3,y,0.9),1e-7,True), 'Cradle must not have upward locating collars'
+            for z in (0.9,1.9,3.9,6.7):
+                assert base.isInside(App.Vector(x+3,y,z),1e-7,True), 'Blind underside locator or relief interrupts the flat flange web'
+
     ties=[]
     for child,meta in zip(children,case['components']):
         if not meta['id'].startswith('parallel-clamp-screw-'):
@@ -151,13 +188,13 @@ def check_split_mount(case,children,fixtures,by_id):
         assert collision>1, ('The rigid case pocket does not bound yaw beyond its nominal0.4mm clearance',yaw,collision)
         yaw_controls.append({'yawDegrees':yaw,'interferenceMm3':collision})
     clip,clip_sweep=ground_clip_fixtures(fixtures)
-    ground=[solid for solid in toggle.Solids if solid.BoundBox.XMin < -20 and solid.BoundBox.ZMin > -3.1 and solid.BoundBox.ZMax < -2.1]
+    ground=[solid for solid in toggle.Solids if solid.BoundBox.XMax > 20 and solid.BoundBox.ZMin > -3.1 and solid.BoundBox.ZMax < -2.1]
     assert len(ground)==1 and overlap_volume(clip,ground[0])>0.1, 'Ground-clip fixture must actually enclose the source horizontal blade'
     clip_collisions=[]
     for child,meta in zip(children,case['components']):
         shapes=child.Shape.Solids
         if meta['id']=='toggle-switch':
-            shapes=[solid for solid in shapes if not (solid.BoundBox.XMin < -20 and solid.BoundBox.ZMin > -3.1 and solid.BoundBox.ZMax < -2.1)]
+            shapes=[solid for solid in shapes if not (solid.BoundBox.XMax > 20 and solid.BoundBox.ZMin > -3.1 and solid.BoundBox.ZMax < -2.1)]
         collision=sum(overlap_volume(clip_sweep,solid) for solid in shapes)
         if collision>1e-5:
             clip_collisions.append({'id':meta['id'],'interferenceMm3':collision})
@@ -169,14 +206,14 @@ def check_split_mount(case,children,fixtures,by_id):
         footprint=planar_area(gasket,0)
         assert footprint>10 and abs(gasket.Volume-footprint*0.8)<1e-5, 'TPU must be an explicit nominal-thickness flat part'
         upper_contact=plane_contact_area(gasket,base,0.8)
-        assert upper_contact>10, ('Nominal TPU gasket lacks a matching recess ceiling',name,upper_contact)
+        assert upper_contact>10, ('External TPU sheet lacks contact with the common flat PETG underside',name,upper_contact)
         item={'id':name,'thicknessMm':0.8,'flatAreaMm2':footprint,'upperSeatContactMm2':upper_contact}
         if name=='parallel-switch-gasket':
             case_contact=plane_contact_area(gasket,toggle,0)
             assert case_contact>1, ('Switch gasket does not meet actual case end regions',case_contact)
             item['caseContactMm2']=case_contact
         gasket_rows.append(item)
-    bed_planes={'parallel-base':0,'parallel-cradle':-19.7,'parallel-clamp':17.5,'parallel-rocker':18.5,'parallel-switch-gasket':0,'parallel-panel-gasket':0}
+    bed_planes={'parallel-base':0.8,'parallel-cradle':-19.7,'parallel-clamp':17.5,'parallel-rocker':18.5,'parallel-switch-gasket':0,'parallel-panel-gasket':0}
     flat_faces=[]
     for name,z in bed_planes.items():
         area=planar_area(by_id[name].Shape,z)
@@ -184,14 +221,14 @@ def check_split_mount(case,children,fixtures,by_id):
         flat_faces.append({'id':name,'bedFaceInstalledZ':z,'flatAreaMm2':area})
     return {'rigidShoulderContactMm2':shoulder_area,'throughTieStacks':ties,'caseYawNegativeControls':yaw_controls,
             'groundClipAuthoredApproachClear':True,'groundClipScope':'Authored17×9×5mm envelope and10mm straight insertion stroke; actual mating-terminal tolerances require fitting.',
-            'nominalGaskets':gasket_rows,'flatPrintFaces':flat_faces}
+            'nominalGaskets':gasket_rows,'flatPrintFaces':flat_faces,'flatFlangeManufacturability':check_flat_flange(case,base,fixtures)}
 
 
 
 def clip_shapes(clip):
     low,high=clip['finalMin'],clip['finalMax']
     final=Part.makeBox(*(b-a for a,b in zip(low,high)),App.Vector(*low))
-    sweep=Part.makeBox(high[0]-low[0]+clip['approachStroke'],high[1]-low[1],high[2]-low[2],App.Vector(low[0]-clip['approachStroke'],low[1],low[2]))
+    sweep=Part.makeBox(high[0]-low[0]+clip['approachStroke'],high[1]-low[1],high[2]-low[2],App.Vector(*low))
     return final,sweep
 
 
@@ -202,8 +239,9 @@ def fixture_transform(shape,translation,rotation):
     return shape
 
 
-def source_fixture(expression,translation):
+def source_fixture(expression,translation,rotation_z=0):
     shape=eval(expression,{'Part':Part,'App':App,'_pl_transform':fixture_transform}).removeSplitter()
+    if rotation_z:shape.rotate(App.Vector(),App.Vector(0,0,1),rotation_z)
     shape.translate(App.Vector(*translation))
     check_shape(shape,1)
     return shape
@@ -226,7 +264,7 @@ def check_manual_switch(case,children,fixtures,by_id,host_coupons):
     manual=fixtures['manual'];guard=manual['guard']
     base,lower,unit=(by_id[name].Shape for name in ('parallel-base','parallel-cradle','manual-toggle-switch'))
     meta=next(item for item in case['components'] if item['id']=='manual-toggle-switch')
-    assert meta['parameters']['model']=='daier-asw-07d-sac-01' and meta['placement']=={'translation':[0,-90,0],'rotation':[0,0,0]}
+    assert meta['parameters']['model']=='daier-asw-07d-sac-01' and meta['placement']['translation']==[0,-90,0] and meta['placement']['rotation'][:2]==[0,0] and meta['placement']['rotation'][2]%360==180
     state=case['parameters']['manualState']
     assert meta['parameters']['guard']==('closed' if state=='guarded-off' else 'open')
     assert meta['parameters']['position']==('last' if state=='open-on' else 'first')
@@ -234,8 +272,8 @@ def check_manual_switch(case,children,fixtures,by_id,host_coupons):
     assert manual['webTop']==6.8
     nut_contact=plane_contact_area(base,unit,6.8)
     assert nut_contact>10, ('Guarded-source lower nut does not clamp the rear web',nut_contact)
-    roi=Part.makeBox(56,44,1,App.Vector(-28,-112,-0.5))
-    rear_shoulder=plane_contact_area(base.common(roi),lower.common(roi),0)
+    roi=Part.makeBox(56,44,1,App.Vector(-28,-112,0.3))
+    rear_shoulder=plane_contact_area(base.common(roi),lower.common(roi),0.8)
     assert rear_shoulder>10, ('Rear carrier has no local rigid split shoulder',rear_shoulder)
     stack=[]
     for index,(x,y) in enumerate(manual['rearAxes'],1):
@@ -261,21 +299,31 @@ def check_manual_switch(case,children,fixtures,by_id,host_coupons):
     assert gasket_upper>10 and gasket_case>10
     assert abs(gasket.Volume-planar_area(gasket,0)*0.8)<1e-5
     rearclip,rearsweep=clip_shapes(manual['groundClip'])
-    ground=[solid for solid in unit.Solids if solid.BoundBox.XMin<-20 and solid.BoundBox.ZMin>-3.1 and solid.BoundBox.ZMax<-2.1]
+    ground=[solid for solid in unit.Solids if solid.BoundBox.XMax>20 and solid.BoundBox.ZMin>-3.1 and solid.BoundBox.ZMax<-2.1]
     assert len(ground)==1 and overlap_volume(rearclip,ground[0])>0.1
     for child,expected in zip(children,case['components']):
         for solid in child.Shape.Solids:
-            if expected['id']=='manual-toggle-switch' and solid.BoundBox.XMin<-20 and solid.BoundBox.ZMin>-3.1 and solid.BoundBox.ZMax<-2.1:continue
+            if expected['id']=='manual-toggle-switch' and solid.BoundBox.XMax>20 and solid.BoundBox.ZMin>-3.1 and solid.BoundBox.ZMax<-2.1:continue
             assert overlap_volume(rearsweep,solid)<1e-5, ('Rear ground clip insertion is obstructed',expected['id'])
     assert all(overlap_volume(rearsweep,coupon)<1e-5 for coupon in host_coupons)
-    cover_closed=source_fixture(guard['closedExpression'],manual['placement'])
-    cover_open=source_fixture(guard['openExpression'],manual['placement'])
+    cover_closed=source_fixture(guard['closedExpression'],manual['placement'],guard['sourceRotationZ'])
+    cover_open=source_fixture(guard['openExpression'],manual['placement'],guard['sourceRotationZ'])
     expected=cover_closed if state=='guarded-off' else cover_open
     actual=unit.Solids[-1]
     assert abs(actual.Volume-expected.Volume)<1e-5 and max(abs(a-b) for a,b in zip(trim_bounds(actual),trim_bounds(expected)))<0.005, 'Retained SAC cover differs from catalog source'
     result={'manualSourceRetained':True,'manualGuardNutContactMm2':nut_contact,'manualRigidShoulderMm2':rear_shoulder,'manualThroughStacks':stack,'manualCaseYawControls':yaw_controls,'manualGasket':{'thicknessMm':0.8,'upperSeatContactMm2':gasket_upper,'caseContactMm2':gasket_case},'manualGroundClipApproachClear':True}
+    tools=[]
+    for index,(x,y) in enumerate(manual['rearAxes'],1):
+        screw_id=f'manual-clamp-screw-{index}'
+        tool=Part.makeCylinder(1.5,54,App.Vector(x,y,6.01))
+        obstacles=[child.Shape for child,meta in zip(children,case['components']) if meta['id'] not in (screw_id,'manual-toggle-switch')]
+        fixed_overlap=sum(overlap_volume(tool,shape) for shape in obstacles)+sum(overlap_volume(tool,solid) for solid in unit.Solids[:-1])
+        assert fixed_overlap<1e-5, ('A straight M3 hex-key approach is blocked even with the removable SAC cover absent',screw_id,fixed_overlap)
+        cover_overlap=overlap_volume(tool,unit.Solids[-1])
+        tools.append({'id':screw_id,'canonicalAxis':[x,y],'toolDiameterMm':3,'toolBottomZ':6.01,'toolHeightMm':54,'fixedInterferenceMm3':fixed_overlap,'coverInterferenceMm3':cover_overlap,'requiresCoverRemovalForThisModeledPose':cover_overlap>1e-5})
+    result['manualTieToolAccess']=tools
     if guard['auditSweep']:
-        assert guard['pivot']==[15.5,-90,14.7] and guard['axis']==[0,1,0] and guard['opening']==69 and guard['sampleStep']==3
+        assert guard['pivot']==[-15.5,-90,14.7] and guard['axis']==[0,-1,0] and guard['sourceRotationZ']==180 and guard['opening']==69 and guard['sampleStep']==3
         pivot,axis=App.Vector(*guard['pivot']),App.Vector(*guard['axis'])
         bounds=cover_closed.BoundBox
         radius=max(math.hypot(x-pivot.x,z-pivot.z) for x in (bounds.XMin,bounds.XMax) for z in (bounds.ZMin,bounds.ZMax))
@@ -296,7 +344,7 @@ def check_manual_switch(case,children,fixtures,by_id,host_coupons):
         # The manual lever sweeps only with the cover fully open. A closed cover
         # intentionally acts on the lever; that interlock is not a clearance test.
         lever_pivot=App.Vector(*guard['leverPivot']);lever_min=float('inf')
-        lever_shapes=[source_fixture(expression,manual['placement']) for expression in guard['firstLeverExpressions']]
+        lever_shapes=[source_fixture(expression,manual['placement'],guard['sourceRotationZ']) for expression in guard['firstLeverExpressions']]
         assert len(lever_shapes)==2
         lever_radius=max(math.hypot(x-lever_pivot.x,z-lever_pivot.z) for lever in lever_shapes for x in (lever.BoundBox.XMin,lever.BoundBox.XMax) for z in (lever.BoundBox.ZMin,lever.BoundBox.ZMax))
         lever_motion_bound=2*lever_radius*math.sin(math.radians(0.5))
@@ -345,12 +393,12 @@ def check_installation_canonical(case, children):
         opening = host['opening']
         coupon = coupon.cut(rounded_opening(*opening['size'], opening['radius'], opening['centre'], -thickness-1, thickness+2))
         branch = host['sideBranch']
-        assert branch == {'size':[16,12], 'centre':[-34,0], 'radius':2}
+        assert branch == {'size':[16,12], 'centre':[34,0], 'radius':2}
         main_only = coupon.copy()
         coupon = coupon.cut(rounded_opening(*branch['size'], branch['radius'], branch['centre'], -thickness-1, thickness+2))
         if dual:
             extra=host['rearSideBranch']
-            assert extra=={'size':[16,12],'centre':[-34,-90],'radius':2}
+            assert extra=={'size':[16,12],'centre':[34,-90],'radius':2}
             coupon=coupon.cut(rounded_opening(*extra['size'],extra['radius'],extra['centre'],-thickness-1,thickness+2))
         check_shape(coupon, 1)
         collisions = [{'id': expected['id'], 'volumeMm3': overlap_volume(coupon, child.Shape)} for child,expected in zip(children, case['components'])]
@@ -363,14 +411,14 @@ def check_installation_canonical(case, children):
         assert notch_negative > 1, ('Plain rectangular opening fails to exercise the ground-clip notch',thickness)
         gasket = by_id['parallel-panel-gasket'].Shape
         gasket_contact = plane_contact_area(gasket,coupon,0)
-        hard_seat_contact = plane_contact_area(base,coupon,0)
-        assert gasket_contact > 10 and hard_seat_contact > 10, ('TPU and rigid M4 lands must both meet the host plane',gasket_contact,hard_seat_contact)
+        petg_host_contact = plane_contact_area(base,coupon,0)
+        assert gasket_contact > 10 and petg_host_contact < 1e-6, ('External TPU must separate the flat flange from the host plane',gasket_contact,petg_host_contact)
         host_coupons.append(coupon)
         if dual:
             rearclip,rearsweep=clip_shapes(fixtures['manual']['groundClip'])
             assert overlap_volume(coupon,rearsweep)<1e-5, 'Rear terminal notch obstructs clip insertion'
             assert overlap_volume(main_only,rearsweep)>1, 'Rear terminal notch negative control did not obstruct insertion'
-        host_rows.append({'thicknessMm': thickness, 'externalInterferences': 0, 'uncutNegativeControlMm3': negative, 'cableInterferenceMm3': cable_overlap, 'terminalNotchNegativeControlMm3':notch_negative, 'panelGasketContactMm2':gasket_contact, 'hardLandContactMm2':hard_seat_contact})
+        host_rows.append({'thicknessMm': thickness, 'externalInterferences': 0, 'uncutNegativeControlMm3': negative, 'cableInterferenceMm3': cable_overlap, 'terminalNotchNegativeControlMm3':notch_negative, 'panelGasketContactMm2':gasket_contact, 'petgHostContactMm2':petg_host_contact})
     rotor = next(child.Shape for child,expected in zip(children, case['components']) if expected['id'] == 'parallel-rocker')
     static_mount = [child.Shape for child,expected in mount_parts if expected['supply'] == 'manufactured' and expected['id'] != 'parallel-rocker' or expected['id'].startswith(('parallel-clamp-screw-', 'parallel-clamp-nut-', 'manual-clamp-'))]
     clearance = rotor.BoundBox.ZMin-max(shape.BoundBox.ZMax for shape in static_mount)
@@ -385,9 +433,9 @@ def check_installation_canonical(case, children):
 def check_dual_world(case,children):
     by_id={meta['id']:child for child,meta in zip(children,case['components'])}
     metadata={meta['id']:meta for meta in case['components']}
-    assert metadata['manual-toggle-switch']['placement']=={'translation':[-90,0,0],'rotation':[0,0,-90]}, 'Manual switch must be left in the final world frame'
+    assert metadata['manual-toggle-switch']['placement']=={'translation':[-90,0,0],'rotation':[0,0,90]}, 'Manual switch must be left in the final world frame'
     assert metadata['drive-servo']['placement']=={'translation':[-28,0,-15.2],'rotation':[0,0,-180]}, 'Servo source axes differ in the final world frame'
-    assert metadata['toggle-switch']['placement']=={'translation':[0,0,0],'rotation':[0,0,-90]}, 'Driven switch must remain at the right-hand datum'
+    assert metadata['toggle-switch']['placement']=={'translation':[0,0,0],'rotation':[0,0,90]}, 'Driven switch must remain at the right-hand datum'
     plate=by_id['parallel-base'].Shape.BoundBox
     assert abs(plate.XLength-case['parameters']['baseWidth'])<0.001 and abs(plate.YLength-case['parameters']['baseLength'])<0.001
     assert abs((plate.XMin+plate.XMax)/2+47)<0.001 and abs((plate.YMin+plate.YMax)/2)<0.001
@@ -400,14 +448,14 @@ def check_dual_world(case,children):
     for index,(cx,expected_removed) in enumerate(((-90,29.5485),(0,31.31025))):
         probes=[(cx-11.325,-38.3,False),(cx-9.575,-35.8,True),(cx-5.325,-37.5,False),(cx-3.875,-35,True),(cx+0.825,-37.8,False),(cx+6.275,-36,True),(cx+9.575,-38.4,False),(cx+8.375,-37.5,index==0)]
         for x,y,retained in probes:
-            assert base.isInside(App.Vector(x,y,5.7),1e-7,True)==retained, ('Engraved legend content differs',index+1,x,y)
-            assert base.isInside(App.Vector(x,y,5.39),1e-7,True), 'Engraving cuts below its Z5.4 floor'
-            if not retained:assert not base.isInside(App.Vector(x,y,5.41),1e-7,True)
-        slab=Part.makeBox(24.4,6.2,0.7,App.Vector(cx-12.2,-39.1,5.3))
+            assert base.isInside(App.Vector(x,y,6.5),1e-7,True)==retained, ('Engraved legend content differs',index+1,x,y)
+            assert base.isInside(App.Vector(x,y,6.19),1e-7,True), 'Engraving cuts below its Z6.2 floor'
+            if not retained:assert not base.isInside(App.Vector(x,y,6.21),1e-7,True)
+        slab=Part.makeBox(24.4,6.2,0.7,App.Vector(cx-12.2,-39.1,6.1))
         removed=slab.Volume-volume(base.common(slab))
         assert abs(removed-expected_removed)<1e-4, ('Engraving removed volume differs',index+1,removed,expected_removed)
-        legends.append({'text':f'ARM {index+1}','centre':[cx,-36],'depthMm':0.6,'absoluteFloorZ':5.4,'removedVolumeMm3':removed,'strokeCounterAndSpaceProbes':8})
-    assert abs(planar_area(base,5.4)-(29.5485+31.31025)/0.6)<1e-4, 'Legend floor faces differ from Z5.4'
+        legends.append({'text':f'ARM {index+1}','centre':[cx,-36],'depthMm':0.6,'absoluteFloorZ':6.2,'removedVolumeMm3':removed,'strokeCounterAndSpaceProbes':8})
+    assert abs(planar_area(base,6.2)-(29.5485+31.31025)/0.6)<1e-4, 'Legend floor faces differ from Z6.2'
     return {'worldLayout':{'manualCentre':[-90,0,0],'servoCentre':[-28,0,-15.2],'drivenCentre':[0,0,0],'plateCentre':[-47,0],'rigidRotationZ':-90},'engravedLegends':legends}
 
 
@@ -477,7 +525,7 @@ with tempfile.TemporaryDirectory(prefix='protolab-servo-toggle-actuator-') as di
                 assert sum('TPU' in item['manufacturing']['material'] for item in manufactured) == (3 if mode=='parallel-dual' else 2)
                 servo = next(item for item in case['components'] if item['libraryId'] == 'bus-servo')
                 toggle = next(item for item in case['components'] if item['libraryId'] == 'panel-switch')
-                assert servo['placement']['rotation'] == ([0,0,-180] if mode=='parallel-dual' else [0,0,-90]) and toggle['placement']['rotation'] == ([0,0,-90] if mode=='parallel-dual' else [0,0,0]), 'Parallel source axes differ'
+                assert servo['placement']['rotation'] == ([0,0,-180] if mode=='parallel-dual' else [0,0,-90]) and toggle['placement']['rotation'] == ([0,0,90] if mode=='parallel-dual' else [0,0,180]), 'Parallel source axes differ'
             bounds_errors, volume_errors = [], []
             for child, expected in zip(children, case['components']):
                 assert child.Label == expected['label'] or child.Label.startswith(expected['label']+' · threads: '), ('Component label differs', child.Label, expected['label'])

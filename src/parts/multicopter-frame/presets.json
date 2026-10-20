@@ -1,8 +1,8 @@
 [
   {
     "id": "source-one-v5",
-    "name": "SOURCE ONE V5 · upstream CAD",
-    "description": "Fixed original frame geometry with an arm-root sandwich and keyed root spacer. Load inputs are assumptions; no local flight release is claimed.",
+    "name": "SOURCE ONE V5",
+    "description": "5 inch freestyle frame; 6 mm replaceable arms, keyed roots and camera cheeks.",
     "parameters": {
       "model": "source-one-v5",
       "mass": 0.65,
@@ -14,22 +14,228 @@
       "stressConcentration": 3,
       "propDiameter": 127,
       "rotorHeight": 38,
+      "bladeAxialEnvelope": 5,
       "explodedGap": 12
     },
     "catalog": {
-      "designation": "SOURCE ONE V5 · pinned IGES revision",
-      "manufacturer": "SOURCE ONE project",
-      "sourceName": "Pinned upstream CAD",
+      "designation": "SOURCE ONE V5 · pinned source CAD",
+      "manufacturer": "SOURCE ONE V5 project",
+      "sourceName": "Original project CAD",
       "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
       "verifiedParameters": [
         "model"
       ],
+      "attributes": {
+        "motorCount": "4",
+        "armCount": 4,
+        "construction": "Carbon sheets"
+      },
       "geometryEvidence": {
         "kind": "manufacturer-cad",
-        "summary": "57 native solids extracted from the original upstream IGES; no arm or plate geometry is scaled.",
-        "limitations": "Upstream CAD geometry is not verification of a locally cut laminate, printed polymer, hardware grade or a chosen flight mass. Resolve the lower-plate drawing revision before cutting.",
+        "summary": "57 native source components. Fixed contours and thicknesses; no geometric scaling.",
+        "limitations": "Native source screws, standoffs and eight press inserts are included. Confirm grades and final thread engagement. The assembly uses the CAD lower plate thickness of 2.5 mm. Lower screw bearing planes are moved down 0.5 mm; the two floating front deck screws are moved down 2 mm. Source component shapes remain unchanged. The CAD-matched cutting layout labels the lower plate 2.5 mm; upstream DXF names it 2 mm. Local materials and complete-aircraft flight qualification still require verification.",
         "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
         "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      }
+    }
+  },
+  {
+    "id": "source-two-v01",
+    "name": "SOURCE TWO V0.1",
+    "description": "5 inch racing frame; 4 mm individual arms, 3 mm main plate and 2 mm reinforcement plates.",
+    "parameters": {
+      "model": "source-two-v01",
+      "mass": 0.5,
+      "motorThrust": 10,
+      "loadFactor": 3,
+      "dynamicFactor": 1.5,
+      "flexuralModulus": 40,
+      "allowableStress": 0,
+      "stressConcentration": 3,
+      "propDiameter": 127,
+      "rotorHeight": 38,
+      "bladeAxialEnvelope": 5,
+      "explodedGap": 12
+    },
+    "catalog": {
+      "designation": "SOURCE TWO V0.1 · pinned source CAD",
+      "manufacturer": "SOURCE TWO V0.1 project",
+      "sourceName": "Original project CAD",
+      "sourceUrl": "https://raw.githubusercontent.com/ps915/source_two/010ade994a150b2971123d6e0a141ed6f69c57fe/Source%20Two%20v0.1.step",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "motorCount": "4",
+        "armCount": 4,
+        "construction": "Carbon sheets"
+      },
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "30 native source components. Fixed contours and thicknesses; no geometric scaling.",
+        "limitations": "Upstream bill: 12 M3 x 12 screws, four M3 lock nuts, four 25 mm M3 standoffs and four silicone camera mounts. Reconcile the CAD camera mounts with the purchased kit. 30 frame occurrences retained. Four overlapping action-camera/accessory solids (source indices 30–33) are excluded from this frame assembly. Only a rigid axis/origin change is applied; source fastener shapes and placements are retained. Local materials and complete-aircraft flight qualification still require verification.",
+        "sourceUrl": "https://raw.githubusercontent.com/ps915/source_two/010ade994a150b2971123d6e0a141ed6f69c57fe/Source%20Two%20v0.1.step",
+        "sourceSha256": "5a97211a24a02f845c07ad1c409c05b31f4930286296f9b53771151309e60144"
+      }
+    }
+  },
+  {
+    "id": "source-v-v1",
+    "name": "SOURCE V V1 · upgraded arms",
+    "description": "5 inch vertical-web racing frame; interlocking 2 mm carbon sheets and 30 mm standoffs.",
+    "parameters": {
+      "model": "source-v-v1",
+      "mass": 0.5,
+      "motorThrust": 10,
+      "loadFactor": 3,
+      "dynamicFactor": 1.5,
+      "flexuralModulus": 40,
+      "allowableStress": 0,
+      "stressConcentration": 3,
+      "propDiameter": 127,
+      "rotorHeight": 38,
+      "bladeAxialEnvelope": 5,
+      "explodedGap": 12
+    },
+    "catalog": {
+      "designation": "SOURCE V V1 · upgraded arms · pinned source CAD",
+      "manufacturer": "SOURCE V V1 · upgraded arms project",
+      "sourceName": "Original project CAD",
+      "sourceUrl": "https://raw.githubusercontent.com/ps915/source_v/ce54d3bae424068fa7f870cb010af86248fa489b/source_v_V1_upgraded_arms.step",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "motorCount": "4",
+        "armCount": 4,
+        "construction": "Carbon sheets"
+      },
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "18 native source components. Fixed contours and thicknesses; no geometric scaling.",
+        "limitations": "Four M3 x 30 standoffs are present in CAD. Add the 24 M3 x 14 screws specified by the author; screws and threads are not modelled in the source. 18 closed upstream shells are wrapped as solids without sewing, scaling or contour repair. Vertical sheets are rotated only in the cutting inspection/layout. The assembly retains the native interfaces. SOURCE V source CAD has 20 small tab interferences (0.165–0.560 mm3). These are retained and reported, not declared clearance fits. Cut a stock/tool-specific fit coupon and resolve tab/slot allowance before fabrication. Local materials and complete-aircraft flight qualification still require verification.",
+        "sourceUrl": "https://raw.githubusercontent.com/ps915/source_v/ce54d3bae424068fa7f870cb010af86248fa489b/source_v_V1_upgraded_arms.step",
+        "sourceSha256": "b29bbb1c06413e385f15df10d2be24180684161791763a703c319efac33baabf"
+      }
+    }
+  },
+  {
+    "id": "source-podracer-v1",
+    "name": "SOURCE PODRACER V1 · 5 inch",
+    "description": "Light 200 mm frame; four 5 mm carbon arms, 1.5 mm clamp plates and a separate nylon pod.",
+    "parameters": {
+      "model": "source-podracer-v1",
+      "mass": 0.25,
+      "motorThrust": 4,
+      "loadFactor": 3,
+      "dynamicFactor": 1.5,
+      "flexuralModulus": 40,
+      "allowableStress": 0,
+      "stressConcentration": 3,
+      "propDiameter": 127,
+      "rotorHeight": 48,
+      "bladeAxialEnvelope": 5,
+      "explodedGap": 12
+    },
+    "catalog": {
+      "designation": "SOURCE PODRACER V1 · 5 inch · pinned source CAD",
+      "manufacturer": "SOURCE PODRACER V1 · 5 inch project",
+      "sourceName": "Original project CAD",
+      "sourceUrl": "https://raw.githubusercontent.com/ps915/source_podracer/9b2d56d92c26a42d8d5cbb88507788389db0317c/Source_PodRacer_v1.0_assembled.step",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "motorCount": "4",
+        "armCount": 4,
+        "construction": "Carbon sheets"
+      },
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "7 native source components. Fixed contours and thicknesses; no geometric scaling.",
+        "limitations": "Source CAD contains seven carbon/pod solids and no hardware. Author hardware: eight M2 x 10 and four M2 x 12 countersunk screws, two M2 x 6 socket screws and 24 M2 x 10 socket screws. Preserve the bottom-plate countersinks as a separate finishing operation. Print the pod in the specified nylon; the carbon arms remain carbon. The four-arm 5 inch STEP configuration is used. The two-arm/Y-arm alternatives and 4 inch drawings are not mixed into this build. Original countersinks and the native nylon pod are retained. Pod mounting axes are at (+/-24, 0) and (0, +/-24) mm; four feet bear on the 1.5 mm top plate. The rear accessory extension intentionally overhangs the plate. Local materials and complete-aircraft flight qualification still require verification.",
+        "sourceUrl": "https://raw.githubusercontent.com/ps915/source_podracer/9b2d56d92c26a42d8d5cbb88507788389db0317c/Source_PodRacer_v1.0_assembled.step",
+        "sourceSha256": "118e1c408f66035c3ac5348ba736975f8e9b6e22f9789f64bd7284d18f75cbb7"
+      }
+    }
+  },
+  {
+    "id": "comet-y6",
+    "name": "COMET Y6 · hexacopter",
+    "description": "Printed PC/CF Y6 frame: three arms, six coaxial motor blocks, two core plates and three landing legs.",
+    "parameters": {
+      "model": "comet-y6",
+      "mass": 0.8,
+      "motorThrust": 8,
+      "loadFactor": 3,
+      "dynamicFactor": 1.5,
+      "flexuralModulus": 40,
+      "allowableStress": 0,
+      "stressConcentration": 3,
+      "propDiameter": 129.54,
+      "rotorHeight": 25,
+      "bladeAxialEnvelope": 5,
+      "explodedGap": 12
+    },
+    "catalog": {
+      "designation": "COMET Y6 · hexacopter · pinned source CAD",
+      "manufacturer": "COMET Y6 · hexacopter project",
+      "sourceName": "Original project CAD",
+      "sourceUrl": "https://github.com/uastw-embsys/comet/tree/9837b8dc6f6ddd623634a82f7f9fa2ca6588c662/mechanical/exports/step",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "motorCount": "6",
+        "armCount": 3,
+        "construction": "Printed PC/CF"
+      },
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "17 native source components. Fixed contours and thicknesses; no geometric scaling.",
+        "limitations": "17 original printed occurrences; electronics, motors, fasteners and heat-set inserts are not modelled. Complete them from the pinned author bill and build manual. Core and motor blocks: 15 M3 x 25 screws (six roots, six block halves, three block-to-arm), washers, nine block lock nuts and six M3 root inserts in the landing mounts. Landing legs: three M3 x 10 screws, washers and M3 inserts. Use inserts matched to the author pockets. Six author motor interfaces: 2004 motors with 12 mm mounting circle; four M2 x 5 screws and washers per motor. Add the author spacers when supplied screws are longer. Verify winding clearance. Use the author PC/CF print profiles and dry material. Imported geometry is solid CAD, not a claim of 100% infill. Battery holder, flight-controller mounts and wiring accessories remain separate author equipment. Individual pinned STEP parts are unchanged. Their assembly is reconstructed from the author manual and measured 35 mm root-hole pairs; front arms are not a 120-degree radial copy. Upper/lower motor mounting faces are at Z=18.4/-0.4 mm. Paired motors face outward. Printed-parts inspection restores each source printing orientation. Six-rotor demand assumes equal load sharing. Coaxial motor/prop interference and motor-out handling require measured data; summed isolated thrust is not installed thrust. Local materials and complete-aircraft flight qualification still require verification.",
+        "sourceUrl": "https://github.com/uastw-embsys/comet/tree/9837b8dc6f6ddd623634a82f7f9fa2ca6588c662/mechanical/exports/step",
+        "sourceSha256": "18c2d608ae9d0b98062463da66f091441de88653b9f27baf0909689a2200a8e4"
+      }
+    }
+  },
+  {
+    "id": "source-one-x8",
+    "name": "SOURCE ONE V4 X8 LIFTER · octocopter",
+    "description": "Carbon X8: four 5 mm arms, four 3 mm lower motor covers, V4 decks and eight coaxial motor interfaces.",
+    "parameters": {
+      "model": "source-one-x8",
+      "mass": 0.9,
+      "motorThrust": 10,
+      "loadFactor": 3,
+      "dynamicFactor": 1.5,
+      "flexuralModulus": 40,
+      "allowableStress": 0,
+      "stressConcentration": 3,
+      "propDiameter": 127,
+      "rotorHeight": 40,
+      "bladeAxialEnvelope": 5,
+      "explodedGap": 12
+    },
+    "catalog": {
+      "designation": "SOURCE ONE V4 X8 LIFTER · octocopter · pinned source CAD",
+      "manufacturer": "SOURCE ONE V4 X8 LIFTER · octocopter project",
+      "sourceName": "Original project CAD",
+      "sourceUrl": "https://raw.githubusercontent.com/shnllsfpv/source_one_X8_lifter/96382c5c8646e8c706dee6a28d13e33177b05b36/SO_v4_X8_LIFTER.stp",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "motorCount": "8",
+        "armCount": 4,
+        "construction": "Carbon sheets"
+      },
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "23 native source components. Fixed contours and thicknesses; no geometric scaling.",
+        "limitations": "23 original CAD occurrences including ten M3 x 30 standoffs. Screws, nuts, motors and electronics are not modelled. Use SOURCE ONE V4 donor parts; V5 is a different interface. Author conversion bill: two Arm 1, two Arm 2, eight covers, 32 M3 x 6 motor screws, ten M3 x 12 cover screws, ten lock nuts and four M3 x 40 stack screws, plus V4 donor hardware. Reconcile this with the STEP: it contains four lower motor covers and one root clamp. The author eight-cover count is not silently replaced by CAD quantities. CAD stock: 5 mm arms, 3 mm covers/root clamp/lower deck, 2 mm upper deck and camera cheeks. Lower motors mount on the covers; upper motors mount on the arms. Pinned full V4 X8 STEP retained without rescaling, repositioning individual parts or mixing V5 components. The origin is the mean of four native motor shaft axes. Eight physical motor interfaces occupy four coaxial stations. Propeller clearance is checked between stations, with the lower motor faces at Z=-2 mm and upper faces at Z=6 mm. Source V4 camera cheeks retain two small tab interferences with the lower deck (0.660 and 0.017 mm3). Resolve the stock/tool-specific cheek slot fit before cutting; the motor arms and covers have no nominal overlap. Eight-rotor demand assumes equal sharing; coaxial installed thrust and one-motor-out behaviour remain unqualified. Local materials and complete-aircraft flight qualification still require verification.",
+        "sourceUrl": "https://raw.githubusercontent.com/shnllsfpv/source_one_X8_lifter/96382c5c8646e8c706dee6a28d13e33177b05b36/SO_v4_X8_LIFTER.stp",
+        "sourceSha256": "a08bf68bf016000e348915ef8888fa6ed377f7b19c897aceb5ef26ca7e31f335"
       }
     }
   }
