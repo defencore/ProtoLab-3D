@@ -62,9 +62,16 @@ for (const part of selections) {
           source.protocol === 'https:' &&
           ['www.china-amass.com', 'www.china-amass.net'].includes(source.hostname);
         const mirroredDrawing =
-          preset.id === 'xt60e-f' && sourceUrl === 'http://pliki.aksotronik.pl/pdf/012682.pdf';
+          preset.id === 'xt60e-f' &&
+          sourceUrl === 'https://www.aksotronik.com.pl/gniazdo-xt60e-f-zenskie-przykrecane.html';
         assert.ok(officialSource || mirroredDrawing, `${preset.id}: documented AMASS source`);
         assert.equal(preset.catalog?.geometryEvidence?.sourceUrl, sourceUrl);
+        if (mirroredDrawing) {
+          assert.match(preset.catalog!.sourceName, /S0 via Aksotronik supplier page/);
+          assert.deepEqual(preset.catalog!.alternateSourceUrls, [
+            'http://pliki.aksotronik.pl/pdf/012682.pdf',
+          ]);
+        }
       } else assert.equal(preset.catalog, undefined);
       assert.deepEqual(validateParameters(part, preset.parameters, 'assembled'), [], preset.id);
     }

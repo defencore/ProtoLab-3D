@@ -55,7 +55,7 @@ XT90E-M 2025V0 recommends a keyed **22.30 × 10.70 mm** panel opening with an il
 
 Manufacturer documents used:
 
-- [AMASS XT60E-F.G/Y engineering drawing, S0, hosted by Aksotronik](http://pliki.aksotronik.pl/pdf/012682.pdf): flange, holes, mounting centres, rear housing, front stack and recommended panel opening.
+- [Aksotronik XT60E-F supplier page](https://www.aksotronik.com.pl/gniazdo-xt60e-f-zenskie-przykrecane.html), linking the [AMASS XT60E-F.G/Y engineering drawing, S0](http://pliki.aksotronik.pl/pdf/012682.pdf) under **Pliki / Dokumentacja PDF (147.99 KB)**: flange, holes, mounting centres, rear housing, front stack and recommended panel opening. The HTTPS supplier page is the primary catalogue reference because its linked PDF host has no valid HTTPS endpoint; the original drawing URL remains an alternate source for audit.
 - [AMASS XT60E-F 2022V1 specification, hosted by TME](https://www.tme.eu/Document/172e3180ebad396a946f7e08df14c4b2/XT60E-F.pdf): corroborating overall envelope and product illustration.
 - [AMASS XT60E-M 2025V0 specification](https://www.china-amass.net/uploads/36.XT60E-M%EF%BC%88V04%EF%BC%89-SPEC-2025V0.pdf): overall envelope, flange, threaded mounting centres and panel opening.
 - [AMASS XT90E-M 2025V0 specification](https://www.china-amass.net/uploads/80.XT90E-M-SPEC-2025V0.pdf): overall envelope, flange, mounting centres, through bores and panel opening.

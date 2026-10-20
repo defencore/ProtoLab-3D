@@ -502,15 +502,16 @@
     "catalog": {
       "designation": "XT60E-F",
       "manufacturer": "AMASS",
-      "sourceName": "AMASS XT60E-F.G/Y engineering drawing \u00b7 S0",
-      "sourceUrl": "http://pliki.aksotronik.pl/pdf/012682.pdf",
+      "sourceName": "AMASS XT60E-F.G/Y engineering drawing \u00b7 S0 via Aksotronik supplier page",
+      "sourceUrl": "https://www.aksotronik.com.pl/gniazdo-xt60e-f-zenskie-przykrecane.html",
+      "alternateSourceUrls": ["http://pliki.aksotronik.pl/pdf/012682.pdf"],
       "productCodes": ["XT60E-F"],
       "verifiedParameters": ["model"],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "AMASS flange envelope, overall length, mounting pattern and panel opening; reconstructed internal details.",
         "limitations": "Reconstructed from AMASS dimension drawings, not original manufacturer CAD. Flange envelope/thickness, mounting-hole pitch and diameter, panel cutout and overall length follow the cited drawing. Contact pitch, socket depths, wall thickness, flange bevels, countersinks, gasket thickness and rear housing split are visual reconstructions. Cosmetic lettering, microscopic spring details, exact threads and wires are omitted. The nominal M2.5 mount is a smooth major-diameter bore; model is not a thread gauge.",
-        "sourceUrl": "http://pliki.aksotronik.pl/pdf/012682.pdf"
+        "sourceUrl": "https://www.aksotronik.com.pl/gniazdo-xt60e-f-zenskie-przykrecane.html"
       },
       "attributes": {
         "family": "XT60E",
