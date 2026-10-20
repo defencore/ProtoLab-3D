@@ -3,6 +3,8 @@ import models from './models.json';
 import type { Piece } from '../../../core/assembly/mechanical/assembly';
 import { B, C, T, poly, move, union, cut, finish } from '../../../core/assembly/mechanical/helpers';
 import type { Shape } from '../../../core/assembly/mechanical/shapes';
+import { panelPieces } from './panel';
+import { pcbPieces } from './pcb';
 
 // M/F always describes metal contacts, not the outer plastic shroud.
 export function pieces(p: Parameters, state: string): Piece[] {
@@ -10,6 +12,8 @@ export function pieces(p: Parameters, state: string): Piece[] {
   const add = (label: string, shape: Shape, color = 0x637585) => out.push({ label, shape, color });
   const m = models.find((m) => m.id === p.model);
   if (!m) throw new Error('Unknown AMASS connector model');
+  if ('panel' in m && m.panel) return panelPieces(m, p, state);
+  if ('pcb' in m && m.pcb) return pcbPieces(m, p, state);
   const { width: w, height: h, pitch, contact: c, pins: count } = m;
   const tail = m.cover ? m.length * 0.27 : m.family === 'XT30U' ? 2.5 : 4;
   const L = m.length - tail;

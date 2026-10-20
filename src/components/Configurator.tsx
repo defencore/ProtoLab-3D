@@ -38,6 +38,7 @@ interface Props {
   onReset: () => void;
   onSave: () => void;
   onPreset: (preset: Preset) => void;
+  onSelectPart: (part: PartDefinition) => void;
   onSelectModel: (part: PartDefinition, preset: Preset, parameters?: Parameters) => void;
   previewPending?: boolean;
   previewError?: string;
@@ -130,6 +131,7 @@ export default function Configurator({
   onReset,
   onSave,
   onPreset,
+  onSelectPart,
   onSelectModel,
   previewPending,
   previewError,
@@ -169,6 +171,28 @@ export default function Configurator({
         </span>
       </div>
       <div className="config-scroll">
+        {!isStandoffFamily && familyParts.length > 1 && (
+          <div className="parameter-field select-field">
+            <label htmlFor="family-part-type">Part type</label>
+            <div className="select-wrap">
+              <select
+                id="family-part-type"
+                value={part.id}
+                onChange={(event) => {
+                  const next = familyParts.find((member) => member.id === event.target.value);
+                  if (next) onSelectPart(next);
+                }}
+              >
+                {familyParts.map((member) => (
+                  <option key={member.id} value={member.id}>
+                    {member.name}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown size={14} />
+            </div>
+          </div>
+        )}
         {errors.length > 0 && (
           <div className="validation-error" role="alert">
             <AlertCircle size={16} />

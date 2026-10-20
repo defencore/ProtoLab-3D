@@ -1,0 +1,191 @@
+[
+  {
+    "id": "py-10x10cm",
+    "name": "PY-10*10CM 2.54MM \u00b7 100 \u00d7 100 mm \u00b7 double sided",
+    "description": "100 \u00d7 100 mm soldering perfboard with 35 \u00d7 37 individual holes on a 2.54 mm grid.",
+    "parameters": {
+      "model": "py-10x10cm"
+    },
+    "catalog": {
+      "designation": "PY-10*10CM 2.54MM",
+      "manufacturer": "Generic PY",
+      "sourceName": "Nikom A066069",
+      "sourceUrl": "https://www.nikom.biz/ua/product_A066069.html",
+      "alternateSourceUrls": ["https://www.nikom.biz/LA06606980065.jpg"],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "sides": "Double sided",
+        "length": 100,
+        "width": 100,
+        "pitch": 2.54,
+        "holes": 1295
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "100 \u00d7 100 mm outline, 2.54 mm grid, double sided. Pad grid and edge pads reconstructed from the supplier photograph.",
+        "limitations": "Source-dimension reconstruction, not manufacturer CAD. Mounting centre coordinates, pad dimensions and 0.035 mm copper thickness are authored from the supplier photograph. Plating barrels, silkscreen and bevels are omitted. Board thickness 1.5 mm and grid drill 0.8 mm are installation assumptions; the supplier does not publish these dimensions.",
+        "sourceUrl": "https://www.nikom.biz/ua/product_A066069.html"
+      }
+    }
+  },
+  {
+    "id": "py-7x9cm",
+    "name": "PY-7*9CM \u00b7 70 \u00d7 90 mm \u00b7 single sided",
+    "description": "90 \u00d7 70 mm soldering perfboard with 30 \u00d7 24 individual holes on a 2.54 mm grid.",
+    "parameters": {
+      "model": "py-7x9cm"
+    },
+    "catalog": {
+      "designation": "PY-7*9CM",
+      "manufacturer": "Generic PY",
+      "sourceName": "Nikom A066023",
+      "sourceUrl": "https://www.nikom.biz/ua/product_A066023.html",
+      "alternateSourceUrls": ["https://www.nikom.biz/LA06602333395.jpg"],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "sides": "Single sided",
+        "length": 90,
+        "width": 70,
+        "pitch": 2.54,
+        "holes": 720,
+        "thickness": 1.5,
+        "holeDiameter": 0.8,
+        "mountDiameter": 3
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "90 \u00d7 70 mm outline, 2.54 mm grid, single sided. Pad grid and edge pads reconstructed from the supplier photograph.",
+        "limitations": "Source-dimension reconstruction, not manufacturer CAD. Mounting centre coordinates, pad dimensions and 0.035 mm copper thickness are authored from the supplier photograph. Plating barrels, silkscreen and bevels are omitted.",
+        "sourceUrl": "https://www.nikom.biz/ua/product_A066023.html"
+      }
+    }
+  },
+  {
+    "id": "py-3x7cm",
+    "name": "PY-3*7CM \u00b7 30 \u00d7 70 mm \u00b7 double sided",
+    "description": "70 \u00d7 30 \u00d7 1.5 mm soldering perfboard with 24 \u00d7 10 individual holes on a 2.54 mm grid.",
+    "parameters": {
+      "model": "py-3x7cm"
+    },
+    "catalog": {
+      "designation": "PY-3*7CM",
+      "manufacturer": "Generic PY",
+      "sourceName": "Nikom A066031",
+      "sourceUrl": "https://www.nikom.biz/ua/product_A066031.html",
+      "alternateSourceUrls": ["https://www.nikom.biz/LA06603133397.jpg"],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "sides": "Double sided",
+        "length": 70,
+        "width": 30,
+        "pitch": 2.54,
+        "holes": 240,
+        "thickness": 1.5,
+        "holeDiameter": 0.8,
+        "mountDiameter": 1.2
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published 70 \u00d7 30 \u00d7 1.5 mm outline, 2.54 mm grid, diameter 0.8 mm component holes, diameter 1.2 mm mounting holes, double sided. Photograph-matched 24 \u00d7 10 grid and 8 edge lands per end.",
+        "limitations": "Source-dimension reconstruction, not manufacturer CAD. Grid counts and edge pad counts match the selected supplier photograph. Mounting centre coordinates, outer pad dimensions and 0.035 mm copper thickness are authored installation approximations. Plating barrels, silkscreen and bevels are omitted. The supplier explicitly labels the retained mounting-bore value as diameter in its table and prose, but its photograph shows larger corner openings and may depict another execution. The mounting bore is a supplier-table value, not a photograph-verified fit; confirm the delivered board before selecting mounting hardware or cutting a plate.",
+        "sourceUrl": "https://www.nikom.biz/ua/product_A066031.html"
+      }
+    }
+  },
+  {
+    "id": "py-4x6cm",
+    "name": "PY-4*6CM \u00b7 40 \u00d7 60 mm \u00b7 double sided",
+    "description": "60 \u00d7 40 \u00d7 1.5 mm soldering perfboard with 20 \u00d7 14 individual holes on a 2.54 mm grid.",
+    "parameters": {
+      "model": "py-4x6cm"
+    },
+    "catalog": {
+      "designation": "PY-4*6CM",
+      "manufacturer": "Generic PY",
+      "sourceName": "Nikom A066037",
+      "sourceUrl": "https://www.nikom.biz/ua/product_A066037.html",
+      "alternateSourceUrls": ["https://www.nikom.biz/LA06603730021.jpg"],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "sides": "Double sided",
+        "length": 60,
+        "width": 40,
+        "pitch": 2.54,
+        "holes": 280,
+        "thickness": 1.5,
+        "holeDiameter": 0.8,
+        "mountDiameter": 1.5
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published 60 \u00d7 40 \u00d7 1.5 mm outline, 2.54 mm grid, diameter 0.8 mm component holes, diameter 1.5 mm mounting holes, double sided. Photograph-matched 20 \u00d7 14 grid and 12 edge lands per end.",
+        "limitations": "Source-dimension reconstruction, not manufacturer CAD. Grid counts and edge pad counts match the selected supplier photograph. Mounting centre coordinates, outer pad dimensions and 0.035 mm copper thickness are authored installation approximations. Plating barrels, silkscreen and bevels are omitted. The supplier explicitly labels the retained mounting-bore value as diameter in its table and prose, but its photograph shows larger corner openings and may depict another execution. The mounting bore is a supplier-table value, not a photograph-verified fit; confirm the delivered board before selecting mounting hardware or cutting a plate.",
+        "sourceUrl": "https://www.nikom.biz/ua/product_A066037.html"
+      }
+    }
+  },
+  {
+    "id": "py-5x7cm",
+    "name": "PY-5*7CM \u00b7 50 \u00d7 70 mm \u00b7 single sided",
+    "description": "70 \u00d7 50 \u00d7 1.5 mm soldering perfboard with 24 \u00d7 18 individual holes on a 2.54 mm grid.",
+    "parameters": {
+      "model": "py-5x7cm"
+    },
+    "catalog": {
+      "designation": "PY-5*7CM",
+      "manufacturer": "Generic PY",
+      "sourceName": "Nikom A066092",
+      "sourceUrl": "https://www.nikom.biz/ua/product_A066092.html",
+      "alternateSourceUrls": ["https://www.nikom.biz/LA06609239342.jpg"],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "sides": "Single sided",
+        "length": 70,
+        "width": 50,
+        "pitch": 2.54,
+        "holes": 432,
+        "thickness": 1.5,
+        "holeDiameter": 0.8,
+        "mountDiameter": 3
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published 70 \u00d7 50 \u00d7 1.5 mm outline, 2.54 mm grid, diameter 0.8 mm component holes, diameter 3 mm mounting holes, single sided. Photograph-matched 24 \u00d7 18 grid and 10 edge lands per end.",
+        "limitations": "Source-dimension reconstruction, not manufacturer CAD. Grid counts and edge pad counts match the selected supplier photograph. Mounting centre coordinates, outer pad dimensions and 0.035 mm copper thickness are authored installation approximations. Plating barrels, silkscreen and bevels are omitted. The photograph shows 10 edge lands per end at approximately 4 mm pitch; the catalogue repeats 2.54 mm in its edge-pitch field. The reconstruction follows the pictured edge layout and does not claim that spacing as a verified attribute.",
+        "sourceUrl": "https://www.nikom.biz/ua/product_A066092.html"
+      }
+    }
+  },
+  {
+    "id": "py-6x8cm",
+    "name": "PY-6*8CM \u00b7 60 \u00d7 80 mm \u00b7 double sided",
+    "description": "80 \u00d7 60 \u00d7 1.6 mm soldering perfboard with 27 \u00d7 22 individual holes on a 2.54 mm grid.",
+    "parameters": {
+      "model": "py-6x8cm"
+    },
+    "catalog": {
+      "designation": "PY-6*8CM",
+      "manufacturer": "Generic PY",
+      "sourceName": "Nikom A066016",
+      "sourceUrl": "https://www.nikom.biz/ua/product_A066016.html",
+      "alternateSourceUrls": ["https://www.nikom.biz/LA06601633391.jpg"],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "sides": "Double sided",
+        "length": 80,
+        "width": 60,
+        "pitch": 2.54,
+        "holes": 594,
+        "thickness": 1.6,
+        "holeDiameter": 0.8,
+        "mountDiameter": 2
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published 80 \u00d7 60 \u00d7 1.6 mm outline, 2.54 mm grid, diameter 0.8 mm component holes, diameter 2 mm mounting holes, double sided. Photograph-matched 27 \u00d7 22 grid and 20 edge lands per end.",
+        "limitations": "Source-dimension reconstruction, not manufacturer CAD. Grid counts and edge pad counts match the selected supplier photograph. Mounting centre coordinates, outer pad dimensions and 0.035 mm copper thickness are authored installation approximations. Plating barrels, silkscreen and bevels are omitted. The supplier explicitly labels the retained mounting-bore value as diameter in its table and prose, but its photograph shows larger corner openings and may depict another execution. The mounting bore is a supplier-table value, not a photograph-verified fit; confirm the delivered board before selecting mounting hardware or cutting a plate.",
+        "sourceUrl": "https://www.nikom.biz/ua/product_A066016.html"
+      }
+    }
+  }
+]

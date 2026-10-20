@@ -1,0 +1,209 @@
+[
+  {
+    "id": "beilamoo-2s",
+    "name": "2S1P · 2 × 18650 · wire leads",
+    "description": "2 cylindrical 18650 cells; series holder with wire leads.",
+    "parameters": {
+      "model": "beilamoo-2s"
+    },
+    "catalog": {
+      "designation": "BH18650*2S-W",
+      "manufacturer": "BeiLaMoo",
+      "sourceName": "BeiLaMoo holder catalogue",
+      "sourceUrl": "https://www.beilamoo.com/sdp/1074412/4/pd-5180803/21007225-2439217/Two_18650_In_Series_Battery_Holder_with_Wire_Leads.html",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "BeiLaMoo",
+        "connection": "2S1P",
+        "termination": "Wire leads",
+        "cells": 2,
+        "format": "18650",
+        "length": 77.7,
+        "width": 40.21,
+        "bodyHeight": 21.54
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "BeiLaMoo BH18650*2S-W: 77.7 × 40.21 × 21.54 mm body; 2 cells; 150 mm 22 AWG wire leads; source-dimension reconstruction without wires.",
+        "limitations": "Installation reconstruction using the MPD holder geometry as a declared reference for the matching published outer envelope. PCB pin tails are removed and wire exits inferred from photographs; external wires, internal busbars and solder joints are omitted. The BeiLaMoo mounting-hole pattern and fine moulding details are not manufacturer-verified. The maker specifies series connection in text, while its reused photograph bears a parallel marking; verify the ordered wiring execution.",
+        "sourceUrl": "https://www.beilamoo.com/sdp/1074412/4/pd-5180803/21007225-2439217/Two_18650_In_Series_Battery_Holder_with_Wire_Leads.html"
+      }
+    }
+  },
+  {
+    "id": "beilamoo-3s",
+    "name": "3S1P · 3 × 18650 · wire leads",
+    "description": "3 cylindrical 18650 cells; series holder with wire leads.",
+    "parameters": {
+      "model": "beilamoo-3s"
+    },
+    "catalog": {
+      "designation": "BH18650*3S-W",
+      "manufacturer": "BeiLaMoo",
+      "sourceName": "BeiLaMoo holder catalogue",
+      "sourceUrl": "https://www.beilamoo.com/sdp/1074412/4/pd-5180803/21007228-2986068/Three_18650_In_Series_Battery_Holder_with_Wire_Lea.html",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "BeiLaMoo",
+        "connection": "3S1P",
+        "termination": "Wire leads",
+        "cells": 3,
+        "format": "18650",
+        "length": 77.7,
+        "width": 59.69,
+        "bodyHeight": 21.54
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "BeiLaMoo BH18650*3S-W: 77.7 × 59.69 × 21.54 mm body; 3 cells; 150 mm 22 AWG wire leads; source-dimension reconstruction without wires.",
+        "limitations": "Installation reconstruction using the MPD holder geometry as a declared reference for the matching published outer envelope. PCB pin tails are removed and wire exits inferred from photographs; external wires, internal busbars and solder joints are omitted. The BeiLaMoo mounting-hole pattern and fine moulding details are not manufacturer-verified. The maker specifies series connection in text, while its reused photograph bears a parallel marking; verify the ordered wiring execution.",
+        "sourceUrl": "https://www.beilamoo.com/sdp/1074412/4/pd-5180803/21007228-2986068/Three_18650_In_Series_Battery_Holder_with_Wire_Lea.html"
+      }
+    }
+  },
+  {
+    "id": "beilamoo-4s",
+    "name": "4S1P · 4 × 18650 · wire leads",
+    "description": "4 cylindrical 18650 cells; series holder with wire leads.",
+    "parameters": {
+      "model": "beilamoo-4s"
+    },
+    "catalog": {
+      "designation": "BH18650*4S-W",
+      "manufacturer": "BeiLaMoo",
+      "sourceName": "BeiLaMoo holder catalogue",
+      "sourceUrl": "https://www.beilamoo.com/sdp/1074412/4/pd-5180803/21007231-2986068/Four_18650_In_Series_Battery_Holder_with_Wire_Lead.html",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "BeiLaMoo",
+        "connection": "4S1P",
+        "termination": "Wire leads",
+        "cells": 4,
+        "format": "18650",
+        "length": 77.98,
+        "width": 78.84,
+        "bodyHeight": 21.54
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "BeiLaMoo BH18650*4S-W: 77.98 × 78.84 × 21.54 mm body; 4 cells; 150 mm 22 AWG wire leads; source-dimension reconstruction without wires.",
+        "limitations": "Installation reconstruction using the MPD holder geometry as a declared reference for the matching published outer envelope. PCB pin tails are removed and wire exits inferred from photographs; external wires, internal busbars and solder joints are omitted. The BeiLaMoo mounting-hole pattern and fine moulding details are not manufacturer-verified. The maker specifies series connection in text, while its reused photograph bears a parallel marking; verify the ordered wiring execution.",
+        "sourceUrl": "https://www.beilamoo.com/sdp/1074412/4/pd-5180803/21007231-2986068/Four_18650_In_Series_Battery_Holder_with_Wire_Lead.html"
+      }
+    }
+  },
+  {
+    "id": "mpd-bk-18650-pc4",
+    "name": "MPD BK-18650-PC4 · 2 × 18650 · PC pins",
+    "description": "2 cylindrical 18650 cells; independent PCB contacts in original manufacturer CAD.",
+    "parameters": {
+      "model": "mpd-bk-18650-pc4"
+    },
+    "catalog": {
+      "designation": "BK-18650-PC4",
+      "manufacturer": "MPD",
+      "sourceName": "MPD holder catalogue",
+      "sourceUrl": "https://www.batteryholders.com/part.php?pn=BK-18650-PC4",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [
+        "https://www.memoryprotectiondevices.com/datasheets/BK-18650-PC4/BK-18650-PC4-datasheet.pdf"
+      ],
+      "attributes": {
+        "manufacturer": "MPD",
+        "connection": "Independent",
+        "termination": "PC pins",
+        "cells": 2,
+        "format": "18650",
+        "length": 77.7,
+        "width": 40.21,
+        "bodyHeight": 21.54,
+        "mountDiameter": 3.2,
+        "pinExtension": 3.2
+      },
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "MPD BK-18650-PC4: 77.7 × 40.21 × 21.54 mm body; 2 cells; original MPD STEP with separate housing and contacts; Ø3.2 mm mounting holes and 3.2 mm PCB pin extension.",
+        "limitations": "Original manufacturer STEP solids retained after a rigid coordinate normalization. Colours are illustrative. Independent cell contacts are not factory series wiring. Batteries, PCB and mounting hardware are excluded; source recommends 2-56 mounting screws and 65–68 mm button-top cells.",
+        "sourceUrl": "https://www.memoryprotectiondevices.com/3D/download.php?pn=BK-18650-PC4&id=1435",
+        "sourceSha256": "05981dfcd16010cf7f94161a07a1ce0ff2a1dfa389d460bcbf7a5fdf44fcfc7e"
+      }
+    }
+  },
+  {
+    "id": "mpd-bk-18650-pc6",
+    "name": "MPD BK-18650-PC6 · 3 × 18650 · PC pins",
+    "description": "3 cylindrical 18650 cells; independent PCB contacts in original manufacturer CAD.",
+    "parameters": {
+      "model": "mpd-bk-18650-pc6"
+    },
+    "catalog": {
+      "designation": "BK-18650-PC6",
+      "manufacturer": "MPD",
+      "sourceName": "MPD holder catalogue",
+      "sourceUrl": "https://www.batteryholders.com/part.php?pn=BK-18650-PC6",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [
+        "https://www.memoryprotectiondevices.com/datasheets/BK-18650-PC6/BK-18650-PC6-datasheet.pdf"
+      ],
+      "attributes": {
+        "manufacturer": "MPD",
+        "connection": "Independent",
+        "termination": "PC pins",
+        "cells": 3,
+        "format": "18650",
+        "length": 77.7,
+        "width": 59.69,
+        "bodyHeight": 21.54,
+        "mountDiameter": 3.2,
+        "pinExtension": 3.2
+      },
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "MPD BK-18650-PC6: 77.7 × 59.69 × 21.54 mm body; 3 cells; original MPD STEP with separate housing and contacts; Ø3.2 mm mounting holes and 3.2 mm PCB pin extension.",
+        "limitations": "Original manufacturer STEP solids retained after a rigid coordinate normalization. Colours are illustrative. Independent cell contacts are not factory series wiring. Batteries, PCB and mounting hardware are excluded; source recommends 2-56 mounting screws and 65–68 mm button-top cells.",
+        "sourceUrl": "https://www.memoryprotectiondevices.com/3D/download.php?pn=BK-18650-PC6&id=1437",
+        "sourceSha256": "d5d1ba3bdac990db31d7fac8107b9d2fc293f567080af6f3b552be542da0bdc2"
+      }
+    }
+  },
+  {
+    "id": "mpd-bk-18650-pc8",
+    "name": "MPD BK-18650-PC8 · 4 × 18650 · PC pins",
+    "description": "4 cylindrical 18650 cells; independent PCB contacts in original manufacturer CAD.",
+    "parameters": {
+      "model": "mpd-bk-18650-pc8"
+    },
+    "catalog": {
+      "designation": "BK-18650-PC8",
+      "manufacturer": "MPD",
+      "sourceName": "MPD holder catalogue",
+      "sourceUrl": "https://www.batteryholders.com/part.php?pn=BK-18650-PC8",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [
+        "https://www.memoryprotectiondevices.com/datasheets/BK-18650-PC8/BK-18650-PC8-datasheet.pdf"
+      ],
+      "attributes": {
+        "manufacturer": "MPD",
+        "connection": "Independent",
+        "termination": "PC pins",
+        "cells": 4,
+        "format": "18650",
+        "length": 77.98,
+        "width": 78.84,
+        "bodyHeight": 21.54,
+        "mountDiameter": 3.2,
+        "pinExtension": 3.2
+      },
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "MPD BK-18650-PC8: 77.98 × 78.84 × 21.54 mm body; 4 cells; original MPD STEP with separate housing and contacts; Ø3.2 mm mounting holes and 3.2 mm PCB pin extension.",
+        "limitations": "Original manufacturer STEP solids retained after a rigid coordinate normalization. Colours are illustrative. Independent cell contacts are not factory series wiring. Batteries, PCB and mounting hardware are excluded; source recommends 2-56 mounting screws and 65–68 mm button-top cells.",
+        "sourceUrl": "https://www.memoryprotectiondevices.com/3D/download.php?pn=BK-18650-PC8&id=1439",
+        "sourceSha256": "dc6b4071d9c72596b681e996058252a077ca6fe7ca437b39a936020d43664d93"
+      }
+    }
+  }
+]

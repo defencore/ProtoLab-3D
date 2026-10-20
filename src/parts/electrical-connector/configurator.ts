@@ -48,4 +48,53 @@ export const catalogFilterFields: ParameterDefinition[] = [
     unit: key === 'pins' ? '' : 'mm',
     catalogSummary: true,
   })),
+  {
+    key: 'mounting',
+    label: 'Mounting',
+    type: 'select',
+    group: 'Connector selection',
+    catalogSummary: true,
+    options: [
+      { value: 'Panel', label: 'Panel flange' },
+      { value: 'PCB vertical', label: 'PCB vertical' },
+      { value: 'PCB right angle', label: 'PCB right angle' },
+    ],
+  },
+  ...(['mountPitch', 'mountDiameter', 'flangeThickness'] as const).map((key) => ({
+    key,
+    label:
+      key === 'mountPitch'
+        ? 'Mounting centres'
+        : key === 'mountDiameter'
+          ? 'Mounting bore'
+          : 'Flange stack',
+    type: 'number' as const,
+    group: 'Dimensions',
+    min: 0,
+    max: 50,
+    step: 0.01,
+    unit: 'mm',
+    catalogSummary: true,
+  })),
+  ...(
+    [
+      ['contactPitch', 'PCB contact pitch'],
+      ['pcbHoleDiameter', 'Recommended power hole'],
+      ['pinProjection', 'Power tail projection'],
+      ['pcbHoldPitch', 'Hold-down centres'],
+      ['pcbRowOffset', 'PCB row separation'],
+      ['pcbSlotWidth', 'Recommended slot width'],
+      ['pcbSlotLength', 'Recommended slot length'],
+      ['pcbTabProjection', 'Hold-down projection'],
+    ] as const
+  ).map(([key, label]) => ({
+    key,
+    label,
+    type: 'number' as const,
+    group: 'PCB mounting',
+    min: 0,
+    max: 50,
+    step: 0.01,
+    unit: 'mm',
+  })),
 ];

@@ -1,0 +1,724 @@
+[
+  {
+    "id": "ws2812-8-stick",
+    "name": "1×8 LEDS · 8-Bit 2812 RGB",
+    "designation": "CEL03113 · WS2812B 5050 stick · 8 LEDs",
+    "manufacturer": "Generic",
+    "supplier": "BOT'n ROLL",
+    "layout": "1×8",
+    "leds": 8,
+    "length": 54,
+    "width": 10,
+    "height": 3.19,
+    "pcbThickness": 1.6,
+    "holes": [
+      [-13, -3, 3],
+      [13, -3, 3]
+    ],
+    "capacitors": [
+      [-22.4, -3, 0],
+      [-16, -3, 0],
+      [-9.6, -3, 0],
+      [-3.2, -3, 0],
+      [3.2, -3, 0],
+      [9.6, -3, 0],
+      [16, -3, 0],
+      [22.4, -3, 0]
+    ],
+    "source": "https://www.botnroll.com/en/matrices/4581-neopixel-rgb-led-module-ws2812b-5050-stick-8-leds.html",
+    "photos": [
+      "https://www.botnroll.com/18044-large_default/neopixel-rgb-led-module-ws2812b-5050-stick-8-leds.jpg"
+    ],
+    "sourceNotes": "The supplier specifies 54 × 10 × 3.19 mm and eight LEDs. This is the 54 mm execution, not the shorter 53 mm generic stick. LED, capacitor, solder-pad and mounting-hole coordinates are reconstructed, not a toleranced supplier drawing.",
+    "outline": "rectangle",
+    "innerDiameter": 0,
+    "heightVerified": true,
+    "ledPositions": [
+      [-22.400000000000002, 1.3, 0],
+      [-16.0, 1.3, 0],
+      [-9.600000000000001, 1.3, 0],
+      [-3.2, 1.3, 0],
+      [3.2, 1.3, 0],
+      [9.600000000000001, 1.3, 0],
+      [16.0, 1.3, 0],
+      [22.400000000000002, 1.3, 0]
+    ],
+    "pads": [
+      {
+        "x": -24.8,
+        "y": -3.81,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Output solder pad 1"
+      },
+      {
+        "x": -24.8,
+        "y": -1.27,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Output solder pad 2"
+      },
+      {
+        "x": -24.8,
+        "y": 1.27,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Output solder pad 3"
+      },
+      {
+        "x": -24.8,
+        "y": 3.81,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Output solder pad 4"
+      },
+      {
+        "x": 24.8,
+        "y": -3.81,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Input solder pad 1"
+      },
+      {
+        "x": 24.8,
+        "y": -1.27,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Input solder pad 2"
+      },
+      {
+        "x": 24.8,
+        "y": 1.27,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Input solder pad 3"
+      },
+      {
+        "x": 24.8,
+        "y": 3.81,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Input solder pad 4"
+      }
+    ]
+  },
+  {
+    "id": "ws2812b-4-matrix",
+    "name": "2×2 LEDS · WS2812B-4",
+    "designation": "LCD03021 · WS2812B 5050 matrix · 4 LEDs",
+    "manufacturer": "Generic",
+    "supplier": "BOT'n ROLL",
+    "layout": "2×2",
+    "leds": 4,
+    "length": 15,
+    "width": 15,
+    "height": 3.19,
+    "pcbThickness": 1.6,
+    "holes": [[0, 0, 3.2]],
+    "capacitors": [
+      [-5, 0, 0],
+      [5, 0, 0]
+    ],
+    "source": "https://www.botnroll.com/en/matrices/4582-neopixel-rgb-led-module-ws2812b-5050-2x2-matrix-4-leds.html",
+    "photos": [
+      "https://www.botnroll.com/18045-large_default/neopixel-rgb-led-module-ws2812b-5050-2x2-matrix-4-leds.jpg",
+      "https://www.botnroll.com/18052-large_default/neopixel-rgb-led-module-ws2812b-5050-2x2-matrix-4-leds.jpg"
+    ],
+    "sourceNotes": "The supplier specifies 15 × 15 × 3.19 mm. The title, description and photographs confirm four LEDs; the isolated specification bullet saying eight is a copy/paste error. The central hole and all undimensioned package, capacitor and pad coordinates are photo-derived references.",
+    "outline": "rectangle",
+    "innerDiameter": 0,
+    "heightVerified": true,
+    "ledPositions": [
+      [-4.0, -4.0, 0],
+      [4.0, -4.0, 0],
+      [-4.0, 4.0, 0],
+      [4.0, 4.0, 0]
+    ],
+    "pads": [
+      {
+        "x": -5.8,
+        "y": -3.81,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Output solder pad 1"
+      },
+      {
+        "x": -5.8,
+        "y": -1.27,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Output solder pad 2"
+      },
+      {
+        "x": -5.8,
+        "y": 1.27,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Output solder pad 3"
+      },
+      {
+        "x": -5.8,
+        "y": 3.81,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Output solder pad 4"
+      },
+      {
+        "x": 5.8,
+        "y": -3.81,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Input solder pad 1"
+      },
+      {
+        "x": 5.8,
+        "y": -1.27,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Input solder pad 2"
+      },
+      {
+        "x": 5.8,
+        "y": 1.27,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Input solder pad 3"
+      },
+      {
+        "x": 5.8,
+        "y": 3.81,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Input solder pad 4"
+      }
+    ]
+  },
+  {
+    "id": "ws2812b-8-ring",
+    "name": "Ring 8 LEDS · WS2812B",
+    "designation": "CEL03109 · WS2812B 5050 ring · 8 LEDs",
+    "manufacturer": "Generic",
+    "supplier": "BOT'n ROLL",
+    "layout": "Ring 8",
+    "outline": "ring",
+    "leds": 8,
+    "length": 32,
+    "width": 32,
+    "height": 3.19,
+    "heightVerified": false,
+    "pcbThickness": 1.6,
+    "innerDiameter": 18,
+    "holes": [
+      [12.4723736889, 5.1662263369, 2.0],
+      [-12.4723736889, -5.1662263369, 2.0]
+    ],
+    "ledPositions": [
+      [12.4, 0.0, -90.0],
+      [8.7681240867, 8.7681240867, -45.0],
+      [0.0, 12.4, 0.0],
+      [-8.7681240867, 8.7681240867, 45.0],
+      [-12.4, 0.0, 90.0],
+      [-8.7681240867, -8.7681240867, 135.0],
+      [-0.0, -12.4, 180.0],
+      [8.7681240867, -8.7681240867, 225.0]
+    ],
+    "pads": [
+      {
+        "x": -3.81,
+        "y": 12.4,
+        "width": 1.5,
+        "length": 1.8,
+        "drill": 0,
+        "label": "DOUT solder pad"
+      },
+      {
+        "x": -1.27,
+        "y": 12.4,
+        "width": 1.5,
+        "length": 1.8,
+        "drill": 0,
+        "label": "GND solder pad"
+      },
+      {
+        "x": 1.27,
+        "y": 12.4,
+        "width": 1.5,
+        "length": 1.8,
+        "drill": 0,
+        "label": "5V solder pad"
+      },
+      {
+        "x": 3.81,
+        "y": 12.4,
+        "width": 1.5,
+        "length": 1.8,
+        "drill": 0,
+        "label": "DIN solder pad"
+      }
+    ],
+    "capacitors": [
+      [15.6, 0.0, -90.0],
+      [11.0308657865, 11.0308657865, -45.0],
+      [0.0, 15.6, 0.0],
+      [-11.0308657865, 11.0308657865, 45.0],
+      [-15.6, 0.0, 90.0],
+      [-11.0308657865, -11.0308657865, 135.0],
+      [-0.0, -15.6, 180.0],
+      [11.0308657865, -11.0308657865, 225.0]
+    ],
+    "source": "https://www.botnroll.com/en/matrices/4572-neopixel-rgb-led-module-ws2812b-5050-ring-8-leds.html",
+    "photos": [
+      "https://www.botnroll.com/18032-large_default/neopixel-rgb-led-module-ws2812b-5050-ring-8-leds.jpg"
+    ],
+    "photoSha256": ["99038d9af1a70f4af542b1d5d05a9254b8ad5acc327b054a9d1d44d04d6cf0c6"],
+    "sourceNotes": "The selected supplier publishes 8 LEDs and 32 mm outside diameter. The 3.19 mm model height and 1.60 mm substrate thickness are authored assumptions, not published ring dimensions. Inner opening 18 mm, mounting holes, component centres, orientation and solder-pad geometry are photo-derived approximations. Four rear connection lands use a common generic ring layout; exact supplier routing is not verified."
+  },
+  {
+    "id": "ws2812b-12-ring",
+    "name": "Ring 12 LEDS · WS2812B",
+    "designation": "CEL03110 · WS2812B 5050 ring · 12 LEDs",
+    "manufacturer": "Generic",
+    "supplier": "BOT'n ROLL",
+    "layout": "Ring 12",
+    "outline": "ring",
+    "leds": 12,
+    "length": 50,
+    "width": 50,
+    "height": 3.19,
+    "heightVerified": false,
+    "pcbThickness": 1.6,
+    "innerDiameter": 37,
+    "holes": [
+      [15.5563491861, 15.5563491861, 2.0],
+      [-15.5563491861, 15.5563491861, 2.0],
+      [-15.5563491861, -15.5563491861, 2.0],
+      [15.5563491861, -15.5563491861, 2.0]
+    ],
+    "ledPositions": [
+      [21.2, 0.0, -90.0],
+      [18.3597385602, 10.6, -60.0],
+      [10.6, 18.3597385602, -30.0],
+      [0.0, 21.2, 0.0],
+      [-10.6, 18.3597385602, 30.0],
+      [-18.3597385602, 10.6, 60.0],
+      [-21.2, 0.0, 90.0],
+      [-18.3597385602, -10.6, 120.0],
+      [-10.6, -18.3597385602, 150.0],
+      [-0.0, -21.2, 180.0],
+      [10.6, -18.3597385602, 210.0],
+      [18.3597385602, -10.6, 240.0]
+    ],
+    "pads": [
+      {
+        "x": 21.2,
+        "y": -3.81,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0,
+        "label": "DOUT solder pad"
+      },
+      {
+        "x": 21.2,
+        "y": -1.27,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0,
+        "label": "GND solder pad"
+      },
+      {
+        "x": 21.2,
+        "y": 1.27,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0,
+        "label": "5V solder pad"
+      },
+      {
+        "x": 21.2,
+        "y": 3.81,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0,
+        "label": "DIN solder pad"
+      }
+    ],
+    "capacitors": [
+      [24.4, 0.0, -90.0],
+      [21.1310198523, 12.2, -60.0],
+      [12.2, 21.1310198523, -30.0],
+      [0.0, 24.4, 0.0],
+      [-12.2, 21.1310198523, 30.0],
+      [-21.1310198523, 12.2, 60.0],
+      [-24.4, 0.0, 90.0],
+      [-21.1310198523, -12.2, 120.0],
+      [-12.2, -21.1310198523, 150.0],
+      [-0.0, -24.4, 180.0],
+      [12.2, -21.1310198523, 210.0],
+      [21.1310198523, -12.2, 240.0]
+    ],
+    "source": "https://www.botnroll.com/en/matrices/4574-neopixel-rgb-led-module-ws2812b-5050-ring-12-leds.html",
+    "photos": [
+      "https://www.botnroll.com/18035-large_default/neopixel-rgb-led-module-ws2812b-5050-ring-12-leds.jpg"
+    ],
+    "photoSha256": ["ca70bebefe47c4ed1c4e2173763465042a758b50e8805410dd3170d823d0ccb5"],
+    "sourceNotes": "The selected supplier publishes 12 LEDs and 50 mm outside diameter. The 3.19 mm model height and 1.60 mm substrate thickness are authored assumptions, not published ring dimensions. Inner opening 37 mm, mounting holes, component centres, orientation and solder-pad geometry are photo-derived approximations. Four rear connection lands use a common generic ring layout; exact supplier routing is not verified."
+  },
+  {
+    "id": "ws2812b-16-ring",
+    "name": "Ring 16 LEDS · WS2812B",
+    "designation": "CEL03111 · WS2812B 5050 ring · 16 LEDs",
+    "manufacturer": "Generic",
+    "supplier": "BOT'n ROLL",
+    "layout": "Ring 16",
+    "outline": "ring",
+    "leds": 16,
+    "length": 67,
+    "width": 67,
+    "height": 3.19,
+    "heightVerified": false,
+    "pcbThickness": 1.6,
+    "innerDiameter": 52,
+    "holes": [
+      [21.5667568262, 21.5667568262, 2.0],
+      [-28.1783257416, 11.6718446871, 2.0],
+      [-21.5667568262, -21.5667568262, 2.0],
+      [28.1783257416, -11.6718446871, 2.0]
+    ],
+    "ledPositions": [
+      [28.9331657719, 5.7551644995, -78.75],
+      [24.5283535629, 16.3893218741, -56.25],
+      [16.3893218741, 24.5283535629, -33.75],
+      [5.7551644995, 28.9331657719, -11.25],
+      [-5.7551644995, 28.9331657719, 11.25],
+      [-16.3893218741, 24.5283535629, 33.75],
+      [-24.5283535629, 16.3893218741, 56.25],
+      [-28.9331657719, 5.7551644995, 78.75],
+      [-28.9331657719, -5.7551644995, 101.25],
+      [-24.5283535629, -16.3893218741, 123.75],
+      [-16.3893218741, -24.5283535629, 146.25],
+      [-5.7551644995, -28.9331657719, 168.75],
+      [5.7551644995, -28.9331657719, 191.25],
+      [16.3893218741, -24.5283535629, 213.75],
+      [24.5283535629, -16.3893218741, 236.25],
+      [28.9331657719, -5.7551644995, 258.75]
+    ],
+    "pads": [
+      {
+        "x": 29.5,
+        "y": -3.81,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0,
+        "label": "DOUT solder pad"
+      },
+      {
+        "x": 29.5,
+        "y": -1.27,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0,
+        "label": "GND solder pad"
+      },
+      {
+        "x": 29.5,
+        "y": 1.27,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0,
+        "label": "5V solder pad"
+      },
+      {
+        "x": 29.5,
+        "y": 3.81,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0,
+        "label": "DIN solder pad"
+      }
+    ],
+    "capacitors": [
+      [32.0716786692, 6.3794535299, -78.75],
+      [27.1890563223, 18.1671466197, -56.25],
+      [18.1671466197, 27.1890563223, -33.75],
+      [6.3794535299, 32.0716786692, -11.25],
+      [-6.3794535299, 32.0716786692, 11.25],
+      [-18.1671466197, 27.1890563223, 33.75],
+      [-27.1890563223, 18.1671466197, 56.25],
+      [-32.0716786692, 6.3794535299, 78.75],
+      [-32.0716786692, -6.3794535299, 101.25],
+      [-27.1890563223, -18.1671466197, 123.75],
+      [-18.1671466197, -27.1890563223, 146.25],
+      [-6.3794535299, -32.0716786692, 168.75],
+      [6.3794535299, -32.0716786692, 191.25],
+      [18.1671466197, -27.1890563223, 213.75],
+      [27.1890563223, -18.1671466197, 236.25],
+      [32.0716786692, -6.3794535299, 258.75]
+    ],
+    "source": "https://www.botnroll.com/en/matrices/4576-neopixel-rgb-led-module-ws2812b-5050-ring-16-leds.html",
+    "photos": [
+      "https://www.botnroll.com/18038-large_default/neopixel-rgb-led-module-ws2812b-5050-ring-16-leds.jpg"
+    ],
+    "photoSha256": ["7c6dccb743b644d06086548591b98b019f19a13024fae3bead8f7c56296a9e3e"],
+    "sourceNotes": "The selected supplier publishes 16 LEDs and 67 mm outside diameter. The 3.19 mm model height and 1.60 mm substrate thickness are authored assumptions, not published ring dimensions. Inner opening 52 mm, mounting holes, component centres, orientation and solder-pad geometry are photo-derived approximations. Four rear connection lands use a common generic ring layout; exact supplier routing is not verified."
+  },
+  {
+    "id": "ws2812b-24-ring",
+    "name": "Ring 24 LEDS · WS2812B",
+    "designation": "CEL03112 · WS2812B 5050 ring · 24 LEDs",
+    "manufacturer": "Generic",
+    "supplier": "BOT'n ROLL",
+    "layout": "Ring 24",
+    "outline": "ring",
+    "leds": 24,
+    "length": 86,
+    "width": 86,
+    "height": 3.19,
+    "heightVerified": false,
+    "pcbThickness": 1.6,
+    "innerDiameter": 72,
+    "holes": [
+      [28.2842712475, 28.2842712475, 2.0],
+      [-28.2842712475, 28.2842712475, 2.0],
+      [-34.6410161514, -20.0, 2.0],
+      [28.2842712475, -28.2842712475, 2.0]
+    ],
+    "ledPositions": [
+      [38.8646385659, 5.116626735, -82.5],
+      [36.2160776744, 15.0011905487, -67.5],
+      [31.0994509394, 23.8634480171, -52.5],
+      [23.8634480171, 31.0994509394, -37.5],
+      [15.0011905487, 36.2160776744, -22.5],
+      [5.116626735, 38.8646385659, -7.5],
+      [-5.116626735, 38.8646385659, 7.5],
+      [-15.0011905487, 36.2160776744, 22.5],
+      [-23.8634480171, 31.0994509394, 37.5],
+      [-31.0994509394, 23.8634480171, 52.5],
+      [-36.2160776744, 15.0011905487, 67.5],
+      [-38.8646385659, 5.116626735, 82.5],
+      [-38.8646385659, -5.116626735, 97.5],
+      [-36.2160776744, -15.0011905487, 112.5],
+      [-31.0994509394, -23.8634480171, 127.5],
+      [-23.8634480171, -31.0994509394, 142.5],
+      [-15.0011905487, -36.2160776744, 157.5],
+      [-5.116626735, -38.8646385659, 172.5],
+      [5.116626735, -38.8646385659, 187.5],
+      [15.0011905487, -36.2160776744, 202.5],
+      [23.8634480171, -31.0994509394, 217.5],
+      [31.0994509394, -23.8634480171, 232.5],
+      [36.2160776744, -15.0011905487, 247.5],
+      [38.8646385659, -5.116626735, 262.5]
+    ],
+    "pads": [
+      {
+        "x": 39.2,
+        "y": -3.81,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0,
+        "label": "DOUT solder pad"
+      },
+      {
+        "x": 39.2,
+        "y": -1.27,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0,
+        "label": "GND solder pad"
+      },
+      {
+        "x": 39.2,
+        "y": 1.27,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0,
+        "label": "5V solder pad"
+      },
+      {
+        "x": 39.2,
+        "y": 3.81,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0,
+        "label": "DIN solder pad"
+      }
+    ],
+    "capacitors": [
+      [42.0372621222, 5.5343105501, -82.5],
+      [39.1724921785, 16.2257775323, -67.5],
+      [33.6381816283, 25.81148459, -52.5],
+      [25.81148459, 33.6381816283, -37.5],
+      [16.2257775323, 39.1724921785, -22.5],
+      [5.5343105501, 42.0372621222, -7.5],
+      [-5.5343105501, 42.0372621222, 7.5],
+      [-16.2257775323, 39.1724921785, 22.5],
+      [-25.81148459, 33.6381816283, 37.5],
+      [-33.6381816283, 25.81148459, 52.5],
+      [-39.1724921785, 16.2257775323, 67.5],
+      [-42.0372621222, 5.5343105501, 82.5],
+      [-42.0372621222, -5.5343105501, 97.5],
+      [-39.1724921785, -16.2257775323, 112.5],
+      [-33.6381816283, -25.81148459, 127.5],
+      [-25.81148459, -33.6381816283, 142.5],
+      [-16.2257775323, -39.1724921785, 157.5],
+      [-5.5343105501, -42.0372621222, 172.5],
+      [5.5343105501, -42.0372621222, 187.5],
+      [16.2257775323, -39.1724921785, 202.5],
+      [25.81148459, -33.6381816283, 217.5],
+      [33.6381816283, -25.81148459, 232.5],
+      [39.1724921785, -16.2257775323, 247.5],
+      [42.0372621222, -5.5343105501, 262.5]
+    ],
+    "source": "https://www.botnroll.com/en/matrices/4577-neopixel-rgb-led-module-ws2812b-5050-ring-24-leds.html",
+    "photos": [
+      "https://www.botnroll.com/18039-large_default/neopixel-rgb-led-module-ws2812b-5050-ring-24-leds.jpg"
+    ],
+    "photoSha256": ["3662510fb39392ce7f2f862c9333798b8d09c05cd362d5a6124b0207caf7ae4b"],
+    "sourceNotes": "The selected supplier publishes 24 LEDs and 86 mm outside diameter. The 3.19 mm model height and 1.60 mm substrate thickness are authored assumptions, not published ring dimensions. Inner opening 72 mm, mounting holes, component centres, orientation and solder-pad geometry are photo-derived approximations. Four rear connection lands use a common generic ring layout; exact supplier routing is not verified."
+  },
+  {
+    "id": "ws2812b-16-matrix",
+    "name": "4×4 LEDS · WS2812B-16",
+    "designation": "LCD03022 · WS2812B 5050 matrix · 16 LEDs",
+    "manufacturer": "Generic",
+    "supplier": "BOT'n ROLL",
+    "layout": "4×4",
+    "outline": "rectangle",
+    "leds": 16,
+    "length": 30,
+    "width": 30,
+    "height": 3.19,
+    "heightVerified": true,
+    "pcbThickness": 1.6,
+    "innerDiameter": 0,
+    "holes": [
+      [-8, -8, 3],
+      [-8, 8, 3],
+      [8, -8, 3],
+      [8, 8, 3]
+    ],
+    "ledPositions": [
+      [-12, -12, 0],
+      [-4, -12, 0],
+      [4, -12, 0],
+      [12, -12, 0],
+      [-12, -4, 0],
+      [-4, -4, 0],
+      [4, -4, 0],
+      [12, -4, 0],
+      [-12, 4, 0],
+      [-4, 4, 0],
+      [4, 4, 0],
+      [12, 4, 0],
+      [-12, 12, 0],
+      [-4, 12, 0],
+      [4, 12, 0],
+      [12, 12, 0]
+    ],
+    "pads": [
+      {
+        "x": -13.8,
+        "y": -3.81,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Output solder pad 1"
+      },
+      {
+        "x": -13.8,
+        "y": -1.27,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Output solder pad 2"
+      },
+      {
+        "x": -13.8,
+        "y": 1.27,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Output solder pad 3"
+      },
+      {
+        "x": -13.8,
+        "y": 3.81,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Output solder pad 4"
+      },
+      {
+        "x": 13.8,
+        "y": -3.81,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Input solder pad 1"
+      },
+      {
+        "x": 13.8,
+        "y": -1.27,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Input solder pad 2"
+      },
+      {
+        "x": 13.8,
+        "y": 1.27,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Input solder pad 3"
+      },
+      {
+        "x": 13.8,
+        "y": 3.81,
+        "width": 1.8,
+        "length": 1.5,
+        "drill": 0.64,
+        "label": "Input solder pad 4"
+      }
+    ],
+    "capacitors": [
+      [-12, -8, 0],
+      [-4, -8, 0],
+      [4, -8, 0],
+      [12, -8, 0],
+      [-12, 0, 0],
+      [-4, 0, 0],
+      [4, 0, 0],
+      [12, 0, 0],
+      [-12, 8, 0],
+      [-4, 8, 0],
+      [4, 8, 0],
+      [12, 8, 0]
+    ],
+    "source": "https://www.botnroll.com/en/matrices/4588-neopixel-rgb-led-module-ws2812b-5050-4x4-matrix-16-leds.html",
+    "photos": [
+      "https://www.botnroll.com/18046-large_default/neopixel-rgb-led-module-ws2812b-5050-4x4-matrix-16-leds.jpg",
+      "https://www.botnroll.com/18047-large_default/neopixel-rgb-led-module-ws2812b-5050-4x4-matrix-16-leds.jpg"
+    ],
+    "photoSha256": [
+      "02c4007027b938c8aedac884eadf0a52e53b245f3bb2ef65aaf9bbdb4e91da8c",
+      "83ac79ff10697e422145fa47390729e1f82d67f3a577198c8e9f9c97e10ce1c3"
+    ],
+    "sourceNotes": "The selected supplier publishes 30 × 30 × 3.19 mm and sixteen LEDs. Four internal mounting holes, eight rear solder lands, the 8 mm LED pitch, passive positions, PCB thickness and undimensioned details are photo-derived approximations."
+  }
+]

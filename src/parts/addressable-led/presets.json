@@ -1,0 +1,391 @@
+[
+  {
+    "id": "ws2812-8-stick",
+    "name": "1×8 LEDS · 8-Bit 2812 RGB",
+    "description": "54 × 10 × 3.19 mm · 8 RGB LEDs",
+    "parameters": {
+      "model": "ws2812-8-stick"
+    },
+    "catalog": {
+      "designation": "CEL03113 · WS2812B 5050 stick · 8 LEDs",
+      "manufacturer": "Generic",
+      "sourceName": "BOT'n ROLL — module specification and photographs",
+      "sourceUrl": "https://www.botnroll.com/en/matrices/4581-neopixel-rgb-led-module-ws2812b-5050-stick-8-leds.html",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published overall dimensions with photo-derived component and mounting layout.",
+        "limitations": "Source-dimension reconstruction, not manufacturer CAD. Only the published overall dimensions are source-verified. PCB thickness, hole diameters and centres, pad positions, package pitch and passive details are photo-derived approximations; confirm the delivered module before drilling an enclosure. No wires, headers, solder joints or PCB copper routing are modelled.",
+        "sourceUrl": "https://www.botnroll.com/en/matrices/4581-neopixel-rgb-led-module-ws2812b-5050-stick-8-leds.html"
+      },
+      "attributes": {
+        "manufacturer": "Generic",
+        "controller": "WS2812B",
+        "layout": "1×8",
+        "connection": "Solder pads",
+        "leds": 8,
+        "length": 54,
+        "width": 10,
+        "height": 3.19
+      },
+      "attributeConditions": {
+        "length": "Overall supplier dimension for the selected execution; other generic boards can differ.",
+        "width": "Overall supplier dimension.",
+        "height": "Overall supplier dimension; component stack is reconstructed to this envelope.",
+        "leds": "Supplier published count and photographed populated board."
+      },
+      "productCodes": ["CEL03113"],
+      "specifications": [
+        {
+          "label": "Supplier",
+          "value": "BOT'n ROLL"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "Photo-derived; verify on the delivered PCB."
+        },
+        {
+          "label": "Geometry basis",
+          "value": "Reconstruction of the selected supplier execution; not original CAD."
+        }
+      ]
+    }
+  },
+  {
+    "id": "ws2812b-4-matrix",
+    "name": "2×2 LEDS · WS2812B-4",
+    "description": "15 × 15 × 3.19 mm · 4 RGB LEDs",
+    "parameters": {
+      "model": "ws2812b-4-matrix"
+    },
+    "catalog": {
+      "designation": "LCD03021 · WS2812B 5050 matrix · 4 LEDs",
+      "manufacturer": "Generic",
+      "sourceName": "BOT'n ROLL — module specification and photographs",
+      "sourceUrl": "https://www.botnroll.com/en/matrices/4582-neopixel-rgb-led-module-ws2812b-5050-2x2-matrix-4-leds.html",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published overall dimensions with photo-derived component and mounting layout.",
+        "limitations": "Source-dimension reconstruction, not manufacturer CAD. Only the published overall dimensions are source-verified. PCB thickness, hole diameters and centres, pad positions, package pitch and passive details are photo-derived approximations; confirm the delivered module before drilling an enclosure. No wires, headers, solder joints or PCB copper routing are modelled.",
+        "sourceUrl": "https://www.botnroll.com/en/matrices/4582-neopixel-rgb-led-module-ws2812b-5050-2x2-matrix-4-leds.html"
+      },
+      "attributes": {
+        "manufacturer": "Generic",
+        "controller": "WS2812B",
+        "layout": "2×2",
+        "connection": "Solder pads",
+        "leds": 4,
+        "length": 15,
+        "width": 15,
+        "height": 3.19
+      },
+      "attributeConditions": {
+        "length": "Overall supplier dimension for the selected execution; other generic boards can differ.",
+        "width": "Overall supplier dimension.",
+        "height": "Overall supplier dimension; component stack is reconstructed to this envelope.",
+        "leds": "The matrix title, narrative and photographs confirm four; its isolated eight-LED bullet is a copy/paste error."
+      },
+      "productCodes": ["LCD03021"],
+      "specifications": [
+        {
+          "label": "Supplier",
+          "value": "BOT'n ROLL"
+        },
+        {
+          "label": "Mounting pattern",
+          "value": "Photo-derived; verify on the delivered PCB."
+        },
+        {
+          "label": "Geometry basis",
+          "value": "Reconstruction of the selected supplier execution; not original CAD."
+        }
+      ]
+    }
+  },
+  {
+    "id": "ws2812b-8-ring",
+    "name": "Ring 8 LEDS · WS2812B",
+    "description": "Outside diameter 32 mm · 8 RGB LEDs",
+    "parameters": {
+      "model": "ws2812b-8-ring"
+    },
+    "catalog": {
+      "designation": "CEL03109 · WS2812B 5050 ring · 8 LEDs",
+      "manufacturer": "Generic",
+      "sourceName": "BOT'n ROLL — module specification and photographs",
+      "sourceUrl": "https://www.botnroll.com/en/matrices/4572-neopixel-rgb-led-module-ws2812b-5050-ring-8-leds.html",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published outside diameter with a reconstructed annular PCB and component arrangement.",
+        "limitations": "Source-dimension reconstruction, not manufacturer CAD. Only the outside diameter and LED count are published for this ring; height, inner diameter and component stack are authored assumptions. Hole centres, hole sizes, LED/capacitor pitch and solder-pad geometry are photo-derived approximations. Ring rear pads follow a common generic layout; exact selected-supplier routing is not verified. Check the delivered module before making a mounting plate. Wires, headers, solder joints and PCB copper routing are omitted.",
+        "sourceUrl": "https://www.botnroll.com/en/matrices/4572-neopixel-rgb-led-module-ws2812b-5050-ring-8-leds.html",
+        "sourceSha256": "99038d9af1a70f4af542b1d5d05a9254b8ad5acc327b054a9d1d44d04d6cf0c6"
+      },
+      "attributes": {
+        "manufacturer": "Generic",
+        "controller": "WS2812B",
+        "layout": "Ring 8",
+        "connection": "Solder pads",
+        "leds": 8,
+        "length": 32,
+        "width": 32,
+        "outerDiameter": 32
+      },
+      "attributeConditions": {
+        "length": "Published outside diameter of this supplier execution.",
+        "width": "Published outside diameter of this supplier execution.",
+        "leds": "Published LED count and photographed populated board.",
+        "outerDiameter": "Published supplier outside diameter; inner opening and thickness are not specified."
+      },
+      "productCodes": ["CEL03109"],
+      "specifications": [
+        {
+          "label": "Supplier",
+          "value": "BOT'n ROLL"
+        },
+        {
+          "label": "Mounting and pad layout",
+          "value": "Photo-derived reference; check the delivered PCB."
+        },
+        {
+          "label": "Model stack",
+          "value": "Assumed 3.19 mm total height and 1.6 mm substrate; not published ring dimensions."
+        },
+        {
+          "label": "Source checksum",
+          "value": "SHA-256 of the linked supplier front photograph; not a manufacturer-CAD checksum."
+        }
+      ]
+    }
+  },
+  {
+    "id": "ws2812b-12-ring",
+    "name": "Ring 12 LEDS · WS2812B",
+    "description": "Outside diameter 50 mm · 12 RGB LEDs",
+    "parameters": {
+      "model": "ws2812b-12-ring"
+    },
+    "catalog": {
+      "designation": "CEL03110 · WS2812B 5050 ring · 12 LEDs",
+      "manufacturer": "Generic",
+      "sourceName": "BOT'n ROLL — module specification and photographs",
+      "sourceUrl": "https://www.botnroll.com/en/matrices/4574-neopixel-rgb-led-module-ws2812b-5050-ring-12-leds.html",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published outside diameter with a reconstructed annular PCB and component arrangement.",
+        "limitations": "Source-dimension reconstruction, not manufacturer CAD. Only the outside diameter and LED count are published for this ring; height, inner diameter and component stack are authored assumptions. Hole centres, hole sizes, LED/capacitor pitch and solder-pad geometry are photo-derived approximations. Ring rear pads follow a common generic layout; exact selected-supplier routing is not verified. Check the delivered module before making a mounting plate. Wires, headers, solder joints and PCB copper routing are omitted.",
+        "sourceUrl": "https://www.botnroll.com/en/matrices/4574-neopixel-rgb-led-module-ws2812b-5050-ring-12-leds.html",
+        "sourceSha256": "ca70bebefe47c4ed1c4e2173763465042a758b50e8805410dd3170d823d0ccb5"
+      },
+      "attributes": {
+        "manufacturer": "Generic",
+        "controller": "WS2812B",
+        "layout": "Ring 12",
+        "connection": "Solder pads",
+        "leds": 12,
+        "length": 50,
+        "width": 50,
+        "outerDiameter": 50
+      },
+      "attributeConditions": {
+        "length": "Published outside diameter of this supplier execution.",
+        "width": "Published outside diameter of this supplier execution.",
+        "leds": "Published LED count and photographed populated board.",
+        "outerDiameter": "Published supplier outside diameter; inner opening and thickness are not specified."
+      },
+      "productCodes": ["CEL03110"],
+      "specifications": [
+        {
+          "label": "Supplier",
+          "value": "BOT'n ROLL"
+        },
+        {
+          "label": "Mounting and pad layout",
+          "value": "Photo-derived reference; check the delivered PCB."
+        },
+        {
+          "label": "Model stack",
+          "value": "Assumed 3.19 mm total height and 1.6 mm substrate; not published ring dimensions."
+        },
+        {
+          "label": "Source checksum",
+          "value": "SHA-256 of the linked supplier front photograph; not a manufacturer-CAD checksum."
+        }
+      ]
+    }
+  },
+  {
+    "id": "ws2812b-16-ring",
+    "name": "Ring 16 LEDS · WS2812B",
+    "description": "Outside diameter 67 mm · 16 RGB LEDs",
+    "parameters": {
+      "model": "ws2812b-16-ring"
+    },
+    "catalog": {
+      "designation": "CEL03111 · WS2812B 5050 ring · 16 LEDs",
+      "manufacturer": "Generic",
+      "sourceName": "BOT'n ROLL — module specification and photographs",
+      "sourceUrl": "https://www.botnroll.com/en/matrices/4576-neopixel-rgb-led-module-ws2812b-5050-ring-16-leds.html",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published outside diameter with a reconstructed annular PCB and component arrangement.",
+        "limitations": "Source-dimension reconstruction, not manufacturer CAD. Only the outside diameter and LED count are published for this ring; height, inner diameter and component stack are authored assumptions. Hole centres, hole sizes, LED/capacitor pitch and solder-pad geometry are photo-derived approximations. Ring rear pads follow a common generic layout; exact selected-supplier routing is not verified. Check the delivered module before making a mounting plate. Wires, headers, solder joints and PCB copper routing are omitted.",
+        "sourceUrl": "https://www.botnroll.com/en/matrices/4576-neopixel-rgb-led-module-ws2812b-5050-ring-16-leds.html",
+        "sourceSha256": "7c6dccb743b644d06086548591b98b019f19a13024fae3bead8f7c56296a9e3e"
+      },
+      "attributes": {
+        "manufacturer": "Generic",
+        "controller": "WS2812B",
+        "layout": "Ring 16",
+        "connection": "Solder pads",
+        "leds": 16,
+        "length": 67,
+        "width": 67,
+        "outerDiameter": 67
+      },
+      "attributeConditions": {
+        "length": "Published outside diameter of this supplier execution.",
+        "width": "Published outside diameter of this supplier execution.",
+        "leds": "Published LED count and photographed populated board.",
+        "outerDiameter": "Published supplier outside diameter; inner opening and thickness are not specified."
+      },
+      "productCodes": ["CEL03111"],
+      "specifications": [
+        {
+          "label": "Supplier",
+          "value": "BOT'n ROLL"
+        },
+        {
+          "label": "Mounting and pad layout",
+          "value": "Photo-derived reference; check the delivered PCB."
+        },
+        {
+          "label": "Model stack",
+          "value": "Assumed 3.19 mm total height and 1.6 mm substrate; not published ring dimensions."
+        },
+        {
+          "label": "Source checksum",
+          "value": "SHA-256 of the linked supplier front photograph; not a manufacturer-CAD checksum."
+        }
+      ]
+    }
+  },
+  {
+    "id": "ws2812b-24-ring",
+    "name": "Ring 24 LEDS · WS2812B",
+    "description": "Outside diameter 86 mm · 24 RGB LEDs",
+    "parameters": {
+      "model": "ws2812b-24-ring"
+    },
+    "catalog": {
+      "designation": "CEL03112 · WS2812B 5050 ring · 24 LEDs",
+      "manufacturer": "Generic",
+      "sourceName": "BOT'n ROLL — module specification and photographs",
+      "sourceUrl": "https://www.botnroll.com/en/matrices/4577-neopixel-rgb-led-module-ws2812b-5050-ring-24-leds.html",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published outside diameter with a reconstructed annular PCB and component arrangement.",
+        "limitations": "Source-dimension reconstruction, not manufacturer CAD. Only the outside diameter and LED count are published for this ring; height, inner diameter and component stack are authored assumptions. Hole centres, hole sizes, LED/capacitor pitch and solder-pad geometry are photo-derived approximations. Ring rear pads follow a common generic layout; exact selected-supplier routing is not verified. Check the delivered module before making a mounting plate. Wires, headers, solder joints and PCB copper routing are omitted.",
+        "sourceUrl": "https://www.botnroll.com/en/matrices/4577-neopixel-rgb-led-module-ws2812b-5050-ring-24-leds.html",
+        "sourceSha256": "3662510fb39392ce7f2f862c9333798b8d09c05cd362d5a6124b0207caf7ae4b"
+      },
+      "attributes": {
+        "manufacturer": "Generic",
+        "controller": "WS2812B",
+        "layout": "Ring 24",
+        "connection": "Solder pads",
+        "leds": 24,
+        "length": 86,
+        "width": 86,
+        "outerDiameter": 86
+      },
+      "attributeConditions": {
+        "length": "Published outside diameter of this supplier execution.",
+        "width": "Published outside diameter of this supplier execution.",
+        "leds": "Published LED count and photographed populated board.",
+        "outerDiameter": "Published supplier outside diameter; inner opening and thickness are not specified."
+      },
+      "productCodes": ["CEL03112"],
+      "specifications": [
+        {
+          "label": "Supplier",
+          "value": "BOT'n ROLL"
+        },
+        {
+          "label": "Mounting and pad layout",
+          "value": "Photo-derived reference; check the delivered PCB."
+        },
+        {
+          "label": "Model stack",
+          "value": "Assumed 3.19 mm total height and 1.6 mm substrate; not published ring dimensions."
+        },
+        {
+          "label": "Source checksum",
+          "value": "SHA-256 of the linked supplier front photograph; not a manufacturer-CAD checksum."
+        }
+      ]
+    }
+  },
+  {
+    "id": "ws2812b-16-matrix",
+    "name": "4×4 LEDS · WS2812B-16",
+    "description": "30 × 30 × 3.19 mm · 16 RGB LEDs",
+    "parameters": {
+      "model": "ws2812b-16-matrix"
+    },
+    "catalog": {
+      "designation": "LCD03022 · WS2812B 5050 matrix · 16 LEDs",
+      "manufacturer": "Generic",
+      "sourceName": "BOT'n ROLL — module specification and photographs",
+      "sourceUrl": "https://www.botnroll.com/en/matrices/4588-neopixel-rgb-led-module-ws2812b-5050-4x4-matrix-16-leds.html",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published module envelope with a reconstructed populated PCB and mounting layout.",
+        "limitations": "Source-dimension reconstruction, not manufacturer CAD. Only the overall dimensions and LED count are published for this matrix. Hole centres, hole sizes, LED/capacitor pitch and solder-pad geometry are photo-derived approximations. Check the delivered module before making a mounting plate. Wires, headers, solder joints and PCB copper routing are omitted.",
+        "sourceUrl": "https://www.botnroll.com/en/matrices/4588-neopixel-rgb-led-module-ws2812b-5050-4x4-matrix-16-leds.html",
+        "sourceSha256": "02c4007027b938c8aedac884eadf0a52e53b245f3bb2ef65aaf9bbdb4e91da8c"
+      },
+      "attributes": {
+        "manufacturer": "Generic",
+        "controller": "WS2812B",
+        "layout": "4×4",
+        "connection": "Solder pads",
+        "leds": 16,
+        "length": 30,
+        "width": 30,
+        "height": 3.19
+      },
+      "attributeConditions": {
+        "length": "Published overall supplier dimension.",
+        "width": "Published overall supplier dimension.",
+        "leds": "Published LED count and photographed populated board.",
+        "height": "Published overall supplier dimension; component stack is reconstructed to this envelope."
+      },
+      "productCodes": ["LCD03022"],
+      "specifications": [
+        {
+          "label": "Supplier",
+          "value": "BOT'n ROLL"
+        },
+        {
+          "label": "Mounting and pad layout",
+          "value": "Photo-derived reference; check the delivered PCB."
+        },
+        {
+          "label": "Model stack",
+          "value": "Reconstructed to the published module envelope."
+        },
+        {
+          "label": "Source checksum",
+          "value": "SHA-256 of the linked supplier front photograph; not a manufacturer-CAD checksum."
+        }
+      ]
+    }
+  }
+]

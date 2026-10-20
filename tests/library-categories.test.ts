@@ -41,6 +41,9 @@ test('reusable machine components belong to their engineering disciplines and de
     'panel-control': ['SWITCHES & BUTTONS', 'PANEL CONTROLS'],
     'laboratory-terminal': ['CONNECTORS & INTERFACES', 'LABORATORY TERMINALS'],
     'signal-connector': ['CONNECTORS & INTERFACES', 'PCB CONNECTORS'],
+    'electrical-connector': ['CONNECTORS & INTERFACES', 'POWER & INDUSTRIAL'],
+    'prototyping-board': ['ELECTRONICS & VISION', 'PROTOTYPING BOARDS'],
+    'addressable-led': ['ELECTRONICS & VISION', 'LED MODULES'],
     'cnc-process-accessory': ['WORKSHOP TOOLS', 'COOLING & COOLANT'],
     'cnc-limit-sensor': ['ELECTRONICS & VISION', 'SENSORS & SWITCHES'],
     'cnc-linear-encoder': ['ELECTRONICS & VISION', 'SENSORS & SWITCHES'],
@@ -64,6 +67,7 @@ test('reusable machine components belong to their engineering disciplines and de
     'li-ion-cell': ['POWER & MOTOR CONTROL', 'BATTERIES & HOLDERS'],
     'standard-battery': ['POWER & MOTOR CONTROL', 'BATTERIES & HOLDERS'],
     'battery-holder': ['POWER & MOTOR CONTROL', 'BATTERIES & HOLDERS'],
+    'li-ion-battery-holder': ['POWER & MOTOR CONTROL', 'BATTERIES & HOLDERS'],
     'din-rail': ['STRUCTURAL PARTS', 'BRACKETS & MOUNTS'],
     'parallel-gripper': ['MOTORS & ACTUATORS', 'GRIPPERS'],
     brake: ['TRANSMISSION & LINKAGES', 'BRAKES'],
@@ -88,7 +92,7 @@ test('batteries and holders share their fitting context while rails, grippers an
       .filter((definition) => definition.subgroup === 'BATTERIES & HOLDERS')
       .map((definition) => definition.id)
       .sort(),
-    ['battery-holder', 'li-ion-cell', 'lipo-battery', 'standard-battery'],
+    ['battery-holder', 'li-ion-battery-holder', 'li-ion-cell', 'lipo-battery', 'standard-battery'],
   );
   assert.deepEqual(
     parts
@@ -123,6 +127,21 @@ test('electrical catalogs are discoverable by workshop terminology and supplier 
     ['WAGO 221-413', 'laboratory-terminal'],
     ['USB', 'signal-connector'],
     ['JST', 'signal-connector'],
+    ['XT60E-F', 'electrical-connector'],
+    ['XT60E-M', 'electrical-connector'],
+    ['XT90E-M', 'electrical-connector'],
+    ['XT30UPB-M', 'electrical-connector'],
+    ['XT30UPB-F', 'electrical-connector'],
+    ['XT60PW-M30', 'electrical-connector'],
+    ['XT60PW-F30', 'electrical-connector'],
+    ['PY-10', 'prototyping-board'],
+    ['PY-7', 'prototyping-board'],
+    ['PY-3*7CM', 'prototyping-board'],
+    ['PY-6*8CM', 'prototyping-board'],
+    ['NeoPixel', 'addressable-led'],
+    ['WS2812B-4', 'addressable-led'],
+    ['WS2812B 24', 'addressable-led'],
+    ['LCD03022', 'addressable-led'],
   ];
   for (const [query, id] of examples)
     assert.ok(

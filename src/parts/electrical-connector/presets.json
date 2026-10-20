@@ -1,8 +1,8 @@
 [
   {
     "id": "xt30u-m",
-    "name": "AMASS XT30U-M · Male pins",
-    "description": "2 contacts · 10.2 × 5.6 × 13.7 mm",
+    "name": "AMASS XT30U-M \u00b7 Male pins",
+    "description": "2 contacts \u00b7 10.2 \u00d7 5.6 \u00d7 13.7 mm",
     "parameters": {
       "model": "xt30u-m",
       "detail": "envelope"
@@ -10,7 +10,7 @@
     "catalog": {
       "designation": "XT30U-M",
       "manufacturer": "AMASS",
-      "sourceName": "AMASS 2024 catalog · page 7",
+      "sourceName": "AMASS 2024 catalog \u00b7 page 7",
       "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
       "productCodes": ["XT30U-M"],
       "verifiedParameters": ["model"],
@@ -42,8 +42,8 @@
   },
   {
     "id": "xt30u-f",
-    "name": "AMASS XT30U-F · Female sockets",
-    "description": "2 contacts · 10.2 × 5.6 × 12.4 mm",
+    "name": "AMASS XT30U-F \u00b7 Female sockets",
+    "description": "2 contacts \u00b7 10.2 \u00d7 5.6 \u00d7 12.4 mm",
     "parameters": {
       "model": "xt30u-f",
       "detail": "envelope"
@@ -51,7 +51,7 @@
     "catalog": {
       "designation": "XT30U-F",
       "manufacturer": "AMASS",
-      "sourceName": "AMASS 2024 catalog · page 7",
+      "sourceName": "AMASS 2024 catalog \u00b7 page 7",
       "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
       "productCodes": ["XT30U-F"],
       "verifiedParameters": ["model"],
@@ -83,8 +83,8 @@
   },
   {
     "id": "xt60-m",
-    "name": "AMASS XT60-M · Male pins",
-    "description": "2 contacts · 16 × 8.1 × 20.5 mm",
+    "name": "AMASS XT60-M \u00b7 Male pins",
+    "description": "2 contacts \u00b7 16 \u00d7 8.1 \u00d7 20.5 mm",
     "parameters": {
       "model": "xt60-m",
       "detail": "envelope"
@@ -92,7 +92,7 @@
     "catalog": {
       "designation": "XT60-M",
       "manufacturer": "AMASS",
-      "sourceName": "AMASS 2024 catalog · page 13",
+      "sourceName": "AMASS 2024 catalog \u00b7 page 13",
       "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
       "productCodes": ["XT60-M"],
       "verifiedParameters": ["model"],
@@ -124,8 +124,8 @@
   },
   {
     "id": "xt60-f",
-    "name": "AMASS XT60-F · Female sockets",
-    "description": "2 contacts · 15.5 × 8.1 × 21.3 mm",
+    "name": "AMASS XT60-F \u00b7 Female sockets",
+    "description": "2 contacts \u00b7 15.5 \u00d7 8.1 \u00d7 21.3 mm",
     "parameters": {
       "model": "xt60-f",
       "detail": "envelope"
@@ -133,7 +133,7 @@
     "catalog": {
       "designation": "XT60-F",
       "manufacturer": "AMASS",
-      "sourceName": "AMASS XT60-F specification · 2025V0",
+      "sourceName": "AMASS XT60-F specification \u00b7 2025V0",
       "sourceUrl": "https://www.china-amass.net/uploads/57.XT60-F-SPEC-2025V0.pdf",
       "productCodes": ["XT60-F"],
       "verifiedParameters": ["model"],
@@ -165,8 +165,8 @@
   },
   {
     "id": "xt60u-m",
-    "name": "AMASS XT60U-M · Male pins",
-    "description": "2 contacts · 15.35 × 8.3 × 17.2 mm",
+    "name": "AMASS XT60U-M \u00b7 Male pins",
+    "description": "2 contacts \u00b7 15.35 \u00d7 8.3 \u00d7 17.2 mm",
     "parameters": {
       "model": "xt60u-m",
       "detail": "envelope"
@@ -174,7 +174,7 @@
     "catalog": {
       "designation": "XT60U-M",
       "manufacturer": "AMASS",
-      "sourceName": "AMASS 2024 catalog · page 13",
+      "sourceName": "AMASS 2024 catalog \u00b7 page 13",
       "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
       "productCodes": ["XT60U-M"],
       "verifiedParameters": ["model"],
@@ -206,8 +206,8 @@
   },
   {
     "id": "xt60u-f",
-    "name": "AMASS XT60U-F · Female sockets",
-    "description": "2 contacts · 15.3 × 8.3 × 17.4 mm",
+    "name": "AMASS XT60U-F \u00b7 Female sockets",
+    "description": "2 contacts \u00b7 15.3 \u00d7 8.3 \u00d7 17.4 mm",
     "parameters": {
       "model": "xt60u-f",
       "detail": "envelope"
@@ -215,7 +215,7 @@
     "catalog": {
       "designation": "XT60U-F",
       "manufacturer": "AMASS",
-      "sourceName": "AMASS 2024 catalog · page 13",
+      "sourceName": "AMASS 2024 catalog \u00b7 page 13",
       "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
       "productCodes": ["XT60U-F"],
       "verifiedParameters": ["model"],
@@ -247,8 +247,8 @@
   },
   {
     "id": "xt60h-m",
-    "name": "AMASS XT60H-M · Male pins",
-    "description": "2 contacts · 16.4 × 9.2 × 23.85 mm · with rear cover",
+    "name": "AMASS XT60H-M \u00b7 Male pins",
+    "description": "2 contacts \u00b7 16.4 \u00d7 9.2 \u00d7 23.85 mm \u00b7 with rear cover",
     "parameters": {
       "model": "xt60h-m",
       "detail": "envelope"
@@ -256,7 +256,7 @@
     "catalog": {
       "designation": "XT60H-M",
       "manufacturer": "AMASS",
-      "sourceName": "AMASS 2024 catalog · page 13",
+      "sourceName": "AMASS 2024 catalog \u00b7 page 13",
       "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
       "productCodes": ["XT60H-M"],
       "verifiedParameters": ["model"],
@@ -288,8 +288,8 @@
   },
   {
     "id": "xt60h-f",
-    "name": "AMASS XT60H-F · Female sockets",
-    "description": "2 contacts · 16.4 × 9.2 × 24.95 mm · with rear cover",
+    "name": "AMASS XT60H-F \u00b7 Female sockets",
+    "description": "2 contacts \u00b7 16.4 \u00d7 9.2 \u00d7 24.95 mm \u00b7 with rear cover",
     "parameters": {
       "model": "xt60h-f",
       "detail": "envelope"
@@ -297,7 +297,7 @@
     "catalog": {
       "designation": "XT60H-F",
       "manufacturer": "AMASS",
-      "sourceName": "AMASS 2024 catalog · page 13",
+      "sourceName": "AMASS 2024 catalog \u00b7 page 13",
       "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
       "productCodes": ["XT60H-F"],
       "verifiedParameters": ["model"],
@@ -329,8 +329,8 @@
   },
   {
     "id": "xt90h-m",
-    "name": "AMASS XT90H-M · Male pins",
-    "description": "2 contacts · 21.3 × 10.7 × 30.7 mm · with rear cover",
+    "name": "AMASS XT90H-M \u00b7 Male pins",
+    "description": "2 contacts \u00b7 21.3 \u00d7 10.7 \u00d7 30.7 mm \u00b7 with rear cover",
     "parameters": {
       "model": "xt90h-m",
       "detail": "envelope"
@@ -338,7 +338,7 @@
     "catalog": {
       "designation": "XT90H-M",
       "manufacturer": "AMASS",
-      "sourceName": "AMASS 2024 catalog · page 21",
+      "sourceName": "AMASS 2024 catalog \u00b7 page 21",
       "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
       "productCodes": ["XT90H-M"],
       "verifiedParameters": ["model"],
@@ -370,8 +370,8 @@
   },
   {
     "id": "xt90h-f",
-    "name": "AMASS XT90H-F · Female sockets",
-    "description": "2 contacts · 21.3 × 10.9 × 29.7 mm · with rear cover",
+    "name": "AMASS XT90H-F \u00b7 Female sockets",
+    "description": "2 contacts \u00b7 21.3 \u00d7 10.9 \u00d7 29.7 mm \u00b7 with rear cover",
     "parameters": {
       "model": "xt90h-f",
       "detail": "envelope"
@@ -379,7 +379,7 @@
     "catalog": {
       "designation": "XT90H-F",
       "manufacturer": "AMASS",
-      "sourceName": "AMASS 2024 catalog · page 21",
+      "sourceName": "AMASS 2024 catalog \u00b7 page 21",
       "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
       "productCodes": ["XT90H-F"],
       "verifiedParameters": ["model"],
@@ -411,8 +411,8 @@
   },
   {
     "id": "mr60-m",
-    "name": "AMASS MR60-M · Male pins",
-    "description": "3 contacts · 20.2 × 9.8 × 21.6 mm · with rear cover",
+    "name": "AMASS MR60-M \u00b7 Male pins",
+    "description": "3 contacts \u00b7 20.2 \u00d7 9.8 \u00d7 21.6 mm \u00b7 with rear cover",
     "parameters": {
       "model": "mr60-m",
       "detail": "envelope"
@@ -420,7 +420,7 @@
     "catalog": {
       "designation": "MR60-M",
       "manufacturer": "AMASS",
-      "sourceName": "AMASS 2024 catalog · page 16",
+      "sourceName": "AMASS 2024 catalog \u00b7 page 16",
       "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
       "productCodes": ["MR60-M"],
       "verifiedParameters": ["model"],
@@ -452,8 +452,8 @@
   },
   {
     "id": "mr60-f",
-    "name": "AMASS MR60-F · Female sockets",
-    "description": "3 contacts · 20.2 × 9.8 × 21.1 mm · with rear cover",
+    "name": "AMASS MR60-F \u00b7 Female sockets",
+    "description": "3 contacts \u00b7 20.2 \u00d7 9.8 \u00d7 21.1 mm \u00b7 with rear cover",
     "parameters": {
       "model": "mr60-f",
       "detail": "envelope"
@@ -461,7 +461,7 @@
     "catalog": {
       "designation": "MR60-F",
       "manufacturer": "AMASS",
-      "sourceName": "AMASS 2024 catalog · page 16",
+      "sourceName": "AMASS 2024 catalog \u00b7 page 16",
       "sourceUrl": "https://www.china-amass.com/public/upload/20240723/c1ae9604bbe795ebfd366c9063019e3e.pdf",
       "productCodes": ["MR60-F"],
       "verifiedParameters": ["model"],
@@ -487,6 +487,423 @@
         {
           "label": "Geometry limits",
           "value": "Published overall width, height and length. Internal contact pitch, bore depths, wall thickness, grip recesses and cover split are reconstructed from catalog illustrations, not tolerance-controlled mating geometry."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xt60e-f",
+    "name": "AMASS XT60E-F \u00b7 Female sockets",
+    "description": "Panel mount \u00b7 34 \u00d7 15.8 \u00d7 20.2 mm \u00b7 25 mm mounting centres",
+    "parameters": {
+      "model": "xt60e-f",
+      "detail": "envelope"
+    },
+    "catalog": {
+      "designation": "XT60E-F",
+      "manufacturer": "AMASS",
+      "sourceName": "AMASS XT60E-F.G/Y engineering drawing \u00b7 S0",
+      "sourceUrl": "http://pliki.aksotronik.pl/pdf/012682.pdf",
+      "productCodes": ["XT60E-F"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "AMASS flange envelope, overall length, mounting pattern and panel opening; reconstructed internal details.",
+        "limitations": "Reconstructed from AMASS dimension drawings, not original manufacturer CAD. Flange envelope/thickness, mounting-hole pitch and diameter, panel cutout and overall length follow the cited drawing. Contact pitch, socket depths, wall thickness, flange bevels, countersinks, gasket thickness and rear housing split are visual reconstructions. Cosmetic lettering, microscopic spring details, exact threads and wires are omitted. The nominal M2.5 mount is a smooth major-diameter bore; model is not a thread gauge.",
+        "sourceUrl": "http://pliki.aksotronik.pl/pdf/012682.pdf"
+      },
+      "attributes": {
+        "family": "XT60E",
+        "sex": "F",
+        "pins": 2,
+        "width": 34,
+        "height": 15.8,
+        "length": 20.2,
+        "mounting": "Panel",
+        "mountPitch": 25,
+        "mountDiameter": 3.1,
+        "flangeThickness": 4.1
+      },
+      "specifications": [
+        {
+          "label": "Mounting pattern",
+          "value": "2 \u00d7 3.10 mm \u00b7 25.00 mm centres \u00b7 M3 through fixing"
+        },
+        {
+          "label": "Recommended panel opening",
+          "value": "19.30 \u00d7 11.85 mm \u00b7 drawing-specific keyed profile; see GUIDE"
+        },
+        {
+          "label": "Panel datum",
+          "value": "Z=0 at the rear flange / gasket face; mating face points +Z."
+        },
+        {
+          "label": "Included gasket",
+          "value": "Yes \u00b7 thickness reconstructed"
+        },
+        {
+          "label": "Included wires",
+          "value": "No"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Reconstructed from AMASS dimension drawings, not original manufacturer CAD. Flange envelope/thickness, mounting-hole pitch and diameter, panel cutout and overall length follow the cited drawing. Contact pitch, socket depths, wall thickness, flange bevels, countersinks, gasket thickness and rear housing split are visual reconstructions. Cosmetic lettering, microscopic spring details, exact threads and wires are omitted. The nominal M2.5 mount is a smooth major-diameter bore; model is not a thread gauge."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xt60e-m",
+    "name": "AMASS XT60E-M \u00b7 Male pins",
+    "description": "Panel mount \u00b7 27.1 \u00d7 12.1 \u00d7 16.7 mm \u00b7 20.5 mm mounting centres",
+    "parameters": {
+      "model": "xt60e-m",
+      "detail": "envelope"
+    },
+    "catalog": {
+      "designation": "XT60E-M",
+      "manufacturer": "AMASS",
+      "sourceName": "AMASS XT60E-M specification \u00b7 2025V0",
+      "sourceUrl": "https://www.china-amass.net/uploads/36.XT60E-M%EF%BC%88V04%EF%BC%89-SPEC-2025V0.pdf",
+      "productCodes": ["XT60E-M"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "AMASS flange envelope, overall length, mounting pattern and panel opening; reconstructed internal details.",
+        "limitations": "Reconstructed from AMASS dimension drawings, not original manufacturer CAD. Flange envelope/thickness, mounting-hole pitch and diameter, panel cutout and overall length follow the cited drawing. Contact pitch, socket depths, wall thickness, flange bevels, countersinks, gasket thickness and rear housing split are visual reconstructions. Cosmetic lettering, microscopic spring details, exact threads and wires are omitted. The nominal M2.5 mount is a smooth major-diameter bore; model is not a thread gauge.",
+        "sourceUrl": "https://www.china-amass.net/uploads/36.XT60E-M%EF%BC%88V04%EF%BC%89-SPEC-2025V0.pdf"
+      },
+      "attributes": {
+        "family": "XT60E",
+        "sex": "M",
+        "pins": 2,
+        "width": 27.1,
+        "height": 12.1,
+        "length": 16.7,
+        "mounting": "Panel",
+        "mountPitch": 20.5,
+        "mountDiameter": 2.5,
+        "flangeThickness": 4
+      },
+      "specifications": [
+        {
+          "label": "Mounting pattern",
+          "value": "2 \u00d7 2.50 mm \u00b7 20.50 mm centres \u00b7 M2.5 threaded"
+        },
+        {
+          "label": "Recommended panel opening",
+          "value": "15.70 \u00d7 8.30 mm \u00b7 drawing-specific keyed profile; see GUIDE"
+        },
+        {
+          "label": "Panel datum",
+          "value": "Z=0 at the rear flange / gasket face; mating face points +Z."
+        },
+        {
+          "label": "Included gasket",
+          "value": "No"
+        },
+        {
+          "label": "Included wires",
+          "value": "No"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Reconstructed from AMASS dimension drawings, not original manufacturer CAD. Flange envelope/thickness, mounting-hole pitch and diameter, panel cutout and overall length follow the cited drawing. Contact pitch, socket depths, wall thickness, flange bevels, countersinks, gasket thickness and rear housing split are visual reconstructions. Cosmetic lettering, microscopic spring details, exact threads and wires are omitted. The nominal M2.5 mount is a smooth major-diameter bore; model is not a thread gauge."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xt90e-m",
+    "name": "AMASS XT90E-M \u00b7 Male pins",
+    "description": "Panel mount \u00b7 42 \u00d7 15.1 \u00d7 22.8 mm \u00b7 32.4 mm mounting centres",
+    "parameters": {
+      "model": "xt90e-m",
+      "detail": "envelope"
+    },
+    "catalog": {
+      "designation": "XT90E-M",
+      "manufacturer": "AMASS",
+      "sourceName": "AMASS XT90E-M specification \u00b7 2025V0",
+      "sourceUrl": "https://www.china-amass.net/uploads/80.XT90E-M-SPEC-2025V0.pdf",
+      "productCodes": ["XT90E-M"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "AMASS flange envelope, overall length, mounting pattern and panel opening; reconstructed internal details.",
+        "limitations": "Reconstructed from AMASS dimension drawings, not original manufacturer CAD. Flange envelope/thickness, mounting-hole pitch and diameter, panel cutout and overall length follow the cited drawing. Contact pitch, socket depths, wall thickness, flange bevels, countersinks, gasket thickness and rear housing split are visual reconstructions. Cosmetic lettering, microscopic spring details, exact threads and wires are omitted. The nominal M2.5 mount is a smooth major-diameter bore; model is not a thread gauge.",
+        "sourceUrl": "https://www.china-amass.net/uploads/80.XT90E-M-SPEC-2025V0.pdf"
+      },
+      "attributes": {
+        "family": "XT90E",
+        "sex": "M",
+        "pins": 2,
+        "width": 42,
+        "height": 15.1,
+        "length": 22.8,
+        "mounting": "Panel",
+        "mountPitch": 32.4,
+        "mountDiameter": 3.2,
+        "flangeThickness": 3
+      },
+      "specifications": [
+        {
+          "label": "Mounting pattern",
+          "value": "2 \u00d7 3.20 mm \u00b7 32.40 mm centres \u00b7 M3 through fixing"
+        },
+        {
+          "label": "Recommended panel opening",
+          "value": "22.30 \u00d7 10.70 mm \u00b7 drawing-specific keyed profile; see GUIDE"
+        },
+        {
+          "label": "Panel datum",
+          "value": "Z=0 at the rear flange / gasket face; mating face points +Z."
+        },
+        {
+          "label": "Included gasket",
+          "value": "No"
+        },
+        {
+          "label": "Included wires",
+          "value": "No"
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Reconstructed from AMASS dimension drawings, not original manufacturer CAD. Flange envelope/thickness, mounting-hole pitch and diameter, panel cutout and overall length follow the cited drawing. Contact pitch, socket depths, wall thickness, flange bevels, countersinks, gasket thickness and rear housing split are visual reconstructions. Cosmetic lettering, microscopic spring details, exact threads and wires are omitted. The nominal M2.5 mount is a smooth major-diameter bore; model is not a thread gauge."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xt30upb-m",
+    "name": "AMASS XT30UPB-M \u00b7 Male pins",
+    "description": "Vertical PCB \u00b7 5.00 mm contact pitch \u00b7 3.00 mm tails",
+    "parameters": {
+      "model": "xt30upb-m",
+      "detail": "envelope"
+    },
+    "catalog": {
+      "designation": "XT30UPB-M",
+      "manufacturer": "AMASS",
+      "sourceName": "AMASS XT30UPB-M specification \u00b7 2025V1 \u00b7 official archive",
+      "sourceUrl": "https://www.china-amass.net/uploads/XT30UPB-FM.rar",
+      "alternateSourceUrls": ["https://www.china-amass.net/xt30upb-m-product/"],
+      "productCodes": ["XT30UPB-M.G.Y"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "AMASS outline, PCB pin pattern and board-hole dimensions; reconstructed internal details.",
+        "limitations": "Dimension-based reconstruction, not original manufacturer CAD. Published overall dimensions, PCB contact centres, recommended board holes, solder-tail projection follow the cited AMASS drawing. Actual pin diameter, socket depth, contact spring slots, wall thickness, edge radii and internal contact retention are reconstructed. PCB plane is Z=0; solder tails project toward -Z. Mating direction is +Z. No wires, solder, circuit board or screws are included.",
+        "sourceUrl": "https://www.china-amass.net/uploads/XT30UPB-FM.rar"
+      },
+      "attributes": {
+        "family": "XT30UPB",
+        "sex": "M",
+        "pins": 2,
+        "width": 10.2,
+        "height": 5.6,
+        "length": 13.7,
+        "mounting": "PCB vertical",
+        "contactPitch": 5,
+        "pcbHoleDiameter": 1.8,
+        "pinProjection": 3
+      },
+      "attributeConditions": {
+        "height": "Overall Y housing extent.",
+        "length": "Overall Z extent along mating axis, including vertical solder tails where applicable."
+      },
+      "specifications": [
+        {
+          "label": "PCB power contacts",
+          "value": "2 \u00d7 \u00d81.80 mm recommended holes \u00b7 5.00 mm centres \u00b7 3.00 mm solder-tail projection"
+        },
+        {
+          "label": "Mounting datum",
+          "value": "PCB plane Z=0; contact centres X=\u00b12.50 mm, Y=0; mating +Z."
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Dimension-based reconstruction, not original manufacturer CAD. Published overall dimensions, PCB contact centres, recommended board holes, solder-tail projection follow the cited AMASS drawing. Actual pin diameter, socket depth, contact spring slots, wall thickness, edge radii and internal contact retention are reconstructed. PCB plane is Z=0; solder tails project toward -Z. Mating direction is +Z. No wires, solder, circuit board or screws are included."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xt30upb-f",
+    "name": "AMASS XT30UPB-F \u00b7 Female sockets",
+    "description": "Vertical PCB \u00b7 5.00 mm contact pitch \u00b7 3.00 mm tails",
+    "parameters": {
+      "model": "xt30upb-f",
+      "detail": "envelope"
+    },
+    "catalog": {
+      "designation": "XT30UPB-F",
+      "manufacturer": "AMASS",
+      "sourceName": "AMASS XT30UPB-F specification \u00b7 2025V1 \u00b7 official archive",
+      "sourceUrl": "https://www.china-amass.net/uploads/XT30UPB-FM.rar",
+      "alternateSourceUrls": ["https://www.china-amass.net/xt30upb-m-product/"],
+      "productCodes": ["XT30UPB-F.G.Y"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "AMASS outline, PCB pin pattern and board-hole dimensions; reconstructed internal details.",
+        "limitations": "Dimension-based reconstruction, not original manufacturer CAD. Published overall dimensions, PCB contact centres, recommended board holes, solder-tail projection follow the cited AMASS drawing. Actual pin diameter, socket depth, contact spring slots, wall thickness, edge radii and internal contact retention are reconstructed. PCB plane is Z=0; solder tails project toward -Z. Mating direction is +Z. No wires, solder, circuit board or screws are included.",
+        "sourceUrl": "https://www.china-amass.net/uploads/XT30UPB-FM.rar"
+      },
+      "attributes": {
+        "family": "XT30UPB",
+        "sex": "F",
+        "pins": 2,
+        "width": 10.2,
+        "height": 5.6,
+        "length": 12.4,
+        "mounting": "PCB vertical",
+        "contactPitch": 5,
+        "pcbHoleDiameter": 1.8,
+        "pinProjection": 3
+      },
+      "attributeConditions": {
+        "height": "Overall Y housing extent.",
+        "length": "Overall Z extent along mating axis, including vertical solder tails where applicable."
+      },
+      "specifications": [
+        {
+          "label": "PCB power contacts",
+          "value": "2 \u00d7 \u00d81.80 mm recommended holes \u00b7 5.00 mm centres \u00b7 3.00 mm solder-tail projection"
+        },
+        {
+          "label": "Mounting datum",
+          "value": "PCB plane Z=0; contact centres X=\u00b12.50 mm, Y=0; mating +Z."
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Dimension-based reconstruction, not original manufacturer CAD. Published overall dimensions, PCB contact centres, recommended board holes, solder-tail projection follow the cited AMASS drawing. Actual pin diameter, socket depth, contact spring slots, wall thickness, edge radii and internal contact retention are reconstructed. PCB plane is Z=0; solder tails project toward -Z. Mating direction is +Z. No wires, solder, circuit board or screws are included."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xt60pw-m30",
+    "name": "AMASS XT60PW-M30 \u00b7 Male pins",
+    "description": "Right-angle PCB \u00b7 7.20 mm contact pitch \u00b7 3.00 mm tails",
+    "parameters": {
+      "model": "xt60pw-m30",
+      "detail": "envelope"
+    },
+    "catalog": {
+      "designation": "XT60PW-M30",
+      "manufacturer": "AMASS",
+      "sourceName": "AMASS XT60PW-M30 specification \u00b7 2025V0",
+      "sourceUrl": "https://www.china-amass.net/uploads/34.XT60PW-M30-SPEC-2025V0.pdf",
+      "alternateSourceUrls": ["https://www.china-amass.net/xt60pw-m-product/"],
+      "productCodes": ["XT60PW-M30.G.Y"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "AMASS outline, PCB pin pattern and board-hole dimensions; reconstructed internal details.",
+        "limitations": "Dimension-based reconstruction, not original manufacturer CAD. Published overall dimensions, PCB contact centres, recommended board holes, solder-tail projection, hold-down spacing and recommended slots follow the cited AMASS drawing. Actual pin diameter, socket depth, contact spring slots, wall thickness, edge radii and internal contact retention are reconstructed. The 11.90 mm Y envelope is 8.40 mm body height plus 3.50 mm hold-down projection. The female front-face position relative to the pin pattern, 4.20 mm contact-axis height and 0.50 \u00d7 1.60 mm actual hold-down section are reconstructed; the published 6.00 mm row offset and 13.50 mm tab spacing are retained. PCB plane is Y=0; all through-board tails project toward -Y. Mating direction is +Z. No wires, solder, circuit board or screws are included.",
+        "sourceUrl": "https://www.china-amass.net/uploads/34.XT60PW-M30-SPEC-2025V0.pdf"
+      },
+      "attributes": {
+        "family": "XT60PW",
+        "sex": "M",
+        "pins": 2,
+        "width": 15.5,
+        "height": 11.9,
+        "length": 18.2,
+        "mounting": "PCB right angle",
+        "contactPitch": 7.2,
+        "pcbHoleDiameter": 2.9,
+        "pinProjection": 3,
+        "pcbHoldPitch": 13.5,
+        "pcbRowOffset": 6,
+        "pcbSlotWidth": 0.8,
+        "pcbSlotLength": 1.9,
+        "pcbTabProjection": 3.5
+      },
+      "attributeConditions": {
+        "height": "Overall Y extent includes 3.50 mm hold-down tails below the PCB datum.",
+        "length": "Overall Z extent along mating axis, including vertical solder tails where applicable."
+      },
+      "specifications": [
+        {
+          "label": "PCB power contacts",
+          "value": "2 \u00d7 \u00d82.90 mm recommended holes \u00b7 7.20 mm centres \u00b7 3.00 mm solder-tail projection"
+        },
+        {
+          "label": "Hold-downs",
+          "value": "2 \u00d7 0.80 \u00d7 1.90 mm recommended slots, 13.50 mm centres, 6.00 mm from the power-pin row; 3.50 mm projection."
+        },
+        {
+          "label": "Mounting datum",
+          "value": "PCB plane Y=0; power-pin row Z=-6.00 mm; mating +Z."
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Dimension-based reconstruction, not original manufacturer CAD. Published overall dimensions, PCB contact centres, recommended board holes, solder-tail projection, hold-down spacing and recommended slots follow the cited AMASS drawing. Actual pin diameter, socket depth, contact spring slots, wall thickness, edge radii and internal contact retention are reconstructed. The 11.90 mm Y envelope is 8.40 mm body height plus 3.50 mm hold-down projection. The female front-face position relative to the pin pattern, 4.20 mm contact-axis height and 0.50 \u00d7 1.60 mm actual hold-down section are reconstructed; the published 6.00 mm row offset and 13.50 mm tab spacing are retained. PCB plane is Y=0; all through-board tails project toward -Y. Mating direction is +Z. No wires, solder, circuit board or screws are included."
+        }
+      ]
+    }
+  },
+  {
+    "id": "xt60pw-f30",
+    "name": "AMASS XT60PW-F30 \u00b7 Female sockets",
+    "description": "Right-angle PCB \u00b7 7.20 mm contact pitch \u00b7 3.00 mm tails",
+    "parameters": {
+      "model": "xt60pw-f30",
+      "detail": "envelope"
+    },
+    "catalog": {
+      "designation": "XT60PW-F30",
+      "manufacturer": "AMASS",
+      "sourceName": "AMASS XT60PW-F30 specification \u00b7 2025V0",
+      "sourceUrl": "https://www.china-amass.net/uploads/35.XT60PW-F30-SPEC-2025V0.pdf",
+      "alternateSourceUrls": ["https://www.china-amass.net/xt60pw-f-product/"],
+      "productCodes": ["XT60PW-F30.G.Y"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "AMASS outline, PCB pin pattern and board-hole dimensions; reconstructed internal details.",
+        "limitations": "Dimension-based reconstruction, not original manufacturer CAD. Published overall dimensions, PCB contact centres, recommended board holes, solder-tail projection, hold-down spacing and recommended slots follow the cited AMASS drawing. Actual pin diameter, socket depth, contact spring slots, wall thickness, edge radii and internal contact retention are reconstructed. The 11.90 mm Y envelope is 8.40 mm body height plus 3.50 mm hold-down projection. The female front-face position relative to the pin pattern, 4.20 mm contact-axis height and 0.50 \u00d7 1.60 mm actual hold-down section are reconstructed; the published 6.00 mm row offset and 13.50 mm tab spacing are retained. PCB plane is Y=0; all through-board tails project toward -Y. Mating direction is +Z. No wires, solder, circuit board or screws are included.",
+        "sourceUrl": "https://www.china-amass.net/uploads/35.XT60PW-F30-SPEC-2025V0.pdf"
+      },
+      "attributes": {
+        "family": "XT60PW",
+        "sex": "F",
+        "pins": 2,
+        "width": 15.5,
+        "height": 11.9,
+        "length": 17.2,
+        "mounting": "PCB right angle",
+        "contactPitch": 7.2,
+        "pcbHoleDiameter": 2.9,
+        "pinProjection": 3,
+        "pcbHoldPitch": 13.5,
+        "pcbRowOffset": 6,
+        "pcbSlotWidth": 0.8,
+        "pcbSlotLength": 1.9,
+        "pcbTabProjection": 3.5
+      },
+      "attributeConditions": {
+        "height": "Overall Y extent includes 3.50 mm hold-down tails below the PCB datum.",
+        "length": "Overall Z extent along mating axis, including vertical solder tails where applicable."
+      },
+      "specifications": [
+        {
+          "label": "PCB power contacts",
+          "value": "2 \u00d7 \u00d82.90 mm recommended holes \u00b7 7.20 mm centres \u00b7 3.00 mm solder-tail projection"
+        },
+        {
+          "label": "Hold-downs",
+          "value": "2 \u00d7 0.80 \u00d7 1.90 mm recommended slots, 13.50 mm centres, 6.00 mm from the power-pin row; 3.50 mm projection."
+        },
+        {
+          "label": "Mounting datum",
+          "value": "PCB plane Y=0; power-pin row Z=-6.00 mm; mating +Z."
+        },
+        {
+          "label": "Geometry limits",
+          "value": "Dimension-based reconstruction, not original manufacturer CAD. Published overall dimensions, PCB contact centres, recommended board holes, solder-tail projection, hold-down spacing and recommended slots follow the cited AMASS drawing. Actual pin diameter, socket depth, contact spring slots, wall thickness, edge radii and internal contact retention are reconstructed. The 11.90 mm Y envelope is 8.40 mm body height plus 3.50 mm hold-down projection. The female front-face position relative to the pin pattern, 4.20 mm contact-axis height and 0.50 \u00d7 1.60 mm actual hold-down section are reconstructed; the published 6.00 mm row offset and 13.50 mm tab spacing are retained. PCB plane is Y=0; all through-board tails project toward -Y. Mating direction is +Z. No wires, solder, circuit board or screws are included."
         }
       ]
     }

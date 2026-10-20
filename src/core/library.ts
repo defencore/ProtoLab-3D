@@ -155,6 +155,8 @@ export const librarySections: { name: string; icon: PartDefinition['icon']; grou
     groups: [
       'SINGLE-BOARD COMPUTERS',
       'MICROCONTROLLER BOARDS',
+      'PROTOTYPING BOARDS',
+      'LED MODULES',
       'FLIGHT CONTROLLERS',
       'RADIO MODULES',
       'CAMERAS & VISION',

@@ -18,25 +18,35 @@ test('every AMASS series has separate pins and bored sockets within published bo
       [m.width, m.height, m.length].forEach((v, i) =>
         assert.ok(Math.abs(bounds.toArray()[i] - v) < 0.02, m.id),
       );
-      const metal = model.children.find((c) => c.name.includes('1 · solder cup'));
+      const pcb = 'pcb' in m && !!m.pcb;
+      const metal = model.children.find((c) =>
+        c.name.includes(pcb ? '1 · PCB tail' : '1 · solder cup'),
+      );
       assert.ok(metal);
+      const panel = 'panel' in m && m.panel;
       const tail = m.cover ? m.length * 0.27 : m.family === 'XT30U' ? 2.5 : 4;
-      const L = m.length - tail;
+      const L = panel ? m.flangeThickness! : pcb ? m.pcbFront! : m.length - tail;
       const ray = new Raycaster(
-        new Vector3((-(m.pins - 1) * m.pitch) / 2, 0, L + 5),
+        new Vector3((-(m.pins - 1) * m.pitch) / 2, pcb ? m.pcbAxisHeight! : 0, L + 5),
         new Vector3(0, 0, -1),
       );
       const hit = ray.intersectObject(metal, true)[0];
       assert.ok(hit);
-      assert.ok(m.sex === 'M' ? hit.point.z > L * 0.9 : hit.point.z < L * 0.4, m.id);
-      assert.equal(model.children.length, m.pins + 1 + Number(m.cover));
+      assert.ok(
+        m.sex === 'M' ? hit.point.z > L * (panel ? 0.7 : 0.9) : hit.point.z < L * 0.4,
+        m.id,
+      );
+      assert.equal(
+        model.children.length,
+        m.pins + 1 + Number(m.cover) + Number('gasket' in m && m.gasket) + (pcb ? m.holdDowns! : 0),
+      );
     } finally {
       disposeModel(model);
     }
   }
 });
 test('catalog selects real paired AMASS models and rejects arbitrary dimensions', () => {
-  for (const family of ['XT30U', 'XT60', 'XT60U', 'XT60H', 'XT90H', 'MR60']) {
+  for (const family of ['XT30U', 'XT60', 'XT60U', 'XT60H', 'XT90H', 'MR60', 'XT30UPB', 'XT60PW']) {
     assert.deepEqual(
       models
         .filter((m) => m.family === family)

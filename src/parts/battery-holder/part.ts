@@ -10,6 +10,7 @@ const part: PartDefinition = {
   id: 'battery-holder',
   product: productData as ProductProfile,
   name: 'Cylindrical cell holder',
+  browseFamily: { id: 'battery-holders', label: 'Battery holders' },
   category: 'POWER & MOTOR CONTROL',
   subgroup: 'BATTERIES & HOLDERS',
   icon: 'circuit',

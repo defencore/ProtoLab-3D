@@ -848,6 +848,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
             previewPending={assembly.pending}
             previewError={assembly.error || measurement.error || viewerError}
             onPreset={(preset) => applyPreset(part, preset)}
+            onSelectPart={(next) => selectPart(next)}
             onSelectModel={(next, preset, values) => {
               if (
                 !values ||
