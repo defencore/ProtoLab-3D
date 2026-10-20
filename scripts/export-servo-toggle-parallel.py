@@ -27,8 +27,8 @@ expected_components = len(case['components'])
 expected_solids = sum(len(obj.Shape.Solids) for obj in children)
 assert len(children) == expected_components
 dual = case['parameters']['mechanism'] == 'parallel-dual'
-assert expected_components == (30 if dual else 24)
-assert expected_solids == (59 if dual else 40)
+assert expected_components == (26 if dual else 20)
+assert expected_solids == (55 if dual else 36)
 assembly_stem = case['assemblyFileStem']
 installation_stem = case['installationFileStem']
 print_ids = {meta['id'] for meta in case['components'] if meta['supply'] == 'manufactured'}
@@ -39,7 +39,7 @@ for obj, meta in zip(children, case['components']):
         continue
     shape = obj.Shape.copy()
     assert shape.isValid() and shape.isClosed() and len(shape.Solids) == 1
-    if meta['id'] == 'parallel-clamp':
+    if meta['id'] in ('parallel-clamp', 'parallel-rocker'):
         shape.rotate(App.Vector(0, 0, 0), App.Vector(1, 0, 0), 180)
     bounds = shape.BoundBox
     shape.translate(App.Vector(-bounds.XMin, -bounds.YMin, -bounds.ZMin))

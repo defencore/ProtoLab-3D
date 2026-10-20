@@ -2,15 +2,21 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { Box3, Euler, Mesh, Ray, Vector3, type Object3D } from 'three';
 import part from '../src/parts/servo-toggle-actuator/part';
+import servoPart from '../src/parts/bus-servo/part';
 import { configured, kinematics } from '../src/parts/servo-toggle-actuator/lib/model';
 import { frame } from '../src/parts/servo-toggle-actuator/lib/frame';
 import { servoMount } from '../src/parts/servo-toggle-actuator/lib/servo-mount';
 import { layout } from '../src/parts/servo-toggle-actuator/lib/layout';
+import { parallelDetails } from '../src/parts/servo-toggle-actuator/lib/parallel';
 import { parallelMountDetails } from '../src/parts/servo-toggle-actuator/lib/parallel-mount';
-import { parallelPanelInterface } from '../src/parts/servo-toggle-actuator/lib/parallel-installation';
+import {
+  installedPanelInterface,
+  parallelPanelInterface,
+} from '../src/parts/servo-toggle-actuator/lib/parallel-installation';
 import { parallelLegendLayout } from '../src/parts/servo-toggle-actuator/lib/parallel-legends';
 import { hardwareLibraries } from '../src/parts/servo-toggle-actuator/lib/hardware';
 import { validateParameters } from '../src/core/validation';
+import { addProduct, createProject, parseProject } from '../src/core/design-project';
 import { matchingPresetId } from '../src/core/part-selection';
 import { disposeModel } from '../src/core/mechanical';
 import type { Parameters } from '../src/core/types';
@@ -118,6 +124,139 @@ function containsPoint(model: Object3D, point: Vector3): boolean {
     distances.filter((distance, index) => !index || distance - distances[index - 1] > 1e-7).length %
       2 ===
     1
+  );
+}
+
+function assertParallelCradleClearances(cradle: Object3D, servo: Object3D, dual: boolean) {
+  const world = (x: number, y: number, z: number) =>
+      dual ? dualWorldPoint(x, y, z) : new Vector3(x, y, z),
+    source = (x: number, y: number, z: number) => world(y, -28 - x, -15.2 + z);
+  for (const centreY of dual ? [0, -90] : [0]) {
+    for (const x of [-13.5, 0, 13.5])
+      assert.equal(
+        containsPoint(cradle, world(x, centreY + 8.2, 1.4)),
+        false,
+        'The case cavity stays open through the raised cradle rim without a printed ceiling.',
+      );
+    for (const x of [14.6, 17, 18.5, 21])
+      for (const y of [-8.8, -7, -5.5, 0, 5.5, 7, 8.8])
+        for (const z of [-5.9, -3, -0.1, 0.7, 1.4])
+          assert.equal(
+            containsPoint(cradle, world(x, centreY + y, z)),
+            false,
+            `The full side-terminal route clears the cradle at ${x}, ${centreY + y}, ${z}.`,
+          );
+    for (const y of [-11, 11])
+      assert.ok(
+        containsPoint(cradle, world(17, centreY + y, -3)),
+        'The widened terminal opening retains rigid walls on both sides.',
+      );
+  }
+  for (const side of [-1, 1]) {
+    for (const x of [-4, 0, 4]) {
+      assert.ok(
+        containsPoint(cradle, source(x, side * 11, -0.1)),
+        'Both shaft-end pads reach the stationary case underside.',
+      );
+      assert.equal(
+        containsPoint(cradle, source(x, side * 11, 0.1)),
+        false,
+        'The shaft-end supports stop at the case datum without entering the supplier solid.',
+      );
+      // The supplier's centre groove starts at Z0.1; probe inside its face, not on that boundary.
+      assert.ok(
+        containsPoint(servo, source(x, side * 11, x === 0 ? 0.2 : 0.1)),
+        'Each new support meets an actual stationary case face.',
+      );
+      assert.ok(
+        containsPoint(cradle, source(x, side * 15.5, -2)),
+        'Each shaft-end pad connects to a broad side wall.',
+      );
+    }
+  }
+  for (const x of [-9.5, 0, 12.5, 34.5])
+    for (const y of [-8.8, 0, 8.8])
+      for (const z of [-4.4, -10, -30])
+        assert.equal(
+          containsPoint(cradle, source(x, y, z)),
+          false,
+          'The 18 mm central cable approach remains clear beneath the servo.',
+        );
+}
+
+function assertParallelThroughHoles(base: Object3D, dual: boolean) {
+  const world = (x: number, y: number, z: number) =>
+    dual ? dualWorldPoint(x, y, z) : new Vector3(x, y, z);
+  for (const x of dual ? [-42, 42] : [-32, 32])
+    for (const y of dual ? [-114, 20] : [-74, 20])
+      for (const z of [1.6, 7, 7.4])
+        assert.equal(
+          containsPoint(base, world(x, y, z)),
+          false,
+          'Every M4 mounting hole passes through the complete raised flange without a printed roof.',
+        );
+  for (const y of dual ? [0, -90] : [0])
+    for (const z of [1.6, 7, 7.4])
+      assert.equal(
+        containsPoint(base, world(0, y, z)),
+        false,
+        'Every keyed switch bore stays open through the raised flange and its top nut seat.',
+      );
+}
+
+function assertParallelRockerMount(rotor: Object3D, lid: Object3D, servo: Object3D, dual: boolean) {
+  const world = (x: number, y: number, z: number) =>
+      dual ? dualWorldPoint(x, y, z) : new Vector3(x, y, z),
+    rotorPoint = (x: number, y: number, z: number) => world(x, -28 + y, 18.5 + z),
+    sourcePoint = (x: number, y: number, z: number) => world(y, -28 - x, -15.2 + z);
+  near(19.5 - new Box3().setFromObject(lid, true).max.z, 2, 0.001);
+  for (let degrees = 0; degrees < 360; degrees += 15) {
+    const angle = (degrees * Math.PI) / 180,
+      radial = (radius: number, z: number) =>
+        rotorPoint(radius * Math.cos(angle), radius * Math.sin(angle), z);
+    assert.ok(containsPoint(rotor, radial(9.5, 0.1)), 'The raised boss retains a complete rim.');
+    assert.equal(containsPoint(rotor, radial(9.7, 0.1)), false);
+    assert.equal(containsPoint(lid, radial(10.4, -1.1)), false);
+    assert.ok(containsPoint(lid, radial(10.6, -1.1)));
+    assert.equal(
+      containsPoint(rotor, radial(12.5, 0.9)),
+      false,
+      'The broad rotating underside is raised above the lid at every yaw.',
+    );
+    assert.ok(containsPoint(rotor, radial(12.5, 1.1)));
+  }
+  assert.equal(containsPoint(rotor, rotorPoint(4.5, 0, 0.1)), false);
+  assert.ok(containsPoint(rotor, rotorPoint(4.7, 0, 0.1)));
+  for (const [x, y] of [
+    [8.5, 0],
+    [-8.5, 0],
+    [0, 8.5],
+    [0, -8.5],
+  ])
+    for (const z of [0.1, 1.1, 7.9])
+      assert.equal(
+        containsPoint(rotor, rotorPoint(x, y, z)),
+        false,
+        'All four M3 clearance holes pass through the boss and full rocker thickness.',
+      );
+  for (const side of [-1, 1])
+    for (const x of [-4, 0, 4]) {
+      assert.ok(
+        containsPoint(lid, sourcePoint(x, side * 11, 29.1)),
+        'Both upper shaft-end ribs connect to the lid and retain the stationary case.',
+      );
+      assert.ok(containsPoint(lid, sourcePoint(x, side * 15.5, 30.5)));
+      // The source centre groove interrupts this face; both sides retain real contact shoulders.
+      if (x !== 0)
+        assert.ok(
+          containsPoint(servo, sourcePoint(x, side * 11, 28.9)),
+          `The upper rib meets stationary case material at native ${x}, ${side * 11}, 28.9.`,
+        );
+    }
+  assert.equal(
+    containsPoint(lid, sourcePoint(0, 10, 29.1)),
+    false,
+    'The upper ribs retain the complete radius 10.5 output opening.',
   );
 }
 
@@ -385,11 +524,7 @@ test('bottom cage ties and thin nuts stay below the moving fork at default and r
 });
 
 test('source-disc fasteners retain M1.6 nuts that clear the unchanged supplier hub', () => {
-  for (const input of [
-    p({ phase: 'press-off' }),
-    rocker({ phase: 'press-on' }),
-    parallel({ phase: 'press-off' }),
-  ]) {
+  for (const input of [p({ phase: 'press-off' }), rocker({ phase: 'press-on' })]) {
     const nuts = part.composition!(input).components.filter((c) =>
       /^(?:rocker-|parallel-)?disc-nut-/.test(c.id),
     );
@@ -405,6 +540,85 @@ test('source-disc fasteners retain M1.6 nuts that clear the unchanged supplier h
       );
     }
   }
+});
+
+test('parallel rockers clamp modified servo discs with four M3 screws and no underside nuts', () => {
+  assert.equal(servoPart.defaults.hornMount, 'original');
+  for (const input of [p(), rocker()])
+    assert.equal(
+      part.composition!(input).components.find((component) => component.id === 'drive-servo')!
+        .parameters.hornMount,
+      'original',
+    );
+  for (const mechanism of ['parallel', 'parallel-dual'])
+    for (const phase of ['off', 'press-on', 'on', 'press-off']) {
+      const input = mechanism === 'parallel' ? parallel({ phase }) : dual({ phase }),
+        components = part.composition!(input).components,
+        servo = components.find((component) => component.id === 'drive-servo')!,
+        screws = components.filter((component) => component.id.startsWith('parallel-disc-screw-')),
+        axis = mechanism === 'parallel' ? new Vector3(0, -28, 0) : dualWorldPoint(0, -28, 0);
+      assert.equal(servo.parameters.hornMount, 'rocker-m3');
+      assert.deepEqual(validateParameters(servoPart, servo.parameters, 'assembled'), []);
+      assert.equal(screws.length, 4);
+      assert.equal(
+        components.some((component) => component.id.startsWith('parallel-disc-nut-')),
+        false,
+      );
+      for (const screw of screws) {
+        assert.equal(screw.parameters.diameter, 3);
+        assert.equal(screw.parameters.length, 14);
+        const position = screw.placement!.translation,
+          underHead = position[2] + (14 - Number(screw.parameters.headHeight)) / 2;
+        near(underHead, 28.7);
+        near(underHead - 14, 14.7);
+        near(Math.hypot(position[0] - axis.x, position[1] - axis.y), 7);
+      }
+    }
+  const shapes = parallelDetails(parallel()),
+    rotor = shapes.find((detail) => detail.id === 'parallel-rocker')!.shape,
+    lid = shapes.find((detail) => detail.id === 'parallel-clamp')!.shape,
+    boss = cylinders(rotor).find((shape) => shape.radius === 9.6 && shape.height === 1)!,
+    opening = cylinders(lid).find((shape) => shape.radius === 10.5)!;
+  assert.ok(boss);
+  assert.ok(opening);
+  near(opening.radius - boss.radius, 0.9, 0.000001);
+});
+
+test('saved ST3215 projects acquire only the original disc installation without weakening validation', () => {
+  const library = [servoPart],
+    projectWith = (parameters: Parameters) =>
+      addProduct(createProject('Servo installation'), library, {
+        part: servoPart,
+        parameters,
+        state: 'assembled',
+      }).project;
+  for (const showHorn of [false, true]) {
+    const project = projectWith({ ...servoPart.defaults, showHorn }),
+      configuration = project.configurations[0];
+    delete configuration.parameters.hornMount;
+    const expected = structuredClone(project);
+    expected.configurations[0].parameters.hornMount = 'original';
+    assert.deepEqual(parseProject(JSON.stringify(project), library), expected);
+    for (const key of ['model', 'outputAngle', 'showHorn']) {
+      const missing = structuredClone(project);
+      delete missing.configurations[0].parameters[key];
+      assert.throws(() => parseProject(JSON.stringify(missing), library), key);
+    }
+    for (const [key, value] of [
+      ['model', 42],
+      ['outputAngle', '0'],
+      ['showHorn', 0],
+      ['unexpected', true],
+    ] as const) {
+      const invalid = structuredClone(project);
+      invalid.configurations[0].parameters[key] = value;
+      assert.throws(() => parseProject(JSON.stringify(invalid), library), key);
+    }
+  }
+  const explicit = projectWith({ ...servoPart.defaults, showHorn: true, hornMount: 'rocker-m3' });
+  assert.deepEqual(parseProject(JSON.stringify(explicit), library), explicit);
+  explicit.configurations[0].parameters.hornMount = 'invalid';
+  assert.throws(() => parseProject(JSON.stringify(explicit), library), /disc installation/i);
 });
 
 test('the default rocker uses three printed details and keeps the supplied source units intact', () => {
@@ -432,6 +646,7 @@ test('the default rocker uses three printed details and keeps the supplied sourc
   assert.equal(toggle.parameters.model, 'daier-asw-07d');
   assert.equal(toggle.parameters.panelThickness, 3);
   assert.equal(servo.parameters.showHorn, true);
+  assert.equal(servo.parameters.hornMount, 'original');
   for (const item of pieces.filter((c) => c.component.supply === 'purchased'))
     assert.equal(item.preserveLibraryAppearance, true);
   assert.ok(
@@ -567,10 +782,11 @@ test('parallel shafts retain source body poses and clamp the full flange with up
   near(servo.placement!.translation[2] + 33.7, 18.5);
   assert.equal(servo.parameters.model, 'st3215-12v');
   assert.equal(servo.parameters.showHorn, true);
+  assert.equal(servo.parameters.hornMount, 'rocker-m3');
   assert.equal(toggle.parameters.model, 'daier-asw-07d');
   assert.equal(toggle.parameters.panelThickness, 3.8);
   assert.equal(toggle.parameters.mountingHardware, 'upper-only');
-  assert.equal(children.length, 24);
+  assert.equal(children.length, 20);
   assert.equal(printed.filter((c) => /PETG/.test(c.manufacturing!.material)).length, 4);
   assert.equal(printed.filter((c) => /TPU/.test(c.manufacturing!.material)).length, 2);
   const clampScrews = children.filter((c) => c.id.startsWith('parallel-clamp-screw-')),
@@ -668,21 +884,25 @@ test('the parallel mounting interface has a fixed top datum, a rounded host open
       actual = parallelPanelInterface(input),
       children = part.composition!(input).components;
     assert.equal(actual.mountingPlane, 0);
+    assert.equal(actual.flangeBottom, 1.5);
     assert.equal(actual.flangeThickness, 6);
+    assert.equal(actual.flangeTop, 7.5);
+    assert.deepEqual(actual.switchNutSeat, { radius: 9.3, floorZ: 6.8 });
     assert.deepEqual(actual.cutout, {
       width: 56,
       height: 84,
       radius: 4,
       centre: [0, -28],
-      terminalNotch: { width: 16, height: 12, radius: 2, centre: [34, 0] },
+      terminalNotch: { width: 16, height: 20, radius: 2, centre: [34, 0] },
       additionalTerminalNotches: [],
     });
-    assert.equal(actual.gasketThickness, 0.8);
+    assert.equal(actual.gasketThickness, 1.5);
     assert.equal(actual.flangeCornerRadius, 4);
     assert.deepEqual(actual.groundClip, {
-      min: [14.5, -4.5, -5.1],
-      size: [17, 9, 5],
+      min: [14.5, -7, -5.1],
+      size: [17, 14, 5],
       insertionStroke: 10,
+      lateralOffsets: [-1, 0, 1],
       approachSide: 'positive-x',
     });
     assert.equal(actual.holeDiameter, 4.5);
@@ -702,6 +922,38 @@ test('the parallel mounting interface has a fixed top datum, a rounded host open
     );
     assert.deepEqual(validateParameters(part, input, 'assembled'), []);
   }
+  const dualPanel = installedPanelInterface(dual());
+  assert.deepEqual(dualPanel.manualSwitch?.tieAxes, [
+    [-101, 22],
+    [-76, -22],
+  ]);
+  assert.deepEqual(dualPanel.manualSwitch?.guardSeat, {
+    centre: [-90, 7],
+    outerSize: [19, 42.6],
+    pocketSize: [17.4, 41],
+    floorZ: 9.5,
+    rimZ: 9.7,
+    depth: 0.2,
+    lateralClearance: 0.2,
+  });
+  assert.deepEqual(dualPanel.cutout.terminalNotch, {
+    width: 20,
+    height: 16,
+    radius: 2,
+    centre: [0, -34],
+  });
+  assert.deepEqual(dualPanel.cutout.additionalTerminalNotches, [
+    { width: 20, height: 16, radius: 2, centre: [-90, -34] },
+  ]);
+  assert.deepEqual(dualPanel.groundClip, {
+    min: [-7, -31.5, -5.1],
+    size: [14, 17, 5],
+    insertionStroke: 10,
+    lateralOffsets: [-1, 0, 1],
+    lateralAxis: 'x',
+    insertionAxis: 'y',
+    approachSide: 'negative-y',
+  });
   assert.deepEqual(
     part.composition!(parallel()).components,
     part.composition!(parallel({ deckHeight: 65 })).components,
@@ -868,7 +1120,7 @@ test('the second guarded switch stays mechanically independent of every front se
         manual = children.find((component) => component.id === 'manual-toggle-switch')!,
         printed = children.filter((component) => component.supply === 'manufactured');
       assert.deepEqual(validateParameters(part, input, 'assembled'), []);
-      assert.equal(children.length, 30);
+      assert.equal(children.length, 26);
       assert.equal(printed.length, 7);
       assert.equal(
         printed.filter((component) => /PETG/.test(component.manufacturing!.material)).length,
@@ -931,7 +1183,7 @@ test('the rear through ties retain the manual cradle without crossing its ground
     nuts = children.filter((component) => component.id.startsWith('manual-clamp-nut-')),
     positions = [
       [-101, 22],
-      [-79, -22],
+      [-76, -22],
     ];
   assert.equal(screws.length, 2);
   assert.equal(nuts.length, 2);
@@ -970,7 +1222,7 @@ test('the rear through ties retain the manual cradle without crossing its ground
   for (const [id, position] of [
     ['manual-toggle-switch', [-35, 0, 45]],
     ['parallel-manual-gasket', [0, -50, 35]],
-    ['parallel-clamp', [-30, 0, 25]],
+    ['parallel-clamp', [-45, 0, 25]],
     ['parallel-rocker', [0, -45, 25]],
   ] as const)
     assert.deepEqual(
@@ -978,6 +1230,81 @@ test('the rear through ties retain the manual cradle without crossing its ground
       position,
       'Inspection offsets rotate with the physical assembly.',
     );
+});
+
+test('the SAC-01 seat captures the guard base from above and retains the flat 1.5 mm gasket stack', () => {
+  const input = dual(),
+    pieces = configured(input, 'assembled'),
+    model = part.buildGeometry(input, 'assembled');
+  try {
+    model.updateMatrixWorld(true);
+    const child = (id: string) =>
+        model.children[pieces.findIndex((piece) => piece.component.id === id)],
+      base = child('parallel-base'),
+      manual = child('manual-toggle-switch');
+    for (const id of [
+      'parallel-switch-gasket',
+      'parallel-manual-gasket',
+      'parallel-panel-gasket',
+    ]) {
+      const bounds = new Box3().setFromObject(child(id), true);
+      near(bounds.min.z, 0, 0.001);
+      near(bounds.max.z, 1.5, 0.001);
+    }
+    for (const x of [-20, 12]) {
+      assert.equal(containsPoint(base, dualWorldPoint(x, -90, 1.4)), false);
+      assert.ok(
+        containsPoint(base, dualWorldPoint(x, -90, 1.6)),
+        'The guard support starts on the common flat flange without an underside gasket recess.',
+      );
+      assert.ok(containsPoint(base, dualWorldPoint(x, -90, 9.49)));
+      assert.equal(containsPoint(base, dualWorldPoint(x, -90, 9.51)), false);
+      assert.ok(
+        containsPoint(manual, dualWorldPoint(x, -90, 9.51)),
+        'Both end lands support the actual SAC-01 metal base at its unchanged source height.',
+      );
+    }
+    for (const [x, y] of [
+      [-27.9, -90],
+      [13.9, -90],
+      [-16, -99.1],
+      [-16, -80.9],
+      [12, -99.1],
+      [12, -80.9],
+    ]) {
+      assert.ok(
+        containsPoint(base, dualWorldPoint(x, y, 9.6)),
+        'The shallow seat retains walls above its Z9.5 floor to resist guard rotation.',
+      );
+      assert.equal(containsPoint(base, dualWorldPoint(x, y, 9.71)), false);
+    }
+    for (const x of [-9, 0, 9])
+      for (const y of [-99, -90, -81])
+        for (const z of [7.6, 9.4, 9.6])
+          assert.equal(
+            containsPoint(base, dualWorldPoint(x, y, z)),
+            false,
+            'The central guard stack remains clear between the two broad end lands.',
+          );
+    for (const centreY of [0, -90]) {
+      assert.ok(containsPoint(base, dualWorldPoint(8, centreY, 6.79)));
+      for (const z of [6.81, 7.4])
+        assert.equal(
+          containsPoint(base, dualWorldPoint(8, centreY, z)),
+          false,
+          'Both source nuts retain the Z6.8 floor within shallow top counterbores.',
+        );
+      assert.ok(containsPoint(base, dualWorldPoint(9.6, centreY, 7.4)));
+    }
+    for (const z of [3.1, 7.4, 9.6])
+      assert.equal(
+        containsPoint(base, dualWorldPoint(-22, -98.5, z)),
+        false,
+        'The manual M3 head recess remains open through the raised guard support.',
+      );
+  } finally {
+    disposeModel(model);
+  }
 });
 
 test('assembled and separated previews have positive component volumes and consistent overall bounds', () => {
@@ -1016,12 +1343,33 @@ test('assembled and separated previews have positive component volumes and consi
       const expected = part.dimensions(input, state),
         actual = new Box3().setFromObject(model, true).getSize(new Vector3()).toArray();
       expected.forEach((v, i) => near(v, actual[i], 0.01));
+      if (['parallel', 'parallel-dual'].includes(mechanism) && state === 'exploded') {
+        const pieces = configured(input, state),
+          base =
+            model.children[pieces.findIndex((piece) => piece.component.id === 'parallel-base')];
+        for (const [index, piece] of pieces.entries()) {
+          if (!piece.component.id.startsWith('parallel-clamp-screw-')) continue;
+          const screw = model.children[index],
+            bounds = new Box3().setFromObject(screw, true),
+            tip = bounds.getCenter(new Vector3()).setZ(bounds.min.z + 0.1);
+          assert.ok(
+            containsPoint(screw, tip),
+            'The inspection clearance probe lies inside the actual M3 screw tip.',
+          );
+          assert.equal(
+            containsPoint(base, tip),
+            false,
+            `${piece.component.id} clears the carrier and SAC-01 support in the inspection view.`,
+          );
+        }
+      }
       if (mechanism === 'parallel' && state === 'assembled') {
         const pieces = configured(input, state),
           base =
             model.children[pieces.findIndex((piece) => piece.component.id === 'parallel-base')],
           cradle =
             model.children[pieces.findIndex((piece) => piece.component.id === 'parallel-cradle')],
+          servo = model.children[pieces.findIndex((piece) => piece.component.id === 'drive-servo')],
           switchGasket =
             model.children[
               pieces.findIndex((piece) => piece.component.id === 'parallel-switch-gasket')
@@ -1035,6 +1383,8 @@ test('assembled and separated previews have positive component volumes and consi
           lid =
             model.children[pieces.findIndex((piece) => piece.component.id === 'parallel-clamp')],
           sourcePoint = (x: number, y: number, z: number) => new Vector3(y, -28 - x, -15.2 + z);
+        assertParallelCradleClearances(cradle, servo, false);
+        assertParallelThroughHoles(base, false);
         for (const [x, y, z] of [
           [12.5, -15.3, 10],
           [12.5, 15.3, 10],
@@ -1065,16 +1415,19 @@ test('assembled and separated previews have positive component volumes and consi
         );
         assert.ok(
           containsPoint(base, new Vector3(30, 0, 3)),
-          'The integrated 6 mm flange starts above the external TPU sheet at Z0.8.',
+          'The integrated 6 mm flange starts above the external TPU sheet at Z1.5.',
         );
         assert.ok(
           containsPoint(base, new Vector3(5.6, 0, 4)),
           'The upper switch web retains its anti-rotation key.',
         );
         assert.ok(
-          containsPoint(base, new Vector3(8, 0, 1)),
-          'The keyed switch bore has a full-height flange web without a lower-nut counterbore.',
+          containsPoint(base, new Vector3(8, 0, 1.6)),
+          'The keyed switch bore retains a flat underside below the upper nut seat.',
         );
+        assert.ok(containsPoint(base, new Vector3(8, 0, 6.79)));
+        assert.equal(containsPoint(base, new Vector3(8, 0, 6.81)), false);
+        assert.ok(containsPoint(base, new Vector3(9.6, 0, 7.4)));
         for (const [x, y] of [
           [-20, -18],
           [20, -18],
@@ -1082,16 +1435,16 @@ test('assembled and separated previews have positive component volumes and consi
           [20, -63],
         ]) {
           assert.ok(
-            containsPoint(cradle, new Vector3(x + 3, y, 0.5)),
-            'The lower cradle has a broad flat rim up to Z0.8.',
+            containsPoint(cradle, new Vector3(x + 3, y, 1.4)),
+            'The lower cradle has a broad flat rim up to Z1.5.',
           );
-          assert.equal(containsPoint(base, new Vector3(x + 3, y, 0.5)), false);
-          for (const z of [0.9, 1.9, 3.9, 6.7])
+          assert.equal(containsPoint(base, new Vector3(x + 3, y, 1.4)), false);
+          for (const z of [1.6, 1.9, 3.9, 7.4])
             assert.ok(
               containsPoint(base, new Vector3(x + 3, y, z)),
               'Through M3 screws align flat shoulders without blind underside locating pockets.',
             );
-          assert.equal(containsPoint(cradle, new Vector3(x + 3, y, 0.9)), false);
+          assert.equal(containsPoint(cradle, new Vector3(x + 3, y, 1.6)), false);
         }
         for (const point of [new Vector3(16, 0, -10), new Vector3(0, 11, -10)])
           assert.ok(containsPoint(cradle, point), 'Rigid flats enclose the actual ASW case.');
@@ -1108,11 +1461,11 @@ test('assembled and separated previews have positive component volumes and consi
         for (const gasket of [switchGasket, panelGasket]) {
           const bounds = new Box3().setFromObject(gasket, true);
           near(bounds.min.z, 0, 0.001);
-          near(bounds.max.z, 0.8, 0.001);
+          near(bounds.max.z, 1.5, 0.001);
         }
         for (const [gasket, point] of [
-          [switchGasket, new Vector3(13, 0, 0.4)],
-          [panelGasket, new Vector3(36, -27, 0.4)],
+          [switchGasket, new Vector3(13, 0, 1.4)],
+          [panelGasket, new Vector3(36, -27, 1.4)],
         ] as const) {
           assert.ok(containsPoint(gasket, point));
           assert.equal(
@@ -1121,8 +1474,8 @@ test('assembled and separated previews have positive component volumes and consi
             'The external TPU sheet lies entirely below the flat PETG flange.',
           );
           assert.ok(
-            containsPoint(base, point.clone().setZ(0.9)),
-            'The gasket seats against the common flat flange underside at Z0.8.',
+            containsPoint(base, point.clone().setZ(1.6)),
+            'The gasket seats against the common flat flange underside at Z1.5.',
           );
         }
         assert.equal(containsPoint(switchGasket, new Vector3(0, 0, 0.4)), false);
@@ -1132,7 +1485,7 @@ test('assembled and separated previews have positive component volumes and consi
         );
         assert.equal(containsPoint(panelGasket, new Vector3(32, 20, 0.4)), false);
         assert.equal(containsPoint(base, new Vector3(36, 20, 0.4)), false);
-        assert.ok(containsPoint(base, new Vector3(36, 20, 0.9)));
+        assert.ok(containsPoint(base, new Vector3(36, 20, 1.6)));
         assert.equal(
           containsPoint(base, new Vector3(39, 27, 3)),
           false,
@@ -1147,6 +1500,7 @@ test('assembled and separated previews have positive component volumes and consi
         assert.ok(containsPoint(cradle, new Vector3(17, 11, -10)));
         const rotorBounds = new Box3().setFromObject(rotor, true),
           lidBounds = new Box3().setFromObject(lid, true);
+        assertParallelRockerMount(rotor, lid, servo, false);
         near(rotorBounds.min.x, -33, 0.01);
         near(rotorBounds.max.x, 33, 0.01);
         near(rotorBounds.min.y, -41, 0.01);
@@ -1174,24 +1528,30 @@ test('assembled and separated previews have positive component volumes and consi
             model.children[pieces.findIndex((piece) => piece.component.id === id)],
           base = child('parallel-base'),
           lower = child('parallel-cradle'),
+          servo = child('drive-servo'),
+          rotor = child('parallel-rocker'),
+          lid = child('parallel-clamp'),
           gasket = child('parallel-manual-gasket'),
           bounds = new Box3().setFromObject(gasket, true);
+        assertParallelCradleClearances(lower, servo, true);
+        assertParallelThroughHoles(base, true);
+        assertParallelRockerMount(rotor, lid, servo, true);
         near(bounds.min.z, 0, 0.001);
-        near(bounds.max.z, 0.8, 0.001);
+        near(bounds.max.z, 1.5, 0.001);
         const plateBounds = new Box3().setFromObject(base, true);
         near(plateBounds.min.x, -47 - Number(input.baseWidth) / 2, 0.001);
         near(plateBounds.max.x, -47 + Number(input.baseWidth) / 2, 0.001);
         near(plateBounds.min.y, -Number(input.baseLength) / 2, 0.001);
         near(plateBounds.max.y, Number(input.baseLength) / 2, 0.001);
         assert.ok(
-          containsPoint(gasket, dualWorldPoint(8, -90, 0.4)),
+          containsPoint(gasket, dualWorldPoint(8, -90, 1.4)),
           'The rear case gasket uses its smaller diameter12.6 bushing clearance.',
         );
-        assert.equal(containsPoint(base, dualWorldPoint(8, -90, 0.4)), false);
-        assert.ok(containsPoint(base, dualWorldPoint(8, -90, 0.9)));
+        assert.equal(containsPoint(base, dualWorldPoint(8, -90, 1.4)), false);
+        assert.ok(containsPoint(base, dualWorldPoint(8, -90, 1.6)));
         assert.ok(
           containsPoint(base, dualWorldPoint(8, -90, 6.4)),
-          'The guarded-source lower nut seats on the common flat Z6.8 flange top.',
+          'The source nut retains its floor at Z6.8 below the raised flange top.',
         );
         assert.deepEqual(
           parallelLegendLayout.map((legend) => legend.text),
@@ -1210,19 +1570,19 @@ test('assembled and separated previews have positive component volumes and consi
           ];
           for (const [x, y, retained] of probes) {
             assert.equal(
-              containsPoint(base, new Vector3(x, y, 6.5)),
+              containsPoint(base, new Vector3(x, y, 7.2)),
               retained,
               `${index === 0 ? 'ARM 1' : 'ARM 2'} stroke/counter/space content at ${x}, ${y}`,
             );
             assert.ok(
-              containsPoint(base, new Vector3(x, y, 6.19)),
-              'Engraving retains the carrier below Z6.2.',
+              containsPoint(base, new Vector3(x, y, 6.89)),
+              'Engraving retains the carrier below Z6.9.',
             );
             if (!retained)
               assert.equal(
-                containsPoint(base, new Vector3(x, y, 6.21)),
+                containsPoint(base, new Vector3(x, y, 6.91)),
                 false,
-                'The absolute engraving floor is Z6.2.',
+                'The absolute engraving floor is Z6.9.',
               );
           }
         }

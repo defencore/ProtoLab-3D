@@ -5,6 +5,11 @@ export const isParallel = (p: Parameters) =>
   p.mechanism === 'parallel' || p.mechanism === 'parallel-dual';
 export const isDual = (p: Parameters) => p.mechanism === 'parallel-dual';
 
+/** Full-width side access for the switch blade and its insulated receptacle. */
+export function parallelTerminalChannel(switchY = 0): Shape {
+  return box([12, 18.4, 7.6], [13, switchY - 9.2, -6]);
+}
+
 /** Install the two-switch panel horizontally: manual ARM 1 on the left. */
 export const dualPanelPoint = ([x, y, z]: readonly [number, number, number]): [
   number,
@@ -45,19 +50,29 @@ export function parallelPanelInterface(p: Parameters) {
     flangeY = dual ? -47 : -27;
   return {
     mountingPlane: 0,
-    flangeBottom: 0.8,
+    flangeBottom: 1.5,
     flangeThickness: 6,
-    flangeTop: 6.8,
+    flangeTop: 7.5,
     flangeCornerRadius: 4,
-    gasketThickness: 0.8,
+    gasketThickness: 1.5,
+    switchNutSeat: { radius: 9.3, floorZ: 6.8 },
     flangeCentre: [0, flangeY] as const,
     manualSwitch: dual
       ? {
           centre: [0, -90] as const,
           webTop: 6.8,
+          guardSeat: {
+            centre: [-7, -90] as const,
+            outerSize: [42.6, 19] as const,
+            pocketSize: [41, 17.4] as const,
+            floorZ: 9.5,
+            rimZ: 9.7,
+            depth: 0.2,
+            lateralClearance: 0.2,
+          },
           tieAxes: [
             [-22, -101],
-            [22, -79],
+            [22, -76],
           ] as const,
         }
       : undefined,
@@ -66,9 +81,9 @@ export function parallelPanelInterface(p: Parameters) {
       height: dual ? 124 : 84,
       radius: 4,
       centre: [0, dual ? -48 : -28] as const,
-      terminalNotch: { width: 16, height: 12, radius: 2, centre: [34, 0] as const },
+      terminalNotch: { width: 16, height: 20, radius: 2, centre: [34, 0] as const },
       additionalTerminalNotches: dual
-        ? [{ width: 16, height: 12, radius: 2, centre: [34, -90] as const }]
+        ? [{ width: 16, height: 20, radius: 2, centre: [34, -90] as const }]
         : [],
     },
     mountingHoles: [-1, 1].flatMap((side) =>
@@ -78,9 +93,10 @@ export function parallelPanelInterface(p: Parameters) {
     // A straight approach to 0.1 mm before the source rear cover, not an inferred port.
     cableApproach: { nativeMin: [-10, -9, -35] as const, nativeMax: [35, 9, -4.2] as const },
     groundClip: {
-      min: [14.5, -4.5, -5.1] as const,
-      size: [17, 9, 5] as const,
+      min: [14.5, -7, -5.1] as const,
+      size: [17, 14, 5] as const,
       insertionStroke: 10,
+      lateralOffsets: [-1, 0, 1] as const,
       approachSide: 'positive-x',
     },
   };
@@ -149,6 +165,12 @@ export function installedPanelInterface(p: Parameters) {
           ...panel.manualSwitch,
           centre: point(panel.manualSwitch.centre),
           tieAxes: panel.manualSwitch.tieAxes.map(point),
+          guardSeat: {
+            ...panel.manualSwitch.guardSeat,
+            centre: point(panel.manualSwitch.guardSeat.centre),
+            outerSize: [...panel.manualSwitch.guardSeat.outerSize].reverse(),
+            pocketSize: [...panel.manualSwitch.guardSeat.pocketSize].reverse(),
+          },
         }
       : undefined,
     cutout: {
@@ -162,9 +184,10 @@ export function installedPanelInterface(p: Parameters) {
     mountingHoles: panel.mountingHoles.map(point),
     groundClip: {
       ...panel.groundClip,
-      min: [-4.5, -31.5, -5.1],
-      size: [9, 17, 5],
+      min: [-7, -31.5, -5.1],
+      size: [14, 17, 5],
       insertionAxis: 'y',
+      lateralAxis: 'x',
       approachSide: 'negative-y',
     },
     legends: [

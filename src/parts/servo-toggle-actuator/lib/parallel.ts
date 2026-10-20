@@ -9,7 +9,7 @@ import {
   type Shape,
   type Vec,
 } from '../../../core/assembly/boundary/shapes';
-import { screw, hexNut } from './hardware';
+import { screw } from './hardware';
 import { parallelMountDetails, parallelMountHardware } from './parallel-mount';
 import { parallelGasketDetails } from './parallel-gaskets';
 import type { DetailSpec } from './types';
@@ -48,7 +48,7 @@ export function parallelContact(yawDegrees: number, leverDegrees: number, side: 
     clearance: distance - 8.5,
     armFraction: fraction,
     leverCoordinate: closest.dot(u),
-    // The contact must remain inside the capsule's retained height [6, 14].
+    // The contact must remain inside the capsule's retained height [7, 14].
     barSurfaceHeight: closest.z - (perpendicular.z * 5) / distance,
   };
 }
@@ -92,18 +92,19 @@ export function parallelDetails(p: Parameters): DetailSpec[] {
   );
   const bar: Shape = {
     kind: 'intersect',
-    children: [capsule, box([68, 30, 8], [-34, -15, 0])],
+    children: [capsule, box([68, 30, 7], [-34, -15, 1])],
   };
   const rotor = pose(
     subtract(
-      union(cylinder(13, 8, [0, 0, 0]), bar),
-      cylinder(4, 10, [0, 0, -1]),
+      // Only the disc-sized boss enters the lid opening; the arms sit 1 mm higher.
+      union(cylinder(9.6, 1, [0, 0, 0]), cylinder(13, 7, [0, 0, 1]), bar),
+      cylinder(4.6, 10, [0, 0, -1]),
       ...[
         [7, 0],
         [0, 7],
         [-7, 0],
         [0, -7],
-      ].map(([x, y]) => cylinder(0.95, 10, [x, y, -1])),
+      ].map(([x, y]) => cylinder(1.6, 10, [x, y, -1])),
     ),
     [0, m.servoY, m.switchZ + 18.5],
     [0, 0, k.rockerAngle],
@@ -116,11 +117,13 @@ export function parallelDetails(p: Parameters): DetailSpec[] {
       shape: rotor,
       color: 0xe7a34a,
       material: 'PETG; qualify the printed prototype',
-      blank: 'Diameter 26 × 8 mm hub; opposed 28 mm arms, 10 mm maximum width, 66 mm overall span',
+      blank:
+        'Diameter 26 × 7 mm hub over a diameter 19.2 × 1 mm boss; opposed 28 mm arms, 66 mm overall span',
       processes: ['printing', 'drilling'],
       requirements: [
-        'Print the disc mating face flat. The solid bar is clipped to 8 mm thickness with broad flat faces; support rounded lower edges only as required by the printer.',
-        'Four M1.6 × 12 screws and AF3.2 × 1.3 mm nuts attach the unchanged supplier disc on PCD14. Align nut flats radially; retain the supplied shaft fastener through the central access opening.',
+        'Print the broad upper face on the bed with the diameter 19.2 × 1 mm lower boss pointing upward. The opposed arms retain 7 mm thickness and do not bridge above the bed.',
+        'Four diameter 3.2 mm through-holes on PCD14 pass M3 × 14 screws. Tap the lower output disc M3 × 0.5 and drill the reused rear disc to diameter 3.2 mm; these are modified accessories, not stock M3 interfaces.',
+        'Flip the rear disc above the rocker with its central boss downward into the diameter 9.2 mm opening. Clamp the 8 mm central stack between the two discs, with screw heads above and no nuts below. Retain access to the supplied shaft screw.',
         'Two opposite arms share one continuous section through the hub. Neutral leaves the modeled manual toggle path clear; drive alternate arms toward the lever and return to neutral after each push.',
         'Nominal tangent positions are approximately ±76.34 degrees. Calibrate actual trip positions, speed and torque limit; no force or service-life rating is assigned.',
       ],
@@ -155,10 +158,7 @@ export function parallelHardware(p: Parameters): ConfiguredPiece[] {
     const a = (i * Math.PI) / 2,
       x = 7 * Math.cos(a),
       y = 7 * Math.sin(a);
-    result.push(installed(screw(`parallel-disc-screw-${i + 1}`, 1.6, 12, [x, y, 41.7])));
-    result.push(
-      installed(hexNut(`parallel-disc-nut-${i + 1}`, 1.6, 3.2, 1.3, [x, y, 29.9], [0, 0, i * 90])),
-    );
+    result.push(installed(screw(`parallel-disc-screw-${i + 1}`, 3, 14, [x, y, 43.9])));
   }
   return result;
 }

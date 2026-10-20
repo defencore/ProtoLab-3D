@@ -46,11 +46,14 @@ function purchased(p: Parameters): ConfiguredPiece[] {
   const servoComponent: AssemblyComponent = {
     id: 'drive-servo',
     libraryId: servo.id,
-    name: 'Waveshare ST3215 12 V with supplied disc pair',
+    name: parallel
+      ? 'Waveshare ST3215 12 V with reworked M3 disc pair'
+      : 'Waveshare ST3215 12 V with supplied disc pair',
     parameters: {
       ...servo.defaults,
       model: 'st3215-12v',
       showHorn: true,
+      hornMount: parallel ? 'rocker-m3' : 'original',
       outputAngle: k.servoAngle,
     },
     state: 'assembled',
@@ -66,8 +69,9 @@ function purchased(p: Parameters): ConfiguredPiece[] {
       manufacturer: 'Waveshare',
       source: 'https://www.waveshare.com/wiki/ST3215_Servo',
     },
-    notes:
-      'Original supplier solids retained. The output retaining screw remains the existing unverified CAD-fit reference; measure the delivered retaining hardware.',
+    notes: parallel
+      ? 'Custom accessory installation: remove the supplied discs before rework. Tap the lower output disc M3 × 0.5 and drill the rear disc to diameter 3.2 mm. Refit the output disc and shaft fastener, then flip the rear disc above the 8 mm rocker stack with its boss down. Four M3 × 14 screws enter from above without underside nuts; modeled tips clear the front cover by 0.9 mm. The closed housing, fixed rear pivot and spline stay unchanged. Tapped bores use smooth nominal envelopes without helical threads. Measure the delivered discs and unverified CAD-fit shaft retaining hardware.'
+      : 'Original supplier solids retained. The output retaining screw remains the existing unverified CAD-fit reference; measure the delivered retaining hardware.',
   };
   const switchComponent: AssemblyComponent = {
     id: 'toggle-switch',
@@ -97,7 +101,7 @@ function purchased(p: Parameters): ConfiguredPiece[] {
       source: 'https://www.chinadaier.com/wp-content/uploads/2018/05/ASW-07D-1.pdf',
     },
     notes: parallel
-      ? 'Bare maintained toggle with the removable lower washer and nut omitted. The 6 mm flat carrier and nominal 0.8 mm case gasket meet the upper nut at Z6.8; measure the delivered bushing and trip force.'
+      ? 'Bare maintained toggle with the removable lower washer and nut omitted. The 1.5 mm case gasket and 5.3 mm residual PETG web meet the unchanged upper nut at its Z6.8 top counterseat; measure the delivered bushing and trip force.'
       : 'Bare maintained toggle. Its installed 3 mm panel occupies local Z3…6; the lever force and true internal pivot require measurement.',
   };
   const manualComponent: AssemblyComponent = {
@@ -121,7 +125,7 @@ function purchased(p: Parameters): ConfiguredPiece[] {
       source: 'https://www.chinadaier.com/wp-content/uploads/2018/05/SAC-01.pdf',
     },
     notes:
-      'Independent manual switch. The source guard seat at Z9.5 and opening angle are illustrative; fit and check the purchased assembly. No electrical circuit or safety function is assigned.',
+      'Independent manual switch. Two upper end lands register the source guard base at Z9.5 in a 0.2 mm deep top seat. The reconstructed guard height and opening angle require fitting to the purchased assembly. No electrical circuit or safety function is assigned.',
   };
   return [servoComponent, switchComponent, ...(isDual(p) ? [manualComponent] : [])].map(
     (component) => ({
@@ -170,7 +174,7 @@ export function configured(p: Parameters, state: string): ConfiguredPiece[] {
         else if (id === 'parallel-rocker' || id.startsWith('parallel-disc-'))
           piece.position = [45, 0, 25];
         else if (id === 'parallel-clamp' || id.startsWith('parallel-clamp-'))
-          piece.position = [0, -30, 25];
+          piece.position = [0, -45, 25];
         else if (id === 'toggle-switch') piece.position = [0, 0, 40];
       } else if (simple) {
         if (id === 'printed-rocker' || id.startsWith('rocker-disc-')) piece.position = [0, -35, 0];
@@ -206,14 +210,14 @@ export function composition(p: Parameters): AssemblyDefinition {
     components: configured(p, 'assembled').map((p) => p.component),
     issues: isDual(p)
       ? [
-          'The horizontal panel places manual ARM 1 with SAC-01 on the left and servo-operated ARM 2 on the right, with both legends engraved 0.6 mm into the upper carrier. Four PETG parts and three nominal 0.8 mm TPU frames form seven prints.',
-          'The 6 mm mounting flange has one flat underside at Z0.8. Three nominal 0.8 mm TPU frames sit outside the PETG, without gasket pockets or blind locating sockets. Four M3 × 30 servo ties and two staggered M3 × 20 rear ties clamp the lower cradle against flat rigid shoulders.',
+          'The horizontal panel places manual ARM 1 with SAC-01 on the left and servo-operated ARM 2 on the right, with both legends engraved 0.6 mm into the upper carrier. Four PETG parts and three nominal 1.5 mm TPU frames form seven prints.',
+          'The 6 mm mounting flange has one flat underside at Z1.5. Three nominal 1.5 mm TPU frames sit outside the PETG, without gasket pockets or blind locating sockets. Four M3 × 30 servo ties and two staggered M3 × 20 rear ties clamp the lower cradle against flat rigid shoulders.',
           'Both switches are clocked with OFF toward the engraved-label edge and the manual cover hinge behind the toggle. The cover opens away from the operator, clear of the servo. Manual cover and toggle positions are independent inspection controls; check actual guard travel, insertion access and trip loads.',
         ]
       : p.mechanism === 'parallel'
         ? [
-            'Four PETG parts form the upper flange, removable lower servo/switch cradle, lid and opposed rocker. Two nominal 0.8 mm TPU sheets sit beneath the flat 6 mm flange, with no gasket pockets or blind locating sockets.',
-            'Four M3 through-bolts clamp flat rigid shoulders at Z0.8. The bare toggle omits its removable lower washer and nut; the upper nut meets Z6.8. Fit the body pockets and keep the bottom cable and side terminal paths clear.',
+            'Four PETG parts form the upper flange, removable lower servo/switch cradle, lid and opposed rocker. Two nominal 1.5 mm TPU sheets sit beneath the flat 6 mm flange, with no gasket pockets or blind locating sockets.',
+            'Four M3 through-bolts clamp flat rigid shoulders at Z1.5. The bare toggle omits its removable lower washer and nut; the upper nut meets Z6.8. Fit the body pockets and keep the bottom cable and side terminal paths clear.',
             'Measure the actual switch trip force and pivot, calibrate low speed and torque limit and return to neutral after each push. Neither nominal gasket contact nor the body register establishes a physical load or sealing rating.',
           ]
         : p.mechanism !== 'guided'

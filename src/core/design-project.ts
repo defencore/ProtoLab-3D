@@ -986,6 +986,15 @@ export function parseProject(text: string, parts: readonly PartDefinition[]): De
     ]);
   }
   const result = project as unknown as DesignProject;
+  // Saved ST3215 units predate the optional reworked-disc installation.
+  // Upgrade that known interface explicitly; other missing fields still fail validation.
+  for (const configuration of result.configurations)
+    if (
+      configuration.libraryId === 'bus-servo' &&
+      configuration.parameters.model === 'st3215-12v' &&
+      !Object.hasOwn(configuration.parameters, 'hornMount')
+    )
+      configuration.parameters.hornMount = 'original';
   const errors = validateProject(result, parts);
   if (errors.length) throw new Error(errors.join(' '));
   return result;

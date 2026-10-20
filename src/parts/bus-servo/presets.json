@@ -6,7 +6,8 @@
     "parameters": {
       "model": "st3215-12v",
       "outputAngle": 0,
-      "showHorn": false
+      "showHorn": false,
+      "hornMount": "original"
     },
     "catalog": {
       "designation": "ST3215 12 V",

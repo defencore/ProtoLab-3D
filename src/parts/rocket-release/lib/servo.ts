@@ -19,7 +19,7 @@ export function servoPieces(p: Parameters): Piece[] {
   const m = layout(p),
     angle = m.servoAngle,
     z = m.stackOffset;
-  const source = { name: 'Waveshare ST3215 12 V bus servo with retaining screw', libraryId: 'bus-servo', parameters: { model: 'st3215-12v', outputAngle: angle, showHorn: false }, state: 'assembled', procurement: { designation: 'ST3215 12 V', manufacturer: 'Waveshare', source: 'https://www.waveshare.com/wiki/ST3215_Servo' } };
+  const source = { name: 'Waveshare ST3215 12 V bus servo with retaining screw', libraryId: 'bus-servo', parameters: { model: 'st3215-12v', outputAngle: angle, showHorn: false, hornMount: 'original' }, state: 'assembled', procurement: { designation: 'ST3215 12 V', manufacturer: 'Waveshare', source: 'https://www.waveshare.com/wiki/ST3215_Servo' } };
   const nativeShape = (index: number): Shape => { const shape: Shape = {kind:'native',index}; markSupplierUnit([shape],source); return shape; };
   // Raised face at local Z44; front pillars locate in the stock pilot holes without modifying the case.
   // The OEM horn is replaced by the pinion itself.

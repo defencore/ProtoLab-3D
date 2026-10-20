@@ -118,7 +118,7 @@ export const parallelLegendLayout = [
 ] as const;
 
 /** Eight shallow glyph cutters: the space is a real 2 mm gap between M and the digit. */
-export function parallelLegendCutters(): Shape[] {
+export function parallelLegendCutters(flangeTop: number): Shape[] {
   const starts = [0, 6.2, 12.4, 19.15],
     centreX = (0.2 + 19.15 + 4.8) / 2;
   return parallelLegendLayout.flatMap((legend) =>
@@ -131,7 +131,7 @@ export function parallelLegendCutters(): Shape[] {
           kind: 'plate',
           outline: glyph.outline.map(move),
           holes: (glyph.holes ?? []).map((hole) => hole.map(move)),
-          z: 6.8 - legend.depth,
+          z: flangeTop - legend.depth,
           height: legend.depth + 0.1,
         },
         translation: [legend.centre[0], legend.centre[1], 0],

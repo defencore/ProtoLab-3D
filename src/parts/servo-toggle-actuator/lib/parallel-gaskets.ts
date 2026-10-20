@@ -22,11 +22,11 @@ export function parallelGasketDetails(p: Parameters): DetailSpec[] {
       ),
       color: 0x3e565c,
       material: 'TPU; verify the printed sheet thickness and fit',
-      blank: '28 × 16 × 0.8 mm frame, R1 outside corners, diameter 12.6 mm centre clearance',
+      blank: '28 × 16 × 1.5 mm frame, R1 outside corners, diameter 12.6 mm centre clearance',
       processes: ['printing'],
       requirements: [
-        'Print flat at nominal 0.8 mm thickness and place against the flat carrier underside at Z0.8. No pocket, compressed shape or sealing rating is modeled.',
-        'The switch case remains at Z0. Remove its lower washer and nut; the upper nut meets the flat 6 mm carrier at Z6.8. The PETG body pocket limits rotation.',
+        'Print flat at nominal 1.5 mm thickness and place against the flat carrier underside at Z1.5. No pocket, compressed shape or sealing rating is modeled.',
+        'The switch case remains at Z0. Remove its lower washer and nut; the upper nut meets its top counterseat floor at Z6.8, above 5.3 mm of PETG. The PETG body pocket limits rotation.',
       ],
     },
     {
@@ -46,10 +46,10 @@ export function parallelGasketDetails(p: Parameters): DetailSpec[] {
       ),
       color: 0x3e565c,
       material: 'TPU; verify the printed sheet thickness and fit',
-      blank: `${Number(p.baseLength) - 2} × ${Number(p.baseWidth) - 2} × 0.8 mm frame with terminal-access notch and diameter 5 mm M4 clearances`,
+      blank: `${Number(p.baseLength) - 2} × ${Number(p.baseWidth) - 2} × 1.5 mm frame with terminal-access notch and diameter 5 mm M4 clearances`,
       processes: ['printing'],
       requirements: [
-        'Print flat at nominal 0.8 mm thickness. Place between the host top at Z0 and the flat PETG underside at Z0.8; no recess or compressed shape is modeled.',
+        'Print flat at nominal 1.5 mm thickness. Place between the host top at Z0 and the flat PETG underside at Z1.5; no recess or compressed shape is modeled.',
         'Diameter 5 mm openings clear the separate M4 fasteners. TPU is present beneath the mounting areas; fit the actual sheet thickness and account for creep when tightening enclosure hardware.',
         isDual(p)
           ? 'Keep the enlarged centre opening and both right terminal notches clear. This wider panel frame remains one piece around both switches; no environmental sealing rating is assigned.'
@@ -67,11 +67,11 @@ export function parallelGasketDetails(p: Parameters): DetailSpec[] {
             ),
             color: 0x3e565c,
             material: 'TPU; verify the printed sheet thickness and fit',
-            blank: '28 × 16 × 0.8 mm frame, R1 outside corners, diameter 12.6 mm centre clearance',
+            blank: '28 × 16 × 1.5 mm frame, R1 outside corners, diameter 12.6 mm centre clearance',
             processes: ['printing'] as DetailSpec['processes'],
             requirements: [
-              'Print flat at nominal 0.8 mm thickness and place against the flat carrier underside at Z0.8. The fixed source mounting stack is not translated or compressed.',
-              'The manual switch case face at Z0 reacts through the TPU sheet and 6 mm carrier up to the lower SAC-01 adjustment nut at Z6.8. Fit the actual bushing, guard height and printed stack; the guard installation height is illustrative.',
+              'Print flat at nominal 1.5 mm thickness and place against the flat carrier underside at Z1.5. The fixed source mounting stack is not translated or compressed.',
+              'The manual switch case face at Z0 reacts through the 1.5 mm TPU sheet and 5.3 mm residual web to the lower SAC-01 adjustment nut at Z6.8. Fit the actual bushing, guard height and printed stack; the guard installation height is illustrative.',
             ],
           },
         ]
