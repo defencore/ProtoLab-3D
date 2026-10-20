@@ -7,8 +7,9 @@ This package follows the same editing and export workflow as every component in 
 - `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.
 - `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.
 - `presets.json`: complete preset parameters and source evidence.
-- `lib/`: optional private geometry, reference data, and domain helpers.
-- `index.ts`: stable package ID, API version, and display order.
+- `product.json`: explicit product type, make or buy policy, process routes and release requirements.
+- `lib/`: component-specific models, reference data and domain helpers; shared geometry and hardware belong to the documented SDK.
+- `index.ts`: stable package ID, API version 2, display order and explicit library dependencies.
 - [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.
 
 ## Edit and verify
@@ -22,7 +23,7 @@ npm run dev
 npm run build
 ```
 
-Keep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.
+Keep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep component-specific helpers inside the package. Reuse the documented core SDK and explicitly declared library dependencies; all physical assembly components need library configuration identities independent of inspection poses. Folder discovery maintains the registry automatically.
 
 ## Export and handoff
 

@@ -1,7 +1,7 @@
 import type { Parameters } from '../../../core/types';
 import catalog from './models.json';
-import { box, cylinder, roundedRect, ring, subtract, type Shape } from './shapes';
-import type { Piece } from './assembly';
+import { box, cylinder, roundedRect, ring, subtract, type Shape } from '../../../core/assembly/electronics/shapes';
+import type { Piece } from '../../../core/assembly/electronics/assembly';
 import { thermalStack, type ThermalStackGeometry } from './thermal-stack';
 interface CameraModel {
   id: string;

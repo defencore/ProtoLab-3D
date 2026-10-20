@@ -1,13 +1,16 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { parameters, defaults } from './configurator';
 import presets from './presets.json';
 import { rollerPieces, rollerSpec } from './lib/model';
-import { geometry, python } from './lib/assembly';
+import { geometry, python } from '../../core/assembly/mechanical/assembly';
 const part: PartDefinition = {
   id: 'conveyor-roller',
+  product: productData as ProductProfile,
   name: 'Conveyor roller',
-  category: 'MACHINE TOOLS',
-  subgroup: 'MATERIAL HANDLING',
+  category: 'STRUCTURAL PARTS',
+  subgroup: 'WHEELS & ROLLERS',
   description: 'Interroll 1700 passive rollers and EC5000 24 V powered belt rollers.',
   keywords: ['conveyor', 'roller', 'Interroll', '1700', 'EC5000'],
   icon: 'wheel',

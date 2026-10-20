@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "Fixed upstream physical CAD component. Use its source fabrication/procurement definition.",
+  "processes": [
+    "cutting"
+  ],
+  "releaseRequirements": [
+    "Resolve material, drawing revision and purchased hardware specification before release."
+  ]
+}

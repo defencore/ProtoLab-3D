@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "Opaque configured supplier product. Its installation geometry and procurement identity are separate from its illustrative internal solids.",
+  "processes": [],
+  "releaseRequirements": [
+    "Specify the actual order designation, manufacturer and supplier evidence.",
+    "Verify the configured installation model against the purchased product; an envelope is not certified supplier CAD.",
+    "Treat the complete supplier unit as one procurement item; do not list its internal visual solids as manufactured details."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "A custom sheet fuselage former with explicit stringer, opening and mounting cuts; joints and structural sizing belong to the aircraft project.",
+  "processes": ["cutting", "milling", "drilling"],
+  "releaseRequirements": [
+    "Specify sheet material, grade, thickness, grain or laminate orientation and manufacturing route.",
+    "Define seat fits, cutter corner treatment, hole tolerances, edge finish and an inspection drawing.",
+    "Verify former spacing, stringer and skin continuity, adhesive joints and the aircraft load cases."
+  ]
+}

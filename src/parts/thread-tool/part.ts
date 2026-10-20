@@ -1,9 +1,12 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { parameters, defaults, updateParameters, catalogSelection } from './configurator';
 import presets from './presets.json';
 import { geometry, python, dimensions, errors } from './lib/thread';
 const part: PartDefinition = {
   id: 'thread-tool',
+  product: productData as ProductProfile,
   name: 'Thread tool for cut or union',
   category: 'FASTENERS & THREADS',
   subgroup: 'THREAD GEOMETRY',

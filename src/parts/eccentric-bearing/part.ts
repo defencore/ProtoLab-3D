@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters } from './configurator';
 import presets from './presets.json';
@@ -5,6 +7,7 @@ import { pieces } from './lib/model';
 import * as assembly from './lib/assembly';
 const part: PartDefinition = {
   id: 'eccentric-bearing',
+  product: productData as ProductProfile,
   name: 'Eccentric ball bearing',
   description:
     'MOCHU 524806K / NA4206X3A keyed eccentric ball bearing with separate races, balls, cage and seals.',

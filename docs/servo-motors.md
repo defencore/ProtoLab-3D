@@ -88,7 +88,7 @@ All eight models provide:
 - **Exploded**: separate components for inspection; ST3215 separates all eight original parts, including the covers, motor and circuit board.
 - **Case only**: the case and mounting features; ST3215 retains its three original housing solids and rear pivot.
 
-Preview and FreeCAD use the same private geometry descriptions in the [Servo motor package](../src/parts/servo-motor/GUIDE.md). Named direct children become separate solid components in an `App::Part`; changing a component's Placement does not move its neighbours. STL exports the selected preview. **Copy Python** and `.FCMacro` create native shapes; export STEP or save FCStd from FreeCAD. The selected model, state and pose apply to every export.
+Preview and FreeCAD use the same private geometry descriptions in the [Servo motor package](../src/parts/servo-motor/GUIDE.md). Named direct children become separate solid components in an `App::Part`; changing a component's Placement does not move its neighbours. STL exports the selected preview. **Copy for FreeCAD** and `.FCMacro` create native shapes; export STEP or save FCStd from FreeCAD. The selected model, state and pose apply to every export.
 
 These models support installation layout, envelope comparison and mechanical prototyping. ST3215 preserves the supplied STEP internals and external mouldings; no missing parts or cables are invented. The KST and Power-HD models remain external layout approximations, with omitted internals and simplified spline geometry. No electrical simulation is supplied.
 

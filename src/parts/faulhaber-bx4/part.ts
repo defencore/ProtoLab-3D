@@ -1,9 +1,12 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters, catalogFilterFields } from './configurator';
 import presets from './presets.json';
 import { geometry, dimensions, python } from './lib/model';
 const part: PartDefinition = {
   id: 'faulhaber-bx4',
+  product: productData as ProductProfile,
   name: 'FAULHABER BX4 brushless motors',
   category: 'MOTORS & ACTUATORS',
   subgroup: 'BRUSHLESS MOTORS',

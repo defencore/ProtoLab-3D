@@ -1,10 +1,14 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters } from './configurator';
-import { geometry, python, dimensions } from './lib/model';
+import { geometry, python, dimensions, pieces } from './lib/model';
+import { pieceDefinition } from './lib/assembly';
 import presets from './presets.json';
 const source = 'https://www.hiwonder.com/products/suspended-shock-absorbing-tracked-chassis';
 const part: PartDefinition = {
   id: 'tracked-chassis',
+  product: productData as ProductProfile,
   name: 'Suspended tracked chassis',
   category: 'VEHICLE STRUCTURES',
   subgroup: 'GROUND VEHICLES',
@@ -72,8 +76,18 @@ const part: PartDefinition = {
   buildGeometry: geometry,
   python,
   dimensions,
+  composition(p) {
+    return {
+      components: pieces({ ...p, detail: 'detailed' }, 'assembled').map(pieceDefinition),
+      issues: [
+        'The editable chassis is a custom reconstruction, not a verified Hiwonder internal bill of materials. Confirm the selected JGB3865 motor, MR104/MR126 bearing interfaces and attachment hardware.',
+        'The continuous tread belt is a layout contour. Specify belt material, reinforcing construction, pitch engagement, tension and a supplier or manufacturing process before release.',
+        'Posed tension springs need free geometry, wire grade, stiffness, preload and fatigue requirements. Fabricated details need materials, blanks, fits, operations and toleranced drawings.',
+      ],
+    };
+  },
   notes:
-    'Hiwonder publishes 270 × 194 mm chassis dimensions, a 270 × 143 × 2 mm deck, single/double deck versions, eight tension-spring suspension modules and the JGB3865-520R45-12 motor drawing. Wheel, spring, bearing, bracket, shaft-fit and slot coordinates are reconstructed for layout, not manufacturer CAD. The 4×10×4 and 6×12×4 bearing envelopes are modelling choices, not a verified Hiwonder BOM. Belts are two connected solids with integral tread ribs; they follow the posed wheel envelope but do not simulate articulated links, chain pitch engagement or elastic tension. Suspension angles pose all arms on each side together. Lightweight mode substitutes smooth belts and central spring envelopes. Dimensions are editable prototype dimensions; modified presets no longer describe the stock product.',
+    'Hiwonder publishes 270 × 194 mm chassis dimensions, a 270 × 143 × 2 mm deck, single/double deck versions, eight tension-spring suspension modules and the JGB3865-520R45-12 motor drawing. Wheel, spring, bearing, bracket, shaft-fit and slot coordinates are reconstructed for layout, not manufacturer CAD. The selected MR104 ZZ and MR126 ZZ library bearings are proposed 4×10×4 and 6×12×4 components for the custom reconstruction, not a verified Hiwonder BOM. Belts are two connected solids with integral tread ribs; they follow the posed wheel envelope but do not simulate articulated links, chain pitch engagement or elastic tension. Suspension angles pose all arms on each side together. Lightweight mode substitutes smooth belts and central spring envelopes. Dimensions are editable prototype dimensions; modified presets no longer describe the stock product.',
   sources: [{ label: 'Hiwonder · suspended shock-absorbing tracked chassis', url: source }],
 };
 export default part;

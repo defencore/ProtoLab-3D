@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -14,6 +16,7 @@ import { ballNutParameters, ballScrewParameters } from './lib/parts/ball-screw-p
 
 const part: PartDefinition = {
   id: 'ball-nut',
+  product: productData as ProductProfile,
   name: 'Ball screw nut',
   category: 'LINEAR MOTION',
   subgroup: 'BALL SCREWS',

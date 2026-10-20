@@ -1,3 +1,6 @@
+import { composition } from './lib/composition';
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters } from './configurator';
 import presets from './presets.json';
@@ -6,6 +9,9 @@ import { layout, assessment, springDimensions } from './lib/motion';
 import * as assembly from './lib/assembly';
 const part: PartDefinition = {
   id: 'rocket-parachute-recovery',
+  composition,
+  preview: 'worker',
+  product: productData as ProductProfile,
   name: 'Parachute Recovery Assembly',
   category: 'VEHICLE STRUCTURES',
   subgroup: 'MODEL ROCKETS',

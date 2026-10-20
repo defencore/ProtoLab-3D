@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { parameters, defaults } from './configurator';
 import presets from './presets.json';
@@ -5,6 +7,7 @@ import { cylinderSpec, cylinderPieces } from './lib/model';
 import { geometry, python } from './lib/assembly';
 const part: PartDefinition = {
   id: 'compact-pneumatic-cylinder',
+  product: productData as ProductProfile,
   name: 'Compact pneumatic cylinder',
   category: 'PNEUMATICS & GAS',
   subgroup: 'CYLINDERS',
@@ -41,7 +44,7 @@ component_groups = [["Pneumatic cylinder"]]*${pieces.length}`
     'Guide the moving shoe externally. Do not transmit cutting side loads through the piston rod.',
   ],
   notes:
-    'Purchased pressure component; barrel, separate end caps, guide gland, ports and threaded rod socket are shown; internal pressure seals and piston remain hidden. No fabricated pressure vessel is supplied.',
+    'Purchased pressure component; barrel, separate end caps, guide gland, ports and female M8×1.25 / M10×1.5 rod socket are shown; internal pressure seals and piston remain hidden. Simple uses symbolic major-diameter thread bores; Full models the declared metric female rod thread. G1/8 is the supplier port designation, with an approximate authored profile and depth rather than verified BSP geometry. No fabricated pressure vessel is supplied.',
   sources: [
     {
       label: 'AirTAC ACE dimensions, page 110',

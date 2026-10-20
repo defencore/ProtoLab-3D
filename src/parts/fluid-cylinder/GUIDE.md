@@ -18,6 +18,6 @@ Cylinder form; Cylinder bore; Rod diameter; Rated geometric stroke; Rod extensio
 
 ## Scope
 
-Cylinder styles are inspired by common ISO construction families, but mounting dimensions are custom and not certified to ISO 6432/15552/21287. No pressure calculation or sealing design. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.
+Cylinder styles are inspired by common ISO construction families, but mounting dimensions are custom and not certified to ISO 6432/15552/21287. No pressure calculation or sealing design. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Simple uses nominal envelopes for declared threads; Full models declared helical features. Features without a defined pitch/profile remain nominal in both modes. No load, pressure or service-life rating is implied.
 
 Separate physical components are exported to FreeCAD. The preview and native export share geometry definitions. This is an independent, editable prototype package; examples without catalog evidence are not manufactured product SKUs.

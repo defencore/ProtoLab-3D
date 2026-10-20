@@ -1,9 +1,12 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters, catalogFilterFields } from './configurator';
 import presets from './presets.json';
 import { geometry, dimensions, python } from './lib/model';
 const part: PartDefinition = {
   id: 'faulhaber-linear-motor',
+  product: productData as ProductProfile,
   name: 'FAULHABER LM linear servomotors',
   category: 'MOTORS & ACTUATORS',
   subgroup: 'LINEAR ACTUATORS',

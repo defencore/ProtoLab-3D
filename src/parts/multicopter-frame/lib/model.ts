@@ -1,157 +1,139 @@
-import { n } from '../../../core/geometry';
+import componentPart, {
+  models,
+  sourceFrame,
+  assemblyPlacement,
+  sheetFabrication,
+} from '../../multicopter-frame-component/part';
+import type { SourceComponent } from '../../multicopter-frame-component/lib/model';
+import {
+  componentGeometry,
+  componentPython,
+  type ConfiguredPiece,
+} from '../../../core/assembly/detail-instances';
+import { Box3, Vector3 } from 'three';
+import { disposeModel } from '../../../core/mechanical';
 import type { Parameters } from '../../../core/types';
-import { box, cylinder, prism, subtract, union, type Shape } from './shapes';
-import type { Piece } from './assembly';
-import { armSites } from './layout';
-
-export function pieces(p: Parameters, state: string): Piece[] {
-  const B = n(p, 'bodyWidth'),
-    L = n(p, 'bodyLength'),
-    t = n(p, 'plate');
-  const gap = n(p, 'gap'),
-    a = n(p, 'armThickness'),
-    w = n(p, 'armWidth');
-  const R = n(p, 'wheelbase') / 2,
-    stack = n(p, 'stackPitch'),
-    hole = n(p, 'hole');
-  const mount = n(p, 'motorPitch'),
-    pad = Math.max(w, mount + hole * 3);
-  const tube = p.armStyle === 'tube',
-    thick = tube ? t : a;
-  const explodedZ = state === 'exploded' ? -gap : 0;
-  const plate = (z: number) =>
-    subtract(
-      box([L, B, t], [-L / 2, -B / 2, z]),
-      ...[-1, 1].flatMap((x) =>
-        [-1, 1].map((y) => cylinder(hole / 2, t + 2, [(x * stack) / 2, (y * stack) / 2, z - 1])),
-      ),
-    );
-  const result: Piece[] = [
-    { label: 'Bottom plate · controller mounting holes', shape: plate(0), color: 0x424a51 },
-  ];
-  if (state === 'body') return result;
-  result.push({
-    label: 'Top plate',
-    shape: plate(t + gap),
-    color: 0x424a51,
-    z: state === 'exploded' ? gap * 1.6 : 0,
-  });
-  const motorCuts = (x: number, y: number, z: number, depth: number) => [
-    ...[-1, 1].flatMap((dx) =>
-      [-1, 1].map((dy) =>
-        cylinder(hole / 2, depth + 2, [x + (dx * mount) / 2, y + (dy * mount) / 2, z - 1]),
-      ),
-    ),
-    cylinder(n(p, 'shaftClearance') / 2, depth + 2, [x, y, z - 1]),
-  ];
-  const pipe = (length: number, origin: [number, number, number], axis: 'x' | 'y') => {
-    const bore: [number, number, number] = [...origin];
-    bore[axis === 'x' ? 0 : 1] -= 1;
-    return subtract(
-      cylinder(w / 2, length, origin, axis),
-      cylinder(w / 2 - n(p, 'tubeWall'), length + 2, bore, axis),
-    );
+import type { AssemblyComponent, AssemblyDefinition } from '../../../core/product-types';
+export { models };
+export function occurrence(m: SourceComponent): AssemblyComponent {
+  const material =
+    m.route === 'sheet'
+      ? 'Carbon/epoxy laminate per upstream drawing'
+      : m.route === 'print'
+        ? m.frameId === 'comet-y6'
+          ? 'PC/CF per COMET print profile'
+          : 'Source camera mount; verify polymer specification'
+        : m.route === 'soft'
+          ? 'Source soft pad; verify compound'
+          : 'Source hardware; verify grade and procurement specification';
+  return {
+    id: m.id,
+    name: m.label,
+    libraryId: 'multicopter-frame-component',
+    parameters: { component: m.id },
+    state: 'default',
+    presetId: m.id,
+    quantity: 1,
+    placement: { translation: assemblyPlacement(m), rotation: [0, 0, 0] },
+    supply: m.route === 'purchase' ? 'purchased' : 'manufactured',
+    ...(m.route === 'purchase'
+      ? {
+          procurement: {
+            designation: m.label,
+            manufacturer: sourceFrame(m.frameId).name + ' source hardware',
+            source: sourceFrame(m.frameId).source.repository,
+          },
+        }
+      : {
+          manufacturing: {
+            material,
+            blank: m.dimensions.map((v) => v.toFixed(3)).join(' x ') + ' mm',
+            processes:
+              m.route === 'sheet'
+                ? ['cutting', 'drilling']
+                : m.route === 'print'
+                  ? ['printing']
+                  : ['cutting'],
+            requirements: [
+              'Preserve the pinned upstream contour and CAD-matched stock thickness. Finish countersinks separately and verify actual material before fabrication.',
+            ],
+          },
+        }),
   };
-  if (p.layout === 'quad-h') {
-    const angle = (n(p, 'armAngle') * Math.PI) / 180,
-      X = R * Math.cos(angle),
-      Y = R * Math.sin(angle);
-    const rails: Shape[] = [-1, 1].map((sign) =>
-      tube
-        ? pipe(2 * X - pad, [-X + pad / 2, sign * Y, -w / 2], 'x')
-        : box([2 * X + pad, w, a], [-X - pad / 2, sign * Y - w / 2, -a]),
-    );
-    rails.push(tube ? pipe(2 * Y, [0, -Y, -w / 2], 'y') : box([w, 2 * Y, a], [-w / 2, -Y, -a]));
-    const cuts: Shape[] = [];
-    for (const sx of [-1, 1])
-      for (const sy of [-1, 1]) {
-        rails.push(box([pad, pad, thick], [sx * X - pad / 2, sy * Y - pad / 2, -thick]));
-        cuts.push(...motorCuts(sx * X, sy * Y, -thick, thick));
-      }
-    result.push({
-      label: 'H frame · side beams, crossmember and four motor mounts',
-      shape: subtract(union(...rails), ...cuts),
-      color: 0x424a51,
-      z: explodedZ,
-    });
-  } else {
-    const sites = armSites(p);
-    for (const [i, site] of sites.entries()) {
-      // Root clearance prevents radial arms intersecting underneath the centre plate.
-      const separation = Math.min(
-        ...sites
-          .filter((s) => s !== site)
-          .map((s) => Math.abs(((s.angle - site.angle + 540) % 360) - 180)),
-      );
-      const root = Math.max(L * 0.16, w / (2 * Math.tan((separation * Math.PI) / 360)) + 0.5);
-      let arm: Shape;
-      if (tube) {
-        result.push({
-          label: `Arm ${i + 1} · tube`,
-          shape: pipe(R - pad / 2 - root, [root, 0, -w / 2], 'x'),
-          angle: site.angle,
-          color: 0x4c535a,
-          z: explodedZ,
-        });
-        arm = box([pad, pad, t], [R - pad / 2, -pad / 2, -t]);
-      } else {
-        arm = prism(
-          [
-            [root, -w / 2],
-            [R - pad / 2, -w / 2],
-            [R - pad / 2, -pad / 2],
-            [R + pad / 2, -pad / 2],
-            [R + pad / 2, pad / 2],
-            [R - pad / 2, pad / 2],
-            [R - pad / 2, w / 2],
-            [root, w / 2],
-          ],
-          a,
-          -a,
-        );
-      }
-      result.push({
-        label: `Arm ${i + 1} · ${tube ? 'motor plate' : 'motor mount'}${site.paired ? ' · upper' : ''}`,
-        shape: subtract(arm, ...motorCuts(R, 0, -thick, thick)),
-        angle: site.angle,
-        color: 0x424a51,
-        z: explodedZ,
-      });
-      if (site.paired) {
-        const spacing = n(p, 'coaxialGap'),
-          bottom = -thick - spacing - t,
-          d = n(p, 'spacerDiameter');
-        result.push({
-          label: `Arm ${i + 1} · lower coaxial motor plate`,
-          shape: subtract(
-            box([pad, pad, t], [R - pad / 2, -pad / 2, bottom]),
-            ...motorCuts(R, 0, bottom, t),
-          ),
-          angle: site.angle,
-          color: 0x596570,
-          z: explodedZ,
-        });
-        for (const side of [-1, 1])
-          result.push({
-            label: `Arm ${i + 1} · coaxial spacer ${side === 1 ? 'left' : 'right'}`,
-            shape: cylinder(d / 2, spacing, [R, (side * (pad - d)) / 2, bottom + t]),
-            angle: site.angle,
-            color: 0xbb8e54,
-            z: explodedZ,
-          });
-      }
+}
+export function composition(p: Parameters): AssemblyDefinition {
+  const f = sourceFrame(p.model);
+  return {
+    components: f.parts.map(occurrence),
+    issues: [
+      'Flight release is unresolved: actual laminate, fastener grade, insert pull-through, joint slip, whole-frame bending/torsion and vibration need verification.',
+      ...f.hardware,
+      ...f.changes,
+    ],
+  };
+}
+export function pieces(p: Parameters, state: string): ConfiguredPiece[] {
+  const f = sourceFrame(p.model),
+    models = f.parts;
+  const selected =
+    state === 'body'
+      ? models.filter((m) => m.sourceIndex === f.body)
+      : state === 'arm'
+        ? models.filter((m) => m.sourceIndex === f.arms[0])
+        : state === 'root'
+          ? models.filter((m) => f.root.includes(m.sourceIndex))
+          : state === 'cut'
+            ? models.filter((m) => m.route === 'sheet')
+            : state === 'print'
+              ? models.filter((m) => m.route === 'print')
+              : models;
+  let x = 0,
+    z = -10;
+  return selected.map((m) => {
+    const component = occurrence(m);
+    let position: [number, number, number] = [0, 0, 0];
+    if (state === 'cut' || state === 'print') {
+      const flat = state === 'print' ? m.printPose : sheetFabrication[m.id];
+      component.placement = flat
+        ? { translation: [0, 0, 0], rotation: flat.rotation as [number, number, number] }
+        : { translation: [0, 0, 0], rotation: [0, 0, 0] };
+      const low = flat ? flat.min : m.meshMin;
+      position = [x - low[0], -low[1], -low[2]];
+      x += (flat ? flat.size[0] : m.dimensions[0]) + 10;
+    } else if (state === 'exploded') {
+      position = [0, 0, z - component.placement.translation[2] - m.meshMax[2]];
+      z -= m.dimensions[2] + Number(p.explodedGap);
     }
+    return {
+      component,
+      label: m.label,
+      color:
+        m.route === 'sheet'
+          ? 0x353c43
+          : m.route === 'print'
+            ? 0x448b87
+            : m.route === 'soft'
+              ? 0x25282b
+              : 0x8c949b,
+      position,
+      preserveLibraryAppearance: true,
+    };
+  });
+}
+export const geometry = (p: Parameters, state: string) =>
+  componentGeometry([componentPart], pieces(p, state));
+export const python = (p: Parameters, state: string) =>
+  componentPython([componentPart], pieces(p, state));
+export function dimensions(p: Parameters, state: string): [number, number, number] {
+  const g = geometry(p, state);
+  try {
+    g.updateMatrixWorld(true);
+    return new Box3().setFromObject(g, true).getSize(new Vector3()).toArray() as [
+      number,
+      number,
+      number,
+    ];
+  } finally {
+    disposeModel(g);
   }
-  for (const x of [-1, 1])
-    for (const y of [-1, 1])
-      result.push({
-        label: `Body spacer · ${x > 0 ? 'front' : 'rear'} ${y > 0 ? 'left' : 'right'}`,
-        shape: cylinder(n(p, 'spacerDiameter') / 2, gap, [
-          x * (L / 2 - n(p, 'spacerDiameter')),
-          y * (B / 2 - n(p, 'spacerDiameter')),
-          t,
-        ]),
-        color: 0xbb8e54,
-      });
-  return result;
 }

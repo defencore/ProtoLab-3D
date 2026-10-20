@@ -1,0 +1,11 @@
+{
+  "kind": "kit",
+  "supply": "manufactured",
+  "description": "Paired pilot-drilling and finished-profile masks for making slots with a drill and files.",
+  "processes": ["printing", "assembly"],
+  "releaseRequirements": [
+    "Select measured workpiece dimensions, final datum, tool and suitable material.",
+    "Provide positive clamping and verify guide/pin retention and tool clearance.",
+    "Qualify actual fit, wear, accuracy and working load; prototype geometry is not production approval."
+  ]
+}

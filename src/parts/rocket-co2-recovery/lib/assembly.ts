@@ -1,29 +1,17 @@
-import { Group, Box3, Vector3, Matrix4 } from 'three';
-import * as rigid from '../../rocket-release/lib/assembly';
-import cartridge from '../../co2-cartridge/part';
-import cell from '../../li-ion-cell/part';
-import lch7 from '../../lch7-controller/part';
-import zx908 from '../../gps-tracker/part';
-import jhe20b from '../../recovery-buzzer/part';
-import pwm from '../../pwm-switch/part';
-const moduleParts: Record<string, typeof lch7> = {
-  'lch7-v3-2': lch7,
-  zx908,
-  jhe20b,
-  'pwm-switch-17x13': pwm,
-};
-const libraryPart = (l: NonNullable<Piece['library']>) => {
-  const part = l.kind === 'cell' ? cell : l.kind === 'cartridge' ? cartridge : moduleParts[l.model];
-  if (!part) throw new Error('Unknown library module: ' + l.model);
-  return part;
-};
-const libraryState = (l: NonNullable<Piece['library']>) =>
-  l.kind === 'cartridge' ? 'sealed' : 'assembled';
+import { Group, Box3, Vector3, Matrix4, Mesh, MeshStandardMaterial } from 'three';
+import detail from '../../recovery-detail/part';
+import purchased from '../../purchased-recovery-component/part';
+import { component } from '../../../core/assembly/recovery/shapes';
+import { recoveryDetailPython } from '../../../core/assembly/recovery/python';
+import { threadFeatures } from '../../../core/assembly/recovery/thread-features';
+import { fastenerCatalog } from '../../rocket-release/lib/fastener-catalog';
+import { libraryPart, pieceComponent } from './composition';
 import type { Piece } from './model';
 import { disposeModel } from '../../../core/mechanical';
-import { manufacturingMetadata } from '../../rocket-release/lib/manufacturing';
 import { threadMetadata } from '../../../core/thread-callouts';
 import { threadCallouts as cartridgeThreads } from '../../co2-cartridge/lib/model';
+import { num } from '../../../core/geometry';
+
 function libraryThreadMetadata(l: NonNullable<Piece['library']>) {
   if (l.kind !== 'cartridge') return {};
   const transform = new Matrix4()
@@ -38,20 +26,94 @@ function libraryThreadMetadata(l: NonNullable<Piece['library']>) {
     })),
   );
 }
+function definition(piece: Piece) {
+  if (piece.library) return libraryPart(piece.library);
+  return piece.process.startsWith('BUY') ? purchased : detail;
+}
+function metadata(piece: Piece, index: number): Record<string, string> {
+  const configured = pieceComponent(piece, index);
+  const features = piece.shape ? threadFeatures(piece.shape) : [];
+  const catalog =
+    piece.shape && piece.process.startsWith('BUY')
+      ? fastenerCatalog(piece.shape, piece.label)
+      : undefined;
+  const manufactured = !piece.process.startsWith('BUY') && piece.process !== 'REFERENCE';
+  const groups = new Map<string, number>();
+  for (const feature of features) {
+    const key = `${feature.internal ? 'internal' : 'external'} ${feature.designation}; nominal tool L${feature.length} mm`;
+    groups.set(key, (groups.get(key) ?? 0) + 1);
+  }
+  return {
+    Procurement:
+      catalog?.procurement ??
+      (manufactured
+        ? piece.process === '3D PRINT'
+          ? 'MAKE_PRINT'
+          : 'MAKE'
+        : piece.process === 'REFERENCE'
+          ? 'REFERENCE'
+          : 'BUY_ASSEMBLY_OR_COMPONENT'),
+    Standard: catalog?.standard ?? (manufactured ? 'Custom drawing' : 'Supplier specification'),
+    OrderDesignation: catalog?.designation ?? configured?.procurement?.designation ?? piece.label,
+    SupplierSource: catalog?.source ?? configured?.procurement?.source ?? '',
+    ProcurementNotes: catalog?.note ?? piece.metadata?.SupplierScope ?? '',
+    LibraryId: configured?.libraryId ?? 'reference-routing',
+    ConfigurationJSON: JSON.stringify(configured?.parameters ?? {}),
+    PhysicalOccurrenceId: configured?.id ?? '',
+    Supply: configured?.supply ?? 'reference',
+    OrganizationPath: JSON.stringify(piece.group),
+    ManufacturingProcess: piece.process,
+    Material: piece.material,
+    ThreadCallouts:
+      [...groups].map(([key, count]) => `${count}× ${key}`).join('; ') ||
+      'No generated thread feature',
+    ThreadLabels: [
+      ...new Set(features.map((t) => `${t.internal ? 'internal' : 'external'} ${t.designation}`)),
+    ].join('; '),
+    ThreadFeaturesJSON: JSON.stringify(features),
+    ThreadModel: features.length ? threadMetadata(features).ThreadModel : '',
+    ...(piece.library ? libraryThreadMetadata(piece.library) : {}),
+    DrawingStatus:
+      piece.process === 'REFERENCE'
+        ? 'ROUTING ENVELOPE'
+        : 'Prototype geometry; fits and load capacity require verification',
+    ...piece.metadata,
+  };
+}
+
 export function geometry(pieces: Piece[]) {
   return new Group().add(
-    ...pieces.map((p) => {
-      if (p.shape) return rigid.geometry([{ shape: p.shape, label: p.label, color: p.color }]);
-      const l = p.library!;
-      const g = libraryPart(l).buildGeometry({ model: l.model }, libraryState(l));
-      g.name = p.label;
-      g.rotation.set(l.inverted ? Math.PI : 0, 0, 0);
-      if (l.azimuth) g.rotateOnWorldAxis(new Vector3(0, 0, 1), (l.azimuth * Math.PI) / 180);
-      g.position.set(...l.offset);
-      g.traverse((o) => {
-        if (o !== g) o.name = p.label + ' · ' + o.name;
+    ...pieces.map((piece, index) => {
+      const configured = pieceComponent(piece, index);
+      const group = configured
+        ? definition(piece).buildGeometry(configured.parameters, configured.state)
+        : component(piece.shape!, piece.label, piece.color);
+      if (configured) {
+        group.position.set(...configured.placement.translation);
+        group.rotation.set(
+          ...(configured.placement.rotation.map((angle) => (angle * Math.PI) / 180) as [
+            number,
+            number,
+            number,
+          ]),
+          'ZYX',
+        );
+        group.userData.libraryId = configured.libraryId;
+        group.userData.configuration = configured.parameters;
+      }
+      group.name = piece.label;
+      group.userData.supply = configured?.supply ?? 'reference';
+      group.userData.organizationPath = piece.group;
+      group.userData.supplierUnitId = piece.metadata?.SupplierUnitId;
+      group.traverse((object) => {
+        if (object !== group) object.name = piece.label + ' · ' + object.name;
+        if (object instanceof Mesh)
+          for (const material of Array.isArray(object.material)
+            ? object.material
+            : [object.material])
+            if (material instanceof MeshStandardMaterial) material.color.setHex(piece.color);
       });
-      return g;
+      return group;
     }),
   );
 }
@@ -69,35 +131,40 @@ export function dimensions(pieces: Piece[]): [number, number, number] {
   }
 }
 export function python(pieces: Piece[]) {
-  const shapes = pieces.filter((p) => p.shape),
-    libraries = pieces.filter((p) => p.library);
-  const ordered = [...shapes, ...libraries];
-  if (ordered.some((p) => !p.group?.length))
-    throw new Error('Every CO2 recovery component must belong to a subassembly.');
+  const ordered = [...pieces.filter((p) => p.shape), ...pieces.filter((p) => p.library)];
+  if (ordered.some((piece) => !piece.group?.length))
+    throw new Error('Every CO2 recovery component must belong to an organizational group.');
+  const lines = [
+    'import hashlib,json',
+    '_co2_cache={}',
+    'def _co2_component(source):',
+    '    if source not in _co2_cache:',
+    '        scope={"App":App,"Part":Part,"math":math}',
+    '        exec(source,scope)',
+    '        _co2_cache[source]=scope["shape"]',
+    '    return _co2_cache[source].copy()',
+    'components=[]',
+  ];
+  for (const [index, piece] of ordered.entries()) {
+    const configured = pieceComponent(piece, index);
+    const code = configured
+      ? definition(piece).python(configured.parameters, configured.state)
+      : recoveryDetailPython(piece.shape!);
+    lines.push(`component=_co2_component(${JSON.stringify(code)})`);
+    if (configured) {
+      for (const [axis, angle] of configured.placement.rotation.entries())
+        if (angle)
+          lines.push(
+            `component.rotate(App.Vector(0,0,0),App.Vector(${[0, 1, 2].map((value) => (value === axis ? 1 : 0)).join(',')}),${num(angle)})`,
+          );
+      lines.push(
+        `component.translate(App.Vector(${configured.placement.translation.map(num).join(',')}))`,
+      );
+    }
+    lines.push('components.append(component)');
+  }
   return [
-    rigid.python(
-      shapes.map((p) => ({
-        label: p.label,
-        color: p.color,
-        shape: p.shape!,
-        metadata: p.metadata,
-      })),
-    ),
-    ...libraries.flatMap((p) => {
-      const l = p.library!,
-        code = libraryPart(l).python({ model: l.model }, libraryState(l));
-      return [
-        '_co2_scope={"App":App,"Part":Part,"math":math}',
-        `exec(${JSON.stringify(code)},_co2_scope)`,
-        '_co2_piece=_co2_scope["shape"]',
-        ...(l.inverted ? ['_co2_piece.rotate(App.Vector(0,0,0),App.Vector(1,0,0),180)'] : []),
-        ...(l.azimuth
-          ? [`_co2_piece.rotate(App.Vector(0,0,0),App.Vector(0,0,1),${l.azimuth})`]
-          : []),
-        `_co2_piece.translate(App.Vector(${l.offset.join(',')}))`,
-        'components.append(_co2_piece)',
-      ];
-    }),
+    ...lines,
     `component_labels=${JSON.stringify(ordered.map((p) => p.label))}`,
     `component_groups=${JSON.stringify(ordered.map((p) => p.group))}`,
     `component_materials=${JSON.stringify(ordered.map((p) => p.material))}`,
@@ -107,9 +174,10 @@ export function python(pieces: Piece[]) {
       .replace(/true/g, 'True')
       .replace(/false/g, 'False')}`,
     `component_colors=${JSON.stringify(ordered.map((p) => [((p.color >> 16) & 255) / 255, ((p.color >> 8) & 255) / 255, (p.color & 255) / 255]))}`,
-    `component_metadata=json.loads(${JSON.stringify(JSON.stringify(ordered.map((p) => ({ ...(p.shape ? manufacturingMetadata({ shape: p.shape, label: p.label, color: p.color }) : p.library ? libraryThreadMetadata(p.library) : {}), ManufacturingProcess: p.process, Material: p.material, DrawingStatus: p.process === 'REFERENCE' ? 'ROUTING ENVELOPE' : 'Prototype geometry; fits and load capacity require verification', ...p.metadata }))))})`,
+    `component_metadata=json.loads(${JSON.stringify(JSON.stringify(ordered.map(metadata)))})`,
     'for i,s in enumerate(components):',
     '    if s.isNull() or not s.isValid() or not s.isClosed(): raise ValueError("Invalid CO2 recovery component: "+component_labels[i])',
+    '    component_metadata[i]["ShapeDigest"]=hashlib.sha256(s.exportBrepToString().encode()).hexdigest()',
     '    if component_manufactured[i]:',
     '        number="CR-"+hashlib.sha1(component_labels[i].split(" · ")[0].encode()).hexdigest()[:8].upper()',
     '        component_metadata[i]["PartNumber"]=number',

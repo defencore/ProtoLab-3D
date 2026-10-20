@@ -52,6 +52,9 @@
           "value": "1.4 kg"
         }
       ]
+    },
+    "product": {
+      "supply": "purchased"
     }
   },
   {
@@ -107,6 +110,9 @@
           "value": "1.6 kg"
         }
       ]
+    },
+    "product": {
+      "supply": "purchased"
     }
   }
 ]

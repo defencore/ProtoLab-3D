@@ -1,0 +1,92 @@
+[
+  {
+    "id": "romi",
+    "name": "Pololu Romi \u00b7 2WD chassis",
+    "description": "Factory chassis, wheels and battery cover with six-AA bay and original board mounting pattern; source file has five CAD solids.",
+    "parameters": {
+      "model": "romi",
+      "explodedGap": 25
+    },
+    "catalog": {
+      "designation": "Romi Chassis Kit #3500 \u00b7 source assembly with optional front caster",
+      "manufacturer": "Pololu",
+      "sourceName": "Original manufacturer CAD",
+      "sourceUrl": "https://www.pololu.com/file/0J1298/romi-chassis-kit.step",
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Pololu",
+        "drive": "2WD",
+        "length": 163.21764630482545,
+        "width": 148.78000019992555,
+        "height": 70.00000020007954
+      },
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original source surfaces and factory placements; 5 retained valid source solids in 5 CAD components. Preview chord tolerance 0.05 mm.",
+        "limitations": "The factory CAD is supplied as five shapes: chassis, battery cover, two wheels and a front caster. Internal kit parts are not separately identified by this simplified source; do not interpret five solids as the retail bill of materials. The front caster is a separately sold accessory.",
+        "sourceUrl": "https://www.pololu.com/file/0J1298/romi-chassis-kit.step",
+        "sourceSha256": "38bb9571c9125f7f00ea12be1d8b85326b6557a96ddf9451932069ee58991be9"
+      }
+    }
+  },
+  {
+    "id": "pirate-4wd",
+    "name": "DFRobot Pirate 4WD \u00b7 ROB0003 (2015 CAD)",
+    "description": "Original 180 x 150 mm upper equipment deck with 60 mm clear space over the inner plate. Fixed 2015 source revision; motors and battery holder are absent from this CAD.",
+    "parameters": {
+      "model": "pirate-4wd",
+      "explodedGap": 25
+    },
+    "catalog": {
+      "designation": "Pirate 4WD Mobile Platform ROB0003",
+      "manufacturer": "DFRobot",
+      "sourceName": "Original manufacturer CAD",
+      "sourceUrl": "https://raw.githubusercontent.com/CainZ/ROB003/master/ROB0003.STEP",
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "DFRobot",
+        "drive": "4WD",
+        "length": 199.86579073716797,
+        "width": 171.4000002000376,
+        "height": 113.25461971974484
+      },
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original source surfaces and factory placements; 48 retained valid source solids in 48 CAD components. Preview chord tolerance 0.05 mm.",
+        "limitations": "The manufacturer-linked ROB0003 STEP is a 2015 SolidWorks AP203 source revision. Measured CAD dimensions are retained; they are not stretched to the current product listing (200 \u00d7 170 \u00d7 105 mm). Confirm the actual purchased revision, because the older assembly manual also has different dimensions. This source CAD omits the four gearmotors and battery holder present in the retail kit; no substitute motor boxes are invented.",
+        "sourceUrl": "https://raw.githubusercontent.com/CainZ/ROB003/master/ROB0003.STEP",
+        "sourceSha256": "f0d62d2059f8768b2dc3f59a09711e0dd0d591e612bdfb3d32db2e6cd813584f"
+      }
+    }
+  },
+  {
+    "id": "ugv-rover",
+    "name": "Waveshare UGV Rover \u00b7 PI4B AI kit",
+    "description": "Original six-wheel 4WD PI4B AI kit with factory frame, motors, rails, electronics and battery arrangement. Five defective/non-volumetric source features are documented.",
+    "parameters": {
+      "model": "ugv-rover",
+      "explodedGap": 25
+    },
+    "catalog": {
+      "designation": "UGV Rover PI4B AI Kit \u00b7 no pan-tilt",
+      "manufacturer": "Waveshare",
+      "sourceName": "Original manufacturer CAD",
+      "sourceUrl": "https://files.waveshare.com/wiki/UGV-Rover/UGV_Rover_PI4B_AI_Kit.zip",
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Waveshare",
+        "drive": "6 wheels / 4WD",
+        "length": 252.4525827079214,
+        "width": 230.42000019999747,
+        "height": 122.54909274294116
+      },
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Original source surfaces and factory placements; 1302 retained valid source solids in 207 CAD components. Preview chord tolerance 0.05 mm.",
+        "limitations": "Original no-PT PI4B AI kit STEP. This CAD configuration is identified separately from newer Pi 5, pan-tilt and bare UGV02 product variants. Five defective/non-volumetric electronic source features are excluded and recorded; frame, drive and mounting geometry is retained.",
+        "sourceUrl": "https://files.waveshare.com/wiki/UGV-Rover/UGV_Rover_PI4B_AI_Kit.zip",
+        "sourceSha256": "eec517fb278c336c5d6a2ec11636f60eb74c1b5a5c9743081220462e1903b6e0"
+      }
+    }
+  }
+]

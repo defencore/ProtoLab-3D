@@ -1,4 +1,4 @@
-import { prism, subtract, type Shape } from './shapes';
+import { prism, subtract, type Shape } from '../../../core/assembly/boundary/shapes';
 type Point = [number, number];
 export interface Wheel {
   x: number;

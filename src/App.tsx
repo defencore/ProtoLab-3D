@@ -16,6 +16,7 @@ import {
   Grid2X2,
   Keyboard,
   Layers3,
+  LoaderCircle,
   Menu,
   Maximize2,
   Minimize2,
@@ -30,31 +31,44 @@ import {
   X,
 } from 'lucide-react';
 import Catalog from './components/Catalog';
+import ProjectWorkspace from './components/ProjectWorkspace';
 import Configurator from './components/Configurator';
 import ModelViewer, { type NavigationMode } from './components/ModelViewer';
 import { useAssemblyPreview } from './components/useAssemblyPreview';
+import { useLibraryOutputs } from './components/useLibraryOutputs';
+import GeometryModeSwitch from './components/GeometryModeSwitch';
 import { usePreviewFullscreen } from './components/usePreviewFullscreen';
 import Modal from './components/Modal';
 import PresetBrowser from './components/PresetBrowser';
 import { Brand, PartIcon } from './components/PartIcon';
 import { parts } from './parts';
-import { generateScript, consoleCommand } from './core/freecad';
+import { consoleCommand } from './core/freecad';
+import { withGeometryMode, type GeometryMode } from './core/geometry-mode';
 import { validateParameters } from './core/validation';
 import { parseConfiguration } from './core/configuration';
-import { downloadFile, downloadStl } from './core/download';
+import { downloadFile } from './core/download';
+import { productKindLabels, supplyKindLabels } from './core/product-library';
+import { familyId, familyLabel, familyMembers } from './core/browse-families';
 import { createPresetId, readPresets, storePresets, type SavedPreset } from './core/storage';
 import type { Parameters, PartDefinition, Preset } from './core/types';
 import type { QuickPickFilters } from './core/quick-picks';
-import { emptyPresetFilters, fieldId, type PresetFilters } from './core/preset-search';
+import {
+  emptyPresetFilters,
+  fieldId,
+  seedCurrentFilters,
+  type PresetFilters,
+} from './core/preset-search';
 import {
   defaultPartSelection,
+  availableModelState,
   matchingPresetId,
+  parametersForPreset,
   reconcilePartSelection,
 } from './core/part-selection';
 
 type DisplayMode = 'solid' | 'wireframe' | 'xray';
 type View = 'isometric' | 'front' | 'top' | 'right';
-type Dialog = 'script' | 'guide' | 'presets' | 'save' | 'catalog' | null;
+type Dialog = 'script' | 'guide' | 'presets' | 'save' | 'catalog' | 'project' | null;
 
 export default function App() {
   if (!parts.length)
@@ -72,10 +86,15 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
   const initialPart = parts.find((item) => item.defaultSelection) ?? parts[0];
   const [selectedPartId, setSelectedPartId] = useState(initialPart.id);
   const part = parts.find((item) => item.id === selectedPartId) ?? initialPart;
+  const browseId = familyId(part);
+  const browseParts = useMemo(() => familyMembers(parts, part), [parts, browseId]);
+  const [browseQuery, setBrowseQuery] = useState({ query: '', revision: 0 });
+  const [libraryQuery, setLibraryQuery] = useState('');
   const [storedParameters, setParameters] = useState<Parameters>({ ...initialPart.defaults });
   const [storedModelState, setModelState] = useState(initialPart.states?.[0]?.id ?? 'default');
   const [storedPresetId, setPresetId] = useState(() => defaultPartSelection(initialPart).presetId);
   const loadedDefinition = useRef(part);
+  const definitionVersion = useRef(0);
   const moduleChanged = loadedDefinition.current !== part;
   const selection = moduleChanged
     ? reconcilePartSelection(part, loadedDefinition.current, {
@@ -90,11 +109,16 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
         modelState: storedModelState,
         presetId: storedPresetId,
       };
-  const { parameters, modelState } = selection;
+  const { parameters } = selection;
+  const modelState = availableModelState(part, parameters, selection.modelState);
+  useEffect(() => {
+    if (storedModelState !== modelState) setModelState(modelState);
+  }, [storedModelState, modelState]);
   const presetId = part.catalogSelectionOnly
     ? matchingPresetId(part, parameters)
     : selection.presetId;
   if (moduleChanged) {
+    definitionVersion.current++;
     loadedDefinition.current = part;
     setSelectedPartId(selection.partId);
     setParameters(parameters);
@@ -102,6 +126,13 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
     setPresetId(presetId);
   }
   const [displayMode, setDisplayMode] = useState<DisplayMode>('solid');
+  const [geometryMode, setGeometryMode] = useState<GeometryMode>(() => {
+    try {
+      return localStorage.getItem('protolab.geometry-mode') === 'full' ? 'full' : 'simple';
+    } catch {
+      return 'simple';
+    }
+  });
   const [navigationMode, setNavigationMode] = useState<NavigationMode>('orbit');
   const { previewRef, expanded: previewExpanded, toggle: togglePreview } = usePreviewFullscreen();
   const [view, setView] = useState<View>('isometric');
@@ -110,19 +141,25 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
   const [fitToken, setFitToken] = useState(0);
   const [dialog, setDialog] = useState<Dialog>(null);
   const [catalogMode, setCatalogMode] = useState<'all' | 'browse' | 'match'>('browse');
-  const [catalogFilters, setCatalogFilters] = useState<PresetFilters>();
+  const [catalogFilters, setCatalogFilters] = useState<PresetFilters>(() => emptyPresetFilters());
   const [catalogRevision, setCatalogRevision] = useState(0);
   const [exportOpen, setExportOpen] = useState(false);
+  const [sourceOpen, setSourceOpen] = useState(false);
   const [savedPresets, setSavedPresets] = useState(() => readPresets(parts));
   const availableSavedPresets = savedPresets.filter((preset) =>
     parts.some((item) => item.id === preset.partId),
   );
   const [presetName, setPresetName] = useState('');
-  const [toast, setToast] = useState('');
+  const [notice, setNotice] = useState<{ message: string; tone: 'success' | 'error' }>();
+  const toast = notice?.message ?? '';
+  function setToast(message: string, tone: 'success' | 'error' = 'success') {
+    setNotice(message ? { message, tone } : undefined);
+  }
   const [mobilePanel, setMobilePanel] = useState<'library' | 'config' | null>(null);
   const [viewerError, setViewerError] = useState('');
   const exportMenu = useRef<HTMLDivElement>(null);
   const importInput = useRef<HTMLInputElement>(null);
+  const consoleInput = useRef<HTMLTextAreaElement>(null);
   const errors = useMemo(
     () => validateParameters(part, parameters, modelState),
     [part, parameters, modelState],
@@ -131,39 +168,58 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
   if (!errors.length) validPreview.current = { part, parameters, modelState };
   const preview = validPreview.current;
   const assembly = useAssemblyPreview(
-    preview.part.id === 'rocket-release' ||
-      preview.part.id === 'rocket-parachute-recovery' ||
-      preview.part.id === 'rocket-co2-recovery' ||
-      preview.part.id === 'automatic-tube-saw' ||
-      preview.part.id === 'automatic-band-saw'
-      ? preview.part.id
-      : undefined,
+    preview.part.preview === 'worker' ? preview.part.id : undefined,
     preview.parameters,
     preview.modelState,
     presetId,
+    geometryMode,
+    definitionVersion.current,
   );
-  const dimensions = useMemo(
-    () =>
-      assembly.enabled
+  const measurement = useMemo(() => {
+    try {
+      const value = assembly.enabled
         ? (assembly.dimensions ?? [0, 0, 0])
-        : preview.part.dimensions(preview.parameters, preview.modelState),
-    [preview.part, preview.parameters, preview.modelState, assembly.dimensions],
+        : withGeometryMode(geometryMode, () =>
+            preview.part.dimensions(preview.parameters, preview.modelState),
+          );
+      return { dimensions: value as [number, number, number], error: '' };
+    } catch (cause) {
+      return {
+        dimensions: [0, 0, 0] as [number, number, number],
+        error: cause instanceof Error ? cause.message : String(cause),
+      };
+    }
+  }, [preview.part, preview.parameters, preview.modelState, geometryMode, assembly.dimensions]);
+  const dimensions = measurement.dimensions;
+  const outputs = useLibraryOutputs(
+    {
+      partId: part.id,
+      parameters,
+      state: modelState,
+      presetId,
+      geometryMode,
+    },
+    definitionVersion.current,
   );
-  const script = useMemo(
-    () =>
-      errors.length
-        ? ''
-        : assembly.enabled
-          ? (assembly.script ?? '')
-          : generateScript(part, parameters, modelState, presetId),
-    [part, parameters, modelState, presetId, errors.length, assembly.script],
-  );
+  const script = errors.length ? '' : (outputs.script ?? '');
+  useEffect(() => {
+    if (dialog === 'script' && !errors.length) void outputs.prepare('script').catch(() => {});
+    if (dialog !== 'script') setSourceOpen(false);
+  }, [dialog, outputs.key, errors.length, outputs.prepare]);
+  useEffect(() => {
+    try {
+      localStorage.setItem('protolab.geometry-mode', geometryMode);
+    } catch {
+      /* Session preference still applies. */
+    }
+    setViewerError('');
+  }, [geometryMode]);
 
   useEffect(() => {
-    if (!toast) return;
+    if (!notice) return;
     const timer = setTimeout(() => setToast(''), 4500);
     return () => clearTimeout(timer);
-  }, [toast]);
+  }, [notice]);
   useEffect(() => {
     const close = (event: MouseEvent) => {
       if (!exportMenu.current?.contains(event.target as Node)) setExportOpen(false);
@@ -196,27 +252,39 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
     setPresetId(matchingPresetId(next, values));
     setFitToken((token) => token + 1);
   }
-  function openPresetBrowser(mode: 'all' | 'browse' | 'match', quickFilters?: QuickPickFilters) {
+  function openPresetBrowser(
+    mode: 'all' | 'browse' | 'match',
+    quickFilters?: QuickPickFilters,
+    query = '',
+    scope = part,
+  ) {
     setCatalogMode(mode);
-    const next = quickFilters ? emptyPresetFilters(part) : undefined;
+    const next =
+      mode === 'match'
+        ? seedCurrentFilters(scope, parameters)
+        : quickFilters || query || mode === 'browse'
+          ? emptyPresetFilters(scope)
+          : undefined;
+    if (next && mode !== 'match') next.query = query;
     if (next && quickFilters)
-      for (const field of part.parameters) {
+      for (const field of scope.parameters) {
         const value = quickFilters[field.key];
         if (value)
           next.parameters[fieldId(field)] =
             field.type === 'number' ? { min: value, max: value } : { value };
       }
-    setCatalogFilters(next);
+    if (next) setCatalogFilters(next);
     setCatalogRevision((revision) => revision + 1);
     setDialog('catalog');
     setMobilePanel(null);
   }
   function applyPreset(next: PartDefinition, preset: Preset) {
+    const values = parametersForPreset(next, preset, next.id === part.id ? parameters : undefined);
     const state =
-      next.id === part.id && !validateParameters(next, preset.parameters, modelState).length
+      next.id === part.id && !validateParameters(next, values, modelState).length
         ? modelState
         : (next.states?.[0].id ?? 'default');
-    selectPart(next, preset.parameters, state);
+    selectPart(next, values, state);
     setPresetId(preset.id);
   }
   function openMobilePanel(panel: 'library' | 'config') {
@@ -224,23 +292,45 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
     setMobilePanel(panel);
   }
   async function copyScript() {
-    if (errors.length || (assembly.enabled && !assembly.script)) return;
+    if (errors.length || outputs.pending) return;
     try {
-      await navigator.clipboard.writeText(consoleCommand(script));
-      setToast('Script copied. Paste into the FreeCAD Python console.');
-    } catch {
+      const prepared = await outputs.prepare('script');
+      if (!prepared.script) throw new Error('The FreeCAD script is empty.');
+      try {
+        await navigator.clipboard.writeText(consoleCommand(prepared.script));
+        setToast(
+          `${geometryMode === 'simple' ? 'Simple' : 'Full'} script copied. Paste into the FreeCAD Python console.`,
+        );
+      } catch {
+        setDialog('script');
+        setToast('Select and copy the console command in the FreeCAD window.');
+        requestAnimationFrame(() => {
+          consoleInput.current?.focus();
+          consoleInput.current?.select();
+        });
+      }
+    } catch (error) {
+      if (error instanceof DOMException && error.name === 'AbortError') return;
       setDialog('script');
-      setToast('Select and copy the console command in the script window.');
+      setToast(
+        `Could not prepare FreeCAD code: ${error instanceof Error ? error.message : String(error)}`,
+        'error',
+      );
     }
   }
-  function exportPart(format: 'macro' | 'stl' | 'json') {
-    if (errors.length || (assembly.enabled && !assembly.script)) return;
+  async function exportPart(format: 'macro' | 'stl' | 'json') {
+    if (errors.length || outputs.pending) return;
+    setExportOpen(false);
     try {
-      if (format === 'macro') downloadFile(script, `${part.id}.FCMacro`, 'text/x-python');
+      if (format === 'macro') {
+        const prepared = await outputs.prepare('script');
+        if (!prepared.script) throw new Error('The FreeCAD script is empty.');
+        downloadFile(prepared.script, `${part.id}-${geometryMode}.FCMacro`, 'text/x-python');
+      }
       if (format === 'stl') {
-        if (assembly.enabled && assembly.stl)
-          downloadFile(assembly.stl, `${part.id}-${modelState}.stl`, 'model/stl');
-        else downloadStl(part, parameters, modelState);
+        const prepared = await outputs.prepare('stl');
+        if (!prepared.stl) throw new Error('The STL mesh is empty.');
+        downloadFile(prepared.stl, `${part.id}-${modelState}.stl`, 'model/stl');
       }
       if (format === 'json')
         downloadFile(
@@ -254,8 +344,10 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
         );
       setToast(`${format === 'macro' ? 'FreeCAD macro' : format.toUpperCase()} downloaded.`);
     } catch (error) {
+      if (error instanceof DOMException && error.name === 'AbortError') return;
       setToast(
         `Export failed: ${error instanceof Error ? error.message : 'Please check the parameters.'}`,
+        'error',
       );
     }
     setExportOpen(false);
@@ -276,7 +368,10 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
       setDialog(null);
       setToast('Preset saved in this browser.');
     } catch {
-      setToast('This browser could not save the preset. Download parameters to keep a copy.');
+      setToast(
+        'This browser could not save the preset. Download parameters to keep a copy.',
+        'error',
+      );
     }
   }
   async function importConfiguration(file: File | undefined) {
@@ -288,7 +383,10 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
       setDialog(null);
       setToast('Configuration imported. Use Save preset to keep it in this browser.');
     } catch (error) {
-      setToast(`Import failed: ${error instanceof Error ? error.message : 'Invalid JSON file.'}`);
+      setToast(
+        `Import failed: ${error instanceof Error ? error.message : 'Invalid JSON file.'}`,
+        'error',
+      );
     } finally {
       if (importInput.current) importInput.current.value = '';
     }
@@ -299,7 +397,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
       storePresets(next);
       setSavedPresets(next);
     } catch {
-      setToast('This browser could not update saved presets.');
+      setToast('This browser could not update saved presets.', 'error');
     }
   }
   const formatDimension = (value: number) => Number(value.toFixed(2));
@@ -310,20 +408,36 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
         <Brand />
         <div className="header-divider" />
         <nav className="main-nav" aria-label="Main navigation">
-          <button className="active" onClick={() => setDialog(null)}>
+          <button
+            className={!dialog || dialog === 'script' ? 'active' : ''}
+            onClick={() => setDialog(null)}
+          >
             <Box size={16} />
             Part library
           </button>
-          <button onClick={() => openPresetBrowser('all')}>
+          <button
+            className={dialog === 'catalog' ? 'active' : ''}
+            onClick={() => openPresetBrowser('all')}
+          >
             <Search size={16} />
             Find presets
           </button>
-          <button onClick={() => setDialog('presets')}>
+          <button
+            className={dialog === 'presets' ? 'active' : ''}
+            onClick={() => setDialog('presets')}
+          >
             <Bookmark size={16} />
             My presets
             {availableSavedPresets.length > 0 && (
               <span className="nav-count">{availableSavedPresets.length}</span>
             )}
+          </button>
+          <button
+            className={dialog === 'project' ? 'active' : ''}
+            onClick={() => setDialog('project')}
+          >
+            <Layers3 size={16} />
+            Design projects
           </button>
         </nav>
         <div className="header-end">
@@ -372,25 +486,29 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
           <button
             className="secondary-button script-button"
             onClick={() => setDialog('script')}
-            disabled={!!errors.length || (assembly.enabled && !assembly.script)}
+            disabled={!!errors.length}
           >
             <Code2 size={16} />
-            <span>View script</span>
+            <span>FreeCAD options</span>
           </button>
           <button
             className="primary-button"
             onClick={copyScript}
-            disabled={!!errors.length || (assembly.enabled && !assembly.script)}
+            disabled={!!errors.length || outputs.pending}
           >
-            <Copy size={15} />
-            <span>Copy Python</span>
+            {outputs.pending ? (
+              <LoaderCircle size={15} className="busy-spinner" />
+            ) : (
+              <Copy size={15} />
+            )}
+            <span>{outputs.pending ? 'Preparing export…' : 'Copy for FreeCAD'}</span>
           </button>
           <div className="export-container" ref={exportMenu}>
             <button
               className={`secondary-button export-button ${exportOpen ? 'pressed' : ''}`}
               onClick={() => setExportOpen(!exportOpen)}
               aria-expanded={exportOpen}
-              disabled={!!errors.length || (assembly.enabled && !assembly.script)}
+              disabled={!!errors.length || outputs.pending}
             >
               <ArrowDownToLine size={16} />
               <span>Download</span>
@@ -398,19 +516,24 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
             </button>
             {exportOpen && (
               <div className="dropdown-menu export-menu">
-                <span className="menu-label">EXPORT CURRENT STATE</span>
+                <span className="menu-label">CURRENT ITEM · {geometryMode.toUpperCase()}</span>
                 <button onClick={() => exportPart('macro')}>
                   <FileCode2 size={18} />
                   <span>
                     <strong>FreeCAD macro</strong>
-                    <small>Solid CAD geometry · .FCMacro</small>
+                    <small>
+                      {geometryMode === 'simple'
+                        ? 'Without threads · TechDraw'
+                        : 'With helical threads'}{' '}
+                      · .FCMacro
+                    </small>
                   </span>
                 </button>
                 <button onClick={() => exportPart('stl')}>
                   <Box size={18} />
                   <span>
                     <strong>STL mesh</strong>
-                    <small>Preview mesh · millimeters</small>
+                    <small>Simple mesh · no thread relief · mm</small>
                   </span>
                 </button>
                 <button onClick={() => exportPart('json')}>
@@ -420,6 +543,22 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
                     <small>Configuration data · .json</small>
                   </span>
                 </button>
+                {part.fabricationFiles?.(parameters).map((file) => (
+                  <button
+                    key={file.id}
+                    onClick={() => {
+                      downloadFile(file.content, file.name, file.type);
+                      setExportOpen(false);
+                      setToast(file.label + ' downloaded.');
+                    }}
+                  >
+                    <FileCode2 size={18} />
+                    <span>
+                      <strong>{file.label}</strong>
+                      <small>{file.description}</small>
+                    </span>
+                  </button>
+                ))}
                 <p>Need STEP? Run the macro in FreeCAD, select the part, then use File → Export.</p>
               </div>
             )}
@@ -444,7 +583,8 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
             currentParameters={parameters}
             currentPresetId={presetId}
             initialMode={catalogMode}
-            initialFilters={catalogFilters}
+            filters={catalogFilters}
+            onFiltersChange={setCatalogFilters}
             onApply={applyPreset}
             onClose={() => setDialog(null)}
           />
@@ -452,7 +592,14 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
           <Catalog
             parts={parts}
             selected={part}
-            onSelect={(next) => selectPart(next)}
+            query={libraryQuery}
+            onQueryChange={setLibraryQuery}
+            onSelect={(next, query) => {
+              if (next.id !== part.id) selectPart(next);
+              const nextQuery = query ?? '';
+              if (familyId(next) !== browseId || nextQuery !== browseQuery.query)
+                setBrowseQuery((current) => ({ query: nextQuery, revision: current.revision + 1 }));
+            }}
             onClose={() => setMobilePanel(null)}
           />
         )}
@@ -462,10 +609,10 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
               <span className="part-type-icon">
                 <PartIcon type={part.icon} size={17} />
               </span>
-              <span>PARAMETRIC COMPONENT</span>
-              <span className="part-revision">/ {part.id.toUpperCase()}</span>
+              <span>{productKindLabels[part.product.kind]}</span>
+              <span className="part-revision">/ {supplyKindLabels[part.product.supply]}</span>
             </div>
-            <h1>{part.name}</h1>
+            <h1>{familyLabel(part)}</h1>
             <p>{part.description}</p>
             <div className="part-badges">
               <span>
@@ -476,6 +623,16 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
               <span>mm</span>
             </div>
           </div>
+          <div className="workspace-detail-bar">
+            <GeometryModeSwitch value={geometryMode} onChange={setGeometryMode} compact />
+            <button
+              className="secondary-button add-project-button"
+              onClick={() => setDialog('project')}
+            >
+              <Layers3 size={16} />
+              <span>Add to project</span>
+            </button>
+          </div>
           <div
             ref={previewRef}
             className={`viewport-area${previewExpanded ? ' viewport-area--expanded' : ''}`}
@@ -484,13 +641,15 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
             aria-label={`${part.name} model preview`}
           >
             <ModelViewer
+              key={preview.part.id}
               preparedModel={assembly.enabled ? (assembly.model ?? null) : undefined}
               preparedDimensions={assembly.dimensions}
               pending={assembly.pending}
-              loadError={assembly.error}
+              loadError={assembly.error || measurement.error}
               part={preview.part}
               parameters={preview.parameters}
               modelState={preview.modelState}
+              geometryMode={geometryMode}
               displayMode={displayMode}
               navigationMode={navigationMode}
               showGrid={showGrid}
@@ -642,8 +801,16 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
             <div className="summary-item summary-export">
               <span>FREECAD EXPORT</span>
               <strong>
-                <Check size={13} />
-                Solid geometry
+                {outputs.pending ? (
+                  <LoaderCircle size={13} className="busy-spinner" />
+                ) : (
+                  <Check size={13} />
+                )}
+                {outputs.pending
+                  ? 'Preparing…'
+                  : geometryMode === 'simple'
+                    ? 'Simple · no threads'
+                    : 'Full · with threads'}
               </strong>
             </div>
           </div>
@@ -669,13 +836,26 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
             <X size={18} />
           </button>
           <Configurator
-            key={part.id}
+            key={browseId}
             part={part}
+            familyParts={browseParts}
+            browseQuery={browseQuery}
+            onBrowseQueryChange={(query) => setBrowseQuery((current) => ({ ...current, query }))}
             parameters={parameters}
             modelState={modelState}
             presetId={presetId}
             errors={errors}
+            previewPending={assembly.pending}
+            previewError={assembly.error || measurement.error || viewerError}
             onPreset={(preset) => applyPreset(part, preset)}
+            onSelectModel={(next, preset, values) => {
+              if (
+                !values ||
+                Object.entries(preset.parameters).every(([key, value]) => values[key] === value)
+              )
+                applyPreset(next, preset);
+              else selectPart(next, values);
+            }}
             onChange={(key, value) => {
               setParameters((current) => {
                 const next = { ...current, [key]: value };
@@ -701,7 +881,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
               setPresetId('custom');
             }}
             onState={setModelState}
-            onBrowse={(filters) => openPresetBrowser('browse', filters)}
+            onBrowse={(filters, query) => openPresetBrowser('browse', filters, query)}
             onFindMatching={() => openPresetBrowser('match')}
             onReset={() => selectPart(part)}
             onSave={() => {
@@ -731,8 +911,11 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
         </span>
       </footer>
       {toast && (
-        <div className="toast" role="status">
-          <Check size={17} />
+        <div
+          className={`toast${notice?.tone === 'error' ? ' toast--error' : ''}`}
+          role={notice?.tone === 'error' ? 'alert' : 'status'}
+        >
+          {notice?.tone === 'error' ? <X size={17} /> : <Check size={17} />}
           <span>{toast}</span>
           <button onClick={() => setToast('')} aria-label="Dismiss notification">
             <X size={14} />
@@ -740,13 +923,63 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
         </div>
       )}
 
+      {dialog === 'project' && (
+        <Modal
+          title="Design project"
+          subtitle="Product structure, documentation and specifications"
+          className="project-dialog"
+          wide
+          onClose={() => setDialog(null)}
+        >
+          <ProjectWorkspace
+            parts={parts}
+            currentPart={part}
+            parameters={parameters}
+            state={modelState}
+            presetId={presetId}
+            geometryMode={geometryMode}
+            onSelect={(next, values, nextState) => {
+              selectPart(next, values, nextState);
+              setDialog(null);
+            }}
+          />
+        </Modal>
+      )}
       {dialog === 'script' && (
         <Modal
-          title="Bring it into FreeCAD"
+          title="Open in FreeCAD"
           subtitle={`${part.name} · ${part.states?.find((state) => state.id === modelState)?.label ?? 'Default state'}`}
           wide
           onClose={() => setDialog(null)}
         >
+          <GeometryModeSwitch value={geometryMode} onChange={setGeometryMode} />
+          <div
+            className="export-preparation-status"
+            role={!outputs.pending && outputs.error && !script ? 'alert' : 'status'}
+          >
+            {outputs.pending ? (
+              <>
+                <LoaderCircle size={16} className="busy-spinner" />
+                Preparing {geometryMode} geometry…
+              </>
+            ) : outputs.error && !script ? (
+              <>
+                <span className="export-error">{outputs.error}</span>
+                <button
+                  className="secondary-button"
+                  disabled={!!errors.length || outputs.pending}
+                  onClick={() => {
+                    consoleInput.current?.focus();
+                    void outputs.prepare('script').catch(() => {});
+                  }}
+                >
+                  Try again
+                </button>
+              </>
+            ) : (
+              'Choose the detail level, then copy the command or download the macro.'
+            )}
+          </div>
           <div className="script-instructions">
             <span className="step-number">1</span>
             <p>
@@ -764,19 +997,24 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
             CONSOLE COMMAND
           </label>
           <textarea
+            ref={consoleInput}
             id="console-command"
             className="console-command"
             readOnly
-            value={consoleCommand(script)}
+            value={script ? consoleCommand(script) : ''}
+            placeholder={outputs.pending ? 'Preparing FreeCAD code…' : 'Code will appear here.'}
             onFocus={(event) => event.currentTarget.select()}
             rows={3}
           />
-          <details className="source-details">
+          <details
+            className="source-details"
+            onToggle={(event) => setSourceOpen(event.currentTarget.open)}
+          >
             <summary>
               <Code2 size={15} />
               Preview Python source <ChevronDown size={14} />
             </summary>
-            <pre>{script}</pre>
+            {sourceOpen && <pre>{script}</pre>}
           </details>
           <div className="modal-note">
             <InfoIcon />
@@ -785,11 +1023,19 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
             FCStd.
           </div>
           <div className="modal-actions">
-            <button className="secondary-button" onClick={() => exportPart('macro')}>
+            <button
+              className="secondary-button"
+              onClick={() => void exportPart('macro')}
+              disabled={!script || outputs.pending}
+            >
               <ArrowDownToLine size={16} />
               Download macro
             </button>
-            <button className="primary-button" onClick={copyScript}>
+            <button
+              className="primary-button"
+              onClick={copyScript}
+              disabled={!script || outputs.pending}
+            >
               <Copy size={15} />
               Copy console command
             </button>
@@ -813,8 +1059,12 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
                 'Use Find presets to search by designation, type and size range. Find matching uses your current dimensions as editable filters. Apply a result, then customize it.',
               ],
               [
-                'Bring it into your project',
-                'Copy Python, open View → Panels → Python console in FreeCAD, paste and press Enter.',
+                'Choose your detail level',
+                'Simple hides threads and exports lighter geometry for TechDraw. Full shows threads and includes helical thread geometry in FreeCAD. Switch above the preview or in FreeCAD options.',
+              ],
+              [
+                'Build a project or open FreeCAD',
+                'Add to project to manage the product structure, documents and specification. Copy for FreeCAD, then paste into View → Panels → Python console in FreeCAD.',
               ],
               [
                 'Keep what works',

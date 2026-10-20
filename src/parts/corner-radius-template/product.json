@@ -1,0 +1,13 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "Two-edge corner registration for marking, sanding and checking external radii.",
+  "processes": [
+    "printing"
+  ],
+  "releaseRequirements": [
+    "Select measured workpiece dimensions, final datum, tool and suitable material.",
+    "Provide positive clamping and verify guide/pin retention and tool clearance.",
+    "Qualify actual fit, wear, accuracy and working load; prototype geometry is not production approval."
+  ]
+}

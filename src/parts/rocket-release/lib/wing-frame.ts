@@ -1,6 +1,6 @@
 import type { Parameters } from '../../../core/types';
 import type { Piece } from './assembly';
-import { cylinder, circle, plate, union, subtract, type Point, type Shape } from './shapes';
+import { cylinder, circle, plate, union, subtract, type Point, type Shape } from '../../../core/assembly/recovery/shapes';
 import { wingLayout, wingTies } from './wing-layout';
 import { controllerMounts, controllerPlacement } from './wing-controller';
 

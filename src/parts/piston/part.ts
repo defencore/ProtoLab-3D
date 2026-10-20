@@ -1,13 +1,20 @@
+import { pistonComposition, pistonPieces } from './lib/composition';
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import { withParameterStates } from '../../core/parameter-states';
 import type { PartDefinition, Preset } from '../../core/types';
 import { n } from '../../core/geometry';
 import { defaults, parameters } from './configurator';
 import { pistonValues, pistonComponents } from './lib/piston';
-import { assemblyBounds, assemblyGeometry, assemblyPython } from './lib/solids';
+import { assemblyBounds } from './lib/solids';
+import { componentGeometry, componentPython } from '../../core/assembly/detail-instances';
+import manufacturedPart from '../manufactured-detail/part';
 import presetData from './presets.json';
 
 const part: PartDefinition = {
   id: 'piston',
+  composition: (p) => pistonComposition(pistonComponents(p, 'assembled')),
+  product: productData as ProductProfile,
   name: 'Piston',
   category: 'TRANSMISSION & LINKAGES',
   subgroup: 'PISTONS & CONNECTING RODS',
@@ -114,8 +121,9 @@ const part: PartDefinition = {
     }
     return errors;
   },
-  buildGeometry: (p, s) => assemblyGeometry(pistonComponents(p, s)),
-  python: (p, s) => assemblyPython(pistonComponents(p, s)),
+  buildGeometry: (p, s) =>
+    componentGeometry([manufacturedPart], pistonPieces(pistonComponents(p, s))),
+  python: (p, s) => componentPython([manufacturedPart], pistonPieces(pistonComponents(p, s))),
   dimensions(p, s) {
     const bounds = assemblyBounds(pistonComponents(p, s));
     return bounds[1].map((v, i) => v - bounds[0][i]) as [number, number, number];

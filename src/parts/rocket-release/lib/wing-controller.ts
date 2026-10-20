@@ -12,7 +12,7 @@ import {
   rotate,
   type Shape,
   type Point,
-} from './shapes';
+} from '../../../core/assembly/recovery/shapes';
 import { screw, flatScrew, matingHole } from './hardware';
 
 // Standard orientation from SpeedyBee manual V1.2. Only the stack envelope and
@@ -52,8 +52,22 @@ const welded = (solid: Shape): Shape => ({
 });
 export function controllerPieces(p: Parameters): Piece[] {
   const out: Piece[] = [];
-  const add = (label: string, shape: Shape, color = 0x293c32) =>
-    out.push({ label, shape: controllerPlacement(p, shape), color });
+  const supplierUnit = {
+    SupplierUnitId: 'speedybee-f405-wing-mini-kit',
+    SupplierUnitName: 'SpeedyBee F405 WING-MINI board stack and supplied mounting hardware',
+    SupplierManufacturer: 'SpeedyBee',
+    SupplierSource: 'https://www.speedybee.com/f405-wing-mini-download/',
+    SupplierScope:
+      'One complete supplier kit; individual board components and pins are installation references. Verify the supplied mounting hardware and actual interfaces.',
+  };
+  let supplierElectronics = true;
+  const add = (label: string, shape: Shape, color = 0x293c32, metadata?: Record<string, string>) =>
+    out.push({
+      label,
+      shape: controllerPlacement(p, shape),
+      color,
+      metadata: { ...(supplierElectronics ? supplierUnit : {}), ...metadata },
+    });
   const mounts = controllerMounts(p),
     holes = mounts.map(([x, y]) => circle(1.1, x, y));
   add(
@@ -119,6 +133,7 @@ export function controllerPieces(p: Parameters): Piece[] {
         box([0.64, 0.64, 6], [-17.55 + col * 2.54, -11.75 + row * 2.54, 7.5]),
         0xb99450,
       );
+  supplierElectronics = false;
   mounts.forEach(([x, y], i) => {
     const isolated = p.wingBattery === '2x18650';
     const bottom = controllerBottomScrew(p, x, y);
@@ -133,11 +148,13 @@ export function controllerPieces(p: Parameters): Piece[] {
         `WING MINI damper lower insert ${i + 1} · bonded steel · M2 female depth2 · custom fit reference`,
         subtract(cylinder(2.5, 2.2, [x, y, -4]), matingHole(bottom)),
         0x929eac,
+        { SourceProcess: 'TURN / DRILL / TAP', SourceMaterial: 'steel; grade to specify' },
       );
       add(
         `WING MINI damper upper stud ${i + 1} · bonded steel · M2×0.4×3 · flange t0.7 · custom fit reference`,
         welded(union(cylinder(2.5, 0.7, [x, y, -0.7]), upperStud)),
         0x929eac,
+        { SourceProcess: 'TURN / THREAD', SourceMaterial: 'steel; grade to specify' },
       );
       add(
         `WING MINI bonded elastomer damper ${i + 1} · silicone Ø6×4 envelope · separate inserts · stiffness TBD`,
@@ -151,6 +168,8 @@ export function controllerPieces(p: Parameters): Piece[] {
         0x363e47,
       );
       out[out.length - 1].metadata = {
+        SourceProcess: 'MOULD / BOND',
+        SourceMaterial: 'silicone; compound to specify',
         DrawingStatus:
           'PROVISIONAL bonded isolator; select compound, stiffness, bond process and load limits before manufacture',
         Isolation: 'Separate metal ends; 1.1 mm elastomer between embedded ends; no through-bolt',
@@ -196,6 +215,7 @@ export function controllerPieces(p: Parameters): Piece[] {
         ),
       ),
       0xb99450,
+      supplierUnit,
     );
     add(
       `BUY WING MINI M2×6.5 copper female-female standoff ${i + 1} · Ø3.2 fit reference`,
@@ -205,18 +225,26 @@ export function controllerPieces(p: Parameters): Piece[] {
         matingHole(top),
       ),
       0xb99450,
+      supplierUnit,
     );
     add(
       `WING MINI frame screw ${i + 1} · M2×0.4×${isolated ? 4 : 6}${isolated ? ' · countersunk 90° · damper lower end only' : ''}`,
       bottom,
       0x929eac,
+      { SourceProcess: 'BUY', SourceMaterial: 'stainless steel; supplied grade to confirm' },
     );
-    add(`WING MINI supplied top screw ${i + 1} · cross pan head · M2×0.4×3.5`, top, 0x929eac);
+    add(
+      `WING MINI supplied top screw ${i + 1} · cross pan head · M2×0.4×3.5`,
+      top,
+      0x929eac,
+      supplierUnit,
+    );
     if (!isolated)
       add(
         `WING MINI shield isolation pad ${i + 1} · silicone Ø5/2.2×1`,
         plate(circle(2.5, x, y), [circle(1.1, x, y)], -1, 1),
         0x373e43,
+        { SourceProcess: 'CUT', SourceMaterial: 'silicone; compound to specify' },
       );
   });
   return out;

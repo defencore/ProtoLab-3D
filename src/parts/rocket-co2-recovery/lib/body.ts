@@ -14,7 +14,7 @@ import {
   union,
   subtract,
   type Shape,
-} from '../../rocket-release/lib/shapes';
+} from '../../../core/assembly/recovery/shapes';
 
 // Local coordinates use the bulkhead datum. The public assembly turns nose-up.
 export function bodyJoints(p: Parameters) {

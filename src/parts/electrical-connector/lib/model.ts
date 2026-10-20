@@ -1,8 +1,8 @@
 import type { Parameters } from '../../../core/types';
 import models from './models.json';
-import type { Piece } from './assembly';
-import { B, C, T, poly, move, union, cut, finish } from './helpers';
-import type { Shape } from './shapes';
+import type { Piece } from '../../../core/assembly/mechanical/assembly';
+import { B, C, T, poly, move, union, cut, finish } from '../../../core/assembly/mechanical/helpers';
+import type { Shape } from '../../../core/assembly/mechanical/shapes';
 
 // M/F always describes metal contacts, not the outer plastic shroud.
 export function pieces(p: Parameters, state: string): Piece[] {

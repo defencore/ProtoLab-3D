@@ -24,7 +24,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'showLeads',
-    label: 'Show short cable leads',
+    label: 'Show illustrative cable outlet and leads',
     type: 'boolean',
     group: 'Assembly',
     filterable: false,
@@ -34,6 +34,27 @@ export const parameters: ParameterDefinition[] = [
 ];
 export const catalogSelection: NonNullable<PartDefinition['catalogSelection']> = [{ key: 'model' }];
 export const catalogFilterFields: ParameterDefinition[] = [
+  {
+    key: 'mountHole',
+    label: 'Mounting hole nominal diameter',
+    unit: 'mm',
+    type: 'number',
+    group: 'Dimensions',
+  },
+  {
+    key: 'mountDepth',
+    label: 'Mounting thread depth (0 = through)',
+    unit: 'mm',
+    type: 'number',
+    group: 'Dimensions',
+  },
+  {
+    key: 'stepAngle',
+    label: 'Full step angle',
+    unit: '°',
+    type: 'number',
+    group: 'Specifications',
+  },
   {
     key: 'width',
     label: 'Frame width',

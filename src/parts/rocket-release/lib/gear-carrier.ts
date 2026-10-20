@@ -1,7 +1,7 @@
 import type { Parameters } from '../../../core/types';
 import type { Piece } from './assembly';
 import { at, layout } from './motion';
-import { cylinder, ring, subtract, transform } from './shapes';
+import { cylinder, ring, subtract, transform } from '../../../core/assembly/recovery/shapes';
 import { flatScrew, flatSeat } from './hardware';
 
 export const gearCapZ = 51.15;

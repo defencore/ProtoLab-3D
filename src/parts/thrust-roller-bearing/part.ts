@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -13,7 +15,7 @@ import {
   numberParameter,
   ring,
 } from '../../core/geometry';
-import { envelopeParameters, validateEnvelope } from './lib/parts/motion-bearing-utils';
+import { envelopeParameters, validateEnvelope } from '../../core/hardware/motion-bearing-utils';
 import { assemblyStates } from './lib/parts/bearing-utils';
 import { motionSources } from './lib/catalog/motion-bearings';
 
@@ -35,6 +37,7 @@ function values(p: Parameters, state: string) {
 }
 const part: PartDefinition = {
   id: 'thrust-roller-bearing',
+  product: productData as ProductProfile,
   name: 'Cylindrical thrust roller bearing',
   category: 'BEARINGS & SEALS',
   subgroup: 'THRUST BEARINGS',
@@ -44,7 +47,7 @@ const part: PartDefinition = {
     'Two axial washers and radially oriented cylindrical rollers for a thrust-bearing assembly.',
   keywords: ['thrust', 'roller', 'axial', '81105', '81110', 'cylindrical'],
   parameters: [
-    ...envelopeParameters,
+    ...envelopeParameters(),
     numberParameter('washer', 'Shaft washer thickness', 's', 'Internal layout', 0.3, 40),
     {
       ...numberParameter('rollers', 'Illustrative roller count', 'n', 'Internal layout', 4, 50, 1),

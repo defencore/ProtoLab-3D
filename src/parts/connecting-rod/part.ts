@@ -1,21 +1,14 @@
+import { rodComposition, rodPieces } from './lib/composition';
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import { withParameterStates } from '../../core/parameter-states';
-import { Group } from 'three';
-import { n, num } from '../../core/geometry';
+import { componentGeometry, componentPython } from '../../core/assembly/detail-instances';
+import manufacturedPart from '../manufactured-detail/part';
+import { n } from '../../core/geometry';
 import type { Parameters, PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters } from './configurator';
 import presetData from './presets.json';
-import {
-  bounds,
-  box,
-  component,
-  cylinder,
-  intersect,
-  prism,
-  pythonHelpers,
-  pythonShape,
-  subtract,
-  union,
-} from './lib/shapes';
+import { bounds, box, cylinder, intersect, prism, subtract, union } from './lib/shapes';
 import type { Bounds, Shape, Vec } from './lib/shapes';
 
 export function rodValues(p: Parameters) {
@@ -234,6 +227,8 @@ export function assemblyBounds(p: Parameters, state: string): Bounds {
 }
 const part: PartDefinition = {
   id: 'connecting-rod',
+  composition: (p) => rodComposition(rodAssembly(p, 'assembled')),
+  product: productData as ProductProfile,
   name: 'Connecting rod',
   category: 'TRANSMISSION & LINKAGES',
   subgroup: 'PISTONS & CONNECTING RODS',
@@ -318,36 +313,10 @@ const part: PartDefinition = {
     return errors;
   },
   buildGeometry(p, state) {
-    const group = new Group();
-    for (const c of rodAssembly(p, state)) {
-      const mesh = component(c.shape, c.label, c.color);
-      mesh.position.add({ x: c.shift[0], y: c.shift[1], z: c.shift[2] });
-      group.add(mesh);
-    }
-    return group;
+    return componentGeometry([manufacturedPart], rodPieces(rodAssembly(p, state)));
   },
   python(p, state) {
-    const lines = [
-      '# Connecting rod prototype; the supplied anatomy images establish no dimensions.',
-      '# Cap fastener threads are smooth envelopes. Working bores and housing bores are distinct.',
-      pythonHelpers,
-      'components = []',
-      'component_labels = []',
-      'component_colors = []',
-    ];
-    for (const c of rodAssembly(p, state)) {
-      lines.push(`item = ${pythonShape(c.shape)}.removeSplitter()`);
-      if (c.shift.some((v) => v !== 0))
-        lines.push(`item.translate(App.Vector(${c.shift.map(num).join(',')}))`);
-      lines.push(
-        'if item.isNull() or not item.isValid() or len(item.Solids) != 1: raise ValueError("A connecting rod component failed solid validation.")',
-        'components.append(item)',
-        `component_labels.append(${JSON.stringify(c.label)})`,
-        `component_colors.append((${[(c.color >> 16) & 255, (c.color >> 8) & 255, c.color & 255].map((v) => num(v / 255)).join(',')}))`,
-      );
-    }
-    lines.push('shape = Part.makeCompound(components)');
-    return lines.join('\n');
+    return componentPython([manufacturedPart], rodPieces(rodAssembly(p, state)));
   },
   dimensions(p, state) {
     const b = assemblyBounds(p, state);

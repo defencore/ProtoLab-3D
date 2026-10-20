@@ -1,8 +1,8 @@
 import { BufferAttribute, BufferGeometry, Group, Mesh, MeshStandardMaterial } from 'three';
 import type { Parameters } from '../../../core/types';
 import native from './native.json';
-import { box, cylinder, subtract, union } from './shapes';
-import * as assembly from './assembly';
+import { box, cylinder, subtract, union } from '../../../core/assembly/electronics/shapes';
+import * as assembly from '../../../core/assembly/electronics/assembly';
 
 // The Aptiv brochure dimensions the envelope, not the key/latch clearances.
 // This is one representative AK-1 sample, not invented B/C coding variants.

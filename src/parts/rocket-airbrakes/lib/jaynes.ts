@@ -1,6 +1,7 @@
+import { markSupplierUnit } from '../../../core/supplier-components';
 /** Reference-inspired topology studies; dimensions and transmission details are reconstructed. */
 import type { Parameters } from '../../../core/types';
-import type { Piece } from './assembly';
+import type { Piece } from './shapes';
 import {
   sphere,
   box,
@@ -160,9 +161,23 @@ export function hingedJaynes(p: Parameters, state: string): Piece[] {
     );
   }
   const [sl, sw, sh] = m.servo;
+  const servoPiece = (label: string, shape: Shape, color = blue) => {
+    markSupplierUnit([shape], {
+      name: p.servo === 'micro' ? 'Tower Pro MG90S servo' : 'Tower Pro MG996R servo',
+      procurement: {
+        designation: p.servo === 'micro' ? 'MG90S' : 'MG996R',
+        manufacturer: 'Tower Pro',
+        source:
+          p.servo === 'micro'
+            ? 'https://towerpro.com.tw/product/mg90s-3/'
+            : 'https://towerpro.com.tw/product/mg996r/',
+      },
+    });
+    add(label, shape, color);
+  };
   if (m.v2) {
     const deck = z - 23;
-    add(
+    servoPiece(
       'Vertical servo body · installation envelope',
       box([sl, sw, sh], [-sl + sw / 2, -sw / 2, deck - sh - 3]),
       blue,
@@ -217,7 +232,7 @@ export function hingedJaynes(p: Parameters, state: string): Piece[] {
     }
     const sx = m.v1 ? -a : 0,
       sy = m.v1 ? 0 : 8;
-    add(
+    servoPiece(
       m.v1
         ? 'Transverse micro servo · installation envelope'
         : 'Centered transverse servo · installation envelope',

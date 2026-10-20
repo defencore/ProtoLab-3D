@@ -1,0 +1,104 @@
+[
+  {
+    "id": "back-65",
+    "name": "65 mm / Rear block",
+    "description": "Own machined aluminium clamp detail; supplier geometry and fit are not implied.",
+    "parameters": {
+      "component": "back",
+      "bodyDiameter": 65,
+      "clampHeight": 40,
+      "radialWall": 14,
+      "rearWall": 18,
+      "splitGap": 1,
+      "boreClearance": 0.15,
+      "clampBoltDiameter": "6",
+      "mountBoltDiameter": "6",
+      "threadFitAllowance": 0
+    }
+  },
+  {
+    "id": "cap-65",
+    "name": "65 mm / Front cap",
+    "description": "Own machined aluminium clamp detail; supplier geometry and fit are not implied.",
+    "parameters": {
+      "component": "cap",
+      "bodyDiameter": 65,
+      "clampHeight": 40,
+      "radialWall": 14,
+      "rearWall": 18,
+      "splitGap": 1,
+      "boreClearance": 0.15,
+      "clampBoltDiameter": "6",
+      "mountBoltDiameter": "6",
+      "threadFitAllowance": 0
+    }
+  },
+  {
+    "id": "back-80",
+    "name": "80 mm / Rear block",
+    "description": "Own machined aluminium clamp detail; supplier geometry and fit are not implied.",
+    "parameters": {
+      "component": "back",
+      "bodyDiameter": 80,
+      "clampHeight": 40,
+      "radialWall": 14,
+      "rearWall": 18,
+      "splitGap": 1,
+      "boreClearance": 0.15,
+      "clampBoltDiameter": "6",
+      "mountBoltDiameter": "6",
+      "threadFitAllowance": 0
+    }
+  },
+  {
+    "id": "cap-80",
+    "name": "80 mm / Front cap",
+    "description": "Own machined aluminium clamp detail; supplier geometry and fit are not implied.",
+    "parameters": {
+      "component": "cap",
+      "bodyDiameter": 80,
+      "clampHeight": 40,
+      "radialWall": 14,
+      "rearWall": 18,
+      "splitGap": 1,
+      "boreClearance": 0.15,
+      "clampBoltDiameter": "6",
+      "mountBoltDiameter": "6",
+      "threadFitAllowance": 0
+    }
+  },
+  {
+    "id": "back-100",
+    "name": "100 mm / Rear block",
+    "description": "Own machined aluminium clamp detail; supplier geometry and fit are not implied.",
+    "parameters": {
+      "component": "back",
+      "bodyDiameter": 100,
+      "clampHeight": 40,
+      "radialWall": 14,
+      "rearWall": 18,
+      "splitGap": 1,
+      "boreClearance": 0.15,
+      "clampBoltDiameter": "6",
+      "mountBoltDiameter": "6",
+      "threadFitAllowance": 0
+    }
+  },
+  {
+    "id": "cap-100",
+    "name": "100 mm / Front cap",
+    "description": "Own machined aluminium clamp detail; supplier geometry and fit are not implied.",
+    "parameters": {
+      "component": "cap",
+      "bodyDiameter": 100,
+      "clampHeight": 40,
+      "radialWall": 14,
+      "rearWall": 18,
+      "splitGap": 1,
+      "boreClearance": 0.15,
+      "clampBoltDiameter": "6",
+      "mountBoltDiameter": "6",
+      "threadFitAllowance": 0
+    }
+  }
+]

@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -11,7 +13,7 @@ import {
   envelopeParameters,
   validateEnvelope,
   type TurnedProfile,
-} from './lib/parts/motion-bearing-utils';
+} from '../../core/hardware/motion-bearing-utils';
 import { motionSources } from './lib/catalog/motion-bearings';
 
 function values(p: Parameters) {
@@ -69,6 +71,7 @@ function camCup(p: Parameters) {
 }
 const part: PartDefinition = {
   id: 'one-way-clutch',
+  product: productData as ProductProfile,
   name: 'Drawn-cup one-way clutch',
   category: 'TRANSMISSION & LINKAGES',
   subgroup: 'ONE-WAY CLUTCHES',
@@ -77,7 +80,7 @@ const part: PartDefinition = {
   description: 'An HF-style drawn cup with repeated locking-ramp cavities and an axial roller set.',
   keywords: ['one way', 'overrunning', 'clutch', 'freewheel', 'HF1012', 'HF1216', 'drawn cup'],
   parameters: [
-    ...envelopeParameters,
+    ...envelopeParameters(),
     {
       ...numberParameter('rollers', 'Illustrative roller count', 'n', 'Internal layout', 4, 40, 1),
       unit: '',

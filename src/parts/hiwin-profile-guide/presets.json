@@ -1,0 +1,1742 @@
+[
+  {
+    "id": "mgn7c",
+    "name": "HIWIN MGN7C",
+    "description": "7 mm rail; 17 x 22.5 mm carriage; H=8 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "mgn7c",
+      "length": 300,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "MGN7C",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p86",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=89",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "MGN7C"
+      ],
+      "attributes": {
+        "series": "MGN",
+        "size": 7,
+        "railWidth": 7,
+        "railHeight": 4.8,
+        "width": 17,
+        "height": 8,
+        "blockLength": 22.5,
+        "thread": 2,
+        "pitchX": 8,
+        "pitchY": 12,
+        "blockType": "C"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M2 x 2.5 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mgn7h",
+    "name": "HIWIN MGN7H",
+    "description": "7 mm rail; 17 x 30.8 mm carriage; H=8 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "mgn7h",
+      "length": 300,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "MGN7H",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p86",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=89",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "MGN7H"
+      ],
+      "attributes": {
+        "series": "MGN",
+        "size": 7,
+        "railWidth": 7,
+        "railHeight": 4.8,
+        "width": 17,
+        "height": 8,
+        "blockLength": 30.8,
+        "thread": 2,
+        "pitchX": 13,
+        "pitchY": 12,
+        "blockType": "H"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M2 x 2.5 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mgn9c",
+    "name": "HIWIN MGN9C",
+    "description": "9 mm rail; 20 x 28.9 mm carriage; H=10 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "mgn9c",
+      "length": 300,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "MGN9C",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p86",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=89",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "MGN9C"
+      ],
+      "attributes": {
+        "series": "MGN",
+        "size": 9,
+        "railWidth": 9,
+        "railHeight": 6.5,
+        "width": 20,
+        "height": 10,
+        "blockLength": 28.9,
+        "thread": 3,
+        "pitchX": 10,
+        "pitchY": 15,
+        "blockType": "C"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M3 x 3 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mgn9h",
+    "name": "HIWIN MGN9H",
+    "description": "9 mm rail; 20 x 39.9 mm carriage; H=10 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "mgn9h",
+      "length": 300,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "MGN9H",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p86",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=89",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "MGN9H"
+      ],
+      "attributes": {
+        "series": "MGN",
+        "size": 9,
+        "railWidth": 9,
+        "railHeight": 6.5,
+        "width": 20,
+        "height": 10,
+        "blockLength": 39.9,
+        "thread": 3,
+        "pitchX": 16,
+        "pitchY": 15,
+        "blockType": "H"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M3 x 3 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mgn12c",
+    "name": "HIWIN MGN12C",
+    "description": "12 mm rail; 27 x 34.7 mm carriage; H=13 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "mgn12c",
+      "length": 300,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "MGN12C",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p86",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=89",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "MGN12C"
+      ],
+      "attributes": {
+        "series": "MGN",
+        "size": 12,
+        "railWidth": 12,
+        "railHeight": 8,
+        "width": 27,
+        "height": 13,
+        "blockLength": 34.7,
+        "thread": 3,
+        "pitchX": 15,
+        "pitchY": 20,
+        "blockType": "C"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M3 x 3.5 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mgn12h",
+    "name": "HIWIN MGN12H",
+    "description": "12 mm rail; 27 x 45.4 mm carriage; H=13 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "mgn12h",
+      "length": 300,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "MGN12H",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p86",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=89",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "MGN12H"
+      ],
+      "attributes": {
+        "series": "MGN",
+        "size": 12,
+        "railWidth": 12,
+        "railHeight": 8,
+        "width": 27,
+        "height": 13,
+        "blockLength": 45.4,
+        "thread": 3,
+        "pitchX": 20,
+        "pitchY": 20,
+        "blockType": "H"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M3 x 3.5 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mgn15c",
+    "name": "HIWIN MGN15C",
+    "description": "15 mm rail; 32 x 42.1 mm carriage; H=16 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "mgn15c",
+      "length": 300,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "MGN15C",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p86",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=89",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "MGN15C"
+      ],
+      "attributes": {
+        "series": "MGN",
+        "size": 15,
+        "railWidth": 15,
+        "railHeight": 10,
+        "width": 32,
+        "height": 16,
+        "blockLength": 42.1,
+        "thread": 3,
+        "pitchX": 20,
+        "pitchY": 25,
+        "blockType": "C"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M3 x 4 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mgn15h",
+    "name": "HIWIN MGN15H",
+    "description": "15 mm rail; 32 x 58.8 mm carriage; H=16 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "mgn15h",
+      "length": 300,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "MGN15H",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p86",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=89",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "MGN15H"
+      ],
+      "attributes": {
+        "series": "MGN",
+        "size": 15,
+        "railWidth": 15,
+        "railHeight": 10,
+        "width": 32,
+        "height": 16,
+        "blockLength": 58.8,
+        "thread": 3,
+        "pitchX": 25,
+        "pitchY": 25,
+        "blockType": "H"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M3 x 4 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mgw7c",
+    "name": "HIWIN MGW7C",
+    "description": "14 mm rail; 25 x 31.2 mm carriage; H=9 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "mgw7c",
+      "length": 300,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "MGW7C",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p87",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=90",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "MGW7C"
+      ],
+      "attributes": {
+        "series": "MGW",
+        "size": 7,
+        "railWidth": 14,
+        "railHeight": 5.2,
+        "width": 25,
+        "height": 9,
+        "blockLength": 31.2,
+        "thread": 3,
+        "pitchX": 10,
+        "pitchY": 19,
+        "blockType": "C"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M3 x 3 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mgw7h",
+    "name": "HIWIN MGW7H",
+    "description": "14 mm rail; 25 x 41 mm carriage; H=9 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "mgw7h",
+      "length": 300,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "MGW7H",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p87",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=90",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "MGW7H"
+      ],
+      "attributes": {
+        "series": "MGW",
+        "size": 7,
+        "railWidth": 14,
+        "railHeight": 5.2,
+        "width": 25,
+        "height": 9,
+        "blockLength": 41,
+        "thread": 3,
+        "pitchX": 19,
+        "pitchY": 19,
+        "blockType": "H"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M3 x 3 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mgw9c",
+    "name": "HIWIN MGW9C",
+    "description": "18 mm rail; 30 x 39.3 mm carriage; H=12 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "mgw9c",
+      "length": 300,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "MGW9C",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p87",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=90",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "MGW9C"
+      ],
+      "attributes": {
+        "series": "MGW",
+        "size": 9,
+        "railWidth": 18,
+        "railHeight": 7,
+        "width": 30,
+        "height": 12,
+        "blockLength": 39.3,
+        "thread": 3,
+        "pitchX": 12,
+        "pitchY": 21,
+        "blockType": "C"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M3 x 3 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mgw9h",
+    "name": "HIWIN MGW9H",
+    "description": "18 mm rail; 30 x 50.7 mm carriage; H=12 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "mgw9h",
+      "length": 300,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "MGW9H",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p87",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=90",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "MGW9H"
+      ],
+      "attributes": {
+        "series": "MGW",
+        "size": 9,
+        "railWidth": 18,
+        "railHeight": 7,
+        "width": 30,
+        "height": 12,
+        "blockLength": 50.7,
+        "thread": 3,
+        "pitchX": 24,
+        "pitchY": 23,
+        "blockType": "H"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M3 x 3 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mgw12c",
+    "name": "HIWIN MGW12C",
+    "description": "24 mm rail; 40 x 46.1 mm carriage; H=14 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "mgw12c",
+      "length": 300,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "MGW12C",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p87",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=90",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "MGW12C"
+      ],
+      "attributes": {
+        "series": "MGW",
+        "size": 12,
+        "railWidth": 24,
+        "railHeight": 8.5,
+        "width": 40,
+        "height": 14,
+        "blockLength": 46.1,
+        "thread": 3,
+        "pitchX": 15,
+        "pitchY": 28,
+        "blockType": "C"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M3 x 3.6 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mgw12h",
+    "name": "HIWIN MGW12H",
+    "description": "24 mm rail; 40 x 60.4 mm carriage; H=14 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "mgw12h",
+      "length": 300,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "MGW12H",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p87",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=90",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "MGW12H"
+      ],
+      "attributes": {
+        "series": "MGW",
+        "size": 12,
+        "railWidth": 24,
+        "railHeight": 8.5,
+        "width": 40,
+        "height": 14,
+        "blockLength": 60.4,
+        "thread": 3,
+        "pitchX": 28,
+        "pitchY": 28,
+        "blockType": "H"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M3 x 3.6 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mgw15c",
+    "name": "HIWIN MGW15C",
+    "description": "42 mm rail; 60 x 54.8 mm carriage; H=16 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "mgw15c",
+      "length": 300,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "MGW15C",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p87",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=90",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "MGW15C"
+      ],
+      "attributes": {
+        "series": "MGW",
+        "size": 15,
+        "railWidth": 42,
+        "railHeight": 9.5,
+        "width": 60,
+        "height": 16,
+        "blockLength": 54.8,
+        "thread": 4,
+        "pitchX": 20,
+        "pitchY": 45,
+        "blockType": "C"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M4 x 4.2 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mgw15h",
+    "name": "HIWIN MGW15H",
+    "description": "42 mm rail; 60 x 73.8 mm carriage; H=16 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "mgw15h",
+      "length": 300,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "MGW15H",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p87",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=90",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "MGW15H"
+      ],
+      "attributes": {
+        "series": "MGW",
+        "size": 15,
+        "railWidth": 42,
+        "railHeight": 9.5,
+        "width": 60,
+        "height": 16,
+        "blockLength": 73.8,
+        "thread": 4,
+        "pitchX": 35,
+        "pitchY": 45,
+        "blockType": "H"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M4 x 4.2 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "hgh15ca",
+    "name": "HIWIN HGH15CA",
+    "description": "15 mm rail; 34 x 61.4 mm carriage; H=28 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "hgh15ca",
+      "length": 500,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "HGH15CA",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p37",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=40",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "HGH15CA"
+      ],
+      "attributes": {
+        "series": "HGH",
+        "size": 15,
+        "railWidth": 15,
+        "railHeight": 15,
+        "width": 34,
+        "height": 28,
+        "blockLength": 61.4,
+        "thread": 4,
+        "pitchX": 26,
+        "pitchY": 26,
+        "blockType": "CA"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M4 x 5 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "hgw15cc",
+    "name": "HIWIN HGW15CC",
+    "description": "15 mm rail; 47 x 61.4 mm carriage; H=24 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "hgw15cc",
+      "length": 500,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "HGW15CC",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p41",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=44",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "HGW15CC"
+      ],
+      "attributes": {
+        "series": "HGW",
+        "size": 15,
+        "railWidth": 15,
+        "railHeight": 15,
+        "width": 47,
+        "height": 24,
+        "blockLength": 61.4,
+        "thread": 5,
+        "pitchX": 30,
+        "pitchY": 38,
+        "blockType": "CC"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M5 x 6 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "hgh20ca",
+    "name": "HIWIN HGH20CA",
+    "description": "20 mm rail; 44 x 77.5 mm carriage; H=30 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "hgh20ca",
+      "length": 500,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "HGH20CA",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p37",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=40",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "HGH20CA"
+      ],
+      "attributes": {
+        "series": "HGH",
+        "size": 20,
+        "railWidth": 20,
+        "railHeight": 17.5,
+        "width": 44,
+        "height": 30,
+        "blockLength": 77.5,
+        "thread": 5,
+        "pitchX": 36,
+        "pitchY": 32,
+        "blockType": "CA"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M5 x 6 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "hgh20ha",
+    "name": "HIWIN HGH20HA",
+    "description": "20 mm rail; 44 x 92.2 mm carriage; H=30 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "hgh20ha",
+      "length": 500,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "HGH20HA",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p37",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=40",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "HGH20HA"
+      ],
+      "attributes": {
+        "series": "HGH",
+        "size": 20,
+        "railWidth": 20,
+        "railHeight": 17.5,
+        "width": 44,
+        "height": 30,
+        "blockLength": 92.2,
+        "thread": 5,
+        "pitchX": 50,
+        "pitchY": 32,
+        "blockType": "HA"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M5 x 6 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "hgw20cc",
+    "name": "HIWIN HGW20CC",
+    "description": "20 mm rail; 63 x 77.5 mm carriage; H=30 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "hgw20cc",
+      "length": 500,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "HGW20CC",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p41",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=44",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "HGW20CC"
+      ],
+      "attributes": {
+        "series": "HGW",
+        "size": 20,
+        "railWidth": 20,
+        "railHeight": 17.5,
+        "width": 63,
+        "height": 30,
+        "blockLength": 77.5,
+        "thread": 6,
+        "pitchX": 40,
+        "pitchY": 53,
+        "blockType": "CC"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M6 x 8 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "hgw20hc",
+    "name": "HIWIN HGW20HC",
+    "description": "20 mm rail; 63 x 92.2 mm carriage; H=30 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "hgw20hc",
+      "length": 500,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "HGW20HC",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p41",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=44",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "HGW20HC"
+      ],
+      "attributes": {
+        "series": "HGW",
+        "size": 20,
+        "railWidth": 20,
+        "railHeight": 17.5,
+        "width": 63,
+        "height": 30,
+        "blockLength": 92.2,
+        "thread": 6,
+        "pitchX": 40,
+        "pitchY": 53,
+        "blockType": "HC"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M6 x 8 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "hgh25ca",
+    "name": "HIWIN HGH25CA",
+    "description": "23 mm rail; 48 x 84 mm carriage; H=40 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "hgh25ca",
+      "length": 500,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "HGH25CA",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p37",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=40",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "HGH25CA"
+      ],
+      "attributes": {
+        "series": "HGH",
+        "size": 25,
+        "railWidth": 23,
+        "railHeight": 22,
+        "width": 48,
+        "height": 40,
+        "blockLength": 84,
+        "thread": 6,
+        "pitchX": 35,
+        "pitchY": 35,
+        "blockType": "CA"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M6 x 8 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "hgh25ha",
+    "name": "HIWIN HGH25HA",
+    "description": "23 mm rail; 48 x 104.6 mm carriage; H=40 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "hgh25ha",
+      "length": 500,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "HGH25HA",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p37",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=40",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "HGH25HA"
+      ],
+      "attributes": {
+        "series": "HGH",
+        "size": 25,
+        "railWidth": 23,
+        "railHeight": 22,
+        "width": 48,
+        "height": 40,
+        "blockLength": 104.6,
+        "thread": 6,
+        "pitchX": 50,
+        "pitchY": 35,
+        "blockType": "HA"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M6 x 8 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "hgw25cc",
+    "name": "HIWIN HGW25CC",
+    "description": "23 mm rail; 70 x 84 mm carriage; H=36 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "hgw25cc",
+      "length": 500,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "HGW25CC",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p41",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=44",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "HGW25CC"
+      ],
+      "attributes": {
+        "series": "HGW",
+        "size": 25,
+        "railWidth": 23,
+        "railHeight": 22,
+        "width": 70,
+        "height": 36,
+        "blockLength": 84,
+        "thread": 8,
+        "pitchX": 45,
+        "pitchY": 57,
+        "blockType": "CC"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M8 x 8 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "hgw25hc",
+    "name": "HIWIN HGW25HC",
+    "description": "23 mm rail; 70 x 104.6 mm carriage; H=36 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "hgw25hc",
+      "length": 500,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "HGW25HC",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p41",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=44",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "HGW25HC"
+      ],
+      "attributes": {
+        "series": "HGW",
+        "size": 25,
+        "railWidth": 23,
+        "railHeight": 22,
+        "width": 70,
+        "height": 36,
+        "blockLength": 104.6,
+        "thread": 8,
+        "pitchX": 45,
+        "pitchY": 57,
+        "blockType": "HC"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M8 x 8 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "hgh30ca",
+    "name": "HIWIN HGH30CA",
+    "description": "28 mm rail; 60 x 97.4 mm carriage; H=45 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "hgh30ca",
+      "length": 500,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "HGH30CA",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p37",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=40",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "HGH30CA"
+      ],
+      "attributes": {
+        "series": "HGH",
+        "size": 30,
+        "railWidth": 28,
+        "railHeight": 26,
+        "width": 60,
+        "height": 45,
+        "blockLength": 97.4,
+        "thread": 8,
+        "pitchX": 40,
+        "pitchY": 40,
+        "blockType": "CA"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M8 x 10 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "hgh30ha",
+    "name": "HIWIN HGH30HA",
+    "description": "28 mm rail; 60 x 120.4 mm carriage; H=45 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "hgh30ha",
+      "length": 500,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "HGH30HA",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p37",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=40",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "HGH30HA"
+      ],
+      "attributes": {
+        "series": "HGH",
+        "size": 30,
+        "railWidth": 28,
+        "railHeight": 26,
+        "width": 60,
+        "height": 45,
+        "blockLength": 120.4,
+        "thread": 8,
+        "pitchX": 60,
+        "pitchY": 40,
+        "blockType": "HA"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M8 x 10 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "hgw30cc",
+    "name": "HIWIN HGW30CC",
+    "description": "28 mm rail; 90 x 97.4 mm carriage; H=42 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "hgw30cc",
+      "length": 500,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "HGW30CC",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p41",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=44",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "HGW30CC"
+      ],
+      "attributes": {
+        "series": "HGW",
+        "size": 30,
+        "railWidth": 28,
+        "railHeight": 26,
+        "width": 90,
+        "height": 42,
+        "blockLength": 97.4,
+        "thread": 10,
+        "pitchX": 52,
+        "pitchY": 72,
+        "blockType": "CC"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M10 x 8.5 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "hgw30hc",
+    "name": "HIWIN HGW30HC",
+    "description": "28 mm rail; 90 x 120.4 mm carriage; H=42 mm. Customer-cut length is editable.",
+    "parameters": {
+      "model": "hgw30hc",
+      "length": 500,
+      "blockCount": 1,
+      "blockSpacing": 150,
+      "position": 50
+    },
+    "catalog": {
+      "designation": "HGW30HC",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN G99TE22-2011, printed p41",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf#page=44",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "HGW30HC"
+      ],
+      "attributes": {
+        "series": "HGW",
+        "size": 30,
+        "railWidth": 28,
+        "railHeight": 26,
+        "width": 90,
+        "height": 42,
+        "blockLength": 120.4,
+        "thread": 10,
+        "pitchX": 52,
+        "pitchY": 72,
+        "blockType": "HC"
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published assembly height, rail section, counterbores, carriage envelope and mounting pattern.",
+        "limitations": "An installation model reconstructed from the dimensional drawing. Undimensioned raceway/cover contours, internal rolling elements and manufacturing tolerances are not supplied. Rail length and number/position of blocks are customer configuration.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "specifications": [
+        {
+          "label": "Catalog revision",
+          "value": "G99TE22-2011"
+        },
+        {
+          "label": "Mounting thread",
+          "value": "M10 x 8.5 mm"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  }
+]

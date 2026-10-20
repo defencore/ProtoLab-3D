@@ -1,0 +1,86 @@
+[
+  {
+    "id": "square",
+    "name": "Square crosscut",
+    "description": "Clamped hand-saw guide for repeatable crosscuts and angled cuts in small strip and tube stock. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockWidth": 25,
+      "stockHeight": 20,
+      "angle": 0,
+      "kerf": 1.2,
+      "stopDistance": 45,
+      "length": 150,
+      "floor": 7
+    }
+  },
+  {
+    "id": "a15",
+    "name": "Miter15",
+    "description": "Clamped hand-saw guide for repeatable crosscuts and angled cuts in small strip and tube stock. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockWidth": 25,
+      "stockHeight": 20,
+      "angle": 15,
+      "kerf": 1.2,
+      "stopDistance": 45,
+      "length": 150,
+      "floor": 7
+    }
+  },
+  {
+    "id": "a22p5",
+    "name": "Miter22.5",
+    "description": "Clamped hand-saw guide for repeatable crosscuts and angled cuts in small strip and tube stock. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockWidth": 25,
+      "stockHeight": 20,
+      "angle": 22.5,
+      "kerf": 1.2,
+      "stopDistance": 45,
+      "length": 150,
+      "floor": 7
+    }
+  },
+  {
+    "id": "a30",
+    "name": "Miter30",
+    "description": "Clamped hand-saw guide for repeatable crosscuts and angled cuts in small strip and tube stock. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockWidth": 25,
+      "stockHeight": 20,
+      "angle": 30,
+      "kerf": 1.2,
+      "stopDistance": 45,
+      "length": 150,
+      "floor": 7
+    }
+  },
+  {
+    "id": "a45",
+    "name": "Miter45",
+    "description": "Clamped hand-saw guide for repeatable crosscuts and angled cuts in small strip and tube stock. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockWidth": 25,
+      "stockHeight": 20,
+      "angle": 45,
+      "kerf": 1.2,
+      "stopDistance": 45,
+      "length": 150,
+      "floor": 7
+    }
+  },
+  {
+    "id": "a60",
+    "name": "Miter60 / narrow strip",
+    "description": "Clamped hand-saw guide for repeatable crosscuts and angled cuts in small strip and tube stock. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockWidth": 16,
+      "stockHeight": 20,
+      "angle": 60,
+      "kerf": 1.2,
+      "stopDistance": 45,
+      "length": 150,
+      "floor": 7
+    }
+  }
+]

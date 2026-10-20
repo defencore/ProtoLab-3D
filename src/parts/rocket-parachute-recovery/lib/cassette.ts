@@ -11,7 +11,7 @@ import {
   transform,
   rotate,
   type Shape,
-} from '../../rocket-release/lib/shapes';
+} from '../../../core/assembly/recovery/shapes';
 import { at } from '../../rocket-release/lib/motion';
 import { radialScrew, matingHole } from '../../rocket-release/lib/hardware';
 import { motion, springDimensions, assessment, cassetteTop } from './motion';

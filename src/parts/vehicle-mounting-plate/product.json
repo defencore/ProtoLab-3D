@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "Authored flat vehicle mounting plate with cut outline, drilled mounting patterns and optional rounded strap slots.",
+  "processes": ["cutting", "drilling"],
+  "releaseRequirements": [
+    "Select laminate, aluminium alloy or qualified polymer, stock thickness and the actual fabrication route.",
+    "Dimension and tolerance the mounting pattern, slot widths, edge finish and countersink requirements in the project drawing.",
+    "Verify payload restraint, strap routing, fastener stack, bending, fatigue and vibration against actual vehicle loads."
+  ]
+}

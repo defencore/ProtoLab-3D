@@ -159,12 +159,13 @@ export function pieces(p: Parameters, state: string): Piece[] {
   const leadR = Math.min(1.3, Math.max(0.45, m.current * 0.16)),
     connectorWidth = (m.wires + 1) * leadR * 2.2;
   // The cable outlet and short straight leads are illustrative clearance geometry.
-  add(
-    'Cable outlet',
-    box([connectorWidth, 2.5, rear * 0.65], [-connectorWidth / 2, w / 2, -L + rear * 0.15]),
-    0x242a2e,
-    -gap,
-  );
+  if (p.showLeads)
+    add(
+      'Cable outlet',
+      box([connectorWidth, 2.5, rear * 0.65], [-connectorWidth / 2, w / 2, -L + rear * 0.15]),
+      0x242a2e,
+      -gap,
+    );
   if (p.showLeads)
     for (let i = 0; i < m.wires; i++)
       add(
@@ -183,9 +184,10 @@ export function pieces(p: Parameters, state: string): Piece[] {
       '1000 ppr rear encoder cover · mounting envelope',
       subtract(prism(outline(45, 4), 20, -L - 20), box([39, 39, 17], [-19.5, -19.5, -L - 17])),
       0x263d50,
+      -gap * 3,
     );
-    add('Encoder end cap', prism(outline(45, 4), 2, -L - 22), 0x344b5f);
-    add('Encoder cable connector', box([14, 7, 10], [-7, 22.5, -L - 17]), 0x202a32);
+    add('Encoder end cap', prism(outline(45, 4), 2, -L - 22), 0x344b5f, -gap * 3);
+    add('Encoder cable connector', box([14, 7, 10], [-7, 22.5, -L - 17]), 0x202a32, -gap * 3);
   }
   return result;
 }

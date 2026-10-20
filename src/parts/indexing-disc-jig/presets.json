@@ -1,0 +1,100 @@
+[
+  {
+    "id": "n4",
+    "name": "4 divisions / 90 degrees",
+    "description": "Bolt-pivot indexing plate with discrete locking positions and a simple carrier mounting pattern. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "diameter": 120,
+      "pcd": 96,
+      "count": 4,
+      "position": 0,
+      "mountPCD": 40,
+      "plate": 8,
+      "pin": 5
+    }
+  },
+  {
+    "id": "n6",
+    "name": "6 divisions / 60 degrees",
+    "description": "Bolt-pivot indexing plate with discrete locking positions and a simple carrier mounting pattern. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "diameter": 120,
+      "pcd": 96,
+      "count": 6,
+      "position": 0,
+      "mountPCD": 40,
+      "plate": 8,
+      "pin": 5
+    }
+  },
+  {
+    "id": "n8",
+    "name": "8 divisions / 45 degrees",
+    "description": "Bolt-pivot indexing plate with discrete locking positions and a simple carrier mounting pattern. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "diameter": 120,
+      "pcd": 96,
+      "count": 8,
+      "position": 0,
+      "mountPCD": 40,
+      "plate": 8,
+      "pin": 5
+    }
+  },
+  {
+    "id": "n12",
+    "name": "12 divisions / 30 degrees",
+    "description": "Bolt-pivot indexing plate with discrete locking positions and a simple carrier mounting pattern. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "diameter": 120,
+      "pcd": 96,
+      "count": 12,
+      "position": 0,
+      "mountPCD": 40,
+      "plate": 8,
+      "pin": 5
+    }
+  },
+  {
+    "id": "n24",
+    "name": "24 divisions / 15 degrees",
+    "description": "Bolt-pivot indexing plate with discrete locking positions and a simple carrier mounting pattern. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "diameter": 120,
+      "pcd": 96,
+      "count": 24,
+      "position": 0,
+      "mountPCD": 40,
+      "plate": 8,
+      "pin": 5
+    }
+  },
+  {
+    "id": "n36",
+    "name": "36 divisions / 10 degrees",
+    "description": "Bolt-pivot indexing plate with discrete locking positions and a simple carrier mounting pattern. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "diameter": 120,
+      "pcd": 96,
+      "count": 36,
+      "position": 0,
+      "mountPCD": 40,
+      "plate": 8,
+      "pin": 5
+    }
+  },
+  {
+    "id": "index3",
+    "name": "12 divisions / position3",
+    "description": "Bolt-pivot indexing plate with discrete locking positions and a simple carrier mounting pattern. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "diameter": 120,
+      "pcd": 96,
+      "count": 12,
+      "position": 3,
+      "mountPCD": 40,
+      "plate": 8,
+      "pin": 5
+    }
+  }
+]

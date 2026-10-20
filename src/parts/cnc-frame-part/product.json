@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "An independent fabricated stock detail with local machining geometry for a bolted CNC machine.",
+  "processes": ["cutting", "milling", "drilling", "turning"],
+  "releaseRequirements": [
+    "Assign an actual material grade, blank standard, manufacturing route and detail drawing.",
+    "Inspect the mounting pattern, rail datum flatness and parallelism, thread engagement, edge margins and tool access.",
+    "Qualify frame stiffness, bolt preload and support loads for the intended cutting conditions."
+  ]
+}

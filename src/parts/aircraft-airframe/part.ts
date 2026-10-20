@@ -1,12 +1,22 @@
+import detailLibrary from '../manufactured-detail/part';
+import {
+  detailGeometry,
+  detailPython,
+  detailDimensions,
+} from '../../core/assembly/detail-instances';
+import { shapeComposition } from '../../core/component-recipes';
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import { withParameterStates } from '../../core/parameter-states';
 import type { PartDefinition, Preset } from '../../core/types';
 import { n } from '../../core/geometry';
 import { defaults, parameters, catalogSelection, updateParameters } from './configurator';
 import presets from './presets.json';
 import { pieces } from './lib/model';
-import * as assembly from './lib/assembly';
 const part: PartDefinition = {
+  composition: (p) => shapeComposition(pieces({ ...p }, 'assembled')),
   id: 'aircraft-airframe',
+  product: productData as ProductProfile,
   name: 'Aircraft airframe',
   category: 'VEHICLE STRUCTURES',
   subgroup: 'AIRCRAFT',
@@ -104,9 +114,9 @@ const part: PartDefinition = {
       errors.push('Hinge clearance is too large for the smallest control surface.');
     return errors;
   },
-  buildGeometry: (p, state) => assembly.geometry(pieces(p, state)),
-  dimensions: (p, state) => assembly.dimensions(pieces(p, state)),
-  python: (p, state) => assembly.python(pieces(p, state)),
+  buildGeometry: (p, state) => detailGeometry(detailLibrary, pieces(p, state)),
+  dimensions: (p, state) => detailDimensions(detailLibrary, pieces(p, state)),
+  python: (p, state) => detailPython(detailLibrary, pieces(p, state)),
   notes:
     'Lightweight geometry for layout studies. Nose is −X, span is Y, up is +Z. Orange surfaces identify controls in neutral position: ailerons (roll), elevators (pitch), rudder (yaw), elevons (pitch + roll), ruddervators (pitch + yaw), and flaps. These are separate solids, not simulated hinges or flight-control mixing. Manufacturer presets verify only the listed overall dimensions; contours, section profiles, mount stations, shell thickness and control geometry are editable approximations. Overall reference length is used for the body envelope; propellers, landing gear, linkages, spar joints and internal fittings are omitted. Use Wing and control surface for detailed profile design.',
 };

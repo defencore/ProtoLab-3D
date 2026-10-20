@@ -1,4 +1,10 @@
+import { nutCoarsePitch } from '../../core/hardware/internal-thread';
+import { currentGeometryMode } from '../../core/geometry-mode';
+import { nativeThreadPython, nativeThreadExpression } from '../../core/thread-native';
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import { showThreads } from '../../core/thread-visual';
+import { metricThreadCallout, threadMetadata } from '../../core/thread-callouts';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -201,6 +207,8 @@ function makeBlock(p: Parameters, cutaway = false): Mesh {
 }
 const part: PartDefinition = {
   id: 'linear-guide',
+  physicalStates: ['rail', 'carriage'],
+  product: productData as ProductProfile,
   name: 'Profile linear guide',
   category: 'LINEAR MOTION',
   subgroup: 'PROFILE RAILS',
@@ -316,7 +324,34 @@ const part: PartDefinition = {
         ? `\nblock = block.cut(Part.makeBox(${num(bl + 2)}, ${num(bw)}, ${num(h + 2)}, App.Vector(${num(x - bl / 2 - 1)}, ${num(-bw)}, -1)))`
         : '';
     const balls = ballPython(circuit.points, circuit.radius).join(', ');
-    return `rail = Part.makeBox(${num(l)}, ${num(rw)}, ${num(rh)}, App.Vector(${num(-l / 2)}, ${num(-rw / 2)}, 0))\nfor side in [-1, 1]:\n    rail = rail.cut(Part.makeCylinder(${num(rw * 0.1)}, ${num(l + 2)}, App.Vector(${num(-l / 2 - 1)}, side * ${num(rw / 2)}, ${num(rh * 0.62)}), App.Vector(1, 0, 0)))\nfor x in [${holePositions(p).map(num).join(', ')}]:\n    rail = rail.cut(Part.makeCylinder(${num(n(p, 'railHole') / 2)}, ${num(rh + 2)}, App.Vector(x, 0, -1)))\n    rail = rail.cut(Part.makeCylinder(${num(n(p, 'counterbore') / 2)}, ${num(n(p, 'counterDepth') + 1)}, App.Vector(x, 0, ${num(rh - n(p, 'counterDepth'))})))\nblock = Part.makeBox(${num(bl)}, ${num(bw)}, ${num(h - bottom)}, App.Vector(${num(x - bl / 2)}, ${num(-bw / 2)}, ${num(bottom)}))\nchannel = Part.makeBox(${num(bl + 2)}, ${num(rw + c * 2)}, ${num(rh + c + 1)}, App.Vector(${num(x - bl / 2 - 1)}, ${num(-rw / 2 - c)}, -1))\nblock = block.cut(channel)${chambers}\nfor sx in [-1, 1]:\n    for sy in [-1, 1]:\n        block = block.cut(Part.makeCylinder(${num(n(p, 'blockHole') / 2)}, ${num(n(p, 'holeDepth') + 1)}, App.Vector(${num(x)} + sx * ${num(n(p, 'blockPitchX') / 2)}, sy * ${num(n(p, 'blockPitchY') / 2)}, ${num(h - n(p, 'holeDepth'))})))\n${cutaway}\nballs = [${balls}]\nshape = ${state === 'rail' ? 'rail.removeSplitter()' : state === 'carriage' ? 'Part.makeCompound([block.removeSplitter()] + balls)' : 'Part.makeCompound([rail.removeSplitter(), block.removeSplitter()] + balls)'}\ncomponent_labels = ${JSON.stringify(state === 'rail' ? ['Guide rail'] : [...(state === 'carriage' ? [] : ['Guide rail']), 'Carriage', ...circuit.points.map((_, i) => `Recirculating ball ${i + 1}`)])}`;
+    const diameter = n(p, 'blockHole'),
+      pitch = nutCoarsePitch(diameter),
+      threadedHole =
+        currentGeometryMode() === 'full'
+          ? `hole = ${nativeThreadExpression({ diameter, pitch, length: n(p, 'holeDepth') + 1, internal: true })}\n        hole.translate(App.Vector(${num(x)} + sx * ${num(n(p, 'blockPitchX') / 2)}, sy * ${num(n(p, 'blockPitchY') / 2)}, ${num(h - n(p, 'holeDepth'))}))\n        block = block.cut(hole)`
+          : `block = block.cut(Part.makeCylinder(${num(diameter / 2)}, ${num(n(p, 'holeDepth') + 1)}, App.Vector(${num(x)} + sx * ${num(n(p, 'blockPitchX') / 2)}, sy * ${num(n(p, 'blockPitchY') / 2)}, ${num(h - n(p, 'holeDepth'))})))`;
+    const carriageMetadata = threadMetadata(
+      [-1, 1].flatMap((sx) =>
+        [-1, 1].map((sy) => ({
+          ...metricThreadCallout(diameter, pitch, n(p, 'holeDepth'), true),
+          origin: [
+            x + (sx * n(p, 'blockPitchX')) / 2,
+            (sy * n(p, 'blockPitchY')) / 2,
+            h - n(p, 'holeDepth'),
+          ],
+          axis: [0, 0, 1],
+        })),
+      ),
+    );
+    const componentMetadata =
+      state === 'rail'
+        ? [{}]
+        : [
+            ...(state === 'carriage' ? [] : [{}]),
+            carriageMetadata,
+            ...circuit.points.map(() => ({})),
+          ];
+    return `${nativeThreadPython()}\nrail = Part.makeBox(${num(l)}, ${num(rw)}, ${num(rh)}, App.Vector(${num(-l / 2)}, ${num(-rw / 2)}, 0))\nfor side in [-1, 1]:\n    rail = rail.cut(Part.makeCylinder(${num(rw * 0.1)}, ${num(l + 2)}, App.Vector(${num(-l / 2 - 1)}, side * ${num(rw / 2)}, ${num(rh * 0.62)}), App.Vector(1, 0, 0)))\nfor x in [${holePositions(p).map(num).join(', ')}]:\n    rail = rail.cut(Part.makeCylinder(${num(n(p, 'railHole') / 2)}, ${num(rh + 2)}, App.Vector(x, 0, -1)))\n    rail = rail.cut(Part.makeCylinder(${num(n(p, 'counterbore') / 2)}, ${num(n(p, 'counterDepth') + 1)}, App.Vector(x, 0, ${num(rh - n(p, 'counterDepth'))})))\nblock = Part.makeBox(${num(bl)}, ${num(bw)}, ${num(h - bottom)}, App.Vector(${num(x - bl / 2)}, ${num(-bw / 2)}, ${num(bottom)}))\nchannel = Part.makeBox(${num(bl + 2)}, ${num(rw + c * 2)}, ${num(rh + c + 1)}, App.Vector(${num(x - bl / 2 - 1)}, ${num(-rw / 2 - c)}, -1))\nblock = block.cut(channel)${chambers}\nfor sx in [-1, 1]:\n    for sy in [-1, 1]:\n        ${threadedHole}\n${cutaway}\nballs = [${balls}]\nshape = ${state === 'rail' ? 'rail.removeSplitter()' : state === 'carriage' ? 'Part.makeCompound([block.removeSplitter()] + balls)' : 'Part.makeCompound([rail.removeSplitter(), block.removeSplitter()] + balls)'}\ncomponent_labels = ${JSON.stringify(state === 'rail' ? ['Guide rail'] : [...(state === 'carriage' ? [] : ['Guide rail']), 'Carriage', ...circuit.points.map((_, i) => `Recirculating ball ${i + 1}`)])}\ncomponent_metadata = ${JSON.stringify(componentMetadata)}`;
   },
   dimensions(p, state) {
     const d = dimensions(p);

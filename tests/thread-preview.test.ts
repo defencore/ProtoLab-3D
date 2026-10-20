@@ -1,3 +1,4 @@
+import { withGeometryMode } from '../src/core/geometry-mode';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { Mesh, MeshStandardMaterial } from 'three';
@@ -13,9 +14,9 @@ import saw from '../src/parts/automatic-band-saw/part';
 test('thread pitch and handedness survive worker transfer without adding thread triangles to STL', () => {
   for (const part of [bolt, nut]) {
     const p = { ...part.defaults, handedness: 'left' };
-    const root = part.buildGeometry(p, 'default');
+    const root = withGeometryMode('full', () => part.buildGeometry(p, 'default'));
     const before = new STLExporter().parse(root, { binary: true });
-    const copy = unpackModel(packModel(root).model);
+    const copy = withGeometryMode('full', () => unpackModel(packModel(root).model));
     let count = 0;
     copy.traverse((o) => {
       if (o instanceof Mesh) {
@@ -33,7 +34,10 @@ test('thread pitch and handedness survive worker transfer without adding thread 
     assert.ok(count > 0, part.id);
     const after = new STLExporter().parse(copy, { binary: true });
     assert.deepEqual(new Uint8Array(before.buffer), new Uint8Array(after.buffer));
-    assert.doesNotMatch(part.python(p, 'default'), /makeLongHelix|makePipeShell/);
+    assert.doesNotMatch(
+      withGeometryMode('simple', () => part.python(p, 'default')),
+      /makeLongHelix|makePipeShell/,
+    );
     disposeModel(root);
     disposeModel(copy);
   }
@@ -46,8 +50,8 @@ test('SFU ball race and individual bearing components exist in the machine', () 
   assert.ok(pieces.some((p) => p.label.includes('cage')));
   const screws = pieces.filter((p) => p.label.startsWith('SFU1605 library'));
   assert.equal(screws.length, 2, 'separate library shaft and flanged nut');
-  const root = geometry(screws),
-    nominal = geometry(screws, true);
+  const root = withGeometryMode('full', () => geometry(screws)),
+    nominal = withGeometryMode('simple', () => geometry(screws, true));
   const triangles = (model: typeof root) => {
     let count = 0;
     model.traverse((o) => {
@@ -57,7 +61,10 @@ test('SFU ball race and individual bearing components exist in the machine', () 
     return count;
   };
   assert.ok(triangles(root) > 3 * triangles(nominal), 'real helical raceways only in preview');
-  assert.doesNotMatch(saw.python(saw.defaults, 'feed-detail'), /makeLongHelix|makePipeShell/);
+  assert.doesNotMatch(
+    withGeometryMode('simple', () => saw.python(saw.defaults, 'feed-detail')),
+    /makeLongHelix|makePipeShell/,
+  );
   disposeModel(root);
   disposeModel(nominal);
 });

@@ -1,0 +1,925 @@
+{
+  "method": "AP214 surface styles: uniform color must be established for every face of a solid; curve styles excluded. Mixed or missing styles retain explicitly illustrative fallback colors.",
+  "models": {
+    "jst-xh-2": {
+      "sourceSha256": "7287616fdad677e9b54cf5494f17efc4b3fb77be002659d73e215772393f20c6",
+      "geometryFingerprint": "eb5b0586af6c2c57957d6fe498416042fd88e57de4afb93713bdac0b8eeb0daf",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 89
+        }
+      ]
+    },
+    "jst-xh-3": {
+      "sourceSha256": "8800a66e739fc222ec36495d2d05fd0f79ba9423c3587c7169630591d024f36f",
+      "geometryFingerprint": "80b01da4030de36362b089101a2ccf3ef7273c9b95aeead7b2e7b4b4d5b5d4be",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 117
+        }
+      ]
+    },
+    "jst-xh-4": {
+      "sourceSha256": "7eb17ded8ec4a3216753a234254e22a2d8e07826f0816045bfb803a19cac75ea",
+      "geometryFingerprint": "2bc4ebdfb99ab02f2dc05d053e55e964ec9856a2e6c280f4ab5a5c440d185d52",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 141
+        }
+      ]
+    },
+    "jst-xh-5": {
+      "sourceSha256": "8af7ded5ecaefc019081b2092b15a5a7a5b727e110fed3328bc806903f5d1a63",
+      "geometryFingerprint": "06585f483355d1c6deff162e2426c4f3f2574847a8fc67f52f3b505ead7af76e",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 165
+        }
+      ]
+    },
+    "jst-xh-6": {
+      "sourceSha256": "5a74ac21b099c174928a7afd6783a9e1d26e23a1f2418d4cb4856ad6430e9c2a",
+      "geometryFingerprint": "2a6601091227c0483dc80c5dcc5b6b8fb8dfe1eed65fea3e04939a703e10788d",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 189
+        }
+      ]
+    },
+    "jst-ph-2": {
+      "sourceSha256": "cab512a9b16c7568ed6e0047c17de04c4dd11893cdee71cb33fb51768543f927",
+      "geometryFingerprint": "4c8e95ab66ead102fca1ab0cdba2a0f142914af54d43303bcd17db4908a3c796",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 93
+        }
+      ]
+    },
+    "jst-ph-3": {
+      "sourceSha256": "00cbe1522070150893f96728ffaa78070972f025d63c45f899e18b3060a41f2d",
+      "geometryFingerprint": "c9ce3231521f10eaadad9766916d2965859c0afec4c3ccc83cd33bbea37da93a",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 121
+        }
+      ]
+    },
+    "jst-ph-4": {
+      "sourceSha256": "0703774983dd0bf32b5175315a63ebb9c9439b35cb491768770aaa13ded27934",
+      "geometryFingerprint": "7abda897234c5125d45f4f7dca4506809085c65bf5a9c660cadcf1f7edc2383e",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 149
+        }
+      ]
+    },
+    "jst-ph-5": {
+      "sourceSha256": "24345d6c358cf3289b1aa2ce6df88d05df811a003aca35a75b154259bf6d4fa4",
+      "geometryFingerprint": "e45cf53fec3d97106e0e059c79f11bdc8099976bc6d8f184fb18bd66e4776a07",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 177
+        }
+      ]
+    },
+    "jst-ph-6": {
+      "sourceSha256": "1d0765e02a2616f5c9b1964a97e519497f61884750f69aea3834ce71ed68380b",
+      "geometryFingerprint": "a92d96c6262f3180b17462ba883089f4de41b4c0a1f704cf826cfb14522d7aa0",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 205
+        }
+      ]
+    },
+    "usb-a-molex-67643": {
+      "sourceSha256": "d6a1e21b2a1b509fd4f36058bf01036c7a296c391e19486566ce10fe78907800",
+      "geometryFingerprint": "4d77fdca7ab391edda93a99a1f7db4b89f0a292cec8d484d69e676ee2c93c502",
+      "components": [
+        {
+          "kind": "source-step",
+          "rgb": [0.507539989043, 0.507539989043, 0.507539989043],
+          "stepSolidEntity": 15,
+          "faceCount": 386
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.147999998088, 0.144999993226, 0.144999993226],
+          "stepSolidEntity": 12411,
+          "faceCount": 45
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.823999987314, 0.819999987296, 0.781000009244],
+          "stepSolidEntity": 13715,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.823999987314, 0.819999987296, 0.781000009244],
+          "stepSolidEntity": 13931,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.823999987314, 0.819999987296, 0.781000009244],
+          "stepSolidEntity": 14147,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.823999987314, 0.819999987296, 0.781000009244],
+          "stepSolidEntity": 14363,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 14579,
+          "faceCount": 24
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 15395,
+          "faceCount": 24
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 16211,
+          "faceCount": 24
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 17027,
+          "faceCount": 24
+        }
+      ]
+    },
+    "usb-c-amphenol-12401610": {
+      "sourceSha256": "0fff21d93e9849e225695fc34dc559359fefeed80c8046e55eecc9f011ec2d87",
+      "geometryFingerprint": "bad33ce5d3f829a338c725617d8af67568ac06ddf365cab2f1e15e433d3c0272",
+      "components": [
+        {
+          "kind": "source-step",
+          "rgb": [0.372321987396, 0.371574020205, 0.373173001298],
+          "stepSolidEntity": 15,
+          "faceCount": 68
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.372321987396, 0.371574020205, 0.373173001298],
+          "stepSolidEntity": 2083,
+          "faceCount": 143
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.147999998088, 0.144999993226, 0.144999993226],
+          "stepSolidEntity": 6341,
+          "faceCount": 80
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 8702,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 8852,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 9002,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 9152,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 9302,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 9452,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 9602,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 9752,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 9902,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 10052,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 10202,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 10352,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 10502,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 10720,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 10938,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 11156,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 11374,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 11592,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 11810,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 12028,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 12246,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 12464,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 12682,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 12900,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 13118,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 13336,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 13554,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 13772,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 13990,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 14208,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 14426,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 14644,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 14862,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 15080,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 15298,
+          "faceCount": 8
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 15516,
+          "faceCount": 8
+        }
+      ]
+    },
+    "usb-c-gct-usb4105": {
+      "sourceSha256": "6338ce740fa231c2d3dcc6384e0576994a47240a312a21413cb85d76990a69a0",
+      "geometryFingerprint": "0bfdcdd02ea3f75ce69fcfc164e6bdd784a557fbdd6016cebac935f0dac54847",
+      "components": [
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 15,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 165,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 315,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 465,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 615,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 765,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 915,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 1065,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.272999999305, 0.272999999305, 0.272999999305],
+          "stepSolidEntity": 1215,
+          "faceCount": 66
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 3161,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 3313,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 3465,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 3617,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 3769,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 3921,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 4073,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 4225,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.823999987314, 0.819999987296, 0.781000009244],
+          "stepSolidEntity": 4377,
+          "faceCount": 161
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 9444,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 9594,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 9744,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 9894,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 10044,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 10194,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 10344,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 10494,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.272999999305, 0.272999999305, 0.272999999305],
+          "stepSolidEntity": 10644,
+          "faceCount": 66
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 12590,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 12742,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 12894,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 13046,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 13198,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 13350,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 13502,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "stepSolidEntity": 13654,
+          "faceCount": 6
+        },
+        {
+          "kind": "source-step",
+          "rgb": [0.823999987314, 0.819999987296, 0.781000009244],
+          "stepSolidEntity": 13806,
+          "faceCount": 161
+        }
+      ]
+    },
+    "usb-micro-b-molex-47346": {
+      "sourceSha256": "34a2947897a95d7d5cd3bb1565629b0a916d49cf19a0b7f5ea652fc235f4250c",
+      "geometryFingerprint": "dca3bbdbc1196d8228f4a3f478d8e570ddb9c2aca5d0cde4e0c942450c4fff10",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 484
+        }
+      ]
+    },
+    "usb-mini-b-lumberg-2486": {
+      "sourceSha256": "9cfd9e8e3e948bf190a5da0c444ebee7f1fc3a7b26bb48717e836634edc30151",
+      "geometryFingerprint": "1ded732d063e89112554ff404af2c45aee2404b8b3cc4a7d2af635bcab11c62e",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 472
+        }
+      ]
+    },
+    "dc-pj-063ah": {
+      "sourceSha256": "b7ce6d1a3c3c351ebf2fe143053b8de575da2270a7d3a1b5d08eec4caad5d4df",
+      "geometryFingerprint": "85b6c591ea7ead4afc1de7e1bf9f53c722c72f089d54e29659741467cf505f7d",
+      "components": [
+        {
+          "kind": "source-step",
+          "rgb": [0.824000000954, 0.819999992847, 0.78100001812],
+          "stepSolidEntity": 15,
+          "faceCount": 54
+        },
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 1533,
+          "faceCount": 42
+        }
+      ]
+    },
+    "dc-pj-063bh": {
+      "sourceSha256": "c3c8ac1001db282f4dc89642b6474bee8fe9473552cdc3c09c864bc0c9439a1b",
+      "geometryFingerprint": "2076f20eb60bfbe3cd9caf18f6971c68852cee0693ce6a675f1743f30d9f1bc5",
+      "components": [
+        {
+          "kind": "source-step",
+          "rgb": [0.824000000954, 0.819999992847, 0.78100001812],
+          "stepSolidEntity": 15,
+          "faceCount": 54
+        },
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 1533,
+          "faceCount": 43
+        }
+      ]
+    },
+    "audio-sj1-3523n": {
+      "sourceSha256": "f9cea25624791cf43ebfdad331f426b4a31e0c96e3ee23bca2b255576ea421db",
+      "geometryFingerprint": "9fd5cedafcb5e30e98c210a25a2b71b42c2199cedacc584b6f63b0ad41c67a8e",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 49
+        }
+      ]
+    },
+    "audio-sj1-3524n": {
+      "sourceSha256": "3279025e590a4376b9d1c53288e40a8840d98cca402a1c5c5f4414664bbb5981",
+      "geometryFingerprint": "b95e489f3a2d248d078346065c07579096edb1fb21a69da124932fc0aa69c80b",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 54
+        }
+      ]
+    },
+    "audio-sj1-3525n": {
+      "sourceSha256": "364a7c3eeb69300c860e5650d77eb301c5f010c084ce5c4f666574960c86deb7",
+      "geometryFingerprint": "6eedac7895b8c8c722df90b7fe9ad66e652e5cc19ab3df789f34e08a9b27108b",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 59
+        }
+      ]
+    },
+    "sma-amphenol-132291": {
+      "sourceSha256": "c3982df71c81d9393d551050e7cbd7b060c1aafa5e4e5f866ce44dfe88aded2f",
+      "geometryFingerprint": "52914295f3a6210564a3a51bcfcd515ba68e1c1ef11a0b1c690eb015aae84c97",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 137
+        }
+      ]
+    },
+    "sma-amphenol-132291-12": {
+      "sourceSha256": "ca62ac36dc75bf80e155ce90447dba8342f536c1992f3b8f15fbfe005054845c",
+      "geometryFingerprint": "d47f19784e159b4a35397ed37ac7dc892d233896cc0f987cbbc7f13f9198a6d7",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 137
+        }
+      ]
+    },
+    "mmcx-molex-73415-0961": {
+      "sourceSha256": "49845cc6e70e5c29f23fc9eb1ca2ae65df7fdf60f7184a42450c482b97144899",
+      "geometryFingerprint": "cc4263df7896a6d24bc18893d5a2af857e2cc3514c2d950fd2389f47bd08cac3",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 43
+        }
+      ]
+    },
+    "mmcx-molex-73415-1471": {
+      "sourceSha256": "2868c17637fa3eb131b128e99203b6127738f9571111b465dbcb57129e5b7871",
+      "geometryFingerprint": "ad921465fd6c03e0b97572b97e95b537e6adc96deade4f58dd6d90304fcb01f4",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "STEP manifold solid count does not match the native asset."
+        }
+      ]
+    },
+    "ufl-hirose-r-smt-1": {
+      "sourceSha256": "bb861ac13b1fa3709690e81d82a64544b02d4420ea410f7334fc7a4b57f8e71a",
+      "geometryFingerprint": "e759cfb8f8ae8e8d175461dc88a87bf1f26bfc1db68dd6b4e7475fd7ef47832e",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 46
+        }
+      ]
+    },
+    "pin-header-3": {
+      "sourceSha256": "b91b4ac5acf1a0d28a676703db972d17b8f11ef26a85b58d60786a69246b921b",
+      "geometryFingerprint": "199a51b4a440047a2fcaee1283b28178a6724fe751caff01d1d25cd767af241e",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 76
+        }
+      ]
+    },
+    "pin-socket-3": {
+      "sourceSha256": "ab4d86724025c0c510718227b1cef16276218bcabfc41131a835b259d8352a53",
+      "geometryFingerprint": "c4543269d8f251d11de33fab3ba863fd7e75bad5c78943a37320d5f1e5c894c2",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 88
+        }
+      ]
+    },
+    "pin-header-4": {
+      "sourceSha256": "a74079b8d06bda78847623b39ee1855ffd1d9a8c1e896b349e4f1dc2056d44d9",
+      "geometryFingerprint": "a2edb6b6fd8e794cf5fc9b7ef6b94600269b14d07c0c33262e9e876078317a5d",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 100
+        }
+      ]
+    },
+    "pin-socket-4": {
+      "sourceSha256": "76063e5b34d90fc10c0dbef08c12530783765cdc34c08acf4bbd23fe7c7671e3",
+      "geometryFingerprint": "d0edd2442010a9b21e643c6b848b01cfdbea9d1c580a24da5206b9dacb942368",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 114
+        }
+      ]
+    },
+    "pin-header-6": {
+      "sourceSha256": "d6113af109a14a67c50dcefd1cfc7b43b59b59afa85d808b2319e2452da91318",
+      "geometryFingerprint": "a8083d84f3af79815f8caab59ff12353be467a5a65fcafed2224841256ac717b",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 148
+        }
+      ]
+    },
+    "pin-socket-6": {
+      "sourceSha256": "8ee399645c928eb498fdf69bc74ad40ee2faf1b368b9e8f397b1f7f9d048a626",
+      "geometryFingerprint": "f0ca91fe303e9334f814071c5f167db2c104bdc41d61f843a020786700254a74",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 166
+        }
+      ]
+    },
+    "idc-6": {
+      "sourceSha256": "6ea2efe2cbc695ad4f2351ed387619e1dc56364f4ff8c1b9556455ce5129ac12",
+      "geometryFingerprint": "e142861da910a871657db87112bf163b58931e1ccecb732916c4f9e64fe430e8",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 150
+        }
+      ]
+    },
+    "idc-10": {
+      "sourceSha256": "4ac293d6a2a02e11fb656cd94214ca3eee4fdb4219ec44112b35866a7c7bb127",
+      "geometryFingerprint": "6726a9ad54cedacb315b5569e7c1f8123175a5b0ae0a7002b544aade344c120f",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 222
+        }
+      ]
+    },
+    "dsub9-pins": {
+      "sourceSha256": "234d264c47c227b36704ad7cf21743c6536f98d8226f6bba21bfe48316a338a8",
+      "geometryFingerprint": "ece20f518f5dd58d446361175be9ca8fe04146fc137a739a2e55eeccd85bcf4a",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "STEP manifold solid count does not match the native asset."
+        }
+      ]
+    },
+    "dsub9-socket": {
+      "sourceSha256": "6e80613e8778f00d8901743f66cee0340845cd69cd3542c9c34d46efa0917eb3",
+      "geometryFingerprint": "8a828c1f0381e42bd0810b87964e5d8920ea1fa496eb4506eb78b374d2fe8e3c",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 151
+        }
+      ]
+    }
+  }
+}

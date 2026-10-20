@@ -1,0 +1,92 @@
+{
+  "faulhaber-am/native-AM0820.json": {
+    "positions": "b0de4a5c03d3f1f7d83df2e49b6fd09810a76644b5e13e0e6a52bcbd791d41cf",
+    "indices": "4e1287a637fbdc856e43d4c70a3b38c3c01b747d1949ca7d4578f88466cc6c69",
+    "metadata": "f5bce4a831326c351ac032190e319a743e179dfc9c1f49ce55a4019188e2f866",
+    "originalEncodedLengths": {
+      "positions": 231216,
+      "indices": 239264
+    }
+  },
+  "faulhaber-am/native-AM1020.json": {
+    "positions": "c16536e330a45765efb199ad76c137d231d23413acd195e583015eebd19e2ba9",
+    "indices": "26c51a72f55987f4383d545e9d776e41152ed989e44ca5ca97f86c97162e4acd",
+    "metadata": "b3b046017891edbcb6a639670a5d427c594388b4da54fb8112b5d8e1def2cdc2",
+    "originalEncodedLengths": {
+      "positions": 288464,
+      "indices": 300592
+    }
+  },
+  "faulhaber-am/native-AM1524.json": {
+    "positions": "c7ecbca2813327b75a518dadfa56d237f71ff93894fb21b0f17564ff7c85db4a",
+    "indices": "aa2b0631f83527861ef7bdae1bd63ef9384dd52301639890a35f42e9371a95b3",
+    "metadata": "c5b635d59ec322c491a0bb4dfd44a5fb3fab3976bf1c65263af6f1dd130f1f5b",
+    "originalEncodedLengths": {
+      "positions": 212768,
+      "indices": 212080
+    }
+  },
+  "faulhaber-am/native-AM2224.json": {
+    "positions": "c133f827c2a6f8329f129e06f593052c50c66d7a90d0d9a9dd29221ce8b1bba3",
+    "indices": "61db230a3329db8dbe1ac8cc8bf8c6b2805d5eeb784512f8dfa889ddf94fc5b5",
+    "metadata": "5d489ca2ebaefca8d70a0b9bec74d2efb483256f5c7058f15cd24b47cd36f102",
+    "originalEncodedLengths": {
+      "positions": 191648,
+      "indices": 190592
+    }
+  },
+  "faulhaber-am/native-AM2224R3.json": {
+    "positions": "ed3309c4f17b86191af31ead062867c0bd6fc7f9ccbe344d87db3f9302a27bda",
+    "indices": "cbde4736ecffcaf42261886d3dc81fa8b717df0e6d3eb7b26cbe689bb185d747",
+    "metadata": "9fc31c68b33ef60f2eded7ede936b0bed1e7c1d27ef4bf5843e282d4c13dbbd2",
+    "originalEncodedLengths": {
+      "positions": 260960,
+      "indices": 258304
+    }
+  },
+  "faulhaber-am/native-AM3248.json": {
+    "positions": "ae4023dc799c02c2769d2d02e6fe88d3c312aea58c00d382d8cd0fcea00e4738",
+    "indices": "f211e40e1d539a80e0929716cef89e9d9f8f56d455db9cc598b2ecf810f2d0b2",
+    "metadata": "b5f8f83f479175990ca6ee833944ee51f974e5bcf5c6f247cf8e2237b104b87d",
+    "originalEncodedLengths": {
+      "positions": 203536,
+      "indices": 203520
+    }
+  },
+  "faulhaber-bx4/native-2232.json": {
+    "positions": "986d34f10677c398f49e0d6248f2a117bc564fafb7fcb0184ca5e5b5d48202d0",
+    "indices": "82b646958e8fd05614b87cf4595f4e05bfaa382aeb35f9a4a44919957eb59b51",
+    "metadata": "f69c473bc5f4e01a1518ab6c968426bd3fe2e4f3420e2a2310768ae05435dc56",
+    "originalEncodedLengths": {
+      "positions": 310416,
+      "indices": 431744
+    }
+  },
+  "faulhaber-bx4/native-2250.json": {
+    "positions": "f1a5dd7b7ed4b58339bc5f05d0d118450c1e90fdf003c09f6afbdee8d2d606fb",
+    "indices": "197721baa8e7ed58392c989f57dc5d7f695b7f5b1cf543b21eb37f26b23046c9",
+    "metadata": "f8abf5355c608a8d7201628f2ea84af1b228b24b763999a7481f3d8bae5fe93f",
+    "originalEncodedLengths": {
+      "positions": 310416,
+      "indices": 431744
+    }
+  },
+  "faulhaber-bx4/native-3242.json": {
+    "positions": "8651a2c56db1fa128384031d855f9c0e85bbb819fede3595dc5dabb947df0c95",
+    "indices": "0128bd171ea1576d5165281eb659a44407f27c329a7760eae8cb23ec2b3750d2",
+    "metadata": "4a4207497c26314f15e0278ee8eaab4c5df1ce96ca454ebb44ae6bee0979bf24",
+    "originalEncodedLengths": {
+      "positions": 332000,
+      "indices": 470256
+    }
+  },
+  "faulhaber-bx4/native-3268.json": {
+    "positions": "e864e925b361cdb8d55348be7be0ff2cf1edbc2af40a44792ed28d91b4444a87",
+    "indices": "3e8b39fdeb2707e59f52a8cc141f0375d11aa4d5edeb9978c09aed69127e3842",
+    "metadata": "cc714fed60759aa06c749fc3c799fa20f2abfcf824ef4639a901a7e4791d7fab",
+    "originalEncodedLengths": {
+      "positions": 332000,
+      "indices": 470256
+    }
+  }
+}

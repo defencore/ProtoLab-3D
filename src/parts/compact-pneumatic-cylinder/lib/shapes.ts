@@ -1,8 +1,10 @@
+import { currentGeometryMode } from '../../../core/geometry-mode';
+import { nativeThreadExpression } from '../../../core/thread-native';
 import { showThreads, type VisualThread } from '../../../core/thread-visual';
 import modeling from '@jscad/modeling';
 import type { Geom3 } from '@jscad/modeling/src/geometries/types';
 import { Float32BufferAttribute, Group, Mesh, MeshStandardMaterial, Vector3 } from 'three';
-import { solidUnionMesh } from './mesh';
+import { solidUnionMesh } from '../../../core/assembly/mesh';
 import { num } from '../../../core/geometry';
 export type Vec = [number, number, number];
 export type Shape =
@@ -12,7 +14,13 @@ export type Shape =
   | { kind: 'box'; size: Vec; origin: Vec }
   | {
       kind: 'cylinder';
-      thread?: { pitch: number; internal?: boolean; rounded?: boolean };
+      thread?: {
+        pitch: number;
+        internal?: boolean;
+        rounded?: boolean;
+        designation?: string;
+        callout?: boolean;
+      };
       radius: number;
       height: number;
       origin: Vec;
@@ -37,7 +45,13 @@ export const cylinder = (
   height: number,
   origin: Vec,
   axis: 'x' | 'y' | 'z' = 'z',
-  thread?: { pitch: number; internal?: boolean; rounded?: boolean },
+  thread?: {
+    pitch: number;
+    internal?: boolean;
+    rounded?: boolean;
+    designation?: string;
+    callout?: boolean;
+  },
 ): Shape => ({ kind: 'cylinder', radius, height, origin, axis, thread });
 export const prism = (
   points: [number, number][],
@@ -300,6 +314,8 @@ export function pythonShape(s: Shape): string {
     case 'box':
       return `Part.makeBox(${s.size.map(num).join(',')},${vector(s.origin)})`;
     case 'cylinder':
+      if (s.thread && currentGeometryMode() === 'full')
+        return `_pl_transform(${nativeThreadExpression({ diameter: 2 * s.radius, pitch: s.thread.pitch, length: s.height, internal: s.thread.internal, rounded: s.thread.rounded })},${JSON.stringify(s.origin)},${JSON.stringify(s.axis === 'x' ? [0, 90, 0] : s.axis === 'y' ? [-90, 0, 0] : [0, 0, 0])})`;
       return `Part.makeCylinder(${num(s.radius)},${num(s.height)},${vector(s.origin)},${s.axis === 'x' ? 'App.Vector(1,0,0)' : s.axis === 'y' ? 'App.Vector(0,1,0)' : 'App.Vector(0,0,1)'})`;
     case 'prism': {
       const points = [...s.points, s.points[0]].map(([a, b]) =>

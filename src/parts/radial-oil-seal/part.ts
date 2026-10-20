@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -10,7 +12,7 @@ import {
   turnedPython,
   validateEnvelope,
   type TurnedProfile,
-} from './lib/parts/motion-bearing-utils';
+} from '../../core/hardware/motion-bearing-utils';
 import { motionSources } from './lib/catalog/motion-bearings';
 
 function values(p: Parameters) {
@@ -34,6 +36,7 @@ function values(p: Parameters) {
 }
 const part: PartDefinition = {
   id: 'radial-oil-seal',
+  product: productData as ProductProfile,
   name: 'Radial shaft oil seal',
   category: 'BEARINGS & SEALS',
   subgroup: 'SHAFT SEALS',
@@ -42,7 +45,7 @@ const part: PartDefinition = {
   description:
     'A radial shaft-seal envelope with a metal case and a recessed flexible sealing lip.',
   keywords: ['oil seal', 'radial seal', 'shaft seal', 'lip seal', 'rotary', 'rubber', 'seal'],
-  parameters: envelopeParameters,
+  parameters: envelopeParameters(),
   defaults: { bore: 14, outer: 28, width: 7 },
   presets: modulePresets,
   presetMatchKeys: ['bore', 'outer', 'width'],

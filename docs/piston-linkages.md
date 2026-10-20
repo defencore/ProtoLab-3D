@@ -21,7 +21,7 @@ For a piston with a wrist pin, **compression height** means crown-to-pin-axis di
 
 ## FreeCAD and independent editing
 
-Use **Assembled**, **Exploded** or the body-only state to choose the exported arrangement. Run **Copy Python** in FreeCAD's Python console, or download the macro. Expand the created assembly in the FreeCAD tree to select, hide or move its rings, pins, bushings, shells, cap and fasteners separately. The piston and rod modules generate separate components; they do not impose assembly constraints or simulate a complete engine.
+Use **Assembled**, **Exploded** or the body-only state to choose the exported arrangement. Run **Copy for FreeCAD** in FreeCAD's Python console, or download the macro. Expand the created assembly in the FreeCAD tree to select, hide or move its rings, pins, bushings, shells, cap and fasteners separately. The piston and rod modules generate separate components; they do not impose assembly constraints or simulate a complete engine.
 
 Edit `src/parts/piston/` or `src/parts/connecting-rod/` without changing the other module. For a portable developer handoff:
 

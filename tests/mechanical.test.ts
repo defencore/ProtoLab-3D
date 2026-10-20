@@ -1,14 +1,15 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import * as THREE from 'three';
-import profileGuide from "../src/parts/linear-guide/part";
-import roundGuide from "../src/parts/round-linear-guide/part";
-import retainingRing from "../src/parts/retaining-ring/part";
-import springPin from "../src/parts/spring-pin/part";
+import profileGuide from '../src/parts/linear-guide/part';
+import roundGuide from '../src/parts/round-linear-guide/part';
+import retainingRing from '../src/parts/retaining-ring/part';
+import springPin from '../src/parts/spring-pin/part';
+import gearbox from '../src/parts/gearbox/part';
 import { disposeModel } from '../src/core/mechanical';
 import { validateParameters } from '../src/core/validation';
 import { generateScript } from '../src/core/freecad';
-import { profileCircuit, roundCircuit } from "../src/parts/linear-bearing/lib/parts/guide-circuits";
+import { profileCircuit, roundCircuit } from '../src/parts/linear-bearing/lib/parts/guide-circuits';
 import type { Parameters } from '../src/core/types';
 
 function shellVolume(mesh: THREE.Mesh): number {
@@ -48,7 +49,10 @@ for (const part of [profileGuide, roundGuide, retainingRing, springPin]) {
           part
             .dimensions(parameters, state)
             .forEach((length, axis) => assert.ok(Math.abs(bounds[axis] - length) < 0.015, label));
-          const meshes = model.children as THREE.Mesh[];
+          const meshes: THREE.Mesh[] = [];
+          model.traverse((child) => {
+            if (child instanceof THREE.Mesh) meshes.push(child);
+          });
           if (part === profileGuide || part === roundGuide) {
             const railOnly = state === 'rail' || state === 'shaft';
             assert.ok(railOnly ? meshes.length === 1 : meshes.length > 20, label);
@@ -127,12 +131,18 @@ test('guide preview volumes account for the shaft bore, blind holes, rail groove
             4 * Math.PI * (p.holeDiameter / 2) ** 2 * p.blockHeight,
         ];
       }
-      (model.children.slice(0, 2) as THREE.Mesh[]).forEach((mesh, i) =>
-        assert.ok(
-          Math.abs(shellVolume(mesh) - expected[i]) / expected[i] < 0.002,
-          `${part.id}: component ${i}`,
-        ),
-      );
+      const meshes: THREE.Mesh[] = [];
+      model.traverse((child) => {
+        if (child instanceof THREE.Mesh) meshes.push(child);
+      });
+      meshes
+        .slice(0, 2)
+        .forEach((mesh, i) =>
+          assert.ok(
+            Math.abs(shellVolume(mesh) - expected[i]) / expected[i] < 0.002,
+            `${part.id}: component ${i}`,
+          ),
+        );
     } finally {
       disposeModel(model);
     }
@@ -176,4 +186,32 @@ test('mechanical constraints reject open walls, intersecting holes and impossibl
     );
     assert.throws(() => generateScript(part, p, state));
   }
+});
+
+test('parallel reducers reject clearance bores that consume their journal bushing walls', () => {
+  const original = JSON.stringify(gearbox.defaults),
+    clearance = Math.min(0.2, Number(gearbox.defaults.diameter) * 0.002),
+    limitingShaft = clearance / (0.7 * 0.25);
+  for (const shaft of [0.1, limitingShaft]) {
+    const parameters = { ...gearbox.defaults, shaft };
+    assert.ok(
+      validateParameters(gearbox, parameters, 'assembled').some((error) =>
+        error.includes('journal bushing walls'),
+      ),
+    );
+    for (const mode of ['simple', 'full'] as const)
+      assert.throws(
+        () => generateScript(gearbox, parameters, 'assembled', undefined, undefined, mode),
+        /journal bushing walls/,
+      );
+  }
+  // A small but positive wall remains a valid geometric choice; the constraint
+  // follows the running clearance rather than imposing a stock-size threshold.
+  const valid = { ...gearbox.defaults, shaft: 1 };
+  assert.deepEqual(validateParameters(gearbox, valid, 'assembled'), []);
+  for (const mode of ['simple', 'full'] as const)
+    assert.doesNotThrow(() =>
+      generateScript(gearbox, valid, 'assembled', undefined, undefined, mode),
+    );
+  assert.equal(JSON.stringify(gearbox.defaults), original);
 });

@@ -18,7 +18,8 @@
     "check:language": "node scripts/check-repository-language.mjs",
     "format": "prettier --write src tests index.html vite.config.ts README.md",
     "audit:models": "node --import tsx scripts/audit-model-evidence.ts",
-    "audit:parameters": "node --import tsx scripts/audit-parameter-effects.ts"
+    "audit:parameters": "node --import tsx scripts/audit-parameter-effects.ts",
+    "audit:library": "node --import tsx scripts/audit-library-scripts.ts"
   },
   "dependencies": {
     "@fontsource-variable/dm-sans": "^5.3.0",

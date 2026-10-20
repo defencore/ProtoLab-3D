@@ -1,10 +1,13 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters } from './configurator';
 import presets from './presets.json';
 import { pieces } from './lib/model';
-import * as assembly from '../flight-controller/lib/assembly';
+import * as assembly from '../../core/assembly/electronics/assembly';
 const part: PartDefinition = {
   id: 'gps-tracker',
+  product: productData as ProductProfile,
   name: 'GPS tracker ZX908',
   category: 'ELECTRONICS & VISION',
   subgroup: 'RADIO MODULES',

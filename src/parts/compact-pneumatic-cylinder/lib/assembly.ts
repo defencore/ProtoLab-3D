@@ -1,3 +1,6 @@
+import { nativeThreadPython } from '../../../core/thread-native';
+import { threadMetadata } from '../../../core/thread-callouts';
+import { boundaryThreadCallouts } from '../../../core/assembly/boundary/shapes';
 import { Group, Box3, Vector3, Mesh, MeshStandardMaterial } from 'three';
 import { component, pythonShape, type Shape, type Vec } from './shapes';
 import { num } from '../../../core/geometry';
@@ -15,6 +18,7 @@ export function geometry(pieces: Piece[]): Group {
 }
 export function python(pieces: Piece[]): string {
   const lines = [
+    nativeThreadPython(),
     'def _pl_transform(shape, translation, rotation):',
     '    for axis, angle in zip([App.Vector(1,0,0),App.Vector(0,1,0),App.Vector(0,0,1)], rotation):',
     '        if angle: shape.rotate(App.Vector(0,0,0),axis,angle)',
@@ -32,6 +36,7 @@ export function python(pieces: Piece[]): string {
   lines.push(
     'shape = Part.makeCompound(components)',
     `component_labels = ${JSON.stringify(pieces.map((p) => p.label))}`,
+    `component_metadata = ${JSON.stringify(pieces.map((p) => threadMetadata(boundaryThreadCallouts({ kind: 'transform', child: p.shape, translation: [0, 0, p.z ?? 0], rotation: [0, 0, p.angle ?? 0] }))))}`,
     `component_colors = [${pieces.map((p) => `(${num(((p.color >> 16) & 255) / 255)},${num(((p.color >> 8) & 255) / 255)},${num((p.color & 255) / 255)})`).join(',')}]`,
   );
   return lines.join('\n');

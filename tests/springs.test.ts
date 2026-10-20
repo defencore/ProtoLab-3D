@@ -8,7 +8,7 @@ import torsion from "../src/parts/torsion-spring/part";
 import doubleTorsion from "../src/parts/double-torsion-spring/part";
 import spiral from "../src/parts/spiral-spring/part";
 import { validateParameters } from '../src/core/validation';
-import { hasWireCollision, v } from "../src/parts/compression-spring/lib/core/spring-geometry";
+import { hasWireCollision, v } from "../src/core/hardware/spring-geometry";
 import type { Parameters, PartDefinition } from '../src/core/types';
 
 const springs = [compression, extension, torsion, doubleTorsion, spiral];

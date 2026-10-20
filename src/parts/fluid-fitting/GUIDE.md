@@ -20,6 +20,6 @@ Fitting form; Connection style; Fitting body diameter; Flow passage diameter; Bo
 
 ## Scope
 
-Connection names identify envelopes only. Thread pitch/taper, JIC cone angle and ORFS groove dimensions must be taken from the mating standard or supplier drawing. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.
+Connection names identify envelopes only. Thread pitch/taper, JIC cone angle and ORFS groove dimensions must be taken from the mating standard or supplier drawing. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Simple uses nominal envelopes for declared threads; Full models declared helical features. Features without a defined pitch/profile remain nominal in both modes. No load, pressure or service-life rating is implied.
 
 Separate named components are exported to FreeCAD; the exploded state separates them along Z. The preview and native export share the same shape recipe. This is an independent, editable package.

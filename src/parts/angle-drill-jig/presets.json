@@ -1,0 +1,98 @@
+[
+  {
+    "id": "a0",
+    "name": "Normal drilling / 0 degrees",
+    "description": "Compact inclined guide with a flat clamping foot and a defined entry point on the workpiece. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "angle": 0,
+      "length": 100,
+      "width": 64,
+      "height": 32,
+      "plate": 6,
+      "guide": "bushing",
+      "drill": 4,
+      "bushOD": 8,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "a15",
+    "name": "Tilt15",
+    "description": "Compact inclined guide with a flat clamping foot and a defined entry point on the workpiece. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "angle": 15,
+      "length": 100,
+      "width": 64,
+      "height": 32,
+      "plate": 6,
+      "guide": "bushing",
+      "drill": 4,
+      "bushOD": 8,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "a22p5",
+    "name": "Tilt22.5",
+    "description": "Compact inclined guide with a flat clamping foot and a defined entry point on the workpiece. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "angle": 22.5,
+      "length": 100,
+      "width": 64,
+      "height": 32,
+      "plate": 6,
+      "guide": "bushing",
+      "drill": 4,
+      "bushOD": 8,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "a30",
+    "name": "Tilt30",
+    "description": "Compact inclined guide with a flat clamping foot and a defined entry point on the workpiece. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "angle": 30,
+      "length": 100,
+      "width": 64,
+      "height": 32,
+      "plate": 6,
+      "guide": "bushing",
+      "drill": 4,
+      "bushOD": 8,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "a45",
+    "name": "Tilt45",
+    "description": "Compact inclined guide with a flat clamping foot and a defined entry point on the workpiece. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "angle": 45,
+      "length": 100,
+      "width": 64,
+      "height": 32,
+      "plate": 6,
+      "guide": "bushing",
+      "drill": 4,
+      "bushOD": 8,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "a60",
+    "name": "Tilt60 / longer foot",
+    "description": "Compact inclined guide with a flat clamping foot and a defined entry point on the workpiece. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "angle": 60,
+      "length": 120,
+      "width": 64,
+      "height": 32,
+      "plate": 6,
+      "guide": "bushing",
+      "drill": 4,
+      "bushOD": 8,
+      "seatAllowance": 0.05
+    }
+  }
+]

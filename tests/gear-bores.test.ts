@@ -6,7 +6,7 @@ import helical from "../src/parts/helical-gear/part";
 import bevel from "../src/parts/bevel-gear/part";
 import pair from "../src/parts/bevel-gear-pair/part";
 import worm from "../src/parts/worm-drive/part";
-import { shaftBoreOutline, shaftBoreShapes, shaftBoreValues } from "../src/parts/spur-gear/lib/core/shaft-bore";
+import { shaftBoreOutline, shaftBoreShapes, shaftBoreValues } from "../src/core/hardware/shaft-bore";
 import { validateParameters } from '../src/core/validation';
 import { disposeModel } from '../src/core/mechanical';
 import type { Parameters } from '../src/core/types';

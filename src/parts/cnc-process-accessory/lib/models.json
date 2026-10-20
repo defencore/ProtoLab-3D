@@ -1,0 +1,44 @@
+[
+  {
+    "id": "teyu-cw3000-tgty",
+    "name": "TEYU CW-3000TGTY spindle water cooler",
+    "width": 270,
+    "length": 490,
+    "height": 380,
+    "manufacturer": "TEYU",
+    "source": "https://www.teyuchiller.com/cnc-cutter-engraver-spindle-industrial-chiller-cw3000.html",
+    "evidence": "Published 490 x 270 x 380 mm overall size and OD10 barbed ports. External contours, feet, handle and port coordinates are illustrative; no factory mounting holes or internal heat exchanger geometry are asserted.",
+    "spec": "220-240 V; 9 L reservoir; passive radiator 50 W/K, rated flow 6 L/min, maximum pump pressure 1 bar. No compressor. Verify spindle heat load, ambient temperature, pressure drop and flow alarm before selecting."
+  },
+  {
+    "id": "teyu-cw5000-tity",
+    "name": "TEYU CW-5000TITY active spindle chiller",
+    "width": 290,
+    "length": 580,
+    "height": 470,
+    "manufacturer": "TEYU",
+    "source": "https://www.teyuchiller.com/cnc-router-spindle-water-chiller-cw5000.html",
+    "evidence": "Published CW-5000TITY overall envelope 580 x 290 x 470 mm and 10 mm fast water connectors. Case divisions, ventilation slots, feet, handle and port locations are illustrative external installation geometry; factory mounting holes and compressor internals are not asserted.",
+    "spec": "220-240 V single phase, 50/60 Hz; active compressor cooling, nominal 750 W heat rejection, temperature stability +/-0.3 C, control range 5-35 C, 8 L reservoir, rated pump flow 10 L/min and maximum pump pressure 2.5 bar. These are separate rated values, not a guaranteed installed flow/capacity. Verify at least 5 L/min through the actual JST spindle, heat load, ambient/setpoint cooling capacity, condensation margin and the delivered alarm/interlock contacts before cutting.",
+    "activeCooling": true,
+    "nominalCoolingWatts": 750,
+    "ratedFlowLitersPerMinute": 10,
+    "pumpMaxPressureBar": 2.5,
+    "temperatureStabilityC": 0.3,
+    "temperatureControlMinC": 5,
+    "temperatureControlMaxC": 35,
+    "reservoirLiters": 8,
+    "massKg": 22
+  },
+  {
+    "id": "vertex-vwp81-150k",
+    "name": "Vertex VWP-81-150K metal-cutting coolant kit",
+    "width": 250,
+    "length": 350,
+    "height": 385,
+    "manufacturer": "Vertex",
+    "source": "https://rotagriponline.com/datasheets/Vertex40/Al.pdf",
+    "evidence": "Manufacturer-authored catalogue publishes the 350 x 250 x 185 mm tank and 150 mm pump immersion depth. The motor head is an illustrative 120 x 120 x 200 mm reservation above the tank; complete kit height and mounting pattern are not published or verified.",
+    "spec": "1/8 HP pump kit, 16 L tank; magnetic coolant hose, delivery and drain hoses included. Specify supply voltage and phase with the supplier. Use a separate circuit from spindle cooling; obtain the pump drawing before drilling its mounting interface."
+  }
+]

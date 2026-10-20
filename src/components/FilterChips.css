@@ -1,0 +1,20 @@
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 12px;
+}
+.filter-chips button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 100%;
+  border: 1px solid #63513e;
+  border-radius: 4px;
+  background: #322a23;
+  padding: 4px 6px;
+  color: #e1bc99;
+  font-size: 10px;
+  text-align: left;
+  overflow-wrap: anywhere;
+}

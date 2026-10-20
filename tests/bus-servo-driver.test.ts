@@ -4,11 +4,11 @@ import { Box3, Vector3 } from 'three';
 import type { Parameters } from '../src/core/types';
 import hat from '../src/parts/bus-servo-driver/part';
 import release from '../src/parts/rocket-release/part';
-import { hatData } from '../src/parts/bus-servo-driver/lib/hat';
-import copied from '../src/parts/rocket-release/lib/hat-native.json';
+import { hatData } from '../src/core/assembly/recovery/hat';
+import copied from '../src/core/assembly/recovery/hat-native.json';
 import { pieces } from '../src/parts/rocket-release/lib/model';
 import { batteryLayout } from '../src/parts/rocket-release/lib/balance';
-import { component } from '../src/parts/rocket-release/lib/shapes';
+import { component } from '../src/core/assembly/recovery/shapes';
 import { disposeModel } from '../src/core/mechanical';
 import { validateParameters } from '../src/core/validation';
 

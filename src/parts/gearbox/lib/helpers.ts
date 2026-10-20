@@ -1,4 +1,4 @@
-import { box, cylinder, prism, union, subtract, component, type Shape, type Vec } from './shapes';
+import { box, cylinder, prism, union, subtract, component, type Shape, type Vec } from '../../../core/assembly/boundary/shapes';
 import type { Piece } from './assembly';
 import { Box3, Mesh, MeshStandardMaterial } from 'three';
 export { union };

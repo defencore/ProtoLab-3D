@@ -165,20 +165,47 @@ test('all bevel reference assemblies contain closed positive-volume meshes at th
     const model = bevel.buildGeometry(preset.parameters, 'assembled');
     try {
       assert.equal(model.children.length, 2);
-      assert.equal(model.children[0].position.x, preset.parameters.pinionMounting);
-      assert.equal(model.children[1].position.z, -Number(preset.parameters.wheelMounting));
-      assert.equal(model.children[0].rotation.y, -Math.PI / 2);
+      model.updateMatrixWorld(true);
+      const pinionBounds = new Box3().setFromObject(model.children[0], true),
+        wheelBounds = new Box3().setFromObject(model.children[1], true);
+      assert.ok(Math.abs(pinionBounds.max.x - Number(preset.parameters.pinionMounting)) < 1e-4);
+      assert.ok(
+        Math.abs(
+          pinionBounds.min.x -
+            Number(preset.parameters.pinionMounting) +
+            Number(preset.parameters.pinionOverall),
+        ) < 1e-4,
+      );
+      // The source mounting datum is exact CAD data; Float32 preview output
+      // can shift a dense annular boundary by a fraction of a micrometre.
+      const occurrences = bevel.composition!(preset.parameters).components;
+      const wheelRecipe = JSON.parse(String(occurrences[1].parameters.recipe));
+      const localBack = Math.min(...wheelRecipe.points.map((point: number[]) => point[2]));
+      assert.ok(
+        Math.abs(
+          localBack +
+            occurrences[1].placement.translation[2] +
+            Number(preset.parameters.wheelMounting),
+        ) < 1e-9,
+      );
+      assert.ok(Math.abs(wheelBounds.min.z + Number(preset.parameters.wheelMounting)) < 0.001);
+      assert.equal(model.children[0].userData.libraryId, 'manufactured-detail');
+      assert.equal(model.children[1].userData.libraryId, 'manufactured-detail');
       const size = new Box3().setFromObject(model, true).getSize(new Vector3()).toArray();
       assert.ok(size.every((value) => Number.isFinite(value) && value > 0));
       model.traverse((object) => {
         if (!(object instanceof Mesh)) return;
         const position = object.geometry.getAttribute('position'),
+          index = object.geometry.getIndex(),
           edges = new Map<string, number>(),
           directions = new Map<string, number>();
         let volume = 0;
-        for (let i = 0; i < position.count; i += 3) {
+        for (let i = 0; i < (index?.count ?? position.count); i += 3) {
           const points = [0, 1, 2].map((offset) =>
-            new Vector3().fromBufferAttribute(position, i + offset),
+            new Vector3().fromBufferAttribute(
+              position,
+              index ? index.getX(i + offset) : i + offset,
+            ),
           );
           const normal = points[1].clone().sub(points[0]).cross(points[2].clone().sub(points[0]));
           assert.ok(normal.lengthSq() > 1e-18, `${preset.id}: degenerate triangle`);

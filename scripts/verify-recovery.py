@@ -13,7 +13,7 @@ import FreeCAD as App,Part
 cases=json.loads(Path(sys.argv[1]).read_text());output=Path(sys.argv[2]);report=[]
 check_intersections='--roundtrip-only' not in sys.argv
 changed_prefix=next((a.split('=',1)[1] for a in sys.argv if a.startswith('--changed-prefix=')),None)
-source=json.loads((Path(__file__).resolve().parent.parent/'src/parts/rocket-release/lib/st3215-native.json').read_text())
+source=json.loads((Path(__file__).resolve().parent.parent/'src/core/assembly/recovery/st3215-native.json').read_text())
 def mesh_volume(shape):
  points,triangles=shape.tessellate(.01)
  center=shape.BoundBox.Center

@@ -54,7 +54,7 @@ its [package guide](../../src/parts/rocket-co2-recovery/GUIDE.md#machining-acces
 and exported component metadata. This does not certify the other library
 mechanisms as having completed the same review.
 
-CAD represents machined threads with smooth nominal-diameter holes and shafts: M2×0.4, M2.5×0.45, M3×0.5, M7×0.5 (plugs), and M8×0.75 (barrels). Part labels and manufacturing properties retain their thread callouts. Only explicitly printed threads retain helical geometry. `threads.csv` lists each axis and nominal tool length in assembly coordinates. This is **not an automatically measured engagement length**: tools may extend beyond the part. Nominal hole geometry is not a tap-drill size or a 6H tolerance specification.
+Simple CAD represents machined threads with smooth nominal-diameter holes and shafts: M2×0.4, M2.5×0.45, M3×0.5, M7×0.5 (plugs), and M8×0.75 (barrels). Full adds authored helical geometry for machined and printed threads. Part labels and manufacturing properties retain their thread callouts in both modes. `threads.csv` lists each axis and nominal tool length in assembly coordinates. This is **not an automatically measured engagement length**: tools may extend beyond the part. Nominal hole geometry is not a tap-drill size or a 6H tolerance specification.
 
 To prepare drawings:
 

@@ -1,7 +1,7 @@
 import type { Parameters } from '../../../core/types';
-import { union, subtract, ring } from './shapes';
-import { C, hex, move } from './helpers';
-import type { Piece } from './assembly';
+import { union, subtract, ring, type Shape } from '../../../core/assembly/boundary/shapes';
+import { C, hex, move } from '../../../core/assembly/boundary-link/helpers';
+import type { Piece } from '../../../core/assembly/boundary/assembly';
 export function pieces(p: Parameters, state: string): Piece[] {
   const D = +p.outer,
     Cw = +p.width,
@@ -13,17 +13,20 @@ export function pieces(p: Parameters, state: string): Piece[] {
   const rollerRadius = (bore - journal) / 4 - 0.04,
     pitch = (bore + journal) / 4;
   const along = (s: Piece): Piece => ({ ...s, angle: +p.angle });
+  const studThread: Shape = {
+    kind: 'cylinder',
+    radius: +p.stud / 2,
+    height: +p.studLength,
+    origin: [0, 0, B],
+    axis: 'z',
+    thread: { pitch: +p.threadPitch },
+  };
   const stud = subtract(
-    union(
-      C(D * 0.71, lip),
-      C(journal, Cw, lip),
-      C(D * 0.71, lip, lip + Cw),
-      C(+p.stud, +p.studLength, B),
-    ),
+    union(C(D * 0.71, lip), C(journal, Cw, lip), C(D * 0.71, lip, lip + Cw), studThread),
     hex(+p.hex, Math.min(2, Cw / 4) + 1, -1),
   );
   const result: Piece[] = [
-    { label: 'Stud · hex socket · nominal thread envelope', color: 0xa8afb8, shape: move(stud, e) },
+    { label: 'Stud · hex socket · declared metric thread', color: 0xa8afb8, shape: move(stud, e) },
     {
       label: 'Cylindrical outer roller',
       color: 0xc2c8cf,

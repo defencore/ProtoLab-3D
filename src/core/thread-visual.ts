@@ -1,11 +1,14 @@
+import { currentGeometryMode } from './geometry-mode';
 import { MeshStandardMaterial, type Mesh } from 'three';
 
-/** Render-only helical flank shading. Exported solids remain nominal cylinders. */
+/** Efficient Full-preview flank shading; native FreeCAD thread geometry is generated separately. */
 export interface VisualThread {
   origin: [number, number, number];
   axis: [number, number, number];
   diameter: number;
   pitch: number;
+  /** Number of helices around the axis; omitted means a single-start thread. */
+  starts?: number;
   length: number;
   left?: boolean;
   internal?: boolean;
@@ -13,6 +16,7 @@ export interface VisualThread {
 }
 const vec = (v: number[]) => `vec3(${v.map((n) => n.toFixed(6)).join(',')})`;
 export function restoreThreadMaterial(material: MeshStandardMaterial) {
+  if (currentGeometryMode() === 'simple') return;
   const threads = material.userData.visualThreads as VisualThread[] | undefined;
   if (!threads?.length) return;
   material.roughness = Math.max(material.roughness, 0.4);
@@ -27,13 +31,14 @@ export function restoreThreadMaterial(material: MeshStandardMaterial) {
     const fields = threads
       .map((t) => {
         const a = t.axis,
-          seed = Math.abs(a[2]) < 0.9 ? [0, 0, 1] : [1, 0, 0];
+          seed = Math.abs(a[2]) < 0.9 ? [0, 0, 1] : [1, 0, 0],
+          starts = t.starts ?? 1;
         return `{
         vec3 axis = normalize(${vec(a)}), delta = plThreadPosition - ${vec(t.origin)};
         float axial = dot(delta,axis), r=length(delta-axis*axial);
         vec3 u=normalize(cross(axis,${vec(seed)})), v=cross(axis,u);
         float angle=atan(dot(delta,v),dot(delta,u));
-        float phase=axial/${t.pitch.toFixed(6)}-${t.left ? '-' : ''}angle/6.28318530718;
+        float phase = axial / ${t.pitch.toFixed(6)} - (${((t.left ? -1 : 1) * starts).toFixed(6)}) * angle / 6.28318530718;
         float mask=step(0.0,axial)*step(axial,${t.length.toFixed(6)})*(1.0-smoothstep(0.08,0.22,abs(r-${(t.diameter / 2).toFixed(6)})));
         float groove=${t.rounded ? '0.5-0.5*cos(phase*6.28318530718)' : 'clamp(abs(fract(phase)-0.5)*2.0,0.125,0.875)'};
         float fade=1.0-smoothstep(0.18,0.7,fwidth(phase));
@@ -58,9 +63,11 @@ export function restoreThreadMaterial(material: MeshStandardMaterial) {
   material.needsUpdate = true;
 }
 export function showThreads(mesh: Mesh, threads: VisualThread[]) {
+  if (currentGeometryMode() === 'simple') return;
+  const configuredThreads = threads.map((thread) => ({ ...thread, starts: thread.starts ?? 1 }));
   for (const material of Array.isArray(mesh.material) ? mesh.material : [mesh.material]) {
     if (!(material instanceof MeshStandardMaterial)) continue;
-    material.userData.visualThreads = threads;
+    material.userData.visualThreads = configuredThreads;
     restoreThreadMaterial(material);
   }
 }

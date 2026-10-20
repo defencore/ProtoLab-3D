@@ -1,11 +1,14 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { parameters, defaults, catalogFilterFields } from './configurator';
 import presets from './presets.json';
 import models from './lib/models.json';
 import { pieces } from './lib/model';
-import * as assembly from './lib/assembly';
+import * as assembly from '../../core/assembly/electronics/assembly';
 const part: PartDefinition = {
   id: 'arduino',
+  product: productData as ProductProfile,
   name: 'Arduino development board',
   category: 'ELECTRONICS & VISION',
   subgroup: 'MICROCONTROLLER BOARDS',

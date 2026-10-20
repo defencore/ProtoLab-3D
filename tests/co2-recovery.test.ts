@@ -20,6 +20,8 @@ import { disposeModel } from '../src/core/mechanical';
 import { h7Mounts } from '../src/parts/rocket-co2-recovery/lib/h7-controller';
 import { blindTapDimensions } from '../src/parts/rocket-co2-recovery/lib/mechanical';
 import { fastener } from '../src/parts/rocket-release/lib/fastener-catalog';
+import { threadFeatures } from '../src/core/assembly/recovery/thread-features';
+import { threadCallouts as cartridgeThreadCallouts } from '../src/parts/co2-cartridge/lib/model';
 import lch7 from '../src/parts/lch7-controller/part';
 import {
   pieces as lch7Pieces,
@@ -594,6 +596,19 @@ test(
   { skip: !process.env.FREECAD_PYTHON },
   () => {
     const v = layout(part.defaults);
+    const source = pieces(part.defaults, 'assembled');
+    const adapterThread = threadFeatures(
+      source.find((piece) => piece.label.startsWith('Printed protective adapter'))!.shape!,
+    ).find((feature) => feature.internal && feature.designation === '3/8-24 UNF RH')!;
+    const cartridge = source.find((piece) => piece.library?.kind === 'cartridge')!;
+    assert.equal(adapterThread.representation, 'nominal-cylinder');
+    assert.equal(
+      cartridgeThreadCallouts({ model: cartridge.library!.model })[0].representation,
+      'nominal-cylinder',
+    );
+    // The native probes below undo the public 180-degree rotation about X.
+    const sourceThreadOrigin = adapterThread.origin.map((value, i) => (i ? -value : value));
+    const sourceThreadAxis = adapterThread.axis.map((value, i) => (i ? -value : value));
     const code = `import FreeCAD as App, Part, math\n${part.python(part.defaults, 'assembled')}\n
 # Public export is nose +Z; rotate back for source-interface probes below.
 assert components[next(i for i,s in enumerate(component_labels) if s.startswith('ZX908 bare PCB'))].BoundBox.ZMin > 100
@@ -614,7 +629,12 @@ assert len(bulk.Solids)==1
 assert bulk.common(Part.makeCylinder(12.69,5,App.Vector())).Volume<0.01
 assert named('Flight-controller carrier disk').common(nut).Volume<0.01
 assert named('BUY battery 1').common(named('BUY battery 2')).Volume<0.01
-assert adapter.common(named('BUY Leland')).Volume<0.01
+# Simple preserves the female print allowance and male envelope at the joint.
+# Nominal envelope clearance does not establish a functional manufactured thread fit.
+thread_joint=Part.makeCylinder(${adapterThread.nominalDiameter / 2},${adapterThread.length},App.Vector(${sourceThreadOrigin.join(',')}),App.Vector(${sourceThreadAxis.join(',')}))
+nominal_thread_overlap=adapter.common(named('BUY Leland'))
+assert nominal_thread_overlap.Volume<0.01
+assert nominal_thread_overlap.cut(thread_joint).Volume<0.01
 for prefix in ['BUY battery 1','BUY battery 2','2S insulating cradle']:
  assert named(prefix).common(nut).Volume<0.01
  assert named(prefix).common(bulk).Volume<0.01

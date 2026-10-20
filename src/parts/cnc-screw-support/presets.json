@@ -1,0 +1,121 @@
+[
+  {
+    "id": "bk12",
+    "name": "HIWIN BK12",
+    "description": "Fixed \u00d812 journal, 7001A bearing pair and M12\u00d71 retention.",
+    "parameters": {
+      "model": "bk12"
+    },
+    "catalog": {
+      "designation": "BK12",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN support-unit catalog",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/HIWIN-Ballscrew-Supports-Catalog.pdf",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "B03TE03-1907 printed pp14\u201315/23/25/26: housing, mounting, bearing type, collars and retention interfaces.",
+        "limitations": "Bearing boundary dimensions follow catalog types. Internal race profiles, axial bearing seating, seal geometry and lid screw pattern are reconstruction assumptions, not supplier-certified CAD. Female tool diameters12.1 mm for M12x1 and4.1 mm for M4 include illustrative clearance; source nominal callouts remain12 and4 mm with no specified production fit class.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/HIWIN-Ballscrew-Supports-Catalog.pdf",
+        "sourceSha256": "4d5f2b51be24834bede8f7ce28942a56c8aeaa4c2685965855cb7d3554dc787f"
+      },
+      "alternateSourceUrls": [
+        "https://sg.misumi-ec.com/pdf/tech/mech/p2855.pdf",
+        "https://www.nsk.com/au-en/engineering/7001a-sp-acbb-st-a.html",
+        "https://www.nsk.com/ph-en/engineering/products/bearings/ball-bearings/deep-groove-ball-bearings/single-row-deep-groove-ball-bearings/6000zz-apn.html"
+      ],
+      "attributes": {
+        "width": 60,
+        "height": 43,
+        "bodyLength": 25,
+        "axisHeight": 25,
+        "journalDiameter": 12,
+        "bearing": "7001A pair",
+        "mountPitchX": 13,
+        "mountPitchY": 46,
+        "mountBore": 6.6,
+        "counterbore": 10.8,
+        "counterboreDepth": 1.5
+      },
+      "specifications": [
+        {
+          "label": "Coordinate frame",
+          "value": "Screw axis X, shaft centreZ0; mounting bottomZ\u221225."
+        },
+        {
+          "label": "Internal reconstruction",
+          "value": "Nominal source bearing boundaries; internal seat layout, raceways and seal/lid details are illustrative."
+        },
+        {
+          "label": "Shaft retention",
+          "value": "\u00d812 journal36, first12 M12\u00d71; source locknutD22/AF19\u00d78."
+        },
+        {
+          "label": "Thread model clearance",
+          "value": "M12x1 and M4 are source nominals; female tool diameters12.1 and4.1 mm are illustrative. Specify actual thread fit on the drawing."
+        }
+      ]
+    }
+  },
+  {
+    "id": "bf12",
+    "name": "HIWIN BF12",
+    "description": "Supported \u00d810 journal, 6000ZZ bearing and S10 external ring.",
+    "parameters": {
+      "model": "bf12"
+    },
+    "catalog": {
+      "designation": "BF12",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN support-unit catalog",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/HIWIN-Ballscrew-Supports-Catalog.pdf",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "B03TE03-1907 printed pp14\u201315/23/25/26: housing, mounting, bearing type, collars and retention interfaces.",
+        "limitations": "Bearing boundary dimensions follow catalog types. Internal race profiles, axial bearing seating, seal geometry and lid screw pattern are reconstruction assumptions, not supplier-certified CAD. BF axial drill centre follows the enlarged side view/photo (two top holes); the generic leader states four and requires supplier confirmation.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/HIWIN-Ballscrew-Supports-Catalog.pdf",
+        "sourceSha256": "4d5f2b51be24834bede8f7ce28942a56c8aeaa4c2685965855cb7d3554dc787f"
+      },
+      "alternateSourceUrls": [
+        "https://sg.misumi-ec.com/pdf/tech/mech/p2855.pdf",
+        "https://www.nsk.com/au-en/engineering/7001a-sp-acbb-st-a.html",
+        "https://www.nsk.com/ph-en/engineering/products/bearings/ball-bearings/deep-groove-ball-bearings/single-row-deep-groove-ball-bearings/6000zz-apn.html"
+      ],
+      "attributes": {
+        "width": 60,
+        "height": 43,
+        "bodyLength": 20,
+        "axisHeight": 25,
+        "journalDiameter": 10,
+        "bearing": "6000ZZ",
+        "mountPitchX": 0,
+        "mountPitchY": 46,
+        "mountBore": 6.6,
+        "counterbore": 10.8,
+        "counterboreDepth": 1.5
+      },
+      "specifications": [
+        {
+          "label": "Coordinate frame",
+          "value": "Screw axis X, shaft centreZ0; mounting bottomZ\u221225."
+        },
+        {
+          "label": "Internal reconstruction",
+          "value": "Nominal source bearing boundaries; internal seat layout, raceways and seal/lid details are illustrative."
+        },
+        {
+          "label": "Shaft retention",
+          "value": "\u00d810 journal11; source groove band8\u20139.15 from shoulder, groove\u00d89.6 from MISUMI JIS table."
+        },
+        {
+          "label": "Mounting drawing conflict",
+          "value": "Side view/photo show two centred top holes; generic leader states four. Verify the actual ordered pattern."
+        }
+      ],
+      "attributeConditions": {
+        "mountPitchX": "Centred axial drill follows side view/photo; generic top drill-count leader conflicts and requires supplier verification."
+      }
+    }
+  }
+]

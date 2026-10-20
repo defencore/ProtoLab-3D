@@ -1,6 +1,6 @@
 import { cellTerminalServiceZones } from '../src/parts/rocket-release/lib/wing-cells';
 import { controllerServiceZones } from '../src/parts/rocket-release/lib/wing-frame';
-import { pythonShape, transform, rotate } from '../src/parts/rocket-release/lib/shapes';
+import { pythonShape, transform, rotate } from '../src/core/assembly/recovery/shapes';
 /** Prepare recovery assembly CAD and preview metrology for FreeCAD verification. */
 import { writeFileSync } from 'node:fs';
 import { Box3, Mesh, Vector3 } from 'three';

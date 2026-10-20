@@ -1,9 +1,12 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters, catalogFilterFields } from './configurator';
 import presets from './presets.json';
-import { hatGeometry, hatPython, hatData } from './lib/hat';
+import { hatGeometry, hatPython, hatData } from '../../core/assembly/recovery/hat';
 const part: PartDefinition = {
   id: 'bus-servo-driver',
+  product: productData as ProductProfile,
   name: 'Bus Servo Driver HAT (A)',
   category: 'POWER & MOTOR CONTROL',
   subgroup: 'SERVO CONTROLLERS',

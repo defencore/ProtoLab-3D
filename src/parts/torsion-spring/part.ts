@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -14,7 +16,7 @@ import {
   wireDimensions,
   wireGeometry,
   wirePython,
-} from './lib/core/spring-geometry';
+} from '../../core/hardware/spring-geometry';
 import type { Vector3 } from 'three';
 
 /** Tangential legs join the coil continuously; bends have an explicit centreline radius. */
@@ -115,6 +117,7 @@ const defaults = {
 const hasBends = (p: Parameters) => p.legEndA !== 'straight' || p.legEndB !== 'straight';
 const part: PartDefinition = {
   id: 'torsion-spring',
+  product: productData as ProductProfile,
   name: 'Torsion spring',
   category: 'SPRINGS',
   subgroup: 'TORSION SPRINGS',
@@ -132,7 +135,7 @@ const part: PartDefinition = {
       unit: '°',
       description: 'Rotates the second leg independently of the whole turn count.',
     },
-    handedness,
+    handedness(),
     numberParameter('legLengthA', 'First straight leg', 'A', 'Legs', 3, 200),
     numberParameter('legLengthB', 'Second straight leg', 'B', 'Legs', 3, 200),
     choice('legEndA', 'First leg end', 'Legs', legStyles),

@@ -80,6 +80,8 @@ The folder name must match the literal lowercase, hyphen-separated ID. IDs must 
 
 The final `PartDefinition` owns its parameter schema and defaults. The generic configurator supports numeric, select and boolean fields. `category` and `subgroup` locate the component in the library; each field's `group` arranges its controls.
 
+Optional `browseFamily: { id, label, primary? }` groups related definitions into one navigation entry while keeping their physical IDs, product classifications, dependencies and exports separate. Members must share the family label, category and subgroup; at most one is primary. A family ID must not collide with an unrelated physical product ID. The spacer/standoff family uses one shared chooser for ordinary articles, bought units with metal inserts, custom-order sleeves and editable plain-spacer designs. Browsing groups are not synthetic assembly products or new specification positions.
+
 Use `visibleWhen(parameters)` for variant-dependent fields. Hidden fields remain part of the configuration and must retain valid types and finite numeric values. Use `updateParameters(parameters, changedKey)` when changing a variant needs to initialize related dimensions; preserve other user values. A number with no physical unit uses `unit: ''`.
 
 Use `catalogSelection` to choose the ordered inline size filters. These definitions belong to the part, including labels and metric-thread formatting:
@@ -160,7 +162,7 @@ For an assembly, return `Part.makeCompound` with direct children representing in
 
 ## Shared SDK and independence
 
-The supported outside-package imports are the generic SDK modules `types.ts`, `geometry.ts`, `mechanical.ts`, `solid-union.ts` and `part-modules.ts` under `src/core`, plus the installed Three.js and JSCAD packages. The SDK provides contracts and generic primitives; application export and validation wrappers are supplied to the workbench by its host. Fixed-model packages declare catalog data through these contracts, without importing application UI components.
+The supported outside-package imports are the documented SDK modules under `src/core`, including `types.ts`, `geometry.ts`, `mechanical.ts`, `solid-union.ts`, `part-modules.ts`, `geometry-mode.ts` and the thread helpers, plus the installed Three.js and JSCAD packages. Package inspection maintains the complete allowlist. The SDK provides contracts and generic primitives; application export and validation wrappers are supplied to the workbench by its host. Fixed-model packages declare catalog data through these contracts, without importing application UI components.
 
 The generic `catalog-models.ts` helper belongs to the host. It centralizes attribute lookup, inclusive model filters and source-identity matching for the application catalog and export wrappers. Runnable handoffs must carry this helper with the host files that import it, so fixed-model source metadata behaves consistently outside the main app. A standalone workbench can select the same model through its schema controls without reproducing the full library's filter UI; the package's fixed geometry and published attributes remain intact.
 
@@ -191,6 +193,8 @@ npm run build
 
 Edit the package folder and return the complete handoff with its manifest intact. The workbench uses the same module code as the main application. Its UI is a development harness, so it does not reproduce every application feature or the full library browser. Keep application-wide SDK changes separate: import does not apply them.
 
+The workbench includes a **Thread detail** selector for Simple and Full. Preview and macro export use the same explicit mode; changing the mode preserves the configured dimensions and product identity. FreeCAD code is prepared when copied or downloaded, and structured text recipe fields remain editable as text.
+
 ## Import the result
 
 From the main project:
@@ -218,9 +222,11 @@ npm run parts:check -- bolt-screw
 
 Use `--all` instead of the part ID to inspect or update the complete library. `--check` performs validation and reports pending changes without writing; it exits with status 1 when a refresh is available. No mode of this command requests catalog pages or repeats a crawl.
 
-The sync uses Gvyntok bolt/set-screw, special fastener, hand-nut, hardware and cotter adapters, plus generated Promtehimport records. It updates matching generated IDs or supplier records, adds new records and retains examples and other sources. It does not remove a last-known record merely because it is absent from a later input. Product availability remains outside the snapshot's purpose. Manually transcribed reference tables without a refresh adapter remain local to their packages.
+The sync uses Gvyntok bolt/set-screw, special fastener, hand-nut, hardware and cotter adapters, plus generated Promtehimport records. Those existing families update matching generated IDs or supplier records, add new records and retain examples and other sources; an absent later input does not remove a last-known record. Product availability remains outside the snapshot's purpose. Manually transcribed reference tables without a refresh adapter remain local to their packages.
 
-Every resulting preset is validated against the package's current schema before any file is written. If an independent part change makes an upstream row incompatible, sync stops with the part/preset ID; adapt the offline mapping or the local data explicitly. Applying a refresh replaces source-owned fields in matching records, so review deliberate local changes before opting in. Previous `presets.json` contents are saved under a `.catalog-snapshot-backup-*` directory outside `src/parts`.
+Three supplier families use complete authoritative replacements: `pcb-standoff` combines DREMEC ordinary standoffs with Kosmodrom M3 records, `pcb-standoff-insert` uses DREMEC nylon/brass composite records, and `dremec-spacer-sleeve` uses the four published custom-order material groups. Removed IDs and old examples are not retained in those families. Fixed standoff schemas, catalog characteristics, defaults and validation closures are rebuilt against the prospective records, so an initial empty snapshot can be populated and new identities are checked against their actual choices.
+
+Every resulting preset is validated against the prospective package schema before any file is written. Requested modules and their declared dependency closure are registered together; missing dependencies, duplicate identities and cycles remain errors. Initial empty fixed dependencies are validated with their authoritative prospective definitions, while only the requested snapshots are written. Populate `pcb-standoff` before its dependent `pcb-standoff-insert`, or use `--all`, when bootstrapping their files. If an independent part change makes an upstream row incompatible, sync stops with the part/preset ID; adapt the offline mapping or the local data explicitly. Applying a refresh replaces source-owned fields in matching records, so review deliberate local changes before opting in. Previous `presets.json` contents are saved under a `.catalog-snapshot-backup-*` directory outside `src/parts`.
 
 This explicit synchronization keeps catalog maintenance available while preserving the package as the independent unit of development and handoff.
 

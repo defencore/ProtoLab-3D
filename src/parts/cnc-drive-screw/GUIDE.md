@@ -1,0 +1,13 @@
+# Custom SFU1610 drive screw with retained ends
+
+This is one detail machined from a purchased SFU1610 grooved blank. It reuses the existing `ball-screw` family’s SFU1610-3 geometry without changing its library definitions or claiming an OEM finished screw. Specify the blank supplier, lead accuracy and matching nut/preload execution.
+
+`driveScrewParameters(racewayLength)` supplies the configuration. Native screw axis is X; the grooved span is centred at 0. `driveScrewLayout` exposes shoulders, journal spans, support centres and retention features. Overall shaft length is `racewayLength+62` mm and its bounding interval is `[-racewayLength/2−51,+racewayLength/2+11]`.
+
+The fixed side has a 12×36 mm journal, with M12×1 on the first 12 mm measured from its outer end, and an additional 10×15 mm motor-drive journal. The supported side has a 10×11 mm journal and 9.6 mm retaining groove at 8..9.15 mm from the body shoulder. [HIWIN suggested shaft-end machining](https://www.hiwin.com/wp-content/uploads/HIWIN-Ballscrew-Supports-Catalog.pdf), printed pages 23/25, supplies journal/retention lengths and diameters. [MISUMI’s JIS groove table](https://sg.misumi-ec.com/pdf/tech/mech/p2855.pdf) supplies groove diameter 9.6. Support PDF SHA-256: `4d5f2b51be24834bede8f7ce28942a56c8aeaa4c2685965855cb7d3554dc787f`.
+
+Place the companion BK12 centre at `fixedShoulder−13` and BF12 centre at `freeShoulder+4`. These placements match the explicitly reconstructed axial seating in `cnc-screw-support`; verify against the ordered unit. The current closed-loop 23HS30-2804-ME1K has a 6.35 mm shaft and uses the matching HLTNC 6.35×10 mm coupling. An 8×10 mm coupling applies only to a separately selected motor with an actual 8 mm shaft, such as 23HS30-2804S2. Check insertion depth and opposing-shaft clearance.
+
+Native CAD fuses the grooved blank and end machining into one solid. Full constructs the grooved body from phase-aligned 200 mm source-profile periods, trimming the last period to the requested span. This keeps long CAD curves bounded while retaining the original groove profile, lead and phase. Period seams remain separate CAD faces; refinement would merge them back into problematic long surfaces. Full also includes the M12 retention helix; Simple retains its nominal envelope and callout.
+
+Specify journal fits, shoulder relief/radii, groove tolerance, runout, surface finish and thread fit in the drawing. The original ball-screw family’s raceway/contact and return-routing limitations still apply. Geometry is not a certificate of stiffness, lead accuracy, preload, critical speed or buckling resistance.

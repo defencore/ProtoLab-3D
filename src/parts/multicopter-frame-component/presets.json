@@ -1,0 +1,1940 @@
+[
+  {
+    "id": "part-00",
+    "name": "Rear equipment pad",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-00"
+    },
+    "product": {
+      "supply": "manufactured"
+    },
+    "catalog": {
+      "designation": "Rear equipment pad",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 27,
+        "depth": 27,
+        "height": 1,
+        "volume": 434.4230606617923,
+        "route": "soft"
+      }
+    }
+  },
+  {
+    "id": "part-01",
+    "name": "Battery pad",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-01"
+    },
+    "product": {
+      "supply": "manufactured"
+    },
+    "catalog": {
+      "designation": "Battery pad",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 118.3861967,
+        "depth": 36,
+        "height": 1.9999999999999998,
+        "volume": 5062.044143297567,
+        "route": "soft"
+      }
+    }
+  },
+  {
+    "id": "part-02",
+    "name": "Lower arm clamp plate",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-02"
+    },
+    "product": {
+      "supply": "manufactured"
+    },
+    "catalog": {
+      "designation": "Lower arm clamp plate",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 98.6956748,
+        "depth": 42.5,
+        "height": 2.5,
+        "volume": 6827.9507936156015,
+        "route": "sheet"
+      }
+    }
+  },
+  {
+    "id": "part-03",
+    "name": "Top deck",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-03"
+    },
+    "product": {
+      "supply": "manufactured"
+    },
+    "catalog": {
+      "designation": "Top deck",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 158.6722044,
+        "depth": 36,
+        "height": 1.9999999999999998,
+        "volume": 7422.492264800232,
+        "route": "sheet"
+      }
+    }
+  },
+  {
+    "id": "part-04",
+    "name": "Main centre plate",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-04"
+    },
+    "product": {
+      "supply": "manufactured"
+    },
+    "catalog": {
+      "designation": "Main centre plate",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 102.63164739999999,
+        "depth": 42.5,
+        "height": 1.9999999999999998,
+        "volume": 5348.554577328065,
+        "route": "sheet"
+      }
+    }
+  },
+  {
+    "id": "part-05",
+    "name": "Camera cheek left",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-05"
+    },
+    "product": {
+      "supply": "manufactured"
+    },
+    "catalog": {
+      "designation": "Camera cheek left",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 24.9,
+        "depth": 2,
+        "height": 34,
+        "volume": 1068.926289280869,
+        "route": "sheet"
+      }
+    }
+  },
+  {
+    "id": "part-06",
+    "name": "Camera cheek right",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-06"
+    },
+    "product": {
+      "supply": "manufactured"
+    },
+    "catalog": {
+      "designation": "Camera cheek right",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 24.9,
+        "depth": 2,
+        "height": 34,
+        "volume": 1068.9262892809475,
+        "route": "sheet"
+      }
+    }
+  },
+  {
+    "id": "part-07",
+    "name": "Body standoff 1",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-07"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "Body standoff 1",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 4.999993,
+        "depth": 4.9999597,
+        "height": 30,
+        "volume": 377.54571505402987,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-08",
+    "name": "Body standoff 2",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-08"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "Body standoff 2",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 4.9997837999999994,
+        "depth": 4.9999597,
+        "height": 22,
+        "volume": 276.86685770628264,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-09",
+    "name": "Body standoff 3",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-09"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "Body standoff 3",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 4.9997837999999994,
+        "depth": 4.9999597,
+        "height": 30,
+        "volume": 377.5457150540262,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-10",
+    "name": "Body standoff 4",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-10"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "Body standoff 4",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 4.9997837999999994,
+        "depth": 4.9999597,
+        "height": 22,
+        "volume": 276.86685770626946,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-11",
+    "name": "Body standoff 5",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-11"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "Body standoff 5",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 4.9997837999999994,
+        "depth": 4.9999597,
+        "height": 30,
+        "volume": 377.5457150540275,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-12",
+    "name": "Body standoff 6",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-12"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "Body standoff 6",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 4.9997837999999994,
+        "depth": 4.9999597,
+        "height": 22,
+        "volume": 276.8668577062772,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-13",
+    "name": "Body standoff 7",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-13"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "Body standoff 7",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 4.999993,
+        "depth": 4.9999597,
+        "height": 30,
+        "volume": 377.5457150540311,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-14",
+    "name": "Body standoff 8",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-14"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "Body standoff 8",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 4.9997837999999994,
+        "depth": 4.9999597,
+        "height": 22,
+        "volume": 276.8668577062831,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-15",
+    "name": "Equipment spacer 1",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-15"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "Equipment spacer 1",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.9997698,
+        "depth": 5.9999994999999995,
+        "height": 4,
+        "volume": 49.075733081148314,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-16",
+    "name": "Equipment spacer 2",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-16"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "Equipment spacer 2",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.9997698,
+        "depth": 5.9999994999999995,
+        "height": 4,
+        "volume": 49.07573308115127,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-17",
+    "name": "Equipment spacer 3",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-17"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "Equipment spacer 3",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.9997698,
+        "depth": 5.9999994999999995,
+        "height": 4,
+        "volume": 49.07573308114898,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-18",
+    "name": "Equipment spacer 4",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-18"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "Equipment spacer 4",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.9997698,
+        "depth": 5.9999994999999995,
+        "height": 4,
+        "volume": 49.07573308115129,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-19",
+    "name": "M3 screw 19",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-19"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 19",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 17.7202424,
+        "volume": 136.90196496324725,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-20",
+    "name": "Camera mount",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-20"
+    },
+    "product": {
+      "supply": "manufactured"
+    },
+    "catalog": {
+      "designation": "Camera mount",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 24.9206068,
+        "depth": 19,
+        "height": 23.913301099999998,
+        "volume": 4700.084191563775,
+        "route": "print"
+      }
+    }
+  },
+  {
+    "id": "part-21",
+    "name": "M3 screw 21",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-21"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 21",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 13.7202424,
+        "volume": 108.61182692992811,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-22",
+    "name": "M3 screw 22",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-22"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 22",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 13.7202424,
+        "volume": 108.61182692993103,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-23",
+    "name": "M3 screw 23",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-23"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 23",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 13.7202424,
+        "volume": 108.6118269299291,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-24",
+    "name": "M3 screw 24",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-24"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 24",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 17.7202424,
+        "volume": 136.86518945829744,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-25",
+    "name": "M3 screw 25",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-25"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 25",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 17.7202424,
+        "volume": 136.86518945831526,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-26",
+    "name": "M3 screw 26",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-26"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 26",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 13.7202424,
+        "volume": 108.58236835746222,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-27",
+    "name": "M3 screw 27",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-27"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 27",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 13.7202424,
+        "volume": 108.58236835746365,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-28",
+    "name": "M3 screw 28",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-28"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 28",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 13.7202424,
+        "volume": 108.58236835746143,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-29",
+    "name": "M3 screw 29",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-29"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 29",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 13.7202424,
+        "volume": 108.58236835745939,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-30",
+    "name": "M3 screw 30",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-30"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 30",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 13.7202424,
+        "volume": 108.58236835745478,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-31",
+    "name": "M3 screw 31",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-31"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 31",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 13.7202424,
+        "volume": 108.58236835745183,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-32",
+    "name": "M3 screw 32",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-32"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 32",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 13.7202424,
+        "volume": 108.61182692992743,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-33",
+    "name": "M3 screw 33",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-33"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 33",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 13.7202424,
+        "volume": 108.5823683574963,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-34",
+    "name": "M3 screw 34",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-34"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 34",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 13.7202424,
+        "volume": 108.58236835750297,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-35",
+    "name": "M3 screw 35",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-35"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 35",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 13.7202424,
+        "volume": 108.58236835749719,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-36",
+    "name": "M3 screw 36",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-36"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 36",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 17.7202424,
+        "volume": 136.90196496325052,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-37",
+    "name": "M3 screw 37",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-37"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 37",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 13.7202424,
+        "volume": 108.61182692992242,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-38",
+    "name": "M3 screw 38",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-38"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 38",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 13.7202424,
+        "volume": 108.61182692991888,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-39",
+    "name": "M3 screw 39",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-39"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 39",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 13.7202424,
+        "volume": 108.61182692992264,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-40",
+    "name": "M3 screw 40",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-40"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 40",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 13.7202424,
+        "volume": 108.61182692991959,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-41",
+    "name": "M3 screw 41",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-41"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 41",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 13.7202424,
+        "volume": 108.61182692990923,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-42",
+    "name": "M3 screw 42",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-42"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 42",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 13.7202424,
+        "volume": 108.61182692991923,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-43",
+    "name": "M3 screw 43",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-43"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 screw 43",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 5.6,
+        "depth": 5.5999598,
+        "height": 13.7202424,
+        "volume": 108.58236835750184,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-44",
+    "name": "M3 press insert 1",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-44"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 press insert 1",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 6.2995826,
+        "depth": 6.2996617,
+        "height": 3.5,
+        "volume": 60.642498173206185,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-45",
+    "name": "M3 press insert 2",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-45"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 press insert 2",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 6.2995826,
+        "depth": 6.2996617,
+        "height": 3.5,
+        "volume": 60.64249817321028,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-46",
+    "name": "M3 press insert 3",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-46"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 press insert 3",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 6.2995826,
+        "depth": 6.2996617,
+        "height": 3.5,
+        "volume": 60.642498173206455,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-47",
+    "name": "M3 press insert 4",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-47"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 press insert 4",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 6.2995826,
+        "depth": 6.2996617,
+        "height": 3.5,
+        "volume": 60.64249817320601,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-48",
+    "name": "M3 press insert 5",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-48"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 press insert 5",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 6.2995826,
+        "depth": 6.2996617,
+        "height": 3.5,
+        "volume": 60.642498173204764,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-49",
+    "name": "M3 press insert 6",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-49"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 press insert 6",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 6.2995826,
+        "depth": 6.2996617,
+        "height": 3.5,
+        "volume": 60.64249817320433,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-50",
+    "name": "M3 press insert 7",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-50"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 press insert 7",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 6.2995826,
+        "depth": 6.2996617,
+        "height": 3.5,
+        "volume": 60.642498173208466,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-51",
+    "name": "M3 press insert 8",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-51"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "M3 press insert 8",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 6.2995826,
+        "depth": 6.2996617,
+        "height": 3.5,
+        "volume": 60.64249817320425,
+        "route": "purchase"
+      }
+    }
+  },
+  {
+    "id": "part-52",
+    "name": "Keyed arm-root cross plate",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-52"
+    },
+    "product": {
+      "supply": "manufactured"
+    },
+    "catalog": {
+      "designation": "Keyed arm-root cross plate",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 31.3398608,
+        "depth": 31.3398608,
+        "height": 6,
+        "volume": 3123.446607896148,
+        "route": "sheet"
+      }
+    }
+  },
+  {
+    "id": "part-53",
+    "name": "Arm front left",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-53"
+    },
+    "product": {
+      "supply": "manufactured"
+    },
+    "catalog": {
+      "designation": "Arm front left",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 85.92128199999999,
+        "depth": 99.8490309,
+        "height": 6,
+        "volume": 8515.991709712947,
+        "route": "sheet"
+      }
+    }
+  },
+  {
+    "id": "part-54",
+    "name": "Arm front right",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-54"
+    },
+    "product": {
+      "supply": "manufactured"
+    },
+    "catalog": {
+      "designation": "Arm front right",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 85.92128199999999,
+        "depth": 99.8490309,
+        "height": 6,
+        "volume": 8515.991709710785,
+        "route": "sheet"
+      }
+    }
+  },
+  {
+    "id": "part-55",
+    "name": "Arm rear left",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-55"
+    },
+    "product": {
+      "supply": "manufactured"
+    },
+    "catalog": {
+      "designation": "Arm rear left",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 85.92128199999999,
+        "depth": 99.8490309,
+        "height": 6,
+        "volume": 8515.991709713038,
+        "route": "sheet"
+      }
+    }
+  },
+  {
+    "id": "part-56",
+    "name": "Arm rear right",
+    "description": "Fixed upstream CAD component. No stretching or material substitution.",
+    "parameters": {
+      "component": "part-56"
+    },
+    "product": {
+      "supply": "manufactured"
+    },
+    "catalog": {
+      "designation": "Arm rear right",
+      "manufacturer": "SOURCE ONE project",
+      "sourceName": "Pinned upstream V5 IGES",
+      "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Native BRep extracted from the pinned upstream IGES; preview tessellated at 0.025 mm chord tolerance.",
+        "limitations": "Source geometry does not establish material properties, fastener grade or flight qualification. Original CAD tolerances are retained.",
+        "sourceUrl": "https://raw.githubusercontent.com/tbs-trappy/source_one/07a8690c6bd73e1300197845eda2ebe547c3a158/SO_V5.iges",
+        "sourceSha256": "f89094fb49269df8573c154fc8c44ecb893800fb47fa2843910555b42604539c"
+      },
+      "attributes": {
+        "width": 85.92128199999999,
+        "depth": 99.8490309,
+        "height": 6,
+        "volume": 8515.991709710803,
+        "route": "sheet"
+      }
+    }
+  }
+]

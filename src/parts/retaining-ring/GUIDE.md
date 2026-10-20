@@ -9,3 +9,5 @@ This folder owns this part's parameter schema, defaults, preview, FreeCAD recipe
 - `index.ts`: API version, stable part ID and display order.
 
 Only the generic geometry SDK under `src/core` is shared. Run `npm run parts:check -- retaining-ring` to check this package and `npm run parts:export -- retaining-ring <output-folder>` to prepare a runnable handoff with the SDK and reference assets.
+
+`boreEnvelope=0` keeps the supplier free-ring configuration and original native recipe unchanged. A positive value is an explicit illustrative installed bore through the expanded body and round lug contours. It does not prescribe machining a purchased DIN ring or certify elastic deformation, retention force or the supplier's unpublished lug shape. Preserve the original stock SKU, free-ring dimensions and actual groove drawing in the assembly purchase/acceptance records.

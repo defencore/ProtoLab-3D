@@ -1,16 +1,73 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import ts from 'typescript';
+import { validateProductProfile } from '../../src/core/product-library';
 import { PART_ID_PATTERN, PART_MODULE_API_VERSION } from '../../src/core/part-modules';
 
 export const SDK_FILES = [
+  'numeric-range.ts',
+  'catalog-models.ts',
+  'recovery-component-recipes.ts',
+  'assembly/recovery/python.ts',
+  'assembly/recovery/shapes.ts',
+  'assembly/recovery/thread.ts',
+  'assembly/recovery/fused-layers.ts',
+  'assembly/recovery/barrel.ts',
+  'assembly/recovery/threaded-plate.ts',
+  'assembly/recovery/triangulate.ts',
+  'assembly/recovery/spring.ts',
+  'assembly/recovery/hat.ts',
+  'assembly/recovery/hat-native.json',
+  'assembly/recovery/st3215-native.json',
+  'assembly/recovery/fasteners.ts',
+  'assembly/recovery/thread-features.ts',
+
+  'hardware/fasteners.ts',
+  'hardware/gears.ts',
+  'hardware/shaft-bore.ts',
+  'hardware/spring-geometry.ts',
+  'hardware/hardware.ts',
+  'hardware/washers.ts',
+  'hardware/nuts.ts',
+  'hardware/internal-thread.ts',
+  'hardware/special-fasteners.ts',
+  'hardware/motion-bearing-utils.ts',
+  'product-types.ts',
+  'product-library.ts',
+  'library.ts',
+  'storage.ts',
+  'validation.ts',
+  'design-project.ts',
+  'project-storage.ts',
+  'component-recipes.ts',
+  'supplier-components.ts',
+  'machine-composition.ts',
+  'recovery-feature-recipes.ts',
+  'project-freecad.ts',
+  'assembly/detail-instances.ts',
+  'assembly/machine-instances.ts',
+  'assembly/precision-mesh.ts',
+  'assembly/mesh.ts',
+  'assembly/mechanical/shapes.ts',
+  'assembly/mechanical/assembly.ts',
+  'assembly/mechanical/helpers.ts',
+  'assembly/boundary/shapes.ts',
+  'assembly/boundary/assembly.ts',
+  'assembly/boundary-link/helpers.ts',
+  'assembly/electronics/shapes.ts',
+  'assembly/electronics/assembly.ts',
+  'assembly/airframe/shapes.ts',
+  'assembly/airframe/assembly.ts',
   'types.ts',
   'parameter-states.ts',
   'geometry.ts',
   'thread-callouts.ts',
+  'geometry-mode.ts',
+  'thread-native.ts',
   'thread-visual.ts',
   'mechanical.ts',
   'solid-union.ts',
+  'jscad-triangulation.ts',
   'manufacturer-cad.ts',
   'part-modules.ts',
 ] as const;
@@ -19,6 +76,7 @@ export const REQUIRED_FILES = [
   'part.ts',
   'configurator.ts',
   'presets.json',
+  'product.json',
   'README.md',
 ] as const;
 const SOURCE_EXTENSIONS = new Set(['.ts', '.tsx', '.js', '.jsx', '.mts', '.mjs']);
@@ -299,6 +357,10 @@ export async function inspectPackage(
       references.add(reference);
     }
   }
+  const product = JSON.parse(await fs.readFile(path.join(directory, 'product.json'), 'utf8'));
+  const productErrors = validateProductProfile(product);
+  if (productErrors.length)
+    throw new Error(`Invalid product profile in ${descriptor.id}: ${productErrors.join(' ')}`);
   const presets: unknown = JSON.parse(
     await fs.readFile(path.join(directory, 'presets.json'), 'utf8'),
   );

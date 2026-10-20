@@ -1,18 +1,22 @@
+import { withGeometryMode } from '../src/core/geometry-mode';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { Box3, Mesh, Vector3 } from 'three';
-import screw from "../src/parts/ball-screw/part";
-import nut from "../src/parts/ball-nut/part";
+import screw from '../src/parts/ball-screw/part';
+import nut from '../src/parts/ball-nut/part';
 import {
   ballScrewBalls,
   ballScrewDefaults,
-  ballScrewGeometry,
+  ballScrewGeometry as detailedBallScrewGeometry,
   ballScrewLayout,
   validateBallScrew,
-} from "../src/parts/ball-screw/lib/parts/ball-screw-geometry";
+} from '../src/parts/ball-screw/lib/parts/ball-screw-geometry';
 import { disposeModel } from '../src/core/mechanical';
 import { validateParameters } from '../src/core/validation';
 import type { Parameters } from '../src/core/types';
+
+const ballScrewGeometry = (p: Parameters, state: string, nutOnly = false) =>
+  withGeometryMode('full', () => detailedBallScrewGeometry(p, state, nutOnly));
 
 function assertClosed(model: ReturnType<typeof ballScrewGeometry>): void {
   model.traverse((child) => {

@@ -1,12 +1,12 @@
 export const PACKAGE_README =
-  '# ProtoLab part package\n\nThis package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.\n\n## Package files\n\n- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.\n- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.\n- `presets.json`: complete preset parameters and source evidence.\n- `lib/`: optional private geometry, reference data, and domain helpers.\n- `index.ts`: stable package ID, API version, and display order.\n- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.\n\n## Edit and verify\n\nRun commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.\n\n```sh\nnpm run parts:check -- <part-id>\nnpm run typecheck\nnpm run dev\nnpm run build\n```\n\nKeep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep domain helpers inside the package; external imports may use only the documented core SDK, Three.js, and JSCAD. Folder discovery maintains the registry automatically.\n\n## Export and handoff\n\n```sh\nnpm run parts:export -- <part-id> <output-folder>\n```\n\nThe handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.\n\nWrite instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.\n';
+  '# ProtoLab part package\n\nThis package follows the same editing and export workflow as every component in the library. Its stable ID and display name are defined in `index.ts` and `part.ts`.\n\n## Package files\n\n- `part.ts`: metadata, validation, preview geometry, FreeCAD recipe, and dimensions, directly or through private helpers.\n- `configurator.ts`: catalog selection controls; scaffolded packages also define their parameter schema and defaults here.\n- `presets.json`: complete preset parameters and source evidence.\n- `product.json`: explicit product type, make or buy policy, process routes and release requirements.\n- `lib/`: component-specific models, reference data and domain helpers; shared geometry and hardware belong to the documented SDK.\n- `index.ts`: stable package ID, API version 2, display order and explicit library dependencies.\n- [GUIDE.md](GUIDE.md): component-specific scope, sources, and engineering limitations.\n\n## Edit and verify\n\nRun commands from the project root. Replace `<part-id>` with the ID declared in `index.ts`.\n\n```sh\nnpm run parts:check -- <part-id>\nnpm run typecheck\nnpm run dev\nnpm run build\n```\n\nKeep preview geometry, FreeCAD solids, reported dimensions, validation, and presets consistent. Keep component-specific helpers inside the package. Reuse the documented core SDK and explicitly declared library dependencies; all physical assembly components need library configuration identities independent of inspection poses. Folder discovery maintains the registry automatically.\n\n## Export and handoff\n\n```sh\nnpm run parts:export -- <part-id> <output-folder>\n```\n\nThe handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.\n\nWrite instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.\n';
 
 export function starterFiles(id: string, name: string, order: number): Record<string, string> {
   return {
     'index.ts': `import type { PartModule } from '../../core/part-modules';
 import partDefinition from './part';
 const part = { ...partDefinition, id: ${JSON.stringify(id)} };
-export default { apiVersion: 1, order: ${order}, part } satisfies PartModule;
+export default { apiVersion: 2, order: ${order}, part } satisfies PartModule;
 `,
     'configurator.ts': `import type { ParameterDefinition, Parameters } from '../../core/types';
 import { numberParameter } from '../../core/geometry';
@@ -18,6 +18,20 @@ export const parameters: ParameterDefinition[] = [
 ];
 export const defaults: Parameters = { outerDiameter: 8, bore: 3.4, length: 15 };
 `,
+    'product.json':
+      JSON.stringify(
+        {
+          kind: 'detail',
+          supply: 'manufactured',
+          description: 'Custom machined spacer from round stock.',
+          processes: ['turning', 'drilling'],
+          releaseRequirements: [
+            'Specify material, stock, tolerances and deburring on the part drawing.',
+          ],
+        },
+        null,
+        2,
+      ) + '\n',
     'presets.json':
       JSON.stringify(
         [
@@ -33,14 +47,17 @@ export const defaults: Parameters = { outerDiameter: 8, bore: 3.4, length: 15 };
       ) + '\n',
     'part.ts': `import { Group } from 'three';
 import type { PartDefinition, Preset } from '../../core/types';
+import type { ProductProfile } from '../../core/product-types';
+import product from './product.json';
 import { n, num, ring } from '../../core/geometry';
 import { parameters, defaults } from './configurator';
 import presets from './presets.json';
 
 const part: PartDefinition = {
+  product: product as ProductProfile,
   id: ${JSON.stringify(id)},
   name: ${JSON.stringify(name)},
-  category: 'FASTENERS',
+  category: 'FASTENERS & THREADS',
   subgroup: 'SPACERS & STANDOFFS',
   description: 'A configurable spacer with an open through bore.',
   icon: 'bolt',
@@ -72,7 +89,10 @@ export default part;
   };
 }
 
-export function workbenchFiles(id: string): Record<string, string> {
+export function workbenchFiles(
+  id: string,
+  dependencies: readonly string[] = [],
+): Record<string, string> {
   return {
     'index.html':
       '<!doctype html>\n<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>ProtoLab Part Workbench</title></head><body><div id="app"></div><script type="module" src="/src/main.ts"></script></body></html>\n',
@@ -100,20 +120,24 @@ export function workbenchFiles(id: string): Record<string, string> {
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import module from './parts/${id}/index';
+${dependencies.map((dependency, index) => `import dependency${index} from './parts/${dependency}/index';`).join('\n')}
 import { registerPartModules } from './core/part-modules';
 import { generateScript, consoleCommand } from './core/freecad';
+import { withGeometryMode, type GeometryMode } from './core/geometry-mode';
 import { validateParameters } from './core/validation';
+import { presetMatchesConfiguration } from './core/catalog-models';
 import type { Parameters } from './core/types';
 
-const [part] = registerPartModules([module]);
+const part = registerPartModules([module${dependencies.map((_, index) => `, dependency${index}`).join('')}]).find((part) => part.id === ${JSON.stringify(id)})!;
 let parameters: Parameters = { ...part.defaults };
 let state = part.states?.[0]?.id ?? 'default';
+let geometryMode: GeometryMode = 'simple';
 let model: THREE.Group | undefined;
 let script = '';
 let presetSelect: HTMLSelectElement | undefined;
 let stateSelect: HTMLSelectElement | undefined;
 const app = document.querySelector<HTMLDivElement>('#app')!;
-app.innerHTML = '<header><h1></h1><span>Isolated part workbench · millimetres</span></header><main><section id="preview"><div id="viewport"></div><button id="fit">Fit model</button><p id="status" role="status"></p></section><aside><h2>Configure</h2><div id="presets"></div><div id="states"></div><div id="parameters"></div><button id="reset">Reset defaults</button><h2>FreeCAD</h2><div class="actions"><button id="copy">Copy console command</button><button id="download">Download macro</button></div><textarea id="script" readonly aria-label="Generated FreeCAD script"></textarea></aside></main>';
+app.innerHTML = '<header><h1></h1><span>Isolated part workbench · millimetres</span></header><main><section id="preview"><div id="viewport"></div><button id="fit">Fit model</button><p id="status" role="status"></p></section><aside><h2>Configure</h2><label>Thread detail<select id="geometry-mode"><option value="simple">Simple · without threads / TechDraw</option><option value="full">Full · with threads</option></select><small>Thread callouts are retained in both modes.</small></label><div id="presets"></div><div id="states"></div><div id="parameters"></div><button id="reset">Reset defaults</button><h2>FreeCAD</h2><div class="actions"><button id="copy">Copy console command</button><button id="download">Download macro</button></div><textarea id="script" readonly aria-label="FreeCAD console command" placeholder="Code is prepared when you copy or download."></textarea></aside></main>';
 app.querySelector('h1')!.textContent = part.name;
 const viewport = document.querySelector<HTMLDivElement>('#viewport')!;
 const status = document.querySelector<HTMLParagraphElement>('#status')!;
@@ -139,7 +163,7 @@ function resize() {
 new ResizeObserver(resize).observe(viewport);
 function fit() {
   if (!model) return;
-  const bounds = new THREE.Box3().setFromObject(model);
+  const bounds = new THREE.Box3().setFromObject(model, true);
   const center = bounds.getCenter(new THREE.Vector3());
   const radius = bounds.getSize(new THREE.Vector3()).length() / 2;
   const distance = Math.max(radius * 3.6 / Math.min(camera.aspect, 1), 5);
@@ -160,21 +184,30 @@ function rebuild(shouldFit = false) {
   const errors = validateParameters(part, parameters, state);
   if (!errors.length) {
     try {
-      const next = part.buildGeometry(parameters, state);
-      script = generateScript(part, parameters, state);
+      const next = withGeometryMode(geometryMode, () => part.buildGeometry(parameters, state));
       if (model) { scene.remove(model); release(model); }
       model = next; scene.add(model);
-      textarea.value = script;
       if (shouldFit) fit();
     } catch (error) { errors.push(error instanceof Error ? error.message : String(error)); }
   }
   copy.disabled = download.disabled = errors.length > 0;
-  if (errors.length) { textarea.value = ''; script = ''; }
-  status.textContent = errors.length ? errors.join(' ') : 'Preview and FreeCAD script are up to date.';
+  textarea.value = ''; script = '';
+  status.textContent = errors.length ? errors.join(' ') : 'Preview is up to date. FreeCAD code is prepared when requested.';
   status.classList.toggle('error', errors.length > 0);
 }
+function prepareScript() {
+  try {
+    if (!script) script = generateScript(part, parameters, state, undefined, undefined, geometryMode);
+    textarea.value = consoleCommand(script);
+    return true;
+  } catch (error) {
+    status.textContent = error instanceof Error ? error.message : String(error);
+    status.classList.add('error');
+    return false;
+  }
+}
 function renderFields() {
-  if (presetSelect) presetSelect.value = part.presets.find((preset) => Object.keys(part.defaults).every((key) => preset.parameters[key] === parameters[key]))?.id ?? '';
+  if (presetSelect) presetSelect.value = part.presets.find((preset) => presetMatchesConfiguration(part, preset, parameters))?.id ?? '';
   if (stateSelect) stateSelect.value = state;
   const parent = document.querySelector<HTMLDivElement>('#parameters')!;
   parent.replaceChildren();
@@ -184,8 +217,11 @@ function renderFields() {
     if (field.group !== group) { const heading = document.createElement('h3'); heading.textContent = field.group; parent.append(heading); group = field.group; }
     const label = document.createElement('label');
     const title = document.createElement('span'); title.textContent = field.label + (field.unit ? ' (' + field.unit + ')' : ''); label.append(title);
-    let input: HTMLInputElement | HTMLSelectElement;
-    if (field.type === 'select') {
+    let input: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+    if (field.type === 'text') {
+      input = document.createElement('textarea'); input.rows = 4;
+      input.value = String(parameters[field.key]);
+    } else if (field.type === 'select') {
       input = document.createElement('select');
       for (const option of field.options ?? []) { const item = document.createElement('option'); item.value = option.value; item.textContent = option.label; input.append(item); }
       input.value = String(parameters[field.key]);
@@ -224,9 +260,10 @@ if (part.states) {
   label.append(select); document.querySelector('#states')!.append(label);
 }
 document.querySelector('#fit')!.addEventListener('click', fit);
+document.querySelector<HTMLSelectElement>('#geometry-mode')!.addEventListener('change', (event) => { geometryMode = (event.currentTarget as HTMLSelectElement).value as GeometryMode; rebuild(); });
 document.querySelector('#reset')!.addEventListener('click', () => { parameters = { ...part.defaults }; state = part.states?.[0]?.id ?? 'default'; renderFields(); rebuild(true); });
-copy.addEventListener('click', async () => { try { await navigator.clipboard.writeText(consoleCommand(script)); status.textContent = 'Console command copied.'; } catch { status.textContent = 'Clipboard unavailable. Select and copy the script below.'; } });
-download.addEventListener('click', () => { const url = URL.createObjectURL(new Blob([script], { type: 'text/x-python' })); const link = document.createElement('a'); link.href = url; link.download = part.id + '.FCMacro'; link.click(); URL.revokeObjectURL(url); });
+copy.addEventListener('click', async () => { if (!prepareScript()) return; try { await navigator.clipboard.writeText(consoleCommand(script)); status.textContent = 'Console command copied (' + geometryMode + ').'; } catch { textarea.focus(); textarea.select(); status.textContent = 'Clipboard unavailable. Copy the selected console command below.'; } });
+download.addEventListener('click', () => { if (!prepareScript()) return; const url = URL.createObjectURL(new Blob([script], { type: 'text/x-python' })); const link = document.createElement('a'); link.href = url; link.download = part.id + '-' + geometryMode + '.FCMacro'; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); });
 resize(); renderFields(); rebuild(true);
 renderer.setAnimationLoop(() => { controls.update(); renderer.render(scene, camera); });
 `,

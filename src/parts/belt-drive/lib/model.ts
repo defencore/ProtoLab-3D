@@ -1,8 +1,8 @@
 import type { Parameters } from '../../../core/types';
 import { n } from '../../../core/geometry';
-import type { Piece } from './assembly';
-import { B, C, T, poly, move, union, cut, finish } from './helpers';
-import type { Shape, Vec } from './shapes';
+import type { Piece } from '../../../core/assembly/mechanical/assembly';
+import { B, C, T, poly, move, union, cut, finish } from '../../../core/assembly/mechanical/helpers';
+import type { Shape, Vec } from '../../../core/assembly/mechanical/shapes';
 export function pieces(p: Parameters, state: string): Piece[] {
   const out: Piece[] = [];
   const add = (label: string, shape: Shape, color = 0x87919c) => out.push({ label, shape, color });

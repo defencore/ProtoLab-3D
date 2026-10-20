@@ -1,0 +1,82 @@
+[
+  {
+    "id": "od10-d2",
+    "name": "Shaft OD10 / drill2",
+    "description": "Slip-on end stop for centered axial pilot holes in rods and small tube end plugs. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockOD": 10,
+      "sleeve": 25,
+      "plate": 10,
+      "clearance": 0.2,
+      "wall": 6,
+      "guide": "bushing",
+      "drill": 2,
+      "bushOD": 5,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "od12-d3",
+    "name": "Shaft OD12 / drill3",
+    "description": "Slip-on end stop for centered axial pilot holes in rods and small tube end plugs. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockOD": 12,
+      "sleeve": 25,
+      "plate": 10,
+      "clearance": 0.2,
+      "wall": 6,
+      "guide": "bushing",
+      "drill": 3,
+      "bushOD": 8,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "od16-d4",
+    "name": "Shaft OD16 / drill4",
+    "description": "Slip-on end stop for centered axial pilot holes in rods and small tube end plugs. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockOD": 16,
+      "sleeve": 25,
+      "plate": 10,
+      "clearance": 0.2,
+      "wall": 6,
+      "guide": "bushing",
+      "drill": 4,
+      "bushOD": 8,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "od20-d5",
+    "name": "Shaft OD20 / drill5",
+    "description": "Slip-on end stop for centered axial pilot holes in rods and small tube end plugs. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockOD": 20,
+      "sleeve": 25,
+      "plate": 10,
+      "clearance": 0.2,
+      "wall": 6,
+      "guide": "bushing",
+      "drill": 5,
+      "bushOD": 10,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "od30-d6",
+    "name": "Shaft OD30 / drill6",
+    "description": "Slip-on end stop for centered axial pilot holes in rods and small tube end plugs. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockOD": 30,
+      "sleeve": 25,
+      "plate": 10,
+      "clearance": 0.2,
+      "wall": 6,
+      "guide": "bushing",
+      "drill": 6,
+      "bushOD": 12,
+      "seatAllowance": 0.05
+    }
+  }
+]

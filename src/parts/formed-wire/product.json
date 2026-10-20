@@ -1,0 +1,10 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "A continuous round wire formed along a defined local centreline; the drawing must specify free shape, material and forming requirements.",
+  "processes": ["winding", "bending"],
+  "releaseRequirements": [
+    "Specify wire grade, free shape, forming mandrel, heat treatment and dimensional inspection.",
+    "A posed spring path does not define stiffness, preload, fatigue life or the unloaded spring geometry."
+  ]
+}

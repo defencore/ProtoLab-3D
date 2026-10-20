@@ -1,0 +1,26 @@
+[
+  {
+    "id": "sfu1610-bk-bf-450",
+    "name": "SFU1610 · active 450 mm · BK12/BF12 ends",
+    "description": "Custom machined shaft from a purchased blank; overall length 512 mm.",
+    "parameters": {
+      "racewayLength": 450
+    }
+  },
+  {
+    "id": "sfu1610-bk-bf-900",
+    "name": "SFU1610 · active 900 mm · BK12/BF12 ends",
+    "description": "Custom machined shaft from a purchased blank; overall length 962 mm.",
+    "parameters": {
+      "racewayLength": 900
+    }
+  },
+  {
+    "id": "sfu1610-bk-bf-1800",
+    "name": "SFU1610 · active 1800 mm · BK12/BF12 ends",
+    "description": "Custom machined shaft from a purchased blank; overall length 1862 mm.",
+    "parameters": {
+      "racewayLength": 1800
+    }
+  }
+]

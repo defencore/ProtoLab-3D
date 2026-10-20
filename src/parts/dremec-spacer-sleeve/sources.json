@@ -1,0 +1,70 @@
+[
+  {
+    "url": "https://dremec.ua/product/spacer-sleeves-latun/",
+    "name": "DREMEC DH metal sleeve brass",
+    "material": "brass",
+    "materialGrade": "CuZn39Pb3 / 2.0401",
+    "finish": "nickel-plated",
+    "manufacturerRange": {
+      "outerDiameterMin": 4,
+      "outerDiameterMax": 36,
+      "bodyLengthMin": 1,
+      "bodyLengthMax": 60,
+      "boreDiameter": "freely-selectable; dimensions must be specified by customer"
+    },
+    "drawingUrl": "https://shop.dremec.de/api/downloads/Dremec_Katalog_Deutsch_doppelseitig.pdf#page=19"
+  },
+  {
+    "url": "https://dremec.ua/product/spacer-sleeves-steel/",
+    "name": "DREMEC DH metal sleeve steel",
+    "material": "steel",
+    "materialGrade": "11SMnPb30 / 1.0718",
+    "finish": "zinc-plated",
+    "manufacturerRange": {
+      "outerDiameterMin": 4,
+      "outerDiameterMax": 36,
+      "bodyLengthMin": 1,
+      "bodyLengthMax": 60,
+      "boreDiameter": "freely-selectable; dimensions must be specified by customer"
+    },
+    "drawingUrl": "https://shop.dremec.de/api/downloads/Dremec_Katalog_Deutsch_doppelseitig.pdf#page=19",
+    "orderExample": {
+      "sku": "324/2.1x10",
+      "bodyDiameter": 4,
+      "boreDiameter": 2.1,
+      "bodyLength": 10,
+      "printedPage": 36,
+      "evidenceKind": "printed-order-example"
+    }
+  },
+  {
+    "url": "https://dremec.ua/product/spacer-sleeves-alu/",
+    "name": "DREMEC DH metal sleeve aluminium",
+    "material": "aluminium",
+    "materialGrade": "AlCuBiPb / 3.1655",
+    "finish": "self-finish",
+    "manufacturerRange": {
+      "outerDiameterMin": 4,
+      "outerDiameterMax": 36,
+      "bodyLengthMin": 1,
+      "bodyLengthMax": 60,
+      "boreDiameter": "freely-selectable; dimensions must be specified by customer"
+    },
+    "drawingUrl": "https://shop.dremec.de/api/downloads/Dremec_Katalog_Deutsch_doppelseitig.pdf#page=19"
+  },
+  {
+    "url": "https://dremec.ua/product/spacer-sleeves-stainless/",
+    "name": "DREMEC DH metal sleeve stainless-steel",
+    "material": "stainless-steel",
+    "materialGrade": "1.4305",
+    "finish": "self-finish",
+    "manufacturerRange": {
+      "outerDiameterMin": 4,
+      "outerDiameterMax": 36,
+      "bodyLengthMin": 1,
+      "bodyLengthMax": 60,
+      "boreDiameter": "freely-selectable; dimensions must be specified by customer"
+    },
+    "drawingUrl": "https://shop.dremec.de/api/downloads/Dremec_Katalog_Deutsch_doppelseitig.pdf#page=19"
+  }
+]

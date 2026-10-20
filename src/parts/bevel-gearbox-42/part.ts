@@ -1,9 +1,12 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters } from './configurator';
 import presets from './presets.json';
 import { geometry, python, dimensions } from './lib/model';
 const part: PartDefinition = {
   id: 'bevel-gearbox-42',
+  product: productData as ProductProfile,
   name: 'Bevel gearbox · 42 mm · 1:1',
   category: 'TRANSMISSION & LINKAGES',
   subgroup: 'REDUCERS & DIFFERENTIALS',

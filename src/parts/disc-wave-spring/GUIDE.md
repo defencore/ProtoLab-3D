@@ -16,6 +16,6 @@ Spring form; Disc outside diameter / leaf length; Disc bore / leaf width; Free r
 
 ## Scope
 
-Free-state geometry only; no stiffness, force or fatigue calculation. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.
+Free-state geometry only; no stiffness, force or fatigue calculation. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Simple uses nominal envelopes for declared threads; Full models declared helical features. Features without a defined pitch/profile remain nominal in both modes. No load, pressure or service-life rating is implied.
 
 Separate named components are exported to FreeCAD; the exploded state separates them along Z. The preview and native export share the same shape recipe. This is an independent, editable package.

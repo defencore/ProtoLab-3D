@@ -15,7 +15,7 @@ import {
   rotate,
   type Shape,
   type Point,
-} from './shapes';
+} from '../../../core/assembly/recovery/shapes';
 import { servoTiePosts, servoRetention } from './servo-retention';
 import { springCartridges } from './cartridges';
 import { named } from './names';

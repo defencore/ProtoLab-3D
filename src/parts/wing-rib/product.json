@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "A configured sheet wing rib with defined spar and lightening cuts; its aircraft attachment and load case are project design requirements.",
+  "processes": ["cutting", "milling"],
+  "releaseRequirements": [
+    "Specify sheet material, grade, thickness, grain or laminate orientation and cutting process.",
+    "Verify spar slot fit with a coupon and define cutter corner treatment, tolerances, kerf and edge finish.",
+    "Size rib spacing, spars, skins, trailing edge strip and bonded or mechanical joints for the aircraft loads."
+  ]
+}

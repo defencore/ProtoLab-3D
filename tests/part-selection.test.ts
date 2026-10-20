@@ -11,6 +11,7 @@ function moduleDefinition(overrides: Partial<PartDefinition> = {}): PartDefiniti
     category: 'TEST',
     subgroup: 'MODULES',
     description: 'A replaceable part module.',
+    product: { kind: 'detail', supply: 'manufactured', description: 'Manufactured test fixture.', processes: ['milling'], releaseRequirements: ['Review the configured fixture drawing.'] },
     keywords: [],
     icon: 'box',
     complexity: 'Simple',

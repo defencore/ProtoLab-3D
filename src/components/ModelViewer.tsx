@@ -35,6 +35,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import type { Parameters, PartDefinition } from '../core/types';
 import './viewer/viewer.css';
+import { withGeometryMode, type GeometryMode } from '../core/geometry-mode';
 
 type CameraView = 'isometric' | 'front' | 'top' | 'right';
 type DisplayMode = 'solid' | 'wireframe' | 'xray';
@@ -48,6 +49,7 @@ interface ModelViewerProps {
   part: PartDefinition;
   parameters: Parameters;
   modelState: string;
+  geometryMode: GeometryMode;
   displayMode: DisplayMode;
   navigationMode: NavigationMode;
   showGrid: boolean;
@@ -262,6 +264,7 @@ export default function ModelViewer({
   part,
   parameters,
   modelState,
+  geometryMode,
   displayMode,
   navigationMode,
   showGrid,
@@ -528,13 +531,15 @@ export default function ModelViewer({
       if (issues.length) throw new Error(issues[0]);
       if (loadError) throw new Error(loadError);
       if (preparedModel === null) return;
-      model = preparedModel ?? part.buildGeometry(parameters, modelState);
+      model =
+        preparedModel ??
+        withGeometryMode(geometryMode, () => part.buildGeometry(parameters, modelState));
       const displayRoot = new Group();
       // FreeCAD models stay in native Z-up coordinates. Only the preview rotates them.
       displayRoot.rotation.x = -Math.PI / 2;
       displayRoot.add(model);
       displayRoot.updateMatrixWorld(true);
-      const bounds = new Box3().setFromObject(displayRoot);
+      const bounds = new Box3().setFromObject(displayRoot, true);
       if (bounds.isEmpty()) throw new Error('This configuration produced an empty model.');
       const size = bounds.getSize(new Vector3());
       const extent = Math.max(size.x, size.y, size.z);
@@ -543,7 +548,7 @@ export default function ModelViewer({
       const center = bounds.getCenter(new Vector3());
       displayRoot.position.set(-center.x, -bounds.min.y, -center.z);
       displayRoot.updateMatrixWorld(true);
-      const worldBounds = new Box3().setFromObject(displayRoot);
+      const worldBounds = new Box3().setFromObject(displayRoot, true);
 
       if (runtime.model) {
         runtime.stage.remove(runtime.model);
@@ -623,7 +628,8 @@ export default function ModelViewer({
       updateDimensions(
         runtime,
         worldBounds,
-        preparedDimensions ?? part.dimensions(parameters, modelState),
+        preparedDimensions ??
+          withGeometryMode(geometryMode, () => part.dimensions(parameters, modelState)),
       );
       applyDisplayMode(runtime, displayModeRef.current);
       if (runtime.currentPart !== part.id) runtime.fit(currentViewRef.current);
@@ -641,7 +647,7 @@ export default function ModelViewer({
       setError(message);
       onErrorRef.current?.(message);
     }
-  }, [part, parameters, modelState, preparedModel, loadError]);
+  }, [part, parameters, modelState, geometryMode, preparedModel, loadError]);
 
   useEffect(() => {
     const runtime = runtimeRef.current;

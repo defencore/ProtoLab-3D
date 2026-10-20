@@ -145,7 +145,7 @@ test('controls for absent components and inactive deformations are hidden', () =
     ['holding-electromagnet', 'airGap', 'magnet-only', 'assembled'],
     ['piston', 'explodedGap', 'assembled', 'exploded'],
     ['ball-screw', 'nutDiameter', 'screw', 'assembled'],
-    ['multicopter-frame', 'wheelbase', 'body', 'assembled'],
+    ['multicopter-frame', 'explodedGap', 'assembled', 'exploded'],
     ['servo-motor', 'outputAngle', 'body', 'assembled'],
     ['gearbox', 'mountPitch', 'internals', 'assembled'],
     ['gearbox', 'mountHole', 'internals', 'assembled'],

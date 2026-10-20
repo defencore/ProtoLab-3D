@@ -1,4 +1,4 @@
-import type { Piece } from '../../flight-controller/lib/assembly';
+import type { Piece } from '../../../core/assembly/electronics/assembly';
 import {
   box,
   cylinder,
@@ -8,7 +8,7 @@ import {
   union,
   type Shape,
   type Vec,
-} from '../../flight-controller/lib/shapes';
+} from '../../../core/assembly/electronics/shapes';
 import components from './components.json';
 export const h7Spec = {
   boardWidth: 50,

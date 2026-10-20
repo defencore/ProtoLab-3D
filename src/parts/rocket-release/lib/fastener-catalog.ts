@@ -1,4 +1,4 @@
-import type { Shape } from './shapes';
+import type { Shape } from '../../../core/assembly/recovery/shapes';
 
 export function fastener(shape: Shape): Extract<Shape, { kind: 'fastener' }> | undefined {
   if (shape.kind === 'fastener') return shape;

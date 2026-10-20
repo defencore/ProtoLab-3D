@@ -1,3 +1,5 @@
+import { periodicThreadPython } from '../../../core/thread-native';
+import { currentGeometryMode } from '../../../core/geometry-mode';
 import { showThreads } from '../../../core/thread-visual';
 import { BufferGeometry, Float32BufferAttribute, Group, Mesh } from 'three';
 import { toCreasedNormals } from 'three/addons/utils/BufferGeometryUtils.js';
@@ -56,7 +58,7 @@ export function values(p: Parameters, state: string) {
 }
 export function radiusAt(p: Parameters, state: string, z: number, angle: number) {
   const v = values(p, state);
-  if (!v.printed) return v.major;
+  if (!v.printed || currentGeometryMode() === 'simple') return v.major;
   const phase = z / v.pitch - (v.hand * v.starts * angle) / TAU;
   const distance = Math.abs(phase - Math.round(phase)) * v.pitch;
   return (
@@ -98,7 +100,8 @@ export function geometry(p: Parameters, state: string): Group {
   // Indexed closed radial surface. 96 angular segments and >=48 axial samples/pitch
   // keep both ends planar while matching the analytical helical cut in FreeCAD.
   const segments = 96,
-    levels = v.printed ? Math.ceil((v.length / v.pitch) * 48) : 1;
+    levels =
+      v.printed && currentGeometryMode() === 'full' ? Math.ceil((v.length / v.pitch) * 48) : 1;
   const positions: number[] = [],
     indices: number[] = [];
   const rings: number[][] = [];
@@ -170,6 +173,7 @@ export function geometry(p: Parameters, state: string): Group {
         axis: [0, 0, 1],
         diameter: v.major * 2,
         pitch: v.pitch,
+        starts: v.starts,
         length: v.length,
         internal: v.internal,
         left: p.handedness === 'left',
@@ -194,20 +198,24 @@ thread_root = ${f(v.root)}
 thread_length = ${f(v.length)}
 shape = Part.makeCylinder(thread_major, thread_length)
 ${
-  v.printed
-    ? `profile_points = [App.Vector(thread_root,0,${f(-halfRoot)}), App.Vector(thread_major+${f(overlap)},0,${f(-halfOuter)}), App.Vector(thread_major+${f(overlap)},0,${f(halfOuter)}), App.Vector(thread_root,0,${f(halfRoot)})]
-profile = Part.Wire(Part.makePolygon(profile_points+[profile_points[0]]).Edges)
-path = Part.Wire(Part.makeLongHelix(thread_lead, thread_length+2*thread_lead, thread_root, 0, ${v.hand < 0 ? 'True' : 'False'}).Edges)
-groove = path.makePipeShell([profile],True,True)
-# OCC may return an inward-oriented swept solid for some lead/profile ratios.
-# Normalize it before Boolean subtraction instead of treating its complement as a tool.
-if groove.Volume < 0:
-    groove.reverse()
-for start in range(${v.starts}):
-    tool = groove.copy()
-    tool.translate(App.Vector(0,0,-thread_lead+(start+0.5)*thread_pitch))
-    shape = shape.cut(tool)`
-    : '# Machined thread: nominal cylindrical envelope; refer to ThreadCallouts.'
+  currentGeometryMode() === 'full'
+    ? `${periodicThreadPython()}
+def _protolab_tool_period(height):
+    shape = Part.makeCylinder(thread_major, height)
+    profile_points = [App.Vector(thread_root,0,${f(-halfRoot)}), App.Vector(thread_major+${f(overlap)},0,${f(-halfOuter)}), App.Vector(thread_major+${f(overlap)},0,${f(halfOuter)}), App.Vector(thread_root,0,${f(halfRoot)})]
+    profile = Part.Wire(Part.makePolygon(profile_points+[profile_points[0]]).Edges)
+    path = Part.Wire(Part.makeLongHelix(thread_lead, height+2*thread_lead, thread_root, 0, ${v.hand < 0 ? 'True' : 'False'}).Edges)
+    groove = path.makePipeShell([profile],True,True)
+    # Preserve outward orientation before Boolean subtraction.
+    if groove.Volume < 0:
+        groove.reverse()
+    for start in range(${v.starts}):
+        tool = groove.copy()
+        tool.translate(App.Vector(0,0,-thread_lead+(start+0.5)*thread_pitch))
+        shape = shape.cut(tool)
+    return shape
+shape = _protolab_thread_periods(_protolab_tool_period,thread_lead,thread_length)`
+    : '# Simple geometry: nominal cylindrical envelope; refer to ThreadCallouts.'
 }
 ${
   v.cap
@@ -239,7 +247,12 @@ ${threadMetadataPython([
     length: v.length,
     origin: [0, 0, 0],
     axis: [0, 0, 1],
-    representation: v.printed ? 'printed-helix' : 'nominal-cylinder',
+    representation:
+      currentGeometryMode() === 'simple'
+        ? 'nominal-cylinder'
+        : v.printed
+          ? 'printed-helix'
+          : 'machined-helix',
   } satisfies ThreadCallout,
 ])}`;
 }

@@ -1,21 +1,15 @@
+import { clevisComposition, clevisPieces } from './lib/composition';
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import { metricThreadCallout, threadMetadata } from '../../core/thread-callouts';
 import { withParameterStates } from '../../core/parameter-states';
-import { Group } from 'three';
+import { componentGeometry, componentPython } from '../../core/assembly/detail-instances';
+import manufacturedPart from '../manufactured-detail/part';
 import type { Parameters, PartDefinition, Preset } from '../../core/types';
-import { n, num } from '../../core/geometry';
+import { n } from '../../core/geometry';
 import { defaults, parameters } from './configurator';
 import presetData from './presets.json';
-import {
-  box,
-  component,
-  cylinder,
-  intersect,
-  pythonHelpers,
-  pythonShape,
-  subtract,
-  thread,
-  union,
-} from './lib/shapes';
+import { box, cylinder, intersect, subtract, thread, union } from './lib/shapes';
 import type { Shape, Vec } from './lib/shapes';
 
 export const isThreaded = (p: Parameters) =>
@@ -161,6 +155,8 @@ function bounds(p: Parameters, state: string): [number, number, number] {
 }
 const part: PartDefinition = {
   id: 'clevis',
+  composition: (p) => clevisComposition(assembly(p, 'assembled')),
+  product: productData as ProductProfile,
   name: 'Clevis fork',
   category: 'TRANSMISSION & LINKAGES',
   subgroup: 'JOINTS & ROD ENDS',
@@ -245,41 +241,16 @@ const part: PartDefinition = {
     }
     return errors;
   },
-  buildGeometry(p, state) {
-    const group = new Group();
-    for (const c of assembly(p, state)) {
-      const object = component(c.shape, c.label, c.color);
-      object.position.x += c.shift[0];
-      object.position.y += c.shift[1];
-      object.position.z += c.shift[2];
-      group.add(object);
-    }
-    return group;
-  },
+  buildGeometry: (p, state) =>
+    componentGeometry([manufacturedPart], clevisPieces(assembly(p, state))),
+  buildExportGeometry: (p, state) =>
+    componentGeometry([manufacturedPart], clevisPieces(assembly(p, state)), true),
   python(p, state) {
-    const lines = [
-      '# Clevis assembly. All removable hardware is exported as independent components.',
-      '# Hardware threads use smooth envelopes. Rod threads retain nominal size and depth callouts.',
-      pythonHelpers,
-      'components = []',
-      'component_labels = []',
-      'component_colors = []',
-      'component_metadata = []',
-    ];
-    for (const c of assembly(p, state)) {
-      lines.push(`item = ${pythonShape(c.shape)}.removeSplitter()`);
-      if (c.shift.some((v) => v !== 0))
-        lines.push(`item.translate(App.Vector(${c.shift.map(num).join(',')}))`);
-      lines.push(
-        'if item.isNull() or not item.isValid() or len(item.Solids) != 1: raise ValueError("A clevis component failed solid validation.")',
-        'components.append(item)',
-        `component_metadata.append(${JSON.stringify(c.label === 'Clevis body' && isThreaded(p) ? threadMetadata([metricThreadCallout(n(p, 'rodDiameter'), n(p, 'threadPitch'), n(p, p.variant === 'female-threaded' ? 'rodDepth' : 'maleLength'), p.variant === 'female-threaded', p.handedness)]) : {})})`,
-        `component_labels.append(${JSON.stringify(c.label)})`,
-        `component_colors.append((${[(c.color >> 16) & 255, (c.color >> 8) & 255, c.color & 255].map((v) => num(v / 255)).join(',')}))`,
-      );
-    }
-    lines.push('shape = Part.makeCompound(components)');
-    return lines.join('\n');
+    const recipe = componentPython([manufacturedPart], clevisPieces(assembly(p, state)));
+    return isThreaded(p)
+      ? recipe +
+          `\ncomponent_metadata[0].update(${JSON.stringify(threadMetadata([metricThreadCallout(n(p, 'rodDiameter'), n(p, 'threadPitch'), n(p, p.variant === 'female-threaded' ? 'rodDepth' : 'maleLength'), p.variant === 'female-threaded', p.handedness)]))})`
+      : recipe;
   },
   dimensions: bounds,
   updateParameters(p, key) {
@@ -322,7 +293,7 @@ const part: PartDefinition = {
     return p;
   },
   notes:
-    'The 25 × 7 mm pushrod reference verifies its 3 mm fork gap, 2 mm rod bore, M2.5 pin screw and M3 set screws. Fork depth, pin setback, clearances and hardware sizes are editable prototype assumptions. Cable presets verify only the listed cable diameter. Threaded variants are prototype examples, not a named standard. All metal threads use smooth nominal envelopes with drawing callouts for the rod connection. The cable terminal is a simplified fixed fork with a set-screw barrel; no swivel, swage qualification or rated load is modeled.',
+    'The 25 × 7 mm pushrod reference verifies its 3 mm fork gap, 2 mm rod bore, M2.5 pin screw and M3 set screws. Fork depth, pin setback, clearances and hardware sizes are editable prototype assumptions. Cable presets verify only the listed cable diameter. Threaded variants are prototype examples, not a named standard. Simple uses nominal thread envelopes and drawing callouts. Full exports real helical flanks for the declared rod connection; unspecified pin and screw pitches remain nominal. The cable terminal is a simplified fixed fork with a set-screw barrel; no swivel, swage qualification or rated load is modeled.',
   sources: [
     {
       label: 'Supplied pushrod clevis dimensions',

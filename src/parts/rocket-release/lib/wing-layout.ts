@@ -1,5 +1,5 @@
 import type { Parameters } from '../../../core/types';
-import type { Point } from './shapes';
+import type { Point } from '../../../core/assembly/recovery/shapes';
 
 export const wingTies: Point[] = [
   [-31, -18],

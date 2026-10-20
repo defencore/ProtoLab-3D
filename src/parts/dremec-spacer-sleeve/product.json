@@ -1,0 +1,10 @@
+{
+  "kind": "detail",
+  "supply": "purchased",
+  "description": "DREMEC metal spacer sleeve ordered to customer-specified dimensions, rather than an inferred stock variant.",
+  "processes": [],
+  "releaseRequirements": [
+    "Specify the material, bore, outside diameter, length, tolerances and drawing revision for the custom order.",
+    "Confirm the requested execution, finish and availability with the supplier."
+  ]
+}

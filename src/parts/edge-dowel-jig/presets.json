@@ -1,0 +1,116 @@
+[
+  {
+    "id": "board12",
+    "name": "Board12 / dowel6",
+    "description": "Centered or offset dowel rows with board-thickness cheeks and an end datum. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockThickness": 12,
+      "length": 140,
+      "endOffset": 25,
+      "count": 3,
+      "pitch": 32,
+      "centerOffset": 0,
+      "plate": 10,
+      "cheek": 25,
+      "guide": "bushing",
+      "drill": 6,
+      "bushOD": 10,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "board16",
+    "name": "Board16 / dowel6",
+    "description": "Centered or offset dowel rows with board-thickness cheeks and an end datum. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockThickness": 16,
+      "length": 140,
+      "endOffset": 25,
+      "count": 3,
+      "pitch": 32,
+      "centerOffset": 0,
+      "plate": 10,
+      "cheek": 25,
+      "guide": "bushing",
+      "drill": 6,
+      "bushOD": 10,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "board18",
+    "name": "Board18 / dowel8",
+    "description": "Centered or offset dowel rows with board-thickness cheeks and an end datum. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockThickness": 18,
+      "length": 140,
+      "endOffset": 25,
+      "count": 3,
+      "pitch": 32,
+      "centerOffset": 0,
+      "plate": 10,
+      "cheek": 25,
+      "guide": "bushing",
+      "drill": 8,
+      "bushOD": 12,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "board20",
+    "name": "Board20 / dowel8",
+    "description": "Centered or offset dowel rows with board-thickness cheeks and an end datum. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockThickness": 20,
+      "length": 140,
+      "endOffset": 25,
+      "count": 3,
+      "pitch": 32,
+      "centerOffset": 0,
+      "plate": 10,
+      "cheek": 25,
+      "guide": "bushing",
+      "drill": 8,
+      "bushOD": 12,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "board25",
+    "name": "Board25 / dowel10",
+    "description": "Centered or offset dowel rows with board-thickness cheeks and an end datum. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockThickness": 25,
+      "length": 140,
+      "endOffset": 25,
+      "count": 3,
+      "pitch": 32,
+      "centerOffset": 0,
+      "plate": 10,
+      "cheek": 25,
+      "guide": "bushing",
+      "drill": 10,
+      "bushOD": 14,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "row64",
+    "name": "Two dowels / 64 mm pitch",
+    "description": "Centered or offset dowel rows with board-thickness cheeks and an end datum. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockThickness": 18,
+      "length": 160,
+      "endOffset": 25,
+      "count": 2,
+      "pitch": 64,
+      "centerOffset": 0,
+      "plate": 10,
+      "cheek": 25,
+      "guide": "bushing",
+      "drill": 8,
+      "bushOD": 12,
+      "seatAllowance": 0.05
+    }
+  }
+]

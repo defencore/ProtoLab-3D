@@ -1,0 +1,10 @@
+{
+  "kind": "reference",
+  "supply": "reference",
+  "description": "Engineering installation or functional envelope without a complete supplier execution or fabrication definition. It is not an approved purchased or manufactured item.",
+  "processes": [],
+  "releaseRequirements": [
+    "Replace the reference with an identified supplier product or a fully detailed manufacturable design before production release.",
+    "Verify all functional interfaces and engineering limits omitted by the reference geometry."
+  ]
+}

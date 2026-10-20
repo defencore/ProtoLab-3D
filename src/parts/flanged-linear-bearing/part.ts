@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -9,6 +11,7 @@ import { lmkReference, lmkReferenceUrl } from './lib/catalog/lmk-reference';
 const defaults = { ...lmkReference[16], width: 37 };
 const part: PartDefinition = {
   id: 'flanged-linear-bearing',
+  product: productData as ProductProfile,
   name: 'Square-flange linear bushing',
   category: 'LINEAR MOTION',
   subgroup: 'LINEAR BUSHINGS',

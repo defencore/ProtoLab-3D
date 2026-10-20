@@ -17,6 +17,8 @@ data/*
 !data/promtehimport-inventory.json
 
 !data/library-expansion.json
+!data/electrical-catalogs-validation.json
+!data/servo-toggle-actuator-validation.json
 
 
 # Source archives are linked remotely, never bundled.

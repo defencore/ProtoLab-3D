@@ -3,6 +3,7 @@
 Use concise English names, matching the application interface.
 
 - Part names identify a component type in singular form: `SRS squib connector`, `BEC voltage regulator`, `SRS igniter housing`, `CO₂ cartridge`.
+- Do not add evaluative qualifiers such as `Real` or `Realistic` to component names or selector labels. Name the component type directly, for example `Robot chassis`.
 - Product variants start with the manufacturer or familiar brand, followed by the exact model and physical distinctions: `Amphenol CA281A · 2-way · 90°`, `TE Connectivity AK II · 3-way · 90°`.
 - Standard hardware starts with size, followed by standard: `M6 · DIN 934`, `Ø2 × 6 mm · DIN 1481`.
 - Use `M` for metric thread designations and `Ø` for diameters. Separate dimensional axes with `×`; separate independent characteristics with `·`. Include units for dimensional values.

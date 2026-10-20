@@ -233,7 +233,7 @@ test(
   async () => {
     const { spawnSync } = await import('node:child_process');
     const { python } = await import('../src/parts/rocket-release/lib/assembly');
-    const { pythonShape } = await import('../src/parts/rocket-release/lib/shapes');
+    const { pythonShape } = await import('../src/core/assembly/recovery/shapes');
     const jobs = [];
     for (const mechanism of ['spiral', 'sculpted-cam'])
       for (const sequence of [0, 7.5, 15, 22.5, 30]) {

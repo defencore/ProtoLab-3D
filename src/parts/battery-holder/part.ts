@@ -1,14 +1,17 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { n } from '../../core/geometry';
 import { defaults, parameters } from './configurator';
 import presets from './presets.json';
 import { pieces } from './lib/model';
-import * as assembly from './lib/assembly';
+import * as assembly from '../../core/assembly/mechanical/assembly';
 const part: PartDefinition = {
   id: 'battery-holder',
+  product: productData as ProductProfile,
   name: 'Cylindrical cell holder',
-  category: 'ELECTRONICS & VISION',
-  subgroup: 'COOLING & MOUNTING',
+  category: 'POWER & MOTOR CONTROL',
+  subgroup: 'BATTERIES & HOLDERS',
   icon: 'circuit',
   description: 'Open tray for 18650, 21700, AA or AAA cells with configurable count and clearance.',
   complexity: 'Parametric prototype',
@@ -51,7 +54,7 @@ const part: PartDefinition = {
   dimensions: (p, s) => assembly.dimensions(pieces(p, s)),
   python: (p, s) => assembly.python(pieces(p, s)),
   notes:
-    'Mechanical cell pockets only; spring contacts, protected-cell extra length and polarity wiring are not supplied. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.',
+    'Mechanical cell pockets only; spring contacts, protected-cell extra length and polarity wiring are not supplied. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Simple uses nominal envelopes for declared threads; Full models declared helical features. Features without a defined pitch/profile remain nominal in both modes. No load, pressure or service-life rating is implied.',
   sources: [],
 };
 export default part;

@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "Identified commercial mobile chassis with original supplier CAD and unchanged internal mounting interfaces.",
+  "processes": [],
+  "releaseRequirements": [
+    "Match the actual purchased kit, revision, motors, cells and optional accessories to the selected source assembly.",
+    "Use original mounting interfaces and inspect real equipment, cable access, centre of gravity and restraint before operation.",
+    "The supplier CAD is a mechanical integration reference; it is not a fabrication drawing or an invented load qualification."
+  ]
+}

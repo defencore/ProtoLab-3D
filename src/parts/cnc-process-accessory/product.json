@@ -1,0 +1,10 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "Complete purchased cooling equipment; visible case subdivisions stay one procurement item.",
+  "processes": [],
+  "releaseRequirements": [
+    "Measure supplied equipment interfaces before fabricating mounting parts.",
+    "Qualify thermal load, fluid compatibility, flow alarms and electrical ratings."
+  ]
+}

@@ -1,14 +1,17 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { n } from '../../core/geometry';
 import { defaults, parameters } from './configurator';
 import presets from './presets.json';
 import { pieces } from './lib/model';
-import * as assembly from './lib/assembly';
+import * as assembly from '../../core/assembly/mechanical/assembly';
 const part: PartDefinition = {
   id: 'din-rail',
+  product: productData as ProductProfile,
   name: 'DIN mounting rail',
-  category: 'ELECTRONICS & VISION',
-  subgroup: 'COOLING & MOUNTING',
+  category: 'STRUCTURAL PARTS',
+  subgroup: 'BRACKETS & MOUNTS',
   icon: 'circuit',
   description: 'Top-hat rail with adjustable section and slotted mounting holes.',
   complexity: 'Parametric prototype',
@@ -54,7 +57,7 @@ const part: PartDefinition = {
   dimensions: (p, s) => assembly.dimensions(pieces(p, s)),
   python: (p, s) => assembly.python(pieces(p, s)),
   notes:
-    'Top-hat dimensions are editable; no full DIN 60715 section tolerances are asserted. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.',
+    'Top-hat dimensions are editable; no full DIN 60715 section tolerances are asserted. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Simple uses nominal envelopes for declared threads; Full models declared helical features. Features without a defined pitch/profile remain nominal in both modes. No load, pressure or service-life rating is implied.',
   sources: [],
 };
 export default part;

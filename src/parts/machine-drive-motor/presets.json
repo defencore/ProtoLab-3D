@@ -1,19 +1,17 @@
 [
   {
     "id": "bevi90l2",
-    "name": "BEVI 4A3 90L-2 \u00b7 2.2 kW \u00b7 B3",
+    "name": "BEVI 4A3 90L-2 · 2.2 kW · B3",
     "description": "Purchased motor. Confirm delivered dimensions before machining mating components.",
     "parameters": {
       "model": "bevi90l2"
     },
     "catalog": {
-      "designation": "BEVI 4A3 90L-2 \u00b7 2.2 kW \u00b7 B3",
+      "designation": "BEVI 4A3 90L-2 · 2.2 kW · B3",
       "manufacturer": "BEVI",
       "sourceName": "Manufacturer product data",
       "sourceUrl": "https://www.bevi.com/electric-motors/three-phase-standard-motors/electric-motor-4a3-90l-2-121116",
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "External body and shaft dimensions from manufacturer; BEVI foot pattern also published.",
@@ -27,19 +25,17 @@
   },
   {
     "id": "23hs30-2804-me1k",
-    "name": "STEPPERONLINE 23HS30-2804-ME1K \u00b7 encoder",
+    "name": "STEPPERONLINE 23HS30-2804-ME1K · encoder",
     "description": "Purchased motor. Confirm delivered dimensions before machining mating components.",
     "parameters": {
       "model": "23hs30-2804-me1k"
     },
     "catalog": {
-      "designation": "STEPPERONLINE 23HS30-2804-ME1K \u00b7 encoder",
+      "designation": "STEPPERONLINE 23HS30-2804-ME1K · encoder",
       "manufacturer": "STEPPERONLINE",
       "sourceName": "Manufacturer product data",
       "sourceUrl": "https://www.omc-stepperonline.com/de/nema-23-schrittmotor-mit-geschlossener-regelkreis-1-85nm-256-9oz-in-mit-magnetischem-geber-1000ppr-4000cpr-23hs30-2804-me1k",
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "geometryEvidence": {
         "kind": "source-dimensions",
         "summary": "External body and shaft dimensions from manufacturer; BEVI foot pattern also published.",
@@ -48,6 +44,30 @@
       },
       "attributes": {
         "shaftDiameter": 6.35
+      }
+    }
+  },
+  {
+    "id": "jgb3865-520r45-12",
+    "name": "JGB3865-520R45-12 · 12 V geared motor",
+    "description": "Source-envelope reconstruction of the geared motor used by the Hiwonder tracked chassis. Confirm the delivered motor and mounting drawing before design release.",
+    "parameters": {
+      "model": "jgb3865-520r45-12"
+    },
+    "catalog": {
+      "designation": "JGB3865-520R45-12",
+      "sourceName": "Hiwonder chassis motor drawing and supplier product",
+      "sourceUrl": "https://www.hiwonder.com/products/suspended-shock-absorbing-tracked-chassis",
+      "alternateSourceUrls": ["https://www.hiwonder.com/products/hall-encoder-dc-geared-motor"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reuses the tracked-chassis published motor envelope: 64.40 × 38 × 12.01 mm gearbox, Ø34 × 35.15 mm motor, 6 mm output shaft.",
+        "limitations": "Envelope geometry does not establish supplier availability, OEM identity, hole positions, internal gears, shaft fits, encoder or load capability. Confirm the exact delivered model and motor drawing.",
+        "sourceUrl": "https://www.hiwonder.com/products/suspended-shock-absorbing-tracked-chassis"
+      },
+      "attributes": {
+        "shaftDiameter": 6
       }
     }
   }

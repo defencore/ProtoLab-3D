@@ -1,3 +1,4 @@
+import { markSupplierUnit } from '../../../core/supplier-components';
 import type { Parameters } from '../../../core/types';
 import type { Piece } from './assembly';
 import {
@@ -10,7 +11,7 @@ import {
   plate,
   circle,
   type Shape,
-} from './shapes';
+} from '../../../core/assembly/recovery/shapes';
 import { profile } from './gears';
 import { at, layout } from './motion';
 
@@ -70,6 +71,7 @@ export function servoPieces(p: Parameters): Piece[] {
       color: steel,
     },
   ];
+  markSupplierUnit([parts[0].shape], { name: 'MG90S micro servo installation envelope', procurement: { designation: 'MG90S; verify supplier interface', manufacturer: '', source: '' } });
   for (const [i, [x, y]] of servoMounts.entries()) {
     parts.push(
       {

@@ -1,7 +1,7 @@
 import modeling from '@jscad/modeling';
 import type { Geom3 } from '@jscad/modeling/src/geometries/types';
 import { Float32BufferAttribute, Group, Mesh, MeshStandardMaterial, Vector3 } from 'three';
-import { solidUnionMesh } from './mesh';
+import { solidUnionMesh } from '../../../core/assembly/mesh';
 import { num } from '../../../core/geometry';
 export type Vec = [number, number, number];
 export type Shape =

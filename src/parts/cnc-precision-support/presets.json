@@ -1,0 +1,130 @@
+[
+  {
+    "id": "bk20-c3",
+    "name": "HIWIN BK20-C3",
+    "description": "Complete purchased precision support; internal supplier assembly remains opaque.",
+    "parameters": {
+      "model": "bk20-c3"
+    },
+    "catalog": {
+      "designation": "BK20-C3",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN manufacturer publication",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/HIWIN-Ballscrew-Supports-Catalog.pdf",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Source B03TE03-1907 pp14/15; published housing, mounting/journal, nominal bearing and collar/locknut interfaces.",
+        "limitations": "Axial internal stack, seal/rolling-contact detail and lid contours are illustrative. BF source omits axial drilling pitch and has a four-drill callout versus two visible top mounts; order drawing acceptance is required. C3/P5 is the requested execution to match a C3 ground screw, not a delivered certificate.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/HIWIN-Ballscrew-Supports-Catalog.pdf",
+        "sourceSha256": "4d5f2b51be24834bede8f7ce28942a56c8aeaa4c2685965855cb7d3554dc787f"
+      },
+      "specifications": [
+        {
+          "label": "Bearing class",
+          "value": "Request C3/P5 support execution to match the C3 ground screw, with measured runout and bearing preload; verify the delivered certificate and factory-approved assembly drawing."
+        }
+      ],
+      "attributes": {
+        "shaft": 20,
+        "fixed": true
+      }
+    }
+  },
+  {
+    "id": "bf20-c3",
+    "name": "HIWIN BF20-C3",
+    "description": "Complete purchased precision support; internal supplier assembly remains opaque.",
+    "parameters": {
+      "model": "bf20-c3"
+    },
+    "catalog": {
+      "designation": "BF20-C3",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN manufacturer publication",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/HIWIN-Ballscrew-Supports-Catalog.pdf",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Source B03TE03-1907 pp14/15; published housing, mounting/journal, nominal bearing and collar/locknut interfaces.",
+        "limitations": "Axial internal stack, seal/rolling-contact detail and lid contours are illustrative. BF source omits axial drilling pitch and has a four-drill callout versus two visible top mounts; order drawing acceptance is required. C3/P5 is the requested execution to match a C3 ground screw, not a delivered certificate.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/HIWIN-Ballscrew-Supports-Catalog.pdf",
+        "sourceSha256": "4d5f2b51be24834bede8f7ce28942a56c8aeaa4c2685965855cb7d3554dc787f"
+      },
+      "specifications": [
+        {
+          "label": "Bearing class",
+          "value": "Request C3/P5 support execution to match the C3 ground screw, with measured runout and bearing preload; verify the delivered certificate and factory-approved assembly drawing."
+        }
+      ],
+      "attributes": {
+        "shaft": 20,
+        "fixed": false
+      }
+    }
+  },
+  {
+    "id": "bk15-c3",
+    "name": "HIWIN BK15-C3",
+    "description": "Complete purchased precision support; internal supplier assembly remains opaque.",
+    "parameters": {
+      "model": "bk15-c3"
+    },
+    "catalog": {
+      "designation": "BK15-C3",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN manufacturer publication",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/HIWIN-Ballscrew-Supports-Catalog.pdf",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Source B03TE03-1907 pp14/15; published housing, mounting/journal, nominal bearing and collar/locknut interfaces.",
+        "limitations": "Axial internal stack, seal/rolling-contact detail and lid contours are illustrative. BF source omits axial drilling pitch and has a four-drill callout versus two visible top mounts; order drawing acceptance is required. C3/P5 is the requested execution to match a C3 ground screw, not a delivered certificate.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/HIWIN-Ballscrew-Supports-Catalog.pdf",
+        "sourceSha256": "4d5f2b51be24834bede8f7ce28942a56c8aeaa4c2685965855cb7d3554dc787f"
+      },
+      "specifications": [
+        {
+          "label": "Bearing class",
+          "value": "Request C3/P5 support execution to match the C3 ground screw, with measured runout and bearing preload; verify the delivered certificate and factory-approved assembly drawing."
+        }
+      ],
+      "attributes": {
+        "shaft": 15,
+        "fixed": true
+      }
+    }
+  },
+  {
+    "id": "bf15-c3",
+    "name": "HIWIN BF15-C3",
+    "description": "Complete purchased precision support; internal supplier assembly remains opaque.",
+    "parameters": {
+      "model": "bf15-c3"
+    },
+    "catalog": {
+      "designation": "BF15-C3",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN manufacturer publication",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/HIWIN-Ballscrew-Supports-Catalog.pdf",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Source B03TE03-1907 pp14/15; published housing, mounting/journal, nominal bearing and collar/locknut interfaces.",
+        "limitations": "Axial internal stack, seal/rolling-contact detail and lid contours are illustrative. BF source omits axial drilling pitch and has a four-drill callout versus two visible top mounts; order drawing acceptance is required. C3/P5 is the requested execution to match a C3 ground screw, not a delivered certificate.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/HIWIN-Ballscrew-Supports-Catalog.pdf",
+        "sourceSha256": "4d5f2b51be24834bede8f7ce28942a56c8aeaa4c2685965855cb7d3554dc787f"
+      },
+      "specifications": [
+        {
+          "label": "Bearing class",
+          "value": "Request C3/P5 support execution to match the C3 ground screw, with measured runout and bearing preload; verify the delivered certificate and factory-approved assembly drawing."
+        }
+      ],
+      "attributes": {
+        "shaft": 15,
+        "fixed": false
+      }
+    }
+  }
+]

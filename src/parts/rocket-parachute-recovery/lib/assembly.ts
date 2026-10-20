@@ -1,4 +1,5 @@
 import { Group, Box3, Vector3 } from 'three';
+import { disposeModel } from '../../../core/mechanical';
 import * as release from '../../rocket-release/lib/assembly';
 import * as visual from './visual-assembly';
 export interface Assembly {
@@ -12,14 +13,9 @@ export function geometry(p: Assembly) {
   );
 }
 export function dimensions(p: Assembly): [number, number, number] {
-  // Reuse the detailed library's cached component meshes; never dispose them here.
   const model = geometry(p);
   model.updateMatrixWorld(true);
-  return new Box3().setFromObject(model, true).getSize(new Vector3()).toArray() as [
-    number,
-    number,
-    number,
-  ];
+  try { return new Box3().setFromObject(model, true).getSize(new Vector3()).toArray() as [number,number,number]; } finally { disposeModel(model); }
 }
 export function python(p: Assembly): string {
   return [

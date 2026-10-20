@@ -1,0 +1,311 @@
+[
+  {
+    "id": "ls477-605365-86",
+    "name": "HEIDENHAIN LS 477, ID 605365-86",
+    "description": "920 mm measuring travel; +/-3 um factory accuracy grade; 1 um evaluated step. Delivered execution and machine calibration still require acceptance.",
+    "parameters": {
+      "model": "ls477-605365-86",
+      "component": "assembly",
+      "headPosition": 0
+    },
+    "catalog": {
+      "designation": "HEIDENHAIN LS 477, ID 605365-86",
+      "manufacturer": "HEIDENHAIN",
+      "sourceName": "HEIDENHAIN exact execution and manufacturer mounting catalogue",
+      "sourceUrl": "https://www.heidenhain.com/product-details/sealed-linear-encoders/605365-86",
+      "alternateSourceUrls": [
+        "https://www.heidenhain.us/wp-content/uploads/2022/07/PR_Linear_Encoders_for_Numerically_Controlled_Machine_Tools_ID571470_en.pdf#page=20"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "kind": "encoder",
+        "measuringLength": 920,
+        "accuracyMicrons": 3,
+        "evaluatedStepMicrons": 1,
+        "endBlock": "09A",
+        "overallLength": 1058
+      },
+      "specifications": [
+        {
+          "label": "Installation dimensions",
+          "value": "1058 mm axial length; source drawing printed pages 38-39."
+        },
+        {
+          "label": "Procurement scope",
+          "value": "One supplied LS 477 housing and readhead kit; mounting spar/cable execution ordered separately."
+        },
+        {
+          "label": "Feedback interface",
+          "value": "5 V +/-5%, complementary TTL A,/A,B,/B,Z,/Z, 14-pin flange socket; 5x interpolation, 1 um after 4-fold evaluation."
+        },
+        {
+          "label": "Accuracy acceptance",
+          "value": "+/-3 um specified execution; delivered certificate and laser-calibrated tool-position map required. This does not certify finished-part tolerance."
+        },
+        {
+          "label": "Model limitations",
+          "value": "Published source envelopes and mounting centers. Spar/clamp section, slot contour, recessed screw-seat depth, head flange and electrical socket contours are nominal installation envelopes requiring delivered instructions. No factory internal CAD or unpublished threads are reconstructed."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Official dimensional mounting catalogue and exact manufacturer execution.",
+        "sourceUrl": "https://www.heidenhain.us/wp-content/uploads/2022/07/PR_Linear_Encoders_for_Numerically_Controlled_Machine_Tools_ID571470_en.pdf#page=20",
+        "sourceSha256": "9638c624e5a7297fd9796773e5b6e0ba9a31e7906a8b24d16eae8ac7cc4dbfb4",
+        "limitations": "Published source envelopes and mounting centers. Spar/clamp section, slot contour, recessed screw-seat depth, head flange and electrical socket contours are nominal installation envelopes requiring delivered instructions. No factory internal CAD or unpublished threads are reconstructed."
+      }
+    }
+  },
+  {
+    "id": "ls477-605363-30",
+    "name": "HEIDENHAIN LS 477, ID 605363-30",
+    "description": "1640 mm measuring travel; +/-3 um factory accuracy grade; 1 um evaluated step. Delivered execution and machine calibration still require acceptance.",
+    "parameters": {
+      "model": "ls477-605363-30",
+      "component": "assembly",
+      "headPosition": 0
+    },
+    "catalog": {
+      "designation": "HEIDENHAIN LS 477, ID 605363-30",
+      "manufacturer": "HEIDENHAIN",
+      "sourceName": "HEIDENHAIN exact execution and manufacturer mounting catalogue",
+      "sourceUrl": "https://www.heidenhain.com/product-details/sealed-linear-encoders/605363-30",
+      "alternateSourceUrls": [
+        "https://www.heidenhain.us/wp-content/uploads/2022/07/PR_Linear_Encoders_for_Numerically_Controlled_Machine_Tools_ID571470_en.pdf#page=20"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "kind": "encoder",
+        "measuringLength": 1640,
+        "accuracyMicrons": 3,
+        "evaluatedStepMicrons": 1,
+        "endBlock": "10A",
+        "overallLength": 1745
+      },
+      "specifications": [
+        {
+          "label": "Installation dimensions",
+          "value": "1745 mm axial length; source drawing printed pages 38-39."
+        },
+        {
+          "label": "Procurement scope",
+          "value": "One supplied LS 477 housing and readhead kit; mounting spar/cable execution ordered separately."
+        },
+        {
+          "label": "Feedback interface",
+          "value": "5 V +/-5%, complementary TTL A,/A,B,/B,Z,/Z, 14-pin flange socket; 5x interpolation, 1 um after 4-fold evaluation."
+        },
+        {
+          "label": "Accuracy acceptance",
+          "value": "+/-3 um specified execution; delivered certificate and laser-calibrated tool-position map required. This does not certify finished-part tolerance."
+        },
+        {
+          "label": "Model limitations",
+          "value": "Published source envelopes and mounting centers. Spar/clamp section, slot contour, recessed screw-seat depth, head flange and electrical socket contours are nominal installation envelopes requiring delivered instructions. No factory internal CAD or unpublished threads are reconstructed."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Official dimensional mounting catalogue and exact manufacturer execution.",
+        "sourceUrl": "https://www.heidenhain.us/wp-content/uploads/2022/07/PR_Linear_Encoders_for_Numerically_Controlled_Machine_Tools_ID571470_en.pdf#page=20",
+        "sourceSha256": "9638c624e5a7297fd9796773e5b6e0ba9a31e7906a8b24d16eae8ac7cc4dbfb4",
+        "limitations": "Published source envelopes and mounting centers. Spar/clamp section, slot contour, recessed screw-seat depth, head flange and electrical socket contours are nominal installation envelopes requiring delivered instructions. No factory internal CAD or unpublished threads are reconstructed."
+      }
+    }
+  },
+  {
+    "id": "ls477-605363-27",
+    "name": "HEIDENHAIN LS 477, ID 605363-27",
+    "description": "270 mm measuring travel; +/-3 um factory accuracy grade; 0.5 um evaluated step. Delivered execution and machine calibration still require acceptance.",
+    "parameters": {
+      "model": "ls477-605363-27",
+      "component": "assembly",
+      "headPosition": 0
+    },
+    "catalog": {
+      "designation": "HEIDENHAIN LS 477, ID 605363-27",
+      "manufacturer": "HEIDENHAIN",
+      "sourceName": "HEIDENHAIN exact execution and manufacturer mounting catalogue",
+      "sourceUrl": "https://www.heidenhain.com/product-details/sealed-linear-encoders/605363-27",
+      "alternateSourceUrls": [
+        "https://www.heidenhain.us/wp-content/uploads/2022/07/PR_Linear_Encoders_for_Numerically_Controlled_Machine_Tools_ID571470_en.pdf#page=20"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "kind": "encoder",
+        "measuringLength": 270,
+        "accuracyMicrons": 3,
+        "evaluatedStepMicrons": 0.5,
+        "endBlock": "10A",
+        "overallLength": 375
+      },
+      "specifications": [
+        {
+          "label": "Installation dimensions",
+          "value": "375 mm axial length; source drawing printed pages 38-39."
+        },
+        {
+          "label": "Procurement scope",
+          "value": "One supplied LS 477 housing and readhead kit; mounting spar/cable execution ordered separately."
+        },
+        {
+          "label": "Feedback interface",
+          "value": "5 V +/-5%, complementary TTL A,/A,B,/B,Z,/Z, 14-pin flange socket; 10x interpolation, 0.5 um after 4-fold evaluation."
+        },
+        {
+          "label": "Accuracy acceptance",
+          "value": "+/-3 um specified execution; delivered certificate and laser-calibrated tool-position map required. This does not certify finished-part tolerance."
+        },
+        {
+          "label": "Model limitations",
+          "value": "Published source envelopes and mounting centers. Spar/clamp section, slot contour, recessed screw-seat depth, head flange and electrical socket contours are nominal installation envelopes requiring delivered instructions. No factory internal CAD or unpublished threads are reconstructed."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Official dimensional mounting catalogue and exact manufacturer execution.",
+        "sourceUrl": "https://www.heidenhain.us/wp-content/uploads/2022/07/PR_Linear_Encoders_for_Numerically_Controlled_Machine_Tools_ID571470_en.pdf#page=20",
+        "sourceSha256": "9638c624e5a7297fd9796773e5b6e0ba9a31e7906a8b24d16eae8ac7cc4dbfb4",
+        "limitations": "Published source envelopes and mounting centers. Spar/clamp section, slot contour, recessed screw-seat depth, head flange and electrical socket contours are nominal installation envelopes requiring delivered instructions. No factory internal CAD or unpublished threads are reconstructed."
+      }
+    }
+  },
+  {
+    "id": "msl41-770902-17",
+    "name": "HEIDENHAIN MSL 41 ML 920, ID 770902-17",
+    "description": "Separate purchase for 920 mm travel. Source MSL 41 includes preassembled clamps; local profiles remain explicitly nominal.",
+    "parameters": {
+      "model": "msl41-770902-17",
+      "component": "assembly",
+      "headPosition": 0
+    },
+    "catalog": {
+      "designation": "HEIDENHAIN MSL 41 ML 920, ID 770902-17",
+      "manufacturer": "HEIDENHAIN",
+      "sourceName": "HEIDENHAIN exact execution and manufacturer mounting catalogue",
+      "sourceUrl": "https://www.heidenhain.com/search?tx_solr%5Bfilter%5D%5B0%5D=type%3Afacet_product&tx_solr%5Bpage%5D=3&tx_solr%5Bq%5D=MSL41",
+      "alternateSourceUrls": [
+        "https://www.heidenhain.us/wp-content/uploads/2022/07/PR_Linear_Encoders_for_Numerically_Controlled_Machine_Tools_ID571470_en.pdf#page=20"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "kind": "spar",
+        "measuringLength": 920,
+        "overallLength": 1025
+      },
+      "specifications": [
+        {
+          "label": "Installation dimensions",
+          "value": "1025 mm axial length; source drawing printed pages 38-39."
+        },
+        {
+          "label": "Procurement scope",
+          "value": "One separately ordered MSL 41 with factory-preassembled clamping components."
+        },
+        {
+          "label": "Model limitations",
+          "value": "Published source envelopes and mounting centers. Spar/clamp section, slot contour, recessed screw-seat depth, head flange and electrical socket contours are nominal installation envelopes requiring delivered instructions. No factory internal CAD or unpublished threads are reconstructed."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Official dimensional mounting catalogue and exact manufacturer execution.",
+        "sourceUrl": "https://www.heidenhain.us/wp-content/uploads/2022/07/PR_Linear_Encoders_for_Numerically_Controlled_Machine_Tools_ID571470_en.pdf#page=20",
+        "sourceSha256": "9638c624e5a7297fd9796773e5b6e0ba9a31e7906a8b24d16eae8ac7cc4dbfb4",
+        "limitations": "Published source envelopes and mounting centers. Spar/clamp section, slot contour, recessed screw-seat depth, head flange and electrical socket contours are nominal installation envelopes requiring delivered instructions. No factory internal CAD or unpublished threads are reconstructed."
+      }
+    }
+  },
+  {
+    "id": "msl41-770902-24",
+    "name": "HEIDENHAIN MSL 41 ML 1640, ID 770902-24",
+    "description": "Separate purchase for 1640 mm travel. Source MSL 41 includes preassembled clamps; local profiles remain explicitly nominal.",
+    "parameters": {
+      "model": "msl41-770902-24",
+      "component": "assembly",
+      "headPosition": 0
+    },
+    "catalog": {
+      "designation": "HEIDENHAIN MSL 41 ML 1640, ID 770902-24",
+      "manufacturer": "HEIDENHAIN",
+      "sourceName": "HEIDENHAIN exact execution and manufacturer mounting catalogue",
+      "sourceUrl": "https://www.heidenhain.com/search?tx_solr%5Bfilter%5D%5B0%5D=type%3Afacet_product&tx_solr%5Bpage%5D=2&tx_solr%5Bq%5D=MSL41",
+      "alternateSourceUrls": [
+        "https://www.heidenhain.us/wp-content/uploads/2022/07/PR_Linear_Encoders_for_Numerically_Controlled_Machine_Tools_ID571470_en.pdf#page=20"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "kind": "spar",
+        "measuringLength": 1640,
+        "overallLength": 1745
+      },
+      "specifications": [
+        {
+          "label": "Installation dimensions",
+          "value": "1745 mm axial length; source drawing printed pages 38-39."
+        },
+        {
+          "label": "Procurement scope",
+          "value": "One separately ordered MSL 41 with factory-preassembled clamping components."
+        },
+        {
+          "label": "Model limitations",
+          "value": "Published source envelopes and mounting centers. Spar/clamp section, slot contour, recessed screw-seat depth, head flange and electrical socket contours are nominal installation envelopes requiring delivered instructions. No factory internal CAD or unpublished threads are reconstructed."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Official dimensional mounting catalogue and exact manufacturer execution.",
+        "sourceUrl": "https://www.heidenhain.us/wp-content/uploads/2022/07/PR_Linear_Encoders_for_Numerically_Controlled_Machine_Tools_ID571470_en.pdf#page=20",
+        "sourceSha256": "9638c624e5a7297fd9796773e5b6e0ba9a31e7906a8b24d16eae8ac7cc4dbfb4",
+        "limitations": "Published source envelopes and mounting centers. Spar/clamp section, slot contour, recessed screw-seat depth, head flange and electrical socket contours are nominal installation envelopes requiring delivered instructions. No factory internal CAD or unpublished threads are reconstructed."
+      }
+    }
+  },
+  {
+    "id": "msl41-770902-05",
+    "name": "HEIDENHAIN MSL 41 ML 270, ID 770902-05",
+    "description": "Separate purchase for 270 mm travel. Source MSL 41 includes preassembled clamps; local profiles remain explicitly nominal.",
+    "parameters": {
+      "model": "msl41-770902-05",
+      "component": "assembly",
+      "headPosition": 0
+    },
+    "catalog": {
+      "designation": "HEIDENHAIN MSL 41 ML 270, ID 770902-05",
+      "manufacturer": "HEIDENHAIN",
+      "sourceName": "HEIDENHAIN exact execution and manufacturer mounting catalogue",
+      "sourceUrl": "https://www.heidenhain.com/search?tx_solr%5Bfilter%5D%5B0%5D=type%3Afacet_product&tx_solr%5Bpage%5D=2&tx_solr%5Bq%5D=MSL41",
+      "alternateSourceUrls": [
+        "https://www.heidenhain.us/wp-content/uploads/2022/07/PR_Linear_Encoders_for_Numerically_Controlled_Machine_Tools_ID571470_en.pdf#page=20"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "kind": "spar",
+        "measuringLength": 270,
+        "overallLength": 375
+      },
+      "specifications": [
+        {
+          "label": "Installation dimensions",
+          "value": "375 mm axial length; source drawing printed pages 38-39."
+        },
+        {
+          "label": "Procurement scope",
+          "value": "One separately ordered MSL 41 with factory-preassembled clamping components."
+        },
+        {
+          "label": "Model limitations",
+          "value": "Published source envelopes and mounting centers. Spar/clamp section, slot contour, recessed screw-seat depth, head flange and electrical socket contours are nominal installation envelopes requiring delivered instructions. No factory internal CAD or unpublished threads are reconstructed."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Official dimensional mounting catalogue and exact manufacturer execution.",
+        "sourceUrl": "https://www.heidenhain.us/wp-content/uploads/2022/07/PR_Linear_Encoders_for_Numerically_Controlled_Machine_Tools_ID571470_en.pdf#page=20",
+        "sourceSha256": "9638c624e5a7297fd9796773e5b6e0ba9a31e7906a8b24d16eae8ac7cc4dbfb4",
+        "limitations": "Published source envelopes and mounting centers. Spar/clamp section, slot contour, recessed screw-seat depth, head flange and electrical socket contours are nominal installation envelopes requiring delivered instructions. No factory internal CAD or unpublished threads are reconstructed."
+      }
+    }
+  }
+]

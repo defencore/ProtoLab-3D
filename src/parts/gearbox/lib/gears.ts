@@ -2,7 +2,7 @@
  * Pitch diameters follow m*z; standard pressure angle 20 degrees.
  */
 import { C, cut, poly } from './helpers';
-import type { Shape, Vec } from './shapes';
+import type { Shape, Vec } from '../../../core/assembly/boundary/shapes';
 export function profile(module: number, count: number, internal = false): [number, number][] {
   const R = (module * count) / 2,
     base = R * Math.cos(Math.PI / 9);

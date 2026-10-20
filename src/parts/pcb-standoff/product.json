@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "purchased",
+  "description": "One catalogued PCB spacer or standoff purchased under its exact supplier-qualified item identity. Geometry is an installation model, with only explicitly dimensioned interfaces authored.",
+  "processes": [],
+  "releaseRequirements": [
+    "Select the exact supplier item, manufacturer execution, material and coating using the recorded source.",
+    "Verify installation dimensions and thread engagement against the selected drawing. Unpublished hole depths, tolerances and thread fit classes remain unresolved.",
+    "An installation envelope or valid CAD solid does not certify strength, availability, material or manufacturing tolerances."
+  ]
+}

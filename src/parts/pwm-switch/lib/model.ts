@@ -1,4 +1,4 @@
-import type { Piece } from '../../flight-controller/lib/assembly';
+import type { Piece } from '../../../core/assembly/electronics/assembly';
 import {
   box,
   roundedRect,
@@ -6,7 +6,7 @@ import {
   union,
   prism,
   type Shape,
-} from '../../flight-controller/lib/shapes';
+} from '../../../core/assembly/electronics/shapes';
 export function pieces(state = 'assembled'): Piece[] {
   const out: Piece[] = [];
   const add = (name: string, shape: Shape, color: number, layer = 0) =>

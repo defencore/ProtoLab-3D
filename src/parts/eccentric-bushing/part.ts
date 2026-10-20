@@ -1,10 +1,13 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters } from './configurator';
 import presets from './presets.json';
 import { pieces } from './lib/model';
-import * as assembly from './lib/assembly';
+import * as assembly from '../../core/assembly/boundary/assembly';
 const part: PartDefinition = {
   id: 'eccentric-bushing',
+  product: productData as ProductProfile,
   name: 'Miniature eccentric bushing',
   description: 'MISUMI ECCB hex-head bushings for adjustable miniature bearing seats.',
   category: 'BEARINGS & SEALS',

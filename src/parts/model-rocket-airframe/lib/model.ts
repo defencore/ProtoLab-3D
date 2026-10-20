@@ -1,7 +1,7 @@
 import { n } from '../../../core/geometry';
 import type { Parameters } from '../../../core/types';
-import { cylinder, subtract, prism, type Shape } from './shapes';
-import type { Piece } from './assembly';
+import { cylinder, subtract, prism, type Shape } from '../../../core/assembly/airframe/shapes';
+import type { Piece } from '../../../core/assembly/airframe/assembly';
 export function pieces(p: Parameters, state: string): Piece[] {
   const d = n(p, 'diameter'),
     r = d / 2,

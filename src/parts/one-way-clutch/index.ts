@@ -3,4 +3,4 @@ import { catalogSelection } from './configurator';
 import type { PartModule } from '../../core/part-modules';
 
 const part = { ...definition, id: 'one-way-clutch', catalogSelection };
-export default { apiVersion: 1, order: 18, part } satisfies PartModule;
+export default { apiVersion: 2, order: 18, part } satisfies PartModule;

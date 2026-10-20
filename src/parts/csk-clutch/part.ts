@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import { withParameterStates } from '../../core/parameter-states';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
@@ -14,14 +16,14 @@ import {
   compoundPython,
 } from '../../core/geometry';
 import { BoundaryMesh, loftMesh, pythonWire } from '../../core/mechanical';
-import { modelBounds } from './lib/core/hardware';
+import { modelBounds } from '../../core/hardware/hardware';
 import { cageMesh, cagePython, type CageLayout } from './lib/parts/bearing-cage';
 import {
   envelopeParameters,
   turnedPython,
   validateEnvelope,
   type TurnedProfile,
-} from './lib/parts/motion-bearing-utils';
+} from '../../core/hardware/motion-bearing-utils';
 
 /** Manufacturer key dimensions are reference defaults, not shop-verified attributes. */
 export function cskKeyDimensions(bore: number) {
@@ -220,6 +222,7 @@ const defaults = {
 };
 const part: PartDefinition = {
   id: 'csk-clutch',
+  product: productData as ProductProfile,
   name: 'Ball-bearing sprag clutch',
   category: 'TRANSMISSION & LINKAGES',
   subgroup: 'ONE-WAY CLUTCHES',
@@ -240,7 +243,7 @@ const part: PartDefinition = {
     'keyway',
   ],
   parameters: [
-    ...envelopeParameters,
+    ...envelopeParameters(),
     {
       key: 'keyways',
       label: 'Keyway configuration',

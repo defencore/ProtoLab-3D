@@ -1,3 +1,6 @@
+import { composition } from './lib/composition';
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { parameters, defaults } from './configurator';
 import presets from './presets.json';
@@ -8,6 +11,9 @@ import { engineering, issues } from './lib/engineering';
 import { budgetFor, releaseBlockers } from './lib/bom';
 const part: PartDefinition = {
   id: 'automatic-tube-saw',
+  composition,
+  preview: 'worker',
+  product: productData as ProductProfile,
   name: 'Automatic tube saw',
   category: 'MACHINE TOOLS',
   subgroup: 'CUTTING MACHINES',
@@ -108,6 +114,7 @@ const part: PartDefinition = {
   ],
   validate: issues,
   buildGeometry: (p, s) => geometry(machinePieces(p, s)),
+  buildExportGeometry: (p, s) => geometry(machinePieces(p, s), true),
   dimensions: (p, s) => dimensions(machinePieces(p, s)),
   python: (p, s) => {
     const pieces = machinePieces(p, s);
@@ -156,7 +163,7 @@ const part: PartDefinition = {
     ];
   },
   notes:
-    'This package exposes dimensions, sequencing and the remaining engineering work explicitly. It does not establish a safe or production-ready machine. Metal threads are nominal surfaces with callouts. All manufactured components require toleranced drawings and verification.',
+    'This package exposes dimensions, sequencing and the remaining engineering work explicitly. It does not establish a safe or production-ready machine. Simple uses nominal thread surfaces with callouts; Full exports declared helical features. Supplier features without defined pitch/profile remain nominal. All manufactured components require toleranced drawings and verification.',
   sources: [
     {
       label: 'DDCS v4.1 manufacturer manual',

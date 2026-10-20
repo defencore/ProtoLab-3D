@@ -9,6 +9,7 @@ export function validateParameters(
   for (const field of part.parameters) {
     const visible = !field.visibleWhen || field.visibleWhen(values, state);
     const value = values[field.key];
+    if (!visible && field.optionalWhenHidden && value === undefined) continue;
     if (field.type === 'number') {
       if (typeof value !== 'number' || !Number.isFinite(value))
         errors.push(`${field.label} must be a finite number.`);
@@ -26,6 +27,8 @@ export function validateParameters(
       errors.push(`Choose a valid ${field.label.toLowerCase()}.`);
     if (field.type === 'boolean' && typeof value !== 'boolean')
       errors.push(`${field.label} must be enabled or disabled.`);
+    if (field.type === 'text' && typeof value !== 'string')
+      errors.push(`${field.label} must be text.`);
   }
   if (errors.length) return errors;
   if (part.states && !part.states.some((option) => option.id === state))

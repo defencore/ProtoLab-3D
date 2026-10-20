@@ -1,10 +1,12 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
 import { Group, Quaternion, Vector3 } from 'three';
 import type { PartDefinition } from '../../core/types';
 import { compoundPython, DARK_STEEL, n, num, numberParameter } from '../../core/geometry';
-import { envelopeParameters, validateEnvelope } from './lib/parts/motion-bearing-utils';
+import { envelopeParameters, validateEnvelope } from '../../core/hardware/motion-bearing-utils';
 import { assemblyStates } from './lib/parts/bearing-utils';
 import {
   sphericalThrustCage,
@@ -18,6 +20,7 @@ import {
 const defaults = { bore: 90, outer: 155, width: 39, elements: 16, contactAngle: 50 };
 const part: PartDefinition = {
   id: 'spherical-thrust-bearing',
+  product: productData as ProductProfile,
   name: 'Spherical thrust roller bearing',
   category: 'BEARINGS & SEALS',
   subgroup: 'THRUST BEARINGS',
@@ -40,7 +43,7 @@ const part: PartDefinition = {
   ],
   defaults,
   parameters: [
-    ...envelopeParameters.map((field) =>
+    ...envelopeParameters().map((field) =>
       field.key === 'width' ? { ...field, symbol: 'T' } : field,
     ),
     {

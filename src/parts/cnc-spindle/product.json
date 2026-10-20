@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "One complete manufacturer spindle purchased as a unit. Reconstructed external shells do not establish its hidden internal BOM.",
+  "processes": [],
+  "releaseRequirements": [
+    "Confirm the exact order execution where the supplier page and drawing designations differ.",
+    "Verify body mounting permission, collet/nut fit, connector, winding voltage, VFD and cooling against the purchased unit.",
+    "Do not use reconstructed endcaps, ventilation, connector or thread spans as supplier-certified manufacturing dimensions."
+  ]
+}

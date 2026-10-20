@@ -1,0 +1,102 @@
+[
+  {
+    "a": "source-v-v1-00",
+    "b": "source-v-v1-04",
+    "volumeMm3": 0.24757060620688512
+  },
+  {
+    "a": "source-v-v1-00",
+    "b": "source-v-v1-06",
+    "volumeMm3": 0.1999999998400467
+  },
+  {
+    "a": "source-v-v1-00",
+    "b": "source-v-v1-12",
+    "volumeMm3": 0.2948345399056006
+  },
+  {
+    "a": "source-v-v1-00",
+    "b": "source-v-v1-13",
+    "volumeMm3": 0.2613131647189425
+  },
+  {
+    "a": "source-v-v1-00",
+    "b": "source-v-v1-14",
+    "volumeMm3": 0.5412806049696361
+  },
+  {
+    "a": "source-v-v1-01",
+    "b": "source-v-v1-04",
+    "volumeMm3": 0.19999999998087298
+  },
+  {
+    "a": "source-v-v1-01",
+    "b": "source-v-v1-06",
+    "volumeMm3": 0.24757060580795556
+  },
+  {
+    "a": "source-v-v1-01",
+    "b": "source-v-v1-12",
+    "volumeMm3": 0.2613131647176272
+  },
+  {
+    "a": "source-v-v1-01",
+    "b": "source-v-v1-13",
+    "volumeMm3": 0.2948345396110044
+  },
+  {
+    "a": "source-v-v1-01",
+    "b": "source-v-v1-14",
+    "volumeMm3": 0.5412806049806316
+  },
+  {
+    "a": "source-v-v1-02",
+    "b": "source-v-v1-05",
+    "volumeMm3": 0.19999999993697076
+  },
+  {
+    "a": "source-v-v1-02",
+    "b": "source-v-v1-07",
+    "volumeMm3": 0.20002432583350163
+  },
+  {
+    "a": "source-v-v1-02",
+    "b": "source-v-v1-15",
+    "volumeMm3": 0.5599999960003951
+  },
+  {
+    "a": "source-v-v1-03",
+    "b": "source-v-v1-05",
+    "volumeMm3": 0.1999999999389005
+  },
+  {
+    "a": "source-v-v1-03",
+    "b": "source-v-v1-07",
+    "volumeMm3": 0.20002432583227422
+  },
+  {
+    "a": "source-v-v1-03",
+    "b": "source-v-v1-15",
+    "volumeMm3": 0.5599999959469623
+  },
+  {
+    "a": "source-v-v1-04",
+    "b": "source-v-v1-17",
+    "volumeMm3": 0.1646814767419625
+  },
+  {
+    "a": "source-v-v1-05",
+    "b": "source-v-v1-17",
+    "volumeMm3": 0.5449270895460686
+  },
+  {
+    "a": "source-v-v1-06",
+    "b": "source-v-v1-17",
+    "volumeMm3": 0.16468147661770438
+  },
+  {
+    "a": "source-v-v1-07",
+    "b": "source-v-v1-17",
+    "volumeMm3": 0.5449270895217451
+  }
+]

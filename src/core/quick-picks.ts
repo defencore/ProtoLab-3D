@@ -44,25 +44,29 @@ export function quickPickOptions(
   fields: QuickPickField[],
   filters: QuickPickFilters,
   index: number,
+  searched: Preset[] = presets,
 ) {
   const field = fields[index];
-  const preceding = Object.fromEntries(
-    fields.slice(0, index).map((item) => [item.key, filters[item.key] ?? '']),
+  const otherFilters = Object.fromEntries(
+    Object.entries(filters).filter(([key]) => key !== field.key),
   );
-  const candidates = quickPickMatches(presets, preceding);
+  const candidates = new Set(quickPickMatches(searched, otherFilters));
   const options = new Map<string, { value: string; label: string; count: number }>();
-  for (const preset of candidates) {
-    if (!preset.catalog!.verifiedParameters.includes(field.key)) continue;
+  for (const preset of presets) {
+    if (!preset.catalog?.verifiedParameters.includes(field.key)) continue;
     const value = String(preset.parameters[field.key]);
     const entry = options.get(value);
-    if (entry) entry.count++;
+    if (entry) entry.count += Number(candidates.has(preset));
     else
       options.set(value, {
         value,
         label: quickPickLabel(field, preset.parameters[field.key]),
-        count: 1,
+        count: Number(candidates.has(preset)),
       });
   }
+  const selected = filters[field.key];
+  if (selected && !options.has(selected))
+    options.set(selected, { value: selected, label: quickPickLabel(field, selected), count: 0 });
   return [...options.values()].sort((a, b) =>
     field.type === 'number' ? Number(a.value) - Number(b.value) : a.label.localeCompare(b.label),
   );
@@ -73,22 +77,10 @@ export function updateQuickPickFilters(
   index: number,
   value: string,
 ): QuickPickFilters {
-  return Object.fromEntries(
-    fields
-      .slice(0, index + 1)
-      .map((field, i) => [field.key, i === index ? value : (filters[field.key] ?? '')]),
-  );
-}
-export function initialQuickPickFilters(
-  part: PartDefinition,
-  parameters: Parameters,
-): QuickPickFilters {
-  const first = quickPickFields(part)[0];
-  if (!first) return {};
-  const value = String(parameters[first.key]);
-  return quickPickMatches(part.presets, { [first.key]: value }).length
-    ? { [first.key]: value }
-    : {};
+  const next = { ...filters };
+  if (value) next[fields[index].key] = value;
+  else delete next[fields[index].key];
+  return next;
 }
 export function hasCatalogQuickSize(part: PartDefinition, parameters: Parameters): boolean {
   const fields = quickPickFields(part);
@@ -100,37 +92,6 @@ export function hasCatalogQuickSize(part: PartDefinition, parameters: Parameters
         fields.every((field) => preset.parameters[field.key] === parameters[field.key]),
     )
   );
-}
-export function reconcileQuickPickFilters(
-  part: PartDefinition,
-  parameters: Parameters,
-  filters: QuickPickFilters,
-  presetId: string,
-): QuickPickFilters {
-  const fields = quickPickFields(part);
-  const selected = part.presets.find((preset) => preset.id === presetId && preset.catalog);
-  const entries = Object.entries(filters).filter(
-    ([key, value]) =>
-      fields.some((field) => field.key === key) &&
-      (!value || !selected || selected.catalog!.verifiedParameters.includes(key)),
-  );
-  if (entries.every(([key, value]) => !value || String(parameters[key]) === value))
-    return entries.length === Object.keys(filters).length ? filters : Object.fromEntries(entries);
-  const matchingPreset =
-    selected ??
-    part.presets.find(
-      (preset) =>
-        preset.catalog &&
-        fields.every((field) => preset.parameters[field.key] === parameters[field.key]),
-    );
-  const next = Object.fromEntries(
-    fields
-      .filter((field) => matchingPreset?.catalog?.verifiedParameters.includes(field.key))
-      .map((field) => [field.key, String(parameters[field.key])]),
-  );
-  return quickPickMatches(part.presets, next).length
-    ? next
-    : initialQuickPickFilters(part, parameters);
 }
 export function closestQuickPick(
   presets: Preset[],

@@ -1,0 +1,13 @@
+# Wing ribs
+
+This is one physical sheet rib, laid flat in XY with sheet thickness along Z. It is a custom airframe detail, not a complete wing or an approved aircraft component. Four editable examples cover a symmetric tailplane rib, trainer section, cambered utility section and thick root rib.
+
+The section uses the four-digit NACA equations with the published finite trailing edge coefficient `-0.1015`. The first two digits define camber and its chordwise position; the last two define thickness ratio. The [NASA section overview](https://www.nasa.gov/image-article/naca-airfoils/) and [NASA TM X-3284](https://ntrs.nasa.gov/citations/19760003945) describe the section family. The package computes its own coordinates and does not import a supplier drawing. Nominal chord describes the complete airfoil before the trailing tip is trimmed.
+
+The profile uses 160 cosine-spaced intervals on each surface and is clipped at the selected trailing edge cutback. This leaves a closed, finite cut edge for a separately designed trailing edge strip. Preview, native FreeCAD outline and DXF use the same sampled section. The cutting profile is a polyline approximation of the airfoil, not a spline or a promised aerodynamic manufacturing tolerance.
+
+Main and optional rear spar slots are enclosed rectangular through cuts, centered on the section camber line. A total clearance of 0.15 mm increases an 8 × 12 mm spar slot to 8.15 × 12.15 mm, rather than adding 0.15 mm on each side. Verify the fit against actual spar stock with a coupon. A rectangular enclosed slot cannot be made with sharp internal corners using a round end mill alone; choose a suitable cutting process or define manual corner relief.
+
+Two optional circular lightening holes occupy separate bays. Each diameter is capped by the requested maximum and automatically reduced to retain the configured minimum web to the profile and the spar slots. A bay unable to fit a 2 mm hole is rejected. Validation also rejects oversized spar slots, disappearing perimeter webs, merged slots and a trailing cut edge less than 1 mm high. These are geometric checks, not allowable load calculations.
+
+Assign actual balsa, plywood or composite sheet, grade, grain or laminate orientation and measured thickness. Choose a cutting process compatible with that stock; composite sheet generally needs an appropriate milling route. The DXF is in millimetres with closed unoffset contours and analytic circular holes. Apply kerf or cutter compensation in CAM. Specify rib spacing, main and rear spars, sheeting, leading and trailing edge details, joints and the aircraft load cases before manufacturing release or flight.

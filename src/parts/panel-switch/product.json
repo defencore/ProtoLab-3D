@@ -1,0 +1,10 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "A purchased switch or explicitly identified switch and guard pairing. Visible components describe installation, not a manufacturing bill of materials.",
+  "processes": [],
+  "releaseRequirements": [
+    "Confirm the full order code, terminal option and purchased revision against the linked manufacturer drawing.",
+    "Confirm panel cutout tolerances, anti-rotation detail, wiring clearance and electrical suitability before fabrication."
+  ]
+}

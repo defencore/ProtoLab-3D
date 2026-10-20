@@ -1,12 +1,22 @@
+import detailLibrary from '../manufactured-detail/part';
+import {
+  detailGeometry,
+  detailPython,
+  detailDimensions,
+} from '../../core/assembly/detail-instances';
+import { shapeComposition } from '../../core/component-recipes';
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import { withParameterStates } from '../../core/parameter-states';
 import type { PartDefinition, Preset } from '../../core/types';
 import { n } from '../../core/geometry';
 import { defaults, parameters, catalogSelection } from './configurator';
 import presets from './presets.json';
 import { pieces } from './lib/model';
-import * as assembly from './lib/assembly';
 const part: PartDefinition = {
+  composition: (p) => shapeComposition(pieces({ ...p }, 'assembled')),
   id: 'model-rocket-airframe',
+  product: productData as ProductProfile,
   name: 'Model rocket airframe',
   category: 'VEHICLE STRUCTURES',
   subgroup: 'MODEL ROCKETS',
@@ -62,9 +72,9 @@ const part: PartDefinition = {
     if (!Number.isInteger(n(p, 'finCount'))) errors.push('Fin count must be a whole number.');
     return errors;
   },
-  buildGeometry: (p, state) => assembly.geometry(pieces(p, state)),
-  dimensions: (p, state) => assembly.dimensions(pieces(p, state)),
-  python: (p, state) => assembly.python(pieces(p, state)),
+  buildGeometry: (p, state) => detailGeometry(detailLibrary, pieces(p, state)),
+  dimensions: (p, state) => detailDimensions(detailLibrary, pieces(p, state)),
+  python: (p, state) => detailPython(detailLibrary, pieces(p, state)),
   notes:
     'External airframe reference for educational model rockets: open tube, hollow nose and separate fins. Z is the longitudinal axis. No motor mount, motor, igniter, propellant or deployment mechanism. Published product dimensions are rounded; tube wall, nose profile/length and fin shapes are editable assumptions, not traced factory parts. The nose sits at the tube end without a modeled retention joint. These are layout solids, not flight-ready kits.',
 };

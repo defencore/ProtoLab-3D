@@ -1,0 +1,86 @@
+[
+  {
+    "id": "loop-r3",
+    "name": "Loop / inside R3 / wire1",
+    "description": "Simple loop and U-bend tooling with replaceable metal mandrels and a drilled mounting plate. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "form": "loop",
+      "wire": 1,
+      "radius": 3,
+      "span": 36,
+      "pin": 6,
+      "plate": 10,
+      "pinHeight": 22
+    }
+  },
+  {
+    "id": "loop-r6",
+    "name": "Loop / inside R6 / wire2",
+    "description": "Simple loop and U-bend tooling with replaceable metal mandrels and a drilled mounting plate. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "form": "loop",
+      "wire": 2,
+      "radius": 6,
+      "span": 36,
+      "pin": 6,
+      "plate": 10,
+      "pinHeight": 22
+    }
+  },
+  {
+    "id": "loop-r10",
+    "name": "Loop / inside R10 / wire3",
+    "description": "Simple loop and U-bend tooling with replaceable metal mandrels and a drilled mounting plate. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "form": "loop",
+      "wire": 3,
+      "radius": 10,
+      "span": 36,
+      "pin": 6,
+      "plate": 10,
+      "pinHeight": 22
+    }
+  },
+  {
+    "id": "u24",
+    "name": "U bend / width24 / R4",
+    "description": "Simple loop and U-bend tooling with replaceable metal mandrels and a drilled mounting plate. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "form": "u",
+      "wire": 2,
+      "radius": 4,
+      "span": 24,
+      "pin": 6,
+      "plate": 10,
+      "pinHeight": 22
+    }
+  },
+  {
+    "id": "u40",
+    "name": "U bend / width40 / R6",
+    "description": "Simple loop and U-bend tooling with replaceable metal mandrels and a drilled mounting plate. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "form": "u",
+      "wire": 2,
+      "radius": 6,
+      "span": 40,
+      "pin": 6,
+      "plate": 10,
+      "pinHeight": 22
+    }
+  },
+  {
+    "id": "u64",
+    "name": "U bend / width64 / R10",
+    "description": "Simple loop and U-bend tooling with replaceable metal mandrels and a drilled mounting plate. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "form": "u",
+      "wire": 2,
+      "radius": 10,
+      "span": 64,
+      "pin": 6,
+      "plate": 10,
+      "pinHeight": 22
+    }
+  }
+]

@@ -8,6 +8,7 @@ import { rollerPieces } from '../../conveyor-roller/lib/model';
 import { cylinderPieces } from '../../compact-pneumatic-cylinder/lib/model';
 import { motorPieces } from '../../machine-drive-motor/lib/model';
 import { controlPieces } from '../../machine-control/lib/model';
+import control from '../../machine-control/part';
 import { engineering, DESIGN } from './engineering';
 import { fixturePieces } from './fixtures';
 import { handlingPieces } from './handling';
@@ -657,7 +658,7 @@ export function machinePieces(p: Parameters, state: string): MachinePiece[] {
   }
   let cx = -1300;
   for (const model of ['atv12hu22m2', 'dvp14ss211t', 'cl57t-v3', 'lrs15024', 'pnozx3']) {
-    const parts = controlPieces({ model });
+    const parts = controlPieces({ ...control.defaults, model });
     purchased(parts, [cx, 335, 230], [0, 0, 0], 'Controls');
     cx += model === 'atv12hu22m2' ? 125 : model === 'lrs15024' ? 155 : 75;
   }

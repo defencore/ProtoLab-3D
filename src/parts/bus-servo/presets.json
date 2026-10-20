@@ -1,0 +1,26 @@
+[
+  {
+    "id": "waveshare-st3215-12v",
+    "name": "Waveshare ST3215 12 V",
+    "description": "Supplier native CAD assembly with output retaining screw; verify delivered retaining thread.",
+    "parameters": {
+      "model": "st3215-12v",
+      "outputAngle": 0,
+      "showHorn": false
+    },
+    "catalog": {
+      "designation": "ST3215 12 V",
+      "manufacturer": "Waveshare",
+      "sourceName": "Waveshare manufacturer documentation and CAD",
+      "sourceUrl": "https://www.waveshare.com/wiki/ST3215_Servo",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "manufacturer-cad",
+        "summary": "Supplier STEP geometry including case, gear assembly, output spline and retaining screw.",
+        "limitations": "Retaining thread is nominal and requires measurement.",
+        "sourceUrl": "https://www.waveshare.com/wiki/ST3215_Servo",
+        "sourceSha256": "58e38e4dc49f97df738c5f229f9aa8a7dce64a0a1d01335486a52d53e6017e8a"
+      }
+    }
+  }
+]

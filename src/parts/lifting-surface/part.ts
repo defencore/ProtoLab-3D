@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import { withParameterStates } from '../../core/parameter-states';
 import type { PartDefinition, Preset } from '../../core/types';
 import { n } from '../../core/geometry';
@@ -8,6 +10,7 @@ import presets from './presets.json';
 
 const part: PartDefinition = {
   id: 'lifting-surface',
+  product: productData as ProductProfile,
   name: 'Wing and control surface',
   category: 'VEHICLE STRUCTURES',
   subgroup: 'WINGS & CONTROL SURFACES',

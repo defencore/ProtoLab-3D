@@ -13,6 +13,7 @@ export function modelEvidence(part: PartDefinition, parameters: Parameters, pres
   const kind = evidence?.kind ?? (catalog ? 'source-dimensions' : 'parametric');
   const labels = {
     'manufacturer-cad': 'Manufacturer CAD',
+    'community-cad': 'Community CAD',
     'source-dimensions': 'Source dimensions · reconstructed shape',
     envelope: 'Envelope model',
     parametric: 'Parametric design',

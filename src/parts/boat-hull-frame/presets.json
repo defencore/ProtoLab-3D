@@ -1,0 +1,86 @@
+[
+  {
+    "id": "skiff-650",
+    "name": "650 mm shallow-V skiff skeleton",
+    "description": "Authored plywood frame kit. Add a designed skin and longitudinal reinforcement.",
+    "parameters": {
+      "length": 650,
+      "beam": 220,
+      "depth": 100,
+      "thickness": 3,
+      "frameCount": 5,
+      "deadrise": 6,
+      "sternBeam": 70,
+      "rocker": 12,
+      "sheer": 6,
+      "keelHeight": 60,
+      "web": 12,
+      "fitClearance": 0.15,
+      "lightening": true,
+      "explodedGap": 30
+    }
+  },
+  {
+    "id": "launch-900",
+    "name": "900 mm model launch skeleton",
+    "description": "Authored plywood frame kit. Add a designed skin and longitudinal reinforcement.",
+    "parameters": {
+      "length": 900,
+      "beam": 280,
+      "depth": 130,
+      "thickness": 4,
+      "frameCount": 7,
+      "deadrise": 12,
+      "sternBeam": 70,
+      "rocker": 18,
+      "sheer": 8,
+      "keelHeight": 80,
+      "web": 16,
+      "fitClearance": 0.15,
+      "lightening": true,
+      "explodedGap": 30
+    }
+  },
+  {
+    "id": "deep-v-750",
+    "name": "750 mm deep-V hull skeleton",
+    "description": "Authored plywood frame kit. Add a designed skin and longitudinal reinforcement.",
+    "parameters": {
+      "length": 750,
+      "beam": 240,
+      "depth": 140,
+      "thickness": 4,
+      "frameCount": 6,
+      "deadrise": 24,
+      "sternBeam": 70,
+      "rocker": 22,
+      "sheer": 10,
+      "keelHeight": 85,
+      "web": 16,
+      "fitClearance": 0.15,
+      "lightening": true,
+      "explodedGap": 30
+    }
+  },
+  {
+    "id": "utility-1200",
+    "name": "1200 mm shallow-V utility hull skeleton",
+    "description": "Authored plywood frame kit. Add a designed skin and longitudinal reinforcement.",
+    "parameters": {
+      "length": 1200,
+      "beam": 380,
+      "depth": 180,
+      "thickness": 6,
+      "frameCount": 9,
+      "deadrise": 8,
+      "sternBeam": 70,
+      "rocker": 20,
+      "sheer": 12,
+      "keelHeight": 110,
+      "web": 24,
+      "fitClearance": 0.15,
+      "lightening": true,
+      "explodedGap": 30
+    }
+  }
+]

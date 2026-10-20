@@ -1,3 +1,4 @@
+import { withGeometryMode } from '../src/core/geometry-mode';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { spawnSync } from 'node:child_process';
@@ -22,40 +23,49 @@ import {
   threadFeatures,
   manufacturingMetadata,
 } from '../src/parts/rocket-release/lib/manufacturing';
-import { pythonShape, component, type Shape } from '../src/parts/rocket-release/lib/shapes';
-import nativeServo from '../src/parts/rocket-release/lib/st3215-native.json';
-import { barrelShape } from '../src/parts/rocket-release/lib/barrel';
+import { pythonShape, component, type Shape } from '../src/core/assembly/recovery/shapes';
+import nativeServo from '../src/core/assembly/recovery/st3215-native.json';
+import { barrelShape } from '../src/core/assembly/recovery/barrel';
 import { radiusAt } from '../src/parts/thread-tool/lib/thread';
 
-test('CO2 helices belong only to printed parts; metal and turned polymer threads retain callouts', () => {
-  for (const avionicsLayout of ['wing-2s', 'wing-4s', 'h7-4s']) {
-    const assembly = pieces({ ...co2.defaults, avionicsLayout }, 'assembled');
-    let printed = 0,
-      symbolic = 0;
-    for (const p of assembly) {
-      if (!p.shape) continue;
-      const threads = threadFeatures(p.shape);
-      if (!threads.length) continue;
-      const isPrinted = threads.some((t) => t.representation === 'printed-helix');
-      if (isPrinted) assert.equal(p.process, '3D PRINT', p.label);
-      threads.forEach((t) => {
-        assert.equal(t.representation, isPrinted ? 'printed-helix' : 'nominal-cylinder', p.label);
-        assert.ok(t.pitch > 0 && t.nominalDiameter > 0 && t.length > 0);
-        assert.equal(t.axis.length, 3);
-      });
-      const code = pythonShape(p.shape);
-      if (isPrinted) {
-        printed++;
-        assert.match(code, /_printed_thread\(/);
-      } else {
-        symbolic++;
-        assert.doesNotMatch(code, /_printed_thread\(|makeLongHelix|makePipeShell/);
+test('CO2 thread representation follows detail mode independently of printed and machined provenance', () => {
+  for (const mode of ['simple', 'full'] as const)
+    withGeometryMode(mode, () => {
+      for (const avionicsLayout of ['wing-2s', 'wing-4s', 'h7-4s']) {
+        const assembly = pieces({ ...co2.defaults, avionicsLayout }, 'assembled');
+        let printed = 0,
+          machined = 0;
+        for (const p of assembly) {
+          if (!p.shape) continue;
+          const threads = threadFeatures(p.shape);
+          if (!threads.length) continue;
+          const isPrinted = withGeometryMode('full', () =>
+            threadFeatures(p.shape!).some((t) => t.representation === 'printed-helix'),
+          );
+          threads.forEach((t) => {
+            assert.equal(
+              t.representation,
+              mode === 'simple'
+                ? 'nominal-cylinder'
+                : isPrinted
+                  ? 'printed-helix'
+                  : 'machined-helix',
+              p.label,
+            );
+            assert.ok(t.pitch > 0 && t.nominalDiameter > 0 && t.length > 0);
+            assert.equal(t.axis.length, 3);
+          });
+          const code = pythonShape(p.shape);
+          if (mode === 'full') assert.match(code, /_protolab_thread|_release_fastener/);
+          else assert.doesNotMatch(code, /_protolab_thread|makeLongHelix|makePipeShell/);
+          if (isPrinted) printed++;
+          else machined++;
+          assert.ok(manufacturingMetadata({ ...p, shape: p.shape }).ThreadLabels);
+        }
+        assert.equal(printed, 3);
+        assert.ok(machined > 30);
       }
-      assert.ok(manufacturingMetadata({ ...p, shape: p.shape }).ThreadLabels);
-    }
-    assert.equal(printed, 3);
-    assert.ok(symbolic > 30);
-  }
+    });
 });
 
 test('optimized spring-barrel and general meshes use the same cylindrical metal thread envelopes', () => {
@@ -77,8 +87,20 @@ test('the thread tool explicitly separates machined nominal envelopes and printa
     assert.doesNotMatch(tool.python(machined, state), /makeLongHelix|makePipeShell/);
     assert.match(tool.python(machined, state), /ThreadCallouts/);
     const printed = { ...machined, manufacturing: 'printed' };
-    assert.notEqual(radiusAt(printed, state, 0, 0), radiusAt(printed, state, 0.5, 0));
-    assert.match(tool.python(printed, state), /makeLongHelix/);
+    withGeometryMode('simple', () =>
+      assert.equal(radiusAt(printed, state, 0, 0), radiusAt(printed, state, 0.5, 0)),
+    );
+    withGeometryMode('full', () =>
+      assert.notEqual(radiusAt(printed, state, 0, 0), radiusAt(printed, state, 0.5, 0)),
+    );
+    assert.match(
+      withGeometryMode('full', () => tool.python(printed, state)),
+      /makeLongHelix/,
+    );
+    assert.match(
+      withGeometryMode('full', () => tool.python(machined, state)),
+      /makeLongHelix/,
+    );
   }
 });
 
@@ -131,8 +153,8 @@ for label, shape, meta in zip(component_labels, components, component_metadata):
     features = json.loads(meta.get('ThreadFeaturesJSON', '[]'))
     if label.startswith('Printed protective adapter'):
         assert '3/8-24 UNF RH' in meta['ThreadCallouts']
-        assert all(f['representation'] == 'printed-helix' for f in features)
-        assert any(type(face.Surface).__name__ == 'BSplineSurface' for face in shape.Faces), (label, [type(f.Surface).__name__ for f in shape.Faces])
+        assert all(f['representation'] == 'nominal-cylinder' for f in features)
+        assert len(TechDraw.projectToSVG(shape, App.Vector(0,1,0))) < 100000, label
         printed += 1
     elif label.startswith('BUY Leland'):
         assert features and '3/8″-24 UNF RH' in meta['ThreadCallouts']

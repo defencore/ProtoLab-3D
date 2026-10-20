@@ -1,0 +1,10 @@
+{
+  "kind": "detail",
+  "supply": "standard",
+  "description": "Nominal standard hardware. The configuration must identify a complete standard product; custom dimensions do not establish standard compliance.",
+  "processes": [],
+  "releaseRequirements": [
+    "Select a complete product designation and the applicable normative standard.",
+    "Confirm material, property class, coating, fit and supplier availability for the selected execution."
+  ]
+}

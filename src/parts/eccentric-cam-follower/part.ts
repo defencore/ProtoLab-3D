@@ -1,10 +1,13 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters } from './configurator';
 import presets from './presets.json';
 import { pieces } from './lib/model';
-import * as assembly from './lib/assembly';
+import * as assembly from '../../core/assembly/boundary/assembly';
 const part: PartDefinition = {
   id: 'eccentric-cam-follower',
+  product: productData as ProductProfile,
   name: 'Eccentric cam follower',
   description:
     'Compact IKO CFE eccentric-collar rollers with hex-socket studs, needle rollers and sealed or shielded closures.',
@@ -38,6 +41,8 @@ const part: PartDefinition = {
   ],
   validate(p, state) {
     const errors: string[] = [];
+    if (!(+p.threadPitch > 0) || +p.stud - (17 * Math.sqrt(3) * +p.threadPitch) / 24 <= 0)
+      errors.push('Thread pitch must leave a positive stud core.');
     if (!['assembled', 'open', 'exploded'].includes(state))
       errors.push('Select a valid model view.');
     const journal = Math.max(+p.stud, +p.outer * 0.48),
@@ -58,7 +63,7 @@ const part: PartDefinition = {
   python: (p, s) => assembly.python(pieces(p, s)),
   dimensions: (p, s) => assembly.dimensions(pieces(p, s)),
   notes:
-    'IKO CFE external dimensions and 0.4 mm eccentricity follow catalogue 1569E pp. 51\u201352. The mounting collar remains centred while the stud and roller axes are offset. Needle count, internal race dimensions and socket depth are reconstructed. B has metal shields; BUU has rubber seals. Stud threads use a smooth nominal-diameter envelope; thread pitches are shown in each preset. Nuts and washers are not included. Edited dimensions describe a custom model.',
+    'IKO CFE external dimensions and 0.4 mm eccentricity follow catalogue 1569E pp. 51\u201352. The mounting collar remains centred while the stud and roller axes are offset. Needle count, internal race dimensions and socket depth are reconstructed. B has metal shields; BUU has rubber seals. Simple uses the nominal stud diameter; Full exports a helical metric thread with the source pitch retained in each preset. Thread fit class is unspecified. Nuts and washers are not included. Edited dimensions describe a custom model.',
   sources: [
     {
       label: 'IKO \u00b7 Cam Followers catalogue \u00b7 CFE pp. 51\u201352',

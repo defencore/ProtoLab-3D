@@ -7,7 +7,7 @@ import {
   manufacturingMetadata,
   threadFeatures,
 } from '../src/parts/rocket-release/lib/manufacturing';
-import { transform, rotate } from '../src/parts/rocket-release/lib/shapes';
+import { transform, rotate } from '../src/core/assembly/recovery/shapes';
 import { screw, matingHole } from '../src/parts/rocket-release/lib/hardware';
 
 const p = part.presets.find((x) => x.id === 'nose-90-86-mg996r-18650-2s-wing-mini')!.parameters;

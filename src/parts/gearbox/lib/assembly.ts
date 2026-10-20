@@ -1,5 +1,11 @@
+import { nativeThreadPython } from '../../../core/thread-native';
 import { Group, Box3, Vector3, Mesh, MeshStandardMaterial } from 'three';
-import { component, pythonShape, type Shape, type Vec } from './shapes';
+import {
+  component,
+  pythonShape,
+  type Shape,
+  type Vec,
+} from '../../../core/assembly/boundary/shapes';
 import { num } from '../../../core/geometry';
 export interface Piece {
   shape: Shape;
@@ -15,6 +21,7 @@ export function geometry(pieces: Piece[]): Group {
 }
 export function python(pieces: Piece[]): string {
   const lines = [
+    nativeThreadPython(),
     'def _pl_transform(shape, translation, rotation):',
     '    for axis, angle in zip([App.Vector(1,0,0),App.Vector(0,1,0),App.Vector(0,0,1)], rotation):',
     '        if angle: shape.rotate(App.Vector(0,0,0),axis,angle)',

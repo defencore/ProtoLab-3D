@@ -26,7 +26,7 @@ Relational validation checks coil space, positive walls, bore clearance, mountin
 
 ## Export scope
 
-The selected state is used by the preview, STL and FreeCAD macro. **Copy Python** or a downloaded macro creates independently selectable component features under a FreeCAD assembly; the frame-only state produces one body. Preview and native shapes share package-local geometric definitions, with corresponding component order, labels and colors. See the [assembly export guide](freecad-assemblies.md) for editing component placement and exporting STEP or saving FCStd.
+The selected state is used by the preview, STL and FreeCAD macro. **Copy for FreeCAD** or a downloaded macro creates independently selectable component features under a FreeCAD assembly; the frame-only state produces one body. Preview and native shapes share package-local geometric definitions, with corresponding component order, labels and colors. See the [assembly export guide](freecad-assemblies.md) for editing component placement and exporting STEP or saving FCStd.
 
 Coils are solid winding or potting envelopes, without individual turns or an electrical circuit. Lead and terminal geometry represents connection envelopes. The holding magnet's mounting bore is smooth and unthreaded. These models do not include return springs or magnetic, force, current, voltage, thermal or duty-cycle calculations. State selection specifies geometric placement; it does not simulate energization. Manufacturing tolerances and omitted fastening details must be established for the intended design.
 

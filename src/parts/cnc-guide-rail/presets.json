@@ -1,0 +1,43 @@
+[
+  {
+    "id": "hgr20-1900",
+    "name": "HIWIN HGR20 \u00b7 requested 1900 mm cut",
+    "description": "Source cross section and mounting pattern; length is a customer cut, not a stock availability claim.",
+    "parameters": {
+      "model": "hgr20",
+      "length": 1900
+    },
+    "catalog": {
+      "designation": "HGR20, customer-cut length 1900 mm",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN HG catalogue",
+      "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "G99TE22-2011 printed pp36\u201337: source rail section and mounting dimensions.",
+        "limitations": "Length1900 is a customer-order design dimension. Symmetric end distances derive from the source hole-pitch equation. Raceways and edge radii are illustrative.",
+        "sourceUrl": "https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf",
+        "sourceSha256": "6d76f03606e15d0a53c167f19c3390c6f1befa4373e21d5fa04d8eecd2bfb6da"
+      },
+      "attributes": {
+        "width": 20,
+        "height": 17.5,
+        "holePitch": 60,
+        "bore": 6,
+        "counterbore": 9.5,
+        "counterboreDepth": 8.5
+      },
+      "specifications": [
+        {
+          "label": "Cut-length maximum",
+          "value": "Source maximum rail length4000 mm; confirm the actual order."
+        },
+        {
+          "label": "Requested cut",
+          "value": "1900 mm is a customer requested cut, not a published stock SKU."
+        }
+      ]
+    }
+  }
+]

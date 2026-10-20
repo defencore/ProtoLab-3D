@@ -10,9 +10,63 @@
     />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <title>ProtoLab — Parametric parts, ready to build</title>
+    <style>
+      body {
+        margin: 0;
+        background: #141619;
+        color: #e7e9ed;
+      }
+      .startup-screen {
+        box-sizing: border-box;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 32px;
+        font-family: system-ui, sans-serif;
+        text-align: center;
+      }
+      .startup-screen__brand {
+        color: #dbac78;
+        font-size: 24px;
+        letter-spacing: -0.5px;
+      }
+      .startup-screen h1 {
+        margin: 28px 0 8px;
+        font-size: 22px;
+      }
+      .startup-screen p {
+        max-width: 420px;
+        margin: 0;
+        color: #a4acb9;
+        line-height: 1.6;
+      }
+      .startup-screen button {
+        margin-top: 24px;
+        padding: 12px 20px;
+        border: 1px solid #dbac78;
+        border-radius: 8px;
+        background: #29241e;
+        color: #e7e9ed;
+        cursor: pointer;
+        font: inherit;
+      }
+      .startup-screen button:focus-visible {
+        outline: 3px solid #dbac78;
+        outline-offset: 4px;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <main class="startup-screen" role="status" aria-live="polite">
+        <strong class="startup-screen__brand">ProtoLab</strong>
+        <h1>Opening your parts library…</h1>
+        <p>Preparing the catalog and 3D workspace.</p>
+        <noscript><p>Enable JavaScript to configure parts and preview them in 3D.</p></noscript>
+      </main>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

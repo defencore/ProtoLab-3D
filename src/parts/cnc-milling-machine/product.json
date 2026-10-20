@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "An independent ProtoLab bolted moving-gantry machine assembled from reusable physical library components; engineering acceptance remains pending.",
+  "processes": ["assembly", "milling", "drilling"],
+  "releaseRequirements": [
+    "Review all manufactured detail drawings and supplier executions.",
+    "Qualify cutting loads, stiffness, spindle clamping, long screw speed and Z retention.",
+    "Complete motion limit, electrical, cooling, guard and commissioning documentation."
+  ]
+}

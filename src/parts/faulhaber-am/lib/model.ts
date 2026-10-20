@@ -7,6 +7,7 @@ import {
   MeshStandardMaterial,
   Vector3,
 } from 'three';
+import { unzlibSync } from 'three/addons/libs/fflate.module.js';
 import type { Parameters } from '../../../core/types';
 import models from './models.json';
 import { nativeModels } from './native';
@@ -20,7 +21,7 @@ function bytes(encoded: string): ArrayBuffer {
   const binary = atob(encoded),
     result = new Uint8Array(binary.length);
   for (let i = 0; i < binary.length; i++) result[i] = binary.charCodeAt(i);
-  return result.buffer;
+  return new Uint8Array(unzlibSync(result)).buffer;
 }
 const templates = new Map<string, BufferGeometry>();
 export function geometry(p: Parameters): Group {

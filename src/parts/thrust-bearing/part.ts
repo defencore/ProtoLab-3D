@@ -1,8 +1,10 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
 import { motionSources } from './lib/catalog/motion-bearings';
-import { turnedMesh, turnedPython, type TurnedProfile } from './lib/parts/motion-bearing-utils';
+import { turnedMesh, turnedPython, type TurnedProfile } from '../../core/hardware/motion-bearing-utils';
 import { Group } from 'three';
 import type { PartDefinition } from '../../core/types';
 import { compoundPython, DARK_STEEL, n, num, numberParameter, sphere } from '../../core/geometry';
@@ -37,6 +39,7 @@ function washerProfiles(p: PartDefinition['defaults'], state: string): TurnedPro
 }
 const part: PartDefinition = {
   id: 'thrust-bearing',
+  product: productData as ProductProfile,
   name: 'Thrust ball bearing',
   category: 'BEARINGS & SEALS',
   subgroup: 'THRUST BEARINGS',

@@ -1,10 +1,11 @@
+import { markSupplierUnit } from '../../../core/supplier-components';
 import type { Parameters } from '../../../core/types';
 import type { Piece } from './assembly';
-import { cylinder, union, subtract, transform, plate, type Shape } from './shapes';
+import { cylinder, union, subtract, transform, plate, type Shape } from '../../../core/assembly/recovery/shapes';
 import { profile } from './gears';
 import { layout } from './motion';
 
-import native from './st3215-native.json';
+import native from '../../../core/assembly/recovery/st3215-native.json';
 import splinePoints from './st3215-spline.json';
 const steel = 0x929eac;
 /** Source front-face hole coordinates: longitudinal pitch 20.7, row pitch 20.5 mm. */
@@ -18,12 +19,14 @@ export function servoPieces(p: Parameters): Piece[] {
   const m = layout(p),
     angle = m.servoAngle,
     z = m.stackOffset;
+  const source = { name: 'Waveshare ST3215 12 V bus servo with retaining screw', libraryId: 'bus-servo', parameters: { model: 'st3215-12v', outputAngle: angle, showHorn: false }, state: 'assembled', procurement: { designation: 'ST3215 12 V', manufacturer: 'Waveshare', source: 'https://www.waveshare.com/wiki/ST3215_Servo' } };
+  const nativeShape = (index: number): Shape => { const shape: Shape = {kind:'native',index}; markSupplierUnit([shape],source); return shape; };
   // Raised face at local Z44; front pillars locate in the stock pilot holes without modifying the case.
   // The OEM horn is replaced by the pinion itself.
   const out: Piece[] = [0, 1, 2, 3, 4, 5].map((index) => ({
     label: `ST3215 · ${native.components[index].label} · supplier CAD`,
     color: Number.parseInt(native.components[index].color.slice(1), 16),
-    shape: transform({ kind: 'native', index }, index === 5 ? angle : 0, [0, 0, m.servoZ]),
+    shape: transform(nativeShape(index), index === 5 ? angle : 0, [0, 0, m.servoZ]),
     ...(index === 5
       ? {
           metadata: {
@@ -59,7 +62,7 @@ export function servoPieces(p: Parameters): Piece[] {
   });
   out.push({
     label: 'BUY ST3215 output retaining screw · CAD-fit reference · assumed head Ø5×1',
-    shape: transform({ kind: 'native', index: 8 }, angle, [0, 0, m.servoZ]),
+    shape: transform(nativeShape(8), angle, [0, 0, m.servoZ]),
     color: steel,
     metadata: {
       ThreadLabels: 'external OEM retaining thread (verify diameter/pitch)',

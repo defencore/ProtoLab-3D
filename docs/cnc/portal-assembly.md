@@ -1,0 +1,45 @@
+# Boxed portal and mounting interfaces
+
+This replaces the two 40 x400 x970 mm solid aluminium portal cheeks. The work range remains800 x1500 x200 mm. The beam, guide and central-Z datums are retained; the lower drive connection is separate from the upper load-bearing posts.
+
+## Physical joints
+
+| Joint                     | Actual interface and fastening                                                                                                                                                                                                                             |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Guide blocks / feet       | Existing sourceHG20 mounting pattern;160 x500 x30 mm feet retain the source bearing footprints and outer edge atX±727.5 mm without shifting the guide axes.                                                                                                |
+| Foot / lower post flange  | 25 mm aluminium flange rests on the horizontal foot face. Four cut M10 threaded ties clamp the complete post stack into26 mm foot taps.                                                                                                                    |
+| Post / flanges            | Short100 x300 x8 mm rounded steel RHS, default214 mm long, bears on machined end faces between the flanges. No full-height solid cheek is needed.                                                                                                          |
+| Upper flange / beam       | The beam rests on the upper flange; four upwardM8 screws enter its actual12.5 mm bottom wall. Side access ports retain a continuous upper wall ligament.                                                                                                   |
+| Foot / lower drive link   | One-piece20 mm aluminium T profile:100 mm-wide stem and400 x50 mm top crossbar. TwoM8 screws are inserted from below the exposed crossbar into the foot; their heads clear the post flange.                                                                |
+| Drive link / lower tiebar | The retained tiebar end inserts seat against the link faces. ShorterM8 screws traverse20 mm link stock and enter the actual end insert.                                                                                                                    |
+| X servo mounting          | A separate short40 x400 x200 mm left end plate retains the original motor datum. The right beam-end insert and former tall cheeks are removed.                                                                                                             |
+| X scale / beam            | A separate 1105 x 12 x 60 mm steel plate supports the complete modeled 1025 mm spar. Four M8 anchors sit outside its outline. The plate's lower 32.5 mm bears on the flat beam wall; the upper 27.5 mm projects above it and requires joint qualification. |
+
+The default post centres areX±650/Y20 mm. Post ends areZ861/1075 mm; flange faces areZ836/861 andZ1075/1100 mm. The lower links keepX±697.5 and spanZ330–806 mm. Their outer crossbar ends provide accessible underside screw seats rather than hidden heads inside the post flange.
+
+The axial clamps use standard M10 threaded stock cut to287.2 mm, DIN934 class8 nuts and DIN125 HV200 washers. The supplier stock listing uses the DIN975 name; confirm the delivered execution and material certificate. The cut tie is a manufactured library detail with an explicit stock-input route, not a fictitious finished supplier SKU. Each upper cap has a25 mm recess13.7 mm deep, leaving11.3 mm floor stock. The nominal rod-to-beam gap is0.9 mm, with2.8 mm projection above the nut,24.1 mm nominal foot engagement and1.9 mm blind-floor reserve. Release cut-length tolerance and verify the dry-fit clearance and actual preload. These are geometry values, not a strength certificate.
+
+## Assembly and inspection order
+
+1. Prepare and inspect the fixed bed and master/secondary rail datums using the actualHIWIN instructions. Install the blocks and feet without changing their source hole patterns.
+2. Fit each lower flange and machined RHS end to its foot. Install the cut ties using temporary jam nuts to set their measured engagement, then remove the temporary nuts, fit the upper flange and install its washers and final nuts. Tighten these nuts with the verified socket before seating the beam; their recesses are covered after beam installation. Inspect actual end-face contact and squareness before the tightening procedure is released.
+3. Seat the beam on both upper flanges. Insert its short underside screws through the modeled side access ports; inspect screw access and datum alignment. A released joint drawing must specify preload and tightening sequence.
+4. Install the integral T links from below the feet, then the lower tiebar and its retained end inserts. Keep the head-bearing post stack and drive links as separate physical parts.
+5. Install and align the unchanged precision drives, the relocated scale support and the foot-mounted limit flags. Verify the actual sensor gap and travel endpoints before enabling movement.
+6. Install the shallow drip tray below the rib fastening envelope, then qualify drainage and leakage. No table rib passes through a tray wall. Flood coolant requires a separately designed splash enclosure.
+
+Each manufactured piece remains a library occurrence with its own holes, stock, material and manufacturing route. Inspection separation applies one displacement to each complete fixed, gantry, X or Z group. Conservative posed bounds use proved canonical frame extrema or the actual Simple source mesh, with a 100 mm gap along Y. The fixed bed, its scales, sensors and equipment stay together; no individual fastener is detached from its host. This is a review layout, not an installation pose or an assembly sequence.
+
+The earlier relocated encoder/limit fixture checks 53 actual units in Simple and 52 in Full, each at the midpoint and eight travel corners. It records 642/741 strict native pair checks and 28 positive material-contact witnesses per mode, with no intersection above 0.001 mm3. These are retained snapshots preceding the integral adapter-ear reinforcement and the canonical thread-spine correction. Executed source, exact template checksums and comparisons are under `test-results/cnc-milling/mounting/encoders/`; use only evidence whose source hash matches the configuration being reviewed.
+
+Each readhead adapter now includes a genuine integral 1.8 mm front ear milled from the same blank. It occupies the existing head/spar gap, leaves 0.5 mm nominal clearance, and stays 0.3 mm below the illustrative clamp envelope throughout travel. A disclosed +/-0.2 mm mating-plane plus +/-0.2 mm spar-depth stack leaves 0.1 mm clearance; the delivered profile still needs inspection. The complete 6 mm M4 tap remains intact. Its upper edge stock is depth-dependent: 0.45 mm in the rear 4.2 mm and 1.65 mm in the front 1.8 mm, including the configured 0.05 mm radial allowance. This strengthens the mating face without changing the OEM holes, poses or conservative spar envelope. It does not establish screw preload or bracket strength.
+
+The current bounded ear fixture checks 15 actual adapters, source readheads/spars and M4 screws in each mode, over nine poses and 108 native pairs per mode. Every adapter is one valid closed solid, actual head contact and added stock are witnessed, and no intersection exceeds 0.001 mm3. The six-millimetre bores remain unobstructed. `readhead-ear-native.json` retains its exact Simple/Full source hashes. Whole-machine evidence covers the remaining partners; reconstructed spar seats and the stepped joint's load/preload drawing remain release requirements.
+
+## Scope of verification
+
+Native checks must establish positive bearing-face contact as well as strict absence of material overlap. Bolt axes, actual tapped stock, tip reserve and an insertion/tool path are checked separately. A visually touching surface or a zero-volume intersection alone does not establish a correctly fastened joint.
+
+The rounded stock is based on the [Tata Hybox technical catalogue](https://www.tatasteeluk.com/sites/default/files/pimcore_doc/tata-steel-uk-hybox-technical-guide-en.pdf). Ordered section/radii, certificates and machined datums still need inspection. CAD volume estimates use declared material densities; they are not physical weighings.
+
+This redesign does not certify joint stiffness, fatigue, thermal behavior, supplier preload or the requested±0.025 mm finished-part tolerance. See [mechanical qualification](mechanical-qualification.md). Previous full-height-cheek geometry proofs and mass estimates are historical snapshots; only records whose source/configuration/CAD guards match this revision support a current geometric claim.

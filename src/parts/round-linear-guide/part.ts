@@ -1,12 +1,14 @@
+import { roundGuideComposition, roundGuidePieces } from './lib/composition';
+import { componentGeometry, componentPython } from '../../core/assembly/detail-instances';
+import manufacturedPart from '../manufactured-detail/part';
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
-import { Group, Vector3 } from 'three';
 import type { PartDefinition } from '../../core/types';
-import { n, num, numberParameter, cylinder, DARK_STEEL } from '../../core/geometry';
+import { n, num, numberParameter } from '../../core/geometry';
 import { roundCircuit } from './lib/parts/guide-circuits';
-import { roundInsert, roundInsertPython } from './lib/parts/round-guide-insert';
-import { BoundaryMesh, circleSection } from '../../core/mechanical';
 
 const defaults = {
   shaftDiameter: 8,
@@ -22,6 +24,8 @@ const defaults = {
 };
 const part: PartDefinition = {
   id: 'round-linear-guide',
+  composition: roundGuideComposition,
+  product: productData as ProductProfile,
   name: 'Round shaft guide',
   category: 'LINEAR MOTION',
   subgroup: 'ROUND SHAFT GUIDES',
@@ -84,146 +88,22 @@ const part: PartDefinition = {
     return errors;
   },
   buildGeometry(p, state) {
-    const g = new Group(),
-      d = n(p, 'shaftDiameter'),
-      l = n(p, 'length'),
-      bl = n(p, 'blockLength'),
-      bw = n(p, 'blockWidth'),
-      bh = n(p, 'blockHeight'),
-      x = (n(p, 'position') / 100 - 0.5) * (l - bl);
-    const cutaway = state === 'cutaway',
-      sleeve = roundCircuit(p);
-    if (state !== 'block') {
-      const shaft = cylinder(d / 2, l);
-      shaft.rotation.y = Math.PI / 2;
-      shaft.position.z = bh / 2;
-      g.add(shaft);
+    const model = componentGeometry([manufacturedPart], roundGuidePieces(p, state));
+    if (state === 'cutaway') {
+      model.rotation.x = Math.PI;
+      model.position.z = n(p, 'blockHeight');
     }
-    if (state !== 'shaft') {
-      const mesh = new BoundaryMesh(),
-        left = x - bl / 2,
-        right = x + bl / 2;
-      const boreLeft = circleSection(sleeve.outer + 0.05, new Vector3(left, 0, bh / 2), 'x');
-      const boreRight = circleSection(sleeve.outer + 0.05, new Vector3(right, 0, bh / 2), 'x');
-      if (!cutaway) mesh.bridge(boreLeft, boreRight, true);
-      else {
-        const arc = (end: number) =>
-          Array.from({ length: 73 }, (_, i) => {
-            const a = -Math.PI / 2 - (Math.PI * i) / 72;
-            return new Vector3(
-              end,
-              (sleeve.outer + 0.05) * Math.cos(a),
-              bh / 2 + (sleeve.outer + 0.05) * Math.sin(a),
-            );
-          });
-        boreLeft.splice(0, boreLeft.length, ...arc(left));
-        boreRight.splice(0, boreRight.length, ...arc(right));
-        for (let i = 1; i < boreLeft.length; i++)
-          mesh.face(
-            [boreLeft[i - 1], boreLeft[i], boreRight[i], boreRight[i - 1]],
-            [],
-            new Vector3(
-              0,
-              -(boreLeft[i].y + boreLeft[i - 1].y),
-              bh - boreLeft[i].z - boreLeft[i - 1].z,
-            ).normalize(),
-          );
-      }
-      for (const [end, bore, sign] of [
-        [left, boreLeft, -1],
-        [right, boreRight, 1],
-      ] as const) {
-        mesh.face(
-          cutaway
-            ? [
-                new Vector3(end, -bw / 2, 0),
-                new Vector3(end, 0, 0),
-                ...bore,
-                new Vector3(end, 0, bh),
-                new Vector3(end, -bw / 2, bh),
-              ]
-            : [
-                new Vector3(end, -bw / 2, 0),
-                new Vector3(end, bw / 2, 0),
-                new Vector3(end, bw / 2, bh),
-                new Vector3(end, -bw / 2, bh),
-              ],
-          cutaway ? [] : [bore],
-          new Vector3(sign, 0, 0),
-        );
-      }
-      for (const side of cutaway ? [-1] : [-1, 1])
-        mesh.face(
-          [
-            new Vector3(left, (side * bw) / 2, 0),
-            new Vector3(right, (side * bw) / 2, 0),
-            new Vector3(right, (side * bw) / 2, bh),
-            new Vector3(left, (side * bw) / 2, bh),
-          ],
-          [],
-          new Vector3(0, side, 0),
-        );
-      if (cutaway)
-        for (const [bottom, top] of [
-          [0, bh / 2 - sleeve.outer - 0.05],
-          [bh / 2 + sleeve.outer + 0.05, bh],
-        ])
-          mesh.face(
-            [
-              new Vector3(left, 0, bottom),
-              new Vector3(right, 0, bottom),
-              new Vector3(right, 0, top),
-              new Vector3(left, 0, top),
-            ],
-            [],
-            new Vector3(0, 1, 0),
-          );
-      const bottomHoles: Vector3[][] = [],
-        topHoles: Vector3[][] = [];
-      for (const sx of [-1, 1])
-        for (const sy of cutaway ? [-1] : [-1, 1]) {
-          const center = new Vector3(x + (sx * n(p, 'pitchX')) / 2, (sy * n(p, 'pitchY')) / 2, 0);
-          const bottom = circleSection(n(p, 'holeDiameter') / 2, center),
-            top = circleSection(n(p, 'holeDiameter') / 2, center.clone().setZ(bh));
-          bottomHoles.push(bottom);
-          topHoles.push(top);
-          mesh.bridge(bottom, top, true);
-        }
-      for (const [z, holes, sign] of [
-        [0, bottomHoles, -1],
-        [bh, topHoles, 1],
-      ] as const)
-        mesh.face(
-          [
-            new Vector3(left, -bw / 2, z),
-            new Vector3(right, -bw / 2, z),
-            new Vector3(right, cutaway ? 0 : bw / 2, z),
-            new Vector3(left, cutaway ? 0 : bw / 2, z),
-          ],
-          holes,
-          new Vector3(0, 0, sign),
-        );
-      g.add(mesh.build(DARK_STEEL));
-      const insert = roundInsert(p, cutaway);
-      while (insert.children.length) g.add(insert.children[0]);
-    }
-    if (cutaway) {
-      // Face the open half toward the default isometric view, preserving the shaft axis.
-      g.rotation.x = Math.PI;
-      g.position.z = bh;
-    }
-    return g;
+    return model;
   },
   python(p, state) {
-    const d = n(p, 'shaftDiameter'),
-      l = n(p, 'length'),
-      bl = n(p, 'blockLength'),
-      bw = n(p, 'blockWidth'),
-      bh = n(p, 'blockHeight'),
-      x = (n(p, 'position') / 100 - 0.5) * (l - bl);
-    const cutaway = state === 'cutaway',
-      sleeve = roundCircuit(p);
-    return `shaft = Part.makeCylinder(${num(d / 2)}, ${num(l)}, App.Vector(${num(-l / 2)}, 0, ${num(bh / 2)}), App.Vector(1, 0, 0))\nblock = Part.makeBox(${num(bl)}, ${num(bw)}, ${num(bh)}, App.Vector(${num(x - bl / 2)}, ${num(-bw / 2)}, 0))\nbore = Part.makeCylinder(${num(sleeve.outer + 0.05)}, ${num(bl + 2)}, App.Vector(${num(x - bl / 2 - 1)}, 0, ${num(bh / 2)}), App.Vector(1, 0, 0))\nblock = block.cut(bore)\nfor sx in [-1, 1]:\n    for sy in [-1, 1]:\n        block = block.cut(Part.makeCylinder(${num(n(p, 'holeDiameter') / 2)}, ${num(bh + 2)}, App.Vector(${num(x)} + sx * ${num(n(p, 'pitchX') / 2)}, sy * ${num(n(p, 'pitchY') / 2)}, -1)))\n${cutaway ? `block = block.cut(Part.makeBox(${num(bl + 2)},${num(bw)},${num(bh + 2)},App.Vector(${num(x - bl / 2 - 1)},0,-1)))` : ''}\n${roundInsertPython(p, cutaway)}\nshape = ${state === 'shaft' ? 'shaft' : state === 'block' ? 'Part.makeCompound([block.removeSplitter()] + insert_parts)' : 'Part.makeCompound([shaft, block.removeSplitter()] + insert_parts)'}${cutaway ? `\nshape.rotate(App.Vector(0, 0, ${num(bh / 2)}), App.Vector(1, 0, 0), 180)` : ''}\ncomponent_labels = ${JSON.stringify(state === 'shaft' ? ['Guide shaft'] : [...(state === 'block' ? [] : ['Guide shaft']), 'Carriage housing', 'Return cage', 'Rear wiper', 'Front wiper', ...sleeve.points.map((_, i) => `Recirculating ball ${i + 1}`)])}`;
+    const recipe = componentPython([manufacturedPart], roundGuidePieces(p, state));
+    return state !== 'cutaway'
+      ? recipe
+      : recipe +
+          `
+for component in components:
+    component.rotate(App.Vector(0,0,${num(n(p, 'blockHeight') / 2)}),App.Vector(1,0,0),180)
+shape = Part.makeCompound(components)`;
   },
   dimensions(p, state) {
     return state === 'shaft'

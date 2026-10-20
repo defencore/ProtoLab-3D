@@ -1,0 +1,13 @@
+{
+  "kind": "material",
+  "supply": "purchased",
+  "description": "Supplier extrusion stock. Final cut length, machining and fastening belong to the resulting manufactured detail.",
+  "processes": [
+    "cutting"
+  ],
+  "releaseRequirements": [
+    "Select the actual supplier execution with a complete order designation and source reference.",
+    "Verify installation dimensions, mounting interfaces, operating ratings and the ordered product revision.",
+    "Specify alloy, section, stock length, cut allowance and final cut-part designation."
+  ]
+}

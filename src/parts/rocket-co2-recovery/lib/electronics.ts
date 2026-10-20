@@ -29,7 +29,7 @@ import {
   transform,
   rotate,
   type Shape,
-} from '../../rocket-release/lib/shapes';
+} from '../../../core/assembly/recovery/shapes';
 import { controllerPieces } from '../../rocket-release/lib/wing-controller';
 import { defaults as releaseDefaults } from '../../rocket-release/configurator';
 export function electronics(p: Parameters): Piece[] {
@@ -269,8 +269,8 @@ export function mountedWing(
       label,
       group: groups.controller,
       shape,
-      material: piece.label.includes('silicone') ? 'silicone' : 'supplier assembly',
-      process: 'BUY',
+      material: piece.metadata?.SourceMaterial ?? 'supplier assembly',
+      process: piece.metadata?.SourceProcess ?? 'BUY',
       metadata: {
         ...piece.metadata,
         Library: 'rocket-release / controllerPieces; library stack and damper interfaces retained',

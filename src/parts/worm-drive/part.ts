@@ -1,19 +1,18 @@
+import { wormComposition, wormPieces } from './lib/composition';
+import { componentGeometry, componentPython } from '../../core/assembly/detail-instances';
+import manufacturedPart from '../manufactured-detail/part';
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import { withParameterStates } from '../../core/parameter-states';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
-import { shaftBoreDefaults, shaftBoreParameters } from './lib/core/shaft-bore';
-import { Box3, Group, Mesh, MeshStandardMaterial, Vector2, Vector3 } from 'three';
+import { shaftBoreDefaults, shaftBoreParameters } from '../../core/hardware/shaft-bore';
+import { Box3, Vector2, Vector3 } from 'three';
 import type { Parameters, PartDefinition } from '../../core/types';
-import { n, num, numberParameter } from '../../core/geometry';
-import { disposeModel, loftMesh } from '../../core/mechanical';
-import {
-  gearGeometry,
-  gearPython,
-  gearValues,
-  validateGear,
-  type GearLayer,
-} from './lib/core/gears';
+import { n, numberParameter } from '../../core/geometry';
+import { disposeModel } from '../../core/mechanical';
+import { gearValues, validateGear, type GearLayer } from '../../core/hardware/gears';
 
 const defaults = {
   ...shaftBoreDefaults(),
@@ -126,27 +125,42 @@ function wheelLayers(p: Parameters): GearLayer[] {
     };
   });
 }
-function build(p: Parameters, state: string): Group {
-  const v = wormValues(p),
-    group = new Group();
-  if (state !== 'worm') {
-    const wheel = gearGeometry(v.wheel, wheelLayers(p)).children[0] as Mesh;
-    wheel.name = 'Throated worm wheel';
-    wheel.material = (wheel.material as MeshStandardMaterial).clone();
-    (wheel.material as MeshStandardMaterial).color.setHex(0xb99650);
-    group.add(wheel);
-  }
-  if (state !== 'wheel') {
-    const worm = loftMesh(wormSections(p));
-    worm.name = 'Helical worm';
-    worm.rotation.y = Math.PI / 2;
-    worm.position.y = state === 'worm' ? 0 : v.distance + (state === 'exploded' ? v.tip * 2 : 0);
-    group.add(worm);
-  }
-  return group;
+function composition(p: Parameters) {
+  const neutral = { ...p, rotation: 0 },
+    v = wormValues(neutral),
+    radialExtra = v.m * 0.1;
+  return wormComposition(
+    wormSections(neutral),
+    v.wheel,
+    wheelLayers(neutral),
+    v.distance,
+    {
+      tip: v.tip,
+      root: v.root,
+      length: v.length,
+      lead: v.lead,
+      starts: v.starts,
+      phase: v.phase,
+      hand: v.hand as 1 | -1,
+      grooveRoot: v.pitch / 2 - v.halfRoot,
+      grooveTip: v.pitch / 2 - v.halfTip + radialExtra * Math.tan(v.alpha),
+      radialExtra,
+      startZ: -v.length / 2 - v.lead,
+    },
+    { worm: n(p, 'rotation'), wheel: (-v.hand * n(p, 'rotation') * v.starts) / v.teeth },
+  );
+}
+function pieces(p: Parameters, state: string) {
+  const v = wormValues(p);
+  return wormPieces(composition(p), state, v.distance, v.tip);
+}
+function build(p: Parameters, state: string) {
+  return componentGeometry([manufacturedPart], pieces(p, state));
 }
 const part: PartDefinition = {
   id: 'worm-drive',
+  composition,
+  product: productData as ProductProfile,
   name: 'Worm drive',
   category: 'TRANSMISSION & LINKAGES',
   subgroup: 'GEARS & GEAR DRIVES',
@@ -258,26 +272,11 @@ const part: PartDefinition = {
     return errors;
   },
   buildGeometry: build,
-  python(p, state) {
-    const v = wormValues(p),
-      startZ = -v.length / 2 - v.lead,
-      radialExtra = v.m * 0.1;
-    const grooveRoot = v.pitch / 2 - v.halfRoot,
-      grooveTip = v.pitch / 2 - v.halfTip + radialExtra * Math.tan(v.alpha);
-    const worm = `worm = Part.makeCylinder(${num(v.tip)},${num(v.length)},App.Vector(0,0,${num(-v.length / 2)}))\nfor start in range(${v.starts}):\n    path = Part.Wire(Part.makeLongHelix(${num(v.lead)},${num(v.length + 2 * v.lead)},${num(v.root)},0,${v.hand < 0 ? 'True' : 'False'}).Edges)\n    points = [App.Vector(${num(v.root)},0,${num(-grooveRoot)}),App.Vector(${num(v.tip + radialExtra)},0,${num(-grooveTip)}),App.Vector(${num(v.tip + radialExtra)},0,${num(grooveTip)}),App.Vector(${num(v.root)},0,${num(grooveRoot)})]\n    groove = path.makePipeShell([Part.makePolygon(points + [points[0]])],True,True)\n    groove.rotate(App.Vector(0,0,0),App.Vector(0,0,1),${num(((v.phase + Math.PI / v.starts + (v.hand * 2 * Math.PI * startZ) / v.lead) * 180) / Math.PI)} + start * ${num(360 / v.starts)})\n    groove.translate(App.Vector(0,0,${num(startZ)}))\n    worm = worm.cut(groove)\nworm = worm.removeSplitter()\nworm.rotate(App.Vector(0,0,0),App.Vector(0,1,0),90)\nworm.translate(App.Vector(0,${num(state === 'worm' ? 0 : v.distance + (state === 'exploded' ? v.tip * 2 : 0))},0))`;
-    if (state === 'worm') return worm + '\nshape = worm';
-    const wheel = gearPython(v.wheel, wheelLayers(p)) + '\nwheel = shape';
-    return state === 'wheel'
-      ? wheel
-      : wheel +
-          '\n' +
-          worm +
-          '\nshape = Part.makeCompound([wheel,worm])\ncomponent_labels = ["Worm wheel", "Worm"]';
-  },
+  python: (p, state) => componentPython([manufacturedPart], pieces(p, state)),
   dimensions(p, state) {
     const model = build(p, state);
     try {
-      return new Box3().setFromObject(model).getSize(new Vector3()).toArray() as [
+      return new Box3().setFromObject(model, true).getSize(new Vector3()).toArray() as [
         number,
         number,
         number,

@@ -1,6 +1,7 @@
+import { markSupplierUnit } from '../../../core/supplier-components';
 import type { Parameters } from '../../../core/types';
 import type { Piece } from './assembly';
-import { box, circle, cylinder, plate, union, subtract, type Shape, type Point } from './shapes';
+import { box, circle, cylinder, plate, union, subtract, type Shape, type Point } from '../../../core/assembly/recovery/shapes';
 import { cellLocations, wingLayout, wingTies } from './wing-layout';
 
 const welded = (solid: Shape): Shape => ({
@@ -117,7 +118,9 @@ export function cylindricalPack(p: Parameters): Piece[] {
   );
   cells.forEach(([x, y], i) => {
     const positiveAtTop = i === 0;
-    add(
+    const supplier = {name:'18650 Li-ion cell',procurement:{designation:'Unprotected 18650 cell; measured D'+p.wingCellDiameter+' x'+p.wingCellLength,manufacturer:'',source:''}};
+    const addCell = (label:string,shape:Shape,color:number) => {markSupplierUnit([shape],supplier);add(label,shape,color);};
+    addCell(
       `BUY 18650 cell ${i + 1} · 2S1P · measured Ø${p.wingCellDiameter}×${p.wingCellLength} · ${p.wingCellMass} g · ${positiveAtTop ? 'positive toward servo disk' : 'positive toward FC'}`,
       cylinder(r, +p.wingCellLength - 1, [x, y, w.cellBottom + 0.5]),
       0x487b87,
@@ -125,7 +128,7 @@ export function cylindricalPack(p: Parameters): Piece[] {
     for (const top of [false, true]) {
       const positive = top === positiveAtTop;
       const z = top ? w.cellTop - 0.5 : w.cellBottom;
-      add(
+      addCell(
         `BUY 18650 cell ${i + 1} ${positive ? 'positive' : 'negative'} terminal · steel · envelope reference`,
         cylinder(positive ? 3 : r - 0.3, 0.5, [x, y, z]),
         0x929eac,

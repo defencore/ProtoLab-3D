@@ -5,12 +5,19 @@ export const librarySections: { name: string; icon: PartDefinition['icon']; grou
   {
     name: 'MACHINE TOOLS',
     icon: 'gear',
+    groups: ['CUTTING MACHINES', 'MILLING MACHINES'],
+  },
+  {
+    name: 'WORKSHOP TOOLS',
+    icon: 'wheel',
     groups: [
-      'CUTTING MACHINES',
       'SAW BLADES',
-      'MATERIAL HANDLING',
-      'DRIVES & CONTROLS',
-      'MEASUREMENT & SENSORS',
+      'DRILLING JIGS',
+      'ROUTING & PROFILE TEMPLATES',
+      'BENDING & ASSEMBLY JIGS',
+      'CUTTING & SAWING GUIDES',
+      'TOOL SETTING & PROBES',
+      'COOLING & COOLANT',
     ],
   },
   {
@@ -20,6 +27,7 @@ export const librarySections: { name: string; icon: PartDefinition['icon']; grou
       'ALUMINIUM PROFILES',
       'STEEL & GENERAL SECTIONS',
       'BRACKETS & MOUNTS',
+      'WORK SURFACES & TRAYS',
       'BOXES & CASES',
       'HANDLES HINGES & FEET',
       'CABLE MANAGEMENT',
@@ -57,7 +65,7 @@ export const librarySections: { name: string; icon: PartDefinition['icon']; grou
       'SHAFT SEALS',
       'STATIC SEALS',
       'DAMPERS & ISOLATORS',
-      'ROTARY TABLES',
+      'SLEWING BEARINGS',
     ],
   },
   {
@@ -86,7 +94,7 @@ export const librarySections: { name: string; icon: PartDefinition['icon']; grou
       'JOINTS & ROD ENDS',
       'PISTONS & CONNECTING RODS',
       'MOTION MECHANISMS',
-      'BRAKES & GRIPPERS',
+      'BRAKES',
     ],
   },
   {
@@ -100,12 +108,15 @@ export const librarySections: { name: string; icon: PartDefinition['icon']; grou
     groups: [
       'STEPPER MOTORS',
       'BRUSHLESS MOTORS',
+      'SPINDLE MOTORS',
       'DC & INDUSTRIAL MOTORS',
+      'MOTOR ASSEMBLIES',
       'LINEAR ACTUATORS',
       'SERVOS',
       'SERVO ACCESSORIES',
       'SOLENOIDS',
       'HOLDING MAGNETS',
+      'GRIPPERS',
     ],
   },
   {
@@ -121,16 +132,20 @@ export const librarySections: { name: string; icon: PartDefinition['icon']; grou
     ],
   },
   {
+    name: 'SWITCHES & BUTTONS',
+    icon: 'circuit',
+    groups: ['PANEL CONTROLS'],
+  },
+  {
     name: 'POWER & MOTOR CONTROL',
     icon: 'circuit',
     groups: [
-      'BATTERY PACKS',
-      'RECHARGEABLE CELLS',
-      'PRIMARY BATTERIES',
+      'BATTERIES & HOLDERS',
       'BEC REGULATORS',
       'DC-DC CONVERTERS',
       'SPEED CONTROLLERS',
       'SERVO CONTROLLERS',
+      'INDUSTRIAL CONTROL EQUIPMENT',
       'POWER SWITCHES',
     ],
   },
@@ -156,21 +171,30 @@ export const librarySections: { name: string; icon: PartDefinition['icon']; grou
       'MODEL ROCKETS',
       'BOAT HULLS',
       'GROUND VEHICLES',
+      'AIRFRAME STRUCTURE',
       'WINGS & CONTROL SURFACES',
       'PROPELLERS & ROTORS',
       'DUCTS & LANDING GEAR',
+      'VEHICLE MOUNTS',
     ],
   },
   {
     name: 'CONNECTORS & INTERFACES',
     icon: 'circuit',
-    groups: ['POWER & INDUSTRIAL', 'CABLE ENTRY', 'SRS AIRBAG'],
+    groups: [
+      'POWER & INDUSTRIAL',
+      'PCB CONNECTORS',
+      'LABORATORY TERMINALS',
+      'CABLE ENTRY',
+      'SRS AIRBAG',
+    ],
   },
 ];
 
 // Lead with the primary component, then its mating parts and accessories.
 // IDs are stable across renames and independent package exports.
 const componentOrder: Record<string, string[]> = {
+  'PANEL CONTROLS': ['panel-switch', 'panel-control'],
   'MODEL ROCKETS': [
     'model-rocket-airframe',
     'rocket-parachute-recovery',
@@ -210,7 +234,18 @@ const componentOrder: Record<string, string[]> = {
     'insert-bearing',
   ],
   'LINEAR BUSHINGS': ['linear-bearing', 'round-flange-linear-bearing', 'flanged-linear-bearing'],
-  'BALL SCREWS': ['ball-screw-axis', 'ball-screw', 'ball-nut'],
+  'PROFILE RAILS': ['hiwin-profile-guide', 'linear-guide', 'cnc-guide-rail', 'cnc-guide-carriage'],
+  'BALL SCREWS': [
+    'tbi-ball-screw',
+    'ball-screw-axis',
+    'ball-screw',
+    'ball-nut',
+    'cnc-drive-screw',
+    'cnc-precision-axis',
+    'cnc-precision-screw',
+    'cnc-precision-nut',
+  ],
+  'SHAFT & SCREW SUPPORTS': ['shaft-support', 'cnc-screw-support', 'cnc-precision-support'],
   'GEARS & GEAR DRIVES': [
     'spur-gear',
     'helical-gear',
@@ -218,7 +253,7 @@ const componentOrder: Record<string, string[]> = {
     'bevel-gear-pair',
     'worm-drive',
   ],
-  SERVOS: ['servo-motor'],
+  SERVOS: ['servo-motor', 'bus-servo', 'cnc-feed-servo'],
   'SERVO ACCESSORIES': ['servo-arm', 'servo-gear'],
 };
 

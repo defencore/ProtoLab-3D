@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Bolt-pivot indexing plate with discrete locking positions and a simple carrier mounting pattern.",
+  "processes": ["cutting", "drilling", "assembly"],
+  "releaseRequirements": [
+    "Select measured workpiece dimensions, final datum, tool and suitable material.",
+    "Provide positive clamping and verify guide/pin retention and tool clearance.",
+    "Qualify actual fit, wear, accuracy and working load; prototype geometry is not production approval."
+  ]
+}

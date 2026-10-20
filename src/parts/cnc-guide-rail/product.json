@@ -1,0 +1,10 @@
+{
+  "kind": "detail",
+  "supply": "purchased",
+  "description": "Purchased HGR20 profile rail cut to the customer requested length.",
+  "processes": [],
+  "releaseRequirements": [
+    "Confirm the actual order execution, accuracy/preload class and supplier availability.",
+    "Verify installation interfaces against the ordered product; internal contours are illustrative."
+  ]
+}

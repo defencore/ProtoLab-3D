@@ -11,7 +11,7 @@ import {
   rotate,
   type Shape,
   type Point,
-} from '../../rocket-release/lib/shapes';
+} from '../../../core/assembly/recovery/shapes';
 import { wingDeck } from '../../rocket-release/lib/wing-package';
 import { noseWalls } from '../../rocket-release/lib/nose-support';
 import {

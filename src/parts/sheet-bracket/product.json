@@ -1,0 +1,15 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "Sheet-metal bracket requiring a developed blank and a specified bending route. Sharp preview bends do not define bend allowances.",
+  "processes": [
+    "cutting",
+    "bending",
+    "drilling"
+  ],
+  "releaseRequirements": [
+    "Specify material, blank, manufacturing route and the applicable drawing revision.",
+    "Define functional tolerances, surface finish, edge treatment and an inspection method.",
+    "Specify sheet thickness, bend radius, bend allowance, flat pattern and bend sequence."
+  ]
+}

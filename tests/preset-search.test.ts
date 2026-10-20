@@ -12,6 +12,9 @@ import {
   getPresetParameterRange,
   getFilterFields,
   seedCurrentFilters,
+  compilePresetQuery,
+  presetFacetOptions,
+  matchesPresetPartScope,
 } from '../src/core/preset-search';
 
 const bevel = parts.find((part) => part.id === 'bevel-gear-pair')!;
@@ -62,6 +65,13 @@ function part(id: string, parameters: ParameterDefinition[], presets: Preset[]):
     category: 'BEARINGS',
     subgroup: 'BALL BEARINGS',
     description: '',
+    product: {
+      kind: 'detail',
+      supply: 'manufactured',
+      description: 'Manufactured test fixture.',
+      processes: ['milling'],
+      releaseRequirements: ['Review the configured fixture drawing.'],
+    },
     keywords: ['radial'],
     icon: 'bearing',
     complexity: 'Simple',
@@ -499,7 +509,9 @@ test('bevel stock bore searches match exact combinations and source keyway width
     const result = filterPresets(bevelIndex, seedCurrentFilters(bevel, preset.parameters));
     assert.deepEqual(result.errors, []);
     assert.deepEqual(
-      result.items.filter((entry) => entry.preset.id.startsWith(stockPrefix)).map((entry) => entry.preset.id),
+      result.items
+        .filter((entry) => entry.preset.id.startsWith(stockPrefix))
+        .map((entry) => entry.preset.id),
       [preset.id],
     );
     for (const key of ['pinionBore', 'wheelBore']) {
@@ -511,7 +523,10 @@ test('bevel stock bore searches match exact combinations and source keyway width
   }
 
   const keyWidthField = bevel.parameters.find((field) => field.key === 'wheelBoreKeyWidth')!;
-  for (const [width, count] of [[5, 15], [6, 10]]) {
+  for (const [width, count] of [
+    [5, 15],
+    [6, 10],
+  ]) {
     const filters = emptyPresetFilters(bevel);
     filters.parameters[fieldId(keyWidthField)] = { min: String(width), max: String(width) };
     const result = filterPresets(bevelIndex, filters);
@@ -524,4 +539,128 @@ test('bevel stock bore searches match exact combinations and source keyway width
   const depthFilters = emptyPresetFilters(bevel);
   depthFilters.parameters[fieldId(keyDepthField)] = { min: '2', max: '2' };
   assert.deepEqual(filterPresets(bevelIndex, depthFilters).items, []);
+});
+
+test('metric size queries join whitespace and multiplication signs without matching numbers from unrelated supplier codes', () => {
+  const bolt = parts.find((part) => part.id === 'bolt-screw')!;
+  const index = buildPresetIndex([bolt]);
+  const diameter = fieldId(bolt.parameters.find((field) => field.key === 'diameter')!);
+  const length = fieldId(bolt.parameters.find((field) => field.key === 'length')!);
+  const expected = filterPresets(index, {
+    ...emptyPresetFilters(bolt),
+    parameters: { [diameter]: { min: '8', max: '8' }, [length]: { min: '30', max: '30' } },
+  }).items.map((item) => item.id);
+  assert.equal(expected.length, 14);
+  for (const query of ['M8 × 30', '  M8   x  30  ', 'M8×30', 'M8x30', 'M8 30']) {
+    assert.deepEqual(compilePresetQuery(query).metricSize, { diameter: 8, length: 30 });
+    assert.deepEqual(
+      filterPresets(index, { ...emptyPresetFilters(bolt), query }).items.map((item) => item.id),
+      expected,
+      query,
+    );
+  }
+  const comma = filterPresets(index, { ...emptyPresetFilters(bolt), query: 'M2,5 × 10' });
+  assert.equal(comma.items.length, 6);
+  assert.ok(
+    comma.items.every(
+      (item) => item.preset.parameters.diameter === 2.5 && item.preset.parameters.length === 10,
+    ),
+  );
+  assert.equal(
+    filterPresets(index, { ...emptyPresetFilters(bolt), query: '030361001' }).items[0].preset.id,
+    'gvyntok-030-361-001',
+  );
+});
+
+test('decimal-comma source intervals work without an assumed chosen scalar and invalid control payloads never become unfiltered results', () => {
+  const ranged = {
+    ...part(
+      'range-only',
+      [width],
+      [
+        {
+          id: 'offered',
+          name: '',
+          description: '',
+          parameters: {},
+          catalog: {
+            ...source,
+            verifiedParameters: [],
+            parameterRanges: { width: { min: 2, max: 3 } },
+          },
+        },
+      ],
+    ),
+    defaults: {},
+  };
+  const index = buildPresetIndex([ranged]);
+  const result = filterPresets(index, {
+    ...emptyPresetFilters(ranged),
+    parameters: { [widthId]: { min: '2,5', max: '2.5' } },
+  });
+  assert.deepEqual(
+    result.items.map((item) => item.preset.id),
+    ['offered'],
+  );
+  for (const parameters of [{ [widthId]: { value: '2.5' } }, { [fieldId(drive)]: { min: '1' } }])
+    assert.ok(
+      filterPresets(buildPresetIndex([ball]), { ...emptyPresetFilters(ball), parameters }).errors
+        .length,
+    );
+});
+
+test('selected scope reports unavailable active fields and unpublished categorical source assumptions cannot satisfy a filter', () => {
+  const scoped = filterPresets(index, {
+    ...emptyPresetFilters(roller),
+    parameters: { [fieldId(ball.parameters[4])]: { min: '7' } },
+  });
+  assert.equal(scoped.items.length, 0);
+  assert.equal(scoped.errors.length, 1);
+  const guessed = filterPresets(index, {
+    ...emptyPresetFilters(ball),
+    parameters: { [fieldId(sealed)]: { value: 'true' } },
+  });
+  assert.equal(guessed.items.length, 0);
+});
+
+test('advanced facets preserve query, dimensions and an unavailable own selection with exact contextual counts', () => {
+  const bolt = parts.find((part) => part.id === 'bolt-screw')!;
+  const index = buildPresetIndex([bolt]);
+  const field = getFilterFields([bolt]).find((field) => field.key === 'head')!;
+  const filters = {
+    ...emptyPresetFilters(bolt),
+    query: 'M8 × 30',
+    parameters: { [field.id]: { value: 'retired-head' } },
+  };
+  const options = presetFacetOptions(index, filters, field);
+  assert.equal(options.find((option) => option.value === 'retired-head')!.count, 0);
+  assert.equal(
+    options.reduce((count, option) => count + option.count, 0),
+    14,
+  );
+  assert.equal(filters.parameters[field.id].value, 'retired-head');
+});
+
+test('a browse-family scope keeps all four standoff product types under one selector without changing physical identities', () => {
+  const members = parts.filter((part) => part.browseFamily?.id === 'spacers-standoffs');
+  assert.equal(members.length, 4);
+  assert.ok(members.every((part) => part.browseFamily!.label === 'Spacers & standoffs'));
+  const index = buildPresetIndex(members);
+  const filters = emptyPresetFilters(members[0]);
+  assert.equal(filters.partId, 'spacers-standoffs');
+  const result = filterPresets(index, filters);
+  assert.deepEqual(result.errors, []);
+  assert.equal(result.items.length, 4451);
+  assert.deepEqual(
+    new Set(result.items.map((item) => item.part.id)),
+    new Set(members.map((part) => part.id)),
+  );
+  for (const part of members) {
+    assert.equal(matchesPresetPartScope(part, filters.partId), true);
+    assert.equal(matchesPresetPartScope(part, part.id), true);
+    assert.equal(matchesPresetPartScope(part, 'bolt-screw'), false);
+    const physical = filterPresets(index, { ...filters, partId: part.id });
+    assert.equal(physical.items.length, part.presets.length);
+    assert.ok(physical.items.every((entry) => entry.part.id === part.id));
+  }
 });

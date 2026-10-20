@@ -16,6 +16,6 @@ Wheel type; Wheel diameter; Wheel width; Axle bore; Peripheral roller count; Mod
 
 ## Scope
 
-Omni/mecanum rollers run on bored axles with supporting forks. The fixed hub, forks and axles form one rigid CAD component; rollers remain independent. No roller contact or load simulation. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.
+Omni/mecanum rollers run on bored axles with supporting forks. The fixed hub, forks and axles form one rigid CAD component; rollers remain independent. No roller contact or load simulation. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Simple uses nominal envelopes for declared threads; Full models declared helical features. Features without a defined pitch/profile remain nominal in both modes. No load, pressure or service-life rating is implied.
 
 Separate physical components are exported to FreeCAD. The preview and native export share geometry definitions. This is an independent, editable prototype package; examples without catalog evidence are not manufactured product SKUs.

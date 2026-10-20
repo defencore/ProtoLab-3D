@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -13,7 +15,7 @@ import {
   wireDimensions,
   wireGeometry,
   wireLoftPython,
-} from './lib/core/spring-geometry';
+} from '../../core/hardware/spring-geometry';
 
 function values(p: Parameters, state: string) {
   const w = n(p, 'wireDiameter'),
@@ -79,6 +81,7 @@ const defaults = {
 };
 const part: PartDefinition = {
   id: 'double-torsion-spring',
+  product: productData as ProductProfile,
   name: 'Double torsion spring',
   category: 'SPRINGS',
   subgroup: 'TORSION SPRINGS',
@@ -91,7 +94,7 @@ const part: PartDefinition = {
     numberParameter('outerDiameter', 'Free outside diameter', 'D', 'Coil', 5, 120),
     numberParameter('wireDiameter', 'Wire diameter', 'd', 'Coil', 0.4, 10),
     { ...numberParameter('turns', 'Turns per coil', 'n', 'Coil', 2, 15, 0.25), unit: '' },
-    handedness,
+    handedness(),
     numberParameter('coilGap', 'Inner end centreline gap', 'G', 'Bridge', 3, 100),
     numberParameter('bridgeLength', 'Bridge straight reach', 'U', 'Bridge', 3, 150),
     numberParameter('legLengthA', 'First outer leg', 'A', 'Legs', 3, 200),

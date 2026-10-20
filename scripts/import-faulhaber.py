@@ -1,4 +1,4 @@
-"""Bake FAULHABER STEP selections into runtime meshes and compressed native BREP.
+"""Bake FAULHABER STEP selections into compressed runtime meshes and native BREP.
 Usage: FreeCAD Python scripts/import-faulhaber.py /tmp/faulhaber
 Supplier archives/PDFs stay outside the repository. Mounting plane is Z=0.
 """
@@ -35,7 +35,7 @@ for series, (index, x) in selections.items():
         silver = face.CenterOfMass.z > -0.01 or not series.startswith('AM')
         groups.append([start, len(indices)-start, 0 if silver else 1])
     bbox = shape.optimalBoundingBox(False, False)
-    def packed(fmt, values): return base64.b64encode(struct.pack('<%s%s' % (len(values), fmt), *values)).decode()
+    def packed(fmt, values): return base64.b64encode(zlib.compress(struct.pack('<%s%s' % (len(values), fmt), *values), 9)).decode()
     record = dict(sourceSha256=hashlib.sha256(path.read_bytes()).hexdigest(),
                   sourceFile=path.name, sourceSolid=index, translation=[-x, 0, 0],
                   bounds=[bbox.XMin,bbox.YMin,bbox.ZMin,bbox.XMax,bbox.YMax,bbox.ZMax],

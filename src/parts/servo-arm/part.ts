@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { n } from '../../core/geometry';
 import presetData from './presets.json';
@@ -6,6 +8,7 @@ import { armDirections, buildHorn, hornDimensions, hornPython } from './lib/geom
 
 const part: PartDefinition = {
   id: 'servo-arm',
+  product: productData as ProductProfile,
   name: 'Servo horn',
   category: 'MOTORS & ACTUATORS',
   subgroup: 'SERVO ACCESSORIES',

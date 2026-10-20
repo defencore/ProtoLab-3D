@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Referenced guide plate for bolt circles, rows, rectangular patterns and flanges.",
+  "processes": ["printing", "assembly"],
+  "releaseRequirements": [
+    "Select measured workpiece dimensions, final datum, tool and suitable material.",
+    "Provide positive clamping and verify guide/pin retention and tool clearance.",
+    "Qualify actual fit, wear, accuracy and working load; prototype geometry is not production approval."
+  ]
+}

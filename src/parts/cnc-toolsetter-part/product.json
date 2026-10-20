@@ -1,0 +1,10 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "Individual turned and drilled contact or insulating detail for a flat toolsetter.",
+  "processes": ["turning", "drilling", "milling"],
+  "releaseRequirements": [
+    "Assign conductive aluminium or insulating POM by selected detail.",
+    "Calibrate assembled touch height; detail the electrical interface and fastener torque."
+  ]
+}

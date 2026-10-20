@@ -20,180 +20,235 @@ import module16 from './pillow-block-bearing/index';
 import module17 from './insert-bearing/index';
 import module18 from './one-way-clutch/index';
 import module19 from './csk-clutch/index';
-import module20 from './thrust-roller-bearing/index';
-import module21 from './spherical-thrust-bearing/index';
-import module22 from './combined-bearing/index';
-import module23 from './zarn-bearing/index';
-import module24 from './plain-bearing/index';
-import module25 from './adapter-sleeve/index';
-import module26 from './radial-oil-seal/index';
-import module27 from './wing-screw/index';
-import module28 from './swing-eye-bolt/index';
-import module29 from './lifting-eye-bolt/index';
-import module30 from './bolt-screw/index';
-import module31 from './set-screw/index';
-import module32 from './thin-nut/index';
-import module33 from './wing-nut/index';
-import module34 from './lifting-eye-nut/index';
-import module35 from './coupling-nut/index';
-import module36 from './high-nut/index';
-import module37 from './square-nut/index';
-import module38 from './flange-nut/index';
-import module39 from './nyloc-nut/index';
-import module40 from './cap-nut/index';
-import module41 from './metal-lock-nut/index';
-import module42 from './square-washer/index';
-import module43 from './conical-washer/index';
-import module44 from './toothed-washer/index';
-import module45 from './threaded-rod/index';
-import module46 from './hex-nut/index';
-import module47 from './washer/index';
-import module48 from './retaining-ring/index';
-import module49 from './e-ring/index';
-import module50 from './split-lock-washer/index';
-import module51 from './spring-pin/index';
-import module52 from './cotter-pin/index';
-import module53 from './compression-spring/index';
-import module54 from './extension-spring/index';
-import module55 from './torsion-spring/index';
-import module56 from './double-torsion-spring/index';
-import module57 from './spiral-spring/index';
-import module58 from './worm-drive/index';
-import module59 from './spur-gear/index';
-import module60 from './helical-gear/index';
-import module61 from './bevel-gear/index';
-import module62 from './bevel-gear-pair/index';
-import module63 from './gear-rack/index';
-import module64 from './linear-guide/index';
-import module65 from './round-linear-guide/index';
-import module66 from './ball-screw/index';
-import module67 from './ball-nut/index';
-import module68 from './ball-screw-axis/index';
-import module69 from './jaw-coupling/index';
-import module70 from './enclosure/index';
-import module71 from './servo-arm/index';
-import module72 from './servo-gear/index';
-import module73 from './clevis/index';
-import module74 from './piston/index';
-import module75 from './connecting-rod/index';
-import module76 from './l-bracket/index';
-import module77 from './spacer/index';
-import module78 from './aluminium-profile/index';
-import module79 from './wheel/index';
-import module80 from './holding-electromagnet/index';
-import module81 from './tubular-solenoid/index';
-import module82 from './open-frame-solenoid/index';
-import module83 from './servo-motor/index';
-import module84 from './lifting-surface/index';
-import module85 from './stepper-motor/index';
-import module86 from './bldc-motor/index';
-import module87 from './camera/index';
-import module88 from './flight-controller/index';
-import module89 from './lch7-controller/index';
-import module90 from './bec/index';
-import module91 from './esc/index';
-import module92 from './gps-tracker/index';
-import module93 from './recovery-buzzer/index';
-import module94 from './dc-dc-converter/index';
-import module95 from './raspberry-pi/index';
-import module96 from './nanopi/index';
-import module97 from './esp32/index';
-import module98 from './nrf52840/index';
-import module99 from './lora-module/index';
-import module100 from './rp-microcontroller/index';
-import module101 from './arduino/index';
-import module102 from './srs-connector/index';
-import module103 from './lipo-battery/index';
-import module104 from './bus-servo-driver/index';
-import module105 from './li-ion-cell/index';
-import module106 from './pwm-switch/index';
-import module107 from './standard-battery/index';
-import module108 from './thread-tool/index';
-import module109 from './co2-cartridge/index';
-import module110 from './srs-igniter/index';
-import module111 from './srs-retainer/index';
-import module112 from './aircraft-airframe/index';
-import module113 from './model-rocket-airframe/index';
-import module114 from './rocket-parachute-recovery/index';
-import module115 from './rocket-co2-recovery/index';
-import module116 from './rocket-airbrakes/index';
-import module117 from './rocket-release/index';
-import module118 from './clamp-band-release/index';
-import module119 from './boat-hull/index';
-import module120 from './multicopter-frame/index';
-import module121 from './dowel-pin/index';
-import module122 from './t-slot-nut/index';
-import module123 from './threaded-insert/index';
-import module124 from './blind-rivet/index';
-import module125 from './shaft-key/index';
-import module126 from './shaft/index';
-import module127 from './shaft-collar/index';
-import module128 from './plain-bushing/index';
-import module129 from './o-ring/index';
-import module130 from './seal-profile/index';
-import module131 from './vibration-mount/index';
-import module132 from './shaft-coupling/index';
-import module133 from './universal-joint/index';
-import module134 from './bearing-locknut/index';
-import module135 from './disc-wave-spring/index';
-import module136 from './strut/index';
-import module137 from './gearbox/index';
-import module138 from './bevel-gearbox-42/index';
-import module139 from './differential/index';
-import module140 from './belt-drive/index';
-import module141 from './chain-drive/index';
-import module142 from './cable-hardware/index';
-import module143 from './shaft-support/index';
-import module144 from './lead-screw-axis/index';
-import module145 from './linear-stage/index';
-import module146 from './industrial-motor/index';
-import module147 from './linear-actuator/index';
-import module148 from './structural-section/index';
-import module149 from './slot-profile/index';
-import module150 from './sheet-bracket/index';
-import module151 from './fluid-cylinder/index';
-import module152 from './fluid-fitting/index';
-import module153 from './fluid-valve/index';
-import module154 from './fluid-pump/index';
-import module155 from './fluid-hose/index';
-import module156 from './vacuum-cup/index';
-import module157 from './machine-hardware/index';
-import module158 from './cable-carrier/index';
-import module159 from './cooling-fan/index';
-import module160 from './heat-sink/index';
-import module161 from './din-rail/index';
-import module162 from './battery-holder/index';
-import module163 from './industrial-sensor/index';
-import module164 from './panel-control/index';
-import module165 from './electrical-connector/index';
-import module166 from './cable-gland/index';
-import module167 from './propeller/index';
-import module168 from './duct/index';
-import module169 from './landing-gear/index';
-import module170 from './robot-wheel/index';
-import module171 from './track-drive/index';
-import module172 from './brake/index';
-import module173 from './parallel-gripper/index';
-import module174 from './slewing-bearing/index';
-import module175 from './linkage-mechanism/index';
-import module176 from './tracked-chassis/index';
-import module177 from './eccentric-bearing/index';
-import module178 from './eccentric-bushing/index';
-import module179 from './eccentric-cam-follower/index';
-import module180 from './chf-gf5560-180/index';
-import module181 from './faulhaber-bx4/index';
-import module182 from './faulhaber-am/index';
-import module183 from './faulhaber-planetary/index';
-import module184 from './faulhaber-linear-actuator/index';
-import module185 from './faulhaber-linear-motor/index';
-import module186 from './circular-saw-blade/index';
-import module187 from './conveyor-roller/index';
-import module188 from './machine-control/index';
-import module189 from './machine-measurement/index';
-import module190 from './compact-pneumatic-cylinder/index';
-import module191 from './automatic-tube-saw/index';
-import module192 from './automatic-band-saw/index';
-import module193 from './machine-drive-motor/index';
+import module20 from './manufactured-detail/index';
+import module21 from './formed-wire/index';
+import module22 from './purchased-component/index';
+import module23 from './recovery-detail/index';
+import module24 from './purchased-recovery-component/index';
+import module25 from './bus-servo/index';
+import module26 from './thrust-roller-bearing/index';
+import module27 from './spherical-thrust-bearing/index';
+import module28 from './combined-bearing/index';
+import module29 from './zarn-bearing/index';
+import module30 from './plain-bearing/index';
+import module31 from './adapter-sleeve/index';
+import module32 from './radial-oil-seal/index';
+import module33 from './wing-screw/index';
+import module34 from './swing-eye-bolt/index';
+import module35 from './lifting-eye-bolt/index';
+import module36 from './bolt-screw/index';
+import module37 from './set-screw/index';
+import module38 from './thin-nut/index';
+import module39 from './wing-nut/index';
+import module40 from './lifting-eye-nut/index';
+import module41 from './coupling-nut/index';
+import module42 from './high-nut/index';
+import module43 from './square-nut/index';
+import module44 from './flange-nut/index';
+import module45 from './nyloc-nut/index';
+import module46 from './cap-nut/index';
+import module47 from './metal-lock-nut/index';
+import module48 from './square-washer/index';
+import module49 from './conical-washer/index';
+import module50 from './toothed-washer/index';
+import module51 from './threaded-rod/index';
+import module52 from './hex-nut/index';
+import module53 from './washer/index';
+import module54 from './retaining-ring/index';
+import module55 from './e-ring/index';
+import module56 from './split-lock-washer/index';
+import module57 from './spring-pin/index';
+import module58 from './cotter-pin/index';
+import module59 from './compression-spring/index';
+import module60 from './extension-spring/index';
+import module61 from './torsion-spring/index';
+import module62 from './double-torsion-spring/index';
+import module63 from './spiral-spring/index';
+import module64 from './worm-drive/index';
+import module65 from './spur-gear/index';
+import module66 from './helical-gear/index';
+import module67 from './bevel-gear/index';
+import module68 from './bevel-gear-pair/index';
+import module69 from './gear-rack/index';
+import module70 from './hiwin-profile-guide/index';
+import module71 from './linear-guide/index';
+import module72 from './cnc-guide-rail/index';
+import module73 from './cnc-guide-carriage/index';
+import module74 from './cnc-screw-support/index';
+import module75 from './cnc-drive-screw/index';
+import module76 from './cnc-feed-servo/index';
+import module77 from './cnc-precision-nut/index';
+import module78 from './cnc-precision-support/index';
+import module79 from './cnc-precision-screw/index';
+import module80 from './cnc-precision-axis/index';
+import module81 from './cnc-precision-coupling/index';
+import module82 from './round-linear-guide/index';
+import module83 from './tbi-ball-screw/index';
+import module84 from './ball-screw/index';
+import module85 from './ball-nut/index';
+import module86 from './ball-screw-axis/index';
+import module87 from './jaw-coupling/index';
+import module88 from './enclosure/index';
+import module89 from './servo-arm/index';
+import module90 from './servo-gear/index';
+import module91 from './clevis/index';
+import module92 from './piston/index';
+import module93 from './connecting-rod/index';
+import module94 from './l-bracket/index';
+import module95 from './spacer/index';
+import module96 from './aluminium-profile/index';
+import module97 from './pcb-standoff/index';
+import module98 from './pcb-standoff-insert/index';
+import module99 from './dremec-spacer-sleeve/index';
+import module100 from './wheel/index';
+import module101 from './holding-electromagnet/index';
+import module102 from './tubular-solenoid/index';
+import module103 from './open-frame-solenoid/index';
+import module104 from './servo-motor/index';
+import module105 from './lifting-surface/index';
+import module106 from './stepper-motor/index';
+import module107 from './bldc-motor/index';
+import module108 from './camera/index';
+import module109 from './flight-controller/index';
+import module110 from './lch7-controller/index';
+import module111 from './bec/index';
+import module112 from './esc/index';
+import module113 from './gps-tracker/index';
+import module114 from './recovery-buzzer/index';
+import module115 from './dc-dc-converter/index';
+import module116 from './raspberry-pi/index';
+import module117 from './nanopi/index';
+import module118 from './esp32/index';
+import module119 from './nrf52840/index';
+import module120 from './lora-module/index';
+import module121 from './rp-microcontroller/index';
+import module122 from './arduino/index';
+import module123 from './srs-connector/index';
+import module124 from './lipo-battery/index';
+import module125 from './bus-servo-driver/index';
+import module126 from './li-ion-cell/index';
+import module127 from './pwm-switch/index';
+import module128 from './standard-battery/index';
+import module129 from './thread-tool/index';
+import module130 from './co2-cartridge/index';
+import module131 from './srs-igniter/index';
+import module132 from './srs-retainer/index';
+import module133 from './aircraft-airframe/index';
+import module134 from './model-rocket-airframe/index';
+import module135 from './rocket-parachute-recovery/index';
+import module136 from './rocket-co2-recovery/index';
+import module137 from './rocket-airbrakes/index';
+import module138 from './rocket-release/index';
+import module139 from './clamp-band-release/index';
+import module140 from './boat-hull/index';
+import module141 from './boat-hull-frame/index';
+import module142 from './multicopter-frame/index';
+import module143 from './multicopter-frame-component/index';
+import module144 from './rover-chassis/index';
+import module145 from './wing-rib/index';
+import module146 from './fuselage-bulkhead/index';
+import module147 from './tube-arm-clamp/index';
+import module148 from './vehicle-mounting-plate/index';
+import module149 from './cnc-servo-drive/index';
+import module150 from './tube-drill-jig/index';
+import module151 from './drill-pattern-jig/index';
+import module152 from './v-block-drill-jig/index';
+import module153 from './shaft-end-drill-jig/index';
+import module154 from './edge-dowel-jig/index';
+import module155 from './angle-drill-jig/index';
+import module156 from './router-template/index';
+import module157 from './chain-drill-slot-jig/index';
+import module158 from './corner-radius-template/index';
+import module159 from './wire-bending-jig/index';
+import module160 from './indexing-disc-jig/index';
+import module161 from './tube-coping-template/index';
+import module162 from './manual-miter-guide/index';
+import module163 from './dowel-pin/index';
+import module164 from './t-slot-nut/index';
+import module165 from './threaded-insert/index';
+import module166 from './blind-rivet/index';
+import module167 from './shaft-key/index';
+import module168 from './shaft/index';
+import module169 from './shaft-collar/index';
+import module170 from './plain-bushing/index';
+import module171 from './cnc-spindle/index';
+import module172 from './cnc-spindle-mount/index';
+import module173 from './o-ring/index';
+import module174 from './seal-profile/index';
+import module175 from './vibration-mount/index';
+import module176 from './shaft-coupling/index';
+import module177 from './universal-joint/index';
+import module178 from './bearing-locknut/index';
+import module179 from './disc-wave-spring/index';
+import module180 from './strut/index';
+import module181 from './gearbox/index';
+import module182 from './bevel-gearbox-42/index';
+import module183 from './differential/index';
+import module184 from './belt-drive/index';
+import module185 from './chain-drive/index';
+import module186 from './cable-hardware/index';
+import module187 from './shaft-support/index';
+import module188 from './lead-screw-axis/index';
+import module189 from './linear-stage/index';
+import module190 from './industrial-motor/index';
+import module191 from './linear-actuator/index';
+import module192 from './structural-section/index';
+import module193 from './slot-profile/index';
+import module194 from './sheet-bracket/index';
+import module195 from './fluid-cylinder/index';
+import module196 from './fluid-fitting/index';
+import module197 from './fluid-valve/index';
+import module198 from './fluid-pump/index';
+import module199 from './fluid-hose/index';
+import module200 from './vacuum-cup/index';
+import module201 from './machine-hardware/index';
+import module202 from './cable-carrier/index';
+import module203 from './cooling-fan/index';
+import module204 from './heat-sink/index';
+import module205 from './din-rail/index';
+import module206 from './battery-holder/index';
+import module207 from './industrial-sensor/index';
+import module208 from './panel-control/index';
+import module209 from './electrical-connector/index';
+import module210 from './cable-gland/index';
+import module211 from './propeller/index';
+import module212 from './duct/index';
+import module213 from './landing-gear/index';
+import module214 from './robot-wheel/index';
+import module215 from './track-drive/index';
+import module216 from './brake/index';
+import module217 from './parallel-gripper/index';
+import module218 from './slewing-bearing/index';
+import module219 from './linkage-mechanism/index';
+import module220 from './tracked-chassis/index';
+import module221 from './eccentric-bearing/index';
+import module222 from './eccentric-bushing/index';
+import module223 from './eccentric-cam-follower/index';
+import module224 from './chf-gf5560-180/index';
+import module225 from './faulhaber-bx4/index';
+import module226 from './faulhaber-am/index';
+import module227 from './faulhaber-planetary/index';
+import module228 from './faulhaber-linear-actuator/index';
+import module229 from './faulhaber-linear-motor/index';
+import module230 from './circular-saw-blade/index';
+import module231 from './conveyor-roller/index';
+import module232 from './machine-control/index';
+import module233 from './machine-measurement/index';
+import module234 from './compact-pneumatic-cylinder/index';
+import module235 from './cnc-worktable/index';
+import module236 from './cnc-process-accessory/index';
+import module237 from './cnc-toolsetter-part/index';
+import module238 from './cnc-limit-sensor/index';
+import module239 from './cnc-linear-encoder/index';
+import module240 from './automatic-tube-saw/index';
+import module241 from './automatic-band-saw/index';
+import module242 from './cnc-frame-part/index';
+import module243 from './machine-drive-motor/index';
+import module244 from './cnc-milling-machine/index';
+import module245 from './panel-switch/index';
+import module246 from './servo-toggle-actuator/index';
+import module247 from './laboratory-terminal/index';
+import module248 from './signal-connector/index';
 
 export const parts = registerPartModules([
   module0,
@@ -390,4 +445,59 @@ export const parts = registerPartModules([
   module191,
   module192,
   module193,
+  module194,
+  module195,
+  module196,
+  module197,
+  module198,
+  module199,
+  module200,
+  module201,
+  module202,
+  module203,
+  module204,
+  module205,
+  module206,
+  module207,
+  module208,
+  module209,
+  module210,
+  module211,
+  module212,
+  module213,
+  module214,
+  module215,
+  module216,
+  module217,
+  module218,
+  module219,
+  module220,
+  module221,
+  module222,
+  module223,
+  module224,
+  module225,
+  module226,
+  module227,
+  module228,
+  module229,
+  module230,
+  module231,
+  module232,
+  module233,
+  module234,
+  module235,
+  module236,
+  module237,
+  module238,
+  module239,
+  module240,
+  module241,
+  module242,
+  module243,
+  module244,
+  module245,
+  module246,
+  module247,
+  module248,
 ]);

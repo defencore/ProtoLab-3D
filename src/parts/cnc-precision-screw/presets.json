@@ -1,0 +1,134 @@
+[
+  {
+    "id": "r25-10t3-fdi-1100",
+    "name": "R25-10T3-FDI ground raceway 1100 mm",
+    "description": "Factory finished custom-end shaft; no delivered precision certificate inferred.",
+    "parameters": {
+      "model": "r25-10t3-fdi",
+      "racewayLength": 1100,
+      "driveExtension": 0
+    },
+    "catalog": {
+      "designation": "R25-10T3-FDI ordered custom shaft",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN manufacturer publication",
+      "sourceUrl": "https://www.hiwin.de/medias/sys_master/hiwinDocumentMedia/hc3/h19/14757156519966/HIWIN%20CATALOGUE%20BALLSCREWS/HIWIN-CATALOGUE-BALLSCREWS.PDF?attachment=true",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published ground shaft nominal diameter, lead/root; HIWIN suggested BK/BF retained interfaces.",
+        "limitations": "RacewayLength/end fit/tolerances are authored order requirements, not manufacturer SKU facts. Full circular groove representative, OEM grinding/contact unpublished. C3/preload certificate required, no relabelled SFU.",
+        "sourceUrl": "https://www.hiwin.de/medias/sys_master/hiwinDocumentMedia/hc3/h19/14757156519966/HIWIN%20CATALOGUE%20BALLSCREWS/HIWIN-CATALOGUE-BALLSCREWS.PDF?attachment=true",
+        "sourceSha256": "f114561afd963a75b1c493f4db58c9667233f44c0b141da948883a9b2ab3e5e4"
+      },
+      "alternateSourceUrls": [
+        "https://www.hiwin.com/wp-content/uploads/Ballscrew-Catalog.pdf",
+        "https://www.hiwin.com/wp-content/uploads/HIWIN-Ballscrew-Supports-Catalog.pdf"
+      ],
+      "specifications": [
+        {
+          "label": "Procurement",
+          "value": "Order the actual matched HIWIN FDI ground set with requested C3/3% preload, specified raceway length and factory-approved end drawing. Shaft/nut records share one matched-set procurement requirement."
+        },
+        {
+          "label": "Retaining grooves",
+          "value": "Authored externalring groove selected using MISUMI/JIS table; supplier approval needed."
+        },
+        {
+          "label": "Current primary source",
+          "value": "Current manufacturer download page resolves the supplied2026catalogue; FDI table6.7 dimensions match the chosen interfaces. ArchiveSHA256 is recorded; custom-end/C3/preload delivery still requires factory acceptance."
+        }
+      ]
+    }
+  },
+  {
+    "id": "r25-10t3-fdi-1800",
+    "name": "R25-10T3-FDI ground raceway 1800 mm",
+    "description": "Factory finished custom-end shaft; no delivered precision certificate inferred.",
+    "parameters": {
+      "model": "r25-10t3-fdi",
+      "racewayLength": 1800,
+      "driveExtension": 0
+    },
+    "catalog": {
+      "designation": "R25-10T3-FDI ordered custom shaft",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN manufacturer publication",
+      "sourceUrl": "https://www.hiwin.de/medias/sys_master/hiwinDocumentMedia/hc3/h19/14757156519966/HIWIN%20CATALOGUE%20BALLSCREWS/HIWIN-CATALOGUE-BALLSCREWS.PDF?attachment=true",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published ground shaft nominal diameter, lead/root; HIWIN suggested BK/BF retained interfaces.",
+        "limitations": "RacewayLength/end fit/tolerances are authored order requirements, not manufacturer SKU facts. Full circular groove representative, OEM grinding/contact unpublished. C3/preload certificate required, no relabelled SFU.",
+        "sourceUrl": "https://www.hiwin.de/medias/sys_master/hiwinDocumentMedia/hc3/h19/14757156519966/HIWIN%20CATALOGUE%20BALLSCREWS/HIWIN-CATALOGUE-BALLSCREWS.PDF?attachment=true",
+        "sourceSha256": "f114561afd963a75b1c493f4db58c9667233f44c0b141da948883a9b2ab3e5e4"
+      },
+      "alternateSourceUrls": [
+        "https://www.hiwin.com/wp-content/uploads/Ballscrew-Catalog.pdf",
+        "https://www.hiwin.com/wp-content/uploads/HIWIN-Ballscrew-Supports-Catalog.pdf"
+      ],
+      "specifications": [
+        {
+          "label": "Procurement",
+          "value": "Order the actual matched HIWIN FDI ground set with requested C3/3% preload, specified raceway length and factory-approved end drawing. Shaft/nut records share one matched-set procurement requirement."
+        },
+        {
+          "label": "Retaining grooves",
+          "value": "Authored externalring groove selected using MISUMI/JIS table; supplier approval needed."
+        },
+        {
+          "label": "Current primary source",
+          "value": "Current manufacturer download page resolves the supplied2026catalogue; FDI table6.7 dimensions match the chosen interfaces. ArchiveSHA256 is recorded; custom-end/C3/preload delivery still requires factory acceptance."
+        }
+      ]
+    }
+  },
+  {
+    "id": "r20-5t3-fdi-460",
+    "name": "R20-5T3-FDI ground raceway 460 mm",
+    "description": "Factory finished custom-end shaft; no delivered precision certificate inferred.",
+    "parameters": {
+      "model": "r20-5t3-fdi",
+      "racewayLength": 460,
+      "driveExtension": 0
+    },
+    "catalog": {
+      "designation": "R20-5T3-FDI ordered custom shaft",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN manufacturer publication",
+      "sourceUrl": "https://www.hiwin.de/medias/sys_master/hiwinDocumentMedia/hc3/h19/14757156519966/HIWIN%20CATALOGUE%20BALLSCREWS/HIWIN-CATALOGUE-BALLSCREWS.PDF?attachment=true",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published ground shaft nominal diameter, lead/root; HIWIN suggested BK/BF retained interfaces.",
+        "limitations": "RacewayLength/end fit/tolerances are authored order requirements, not manufacturer SKU facts. Full circular groove representative, OEM grinding/contact unpublished. C3/preload certificate required, no relabelled SFU.",
+        "sourceUrl": "https://www.hiwin.de/medias/sys_master/hiwinDocumentMedia/hc3/h19/14757156519966/HIWIN%20CATALOGUE%20BALLSCREWS/HIWIN-CATALOGUE-BALLSCREWS.PDF?attachment=true",
+        "sourceSha256": "f114561afd963a75b1c493f4db58c9667233f44c0b141da948883a9b2ab3e5e4"
+      },
+      "alternateSourceUrls": [
+        "https://www.hiwin.com/wp-content/uploads/Ballscrew-Catalog.pdf",
+        "https://www.hiwin.com/wp-content/uploads/HIWIN-Ballscrew-Supports-Catalog.pdf"
+      ],
+      "specifications": [
+        {
+          "label": "Procurement",
+          "value": "Order the actual matched HIWIN FDI ground set with requested C3/3% preload, specified raceway length and factory-approved end drawing. Shaft/nut records share one matched-set procurement requirement."
+        },
+        {
+          "label": "Retaining grooves",
+          "value": "Authored externalring groove selected using MISUMI/JIS table; supplier approval needed."
+        },
+        {
+          "label": "Current primary source",
+          "value": "Current manufacturer download page resolves the supplied2026catalogue; FDI table6.7 dimensions match the chosen interfaces. ArchiveSHA256 is recorded; custom-end/C3/preload delivery still requires factory acceptance."
+        }
+      ]
+    }
+  }
+]

@@ -1,7 +1,8 @@
 import type { PartDefinition } from './types';
+import { validateProductProfile } from './product-library';
 
 /** Increment only when the portable part contract changes incompatibly. */
-export const PART_MODULE_API_VERSION = 1;
+export const PART_MODULE_API_VERSION = 2;
 
 export interface PartModule {
   apiVersion: typeof PART_MODULE_API_VERSION;
@@ -16,6 +17,10 @@ export const PART_ID_PATTERN = /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/;
 /** Fail at the module boundary, before malformed definitions reach the interface. */
 export function registerPartModules(modules: readonly PartModule[]): PartDefinition[] {
   const ids = new Set<string>();
+  const browseFamilies = new Map<
+    string,
+    { label: string; category: string; subgroup: string; primary?: string }
+  >();
   let defaultSelection: string | undefined;
   for (const module of modules) {
     if (!module || module.apiVersion !== PART_MODULE_API_VERSION)
@@ -35,6 +40,52 @@ export function registerPartModules(modules: readonly PartModule[]): PartDefinit
     const fail = (message: string): never => {
       throw new Error(`${part.id}: ${message}`);
     };
+    if (part.browseFamily !== undefined) {
+      const family = part.browseFamily;
+      if (
+        !family ||
+        typeof family !== 'object' ||
+        Array.isArray(family) ||
+        typeof family.id !== 'string' ||
+        !PART_ID_PATTERN.test(family.id) ||
+        typeof family.label !== 'string' ||
+        !family.label.trim() ||
+        (family.primary !== undefined && typeof family.primary !== 'boolean')
+      )
+        fail(
+          'Browse family requires a valid lowercase ID, nonempty label and optional boolean primary.',
+        );
+      const previous = browseFamilies.get(family.id);
+      if (previous) {
+        if (previous.label !== family.label)
+          fail(`Browse family ${family.id} has inconsistent labels.`);
+        if (previous.category !== part.category || previous.subgroup !== part.subgroup)
+          fail(`Browse family ${family.id} must share its engineering category and subgroup.`);
+        if (family.primary && previous.primary)
+          fail(
+            `Browse family ${family.id} has more than one primary: ${previous.primary}, ${part.id}.`,
+          );
+        if (family.primary) previous.primary = part.id;
+      } else
+        browseFamilies.set(family.id, {
+          label: family.label,
+          category: part.category,
+          subgroup: part.subgroup,
+          ...(family.primary ? { primary: part.id } : {}),
+        });
+    }
+    const productErrors = validateProductProfile(part.product);
+    if (productErrors.length) fail(`Invalid product profile: ${productErrors.join(' ')}`);
+    if (part.composition !== undefined && typeof part.composition !== 'function')
+      fail('Composition must be a function when provided.');
+    if (
+      part.product.supply === 'manufactured' &&
+      ['assembly', 'complex', 'kit'].includes(part.product.kind) &&
+      typeof part.composition !== 'function'
+    )
+      fail(
+        'Manufactured assemblies, complexes and kits require a physical library composition function.',
+      );
     if (!Number.isFinite(module.order) || module.order < 0)
       fail('Module order must be finite and nonnegative.');
     for (const key of [
@@ -55,14 +106,27 @@ export function registerPartModules(modules: readonly PartModule[]): PartDefinit
       if (!field.key || keys.has(field.key))
         fail(`Duplicate or missing parameter key: ${field.key}.`);
       keys.add(field.key);
-      if (!['number', 'select', 'boolean'].includes(field.type))
+      if (!['number', 'select', 'boolean', 'text'].includes(field.type))
         fail(`Unknown parameter type for ${field.key}.`);
-      if (!(field.key in part.defaults)) fail(`Missing default for ${field.key}.`);
+      if (field.optionalWhenHidden !== undefined && typeof field.optionalWhenHidden !== 'boolean')
+        fail(`optionalWhenHidden must be boolean for ${field.key}.`);
+      if (field.optionalWhenHidden && typeof field.visibleWhen !== 'function')
+        fail(`Optional hidden field ${field.key} requires a visibility condition.`);
+      if (!(field.key in part.defaults)) {
+        if (
+          field.optionalWhenHidden &&
+          !field.visibleWhen!(part.defaults, part.states?.[0]?.id ?? 'default')
+        )
+          continue;
+        fail(`Missing default for ${field.key}.`);
+      }
       const value = part.defaults[field.key];
       if (field.type === 'number' && (typeof value !== 'number' || !Number.isFinite(value)))
         fail(`Default ${field.key} must be a finite number.`);
       if (field.type === 'boolean' && typeof value !== 'boolean')
         fail(`Default ${field.key} must be boolean.`);
+      if (field.type === 'text' && typeof value !== 'string')
+        fail(`Default ${field.key} must be a string.`);
       if (field.type === 'select' && !field.options?.some((option) => option.value === value))
         fail(`Default ${field.key} must be one of its options.`);
     }
@@ -113,6 +177,11 @@ export function registerPartModules(modules: readonly PartModule[]): PartDefinit
       if (!keys.has(selection.key))
         fail(`Catalog selection refers to unknown parameter ${selection.key}.`);
   }
+  for (const module of modules)
+    if (browseFamilies.has(module.part.id) && module.part.browseFamily?.id !== module.part.id)
+      throw new Error(
+        `Browse family ID ${module.part.id} conflicts with an unrelated physical part.`,
+      );
   const byId = new Map(modules.map((module) => [module.part.id, module]));
   const complete = new Set<string>();
   const visit = (id: string, ancestors: string[] = []) => {

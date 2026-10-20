@@ -1,7 +1,7 @@
 import type { Parameters } from '../../../core/types';
 import type { Piece } from './assembly';
 import { layout } from './motion';
-import { box, cylinder, union, subtract, transform, rotate, type Shape } from './shapes';
+import { box, cylinder, union, subtract, transform, rotate, type Shape } from '../../../core/assembly/recovery/shapes';
 import { screw, matingHole } from './hardware';
 export const servoTiePosts: [number, number][] = [
   [-13.5, -10],

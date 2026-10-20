@@ -1,13 +1,16 @@
+import { withGeometryMode } from '../src/core/geometry-mode';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { Box3, Mesh, Vector3 } from 'three';
 import type { Parameters } from '../src/core/types';
 import part from '../src/parts/thread-tool/part';
-import { values, radiusAt } from '../src/parts/thread-tool/lib/thread';
+import { values, radiusAt as threadRadiusAt } from '../src/parts/thread-tool/lib/thread';
 import { updateParameters } from '../src/parts/thread-tool/configurator';
 import { disposeModel } from '../src/core/mechanical';
 import { validateParameters } from '../src/core/validation';
 import { generateScript } from '../src/core/freecad';
+const radiusAt = (...args: [Parameters, string, number, number]) =>
+  withGeometryMode('full', () => threadRadiusAt(...args));
 function checkMesh(mesh: Mesh, label: string) {
   const positions = mesh.geometry.getAttribute('position');
   const indices = mesh.geometry.index;
@@ -53,7 +56,7 @@ for (const preset of part.presets)
   for (const state of part.states!)
     test(`${preset.id}/${state.id}: valid closed Boolean tool`, () => {
       assert.deepEqual(validateParameters(part, preset.parameters, state.id), []);
-      const model = part.buildGeometry(preset.parameters, state.id);
+      const model = withGeometryMode('full', () => part.buildGeometry(preset.parameters, state.id));
       try {
         assert.equal(model.children.length, 1);
         model.traverse((o) => {
@@ -147,7 +150,7 @@ for (const form of ['tool', 'round-cap', 'hex-cap'])
       test(`${form}/${state}/hole=${boreEnabled}: closed material boundary and actual cap envelope`, () => {
         const p = { ...part.defaults, form, boreEnabled, length: 4 };
         assert.deepEqual(validateParameters(part, p, state), []);
-        const model = part.buildGeometry(p, state);
+        const model = withGeometryMode('full', () => part.buildGeometry(p, state));
         try {
           model.traverse((o) => {
             if (o instanceof Mesh) checkMesh(o, `${form}/${state}`);
@@ -196,7 +199,7 @@ test(
       for (const state of ['external', 'internal'])
         for (const boreEnabled of [false, true]) {
           const p = { ...part.defaults, form, boreEnabled, length: 4 };
-          const model = part.buildGeometry(p, state);
+          const model = withGeometryMode('full', () => part.buildGeometry(p, state));
           let volume = 0;
           model.traverse((o) => {
             if (!(o instanceof Mesh)) return;
@@ -215,7 +218,7 @@ test(
             form,
             state,
             hole: boreEnabled,
-            code: part.python(p, state),
+            code: withGeometryMode('full', () => part.python(p, state)),
             volume,
             dimensions: part.dimensions(p, state),
           });

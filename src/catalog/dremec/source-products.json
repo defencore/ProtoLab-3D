@@ -1,0 +1,499 @@
+{
+  "schemaVersion": 1,
+  "shopUrl": "https://dremec.ua/shop/",
+  "shopPages": [
+    "https://dremec.ua/shop/",
+    "https://dremec.ua/shop/page/2/"
+  ],
+  "listedParents": 28,
+  "listingEvidence": "Indexed public UA shop pages enumerate 20 + 8 parent products; direct UA transport resets and variation records are not confirmed.",
+  "products": [
+    {
+      "url": "https://dremec.ua/product/mama-mama-latyn/",
+      "name": "DREMEC DII hex brass metric",
+      "kind": "DII",
+      "shape": "hex",
+      "material": "brass",
+      "threadFamily": "metric",
+      "parentSku": "DREMEC-M-M-LATUN",
+      "printedPages": [
+        8
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 187
+    },
+    {
+      "url": "https://dremec.ua/product/mama-mama-unc/",
+      "name": "DREMEC DII hex brass UNC",
+      "kind": "DII",
+      "shape": "hex",
+      "material": "brass",
+      "threadFamily": "UNC",
+      "parentSku": null,
+      "printedPages": [
+        9
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 6
+    },
+    {
+      "url": "https://dremec.ua/product/mama-mama-stal/",
+      "name": "DREMEC DII hex steel metric",
+      "kind": "DII",
+      "shape": "hex",
+      "material": "steel",
+      "threadFamily": "metric",
+      "parentSku": null,
+      "printedPages": [
+        10
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 195
+    },
+    {
+      "url": "https://dremec.ua/product/mama-mama-aluminium/",
+      "name": "DREMEC DII hex aluminium metric",
+      "kind": "DII",
+      "shape": "hex",
+      "material": "aluminium",
+      "threadFamily": "metric",
+      "parentSku": null,
+      "printedPages": [
+        11
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 128
+    },
+    {
+      "url": "https://dremec.ua/product/mama-mama-stainless/",
+      "name": "DREMEC DII hex stainless-steel metric",
+      "kind": "DII",
+      "shape": "hex",
+      "material": "stainless-steel",
+      "threadFamily": "metric",
+      "parentSku": null,
+      "printedPages": [
+        12
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 126
+    },
+    {
+      "url": "https://dremec.ua/product/mama-mama-polyamid-latun/",
+      "name": "DREMEC DII hex polyamide-brass metric",
+      "kind": "DII",
+      "shape": "hex",
+      "material": "polyamide-brass",
+      "threadFamily": "metric",
+      "parentSku": null,
+      "printedPages": [
+        13,
+        14
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 361
+    },
+    {
+      "url": "https://dremec.ua/product/%D0%B4%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D1%86%D1%96%D0%B9%D0%BD%D1%96-%D1%81%D1%82%D1%96%D0%B9%D0%BA%D0%B8-internal-internal-%D0%BF%D0%BE%D0%BB%D1%96%D0%B0%D0%BC%D1%96%D0%B4-%D1%87%D0%BE/",
+      "name": "DREMEC DII hex polyamide metric",
+      "kind": "DII",
+      "shape": "hex",
+      "material": "polyamide",
+      "threadFamily": "metric",
+      "parentSku": null,
+      "printedPages": [
+        15
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 341
+    },
+    {
+      "url": "https://dremec.ua/product/mizhplatni-stiyki-polyamid-mama-mama/",
+      "name": "DREMEC DII round polyamide metric",
+      "kind": "DII",
+      "shape": "round",
+      "material": "polyamide",
+      "threadFamily": "metric",
+      "parentSku": null,
+      "printedPages": [
+        16
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 210
+    },
+    {
+      "url": "https://dremec.ua/product/papa-mama-latyn/",
+      "name": "DREMEC DIA hex brass metric",
+      "kind": "DIA",
+      "shape": "hex",
+      "material": "brass",
+      "threadFamily": "metric",
+      "parentSku": null,
+      "printedPages": [
+        17
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 187
+    },
+    {
+      "url": "https://dremec.ua/product/mama-papa-latun-selftapping/",
+      "name": "DREMEC DIA hex brass self-tapping",
+      "kind": "DIA",
+      "shape": "hex",
+      "material": "brass",
+      "threadFamily": "self-tapping",
+      "parentSku": null,
+      "printedPages": [
+        18
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 34
+    },
+    {
+      "url": "https://dremec.ua/product/mama-papa-unc/",
+      "name": "DREMEC DIA hex brass UNC",
+      "kind": "DIA",
+      "shape": "hex",
+      "material": "brass",
+      "threadFamily": "UNC",
+      "parentSku": null,
+      "printedPages": [
+        19
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 24
+    },
+    {
+      "url": "https://dremec.ua/product/papa-mama-stal/",
+      "name": "DREMEC DIA hex steel metric",
+      "kind": "DIA",
+      "shape": "hex",
+      "material": "steel",
+      "threadFamily": "metric",
+      "parentSku": null,
+      "printedPages": [
+        20
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 195
+    },
+    {
+      "url": "https://dremec.ua/product/papa-mama-selftapping/",
+      "name": "DREMEC DIA hex steel self-tapping",
+      "kind": "DIA",
+      "shape": "hex",
+      "material": "steel",
+      "threadFamily": "self-tapping",
+      "parentSku": null,
+      "printedPages": [
+        21
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 34
+    },
+    {
+      "url": "https://dremec.ua/product/papa-mama-aluminium/",
+      "name": "DREMEC DIA hex aluminium metric",
+      "kind": "DIA",
+      "shape": "hex",
+      "material": "aluminium",
+      "threadFamily": "metric",
+      "parentSku": null,
+      "printedPages": [
+        22
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 126
+    },
+    {
+      "url": "https://dremec.ua/product/papa-mama-stainless/",
+      "name": "DREMEC DIA hex stainless-steel metric",
+      "kind": "DIA",
+      "shape": "hex",
+      "material": "stainless-steel",
+      "threadFamily": "metric",
+      "parentSku": null,
+      "printedPages": [
+        23
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 124
+    },
+    {
+      "url": "https://dremec.ua/product/papa-mama-polyamid-latyn/",
+      "name": "DREMEC DIA hex polyamide-brass metric",
+      "kind": "DIA",
+      "shape": "hex",
+      "material": "polyamide-brass",
+      "threadFamily": "metric",
+      "parentSku": null,
+      "printedPages": [
+        24,
+        25
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 281
+    },
+    {
+      "url": "https://dremec.ua/product/%D0%B4%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D1%86%D1%96%D0%B9%D0%BD%D1%96-%D1%81%D1%82%D1%96%D0%B9%D0%BA%D0%B8-%D0%B2%D0%BD%D1%83%D1%82%D1%80%D1%96%D1%88%D0%BD%D1%8F-%D0%B7%D0%BE%D0%B2%D0%BD%D1%96%D1%88/",
+      "name": "DREMEC DIA hex polyamide metric",
+      "kind": "DIA",
+      "shape": "hex",
+      "material": "polyamide",
+      "threadFamily": "metric",
+      "parentSku": null,
+      "printedPages": [
+        26
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 297
+    },
+    {
+      "url": "https://dremec.ua/product/mizhplatni-stoyki-polyamid-mama-papa/",
+      "name": "DREMEC DIA round polyamide metric",
+      "kind": "DIA",
+      "shape": "round",
+      "material": "polyamide",
+      "threadFamily": "metric",
+      "parentSku": null,
+      "printedPages": [
+        27
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 225
+    },
+    {
+      "url": "https://dremec.ua/product/papa-papa-latun/",
+      "name": "DREMEC DAA hex brass metric",
+      "kind": "DAA",
+      "shape": "hex",
+      "material": "brass",
+      "threadFamily": "metric",
+      "parentSku": null,
+      "printedPages": [
+        28
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 181
+    },
+    {
+      "url": "https://dremec.ua/product/papa-papa-steel/",
+      "name": "DREMEC DAA hex steel metric",
+      "kind": "DAA",
+      "shape": "hex",
+      "material": "steel",
+      "threadFamily": "metric",
+      "parentSku": null,
+      "printedPages": [
+        29
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 195
+    },
+    {
+      "url": "https://dremec.ua/product/papa-papa-aluminium/",
+      "name": "DREMEC DAA hex aluminium metric",
+      "kind": "DAA",
+      "shape": "hex",
+      "material": "aluminium",
+      "threadFamily": "metric",
+      "parentSku": null,
+      "printedPages": [
+        30
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 126
+    },
+    {
+      "url": "https://dremec.ua/product/papa-papa-stainless/",
+      "name": "DREMEC DAA hex stainless-steel metric",
+      "kind": "DAA",
+      "shape": "hex",
+      "material": "stainless-steel",
+      "threadFamily": "metric",
+      "parentSku": null,
+      "printedPages": [
+        31
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 107
+    },
+    {
+      "url": "https://dremec.ua/product/dremec-daa-papa-papa-polyamidlatyn/",
+      "name": "DREMEC DAA hex polyamide-brass metric",
+      "kind": "DAA",
+      "shape": "hex",
+      "material": "polyamide-brass",
+      "threadFamily": "metric",
+      "parentSku": null,
+      "printedPages": [
+        32,
+        33
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 361
+    },
+    {
+      "url": "https://dremec.ua/product/papa-papa-polyamid/",
+      "name": "DREMEC DAA hex polyamide metric",
+      "kind": "DAA",
+      "shape": "hex",
+      "material": "polyamide",
+      "threadFamily": "metric",
+      "parentSku": null,
+      "printedPages": [
+        34
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerConfigurations": 199
+    },
+    {
+      "url": "https://dremec.ua/product/spacer-sleeves-latun/",
+      "name": "DREMEC DH metal sleeve brass",
+      "kind": "DH",
+      "shape": "round",
+      "material": "brass",
+      "materialGrade": "CuZn39Pb3 / 2.0401",
+      "finish": "nickel-plated",
+      "parentSku": null,
+      "printedPages": [
+        36
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerRange": {
+        "outerDiameterMin": 4,
+        "outerDiameterMax": 36,
+        "bodyLengthMin": 1,
+        "bodyLengthMax": 60,
+        "boreDiameter": "freely-selectable; dimensions must be specified by customer"
+      },
+      "drawingUrl": "https://shop.dremec.de/api/downloads/Dremec_Katalog_Deutsch_doppelseitig.pdf#page=19",
+      "fixedVariationRecords": [],
+      "evidenceNotes": [
+        "Official p.36 publishes a custom size range, not a finite fixed-SKU dimension table.",
+        "UA dropdown sets do not prove all diameter/length combinations and do not specify the free bore."
+      ],
+      "manufacturerConfigurations": 0
+    },
+    {
+      "url": "https://dremec.ua/product/spacer-sleeves-steel/",
+      "name": "DREMEC DH metal sleeve steel",
+      "kind": "DH",
+      "shape": "round",
+      "material": "steel",
+      "materialGrade": "11SMnPb30 / 1.0718",
+      "finish": "zinc-plated",
+      "parentSku": "SLEEVE-ST-ZN",
+      "printedPages": [
+        36
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerRange": {
+        "outerDiameterMin": 4,
+        "outerDiameterMax": 36,
+        "bodyLengthMin": 1,
+        "bodyLengthMax": 60,
+        "boreDiameter": "freely-selectable; dimensions must be specified by customer"
+      },
+      "drawingUrl": "https://shop.dremec.de/api/downloads/Dremec_Katalog_Deutsch_doppelseitig.pdf#page=19",
+      "fixedVariationRecords": [],
+      "evidenceNotes": [
+        "Official p.36 publishes a custom size range, not a finite fixed-SKU dimension table.",
+        "UA dropdown sets do not prove all diameter/length combinations and do not specify the free bore."
+      ],
+      "manufacturerOrderExample": {
+        "sku": "324/2.1x10",
+        "bodyDiameter": 4,
+        "boreDiameter": 2.1,
+        "bodyLength": 10,
+        "printedPage": 36,
+        "evidenceKind": "printed-order-example"
+      },
+      "manufacturerConfigurations": 0
+    },
+    {
+      "url": "https://dremec.ua/product/spacer-sleeves-alu/",
+      "name": "DREMEC DH metal sleeve aluminium",
+      "kind": "DH",
+      "shape": "round",
+      "material": "aluminium",
+      "materialGrade": "AlCuBiPb / 3.1655",
+      "finish": "self-finish",
+      "parentSku": "SLEEVE-AL-SF",
+      "printedPages": [
+        36
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerRange": {
+        "outerDiameterMin": 4,
+        "outerDiameterMax": 36,
+        "bodyLengthMin": 1,
+        "bodyLengthMax": 60,
+        "boreDiameter": "freely-selectable; dimensions must be specified by customer"
+      },
+      "drawingUrl": "https://shop.dremec.de/api/downloads/Dremec_Katalog_Deutsch_doppelseitig.pdf#page=19",
+      "fixedVariationRecords": [],
+      "evidenceNotes": [
+        "Official p.36 publishes a custom size range, not a finite fixed-SKU dimension table.",
+        "UA dropdown sets do not prove all diameter/length combinations and do not specify the free bore."
+      ],
+      "manufacturerConfigurations": 0
+    },
+    {
+      "url": "https://dremec.ua/product/spacer-sleeves-stainless/",
+      "name": "DREMEC DH metal sleeve stainless-steel",
+      "kind": "DH",
+      "shape": "round",
+      "material": "stainless-steel",
+      "materialGrade": "1.4305",
+      "finish": "self-finish",
+      "parentSku": null,
+      "printedPages": [
+        36
+      ],
+      "sourceKind": "indexed-UA-shop-listing",
+      "localVariationStatus": "not-confirmed",
+      "manufacturerRange": {
+        "outerDiameterMin": 4,
+        "outerDiameterMax": 36,
+        "bodyLengthMin": 1,
+        "bodyLengthMax": 60,
+        "boreDiameter": "freely-selectable; dimensions must be specified by customer"
+      },
+      "drawingUrl": "https://shop.dremec.de/api/downloads/Dremec_Katalog_Deutsch_doppelseitig.pdf#page=19",
+      "fixedVariationRecords": [],
+      "evidenceNotes": [
+        "Official p.36 publishes a custom size range, not a finite fixed-SKU dimension table.",
+        "UA dropdown sets do not prove all diameter/length combinations and do not specify the free bore."
+      ],
+      "manufacturerConfigurations": 0
+    }
+  ]
+}

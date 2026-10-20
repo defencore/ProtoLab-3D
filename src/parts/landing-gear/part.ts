@@ -1,11 +1,28 @@
+import detailLibrary from '../manufactured-detail/part';
+import {
+  detailGeometry,
+  detailPython,
+  detailDimensions,
+  withRadialSegments,
+} from '../../core/assembly/detail-instances';
+import { shapeComposition } from '../../core/component-recipes';
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { n } from '../../core/geometry';
 import { defaults, parameters } from './configurator';
 import presets from './presets.json';
 import { pieces } from './lib/model';
-import * as assembly from './lib/assembly';
 const part: PartDefinition = {
+  composition: (p) =>
+    shapeComposition(
+      pieces({ ...p }, 'assembled').map((piece) => ({
+        ...piece,
+        shape: withRadialSegments(piece.shape, 96),
+      })),
+    ),
   id: 'landing-gear',
+  product: productData as ProductProfile,
   name: 'Landing gear strut',
   category: 'VEHICLE STRUCTURES',
   subgroup: 'DUCTS & LANDING GEAR',
@@ -70,9 +87,21 @@ const part: PartDefinition = {
       errors.push('Knee offset must stay below 40% of the horizontal brace span.');
     return errors;
   },
-  buildGeometry: (p, s) => assembly.geometry(pieces(p, s)),
-  dimensions: (p, s) => assembly.dimensions(pieces(p, s)),
-  python: (p, s) => assembly.python(pieces(p, s)),
+  buildGeometry: (p, s) =>
+    detailGeometry(
+      detailLibrary,
+      pieces(p, s).map((piece) => ({ ...piece, shape: withRadialSegments(piece.shape, 96) })),
+    ),
+  dimensions: (p, s) =>
+    detailDimensions(
+      detailLibrary,
+      pieces(p, s).map((piece) => ({ ...piece, shape: withRadialSegments(piece.shape, 96) })),
+    ),
+  python: (p, s) =>
+    detailPython(
+      detailLibrary,
+      pieces(p, s).map((piece) => ({ ...piece, shape: withRadialSegments(piece.shape, 96) })),
+    ),
   notes:
     'Mechanical layout with bored fork, axle, retainers, wheel hubs, sliding-strut envelope and clevis-mounted drag braces. Dimensions are editable prototype choices. Two-link brace is a fixed pose, without retraction actuation or an over-centre lock. No internal damper, bearings, fastener threads or load rating are modeled. Z is vertical; wheel and pivot axes are Y.',
   sources: [],

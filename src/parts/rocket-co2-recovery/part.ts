@@ -1,8 +1,11 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters } from './configurator';
 import presets from './presets.json';
 import { pieces } from './lib/model';
 import * as assembly from './lib/assembly';
+import { compositionComponents } from './lib/composition';
 import { assessment, layout } from './lib/layout';
 import { h7Spec, h7BoardOffset } from './lib/h7-controller';
 import { blindTapDimensions, blindTapNote } from './lib/mechanical';
@@ -54,6 +57,8 @@ const states = [
 ];
 const part: PartDefinition = {
   id: 'rocket-co2-recovery',
+  preview: 'worker',
+  product: productData as ProductProfile,
   name: 'CO2 Parachute Recovery Assembly',
   category: 'VEHICLE STRUCTURES',
   subgroup: 'MODEL ROCKETS',
@@ -124,6 +129,18 @@ const part: PartDefinition = {
   buildGeometry: (p, s) => assembly.geometry(pieces(p, s)),
   dimensions: (p, s) => assembly.dimensions(pieces(p, s)),
   python: (p, s) => assembly.python(pieces(p, s)),
+  composition(p) {
+    return {
+      components: compositionComponents(pieces(p, 'assembled')),
+      issues: [
+        'Existing gas valve and actuator have no supplied model or pressure qualification; obtain their actual component and installation records.',
+        'Confirm materials, blank allowances, process qualification, datums, fits, seals, measured shear force and recovery loads before fabrication.',
+        'Simple uses nominal male and female envelopes; Full models their declared helical flanks. Obtain actual UNF thread tolerances and verify a printed fit coupon against supplied hardware.',
+        'Routing, packed fabric and interface envelopes are inspection references and are excluded from the physical bill of materials.',
+        'Supplier references do not confirm delivered interfaces or availability; unresolved supplier records remain project requirements.',
+      ],
+    };
+  },
   assessment(p) {
     const a = assessment(p),
       v = layout(p);

@@ -1,3 +1,4 @@
+import { currentGeometryMode } from '../../../../core/geometry-mode';
 import {
   Box3,
   BufferGeometry,
@@ -92,7 +93,7 @@ export function ballScrewLayout(p: Parameters) {
     double: p.family === 'DFU' || p.family === 'DFI',
     oblong: p.family === 'SFI' || p.family === 'DFI',
     endReturn: ['SFS', 'SFE', 'SFH', 'SFY'].includes(String(p.family)),
-    detail: p.detail === 'raceway',
+    detail: currentGeometryMode() === 'full',
   };
 }
 
@@ -483,7 +484,7 @@ export function ballScrewGeometry(p: Parameters, state: string, nutOnly = false)
     number,
     number,
   ];
-  const signature = JSON.stringify(p),
+  const signature = currentGeometryMode() + JSON.stringify(p),
     previous = lastBounds.get(p);
   const cached =
     previous?.signature === signature
@@ -501,7 +502,7 @@ export function ballScrewDimensions(
 ): [number, number, number] {
   const previous = lastBounds.get(p),
     cached =
-      previous?.signature === JSON.stringify(p)
+      previous?.signature === currentGeometryMode() + JSON.stringify(p)
         ? previous.states.get(`${state}:${nutOnly}`)
         : undefined;
   if (cached) return cached;
@@ -568,7 +569,7 @@ export function validateBallScrew(p: Parameters, nutOnly = false): string[] {
   if (!nutOnly) {
     if (v.detail && ((v.end - v.start) / v.lead) * n(p, 'starts') > 1200)
       errors.push(
-        'Detailed models support up to 1,200 groove turns. Shorten the shaft or select Envelope detail.',
+        'Full supports up to 1,200 groove turns. Shorten the shaft or switch to Simple.',
       );
     if (v.end - v.start < v.nl + 2 * v.lead)
       errors.push('The threaded shaft must be longer than the nut plus two leads.');
@@ -606,20 +607,24 @@ export function ballScrewPython(p: Parameters, state: string, nutOnly = false): 
       'import math',
       '# Nominal raceway and return geometry for prototype layout; accuracy class is metadata.',
       'components = []',
-      '# Move the periodic profile seam away from its intersection with the cylindrical bore.',
-      `def groove_tool(low, high, phase):`,
-      `    path = Part.Wire(Part.makeLongHelix(${num(v.lead)}, high-low+${num(2 * v.lead)}, ${num(v.track)}, 0, ${v.hand < 0 ? 'True' : 'False'}).Edges)`,
-      `    profile = Part.Wire([Part.Ellipse(App.Vector(${num(v.track)},0,${num((v.cutter * Math.hypot(v.track, v.lead / (2 * Math.PI))) / v.track)}),App.Vector(${num(v.track + v.cutter)},0,0),App.Vector(${num(v.track)},0,0)).toShape(0.37,0.37+2*math.pi)])`,
-      '    tool = path.makePipeShell([profile], True, True)',
-      `    start = low-${num(v.lead)}`,
-      `    tool.rotate(App.Vector(),App.Vector(0,0,1),phase+${num((v.hand * 360) / v.lead)}*start)`,
-      '    tool.translate(App.Vector(0,0,start))',
-      '    tools = []',
-      `    for start_index in range(${n(p, 'starts')}):`,
-      '        copy = tool.copy()',
-      `        copy.rotate(App.Vector(),App.Vector(0,0,1),start_index*${num(360 / n(p, 'starts'))})`,
-      '        tools.append(copy)',
-      '    return Part.makeCompound(tools)',
+      ...(v.detail
+        ? [
+            '# Move the periodic profile seam away from its intersection with the cylindrical bore.',
+            `def groove_tool(low, high, phase):`,
+            `    path = Part.Wire(Part.makeLongHelix(${num(v.lead)}, high-low+${num(2 * v.lead)}, ${num(v.track)}, 0, ${v.hand < 0 ? 'True' : 'False'}).Edges)`,
+            `    profile = Part.Wire([Part.Ellipse(App.Vector(${num(v.track)},0,${num((v.cutter * Math.hypot(v.track, v.lead / (2 * Math.PI))) / v.track)}),App.Vector(${num(v.track + v.cutter)},0,0),App.Vector(${num(v.track)},0,0)).toShape(0.37,0.37+2*math.pi)])`,
+            '    tool = path.makePipeShell([profile], True, True)',
+            `    start = low-${num(v.lead)}`,
+            `    tool.rotate(App.Vector(),App.Vector(0,0,1),phase+${num((v.hand * 360) / v.lead)}*start)`,
+            '    tool.translate(App.Vector(0,0,start))',
+            '    tools = []',
+            `    for start_index in range(${n(p, 'starts')}):`,
+            '        copy = tool.copy()',
+            `        copy.rotate(App.Vector(),App.Vector(0,0,1),start_index*${num(360 / n(p, 'starts'))})`,
+            '        tools.append(copy)',
+            '    return Part.makeCompound(tools)',
+          ]
+        : []),
       'def annulus(outer,inner,height,z):',
       '    return Part.makeCylinder(outer,height,App.Vector(0,0,z)).cut(Part.makeCylinder(inner,height+2,App.Vector(0,0,z-1)))',
     ];

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "sourceUrl": "https://shop.dremec.de/api/downloads/Dremec_Katalog_Deutsch_doppelseitig.pdf",
+  "sourceSha256": "747c189d30afb816825a33934aec4f08c1c3154543ba48338f489862ecb9fd55",
+  "sourceRows": 162,
+  "catalogConfigurations": 4250,
+  "completePrincipalDimensions": 4207,
+  "unresolvedPrincipalDimensions": 43,
+  "byType": {
+    "DII": 1554,
+    "DIA": 1527,
+    "DAA": 1169
+  },
+  "byMaterial": {
+    "brass": 619,
+    "steel": 619,
+    "aluminium": 380,
+    "stainless-steel": 357,
+    "polyamide-brass": 1003,
+    "polyamide": 1272
+  },
+  "localVariationsConfirmed": 0,
+  "localStockConfirmed": false,
+  "metalSleeves": "Supplier-declared custom outer diameter/bore/length; fixed catalog variants are not inferred.",
+  "excludedPrintedPages": [
+    35,
+    37
+  ],
+  "scopeNotes": [
+    "Printed p.35 sign-holder construction is not one of the 28 UA product parents.",
+    "Printed p.37 nylon sleeves are outside the four offered UA metal sleeve parents.",
+    "Self-tapping pitch and DIN76-B relief dimensions are not supplied; principal dimensions do not imply exact production geometry.",
+    "Standard rows and explicit integer-length ranges are expanded; unspecified material/thread/length cross-products are not."
+  ]
+}

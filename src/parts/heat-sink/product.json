@@ -1,0 +1,14 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "Machined or cut extrusion heat sink. Thermal performance must be established for the actual material, finish and installation.",
+  "processes": [
+    "milling",
+    "cutting"
+  ],
+  "releaseRequirements": [
+    "Specify material, blank, manufacturing route and the applicable drawing revision.",
+    "Define functional tolerances, surface finish, edge treatment and an inspection method.",
+    "Verify thermal resistance, fastening and interface material against the application heat load."
+  ]
+}

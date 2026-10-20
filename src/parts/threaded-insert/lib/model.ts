@@ -1,7 +1,7 @@
 import type { Parameters } from '../../../core/types';
 import { n } from '../../../core/geometry';
-import type { Piece } from './assembly';
-import { C, union, cut, ring, teeth, finish } from './helpers';
+import type { Piece } from '../../../core/assembly/mechanical/assembly';
+import { C, union, cut, ring, teeth, finish } from '../../../core/assembly/mechanical/helpers';
 export function pieces(p: Parameters, state: string): Piece[] {
   const d = n(p, 'diameter'),
     b = n(p, 'bore'),

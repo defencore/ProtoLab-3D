@@ -1,7 +1,7 @@
 import type { Parameters } from '../../../core/types';
-import { union, subtract } from './shapes';
-import { C, hex } from './helpers';
-import type { Piece } from './assembly';
+import { union, subtract } from '../../../core/assembly/boundary/shapes';
+import { C, hex } from '../../../core/assembly/boundary-link/helpers';
+import type { Piece } from '../../../core/assembly/boundary/assembly';
 export function pieces(p: Parameters): Piece[] {
   return [
     {

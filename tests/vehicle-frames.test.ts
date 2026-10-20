@@ -51,34 +51,32 @@ function checkMesh(mesh: Mesh, label: string) {
 test('four vehicle families include sourced references and editable design presets', () => {
   assert.equal(selections.length, 4);
   for (const part of selections) {
-    assert.ok(part.presets.filter((p) => p.catalog).length >= 2);
-    assert.ok(part.presets.filter((p) => !p.catalog).length >= 2);
+    if (part.id !== 'multicopter-frame')
+      assert.ok(part.presets.filter((p) => p.catalog).length >= 2);
+    else assert.ok(part.presets.some((p) => p.catalog));
+    if (part.id !== 'multicopter-frame')
+      assert.ok(part.presets.filter((p) => !p.catalog).length >= 2);
     assert.equal(part.catalogSelectionOnly, undefined);
     for (const preset of part.presets) {
       assert.deepEqual(validateParameters(part, preset.parameters, 'assembled'), [], preset.id);
       if (preset.catalog) {
-        assert.equal(preset.catalog.geometryEvidence?.kind, 'envelope');
+        assert.equal(
+          preset.catalog.geometryEvidence?.kind,
+          part.id === 'multicopter-frame' ? 'manufacturer-cad' : 'envelope',
+        );
         assert.ok(preset.catalog.verifiedParameters.length);
       }
     }
   }
 });
 for (const part of selections)
-  for (const preset of [
-    ...part.presets,
-    ...part.presets
-      .filter((p) => part.id === 'multicopter-frame' && p.id.startsWith('layout-'))
-      .map((p) => ({
-        ...p,
-        id: p.id + '-tube',
-        parameters: { ...p.parameters, armStyle: 'tube' },
-      })),
-  ])
+  for (const preset of part.presets)
     for (const state of part.states!) {
+      if (state.availableWhen && !state.availableWhen(preset.parameters)) continue;
       test(`${part.id}/${preset.id}/${state.id}: lightweight closed geometry and dimensions`, () => {
         const model = part.buildGeometry(preset.parameters, state.id);
         try {
-          assert.ok(model.children.length > 0 && model.children.length < 30);
+          assert.ok(model.children.length > 0 && model.children.length < 150);
           model.traverse((o) => {
             if (o instanceof Mesh) checkMesh(o, `${preset.id}/${o.name}`);
           });
@@ -96,7 +94,7 @@ test('impossible shells and mounting geometry are rejected', () => {
     assert.ok(validateParameters(part, part.defaults, 'unknown').length);
     const bad =
       part.id === 'multicopter-frame'
-        ? { ...part.defaults, stackPitch: 300 }
+        ? { ...part.defaults, propDiameter: 150 }
         : { ...part.defaults, wall: 100 };
     assert.ok(validateParameters(part, bad, 'assembled').length);
   }

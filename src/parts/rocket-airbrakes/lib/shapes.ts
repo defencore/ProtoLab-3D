@@ -1,7 +1,3 @@
-import modeling from '@jscad/modeling';
-import type { Geom3 } from '@jscad/modeling/src/geometries/types';
-import { Group, Mesh, MeshStandardMaterial } from 'three';
-import { solidUnionMesh } from '../../../core/solid-union';
 export type Vec = [number, number, number];
 export type Point = [number, number];
 export type Shape =
@@ -62,102 +58,12 @@ export const ring = (
   y = 0,
 ): Shape =>
   subtract(cylinder(outer, height, [x, y, z]), cylinder(inner, height + 2, [x, y, z - 1]));
-function solid(s: Shape): Geom3 {
-  const { primitives: p, transforms: t, booleans: b, extrusions: e } = modeling;
-  switch (s.kind) {
-    case 'sphere':
-      return p.sphere({ radius: s.radius, center: s.origin, segments: 48 });
-    case 'box':
-      return p.cuboid({ size: s.size, center: s.origin.map((v, i) => v + s.size[i] / 2) as Vec });
-    case 'cylinder': {
-      let v = p.cylinder({ radius: s.radius, height: s.height, segments: 120 });
-      if (s.axis === 'x') v = t.rotateY(Math.PI / 2, v);
-      const center = [...s.origin] as Vec;
-      center[s.axis === 'x' ? 0 : 2] += s.height / 2;
-      return t.translate(center, v);
-    }
-    case 'plate': {
-      let section = p.polygon({ points: s.outline });
-      if (s.holes.length)
-        section = b.subtract(section, ...s.holes.map((points) => p.polygon({ points })));
-      return t.translate([0, 0, s.z], e.extrudeLinear({ height: s.height }, section));
-    }
-    case 'rotate':
-      return (s.axis === 'x' ? t.rotateX : t.rotateY)((s.angle * Math.PI) / 180, solid(s.child));
-    case 'transform':
-      return t.translate(s.offset, t.rotateZ((s.angle * Math.PI) / 180, solid(s.child)));
-    case 'subtract':
-      return b.subtract(...s.children.map(solid));
-    case 'union':
-      return b.union(...s.children.map(solid));
-  }
-}
-const cache = new Map<string, Group>();
-export function component(shape: Shape, label: string, color: number): Group {
-  const key = JSON.stringify(shape);
-  let template = cache.get(key);
-  if (!template) {
-    const value = solid(shape),
-      bounds = modeling.measurements.measureBoundingBox(value);
-    template = solidUnionMesh(value);
-    template.position.set(...(bounds[0].map((v, i) => (v + bounds[1][i]) / 2) as Vec));
-    cache.set(key, template);
-    if (cache.size > 180) {
-      const first = cache.keys().next().value!;
-      cache.get(first)!.traverse((o) => {
-        if (o instanceof Mesh) {
-          o.geometry.dispose();
-          (o.material as MeshStandardMaterial).dispose();
-        }
-      });
-      cache.delete(first);
-    }
-  }
-  const result = template.clone(true);
-  result.name = label;
-  result.traverse((o) => {
-    if (o instanceof Mesh) {
-      o.geometry = o.geometry.clone();
-      o.material = (o.material as MeshStandardMaterial).clone();
-      (o.material as MeshStandardMaterial).color.setHex(color);
-      o.name = label;
-    }
-  });
-  const group = new Group().add(result);
-  group.name = label;
-  return group;
-}
-const vector = (v: Vec) => `App.Vector(${v.join(',')})`;
-function wire(points: Point[], z: number): string {
-  if (points.length >= 24) {
-    const x = points.reduce((v, p) => v + p[0], 0) / points.length,
-      y = points.reduce((v, p) => v + p[1], 0) / points.length;
-    const radius = Math.hypot(points[0][0] - x, points[0][1] - y);
-    if (points.every((p) => Math.abs(Math.hypot(p[0] - x, p[1] - y) - radius) < 1e-7))
-      return `Part.Wire([Part.makeCircle(${radius},App.Vector(${x},${y},${z}))])`;
-  }
-  return `Part.makePolygon([${[...points, points[0]].map(([x, y]) => vector([x, y, z])).join(',')}])`;
-}
-export function pythonShape(s: Shape): string {
-  switch (s.kind) {
-    case 'sphere':
-      return `Part.makeSphere(${s.radius},${vector(s.origin)})`;
-    case 'box':
-      return `Part.makeBox(${s.size.join(',')},${vector(s.origin)})`;
-    case 'cylinder':
-      return `Part.makeCylinder(${s.radius},${s.height},${vector(s.origin)},${vector(s.axis === 'x' ? [1, 0, 0] : [0, 0, 1])})`;
-    case 'plate':
-      return `${s.holes.reduce((v, hole) => `${v}.cut(Part.Face(${wire(hole, s.z)}))`, `Part.Face(${wire(s.outline, s.z)})`)}.extrude(App.Vector(0,0,${s.height}))`;
-    case 'rotate':
-      return `_air_tilt(${pythonShape(s.child)},${s.angle},${JSON.stringify(s.axis)})`;
-    case 'transform':
-      return `_air_place(${pythonShape(s.child)},${s.angle},${JSON.stringify(s.offset)})`;
-    default:
-      return s.children
-        .slice(1)
-        .reduce(
-          (v, child) => `${v}.${s.kind === 'union' ? 'fuse' : 'cut'}(${pythonShape(child)})`,
-          pythonShape(s.children[0]),
-        );
-  }
+
+export interface Piece {
+  shape: Shape;
+  label: string;
+  color: number;
+  z?: number;
+  position?: Vec;
+  angle?: number;
 }

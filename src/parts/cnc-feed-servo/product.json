@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "One source-specific purchased supplier unit; visual subdivisions are not independent fabricated products.",
+  "processes": [],
+  "releaseRequirements": [
+    "Obtain the actual supplier quote, ordered execution and factory-approved installation drawing.",
+    "Verify delivered dimensions, ratings, materials and operating limits before acceptance.",
+    "Prototype CAD topology and envelope fit do not certify production performance or unspecified supplier internals."
+  ]
+}

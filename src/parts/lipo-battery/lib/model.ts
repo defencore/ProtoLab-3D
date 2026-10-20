@@ -1,7 +1,7 @@
 import type { Parameters } from '../../../core/types';
 import models from './models.json';
-import { roundedRect, subtract } from './shapes';
-import type { Piece } from './assembly';
+import { roundedRect, subtract } from '../../../core/assembly/electronics/shapes';
+import type { Piece } from '../../../core/assembly/electronics/assembly';
 export function pieces(p: Parameters): Piece[] {
   const m = models.find((m) => m.id === p.model);
   if (!m) throw new Error('Unknown battery model');

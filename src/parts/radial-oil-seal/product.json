@@ -1,0 +1,10 @@
+{
+  "kind": "detail",
+  "supply": "purchased",
+  "description": "Identified supplier component. Source dimensions and illustrative details remain subject to confirmation for the exact ordered execution.",
+  "processes": [],
+  "releaseRequirements": [
+    "Select the actual supplier execution with a complete order designation and source reference.",
+    "Verify installation dimensions, mounting interfaces, operating ratings and the ordered product revision."
+  ]
+}

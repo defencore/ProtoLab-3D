@@ -1,0 +1,86 @@
+[
+  {
+    "id": "ecm-a3h-c20807rs1",
+    "name": "ECM-A3H-C20807RS1",
+    "description": "750 W high-inertia factory servo, no holding brake.",
+    "parameters": {
+      "model": "ecm-a3h-c20807rs1",
+      "includeKey": true
+    },
+    "catalog": {
+      "designation": "ECM-A3H-C20807RS1",
+      "manufacturer": "Delta",
+      "sourceName": "Delta manufacturer publication",
+      "sourceUrl": "https://deltaww.com.ua/deltaww/ECMA-C3.pdf",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Current C20807 drawing: flange80, PCD90 four6.6, pilot70x3, shaft19h6x40, key6, M6 depth10; body115.8/153.2.",
+        "limitations": "Housing corner contours, connector/end form and loose-key shape are illustrative; source S standard connectors are not J waterproof. Continuous output requires maker 250x250x6 aluminium cooling plate. Brake is static hold, not a dynamic stop.",
+        "sourceUrl": "https://deltaww.com.ua/deltaww/ECMA-C3.pdf",
+        "sourceSha256": "b26e45c2342f708ed1bdbf5c564516ef4b5944b8d4031d58c27d03bc85565648"
+      },
+      "attributes": {
+        "ratedTorque": 2.39,
+        "brake": false,
+        "mass": 2.8
+      },
+      "specifications": [
+        {
+          "label": "Continuous torque",
+          "value": "2.39 Nm through 3000 rpm at maker rated cooling/temperature conditions; 8.36 Nm intermittent."
+        },
+        {
+          "label": "Factory brake",
+          "value": "No brake."
+        },
+        {
+          "label": "Drawing revision",
+          "value": "Manufacturer ECM-A3 common catalogue, printed64; current encoder-2 execution. Original ASDA-A3 maker20210104 torque curve H0807."
+        }
+      ]
+    }
+  },
+  {
+    "id": "ecm-a3h-c20807ss1",
+    "name": "ECM-A3H-C20807SS1",
+    "description": "750 W high-inertia factory servo with 24 V holding brake.",
+    "parameters": {
+      "model": "ecm-a3h-c20807ss1",
+      "includeKey": true
+    },
+    "catalog": {
+      "designation": "ECM-A3H-C20807SS1",
+      "manufacturer": "Delta",
+      "sourceName": "Delta manufacturer publication",
+      "sourceUrl": "https://deltaww.com.ua/deltaww/ECMA-C3.pdf",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Current C20807 drawing: flange80, PCD90 four6.6, pilot70x3, shaft19h6x40, key6, M6 depth10; body115.8/153.2.",
+        "limitations": "Housing corner contours, connector/end form and loose-key shape are illustrative; source S standard connectors are not J waterproof. Continuous output requires maker 250x250x6 aluminium cooling plate. Brake is static hold, not a dynamic stop.",
+        "sourceUrl": "https://deltaww.com.ua/deltaww/ECMA-C3.pdf",
+        "sourceSha256": "b26e45c2342f708ed1bdbf5c564516ef4b5944b8d4031d58c27d03bc85565648"
+      },
+      "attributes": {
+        "ratedTorque": 2.39,
+        "brake": true,
+        "mass": 3.6
+      },
+      "specifications": [
+        {
+          "label": "Continuous torque",
+          "value": "2.39 Nm through 3000 rpm at maker rated cooling/temperature conditions; 8.36 Nm intermittent."
+        },
+        {
+          "label": "Factory brake",
+          "value": "24 V / 8 W, >=2.5Nm static hold, <=20ms release /<=60ms pull-in."
+        },
+        {
+          "label": "Drawing revision",
+          "value": "Manufacturer ECM-A3 common catalogue, printed64; current encoder-2 execution. Original ASDA-A3 maker20210104 torque curve H0807."
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,959 @@
+[
+  {
+    "id": "ck-7101syzqe",
+    "name": "C&K 7101SYZQE · SPDT · ON–ON",
+    "description": "Toggle switch. maintained; SPDT; solder lug.",
+    "parameters": {
+      "model": "ck-7101syzqe",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "7101SYZQE",
+      "manufacturer": "C&K / Littelfuse",
+      "sourceName": "C&K 7000 series manufacturer drawing",
+      "sourceUrl": "https://www.ckswitches.com/media/1394/7000toggle.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "C&K / Littelfuse",
+        "actuation": "Toggle",
+        "behavior": "Maintained",
+        "circuit": "SPDT",
+        "positions": 2,
+        "terminalCount": 3,
+        "termination": "Solder lug",
+        "mounting": "Threaded bushing",
+        "mountDiameter": 6.35,
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "S actuator Ø2.92 × 10.67 mm; Y bushing 1/4-40 × 8.89 mm; 12.70 mm body length; SP 6.86 mm / DP 11.43 mm width; 8.89 mm body depth; 4.70 mm terminal pitch; 25° lever travel.",
+        "limitations": "Installation reconstruction from published dimensions. Internal contacts, thread helices, edge radii, terminal hole details and moulded lettering are omitted. Undimensioned shell details and nut sizes are illustrative. Not original manufacturer CAD. The 6.35 mm characteristic is the nominal bushing interface; add the drawing tolerance and anti-rotation keyway for a production panel.",
+        "sourceUrl": "https://www.ckswitches.com/media/1394/7000toggle.pdf"
+      }
+    }
+  },
+  {
+    "id": "ck-7103syzqe",
+    "name": "C&K 7103SYZQE · SPDT · ON–OFF–ON",
+    "description": "Toggle switch. maintained; SPDT; solder lug.",
+    "parameters": {
+      "model": "ck-7103syzqe",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "7103SYZQE",
+      "manufacturer": "C&K / Littelfuse",
+      "sourceName": "C&K 7000 series manufacturer drawing",
+      "sourceUrl": "https://www.ckswitches.com/media/1394/7000toggle.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "C&K / Littelfuse",
+        "actuation": "Toggle",
+        "behavior": "Maintained",
+        "circuit": "SPDT",
+        "positions": 3,
+        "terminalCount": 3,
+        "termination": "Solder lug",
+        "mounting": "Threaded bushing",
+        "mountDiameter": 6.35,
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "S actuator Ø2.92 × 10.67 mm; Y bushing 1/4-40 × 8.89 mm; 12.70 mm body length; SP 6.86 mm / DP 11.43 mm width; 8.89 mm body depth; 4.70 mm terminal pitch; 25° lever travel.",
+        "limitations": "Installation reconstruction from published dimensions. Internal contacts, thread helices, edge radii, terminal hole details and moulded lettering are omitted. Undimensioned shell details and nut sizes are illustrative. Not original manufacturer CAD. The 6.35 mm characteristic is the nominal bushing interface; add the drawing tolerance and anti-rotation keyway for a production panel.",
+        "sourceUrl": "https://www.ckswitches.com/media/1394/7000toggle.pdf"
+      }
+    }
+  },
+  {
+    "id": "ck-7105syzqe",
+    "name": "C&K 7105SYZQE · SPDT · (ON)–OFF–(ON)",
+    "description": "Toggle switch. momentary both ends; SPDT; solder lug.",
+    "parameters": {
+      "model": "ck-7105syzqe",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "7105SYZQE",
+      "manufacturer": "C&K / Littelfuse",
+      "sourceName": "C&K 7000 series manufacturer drawing",
+      "sourceUrl": "https://www.ckswitches.com/media/1394/7000toggle.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "C&K / Littelfuse",
+        "actuation": "Toggle",
+        "behavior": "Momentary both ends",
+        "circuit": "SPDT",
+        "positions": 3,
+        "terminalCount": 3,
+        "termination": "Solder lug",
+        "mounting": "Threaded bushing",
+        "mountDiameter": 6.35,
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "S actuator Ø2.92 × 10.67 mm; Y bushing 1/4-40 × 8.89 mm; 12.70 mm body length; SP 6.86 mm / DP 11.43 mm width; 8.89 mm body depth; 4.70 mm terminal pitch; 25° lever travel.",
+        "limitations": "Installation reconstruction from published dimensions. Internal contacts, thread helices, edge radii, terminal hole details and moulded lettering are omitted. Undimensioned shell details and nut sizes are illustrative. Not original manufacturer CAD. The 6.35 mm characteristic is the nominal bushing interface; add the drawing tolerance and anti-rotation keyway for a production panel.",
+        "sourceUrl": "https://www.ckswitches.com/media/1394/7000toggle.pdf"
+      }
+    }
+  },
+  {
+    "id": "ck-7108syzqe",
+    "name": "C&K 7108SYZQE · SPDT · ON–(ON)",
+    "description": "Toggle switch. momentary one end; SPDT; solder lug.",
+    "parameters": {
+      "model": "ck-7108syzqe",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "7108SYZQE",
+      "manufacturer": "C&K / Littelfuse",
+      "sourceName": "C&K 7000 series manufacturer drawing",
+      "sourceUrl": "https://www.ckswitches.com/media/1394/7000toggle.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "C&K / Littelfuse",
+        "actuation": "Toggle",
+        "behavior": "Momentary one end",
+        "circuit": "SPDT",
+        "positions": 2,
+        "terminalCount": 3,
+        "termination": "Solder lug",
+        "mounting": "Threaded bushing",
+        "mountDiameter": 6.35,
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "S actuator Ø2.92 × 10.67 mm; Y bushing 1/4-40 × 8.89 mm; 12.70 mm body length; SP 6.86 mm / DP 11.43 mm width; 8.89 mm body depth; 4.70 mm terminal pitch; 25° lever travel.",
+        "limitations": "Installation reconstruction from published dimensions. Internal contacts, thread helices, edge radii, terminal hole details and moulded lettering are omitted. Undimensioned shell details and nut sizes are illustrative. Not original manufacturer CAD. The 6.35 mm characteristic is the nominal bushing interface; add the drawing tolerance and anti-rotation keyway for a production panel.",
+        "sourceUrl": "https://www.ckswitches.com/media/1394/7000toggle.pdf"
+      }
+    }
+  },
+  {
+    "id": "ck-7201syzqe",
+    "name": "C&K 7201SYZQE · DPDT · ON–ON",
+    "description": "Toggle switch. maintained; DPDT; solder lug.",
+    "parameters": {
+      "model": "ck-7201syzqe",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "7201SYZQE",
+      "manufacturer": "C&K / Littelfuse",
+      "sourceName": "C&K 7000 series manufacturer drawing",
+      "sourceUrl": "https://www.ckswitches.com/media/1394/7000toggle.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "C&K / Littelfuse",
+        "actuation": "Toggle",
+        "behavior": "Maintained",
+        "circuit": "DPDT",
+        "positions": 2,
+        "terminalCount": 6,
+        "termination": "Solder lug",
+        "mounting": "Threaded bushing",
+        "mountDiameter": 6.35,
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "S actuator Ø2.92 × 10.67 mm; Y bushing 1/4-40 × 8.89 mm; 12.70 mm body length; SP 6.86 mm / DP 11.43 mm width; 8.89 mm body depth; 4.70 mm terminal pitch; 25° lever travel.",
+        "limitations": "Installation reconstruction from published dimensions. Internal contacts, thread helices, edge radii, terminal hole details and moulded lettering are omitted. Undimensioned shell details and nut sizes are illustrative. Not original manufacturer CAD. The 6.35 mm characteristic is the nominal bushing interface; add the drawing tolerance and anti-rotation keyway for a production panel.",
+        "sourceUrl": "https://www.ckswitches.com/media/1394/7000toggle.pdf"
+      }
+    }
+  },
+  {
+    "id": "ck-7203syzqe",
+    "name": "C&K 7203SYZQE · DPDT · ON–OFF–ON",
+    "description": "Toggle switch. maintained; DPDT; solder lug.",
+    "parameters": {
+      "model": "ck-7203syzqe",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "7203SYZQE",
+      "manufacturer": "C&K / Littelfuse",
+      "sourceName": "C&K 7000 series manufacturer drawing",
+      "sourceUrl": "https://www.ckswitches.com/media/1394/7000toggle.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "C&K / Littelfuse",
+        "actuation": "Toggle",
+        "behavior": "Maintained",
+        "circuit": "DPDT",
+        "positions": 3,
+        "terminalCount": 6,
+        "termination": "Solder lug",
+        "mounting": "Threaded bushing",
+        "mountDiameter": 6.35,
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "S actuator Ø2.92 × 10.67 mm; Y bushing 1/4-40 × 8.89 mm; 12.70 mm body length; SP 6.86 mm / DP 11.43 mm width; 8.89 mm body depth; 4.70 mm terminal pitch; 25° lever travel.",
+        "limitations": "Installation reconstruction from published dimensions. Internal contacts, thread helices, edge radii, terminal hole details and moulded lettering are omitted. Undimensioned shell details and nut sizes are illustrative. Not original manufacturer CAD. The 6.35 mm characteristic is the nominal bushing interface; add the drawing tolerance and anti-rotation keyway for a production panel.",
+        "sourceUrl": "https://www.ckswitches.com/media/1394/7000toggle.pdf"
+      }
+    }
+  },
+  {
+    "id": "ck-7205syzqe",
+    "name": "C&K 7205SYZQE · DPDT · (ON)–OFF–(ON)",
+    "description": "Toggle switch. momentary both ends; DPDT; solder lug.",
+    "parameters": {
+      "model": "ck-7205syzqe",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "7205SYZQE",
+      "manufacturer": "C&K / Littelfuse",
+      "sourceName": "C&K 7000 series manufacturer drawing",
+      "sourceUrl": "https://www.ckswitches.com/media/1394/7000toggle.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "C&K / Littelfuse",
+        "actuation": "Toggle",
+        "behavior": "Momentary both ends",
+        "circuit": "DPDT",
+        "positions": 3,
+        "terminalCount": 6,
+        "termination": "Solder lug",
+        "mounting": "Threaded bushing",
+        "mountDiameter": 6.35,
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "S actuator Ø2.92 × 10.67 mm; Y bushing 1/4-40 × 8.89 mm; 12.70 mm body length; SP 6.86 mm / DP 11.43 mm width; 8.89 mm body depth; 4.70 mm terminal pitch; 25° lever travel.",
+        "limitations": "Installation reconstruction from published dimensions. Internal contacts, thread helices, edge radii, terminal hole details and moulded lettering are omitted. Undimensioned shell details and nut sizes are illustrative. Not original manufacturer CAD. The 6.35 mm characteristic is the nominal bushing interface; add the drawing tolerance and anti-rotation keyway for a production panel.",
+        "sourceUrl": "https://www.ckswitches.com/media/1394/7000toggle.pdf"
+      }
+    }
+  },
+  {
+    "id": "ck-7207syzqe",
+    "name": "C&K 7207SYZQE · DPDT · ON–OFF–(ON)",
+    "description": "Toggle switch. momentary one end; DPDT; solder lug.",
+    "parameters": {
+      "model": "ck-7207syzqe",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "7207SYZQE",
+      "manufacturer": "C&K / Littelfuse",
+      "sourceName": "C&K 7000 series manufacturer drawing",
+      "sourceUrl": "https://www.ckswitches.com/media/1394/7000toggle.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "C&K / Littelfuse",
+        "actuation": "Toggle",
+        "behavior": "Momentary one end",
+        "circuit": "DPDT",
+        "positions": 3,
+        "terminalCount": 6,
+        "termination": "Solder lug",
+        "mounting": "Threaded bushing",
+        "mountDiameter": 6.35,
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "S actuator Ø2.92 × 10.67 mm; Y bushing 1/4-40 × 8.89 mm; 12.70 mm body length; SP 6.86 mm / DP 11.43 mm width; 8.89 mm body depth; 4.70 mm terminal pitch; 25° lever travel.",
+        "limitations": "Installation reconstruction from published dimensions. Internal contacts, thread helices, edge radii, terminal hole details and moulded lettering are omitted. Undimensioned shell details and nut sizes are illustrative. Not original manufacturer CAD. The 6.35 mm characteristic is the nominal bushing interface; add the drawing tolerance and anti-rotation keyway for a production panel.",
+        "sourceUrl": "https://www.ckswitches.com/media/1394/7000toggle.pdf"
+      }
+    }
+  },
+  {
+    "id": "eswitch-r1966ablkblkff",
+    "name": "E-Switch R1966ABLKBLKFF · SPST · ON–OFF",
+    "description": "Rocker switch. maintained; SPST; 4.8 mm quick-connect.",
+    "parameters": {
+      "model": "eswitch-r1966ablkblkff",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "R1966ABLKBLKFF",
+      "manufacturer": "E-Switch",
+      "sourceName": "E-Switch R1966 series and configuration drawing",
+      "sourceUrl": "https://www.e-switch.com/wp-content/uploads/2024/08/R1966.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [
+        "https://configured-product-images.s3.amazonaws.com/2D/specs/R1966ABLKBLKFF.pdf"
+      ],
+      "attributes": {
+        "manufacturer": "E-Switch",
+        "actuation": "Rocker",
+        "behavior": "Maintained",
+        "circuit": "SPST",
+        "positions": 2,
+        "terminalCount": 2,
+        "termination": "4.8 mm quick-connect",
+        "mounting": "Snap-in",
+        "cutoutLength": 19.2,
+        "cutoutWidth": 13,
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "20.80 × 14.80 mm bezel; 18.50 × 12.90 mm body cross-section; 19.2–19.3 × 13.0–13.1 mm panel opening for 0.75–1.25 mm panel; 4.80 × 0.80 mm quick-connect terminals.",
+        "limitations": "Installation reconstruction from published dimensions. Internal contacts, thread helices, edge radii, terminal hole details and moulded lettering are omitted. Undimensioned shell details and nut sizes are illustrative. Not original manufacturer CAD. The catalogue stores the minimum opening for a thin panel. Required length grows to 19.5–19.6 mm for a 2–3 mm panel. Rocker concavity and clip flex are simplified; 14 mm body depth is read from the dimensional side view.",
+        "sourceUrl": "https://www.e-switch.com/wp-content/uploads/2024/08/R1966.pdf"
+      }
+    }
+  },
+  {
+    "id": "eswitch-r1966fblkblkaf",
+    "name": "E-Switch R1966FBLKBLKAF · SPST · OFF–(ON)",
+    "description": "Rocker switch. momentary one end; SPST; 4.8 mm quick-connect.",
+    "parameters": {
+      "model": "eswitch-r1966fblkblkaf",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "R1966FBLKBLKAF",
+      "manufacturer": "E-Switch",
+      "sourceName": "E-Switch R1966 series and configuration drawing",
+      "sourceUrl": "https://www.e-switch.com/wp-content/uploads/2024/08/R1966.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [
+        "https://configured-product-images.s3.amazonaws.com/2D/specs/R1966ABLKBLKFF.pdf"
+      ],
+      "attributes": {
+        "manufacturer": "E-Switch",
+        "actuation": "Rocker",
+        "behavior": "Momentary one end",
+        "circuit": "SPST",
+        "positions": 2,
+        "terminalCount": 2,
+        "termination": "4.8 mm quick-connect",
+        "mounting": "Snap-in",
+        "cutoutLength": 19.2,
+        "cutoutWidth": 13,
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "20.80 × 14.80 mm bezel; 18.50 × 12.90 mm body cross-section; 19.2–19.3 × 13.0–13.1 mm panel opening for 0.75–1.25 mm panel; 4.80 × 0.80 mm quick-connect terminals.",
+        "limitations": "Installation reconstruction from published dimensions. Internal contacts, thread helices, edge radii, terminal hole details and moulded lettering are omitted. Undimensioned shell details and nut sizes are illustrative. Not original manufacturer CAD. The catalogue stores the minimum opening for a thin panel. Required length grows to 19.5–19.6 mm for a 2–3 mm panel. Rocker concavity and clip flex are simplified; 14 mm body depth is read from the dimensional side view.",
+        "sourceUrl": "https://www.e-switch.com/wp-content/uploads/2024/08/R1966.pdf"
+      }
+    }
+  },
+  {
+    "id": "eswitch-r1966dblkblkaf",
+    "name": "E-Switch R1966DBLKBLKAF · SPDT · ON–OFF–ON",
+    "description": "Rocker switch. maintained; SPDT; 4.8 mm quick-connect.",
+    "parameters": {
+      "model": "eswitch-r1966dblkblkaf",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "R1966DBLKBLKAF",
+      "manufacturer": "E-Switch",
+      "sourceName": "E-Switch R1966 series and configuration drawing",
+      "sourceUrl": "https://www.e-switch.com/wp-content/uploads/2024/08/R1966.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [
+        "https://configured-product-images.s3.amazonaws.com/2D/specs/R1966ABLKBLKFF.pdf"
+      ],
+      "attributes": {
+        "manufacturer": "E-Switch",
+        "actuation": "Rocker",
+        "behavior": "Maintained",
+        "circuit": "SPDT",
+        "positions": 3,
+        "terminalCount": 3,
+        "termination": "4.8 mm quick-connect",
+        "mounting": "Snap-in",
+        "cutoutLength": 19.2,
+        "cutoutWidth": 13,
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "20.80 × 14.80 mm bezel; 18.50 × 12.90 mm body cross-section; 19.2–19.3 × 13.0–13.1 mm panel opening for 0.75–1.25 mm panel; 4.80 × 0.80 mm quick-connect terminals.",
+        "limitations": "Installation reconstruction from published dimensions. Internal contacts, thread helices, edge radii, terminal hole details and moulded lettering are omitted. Undimensioned shell details and nut sizes are illustrative. Not original manufacturer CAD. The catalogue stores the minimum opening for a thin panel. Required length grows to 19.5–19.6 mm for a 2–3 mm panel. Rocker concavity and clip flex are simplified; 14 mm body depth is read from the dimensional side view.",
+        "sourceUrl": "https://www.e-switch.com/wp-content/uploads/2024/08/R1966.pdf"
+      }
+    }
+  },
+  {
+    "id": "ck-a10303rnzq",
+    "name": "C&K A10303RNZQ · 1 pole · 3 positions",
+    "description": "Rotary selector switch. maintained; SP3T; solder lug.",
+    "parameters": {
+      "model": "ck-a10303rnzq",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "A10303RNZQ",
+      "manufacturer": "C&K / Littelfuse",
+      "sourceName": "C&K A series manufacturer drawing",
+      "sourceUrl": "https://www.ckswitches.com/media/1349/arotary.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "C&K / Littelfuse",
+        "actuation": "Rotary selector",
+        "behavior": "Maintained",
+        "circuit": "SP3T",
+        "positions": 3,
+        "terminalCount": 4,
+        "termination": "Solder lug",
+        "mounting": "Threaded bushing",
+        "mountDiameter": 9.8,
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø26.19 mm body; 12.83 mm case depth; 3/8-32 bushing 6.99 mm high; Ø6.35 mm shaft with 5.51 mm flat; 03 shaft 9.53 mm high; Ø9.80 mm panel hole plus Ø3.18 mm anti-rotation feature; 30° indexing.",
+        "limitations": "Installation reconstruction from published dimensions. Internal contacts, thread helices, edge radii, terminal hole details and moulded lettering are omitted. Undimensioned shell details and nut sizes are illustrative. Not original manufacturer CAD. The model includes the shaft D-flat and the selected solder-lug count. Anti-rotation pin, pin orientation and internal detent mechanism are omitted; use the manufacturer drawing for the complete panel pattern. No knob is included.",
+        "sourceUrl": "https://www.ckswitches.com/media/1349/arotary.pdf"
+      }
+    }
+  },
+  {
+    "id": "ck-a10603rnzq",
+    "name": "C&K A10603RNZQ · 1 pole · 6 positions",
+    "description": "Rotary selector switch. maintained; SP6T; solder lug.",
+    "parameters": {
+      "model": "ck-a10603rnzq",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "A10603RNZQ",
+      "manufacturer": "C&K / Littelfuse",
+      "sourceName": "C&K A series manufacturer drawing",
+      "sourceUrl": "https://www.ckswitches.com/media/1349/arotary.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "C&K / Littelfuse",
+        "actuation": "Rotary selector",
+        "behavior": "Maintained",
+        "circuit": "SP6T",
+        "positions": 6,
+        "terminalCount": 7,
+        "termination": "Solder lug",
+        "mounting": "Threaded bushing",
+        "mountDiameter": 9.8,
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø26.19 mm body; 12.83 mm case depth; 3/8-32 bushing 6.99 mm high; Ø6.35 mm shaft with 5.51 mm flat; 03 shaft 9.53 mm high; Ø9.80 mm panel hole plus Ø3.18 mm anti-rotation feature; 30° indexing.",
+        "limitations": "Installation reconstruction from published dimensions. Internal contacts, thread helices, edge radii, terminal hole details and moulded lettering are omitted. Undimensioned shell details and nut sizes are illustrative. Not original manufacturer CAD. The model includes the shaft D-flat and the selected solder-lug count. Anti-rotation pin, pin orientation and internal detent mechanism are omitted; use the manufacturer drawing for the complete panel pattern. No knob is included.",
+        "sourceUrl": "https://www.ckswitches.com/media/1349/arotary.pdf"
+      }
+    }
+  },
+  {
+    "id": "ck-a11203rnzq",
+    "name": "C&K A11203RNZQ · 1 pole · 12 positions",
+    "description": "Rotary selector switch. maintained; SP12T; solder lug.",
+    "parameters": {
+      "model": "ck-a11203rnzq",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "A11203RNZQ",
+      "manufacturer": "C&K / Littelfuse",
+      "sourceName": "C&K A series manufacturer drawing",
+      "sourceUrl": "https://www.ckswitches.com/media/1349/arotary.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "C&K / Littelfuse",
+        "actuation": "Rotary selector",
+        "behavior": "Maintained",
+        "circuit": "SP12T",
+        "positions": 12,
+        "terminalCount": 13,
+        "termination": "Solder lug",
+        "mounting": "Threaded bushing",
+        "mountDiameter": 9.8,
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø26.19 mm body; 12.83 mm case depth; 3/8-32 bushing 6.99 mm high; Ø6.35 mm shaft with 5.51 mm flat; 03 shaft 9.53 mm high; Ø9.80 mm panel hole plus Ø3.18 mm anti-rotation feature; 30° indexing.",
+        "limitations": "Installation reconstruction from published dimensions. Internal contacts, thread helices, edge radii, terminal hole details and moulded lettering are omitted. Undimensioned shell details and nut sizes are illustrative. Not original manufacturer CAD. The model includes the shaft D-flat and the selected solder-lug count. Anti-rotation pin, pin orientation and internal detent mechanism are omitted; use the manufacturer drawing for the complete panel pattern. No knob is included.",
+        "sourceUrl": "https://www.ckswitches.com/media/1349/arotary.pdf"
+      }
+    }
+  },
+  {
+    "id": "eswitch-pva6fe24s41",
+    "name": "E-Switch PVA6FE24S41 · Ø16 mm · OFF–(ON)",
+    "description": "Pushbutton switch. momentary one end; SPST-NO; solder lug.",
+    "parameters": {
+      "model": "eswitch-pva6fe24s41",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "PVA6FE24S41",
+      "manufacturer": "E-Switch",
+      "sourceName": "E-Switch fixed-configuration manufacturer drawing",
+      "sourceUrl": "https://configured-product-images.s3.amazonaws.com/2D/specs/PVA6FE24S41.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "E-Switch",
+        "actuation": "Pushbutton",
+        "behavior": "Momentary one end",
+        "circuit": "SPST-NO",
+        "positions": 2,
+        "terminalCount": 4,
+        "termination": "Solder lug",
+        "mounting": "Threaded bushing",
+        "mountDiameter": 16,
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø18.50 mm bezel; M16 × 1 threaded body; Ø16.0–16.2 mm panel hole with 15.4–15.6 mm orientation flat; 13.8 mm rear body depth plus 4 mm terminals; 1.5 mm front projection; separate switch and LED terminal pairs.",
+        "limitations": "Installation reconstruction from published dimensions. Internal contacts, thread helices, edge radii, terminal hole details and moulded lettering are omitted. Undimensioned shell details and nut sizes are illustrative. Not original manufacturer CAD. The ring represents the specified blue / green LED colour; illumination and electrical state are not simulated. Rounded bezel profile is simplified. Panel hole orientation flat is a drawing requirement, not a circular drilling template. The momentary body flats are not dimensioned in its drawing: 15.3 mm across is an illustrative 0.1 mm clearance choice inside the published 15.4 mm panel flat, not a verified article measurement.",
+        "sourceUrl": "https://configured-product-images.s3.amazonaws.com/2D/specs/PVA6FE24S41.pdf"
+      }
+    }
+  },
+  {
+    "id": "eswitch-pva6lre21231",
+    "name": "E-Switch PVA6LRE21231 · Ø16 mm · OFF–ON",
+    "description": "Pushbutton switch. latching; SPST-NO; solder lug.",
+    "parameters": {
+      "model": "eswitch-pva6lre21231",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "PVA6LRE21231",
+      "manufacturer": "E-Switch",
+      "sourceName": "E-Switch fixed-configuration manufacturer drawing",
+      "sourceUrl": "https://configured-product-images.s3.amazonaws.com/2D/specs/PVA6LRE21231.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "E-Switch",
+        "actuation": "Pushbutton",
+        "behavior": "Latching",
+        "circuit": "SPST-NO",
+        "positions": 2,
+        "terminalCount": 4,
+        "termination": "Solder lug",
+        "mounting": "Threaded bushing",
+        "mountDiameter": 16,
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø18.50 mm bezel; M16 × 1 threaded body; Ø16.0–16.2 mm panel hole with 15.4–15.6 mm orientation flat; 19.6 mm rear body depth plus 4.5 mm terminals; 2.2 mm front projection; separate switch and LED terminal pairs. Body orientation flats are 15.3 mm across in the fixed drawing.",
+        "limitations": "Installation reconstruction from published dimensions. Internal contacts, thread helices, edge radii, terminal hole details and moulded lettering are omitted. Undimensioned shell details and nut sizes are illustrative. Not original manufacturer CAD. The ring represents the specified blue / green LED colour; illumination and electrical state are not simulated. Rounded bezel profile is simplified. Panel hole orientation flat is a drawing requirement, not a circular drilling template.",
+        "sourceUrl": "https://configured-product-images.s3.amazonaws.com/2D/specs/PVA6LRE21231.pdf"
+      }
+    }
+  },
+  {
+    "id": "omron-b3f-1000",
+    "name": "Omron B3F-1000 · 6 × 6 mm · H4.3 mm",
+    "description": "Tactile button switch. momentary one end; SPST-NO; through-hole pcb.",
+    "parameters": {
+      "model": "omron-b3f-1000",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "B3F-1000",
+      "manufacturer": "Omron",
+      "sourceName": "Omron B3F manufacturer drawing",
+      "sourceUrl": "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "Omron",
+        "actuation": "Tactile button",
+        "behavior": "Momentary one end",
+        "circuit": "SPST-NO",
+        "positions": 2,
+        "terminalCount": 4,
+        "termination": "Through-hole PCB",
+        "mounting": "PCB through-hole",
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "6 × 6 mm body; 4.3 mm actuator height above PCB; 6.5 × 4.5 mm terminal centre pattern; Ø3.5 mm actuator. Four terminals form two permanently common pairs.",
+        "limitations": "Installation reconstruction from published dimensions. Internal contacts, thread helices, edge radii, terminal hole details and moulded lettering are omitted. Undimensioned shell details and nut sizes are illustrative. Not original manufacturer CAD. Bent leads are simplified to connected L sections at the published board centres. Metal lid folds and spring dome are omitted. Push travel is a 0.2 mm inspection displacement within published pretravel, not a force model.",
+        "sourceUrl": "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf"
+      }
+    }
+  },
+  {
+    "id": "omron-b3f-1020",
+    "name": "Omron B3F-1020 · 6 × 6 mm · H5 mm",
+    "description": "Tactile button switch. momentary one end; SPST-NO; through-hole pcb.",
+    "parameters": {
+      "model": "omron-b3f-1020",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "B3F-1020",
+      "manufacturer": "Omron",
+      "sourceName": "Omron B3F manufacturer drawing",
+      "sourceUrl": "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "Omron",
+        "actuation": "Tactile button",
+        "behavior": "Momentary one end",
+        "circuit": "SPST-NO",
+        "positions": 2,
+        "terminalCount": 4,
+        "termination": "Through-hole PCB",
+        "mounting": "PCB through-hole",
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "6 × 6 mm body; 5 mm actuator height above PCB; 6.5 × 4.5 mm terminal centre pattern; Ø3.5 mm actuator. Four terminals form two permanently common pairs.",
+        "limitations": "Installation reconstruction from published dimensions. Internal contacts, thread helices, edge radii, terminal hole details and moulded lettering are omitted. Undimensioned shell details and nut sizes are illustrative. Not original manufacturer CAD. Bent leads are simplified to connected L sections at the published board centres. Metal lid folds and spring dome are omitted. Push travel is a 0.2 mm inspection displacement within published pretravel, not a force model.",
+        "sourceUrl": "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf"
+      }
+    }
+  },
+  {
+    "id": "omron-b3f-1050",
+    "name": "Omron B3F-1050 · 6 × 6 mm · H7.3 mm",
+    "description": "Tactile button switch. momentary one end; SPST-NO; through-hole pcb.",
+    "parameters": {
+      "model": "omron-b3f-1050",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "B3F-1050",
+      "manufacturer": "Omron",
+      "sourceName": "Omron B3F manufacturer drawing",
+      "sourceUrl": "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "Omron",
+        "actuation": "Tactile button",
+        "behavior": "Momentary one end",
+        "circuit": "SPST-NO",
+        "positions": 2,
+        "terminalCount": 4,
+        "termination": "Through-hole PCB",
+        "mounting": "PCB through-hole",
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "6 × 6 mm body; 7.3 mm actuator height above PCB; 6.5 × 4.5 mm terminal centre pattern; Ø3 mm actuator. Four terminals form two permanently common pairs.",
+        "limitations": "Installation reconstruction from published dimensions. Internal contacts, thread helices, edge radii, terminal hole details and moulded lettering are omitted. Undimensioned shell details and nut sizes are illustrative. Not original manufacturer CAD. Bent leads are simplified to connected L sections at the published board centres. Metal lid folds and spring dome are omitted. Push travel is a 0.2 mm inspection displacement within published pretravel, not a force model.",
+        "sourceUrl": "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf"
+      }
+    }
+  },
+  {
+    "id": "omron-b3f-4000",
+    "name": "Omron B3F-4000 · 12 × 12 mm · H4.3 mm",
+    "description": "Tactile button switch. momentary one end; SPST-NO; through-hole pcb.",
+    "parameters": {
+      "model": "omron-b3f-4000",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "B3F-4000",
+      "manufacturer": "Omron",
+      "sourceName": "Omron B3F manufacturer drawing",
+      "sourceUrl": "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "Omron",
+        "actuation": "Tactile button",
+        "behavior": "Momentary one end",
+        "circuit": "SPST-NO",
+        "positions": 2,
+        "terminalCount": 4,
+        "termination": "Through-hole PCB",
+        "mounting": "PCB through-hole",
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "12 × 12 mm body; 4.3 mm actuator height above PCB; 12.5 × 5 mm terminal centre pattern; Ø7.1 mm actuator. Four terminals form two permanently common pairs.",
+        "limitations": "Installation reconstruction from published dimensions. Internal contacts, thread helices, edge radii, terminal hole details and moulded lettering are omitted. Undimensioned shell details and nut sizes are illustrative. Not original manufacturer CAD. Bent leads are simplified to connected L sections at the published board centres. Metal lid folds and spring dome are omitted. Push travel is a 0.2 mm inspection displacement within published pretravel, not a force model.",
+        "sourceUrl": "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf"
+      }
+    }
+  },
+  {
+    "id": "apem-12146ak",
+    "name": "APEM 12146AK · DPDT · ON–ON",
+    "description": "Toggle switch. maintained; DPDT; solder lug.",
+    "parameters": {
+      "model": "apem-12146ak",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "12146AK",
+      "manufacturer": "APEM",
+      "sourceName": "APEM 12000 series product and mechanical drawing",
+      "sourceUrl": "https://www.apem.com/en-us/panel-switches/toggles/12000/12146ak",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "APEM",
+        "actuation": "Toggle",
+        "behavior": "Maintained",
+        "circuit": "DPDT",
+        "positions": 2,
+        "terminalCount": 6,
+        "termination": "Solder lug",
+        "mounting": "Threaded bushing",
+        "mountDiameter": 12,
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "12146AK DPDT maintained solder-lug execution; 15/32-32 threaded bushing, Ø12 mm panel opening; standard lever. Manufacturer 12000 series / 90-series compatibility uses the Ø11.9/12 mm bushing class.",
+        "limitations": "Body envelope 18.2 × 14 × 13.7 mm, 10.9 mm bushing height and 17.3 mm lever are reconstruction values awaiting the exact supplier drawing revision. Terminal positions, nut profile and keyway geometry are illustrative. No rating is inferred. Not original manufacturer CAD.",
+        "sourceUrl": "https://www.apem.com/en-us/panel-switches/toggles/12000/12146ak"
+      }
+    }
+  },
+  {
+    "id": "apem-12146ak-90c46",
+    "name": "APEM 12146AK + 90C46 · DPDT · red protective cover",
+    "description": "Guarded toggle switch. maintained; DPDT; solder lug.",
+    "parameters": {
+      "model": "apem-12146ak-90c46",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "12146AK + 90C46",
+      "manufacturer": "APEM",
+      "sourceName": "APEM 90-series guard and 12000-series compatibility",
+      "sourceUrl": "https://www.apem.com/panel-switches/switch-guards/sg-90-series",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": ["https://www.apem.com/en-us/panel-switches/toggles/12000/12146ak"],
+      "attributes": {
+        "manufacturer": "APEM",
+        "actuation": "Guarded toggle",
+        "behavior": "Maintained",
+        "circuit": "DPDT",
+        "positions": 2,
+        "terminalCount": 6,
+        "termination": "Solder lug",
+        "mounting": "Threaded bushing",
+        "mountDiameter": 12,
+        "guarded": true
+      },
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "12146AK DPDT maintained solder-lug execution; 15/32-32 threaded bushing, Ø12 mm panel opening; standard lever. Manufacturer 12000 series / 90-series compatibility uses the Ø11.9/12 mm bushing class. 90C46 is red, keyway-left and locks the toggle in its down position. Guard is a separately ordered accessory.",
+        "limitations": "Body envelope 18.2 × 14 × 13.7 mm, 10.9 mm bushing height and 17.3 mm lever are reconstruction values awaiting the exact supplier drawing revision. Terminal positions, nut profile and keyway geometry are illustrative. No rating is inferred. Not original manufacturer CAD. Guard roof, side walls, base, hinge, open angle and adjustment are fixed photo-derived approximations. Guard sweep is useful for layout only and must be measured on the purchased assembly. Closed pose holds the first switch position; no miniature 6.35 mm switch is paired with this 12 mm guard.",
+        "sourceUrl": "https://www.apem.com/panel-switches/switch-guards/sg-90-series"
+      }
+    }
+  },
+  {
+    "id": "daier-asw-07d",
+    "name": "DAIER ASW-07D · illuminated SPST · ON–OFF",
+    "description": "Toggle switch. maintained; SPST; 6.3 × 0.8 mm quick-connect. Illuminated actuator, red / green / yellow / blue LED option.",
+    "parameters": {
+      "model": "daier-asw-07d",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "ASW-07D",
+      "manufacturer": "DAIER",
+      "sourceName": "DAIER ASW-07D manufacturer dimensional drawing",
+      "sourceUrl": "https://www.chinadaier.com/wp-content/uploads/2018/05/ASW-07D-1.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "DAIER",
+        "actuation": "Toggle",
+        "behavior": "Maintained",
+        "circuit": "SPST",
+        "positions": 2,
+        "terminalCount": 3,
+        "termination": "6.3 × 0.8 mm quick-connect",
+        "mounting": "Threaded bushing",
+        "mountDiameter": 12.2,
+        "guarded": false
+      },
+      "specifications": [
+        {
+          "label": "LED colour options",
+          "value": "Red, green, yellow, blue; chosen in the configurator"
+        },
+        {
+          "label": "Reference drawing",
+          "value": "ASW-07D-1.pdf: 28 × 16 × 19 mm case; not ASW-07D-2"
+        },
+        {
+          "label": "Electrical rating",
+          "value": "Unassigned: manufacturer drawing and current product tables give conflicting current ratings"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Drawing ASW-07D-1: 28 × 16 × 19 mm case; M12 × 0.75 bushing, 12.5 mm projection; Ø7 mm actuator, 19.9 mm projection and 24° total travel; 24.2 mm lower terminal spacing, 10.3 mm terminal projection and 6.3 mm blade width; Ø12.2 mm panel opening with 1.9 × 0.9 mm orientation tongue. Three terminals provide switched supply, load and lamp ground. Red, green, yellow and blue LED options are manufacturer-listed.",
+        "limitations": "Installation reconstruction from the linked ASW-07D-1 drawing. Not original manufacturer CAD. The public product page also quotes 28.3 × 16 × 56 mm, corresponding to a different drawing execution; this model follows the linked 28 × 16 × 19 mm case drawing. Current ratings conflict between the drawing and product/store tables, so none is assigned. Nut and washer profiles, terminal holes, horizontal ground-blade length, actuator end-lens profile and bushing groove depth are illustrative. Blade thickness 0.8 mm follows the manufacturer paired-product specification. Thread helices, lettering and internal contacts are omitted. LED colour is an ordering option, not an electrical simulation.",
+        "sourceUrl": "https://www.chinadaier.com/wp-content/uploads/2018/05/ASW-07D-1.pdf"
+      }
+    }
+  },
+  {
+    "id": "daier-asw-07d-sac-01",
+    "name": "DAIER ASW-07D + SAC-01 · illuminated SPST · transparent protective cover",
+    "description": "Guarded toggle switch. maintained; SPST; 6.3 × 0.8 mm quick-connect. Illuminated actuator, red / green / yellow / blue LED option.",
+    "parameters": {
+      "model": "daier-asw-07d-sac-01",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3
+    },
+    "catalog": {
+      "designation": "ASW-07D + SAC-01",
+      "manufacturer": "DAIER",
+      "sourceName": "DAIER paired ASW-07D + SAC-01 product and manufacturer drawings",
+      "sourceUrl": "https://www.daierswitches.com/products/racing-auto-20a-12v-lighted-toggle-switch-with-safety-guard",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [
+        "https://www.chinadaier.com/wp-content/uploads/2018/05/ASW-07D-1.pdf",
+        "https://www.chinadaier.com/wp-content/uploads/2018/05/SAC-01.pdf",
+        "https://www.chinadaier.com/sac-01-safety-toggle-switch-cover-guard/"
+      ],
+      "attributes": {
+        "manufacturer": "DAIER",
+        "actuation": "Guarded toggle",
+        "behavior": "Maintained",
+        "circuit": "SPST",
+        "positions": 2,
+        "terminalCount": 3,
+        "termination": "6.3 × 0.8 mm quick-connect",
+        "mounting": "Threaded bushing",
+        "mountDiameter": 12.2,
+        "guarded": true
+      },
+      "specifications": [
+        {
+          "label": "LED colour options",
+          "value": "Red, green, yellow, blue; chosen in the configurator"
+        },
+        {
+          "label": "Reference drawing",
+          "value": "ASW-07D-1.pdf: 28 × 16 × 19 mm case; not ASW-07D-2"
+        },
+        {
+          "label": "Electrical rating",
+          "value": "Unassigned: manufacturer drawing and current product tables give conflicting current ratings"
+        },
+        {
+          "label": "Paired colour SKUs",
+          "value": "ASW-07D+SAC-01-TR (red), -TG (green), -TY (yellow), -TBL (blue)"
+        },
+        {
+          "label": "SAC-01 installation",
+          "value": "9.5 mm base-seat adjustment and hinge details are illustrative; verify the purchased assembly"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Drawing ASW-07D-1: 28 × 16 × 19 mm case; M12 × 0.75 bushing, 12.5 mm projection; Ø7 mm actuator, 19.9 mm projection and 24° total travel; 24.2 mm lower terminal spacing, 10.3 mm terminal projection and 6.3 mm blade width; Ø12.2 mm panel opening with 1.9 × 0.9 mm orientation tongue. Three terminals provide switched supply, load and lamp ground. Red, green, yellow and blue LED options are manufacturer-listed. SAC-01 drawing: 46.6 mm closed assembly length, 27.8 mm height above the base seat; 40.6 mm base length, 17 / 15 mm base widths and 0.9 mm sheet thickness; Ø12 mm keyed mounting hole; hinge axis 11.8 mm from the base rear end; 45 mm open height. Manufacturer paired colour codes are ASW-07D+SAC-01-TR / -TG / -TY / -TBL. Closing the hinged cover returns the toggle to OFF.",
+        "limitations": "Installation reconstruction from the linked ASW-07D-1 drawing. Not original manufacturer CAD. The public product page also quotes 28.3 × 16 × 56 mm, corresponding to a different drawing execution; this model follows the linked 28 × 16 × 19 mm case drawing. Current ratings conflict between the drawing and product/store tables, so none is assigned. Nut and washer profiles, terminal holes, horizontal ground-blade length, actuator end-lens profile and bushing groove depth are illustrative. Blade thickness 0.8 mm follows the manufacturer paired-product specification. Thread helices, lettering and internal contacts are omitted. LED colour is an ordering option, not an electrical simulation. SAC-01 cap width 20 mm follows the manufacturer product envelope; the drawing only dimensions the base widths. The rounded shell profile follows the drawing silhouette, while wall thickness, hole-to-hinge distance, hinge bore/pin, spring and 69° inspection opening angle are illustrative. A 9.5 mm base-seat height and retaining-nut stack are an illustrative installation adjustment chosen to clear the selected actuator. The open pose approximates the drawing's 45 mm envelope within 0.05 mm, not a verified angular stop. Transparent coloured plastic is shown with illustrative 55% opacity in the preview; native export retains RGB colour. Confirm the purchased revision and adjustment before machining a panel or relying on the interlock.",
+        "sourceUrl": "https://www.daierswitches.com/products/racing-auto-20a-12v-lighted-toggle-switch-with-safety-guard"
+      }
+    }
+  }
+]

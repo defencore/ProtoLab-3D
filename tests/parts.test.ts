@@ -33,7 +33,7 @@ test('the catalog has unique part identifiers and parameter keys', () => {
     for (const field of part.parameters) {
       assert.ok(typeof field.key === 'string' && field.key.length > 0, `${part.id}: field key`);
       assert.ok(
-        ['number', 'select', 'boolean'].includes(field.type),
+        ['number', 'select', 'boolean', 'text'].includes(field.type),
         `${part.id}/${field.key}: field type`,
       );
     }
@@ -98,7 +98,7 @@ test('spring states change the exported geometry and honor the requested travel'
   }
 });
 
-test('enclosure and wheel previews have one closed shell without internal assembly faces', () => {
+test('enclosure and wheel components are closed shells without internal assembly faces', () => {
   for (const id of ['enclosure', 'wheel']) {
     const part = parts.find((item) => item.id === id);
     assert.ok(part);
@@ -108,38 +108,41 @@ test('enclosure and wheel previews have one closed shell without internal assemb
       model.traverse((child) => {
         if (child instanceof THREE.Mesh) meshes.push(child);
       });
-      assert.equal(meshes.length, 1, id);
-      const geometry = meshes[0].geometry;
-      const positions = geometry.getAttribute('position');
-      const indices = triangleIndices(geometry);
-      const edges = new Map<string, number>();
-      let volume = 0;
-      for (let i = 0; i < indices.length; i += 3) {
-        const vertices = indices
-          .slice(i, i + 3)
-          .map((index) => new THREE.Vector3().fromBufferAttribute(positions, index));
-        volume += vertices[0].dot(vertices[1].clone().cross(vertices[2])) / 6;
-        const keys = vertices.map((vertex) =>
-          vertex
-            .toArray()
-            .map((value) => Math.round(value * 10000))
-            .join(','),
-        );
-        for (let side = 0; side < 3; side++) {
-          const edge = [keys[side], keys[(side + 1) % 3]].sort().join('|');
-          edges.set(edge, (edges.get(edge) ?? 0) + 1);
+      assert.equal(meshes.length, id === 'wheel' ? 2 : 1, id);
+      for (const [meshIndex, mesh] of meshes.entries()) {
+        const label = `${id}/${meshIndex}`;
+        const geometry = mesh.geometry;
+        const positions = geometry.getAttribute('position');
+        const indices = triangleIndices(geometry);
+        const edges = new Map<string, number>();
+        let volume = 0;
+        for (let i = 0; i < indices.length; i += 3) {
+          const vertices = indices
+            .slice(i, i + 3)
+            .map((index) => new THREE.Vector3().fromBufferAttribute(positions, index));
+          volume += vertices[0].dot(vertices[1].clone().cross(vertices[2])) / 6;
+          const keys = vertices.map((vertex) =>
+            vertex
+              .toArray()
+              .map((value) => Math.round(value * 10000))
+              .join(','),
+          );
+          for (let side = 0; side < 3; side++) {
+            const edge = [keys[side], keys[(side + 1) % 3]].sort().join('|');
+            edges.set(edge, (edges.get(edge) ?? 0) + 1);
+          }
         }
-      }
-      assert.ok(volume > 0, `${id}: outward triangle winding`);
-      for (const [edge, count] of edges) assert.equal(count, 2, `${id}: shared edge ${edge}`);
-      if (id === 'enclosure') {
-        const { width, depth, height, wall } = part.defaults as Record<string, number>;
-        const expected =
-          width * depth * height - (width - 2 * wall) * (depth - 2 * wall) * (height - wall);
-        assert.ok(
-          Math.abs(volume - expected) / expected < 0.00001,
-          'Open cavity has the expected wall and floor volume.',
-        );
+        assert.ok(volume > 0, `${label}: outward triangle winding`);
+        for (const [edge, count] of edges) assert.equal(count, 2, `${label}: shared edge ${edge}`);
+        if (id === 'enclosure') {
+          const { width, depth, height, wall } = part.defaults as Record<string, number>;
+          const expected =
+            width * depth * height - (width - 2 * wall) * (depth - 2 * wall) * (height - wall);
+          assert.ok(
+            Math.abs(volume - expected) / expected < 0.00001,
+            'Open cavity has the expected wall and floor volume.',
+          );
+        }
       }
     } finally {
       dispose(model);

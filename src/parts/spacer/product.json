@@ -1,0 +1,14 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "Custom machined detail. Nominal geometry defines the design shape; material, fits and manufacturing requirements must be specified.",
+  "processes": [
+    "turning",
+    "milling",
+    "drilling"
+  ],
+  "releaseRequirements": [
+    "Specify material, blank, manufacturing route and the applicable drawing revision.",
+    "Define functional tolerances, surface finish, edge treatment and an inspection method."
+  ]
+}

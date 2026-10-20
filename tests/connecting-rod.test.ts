@@ -68,8 +68,14 @@ test('connecting rod component states have closed meshes and stable labels', () 
         .dimensions(part.defaults, state.id)
         .forEach((v, i) => assert.ok(Math.abs(v - actual[i]) < 0.005));
       const python = part.python(part.defaults, state.id);
-      for (const c of model.children)
-        assert.ok(python.includes(`component_labels.append("${c.name}")`));
+      assert.ok(
+        python.includes(
+          `component_labels = ${JSON.stringify(model.children.map((child) => child.name))}`,
+        ),
+      );
+      assert.ok(
+        model.children.every((child) => child.userData.libraryId === 'manufactured-detail'),
+      );
     } finally {
       disposeModel(model);
     }

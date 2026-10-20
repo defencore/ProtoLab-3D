@@ -1,0 +1,86 @@
+[
+  {
+    "id": "25-25-90",
+    "name": "Tube25 to tube25 / 90 degrees",
+    "description": "Geometric saddle intersection for marking round-tube joints before hand cutting and fitting. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "tubeOD": 25,
+      "mateOD": 25,
+      "angle": 90,
+      "clearance": 0.3,
+      "wall": 3,
+      "base": 8,
+      "phase": 0
+    }
+  },
+  {
+    "id": "25-40-90",
+    "name": "Tube25 to tube40 / 90 degrees",
+    "description": "Geometric saddle intersection for marking round-tube joints before hand cutting and fitting. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "tubeOD": 25,
+      "mateOD": 40,
+      "angle": 90,
+      "clearance": 0.3,
+      "wall": 3,
+      "base": 8,
+      "phase": 0
+    }
+  },
+  {
+    "id": "25-40-45",
+    "name": "Tube25 to tube40 / 45 degrees",
+    "description": "Geometric saddle intersection for marking round-tube joints before hand cutting and fitting. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "tubeOD": 25,
+      "mateOD": 40,
+      "angle": 45,
+      "clearance": 0.3,
+      "wall": 3,
+      "base": 8,
+      "phase": 0
+    }
+  },
+  {
+    "id": "32-50-60",
+    "name": "Tube32 to tube50 / 60 degrees",
+    "description": "Geometric saddle intersection for marking round-tube joints before hand cutting and fitting. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "tubeOD": 32,
+      "mateOD": 50,
+      "angle": 60,
+      "clearance": 0.3,
+      "wall": 3,
+      "base": 8,
+      "phase": 0
+    }
+  },
+  {
+    "id": "40-60-90",
+    "name": "Tube40 to tube60 / 90 degrees",
+    "description": "Geometric saddle intersection for marking round-tube joints before hand cutting and fitting. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "tubeOD": 40,
+      "mateOD": 60,
+      "angle": 90,
+      "clearance": 0.3,
+      "wall": 3,
+      "base": 8,
+      "phase": 0
+    }
+  },
+  {
+    "id": "50-76-45",
+    "name": "Tube50 to tube76 / 45 degrees",
+    "description": "Geometric saddle intersection for marking round-tube joints before hand cutting and fitting. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "tubeOD": 50,
+      "mateOD": 76,
+      "angle": 45,
+      "clearance": 0.3,
+      "wall": 3,
+      "base": 8,
+      "phase": 0
+    }
+  }
+]

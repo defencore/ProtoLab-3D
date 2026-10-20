@@ -1,10 +1,53 @@
-import type { PartDefinition, Preset } from '../../core/types';
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
+import type { PartDefinition, Preset, Parameters } from '../../core/types';
 import { defaults, parameters } from './configurator';
 import presets from './presets.json';
 import { pieces } from './lib/model';
-import * as assembly from './lib/assembly';
+import manufactured from '../manufactured-detail/part';
+import purchased from '../purchased-component/part';
+import {
+  componentGeometry,
+  componentPython,
+  componentDimensions,
+} from '../../core/assembly/detail-instances';
+import { configureRecoveryPieces, recoveryComposition } from '../../core/recovery-feature-recipes';
+import wire from '../formed-wire/part';
+import type { AssemblyComponent } from '../../core/product-types';
+const libraries = [manufactured, purchased, wire];
+const configured = (p: Parameters, state: string) =>
+  configureRecoveryPieces(pieces(p, state), 24, (piece, index): AssemblyComponent => {
+    if (piece.shape.kind !== 'spring') throw new Error('Expected a helical spring.');
+    const spring = piece.shape;
+    return {
+      id: 'component-' + (index + 1),
+      name: piece.label,
+      libraryId: 'formed-wire',
+      parameters: {
+        ...wire.defaults,
+        mode: 'helix',
+        coilRadius: spring.radius,
+        wireDiameter: spring.wire * 2,
+        coilHeight: spring.height,
+        turns: spring.turns,
+      },
+      state: 'default',
+      quantity: 1,
+      supply: 'manufactured',
+      placement: { translation: [0, 0, 0], rotation: [0, 0, 0] },
+      manufacturing: {
+        material: 'Spring steel; grade requires selection',
+        blank: `Round wire, diameter ${spring.wire * 2} mm`,
+        processes: ['winding'],
+        requirements: [
+          'Specify free length, spring rate, preload, heat treatment and fatigue acceptance before fabrication.',
+        ],
+      },
+    };
+  });
 const part: PartDefinition = {
   id: 'clamp-band-release',
+  product: productData as ProductProfile,
   name: 'Clamp Band Separation Mechanism',
   category: 'VEHICLE STRUCTURES',
   subgroup: 'MODEL ROCKETS',
@@ -64,9 +107,14 @@ const part: PartDefinition = {
       errors.push('Choose a valid inspection state.');
     return errors;
   },
-  buildGeometry: (p, s) => assembly.geometry(pieces(p, s)),
-  dimensions: (p, s) => assembly.dimensions(pieces(p, s)),
-  python: (p, s) => assembly.python(pieces(p, s)),
+  composition: (p) =>
+    recoveryComposition(configured({ ...p, release: 0 }, 'assembled'), [
+      'Custom clamp details require material grade, blank, operations, fastener specifications, fits and toleranced drawings before fabrication.',
+      'Verify clamp holding load, flange separation, hinge retention and spring rate, preload, free length and fatigue capability before design release.',
+    ]),
+  buildGeometry: (p, s) => componentGeometry(libraries, configured(p, s)),
+  dimensions: (p, s) => componentDimensions(libraries, configured(p, s)),
+  python: (p, s) => componentPython(libraries, configured(p, s)),
   assessment: (p) => [
     `Nominal flange bore: ${p.bore} mm. ${p.segments} distributed clamp segments.`,
     p.layout === 'band'
@@ -76,7 +124,7 @@ const part: PartDefinition = {
     'Source figures provide topology, not dimensions. These editable dimensions and spring geometry are design-study choices; no load or release reliability rating is assigned.',
   ],
   notes:
-    'Separate FreeCAD solids with component labels. Nominal fastener envelopes have no modeled helical threads. Springs have no specified rate or preload. No cutter internals, drive electronics, manufacturing tolerances or TechDraw sheets are included. This reference-inspired concept requires mechanical detailing and verification before fabrication.',
+    'Separate FreeCAD solids with component labels. Fastener envelopes without a declared pitch/profile remain nominal in both modes; Full models explicitly declared thread features. Springs have no specified rate or preload. No cutter internals, drive electronics, manufacturing tolerances or TechDraw sheets are included. This reference-inspired concept requires mechanical detailing and verification before fabrication.',
   sources: [
     {
       label:

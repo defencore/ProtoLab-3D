@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -11,9 +13,9 @@ import {
   internalThreadErrors,
   internalThreadCutter,
   internalThreadPython,
-  nominalThreadDiameter,
+  internalThreadPilotDiameter,
   nutCoarsePitch,
-} from './lib/core/internal-thread';
+} from '../../core/hardware/internal-thread';
 import { booleans, primitives, transforms, solidUnionMesh } from '../../core/solid-union';
 import { handNutDrawings } from './lib/catalog/hand-nuts';
 
@@ -45,6 +47,7 @@ function outline(p: Parameters): [number, number][] {
 }
 const part: PartDefinition = {
   id: 'wing-nut',
+  product: productData as ProductProfile,
   name: 'Wing nut',
   category: 'FASTENERS & THREADS',
   subgroup: 'NUTS',
@@ -56,7 +59,7 @@ const part: PartDefinition = {
   defaults,
   parameters: [
     numberParameter('diameter', 'Nominal thread bore', 'd', 'Thread', 1, 100, 0.5),
-    ...internalThreadParameters,
+    ...internalThreadParameters(),
     numberParameter('baseDiameter', 'Body base diameter', 'd₂', 'Body', 3, 200, 0.1),
     numberParameter('baseHeight', 'Body height', 'm', 'Body', 1, 100, 0.1),
     numberParameter('wingSpan', 'Overall wing span', 'e', 'Wings', 5, 400, 0.1),
@@ -114,7 +117,7 @@ const part: PartDefinition = {
       t = Number(p.wingThickness),
       h = Number(p.height);
     const points = outline(p).map(([x, z]) => `App.Vector(${num(x)},${num(-t / 2)},${num(z)})`);
-    return `# Forged wing outline with a labeled smooth nominal thread bore.\nshape = Part.makeCone(${num(r)},${num(r * 0.8)},${num(Number(p.baseHeight))})\npoints = [${points.join(',')}]\nwing = Part.Face(Part.makePolygon(points+[points[0]])).extrude(App.Vector(0,${num(t)},0))\nother_wing = wing.copy()\nother_wing.rotate(App.Vector(0,0,0),App.Vector(0,0,1),180)\nshape = shape.fuse(wing).fuse(other_wing)\nshape = shape.cut(Part.makeCylinder(${num(nominalThreadDiameter(p, Number(p.diameter)) / 2)},${num(h + 2)},App.Vector(0,0,-1)))\n${internalThreadPython(p, Number(p.diameter), h)}\nif len(shape.Solids) != 1: raise ValueError("The wings and bored body must form one solid.")\nshape.translate(App.Vector(0,0,-${num(h / 2)}))`;
+    return `# Forged wing outline with a declared female thread: Simple nominal bore, Full helical flanks.\nshape = Part.makeCone(${num(r)},${num(r * 0.8)},${num(Number(p.baseHeight))})\npoints = [${points.join(',')}]\nwing = Part.Face(Part.makePolygon(points+[points[0]])).extrude(App.Vector(0,${num(t)},0))\nother_wing = wing.copy()\nother_wing.rotate(App.Vector(0,0,0),App.Vector(0,0,1),180)\nshape = shape.fuse(wing).fuse(other_wing)\nshape = shape.cut(Part.makeCylinder(${num(internalThreadPilotDiameter(p, Number(p.diameter)) / 2)},${num(h + 2)},App.Vector(0,0,-1)))\n${internalThreadPython(p, Number(p.diameter), h)}\nif len(shape.Solids) != 1: raise ValueError("The wings and bored body must form one solid.")\nshape.translate(App.Vector(0,0,-${num(h / 2)}))`;
   },
   notes:
     'DIN 315 American-form outline. Supplier presets use the published maximum d2/e/h/m envelope; material variants share that dimensional preset. Wing thickness, faceted curvature and body taper are representative. Internal threads use a truncated 60° basic metric profile without fit tolerances. Smooth envelope mode is available for fast layout.',

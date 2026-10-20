@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import { withParameterStates } from '../../core/parameter-states';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
@@ -21,7 +23,7 @@ import {
   turnedPython,
   validateEnvelope,
   type TurnedProfile,
-} from './lib/parts/motion-bearing-utils';
+} from '../../core/hardware/motion-bearing-utils';
 
 function values(p: Parameters) {
   const r = n(p, 'bore') / 2,
@@ -115,6 +117,7 @@ const defaults = {
 
 const part: PartDefinition = {
   id: 'double-row-angular-contact-bearing',
+  product: productData as ProductProfile,
   name: 'Double-row angular contact ball bearing',
   category: 'BEARINGS & SEALS',
   subgroup: 'BALL BEARINGS',
@@ -128,7 +131,7 @@ const part: PartDefinition = {
   presets: modulePresets,
   presetMatchKeys: ['bore', 'outer', 'width'],
   parameters: [
-    ...envelopeParameters,
+    ...envelopeParameters(),
     {
       ...numberParameter(
         'elements',

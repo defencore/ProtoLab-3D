@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import { withParameterStates } from '../../core/parameter-states';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
@@ -54,6 +56,21 @@ export function jawCouplingValues(p: Parameters) {
     screwZ: -L / 2 + baseHeight / 2,
     screwSeat: -n(p, 'slitWidth') / 2 - 1,
     screwEnd: R * 0.35,
+  };
+}
+
+/** Native Z-axis datums for two distinct shaft bores; jaw depth is not shaft insertion depth. */
+export function jawCouplingLayout(p: Parameters) {
+  const v = jawCouplingValues(p);
+  return {
+    axis: 'z' as const,
+    minimum: -v.L / 2,
+    maximum: v.L / 2,
+    outsideDiameter: 2 * v.R,
+    shaftTipGap: -2 * v.baseEnd,
+    hubA: { start: -v.L / 2, end: v.baseEnd, bore: n(p, 'boreA'), grip: v.baseHeight },
+    hubB: { start: -v.baseEnd, end: v.L / 2, bore: n(p, 'boreB'), grip: v.baseHeight },
+    spiderBore: 2 * v.spiderBore,
   };
 }
 
@@ -214,6 +231,7 @@ function sectorPython(
 
 const part: PartDefinition = {
   id: 'jaw-coupling',
+  product: productData as ProductProfile,
   name: 'Flexible jaw coupling',
   category: 'TRANSMISSION & LINKAGES',
   subgroup: 'SHAFT COUPLINGS',

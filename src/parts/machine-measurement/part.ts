@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { parameters, defaults } from './configurator';
 import presets from './presets.json';
@@ -5,9 +7,10 @@ import { measurementPieces } from './lib/model';
 import { geometry, dimensions, python } from './lib/assembly';
 const part: PartDefinition = {
   id: 'machine-measurement',
-  name: 'Machine measurement sensors',
-  category: 'MACHINE TOOLS',
-  subgroup: 'MEASUREMENT & SENSORS',
+  product: productData as ProductProfile,
+  name: 'Measurement and position sensors',
+  category: 'ELECTRONICS & VISION',
+  subgroup: 'SENSORS & SWITCHES',
   icon: 'circuit',
   complexity: 'Purchased instrumentation',
   description:
@@ -24,7 +27,7 @@ const part: PartDefinition = {
   dimensions: (p) => dimensions(measurementPieces(p)),
   python: (p) => python(measurementPieces(p)),
   notes:
-    'Purchased instruments, not fabrication geometry. MWE21 wheel circumference and encoder diameter are sourced; spring-arm contour, encoder depth and bracket holes are planning envelopes awaiting the exact ordered drawing. E3Z is sold as emitter/receiver pair: the standalone model shows one sensor. E2B nominal thread is smooth. Standard sensors do not implement a safety function. 0.05 mm quadrature resolution does not establish length accuracy.',
+    'Purchased instruments, not fabrication geometry. MWE21 wheel circumference and encoder diameter are sourced; spring-arm contour, encoder depth and bracket holes are planning envelopes awaiting the exact ordered drawing. E3Z is sold as emitter/receiver pair: the standalone model shows one sensor. The E2B source envelope has no defined pitch/profile; its thread remains nominal in both modes. Standard sensors do not implement a safety function. 0.05 mm quadrature resolution does not establish length accuracy.',
   sources: [
     {
       label: 'Kuebler MWE21 measuring system',

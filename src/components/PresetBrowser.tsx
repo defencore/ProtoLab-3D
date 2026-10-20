@@ -15,6 +15,8 @@ import {
 } from 'lucide-react';
 import type { Parameters, PartDefinition, Preset } from '../core/types';
 import { libraryCategories, sortLibraryParts } from '../core/library';
+import { libraryAreas, libraryArea, libraryLabel } from '../core/library-navigation';
+import { groupBrowseFamilies } from '../core/browse-families';
 import {
   isPublishedValue,
   presetMatchesConfiguration,
@@ -32,12 +34,18 @@ import {
   getFilterFields,
   isActiveParameterFilter,
   seedCurrentFilters,
+  presetFacetOptions,
   type ParameterFilter,
   type PresetEntry,
   type PresetFilterField,
   type PresetFilters,
+  matchesPresetPartScope,
 } from '../core/preset-search';
 import './PresetBrowser.css';
+import NumericRangeFilter from './NumericRangeFilter';
+import FilterChips, { type FilterChip } from './FilterChips';
+import './NumericRangeFilter.css';
+import { parseNumericRange } from '../core/numeric-range';
 
 export interface PresetBrowserProps {
   parts: PartDefinition[];
@@ -45,7 +53,8 @@ export interface PresetBrowserProps {
   currentParameters: Parameters;
   currentPresetId: string;
   initialMode?: 'all' | 'browse' | 'match';
-  initialFilters?: PresetFilters;
+  filters: PresetFilters;
+  onFiltersChange: (filters: PresetFilters) => void;
   onApply: (part: PartDefinition, preset: Preset) => void;
   onClose: () => void;
 }
@@ -126,12 +135,14 @@ function FilterField({
   filter,
   currentValue,
   error,
+  options,
   onChange,
 }: {
   field: PresetFilterField;
   filter: ParameterFilter;
   currentValue?: number | string | boolean;
   error?: string;
+  options: { value: string; label: string; count: number }[];
   onChange: (value: ParameterFilter) => void;
 }) {
   const inputId = `preset-filter-${encodeURIComponent(field.id)}`;
@@ -139,7 +150,7 @@ function FilterField({
   return (
     <div className={`pb-filter-field ${active ? 'has-filter' : ''}`}>
       <div className="pb-filter-label">
-        <label htmlFor={`${inputId}-from`}>
+        <label htmlFor={field.type === 'number' ? `${inputId}-min` : `${inputId}-select`}>
           {field.label}
           {field.type === 'number' && <small>{field.unit ?? 'mm'}</small>}
         </label>
@@ -155,51 +166,36 @@ function FilterField({
         )}
       </div>
       {field.type === 'number' ? (
-        <div className="pb-range">
-          <input
-            id={`${inputId}-from`}
-            type="number"
-            step="any"
-            placeholder="From"
-            aria-label={`${field.label} from`}
-            aria-invalid={!!error}
-            value={filter.min ?? ''}
-            onChange={(event) => onChange({ ...filter, min: event.target.value })}
-          />
-          <span>–</span>
-          <input
-            type="number"
-            step="any"
-            placeholder="To"
-            aria-label={`${field.label} to`}
-            aria-invalid={!!error}
-            value={filter.max ?? ''}
-            onChange={(event) => onChange({ ...filter, max: event.target.value })}
-          />
-        </div>
+        <NumericRangeFilter
+          id={inputId}
+          className="pb-range"
+          label={field.label}
+          value={filter}
+          error={error}
+          minLabel={`${field.label} from`}
+          maxLabel={`${field.label} to`}
+          onChange={onChange}
+        />
       ) : (
         <select
-          id={`${inputId}-from`}
+          id={`${inputId}-select`}
           aria-label={`${field.label} filter`}
           value={filter.value ?? ''}
           onChange={(event) => onChange({ value: event.target.value })}
         >
           <option value="">Any {field.label.toLowerCase()}</option>
-          {field.type === 'boolean' ? (
-            <>
-              <option value="true">Yes</option>
-              <option value="false">No</option>
-            </>
-          ) : (
-            field.options?.map((option) => (
-              <option value={option.value} key={option.value}>
-                {option.label}
-              </option>
-            ))
-          )}
+          {options.map((option) => (
+            <option
+              value={option.value}
+              key={option.value}
+              disabled={!option.count && option.value !== filter.value?.trim()}
+            >
+              {option.label} · {option.count.toLocaleString('en-US')}
+            </option>
+          ))}
         </select>
       )}
-      {error && (
+      {error && field.type !== 'number' && (
         <p className="pb-field-error" role="alert">
           {error}
         </p>
@@ -230,19 +226,18 @@ export default function PresetBrowser({
   currentParameters,
   currentPresetId,
   initialMode = 'browse',
-  initialFilters,
+  filters,
+  onFiltersChange: setFilters,
   onApply,
   onClose,
 }: PresetBrowserProps) {
-  const [filters, setFilters] = useState<PresetFilters>(
-    () =>
-      initialFilters ??
-      (initialMode === 'match'
-        ? seedCurrentFilters(currentPart, currentParameters)
-        : emptyPresetFilters(initialMode === 'all' ? undefined : currentPart)),
-  );
   const [page, setPage] = useState(0);
-  const [showFilters, setShowFilters] = useState(initialMode === 'match' || !!initialFilters);
+  const [showFilters, setShowFilters] = useState(
+    initialMode === 'match' ||
+      Object.values(filters.parameters).some(isActiveParameterFilter) ||
+      !!filters.sourceName ||
+      !!filters.manufacturer,
+  );
   const searchInput = useRef<HTMLInputElement>(null);
   const orderedParts = useMemo(() => sortLibraryParts(parts), [parts]);
   const index = useMemo(() => buildPresetIndex(orderedParts), [orderedParts]);
@@ -251,10 +246,13 @@ export default function PresetBrowser({
       parts.filter(
         (part) =>
           (!filters.category || part.category === filters.category) &&
-          (!filters.partId || part.id === filters.partId),
+          matchesPresetPartScope(part, filters.partId),
       ),
     [parts, filters.category, filters.partId],
   );
+  const groupedScope =
+    !!filters.partId && scopeParts.some((part) => part.browseFamily?.id === filters.partId);
+  const broadScope = !filters.partId && scopeParts.length > 1;
   const fields = useMemo(() => {
     const labels: Record<string, string> = {
       bore: 'Bore diameter',
@@ -264,17 +262,45 @@ export default function PresetBrowser({
       width: 'Width',
       height: 'Height',
     };
-    return getFilterFields(scopeParts).map((field) =>
-      scopeParts.length > 1 && labels[field.key] ? { ...field, label: labels[field.key] } : field,
-    );
-  }, [scopeParts]);
+    const available = getFilterFields(scopeParts);
+    const separateBodyLengths =
+      groupedScope && available.some((field) => field.key === 'catalogBodyLength');
+    return available.map((field) => {
+      if (separateBodyLengths && field.key === 'length')
+        return { ...field, label: 'Plain spacer / sleeve length' };
+      if (separateBodyLengths && field.key === 'catalogBodyLength')
+        return { ...field, label: 'Catalog body length' };
+      return broadScope && labels[field.key] ? { ...field, label: labels[field.key] } : field;
+    });
+  }, [scopeParts, groupedScope, broadScope]);
+  const { primaryFields, additionalFields } = useMemo(() => {
+    const commonBearingScope = filters.category === 'BEARINGS & SEALS' && broadScope;
+    const isPrimary = (field: PresetFilterField) =>
+      groupedScope
+        ? field.primary || field.catalogSummary === true
+        : commonBearingScope
+          ? ['bore', 'outer', 'width'].includes(field.key)
+          : !filters.category
+            ? ['bore', 'diameter', 'length', 'width', 'height'].includes(field.key)
+            : field.primary;
+    return {
+      primaryFields: fields.filter(isPrimary),
+      additionalFields: fields.filter((field) => !isPrimary(field)),
+    };
+  }, [fields, groupedScope, broadScope, filters.category]);
+  const renderedFilterFields = useMemo(
+    () => (showFilters ? (broadScope ? primaryFields : fields) : []),
+    [showFilters, broadScope, primaryFields, fields],
+  );
   const results = useMemo(() => filterPresets(index, filters), [index, filters]);
-  const selected = results.items.find(
+  const selected = index.find(
     (entry) =>
       entry.part.id === currentPart.id &&
       entry.preset.id === currentPresetId &&
       presetMatchesConfiguration(currentPart, entry.preset, currentParameters),
   );
+  const selectedOutsideResults =
+    selected && !results.items.some((entry) => entry.id === selected.id);
   const reviewParameters: Parameters = selected?.part.catalogSelectionOnly
     ? currentParameters
     : (selected?.preset.parameters ?? {});
@@ -284,11 +310,31 @@ export default function PresetBrowser({
   };
   const selectedId = selected?.id ?? '';
   const categories = libraryCategories(orderedParts);
-  const categoryParts = orderedParts.filter(
-    (part) => !filters.category || part.category === filters.category,
+  const categoryCollections = libraryAreas
+    .map((area) => ({
+      ...area,
+      categories: categories.filter((category) => libraryArea(category) === area.id),
+    }))
+    .filter((area) => area.categories.length > 0);
+  const categoryFamilies = useMemo(
+    () =>
+      groupBrowseFamilies(
+        orderedParts.filter((part) => !filters.category || part.category === filters.category),
+      ),
+    [orderedParts, filters.category],
   );
-  const scopeEntries = index.filter((entry) =>
-    scopeParts.some((part) => part.id === entry.part.id),
+  const scopeEntries = useMemo(
+    () => index.filter((entry) => scopeParts.some((part) => part.id === entry.part.id)),
+    [index, scopeParts],
+  );
+  const facetOptions = useMemo(
+    () =>
+      new Map(
+        renderedFilterFields
+          .filter((field) => field.type !== 'number')
+          .map((field) => [field.id, presetFacetOptions(scopeEntries, filters, field)]),
+      ),
+    [scopeEntries, filters, renderedFilterFields],
   );
   const sources = sortedUnique(scopeEntries.map((entry) => entry.preset.catalog?.sourceName));
   const manufacturers = sortedUnique(
@@ -300,15 +346,6 @@ export default function PresetBrowser({
     displayedPage * PAGE_SIZE,
     (displayedPage + 1) * PAGE_SIZE,
   );
-  const commonBearingScope = filters.category === 'BEARINGS & SEALS' && scopeParts.length > 1;
-  const isPrimary = (field: PresetFilterField) =>
-    commonBearingScope
-      ? ['bore', 'outer', 'width'].includes(field.key)
-      : !filters.category
-        ? ['bore', 'diameter', 'length', 'width', 'height'].includes(field.key)
-        : field.primary;
-  const primaryFields = fields.filter(isPrimary);
-  const additionalFields = fields.filter((field) => !isPrimary(field));
   const activeParameters = Object.entries(filters.parameters).filter(([, filter]) =>
     isActiveParameterFilter(filter),
   );
@@ -327,38 +364,44 @@ export default function PresetBrowser({
 
   function setScope(category: string, partId: string) {
     const nextParts = parts.filter(
-      (part) => (!category || part.category === category) && (!partId || part.id === partId),
+      (part) => (!category || part.category === category) && matchesPresetPartScope(part, partId),
     );
     const available = new Set(getFilterFields(nextParts).map((field) => field.id));
-    setFilters((previous) => ({
-      ...previous,
+    setFilters({
+      ...filters,
       category,
       partId,
-      sourceName: '',
-      manufacturer: '',
+      sourceName: nextParts.some((part) =>
+        part.presets.some((preset) => preset.catalog?.sourceName === filters.sourceName),
+      )
+        ? filters.sourceName
+        : '',
+      manufacturer: nextParts.some((part) =>
+        part.presets.some((preset) => preset.catalog?.manufacturer === filters.manufacturer),
+      )
+        ? filters.manufacturer
+        : '',
       parameters: Object.fromEntries(
-        Object.entries(previous.parameters).filter(([id]) => available.has(id)),
+        Object.entries(filters.parameters).filter(([id]) => available.has(id)),
       ),
-    }));
-  }
-
-  function updateParameter(id: string, value: ParameterFilter) {
-    setFilters((previous) => {
-      const parameters = { ...previous.parameters };
-      if (isActiveParameterFilter(value)) parameters[id] = value;
-      else delete parameters[id];
-      return { ...previous, parameters };
     });
   }
 
+  function updateParameter(id: string, value: ParameterFilter) {
+    const parameters = { ...filters.parameters };
+    if (isActiveParameterFilter(value)) parameters[id] = value;
+    else delete parameters[id];
+    setFilters({ ...filters, parameters });
+  }
+
   function renderField(field: PresetFilterField) {
-    const currentDefinition = currentPart.parameters.find(
+    const currentDefinition = searchableFields(currentPart).find(
       (candidate) => fieldId(candidate) === field.id,
     );
     const currentValue =
       currentDefinition &&
       (!currentDefinition.visibleWhen || currentDefinition.visibleWhen(currentParameters))
-        ? currentParameters[field.key]
+        ? (selected?.preset.catalog?.attributes?.[field.key] ?? currentParameters[field.key])
         : undefined;
     return (
       <FilterField
@@ -367,11 +410,62 @@ export default function PresetBrowser({
         filter={filters.parameters[field.id] ?? {}}
         currentValue={currentValue}
         error={results.errors.find((error) => error.fieldId === field.id)?.message}
+        options={facetOptions.get(field.id) ?? []}
         onChange={(value) => updateParameter(field.id, value)}
       />
     );
   }
 
+  const chips: FilterChip[] = [];
+  if (filters.query.trim())
+    chips.push({
+      id: 'query',
+      label: `Search: ${filters.query}`,
+      removeLabel: 'Clear preset search',
+      onRemove: () => setFilters({ ...filters, query: '' }),
+    });
+  if (filters.kind !== 'all')
+    chips.push({
+      id: 'kind',
+      label: filters.kind === 'catalog' ? 'Sourced catalog' : 'Prototype examples',
+      removeLabel: 'Clear preset library filter',
+      onRemove: () => setFilters({ ...filters, kind: 'all' }),
+    });
+  if (filters.sourceName)
+    chips.push({
+      id: 'source',
+      label: filters.sourceName,
+      removeLabel: 'Clear preset source filter',
+      onRemove: () => setFilters({ ...filters, sourceName: '' }),
+    });
+  if (filters.manufacturer)
+    chips.push({
+      id: 'manufacturer',
+      label: filters.manufacturer,
+      removeLabel: 'Clear preset manufacturer filter',
+      onRemove: () => setFilters({ ...filters, manufacturer: '' }),
+    });
+  for (const [id, filter] of activeParameters) {
+    const field = fields.find((candidate) => candidate.id === id);
+    const range = parseNumericRange(filter);
+    const label = field?.label ?? 'Unavailable parameter';
+    const text =
+      field?.type === 'number'
+        ? (!range.errors.length &&
+          range.range.min !== undefined &&
+          range.range.min === range.range.max
+            ? filter.min
+            : `${filter.min?.trim() || '…'}–${filter.max?.trim() || '…'}`) +
+          (field.unit === '' ? '' : ` ${field.unit ?? 'mm'}`)
+        : (field?.options?.find((option) => option.value === filter.value)?.label ??
+          (filter.value === 'true' ? 'Yes' : filter.value === 'false' ? 'No' : filter.value));
+    chips.push({
+      id,
+      label: `${label}: ${text}`,
+      removeLabel: `Clear ${label.toLowerCase()} filter`,
+      onRemove: () => updateParameter(id, {}),
+    });
+  }
   return (
     <aside className="preset-dock" aria-label="Advanced preset browser">
       <div className="preset-dock-heading">
@@ -418,10 +512,14 @@ export default function PresetBrowser({
               onChange={(event) => setScope(event.target.value, '')}
             >
               <option value="">All categories</option>
-              {categories.map((category) => (
-                <option key={category} value={category}>
-                  {category}
-                </option>
+              {categoryCollections.map((area) => (
+                <optgroup key={area.id} label={area.label}>
+                  {area.categories.map((category) => (
+                    <option key={category} value={category}>
+                      {libraryLabel(category)}
+                    </option>
+                  ))}
+                </optgroup>
               ))}
             </select>
           </label>
@@ -433,9 +531,9 @@ export default function PresetBrowser({
               onChange={(event) => setScope(filters.category, event.target.value)}
             >
               <option value="">All types in category</option>
-              {categoryParts.map((part) => (
-                <option key={part.id} value={part.id}>
-                  {part.name}
+              {categoryFamilies.map((family) => (
+                <option key={family.id} value={family.id}>
+                  {family.label}
                 </option>
               ))}
             </select>
@@ -478,69 +576,7 @@ export default function PresetBrowser({
             Reset
           </button>
         </div>
-        {activeCount > 0 && (
-          <div className="pb-chips" aria-label="Active preset filters">
-            {filters.query && (
-              <button onClick={() => setFilters({ ...filters, query: '' })}>
-                Search: {filters.query}
-                <X size={12} />
-              </button>
-            )}
-            {filters.kind !== 'all' && (
-              <button onClick={() => setFilters({ ...filters, kind: 'all' })}>
-                {filters.kind === 'catalog' ? 'Sourced catalog' : 'Prototype examples'}
-                <X size={12} />
-              </button>
-            )}
-            {filters.sourceName && (
-              <button onClick={() => setFilters({ ...filters, sourceName: '' })}>
-                {filters.sourceName}
-                <X size={12} />
-              </button>
-            )}
-            {filters.manufacturer && (
-              <button onClick={() => setFilters({ ...filters, manufacturer: '' })}>
-                {filters.manufacturer}
-                <X size={12} />
-              </button>
-            )}
-            {activeParameters.map(([id, filter]) => {
-              const field = fields.find((candidate) => candidate.id === id);
-              const range =
-                filter.min?.trim() &&
-                filter.max?.trim() &&
-                Number(filter.min) === Number(filter.max)
-                  ? filter.min
-                  : `${filter.min?.trim() || 'any'} – ${filter.max?.trim() || 'any'}`;
-              return (
-                <button key={id} onClick={() => updateParameter(id, {})}>
-                  {field?.label ?? 'Parameter'}:{' '}
-                  {field?.type === 'number'
-                    ? `${range}${field.unit === '' ? '' : ` ${field.unit ?? 'mm'}`}`
-                    : (field?.options?.find((option) => option.value === filter.value)?.label ??
-                      (filter.value === 'true'
-                        ? 'Yes'
-                        : filter.value === 'false'
-                          ? 'No'
-                          : filter.value))}
-                  <X size={12} />
-                </button>
-              );
-            })}
-            <button
-              className="pb-clear-all"
-              onClick={() =>
-                setFilters({
-                  ...emptyPresetFilters(),
-                  category: filters.category,
-                  partId: filters.partId,
-                })
-              }
-            >
-              Clear filters
-            </button>
-          </div>
-        )}
+        <FilterChips label="Active preset filters" items={chips} />
         <div className={`pb-workspace ${showFilters ? 'with-filters' : ''}`}>
           {showFilters && (
             <aside className="pb-filters" id="preset-filter-panel" aria-label="Preset filters">
@@ -549,7 +585,7 @@ export default function PresetBrowser({
                 <small>Optional filters</small>
               </div>
               <div className="pb-primary-fields">{primaryFields.map(renderField)}</div>
-              {additionalFields.length > 0 && scopeParts.length === 1 && (
+              {additionalFields.length > 0 && !broadScope && (
                 <details className="pb-more-fields">
                   <summary>
                     More parameters <span>{additionalFields.length}</span>
@@ -557,7 +593,7 @@ export default function PresetBrowser({
                   {additionalFields.map(renderField)}
                 </details>
               )}
-              {scopeParts.length > 1 && (
+              {broadScope && (
                 <p className="pb-field-hint">
                   Select a part type for additional dimensions and shape filters.
                 </p>
@@ -614,7 +650,13 @@ export default function PresetBrowser({
               <strong role="status" aria-live="polite">
                 {results.items.length} {results.items.length === 1 ? 'preset' : 'presets'} found
               </strong>
-              <span>{selected ? 'Shown in 3D' : 'Select to preview'}</span>
+              <span>
+                {selectedOutsideResults
+                  ? 'Current preview outside results'
+                  : selected
+                    ? 'Shown in 3D'
+                    : 'Select to preview'}
+              </span>
             </div>
             {results.errors.length > 0 ? (
               <div className="pb-empty">
@@ -747,7 +789,13 @@ export default function PresetBrowser({
           {selected ? (
             <>
               <div className="pb-review-info">
-                <span className="pb-review-eyebrow">SELECTED PRESET</span>
+                <span className="pb-review-eyebrow">CURRENT PREVIEW</span>
+                {selectedOutsideResults && (
+                  <p className="pb-current-excluded" role="status">
+                    This article is outside your filters. The preview stays unchanged until you
+                    select a result.
+                  </p>
+                )}
                 <strong>{selected.preset.name}</strong>
                 <p>
                   {selected.part.name} · {selected.preset.description}

@@ -1,0 +1,14 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Flat-sided slip-on drilling fixture with reusable height spacers, a positive tube-end datum and replaceable purchased guide elements.",
+  "processes": ["printing", "assembly"],
+  "releaseRequirements": [
+    "Measure actual tube OD, roundness and wall thickness. Qualify fit and seating against the annular stop.",
+    "Measure actual spacer thickness and face parallelism. Verify fixed drill height minus the measured spacer stack equals the desired tube-end offset.",
+    "Verify all hardware stays behind the support flats before placing the fixture on a flat table or in a vise.",
+    "Verify guide procurement, free drill passage, guide retention, printed screw engagement and station clearance.",
+    "Clamp tube and jig against rotation and lift. Set drilling depth for one wall; remove the jig before tapping.",
+    "Specify print material, orientation, fit allowances, drawing tolerances and inspection before manufacture."
+  ]
+}

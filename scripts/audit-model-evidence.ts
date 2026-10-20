@@ -3,9 +3,13 @@ import { existsSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { parts } from '../src/parts';
 import { presetEvidence } from '../src/core/model-evidence';
+import { productKindLabels, supplyKindLabels } from '../src/core/product-library';
 const counts: Record<string, number> = {};
+const productCounts: Record<string, number> = {};
 const missingReferences = new Set<string>();
 const modules = parts.map((part) => {
+  const classification = part.product.kind + '/' + part.product.supply;
+  productCounts[classification] = (productCounts[classification] ?? 0) + 1;
   const presets = part.presets.map((preset) => {
     const evidence = presetEvidence(part, preset);
     counts[evidence.kind] = (counts[evidence.kind] ?? 0) + 1;
@@ -32,7 +36,7 @@ const modules = parts.map((part) => {
         : {}),
     };
   });
-  return { id: part.id, name: part.name, notes: part.notes, presets };
+  return { id: part.id, name: part.name, product: part.product, notes: part.notes, presets };
 });
 const report = {
   scope:
@@ -40,6 +44,7 @@ const report = {
   modules: modules.length,
   presets: modules.reduce((n, m) => n + m.presets.length, 0),
   counts,
+  productCounts,
   missingLocalReferences: [...missingReferences].sort(),
   families: modules,
 };
@@ -53,11 +58,27 @@ const lines = [
   '',
   'The generated `data/model-evidence-audit.json` lists every preset and its declared verified parameters. Unverified numeric fields also include pose controls and custom design choices; they are an evidence inventory, not automatically dimensional defects.',
   '',
+  '## Product classifications',
+  '',
+  'Each family retains its reviewed package profile in the JSON audit. Product classification is independent of source fidelity and does not establish production approval.',
+  '',
+  '| Product type | Supply policy | Families |',
+  '| --- | --- | ---: |',
+  ...Object.entries(productCounts)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([key, count]) => {
+      const [kind, supply] = key.split('/') as [
+        keyof typeof productKindLabels,
+        keyof typeof supplyKindLabels,
+      ];
+      return `| ${productKindLabels[kind]} | ${supplyKindLabels[supply]} | ${count} |`;
+    }),
+  '',
   '## Evidence classes',
   '',
   ...Object.entries(counts).map(([kind, n]) => `- ${kind}: ${n}`),
   '',
-  'Manufacturer CAD means geometry is imported from an identified source revision, with recorded exceptions. It does not certify physical production tolerances or later product revisions. Source dimensions means a reconstruction with a limited set of published dimensions; model identity alone does not verify connector positions or every surface. Envelope models represent outside dimensions only. Parametric designs have no specific original to copy.',
+  'Manufacturer CAD means geometry is imported from an identified manufacturer source revision, with recorded exceptions. Community CAD means retained geometry from an identified community library revision, with an explicit source hash; it is not manufacturer-issued geometry. Neither imported CAD class certifies physical production tolerances or later product revisions. Source dimensions means a reconstruction with a limited set of published dimensions; model identity alone does not verify connector positions or every surface. Envelope models represent outside dimensions only. Parametric designs have no specific original to copy.',
   '',
   '## Remaining fidelity work',
   '',
@@ -70,14 +91,14 @@ const lines = [
   '',
   '## Family-by-family limitations',
   '',
-  '| Family | Presets | Manufacturer CAD | Sourced reconstruction / envelope | Parametric | Recorded limitations |',
-  '| --- | ---: | ---: | ---: | ---: | --- |',
+  '| Family | Presets | Manufacturer CAD | Community CAD | Sourced reconstruction / envelope | Parametric | Recorded limitations |',
+  '| --- | ---: | ---: | ---: | ---: | ---: | --- |',
 ];
 const escape = (s: string) => s.replaceAll('|', '/').replaceAll('\n', ' ');
 for (const m of modules) {
   const count = (k: string) => m.presets.filter((p) => p.kind === k).length;
   lines.push(
-    `| ${escape(m.name)} | ${m.presets.length} | ${count('manufacturer-cad')} | ${count('source-dimensions') + count('envelope')} | ${count('parametric')} | ${escape(m.notes ?? 'No detailed geometry audit recorded.')} |`,
+    `| ${escape(m.name)} | ${m.presets.length} | ${count('manufacturer-cad')} | ${count('community-cad')} | ${count('source-dimensions') + count('envelope')} | ${count('parametric')} | ${escape(m.notes ?? 'No detailed geometry audit recorded.')} |`,
   );
 }
 lines.push(

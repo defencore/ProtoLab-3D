@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { n } from '../../core/geometry';
 import { defaults, parameters } from './configurator';
@@ -6,6 +8,7 @@ import presetData from './presets.json';
 
 const part: PartDefinition = {
   id: 'tubular-solenoid',
+  product: productData as ProductProfile,
   name: 'Tubular solenoid',
   category: 'MOTORS & ACTUATORS',
   subgroup: 'SOLENOIDS',

@@ -1,0 +1,104 @@
+[
+  {
+    "id": "rod8",
+    "name": "Rod OD8 / one cross hole",
+    "description": "End-referenced cross holes in round shafts and tubes using a drill press or hand drill. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockOD": 8,
+      "length": 90,
+      "endOffset": 25,
+      "count": 1,
+      "pitch": 25,
+      "plate": 10,
+      "guide": "bushing",
+      "drill": 3,
+      "bushOD": 8,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "rod12",
+    "name": "Rod OD12 / one cross hole",
+    "description": "End-referenced cross holes in round shafts and tubes using a drill press or hand drill. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockOD": 12,
+      "length": 90,
+      "endOffset": 25,
+      "count": 1,
+      "pitch": 25,
+      "plate": 10,
+      "guide": "bushing",
+      "drill": 3,
+      "bushOD": 8,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "rod20",
+    "name": "Rod OD20 / two holes",
+    "description": "End-referenced cross holes in round shafts and tubes using a drill press or hand drill. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockOD": 20,
+      "length": 90,
+      "endOffset": 25,
+      "count": 2,
+      "pitch": 25,
+      "plate": 10,
+      "guide": "bushing",
+      "drill": 3,
+      "bushOD": 8,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "tube30",
+    "name": "Tube OD30 / two holes",
+    "description": "End-referenced cross holes in round shafts and tubes using a drill press or hand drill. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockOD": 30,
+      "length": 90,
+      "endOffset": 25,
+      "count": 2,
+      "pitch": 25,
+      "plate": 10,
+      "guide": "bushing",
+      "drill": 3,
+      "bushOD": 8,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "tube50",
+    "name": "Tube OD50 / one hole",
+    "description": "End-referenced cross holes in round shafts and tubes using a drill press or hand drill. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockOD": 50,
+      "length": 90,
+      "endOffset": 25,
+      "count": 1,
+      "pitch": 25,
+      "plate": 10,
+      "guide": "bushing",
+      "drill": 3,
+      "bushOD": 8,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "three",
+    "name": "Rod OD20 / three holes",
+    "description": "End-referenced cross holes in round shafts and tubes using a drill press or hand drill. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "stockOD": 20,
+      "length": 120,
+      "endOffset": 25,
+      "count": 3,
+      "pitch": 25,
+      "plate": 10,
+      "guide": "bushing",
+      "drill": 3,
+      "bushOD": 8,
+      "seatAllowance": 0.05
+    }
+  }
+]

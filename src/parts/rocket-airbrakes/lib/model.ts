@@ -1,9 +1,10 @@
+import { markSupplierUnit, type SupplierUnit } from '../../../core/supplier-components';
 import { hingedJaynes } from './jaynes';
 import { jaynesHinged } from './kinematics';
 import { motion, phases as mechanismPhases, layer, paired, linked, camLift } from './kinematics';
 import { alternativeDrive, sculptedCam, gearedPetals, rackDrive, tray } from './variants';
 import type { Parameters } from '../../../core/types';
-import type { Piece } from './assembly';
+import type { Piece } from './shapes';
 import {
   box,
   cylinder,
@@ -101,6 +102,21 @@ export function pieces(p: Parameters, state: string): Piece[] {
   const bodyX = -m.servoLength + m.servoWidth / 2;
   const mountX = [bodyX - 3, bodyX + m.servoLength + 3];
   const add = (label: string, shape: Shape, color = alloy) => result.push({ label, shape, color });
+  const servo: SupplierUnit = {
+    name: p.servo === 'micro' ? 'Tower Pro MG90S servo' : 'Tower Pro MG996R servo',
+    procurement: {
+      designation: p.servo === 'micro' ? 'MG90S' : 'MG996R',
+      manufacturer: 'Tower Pro',
+      source:
+        p.servo === 'micro'
+          ? 'https://towerpro.com.tw/product/mg90s-3/'
+          : 'https://towerpro.com.tw/product/mg996r/',
+    },
+  };
+  const servoPiece = (label: string, shape: Shape, color = alloy) => {
+    markSupplierUnit([shape], servo);
+    add(label, shape, color);
+  };
   const phases = mechanismPhases(p);
   const posts = phases.map(
     (a) =>
@@ -165,13 +181,13 @@ export function pieces(p: Parameters, state: string): Piece[] {
       add(`Deck lower collar ${i + 1}`, ring(3.5, 2.55, d - 1, 1, x, y), dark);
       add(`Deck upper collar ${i + 1}`, ring(3.5, 2.55, d + 3, 1, x, y), dark);
     }
-  add(
+  servoPiece(
     'Servo body (installation reference)',
     box([m.servoLength, m.servoWidth, m.servoHeight], [bodyX, -m.servoWidth / 2, 6]),
     dark,
   );
   for (const [i, x] of mountX.entries()) {
-    add(
+    servoPiece(
       `Servo mounting ear ${i + 1}`,
       subtract(
         box([6, m.servoWidth, 2], [x - 3, -m.servoWidth / 2, d - 5]),
@@ -194,7 +210,7 @@ export function pieces(p: Parameters, state: string): Piece[] {
       steel,
     );
   }
-  add('Servo output boss', cylinder(4, 3, [0, 0, d - 3]), dark);
+  servoPiece('Servo output boss', cylinder(4, 3, [0, 0, d - 3]), dark);
   add('8 mm drive shaft', cylinder(4, 12.8, [0, 0, d]), steel);
   add('8 × 10 × 5 bronze support sleeve', ring(5, 4.05, d, 5), brass);
   const hex = circle(4 / Math.cos(Math.PI / 6), 0, 0, 6);
@@ -288,9 +304,26 @@ export function pieces(p: Parameters, state: string): Piece[] {
     if (p.mechanism === 'rack-pinion') continue;
     moving('Follower shoulder pin M3', cylinder(1.5, 10, [m.followerStart, 0, d + 9]), steel);
     moving('Follower spacer', ring(2.2, 1.55, d + 12.8, 0.3, m.followerStart), brass);
+    const follower = ring(
+      linked(p) ? 2.5 : 3.5,
+      1.55,
+      d + 13.1,
+      linked(p) ? 2.2 : 3,
+      m.followerStart,
+    );
+    if (!linked(p))
+      markSupplierUnit([follower], {
+        name: '683ZZ follower bearing',
+        procurement: {
+          designation: '683ZZ',
+          manufacturer: '',
+          source:
+            'https://www.nsk.com/content/dam/nsk/common/catalogs/ctrgPdf/bearings/e1103c_partc.pdf',
+        },
+      });
     moving(
       linked(p) ? 'Link pivot bushing · 3 × 5' : '683ZZ follower bearing · 3 × 7 × 3',
-      ring(linked(p) ? 2.5 : 3.5, 1.55, d + 13.1, linked(p) ? 2.2 : 3, m.followerStart),
+      follower,
       steel,
     );
     moving('Follower washer', ring(2.5, 1.55, d + 16.2, 0.8, m.followerStart), steel);

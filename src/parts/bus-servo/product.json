@@ -1,0 +1,10 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "Complete Waveshare ST3215 12 V supplier servo assembly, including the output retaining screw.",
+  "processes": [],
+  "releaseRequirements": [
+    "Verify the delivered variant, spline, retaining thread and mounting interfaces.",
+    "Validate supply voltage, permissible torque and duty cycle for the mechanism."
+  ]
+}

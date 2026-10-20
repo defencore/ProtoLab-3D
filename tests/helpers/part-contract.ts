@@ -146,12 +146,20 @@ export function registerPartContractTests(shard: number) {
       );
       const field =
         active.find((parameter) => parameter.type === 'number') ??
-        active.find((parameter) => parameter.type === 'select');
+        active.find((parameter) => parameter.type === 'select') ??
+        active.find((parameter) => parameter.type === 'text') ??
+        active.find((parameter) => parameter.type === 'boolean') ??
+        part.parameters.find((parameter) => parameter.type === 'number') ??
+        part.parameters[0];
       assert.ok(field);
       const badValues =
         field.type === 'number'
           ? [NaN, Infinity, -Infinity, '12', (field.min ?? 0) - 1]
-          : [NaN, Infinity, -Infinity, '__unsupported_catalog_option__', false];
+          : field.type === 'text'
+            ? [NaN, Infinity, -Infinity, 42, false]
+            : field.type === 'boolean'
+              ? [NaN, Infinity, -Infinity, 'true', 0]
+              : [NaN, Infinity, -Infinity, '__unsupported_catalog_option__', false];
       for (const badValue of badValues) {
         const values = { ...part.defaults, [field.key]: badValue };
         assert.ok(validateParameters(part, values, state).length > 0);

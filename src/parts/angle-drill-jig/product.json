@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Compact inclined guide with a flat clamping foot and a defined entry point on the workpiece.",
+  "processes": ["printing", "assembly"],
+  "releaseRequirements": [
+    "Select measured workpiece dimensions, final datum, tool and suitable material.",
+    "Provide positive clamping and verify guide/pin retention and tool clearance.",
+    "Qualify actual fit, wear, accuracy and working load; prototype geometry is not production approval."
+  ]
+}

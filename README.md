@@ -1,6 +1,6 @@
 # ProtoLab 3D
 
-A browser-based library of configurable mechanical parts for quick FreeCAD prototyping. Find a component in the category tree, adjust its dimensions, inspect its 3D preview, and bring the generated solid geometry into an existing FreeCAD document.
+A browser-based library of configurable mechanical products and assembly definitions. Find a component, adjust its dimensions, inspect its 3D preview, organize its physical occurrences in a design project, and bring the generated solid geometry into an existing FreeCAD document.
 
 ![ProtoLab interface showing the part library, a live 3D ball screw assembly preview, and the configurator](docs/protolab-preview.png)
 
@@ -29,23 +29,31 @@ The production output is `dist/`. Vite uses `/` as the base for the custom domai
 ## Working with parts
 
 - Browse category → subgroup → component, or press `/` to search names, descriptions, keywords, and preset sizes.
+- Choose a library view by engineering discipline, product type, make or buy policy, or manufacturing process. All views reference the same product definitions.
 - Use **Catalog sizes** in the configurator for everyday selection. For bolts and screws, choose thread → length → head → drive. Each choice narrows the remaining catalog options and automatically selects a matching part in the 3D preview. Matching product cards, counts and supplier links remain beside the model; clicking a card applies it immediately.
 - Switch to **Custom dimensions** to enter precise numeric dimensions and fine-tune the geometry.
 - Open **Browse presets** for advanced searches by designation, standard, manufacturer, supplier SKU or source. Its sidebar keeps the model visible while you filter by category, part type, numeric ranges and shape choices. Clicking a result immediately updates the model and its parameter review.
 - **Find matching** turns the current part's main dimensions and choices into editable search conditions. Remove individual conditions or widen their From/To ranges. Blank endpoints are unbounded, and both ends of a range are included. Browse all bearing types to compare available bore/outside diameter/width combinations.
 - Choose a sourced catalog preset, a prototype example, or enter your own dimensions. Invalid configurations display an explanation and disable export.
+- Open the single **Fasteners & threads → Spacers & standoffs** entry for all 4,451 choices: 4,444 supplier articles, four custom-order sleeve templates and three editable plain-spacer designs. Search `M3 10` or `M3 × 10 mm`, or choose ends, thread, body length, shape and material. **Catalog** lists actual supplier body lengths; **Range** accepts From/To bounds. Each length mode remembers its separate manual values. The first switch may initialize the alternate mode from a valid explicit exact length; it never uses the selected model or the lower endpoint of a genuine interval. **More filters** provides construction (including metal inserts), supplier, finish, independent end threads, overall length, diameter/across flats and plain bore. Options show counts under the other active filters; each filter can be cleared separately. Selecting an article preserves your filters and the real product identity. Results load in groups of 24.
+- Each supplier card includes its product link. Choose **Custom-order sleeve** to request dimensions within DREMEC's published range; selecting a template applies your requested dimensions. The steel default reproduces printed example `324/2.1x10`; the other initial dimensions are customer examples. Missing source dimensions and conflicts remain identified in cards/specifications. DREMEC dimensions come from the manufacturer's 2020 catalog, with Ukrainian product-family links; current Ukrainian variations and stock are unconfirmed. See [source coverage and verification](docs/standoff-catalogs.md).
 - Orbit, pan, and zoom the preview. Use the camera and rendering controls to inspect the model.
+- Switch **Simple / Full** above the preview to hide or show declared thread detail. Simple is the default for lighter geometry and TechDraw; Full exports actual helical threads where the library defines a pitch and profile. Drawing callouts are retained in both modes. The mode is remembered in this browser and does not change product identity or configured dimensions.
 - Where available, select an assembled/exploded bearing state or a free/loaded spring state. The selected state is used by every export.
 - Save named presets in this browser. Presets use local storage and are not synced to another device.
 
-**Copy Python** puts a one-line `exec(...)` command on the clipboard. In FreeCAD, open **View → Panels → Python console**, paste the command, and press Enter. The macro adds a single solid as a `Part::Feature`, or an assembly as an `App::Part` containing independently selectable component features. Expand the assembly in the model tree to hide components or change their **Placement**; moving the parent moves the complete assembly. The macro uses the active document, creates a document if necessary, and wraps creation in a transaction.
+**Copy for FreeCAD** puts a one-line `exec(...)` command on the clipboard. **FreeCAD options** lets you review the mode, copy the command or download the macro. Code and STL are prepared only when requested. In FreeCAD, open **View → Panels → Python console**, paste the command, and press Enter. The macro adds a single solid as a `Part::Feature`, or an assembly as an `App::Part` containing independently selectable component features. Expand the assembly in the model tree to hide components or change their **Placement**; moving the parent moves the complete assembly. The macro uses the active document, creates a document if necessary, and wraps creation in a transaction.
+
+Preview and export workers load the selected product and its declared dependencies on demand. Project exports load the configured products and their dependencies. Unrelated model assets are not loaded into those workers.
+
+The main application still loads the catalog at startup. Worker loading and Simple mode reduce subsequent geometry work; the initial catalog download remains large.
 
 The download menu provides:
 
 | Format                     | Result                                                                                                    |
 | -------------------------- | --------------------------------------------------------------------------------------------------------- |
 | FreeCAD macro (`.FCMacro`) | Standalone Python that constructs OpenCASCADE solid geometry in FreeCAD.                                  |
-| STL (`.stl`)               | Binary triangle mesh of the current preview, with coordinates in millimetres.                             |
+| STL (`.stl`)               | Binary triangle mesh in Simple mode, without thread relief, with coordinates in millimetres.              |
 | Parameters (`.json`)       | Part ID, dimensions, model state, format version, and units. This is configuration data, not a CAD model. |
 
 For STEP, run the macro in FreeCAD, select the created object, and use **File → Export**. Use **File → Save** for an FCStd document. The browser does not run the FreeCAD geometry kernel.
@@ -55,16 +63,23 @@ For STEP, run the macro in FreeCAD, select the created object, and use **File �
 The library covers mechanical parts, fasteners, motion systems, actuators, electronics, power components, and vehicle structures. Use the category tree or search to select a part. The live library shows the current package count.
 
 - [Library structure](docs/library-structure.md) and [library reference](docs/library-reference.md)
+- [Source-dimensioned motion components](docs/motion-catalog.md): HIWIN guides, TBI screws and STEPPERONLINE motor sizes.
+- [Tube drilling jigs with end stops, 4/8/12 hole belts and automatic guide selection](src/parts/tube-drill-jig/GUIDE.md)
+- [Workshop jigs for drilling, routing, filing, indexing, bending and tube fitting](docs/workshop-jigs.md)
+- [Product classification, specification sections and release requirements](docs/product-library.md)
+- [Engineering projects, enterprise documentation rules and project CAD](docs/engineering-projects.md)
 - [Part package contract and handoff](docs/part-modules.md)
 - [Catalog coverage](CATALOG_COVERAGE.md) and [engineering coverage](docs/engineering-library-coverage.md)
 - [Geometry fidelity](docs/model-fidelity-audit.md) and [manufacturer CAD evidence](docs/manufacturer-cad.md)
+- [Complete library macro verification and measured coverage](docs/library-script-audit.md)
+- [Library filters, selection behavior and output verification](docs/library-filter-verification.md)
 - [CAD handoff and drawing workflow](docs/recovery/README.md) and [TechDraw line settings](docs/freecad-techdraw.md)
 
 Each package's `GUIDE.md` contains its specific sources, dimensions, and limitations. READMEs describe workflows shared across the project or package system.
 
 ## Independent part packages
 
-Each part lives in one folder under `src/parts/<part-id>/`. That folder contains its configurator, presets, preview, FreeCAD recipe, validation and private helpers. Editing a nut's private thread code affects that nut only. You can hand a complete package to another developer, run it in an isolated workbench, and import it back without changing the application UI or registering imports by hand.
+Each product family lives in one folder under `src/parts/<part-id>/`. That folder contains its classification, configurator, presets, preview, FreeCAD recipe, validation and component-specific helpers. Shared hardware and geometry have one implementation in the documented SDK. Assemblies declare their library dependencies; portable handoffs include the complete dependency closure and run in an isolated workbench.
 
 ```text
 src/
@@ -72,7 +87,13 @@ src/
   components/                   Generic library, configurator, viewer and preset browser
   core/
     types.ts                    Parameter and PartDefinition contracts
+    product-types.ts            Product, occurrence and design-project contracts
+    product-library.ts          Classification, grouping and specification sections
+    design-project.ts           Product structure, manufacturing, procurement and release checks
     part-modules.ts             Versioned package contract and validation
+    assembly/                   Shared physical geometry and library instance rendering
+    hardware/                   Shared fastener, nut, washer, bearing, gear and spring utilities
+    component-recipes.ts         Structured local fabrication geometry and component definitions
     geometry.ts                 Generic mesh primitives
     mechanical.ts               Generic boundary meshes and section construction
     manufacturer-cad.ts         Compressed supplier meshes, placements and native BREP export
@@ -81,10 +102,11 @@ src/
   parts/
     index.ts                    Generated registry; do not edit manually
     <part-id>/
-      index.ts                  Package API version, stable ID and display order
+      index.ts                  Package API version, stable ID, display order and library dependencies
       part.ts                   Definition, geometry, FreeCAD recipe and validation
       configurator.ts           Local configuration metadata
       presets.json              Complete local preset snapshot and source evidence
+      product.json              Product type, supply, manufacturing routes and release requirements
       lib/                      Private domain helpers, when needed
       README.md                 Shared package workflow
       GUIDE.md                  Component-specific scope and sources
@@ -96,7 +118,7 @@ scripts/
 
 The migrated packages define their numeric and conditional parameter schema in `part.ts` or a private factory under `lib/`; their `configurator.ts` defines ordered **Catalog sizes** selectors. The new-part template separates its parameter schema and defaults into `configurator.ts`. Both layouts keep all editable part behavior in the same package. Its README explains the shared workflow; GUIDE.md records component-specific details.
 
-Part-specific thread, bearing, spring and gear helpers are intentionally private copies. Packages may share only the small geometry/type SDK and the installed Three.js/JSCAD dependencies. The boundary checker rejects imports into another part or the application catalog. `src/catalog` remains an offline data preparation layer; the browser uses each package's `presets.json`.
+Reusable thread, bearing, spring and gear helpers belong to the shared SDK. Unique component geometry and reference data remain local. Imports into another product package require an explicit library dependency, and dependency cycles are rejected. The boundary checker rejects undeclared package imports and application catalog imports. `src/catalog` remains an offline data preparation layer; the browser uses each package's `presets.json`.
 
 Vite discovers added or removed package folders and regenerates the registry. Existing-file edits update the live preview and configurator through hot reload. The application resolves the selected module by ID, applies updated untouched defaults and preserves compatible edits. Removed fields, unsupported values and removed states are reconciled against the new definition. A part's `defaultSelection: true` metadata chooses the initial selection; only one package may declare it.
 

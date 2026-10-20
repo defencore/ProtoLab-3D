@@ -1,5 +1,5 @@
-import { component } from '../src/parts/rocket-release/lib/shapes';
-import type { Shape } from '../src/parts/rocket-release/lib/shapes';
+import { component } from '../src/core/assembly/recovery/shapes';
+import type { Shape } from '../src/core/assembly/recovery/shapes';
 import { Matrix4, Vector3, Mesh, Raycaster } from 'three';
 import test from 'node:test';
 import assert from 'node:assert/strict';

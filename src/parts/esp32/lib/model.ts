@@ -1,7 +1,7 @@
 import type { Parameters } from '../../../core/types';
 import data from './models.json';
-import type { Piece } from './assembly';
-import { box, cylinder, prism, roundedRect, subtract, type Shape, type Vec } from './shapes';
+import type { Piece } from '../../../core/assembly/electronics/assembly';
+import { box, cylinder, prism, roundedRect, subtract, type Shape, type Vec } from '../../../core/assembly/electronics/shapes';
 interface Detail {
   kind: string;
   name: string;

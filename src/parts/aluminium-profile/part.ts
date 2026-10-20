@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { n } from '../../core/geometry';
 import { defaults, parameters, profileDefaults, type ProfileId } from './configurator';
@@ -8,6 +10,7 @@ import presetData from './presets.json';
 
 const part: PartDefinition = {
   id: 'aluminium-profile',
+  product: productData as ProductProfile,
   name: 'T-slot aluminium profile',
   category: 'STRUCTURAL PARTS',
   subgroup: 'ALUMINIUM PROFILES',

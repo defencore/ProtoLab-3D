@@ -1,10 +1,13 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters } from './configurator';
 import presets from './presets.json';
 import { pieces } from './lib/model';
-import * as assembly from '../flight-controller/lib/assembly';
+import * as assembly from '../../core/assembly/electronics/assembly';
 const part: PartDefinition = {
   id: 'lch7-controller',
+  product: productData as ProductProfile,
   name: 'LCH7 v3.2',
   category: 'ELECTRONICS & VISION',
   subgroup: 'FLIGHT CONTROLLERS',

@@ -1,10 +1,13 @@
+import { composition } from './lib/composition';
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import { transmissionReport } from './lib/transmission';
 import { wingLayout } from './lib/wing-layout';
 import { wingReport, wingSources, wingPreset } from './lib/wing-package';
 import type { PartDefinition, Preset } from '../../core/types';
 import { springReport } from './lib/spring-assessment';
 import { electronicsReport } from './lib/electronics';
-import { hatData } from './lib/hat';
+import { hatData } from '../../core/assembly/recovery/hat';
 import { defaults, parameters } from './configurator';
 import presets from './presets.json';
 import { pieces } from './lib/model';
@@ -15,6 +18,9 @@ import { layout, at, springAngles } from './lib/motion';
 import * as assembly from './lib/assembly';
 const part: PartDefinition = {
   id: 'rocket-release',
+  composition,
+  preview: 'worker',
+  product: productData as ProductProfile,
   name: 'Rocket Release Mechanism',
   category: 'VEHICLE STRUCTURES',
   subgroup: 'MODEL ROCKETS',

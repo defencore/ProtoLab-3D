@@ -1,9 +1,12 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters, catalogFilterFields } from './configurator';
 import presets from './presets.json';
 import { geometry, python, dimensions } from './lib/model';
 const part: PartDefinition = {
   id: 'srs-retainer',
+  product: productData as ProductProfile,
   name: 'SRS squib retainer',
   category: 'CONNECTORS & INTERFACES',
   subgroup: 'SRS AIRBAG',

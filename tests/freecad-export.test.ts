@@ -11,6 +11,7 @@ const fixture: PartDefinition = {
   category: 'Tests',
   subgroup: 'Export',
   description: 'Assembly metadata must not overwrite native properties.',
+  product: { kind: 'detail', supply: 'manufactured', description: 'Manufactured test fixture.', processes: ['milling'], releaseRequirements: ['Review the configured fixture drawing.'] },
   keywords: [],
   icon: 'box',
   complexity: 'Test',

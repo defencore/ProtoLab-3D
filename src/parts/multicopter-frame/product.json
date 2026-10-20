@@ -1,0 +1,9 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Six pinned open frame projects: quads, a printed Y6 hexacopter and a carbon X8 octocopter.",
+  "processes": ["assembly"],
+  "releaseRequirements": [
+    "Verify actual laminate, hardware, joint proof loads, vibration and complete-aircraft qualification."
+  ]
+}

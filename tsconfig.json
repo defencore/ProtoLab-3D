@@ -13,6 +13,6 @@
     "noEmit": true,
     "types": ["vite/client", "node"]
   },
-  "files": ["src/main.tsx", "vite.config.ts"],
+  "files": ["src/main.tsx", "src/workers/assembly.worker.ts", "vite.config.ts"],
   "include": []
 }

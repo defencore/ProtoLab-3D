@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -14,7 +16,7 @@ import {
   ring,
   sphere,
 } from '../../core/geometry';
-import { envelopeParameters, validateEnvelope } from './lib/parts/motion-bearing-utils';
+import { envelopeParameters, validateEnvelope } from '../../core/hardware/motion-bearing-utils';
 import { motionSources } from './lib/catalog/motion-bearings';
 
 function values(p: Parameters) {
@@ -34,6 +36,7 @@ function values(p: Parameters) {
 }
 const part: PartDefinition = {
   id: 'combined-bearing',
+  product: productData as ProductProfile,
   name: 'Combined needle and ball bearing',
   category: 'BEARINGS & SEALS',
   subgroup: 'COMBINED BEARINGS',
@@ -43,7 +46,7 @@ const part: PartDefinition = {
     'An NKIB-style combination of an axial ball row and a radial needle row around one shaft ring.',
   keywords: ['combined', 'needle', 'angular contact', 'axial', 'NKIB5903', 'NKIB5904'],
   parameters: [
-    ...envelopeParameters,
+    ...envelopeParameters(),
     numberParameter('outerWidth', 'Outer ring width', 'C', 'Raceways', 1, 100),
     numberParameter('raceDiameter', 'Inner raceway diameter', 'F', 'Raceways', 2, 250),
     {

@@ -8,6 +8,7 @@ import {
   AlertCircle,
   Search,
   Filter,
+  LoaderCircle,
   ArrowUpRight,
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
@@ -15,23 +16,31 @@ import { ReferenceSpecifications } from './ReferenceSpecifications';
 import QuickPicks from './QuickPicks';
 import { modelEvidence } from '../core/model-evidence';
 import CatalogModelPicker from './CatalogModelPicker';
+import StandoffCatalogPicker from './StandoffCatalogPicker';
+import NumericParameterInput from './NumericParameterInput';
 import { hasCatalogQuickSize, quickPickFields } from '../core/quick-picks';
 import type { QuickPickFilters } from '../core/quick-picks';
 import type { Parameters, PartDefinition, ParameterDefinition, Preset } from '../core/types';
 
 interface Props {
   part: PartDefinition;
+  familyParts: PartDefinition[];
+  browseQuery: { query: string; revision: number };
+  onBrowseQueryChange: (query: string) => void;
   parameters: Parameters;
   modelState: string;
   presetId: string;
   errors: string[];
   onChange: (key: string, value: number | string | boolean) => void;
   onState: (state: string) => void;
-  onBrowse: (filters?: QuickPickFilters) => void;
+  onBrowse: (filters?: QuickPickFilters, query?: string) => void;
   onFindMatching: () => void;
   onReset: () => void;
   onSave: () => void;
   onPreset: (preset: Preset) => void;
+  onSelectModel: (part: PartDefinition, preset: Preset, parameters?: Parameters) => void;
+  previewPending?: boolean;
+  previewError?: string;
 }
 
 function ParameterField({
@@ -58,19 +67,23 @@ function ParameterField({
       </label>
       {field.type === 'number' && (
         <div className="number-input">
-          <input
+          <NumericParameterInput
             id={`parameter-${field.key}`}
-            type="number"
-            step={field.step ?? 0.1}
             min={field.min}
             max={field.max}
-            value={String(value)}
-            onChange={(event) =>
-              onChange(field.key, event.target.value === '' ? '' : Number(event.target.value))
-            }
+            value={value}
+            onChange={(next) => onChange(field.key, next)}
           />
           <span>{field.unit ?? 'mm'}</span>
         </div>
+      )}
+      {field.type === 'text' && (
+        <input
+          id={`parameter-${field.key}`}
+          type="text"
+          value={String(value)}
+          onChange={(event) => onChange(field.key, event.target.value)}
+        />
       )}
       {field.type === 'select' && (
         <div className="select-wrap">
@@ -103,6 +116,9 @@ function ParameterField({
 
 export default function Configurator({
   part,
+  familyParts,
+  browseQuery,
+  onBrowseQueryChange,
   parameters,
   modelState,
   presetId,
@@ -114,7 +130,11 @@ export default function Configurator({
   onReset,
   onSave,
   onPreset,
+  onSelectModel,
+  previewPending,
+  previewError,
 }: Props) {
+  const isStandoffFamily = part.browseFamily?.id === 'spacers-standoffs';
   const evidence = modelEvidence(part, parameters, presetId);
   const [collapsed, setCollapsed] = useState<string[]>([]);
   const pickFields = quickPickFields(part);
@@ -122,7 +142,6 @@ export default function Configurator({
   useEffect(() => {
     if (!part.catalogSelectionOnly && !hasCatalogQuickSize(part, parameters)) setCustomMode(true);
   }, [part, parameters]);
-  const [pickerReset, setPickerReset] = useState(0);
   const selectedPreset = part.presets.find((preset) => preset.id === presetId);
   const visibleFields = part.parameters.filter(
     (field) =>
@@ -137,19 +156,38 @@ export default function Configurator({
     <aside className="configurator">
       <div className="config-heading">
         <SlidersHorizontal size={17} />
-        <h2>{part.catalogSelectionOnly ? 'Select model & pose' : 'Configure part'}</h2>
+        <h2>
+          {isStandoffFamily
+            ? 'Choose a spacer or standoff'
+            : part.catalogSelectionOnly
+              ? 'Select model & configure'
+              : 'Configure part'}
+        </h2>
         <span className="live-label">
           <span />
           Live
         </span>
       </div>
       <div className="config-scroll">
+        {errors.length > 0 && (
+          <div className="validation-error" role="alert">
+            <AlertCircle size={16} />
+            <div>
+              <strong>Check your dimensions</strong>
+              {errors.map((error) => (
+                <p key={error}>{error}</p>
+              ))}
+            </div>
+          </div>
+        )}
         <section className="preset-section">
           <div className="field-title">
             <span className="preset-field-label">
-              {part.catalogSelectionOnly ? 'MODEL CATALOG' : 'SIZE & CATALOG'}
-              {part.presets.length > 0
-                ? ` · ${part.presets.length.toLocaleString('en-US')} AVAILABLE`
+              {isStandoffFamily || part.catalogSelectionOnly ? 'MODEL CATALOG' : 'SIZE & CATALOG'}
+              {(isStandoffFamily
+                ? familyParts.reduce((count, member) => count + member.presets.length, 0)
+                : part.presets.length) > 0
+                ? ` · ${(isStandoffFamily ? familyParts.reduce((count, member) => count + member.presets.length, 0) : part.presets.length).toLocaleString('en-US')} AVAILABLE`
                 : ''}
             </span>
             <button
@@ -162,17 +200,21 @@ export default function Configurator({
               <BookmarkPlus size={17} />
             </button>
           </div>
-          {!part.catalogSelectionOnly && part.presets.length > 0 && (
-            <div className="preset-finder-actions">
-              <button onClick={() => onBrowse()}>
-                <Search size={14} />
-                {part.presets.some((preset) => preset.catalog)
-                  ? 'Choose a catalog preset'
-                  : 'Choose a prototype preset'}
-              </button>
-            </div>
-          )}
-          {!part.catalogSelectionOnly &&
+          {!isStandoffFamily &&
+            !part.catalogSelectionOnly &&
+            part.presets.length > 0 &&
+            (!pickFields.length || customMode) && (
+              <div className="preset-finder-actions">
+                <button onClick={() => onBrowse()}>
+                  <Search size={14} />
+                  {part.presets.some((preset) => preset.catalog)
+                    ? 'Choose a catalog preset'
+                    : 'Choose a prototype preset'}
+                </button>
+              </div>
+            )}
+          {!isStandoffFamily &&
+            !part.catalogSelectionOnly &&
             pickFields.length === 0 &&
             part.presets.length > 0 &&
             part.presets.length <= 100 && (
@@ -200,7 +242,7 @@ export default function Configurator({
                 </div>
               </div>
             )}
-          {!part.catalogSelectionOnly && pickFields.length > 0 && (
+          {!isStandoffFamily && !part.catalogSelectionOnly && pickFields.length > 0 && (
             <div className="configuration-mode" aria-label="Configuration mode">
               <button
                 className={!customMode ? 'active' : ''}
@@ -218,22 +260,39 @@ export default function Configurator({
               </button>
             </div>
           )}
-          {part.catalogSelectionOnly ? (
+          {isStandoffFamily ? (
+            <StandoffCatalogPicker
+              key={`standoffs-${browseQuery.revision}`}
+              parts={familyParts}
+              selectedPart={part}
+              presetId={presetId}
+              currentParameters={parameters}
+              initialQuery={browseQuery.query}
+              onQueryChange={onBrowseQueryChange}
+              onSelect={onSelectModel}
+            />
+          ) : part.catalogSelectionOnly ? (
             <CatalogModelPicker
-              key={`${part.id}-${pickerReset}`}
+              key={`catalog-${browseQuery.revision}`}
               part={part}
               presetId={presetId}
+              initialQuery={browseQuery.query}
+              onQueryChange={onBrowseQueryChange}
               onSelect={onPreset}
             />
-          ) : !customMode ? (
-            <QuickPicks
-              key={`${part.id}-${pickerReset}`}
-              part={part}
-              parameters={parameters}
-              presetId={presetId}
-              onSelect={onPreset}
-              onBrowse={onBrowse}
-            />
+          ) : pickFields.length ? (
+            <div hidden={customMode}>
+              <QuickPicks
+                key={`quick-${browseQuery.revision}`}
+                part={part}
+                parameters={parameters}
+                presetId={presetId}
+                initialQuery={browseQuery.query}
+                onQueryChange={onBrowseQueryChange}
+                onSelect={onPreset}
+                onBrowse={onBrowse}
+              />
+            </div>
           ) : null}
           <details className="model-evidence">
             <summary>{evidence.label}</summary>
@@ -298,17 +357,19 @@ export default function Configurator({
           <section className="state-section">
             <div className="section-label">MODEL STATE</div>
             <div className={`state-options${part.states.length > 3 ? ' state-options-grid' : ''}`}>
-              {part.states.map((state) => (
-                <button
-                  key={state.id}
-                  className={state.id === modelState ? 'active' : ''}
-                  onClick={() => onState(state.id)}
-                  aria-pressed={state.id === modelState}
-                  title={state.description}
-                >
-                  {state.label}
-                </button>
-              ))}
+              {part.states
+                .filter((state) => !state.availableWhen || state.availableWhen(parameters))
+                .map((state) => (
+                  <button
+                    key={state.id}
+                    className={state.id === modelState ? 'active' : ''}
+                    onClick={() => onState(state.id)}
+                    aria-pressed={state.id === modelState}
+                    title={state.description}
+                  >
+                    {state.label}
+                  </button>
+                ))}
             </div>
           </section>
         )}
@@ -352,17 +413,7 @@ export default function Configurator({
             ))}
           </section>
         )}
-        {errors.length > 0 ? (
-          <div className="validation-error" role="alert">
-            <AlertCircle size={16} />
-            <div>
-              <strong>Check your dimensions</strong>
-              {errors.map((error) => (
-                <p key={error}>{error}</p>
-              ))}
-            </div>
-          </div>
-        ) : (
+        {!errors.length && (
           <details className="config-note">
             <summary>
               <Info size={15} /> Modeling notes
@@ -387,19 +438,36 @@ export default function Configurator({
         )}
       </div>
       <div className="config-bottom">
-        <div className={errors.length ? 'geometry-status invalid' : 'geometry-status'}>
-          {errors.length ? <AlertCircle size={14} /> : <Check size={14} />}
+        <div
+          className={
+            errors.length || previewError
+              ? 'geometry-status invalid'
+              : part.validationNotice
+                ? 'geometry-status notice'
+                : 'geometry-status'
+          }
+          role="status"
+        >
+          {errors.length || previewError ? (
+            <AlertCircle size={14} />
+          ) : previewPending ? (
+            <LoaderCircle size={14} className="busy-spinner" />
+          ) : part.validationNotice ? (
+            <Info size={14} />
+          ) : (
+            <Check size={14} />
+          )}
           <span>
-            {errors.length ? 'Parameters need attention' : 'Parameters valid · ready to export'}
+            {errors.length
+              ? 'Parameters need attention'
+              : previewError
+                ? 'Preview needs attention'
+                : previewPending
+                  ? 'Building preview…'
+                  : (part.validationNotice ?? 'Configuration valid')}
           </span>
         </div>
-        <button
-          className="reset-button"
-          onClick={() => {
-            onReset();
-            setPickerReset((value) => value + 1);
-          }}
-        >
+        <button className="reset-button" onClick={onReset}>
           <RotateCcw size={15} />
           Reset parameters
         </button>

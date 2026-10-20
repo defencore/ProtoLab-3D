@@ -1,3 +1,6 @@
+import { composition } from './lib/composition';
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters } from './configurator';
 import presets from './presets.json';
@@ -8,6 +11,9 @@ import { sources } from './lib/procurement';
 
 const part: PartDefinition = {
   id: 'automatic-band-saw',
+  composition,
+  preview: 'worker',
+  product: productData as ProductProfile,
   name: 'Automatic band saw',
   category: 'MACHINE TOOLS',
   subgroup: 'CUTTING MACHINES',
@@ -110,6 +116,7 @@ const part: PartDefinition = {
     return issues;
   },
   buildGeometry: (p, s) => geometry(machinePieces(p, s)),
+  buildExportGeometry: (p, s) => geometry(machinePieces(p, s), true),
   dimensions: (p, s) => dimensions(machinePieces(p, s)),
   python: (p, s) => {
     const pieces = machinePieces(p, s);

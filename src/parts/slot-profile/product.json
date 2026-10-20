@@ -1,0 +1,14 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "Stock section cut to a configured length. Select an available section or define how the nonstandard section will be fabricated.",
+  "processes": [
+    "cutting",
+    "drilling"
+  ],
+  "releaseRequirements": [
+    "Specify material, blank, manufacturing route and the applicable drawing revision.",
+    "Define functional tolerances, surface finish, edge treatment and an inspection method.",
+    "Identify the stock section supplier/standard and all finishing operations."
+  ]
+}

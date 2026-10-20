@@ -1,0 +1,128 @@
+[
+  {
+    "id": "pcd40-4",
+    "name": "Flange PCD40 / 4 holes",
+    "description": "Referenced guide plate for bolt circles, rows, rectangular patterns and flanges. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "pattern": "circle",
+      "pcd": 40,
+      "count": 4,
+      "rows": 2,
+      "columns": 3,
+      "pitchX": 20,
+      "pitchY": 20,
+      "plate": 10,
+      "edge": 20,
+      "fenceDrop": 8,
+      "guide": "bushing",
+      "drill": 3,
+      "bushOD": 8,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "pcd60-6",
+    "name": "Flange PCD60 / 6 holes",
+    "description": "Referenced guide plate for bolt circles, rows, rectangular patterns and flanges. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "pattern": "circle",
+      "pcd": 60,
+      "count": 6,
+      "rows": 2,
+      "columns": 3,
+      "pitchX": 20,
+      "pitchY": 20,
+      "plate": 10,
+      "edge": 20,
+      "fenceDrop": 8,
+      "guide": "bushing",
+      "drill": 3,
+      "bushOD": 8,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "pcd80-8",
+    "name": "Flange PCD80 / 8 holes",
+    "description": "Referenced guide plate for bolt circles, rows, rectangular patterns and flanges. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "pattern": "circle",
+      "pcd": 80,
+      "count": 8,
+      "rows": 2,
+      "columns": 3,
+      "pitchX": 20,
+      "pitchY": 20,
+      "plate": 10,
+      "edge": 20,
+      "fenceDrop": 8,
+      "guide": "bushing",
+      "drill": 3,
+      "bushOD": 8,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "pcd100-12",
+    "name": "Flange PCD100 / 12 holes",
+    "description": "Referenced guide plate for bolt circles, rows, rectangular patterns and flanges. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "pattern": "circle",
+      "pcd": 100,
+      "count": 12,
+      "rows": 2,
+      "columns": 3,
+      "pitchX": 20,
+      "pitchY": 20,
+      "plate": 10,
+      "edge": 20,
+      "fenceDrop": 8,
+      "guide": "bushing",
+      "drill": 3,
+      "bushOD": 8,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "grid32",
+    "name": "Grid 3 x 2 / pitch32",
+    "description": "Referenced guide plate for bolt circles, rows, rectangular patterns and flanges. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "pattern": "grid",
+      "pcd": 60,
+      "count": 6,
+      "rows": 2,
+      "columns": 3,
+      "pitchX": 32,
+      "pitchY": 32,
+      "plate": 10,
+      "edge": 20,
+      "fenceDrop": 8,
+      "guide": "bushing",
+      "drill": 3,
+      "bushOD": 8,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "row20",
+    "name": "Row / 6 holes at 20 mm",
+    "description": "Referenced guide plate for bolt circles, rows, rectangular patterns and flanges. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "pattern": "line",
+      "pcd": 60,
+      "count": 6,
+      "rows": 2,
+      "columns": 3,
+      "pitchX": 20,
+      "pitchY": 20,
+      "plate": 10,
+      "edge": 20,
+      "fenceDrop": 8,
+      "guide": "bushing",
+      "drill": 3,
+      "bushOD": 8,
+      "seatAllowance": 0.05
+    }
+  }
+]

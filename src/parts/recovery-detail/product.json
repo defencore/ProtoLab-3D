@@ -1,0 +1,10 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "Configured single fabricated part with exact authored contours, machined or printed threads and local features.",
+  "processes": ["turning", "milling", "cutting", "drilling", "printing", "winding"],
+  "releaseRequirements": [
+    "Assign material, stock blank and operations.",
+    "Verify a single physical part, tool access, dimensions, thread fit and detail drawing."
+  ]
+}

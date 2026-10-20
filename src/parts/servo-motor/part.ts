@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import { withParameterStates } from '../../core/parameter-states';
 import type { Parameters, PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters, catalogFilterFields } from './configurator';
@@ -42,6 +44,7 @@ function validate(p: Parameters, state: string): string[] {
 
 const part: PartDefinition = {
   id: 'servo-motor',
+  product: productData as ProductProfile,
   name: 'Servo motor',
   category: 'MOTORS & ACTUATORS',
   subgroup: 'SERVOS',

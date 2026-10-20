@@ -1,0 +1,302 @@
+[
+  {
+    "id": "jst-1500-water-65",
+    "name": "JST 1.5 kW water / 65 mm",
+    "description": "JGD-65C-1.5KW; manufacturer-dimensional installation reconstruction, not confirmed factory machine supply.",
+    "parameters": {
+      "model": "jst-1500-water-65"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "JGD-65C-1.5KW",
+      "manufacturer": "Changzhou Jiesite / JST",
+      "sourceName": "Manufacturer product page and linked dimensioned source",
+      "sourceUrl": "https://www.apsmotor.com/round-water-cooled-1-5-kw-mtc-spindle-motor-with-er11-collet-65-mm-diameter.html",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [
+        "https://rkrorwxhjmmnlp5m.ldycdn.com/JST-1.5kw%2BER11%2B65mm%2Bwater-cooled%2Bround%2BMTC%2Bspindle%2Bmotor-aidlmBplKlllkSRnlmqklppkp.pdf"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Body 65 mm diameter, 217.5 mm length; positive-Z body begins 27 mm above the selected shaft-mouth/nose datum.",
+        "limitations": "Page names JGD-65D-1.5; linked drawing names JGD-65C-1.5KW. This reconstructs the drawing execution; verify the order designation. Body 217.5, shoulder 6, nose 21 and port extension 26 are dimensioned. Clamp window and undimensioned shell details are authored installation choices. Drawing declares M14x0.75. Its complete threaded engagement length and nut dimensions are unpublished; the 16 mm thread span and 11 mm nut are explicitly authored inspection envelopes, not supplier manufacturing dimensions.",
+        "sourceUrl": "https://rkrorwxhjmmnlp5m.ldycdn.com/JST-1.5kw%2BER11%2B65mm%2Bwater-cooled%2Bround%2BMTC%2Bspindle%2Bmotor-aidlmBplKlllkSRnlmqklppkp.pdf",
+        "sourceSha256": "6767f9c142a6fe3d6e388fd7058c65434164f28d53c7c1c7f913296c3c78d6b4"
+      },
+      "attributes": {
+        "power": 1500,
+        "cooling": "water",
+        "bodyDiameter": 65,
+        "bodyLength": 217.5,
+        "collet": "ER11"
+      },
+      "specifications": [
+        {
+          "label": "Drawing execution",
+          "value": "JGD-65C-1.5KW"
+        },
+        {
+          "label": "Spindle winding",
+          "value": "1.5 kW; 24000 rpm; 400 Hz; source execution voltage must match the ordered winding/VFD"
+        },
+        {
+          "label": "Source qualifications",
+          "value": "Page names JGD-65D-1.5; linked drawing names JGD-65C-1.5KW. This reconstructs the drawing execution; verify the order designation. Body 217.5, shoulder 6, nose 21 and port extension 26 are dimensioned. Clamp window and undimensioned shell details are authored installation choices."
+        },
+        {
+          "label": "Thread basis",
+          "value": "Drawing declares M14x0.75. Its complete threaded engagement length and nut dimensions are unpublished; the 16 mm thread span and 11 mm nut are explicitly authored inspection envelopes, not supplier manufacturing dimensions."
+        },
+        {
+          "label": "Procurement scope",
+          "value": "One complete spindle; not confirmed factory-installed machine SKU"
+        }
+      ],
+      "attributeConditions": {
+        "model": "Stable library selection of the recorded drawing execution; not certification of all geometry or confirmation of factory-installed machine supply."
+      }
+    }
+  },
+  {
+    "id": "jst-2200-water-80",
+    "name": "JST 2.2 kW water / 80 mm",
+    "description": "JGD-80C3-2.2K; manufacturer-dimensional installation reconstruction, not confirmed factory machine supply.",
+    "parameters": {
+      "model": "jst-2200-water-80"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "JGD-80C3-2.2K",
+      "manufacturer": "Changzhou Jiesite / JST",
+      "sourceName": "Manufacturer product page and linked dimensioned source",
+      "sourceUrl": "https://www.apsmotor.com/2-2-kw-water-cooled-mtc-spindle-motor-er20-80-mm-4-bearings-24000-rpm.html",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [
+        "https://rkrorwxhjmmnlp5m.ldycdn.com/JST-2.2kw%2BER20%2B80mm%2B4%2Bbearings%2Bwater-cooled%2Bround%2BMTC%2Bspindle%2Bmotor-aidpkBplKlllkSRnlppinpmkm.pdf"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Body 80 mm diameter, 220 mm length; positive-Z body begins 43.8 mm above the selected shaft-mouth/nose datum.",
+        "limitations": "Drawing body 220, shoulder envelope 8+5 and nose 30.8 yield body datum 43.8 above the shaft mouth. Port extension 26 and port diameter 12 are dimensioned. Endcap split lines and clamp window are not dimensioned mounting instructions. Drawing declares M25x1.5. The 20 mm modeled engagement and 18 mm nut are authored inspection envelopes; source nut profile, span and fit class are unspecified.",
+        "sourceUrl": "https://rkrorwxhjmmnlp5m.ldycdn.com/JST-2.2kw%2BER20%2B80mm%2B4%2Bbearings%2Bwater-cooled%2Bround%2BMTC%2Bspindle%2Bmotor-aidpkBplKlllkSRnlppinpmkm.pdf",
+        "sourceSha256": "4b23705e8eb678c964a9191c2179ce69ac6d9c8b20134a49215e6f97205c70c7"
+      },
+      "attributes": {
+        "power": 2200,
+        "cooling": "water",
+        "bodyDiameter": 80,
+        "bodyLength": 220,
+        "collet": "ER20"
+      },
+      "specifications": [
+        {
+          "label": "Drawing execution",
+          "value": "JGD-80C3-2.2K"
+        },
+        {
+          "label": "Spindle winding",
+          "value": "2.2 kW; 24000 rpm; 400 Hz; source execution voltage must match the ordered winding/VFD"
+        },
+        {
+          "label": "Source qualifications",
+          "value": "Drawing body 220, shoulder envelope 8+5 and nose 30.8 yield body datum 43.8 above the shaft mouth. Port extension 26 and port diameter 12 are dimensioned. Endcap split lines and clamp window are not dimensioned mounting instructions."
+        },
+        {
+          "label": "Thread basis",
+          "value": "Drawing declares M25x1.5. The 20 mm modeled engagement and 18 mm nut are authored inspection envelopes; source nut profile, span and fit class are unspecified."
+        },
+        {
+          "label": "Procurement scope",
+          "value": "One complete spindle; not confirmed factory-installed machine SKU"
+        }
+      ],
+      "attributeConditions": {
+        "model": "Stable library selection of the recorded drawing execution; not certification of all geometry or confirmation of factory-installed machine supply."
+      }
+    }
+  },
+  {
+    "id": "jst-2200-air-80",
+    "name": "JST 2.2 kW air / 80 mm",
+    "description": "JGF-80E-2.2K; manufacturer-dimensional installation reconstruction, not confirmed factory machine supply.",
+    "parameters": {
+      "model": "jst-2200-air-80"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "JGF-80E-2.2K",
+      "manufacturer": "Changzhou Jiesite / JST",
+      "sourceName": "Manufacturer product page and linked dimensioned source",
+      "sourceUrl": "https://www.apsmotor.com/round-air-cooled-2-2-kw-mtc-spindle-motor-80-mm-diameter-with-er20-collet.html",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [
+        "https://rkrorwxhjmmnlp5m.ldycdn.com/JST-2.2kw%2BER20%2B80mm%2Bair-cooled%2Bround%2BMTC%2Bspindle%2Bmotor-aidliBplKlllkSRnlqqrokpkp.pdf"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Body 80 mm diameter, 255 mm length; positive-Z body begins 44 mm above the selected shaft-mouth/nose datum.",
+        "limitations": "Page names JGF-F80E-2.2; drawing names JGF-80E-2.2K. Body 255, front shoulder 8, nose 36 and shoulder diameter 58.5 are dimensioned. Nut front projection, connector length and individual air vents are not dimensioned; they remain authored envelopes. Drawing declares M25x1.5. The modeled thread span and nut dimensions are authored inspection envelopes, not a verified replacement nut drawing.",
+        "sourceUrl": "https://rkrorwxhjmmnlp5m.ldycdn.com/JST-2.2kw%2BER20%2B80mm%2Bair-cooled%2Bround%2BMTC%2Bspindle%2Bmotor-aidliBplKlllkSRnlqqrokpkp.pdf",
+        "sourceSha256": "d84d8d679a1e403339cb77d56f28ab0c51d364f5614b33b51478835f4618a38f"
+      },
+      "attributes": {
+        "power": 2200,
+        "cooling": "air",
+        "bodyDiameter": 80,
+        "bodyLength": 255,
+        "collet": "ER20"
+      },
+      "specifications": [
+        {
+          "label": "Drawing execution",
+          "value": "JGF-80E-2.2K"
+        },
+        {
+          "label": "Spindle winding",
+          "value": "2.2 kW; 24000 rpm; 400 Hz; source execution voltage must match the ordered winding/VFD"
+        },
+        {
+          "label": "Source qualifications",
+          "value": "Page names JGF-F80E-2.2; drawing names JGF-80E-2.2K. Body 255, front shoulder 8, nose 36 and shoulder diameter 58.5 are dimensioned. Nut front projection, connector length and individual air vents are not dimensioned; they remain authored envelopes."
+        },
+        {
+          "label": "Thread basis",
+          "value": "Drawing declares M25x1.5. The modeled thread span and nut dimensions are authored inspection envelopes, not a verified replacement nut drawing."
+        },
+        {
+          "label": "Procurement scope",
+          "value": "One complete spindle; not confirmed factory-installed machine SKU"
+        }
+      ],
+      "attributeConditions": {
+        "model": "Stable library selection of the recorded drawing execution; not certification of all geometry or confirmation of factory-installed machine supply."
+      }
+    }
+  },
+  {
+    "id": "jst-3000-water-100",
+    "name": "JST 3 kW water / 100 mm",
+    "description": "JGD-100A-3.0KW; manufacturer-dimensional installation reconstruction, not confirmed factory machine supply.",
+    "parameters": {
+      "model": "jst-3000-water-100"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "JGD-100A-3.0KW",
+      "manufacturer": "Changzhou Jiesite / JST",
+      "sourceName": "Manufacturer product page and linked dimensioned source",
+      "sourceUrl": "https://www.apsmotor.com/3-0-kw-water-cooled-mtc-spindle-motor-er20-100-mm-4-bearings-24000-rpm.html",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [
+        "https://rkrorwxhjmmnlp5m.ldycdn.com/JST-3kw%2BER20%2B100mm%2B4%2Bbearings%2Bwater-cooled%2Bround%2BMTC%2Bspindle%2Bmotor-aidpqBplKlllkSRnlqpjpojkp.pdf"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Body 100 mm diameter, 243 mm length; positive-Z body begins 58 mm above the selected shaft-mouth/nose datum.",
+        "limitations": "Page names JGD-100A2-3; linked drawing names JGD-100A-3.0KW. Body 243, shoulder 8+5, nose 45 and smooth barrel 206 are dimensioned. The barrel bounds 70..276 are sourced, but clamping permission/torque is not. Port and connector projections are undimensioned envelopes. Drawing declares M25x1.5. Modeled thread span, nut and collet internals remain authored inspection geometry with no supplier fit certification.",
+        "sourceUrl": "https://rkrorwxhjmmnlp5m.ldycdn.com/JST-3kw%2BER20%2B100mm%2B4%2Bbearings%2Bwater-cooled%2Bround%2BMTC%2Bspindle%2Bmotor-aidpqBplKlllkSRnlqpjpojkp.pdf",
+        "sourceSha256": "9882c5d547a0af7a83d2d937b49565167e9cc35a65b9edcaef1a8b53b968c1ae"
+      },
+      "attributes": {
+        "power": 3000,
+        "cooling": "water",
+        "bodyDiameter": 100,
+        "bodyLength": 243,
+        "collet": "ER20"
+      },
+      "specifications": [
+        {
+          "label": "Drawing execution",
+          "value": "JGD-100A-3.0KW"
+        },
+        {
+          "label": "Spindle winding",
+          "value": "3 kW; 24000 rpm; 400 Hz; source execution voltage must match the ordered winding/VFD"
+        },
+        {
+          "label": "Source qualifications",
+          "value": "Page names JGD-100A2-3; linked drawing names JGD-100A-3.0KW. Body 243, shoulder 8+5, nose 45 and smooth barrel 206 are dimensioned. The barrel bounds 70..276 are sourced, but clamping permission/torque is not. Port and connector projections are undimensioned envelopes."
+        },
+        {
+          "label": "Thread basis",
+          "value": "Drawing declares M25x1.5. Modeled thread span, nut and collet internals remain authored inspection geometry with no supplier fit certification."
+        },
+        {
+          "label": "Procurement scope",
+          "value": "One complete spindle; not confirmed factory-installed machine SKU"
+        }
+      ],
+      "attributeConditions": {
+        "model": "Stable library selection of the recorded drawing execution; not certification of all geometry or confirmation of factory-installed machine supply."
+      }
+    }
+  },
+  {
+    "id": "zhj-3000-air-100",
+    "name": "Zhong Hua Jiang 3 kW air / 100 mm",
+    "description": "ER20 100mm 3KW Round Air Cooled; manufacturer-dimensional installation reconstruction, not confirmed factory machine supply.",
+    "parameters": {
+      "model": "zhj-3000-air-100"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "ER20 100mm 3KW Round Air Cooled",
+      "manufacturer": "Changzhou Huajiang / Zhong Hua Jiang",
+      "sourceName": "Manufacturer product page and linked dimensioned source",
+      "sourceUrl": "https://www.zhonghuajiangspindle.com/3kw-cnc-air-cooled-spindle-motor.html",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [
+        "https://iprorwxhmkqlll5p.ldycdn.com/cloud/liBpnKilloSRrllkmpkriq/Main.jpg"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Body 100 mm diameter, 220 mm length; positive-Z body begins 88 mm above the selected shaft-mouth/nose datum.",
+        "limitations": "Manufacturer dimensional photo specifies diameter 100, nose assembly 88, body 220 and total 308 excluding the undimensioned connector. Page introduction says 24000 rpm; model table and nameplate say 18000 rpm / 300 Hz. Nose subdivisions and vent/connector details remain authored envelopes. Source specifies ER20 only; shaft thread diameter, pitch and span are unpublished. M25x1.5 is a qualified standard-derived ER20 inspection interface, not manufacturer-verified. The 20 mm span, nut geometry and fit must be measured on the supplied unit before release.",
+        "sourceUrl": "https://iprorwxhmkqlll5p.ldycdn.com/cloud/liBpnKilloSRrllkmpkriq/Main.jpg",
+        "sourceSha256": "ddbedcaad3b070201efebf8f48350161d71d885534e7cca6a46a1822a46eb2e6"
+      },
+      "attributes": {
+        "power": 3000,
+        "cooling": "air",
+        "bodyDiameter": 100,
+        "bodyLength": 220,
+        "collet": "ER20"
+      },
+      "specifications": [
+        {
+          "label": "Drawing execution",
+          "value": "ER20 100mm 3KW Round Air Cooled"
+        },
+        {
+          "label": "Spindle winding",
+          "value": "3 kW; 18000 rpm; 300 Hz; source execution voltage must match the ordered winding/VFD"
+        },
+        {
+          "label": "Source qualifications",
+          "value": "Manufacturer dimensional photo specifies diameter 100, nose assembly 88, body 220 and total 308 excluding the undimensioned connector. Page introduction says 24000 rpm; model table and nameplate say 18000 rpm / 300 Hz. Nose subdivisions and vent/connector details remain authored envelopes."
+        },
+        {
+          "label": "Thread basis",
+          "value": "Source specifies ER20 only; shaft thread diameter, pitch and span are unpublished. M25x1.5 is a qualified standard-derived ER20 inspection interface, not manufacturer-verified. The 20 mm span, nut geometry and fit must be measured on the supplied unit before release."
+        },
+        {
+          "label": "Procurement scope",
+          "value": "One complete spindle; not confirmed factory-installed machine SKU"
+        }
+      ],
+      "attributeConditions": {
+        "model": "Stable library selection of the recorded drawing execution; not certification of all geometry or confirmation of factory-installed machine supply."
+      }
+    }
+  }
+]

@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import { withParameterStates } from '../../core/parameter-states';
 import { Group } from 'three';
 import type { Parameters, PartDefinition, Preset } from '../../core/types';
@@ -130,6 +132,7 @@ export function assembly(p: Parameters, state: string): Component[] {
 }
 const part: PartDefinition = {
   id: 'open-frame-solenoid',
+  product: productData as ProductProfile,
   name: 'Open-frame solenoid',
   category: 'MOTORS & ACTUATORS',
   subgroup: 'SOLENOIDS',

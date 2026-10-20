@@ -1,4 +1,11 @@
-import { box, cylinder, prism, union, subtract, type Shape } from './shapes';
+import {
+  box,
+  cylinder,
+  prism,
+  union,
+  subtract,
+  type Shape,
+} from '../../../core/assembly/boundary/shapes';
 export { union };
 export const cut = subtract;
 export const B = (w: number, d: number, h: number, x = 0, y = 0, z = 0): Shape =>

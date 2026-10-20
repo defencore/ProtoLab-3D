@@ -1,5 +1,11 @@
 {
   "extends": "./tsconfig.json",
   "files": [],
-  "include": ["tests", "scripts/parts.ts", "scripts/part-modules"]
+  "include": [
+    "tests",
+    "scripts/parts.ts",
+    "scripts/part-modules",
+    "scripts/audit-library-scripts.ts",
+    "scripts/library-script-audit"
+  ]
 }

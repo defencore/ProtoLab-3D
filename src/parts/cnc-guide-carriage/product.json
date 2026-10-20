@@ -1,0 +1,10 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "Complete purchased HGH20CA carriage; its visual subdivisions are not separate fabrication items.",
+  "processes": [],
+  "releaseRequirements": [
+    "Confirm the actual order execution, accuracy/preload class and supplier availability.",
+    "Verify installation interfaces against the ordered product; internal contours are illustrative."
+  ]
+}

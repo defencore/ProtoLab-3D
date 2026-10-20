@@ -7,7 +7,7 @@ import { disposeModel } from '../src/core/mechanical';
 import {
   nominalThreadDiameter,
   nutCoarsePitch,
-} from '../src/parts/hex-nut/lib/core/internal-thread';
+} from '../src/core/hardware/internal-thread';
 import { validateParameters } from '../src/core/validation';
 
 // Lifting eye nuts live with lifting hardware; UI taxonomy must not exclude

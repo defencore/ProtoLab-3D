@@ -1,10 +1,11 @@
+import { markSupplierUnit } from '../../../core/supplier-components';
 import type { Parameters } from '../../../core/types';
-import { cylinder, prism, subtract } from './shapes';
-import type { Piece } from './assembly';
+import { cylinder, prism, subtract } from '../../../core/assembly/mechanical/shapes';
+import type { Piece } from '../../../core/assembly/mechanical/assembly';
 export function bladeSpec(p: Parameters) {
   return { diameter: 500, kerf: 4, body: 3.4, teeth: 120, bore: p.model === 'lu5h50002' ? 32 : 30 };
 }
-export function bladePieces(p: Parameters): Piece[] {
+function buildBladePieces(p: Parameters): Piece[] {
   const s = bladeSpec(p);
   const outline: [number, number][] = Array.from({ length: 480 }, (_, i) => {
     const a = ((i - 1) * Math.PI) / 240,
@@ -27,4 +28,18 @@ export function bladePieces(p: Parameters): Piece[] {
       ),
     },
   ];
+}
+
+export function bladePieces(p: Parameters): Piece[] {
+  const items = buildBladePieces(p);
+  markSupplierUnit(
+    items.map((item) => item.shape),
+    {
+      name: 'Circular saw blade',
+      libraryId: 'circular-saw-blade',
+      parameters: { ...p },
+      state: 'default',
+    },
+  );
+  return items;
 }

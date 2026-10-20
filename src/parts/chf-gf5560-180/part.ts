@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters } from './configurator';
 import presets from './presets.json';
@@ -5,6 +7,7 @@ import { pieces } from './lib/model';
 import * as assembly from './lib/assembly';
 const part: PartDefinition = {
   id: 'chf-gf5560-180',
+  product: productData as ProductProfile,
   name: 'CHIHAI GF5560-180 worm gear motor',
   category: 'MOTORS & ACTUATORS',
   subgroup: 'DC & INDUSTRIAL MOTORS',

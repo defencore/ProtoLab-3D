@@ -1,3 +1,4 @@
+import { markSupplierUnit, supplierUnit } from '../../../core/supplier-components';
 import { pivotPieces, rotateHead } from './pivot-head';
 import { clampPieces } from './clamps';
 import { feedAxis } from './feed-axis';
@@ -74,6 +75,7 @@ export function machinePieces(p: Parameters, state: string): MachinePiece[] {
     group: string,
     prefix: string,
   ) => {
+    markSupplierUnit(items.map(item=>item.shape), {...(items[0] ? supplierUnit(items[0].shape) : undefined), name:prefix});
     for (const item of items)
       add(
         `${prefix} / ${item.label}`,

@@ -1,5 +1,5 @@
-import { box, cylinder, prism, union, subtract, component, type Shape, type Vec } from './shapes';
-import type { Piece } from './assembly';
+import { box, cylinder, prism, union, subtract, component, type Shape, type Vec } from '../../../core/assembly/mechanical/shapes';
+import type { Piece } from '../../../core/assembly/mechanical/assembly';
 import { Box3, Mesh, MeshStandardMaterial } from 'three';
 export { union };
 export const cut = subtract;

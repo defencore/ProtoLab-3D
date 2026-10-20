@@ -44,11 +44,11 @@ export const parameters: ParameterDefinition[] = [
     type: 'select',
     group: 'Thread',
     options: [
-      { value: 'machined', label: 'Machined metal · smooth with callout' },
-      { value: 'printed', label: '3D printed · modeled thread' },
+      { value: 'machined', label: 'Machined' },
+      { value: 'printed', label: '3D printed' },
     ],
     description:
-      'Machined threads use nominal cylinders for drawings. Only printed threads retain helical faces and print fit allowance.',
+      'Simple uses nominal envelopes with thread callouts. Full models actual helical flanks for both processes; printed features retain the configured fit allowance.',
   },
   {
     key: 'form',

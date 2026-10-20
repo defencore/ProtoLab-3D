@@ -2,7 +2,7 @@ import type { Parameters } from '../../../core/types';
 import type { Piece } from './assembly';
 import { at, layout } from './motion';
 import { batteryPosts, batteryLayout } from './balance';
-import { plate, circle, subtract, transform, rotate, type Shape } from './shapes';
+import { plate, circle, subtract, transform, rotate, type Shape } from '../../../core/assembly/recovery/shapes';
 import { radialScrew, matingHole } from './hardware';
 import { packWirePorts, packLightening } from './pack-support';
 import { hatMounts, hatBolt } from './electronics';

@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "One selected rear clamp block or front cap, machined from aluminium stock. The two details are separate assembly occurrences.",
+  "processes": ["milling", "drilling"],
+  "releaseRequirements": [
+    "Specify aluminium grade, blank, assembled bore fit, surface finish and tolerances on the detail drawings.",
+    "Finish the common bore with the rear block and cap held at the designed split gap.",
+    "Verify screw engagement, torque and mount rigidity for the selected spindle and cutting loads."
+  ]
+}

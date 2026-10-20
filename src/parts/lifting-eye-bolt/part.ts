@@ -1,3 +1,9 @@
+import { externalThreadPython } from '../../core/thread-native';
+import { metricThreadCallout, threadMetadataPython } from '../../core/thread-callouts';
+import { showThreads } from '../../core/thread-visual';
+import { Mesh } from 'three';
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -28,6 +34,7 @@ function values(p: Parameters) {
 }
 const part: PartDefinition = {
   id: 'lifting-eye-bolt',
+  product: productData as ProductProfile,
   name: 'Lifting eye bolt',
   category: 'FASTENERS & THREADS',
   subgroup: 'LIFTING EYES',
@@ -71,7 +78,8 @@ const part: PartDefinition = {
       max: 8,
       step: 0.05,
       group: 'Stem',
-      description: 'Thread identification; preview and CAD use a smooth nominal envelope.',
+      description:
+        'Pitch for the thread callout and Full helical geometry; Simple uses a nominal envelope.',
     },
     {
       key: 'collarDiameter',
@@ -175,7 +183,20 @@ const part: PartDefinition = {
         }),
       ),
     );
-    return solidUnionMesh(booleans.union(stem, collar, ring));
+    const model = solidUnionMesh(booleans.union(stem, collar, ring));
+    model.traverse((object) => {
+      if (object instanceof Mesh)
+        showThreads(object, [
+          {
+            origin: [0, 0, -(v.length + Number(p.headHeight)) / 2],
+            axis: [0, 0, 1],
+            diameter: Number(p.diameter),
+            pitch: Number(p.pitch),
+            length: v.length,
+          },
+        ]);
+    });
+    return model;
   },
   dimensions: (p) => [
     Math.max(Number(p.collarDiameter), Number(p.eyeDiameter)),
@@ -184,10 +205,10 @@ const part: PartDefinition = {
   ],
   python: (p) => {
     const v = values(p);
-    return `# Smooth thread envelope and joined ring/collar geometry for clearance prototyping.\nshape = Part.makeCylinder(${num(Number(p.diameter) / 2)}, ${num(v.length)})\ncollar = Part.makeCylinder(${num(Number(p.collarDiameter) / 2)}, ${num(Number(p.collarHeight))}, App.Vector(0,0,${num(v.length)}))\neye = Part.makeTorus(${num(v.radius)}, ${num(v.tube)}, App.Vector(0,0,${num(v.z)}), App.Vector(0,1,0))\nshape = shape.fuse(collar).fuse(eye).removeSplitter()\nif len(shape.Solids) != 1: raise ValueError("The eye, collar and stem must form one solid.")\nshape.translate(App.Vector(0,0,-${num((v.length + Number(p.headHeight)) / 2)}))`;
+    return `# Joined ring/collar geometry for clearance prototyping.\nshape = Part.makeCylinder(${num(Number(p.diameter) / 2)}, ${num(v.length)})\ncollar = Part.makeCylinder(${num(Number(p.collarDiameter) / 2)}, ${num(Number(p.collarHeight))}, App.Vector(0,0,${num(v.length)}))\neye = Part.makeTorus(${num(v.radius)}, ${num(v.tube)}, App.Vector(0,0,${num(v.z)}), App.Vector(0,1,0))\nshape = shape.fuse(collar).fuse(eye).removeSplitter()\n${externalThreadPython({ diameter: Number(p.diameter), pitch: Number(p.pitch), length: v.length })}\nif len(shape.Solids) != 1: raise ValueError("The eye, collar and stem must form one solid.")\nshape.translate(App.Vector(0,0,-${num((v.length + Number(p.headHeight)) / 2)}))\n${threadMetadataPython([{ ...metricThreadCallout(Number(p.diameter), Number(p.pitch), v.length, false), origin: [0, 0, -(v.length + Number(p.headHeight)) / 2], axis: [0, 0, 1] }])}`;
   },
   notes:
-    'Dimensional layout model with a circular ring cross-section, cylindrical collar and smooth thread envelope. Local forged transitions and certification details are omitted; this model does not establish a lifting capacity.',
+    'Dimensional layout model with a circular ring cross-section and cylindrical collar. Simple uses a nominal thread envelope; Full exports real helical flanks. Local forged transitions and certification details are omitted; this model does not establish a lifting capacity.',
   sources: [
     {
       label: 'Gvyntok DIN 580 dimensions',

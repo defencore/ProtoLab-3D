@@ -1,0 +1,12 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Authored two-piece tube block clamp with configured fabricated halves and separately identified standard hardware.",
+  "processes": ["assembly"],
+  "releaseRequirements": [
+    "Measure tube OD, ovality and wall thickness; qualify bore fit, residual split gap and resistance to rotation without crushing the tube.",
+    "Specify half material, machining or printing route, tolerances, bearing-face flatness and finish.",
+    "Resolve fastener grade, locking method, torque, mounting stack and joint proof loads for the actual vehicle.",
+    "Check fatigue, vibration, polymer creep and carbon tube local bearing before vehicle use."
+  ]
+}

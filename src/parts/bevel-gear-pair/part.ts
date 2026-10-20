@@ -1,24 +1,28 @@
+import { bevelComposition, bevelPieces } from './lib/composition';
+import { componentGeometry, componentPython } from '../../core/assembly/detail-instances';
+import manufacturedPart from '../manufactured-detail/part';
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import { withParameterStates } from '../../core/parameter-states';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
 import modeling from '@jscad/modeling';
-import { Box3, Group, Mesh, Vector3 } from 'three';
+import { Box3, Vector3 } from 'three';
 import type { Parameters, PartDefinition } from '../../core/types';
-import { n, num, numberParameter } from '../../core/geometry';
-import { gearValues, involuteProfile } from './lib/core/gears';
+import { n, numberParameter } from '../../core/geometry';
+import { gearValues, involuteProfile } from '../../core/hardware/gears';
 import { disposeModel } from '../../core/mechanical';
-import { booleans, primitives, transforms, solidUnionMesh } from '../../core/solid-union';
+import { booleans, primitives, transforms } from '../../core/solid-union';
 import { gearReferenceFiles } from './lib/catalog/reference-gears';
 import { appendBevelEndCap } from './lib/core/end-cap';
 import {
   shaftBoreOutline,
   shaftBoreParameters,
-  shaftBorePython,
   shaftBoreRadius,
   shaftBoreValues,
   validateShaftBore,
-} from './lib/core/shaft-bore';
+} from '../../core/hardware/shaft-bore';
 
 const presets = modulePresets;
 const defaults = presets[0].parameters;
@@ -180,66 +184,14 @@ function solid(p: Parameters, side: GearSide) {
     ...hubBoundary,
   ]);
 }
-function build(p: Parameters, state: string): Group {
-  const group = new Group();
-  for (const side of ['pinion', 'wheel'] as const) {
-    if ((state === 'pinion' && side !== 'pinion') || (state === 'wheel' && side !== 'wheel'))
-      continue;
-    const get = (key: string) => n(p, `${side}${key}`),
-      shape = solid(p, side);
-    const bounds = modeling.measurements.measureBoundingBox(shape);
-    // Radial holes can leave small real intersection facets beside shaft flats.
-    const mesh = solidUnionMesh(shape, { minimumTriangleArea: 1e-10 }).children[0] as Mesh;
-    mesh.position.set(...(bounds[0].map((x, i) => (x + bounds[1][i]) / 2) as Point));
-    mesh.name = side === 'pinion' ? 'Bevel pinion' : 'Bevel wheel';
-    const holder = new Group().add(mesh);
-    if (state === 'pinion' || state === 'wheel') holder.position.z = -get('Overall') / 2;
-    else {
-      const distance = get('Mounting') + (state === 'exploded' ? n(p, 'module') * 12 : 0);
-      if (side === 'pinion') {
-        holder.rotation.y = -Math.PI / 2;
-        holder.position.x = distance;
-      } else holder.position.z = -distance;
-    }
-    group.add(holder);
-  }
-  return group;
+function solids(p: Parameters) {
+  return {
+    pinion: solid({ ...p, rotation: 0 }, 'pinion'),
+    wheel: solid({ ...p, rotation: 0 }, 'wheel'),
+  };
 }
-
-function pythonGear(p: Parameters, side: GearSide): string {
-  const get = (key: string) => n(p, `${side}${key}`);
-  const polygons = modeling.geometries.geom3.toPolygons(solid({ ...p, setScrews: false }, side));
-  const vertices: Point[] = [],
-    indices = new Map<string, number>();
-  const faces = polygons.map((polygon) =>
-    polygon.vertices.map((point) => {
-      const key = point.map((value) => num(value)).join(',');
-      let index = indices.get(key);
-      if (index === undefined) {
-        index = vertices.length;
-        vertices.push(point as Point);
-        indices.set(key, index);
-      }
-      return index;
-    }),
-  );
-  return `# The same closed boundary defines preview and native mounting envelopes.
-points = [App.Vector(*point) for point in ${JSON.stringify(vertices)}]
-faces = ${JSON.stringify(faces)}
-surfaces = [Part.Face(Part.makePolygon([points[i] for i in face] + [points[face[0]]])) for face in faces]
-shape = Part.makeSolid(Part.makeShell(surfaces))
-# Keep circles analytic while preserving the selected shaft flats and keyway.
-${shaftBorePython(boreValues(p, side), get('Overall') + 2, -1)}
-shape = shape.cut(bore)
-${
-  p.setScrews
-    ? `set_screw_hole = Part.makeCylinder(${num(n(p, 'setScrewDiameter') / 2)},${num(get('Hub') / 2 + 2)},App.Vector(0,-1,${num(get('HubLength') / 2)}),App.Vector(0,1,0))
-set_screw_hole.rotate(App.Vector(0,0,0),App.Vector(0,0,1),${num((shaftRotation(p, side) * 180) / Math.PI)})
-shape = shape.cut(set_screw_hole)`
-    : ''
-}
-# Preserve triangular patches instead of merging narrow bevel root wires.
-${side} = shape`;
+function build(p: Parameters, state: string) {
+  return componentGeometry([manufacturedPart], bevelPieces(p, solids(p), state));
 }
 const fields = (side: GearSide) => {
   const group = side === 'pinion' ? 'Pinion dimensions' : 'Wheel dimensions';
@@ -293,6 +245,8 @@ const fields = (side: GearSide) => {
 
 const part: PartDefinition = {
   id: 'bevel-gear-pair',
+  composition: (p) => bevelComposition(p, solids(p)),
+  product: productData as ProductProfile,
   name: 'Bevel gear pair',
   category: 'TRANSMISSION & LINKAGES',
   subgroup: 'GEARS & GEAR DRIVES',
@@ -439,30 +393,7 @@ const part: PartDefinition = {
     return [...new Set(errors)];
   },
   buildGeometry: build,
-  python(p, state) {
-    const chunks: string[] = [],
-      objects: string[] = [];
-    for (const side of ['pinion', 'wheel'] as const) {
-      if ((state === 'pinion' && side !== 'pinion') || (state === 'wheel' && side !== 'wheel'))
-        continue;
-      chunks.push(pythonGear(p, side));
-      objects.push(side);
-      if (state === 'pinion' || state === 'wheel')
-        chunks.push(`${side}.translate(App.Vector(0,0,${num(-n(p, `${side}Overall`) / 2)}))`);
-      else {
-        const distance = n(p, `${side}Mounting`) + (state === 'exploded' ? n(p, 'module') * 12 : 0);
-        chunks.push(
-          side === 'pinion'
-            ? `pinion.rotate(App.Vector(0,0,0),App.Vector(0,1,0),-90)\npinion.translate(App.Vector(${num(distance)},0,0))`
-            : `wheel.translate(App.Vector(0,0,${num(-distance)}))`,
-        );
-      }
-    }
-    return (
-      chunks.join('\n') +
-      `\nshape = Part.makeCompound([${objects.join(',')}])\ncomponent_labels = ${JSON.stringify(objects.map((name) => (name === 'pinion' ? 'Pinion' : 'Wheel')))}`
-    );
-  },
+  python: (p, state) => componentPython([manufacturedPart], bevelPieces(p, solids(p), state)),
   dimensions(p, state) {
     const model = build(p, state);
     try {

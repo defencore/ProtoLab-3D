@@ -2,6 +2,7 @@ import type { Parameters } from '../../../core/types';
 import { box, cylinder, subtract } from './shapes';
 import { collection, pose, paint, metal, dark } from './layout';
 import { controlPieces } from '../../machine-control/lib/model';
+import control from '../../machine-control/part';
 
 export function operatorPieces(p: Parameters) {
   const c = collection('Operator panel and emergency stops');
@@ -31,7 +32,7 @@ export function operatorPieces(p: Parameters) {
     ),
     metal,
   );
-  for (const q of controlPieces({ model: 'ddcs-v4-1' }))
+  for (const q of controlPieces({ ...control.defaults, model: 'ddcs-v4-1' }))
     c.add(q.label, pose(q.shape, [105, -765.8, 1020], [0, 0, 180]), q.color, 'BUY');
   for (const x of [20, 340]) {
     c.add('Console support arm to cabinet frame', box([40, 204, 30], [x - 20, -784, 790]), paint);
@@ -59,7 +60,7 @@ export function operatorPieces(p: Parameters) {
     ['Outfeed', 2700, -285, 1040],
   ] as const) {
     if (p.feedMode === 'manual' && name !== 'Operator') continue;
-    for (const q of controlPieces({ model: 'xb5as8444' }))
+    for (const q of controlPieces({ ...control.defaults, model: 'xb5as8444' }))
       c.add(
         `${name} emergency stop · ${q.label}`,
         pose(q.shape, [x, y, z], [0, 0, 180]),

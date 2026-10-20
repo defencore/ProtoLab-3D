@@ -51,14 +51,16 @@ export const ballNutParameters: ParameterDefinition[] = [
   },
   {
     key: 'detail',
-    label: 'Model detail',
+    label: 'Stored visualization detail',
+    visibleWhen: () => false,
     group: 'Raceway',
     type: 'select',
     options: [
       { value: 'raceway', label: 'Helical raceways and balls' },
       { value: 'envelope', label: 'Envelope · fast layout' },
     ],
-    description: 'Detailed long screws require more time for native CAD generation.',
+    description:
+      'Global Simple / Full controls preview and FreeCAD detail; this stored field does not change the physical configuration.',
   },
   numberParameter('nutDiameter', 'Nut body diameter', 'D', 'Nut envelope', 4, 200),
   numberParameter('nutLength', 'Overall nut length', 'L', 'Nut envelope', 8, 300),

@@ -1,0 +1,76 @@
+[
+  {
+    "id": "bk2-15-59-19-15",
+    "name": "R+W BK2/15/59 \u00b719/15 mm",
+    "description": "Source bellows coupling ordered with matching keyway and bores.",
+    "parameters": {
+      "model": "bk2-15-59",
+      "motorBore": 19,
+      "screwBore": "15"
+    },
+    "catalog": {
+      "designation": "BK2/15/59/19/15/XX DIN keyway",
+      "manufacturer": "R+W",
+      "sourceName": "R+W manufacturer publication",
+      "sourceUrl": "https://www.rw-couplings.com/product/bk2/",
+      "verifiedParameters": ["model", "motorBore", "screwBore"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Source BK2/15/59 diameter49, fit22, torque15Nm, torsional20,000Nm/rad, DIN/ANSIkeyway available.",
+        "limitations": "Actual ordered keyway shape/depth12.3, slit, bellows corrugations and clamp contours are illustrative; optional factory keywaydrawing approval required.",
+        "sourceUrl": "https://www.rw-couplings.com/wp-content/uploads/PDFs/RW-Handbuch/RW_Guidebook_Precision-Couplings.pdf",
+        "sourceSha256": "b01b044a70853cbdc8158dc52207bc7dd4a12ab3e780fd6ef50b7f49c6fd628c"
+      },
+      "alternateSourceUrls": [
+        "https://www.rw-couplings.com/wp-content/uploads/PDFs/RW-Handbuch/RW_Guidebook_Precision-Couplings.pdf"
+      ],
+      "specifications": [
+        {
+          "label": "Ordered execution",
+          "value": "D1=19H7 optional DIN6885keywayfor6x6motor key, D2=15H7; source optional keyway customexecution must be approved."
+        },
+        {
+          "label": "Published ratings",
+          "value": "15Nm; torsional20,000Nm/rad; J=6e-5kgm2; approx.0.16kg; M5clamp screw8Nm; lateral0.15mm/angular1deg/axial1mm maxima require coupled maker sizing."
+        }
+      ]
+    }
+  },
+  {
+    "id": "bk2-15-59-19-20",
+    "name": "R+W BK2/15/59 \u00b719/20 mm",
+    "description": "Source bellows coupling ordered with matching keyway and bores.",
+    "parameters": {
+      "model": "bk2-15-59",
+      "motorBore": 19,
+      "screwBore": "20"
+    },
+    "catalog": {
+      "designation": "BK2/15/59/19/20/XX DIN keyway",
+      "manufacturer": "R+W",
+      "sourceName": "R+W manufacturer publication",
+      "sourceUrl": "https://www.rw-couplings.com/product/bk2/",
+      "verifiedParameters": ["model", "motorBore", "screwBore"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Source BK2/15/59 diameter49, fit22, torque15Nm, torsional20,000Nm/rad, DIN/ANSIkeyway available.",
+        "limitations": "Actual ordered keyway shape/depth12.3, slit, bellows corrugations and clamp contours are illustrative; optional factory keywaydrawing approval required.",
+        "sourceUrl": "https://www.rw-couplings.com/wp-content/uploads/PDFs/RW-Handbuch/RW_Guidebook_Precision-Couplings.pdf",
+        "sourceSha256": "b01b044a70853cbdc8158dc52207bc7dd4a12ab3e780fd6ef50b7f49c6fd628c"
+      },
+      "alternateSourceUrls": [
+        "https://www.rw-couplings.com/wp-content/uploads/PDFs/RW-Handbuch/RW_Guidebook_Precision-Couplings.pdf"
+      ],
+      "specifications": [
+        {
+          "label": "Ordered execution",
+          "value": "D1=19H7 optional DIN6885keywayfor6x6motor key, D2=20H7; source optional keyway customexecution must be approved."
+        },
+        {
+          "label": "Published ratings",
+          "value": "15Nm; torsional20,000Nm/rad; J=6e-5kgm2; approx.0.16kg; M5clamp screw8Nm; lateral0.15mm/angular1deg/axial1mm maxima require coupled maker sizing."
+        }
+      ]
+    }
+  }
+]

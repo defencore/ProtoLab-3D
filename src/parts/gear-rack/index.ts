@@ -3,4 +3,4 @@ import { catalogSelection } from './configurator';
 import type { PartModule } from '../../core/part-modules';
 
 const part = { ...definition, id: 'gear-rack', catalogSelection };
-export default { apiVersion: 1, order: 63, part } satisfies PartModule;
+export default { apiVersion: 2, order: 63, part } satisfies PartModule;

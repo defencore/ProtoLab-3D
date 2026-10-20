@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import { Group } from 'three';
 import type { Parameters, PartDefinition, Preset } from '../../core/types';
 import { n } from '../../core/geometry';
@@ -102,6 +104,7 @@ function components(p: Parameters, state: string): Component[] {
 
 const part: PartDefinition = {
   id: 'holding-electromagnet',
+  product: productData as ProductProfile,
   name: 'Holding electromagnet',
   category: 'MOTORS & ACTUATORS',
   subgroup: 'HOLDING MAGNETS',

@@ -1,7 +1,8 @@
+import { markSupplierUnit } from '../../../core/supplier-components';
 import type { Parameters } from '../../../core/types';
 import type { Piece } from './assembly';
 import { layout } from './motion';
-import { box, cylinder, ring, union, subtract, transform, rotate, type Shape } from './shapes';
+import { box, cylinder, ring, union, subtract, transform, rotate, type Shape } from '../../../core/assembly/recovery/shapes';
 import { screw, matingHole } from './hardware';
 import { batteryLayout, batteryPosts } from './balance';
 import { packSeatPlate, packWirePorts, wireLiner } from './pack-support';
@@ -38,6 +39,7 @@ export function batteryPieces(p: Parameters): Piece[] {
     const polarity = i === 1 ? 'reversed; B1− / B2+' : i === 0 ? 'B− / B1+' : 'B2− / B+';
     const orient = (s: Shape): Shape =>
       i === 1 ? transform(rotate(transform(s, 0, [-x, -y, -43.1]), 180, 'x'), 0, [x, y, 43.1]) : s;
+    const supplierStart = out.length;
     out.push(
       {
         label: `18650 cell ${i + 1} · 3S1P · jacket · Ø18.6×65.2 · ${p.cellMass} g · ${polarity}`,
@@ -65,6 +67,7 @@ export function batteryPieces(p: Parameters): Piece[] {
         color: 0x526e8b,
       },
     );
+    markSupplierUnit(out.slice(supplierStart,supplierStart+4).map(piece=>piece.shape), {name:'18650 Li-ion cell',procurement:{designation:'Unprotected 18650 cell D18.6 x65.2; verify matched pack',manufacturer:'',source:''}});
   });
   out.push(
     {

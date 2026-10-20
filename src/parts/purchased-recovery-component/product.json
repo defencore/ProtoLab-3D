@@ -1,0 +1,10 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "One configured supplier unit with authored installation geometry. Internal visual shapes are included within the procurement unit.",
+  "processes": [],
+  "releaseRequirements": [
+    "Specify supplier, order designation and source.",
+    "Verify supplied interfaces, material and ratings; a geometric envelope is insufficient."
+  ]
+}

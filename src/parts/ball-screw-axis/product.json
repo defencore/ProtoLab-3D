@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Own configurable assembly. Separate physical components require library identities and individual make or buy definitions; the preview does not approve production.",
+  "processes": ["assembly"],
+  "releaseRequirements": [
+    "Resolve every physical component to a reusable library configuration and a procurement or fabrication definition.",
+    "Specify assembly interfaces, fastening, fits, material and toleranced component drawings.",
+    "Verify the complete assembly travel, collision clearance, loading and acceptance criteria."
+  ]
+}

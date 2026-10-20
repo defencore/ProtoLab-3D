@@ -1,7 +1,9 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
-import { nutDefinition } from './lib/core/nuts';
+import { nutDefinition } from '../../core/hardware/nuts';
 
 export default {
   ...nutDefinition('flange-nut', 'Flange nut', 'DIN 6923', 'flange', {
@@ -11,5 +13,6 @@ export default {
     flangeDiameter: 14.2,
     flangeThickness: 1.2,
   }),
+  product: productData as ProductProfile,
   presets: modulePresets,
 };

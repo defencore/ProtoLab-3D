@@ -1,0 +1,38 @@
+[
+  {
+    "id": "e2b-m12",
+    "name": "OMRON E2B-M12KS04-WP-B1 2M",
+    "description": "Shielded M12 PNP NO sensor, nominal sensing distance4 mm, pre-wired2 m. Purchased unit includes two mounting nuts. Installation envelopes retain the documented geometry limitations.",
+    "parameters": { "model": "e2b-m12" },
+    "catalog": {
+      "designation": "E2B-M12KS04-WP-B1 2M",
+      "manufacturer": "OMRON",
+      "sourceName": "OMRON E2B manufacturer catalogue",
+      "sourceUrl": "https://www.ia.omron.com/data_pdf/cat/e2b_d116-e1_1_6_csm1012652.pdf#page=15",
+      "verifiedParameters": ["model"],
+      "attributes": { "bodyDiameter": 12 },
+      "specifications": [
+        { "label": "Output", "value": "PNP, normally open, 10-30 VDC" },
+        {
+          "label": "Nominal sensing distance",
+          "value": "4 mm; switching point depends on target and installation"
+        },
+        { "label": "Body designation", "value": "M12 x P1; published short-body length47 mm" },
+        {
+          "label": "Included installation items",
+          "value": "Two clamping nuts and toothed washer in the source drawing. Washer contour is not reconstructed."
+        },
+        {
+          "label": "Inspection limitations",
+          "value": "Nut axial placement18..22 and27..31, added0.5 mm face layer, round nut contours and cable tail are nominal assembly envelopes. Thread span/profile and delivered fit are not verified or represented as real helices."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Manufacturer identity and M12/P1/47 mm short-body boundary, with explicitly nominal face, nut and cable inspection subdivisions.",
+        "limitations": "The modeled sensing face ends at47.5 mm because of an illustrative0.5 mm layer. Nut contours/placement, thread span, internal sensor construction and cable route are not factory CAD or manufacturing dimensions.",
+        "sourceUrl": "https://www.ia.omron.com/data_pdf/cat/e2b_d116-e1_1_6_csm1012652.pdf#page=15"
+      }
+    }
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "id": "asd-a3-0721-m",
+    "name": "Delta ASD-A3-0721-M",
+    "description": "750W industrial feed servo drive; CN5 scales feed drive, not pulse command controller.",
+    "parameters": {
+      "model": "asd-a3-0721-m"
+    },
+    "catalog": {
+      "designation": "ASD-A3-0721-M",
+      "manufacturer": "Delta",
+      "sourceName": "Delta manufacturer publication",
+      "sourceUrl": "https://landing.deltaww.com/IA/downloadcenter/catalogue/2.Motion/ASDA-A3/DELTA_IA-ASDA_ASDA-A3_C_EN_20210104_Web.pdf",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "FrameC-M50x180x180; rear172.5 fixingpitch/36.3 fromleft.",
+        "limitations": "Port contours, mountingtab andslot ends illustrative; source M5backplane label conflicts with M4caption; ordered mountingdrawing required. Rear \u00d87.5\u00d74.5 clearance contours are illustrative installation envelopes for M4socket heads, not factory CAD or a modification instruction.",
+        "sourceUrl": "https://landing.deltaww.com/IA/downloadcenter/catalogue/2.Motion/ASDA-A3/DELTA_IA-ASDA_ASDA-A3_C_EN_20210104_Web.pdf",
+        "sourceSha256": "45f8cb912d01e331a38f6a51e9340d6e68342adb5817936af5907d6306e7fc68"
+      },
+      "specifications": [
+        {
+          "label": "Input and output",
+          "value": "200-230VAC1/3phase,750W; PT pulse commands; M execution STO and CN5 full-closed linear feedback."
+        }
+      ],
+      "attributes": {
+        "power": 750
+      }
+    }
+  }
+]

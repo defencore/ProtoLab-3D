@@ -1,10 +1,12 @@
 import type { PartModule } from '../../core/part-modules';
 import part from './part';
 export default {
-  apiVersion: 1,
+  apiVersion: 2,
   order: 121.45,
   dependencies: [
     'rocket-release',
+    'recovery-detail',
+    'purchased-recovery-component',
     'co2-cartridge',
     'li-ion-cell',
     'lch7-controller',

@@ -1,11 +1,21 @@
+import detailLibrary from '../manufactured-detail/part';
+import {
+  detailGeometry,
+  detailPython,
+  detailDimensions,
+} from '../../core/assembly/detail-instances';
+import { shapeComposition } from '../../core/component-recipes';
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { n } from '../../core/geometry';
 import { defaults, parameters } from './configurator';
 import presets from './presets.json';
 import { pieces } from './lib/model';
-import * as assembly from './lib/assembly';
 const part: PartDefinition = {
+  composition: (p) => shapeComposition(pieces({ ...p, detail: 'detailed' }, 'assembled')),
   id: 'differential',
+  product: productData as ProductProfile,
   name: 'Differential carrier',
   category: 'TRANSMISSION & LINKAGES',
   subgroup: 'REDUCERS & DIFFERENTIALS',
@@ -52,9 +62,9 @@ const part: PartDefinition = {
       errors.push('Carrier must leave room around the half-shaft.');
     return errors;
   },
-  buildGeometry: (p, s) => assembly.geometry(pieces(p, s)),
-  dimensions: (p, s) => assembly.dimensions(pieces(p, s)),
-  python: (p, s) => assembly.python(pieces(p, s)),
+  buildGeometry: (p, s) => detailGeometry(detailLibrary, pieces(p, s)),
+  dimensions: (p, s) => detailDimensions(detailLibrary, pieces(p, s)),
+  python: (p, s) => detailPython(detailLibrary, pieces(p, s)),
   notes:
     'Detailed construction includes two bevel side gears, two spider pinions, a cross pin and a driven carrier. Teeth are sampled conical reference profiles; tooth contact, spline fits, bearing and strength design require separate engineering. Prototype dimensions are not a manufacturer catalog specification.',
   sources: [],

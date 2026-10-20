@@ -1,0 +1,98 @@
+{
+  "categoryUrl": "https://kosmodrom.ua/mizhplatni-stiyki-z-rizblennyam-m3",
+  "snapshotDate": "2026-10-13",
+  "status": "complete",
+  "pages": [
+    {
+      "page": 1,
+      "url": "https://kosmodrom.ua/mizhplatni-stiyki-z-rizblennyam-m3",
+      "sha256": "936fee4c76c96a65c2ad697c8e7a1d972e6682109cdbaf30e31af485492704d5",
+      "productCount": 15,
+      "lastPage": 9
+    },
+    {
+      "page": 2,
+      "url": "https://kosmodrom.ua/mizhplatni-stiyki-z-rizblennyam-m3?page=2",
+      "sha256": "49b9a7f995b3d9f3b90a32094c2068352d65d1632363f21012946391cbecd7ea",
+      "productCount": 15,
+      "lastPage": 9
+    },
+    {
+      "page": 3,
+      "url": "https://kosmodrom.ua/mizhplatni-stiyki-z-rizblennyam-m3?page=3",
+      "sha256": "aae34b9a16bf0b4d1955f98838467060042e175954ea523f11331b573f45a739",
+      "productCount": 15,
+      "lastPage": 9
+    },
+    {
+      "page": 4,
+      "url": "https://kosmodrom.ua/mizhplatni-stiyki-z-rizblennyam-m3?page=4",
+      "sha256": "0357d7d90ad51b0f5b4094e7eb98c2424fb475717662f1077fc327055c1949d2",
+      "productCount": 15,
+      "lastPage": 9
+    },
+    {
+      "page": 5,
+      "url": "https://kosmodrom.ua/mizhplatni-stiyki-z-rizblennyam-m3?page=5",
+      "sha256": "61d20e7a9864c56c4458cd32fabbf51fa36d67702de997b3a91e74e714253823",
+      "productCount": 15,
+      "lastPage": 9
+    },
+    {
+      "page": 6,
+      "url": "https://kosmodrom.ua/mizhplatni-stiyki-z-rizblennyam-m3?page=6",
+      "sha256": "afc027dbe3c54a665449ecf976d94988a298d91b278fcf87304698ad4b98c3bd",
+      "productCount": 15,
+      "lastPage": 9
+    },
+    {
+      "page": 7,
+      "url": "https://kosmodrom.ua/mizhplatni-stiyki-z-rizblennyam-m3?page=7",
+      "sha256": "e4a5a403201aa8ea2fe7764d6eba25ccc931380e1a2ced672b2e82eb2d026bc0",
+      "productCount": 15,
+      "lastPage": 9
+    },
+    {
+      "page": 8,
+      "url": "https://kosmodrom.ua/mizhplatni-stiyki-z-rizblennyam-m3?page=8",
+      "sha256": "75270ded24b367fef7eea3c90855c690e5314703e3e2f8c52d449425e1ca9680",
+      "productCount": 15,
+      "lastPage": 9
+    },
+    {
+      "page": 9,
+      "url": "https://kosmodrom.ua/mizhplatni-stiyki-z-rizblennyam-m3?page=9",
+      "sha256": "1eadfcbca555c316aa38a3d454c540c78497996e51bf26d219d3dfe2119bc13b",
+      "productCount": 6,
+      "lastPage": 9
+    }
+  ],
+  "listedProducts": 126,
+  "fetchedProducts": 126,
+  "skuCount": 126,
+  "productUrlCount": 126,
+  "drawings": [
+    {
+      "url": "https://kosmodrom.ua/storage/pdf/KLS8-DBK.pdf",
+      "sha256": "389ae1e7aae195796035577ebc4593527e85e8fc38d98487b26758d58895db13",
+      "bytes": 58999
+    },
+    {
+      "url": "https://kosmodrom.ua/storage/pdf/KLS8-DBL.pdf",
+      "sha256": "ae337c7fe868eb3fb648b9c0aaecdd160e1cf17e62137029bff938b54c2f4c19",
+      "bytes": 62338
+    },
+    {
+      "url": "https://kosmodrom.ua/storage/pdf/PCHS.pdf",
+      "sha256": "92cee46cc3099386ed000c584d37e55a1703e7d8f836b7adc811ec2274820db8",
+      "bytes": 734531
+    }
+  ],
+  "errors": [],
+  "normalizedProducts": 126,
+  "productsWithRequiredEnvelopeFields": 31,
+  "productsWithUnpublishedGeometry": 95,
+  "productsWithSourceIssues": 2,
+  "productsWithUnpublishedPitch": 126,
+  "exactManufacturingGeometryPublished": false
+}

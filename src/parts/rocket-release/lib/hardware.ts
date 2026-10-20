@@ -1,6 +1,6 @@
 import type { Parameters } from '../../../core/types';
-import type { Shape } from './shapes';
-import { transform, rotate, union, cylinder } from './shapes';
+import type { Shape } from '../../../core/assembly/recovery/shapes';
+import { transform, rotate, union, cylinder } from '../../../core/assembly/recovery/shapes';
 export const pitchFor = (d: number) =>
   d === 1.6 ? 0.35 : d === 2 ? 0.4 : d === 2.5 ? 0.45 : d === 3 ? 0.5 : 0.7;
 /** Tip at origin, head above the shaft; smooth RH thread envelope with a callout. */

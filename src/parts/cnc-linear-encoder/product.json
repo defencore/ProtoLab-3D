@@ -1,0 +1,13 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "Identified HEIDENHAIN LS 477 housing/readhead procurement kits, or separately ordered MSL 41 mounting spars. Inspection children remain included items, not additional orders.",
+  "processes": [],
+  "releaseRequirements": [
+    "Obtain an authentic factory quotation and delivered certificate for the selected ID, accuracy grade, interpolation, cable and reference-mark execution.",
+    "Order the matching MSL 41 separately; use the manufacturer mounting instructions and supplied clamping hardware, not nominal reconstructed contours.",
+    "Verify the actual TTL differential interface, pinout, shielding, supply current and fault behavior against the servo-drive CN5 manual before wiring.",
+    "Commission both motor and linear feedback, following-error limits, homing/reference capture and laser compensation over the full machine travel.",
+    "A scale accuracy grade is not finished-part tolerance or machine positioning certification."
+  ]
+}

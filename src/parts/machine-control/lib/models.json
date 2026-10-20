@@ -9,7 +9,7 @@
     "kind": "vfd",
     "manufacturer": "Schneider Electric",
     "source": "https://www.se.com/us/en/product/ATV12HU22M2/",
-    "spec": "Single-phase 200-240 V input; 10 A continuous output at 4 kHz. Input line current 20.2 A at 240 V. No safety-rated STO assumed."
+    "spec": "Single-phase 200-240 V input; 10 A continuous output at 4 kHz switching frequency; 0.5-400 Hz fundamental output. Match 220 V spindle nameplate voltage, rated current, base frequency and cable/EMC requirements. No safety-rated STO assumed."
   },
   {
     "id": "dvp14ss211t",
@@ -75,12 +75,60 @@
     "id": "xb5as8444",
     "name": "Schneider XB5AS8444 \u00b7 D40 emergency stop \u00b7 2 NC",
     "w": 40,
-    "h": 40,
+    "h": 43,
     "d": 82,
     "color": 11741481,
     "kind": "estop",
     "manufacturer": "Schneider Electric",
     "source": "https://www.se.com/us/en/product/XB5AS8444/",
     "spec": "D22 panel mounting; D40 latching red mushroom, twist release, two NC contacts. Contact body contours are simplified. Connect both channels to the independent safety circuit; reset must not restart motion."
+  },
+  {
+    "id": "ddcs-v3-1",
+    "name": "Digital Dream DDCS v3.1 \u00b7 4-axis controller",
+    "w": 191,
+    "h": 128,
+    "d": 37,
+    "color": 3423815,
+    "kind": "cnc",
+    "manufacturer": "Digital Dream",
+    "source": "https://nvcnc.net/pdf/NVCNC_DDCSV3.1_EN.pdf",
+    "spec": "24 V controller; pulse/direction for up to four axes and 0-10 V spindle command. Published rear body 175 x 110 mm; fascia 191 x 128 mm. Manual text and drawing disagree on depth and panel cutout: measure supplied unit before machining the panel."
+  },
+  {
+    "id": "lrs35048",
+    "name": "MEAN WELL LRS-350-48 \u00b7 48 V / 7.3 A",
+    "w": 215,
+    "h": 115,
+    "d": 30,
+    "color": 12107202,
+    "kind": "psu",
+    "manufacturer": "MEAN WELL",
+    "source": "https://www.meanwell.com/Upload/PDF/LRS-350/LRS-350-SPEC.PDF",
+    "spec": "350.4 W, 48 VDC, 7.3 A; 215 x 115 x 30 mm case. 230 V input selector. Check regenerated motor voltage, simultaneous load, ambient derating and protective bonding. Terminal and mounting contours remain reference geometry."
+  },
+  {
+    "id": "lrs35036",
+    "name": "MEAN WELL LRS-350-36 \u00b7 36 V / 9.7 A",
+    "w": 215,
+    "h": 115,
+    "d": 30,
+    "color": 12107202,
+    "kind": "psu",
+    "manufacturer": "MEAN WELL",
+    "source": "https://www.meanwell.com/Upload/PDF/LRS-350/LRS-350-SPEC.PDF",
+    "spec": "349.2 W, 36 VDC, 9.7 A; 215 x 115 x 30 mm case. 230 V input selector. Selected below the CL57T 48 V maximum to reserve voltage headroom; measure regeneration and total simultaneous load."
+  },
+  {
+    "id": "gpenny-huanyang-4kw-220v",
+    "name": "Huanyang 4 kW / 220 V - G-Penny supplier execution",
+    "w": 150,
+    "h": 220,
+    "d": 160,
+    "color": 6054248,
+    "kind": "vfd",
+    "manufacturer": "Huanyang",
+    "source": "https://gpennymachine.com/products/huanyang-4kw-220v-380v-inverter-cnc-spindle-motor-speed-control-variable-frequency-drive-0-400hz-3p-output",
+    "spec": "Source-listed 220 V execution: 1- or 3-phase 220 V input, 3-phase 220 V output, rated output 17 A, fundamental frequency 0-400 Hz. 4 kW class for a 3 kW spindle. Exact manufacturer order code is unpublished; verify delivered execution, current availability, motor winding/current and VFD parameters before release. No STO or functional safety claim."
   }
 ]

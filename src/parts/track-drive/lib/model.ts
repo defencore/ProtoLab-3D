@@ -1,6 +1,6 @@
 import type { Parameters } from '../../../core/types';
 import { n } from '../../../core/geometry';
-import type { Piece } from './assembly';
+import type { Piece } from '../../../core/assembly/mechanical/assembly';
 import {
   B,
   C,
@@ -17,8 +17,8 @@ import {
   link,
   arcBand,
   finish,
-} from './helpers';
-import type { Shape, Vec } from './shapes';
+} from '../../../core/assembly/mechanical/helpers';
+import type { Shape, Vec } from '../../../core/assembly/mechanical/shapes';
 export function pieces(p: Parameters, state: string): Piece[] {
   const out: Piece[] = [];
   const detailed = p.detail === 'detailed';

@@ -11,7 +11,10 @@ import {
 import { Box3, Vector3 } from 'three';
 import part from '../src/parts/rocket-airbrakes/part';
 import { layout, pieces, slotPoint, slotOutline } from '../src/parts/rocket-airbrakes/lib/model';
-import { component } from '../src/parts/rocket-airbrakes/lib/shapes';
+import { component as featureComponent } from '../src/core/assembly/boundary/shapes';
+import { recoveryFeature, type RecoveryFeature } from '../src/core/recovery-feature-recipes';
+const component = (shape: RecoveryFeature, label: string, color: number) =>
+  featureComponent(recoveryFeature(shape, 120), label, color);
 import { disposeModel } from '../src/core/mechanical';
 import { validateParameters } from '../src/core/validation';
 import type { Parameters } from '../src/core/types';

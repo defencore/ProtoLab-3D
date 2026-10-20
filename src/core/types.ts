@@ -1,4 +1,5 @@
 import type { Group } from 'three';
+import type { AssemblyDefinition, ProductProfile, SupplyKind } from './product-types';
 
 export type Parameters = Record<string, number | string | boolean>;
 
@@ -6,7 +7,7 @@ export interface ParameterDefinition {
   key: string;
   label: string;
   symbol?: string;
-  type: 'number' | 'select' | 'boolean';
+  type: 'number' | 'select' | 'boolean' | 'text';
   unit?: string;
   min?: number;
   max?: number;
@@ -15,6 +16,8 @@ export interface ParameterDefinition {
   description?: string;
   options?: { label: string; value: string }[];
   visibleWhen?: (parameters: Parameters, state?: string) => boolean;
+  /** A mode-specific field may be absent while hidden; present values are still validated. */
+  optionalWhenHidden?: boolean;
   filterable?: boolean;
   catalogSummary?: boolean;
   catalogCondition?: boolean;
@@ -25,6 +28,8 @@ export interface Preset {
   name: string;
   description: string;
   parameters: Parameters;
+  /** An explicitly selected supplier product can be bought as a complete opaque unit. */
+  product?: { supply: SupplyKind };
   catalog?: {
     designation: string;
     manufacturer?: string;
@@ -35,7 +40,7 @@ export interface Preset {
     verifiedParameters: string[];
     /** Evidence for physical geometry, independent of SKU identity and valid CAD topology. */
     geometryEvidence?: {
-      kind: 'manufacturer-cad' | 'source-dimensions' | 'envelope';
+      kind: 'manufacturer-cad' | 'community-cad' | 'source-dimensions' | 'envelope';
       summary: string;
       limitations: string;
       sourceUrl: string;
@@ -51,10 +56,31 @@ export interface Preset {
   };
 }
 
-export interface PartDefinition {
+export interface FabricationFile {
   id: string;
+  label: string;
+  description: string;
+  name: string;
+  type: string;
+  content: string;
+}
+
+export interface PartDefinition {
+  fabricationFiles?: (parameters: Parameters) => FabricationFile[];
+  id: string;
+  /** Shared navigation entry; physical package/product identity remains independent. */
+  browseFamily?: { id: string; label: string; primary?: boolean };
+  product: ProductProfile;
+  /** Physical library occurrences. Display states must not change the bill of materials. */
+  composition?: (parameters: Parameters) => AssemblyDefinition;
+  preview?: 'worker';
+  /** These states select separate physical supplier units, rather than inspection views. */
+  physicalStates?: string[];
+  /** Export contours can omit visual thread relief while retaining the physical part. */
+  buildExportGeometry?: (parameters: Parameters, state: string) => Group;
   defaultSelection?: boolean;
   name: string;
+  validationNotice?: string;
   category: string;
   subgroup: string;
   description: string;
@@ -77,7 +103,12 @@ export interface PartDefinition {
   parameters: ParameterDefinition[];
   defaults: Parameters;
   presets: Preset[];
-  states?: { id: string; label: string; description: string }[];
+  states?: {
+    id: string;
+    label: string;
+    description: string;
+    availableWhen?: (parameters: Parameters) => boolean;
+  }[];
   validate: (parameters: Parameters, state: string) => string[];
   buildGeometry: (parameters: Parameters, state: string) => Group;
   python: (parameters: Parameters, state: string) => string;

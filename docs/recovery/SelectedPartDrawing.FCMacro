@@ -3,6 +3,7 @@
 import FreeCAD as App
 import Part
 import os
+import glob
 
 if App.GuiUp:
     import FreeCADGui as Gui
@@ -17,6 +18,9 @@ if len(source.Shape.Solids) != 1:
 shape = source.Shape.copy()
 center = shape.BoundBox.Center
 shape.translate(-center)
+templates = sorted(glob.glob(os.path.join(App.getResourceDir(), 'Mod', 'TechDraw', 'Templates', '**', 'A4_Landscape_blank.svg'), recursive=True))
+if not templates:
+    raise ValueError('The installed FreeCAD has no A4 landscape blank TechDraw template.')
 doc = App.newDocument('PartDrawing')
 if not doc.TransientDir:
     import tempfile
@@ -30,7 +34,7 @@ for prop in ['PartNumber', 'Material', 'ThreadCallouts', 'ShapeDigest', 'Drawing
         setattr(obj, prop, getattr(source, prop))
 page = doc.addObject('TechDraw::DrawPage', 'Drawing')
 template = doc.addObject('TechDraw::DrawSVGTemplate', 'Template')
-template.Template = os.path.join(App.getResourceDir(), 'Mod', 'TechDraw', 'Templates', 'A4_Landscape_blank.svg')
+template.Template = templates[0]
 page.Template = template
 span = max(shape.BoundBox.XLength, shape.BoundBox.YLength, shape.BoundBox.ZLength)
 scale = min(2, 70 / max(span, 1))

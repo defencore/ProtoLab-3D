@@ -1,9 +1,12 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters } from './configurator';
 import { geometry, python, PIN_LENGTH } from './lib/model';
 import presets from './presets.json';
 const part: PartDefinition = {
   id: 'srs-igniter',
+  product: productData as ProductProfile,
   name: 'SRS igniter housing',
   category: 'CONNECTORS & INTERFACES',
   subgroup: 'SRS AIRBAG',

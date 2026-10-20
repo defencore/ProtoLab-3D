@@ -1,0 +1,82 @@
+[
+  {
+    "id": "tube-10-block",
+    "name": "10 mm tube \u00b7 split block clamp",
+    "description": "Authored 28 mm long clamp with four M3 through bolts; qualify material and grip on the actual tube.",
+    "parameters": {
+      "tubeDiameter": 10,
+      "boreAllowance": 0,
+      "splitGap": 0.6,
+      "length": 28,
+      "wall": 4,
+      "bolt": "3",
+      "boltClearance": 3.4,
+      "boltPitchX": 14,
+      "boltPitchY": 25
+    }
+  },
+  {
+    "id": "tube-12-block",
+    "name": "12 mm tube \u00b7 split block clamp",
+    "description": "Authored 28 mm long clamp with four M3 through bolts; qualify material and grip on the actual tube.",
+    "parameters": {
+      "tubeDiameter": 12,
+      "boreAllowance": 0,
+      "splitGap": 0.6,
+      "length": 28,
+      "wall": 4,
+      "bolt": "3",
+      "boltClearance": 3.4,
+      "boltPitchX": 14,
+      "boltPitchY": 27
+    }
+  },
+  {
+    "id": "tube-16-block",
+    "name": "16 mm tube \u00b7 split block clamp",
+    "description": "Authored 32 mm long clamp with four M3 through bolts; qualify material and grip on the actual tube.",
+    "parameters": {
+      "tubeDiameter": 16,
+      "boreAllowance": 0,
+      "splitGap": 0.6,
+      "length": 32,
+      "wall": 4,
+      "bolt": "3",
+      "boltClearance": 3.4,
+      "boltPitchX": 18,
+      "boltPitchY": 31
+    }
+  },
+  {
+    "id": "tube-20-block",
+    "name": "20 mm tube \u00b7 split block clamp",
+    "description": "Authored 36 mm long clamp with four M3 through bolts; qualify material and grip on the actual tube.",
+    "parameters": {
+      "tubeDiameter": 20,
+      "boreAllowance": 0,
+      "splitGap": 0.6,
+      "length": 36,
+      "wall": 4,
+      "bolt": "3",
+      "boltClearance": 3.4,
+      "boltPitchX": 20,
+      "boltPitchY": 35
+    }
+  },
+  {
+    "id": "tube-25-block",
+    "name": "25 mm tube \u00b7 split block clamp",
+    "description": "Authored 40 mm long clamp with four M4 through bolts; qualify material and grip on the actual tube.",
+    "parameters": {
+      "tubeDiameter": 25,
+      "boreAllowance": 0,
+      "splitGap": 0.6,
+      "length": 40,
+      "wall": 5,
+      "bolt": "4",
+      "boltClearance": 4.5,
+      "boltPitchX": 24,
+      "boltPitchY": 45
+    }
+  }
+]

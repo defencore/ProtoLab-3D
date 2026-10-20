@@ -1,5 +1,5 @@
 import type { Parameters } from '../../../core/types';
-import type { Shape } from '../../rocket-release/lib/shapes';
+import type { Shape } from '../../../core/assembly/recovery/shapes';
 import {
   box,
   cylinder,
@@ -10,7 +10,7 @@ import {
   union,
   rotate,
   transform,
-} from '../../rocket-release/lib/shapes';
+} from '../../../core/assembly/recovery/shapes';
 import { screw } from '../../rocket-release/lib/hardware';
 import { layout, dispenserMounts, cartridgeRearZ, bodyEye, parachuteExitRadius } from './layout';
 import { electronics } from './electronics';

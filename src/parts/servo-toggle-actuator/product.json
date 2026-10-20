@@ -1,0 +1,14 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Servo-operated toggle assembly with a three-part printed rocker or a guided fork, identified purchased units and separately fabricated mounting components.",
+  "processes": ["assembly"],
+  "releaseRequirements": [
+    "Confirm the delivered ST3215 12 V servo, supplied disc and retaining hardware, and the ASW-07D switch revision and keyed panel interface.",
+    "Measure switch operating force, actual pivot and trip positions; calibrate servo endpoints, speed and torque limits before allowing powered operation.",
+    "For the printed rocker, qualify PETG or PA grade, print orientation, support removal, layer strength, case retention, creep and rounded-finger wear.",
+    "For the guided fork, qualify TPU grade, printed pad orientation, stiffness, compression allowance, durability and replacement criteria from physical tests.",
+    "Assign material grades, stock blanks, manufacturing routes, guide fits, rod retention, fastener engagement, tolerances and inspection criteria to every fabricated component.",
+    "Verify complete linkage travel, panel and case mounting stiffness, manual access and clearance, including both maintained switch positions and push/return stages."
+  ]
+}

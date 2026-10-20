@@ -4,6 +4,7 @@ import {
   catalogFilterErrors,
   matchesCatalogFilters,
   presetMatchesConfiguration,
+  catalogFacetOptions,
   type CatalogModelFilters,
 } from '../src/core/catalog-models';
 import {
@@ -132,4 +133,76 @@ test('fixed catalog identity must refer to a valid, present model parameter', ()
       /identity/i,
     );
   }
+});
+
+test('catalog ranges share decimal-comma, inclusive and missing-scalar source interval semantics', () => {
+  const preset = servo.presets.find((item) => item.parameters.model === 'waveshare-st3215-hs')!;
+  assert.equal(
+    matchesCatalogFilters(preset, fields, { stallCurrent: { min: ' 2,4 ', max: '2.4' } }),
+    true,
+  );
+  const attributes = { ...preset.catalog!.attributes };
+  delete attributes.caseWidth;
+  const withoutScalar = {
+    ...preset,
+    catalog: {
+      ...preset.catalog!,
+      attributes,
+      parameterRanges: { caseWidth: { min: 19, max: 21 } },
+    },
+  };
+  assert.equal(
+    matchesCatalogFilters(withoutScalar, fields, { caseWidth: { min: '20', max: '20' } }),
+    true,
+  );
+  const malformed = {
+    ...withoutScalar,
+    catalog: { ...withoutScalar.catalog, parameterRanges: { caseWidth: { min: 21, max: 19 } } },
+  };
+  assert.equal(
+    matchesCatalogFilters(malformed, fields, { caseWidth: { min: '20', max: '20' } }),
+    false,
+  );
+});
+
+test('disabled fields and filters for the wrong control type are explicit errors', () => {
+  const disabled = fields.map((field) =>
+    field.key === 'caseWidth' ? { ...field, filterable: false } : field,
+  );
+  for (const filter of [{ caseWidth: { min: '20' } }]) {
+    assert.ok(catalogFilterErrors(disabled, filter).length);
+    assert.ok(servo.presets.every((preset) => !matchesCatalogFilters(preset, disabled, filter)));
+  }
+  assert.ok(catalogFilterErrors(fields, { caseWidth: { value: '20' } }).length);
+  assert.ok(catalogFilterErrors(fields, { interfaceType: { min: '20' } }).length);
+});
+
+test('contextual catalog facets count actual source values and retain an unavailable selection without resetting it', () => {
+  const filters = { caseWidth: { max: '20' }, interfaceType: { value: 'retired-interface' } };
+  const options = catalogFacetOptions(
+    servo.presets,
+    fields,
+    filters,
+    'interfaceType',
+    (preset) => preset.catalog!.manufacturer === 'KST',
+  );
+  assert.equal(options.find((option) => option.value === 'PWM')!.count, 5);
+  assert.equal(options.find((option) => option.value === 'TTL serial bus')!.count, 0);
+  assert.equal(options.find((option) => option.value === 'retired-interface')!.count, 0);
+  assert.deepEqual(filters, {
+    caseWidth: { max: '20' },
+    interfaceType: { value: 'retired-interface' },
+  });
+});
+
+test('missing identity keys never create a false exact configuration match', () => {
+  const preset = servo.presets[0];
+  const parameters = { ...preset.parameters };
+  delete parameters.model;
+  const absent = {
+    ...preset,
+    parameters,
+    catalog: { ...preset.catalog!, verifiedParameters: ['model'] },
+  };
+  assert.equal(presetMatchesConfiguration(servo, absent, parameters), false);
 });

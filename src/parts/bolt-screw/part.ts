@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -12,7 +14,7 @@ import {
   selectParameter,
   updateFastenerParameters,
   validateFastener,
-} from './lib/core/fasteners';
+} from '../../core/hardware/fasteners';
 
 const defaults: Parameters = {
   diameter: 6,
@@ -45,6 +47,7 @@ const defaults: Parameters = {
 
 const part: PartDefinition = {
   id: 'bolt-screw',
+  product: productData as ProductProfile,
   name: 'Bolt or screw',
   category: 'FASTENERS & THREADS',
   subgroup: 'BOLTS & SCREWS',
@@ -155,7 +158,7 @@ const part: PartDefinition = {
   python: (p) => fastenerPython(p),
   dimensions: (p) => fastenerDimensions(p),
   notes:
-    'Prototype geometry, not a DIN/ISO certification. Metal threads use smooth nominal-diameter envelopes with drawing callouts for diameter, pitch, direction and length. Cross and six-lobe recesses are dimensional approximations, not certified Phillips or Torx tooling profiles. Rounded heads use a sampled dome profile. Slotted drives are closed pockets. Countersunk length includes the head; other bolt lengths are measured under the head. STL is a closed tessellation; FreeCAD exports smooth thread envelopes with manufacturing properties.',
+    'Prototype geometry, not a DIN/ISO certification. Simple uses nominal-diameter envelopes with drawing callouts; Full previews thread relief and exports real helical flanks for the declared diameter, pitch, direction and length. Cross and six-lobe recesses are dimensional approximations, not certified Phillips or Torx tooling profiles. Rounded heads use a sampled dome profile. Slotted drives are closed pockets. Countersunk length includes the head; other bolt lengths are measured under the head. STL uses a closed nominal tessellation. FreeCAD records the selected Simple or Full representation and manufacturing properties.',
   sources: [
     {
       label: 'Gvyntok socket-cap dimensional grid',

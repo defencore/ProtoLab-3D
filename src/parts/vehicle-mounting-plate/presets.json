@@ -1,0 +1,112 @@
+[
+  {
+    "id": "electronics-50",
+    "name": "50 mm electronics plate",
+    "description": "20 mm square mounting pattern with four perimeter mounting holes.",
+    "parameters": {
+      "length": 50,
+      "width": 50,
+      "thickness": 2,
+      "corner": 3,
+      "pattern": "20",
+      "patternX": 40,
+      "patternY": 40,
+      "hole": 3.2,
+      "perimeter": true,
+      "edgeOffset": 8,
+      "straps": false,
+      "strapLength": 20,
+      "strapWidth": 3,
+      "strapPitchX": 54,
+      "strapPitchY": 44
+    }
+  },
+  {
+    "id": "dual-stack-65",
+    "name": "65 mm dual-pattern electronics plate",
+    "description": "20 and 30.5 mm square interfaces with perimeter mounting.",
+    "parameters": {
+      "length": 65,
+      "width": 65,
+      "thickness": 2.5,
+      "corner": 4,
+      "pattern": "dual",
+      "patternX": 40,
+      "patternY": 40,
+      "hole": 3.2,
+      "perimeter": true,
+      "edgeOffset": 8,
+      "straps": false,
+      "strapLength": 20,
+      "strapWidth": 3,
+      "strapPitchX": 54,
+      "strapPitchY": 44
+    }
+  },
+  {
+    "id": "battery-100",
+    "name": "100 mm battery and payload tray",
+    "description": "Four strap slots and perimeter mounts around a 30.5 mm central interface.",
+    "parameters": {
+      "length": 100,
+      "width": 60,
+      "thickness": 3,
+      "corner": 5,
+      "pattern": "30.5",
+      "patternX": 40,
+      "patternY": 40,
+      "hole": 3.2,
+      "perimeter": true,
+      "edgeOffset": 8,
+      "straps": true,
+      "strapLength": 20,
+      "strapWidth": 3,
+      "strapPitchX": 54,
+      "strapPitchY": 44
+    }
+  },
+  {
+    "id": "payload-140",
+    "name": "140 mm payload tray",
+    "description": "Larger strapped tray with a custom 60 x 40 mm rectangular payload interface.",
+    "parameters": {
+      "length": 140,
+      "width": 90,
+      "thickness": 3,
+      "corner": 5,
+      "pattern": "custom",
+      "patternX": 60,
+      "patternY": 40,
+      "hole": 3.2,
+      "perimeter": true,
+      "edgeOffset": 10,
+      "straps": true,
+      "strapLength": 25,
+      "strapWidth": 4,
+      "strapPitchX": 84,
+      "strapPitchY": 68
+    }
+  },
+  {
+    "id": "battery-180",
+    "name": "180 mm rover battery tray",
+    "description": "Long flat battery restraint plate with two strap stations and four perimeter mounts.",
+    "parameters": {
+      "length": 180,
+      "width": 90,
+      "thickness": 4,
+      "corner": 8,
+      "pattern": "none",
+      "patternX": 40,
+      "patternY": 40,
+      "hole": 3.2,
+      "perimeter": true,
+      "edgeOffset": 12,
+      "straps": true,
+      "strapLength": 25,
+      "strapWidth": 4,
+      "strapPitchX": 110,
+      "strapPitchY": 64
+    }
+  }
+]

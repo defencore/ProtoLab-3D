@@ -29,4 +29,4 @@ points,facets=mesh.Topology;b=t.optimalBoundingBox(False,False)
 record=dict(label='Output retaining screw (CAD-fit reference)',color='#929eac',sourceSolid=None,derived='Smooth D2.88 retaining-thread envelope, nominal span3.2; assumed head Ø5×1 and hex recess. OEM diameter/pitch must be measured; the source CAD thread is nonstandard.',volume=t.Volume,bounds=[b.XMin,b.YMin,b.ZMin,b.XMax,b.YMax,b.ZMax],positions=base64.b64encode(struct.pack('<%sf'%(len(points)*3),*[v for p in points for v in p])).decode(),indices=base64.b64encode(struct.pack('<%sI'%(len(facets)*3),*[v for f in facets for v in f])).decode(),brep=base64.b64encode(zlib.compress(t.exportBrepToString().encode(),9)).decode())
 j['components']=j['components'][:8]+[record]
 
-(ROOT/'src/parts/rocket-release/lib/st3215-native.json').write_text(json.dumps(j,separators=(',',':'))+'\n')
+(ROOT/'src/core/assembly/recovery/st3215-native.json').write_text(json.dumps(j,separators=(',',':'))+'\n')

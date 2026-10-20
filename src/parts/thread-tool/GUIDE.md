@@ -44,4 +44,6 @@ python scripts/verify-thread-tools.py /tmp/protolab-thread-cases.json data/threa
 
 ## Manufacturing method
 
-Choose **Machined metal** for a smooth nominal-diameter tool, cap or plug with drawing callouts. It creates no helical faces and applies no print-fit allowance. Choose **3D printed** when the exported mesh must contain the real thread flanks. Printed thread tools and their presets use this explicit mode. Thread size, pitch, handedness and length remain available in FreeCAD manufacturing properties in either mode.
+Manufacturing method and thread detail are independent. **Machined metal** uses the nominal profile without print-fit allowance. **3D printed** applies the configured fit adjustment. **Simple** gives either method smooth envelopes with drawing callouts; **Full** retains helical geometry in the preview and FreeCAD export. Thread size, pitch, handedness and length remain available in FreeCAD manufacturing properties in both modes.
+
+Library STL downloads always use Simple geometry. To manufacture a printed thread with real flanks, export Full to FreeCAD and prepare the mesh from that solid there.

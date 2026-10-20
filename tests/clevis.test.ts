@@ -81,7 +81,14 @@ test('clevis states keep closed separate components and exact assembly dimension
         );
       const python = part.python(part.defaults, state.id);
       assert.ok(python.includes('shape = Part.makeCompound(components)'));
-      assert.equal((python.match(/component_labels.append/g) ?? []).length, model.children.length);
+      assert.ok(
+        python.includes(
+          `component_labels = ${JSON.stringify(model.children.map((child) => child.name))}`,
+        ),
+      );
+      assert.ok(
+        model.children.every((child) => child.userData.libraryId === 'manufactured-detail'),
+      );
     } finally {
       disposeModel(model);
     }

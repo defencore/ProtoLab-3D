@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -5,7 +7,7 @@ import { Group, Vector2, Vector3 } from 'three';
 import type { Parameters, PartDefinition } from '../../core/types';
 import { n, num, numberParameter } from '../../core/geometry';
 import { BoundaryMesh } from '../../core/mechanical';
-import { modelBounds } from './lib/core/hardware';
+import { modelBounds } from '../../core/hardware/hardware';
 const presets = modulePresets;
 
 type Station = { point: Vector2; tangent: Vector2 };
@@ -117,6 +119,7 @@ const defaults = {
 
 const part: PartDefinition = {
   id: 'cotter-pin',
+  product: productData as ProductProfile,
   name: 'Split cotter pin',
   category: 'FASTENERS & THREADS',
   subgroup: 'PINS & DOWELS',

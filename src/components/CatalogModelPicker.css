@@ -86,14 +86,6 @@
 .catalog-model-filter-label > span + span {
   color: #82909f;
 }
-.catalog-model-range {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  align-items: center;
-  gap: 6px;
-  color: #718091;
-}
-.catalog-model-range input,
 .catalog-model-filter select {
   width: 100%;
   min-width: 0;
@@ -103,9 +95,6 @@
   border-radius: 4px;
   color: #e0e6ee;
   font-size: 11px;
-}
-.catalog-model-range input[aria-invalid='true'] {
-  border-color: #ca8170;
 }
 .catalog-model-filter > small {
   color: #8492a3;
@@ -151,6 +140,56 @@
 .catalog-model-results {
   display: grid;
   gap: 8px;
+}
+.catalog-model-entry {
+  min-width: 0;
+}
+.catalog-model-source {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 6px 10px 2px;
+  color: #c4a180;
+  font-size: 10px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.catalog-model-source:hover {
+  color: #f0c49f;
+}
+.catalog-model-source-notes {
+  margin: 6px 10px 2px;
+  color: #aeb9c6;
+  font-size: 10px;
+  line-height: 1.55;
+}
+.catalog-model-source-notes > summary {
+  color: #c4a180;
+  cursor: pointer;
+}
+.catalog-model-source-notes p {
+  margin: 8px 0;
+  overflow-wrap: anywhere;
+}
+.catalog-model-current {
+  margin-bottom: 14px;
+}
+.catalog-model-current-label {
+  display: block;
+  margin-bottom: 6px;
+  color: #c1cbd7;
+  font-size: 10px;
+}
+.catalog-model-more {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  border: 1px solid #4c453b;
+  border-radius: 5px;
+  color: #d8b99d;
+  font-size: 11px;
 }
 .catalog-model-result {
   display: flex;
@@ -205,10 +244,6 @@
   font-weight: 500;
   font-size: 10px;
 }
-.catalog-model-metric > small {
-  color: #b09d88;
-  font-size: 8px;
-}
 .catalog-model-condition {
   display: block;
   margin-top: 2px;
@@ -230,7 +265,29 @@
 .catalog-model-picker input:focus-visible,
 .catalog-model-picker select:focus-visible,
 .catalog-model-picker button:focus-visible,
+.catalog-model-picker a:focus-visible,
 .catalog-model-picker summary:focus-visible {
   outline: 2px solid var(--orange);
   outline-offset: 2px;
+}
+
+.catalog-model-range-error {
+  color: #f0a999;
+  font-size: 10px;
+  line-height: 1.5;
+}
+.catalog-model-current .catalog-model-result:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+/* Keep order dimensions and pose controls reachable below large model catalogs. */
+.catalog-model-results {
+  position: relative;
+  max-height: min(360px, 42dvh);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #4b535e transparent;
+  padding-right: 3px;
 }

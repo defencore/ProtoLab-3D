@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -16,6 +18,7 @@ import {
 const defaults = { bore: 25, outer: 52, width: 18, elements: 12, boreType: 'straight' };
 const part: PartDefinition = {
   id: 'spherical-roller-bearing',
+  product: productData as ProductProfile,
   name: 'Spherical roller bearing',
   category: 'BEARINGS & SEALS',
   subgroup: 'ROLLER BEARINGS',

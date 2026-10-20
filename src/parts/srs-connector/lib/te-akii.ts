@@ -1,6 +1,6 @@
 import type { Parameters } from '../../../core/types';
-import { box, cylinder, roundedRect, prism, subtract, union, type Shape } from './shapes';
-import type { Piece } from './assembly';
+import { box, cylinder, roundedRect, prism, subtract, union, type Shape } from '../../../core/assembly/electronics/shapes';
+import type { Piece } from '../../../core/assembly/electronics/assembly';
 
 /** Dimensioned envelope with illustrative exterior details; not a mating drawing. */
 export function teAkiiPieces(

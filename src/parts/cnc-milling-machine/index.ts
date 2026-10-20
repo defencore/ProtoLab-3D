@@ -1,0 +1,35 @@
+import type { PartModule } from '../../core/part-modules';
+import definition from './part';
+const part = { ...definition, id: 'cnc-milling-machine' };
+export default {
+  apiVersion: 2,
+  order: 1400,
+  dependencies: [
+    'cnc-frame-part',
+    'cnc-guide-rail',
+    'cnc-guide-carriage',
+    'cnc-drive-screw',
+    'cnc-feed-servo',
+    'cnc-servo-drive',
+    'cnc-precision-screw',
+    'cnc-precision-nut',
+    'cnc-precision-support',
+    'cnc-precision-coupling',
+    'cnc-precision-axis',
+    'cnc-linear-encoder',
+    'retaining-ring',
+    'bolt-screw',
+    'threaded-rod',
+    'hex-nut',
+    'cnc-spindle',
+    'cnc-spindle-mount',
+    'cnc-worktable',
+    'washer',
+    'cnc-process-accessory',
+    'machine-control',
+    'manufactured-detail',
+    'din-rail',
+    'cnc-limit-sensor',
+  ],
+  part,
+} satisfies PartModule;

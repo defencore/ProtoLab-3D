@@ -1,0 +1,20 @@
+[
+  {
+    "id": "nonferrous-water-tslot",
+    "name": "ProtoLab CNC / D16T / 2.2 kW spindle",
+    "description": "Independent custom arrangement with source-specific ground screw sets, industrial Delta servo axes, braked Z and direct linear feedback. Finished-part target ±0.025 mm awaits physical acceptance tests; no factory-machine identity is claimed.",
+    "parameters": {
+      "spindle": "jst-2200-water-80",
+      "motor": "ecm-a3h-c20807rs1",
+      "table": "aluminium",
+      "coolant": true,
+      "stand": true,
+      "tableHeight": 800,
+      "toolProjection": 25,
+      "xPosition": 50,
+      "yPosition": 50,
+      "zPosition": 50,
+      "controller": "ddcs-v3-1"
+    }
+  }
+]

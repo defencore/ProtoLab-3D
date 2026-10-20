@@ -1,8 +1,5 @@
 import modeling from '@jscad/modeling';
 import type { Geom3 } from '@jscad/modeling/src/geometries/types';
-import { Group, Mesh, MeshStandardMaterial } from 'three';
-import { solidUnionMesh } from '../../../core/solid-union';
-import { num } from '../../../core/geometry';
 export type Vec = [number, number, number];
 export type Bounds = [Vec, Vec];
 type Cylinder = {
@@ -71,23 +68,17 @@ function solid(s: Shape): Geom3 {
       return modeling.booleans.intersect(...s.children.map(solid));
   }
 }
-// State changes reuse solids, but every displayed component owns its geometry and material.
-const cache = new Map<string, { shape: Geom3; bounds: Bounds; mesh?: Group }>();
+// Bounds are independent of display state; actual physical components render through the library.
+const cache = new Map<string, { bounds: Bounds }>();
 function cached(s: Shape) {
   const key = JSON.stringify(s);
   let entry = cache.get(key);
   if (!entry) {
     const shape = solid(s);
-    entry = { shape, bounds: modeling.measurements.measureBoundingBox(shape) as Bounds };
+    entry = { bounds: modeling.measurements.measureBoundingBox(shape) as Bounds };
     cache.set(key, entry);
     if (cache.size > 18) {
       const oldest = cache.keys().next().value!;
-      cache.get(oldest)!.mesh?.traverse((c) => {
-        if (c instanceof Mesh) {
-          c.geometry.dispose();
-          (c.material as MeshStandardMaterial).dispose();
-        }
-      });
       cache.delete(oldest);
     }
   } else {
@@ -97,46 +88,3 @@ function cached(s: Shape) {
   return entry;
 }
 export const bounds = (s: Shape): Bounds => cached(s).bounds;
-export function component(s: Shape, label: string, color: number): Group {
-  const c = cached(s);
-  if (!c.mesh) {
-    c.mesh = solidUnionMesh(c.shape);
-    c.mesh.position.set(...(c.bounds[0].map((v, i) => (v + c.bounds[1][i]) / 2) as Vec));
-  }
-  const mesh = c.mesh.clone(true);
-  mesh.name = label;
-  mesh.traverse((child) => {
-    if (child instanceof Mesh) {
-      child.geometry = child.geometry.clone();
-      child.material = (child.material as MeshStandardMaterial).clone();
-      (child.material as MeshStandardMaterial).color.setHex(color);
-    }
-  });
-  return mesh;
-}
-const vector = (v: Vec) => `App.Vector(${v.map(num).join(',')})`;
-export function pythonShape(s: Shape): string {
-  switch (s.kind) {
-    case 'cylinder':
-      return s.segments === 6
-        ? `rod_hex(${num(s.radius)},${num(s.height)},${vector(s.origin)})`
-        : `Part.makeCylinder(${num(s.radius)},${num(s.height)},${vector(s.origin)},${s.axis === 'y' ? 'App.Vector(0,1,0)' : 'App.Vector(0,0,1)'})`;
-    case 'box':
-      return `Part.makeBox(${s.size.map(num).join(',')},${vector(s.origin)})`;
-    case 'prism': {
-      const pts = s.points.map(([x, z]) => vector([x, s.y, z]));
-      return `Part.Face(Part.makePolygon([${[...pts, pts[0]].join(',')}])).extrude(App.Vector(0,${num(s.height)},0))`;
-    }
-    default: {
-      const method = s.kind === 'union' ? 'fuse' : s.kind === 'subtract' ? 'cut' : 'common';
-      return s.children
-        .slice(1)
-        .reduce((out, c) => `${out}.${method}(${pythonShape(c)})`, pythonShape(s.children[0]));
-    }
-  }
-}
-export const pythonHelpers = `def rod_hex(radius,height,origin):
-    points = [App.Vector(radius*math.cos(i*math.pi/3),radius*math.sin(i*math.pi/3),0) for i in range(6)]
-    solid = Part.Face(Part.makePolygon(points+[points[0]])).extrude(App.Vector(0,0,height))
-    solid.translate(origin)
-    return solid`;

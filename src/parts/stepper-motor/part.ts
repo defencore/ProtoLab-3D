@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { parameters, defaults, catalogFilterFields } from './configurator';
 import presets from './presets.json';
@@ -5,6 +7,7 @@ import { pieces, models } from './lib/model';
 import * as assembly from './lib/assembly';
 const part: PartDefinition = {
   id: 'stepper-motor',
+  product: productData as ProductProfile,
   name: 'NEMA stepper motor',
   category: 'MOTORS & ACTUATORS',
   subgroup: 'STEPPER MOTORS',
@@ -18,6 +21,7 @@ const part: PartDefinition = {
     'electric motor',
     'stepper',
     'NEMA',
+    ...models.map((model) => model.code),
     '8HS12-0506S',
     '11HS12-0674S',
     '14HS10-0404S',

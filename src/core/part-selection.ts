@@ -1,4 +1,4 @@
-import type { ParameterDefinition, Parameters, PartDefinition } from './types';
+import type { ParameterDefinition, Parameters, PartDefinition, Preset } from './types';
 import { validateParameters } from './validation';
 import { presetMatchesConfiguration } from './catalog-models';
 
@@ -10,7 +10,7 @@ export interface PartSelection {
 }
 
 function matchesParameters(part: PartDefinition, left: Parameters, right: Parameters): boolean {
-  return Object.keys(part.defaults).every((key) => left[key] === right[key]);
+  return part.parameters.every((field) => left[field.key] === right[field.key]);
 }
 
 export function matchingPresetId(part: PartDefinition, parameters: Parameters): string {
@@ -18,6 +18,20 @@ export function matchingPresetId(part: PartDefinition, parameters: Parameters): 
     part.presets.find((preset) => presetMatchesConfiguration(part, preset, parameters))?.id ??
     'custom'
   );
+}
+
+/** Selecting another fixed source model keeps the user's independent order and placement inputs. */
+export function parametersForPreset(
+  part: PartDefinition,
+  preset: Preset,
+  current?: Parameters,
+): Parameters {
+  const parameters = { ...preset.parameters };
+  if (part.catalogSelectionOnly && current)
+    for (const field of part.parameters)
+      if (field.filterable === false && Object.hasOwn(current, field.key))
+        parameters[field.key] = current[field.key];
+  return parameters;
 }
 
 export function defaultPartSelection(part: PartDefinition): PartSelection {
@@ -103,4 +117,18 @@ export function reconcilePartSelection(
     modelState: state,
     presetId: matchingPresetId(part, retained),
   };
+}
+
+/** Keep physical inspection states applicable to the current construction. */
+export function availableModelState(
+  part: PartDefinition,
+  parameters: Parameters,
+  requested: string,
+): string {
+  const states = part.states?.filter(
+    (state) => !state.availableWhen || state.availableWhen(parameters),
+  );
+  return states?.some((state) => state.id === requested)
+    ? requested
+    : (states?.[0]?.id ?? requested);
 }

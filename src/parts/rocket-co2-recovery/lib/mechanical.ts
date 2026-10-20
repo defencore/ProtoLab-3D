@@ -10,7 +10,7 @@ import {
   transform,
   rotate,
   type Shape,
-} from '../../rocket-release/lib/shapes';
+} from '../../../core/assembly/recovery/shapes';
 import { screw } from '../../rocket-release/lib/hardware';
 import type { Piece } from './model';
 import {
@@ -328,7 +328,7 @@ export function dispenser(p: Parameters): Piece[] {
       material: 'PA12',
       process: '3D PRINT',
       metadata: {
-        ThreadFit: `Nominal 3/8-24 UNF pitch 1.058333 mm retained; radial female allowance ${female} mm. Cartridge connection is not a printed pressure seal.`,
+        ThreadFit: `Nominal 3/8-24 UNF pitch 1.058333 mm retained; radial female allowance ${female} mm. Simple uses nominal male and female thread envelopes; Full represents their helical flanks. Verify actual cartridge thread tolerance and printed fit with a coupon and measured hardware; envelope collision does not establish functional fit. Cartridge connection is not a printed pressure seal.`,
       },
     },
   ];

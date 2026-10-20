@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { parameters, defaults, catalogFilterFields } from './configurator';
 import presets from './presets.json';
@@ -5,6 +7,7 @@ import { pieces, models } from './lib/model';
 import * as assembly from './lib/assembly';
 const part: PartDefinition = {
   id: 'bldc-motor',
+  product: productData as ProductProfile,
   name: 'Brushless DC motor (BLDC)',
   category: 'MOTORS & ACTUATORS',
   subgroup: 'BRUSHLESS MOTORS',

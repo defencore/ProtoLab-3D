@@ -1,4 +1,4 @@
-import { box, prism, roundedRect, subtract, union, type Shape } from './shapes';
+import { box, prism, roundedRect, subtract, union, type Shape } from '../../../core/assembly/electronics/shapes';
 
 /** Mold silhouettes reconstructed from the orthographic catalog views.
  * Hook undercuts face OUTWARDS, away from the two-contact nozzle.

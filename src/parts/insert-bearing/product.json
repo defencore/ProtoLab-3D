@@ -1,0 +1,10 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "Supplier product used as one procurement unit. Internal visual solids are installation references, not a specification of parts to manufacture.",
+  "processes": [],
+  "releaseRequirements": [
+    "Select the actual supplier execution with a complete order designation and source reference.",
+    "Verify installation dimensions, mounting interfaces, operating ratings and the ordered product revision."
+  ]
+}

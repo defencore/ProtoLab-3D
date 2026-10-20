@@ -1,12 +1,15 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { parameters, defaults } from './configurator';
 import presets from './presets.json';
 import { bladePieces } from './lib/model';
-import { geometry, python } from './lib/assembly';
+import { geometry, python } from '../../core/assembly/mechanical/assembly';
 const part: PartDefinition = {
   id: 'circular-saw-blade',
+  product: productData as ProductProfile,
   name: 'Circular saw blade',
-  category: 'MACHINE TOOLS',
+  category: 'WORKSHOP TOOLS',
   subgroup: 'SAW BLADES',
   description:
     'Freud LU5H 500 mm carbide blade for non-ferrous material. Purchased tooling with fixed supplier dimensions.',
@@ -17,7 +20,19 @@ const part: PartDefinition = {
   defaults,
   presets: presets as Preset[],
   catalogSelectionOnly: true,
- catalogFilterFields:[{key:'bore',label:'Bore diameter',type:'number',unit:'mm',min:0,max:500,step:0.01,group:'Dimensions',catalogSummary:true}],
+  catalogFilterFields: [
+    {
+      key: 'bore',
+      label: 'Bore diameter',
+      type: 'number',
+      unit: 'mm',
+      min: 0,
+      max: 500,
+      step: 0.01,
+      group: 'Dimensions',
+      catalogSummary: true,
+    },
+  ],
   presetMatchKeys: ['model'],
   catalogSelection: [{ key: 'model' }],
   validate: (p) =>
@@ -26,7 +41,7 @@ const part: PartDefinition = {
   dimensions: () => [500, 500, 4],
   python: (p) =>
     python(bladePieces(p)) +
-    '\ncomponent_manufactured = [False]\ncomponent_groups = [["Cutting tool"]]\ncomponent_metadata = [{"Procurement":"BUY_STANDARD","GeometryEvidence":"Supplier diameter, bore, body, kerf, tooth count and pin-hole PCDs; illustrative tooth form and relative pin-hole clocking","SpeedLimit":"Confirm the marked maximum RPM and application with the blade supplier"}]',
+    '\ncomponent_manufactured = [False]\ncomponent_groups = [["Cutting tool"]]\ncomponent_metadata = [{"Procurement":"BUY_STANDARD","SupplierGeometryEvidence":"Supplier diameter, bore, body, kerf, tooth count and pin-hole PCDs; illustrative tooth form and relative pin-hole clocking","SpeedLimit":"Confirm the marked maximum RPM and application with the blade supplier"}]',
   notes:
     'Do not manufacture a blade from this reference model. Tooth grinding, brazing, tensioning and balance are supplier processes; slots and exact tooth profile are not reproduced.',
   sources: [

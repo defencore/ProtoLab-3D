@@ -1,11 +1,14 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { n } from '../../core/geometry';
 import { defaults, parameters } from './configurator';
 import presets from './presets.json';
 import { pieces } from './lib/model';
-import * as assembly from './lib/assembly';
+import * as assembly from '../../core/assembly/mechanical/assembly';
 const part: PartDefinition = {
   id: 'industrial-motor',
+  product: productData as ProductProfile,
   name: 'DC and industrial motor',
   category: 'MOTORS & ACTUATORS',
   subgroup: 'DC & INDUSTRIAL MOTORS',
@@ -59,7 +62,7 @@ const part: PartDefinition = {
   dimensions: (p, s) => assembly.dimensions(pieces(p, s)),
   python: (p, s) => assembly.python(pieces(p, s)),
   notes:
-    'IEC/servo labels indicate construction form only, not frame-standard compliance. Coil windings and electromagnetic travel/torque are not modeled. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.',
+    'IEC/servo labels indicate construction form only, not frame-standard compliance. Coil windings and electromagnetic travel/torque are not modeled. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Simple uses nominal envelopes for declared threads; Full models declared helical features. Features without a defined pitch/profile remain nominal in both modes. No load, pressure or service-life rating is implied.',
   sources: [],
 };
 export default part;

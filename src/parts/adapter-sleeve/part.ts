@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -5,7 +7,7 @@ import { Group, Path, Shape, Vector2 } from 'three';
 import type { PartDefinition, Parameters } from '../../core/types';
 import { DARK_STEEL, extrude, n, num, numberParameter } from '../../core/geometry';
 import { annularSector, loftMesh, pythonWire } from '../../core/mechanical';
-import { envelopeParameters, validateEnvelope } from './lib/parts/motion-bearing-utils';
+import { envelopeParameters, validateEnvelope } from '../../core/hardware/motion-bearing-utils';
 import { motionSources } from './lib/catalog/motion-bearings';
 
 function values(p: Parameters) {
@@ -44,6 +46,7 @@ function nutOutline(p: Parameters): Vector2[] {
 }
 const part: PartDefinition = {
   id: 'adapter-sleeve',
+  product: productData as ProductProfile,
   name: 'Adapter sleeve with locknut',
   category: 'BEARINGS & SEALS',
   subgroup: 'BEARING MOUNTING',
@@ -53,7 +56,7 @@ const part: PartDefinition = {
     'A split adapter sleeve with a 1:12 diameter taper and a notched locking-nut envelope.',
   keywords: ['adapter', 'sleeve', 'H206', 'H208', 'taper', 'locknut', 'bearing mount'],
   parameters: [
-    ...envelopeParameters.map((field) =>
+    ...envelopeParameters().map((field) =>
       field.key === 'outer' ? { ...field, label: 'Locknut outside diameter', symbol: 'd3' } : field,
     ),
     numberParameter('seatDiameter', 'Large bearing-seat diameter', 'd', 'Sleeve', 2, 250),
@@ -101,6 +104,6 @@ const part: PartDefinition = {
   },
   dimensions: (p) => [n(p, 'outer'), n(p, 'outer'), n(p, 'width')],
   notes:
-    'Supplier assembly envelope, nominal bearing seat and nut thickness. Taper, split and notch details are representative; threads are smooth and the locking-tab washer is omitted. This is not a thread-fit or installation-force model.',
+    'Supplier assembly envelope, nominal bearing seat and nut thickness. Taper, split and notch details are representative; thread pitch/profile are unspecified and remain nominal in both modes; the locking-tab washer is omitted. This is not a thread-fit or installation-force model.',
 };
 export default { ...part, presets: modulePresets };

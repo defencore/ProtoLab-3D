@@ -1,7 +1,7 @@
 import type { Parameters } from '../../../core/types';
 import models from './models.json';
-import { box, cylinder, prism, roundedRect, subtract, union, type Shape } from './shapes';
-import type { Piece } from './assembly';
+import { box, cylinder, prism, roundedRect, subtract, union, type Shape } from '../../../core/assembly/electronics/shapes';
+import type { Piece } from '../../../core/assembly/electronics/assembly';
 import { rightAngleLatch, straightLatch, sqxwCPA, ca281aCPA, ca282bCPA } from './latches';
 import { teAkiiPieces } from './te-akii';
 

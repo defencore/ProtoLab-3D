@@ -1,3 +1,4 @@
+import { markSupplierUnit } from '../../../core/supplier-components';
 import { box, cylinder, prism, subtract, union, type Shape, type Vec } from './shapes';
 import type { Piece } from './assembly';
 const pose = (child: Shape, translation: Vec, rotation: Vec = [0, 0, 0]): Shape => ({
@@ -56,6 +57,10 @@ export function bearingPieces(
     ),
     0xb29a58,
   );
+  markSupplierUnit(
+    out.map((item) => item.shape),
+    { name: 'Configured bearing ' + bore + 'x' + diameter + 'x' + width },
+  );
   return out;
 }
 export function maCylinderPieces(
@@ -82,6 +87,20 @@ export function maCylinderPieces(
   }
   add('front rod wiper', annulus(7.5, 5.05, 0, 2), 0x303a42);
   add('magnetic switch', box([8, 7, 17], [-4, 17.5, 22]), 0x287ea1);
+  markSupplierUnit(
+    out.map((item) => item.shape),
+    {
+      name,
+      procurement: {
+        designation: length === 187 ? 'MA32x100-SCA' : 'MA32x50-SCA',
+        manufacturer: '',
+        source:
+          length === 187
+            ? 'https://prom.ua/p1969890636-pnevmotsilindr-kruglyj-magnitom.html'
+            : 'https://prom.ua/ua/p1969399405-pnevmotsilindr-kruglyj-magnitom.html',
+      },
+    },
+  );
   return out;
 }
 export function socketScrew(

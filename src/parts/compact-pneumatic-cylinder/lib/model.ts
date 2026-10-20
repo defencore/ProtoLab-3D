@@ -1,3 +1,4 @@
+import { markSupplierUnit } from '../../../core/supplier-components';
 import type { Parameters } from '../../../core/types';
 import { box, cylinder, subtract } from './shapes';
 import type { Piece } from './assembly';
@@ -15,11 +16,12 @@ export function cylinderSpec(p: Parameters) {
     mountPitch: large ? 46.5 : 32.5,
     mountHole: large ? 5.5 : 4.5,
     thread: large ? 'M10x1.5' : 'M8x1.25',
+    threadRadius: large ? 5 : 4,
     tapRadius: large ? 4.25 : 3.4,
     tapDepth: large ? 20 : 16,
   };
 }
-export function cylinderPieces(p: Parameters): Piece[] {
+function buildCylinderPieces(p: Parameters): Piece[] {
   const s = cylinderSpec(p),
     b = s.width / 2,
     q = s.mountPitch / 2;
@@ -31,7 +33,12 @@ export function cylinderPieces(p: Parameters): Piece[] {
     cylinder(s.rod / 2 + 0.05, s.body + 2, [0, 0, -1]),
     ...holes,
     ...[7.5, s.body - 7.5].map((z) =>
-      cylinder(4.25, 9, [b - 8, -3, z], 'x', { pitch: 0.907, internal: true }),
+      cylinder(4.25, 9, [b - 8, -3, z], 'x', {
+        pitch: 0.907,
+        internal: true,
+        designation: 'G1/8 RH (approximate port profile)',
+        callout: false,
+      }),
     ),
     ...[-1, 1].map((sign) => box([3, 5, s.body - 22], [sign < 0 ? -b - 1 : b - 2, -2.5, 11])),
   );
@@ -44,7 +51,12 @@ export function cylinderPieces(p: Parameters): Piece[] {
         cylinder(s.rod / 2 + 0.05, 12, [0, 0, z - 1]),
         ...holes,
         ...[7.5, s.body - 7.5].map((zz) =>
-          cylinder(4.25, 9, [b - 8, -3, zz], 'x', { pitch: 0.907, internal: true }),
+          cylinder(4.25, 9, [b - 8, -3, zz], 'x', {
+            pitch: 0.907,
+            internal: true,
+            designation: 'G1/8 RH (approximate port profile)',
+            callout: zz === (z === 0 ? 7.5 : s.body - 7.5),
+          }),
         ),
       ),
     })),
@@ -67,7 +79,7 @@ export function cylinderPieces(p: Parameters): Piece[] {
       shape: subtract(
         cylinder(s.rod / 2, s.body + s.projection + s.extension, [0, 0, 0]),
         cylinder(
-          s.tapRadius,
+          s.threadRadius,
           s.tapDepth,
           [0, 0, s.body + s.projection + s.extension - s.tapDepth],
           'z',
@@ -76,4 +88,18 @@ export function cylinderPieces(p: Parameters): Piece[] {
       ),
     },
   ];
+}
+
+export function cylinderPieces(p: Parameters): Piece[] {
+  const items = buildCylinderPieces(p);
+  markSupplierUnit(
+    items.map((item) => item.shape),
+    {
+      name: 'Compact pneumatic cylinder',
+      libraryId: 'compact-pneumatic-cylinder',
+      parameters: { ...p, bore: String(p.bore), stroke: String(p.stroke) },
+      state: 'default',
+    },
+  );
+  return items;
 }

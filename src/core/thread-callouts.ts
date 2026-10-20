@@ -1,3 +1,4 @@
+import { currentGeometryMode } from './geometry-mode';
 /** Drawing information is independent of the simplified CAD thread envelope. */
 export interface ThreadCallout {
   designation: string;
@@ -7,7 +8,7 @@ export interface ThreadCallout {
   pitch: number;
   origin?: number[];
   axis?: number[];
-  representation: 'nominal-cylinder' | 'printed-helix';
+  representation: 'nominal-cylinder' | 'printed-helix' | 'machined-helix';
 }
 
 export function metricThreadCallout(
@@ -23,11 +24,12 @@ export function metricThreadCallout(
     length,
     nominalDiameter: diameter,
     pitch,
-    representation: 'nominal-cylinder',
+    representation: currentGeometryMode() === 'full' ? 'machined-helix' : 'nominal-cylinder',
   };
 }
 
 export function threadMetadata(features: ThreadCallout[]): Record<string, string> {
+  if (!features.length) return {};
   const groups = new Map<string, number>();
   for (const t of features) {
     const key = `${t.internal ? 'internal' : 'external'} ${t.designation}; nominal span ${t.length} mm`;
@@ -39,9 +41,9 @@ export function threadMetadata(features: ThreadCallout[]): Record<string, string
       ...new Set(features.map((t) => `${t.internal ? 'internal' : 'external'} ${t.designation}`)),
     ].join('; '),
     ThreadFeaturesJSON: JSON.stringify(features),
-    ThreadModel: features.some((t) => t.representation === 'printed-helix')
-      ? 'Printed threads retain helical geometry and print fit allowance; machined threads use nominal cylinders.'
-      : 'Smooth nominal-diameter bores and shafts without helical faces. Bore diameter is a symbolic thread envelope, NOT a tap-drill or clearance-hole size. Use callouts and depth notes; specify fit and tolerance class on the drawing.',
+    ThreadModel: features.some((t) => t.representation !== 'nominal-cylinder')
+      ? 'Full geometry: actual helical thread flanks. Printed features retain their configured fit allowance. Thread fit classes and manufacturing tolerances require a drawing.'
+      : 'Simple geometry: nominal-diameter bores and shafts without helical faces. Bore diameter is a symbolic thread envelope, NOT a tap-drill or clearance-hole size. Use callouts and depth notes; specify fit and tolerance class on the drawing.',
   };
 }
 

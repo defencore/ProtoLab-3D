@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -15,6 +17,7 @@ import {
 const defaults = { bore: 6, outer: 10, width: 8, elements: 12, seals: 'open' };
 const part: PartDefinition = {
   id: 'needle-bearing',
+  product: productData as ProductProfile,
   name: 'Drawn-cup needle roller bearing',
   category: 'BEARINGS & SEALS',
   subgroup: 'ROLLER BEARINGS',

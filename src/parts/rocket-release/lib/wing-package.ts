@@ -1,3 +1,4 @@
+import { markSupplierUnit } from '../../../core/supplier-components';
 import type { Parameters } from '../../../core/types';
 import type { Piece } from './assembly';
 import {
@@ -11,7 +12,7 @@ import {
   rotate,
   type Shape,
   type Point,
-} from './shapes';
+} from '../../../core/assembly/recovery/shapes';
 import { screw, outputScrew, flatSeat, matingHole } from './hardware';
 import { layout } from './motion';
 import { profile } from './gears';
@@ -99,6 +100,9 @@ export function wingPieces(p: Parameters): Piece[] {
     w = wingLayout(p),
     out: Piece[] = [];
   const add = (label: string, shape: Shape, color = 0xc6cdd5) => out.push({ label, shape, color });
+  const servo = {name:'TowerPro MG996R servo',procurement:{designation:'MG996R',manufacturer:'TowerPro',source:'https://www.towerpro.com.tw/product/mg996r/'}};
+  const battery = {name:'Tattu 650 mAh LiPo with supplied leads and connectors',procurement:{designation:'TA-75C-650-'+w.cells+'S1P-XT30',manufacturer:'Tattu',source:''}};
+  const supplied = (source:typeof servo,label:string,shape:Shape,color:number) => {markSupplierUnit([shape],source);add(label,shape,color);};
   const steel = 0x929eac,
     plastic = 0xdddcd2,
     rubber = 0x363e47;
@@ -113,7 +117,7 @@ export function wingPieces(p: Parameters): Piece[] {
     32,
     2.5,
   );
-  add(
+  supplied(servo,
     'BUY TowerPro MG996R · metal gears · PWM · 4.8–6.6 V · 55 g · nominal case and ears; fit reference',
     welded(subtract(union(body, ears), cylinder(1.6, 2, [0, 0, 41]))),
     0x292e35,
@@ -137,7 +141,7 @@ export function wingPieces(p: Parameters): Piece[] {
   });
   const output = plate(spline, [], 42.1, 5.9);
   const retaining = transform(outputScrew(), 0, [0, 0, 42]);
-  add(
+  supplied(servo,
     'BUY MG996R output · nominal 25T fit reference · measure tooth form before manufacture',
     transform(subtract(output, matingHole(retaining)), m.servoAngle),
     steel,
@@ -331,7 +335,7 @@ export function wingPieces(p: Parameters): Piece[] {
       box([w.width, w.length, 1], [bx - w.width / 2, -w.length / 2, -w.thickness - 1]),
       rubber,
     );
-    add(
+    supplied(battery,
       `BUY Tattu TA-75C-650-${w.cells}S1P-XT30 · 650 mAh · ${w.cells === 2 ? '7.4' : '11.1'} V · ${p.lipoMass} g · wrapper envelope ${w.length}×${w.width}×${w.thickness}`,
       box([w.width, w.length, w.thickness], [bx - w.width / 2, -w.length / 2, -w.thickness]),
       0x242831,
@@ -369,7 +373,7 @@ export function wingPieces(p: Parameters): Piece[] {
     // Lead routing envelopes use 45 mm supplier leads. Exit the pack end, turn into
     // the lined plate opening, then terminate in the unobstructed side corridor.
     for (const [i, x] of [bx - 3, bx].entries()) {
-      add(
+      supplied(battery,
         `BUY Tattu AWG16 ${i ? 'negative' : 'positive'} lead · routed clearance envelope`,
         welded(
           union(
@@ -384,13 +388,13 @@ export function wingPieces(p: Parameters): Piece[] {
         i ? 0x292c32 : 0xc84b42,
       );
     }
-    add(
+    supplied(battery,
       'BUY Tattu XT30 plug · 10×5×12 installation reference · lead-side access',
       box([10, 5, 12], [bx - 6.5, w.leadY - 2.5, 10]),
       0xe5b941,
     );
     // Separate balance bundle and plug; their clearance stays within the same port.
-    add(
+    supplied(battery,
       'BUY Tattu balance harness · routed bundle Ø2 · 45 mm lead reference',
       welded(
         union(
@@ -404,7 +408,7 @@ export function wingPieces(p: Parameters): Piece[] {
       ),
       0x777a7d,
     );
-    add(
+    supplied(battery,
       `BUY JST-XHR-${w.cells + 1}P balance plug · connector clearance reference`,
       box([w.cells * 2.5 + 3, 5, 5], [bx + 4, w.leadY - 2.5, 9]),
       0xece8d9,

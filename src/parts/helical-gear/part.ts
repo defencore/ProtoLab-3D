@@ -1,7 +1,9 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
-import { shaftBoreDefaults } from './lib/core/shaft-bore';
+import { shaftBoreDefaults } from '../../core/hardware/shaft-bore';
 import type { PartDefinition } from '../../core/types';
 import {
   gearDimensions,
@@ -12,7 +14,7 @@ import {
   gearValues,
   helicalLayers,
   validateGear,
-} from './lib/core/gears';
+} from '../../core/hardware/gears';
 import { n, numberParameter } from '../../core/geometry';
 
 const defaults = {
@@ -32,6 +34,7 @@ const defaults = {
 };
 const part: PartDefinition = {
   id: 'helical-gear',
+  product: productData as ProductProfile,
   name: 'Helical and herringbone gear',
   category: 'TRANSMISSION & LINKAGES',
   subgroup: 'GEARS & GEAR DRIVES',

@@ -1,0 +1,200 @@
+[
+  {
+    "id": "printed-rocker-off",
+    "name": "Printed rocker · OFF",
+    "description": "Three printed mounting and rocker parts, with the toggle off and fingers clear at rest.",
+    "parameters": {
+      "mechanism": "rocker",
+      "phase": "off",
+      "baseLength": 100,
+      "baseWidth": 90,
+      "deckHeight": 42,
+      "contactHeight": 12,
+      "padGap": 14.6,
+      "servoSweep": 50
+    }
+  },
+  {
+    "id": "printed-rocker-press-on",
+    "name": "Printed rocker · Press ON",
+    "description": "Rounded rocker finger reaches the ON contact position.",
+    "parameters": {
+      "mechanism": "rocker",
+      "phase": "press-on",
+      "baseLength": 100,
+      "baseWidth": 90,
+      "deckHeight": 42,
+      "contactHeight": 12,
+      "padGap": 14.6,
+      "servoSweep": 50
+    }
+  },
+  {
+    "id": "printed-rocker-wide-on",
+    "name": "Printed rocker · Wide base · ON",
+    "description": "120 × 100 mm printed base with the toggle on and the rocker centred.",
+    "parameters": {
+      "mechanism": "rocker",
+      "phase": "on",
+      "baseLength": 120,
+      "baseWidth": 100,
+      "deckHeight": 42,
+      "contactHeight": 12,
+      "padGap": 14.6,
+      "servoSweep": 50
+    }
+  },
+  {
+    "id": "panel-mount",
+    "name": "Guided fork · Panel mounting · OFF",
+    "description": "160 × 96 mm mounting base with the fork centred and the toggle off.",
+    "parameters": {
+      "mechanism": "guided",
+      "phase": "off",
+      "baseLength": 160,
+      "baseWidth": 96,
+      "deckHeight": 50,
+      "contactHeight": 10,
+      "padGap": 13,
+      "servoSweep": 50
+    }
+  },
+  {
+    "id": "wide-enclosure",
+    "name": "Guided fork · Wide enclosure mounting · ON",
+    "description": "180 × 120 mm base with the toggle on and the fork returned to centre.",
+    "parameters": {
+      "mechanism": "guided",
+      "phase": "on",
+      "baseLength": 180,
+      "baseWidth": 120,
+      "deckHeight": 50,
+      "contactHeight": 10,
+      "padGap": 13,
+      "servoSweep": 50
+    }
+  },
+  {
+    "id": "raised-platform",
+    "name": "Guided fork · Raised switch platform · OFF",
+    "description": "Switch case mounting face at 65 mm, with the same source switch mounting stack and contact height.",
+    "parameters": {
+      "mechanism": "guided",
+      "phase": "off",
+      "baseLength": 160,
+      "baseWidth": 96,
+      "deckHeight": 65,
+      "contactHeight": 10,
+      "padGap": 13,
+      "servoSweep": 50
+    }
+  },
+  {
+    "id": "press-on",
+    "name": "Guided fork · Press ON",
+    "description": "Inspect the ON push, with the servo turned and the soft contact pad compressed.",
+    "parameters": {
+      "mechanism": "guided",
+      "phase": "press-on",
+      "baseLength": 160,
+      "baseWidth": 96,
+      "deckHeight": 50,
+      "contactHeight": 10,
+      "padGap": 13,
+      "servoSweep": 50
+    }
+  },
+  {
+    "id": "parallel-shaft-off",
+    "name": "Parallel-shaft rocker · OFF",
+    "description": "80 × 110 mm panel-mounted assembly with four PETG parts, including a separate lower servo and switch cradle, and two thin TPU frames. The opposed bar rests across the servo, leaving the toggle free for manual operation.",
+    "parameters": {
+      "mechanism": "parallel",
+      "phase": "off",
+      "baseLength": 80,
+      "baseWidth": 110,
+      "deckHeight": 42,
+      "contactHeight": 12,
+      "padGap": 14.6,
+      "servoSweep": 50
+    }
+  },
+  {
+    "id": "parallel-shaft-press-on",
+    "name": "Parallel-shaft rocker · Press ON",
+    "description": "80 × 110 mm panel-mounted assembly with four PETG parts, including a separate lower servo and switch cradle, and two thin TPU frames. Inspect one end of the opposed bar at its calculated ON contact.",
+    "parameters": {
+      "mechanism": "parallel",
+      "phase": "press-on",
+      "baseLength": 80,
+      "baseWidth": 110,
+      "deckHeight": 42,
+      "contactHeight": 12,
+      "padGap": 14.6,
+      "servoSweep": 50
+    }
+  },
+  {
+    "id": "parallel-shaft-large-flange-off",
+    "name": "Parallel-shaft rocker · Larger flange · OFF",
+    "description": "100 × 120 mm panel-mounted assembly with four PETG parts, including a separate lower servo and switch cradle, and two thin TPU frames. The larger flange provides more space for the enclosure mounting.",
+    "parameters": {
+      "mechanism": "parallel",
+      "phase": "off",
+      "baseLength": 100,
+      "baseWidth": 120,
+      "deckHeight": 42,
+      "contactHeight": 12,
+      "padGap": 14.6,
+      "servoSweep": 50
+    }
+  },
+  {
+    "id": "parallel-dual-guarded-off",
+    "name": "Two switches · ARM 1 OFF · cover closed",
+    "description": "150 × 100 mm flange along X/Y, with ARM 1 manual on the left and ARM 2 servo-operated on the right. Four PETG parts and three thin TPU frames; ARM 2 is OFF at rest.",
+    "parameters": {
+      "mechanism": "parallel-dual",
+      "phase": "off",
+      "baseLength": 100,
+      "baseWidth": 150,
+      "deckHeight": 42,
+      "contactHeight": 12,
+      "padGap": 14.6,
+      "servoSweep": 50,
+      "manualState": "guarded-off"
+    }
+  },
+  {
+    "id": "parallel-dual-open-off",
+    "name": "Two switches · ARM 1 OFF · cover open",
+    "description": "150 × 100 mm flange along X/Y, with ARM 1 manual on the left and ARM 2 servo-operated on the right. Four PETG parts and three thin TPU frames; ARM 2 is OFF at rest.",
+    "parameters": {
+      "mechanism": "parallel-dual",
+      "phase": "off",
+      "baseLength": 100,
+      "baseWidth": 150,
+      "deckHeight": 42,
+      "contactHeight": 12,
+      "padGap": 14.6,
+      "servoSweep": 50,
+      "manualState": "open-off"
+    }
+  },
+  {
+    "id": "parallel-dual-open-on",
+    "name": "Two switches · ARM 1 ON · cover open",
+    "description": "160 × 110 mm flange along X/Y, with ARM 1 manual on the left and ARM 2 servo-operated on the right. Four PETG parts and three thin TPU frames; ARM 2 is OFF at rest.",
+    "parameters": {
+      "mechanism": "parallel-dual",
+      "phase": "off",
+      "baseLength": 110,
+      "baseWidth": 160,
+      "deckHeight": 42,
+      "contactHeight": 12,
+      "padGap": 14.6,
+      "servoSweep": 50,
+      "manualState": "open-on"
+    }
+  }
+]

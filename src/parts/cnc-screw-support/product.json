@@ -1,0 +1,12 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "Complete HIWIN BK12 or BF12 support unit, including visible supplier internals and retention pieces.",
+  "processes": [],
+  "releaseRequirements": [
+    "Confirm the actual BK12/BF12 accuracy execution and supplier order.",
+    "Confirm the ordered BF12 top-hole pattern: the source side view/photo and generic drill-count leader conflict.",
+    "Use the source journal dimensions and verify supplier internal/axial seating before production; reconstructed internals are illustrative.",
+    "Verify retention, bearing preload, journal tolerances, alignment and operating loads."
+  ]
+}

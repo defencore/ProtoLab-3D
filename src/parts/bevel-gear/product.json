@@ -1,0 +1,14 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "Custom gear design for prototype fabrication. Tooth geometry and the chosen manufacturing route require engineering verification before use as a loaded transmission.",
+  "processes": [
+    "milling",
+    "printing"
+  ],
+  "releaseRequirements": [
+    "Specify material, blank, manufacturing route and the applicable drawing revision.",
+    "Define functional tolerances, surface finish, edge treatment and an inspection method.",
+    "Specify a manufacturable tooth form, cutter/root details, mating clearance and gear acceptance requirements."
+  ]
+}

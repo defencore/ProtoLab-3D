@@ -2,7 +2,7 @@
 
 Open tray for 18650, 21700, AA or AAA cells with configurable count and clearance.
 
-Find **ELECTRONICS & VISION → COOLING & MOUNTING → Cylindrical cell holder**.
+Find **Electronics → POWER & MOTOR CONTROL → BATTERIES & HOLDERS → Cylindrical cell holder**.
 
 ## Variants
 
@@ -17,6 +17,6 @@ Cell diameter; Cell length; Cell count; Tray wall; Radial clearance.
 
 ## Scope
 
-Mechanical cell pockets only; spring contacts, protected-cell extra length and polarity wiring are not supplied. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.
+Mechanical cell pockets only; spring contacts, protected-cell extra length and polarity wiring are not supplied. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Simple uses nominal envelopes for declared threads; Full models declared helical features. Features without a defined pitch/profile remain nominal in both modes. No load, pressure or service-life rating is implied.
 
 Separate named components are exported to FreeCAD; the exploded state separates them along Z. The preview and native export share the same shape recipe. This is an independent, editable package.

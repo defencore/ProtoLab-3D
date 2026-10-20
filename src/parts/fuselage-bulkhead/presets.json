@@ -1,0 +1,86 @@
+[
+  {
+    "id": "round-100",
+    "name": "Round former · 100 mm",
+    "description": "3 mm sheet with a 60 mm service opening, four stringer seats and four custom 3.2 mm mounting holes; editable example.",
+    "parameters": {
+      "form": "round",
+      "width": 100,
+      "height": 100,
+      "thickness": 3,
+      "opening": true,
+      "openingWidth": 60,
+      "openingHeight": 60,
+      "notches": true,
+      "notchWidth": 5.15,
+      "notchDepth": 4,
+      "mountingHoles": true,
+      "holeDiameter": 3.2,
+      "mountingInset": 10,
+      "minimumWeb": 4
+    }
+  },
+  {
+    "id": "elliptic-140-100",
+    "name": "Elliptic former · 140 × 100 mm",
+    "description": "4 mm sheet with an elliptic access opening and four stringer seats; editable fuselage example.",
+    "parameters": {
+      "form": "ellipse",
+      "width": 140,
+      "height": 100,
+      "thickness": 4,
+      "opening": true,
+      "openingWidth": 90,
+      "openingHeight": 50,
+      "notches": true,
+      "notchWidth": 6.2,
+      "notchDepth": 5,
+      "mountingHoles": false,
+      "holeDiameter": 3.2,
+      "mountingInset": 10,
+      "minimumWeb": 5
+    }
+  },
+  {
+    "id": "box-120-90",
+    "name": "Box former · 120 × 90 mm",
+    "description": "4 mm rectangular sheet former with a rectangular opening and four stringer seats; editable example.",
+    "parameters": {
+      "form": "box",
+      "width": 120,
+      "height": 90,
+      "thickness": 4,
+      "opening": true,
+      "openingWidth": 70,
+      "openingHeight": 40,
+      "notches": true,
+      "notchWidth": 6.2,
+      "notchDepth": 5,
+      "mountingHoles": true,
+      "holeDiameter": 3.2,
+      "mountingInset": 8,
+      "minimumWeb": 4
+    }
+  },
+  {
+    "id": "solid-round-80",
+    "name": "Solid round bulkhead · 80 mm",
+    "description": "6 mm closed sheet disk with four custom mounting holes and no stringer notches; attachment design remains project-specific.",
+    "parameters": {
+      "form": "round",
+      "width": 80,
+      "height": 80,
+      "thickness": 6,
+      "opening": false,
+      "openingWidth": 40,
+      "openingHeight": 40,
+      "notches": false,
+      "notchWidth": 5.15,
+      "notchDepth": 4,
+      "mountingHoles": true,
+      "holeDiameter": 3.2,
+      "mountingInset": 10,
+      "minimumWeb": 5
+    }
+  }
+]

@@ -13,8 +13,8 @@ test('every preset has conservative geometry evidence, separate from catalog ide
         evidence.label && evidence.summary && evidence.limitations,
         `${part.id}/${preset.id}`,
       );
-      if (evidence.kind === 'manufacturer-cad') {
-        assert.equal(preset.catalog?.geometryEvidence?.kind, 'manufacturer-cad');
+      if (evidence.kind === 'manufacturer-cad' || evidence.kind === 'community-cad') {
+        assert.equal(preset.catalog?.geometryEvidence?.kind, evidence.kind);
         assert.match(evidence.sourceSha256!, /^[a-f0-9]{64}$/);
       } else if (!preset.catalog) assert.equal(evidence.kind, 'parametric');
     }
@@ -34,6 +34,29 @@ test('every preset has conservative geometry evidence, separate from catalog ide
   );
   const bec = parts.find((p) => p.id === 'bec')!;
   assert.equal(modelEvidence(bec, bec.defaults).kind, 'envelope');
+});
+
+test('retained community connector CAD has an explicit provenance class and matching UI label', () => {
+  const connector = parts.find((part) => part.id === 'signal-connector')!;
+  assert.equal(connector.presets.length, 35);
+  for (const preset of connector.presets) {
+    assert.equal(preset.catalog!.geometryEvidence!.kind, 'community-cad');
+    const evidence = modelEvidence(connector, preset.parameters, preset.id);
+    assert.equal(evidence.kind, 'community-cad');
+    assert.equal(evidence.label, 'Community CAD');
+    assert.match(evidence.sourceSha256!, /^[a-f0-9]{64}$/);
+    assert.equal(evidence.source, preset.catalog!.geometryEvidence!.sourceUrl);
+  }
+  const first = connector.presets[0];
+  const withoutExplicitEvidence = {
+    ...connector,
+    presets: [{ ...first, catalog: { ...first.catalog!, geometryEvidence: undefined } }],
+  };
+  assert.equal(
+    modelEvidence(withoutExplicitEvidence, first.parameters).kind,
+    'source-dimensions',
+    'A community source name alone must not imply imported geometry provenance',
+  );
 });
 
 test('native board metadata pins original source assets and exports scope', () => {

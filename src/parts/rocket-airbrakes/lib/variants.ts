@@ -1,5 +1,5 @@
 import type { Parameters } from '../../../core/types';
-import type { Piece } from './assembly';
+import type { Piece } from './shapes';
 import type { layout } from './model';
 import {
   box,

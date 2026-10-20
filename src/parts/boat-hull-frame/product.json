@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Authored sheet keel and transverse-frame kit with complementary half-lap joints.",
+  "processes": ["assembly"],
+  "releaseRequirements": [
+    "Measure actual sheet stock and qualify the slot allowance with a cut coupon.",
+    "Specify plywood grade, adhesive, skin, gunwales, longitudinal stiffening and waterproof finishing.",
+    "Verify hull loads, buoyancy and equipment attachment before use."
+  ]
+}

@@ -1,12 +1,31 @@
+import detailLibrary from '../manufactured-detail/part';
+import {
+  detailGeometry,
+  detailPython,
+  detailDimensions,
+} from '../../core/assembly/detail-instances';
+import { shapeComposition } from '../../core/component-recipes';
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import { withParameterStates } from '../../core/parameter-states';
 import type { PartDefinition, Preset } from '../../core/types';
 import { n } from '../../core/geometry';
 import { defaults, parameters, catalogSelection, updateParameters } from './configurator';
 import presets from './presets.json';
 import { pieces, stations, hulls } from './lib/model';
-import * as assembly from './lib/assembly';
 const part: PartDefinition = {
+  composition: (p) =>
+    shapeComposition(
+      pieces({ ...p }, 'assembled').map((piece) => ({
+        ...piece,
+        shape:
+          piece.shape.kind === 'faceted'
+            ? { kind: 'boundary' as const, points: piece.shape.points, faces: piece.shape.faces }
+            : piece.shape,
+      })),
+    ),
   id: 'boat-hull',
+  product: productData as ProductProfile,
   name: 'Boat hull',
   category: 'VEHICLE STRUCTURES',
   subgroup: 'BOAT HULLS',
@@ -103,9 +122,39 @@ const part: PartDefinition = {
     }
     return errors;
   },
-  buildGeometry: (p, state) => assembly.geometry(pieces(p, state)),
-  dimensions: (p, state) => assembly.dimensions(pieces(p, state)),
-  python: (p, state) => assembly.python(pieces(p, state)),
+  buildGeometry: (p, state) =>
+    detailGeometry(
+      detailLibrary,
+      pieces(p, state).map((piece) => ({
+        ...piece,
+        shape:
+          piece.shape.kind === 'faceted'
+            ? { kind: 'boundary' as const, points: piece.shape.points, faces: piece.shape.faces }
+            : piece.shape,
+      })),
+    ),
+  dimensions: (p, state) =>
+    detailDimensions(
+      detailLibrary,
+      pieces(p, state).map((piece) => ({
+        ...piece,
+        shape:
+          piece.shape.kind === 'faceted'
+            ? { kind: 'boundary' as const, points: piece.shape.points, faces: piece.shape.faces }
+            : piece.shape,
+      })),
+    ),
+  python: (p, state) =>
+    detailPython(
+      detailLibrary,
+      pieces(p, state).map((piece) => ({
+        ...piece,
+        shape:
+          piece.shape.kind === 'faceted'
+            ? { kind: 'boundary' as const, points: piece.shape.points, faces: piece.shape.faces }
+            : piece.shape,
+      })),
+    ),
   notes:
     'Geometric hull templates, not a buoyancy or planing prediction. X runs bow to stern, Y across the beam and Z upward. Z=0 is the midship sheer reference before sheer rise; it is not a waterline. Select flat, single/double-chine V, round, arched or soft-chine sections independently of the longitudinal hull form. Deadrise controls the symmetric parent section; asymmetric outer hulls shift the keel toward the tunnel. Rocker, sheer, maximum-beam station, stem and transom setbacks change the ruled hull lines. Wall inset is not constant normal thickness. Covers have 0.2 mm illustrative clearance; crossbeams clear the highest local sheer by 0.2 mm. These major solids omit hardware, sealed joints, propulsion, rudders, sailing rigs and keels. Branded presets verify only published length/beam; all other dimensions and contours are editable approximations.',
 };

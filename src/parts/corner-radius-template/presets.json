@@ -1,0 +1,90 @@
+[
+  {
+    "id": "r3",
+    "name": "External R3",
+    "description": "Two-edge corner registration for marking, sanding and checking external radii. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "radius": 3,
+      "reach": 45,
+      "plate": 5,
+      "fenceDrop": 8
+    }
+  },
+  {
+    "id": "r5",
+    "name": "External R5",
+    "description": "Two-edge corner registration for marking, sanding and checking external radii. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "radius": 5,
+      "reach": 45,
+      "plate": 5,
+      "fenceDrop": 8
+    }
+  },
+  {
+    "id": "r8",
+    "name": "External R8",
+    "description": "Two-edge corner registration for marking, sanding and checking external radii. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "radius": 8,
+      "reach": 55,
+      "plate": 5,
+      "fenceDrop": 8
+    }
+  },
+  {
+    "id": "r10",
+    "name": "External R10",
+    "description": "Two-edge corner registration for marking, sanding and checking external radii. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "radius": 10,
+      "reach": 70,
+      "plate": 5,
+      "fenceDrop": 8
+    }
+  },
+  {
+    "id": "r15",
+    "name": "External R15",
+    "description": "Two-edge corner registration for marking, sanding and checking external radii. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "radius": 15,
+      "reach": 70,
+      "plate": 5,
+      "fenceDrop": 8
+    }
+  },
+  {
+    "id": "r20",
+    "name": "External R20",
+    "description": "Two-edge corner registration for marking, sanding and checking external radii. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "radius": 20,
+      "reach": 80,
+      "plate": 5,
+      "fenceDrop": 8
+    }
+  },
+  {
+    "id": "r30",
+    "name": "External R30",
+    "description": "Two-edge corner registration for marking, sanding and checking external radii. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "radius": 30,
+      "reach": 100,
+      "plate": 5,
+      "fenceDrop": 8
+    }
+  },
+  {
+    "id": "r40",
+    "name": "External R40",
+    "description": "Two-edge corner registration for marking, sanding and checking external radii. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "radius": 40,
+      "reach": 120,
+      "plate": 5,
+      "fenceDrop": 8
+    }
+  }
+]

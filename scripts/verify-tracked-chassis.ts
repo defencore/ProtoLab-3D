@@ -1,6 +1,6 @@
 /** Prepare native-CAD cases with independently measured preview bounds and volumes.
  * FULL=1 covers catalog variants, inspection states, suspension travel, idler adjustment and frame dimensions.
- * Run the resulting cases with scripts/verify-electronics.py in FreeCAD Python.
+ * Run the resulting cases with scripts/verify-tracked-chassis.py in FreeCAD Python.
  */
 import { writeFileSync } from 'node:fs';
 import { Box3, Mesh, Vector3 } from 'three';
@@ -69,7 +69,14 @@ for (const part of selections) {
               volume += vertices[0].dot(vertices[1].clone().cross(vertices[2])) / 6;
             }
           });
-          return { name: child.name, min: bounds.min.toArray(), max: bounds.max.toArray(), volume };
+          return {
+            name: child.name,
+            libraryId: child.userData.libraryId as string,
+            configuration: child.userData.configuration as typeof part.defaults,
+            min: bounds.min.toArray(),
+            max: bounds.max.toArray(),
+            volume,
+          };
         });
         cases.push({
           name,

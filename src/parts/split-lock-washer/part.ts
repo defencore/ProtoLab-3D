@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import { withParameterStates } from '../../core/parameter-states';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
@@ -40,6 +42,7 @@ const defaults = {
 };
 const part: PartDefinition = {
   id: 'split-lock-washer',
+  product: productData as ProductProfile,
   name: 'Split spring lock washer',
   category: 'FASTENERS & THREADS',
   subgroup: 'WASHERS',

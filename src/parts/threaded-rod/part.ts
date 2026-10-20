@@ -1,17 +1,19 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
 import type { PartDefinition, Parameters } from '../../core/types';
-import setScrew from './lib/parts/set-screw';
+import setScrew from '../set-screw/part';
 import {
   buildFastenerGeometry,
   fastenerDimensions,
   fastenerPython,
   validateFastener,
-} from './lib/core/fasteners';
+} from '../../core/hardware/fasteners';
 import { n, numberParameter } from '../../core/geometry';
 
-const expanded = (p: Parameters): Parameters => ({
+export const threadedRodFastenerParameters = (p: Parameters): Parameters => ({
   ...setScrew.defaults,
   diameter: p.diameter,
   shankDiameter: p.diameter,
@@ -30,13 +32,14 @@ const expanded = (p: Parameters): Parameters => ({
 });
 const part: PartDefinition = {
   id: 'threaded-rod',
+  product: productData as ProductProfile,
   name: 'Threaded rod and stud',
   category: 'FASTENERS & THREADS',
   subgroup: 'STUDS & RODS',
   icon: 'bolt',
   complexity: 'Continuous metric thread',
   description:
-    'Cut-to-length threaded rod with selectable thread direction, smooth nominal geometry and drawing callouts.',
+    'Cut-to-length threaded rod with selectable thread direction, drawing callouts and selectable Simple / Full thread detail.',
   keywords: ['DIN 975', 'DIN 976', 'stud', 'rod', 'threaded bar', 'allthread'],
   defaults: { diameter: 6, length: 100, pitch: 1, handedness: 'right', threadMode: 'envelope' },
   presets: modulePresets,
@@ -49,7 +52,7 @@ const part: PartDefinition = {
       label: 'Thread representation',
       group: 'Thread',
       type: 'select',
-      options: [{ label: 'Nominal envelope with drawing callouts', value: 'envelope' }],
+      options: [{ label: 'Threaded', value: 'envelope' }],
     },
     {
       key: 'handedness',
@@ -64,18 +67,18 @@ const part: PartDefinition = {
   ],
   presetMatchKeys: ['diameter', 'length', 'handedness'],
   validate(p) {
-    return validateFastener(expanded(p), true);
+    return validateFastener(threadedRodFastenerParameters(p), true);
   },
   buildGeometry(p) {
-    return buildFastenerGeometry(expanded(p), true);
+    return buildFastenerGeometry(threadedRodFastenerParameters(p), true);
   },
   python(p) {
-    return fastenerPython(expanded(p), true);
+    return fastenerPython(threadedRodFastenerParameters(p), true);
   },
   dimensions(p) {
-    return fastenerDimensions(expanded(p), true);
+    return fastenerDimensions(threadedRodFastenerParameters(p), true);
   },
   notes:
-    'Stock lengths use a smooth nominal thread envelope for fast assembly layout. Diameter, pitch, handedness and length are preserved as drawing callouts. No drive recess is present.',
+    'Simple uses nominal thread envelopes for fast layout; Full exports real helical flanks over the declared thread length. Diameter, pitch, handedness and length are preserved as drawing callouts. No drive recess is present.',
 };
 export default { ...part, presets: modulePresets };

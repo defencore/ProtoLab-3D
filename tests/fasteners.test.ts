@@ -9,9 +9,26 @@ import swingEyeBolt from '../src/parts/swing-eye-bolt/part';
 import liftingEyeBolt from '../src/parts/lifting-eye-bolt/part';
 import sourceInventory from '../src/catalog/data/gvyntok-fasteners.json';
 import { supplierFasteners, supplierFamily } from '../src/catalog/fasteners';
-import { fastenerValues } from '../src/parts/bolt-screw/lib/core/fasteners';
+import { fastenerValues } from '../src/core/hardware/fasteners';
 import { validateParameters } from '../src/core/validation';
 import type { Parameters } from '../src/core/types';
+import { generateScript } from '../src/core/freecad';
+
+test('wing and swing-eye screws reject an impossible thread core before either macro mode is generated', () => {
+  for (const part of [wingScrew, swingEyeBolt]) {
+    const impossible = { ...part.defaults, diameter: 1 };
+    assert.ok(validateParameters(part, impossible, 'default').length, part.id);
+    for (const mode of ['simple', 'full'] as const)
+      assert.throws(
+        () => generateScript(part, impossible, 'default', undefined, undefined, mode),
+        /positive load-bearing core/,
+      );
+    const edited = part.updateParameters!(impossible, 'diameter');
+    assert.equal(edited.pitch, 0.25);
+    assert.deepEqual(validateParameters(part, edited, 'default'), [], part.id);
+    assert.equal(part.defaults.pitch, part === wingScrew ? 1 : 1.25);
+  }
+});
 
 function solidMetrics(model: THREE.Group, checkEdges = false) {
   const meshes: THREE.Mesh[] = [];

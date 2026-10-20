@@ -19,7 +19,7 @@ import {
   union,
   rotate,
   type Shape,
-} from '../../rocket-release/lib/shapes';
+} from '../../../core/assembly/recovery/shapes';
 
 // User-supplied body dimensions in tray coordinates. Shared library models add
 // illustrative visible details; electrical ratings are not inferred from photos.

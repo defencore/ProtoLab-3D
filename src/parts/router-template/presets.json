@@ -1,0 +1,114 @@
+[
+  {
+    "id": "slot6x40",
+    "name": "Mortise 6 x 40",
+    "description": "Guide-bush compensated slots, rounded pockets and circular openings with clamping borders. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "opening": "slot",
+      "targetLength": 40,
+      "targetWidth": 6,
+      "corner": 6,
+      "cutter": 6,
+      "follower": 16,
+      "border": 28,
+      "plate": 8,
+      "fenceDrop": 8
+    }
+  },
+  {
+    "id": "slot8x60",
+    "name": "Mortise 8 x 60",
+    "description": "Guide-bush compensated slots, rounded pockets and circular openings with clamping borders. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "opening": "slot",
+      "targetLength": 60,
+      "targetWidth": 8,
+      "corner": 6,
+      "cutter": 6,
+      "follower": 16,
+      "border": 28,
+      "plate": 8,
+      "fenceDrop": 8
+    }
+  },
+  {
+    "id": "slot12x60",
+    "name": "Slot12 x 60",
+    "description": "Guide-bush compensated slots, rounded pockets and circular openings with clamping borders. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "opening": "slot",
+      "targetLength": 60,
+      "targetWidth": 12,
+      "corner": 6,
+      "cutter": 6,
+      "follower": 16,
+      "border": 28,
+      "plate": 8,
+      "fenceDrop": 8
+    }
+  },
+  {
+    "id": "pocket30x60",
+    "name": "Pocket30 x 60 / R6",
+    "description": "Guide-bush compensated slots, rounded pockets and circular openings with clamping borders. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "opening": "pocket",
+      "targetLength": 60,
+      "targetWidth": 30,
+      "corner": 6,
+      "cutter": 6,
+      "follower": 16,
+      "border": 28,
+      "plate": 8,
+      "fenceDrop": 8
+    }
+  },
+  {
+    "id": "pocket50x100",
+    "name": "Pocket50 x 100 / R10",
+    "description": "Guide-bush compensated slots, rounded pockets and circular openings with clamping borders. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "opening": "pocket",
+      "targetLength": 100,
+      "targetWidth": 50,
+      "corner": 10,
+      "cutter": 6,
+      "follower": 16,
+      "border": 28,
+      "plate": 8,
+      "fenceDrop": 8
+    }
+  },
+  {
+    "id": "circle40",
+    "name": "Circular opening40",
+    "description": "Guide-bush compensated slots, rounded pockets and circular openings with clamping borders. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "opening": "circle",
+      "targetLength": 40,
+      "targetWidth": 12,
+      "corner": 6,
+      "cutter": 6,
+      "follower": 16,
+      "border": 28,
+      "plate": 8,
+      "fenceDrop": 8
+    }
+  },
+  {
+    "id": "circle80",
+    "name": "Circular opening80",
+    "description": "Guide-bush compensated slots, rounded pockets and circular openings with clamping borders. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "opening": "circle",
+      "targetLength": 80,
+      "targetWidth": 12,
+      "corner": 6,
+      "cutter": 6,
+      "follower": 16,
+      "border": 28,
+      "plate": 8,
+      "fenceDrop": 8
+    }
+  }
+]

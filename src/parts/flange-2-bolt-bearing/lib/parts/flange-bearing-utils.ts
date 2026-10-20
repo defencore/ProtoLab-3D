@@ -7,7 +7,7 @@ import {
   turnedMesh,
   turnedPython,
   type TurnedProfile,
-} from './motion-bearing-utils';
+} from '../../../../core/hardware/motion-bearing-utils';
 
 export const flangeDefaults = {
   bore: 20,

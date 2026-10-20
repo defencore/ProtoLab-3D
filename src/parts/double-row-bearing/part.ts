@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -15,6 +17,7 @@ import {
 const defaults = { bore: 17, outer: 40, width: 16, elements: 12, seals: 'rubber' };
 const part: PartDefinition = {
   id: 'double-row-bearing',
+  product: productData as ProductProfile,
   name: 'Double-row ball bearing',
   category: 'BEARINGS & SEALS',
   subgroup: 'BALL BEARINGS',

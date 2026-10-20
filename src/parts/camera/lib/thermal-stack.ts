@@ -1,5 +1,5 @@
-import { box, cylinder, prism, roundedRect, ring, subtract, type Shape } from './shapes';
-import type { Piece } from './assembly';
+import { box, cylinder, prism, roundedRect, ring, subtract, type Shape } from '../../../core/assembly/electronics/shapes';
+import type { Piece } from '../../../core/assembly/electronics/assembly';
 
 export interface ThermalStackGeometry {
   bodyDepth: number;

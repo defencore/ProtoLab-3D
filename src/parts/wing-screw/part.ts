@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -7,8 +9,10 @@ import {
   profileHeadDimensions,
   profileHeadGeometry,
   profileHeadPython,
+  profileThreadErrors,
   type ProfileHead,
-} from './lib/core/special-fasteners';
+} from '../../core/hardware/special-fasteners';
+import { nutCoarsePitch } from '../../core/hardware/internal-thread';
 
 const defaults: Parameters = {
   diameter: 6,
@@ -47,10 +51,12 @@ function head(p: Parameters): ProfileHead {
       Number(p.baseDiameter) + ((Number(p.tipThickness) - Number(p.baseDiameter)) * y) / h,
     shaftLength: Number(p.length),
     diameter: Number(p.diameter),
+    thread: { pitch: Number(p.pitch), length: Number(p.length) },
   };
 }
 const part: PartDefinition = {
   id: 'wing-screw',
+  product: productData as ProductProfile,
   name: 'Wing screw',
   category: 'FASTENERS & THREADS',
   subgroup: 'BOLTS & SCREWS',
@@ -95,7 +101,7 @@ const part: PartDefinition = {
       step: 0.05,
       group: 'Shank',
       description:
-        'Stored for thread identification. The preview and CAD use a smooth nominal thread envelope.',
+        'Thread pitch for the drawing callout and Full helical geometry. Simple uses a nominal envelope.',
     },
     {
       key: 'form',
@@ -154,8 +160,10 @@ const part: PartDefinition = {
   ],
   presetMatchKeys: ['diameter', 'length', 'form'],
   presets: modulePresets,
+  updateParameters: (p, key) =>
+    key === 'diameter' ? { ...p, pitch: nutCoarsePitch(Number(p.diameter)) } : p,
   validate: (p) => {
-    const errors: string[] = [];
+    const errors = profileThreadErrors(Number(p.diameter), Number(p.pitch));
     if (Number(p.baseDiameter) <= Number(p.diameter))
       errors.push('The head base must be wider than the shank.');
     if (Number(p.wingSpan) <= Number(p.baseDiameter) * 1.3)
@@ -168,7 +176,7 @@ const part: PartDefinition = {
   dimensions: (p) => profileHeadDimensions(head(p)),
   python: (p) => profileHeadPython(head(p)),
   notes:
-    'Nominal supplier dimensions with a faceted forged-wing profile and smooth thread envelope. The head base is an editable square envelope. DIN 316 source h and overall-length rows disagree, so head height and wing taper are not marked verified. No load rating or manufacturing certification is implied.',
+    'Nominal supplier dimensions with a faceted forged-wing profile. Simple uses a nominal thread envelope; Full exports real helical flanks. The head base is an editable square envelope. DIN 316 source h and overall-length rows disagree, so head height and wing taper are not marked verified. No load rating or manufacturing certification is implied.',
   sources: [
     {
       label: 'Gvyntok DIN 316 drawing',

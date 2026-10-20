@@ -1,0 +1,82 @@
+[
+  {
+    "id": "slot6x30",
+    "name": "Slot6 x 30 / drill4",
+    "description": "Paired pilot-drilling and finished-profile masks for making slots with a drill and files. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "slotLength": 30,
+      "slotWidth": 6,
+      "finalDrill": 4,
+      "plate": 8,
+      "border": 20,
+      "guide": "printed",
+      "drill": 2.5,
+      "bushOD": 5,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "slot8x40",
+    "name": "Slot8 x 40 / drill6",
+    "description": "Paired pilot-drilling and finished-profile masks for making slots with a drill and files. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "slotLength": 40,
+      "slotWidth": 8,
+      "finalDrill": 6,
+      "plate": 8,
+      "border": 20,
+      "guide": "bushing",
+      "drill": 2.5,
+      "bushOD": 5,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "slot10x60",
+    "name": "Slot10 x 60",
+    "description": "Paired pilot-drilling and finished-profile masks for making slots with a drill and files. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "slotLength": 60,
+      "slotWidth": 10,
+      "finalDrill": 6,
+      "plate": 8,
+      "border": 20,
+      "guide": "bushing",
+      "drill": 2.5,
+      "bushOD": 5,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "slot12x80",
+    "name": "Slot12 x 80 / drill8",
+    "description": "Paired pilot-drilling and finished-profile masks for making slots with a drill and files. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "slotLength": 80,
+      "slotWidth": 12,
+      "finalDrill": 8,
+      "plate": 8,
+      "border": 20,
+      "guide": "bushing",
+      "drill": 2.5,
+      "bushOD": 5,
+      "seatAllowance": 0.05
+    }
+  },
+  {
+    "id": "slot16x100",
+    "name": "Slot16 x 100 / drill10",
+    "description": "Paired pilot-drilling and finished-profile masks for making slots with a drill and files. Editable workshop prototype; see its guide for datums and tool limits.",
+    "parameters": {
+      "slotLength": 100,
+      "slotWidth": 16,
+      "finalDrill": 10,
+      "plate": 8,
+      "border": 20,
+      "guide": "bushing",
+      "drill": 2.5,
+      "bushOD": 5,
+      "seatAllowance": 0.05
+    }
+  }
+]

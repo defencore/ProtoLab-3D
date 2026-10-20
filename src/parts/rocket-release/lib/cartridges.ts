@@ -1,9 +1,9 @@
 import type { Parameters } from '../../../core/types';
 import type { Piece } from './assembly';
 import { at, layout, springAngles } from './motion';
-import { box, cylinder, union, subtract, transform, type Shape } from './shapes';
+import { box, cylinder, union, subtract, transform, type Shape } from '../../../core/assembly/recovery/shapes';
 import { springAssessment } from './spring-assessment';
-import { barrelPlug } from './barrel';
+import { barrelPlug } from '../../../core/assembly/recovery/barrel';
 
 /** Open-mouth screw-in barrels; the external stop keeps each through-rod captive. */
 export function springCartridges(p: Parameters, state: string): Piece[] {

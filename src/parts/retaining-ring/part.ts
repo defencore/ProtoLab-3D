@@ -1,10 +1,12 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
 import { Group, Shape, Path, Vector2 } from 'three';
 import type { PartDefinition, Parameters } from '../../core/types';
 import { n, num, numberParameter, extrude } from '../../core/geometry';
-import { modelBounds } from './lib/core/hardware';
+import { modelBounds } from '../../core/hardware/hardware';
 import { annularSector, unionPolygons, pythonWire } from '../../core/mechanical';
 
 function values(p: Parameters) {
@@ -53,9 +55,11 @@ const defaults = {
   gapAngle: 40,
   earDiameter: 4,
   holeDiameter: 1.5,
+  boreEnvelope: 0,
 };
 const part: PartDefinition = {
   id: 'retaining-ring',
+  product: productData as ProductProfile,
   name: 'Retaining ring',
   category: 'FASTENERS & THREADS',
   subgroup: 'RETAINING RINGS',
@@ -84,6 +88,11 @@ const part: PartDefinition = {
     },
     numberParameter('earDiameter', 'Lug diameter', 'e', 'Opening & lugs', 1, 40),
     numberParameter('holeDiameter', 'Plier hole diameter', 'h', 'Opening & lugs', 0.3, 20),
+    {
+      ...numberParameter('boreEnvelope', 'Installed bore envelope', 'di', 'Installation', 0, 590),
+      filterable: false,
+      visibleWhen: () => false,
+    },
   ],
   presetMatchKeys: ['mounting', 'thickness'],
   defaults,
@@ -102,6 +111,13 @@ const part: PartDefinition = {
     if (v.earRadius < (v.r - v.inner) * 0.45)
       errors.push('Increase lug diameter to connect it securely to the ring ends.');
     if (v.earRadius >= v.inner * 0.8) errors.push('Lugs are too large for the ring bore.');
+    if (
+      !Number.isFinite(n(p, 'boreEnvelope')) ||
+      n(p, 'boreEnvelope') < 0 ||
+      (n(p, 'boreEnvelope') > 0 &&
+        (p.mounting !== 'external' || n(p, 'boreEnvelope') >= n(p, 'outerDiameter') - 0.8))
+    )
+      errors.push('An installed external-ring bore envelope must leave a connected ring band.');
     return errors;
   },
   buildGeometry(p) {
@@ -118,6 +134,10 @@ const part: PartDefinition = {
     const outline = previewOutline(
       unionPolygons([ringOutline(p), circle(v.earRadius, -1), circle(v.earRadius, 1)]),
     );
+    const installedRadius = n(p, 'boreEnvelope') / 2;
+    if (installedRadius > 0)
+      for (const point of outline)
+        if (point.length() < installedRadius) point.setLength(installedRadius);
     const shape = new Shape(outline);
     shape.closePath();
     for (const sign of [-1, 1]) {
@@ -131,13 +151,15 @@ const part: PartDefinition = {
   },
   python(p) {
     const v = values(p);
-    return `shape = Part.Face(${pythonWire(ringOutline(p), -v.thickness / 2)}).extrude(App.Vector(0, 0, ${num(v.thickness)}))\nfor sign in [-1, 1]:\n    lug = Part.makeCylinder(${num(v.earRadius)}, ${num(v.thickness)}, App.Vector(${num(v.cx)}, sign * ${num(v.cy)}, ${num(-v.thickness / 2)}))\n    shape = shape.fuse(lug)\n    hole = Part.makeCylinder(${num(n(p, 'holeDiameter') / 2)}, ${num(v.thickness + 2)}, App.Vector(${num(v.cx)}, sign * ${num(v.cy)}, ${num(-v.thickness / 2 - 1)}))\n    shape = shape.cut(hole)\nshape = shape.removeSplitter()`;
+    const source = `shape = Part.Face(${pythonWire(ringOutline(p), -v.thickness / 2)}).extrude(App.Vector(0, 0, ${num(v.thickness)}))\nfor sign in [-1, 1]:\n    lug = Part.makeCylinder(${num(v.earRadius)}, ${num(v.thickness)}, App.Vector(${num(v.cx)}, sign * ${num(v.cy)}, ${num(-v.thickness / 2)}))\n    shape = shape.fuse(lug)\n    hole = Part.makeCylinder(${num(n(p, 'holeDiameter') / 2)}, ${num(v.thickness + 2)}, App.Vector(${num(v.cx)}, sign * ${num(v.cy)}, ${num(-v.thickness / 2 - 1)}))\n    shape = shape.cut(hole)\nshape = shape.removeSplitter()`;
+    if (n(p, 'boreEnvelope') === 0) return source;
+    return `${source}\nshape=shape.cut(Part.makeCylinder(${num(n(p, 'boreEnvelope') / 2)},${num(v.thickness + 2)},App.Vector(0,0,${num(-v.thickness / 2 - 1)})))\ncomponent_metadata=[${JSON.stringify({ InstalledBoreEnvelope: `Illustrative installed spring-ring bore ${n(p, 'boreEnvelope')} mm through body and round lug contours; no machining of the purchased DIN ring is prescribed. Source free-ring dimensions and elastic retention require supplier drawing/physical fit approval.` })}]`;
   },
   dimensions(p) {
     return modelBounds(part.buildGeometry(p, 'default'));
   },
   notes:
-    'Editable circlip geometry with round lugs. Source presets use supplier free-ring diameters and thicknesses. Bore offset, lug rounding and unspecified holes are prototype settings, not DIN groove-fit specifications. Check the mating groove and free-ring size separately. External/internal chooses lug direction; elastic installation is not simulated.',
+    'Editable circlip geometry with round lugs. Source presets use supplier free-ring diameters and thicknesses. Bore offset, lug rounding and unspecified holes are prototype settings, not DIN groove-fit specifications. A positive installed bore envelope constrains illustrative expanded lug/body contours and does not prescribe machining a purchased DIN ring. Free presets keep this setting at zero. Check the actual supplied ring, groove and retention separately; elastic installation is not simulated.',
   sources: [
     {
       label: 'Gvyntok · external DIN 471 and internal DIN 472 families',

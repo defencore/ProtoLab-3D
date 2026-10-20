@@ -1,3 +1,5 @@
+import { currentGeometryMode } from '../../../../core/geometry-mode';
+import { nativeThreadPython, nativeThreadExpression } from '../../../../core/thread-native';
 import { showThreads } from '../../../../core/thread-visual';
 import { metricThreadCallout, threadMetadataPython } from '../../../../core/thread-callouts';
 import * as THREE from 'three';
@@ -46,7 +48,7 @@ export function fastenerParameters(headless: boolean): ParameterDefinition[] {
       description: 'The unthreaded shoulder must be at least as wide as the thread major diameter.',
     },
     selectParameter('threadMode', 'Thread geometry', 'Thread', [
-      ['envelope', 'Visible thread / smooth export'],
+      ['envelope', 'Threaded'],
       ['none', 'No thread'],
     ]),
     {
@@ -69,7 +71,7 @@ export function fastenerParameters(headless: boolean): ParameterDefinition[] {
       ...numberParameter('pitch', 'Thread pitch', 'P', 'Thread', 0.15, 8, 0.05),
       visibleWhen: (p) => p.threadMode !== 'none',
       description:
-        'Nominal thread pitch for the drawing callout. Helical flanks are visible in preview; exports use smooth envelopes.',
+        'Nominal thread pitch for the drawing callout. Simple geometry uses nominal envelopes; Full displays thread relief and exports actual helical flanks.',
     },
     {
       ...selectParameter('handedness', 'Thread direction', 'Thread', [
@@ -567,7 +569,17 @@ export function buildFastenerGeometry(p: Parameters, headless = false): THREE.Gr
   mesh.name = v.threaded
     ? `External M${2 * v.r}×${v.pitch} ${p.handedness === 'left' ? 'LH' : 'RH'} · L${v.threadLength}`
     : 'Unthreaded shank';
-  if (v.threaded) showThreads(mesh, [{ origin: [0,0,v.start], axis:[0,0,1], diameter:2*v.r, pitch:v.pitch, length:v.threadLength, left:p.handedness==='left' }]);
+  if (v.threaded)
+    showThreads(mesh, [
+      {
+        origin: [0, 0, v.start],
+        axis: [0, 0, 1],
+        diameter: 2 * v.r,
+        pitch: v.pitch,
+        length: v.threadLength,
+        left: p.handedness === 'left',
+      },
+    ]);
   mesh.position.z = -v.total / 2;
   group.add(mesh);
   return group;
@@ -595,6 +607,7 @@ export function fastenerDimensions(p: Parameters, headless = false): [number, nu
 export function fastenerPython(p: Parameters, headless = false): string {
   const v = fastenerValues(p, headless);
   const lines = [
+    ...(v.threaded && currentGeometryMode() === 'full' ? [nativeThreadPython()] : []),
     `# Length is measured from the point; the result is centered on its total height.`,
     `radius = ${num(v.r)}`,
     `body_length = ${num(v.shaftLength)}`,
@@ -608,6 +621,20 @@ export function fastenerPython(p: Parameters, headless = false): string {
       lines.push(
         `shape = shape.fuse(Part.makeCylinder(${num(v.smoothR)}, ${num(v.shaftLength - v.end)}, App.Vector(0, 0, ${num(v.end)})))`,
       );
+  }
+  if (v.threaded && currentGeometryMode() === 'full') {
+    const thread = nativeThreadExpression({
+      diameter: 2 * v.r,
+      pitch: v.pitch,
+      length: v.threadLength,
+      left: p.handedness === 'left',
+    });
+    lines.push(
+      `shape = shape.cut(Part.makeCylinder(${num(v.r + 0.01)},${num(v.threadLength)},App.Vector(0,0,${num(v.start)})))`,
+      `thread_body = ${thread}`,
+      `thread_body.translate(App.Vector(0,0,${num(v.start)}))`,
+      'shape = shape.fuse(thread_body)',
+    );
   }
   if (p.tip !== 'flat' && p.tip !== 'cup') {
     const c = n(p, 'tipLength'),
@@ -683,7 +710,9 @@ export function fastenerPython(p: Parameters, headless = false): string {
     );
   }
   lines.push(
-    'shape = shape.removeSplitter()',
+    ...(v.threaded && currentGeometryMode() === 'full'
+      ? ['# Preserve helical face patches; global refinement is unnecessary and costly.']
+      : ['shape = shape.removeSplitter()']),
     'if len(shape.Solids) != 1:',
     '    raise ValueError("The fastener must be one connected solid.")',
     `shape.translate(App.Vector(0, 0, ${num(-v.total / 2)}))`,

@@ -1,7 +1,8 @@
+import { markSupplierUnit } from '../../../core/supplier-components';
 import type { Parameters } from '../../../core/types';
 import type { Piece } from './assembly';
-import { hatData } from './hat';
-import { box, union, ring, cylinder, subtract, transform, rotate, type Shape } from './shapes';
+import { hatData } from '../../../core/assembly/recovery/hat';
+import { box, union, ring, cylinder, subtract, transform, rotate, type Shape } from '../../../core/assembly/recovery/shapes';
 import { screw } from './hardware';
 import { batteryPosts } from './balance';
 import { layout } from './motion';
@@ -19,10 +20,12 @@ export const hatBolt = (x: number, y: number) =>
     6.5,
   ]);
 export function electronicsPieces(p: Parameters): Piece[] {
+  const controller:Shape={kind:'hat'};
+  markSupplierUnit([controller],{name:'Waveshare Bus Servo Driver HAT (A)',libraryId:'bus-servo-driver',parameters:{model:'waveshare-hat-a'},state:'assembled',procurement:{designation:'Bus Servo Driver HAT (A), SKU 27577',manufacturer:'Waveshare',source:'https://www.waveshare.com/wiki/Bus_Servo_Driver_HAT_(A)'}});
   const result: Piece[] = [
     {
       label: 'BUY Waveshare Bus Servo Driver HAT (A) · SKU 27577 · ESP32 · 9–25 V · 3S supply',
-      shape: transform(rotate({ kind: 'hat' }, 180, 'x'), 0, [0, 0, -7]),
+      shape: transform(rotate(controller, 180, 'x'), 0, [0, 0, -7]),
       color: 0x176f99,
     },
   ];

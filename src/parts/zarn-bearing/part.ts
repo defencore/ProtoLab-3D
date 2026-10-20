@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import { withParameterStates } from '../../core/parameter-states';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
@@ -16,7 +18,7 @@ import {
 } from '../../core/geometry';
 import { BoundaryMesh, disposeModel } from '../../core/mechanical';
 import { cageMesh, cagePython, type CageLayout } from './lib/parts/bearing-cage';
-import { envelopeParameters, validateEnvelope } from './lib/parts/motion-bearing-utils';
+import { envelopeParameters, validateEnvelope } from '../../core/hardware/motion-bearing-utils';
 
 /** Published light-series dimensions; supplier provenance is assigned by the catalog adapter. */
 export function zarnReferenceDimensions(bore: number) {
@@ -201,6 +203,7 @@ const defaults = {
 };
 const part: PartDefinition = {
   id: 'zarn-bearing',
+  product: productData as ProductProfile,
   name: 'Combined needle and thrust roller bearing',
   category: 'BEARINGS & SEALS',
   subgroup: 'COMBINED BEARINGS',
@@ -224,7 +227,7 @@ const part: PartDefinition = {
   presets: modulePresets,
   presetMatchKeys: ['bore', 'outer', 'width'],
   parameters: [
-    ...envelopeParameters,
+    ...envelopeParameters(),
     {
       ...numberParameter(
         'shoulderSpan',

@@ -1,0 +1,99 @@
+[
+  {
+    "id": "teyu-cw3000-tgty",
+    "name": "TEYU CW-3000TGTY spindle water cooler",
+    "description": "Published 490 x 270 x 380 mm overall size and OD10 barbed ports. External contours, feet, handle and port coordinates are illustrative; no factory mounting holes or internal heat exchanger geometry are asserted.",
+    "parameters": {
+      "model": "teyu-cw3000-tgty"
+    },
+    "catalog": {
+      "designation": "TEYU CW-3000TGTY spindle water cooler",
+      "manufacturer": "TEYU",
+      "sourceName": "Manufacturer documentation",
+      "sourceUrl": "https://www.teyuchiller.com/cnc-cutter-engraver-spindle-industrial-chiller-cw3000.html",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Published 490 x 270 x 380 mm overall size and OD10 barbed ports. External contours, feet, handle and port coordinates are illustrative; no factory mounting holes or internal heat exchanger geometry are asserted.",
+        "limitations": "Published 490 x 270 x 380 mm overall size and OD10 barbed ports. External contours, feet, handle and port coordinates are illustrative; no factory mounting holes or internal heat exchanger geometry are asserted.",
+        "sourceUrl": "https://www.teyuchiller.com/cnc-cutter-engraver-spindle-industrial-chiller-cw3000.html"
+      },
+      "attributes": {
+        "width": 270
+      }
+    }
+  },
+  {
+    "id": "teyu-cw5000-tity",
+    "name": "TEYU CW-5000TITY active spindle chiller",
+    "description": "220-240 V active compressor chiller, nominal 750 W, +/-0.3 C temperature stability and TI pump rated 10 L/min. Verify installed flow, thermal duty and alarm wiring; no spindle-process accuracy approval is implied.",
+    "parameters": { "model": "teyu-cw5000-tity" },
+    "catalog": {
+      "designation": "TEYU CW-5000TITY",
+      "manufacturer": "TEYU",
+      "sourceName": "TEYU manufacturer CW-5000 model table",
+      "sourceUrl": "https://www.teyuchiller.com/cnc-router-spindle-water-chiller-cw5000.html",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Manufacturer publishes CW-5000TITY 580 x 290 x 470 mm overall size, 10 mm fast water connectors and 22 kg net mass.",
+        "limitations": "Undimensioned feet, handle, vents, ports and controls are reconstructed installation contours. Mounting-hole positions and internal compressor/radiator geometry are unpublished. Nominal 750 W and rated pump flow are not an installed duty guarantee; obtain the delivered execution manual and cooling performance at the selected ambient/setpoint.",
+        "sourceUrl": "https://www.teyuchiller.com/cnc-router-spindle-water-chiller-cw5000.html"
+      },
+      "attributes": {
+        "width": 290,
+        "length": 580,
+        "height": 470,
+        "activeCooling": true,
+        "nominalCoolingWatts": 750,
+        "ratedFlowLitersPerMinute": 10,
+        "pumpMaxPressureBar": 2.5,
+        "temperatureStabilityC": 0.3,
+        "massKg": 22
+      },
+      "attributeConditions": {
+        "nominalCoolingWatts": "Nominal manufacturer capacity; actual duty depends on ambient and setpoint. Confirm against measured spindle heat input.",
+        "ratedFlowLitersPerMinute": "Rated pump flow, not verified installed flow through the spindle and hoses.",
+        "pumpMaxPressureBar": "Maximum pressure; do not assume 10 L/min and 2.5 bar occur simultaneously."
+      },
+      "specifications": [
+        {
+          "label": "Electrical execution",
+          "value": "CW-5000TITY: 1 phase 220-240 V, 50/60 Hz, maximum input 0.67/0.73 kW; confirm delivered nameplate."
+        },
+        {
+          "label": "Temperature control",
+          "value": "5-35 C control range, +/-0.3 C stability. Select a setpoint respecting the spindle maker's cooling and condensation instructions."
+        },
+        {
+          "label": "Water circuit",
+          "value": "8 L reservoir; TI pump rated 10 L/min, maximum 2.5 bar; 10 mm fast connectors. Qualify pressure drop, coolant compatibility, measured flow and flow/temperature alarm inhibit."
+        }
+      ]
+    }
+  },
+  {
+    "id": "vertex-vwp81-150k",
+    "name": "Vertex VWP-81-150K metal-cutting coolant kit",
+    "description": "Manufacturer-authored catalogue publishes the 350 x 250 x 185 mm tank and 150 mm pump immersion depth. The motor head is an illustrative 120 x 120 x 200 mm reservation above the tank; complete kit height and mounting pattern are not published or verified.",
+    "parameters": {
+      "model": "vertex-vwp81-150k"
+    },
+    "catalog": {
+      "designation": "Vertex VWP-81-150K metal-cutting coolant kit",
+      "manufacturer": "Vertex",
+      "sourceName": "Manufacturer documentation",
+      "sourceUrl": "https://rotagriponline.com/datasheets/Vertex40/Al.pdf",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Manufacturer-authored catalogue publishes the 350 x 250 x 185 mm tank and 150 mm pump immersion depth. The motor head is an illustrative 120 x 120 x 200 mm reservation above the tank; complete kit height and mounting pattern are not published or verified.",
+        "limitations": "Manufacturer-authored catalogue publishes the 350 x 250 x 185 mm tank and 150 mm pump immersion depth. The motor head is an illustrative 120 x 120 x 200 mm reservation above the tank; complete kit height and mounting pattern are not published or verified.",
+        "sourceUrl": "https://rotagriponline.com/datasheets/Vertex40/Al.pdf"
+      },
+      "attributes": {
+        "width": 250
+      }
+    }
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "id": "romi",
+    "name": "Pololu Romi \u00b7 2WD chassis",
+    "manufacturer": "Pololu",
+    "designation": "Romi Chassis Kit #3500 \u00b7 source assembly with optional front caster",
+    "productUrl": "https://www.pololu.com/product/3500",
+    "resourcesUrl": "https://www.pololu.com/product/3500/resources",
+    "drive": "2WD",
+    "power": "Six AA cells in the integral battery compartment; cells and control electronics are separate purchases.",
+    "mounting": "Factory holes for Arduino and Raspberry Pi boards. The battery-box top is 10 mm above the base; Raspberry Pi mounting uses unequal-height supports (25 mm front / 15 mm rear in the manufacturer example).",
+    "scope": "The factory CAD is supplied as five shapes: chassis, battery cover, two wheels and a front caster. Internal kit parts are not separately identified by this simplified source; do not interpret five solids as the retail bill of materials. The front caster is a separately sold accessory.",
+    "equipment": "The battery bay leaves the chassis rim available for sensors and the factory board pattern. Use the source hole drawing and provide connector/service access; no arbitrary stretched deck is used.",
+    "references": [
+      {
+        "label": "Romi dimensions and mounting holes",
+        "url": "https://www.pololu.com/docs/0J68/6"
+      },
+      {
+        "label": "Romi chassis mounting DXF",
+        "url": "https://www.pololu.com/file/0J1199/romi-chassis.dxf"
+      },
+      {
+        "label": "Romi chassis assembly guide",
+        "url": "https://www.pololu.com/docs/0J68/all"
+      }
+    ]
+  },
+  {
+    "id": "pirate-4wd",
+    "name": "DFRobot Pirate 4WD \u00b7 ROB0003 (2015 CAD)",
+    "manufacturer": "DFRobot",
+    "designation": "Pirate 4WD Mobile Platform ROB0003",
+    "productUrl": "https://www.dfrobot.com/product-97.html",
+    "resourcesUrl": "https://www.dfrobot.com/product-97.html",
+    "drive": "4WD",
+    "mountingSupportIds": [
+      "pirate-4wd-037",
+      "pirate-4wd-038",
+      "pirate-4wd-039",
+      "pirate-4wd-040"
+    ],
+    "power": "Original lower battery compartment/holder. The manufacturer assembly manual specifies five AA cells; cells, motor driver and controller are separate purchases. Confirm the actual kit contents and revision.",
+    "mounting": "Original two-level chassis: motors and power below; the upper plate is an accessible electronics/payload deck with its original holes and slots. Use the actual source plate rather than an invented grid.",
+    "scope": "The manufacturer-linked ROB0003 STEP is a 2015 SolidWorks AP203 source revision. Measured CAD dimensions are retained; they are not stretched to the current product listing (200 \u00d7 170 \u00d7 105 mm). Confirm the actual purchased revision, because the older assembly manual also has different dimensions. This source CAD omits the four gearmotors and battery holder present in the retail kit; no substitute motor boxes are invented.",
+    "equipment": "Use Frame and mounting surfaces to inspect the upper deck and the volume between decks. The unoccupied upper deck is the intended equipment surface; source geometry and wheel clearance are retained.",
+    "references": [
+      {
+        "label": "Pirate 4WD wiki and assembly resources",
+        "url": "https://wiki.dfrobot.com/rob0003/"
+      },
+      {
+        "label": "DFRobot-linked original CAD repository",
+        "url": "https://github.com/CainZ/ROB003"
+      }
+    ]
+  },
+  {
+    "id": "ugv-rover",
+    "name": "Waveshare UGV Rover \u00b7 PI4B AI kit",
+    "manufacturer": "Waveshare",
+    "designation": "UGV Rover PI4B AI Kit \u00b7 no pan-tilt",
+    "productUrl": "https://www.waveshare.com/product/robotics/ugv-rover.htm",
+    "resourcesUrl": "https://www.waveshare.com/wiki/UGV-Rover",
+    "drive": "6 wheels / 4WD",
+    "mountingSupportIds": [
+      "ugv-rover-116",
+      "ugv-rover-118",
+      "ugv-rover-120",
+      "ugv-rover-122",
+      "ugv-rover-190",
+      "ugv-rover-191",
+      "ugv-rover-192",
+      "ugv-rover-193"
+    ],
+    "frameExcludedIds": [
+      "ugv-rover-130",
+      "ugv-rover-131",
+      "ugv-rover-132",
+      "ugv-rover-133",
+      "ugv-rover-135",
+      "ugv-rover-136",
+      "ugv-rover-145",
+      "ugv-rover-146",
+      "ugv-rover-147",
+      "ugv-rover-148",
+      "ugv-rover-149",
+      "ugv-rover-150",
+      "ugv-rover-151"
+    ],
+    "power": "Three 18650 cells are required separately. The supplier platform integrates power/control equipment; match the actual purchased kit and cell requirements.",
+    "mounting": "Factory aluminium body, top expansion rails and mounting provisions. The source PI4B kit shows the equipment installation; retain its service access and use the actual rail/plate interfaces.",
+    "scope": "Original no-PT PI4B AI kit STEP, distinct from Pi 5, pan-tilt and bare UGV02 variants. The full native FreeCAD assembly is verified. For checked STEP integration geometry, use Frame and mounting surfaces. Detailed assembly and drive STEP re-import do not pass the tested FreeCAD 1.1.4 / OCC 7.8.1 default checks; use native FreeCAD for the complete equipment layout.",
+    "equipment": "The larger platform provides dedicated equipment mounting above the drive/battery body. Electronics already present in the supplier STEP are shown at the supplier positions, not replaced with generic boxes.",
+    "references": [
+      {
+        "label": "UGV Rover official CAD and assembly resources",
+        "url": "https://www.waveshare.com/wiki/UGV-Rover"
+      }
+    ]
+  }
+]

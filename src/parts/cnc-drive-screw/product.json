@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "SFU1610 purchased grooved blank with custom turned BK12/BF12 journals and shaft retention features.",
+  "processes": ["turning", "cutting"],
+  "releaseRequirements": [
+    "Specify the actual purchased blank and matching nut, lead accuracy and preload.",
+    "Issue the shaft-end drawing with journal fits, shoulder radii, runout, thread fit and groove tolerances.",
+    "Verify contact geometry, bearing retention, critical speed and buckling for the selected axis travel."
+  ]
+}

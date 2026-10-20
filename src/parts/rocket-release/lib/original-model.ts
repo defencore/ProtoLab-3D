@@ -1,3 +1,4 @@
+import { markSupplierUnit } from '../../../core/supplier-components';
 import type { Parameters } from '../../../core/types';
 import modeling from '@jscad/modeling';
 import type { Piece } from './assembly';
@@ -12,7 +13,7 @@ import {
   transform,
   type Shape,
   type Point,
-} from './shapes';
+} from '../../../core/assembly/recovery/shapes';
 import { profile } from './gears';
 import { at, layout, rad } from './motion';
 import { servoPieces, servoMounts, spindle, spindleScrew, dBore } from './micro-servo';
@@ -173,6 +174,7 @@ export function originalPieces(p: Parameters, state: string): Piece[] {
       const mounting = motorMounts
         .slice(i * 2, i * 2 + 2)
         .map(([bx, by]) => cylinder(1.05, 3, [bx, by, 7]));
+      const supplierStart = result.length;
       add(
         `Gearmotor ${i + 1} · cylindrical body`,
         subtract(cylinder(m.motorRadius, 24, [x, y, 8]), ...mounting),
@@ -181,6 +183,7 @@ export function originalPieces(p: Parameters, state: string): Piece[] {
       add(`Gearmotor ${i + 1} · reduction housing`, cylinder(m.motorRadius, 11, [x, y, 32]), alloy);
       const shaft = subtract(cylinder(1.5, 9, [0, 0, 43]), box([3, 4, 11], [1.1, -2, 42]));
       add(`Gearmotor ${i + 1} · D output shaft`, transform(shaft, angle, [x, y, 0]), steel);
+      markSupplierUnit(result.slice(supplierStart).map(piece=>piece.shape), {name: 'Cylindrical geared motor installation envelope', procurement: {designation: 'Geared motor body diameter '+2*m.motorRadius+' mm; select actual supplier',manufacturer:'',source:''}});
       const gear = subtract(plate(profile(m.module, 20), [], 48, 3), dBore(47, 5));
       add(`Drive pinion ${i + 1} · 20 teeth`, transform(gear, angle, [x, y, 0]), polymer);
       add(`Pinion retaining cap ${i + 1}`, ring(2.2, 1.55, 51.15, 0.8, x, y), steel);

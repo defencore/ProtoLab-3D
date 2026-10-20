@@ -1,3 +1,4 @@
+import { currentGeometryMode } from '../../../../core/geometry-mode';
 import {
   Box3,
   BufferGeometry,
@@ -92,7 +93,7 @@ export function ballScrewLayout(p: Parameters) {
     double: p.family === 'DFU' || p.family === 'DFI',
     oblong: p.family === 'SFI' || p.family === 'DFI',
     endReturn: ['SFS', 'SFE', 'SFH', 'SFY'].includes(String(p.family)),
-    detail: p.detail === 'raceway',
+    detail: currentGeometryMode() === 'full',
   };
 }
 
@@ -483,7 +484,7 @@ export function ballScrewGeometry(p: Parameters, state: string, nutOnly = false)
     number,
     number,
   ];
-  const signature = JSON.stringify(p),
+  const signature = currentGeometryMode() + JSON.stringify(p),
     previous = lastBounds.get(p);
   const cached =
     previous?.signature === signature
@@ -501,7 +502,7 @@ export function ballScrewDimensions(
 ): [number, number, number] {
   const previous = lastBounds.get(p),
     cached =
-      previous?.signature === JSON.stringify(p)
+      previous?.signature === currentGeometryMode() + JSON.stringify(p)
         ? previous.states.get(`${state}:${nutOnly}`)
         : undefined;
   if (cached) return cached;
@@ -568,7 +569,7 @@ export function validateBallScrew(p: Parameters, nutOnly = false): string[] {
   if (!nutOnly) {
     if (v.detail && ((v.end - v.start) / v.lead) * n(p, 'starts') > 1200)
       errors.push(
-        'Detailed models support up to 1,200 groove turns. Shorten the shaft or select Envelope detail.',
+        'Full supports up to 1,200 groove turns. Shorten the shaft or switch to Simple.',
       );
     if (v.end - v.start < v.nl + 2 * v.lead)
       errors.push('The threaded shaft must be longer than the nut plus two leads.');

@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "One identified OMRON E2B-M12KS04-WP-B1 2M sensor, including its supplied mounting nuts; inspection subdivisions are not separate procurement rows.",
+  "processes": [],
+  "releaseRequirements": [
+    "Confirm the delivered PNP NO, 2 m pre-wired execution and manufacturer mounting clearances.",
+    "Measure nut and sensing-face datums before final bracket manufacture; nominal geometry does not establish the switching point or thread fit.",
+    "Commission ordinary motion limits and independent mechanical stops; this is not a safety function."
+  ]
+}

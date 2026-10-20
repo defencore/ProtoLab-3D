@@ -179,3 +179,21 @@
   font-size: 11px;
   line-height: 1.6;
 }
+.quick-pick-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 8px 9px;
+  border: 1px solid #414a56;
+  border-radius: 5px;
+  background: #272c34;
+  color: #8f9cab;
+}
+.quick-pick-search input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  font-size: 11px;
+}

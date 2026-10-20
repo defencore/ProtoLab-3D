@@ -2,10 +2,30 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { parts } from '../src/parts';
 
+// These reviewed machine-component choices add installation details or use a
+// requested cut length in the preset title. Both labels must retain the full SKU.
+const executionLabelModels = new Set([
+  'cnc-guide-rail:hgr20',
+  'cnc-screw-support:bk12',
+  'cnc-screw-support:bf12',
+  'cnc-feed-servo:ecm-a3h-c20807rs1',
+  'cnc-feed-servo:ecm-a3h-c20807ss1',
+  'cnc-precision-nut:r25-10t3-fdi',
+  'cnc-precision-nut:r20-5t3-fdi',
+  'cnc-precision-support:bk20-c3',
+  'cnc-precision-support:bf20-c3',
+  'cnc-precision-support:bk15-c3',
+  'cnc-precision-support:bf15-c3',
+  'cnc-precision-screw:r20-5t3-fdi',
+  'cnc-precision-axis:r20-5t3-fdi',
+  'cnc-servo-drive:asd-a3-0721-m',
+]);
+const normalizedIdentifier = (text: string) => text.toLowerCase().replace(/[^a-z0-9]/g, '');
+
 test('library and catalog names are readable and model selector labels agree', () => {
   for (const part of parts) {
     assert.equal(part.name, part.name.trim());
-    assert.doesNotMatch(part.name, /layout|envelope|\bCAD\b/i);
+    assert.doesNotMatch(part.name, /\blayout model\b|\benvelope\b|\bCAD\b/i);
     for (const p of part.presets) {
       assert.ok(p.name.length > 0);
       assert.equal(p.name, p.name.trim());
@@ -13,8 +33,21 @@ test('library and catalog names are readable and model selector labels agree', (
     }
     for (const option of part.parameters.find((p) => p.key === 'model')?.options ?? []) {
       const matches = part.presets.filter((p) => p.parameters.model === option.value);
-      if (matches.length === 1)
-        assert.equal(option.label, matches[0].name, `${part.id}/${option.value}`);
+      if (matches.length === 1) {
+        const context = `${part.id}/${option.value}`;
+        if (executionLabelModels.has(`${part.id}:${option.value}`)) {
+          const identity = normalizedIdentifier(option.value);
+          assert.ok(identity.length >= 4 && /\d/.test(identity), `${context}: complete model SKU`);
+          assert.ok(
+            normalizedIdentifier(option.label).includes(identity),
+            `${context}: selector SKU`,
+          );
+          assert.ok(
+            normalizedIdentifier(matches[0].name).includes(identity),
+            `${context}: preset SKU`,
+          );
+        } else assert.equal(option.label, matches[0].name, context);
+      }
     }
   }
 });
@@ -59,9 +92,11 @@ test('each built-in part has a unique name and one registered, populated library
     'MODEL ROCKETS',
     'BOAT HULLS',
     'GROUND VEHICLES',
+    'AIRFRAME STRUCTURE',
     'WINGS & CONTROL SURFACES',
     'PROPELLERS & ROTORS',
     'DUCTS & LANDING GEAR',
+    'VEHICLE MOUNTS',
   ]);
   assert.deepEqual(
     sortLibraryParts([...parts].reverse()).map((p) => p.id),

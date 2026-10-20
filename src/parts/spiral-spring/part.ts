@@ -1,10 +1,12 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
 import * as THREE from 'three';
 import type { PartDefinition, Parameters } from '../../core/types';
 import { extrude, n, num, numberParameter } from '../../core/geometry';
-import { handedness, tau } from './lib/core/spring-geometry';
+import { handedness, tau } from '../../core/hardware/spring-geometry';
 
 function values(p: Parameters) {
   const thickness = n(p, 'stripThickness'),
@@ -42,6 +44,7 @@ const defaults = {
 };
 const part: PartDefinition = {
   id: 'spiral-spring',
+  product: productData as ProductProfile,
   name: 'Flat spiral spring',
   category: 'SPRINGS',
   subgroup: 'SPIRAL SPRINGS',
@@ -57,7 +60,7 @@ const part: PartDefinition = {
     { ...numberParameter('turns', 'Whole turns', 'n', 'Coil', 1, 20, 1), unit: '' },
     { ...numberParameter('endAngle', 'Additional end angle', 'α', 'Coil', 0, 355, 5), unit: '°' },
     numberParameter('radialGap', 'Gap between turns', 'g', 'Coil', 0.2, 12),
-    handedness,
+    handedness(),
   ],
   presetMatchKeys: ['innerDiameter', 'stripThickness'],
   defaults,

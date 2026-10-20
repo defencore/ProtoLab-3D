@@ -1,0 +1,14 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "Custom formed spring. Free or posed geometry does not specify force, fatigue life, heat treatment or working stress.",
+  "processes": [
+    "winding",
+    "bending"
+  ],
+  "releaseRequirements": [
+    "Specify material, blank, manufacturing route and the applicable drawing revision.",
+    "Define functional tolerances, surface finish, edge treatment and an inspection method.",
+    "Specify spring material, wire or strip condition, forming route, heat treatment, load curve and fatigue acceptance requirements."
+  ]
+}

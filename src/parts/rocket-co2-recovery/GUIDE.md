@@ -5,6 +5,25 @@ a metal gas unit in polymer holders, retained 18650 cells and a damped controlle
 Choose F405 WING-MINI with 2S or 4S, or LCH7 v3.2 with 4S. Both 4S versions use
 one battery pack and a replaceable, turned POM-C controller disk.
 
+## Library composition and project records
+
+The physical project composition always uses the complete assembled configuration,
+independent of cutaway or inspection state. Authored custom geometry instantiates
+`recovery-detail`; supplier interface shapes instantiate
+`purchased-recovery-component`. Cartridge, cells, LCH7, tracker, buzzer and PWM switch
+reuse their existing library families. One F405 board stack and supplied hardware
+form one purchased kit. Its individual pins and board components retain visual
+detail without becoming separate purchase positions. Custom damper inserts and
+elastomer carry explicit manufacturing routes; frame screws remain separate.
+
+Make or buy follows the authored process record. Material, operation sequence,
+source requirements and organizational path travel into editable project records.
+Routing envelopes, packed-fabric and installation references remain visible but
+are excluded from the physical bill of materials. Organizational visibility groups
+do not imply separately purchasable or released subassemblies. Missing supplier
+records, stock allowances, drawings, tolerances and qualification remain explicit
+requirements in the project. No manufacturing approval is inferred from geometry.
+
 ## FreeCAD visibility groups
 
 New exports organize the model into expandable `App::Part` subassemblies:
@@ -286,6 +305,13 @@ Defaults are +0.15 mm on female radii and -0.10 mm on printed male radii:
 0.25 mm combined radial clearance on printed/printed pairs. Nominal pitch and
 60-degree thread form remain unchanged. The printed adapter receives the female allowance at the steel cartridge interface; the cartridge uses its nominal UNF envelope with no print allowance.
 
+The cartridge's smooth major-diameter envelope intersects the adapter's real
+female helical ridges inside the intended threaded joint. Native checks retain
+the unchanged default overlap (42.156630 mm3) and require zero interference
+outside that joint. This verifies placement and surrounding clearance; it does
+not establish functional thread fit. Obtain the supplied cartridge's actual
+UNF tolerance and test a printed coupon against measured hardware.
+
 These are initial fit values, not printer-independent tolerances. Print the parts
 with thread axes vertical; remove brim/elephant-foot interference and test the
 actual printed mating pieces before installation. Excessive relief weakens the
@@ -443,8 +469,11 @@ behavior, repeatable release and harness opening loads on a restrained prototype
 ## Export and references
 
 FreeCAD export retains separate labeled components, material, process and part
-numbers for manufactured pieces. It contains no TechDraw sheets. Printed parts
-retain helical thread solids. Metal and machined-polymer threads use smooth nominal-diameter bores/shafts with `ThreadCallouts`, `ThreadFeaturesJSON` and depth notes on each part. These nominal envelopes are not tap-drill diameters. Fabric and missing-device
+numbers for manufactured pieces. It contains no TechDraw sheets. Choose Simple for
+smooth nominal thread envelopes or Full for authored helical threads, including
+printed and machined features. Both modes retain `ThreadCallouts`,
+`ThreadFeaturesJSON` and depth notes on each part. Simple envelopes are not
+tap-drill diameters. Fabric and missing-device
 interfaces remain explicitly marked references.
 
 - [Leland 82122Z cartridge](https://www.lelandgas.com/product-page/82122z-cartridge-small-20ml-16g-carbon-dioxide-3-8)

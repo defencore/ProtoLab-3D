@@ -3,7 +3,7 @@ import { n } from '../../../core/geometry';
 import type { Piece } from './assembly';
 import { B, C, poly, move, rotate, union, cut, ring, boltCircle, finish } from './helpers';
 import { gear, profile, miter } from './gears';
-import type { Shape } from './shapes';
+import type { Shape } from '../../../core/assembly/boundary/shapes';
 export function pieces(p: Parameters, state: string): Piece[] {
   const out: Piece[] = [];
   const add = (label: string, shape: Shape, color = 0x87919c) => out.push({ label, shape, color });

@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -39,6 +41,7 @@ const defaults: Parameters = {
 
 const part: PartDefinition = {
   id: 'set-screw',
+  product: productData as ProductProfile,
   name: 'Set screw',
   category: 'FASTENERS & THREADS',
   subgroup: 'BOLTS & SCREWS',
@@ -113,7 +116,7 @@ const part: PartDefinition = {
     (p.finish === 'black' ? '\ncomponent_colors = [(0.204, 0.212, 0.231)]' : ''),
   dimensions: (p) => fastenerDimensions(p, true),
   notes:
-    'Prototype reference, not a certified fastener. M2.5 × 8 uses the requested DIN 914 cone-point format. DIN 915 black steel references retain the supplied M2–M16 dimension rows and stated grade 12.9. Their overall lengths and shoulder chamfers are editable prototype choices; the image supplies no stock lengths. Socket nominal sizes and printed tolerance intervals are retained separately, including source inconsistencies. Material strength is not modeled. The thread uses a smooth nominal-diameter envelope and drawing callouts; fit tolerances must be specified separately. Overall length includes the point and its shoulder transition. Cup recesses are conical.',
+    'Prototype reference, not a certified fastener. M2.5 × 8 uses the requested DIN 914 cone-point format. DIN 915 black steel references retain the supplied M2–M16 dimension rows and stated grade 12.9. Their overall lengths and shoulder chamfers are editable prototype choices; the image supplies no stock lengths. Socket nominal sizes and printed tolerance intervals are retained separately, including source inconsistencies. Material strength is not modeled. Simple uses a nominal-diameter thread envelope and drawing callouts; Full exports real helical flanks. Fit tolerances must be specified separately. Overall length includes the point and its shoulder transition. Cup recesses are conical.',
   sources: [
     { label: 'User-supplied DIN 915 dimension table', url: din915ReferenceFiles.dimensions },
     { label: 'User-supplied DIN 915 black steel example', url: din915ReferenceFiles.photo },

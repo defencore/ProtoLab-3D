@@ -1,3 +1,4 @@
+import { markSupplierUnit } from '../../../core/supplier-components';
 import type { Parameters } from '../../../core/types';
 import type { Piece } from './visual-assembly';
 import { cylinder, ring, union, type Shape, type Vec } from './shapes';
@@ -70,6 +71,7 @@ export function fabric(p: Parameters, state: string): Piece[] {
         polymer,
       );
   };
+  const mainStart = out.length;
   const mainLength = +p.packLength * 0.75;
   if (mainInflation === 0) {
     add(
@@ -90,6 +92,8 @@ export function fabric(p: Parameters, state: string): Piece[] {
       bottom,
       orange,
     );
+  markSupplierUnit(out.slice(mainStart).map(piece=>piece.shape),{name:'Rated main parachute with suspension lines and packing bands'});
+  const drogueStart = out.length;
   if (drogueInflation === 0)
     add(
       'Packed drogue · fabric',
@@ -103,12 +107,16 @@ export function fabric(p: Parameters, state: string): Piece[] {
       bottom + mainLength + 160,
       0x668d76,
     );
+  markSupplierUnit(out.slice(drogueStart).map(piece=>piece.shape),{name:'Rated drogue parachute with suspension lines'});
+  const bagStart = out.length;
   if (q.inflation === 0)
     add(
       'Deployment bag · fabric sleeve',
       ring(+p.packDiameter / 2, +p.packDiameter / 2 - 0.5, bottom, +p.packLength),
       0x668d76,
     );
+  markSupplierUnit(out.slice(bagStart).map(piece=>piece.shape),{name:'Rated deployment bag'});
+  const tetherStart=out.length;
   add(
     'Body tether stopper knot · schematic · qualify knot and cord strength',
     ring(6, 2, s.seat - 10, 4),
@@ -124,6 +132,8 @@ export function fabric(p: Parameters, state: string): Piece[] {
     path([...lower, [0, 0, cassetteTop(p) + q.lift - 21], [q.noseX, 0, anchorZ]], 2),
     0xceae72,
   );
+  markSupplierUnit(out.slice(tetherStart).map(piece=>piece.shape),{name:'Rated body-to-nose tether with qualified termination'});
+  const riggingStart=out.length;
   if (q.inflation > 0)
     add('Main riser · central routing envelope', path([...lower, [0, 0, bottom - 55]], 2), polymer);
   if (drogueInflation > 0)
@@ -138,5 +148,6 @@ export function fabric(p: Parameters, state: string): Piece[] {
       ),
       polymer,
     );
+  markSupplierUnit(out.slice(riggingStart).map(piece=>piece.shape),{name:'Rated parachute riser and bridle'});
   return out;
 }

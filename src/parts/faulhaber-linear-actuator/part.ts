@@ -1,9 +1,12 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters, catalogFilterFields } from './configurator';
 import presets from './presets.json';
 import { geometry, dimensions, python } from './lib/model';
 const part: PartDefinition = {
   id: 'faulhaber-linear-actuator',
+  product: productData as ProductProfile,
   name: 'FAULHABER screw actuators',
   category: 'MOTORS & ACTUATORS',
   subgroup: 'LINEAR ACTUATORS',

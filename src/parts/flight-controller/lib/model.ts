@@ -1,7 +1,7 @@
 import type { Parameters } from '../../../core/types';
 import models from './models.json';
-import type { Piece } from './assembly';
-import { box, cylinder, prism, roundedRect, subtract, type Shape, type Vec } from './shapes';
+import type { Piece } from '../../../core/assembly/electronics/assembly';
+import { box, cylinder, prism, roundedRect, subtract, type Shape, type Vec } from '../../../core/assembly/electronics/shapes';
 
 type Model = (typeof models)[number];
 type Direction = 'north' | 'south' | 'east' | 'west' | 'top';

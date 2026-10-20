@@ -11,7 +11,7 @@ import {
   union,
   subtract,
   type Shape,
-} from '../../rocket-release/lib/shapes';
+} from '../../../core/assembly/recovery/shapes';
 import { motion, releaseParameters, cassetteTop } from './motion';
 import { springCartridges } from '../../rocket-release/lib/cartridges';
 import { cassettePieces, cassetteMounts } from './cassette';

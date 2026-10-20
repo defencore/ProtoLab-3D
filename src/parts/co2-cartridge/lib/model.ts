@@ -1,3 +1,5 @@
+import { currentGeometryMode } from '../../../core/geometry-mode';
+import { nativeThreadPython, nativeThreadExpression } from '../../../core/thread-native';
 import { showThreads } from '../../../core/thread-visual';
 import { threadMetadataPython, type ThreadCallout } from '../../../core/thread-callouts';
 import { BufferGeometry, Float32BufferAttribute, Group, Mesh, Vector3 } from 'three';
@@ -40,7 +42,7 @@ export function threadCallouts(p: Parameters): ThreadCallout[] {
           length: v.end - v.start,
           origin: [0, 0, v.start],
           axis: [0, 0, 1],
-          representation: 'nominal-cylinder',
+          representation: currentGeometryMode() === 'full' ? 'machined-helix' : 'nominal-cylinder',
         },
       ]
     : [];
@@ -150,6 +152,14 @@ export function python(p: Parameters): string {
       ),
     'shape = Part.Face(Part.Wire(edges)).revolve(App.Vector(0,0,0),App.Vector(0,0,1),360)',
   ];
+  if (v.pitch && currentGeometryMode() === 'full')
+    lines.push(
+      nativeThreadPython(),
+      `shape = shape.cut(Part.makeCylinder(${v.neck + 0.01},${v.end - v.start},App.Vector(0,0,${v.start})))`,
+      `thread_body = ${nativeThreadExpression({ diameter: v.m.neckDiameter, pitch: v.pitch, length: v.end - v.start })}`,
+      `thread_body.translate(App.Vector(0,0,${v.start}))`,
+      'shape = shape.fuse(thread_body)',
+    );
   lines.push(threadMetadataPython(threadCallouts(p)));
   lines.push(
     'if shape.isNull() or not shape.isValid() or not shape.isClosed() or len(shape.Solids)!=1:',

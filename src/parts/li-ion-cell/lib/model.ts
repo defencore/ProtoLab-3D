@@ -1,7 +1,7 @@
 import type { Parameters } from '../../../core/types';
 import models from './models.json';
-import { cylinder, ring } from './shapes';
-import type { Piece } from './assembly';
+import { cylinder, ring } from '../../../core/assembly/electronics/shapes';
+import type { Piece } from '../../../core/assembly/electronics/assembly';
 interface Cell {
   id: string;
   format: string;

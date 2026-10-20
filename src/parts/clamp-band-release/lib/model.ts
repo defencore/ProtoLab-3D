@@ -1,5 +1,5 @@
 import type { Parameters } from '../../../core/types';
-import type { Piece } from './assembly';
+import type { Piece } from './shapes';
 import { box, cylinder, prism, ring, subtract, union, type Shape, type Vec } from './shapes';
 const metal = 0xaeb9c3,
   green = 0x89986a,

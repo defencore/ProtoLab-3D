@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import { Group, Vector2, Vector3 } from 'three';
 import { n, num } from '../../core/geometry';
 import { BoundaryMesh } from '../../core/mechanical';
@@ -62,6 +64,7 @@ function socketSections(p: Parameters) {
 
 const part: PartDefinition = {
   id: 'servo-gear',
+  product: productData as ProductProfile,
   name: 'Servo spline gear',
   category: 'MOTORS & ACTUATORS',
   subgroup: 'SERVO ACCESSORIES',

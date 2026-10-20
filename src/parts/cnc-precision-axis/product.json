@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "One purchased factory-matched ground shaft and FDI double nut kit. Physical child records are installation detail, not two complete kit orders.",
+  "processes": [],
+  "releaseRequirements": [
+    "Obtain the factory-approved custom end and nut orientation drawing.",
+    "Obtain actual matched-set serial identity and measured C3 lead/runout, requested 3% preload torque and backlash certificates.",
+    "Validate installed linear metrology and thermal behavior; the CAD envelope does not certify OEM racecontact."
+  ]
+}

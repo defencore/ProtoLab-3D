@@ -1,14 +1,26 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import { jaynesHinged, rotating } from './lib/kinematics';
 import { jaynesLayout, jaynesLinkage } from './lib/jaynes';
 import { mechanismOptions, linked, paired, linkage } from './lib/kinematics';
 import { withParameterStates } from '../../core/parameter-states';
-import type { PartDefinition, Preset } from '../../core/types';
+import type { PartDefinition, Preset, Parameters } from '../../core/types';
 import { defaults, parameters } from './configurator';
 import presets from './presets.json';
 import { pieces, layout } from './lib/model';
-import * as assembly from './lib/assembly';
+import manufactured from '../manufactured-detail/part';
+import purchased from '../purchased-component/part';
+import {
+  componentGeometry,
+  componentPython,
+  componentDimensions,
+} from '../../core/assembly/detail-instances';
+import { configureRecoveryPieces, recoveryComposition } from '../../core/recovery-feature-recipes';
+const libraries = [manufactured, purchased];
+const configured = (p: Parameters, state: string) => configureRecoveryPieces(pieces(p, state), 120);
 const part: PartDefinition = {
   id: 'rocket-airbrakes',
+  product: productData as ProductProfile,
   name: 'Rocket AirBrakes',
   category: 'VEHICLE STRUCTURES',
   subgroup: 'MODEL ROCKETS',
@@ -130,11 +142,16 @@ const part: PartDefinition = {
       };
     return { ...p, height: Math.max(+p.height, Math.ceil(layout(p).deck + (paired(p) ? 45 : 25))) };
   },
-  buildGeometry: (p, s) => assembly.geometry(pieces(p, s)),
-  dimensions: (p, s) => assembly.dimensions(pieces(p, s)),
-  python: (p, s) => assembly.python(pieces(p, s)),
+  composition: (p) =>
+    recoveryComposition(configured({ ...p, deployment: 0 }, 'assembled'), [
+      'Custom details require material, blank, operations, fits and toleranced drawings; verify actuator torque, aerodynamic loading and collision clearance before release.',
+      'Servo installation envelopes and bearing shells are supplier-unit references. Verify procurement, mounting interfaces and rated suitability against the actual selected product.',
+    ]),
+  buildGeometry: (p, s) => componentGeometry(libraries, configured(p, s)),
+  dimensions: (p, s) => componentDimensions(libraries, configured(p, s)),
+  python: (p, s) => componentPython(libraries, configured(p, s)),
   notes:
-    'Parametric adaptations of the linked mechanisms and supplied images, not original author CAD. Jaynes V1/V5 use reconstructed opposed geared flaps; V5 adds a second gear plane for a centered input. V2 uses rigid spatial crank links with solved closure. V3/V4 reuse the corresponding spiral/petal topology with the servo above the mechanism. Source tooth counts, dimensions, printed ball-bearing races and electronics are not reproduced. Waterloo uses linear Archimedean slots; the UGA/WPI-style sculpted cam uses an explicitly reconstructed smoothstep lift with tangential ends, not the article’s dimensional polynomial. Curved links use exact slider-crank closure, giving nonlinear radial travel. MIT uses two opposed pairs of straight links and resin sliding trays on two levels. Sprague uses two 20-tooth pinions and four involute-compatible racks. Geared petals pivot on fixed axes with an 18:42 gear ratio; their extension follows rotation, so radial-travel and blade-width controls are hidden. The tube windows, guides, drive shaft and hardware change with the mechanism. Threads, servo internals and bearing races are simplified; servo envelopes use Tower Pro nominal body sizes. Tube Ø80/76 and the remaining preset dimensions are custom adaptations. Aerodynamic loads, torque suitability, structural strength and flight performance are not established by this model.',
+    'Parametric adaptations of the linked mechanisms and supplied images, not original author CAD. Jaynes V1/V5 use reconstructed opposed geared flaps; V5 adds a second gear plane for a centered input. V2 uses rigid spatial crank links with solved closure. V3/V4 reuse the corresponding spiral/petal topology with the servo above the mechanism. Source tooth counts, dimensions, printed ball-bearing races and electronics are not reproduced. Waterloo uses linear Archimedean slots; the UGA/WPI-style sculpted cam uses an explicitly reconstructed smoothstep lift with tangential ends, not the article’s dimensional polynomial. Curved links use exact slider-crank closure, giving nonlinear radial travel. MIT uses two opposed pairs of straight links and resin sliding trays on two levels. Sprague uses two 20-tooth pinions and four involute-compatible racks. Geared petals pivot on fixed axes with an 18:42 gear ratio; their extension follows rotation, so radial-travel and blade-width controls are hidden. The tube windows, guides, drive shaft and hardware change with the mechanism. Hardware without a declared thread pitch/profile, servo internals and bearing races remain simplified in both modes; servo envelopes use Tower Pro nominal body sizes. Tube Ø80/76 and the remaining preset dimensions are custom adaptations. Aerodynamic loads, torque suitability, structural strength and flight performance are not established by this model.',
   sources: [
     {
       label: 'Ben Jaynes · 3D Printed Airbrakes for a Model Rocket · V1–V5',

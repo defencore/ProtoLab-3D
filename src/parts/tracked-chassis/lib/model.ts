@@ -1,10 +1,17 @@
 import type { Parameters } from '../../../core/types';
-import { cylinder, prism, roundedRect, type Shape, type Vec } from './shapes';
+import {
+  cylinder,
+  prism,
+  roundedRect,
+  type Shape,
+  type Vec,
+} from '../../../core/assembly/boundary/shapes';
 import { B, C, cut, union, move, rotate, ring, link, teeth } from './helpers';
 import * as assembly from './assembly';
 import type { Piece } from './assembly';
 import { track, type Wheel } from './track';
-import { bezier, sample, v } from './spring';
+import { bezier, sample, v } from '../../../core/hardware/spring-geometry';
+import bearing from '../../ball-bearing/part';
 const black = 0x252b31,
   tyre = 0x343a3e,
   silver = 0xa2acb4,
@@ -220,14 +227,19 @@ export function pieces(p: Parameters, state: string): Piece[] {
         ),
         tyre,
       );
-      place(
-        `Road wheel bearing ${i + 1} · 4 × 10 × 4 envelope`,
-        cut(
-          cy(10, 4, wx, wheelY + wheelWidth - 4, wz),
-          cy(4.1, 6, wx, wheelY + wheelWidth - 5, wz),
-        ),
-        silver,
-      );
+      const roadBearing = bearing.presets.find((preset) => preset.id === 'promteh-9878')!;
+      result.push({
+        label: `${name} · Road wheel bearing ${i + 1} · selected MR104 ZZ`,
+        color: silver,
+        library: {
+          id: 'ball-bearing',
+          parameters: { ...roadBearing.parameters },
+          presetId: roadBearing.id,
+          state: 'assembled',
+        },
+        position: [side === 1 ? wx : -wx, side * (wheelY + wheelWidth - 2) + explode, wz],
+        rotation: [-side * 90, 0, 0],
+      });
       const springY = half + t + 6.5,
         springLen = Math.hypot(ax - ex, az - ez),
         springAngle = (Math.atan2(ax - ex, az - ez) * 180) / Math.PI;
@@ -292,11 +304,19 @@ export function pieces(p: Parameters, state: string): Piece[] {
       else disk = cut(disk, cy(12, 4.01, xx, wheelY, endZ));
       place(`${kind} wheel`, disk);
       if (!drive) {
-        place(
-          'Idler bearing · 6 × 12 × 4 envelope',
-          cut(cy(12, 4, xx, wheelY, endZ), cy(6.1, 6, xx, wheelY - 1, endZ)),
-          silver,
-        );
+        const idlerBearing = bearing.presets.find((preset) => preset.id === 'promteh-1858')!;
+        result.push({
+          label: `${name} · Idler bearing · selected MR126 ZZ`,
+          color: silver,
+          library: {
+            id: 'ball-bearing',
+            parameters: { ...idlerBearing.parameters },
+            presetId: idlerBearing.id,
+            state: 'assembled',
+          },
+          position: [side === 1 ? xx : -xx, side * (wheelY + 2) + explode, endZ],
+          rotation: [-side * 90, 0, 0],
+        });
         place(
           'Sliding idler axle',
           union(
@@ -338,16 +358,18 @@ export function pieces(p: Parameters, state: string): Piece[] {
       }
     }
     // Published motor envelope: 64.40×38 gearbox, 12.01 thick; Ø34×35.15 motor, 6 mm output.
-    const driveX = sx(-end),
-      gearX = driveX + side * 19.27;
-    place(
-      'JGB3865 gearbox housing',
-      cut(B(64.4, 12.01, 38, gearX, half - 6.005, endZ - 19), cy(6.2, 14, driveX, half - 13, endZ)),
-      silver,
-    );
-    place('JGB3865 motor can', cy(34, 35.15, gearX, half - 47.16, endZ), silver);
-    const output = union(cy(6, 13.1, driveX, half, endZ), cy(11.8, 2.5, driveX, half, endZ));
-    place('6 mm D output shaft', cut(output, B(8, 12, 2, driveX, half + 9, endZ + 2.5)), silver);
+    result.push({
+      label: `${name} · JGB3865 geared motor · purchased unit`,
+      color: silver,
+      library: {
+        id: 'machine-drive-motor',
+        parameters: { model: 'jgb3865-520r45-12' },
+        presetId: 'jgb3865-520r45-12',
+        state: 'default',
+      },
+      position: [-end, side * half + explode, endZ],
+      rotation: [side === 1 ? 0 : 180, 0, 0],
+    });
     if (state !== 'undercarriage') place('Continuous tread belt', track(wheels, TW, detail), tyre);
     // Belt is generated around local wheel coordinates and then translated to the track centre.
     if (state !== 'undercarriage') {

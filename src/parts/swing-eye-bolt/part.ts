@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -7,8 +9,10 @@ import {
   profileHeadDimensions,
   profileHeadGeometry,
   profileHeadPython,
+  profileThreadErrors,
   type ProfileHead,
-} from './lib/core/special-fasteners';
+} from '../../core/hardware/special-fasteners';
+import { nutCoarsePitch } from '../../core/hardware/internal-thread';
 
 const defaults: Parameters = {
   diameter: 8,
@@ -28,10 +32,18 @@ function head(p: Parameters): ProfileHead {
     thickness: () => Number(p.headThickness),
     shaftLength: Number(p.length) - profile.centerHeight,
     diameter: Number(p.diameter),
+    thread: {
+      pitch: Number(p.pitch),
+      length:
+        p.threadSpan === 'partial'
+          ? Number(p.threadLength)
+          : Number(p.length) - profile.centerHeight,
+    },
   };
 }
 const part: PartDefinition = {
   id: 'swing-eye-bolt',
+  product: productData as ProductProfile,
   name: 'Swing eye bolt',
   category: 'FASTENERS & THREADS',
   subgroup: 'BOLTS & SCREWS',
@@ -75,7 +87,8 @@ const part: PartDefinition = {
       max: 8,
       step: 0.05,
       group: 'Shank',
-      description: 'Thread identification; this model uses a smooth nominal envelope.',
+      description:
+        'Pitch for the thread callout and Full helical geometry; Simple uses a nominal envelope.',
     },
     {
       key: 'threadSpan',
@@ -98,7 +111,8 @@ const part: PartDefinition = {
       step: 1,
       group: 'Shank',
       visibleWhen: (p) => p.threadSpan === 'partial',
-      description: 'Stored for reference; the thread is represented by its outer envelope.',
+      description:
+        'Physical thread span, retained in both modes. Full exports helical flanks over this length.',
     },
     {
       key: 'eyeBore',
@@ -135,9 +149,11 @@ const part: PartDefinition = {
     },
   ],
   presets: modulePresets,
+  updateParameters: (p, key) =>
+    key === 'diameter' ? { ...p, pitch: nutCoarsePitch(Number(p.diameter)) } : p,
   presetMatchKeys: ['diameter', 'length', 'eyeBore', 'threadSpan'],
   validate: (p) => {
-    const errors: string[] = [];
+    const errors = profileThreadErrors(Number(p.diameter), Number(p.pitch));
     if (Number(p.eyeDiameter) <= Math.max(Number(p.eyeBore) + 0.5, Number(p.diameter) * 1.2))
       errors.push(
         'The eye outside diameter must leave a wall around the bore and clear the shank.',
@@ -164,7 +180,7 @@ const part: PartDefinition = {
   dimensions: (p) => profileHeadDimensions(head(p)),
   python: (p) => profileHeadPython(head(p)),
   notes:
-    'The source nominal length runs from the tip to the eye centre. The flat eye, bore and transition are tessellated consistently in the preview and CAD; the thread is a smooth nominal envelope. Transition fillets and manufacturing tolerances are not modelled.',
+    'The source nominal length runs from the tip to the eye centre. The flat eye, bore and transition are tessellated consistently in the preview and CAD; Simple uses a nominal thread envelope and Full exports helical flanks over the declared span. Transition fillets and manufacturing tolerances are not modelled.',
   sources: [
     {
       label: 'Gvyntok DIN 444 drawing',

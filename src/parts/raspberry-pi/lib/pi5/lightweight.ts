@@ -1,9 +1,9 @@
 import { Box3, Vector3 } from 'three';
 import native from './native.json';
 import * as original from './model';
-import * as assembly from '../assembly';
-import { box, subtract, type Shape } from '../shapes';
-import type { Piece } from '../assembly';
+import * as assembly from '../../../../core/assembly/electronics/assembly';
+import { box, subtract, type Shape } from '../../../../core/assembly/electronics/shapes';
+import type { Piece } from '../../../../core/assembly/electronics/assembly';
 
 // Source-solid groups identify physical packages in the pinned Pi 5 STEP.
 // A simple, continuous body replaces each connector's contacts and small faces.

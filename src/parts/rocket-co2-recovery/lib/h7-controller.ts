@@ -1,6 +1,6 @@
 import type { Piece } from './model';
 import { bore, axialScrew, metal } from './mechanical';
-import { subtract, ring, union, type Point, type Shape } from '../../rocket-release/lib/shapes';
+import { subtract, ring, union, type Point, type Shape } from '../../../core/assembly/recovery/shapes';
 import { h7Spec, mountingHoles } from '../../lch7-controller/lib/model';
 export { h7Spec } from '../../lch7-controller/lib/model';
 export const h7BoardOffset = 8.5;

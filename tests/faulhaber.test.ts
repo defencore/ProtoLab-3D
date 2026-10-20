@@ -1,10 +1,63 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { unzlibSync } from 'three/addons/libs/fflate.module.js';
 import { parts } from '../src/parts';
 import { Box3, Mesh, Vector3 } from 'three';
 import { disposeModel } from '../src/core/mechanical';
 import { validateParameters } from '../src/core/validation';
+
+/** Digests of the original uncompressed supplier preview bytes and untouched metadata. */
+const previewDigests = JSON.parse(
+  readFileSync(new URL('./fixtures/faulhaber-preview-digests.json', import.meta.url), 'utf8'),
+) as Record<
+  string,
+  {
+    positions: string;
+    indices: string;
+    metadata: string;
+    originalEncodedLengths: { positions: number; indices: number };
+  }
+>;
+function digest(value: string | Uint8Array): string {
+  return createHash('sha256').update(value).digest('hex');
+}
+function arrayBytes(array: Float32Array | Uint32Array): Uint8Array {
+  return new Uint8Array(array.buffer, array.byteOffset, array.byteLength);
+}
+
+test('FAULHABER preview compression preserves every original byte and all native metadata', () => {
+  let originalEncodedBytes = 0;
+  let compressedEncodedBytes = 0;
+  for (const [selection, expected] of Object.entries(previewDigests)) {
+    const [family, filename] = selection.split('/');
+    const data = JSON.parse(readFileSync(`src/parts/${family}/lib/${filename}`, 'utf8'));
+    const { positions, indices, ...metadata } = data;
+    assert.equal(
+      digest(JSON.stringify(metadata)),
+      expected.metadata,
+      `${selection}: native metadata`,
+    );
+    for (const field of ['positions', 'indices'] as const) {
+      const encoded = data[field] as string;
+      const decoded = unzlibSync(Buffer.from(encoded, 'base64'));
+      assert.equal(digest(decoded), expected[field], `${selection}/${field}: original bytes`);
+      assert.equal(decoded.byteLength % 4, 0, `${selection}/${field}: aligned typed array`);
+      assert.ok(
+        encoded.length < expected.originalEncodedLengths[field],
+        `${selection}/${field}: smaller asset`,
+      );
+      originalEncodedBytes += expected.originalEncodedLengths[field];
+      compressedEncodedBytes += encoded.length;
+    }
+  }
+  assert.equal(Object.keys(previewDigests).length, 10);
+  assert.ok(
+    compressedEncodedBytes < originalEncodedBytes * 0.4,
+    'Preview payload remains substantially smaller',
+  );
+});
 
 for (const family of ['am', 'bx4']) {
   const id = `faulhaber-${family}`,
@@ -29,6 +82,7 @@ for (const family of ['am', 'bx4']) {
       assert.equal(preset.catalog!.geometryEvidence!.kind, 'manufacturer-cad');
       if (checked.has(series)) continue;
       checked.add(series);
+      const expectedPreview = previewDigests[`${id}/native-${series}.json`];
       const model = part.buildGeometry(preset.parameters, 'assembled');
       try {
         const b = new Box3().setFromObject(model, true);
@@ -40,6 +94,8 @@ for (const family of ['am', 'bx4']) {
           if (!(mesh instanceof Mesh)) return;
           const a = mesh.geometry.getAttribute('position'),
             indices = mesh.geometry.index!;
+          assert.equal(digest(arrayBytes(a.array as Float32Array)), expectedPreview.positions);
+          assert.equal(digest(arrayBytes(indices.array as Uint32Array)), expectedPreview.indices);
           for (let i = 0; i < indices.count; i += 3) {
             const [x, y, z] = [0, 1, 2].map((k) =>
               new Vector3().fromBufferAttribute(a, indices.getX(i + k)),

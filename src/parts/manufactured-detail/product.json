@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "Reusable configured custom detail with local feature geometry. Material, process and drawing requirements belong to its project configuration.",
+  "processes": ["turning", "milling", "cutting", "drilling", "bending", "printing"],
+  "releaseRequirements": [
+    "Specify material and stock blank.",
+    "Select and qualify a manufacturing route.",
+    "Verify one physical part, tool access, tolerances, threads and fits in the detail drawing."
+  ]
+}

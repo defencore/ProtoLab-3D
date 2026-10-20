@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "Individually manufactured workholding surface or coolant tray detail, with an explicit local feature definition.",
+  "processes": ["milling", "cutting", "drilling", "bending"],
+  "releaseRequirements": [
+    "Assign the selected component material, stock, datum, tolerances and surface treatment on its drawing.",
+    "Machine and inspect coplanarity of metal slats after fastening to the table ribs.",
+    "Verify sealing, coolant compatibility, drainage and workholding force for the selected process."
+  ]
+}

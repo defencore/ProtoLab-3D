@@ -7,6 +7,11 @@ import { validateParameters } from '../src/core/validation';
 import { disposeModel } from '../src/core/mechanical';
 import { generateScript } from '../src/core/freecad';
 import type { Parameters } from '../src/core/types';
+import { configureProduct } from '../src/core/design-project';
+import formedWire from '../src/parts/formed-wire/part';
+import motor from '../src/parts/machine-drive-motor/part';
+import bearing from '../src/parts/ball-bearing/part';
+import detail from '../src/parts/manufactured-detail/part';
 function signature(model: Group, prefix = '') {
   const hash = createHash('sha256');
   model.updateMatrixWorld(true);
@@ -37,7 +42,7 @@ test('tracked chassis presets include complete suspended running gear and a real
         ['Tension spring', 8],
         ['Road wheel bearing', 8],
         ['Continuous tread belt', 2],
-        ['JGB3865 motor can', 2],
+        ['JGB3865 geared motor', 2],
       ] as const)
         assert.equal(names.filter((n) => n.includes(name)).length, count, name);
       assert.equal(
@@ -51,6 +56,51 @@ test('tracked chassis presets include complete suspended running gear and a real
     } finally {
       disposeModel(model);
     }
+  }
+});
+
+test('custom chassis resolves fabricated pieces, wire springs, bearings and complete motors to library products', () => {
+  const composition = part.composition!({ ...part.defaults, length: 300 });
+  const library = [formedWire, motor, bearing, detail];
+  assert.ok(composition.issues.some((item) => item.includes('not a verified Hiwonder')));
+  assert.equal(
+    composition.components.filter((item) => item.libraryId === 'machine-drive-motor').length,
+    2,
+  );
+  assert.equal(
+    composition.components.filter((item) => item.libraryId === 'ball-bearing').length,
+    10,
+  );
+  assert.equal(composition.components.filter((item) => item.libraryId === 'formed-wire').length, 8);
+  for (const component of composition.components) {
+    const definition = library.find((item) => item.id === component.libraryId)!;
+    assert.ok(definition, component.name);
+    assert.deepEqual(
+      validateParameters(definition, component.parameters, component.state),
+      [],
+      component.name,
+    );
+  }
+  assert.deepEqual(
+    part.composition!({ ...part.defaults, detail: 'lightweight' }),
+    part.composition!(part.defaults),
+    'preview simplification does not change physical BOM',
+  );
+  for (const preset of part.presets) {
+    const stock = configureProduct({
+      part,
+      parameters: preset.parameters,
+      state: 'exploded',
+      presetId: preset.id,
+    });
+    assert.equal(stock.supply, 'purchased');
+    const custom = configureProduct({
+      part,
+      parameters: { ...preset.parameters, length: 300 },
+      state: 'exploded',
+      presetId: preset.id,
+    });
+    assert.equal(custom.supply, 'manufactured');
   }
 });
 test('every visible chassis control changes geometry; left pose leaves the right suspension fixed', () => {

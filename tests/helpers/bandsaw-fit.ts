@@ -1,4 +1,6 @@
 import part from '../../src/parts/automatic-band-saw/part';
+import { machinePieces } from '../../src/parts/automatic-band-saw/lib/model';
+import { machineInstances } from '../../src/core/assembly/machine-instances';
 import type { Parameters } from '../../src/core/types';
 export interface FitCase {
   name: string;
@@ -55,34 +57,33 @@ export function fitAuditCases(): FitCase[] {
     ),
   ];
 }
-/** Cache identical BReps and pair results, never skip a hardware group or a fastening pair. */
+/** Cache physical configuration pairs, never skip a hardware group or a fastening pair. */
 export function fitAuditCode(cases: FitCase[]): string {
-  const expressions = new Map<string, number>();
+  const configurations = new Map<string, number>();
   const sources = cases.map(({ name, state, parameters }) => {
-    const keys: number[] = [];
-    const source = part
-      .python(parameters, state)
-      .replace(/^component = \((.*)\)\.removeSplitter\(\)$/gm, (_, expression: string) => {
-        if (!expressions.has(expression)) expressions.set(expression, expressions.size);
-        const key = expressions.get(expression)!;
-        keys.push(key);
-        return `component = _cached(${key}, ${JSON.stringify(expression)})`;
+    const keys = machineInstances(machinePieces(parameters, state), true).map((piece) => {
+      const occurrence = JSON.stringify({
+        libraryId: piece.component.libraryId,
+        parameters: piece.component.parameters,
+        state: piece.component.state,
+        placement: piece.component.placement,
+        position: piece.position,
+        z: piece.z,
+        angle: piece.angle,
       });
-    return { name, source, keys };
+      if (!configurations.has(occurrence)) configurations.set(occurrence, configurations.size);
+      return configurations.get(occurrence)!;
+    });
+    return { name, source: part.python(parameters, state), keys };
   });
   return `import FreeCAD as App
-import Part, json
-_shapes = {}
+import Part, math, json
 _pairs = {}
-def _cached(key, expression):
-    if key not in _shapes:
-        s = eval(expression).removeSplitter()
-        assert not s.isNull() and s.isValid() and s.Volume > 0 and all(v.isClosed() for v in s.Solids), ('invalid shape', key)
-        _shapes[key] = s
-    return _shapes[key].copy()
 failures = []
 for case in json.loads(${JSON.stringify(JSON.stringify(sources))}):
     exec(case['source'])
+    assert len(case['keys']) == len(components), (case['name'], 'missing physical occurrence')
+    assert all(not s.isNull() and s.isValid() and s.Volume > 0 and all(v.isClosed() for v in s.Solids) for s in components), (case['name'], 'invalid shape')
     boxes = [s.BoundBox for s in components]
     order = sorted(range(len(components)), key=lambda i: boxes[i].XMin)
     clashes = []

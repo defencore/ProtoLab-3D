@@ -7,7 +7,7 @@ import {
   transform,
   rotate,
   type Shape,
-} from '../../rocket-release/lib/shapes';
+} from '../../../core/assembly/recovery/shapes';
 import { at } from '../../rocket-release/lib/motion';
 
 export const latchPhases = [0, 120, 240];

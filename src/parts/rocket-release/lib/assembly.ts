@@ -1,37 +1,45 @@
+import { recoveryPieceGeometry, recoveryPiecePython } from './library-components';
+import { servoCadPython } from '../../bus-servo/part';
 import { Group, Box3, Vector3, Mesh, MeshStandardMaterial } from 'three';
-import { component, pythonShape, type Shape, type Vec } from './shapes';
+import { pythonShape, type Shape, type Vec } from '../../../core/assembly/recovery/shapes';
 import { num } from '../../../core/geometry';
 import { manufactured, material } from './names';
 import { manufacturingMetadata, threadFeatures, threadLabel } from './manufacturing';
-import native from './st3215-native.json';
-import { hatPython } from './hat';
-import { threadPython } from './thread';
-import { springPython } from './spring';
+import { hatPython } from '../../../core/assembly/recovery/hat';
+import { threadPython } from '../../../core/assembly/recovery/thread';
+import { springPython } from '../../../core/assembly/recovery/spring';
 export interface Piece {
   shape: Shape;
   label: string;
   color: number;
   metadata?: Record<string, string>;
 }
+function supplierGeometryKind(shape: Shape, kind: 'hat' | 'native'): boolean {
+  return (
+    shape.kind === kind ||
+    ((shape.kind === 'transform' || shape.kind === 'rotate') &&
+      supplierGeometryKind(shape.child, kind))
+  );
+}
 export function geometry(pieces: Piece[]): Group {
-  return new Group().add(...pieces.map((p) => component(p.shape, threadLabel(p), p.color)));
+  return new Group().add(
+    ...pieces.map((p) => recoveryPieceGeometry({ ...p, label: threadLabel(p) })),
+  );
 }
 export function python(pieces: Piece[]): string {
   const lines = [
-    ...(pieces.some((p) => p.label.startsWith('BUY Waveshare Bus Servo')) ? hatPython : []),
+    ...(pieces.some((p) => supplierGeometryKind(p.shape, 'hat')) ? hatPython : []),
     ...springPython,
-    ...(pieces.some((p) =>
-      threadFeatures(p.shape).some((t) => t.representation === 'printed-helix'),
-    )
-      ? threadPython
-      : []),
-    'import base64,zlib',
-    '_release_native_data=' + JSON.stringify(native.components.map((c) => c.brep)),
+    ...threadPython(),
+    ...(pieces.some((p) => supplierGeometryKind(p.shape, 'native')) ? servoCadPython : []),
+    '_release_library_cache={}',
+    'def _release_library(code):',
+    '    if code not in _release_library_cache:',
+    '        scope={"Part":Part,"App":App,"math":math}',
+    '        exec(code,scope)',
+    '        _release_library_cache[code]=scope["shape"]',
+    '    return _release_library_cache[code].copy()',
     '_release_fastener_cache={}',
-    'def _release_native(index):',
-    '    s=Part.Shape()',
-    '    s.importBrepFromString(zlib.decompress(base64.b64decode(_release_native_data[index])).decode())',
-    '    return s',
     'def _release_fastener(code,offset):',
     '    if code not in _release_fastener_cache:',
     '        scope={"Part":Part,"App":App,"math":math}',
@@ -52,7 +60,9 @@ export function python(pieces: Piece[]): string {
   ];
   for (const p of pieces)
     lines.push(
-      `component = (${pythonShape(p.shape)})${p.label.startsWith('BUY Waveshare Bus Servo') ? '' : '.removeSplitter()'}`,
+      recoveryPiecePython(p)
+        ? `component = _release_library(${JSON.stringify(recoveryPiecePython(p))})`
+        : `component = (${pythonShape(p.shape)})${supplierGeometryKind(p.shape, 'hat') ? '' : '.removeSplitter()'}`,
       'components.append(component)',
     );
   lines.push(
@@ -78,11 +88,12 @@ export function dimensions(pieces: Piece[]): Vec {
   if (measured?.key === key) return [...measured.size];
   // Metrology only reads attributes: do not allocate another full assembly's
   // vertex buffers for each dimensions/export request in the configurator.
-  const model = new Group().add(...pieces.map((p) => component(p.shape, p.label, p.color, false)));
+  const model = new Group().add(...pieces.map((p) => recoveryPieceGeometry(p)));
   model.updateMatrixWorld(true);
   const size = new Box3().setFromObject(model, true).getSize(new Vector3()).toArray() as Vec;
   model.traverse((object) => {
     if (object instanceof Mesh) {
+      object.geometry.dispose();
       (object.material as MeshStandardMaterial).dispose();
     }
   });

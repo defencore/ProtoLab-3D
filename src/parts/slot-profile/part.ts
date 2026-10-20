@@ -1,11 +1,14 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { n } from '../../core/geometry';
 import { defaults, parameters } from './configurator';
 import presets from './presets.json';
 import { pieces } from './lib/model';
-import * as assembly from './lib/assembly';
+import * as assembly from '../../core/assembly/mechanical/assembly';
 const part: PartDefinition = {
   id: 'slot-profile',
+  product: productData as ProductProfile,
   name: 'Modular T-slot extrusion',
   category: 'STRUCTURAL PARTS',
   subgroup: 'ALUMINIUM PROFILES',
@@ -52,7 +55,7 @@ const part: PartDefinition = {
   dimensions: (p, s) => assembly.dimensions(pieces(p, s)),
   python: (p, s) => assembly.python(pieces(p, s)),
   notes:
-    'Generic slot cavities, no Bosch/item/80-20 interchangeability claim. Existing source-backed 2020/2040 profiles remain in T-slot aluminium profile. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Threads are smooth nominal envelopes unless explicitly stated. No load, pressure or service-life rating is implied.',
+    'Generic slot cavities, no Bosch/item/80-20 interchangeability claim. Existing source-backed 2020/2040 profiles remain in T-slot aluminium profile. Dimensions are editable prototype choices, not source-certified product dimensions or a manufacturing drawing. Simple uses nominal envelopes for declared threads; Full models declared helical features. Features without a defined pitch/profile remain nominal in both modes. No load, pressure or service-life rating is implied.',
   sources: [],
 };
 export default part;

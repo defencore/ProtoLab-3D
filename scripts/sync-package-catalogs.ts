@@ -6,6 +6,11 @@ import { withSupplierPresets } from '../src/catalog/supplier-presets';
 import { sourceBoltPresets, sourceSetScrewPresets } from '../src/catalog/fasteners';
 import { specialFastenerPresets } from '../src/catalog/special-fastener-catalog';
 import { handNutPresets } from '../src/catalog/hand-nuts';
+import { dremecPresets } from '../src/catalog/dremec-presets';
+import { kosmodromPresets } from '../src/catalog/kosmodrom-presets';
+import { dremecSleevePresets } from '../src/catalog/dremec-sleeve-presets';
+import { parameterSchema, catalogFields } from '../src/parts/pcb-standoff/lib/schema';
+import { validateStandoff } from '../src/parts/pcb-standoff/lib/model';
 import cotterPresets from '../src/catalog/generated/gvyntok-cotter-presets.json';
 import { PART_ID_PATTERN, registerPartModules, type PartModule } from '../src/core/part-modules';
 import type { PartDefinition, Preset } from '../src/core/types';
@@ -31,7 +36,16 @@ const adapterPresets: Record<string, (part: PartDefinition) => Preset[]> = {
   'cotter-pin': () => cotterPresets as Preset[],
 };
 
-function refreshedPresets(part: PartDefinition): Preset[] {
+let dremec: ReturnType<typeof dremecPresets> | undefined;
+const authoritativePresets: Record<string, () => Preset[]> = {
+  'pcb-standoff': () => [...(dremec ??= dremecPresets()).detail, ...kosmodromPresets()],
+  'pcb-standoff-insert': () => (dremec ??= dremecPresets()).insert,
+  'dremec-spacer-sleeve': dremecSleevePresets,
+};
+
+export function refreshedPresets(part: PartDefinition): Preset[] {
+  const replace = authoritativePresets[part.id];
+  if (replace) return replace();
   const imported = [
     ...withHardwarePresets({ ...part, presets: [] }).presets,
     ...(adapterPresets[part.id]?.(part) ?? []),
@@ -46,6 +60,24 @@ function refreshedPresets(part: PartDefinition): Preset[] {
   return [...updated, ...byId.values()];
 }
 
+/** Fixed identity choices and validation must refer to the prospective snapshot. */
+export function moduleWithPresets(module: PartModule, presets: Preset[]): PartModule {
+  const part = { ...module.part, presets };
+  if (part.id !== 'pcb-standoff' && part.id !== 'pcb-standoff-insert') return { ...module, part };
+  if (!presets.length) throw new Error(`${part.id}: the authoritative supplier catalog is empty.`);
+  const composite = part.id === 'pcb-standoff-insert';
+  return {
+    ...module,
+    part: {
+      ...part,
+      defaults: { ...presets[0].parameters },
+      parameters: parameterSchema(presets, composite),
+      catalogFilterFields: catalogFields(presets),
+      validate: (parameters) => validateStandoff(parameters, presets, composite),
+    },
+  };
+}
+
 function canonical(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(canonical);
   if (value && typeof value === 'object')
@@ -57,72 +89,103 @@ function canonical(value: unknown): unknown {
   return value;
 }
 
-try {
-  const [target, ...options] = process.argv.slice(2);
-  if (
-    !target ||
-    (target !== '--all' && !PART_ID_PATTERN.test(target)) ||
-    options.some((option) => option !== '--check') ||
-    options.length > 1
-  )
-    throw new Error(usage);
-  const checkOnly = options.includes('--check');
-  const packages =
-    target === '--all'
-      ? await discoverPackages(root)
-      : [await inspectPackage(path.join(root, 'src/parts', target), root)];
-  const changes: { id: string; file: string; previous: string; next: string; count: number }[] = [];
-  for (const entry of packages) {
-    const module = (await import(pathToFileURL(path.join(entry.directory, 'index.ts')).href))
-      .default as PartModule;
-    const [part] = registerPartModules([module]);
-    const presets = refreshedPresets(part);
-    registerPartModules([{ ...module, part: { ...part, presets } }]);
-    const state = part.states?.[0]?.id ?? 'default';
-    for (const preset of presets) {
-      const errors = validateParameters(part, preset.parameters, state);
-      if (errors.length)
-        throw new Error(
-          `${part.id} / ${preset.id}: ${errors.join(' ')} No snapshots were changed.`,
-        );
+async function main(): Promise<void> {
+  try {
+    const [target, ...options] = process.argv.slice(2);
+    if (
+      !target ||
+      (target !== '--all' && !PART_ID_PATTERN.test(target)) ||
+      options.some((option) => option !== '--check') ||
+      options.length > 1
+    )
+      throw new Error(usage);
+    const checkOnly = options.includes('--check');
+    const packages =
+      target === '--all'
+        ? await discoverPackages(root)
+        : [await inspectPackage(path.join(root, 'src/parts', target), root)];
+    const modules = new Map<string, PartModule>();
+    async function loadModule(id: string): Promise<void> {
+      if (modules.has(id)) return;
+      if (!PART_ID_PATTERN.test(id)) throw new Error(`Invalid library dependency: ${id}.`);
+      const entry =
+        packages.find((entry) => entry.id === id) ??
+        (await inspectPackage(path.join(root, 'src/parts', id), root));
+      const module = (await import(pathToFileURL(path.join(entry.directory, 'index.ts')).href))
+        .default as PartModule;
+      if (module?.part?.id !== id)
+        throw new Error(`${id}: package module declares a different or missing part identity.`);
+      modules.set(id, module);
+      if (module.dependencies !== undefined && !Array.isArray(module.dependencies))
+        throw new Error(`${id}: library dependencies must be an array.`);
+      for (const dependency of module.dependencies ?? []) await loadModule(dependency);
     }
-    const file = path.join(entry.directory, 'presets.json');
-    const previous = await fs.readFile(file, 'utf8');
-    if (JSON.stringify(canonical(JSON.parse(previous))) === JSON.stringify(canonical(presets)))
-      continue;
-    changes.push({
-      id: part.id,
-      file,
-      previous,
-      next: JSON.stringify(presets) + '\n',
-      count: presets.length,
+    for (const entry of packages) await loadModule(entry.id);
+    const targets = new Set(packages.map((entry) => entry.id));
+    const prospectiveModules = [...modules.values()].map((module) => {
+      // An empty initial fixed snapshot cannot be registered. Its authoritative
+      // prospective definition also validates a dependent package's bootstrap;
+      // only explicitly requested packages are considered for snapshot writes.
+      const refresh = targets.has(module.part.id) || authoritativePresets[module.part.id];
+      return refresh ? moduleWithPresets(module, refreshedPresets(module.part)) : module;
     });
-  }
-  if (!changes.length)
-    console.log(`Checked ${packages.length} packages. Offline supplier snapshots are current.`);
-  else if (checkOnly) {
-    for (const change of changes)
-      console.log(`${change.id}: pending snapshot update (${change.count} presets).`);
-    console.log('Run the same command without --check to apply these updates.');
-    process.exitCode = 1;
-  } else {
-    const stamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const backup = await fs.mkdtemp(path.join(root, `.catalog-snapshot-backup-${stamp}-`));
-    const written: typeof changes = [];
-    try {
-      for (const change of changes) {
-        await fs.writeFile(path.join(backup, `${change.id}.presets.json`), change.previous);
-        written.push(change);
-        await fs.writeFile(change.file, change.next);
+    const registered = new Map(
+      registerPartModules(prospectiveModules).map((part) => [part.id, part]),
+    );
+    const changes: { id: string; file: string; previous: string; next: string; count: number }[] =
+      [];
+    for (const entry of packages) {
+      const part = registered.get(entry.id)!;
+      const presets = part.presets;
+      const state = part.states?.[0]?.id ?? 'default';
+      for (const preset of presets) {
+        const errors = validateParameters(part, preset.parameters, state);
+        if (errors.length)
+          throw new Error(
+            `${part.id} / ${preset.id}: ${errors.join(' ')} No snapshots were changed.`,
+          );
       }
-    } catch (error) {
-      for (const change of written) await fs.writeFile(change.file, change.previous);
-      throw error;
+      const file = path.join(entry.directory, 'presets.json');
+      const previous = await fs.readFile(file, 'utf8');
+      if (JSON.stringify(canonical(JSON.parse(previous))) === JSON.stringify(canonical(presets)))
+        continue;
+      changes.push({
+        id: part.id,
+        file,
+        previous,
+        next: JSON.stringify(presets) + '\n',
+        count: presets.length,
+      });
     }
-    for (const change of changes) console.log(`Updated ${change.id}: ${change.count} presets.`);
-    console.log(`Previous snapshots saved in ${backup}.`);
+    if (!changes.length)
+      console.log(`Checked ${packages.length} packages. Offline supplier snapshots are current.`);
+    else if (checkOnly) {
+      for (const change of changes)
+        console.log(`${change.id}: pending snapshot update (${change.count} presets).`);
+      console.log('Run the same command without --check to apply these updates.');
+      process.exitCode = 1;
+    } else {
+      const stamp = new Date().toISOString().replace(/[:.]/g, '-');
+      const backup = await fs.mkdtemp(path.join(root, `.catalog-snapshot-backup-${stamp}-`));
+      const written: typeof changes = [];
+      try {
+        for (const change of changes) {
+          await fs.writeFile(path.join(backup, `${change.id}.presets.json`), change.previous);
+          written.push(change);
+          await fs.writeFile(change.file, change.next);
+        }
+      } catch (error) {
+        for (const change of written) await fs.writeFile(change.file, change.previous);
+        throw error;
+      }
+      for (const change of changes) console.log(`Updated ${change.id}: ${change.count} presets.`);
+      console.log(`Previous snapshots saved in ${backup}.`);
+    }
+  } catch (error) {
+    console.error(error instanceof Error ? error.message : String(error));
+    process.exitCode = 1;
   }
-} catch (error) {
-  console.error(error instanceof Error ? error.message : String(error));
-  process.exitCode = 1;
 }
+
+if (process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href === import.meta.url)
+  await main();

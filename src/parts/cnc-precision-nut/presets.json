@@ -1,0 +1,96 @@
+[
+  {
+    "id": "r25-10t3-fdi",
+    "name": "HIWIN R25-10T3-FDI",
+    "description": "Factory matched ground FDI nut; precision/preload ordered and inspected.",
+    "parameters": {
+      "model": "r25-10t3-fdi"
+    },
+    "catalog": {
+      "designation": "R25-10T3-FDI",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN manufacturer publication",
+      "sourceUrl": "https://www.hiwin.de/medias/sys_master/hiwinDocumentMedia/hc3/h19/14757156519966/HIWIN%20CATALOGUE%20BALLSCREWS/HIWIN-CATALOGUE-BALLSCREWS.PDF?attachment=true",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published ground FDI flange double-nut table6.7; exact flange/body fit and bolt interfaces.",
+        "limitations": "Internal Gothic raceways, returns, balls/spacer and actual preload are opaque/unpublished. Central clearing bore only. Source rigidity at10% preload is NOT requested 3% stiffness. C3/3% require actual measured certificates.",
+        "sourceUrl": "https://www.hiwin.de/medias/sys_master/hiwinDocumentMedia/hc3/h19/14757156519966/HIWIN%20CATALOGUE%20BALLSCREWS/HIWIN-CATALOGUE-BALLSCREWS.PDF?attachment=true",
+        "sourceSha256": "f114561afd963a75b1c493f4db58c9667233f44c0b141da948883a9b2ab3e5e4"
+      },
+      "attributes": {
+        "nominalShaft": 25,
+        "sourceLead": 10,
+        "flange": 74,
+        "nutLength": 140
+      },
+      "alternateSourceUrls": [
+        "https://www.hiwin.com/wp-content/uploads/Ballscrew-Catalog.pdf"
+      ],
+      "specifications": [
+        {
+          "label": "Order and acceptance",
+          "value": "Factory-matched ground shaft andFDI nut; request C3 /3% dynamic-load preload, factory-approved ends and lead/preload/backlash inspection records. No certificate or delivered preload claimed."
+        },
+        {
+          "label": "FDI source evidence",
+          "value": "HIWIN Europe table6.7 current published nominal values; original maker S99TE22-2009 printed72 drawing supplies flange orientation and six30deg holes."
+        },
+        {
+          "label": "Current primary source",
+          "value": "Current manufacturer download page resolves the supplied2026catalogue; FDI table6.7 dimensions match the chosen interfaces. ArchiveSHA256 is recorded; custom-end/C3/preload delivery still requires factory acceptance."
+        }
+      ]
+    }
+  },
+  {
+    "id": "r20-5t3-fdi",
+    "name": "HIWIN R20-5T3-FDI",
+    "description": "Factory matched ground FDI nut; precision/preload ordered and inspected.",
+    "parameters": {
+      "model": "r20-5t3-fdi"
+    },
+    "catalog": {
+      "designation": "R20-5T3-FDI",
+      "manufacturer": "HIWIN",
+      "sourceName": "HIWIN manufacturer publication",
+      "sourceUrl": "https://www.hiwin.de/medias/sys_master/hiwinDocumentMedia/hc3/h19/14757156519966/HIWIN%20CATALOGUE%20BALLSCREWS/HIWIN-CATALOGUE-BALLSCREWS.PDF?attachment=true",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Published ground FDI flange double-nut table6.7; exact flange/body fit and bolt interfaces.",
+        "limitations": "Internal Gothic raceways, returns, balls/spacer and actual preload are opaque/unpublished. Central clearing bore only. Source rigidity at10% preload is NOT requested 3% stiffness. C3/3% require actual measured certificates.",
+        "sourceUrl": "https://www.hiwin.de/medias/sys_master/hiwinDocumentMedia/hc3/h19/14757156519966/HIWIN%20CATALOGUE%20BALLSCREWS/HIWIN-CATALOGUE-BALLSCREWS.PDF?attachment=true",
+        "sourceSha256": "f114561afd963a75b1c493f4db58c9667233f44c0b141da948883a9b2ab3e5e4"
+      },
+      "attributes": {
+        "nominalShaft": 20,
+        "sourceLead": 5,
+        "flange": 57,
+        "nutLength": 78
+      },
+      "alternateSourceUrls": [
+        "https://www.hiwin.com/wp-content/uploads/Ballscrew-Catalog.pdf"
+      ],
+      "specifications": [
+        {
+          "label": "Order and acceptance",
+          "value": "Factory-matched ground shaft andFDI nut; request C3 /3% dynamic-load preload, factory-approved ends and lead/preload/backlash inspection records. No certificate or delivered preload claimed."
+        },
+        {
+          "label": "FDI source evidence",
+          "value": "HIWIN Europe table6.7 current published nominal values; original maker S99TE22-2009 printed72 drawing supplies flange orientation and six30deg holes."
+        },
+        {
+          "label": "Current primary source",
+          "value": "Current manufacturer download page resolves the supplied2026catalogue; FDI table6.7 dimensions match the chosen interfaces. ArchiveSHA256 is recorded; custom-end/C3/preload delivery still requires factory acceptance."
+        }
+      ]
+    }
+  }
+]

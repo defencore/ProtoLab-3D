@@ -1,5 +1,6 @@
 import type { Piece } from './assembly';
 import { fastener, fastenerCatalog } from './fastener-catalog';
+import { supplierUnit } from '../../../core/supplier-components';
 export function named(piece: Piece): Piece {
   const spec = fastenerCatalog(piece.shape, piece.label);
   return spec
@@ -7,17 +8,10 @@ export function named(piece: Piece): Piece {
     : piece;
 }
 export function manufactured(piece: Piece): boolean {
-  const spec = fastenerCatalog(piece.shape, piece.label);
+  if (supplierUnit(piece.shape) || piece.metadata?.SupplierUnitId) return false;
+  const spec = fastenerCatalog(piece.shape);
   if (spec) return spec.procurement === 'MAKE_CUSTOM_FASTENER';
-  if (piece.label.startsWith('BUY ')) return false;
-  if (/PRINT|PA12|TPU|PETG|silicone/.test(piece.label)) return true;
-  return (
-    !piece.label.startsWith('BUY ') &&
-    !piece.label.includes(' · BUY ') &&
-    !piece.label.includes(' · ISO') &&
-    !piece.label.startsWith('ST3215 ·') &&
-    !piece.label.startsWith('Gearmotor ')
-  );
+  return true;
 }
 export function material(piece: Piece): string {
   if (piece.label.includes('nickel')) return 'Ni200';

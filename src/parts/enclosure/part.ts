@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -12,6 +14,7 @@ const values = (p: Parameters) => ({
 });
 const part: PartDefinition = {
   id: 'enclosure',
+  product: productData as ProductProfile,
   name: 'Open enclosure',
   category: 'STRUCTURAL PARTS',
   subgroup: 'BOXES & CASES',

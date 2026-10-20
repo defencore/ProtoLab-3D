@@ -1,7 +1,7 @@
 import type { Parameters } from '../../../core/types';
 import { at } from '../../rocket-release/lib/motion';
 import { radialScrew } from '../../rocket-release/lib/hardware';
-import { transform, rotate, cylinder, type Shape } from '../../rocket-release/lib/shapes';
+import { transform, rotate, cylinder, type Shape } from '../../../core/assembly/recovery/shapes';
 import { springDimensions } from './motion';
 export const guideStop = (p: Parameters) => springDimensions(p).cassetteBottom + +p.springTravel;
 export const packingPinZ = (p: Parameters) => springDimensions(p).cassetteBottom - 4;

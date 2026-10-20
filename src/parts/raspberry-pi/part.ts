@@ -1,13 +1,16 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { parameters, defaults, catalogFilterFields } from './configurator';
 import presets from './presets.json';
 import models from './lib/models.json';
 import { pieces } from './lib/model';
-import * as assembly from './lib/assembly';
+import * as assembly from '../../core/assembly/electronics/assembly';
 import * as native from './lib/pi5/model';
 import * as lightweight from './lib/pi5/lightweight';
 const part: PartDefinition = {
   id: 'raspberry-pi',
+  product: productData as ProductProfile,
   name: 'Raspberry Pi single-board computer',
   category: 'ELECTRONICS & VISION',
   subgroup: 'SINGLE-BOARD COMPUTERS',

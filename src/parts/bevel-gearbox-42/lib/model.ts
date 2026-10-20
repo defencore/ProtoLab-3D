@@ -1,11 +1,11 @@
 import { BufferAttribute, BufferGeometry, Mesh, MeshStandardMaterial, Box3, Vector3 } from 'three';
 import type { Parameters } from '../../../core/types';
 import housing from './housing.json';
-import { type Shape, type Vec } from './shapes';
+import { type Shape, type Vec } from '../../../core/assembly/boundary/shapes';
 import { C, cut, union, ring, rotate, move, arcBand } from './helpers';
 import { profile } from './gears';
-import * as assembly from './assembly';
-import type { Piece } from './assembly';
+import * as assembly from '../../../core/assembly/boundary/assembly';
+import type { Piece } from '../../../core/assembly/boundary/assembly';
 
 const steel = 0x41454a,
   bearingSteel = 0xa8afb8;
@@ -174,14 +174,14 @@ export function geometry(p: Parameters, state: string) {
 export function python(p: Parameters, state: string) {
   const code =
     state === 'housing'
-      ? 'components = []\ncomponent_labels = []\ncomponent_colors = []'
+      ? 'components = []\ncomponent_labels = []\ncomponent_colors = []\ncomponent_metadata = []'
       : assembly.python(pieces(p, state));
   if (state === 'internals') return code;
   return (
     code +
     '\nimport base64, zlib\nhousing = Part.Shape()\n' +
     `housing.importBrepFromString(zlib.decompress(base64.b64decode(${JSON.stringify(housing.brep)})).decode('utf-8'))\n` +
-    `components.append(housing)\ncomponent_labels.append('42 mm housing · STEP exterior / corrected seats')\ncomponent_colors.append((0.725,0.757,0.788))\nshape = Part.makeCompound(components)`
+    `components.append(housing)\ncomponent_labels.append('42 mm housing · STEP exterior / corrected seats')\ncomponent_colors.append((0.725,0.757,0.788))\ncomponent_metadata.append(${JSON.stringify({ SourceGeometry: housing.sourceName, SourceSHA256: housing.sourceSha256, SourceModificationsJSON: JSON.stringify(housing.modifications) })})\nshape = Part.makeCompound(components)`
   );
 }
 export function dimensions(p: Parameters, state: string): Vec {

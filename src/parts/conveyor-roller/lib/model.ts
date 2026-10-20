@@ -1,6 +1,7 @@
+import { markSupplierUnit } from '../../../core/supplier-components';
 import type { Parameters } from '../../../core/types';
-import { cylinder, subtract } from './shapes';
-import type { Piece } from './assembly';
+import { cylinder, subtract } from '../../../core/assembly/mechanical/shapes';
+import type { Piece } from '../../../core/assembly/mechanical/assembly';
 export function rollerSpec(p: Parameters) {
   const length = Number(p.installationLength);
   return {
@@ -12,7 +13,7 @@ export function rollerSpec(p: Parameters) {
     wall: 1.5,
   };
 }
-export function rollerPieces(p: Parameters): Piece[] {
+function buildRollerPieces(p: Parameters): Piece[] {
   const s = rollerSpec(p),
     h = s.tubeLength / 2,
     cap = (s.length - s.tubeLength) / 2 - 0.5;
@@ -59,4 +60,18 @@ export function rollerPieces(p: Parameters): Piece[] {
       ),
     })),
   ];
+}
+
+export function rollerPieces(p: Parameters): Piece[] {
+  const items = buildRollerPieces(p);
+  markSupplierUnit(
+    items.map((item) => item.shape),
+    {
+      name: 'Conveyor roller',
+      libraryId: 'conveyor-roller',
+      parameters: { ...p, model: p.model ?? '1700' },
+      state: 'default',
+    },
+  );
+  return items;
 }

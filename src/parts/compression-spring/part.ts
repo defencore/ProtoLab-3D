@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -12,7 +14,7 @@ import {
   wireDimensions,
   wireGeometry,
   wirePython,
-} from './lib/core/spring-geometry';
+} from '../../core/hardware/spring-geometry';
 
 function values(p: Parameters, state: string) {
   const w = n(p, 'wireDiameter'),
@@ -67,6 +69,7 @@ const defaults = {
 };
 const part: PartDefinition = {
   id: 'compression-spring',
+  product: productData as ProductProfile,
   name: 'Compression spring',
   category: 'SPRINGS',
   subgroup: 'HELICAL SPRINGS',
@@ -98,7 +101,7 @@ const part: PartDefinition = {
     },
     numberParameter('wireDiameter', 'Wire diameter', 'd', 'Coil', 0.4, 12),
     { ...numberParameter('turns', 'Total turns', 'n', 'Coil', 2, 30, 0.25), unit: '' },
-    handedness,
+    handedness(),
     choice('ends', 'End pitch', 'Ends', [
       ['open', 'Open / uniform pitch'],
       ['closed', 'Reduced pitch at both ends'],

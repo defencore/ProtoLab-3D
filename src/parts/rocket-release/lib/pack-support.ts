@@ -2,7 +2,7 @@ import type { Parameters } from '../../../core/types';
 import { batteryLayout, batteryPosts } from './balance';
 import { at, layout, springAngles } from './motion';
 import { servoTiePosts } from './servo-retention';
-import { box, circle, cylinder, plate, ring, subtract, union, type Shape } from './shapes';
+import { box, circle, cylinder, plate, ring, subtract, union, type Shape } from '../../../core/assembly/recovery/shapes';
 
 /** Dedicated harness passages, separated from cell terminals and structural fasteners. */
 export const packWirePorts: [number, number][] = [

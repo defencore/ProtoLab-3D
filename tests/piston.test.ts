@@ -73,10 +73,13 @@ test('all preset assemblies expose closed outward physical components with match
         child.traverse((mesh) => {
           if (!(mesh instanceof Mesh)) return;
           const pos = mesh.geometry.getAttribute('position'),
+            indices = mesh.geometry.index,
             edges = new Map<string, number>();
           let volume = 0;
-          for (let j = 0; j < pos.count; j += 3) {
-            const vs = [0, 1, 2].map((k) => new Vector3().fromBufferAttribute(pos, j + k));
+          for (let j = 0; j < (indices?.count ?? pos.count); j += 3) {
+            const vs = [0, 1, 2].map((k) =>
+              new Vector3().fromBufferAttribute(pos, indices ? indices.getX(j + k) : j + k),
+            );
             assert.ok(
               vs[1].clone().sub(vs[0]).cross(vs[2].clone().sub(vs[0])).lengthSq() > 1e-17,
               `${preset.id}/${child.name}: degenerate triangle`,
@@ -120,7 +123,10 @@ test('exploded and body views retain component labels and preview/export dimensi
         assert.ok(
           macro.includes(`component_labels = ${JSON.stringify(components.map((c) => c.name))}`),
         );
-        assert.ok(macro.includes('len(item.Solids) != 1'));
+        assert.ok(macro.includes('len(component.Solids) != 1'));
+        assert.ok(
+          model.children.every((child) => child.userData.libraryId === 'manufactured-detail'),
+        );
       } finally {
         disposeModel(model);
       }

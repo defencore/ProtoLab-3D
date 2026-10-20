@@ -22,7 +22,7 @@ import {
   union,
   transform,
   type Shape,
-} from '../../rocket-release/lib/shapes';
+} from '../../../core/assembly/recovery/shapes';
 
 /** Identical screws and tapped clamp pattern for both replaceable controller disks. */
 export function controllerCarrierScrew(p: Parameters, x: number, y: number): Shape {

@@ -1,0 +1,13 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "Custom solid design that can be produced with an explicitly selected additive or machining route. Application-specific interfaces and qualification remain design work.",
+  "processes": [
+    "printing",
+    "milling"
+  ],
+  "releaseRequirements": [
+    "Specify material, blank, manufacturing route and the applicable drawing revision.",
+    "Define functional tolerances, surface finish, edge treatment and an inspection method."
+  ]
+}

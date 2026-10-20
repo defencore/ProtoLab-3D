@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "One complete supplier standoff containing a polymer body and metal insert. It is procured as one unit; illustrative internal geometry is not a manufacturing bill of materials.",
+  "processes": [],
+  "releaseRequirements": [
+    "Select the exact supplier item and verify its published polymer, insert material, interfaces and dimensions.",
+    "Unpublished insert geometry remains an installation envelope. Do not infer a press fit, knurl or retention strength from the model.",
+    "Procure the complete supplier unit; do not create separate manufacturing orders for its illustrative internal components."
+  ]
+}

@@ -1,10 +1,13 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import type { PartDefinition, Preset } from '../../core/types';
 import { defaults, parameters } from './configurator';
 import presets from './presets.json';
 import { pieces } from './lib/model';
-import * as assembly from '../flight-controller/lib/assembly';
+import * as assembly from '../../core/assembly/electronics/assembly';
 const part: PartDefinition = {
   id: 'pwm-switch',
+  product: productData as ProductProfile,
   name: 'PWM electronic switch',
   category: 'POWER & MOTOR CONTROL',
   subgroup: 'POWER SWITCHES',

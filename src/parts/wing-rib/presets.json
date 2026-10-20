@@ -1,0 +1,90 @@
+[
+  {
+    "id": "trainer-200",
+    "name": "Trainer rib · NACA 2412 · 200 mm",
+    "description": "3 mm sheet rib with two rectangular spar slots and lightening bays; an editable design example.",
+    "parameters": {
+      "profile": "naca2412",
+      "chord": 200,
+      "thickness": 3,
+      "tailTrim": 5,
+      "mainPosition": 28,
+      "mainWidth": 8,
+      "mainHeight": 12,
+      "rearSpar": true,
+      "rearPosition": 65,
+      "rearWidth": 5,
+      "rearHeight": 5,
+      "slotClearance": 0.15,
+      "lightening": true,
+      "lighteningDiameter": 20,
+      "minimumWeb": 3
+    }
+  },
+  {
+    "id": "tailplane-120",
+    "name": "Tailplane rib · NACA 0012 · 120 mm",
+    "description": "Symmetric 2 mm sheet rib with one spar slot and a solid web; an editable design example.",
+    "parameters": {
+      "profile": "naca0012",
+      "chord": 120,
+      "thickness": 2,
+      "tailTrim": 5,
+      "mainPosition": 30,
+      "mainWidth": 5,
+      "mainHeight": 6,
+      "rearSpar": false,
+      "rearPosition": 65,
+      "rearWidth": 3,
+      "rearHeight": 3,
+      "slotClearance": 0.1,
+      "lightening": false,
+      "lighteningDiameter": 10,
+      "minimumWeb": 2
+    }
+  },
+  {
+    "id": "utility-300",
+    "name": "Utility rib · NACA 4415 · 300 mm",
+    "description": "Cambered 4 mm sheet rib with deeper main spar and larger lightening bays; an editable design example.",
+    "parameters": {
+      "profile": "naca4415",
+      "chord": 300,
+      "thickness": 4,
+      "tailTrim": 6,
+      "mainPosition": 28,
+      "mainWidth": 12,
+      "mainHeight": 24,
+      "rearSpar": true,
+      "rearPosition": 65,
+      "rearWidth": 8,
+      "rearHeight": 10,
+      "slotClearance": 0.2,
+      "lightening": true,
+      "lighteningDiameter": 32,
+      "minimumWeb": 4
+    }
+  },
+  {
+    "id": "thick-root-250",
+    "name": "Thick root rib · NACA 0018 · 250 mm",
+    "description": "Solid-web 6 mm sheet rib with two spar apertures; root reinforcement and attachment remain project design work.",
+    "parameters": {
+      "profile": "naca0018",
+      "chord": 250,
+      "thickness": 6,
+      "tailTrim": 4,
+      "mainPosition": 28,
+      "mainWidth": 14,
+      "mainHeight": 28,
+      "rearSpar": true,
+      "rearPosition": 65,
+      "rearWidth": 8,
+      "rearHeight": 10,
+      "slotClearance": 0.2,
+      "lightening": false,
+      "lighteningDiameter": 24,
+      "minimumWeb": 5
+    }
+  }
+]

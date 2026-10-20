@@ -1,0 +1,1085 @@
+[
+  {
+    "id": "sfu01204-4",
+    "name": "TBI SFU01204-4",
+    "description": "Nominal diameter 12 mm; lead 4 mm/rev; nut length 40 mm. Shaft cut length is editable; ends are unmachined.",
+    "parameters": {
+      "model": "sfu01204-4",
+      "length": 500,
+      "nutPosition": 50,
+      "rotation": 0
+    },
+    "catalog": {
+      "designation": "SFU01204-4",
+      "manufacturer": "TBI MOTION",
+      "sourceName": "TBI Ball Screw 25.02-1F, printed C76",
+      "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf#page=76",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "diameter": 12,
+        "lead": 4,
+        "nutDiameter": 24,
+        "nutLength": 40,
+        "flangeDiameter": 40,
+        "flangeWidth": 30,
+        "flangeThickness": 10,
+        "mountCircle": 32,
+        "mountHole": 4.5,
+        "ballDiameter": 2.5,
+        "series": "SFU"
+      },
+      "productCodes": [
+        "SFU01204-4"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Exact published nut/flange envelope, mounting circle, hole diameters, nominal screw diameter and lead.",
+        "limitations": "Unmachined customer-cut screw. Ball raceway contact geometry, internal returns, wipers and undimensioned lubrication details are illustrative. No accuracy/preload class or journal execution is claimed.",
+        "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf",
+        "sourceSha256": "26016dac2c8238f16e47eaaaced604f087184be591f9b41e246af3f29ff49665"
+      },
+      "specifications": [
+        {
+          "label": "Catalog edition",
+          "value": "25.02-1F (2025)"
+        },
+        {
+          "label": "Reference construction",
+          "value": "SFU01204-4"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sfu01604-4",
+    "name": "TBI SFU01604-4",
+    "description": "Nominal diameter 16 mm; lead 4 mm/rev; nut length 40 mm. Shaft cut length is editable; ends are unmachined.",
+    "parameters": {
+      "model": "sfu01604-4",
+      "length": 500,
+      "nutPosition": 50,
+      "rotation": 0
+    },
+    "catalog": {
+      "designation": "SFU01604-4",
+      "manufacturer": "TBI MOTION",
+      "sourceName": "TBI Ball Screw 25.02-1F, printed C76",
+      "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf#page=76",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "diameter": 16,
+        "lead": 4,
+        "nutDiameter": 28,
+        "nutLength": 40,
+        "flangeDiameter": 48,
+        "flangeWidth": 40,
+        "flangeThickness": 10,
+        "mountCircle": 38,
+        "mountHole": 5.5,
+        "ballDiameter": 2.381,
+        "series": "SFU"
+      },
+      "productCodes": [
+        "SFU01604-4"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Exact published nut/flange envelope, mounting circle, hole diameters, nominal screw diameter and lead.",
+        "limitations": "Unmachined customer-cut screw. Ball raceway contact geometry, internal returns, wipers and undimensioned lubrication details are illustrative. No accuracy/preload class or journal execution is claimed.",
+        "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf",
+        "sourceSha256": "26016dac2c8238f16e47eaaaced604f087184be591f9b41e246af3f29ff49665"
+      },
+      "specifications": [
+        {
+          "label": "Catalog edition",
+          "value": "25.02-1F (2025)"
+        },
+        {
+          "label": "Reference construction",
+          "value": "SFU01604-4"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sfu02004-4",
+    "name": "TBI SFU02004-4",
+    "description": "Nominal diameter 20 mm; lead 4 mm/rev; nut length 42 mm. Shaft cut length is editable; ends are unmachined.",
+    "parameters": {
+      "model": "sfu02004-4",
+      "length": 500,
+      "nutPosition": 50,
+      "rotation": 0
+    },
+    "catalog": {
+      "designation": "SFU02004-4",
+      "manufacturer": "TBI MOTION",
+      "sourceName": "TBI Ball Screw 25.02-1F, printed C76",
+      "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf#page=76",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "diameter": 20,
+        "lead": 4,
+        "nutDiameter": 36,
+        "nutLength": 42,
+        "flangeDiameter": 58,
+        "flangeWidth": 44,
+        "flangeThickness": 10,
+        "mountCircle": 47,
+        "mountHole": 6.6,
+        "ballDiameter": 2.381,
+        "series": "SFU"
+      },
+      "productCodes": [
+        "SFU02004-4"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Exact published nut/flange envelope, mounting circle, hole diameters, nominal screw diameter and lead.",
+        "limitations": "Unmachined customer-cut screw. Ball raceway contact geometry, internal returns, wipers and undimensioned lubrication details are illustrative. No accuracy/preload class or journal execution is claimed.",
+        "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf",
+        "sourceSha256": "26016dac2c8238f16e47eaaaced604f087184be591f9b41e246af3f29ff49665"
+      },
+      "specifications": [
+        {
+          "label": "Catalog edition",
+          "value": "25.02-1F (2025)"
+        },
+        {
+          "label": "Reference construction",
+          "value": "SFU02004-4"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sfu02504-4",
+    "name": "TBI SFU02504-4",
+    "description": "Nominal diameter 25 mm; lead 4 mm/rev; nut length 42 mm. Shaft cut length is editable; ends are unmachined.",
+    "parameters": {
+      "model": "sfu02504-4",
+      "length": 500,
+      "nutPosition": 50,
+      "rotation": 0
+    },
+    "catalog": {
+      "designation": "SFU02504-4",
+      "manufacturer": "TBI MOTION",
+      "sourceName": "TBI Ball Screw 25.02-1F, printed C76",
+      "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf#page=76",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "diameter": 25,
+        "lead": 4,
+        "nutDiameter": 40,
+        "nutLength": 42,
+        "flangeDiameter": 62,
+        "flangeWidth": 48,
+        "flangeThickness": 10,
+        "mountCircle": 51,
+        "mountHole": 6.6,
+        "ballDiameter": 2.381,
+        "series": "SFU"
+      },
+      "productCodes": [
+        "SFU02504-4"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Exact published nut/flange envelope, mounting circle, hole diameters, nominal screw diameter and lead.",
+        "limitations": "Unmachined customer-cut screw. Ball raceway contact geometry, internal returns, wipers and undimensioned lubrication details are illustrative. No accuracy/preload class or journal execution is claimed.",
+        "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf",
+        "sourceSha256": "26016dac2c8238f16e47eaaaced604f087184be591f9b41e246af3f29ff49665"
+      },
+      "specifications": [
+        {
+          "label": "Catalog edition",
+          "value": "25.02-1F (2025)"
+        },
+        {
+          "label": "Reference construction",
+          "value": "SFU02504-4"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sfnu01605-4",
+    "name": "TBI SFNU01605-4",
+    "description": "Nominal diameter 16 mm; lead 5 mm/rev; nut length 45 mm. Shaft cut length is editable; ends are unmachined.",
+    "parameters": {
+      "model": "sfnu01605-4",
+      "length": 500,
+      "nutPosition": 50,
+      "rotation": 0
+    },
+    "catalog": {
+      "designation": "SFNU01605-4",
+      "manufacturer": "TBI MOTION",
+      "sourceName": "TBI Ball Screw 25.02-1F, printed C76",
+      "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf#page=76",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "diameter": 16,
+        "lead": 5,
+        "nutDiameter": 28,
+        "nutLength": 45,
+        "flangeDiameter": 48,
+        "flangeWidth": 40,
+        "flangeThickness": 10,
+        "mountCircle": 38,
+        "mountHole": 5.5,
+        "ballDiameter": 3.175,
+        "series": "SFNU"
+      },
+      "productCodes": [
+        "SFNU01605-4"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Exact published nut/flange envelope, mounting circle, hole diameters, nominal screw diameter and lead.",
+        "limitations": "Unmachined customer-cut screw. Ball raceway contact geometry, internal returns, wipers and undimensioned lubrication details are illustrative. No accuracy/preload class or journal execution is claimed.",
+        "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf",
+        "sourceSha256": "26016dac2c8238f16e47eaaaced604f087184be591f9b41e246af3f29ff49665"
+      },
+      "specifications": [
+        {
+          "label": "Catalog edition",
+          "value": "25.02-1F (2025)"
+        },
+        {
+          "label": "Reference construction",
+          "value": "SFNU01605-4"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sfnu01610-3",
+    "name": "TBI SFNU01610-3",
+    "description": "Nominal diameter 16 mm; lead 10 mm/rev; nut length 57 mm. Shaft cut length is editable; ends are unmachined.",
+    "parameters": {
+      "model": "sfnu01610-3",
+      "length": 500,
+      "nutPosition": 50,
+      "rotation": 0
+    },
+    "catalog": {
+      "designation": "SFNU01610-3",
+      "manufacturer": "TBI MOTION",
+      "sourceName": "TBI Ball Screw 25.02-1F, printed C76",
+      "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf#page=76",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "diameter": 16,
+        "lead": 10,
+        "nutDiameter": 28,
+        "nutLength": 57,
+        "flangeDiameter": 48,
+        "flangeWidth": 40,
+        "flangeThickness": 10,
+        "mountCircle": 38,
+        "mountHole": 5.5,
+        "ballDiameter": 3.175,
+        "series": "SFNU"
+      },
+      "productCodes": [
+        "SFNU01610-3"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Exact published nut/flange envelope, mounting circle, hole diameters, nominal screw diameter and lead.",
+        "limitations": "Unmachined customer-cut screw. Ball raceway contact geometry, internal returns, wipers and undimensioned lubrication details are illustrative. No accuracy/preload class or journal execution is claimed.",
+        "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf",
+        "sourceSha256": "26016dac2c8238f16e47eaaaced604f087184be591f9b41e246af3f29ff49665"
+      },
+      "specifications": [
+        {
+          "label": "Catalog edition",
+          "value": "25.02-1F (2025)"
+        },
+        {
+          "label": "Reference construction",
+          "value": "SFNU01610-3"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sfnu02005-4",
+    "name": "TBI SFNU02005-4",
+    "description": "Nominal diameter 20 mm; lead 5 mm/rev; nut length 51 mm. Shaft cut length is editable; ends are unmachined.",
+    "parameters": {
+      "model": "sfnu02005-4",
+      "length": 500,
+      "nutPosition": 50,
+      "rotation": 0
+    },
+    "catalog": {
+      "designation": "SFNU02005-4",
+      "manufacturer": "TBI MOTION",
+      "sourceName": "TBI Ball Screw 25.02-1F, printed C76",
+      "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf#page=76",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "diameter": 20,
+        "lead": 5,
+        "nutDiameter": 36,
+        "nutLength": 51,
+        "flangeDiameter": 58,
+        "flangeWidth": 44,
+        "flangeThickness": 10,
+        "mountCircle": 47,
+        "mountHole": 6.6,
+        "ballDiameter": 3.175,
+        "series": "SFNU"
+      },
+      "productCodes": [
+        "SFNU02005-4"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Exact published nut/flange envelope, mounting circle, hole diameters, nominal screw diameter and lead.",
+        "limitations": "Unmachined customer-cut screw. Ball raceway contact geometry, internal returns, wipers and undimensioned lubrication details are illustrative. No accuracy/preload class or journal execution is claimed.",
+        "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf",
+        "sourceSha256": "26016dac2c8238f16e47eaaaced604f087184be591f9b41e246af3f29ff49665"
+      },
+      "specifications": [
+        {
+          "label": "Catalog edition",
+          "value": "25.02-1F (2025)"
+        },
+        {
+          "label": "Reference construction",
+          "value": "SFNU02005-4"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sfnu02505-4",
+    "name": "TBI SFNU02505-4",
+    "description": "Nominal diameter 25 mm; lead 5 mm/rev; nut length 51 mm. Shaft cut length is editable; ends are unmachined.",
+    "parameters": {
+      "model": "sfnu02505-4",
+      "length": 500,
+      "nutPosition": 50,
+      "rotation": 0
+    },
+    "catalog": {
+      "designation": "SFNU02505-4",
+      "manufacturer": "TBI MOTION",
+      "sourceName": "TBI Ball Screw 25.02-1F, printed C76",
+      "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf#page=76",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "diameter": 25,
+        "lead": 5,
+        "nutDiameter": 40,
+        "nutLength": 51,
+        "flangeDiameter": 62,
+        "flangeWidth": 48,
+        "flangeThickness": 10,
+        "mountCircle": 51,
+        "mountHole": 6.6,
+        "ballDiameter": 3.175,
+        "series": "SFNU"
+      },
+      "productCodes": [
+        "SFNU02505-4"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Exact published nut/flange envelope, mounting circle, hole diameters, nominal screw diameter and lead.",
+        "limitations": "Unmachined customer-cut screw. Ball raceway contact geometry, internal returns, wipers and undimensioned lubrication details are illustrative. No accuracy/preload class or journal execution is claimed.",
+        "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf",
+        "sourceSha256": "26016dac2c8238f16e47eaaaced604f087184be591f9b41e246af3f29ff49665"
+      },
+      "specifications": [
+        {
+          "label": "Catalog edition",
+          "value": "25.02-1F (2025)"
+        },
+        {
+          "label": "Reference construction",
+          "value": "SFNU02505-4"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sfnu02510-4",
+    "name": "TBI SFNU02510-4",
+    "description": "Nominal diameter 25 mm; lead 10 mm/rev; nut length 80 mm. Shaft cut length is editable; ends are unmachined.",
+    "parameters": {
+      "model": "sfnu02510-4",
+      "length": 500,
+      "nutPosition": 50,
+      "rotation": 0
+    },
+    "catalog": {
+      "designation": "SFNU02510-4",
+      "manufacturer": "TBI MOTION",
+      "sourceName": "TBI Ball Screw 25.02-1F, printed C76",
+      "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf#page=76",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "diameter": 25,
+        "lead": 10,
+        "nutDiameter": 40,
+        "nutLength": 80,
+        "flangeDiameter": 62,
+        "flangeWidth": 48,
+        "flangeThickness": 12,
+        "mountCircle": 51,
+        "mountHole": 6.6,
+        "ballDiameter": 4.762,
+        "series": "SFNU"
+      },
+      "productCodes": [
+        "SFNU02510-4"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Exact published nut/flange envelope, mounting circle, hole diameters, nominal screw diameter and lead.",
+        "limitations": "Unmachined customer-cut screw. Ball raceway contact geometry, internal returns, wipers and undimensioned lubrication details are illustrative. No accuracy/preload class or journal execution is claimed.",
+        "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf",
+        "sourceSha256": "26016dac2c8238f16e47eaaaced604f087184be591f9b41e246af3f29ff49665"
+      },
+      "specifications": [
+        {
+          "label": "Catalog edition",
+          "value": "25.02-1F (2025)"
+        },
+        {
+          "label": "Reference construction",
+          "value": "SFNU02510-4"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sfnu03205-4",
+    "name": "TBI SFNU03205-4",
+    "description": "Nominal diameter 32 mm; lead 5 mm/rev; nut length 52 mm. Shaft cut length is editable; ends are unmachined.",
+    "parameters": {
+      "model": "sfnu03205-4",
+      "length": 500,
+      "nutPosition": 50,
+      "rotation": 0
+    },
+    "catalog": {
+      "designation": "SFNU03205-4",
+      "manufacturer": "TBI MOTION",
+      "sourceName": "TBI Ball Screw 25.02-1F, printed C76",
+      "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf#page=76",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "diameter": 32,
+        "lead": 5,
+        "nutDiameter": 50,
+        "nutLength": 52,
+        "flangeDiameter": 80,
+        "flangeWidth": 62,
+        "flangeThickness": 12,
+        "mountCircle": 65,
+        "mountHole": 9,
+        "ballDiameter": 3.175,
+        "series": "SFNU"
+      },
+      "productCodes": [
+        "SFNU03205-4"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Exact published nut/flange envelope, mounting circle, hole diameters, nominal screw diameter and lead.",
+        "limitations": "Unmachined customer-cut screw. Ball raceway contact geometry, internal returns, wipers and undimensioned lubrication details are illustrative. No accuracy/preload class or journal execution is claimed.",
+        "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf",
+        "sourceSha256": "26016dac2c8238f16e47eaaaced604f087184be591f9b41e246af3f29ff49665"
+      },
+      "specifications": [
+        {
+          "label": "Catalog edition",
+          "value": "25.02-1F (2025)"
+        },
+        {
+          "label": "Reference construction",
+          "value": "SFNU03205-4"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sfnu03210-4",
+    "name": "TBI SFNU03210-4",
+    "description": "Nominal diameter 32 mm; lead 10 mm/rev; nut length 85 mm. Shaft cut length is editable; ends are unmachined.",
+    "parameters": {
+      "model": "sfnu03210-4",
+      "length": 500,
+      "nutPosition": 50,
+      "rotation": 0
+    },
+    "catalog": {
+      "designation": "SFNU03210-4",
+      "manufacturer": "TBI MOTION",
+      "sourceName": "TBI Ball Screw 25.02-1F, printed C76",
+      "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf#page=76",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "diameter": 32,
+        "lead": 10,
+        "nutDiameter": 50,
+        "nutLength": 85,
+        "flangeDiameter": 80,
+        "flangeWidth": 62,
+        "flangeThickness": 12,
+        "mountCircle": 65,
+        "mountHole": 9,
+        "ballDiameter": 6.35,
+        "series": "SFNU"
+      },
+      "productCodes": [
+        "SFNU03210-4"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Exact published nut/flange envelope, mounting circle, hole diameters, nominal screw diameter and lead.",
+        "limitations": "Unmachined customer-cut screw. Ball raceway contact geometry, internal returns, wipers and undimensioned lubrication details are illustrative. No accuracy/preload class or journal execution is claimed.",
+        "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf",
+        "sourceSha256": "26016dac2c8238f16e47eaaaced604f087184be591f9b41e246af3f29ff49665"
+      },
+      "specifications": [
+        {
+          "label": "Catalog edition",
+          "value": "25.02-1F (2025)"
+        },
+        {
+          "label": "Reference construction",
+          "value": "SFNU03210-4"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sfb01205-2.8",
+    "name": "TBI SFB01205-2.8",
+    "description": "Nominal diameter 12 mm; lead 5 mm/rev; nut length 30 mm. Shaft cut length is editable; ends are unmachined.",
+    "parameters": {
+      "model": "sfb01205-2.8",
+      "length": 500,
+      "nutPosition": 50,
+      "rotation": 0
+    },
+    "catalog": {
+      "designation": "SFB01205-2.8",
+      "manufacturer": "TBI MOTION",
+      "sourceName": "TBI Ball Screw 25.02-1F, printed C73",
+      "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf#page=73",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "diameter": 12,
+        "lead": 5,
+        "nutDiameter": 24,
+        "nutLength": 30,
+        "flangeDiameter": 40,
+        "flangeWidth": 30,
+        "flangeThickness": 10,
+        "mountCircle": 32,
+        "mountHole": 4.5,
+        "ballDiameter": 2.5,
+        "series": "SFB"
+      },
+      "productCodes": [
+        "SFB01205-2.8"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Exact published nut/flange envelope, mounting circle, hole diameters, nominal screw diameter and lead.",
+        "limitations": "Unmachined customer-cut screw. Ball raceway contact geometry, internal returns, wipers and undimensioned lubrication details are illustrative. No accuracy/preload class or journal execution is claimed.",
+        "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf",
+        "sourceSha256": "26016dac2c8238f16e47eaaaced604f087184be591f9b41e246af3f29ff49665"
+      },
+      "specifications": [
+        {
+          "label": "Catalog edition",
+          "value": "25.02-1F (2025)"
+        },
+        {
+          "label": "Reference construction",
+          "value": "SFB01205-2.8"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sfb01210-2.8",
+    "name": "TBI SFB01210-2.8",
+    "description": "Nominal diameter 12 mm; lead 10 mm/rev; nut length 42 mm. Shaft cut length is editable; ends are unmachined.",
+    "parameters": {
+      "model": "sfb01210-2.8",
+      "length": 500,
+      "nutPosition": 50,
+      "rotation": 0
+    },
+    "catalog": {
+      "designation": "SFB01210-2.8",
+      "manufacturer": "TBI MOTION",
+      "sourceName": "TBI Ball Screw 25.02-1F, printed C73",
+      "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf#page=73",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "diameter": 12,
+        "lead": 10,
+        "nutDiameter": 24,
+        "nutLength": 42,
+        "flangeDiameter": 40,
+        "flangeWidth": 30,
+        "flangeThickness": 10,
+        "mountCircle": 32,
+        "mountHole": 4.5,
+        "ballDiameter": 2.5,
+        "series": "SFB"
+      },
+      "productCodes": [
+        "SFB01210-2.8"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Exact published nut/flange envelope, mounting circle, hole diameters, nominal screw diameter and lead.",
+        "limitations": "Unmachined customer-cut screw. Ball raceway contact geometry, internal returns, wipers and undimensioned lubrication details are illustrative. No accuracy/preload class or journal execution is claimed.",
+        "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf",
+        "sourceSha256": "26016dac2c8238f16e47eaaaced604f087184be591f9b41e246af3f29ff49665"
+      },
+      "specifications": [
+        {
+          "label": "Catalog edition",
+          "value": "25.02-1F (2025)"
+        },
+        {
+          "label": "Reference construction",
+          "value": "SFB01210-2.8"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sfb01605-3.8",
+    "name": "TBI SFB01605-3.8",
+    "description": "Nominal diameter 16 mm; lead 5 mm/rev; nut length 31 mm. Shaft cut length is editable; ends are unmachined.",
+    "parameters": {
+      "model": "sfb01605-3.8",
+      "length": 500,
+      "nutPosition": 50,
+      "rotation": 0
+    },
+    "catalog": {
+      "designation": "SFB01605-3.8",
+      "manufacturer": "TBI MOTION",
+      "sourceName": "TBI Ball Screw 25.02-1F, printed C73",
+      "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf#page=73",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "diameter": 16,
+        "lead": 5,
+        "nutDiameter": 28,
+        "nutLength": 31,
+        "flangeDiameter": 48,
+        "flangeWidth": 40,
+        "flangeThickness": 10,
+        "mountCircle": 38,
+        "mountHole": 5.5,
+        "ballDiameter": 2.778,
+        "series": "SFB"
+      },
+      "productCodes": [
+        "SFB01605-3.8"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Exact published nut/flange envelope, mounting circle, hole diameters, nominal screw diameter and lead.",
+        "limitations": "Unmachined customer-cut screw. Ball raceway contact geometry, internal returns, wipers and undimensioned lubrication details are illustrative. No accuracy/preload class or journal execution is claimed.",
+        "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf",
+        "sourceSha256": "26016dac2c8238f16e47eaaaced604f087184be591f9b41e246af3f29ff49665"
+      },
+      "specifications": [
+        {
+          "label": "Catalog edition",
+          "value": "25.02-1F (2025)"
+        },
+        {
+          "label": "Reference construction",
+          "value": "SFB01605-3.8"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sfb01610-2.8",
+    "name": "TBI SFB01610-2.8",
+    "description": "Nominal diameter 16 mm; lead 10 mm/rev; nut length 42 mm. Shaft cut length is editable; ends are unmachined.",
+    "parameters": {
+      "model": "sfb01610-2.8",
+      "length": 500,
+      "nutPosition": 50,
+      "rotation": 0
+    },
+    "catalog": {
+      "designation": "SFB01610-2.8",
+      "manufacturer": "TBI MOTION",
+      "sourceName": "TBI Ball Screw 25.02-1F, printed C73",
+      "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf#page=73",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "diameter": 16,
+        "lead": 10,
+        "nutDiameter": 28,
+        "nutLength": 42,
+        "flangeDiameter": 48,
+        "flangeWidth": 40,
+        "flangeThickness": 10,
+        "mountCircle": 38,
+        "mountHole": 5.5,
+        "ballDiameter": 2.778,
+        "series": "SFB"
+      },
+      "productCodes": [
+        "SFB01610-2.8"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Exact published nut/flange envelope, mounting circle, hole diameters, nominal screw diameter and lead.",
+        "limitations": "Unmachined customer-cut screw. Ball raceway contact geometry, internal returns, wipers and undimensioned lubrication details are illustrative. No accuracy/preload class or journal execution is claimed.",
+        "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf",
+        "sourceSha256": "26016dac2c8238f16e47eaaaced604f087184be591f9b41e246af3f29ff49665"
+      },
+      "specifications": [
+        {
+          "label": "Catalog edition",
+          "value": "25.02-1F (2025)"
+        },
+        {
+          "label": "Reference construction",
+          "value": "SFB01610-2.8"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sfb02005-3.8",
+    "name": "TBI SFB02005-3.8",
+    "description": "Nominal diameter 20 mm; lead 5 mm/rev; nut length 33 mm. Shaft cut length is editable; ends are unmachined.",
+    "parameters": {
+      "model": "sfb02005-3.8",
+      "length": 500,
+      "nutPosition": 50,
+      "rotation": 0
+    },
+    "catalog": {
+      "designation": "SFB02005-3.8",
+      "manufacturer": "TBI MOTION",
+      "sourceName": "TBI Ball Screw 25.02-1F, printed C73",
+      "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf#page=73",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "diameter": 20,
+        "lead": 5,
+        "nutDiameter": 36,
+        "nutLength": 33,
+        "flangeDiameter": 58,
+        "flangeWidth": 44,
+        "flangeThickness": 10,
+        "mountCircle": 47,
+        "mountHole": 6.6,
+        "ballDiameter": 3.175,
+        "series": "SFB"
+      },
+      "productCodes": [
+        "SFB02005-3.8"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Exact published nut/flange envelope, mounting circle, hole diameters, nominal screw diameter and lead.",
+        "limitations": "Unmachined customer-cut screw. Ball raceway contact geometry, internal returns, wipers and undimensioned lubrication details are illustrative. No accuracy/preload class or journal execution is claimed.",
+        "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf",
+        "sourceSha256": "26016dac2c8238f16e47eaaaced604f087184be591f9b41e246af3f29ff49665"
+      },
+      "specifications": [
+        {
+          "label": "Catalog edition",
+          "value": "25.02-1F (2025)"
+        },
+        {
+          "label": "Reference construction",
+          "value": "SFB02005-3.8"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sfb02010-3.8",
+    "name": "TBI SFB02010-3.8",
+    "description": "Nominal diameter 20 mm; lead 10 mm/rev; nut length 52 mm. Shaft cut length is editable; ends are unmachined.",
+    "parameters": {
+      "model": "sfb02010-3.8",
+      "length": 500,
+      "nutPosition": 50,
+      "rotation": 0
+    },
+    "catalog": {
+      "designation": "SFB02010-3.8",
+      "manufacturer": "TBI MOTION",
+      "sourceName": "TBI Ball Screw 25.02-1F, printed C73",
+      "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf#page=73",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "diameter": 20,
+        "lead": 10,
+        "nutDiameter": 36,
+        "nutLength": 52,
+        "flangeDiameter": 58,
+        "flangeWidth": 44,
+        "flangeThickness": 10,
+        "mountCircle": 47,
+        "mountHole": 6.6,
+        "ballDiameter": 3.175,
+        "series": "SFB"
+      },
+      "productCodes": [
+        "SFB02010-3.8"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Exact published nut/flange envelope, mounting circle, hole diameters, nominal screw diameter and lead.",
+        "limitations": "Unmachined customer-cut screw. Ball raceway contact geometry, internal returns, wipers and undimensioned lubrication details are illustrative. No accuracy/preload class or journal execution is claimed.",
+        "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf",
+        "sourceSha256": "26016dac2c8238f16e47eaaaced604f087184be591f9b41e246af3f29ff49665"
+      },
+      "specifications": [
+        {
+          "label": "Catalog edition",
+          "value": "25.02-1F (2025)"
+        },
+        {
+          "label": "Reference construction",
+          "value": "SFB02010-3.8"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sfb02505-3.8",
+    "name": "TBI SFB02505-3.8",
+    "description": "Nominal diameter 25 mm; lead 5 mm/rev; nut length 33 mm. Shaft cut length is editable; ends are unmachined.",
+    "parameters": {
+      "model": "sfb02505-3.8",
+      "length": 500,
+      "nutPosition": 50,
+      "rotation": 0
+    },
+    "catalog": {
+      "designation": "SFB02505-3.8",
+      "manufacturer": "TBI MOTION",
+      "sourceName": "TBI Ball Screw 25.02-1F, printed C73",
+      "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf#page=73",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "diameter": 25,
+        "lead": 5,
+        "nutDiameter": 40,
+        "nutLength": 33,
+        "flangeDiameter": 62,
+        "flangeWidth": 48,
+        "flangeThickness": 10,
+        "mountCircle": 51,
+        "mountHole": 6.6,
+        "ballDiameter": 3.175,
+        "series": "SFB"
+      },
+      "productCodes": [
+        "SFB02505-3.8"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Exact published nut/flange envelope, mounting circle, hole diameters, nominal screw diameter and lead.",
+        "limitations": "Unmachined customer-cut screw. Ball raceway contact geometry, internal returns, wipers and undimensioned lubrication details are illustrative. No accuracy/preload class or journal execution is claimed.",
+        "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf",
+        "sourceSha256": "26016dac2c8238f16e47eaaaced604f087184be591f9b41e246af3f29ff49665"
+      },
+      "specifications": [
+        {
+          "label": "Catalog edition",
+          "value": "25.02-1F (2025)"
+        },
+        {
+          "label": "Reference construction",
+          "value": "SFB02505-3.8"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sfb02510-3.8",
+    "name": "TBI SFB02510-3.8",
+    "description": "Nominal diameter 25 mm; lead 10 mm/rev; nut length 52 mm. Shaft cut length is editable; ends are unmachined.",
+    "parameters": {
+      "model": "sfb02510-3.8",
+      "length": 500,
+      "nutPosition": 50,
+      "rotation": 0
+    },
+    "catalog": {
+      "designation": "SFB02510-3.8",
+      "manufacturer": "TBI MOTION",
+      "sourceName": "TBI Ball Screw 25.02-1F, printed C73",
+      "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf#page=73",
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "diameter": 25,
+        "lead": 10,
+        "nutDiameter": 40,
+        "nutLength": 52,
+        "flangeDiameter": 62,
+        "flangeWidth": 48,
+        "flangeThickness": 12,
+        "mountCircle": 51,
+        "mountHole": 6.6,
+        "ballDiameter": 3.175,
+        "series": "SFB"
+      },
+      "productCodes": [
+        "SFB02510-3.8"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Exact published nut/flange envelope, mounting circle, hole diameters, nominal screw diameter and lead.",
+        "limitations": "Unmachined customer-cut screw. Ball raceway contact geometry, internal returns, wipers and undimensioned lubrication details are illustrative. No accuracy/preload class or journal execution is claimed.",
+        "sourceUrl": "https://i0528.tbimotion.com.tw/storage/pdf/TBIMOTION_BallScrew_25.02-1F%28EN%29.pdf",
+        "sourceSha256": "26016dac2c8238f16e47eaaaced604f087184be591f9b41e246af3f29ff49665"
+      },
+      "specifications": [
+        {
+          "label": "Catalog edition",
+          "value": "25.02-1F (2025)"
+        },
+        {
+          "label": "Reference construction",
+          "value": "SFB02510-3.8"
+        },
+        {
+          "label": "Source checked",
+          "value": "2026-10-19"
+        }
+      ]
+    }
+  }
+]

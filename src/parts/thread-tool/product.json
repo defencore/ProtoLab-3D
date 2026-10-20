@@ -1,0 +1,14 @@
+{
+  "kind": "reference",
+  "supply": "reference",
+  "description": "Geometric thread tool or configurable cap/plug. Catalog entries identify nominal thread sizes rather than finished purchasable products.",
+  "processes": [
+    "turning",
+    "printing"
+  ],
+  "releaseRequirements": [
+    "Replace the reference with an identified supplier product or a fully detailed manufacturable design before production release.",
+    "Verify all functional interfaces and engineering limits omitted by the reference geometry.",
+    "For a finished cap or plug, define material, fit class, thread runout, tolerances and the final detail designation."
+  ]
+}

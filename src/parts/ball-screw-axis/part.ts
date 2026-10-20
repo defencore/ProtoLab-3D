@@ -1,14 +1,33 @@
+import { detailComponent } from '../../core/component-recipes';
+import { nutCoarsePitch } from '../../core/hardware/internal-thread';
+import {
+  box,
+  cylinder,
+  subtract,
+  union,
+  prism,
+  type Shape,
+} from '../../core/assembly/boundary/shapes';
+import type { AssemblyDefinition, AssemblyComponent } from '../../core/product-types';
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
-import { Group, Mesh } from 'three';
+import { Group } from 'three';
+import detail from '../manufactured-detail/part';
+import {
+  componentGeometry,
+  componentPython,
+  componentMetadataPlacementPython,
+  type ConfiguredPiece,
+} from '../../core/assembly/detail-instances';
 import type { Parameters, PartDefinition } from '../../core/types';
-import { material, n, num, numberParameter, ring } from '../../core/geometry';
-import { booleans, primitives, solidUnionMesh, transforms } from '../../core/solid-union';
+import { n, num, numberParameter } from '../../core/geometry';
 import { ballScrewReferences } from './lib/catalog/ball-screw-reference';
-import ballScrew from './lib/parts/ball-screw';
-import guide from './lib/parts/linear-guide';
-import { ballScrewLayout } from './lib/parts/ball-screw-geometry';
+import ballScrew from '../ball-screw/part';
+import guide from '../linear-guide/part';
+import { ballScrewLayout } from '../ball-screw/lib/parts/ball-screw-geometry';
 
 type Point = [number, number, number];
 type Hole = { axis: 'x' | 'z'; center: Point; diameter: number };
@@ -193,48 +212,6 @@ function bodies(p: Parameters): Body[] {
     }
   return result;
 }
-function bodyMesh(body: Body) {
-  let solid = primitives.cuboid({ size: body.size });
-  for (const hole of body.holes) {
-    let tool = primitives.cylinder({
-      height: Math.max(...body.size) + 2,
-      radius: hole.diameter / 2,
-      segments: 48,
-    });
-    if (hole.axis === 'x') tool = transforms.rotateY(Math.PI / 2, tool);
-    const offset: Point = hole.center.map((value, i) =>
-      (hole.axis === 'x' && i === 0) || (hole.axis === 'z' && i === 2) ? 0 : value - body.center[i],
-    ) as Point;
-    solid = booleans.subtract(solid, transforms.translate(offset, tool));
-  }
-  const group = solidUnionMesh(solid);
-  group.position.set(...body.center);
-  group.name = body.label;
-  group.traverse((object) => {
-    if (object instanceof Mesh) object.material = material(body.color);
-  });
-  return group;
-}
-function bodyPython(body: Body) {
-  const corner = body.center.map((value, i) => value - body.size[i] / 2);
-  const lines = [
-    `item = Part.makeBox(${body.size.map(num).join(',')},App.Vector(${corner.map(num).join(',')}))`,
-  ];
-  for (const hole of body.holes) {
-    const axis = hole.axis === 'x' ? 0 : 2,
-      origin = [...hole.center];
-    origin[axis] = corner[axis] - 1;
-    lines.push(
-      `item = item.cut(Part.makeCylinder(${num(hole.diameter / 2)},${num(body.size[axis] + 2)},App.Vector(${origin.map(num).join(',')}),App.Vector(${hole.axis === 'x' ? '1,0,0' : '0,0,1'})))`,
-    );
-  }
-  lines.push(
-    'axis_components.append(item.removeSplitter())',
-    `axis_labels.append(${JSON.stringify(body.label)})`,
-    `axis_colors.append(${JSON.stringify([((body.color >> 16) & 255) / 255, ((body.color >> 8) & 255) / 255, (body.color & 255) / 255])})`,
-  );
-  return lines.join('\n');
-}
 function bearings(p: Parameters) {
   const v = ballScrewAxisLayout(p);
   return [true, false].map((fixed) => ({
@@ -305,45 +282,81 @@ function fasteners(p: Parameters): Fastener[] {
   }
   return result;
 }
-function fastenerMesh(b: Fastener) {
-  const total = b.length + b.diameter;
-  const shaft = primitives.cylinder({
-    radius: b.diameter / 2,
-    height: b.length,
-    center: [0, 0, -b.diameter / 2],
-    segments: 32,
-  });
-  const head = primitives.cylinder({
-    radius: b.diameter * 0.85,
-    height: b.diameter,
-    center: [0, 0, b.length / 2],
-    segments: 32,
-  });
-  const drive = primitives.cylinder({
-    radius: b.diameter * 0.42,
-    height: b.diameter,
-    center: [0, 0, total / 2],
-    segments: 6,
-  });
-  const group = solidUnionMesh(booleans.subtract(booleans.union(shaft, head), drive));
-  group.name = b.label;
-  group.position.set(...b.center);
-  if (b.axis === 'x') group.rotation.y = -Math.PI / 2;
-  group.traverse((object) => {
-    if (object instanceof Mesh) object.material = material(0x252d38);
-  });
-  return group;
-}
-function fastenerPython(b: Fastener) {
-  const total = b.length + b.diameter;
-  return `item = Part.makeCylinder(${num(b.diameter / 2)},${num(b.length)},App.Vector(0,0,${num(-total / 2)})).fuse(Part.makeCylinder(${num(b.diameter * 0.85)},${num(b.diameter)},App.Vector(0,0,${num(total / 2 - b.diameter)})))
-points = [App.Vector(${num(b.diameter * 0.42)}*math.cos(i*math.pi/3),${num(b.diameter * 0.42)}*math.sin(i*math.pi/3),${num(total / 2 - b.diameter / 2)}) for i in range(6)]
-item = item.cut(Part.Face(Part.makePolygon(points+[points[0]])).extrude(App.Vector(0,0,${num(b.diameter)}))).removeSplitter()
-${b.axis === 'x' ? 'item.rotate(App.Vector(),App.Vector(0,1,0),-90)' : ''}
-item.translate(App.Vector(${b.center.map(num).join(',')}))
-axis_components.append(item)
-axis_labels.append(${JSON.stringify(b.label)})
-axis_colors.append((0.15,0.18,0.22))`;
+function customInstances(p: Parameters): ConfiguredPiece[] {
+  const result: ConfiguredPiece[] = [];
+  for (const [index, body] of bodies(p).entries()) {
+    const start = body.center.map((value, i) => value - body.size[i] / 2) as Point;
+    const tools = body.holes.map((hole) => {
+      const axis = hole.axis === 'x' ? 0 : 2,
+        origin = [...hole.center] as Point;
+      origin[axis] = start[axis] - 1;
+      return cylinder(hole.diameter / 2, body.size[axis] + 2, origin, hole.axis);
+    });
+    result.push({
+      label: body.label,
+      color: body.color,
+      component: detailComponent(
+        'body-' + index,
+        body.label,
+        tools.length ? subtract(box(body.size, start), ...tools) : box(body.size, start),
+        { edgeTolerance: 1e-6 },
+      ),
+    });
+  }
+  if (p.showSupports)
+    for (const [index, b] of bearings(p).entries()) {
+      const origin: Point = [b.center[0] - b.length / 2, 0, b.center[2]];
+      result.push({
+        label: b.label,
+        color: 0x8294a7,
+        component: detailComponent(
+          'support-ring-' + index,
+          b.label,
+          subtract(
+            { ...cylinder(b.bore / 2 + 3.95, b.length, origin, 'x'), segments: 128 } as Shape,
+            {
+              ...cylinder(b.bore / 2 + 0.1, b.length + 2, [origin[0] - 1, 0, origin[2]], 'x'),
+              segments: 128,
+            } as Shape,
+          ),
+          { edgeTolerance: 1e-6 },
+        ),
+      });
+    }
+  for (const [index, b] of fasteners(p).entries()) {
+    const total = b.length + b.diameter;
+    const drive: [number, number][] = Array.from({ length: 6 }, (_, i) => [
+      b.diameter * 0.42 * Math.cos((i * Math.PI) / 3),
+      b.diameter * 0.42 * Math.sin((i * Math.PI) / 3),
+    ]);
+    const shape: Shape = {
+      kind: 'transform',
+      child: subtract(
+        union(
+          {
+            ...cylinder(b.diameter / 2, b.length, [0, 0, -total / 2]),
+            segments: 32,
+            thread: { pitch: nutCoarsePitch(b.diameter) },
+          } as Shape,
+          {
+            ...cylinder(b.diameter * 0.85, b.diameter, [0, 0, total / 2 - b.diameter]),
+            segments: 32,
+          } as Shape,
+        ),
+        prism(drive, b.diameter, total / 2 - b.diameter / 2),
+      ),
+      translation: b.center,
+      rotation: [0, b.axis === 'x' ? -90 : 0, 0],
+    };
+    result.push({
+      label: b.label,
+      color: 0x252d38,
+      component: detailComponent('custom-fastener-' + index, b.label, shape, {
+        edgeTolerance: 1e-6,
+      }),
+    });
+  }
+  return result;
 }
 function build(p: Parameters, state: string) {
   const v = ballScrewAxisLayout(p),
@@ -357,20 +370,52 @@ function build(p: Parameters, state: string) {
     rail.position.set(0, (side * v.spacing) / 2, v.base);
     group.add(rail);
   }
-  for (const body of bodies(p)) group.add(bodyMesh(body));
-  if (p.showSupports)
-    for (const bearing of bearings(p)) {
-      const mesh = ring(bearing.bore / 2 + 3.95, bearing.bore / 2 + 0.1, bearing.length, 0x8294a7);
-      mesh.rotation.y = Math.PI / 2;
-      mesh.position.set(...bearing.center);
-      mesh.name = bearing.label;
-      group.add(mesh);
-    }
-  for (const bolt of fasteners(p)) group.add(fastenerMesh(bolt));
+  const customs = componentGeometry([detail], customInstances(p));
+  group.add(...customs.children);
   return group;
+}
+
+/** Full physical composition; table pose and detail toggles do not alter the definition. */
+function composition(parameters: Parameters): AssemblyDefinition {
+  const p: Parameters = { ...parameters, position: 50, detail: 'raceway' },
+    v = ballScrewAxisLayout(p);
+  const components: AssemblyComponent[] = [
+    {
+      id: 'drive',
+      libraryId: 'ball-screw',
+      parameters: v.screw,
+      state: 'assembled',
+      name: 'Configured ball screw and nut',
+      supply: 'purchased',
+      quantity: 1,
+      placement: { translation: [0, 0, v.screwZ], rotation: [0, 90, 0] },
+    },
+    ...[-1, 1].map((side) => ({
+      id: side < 0 ? 'left-guide' : 'right-guide',
+      libraryId: 'linear-guide',
+      parameters: v.rail,
+      state: 'assembled',
+      name: side < 0 ? 'Left profile guide' : 'Right profile guide',
+      supply: 'purchased' as const,
+      quantity: 1,
+      placement: {
+        translation: [0, (side * v.spacing) / 2, v.base] as Point,
+        rotation: [0, 0, 0] as Point,
+      },
+    })),
+  ];
+  components.push(...customInstances(p).map((piece) => piece.component));
+  return {
+    components,
+    issues: [
+      'Select actual end support bearings and stock fastener designations. Current rings and fasteners retain prototype fit geometry, not a qualified purchase selection. Specify stock, material, operations, fits and drawings for the custom supports and mounting bodies. Confirm screw-end machining with the supplier.',
+    ],
+  };
 }
 const part: PartDefinition = {
   id: 'ball-screw-axis',
+  composition,
+  product: productData as ProductProfile,
   name: 'Ball screw linear actuator',
   category: 'LINEAR MOTION',
   subgroup: 'BALL SCREWS',
@@ -422,6 +467,7 @@ const part: PartDefinition = {
       label: 'Screw detail',
       type: 'select',
       group: 'Display',
+      visibleWhen: () => false,
       options: [
         { value: 'envelope', label: 'Fast envelope' },
         { value: 'raceway', label: 'Helical raceways and balls' },
@@ -447,7 +493,7 @@ const part: PartDefinition = {
       id: 'cutaway',
       label: 'Inspect ball circuits',
       description:
-        'Open nut and carriage housings; choose helical detail to inspect screw raceway balls.',
+        'Open nut and carriage housings; global Full mode also reveals the screw raceways.',
     },
   ],
   presetMatchKeys: ['screwSize', 'length', 'guideSize', 'guideSpacing'],
@@ -473,19 +519,43 @@ const part: PartDefinition = {
   },
   python(p, state) {
     const v = ballScrewAxisLayout(p),
-      chunks = ['axis_components = []', 'axis_labels = []', 'axis_colors = []'];
-    const add = (name: string, source: string, transform: string, prefix: string) => {
+      chunks = [
+        'import json',
+        componentMetadataPlacementPython(),
+        'axis_components = []',
+        'axis_labels = []',
+        'axis_colors = []',
+        'axis_metadata = []',
+      ];
+    const add = (
+      name: string,
+      source: string,
+      transform: string,
+      prefix: string,
+      library: PartDefinition,
+      parameters: Parameters,
+      rotation: Point,
+      translation: Point,
+    ) => {
+      const provenance = {
+        LibraryId: library.id,
+        ConfigurationJSON: JSON.stringify(parameters),
+        Supply: 'purchased',
+      };
       chunks.push(
-        `def ${name}():\n    component_labels = None\n    component_colors = None\n${source
+        `def ${name}():\n    component_labels = None\n    component_colors = None\n    component_metadata = None\n${source
           .split('\n')
           .map((line) => `    ${line}`)
-          .join('\n')}\n    return shape, component_labels, component_colors`,
-        `child_shape, child_labels, child_colors = ${name}()`,
+          .join('\n')}\n    return shape, component_labels, component_colors, component_metadata`,
+        `child_shape, child_labels, child_colors, child_metadata = ${name}()`,
         transform,
         'child_components = child_shape.childShapes() if child_shape.ShapeType == "Compound" else [child_shape]',
         'axis_components.extend(child_components)',
         `axis_labels.extend([${JSON.stringify(prefix)} + label for label in child_labels] if child_labels is not None else [${JSON.stringify(prefix + 'Component ')} + str(i+1) for i in range(len(child_components))])`,
         'axis_colors.extend(child_colors if child_colors is not None else [(0.62,0.70,0.78)] * len(child_components))',
+        'if child_metadata is not None and len(child_metadata) != len(child_components):',
+        `    raise ValueError(${JSON.stringify('Library component metadata does not match ' + library.id)})`,
+        `axis_metadata.extend(dict(_pl_placed_metadata(metadata, ${JSON.stringify(rotation)}, ${JSON.stringify(translation)}, 0, [0,0,0]), **${JSON.stringify(provenance)}) for metadata in (child_metadata if child_metadata is not None else [{} for _ in child_components]))`,
       );
     };
     add(
@@ -493,6 +563,10 @@ const part: PartDefinition = {
       ballScrew.python(v.screw, state === 'cutaway' ? 'cutaway' : 'assembled'),
       `child_shape.rotate(App.Vector(),App.Vector(0,1,0),90)\nchild_shape.translate(App.Vector(0,0,${num(v.screwZ)}))`,
       'Drive · ',
+      ballScrew,
+      v.screw,
+      [0, 90, 0],
+      [0, 0, v.screwZ],
     );
     for (const side of [-1, 1])
       add(
@@ -500,26 +574,28 @@ const part: PartDefinition = {
         guide.python(v.rail, state === 'cutaway' ? 'cutaway' : 'assembled'),
         `child_shape.translate(App.Vector(0,${num((side * v.spacing) / 2)},${num(v.base)}))`,
         `${side < 0 ? 'Left' : 'Right'} guide · `,
+        guide,
+        v.rail,
+        [0, 0, 0],
+        [0, (side * v.spacing) / 2, v.base],
       );
-    for (const body of bodies(p)) chunks.push(bodyPython(body));
-    if (p.showSupports)
-      for (const b of bearings(p))
-        chunks.push(
-          `item = Part.makeCylinder(${num(b.bore / 2 + 3.95)},${num(b.length)},App.Vector(${num(b.center[0] - b.length / 2)},0,${num(b.center[2])}),App.Vector(1,0,0))\nitem = item.cut(Part.makeCylinder(${num(b.bore / 2 + 0.1)},${num(b.length + 2)},App.Vector(${num(b.center[0] - b.length / 2 - 1)},0,${num(b.center[2])}),App.Vector(1,0,0)))\naxis_components.append(item)\naxis_labels.append(${JSON.stringify(b.label)})\naxis_colors.append((0.51,0.58,0.65))`,
-        );
-    for (const bolt of fasteners(p)) chunks.push(fastenerPython(bolt));
+    chunks.push(
+      componentPython([detail], customInstances(p)),
+      'axis_components.extend(components)',
+      'axis_labels.extend(component_labels)',
+      'axis_colors.extend(component_colors)',
+      'axis_metadata.extend(component_metadata)',
+    );
     chunks.push(
       'shape = Part.makeCompound(axis_components)',
       'component_labels = axis_labels',
       'component_colors = axis_colors',
+      'component_metadata = axis_metadata',
     );
     return chunks.join('\n');
   },
-  sources: [
-    { label: 'Supplied SFU dimensions', url: '' },
-    ...(guide.sources ?? []),
-  ],
+  sources: [{ label: 'Supplied SFU dimensions', url: '' }, ...(guide.sources ?? [])],
   notes:
-    'Prototype axis assembly. Screw/nut and MGN rail envelopes use the selected catalog rows; base, saddle, risers, support bearings and machined journals are custom layout geometry. End bearing rings represent clearances, not a bearing selection or load rating. Table travel is limited to clear both screw supports. The fast envelope omits screw raceway balls; choose helical detail to inspect them.',
+    'Prototype axis assembly. Screw/nut and MGN rail envelopes use the selected catalog rows; base, saddle, risers, support bearings and machined journals are custom layout geometry. End bearing rings represent clearances, not a bearing selection or load rating. Table travel is limited to clear both screw supports. Global Simple mode provides nominal thread and raceway envelopes; Full mode provides physical helical detail. Cutaway opens the housings for inspection.',
 };
 export default { ...part, presets: modulePresets };

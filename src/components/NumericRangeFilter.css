@@ -1,0 +1,44 @@
+.numeric-range-filter {
+  min-width: 0;
+}
+.numeric-range-filter > label {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+}
+.numeric-range-filter > label small {
+  color: #82909f;
+}
+.numeric-range-inputs {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 6px;
+}
+.numeric-range-inputs > span {
+  color: #74808e;
+  text-align: center;
+}
+.numeric-range-inputs input {
+  width: 100%;
+  min-width: 0;
+  padding: 8px;
+  background: #272c34;
+  border: 1px solid #414a56;
+  border-radius: 4px;
+  color: #e0e6ee;
+  font: 11px var(--mono, monospace);
+}
+.numeric-range-inputs input[aria-invalid='true'] {
+  border-color: #d58275;
+}
+.numeric-range-inputs input:focus-visible {
+  outline: 2px solid var(--orange, #efa46a);
+  outline-offset: 2px;
+}
+.numeric-range-error {
+  margin: 6px 0 0;
+  color: #f0a999;
+  font-size: 10px;
+  line-height: 1.5;
+}

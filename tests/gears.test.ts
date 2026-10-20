@@ -5,7 +5,7 @@ import spur from "../src/parts/spur-gear/part";
 import helical from "../src/parts/helical-gear/part";
 import bevel from "../src/parts/bevel-gear/part";
 import rack, { rackProfile } from "../src/parts/gear-rack/part";
-import { gearValues, helicalLayers, involuteProfile } from "../src/parts/spur-gear/lib/core/gears";
+import { gearValues, helicalLayers, involuteProfile } from "../src/core/hardware/gears";
 import { validateParameters } from '../src/core/validation';
 
 function dispose(group: THREE.Group) {

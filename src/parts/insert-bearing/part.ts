@@ -1,3 +1,5 @@
+import productData from './product.json';
+import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
@@ -18,7 +20,7 @@ import {
   turnedPython,
   validateEnvelope,
   type TurnedProfile,
-} from './lib/parts/motion-bearing-utils';
+} from '../../core/hardware/motion-bearing-utils';
 import { motionSources } from './lib/catalog/motion-bearings';
 
 function outerProfile(p: PartDefinition['defaults']): TurnedProfile {
@@ -30,6 +32,7 @@ function outerProfile(p: PartDefinition['defaults']): TurnedProfile {
 }
 const part: PartDefinition = {
   id: 'insert-bearing',
+  product: productData as ProductProfile,
   name: 'Insert bearing',
   category: 'BEARINGS & SEALS',
   subgroup: 'MOUNTED BEARINGS',
@@ -48,7 +51,7 @@ const part: PartDefinition = {
     'UC205',
   ],
   parameters: [
-    ...envelopeParameters,
+    ...envelopeParameters(),
     numberParameter('outerWidth', 'Outer ring width', 'C', 'Insert', 1, 100),
     numberParameter('hubDiameter', 'Inner ring shoulder diameter', 'd1', 'Insert', 2, 250),
   ],
