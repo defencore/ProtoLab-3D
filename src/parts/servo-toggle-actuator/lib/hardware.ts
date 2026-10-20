@@ -61,7 +61,7 @@ export function screw(
     drive: 'hex',
     driveWidth: d <= 2 ? 1.5 : d === 3 ? 2.5 : 3,
     driveDepth: d / 2,
-    threadMode: 'threaded',
+    threadMode: 'envelope',
     threadSpan: 'full',
     pitch: d === 1.6 ? 0.35 : d === 2 ? 0.4 : d === 3 ? 0.5 : 0.7,
     threadLength: length,
@@ -112,9 +112,7 @@ export function hardware(p: Parameters): ConfiguredPiece[] {
   const stockLength = Math.ceil((cageTop - 1) / 5) * 5;
   // Custom heights may require a fitted screw to clear the moving fork above the nut.
   const cageLength =
-    4.2 + stockLength <= m.contactZ - 2.2
-      ? stockLength
-      : Math.round((cageTop - 0.8) * 100) / 100;
+    4.2 + stockLength <= m.contactZ - 2.2 ? stockLength : Math.round((cageTop - 0.8) * 100) / 100;
   for (const x of [m.servoX - 16, m.servoX + 38])
     for (const y of [-18, 18]) {
       result.push(screw(`servo-tie-${x}-${y}`, 4, cageLength, [x, y, 4.2], [180, 0, 0]));

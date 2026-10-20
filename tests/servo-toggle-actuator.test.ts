@@ -9,6 +9,7 @@ import { layout } from '../src/parts/servo-toggle-actuator/lib/layout';
 import { parallelMountDetails } from '../src/parts/servo-toggle-actuator/lib/parallel-mount';
 import { parallelPanelInterface } from '../src/parts/servo-toggle-actuator/lib/parallel-installation';
 import { parallelLegendLayout } from '../src/parts/servo-toggle-actuator/lib/parallel-legends';
+import { hardwareLibraries } from '../src/parts/servo-toggle-actuator/lib/hardware';
 import { validateParameters } from '../src/core/validation';
 import { matchingPresetId } from '../src/core/part-selection';
 import { disposeModel } from '../src/core/mechanical';
@@ -171,6 +172,24 @@ test('the mechanism is an authored assembly with stable source units and complet
   for (const item of component.filter((c) => c.supply === 'manufactured')) {
     assert.equal(item.libraryId, 'manufactured-detail');
     assert.ok(item.manufacturing?.material);
+  }
+});
+
+test('all actuator presets resolve valid fastener configurations in the shared hardware library', () => {
+  const definitions = new Map(hardwareLibraries.map((definition) => [definition.id, definition]));
+  for (const configuration of [{ id: 'defaults', parameters: part.defaults }, ...part.presets]) {
+    const hardware = part.composition!(configuration.parameters).components.filter((component) =>
+      definitions.has(component.libraryId),
+    );
+    assert.ok(hardware.length, configuration.id);
+    for (const component of hardware) {
+      const definition = definitions.get(component.libraryId)!;
+      assert.deepEqual(
+        validateParameters(definition, component.parameters, component.state),
+        [],
+        `${configuration.id}/${component.id}: ${component.name}`,
+      );
+    }
   }
 });
 
