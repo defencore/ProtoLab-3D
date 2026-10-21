@@ -1,7 +1,16 @@
 import type { Parameters } from '../../../core/types';
 import data from './models.json';
 import type { Piece } from '../../../core/assembly/electronics/assembly';
-import { box, cylinder, prism, roundedRect, subtract, type Shape, type Vec } from '../../../core/assembly/electronics/shapes';
+import {
+  box,
+  cylinder,
+  prism,
+  roundedRect,
+  subtract,
+  type Shape,
+  type Vec,
+} from '../../../core/assembly/electronics/shapes';
+import { cm5Models, cm5Pieces } from './cm5';
 interface Detail {
   kind: string;
   name: string;
@@ -35,6 +44,7 @@ const black = 0x25282c,
   gold = 0xc6ab68,
   silver = 0xaab4bc;
 export function pieces(p: Parameters, state: string): Piece[] {
+  if (cm5Models.some((model) => model.id === p.model)) return cm5Pieces(p, state);
   const m = models.find((m) => m.id === p.model);
   if (!m) throw new Error('Unknown module model');
   const lightweight = p.detail === 'lightweight';

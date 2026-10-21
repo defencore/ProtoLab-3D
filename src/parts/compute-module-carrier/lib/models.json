@@ -1,0 +1,962 @@
+[
+  {
+    "id": "raspberry-pi-cm5-io-rev2",
+    "name": "Raspberry Pi Compute Module 5 IO Board \u00b7 rev 2",
+    "manufacturer": "Raspberry Pi",
+    "revision": "Official KiCad revision 2",
+    "width": 160,
+    "length": 90,
+    "board": 1.6,
+    "radius": 3.5,
+    "holes": [
+      [
+        -69.0,
+        -37.0,
+        2.7
+      ],
+      [
+        -76.5,
+        -41.5,
+        2.7
+      ],
+      [
+        -76.5,
+        7.5,
+        2.7
+      ],
+      [
+        -18.5,
+        -41.5,
+        2.7
+      ],
+      [
+        -18.5,
+        7.5,
+        2.7
+      ],
+      [
+        52.5,
+        32.0,
+        2.7
+      ],
+      [
+        -69.0,
+        32.0,
+        2.7
+      ],
+      [
+        52.5,
+        -37.0,
+        2.7
+      ]
+    ],
+    "moduleHoles": [
+      [
+        36.5,
+        -6.5,
+        2.7
+      ],
+      [
+        36.5,
+        41.5,
+        2.7
+      ],
+      [
+        3.5,
+        -6.5,
+        2.7
+      ],
+      [
+        3.5,
+        41.5,
+        2.7
+      ]
+    ],
+    "components": [
+      {
+        "label": "CAM/DISP0",
+        "origin": [
+          -76.1075,
+          38.0222,
+          1.6
+        ],
+        "size": [
+          15.1,
+          6.4,
+          2.0302
+        ],
+        "color": 12894646,
+        "style": "socket",
+        "sourceBounds": [
+          -76.1075,
+          -61.0075,
+          38.0222,
+          44.4222,
+          1.5302,
+          3.6302
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "y+"
+      },
+      {
+        "label": "CAM/DISP1",
+        "origin": [
+          -40.1075,
+          38.0222,
+          1.6
+        ],
+        "size": [
+          15.1,
+          6.4,
+          2.0302
+        ],
+        "color": 12894646,
+        "style": "socket",
+        "sourceBounds": [
+          -40.1075,
+          -25.0075,
+          38.0222,
+          44.4222,
+          1.5302,
+          3.6302
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "y+"
+      },
+      {
+        "label": "Gigabit Ethernet RJ45",
+        "origin": [
+          -14.1426,
+          -46.3,
+          1.6
+        ],
+        "size": [
+          16.2852,
+          21.25,
+          13.445
+        ],
+        "color": 11187388,
+        "style": "socket",
+        "sourceBounds": [
+          -14.1426,
+          2.1426,
+          -46.3,
+          -25.05,
+          -2.255,
+          15.045
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "y-"
+      },
+      {
+        "label": "HDMI0",
+        "origin": [
+          -64.5,
+          -45.95,
+          1.6
+        ],
+        "size": [
+          15.0,
+          12.15,
+          6.27
+        ],
+        "color": 11187388,
+        "style": "socket",
+        "sourceBounds": [
+          -64.5,
+          -49.5,
+          -45.95,
+          -33.8,
+          -0.51,
+          7.87
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "y-"
+      },
+      {
+        "label": "HDMI1",
+        "origin": [
+          -39.5,
+          -45.95,
+          1.6
+        ],
+        "size": [
+          15.0,
+          12.15,
+          6.27
+        ],
+        "color": 11187388,
+        "style": "socket",
+        "sourceBounds": [
+          -39.5,
+          -24.5,
+          -45.95,
+          -33.8,
+          -0.51,
+          7.87
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "y-"
+      },
+      {
+        "label": "Stacked dual USB3 TypeA",
+        "origin": [
+          5.1241,
+          -46.095,
+          1.6
+        ],
+        "size": [
+          15.7501,
+          17.5,
+          16.315
+        ],
+        "color": 11187388,
+        "style": "socket",
+        "sourceBounds": [
+          5.1241,
+          20.8742,
+          -46.095,
+          -28.595,
+          -1.4845,
+          17.915
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "y-",
+        "openings": 2
+      },
+      {
+        "label": "M.2 M-key",
+        "origin": [
+          56.575,
+          -43.3189,
+          1.6
+        ],
+        "size": [
+          21.85,
+          8.37,
+          3.0194
+        ],
+        "color": 2435116,
+        "style": "socket",
+        "sourceBounds": [
+          56.575,
+          78.425,
+          -43.3189,
+          -34.9489,
+          0.8935,
+          4.6194
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "z+"
+      },
+      {
+        "label": "4-pin fan JST-SH",
+        "origin": [
+          44.35,
+          29.3,
+          1.6
+        ],
+        "size": [
+          3.6,
+          6.0,
+          4.345
+        ],
+        "color": 12894646,
+        "style": "socket",
+        "sourceBounds": [
+          44.35,
+          47.95,
+          29.3,
+          35.3,
+          1.595,
+          5.945
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "z+"
+      },
+      {
+        "label": "100-pin CM5 B2B connector0",
+        "origin": [
+          35.31,
+          8.7,
+          1.6
+        ],
+        "size": [
+          3.38,
+          22.6,
+          1.405
+        ],
+        "color": 2435116,
+        "style": "b2b",
+        "sourceBounds": [
+          35.31,
+          38.69,
+          8.7,
+          31.3,
+          1.555,
+          3.005
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "z+"
+      },
+      {
+        "label": "100-pin CM5 B2B connector1",
+        "origin": [
+          1.31,
+          8.7,
+          1.6
+        ],
+        "size": [
+          3.38,
+          22.6,
+          1.405
+        ],
+        "color": 2435116,
+        "style": "b2b",
+        "sourceBounds": [
+          1.31,
+          4.69,
+          8.7,
+          31.3,
+          1.555,
+          3.005
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "z+"
+      },
+      {
+        "label": "40-pin GPIO",
+        "origin": [
+          -72.9,
+          4.96,
+          1.6
+        ],
+        "size": [
+          50.8,
+          5.08,
+          8.5
+        ],
+        "color": 2435116,
+        "style": "header",
+        "sourceBounds": [
+          -72.9,
+          -22.1,
+          4.96,
+          10.04,
+          1.6,
+          10.1
+        ],
+        "evidence": "exact manufacturer KiCad Fab XY; approximate Z envelope; no source STEP for this component"
+      },
+      {
+        "label": "USB-C power",
+        "origin": [
+          23.53,
+          -46.2,
+          1.6
+        ],
+        "size": [
+          8.94,
+          7.35,
+          3.3
+        ],
+        "color": 11187388,
+        "style": "socket",
+        "sourceBounds": [
+          23.53,
+          32.47,
+          -46.2,
+          -38.85,
+          1.6,
+          4.9
+        ],
+        "evidence": "exact manufacturer KiCad Fab XY; approximate Z envelope; no source STEP for this component",
+        "mouth": "y-"
+      },
+      {
+        "label": "microSD socket",
+        "origin": [
+          35.53,
+          -44.475,
+          1.6
+        ],
+        "size": [
+          13.1,
+          14.05,
+          1.8
+        ],
+        "color": 11187388,
+        "style": "socket",
+        "sourceBounds": [
+          35.53,
+          48.63,
+          -44.475,
+          -30.425,
+          1.6,
+          3.4
+        ],
+        "evidence": "exact manufacturer KiCad Fab XY; approximate Z envelope; no source STEP for this component",
+        "mouth": "y-"
+      },
+      {
+        "label": "Power button",
+        "origin": [
+          -54.25,
+          37.9,
+          1.6
+        ],
+        "size": [
+          7.5,
+          10.05,
+          5.8
+        ],
+        "color": 2435116,
+        "style": "box",
+        "sourceBounds": [
+          -54.25,
+          -46.75,
+          37.9,
+          47.95,
+          1.6,
+          7.4
+        ],
+        "evidence": "exact manufacturer KiCad Fab XY; approximate Z envelope; no source STEP for this component"
+      },
+      {
+        "label": "RTC coin-cell holder",
+        "origin": [
+          -77.7682,
+          -18.83,
+          1.6
+        ],
+        "size": [
+          16.1582,
+          21.26,
+          5.0
+        ],
+        "color": 2435116,
+        "style": "box",
+        "sourceBounds": [
+          -77.7682,
+          -61.61,
+          -18.83,
+          2.43,
+          1.6,
+          6.6
+        ],
+        "evidence": "exact manufacturer KiCad Fab XY; approximate Z envelope; no source STEP for this component"
+      }
+    ],
+    "source": "https://www.raspberrypi.com/products/compute-module-5-io-board/",
+    "references": [
+      "https://pip-assets.raspberrypi.com/categories/1098-design-files/documents/RP-008099-DD-1-CM5%20IO%20Board%2C%20revision%202%2C%20KiCAD%20files..zip"
+    ],
+    "sourceSha256": "48b14a6757b0edc0ac110331445f35a4212b5ce432bdcec6605c99431b59496b",
+    "attributes": {
+      "manufacturer": "Raspberry Pi",
+      "module": "CM5",
+      "width": 160,
+      "length": 90,
+      "usb3": 2,
+      "ethernet": 1,
+      "hdmi": 2,
+      "pcie": "M.2 M-key"
+    },
+    "limitations": "Authored reconstruction from official revision 2 KiCad geometry and connector reference models. Five components have source footprint XY dimensions and approximate heights. Nominal PCB thickness is 1.6 mm from the general KiCad field; the exported source stackup is 1.51 mm. Connector bodies are seated on the nominal PCB faces. Solder tails, traces and small electronics are omitted. B2B open-shell reference envelopes are reconstructed as closed bodies; cavity profiles, individual GPIO contacts and colors are illustrative. The source archive notes that some component models are approximate."
+  },
+  {
+    "id": "waveshare-cm5-io-base-a",
+    "name": "Waveshare CM5-IO-BASE-A",
+    "manufacturer": "Waveshare",
+    "revision": "Manufacturer STEP 2025-02-25",
+    "width": 85,
+    "length": 56,
+    "board": 1.6,
+    "radius": 3.5,
+    "holes": [
+      [
+        -39.0,
+        -24.5,
+        3.0
+      ],
+      [
+        19.0,
+        -24.5,
+        3.0
+      ],
+      [
+        -39.0,
+        24.5,
+        3.0
+      ],
+      [
+        19.0,
+        24.5,
+        3.0
+      ]
+    ],
+    "moduleHoles": [
+      [
+        -30.95,
+        -15.85,
+        3.0
+      ],
+      [
+        17.05,
+        -15.85,
+        3.0
+      ],
+      [
+        -30.95,
+        17.15,
+        3.0
+      ],
+      [
+        17.05,
+        17.15,
+        3.0
+      ]
+    ],
+    "components": [
+      {
+        "label": "40-pin GPIO",
+        "origin": [
+          -35.4,
+          21.96,
+          1.6
+        ],
+        "size": [
+          50.8,
+          5.08,
+          8.3
+        ],
+        "color": 2435116,
+        "style": "header",
+        "sourceBounds": [
+          -35.4,
+          15.4,
+          21.96,
+          27.04,
+          -1.4,
+          9.9
+        ],
+        "evidence": "manufacturer STEP bounds including terminals"
+      },
+      {
+        "label": "USB-C power",
+        "origin": [
+          -43.8387,
+          12.3102,
+          1.6
+        ],
+        "size": [
+          7.6,
+          8.94,
+          3.3121
+        ],
+        "color": 11187388,
+        "style": "socket",
+        "sourceBounds": [
+          -43.8387,
+          -36.2387,
+          12.3102,
+          21.2502,
+          0.7889,
+          4.9121
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "x-"
+      },
+      {
+        "label": "Gigabit Ethernet RJ45",
+        "origin": [
+          22.8966,
+          9.7191,
+          1.6
+        ],
+        "size": [
+          21.436,
+          16.1036,
+          13.5318
+        ],
+        "color": 11187388,
+        "style": "socket",
+        "sourceBounds": [
+          22.8966,
+          44.3326,
+          9.7191,
+          25.8227,
+          -2.1,
+          15.1318
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "x+"
+      },
+      {
+        "label": "Stacked dual USB3 TypeA",
+        "origin": [
+          26.2323,
+          -8.2778,
+          1.6
+        ],
+        "size": [
+          17.46,
+          15.826,
+          16.4
+        ],
+        "color": 11187388,
+        "style": "socket",
+        "sourceBounds": [
+          26.2323,
+          43.6923,
+          -8.2778,
+          7.5482,
+          -1.4945,
+          18.0
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "x+",
+        "openings": 2
+      },
+      {
+        "label": "HDMI0",
+        "origin": [
+          31.9596,
+          -26.55,
+          1.6
+        ],
+        "size": [
+          12.15,
+          15.0,
+          6.3
+        ],
+        "color": 11187388,
+        "style": "socket",
+        "sourceBounds": [
+          31.9596,
+          44.1096,
+          -26.55,
+          -11.55,
+          -0.48,
+          7.9
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "x+"
+      },
+      {
+        "label": "CR1220 batteryholder",
+        "origin": [
+          -26.4526,
+          -26.6271,
+          -4.35
+        ],
+        "size": [
+          18.8062,
+          14.7528,
+          4.35
+        ],
+        "color": 2435116,
+        "style": "box",
+        "sourceBounds": [
+          -26.4526,
+          -7.6464,
+          -26.6271,
+          -11.8743,
+          -4.35,
+          0.4
+        ],
+        "evidence": "manufacturer STEP bounds including terminals"
+      },
+      {
+        "label": "microSD socket",
+        "origin": [
+          -41.9788,
+          -10.6012,
+          -1.85
+        ],
+        "size": [
+          15.0026,
+          16.1,
+          1.85
+        ],
+        "color": 11187388,
+        "style": "socket",
+        "sourceBounds": [
+          -41.9788,
+          -26.9762,
+          -10.6012,
+          5.4988,
+          -1.85,
+          0.6
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "x-"
+      },
+      {
+        "label": "USB2 FFC socket",
+        "origin": [
+          36.1108,
+          -24.6,
+          -2.0
+        ],
+        "size": [
+          5.4,
+          11.0,
+          2.0
+        ],
+        "color": 12894646,
+        "style": "socket",
+        "sourceBounds": [
+          36.1108,
+          41.5108,
+          -24.6,
+          -13.6,
+          -2.0,
+          0.0
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "x+"
+      },
+      {
+        "label": "CAM/DISP0",
+        "origin": [
+          -32.48,
+          -27.0281,
+          1.6
+        ],
+        "size": [
+          16.52,
+          3.5,
+          4.1
+        ],
+        "color": 12894646,
+        "style": "socket",
+        "sourceBounds": [
+          -32.48,
+          -15.96,
+          -27.0281,
+          -23.5281,
+          1.6,
+          5.7
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "y-"
+      },
+      {
+        "label": "CAM/DISP1",
+        "origin": [
+          -4.03,
+          -27.0281,
+          1.6
+        ],
+        "size": [
+          16.52,
+          3.5,
+          4.1
+        ],
+        "color": 12894646,
+        "style": "socket",
+        "sourceBounds": [
+          -4.03,
+          12.49,
+          -27.0281,
+          -23.5281,
+          1.6,
+          5.7
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "y-"
+      },
+      {
+        "label": "PCIe FPC16pin",
+        "origin": [
+          -42.0841,
+          -4.69,
+          1.6
+        ],
+        "size": [
+          3.5,
+          13.52,
+          4.1
+        ],
+        "color": 2435116,
+        "style": "socket",
+        "sourceBounds": [
+          -42.0841,
+          -38.5841,
+          -4.69,
+          8.83,
+          1.6,
+          5.7
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "x-"
+      },
+      {
+        "label": "Power button",
+        "origin": [
+          -42.9006,
+          -11.875,
+          1.6
+        ],
+        "size": [
+          4.0,
+          4.6,
+          3.3
+        ],
+        "color": 2435116,
+        "style": "box",
+        "sourceBounds": [
+          -42.9006,
+          -38.9006,
+          -11.875,
+          -7.275,
+          1.1,
+          4.9
+        ],
+        "evidence": "manufacturer STEP bounds including terminals"
+      },
+      {
+        "label": "Boot button",
+        "origin": [
+          -42.9006,
+          -21.275,
+          1.6
+        ],
+        "size": [
+          4.0,
+          4.6,
+          3.3
+        ],
+        "color": 2435116,
+        "style": "box",
+        "sourceBounds": [
+          -42.9006,
+          -38.9006,
+          -21.275,
+          -16.675,
+          1.1,
+          4.9
+        ],
+        "evidence": "manufacturer STEP bounds including terminals"
+      },
+      {
+        "label": "4-pin fan JST-SH",
+        "origin": [
+          21.1823,
+          1.8118,
+          1.6
+        ],
+        "size": [
+          4.05,
+          6.35,
+          4.5
+        ],
+        "color": 12894646,
+        "style": "socket",
+        "sourceBounds": [
+          21.1823,
+          25.2323,
+          1.8118,
+          8.1618,
+          1.5,
+          6.1
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "z+"
+      },
+      {
+        "label": "HDMI1 FFC socket",
+        "origin": [
+          36.1108,
+          -7.6148,
+          -2.0
+        ],
+        "size": [
+          5.4,
+          14.5,
+          2.0
+        ],
+        "color": 12894646,
+        "style": "socket",
+        "sourceBounds": [
+          36.1108,
+          41.5108,
+          -7.6148,
+          6.8852,
+          -2.0,
+          0.0
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "x+"
+      },
+      {
+        "label": "100-pin CM5 B2B connector0",
+        "origin": [
+          -20.75,
+          15.96,
+          1.6
+        ],
+        "size": [
+          22.6,
+          3.38,
+          1.45
+        ],
+        "color": 2435116,
+        "style": "b2b",
+        "sourceBounds": [
+          -20.75,
+          1.85,
+          15.96,
+          19.34,
+          1.6,
+          3.05
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "z+"
+      },
+      {
+        "label": "100-pin CM5 B2B connector1",
+        "origin": [
+          -20.75,
+          -18.04,
+          1.6
+        ],
+        "size": [
+          22.6,
+          3.38,
+          1.45
+        ],
+        "color": 2435116,
+        "style": "b2b",
+        "sourceBounds": [
+          -20.75,
+          1.85,
+          -18.04,
+          -14.66,
+          1.6,
+          3.05
+        ],
+        "evidence": "manufacturer STEP bounds including terminals",
+        "mouth": "z+"
+      }
+    ],
+    "source": "https://www.waveshare.com/product/cm5-io-base-a.htm",
+    "references": [
+      "https://files.waveshare.com/wiki/CM5-IO-BASE-A/CM5-IO-BASE-A-3D.zip",
+      "https://www.waveshare.com/w/upload/7/71/800px-CM5-IO-BASE-A-details-size.jpg"
+    ],
+    "sourceSha256": "c879c55a9f37172ccb997f4868642447079b239e1b9848aeed0c6eb43310c97e",
+    "attributes": {
+      "manufacturer": "Waveshare",
+      "module": "CM5",
+      "width": 85,
+      "length": 56,
+      "usb3": 2,
+      "ethernet": 1,
+      "hdmi": 1,
+      "pcie": "16-pin FFC"
+    },
+    "limitations": "Authored reconstruction from the manufacturer STEP dated 2025-02-25. PCB corner radius 3.5 mm is inferred from CAD tangent geometry, not a dimensioned callout. Major connector envelopes and mounting bores are source measured. Solder tails, traces and small electronics are omitted; cavities, individual GPIO contacts and colors are illustrative. The source inserted microSD card is excluded. The CR1220 holder and several FFC connectors extend below the PCB."
+  }
+]

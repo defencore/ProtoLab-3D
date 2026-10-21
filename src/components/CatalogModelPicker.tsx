@@ -7,6 +7,7 @@ import {
   catalogFacetOptions,
 } from '../core/catalog-models';
 import { buildPresetIndex, filterPresets, emptyPresetFilters } from '../core/preset-search';
+import { presetLabels } from '../core/library-labels';
 import NumericRangeFilter from './NumericRangeFilter';
 import FilterChips, { type FilterChip } from './FilterChips';
 import { parseNumericRange } from '../core/numeric-range';
@@ -106,12 +107,13 @@ export default function CatalogModelPicker({
   }
 
   function modelCard(preset: Preset, pinned = false) {
+    const labels = presetLabels(preset);
     return (
       <div className="catalog-model-entry" key={preset.id}>
         <button
           type="button"
           className={`catalog-model-result${preset.id === presetId ? ' selected' : ''}`}
-          aria-label={`${pinned ? 'Current preview' : 'Select'} ${preset.name}`}
+          aria-label={`${pinned ? 'Current preview' : 'Select'} ${labels.name}`}
           aria-pressed={preset.id === presetId}
           disabled={pinned}
           onClick={() => onSelect(preset)}
@@ -120,7 +122,12 @@ export default function CatalogModelPicker({
             <span>{preset.catalog?.manufacturer ?? preset.catalog?.sourceName}</span>
             {preset.id === presetId && <Check size={14} aria-hidden="true" />}
           </span>
-          <strong>{preset.name}</strong>
+          <strong>{labels.name}</strong>
+          {labels.designation && (
+            <span className="catalog-model-condition">
+              Source designation: {labels.designation}
+            </span>
+          )}
           {!!summaryFields.length && (
             <span className="catalog-model-summary">
               {summaryFields.map((field) => (
@@ -154,7 +161,7 @@ export default function CatalogModelPicker({
             href={preset.catalog.sourceUrl}
             target="_blank"
             rel="noreferrer"
-            aria-label={`Open ${preset.name} on ${preset.catalog.sourceName}`}
+            aria-label={`Open ${labels.name} on ${preset.catalog.sourceName}`}
           >
             {String(preset.catalog.attributes?.supplier ?? preset.catalog.sourceName)}
             <ExternalLink size={11} aria-hidden="true" />

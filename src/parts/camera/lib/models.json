@@ -54,9 +54,7 @@
     "voltageMin": 4.5,
     "voltageMax": 36,
     "sensor": "1/1.8-inch",
-    "unknownDimensions": [
-      "depth"
-    ]
+    "unknownDimensions": ["depth"]
   },
   {
     "id": "baby-ratel2",
@@ -74,7 +72,8 @@
       "projection": 5,
       "lensDiameter": 9,
       "sideHole": 2,
-      "color": 3290682
+      "color": 3290682,
+      "sideMountZ": -9
     },
     "tvl": 1200,
     "weight": 3,
@@ -82,6 +81,165 @@
     "voltageMax": 26,
     "sensor": "1/1.8-inch",
     "drawing": "https://en.caddxfpv.com.cn/app/template/images/product_baby_ratel/img10.webp"
+  },
+  {
+    "id": "racer-nano4",
+    "name": "RunCam Racer Nano 4",
+    "manufacturer": "RunCam",
+    "kind": "fpv-analog",
+    "form": "fpv",
+    "width": 14,
+    "height": 14,
+    "depth": 20,
+    "interface": "cvbs",
+    "source": "https://shop.runcam.com/runcam-racer-nano-4/",
+    "drawing": "https://store-m8o52p.mybigcommerce.com/product_images/img_RunCam_racer_nano4/Racer%20Nano4%20Manual_EN.pdf",
+    "notes": "Camera only; cable, adapter bracket and menu controller excluded. Manufacturer drawing gives a 14 × 14 mm body and 20 mm axial extent, with the M2 side pivot 14 mm behind the lens tip (6 mm from the rear datum). Nominal smooth Ø2 bores represent the M2 thread; thread form is omitted. Lens outer diameter, housing profile, wall thickness and internal parts are reconstructed. PAL/NTSC CVBS; TVL is not a pixel count.",
+    "geometry": {
+      "projection": 9.5,
+      "lensDiameter": 11.5,
+      "sideHole": 2,
+      "sideMountZ": -14,
+      "color": 8484750
+    },
+    "tvl": 1200,
+    "weight": 4.5,
+    "voltageMin": 5,
+    "voltageMax": 36,
+    "current": 0.12,
+    "hfov": 125,
+    "vfov": 97,
+    "dfov": 160,
+    "sensor": "Super WDR CMOS",
+    "shutter": "rolling",
+    "conditions": {
+      "current": "120 mA at 5 V; also specified as 70 mA at 12 V."
+    }
+  },
+  {
+    "id": "robin3",
+    "name": "RunCam Robin 3",
+    "manufacturer": "RunCam",
+    "kind": "fpv-analog",
+    "form": "fpv",
+    "width": 19,
+    "height": 19,
+    "depth": 19,
+    "interface": "cvbs",
+    "source": "https://shop.runcam.com/runcam-robin-3/",
+    "notes": "Camera only; six-pin cable and fasteners excluded. The manufacturer specifies 19 × 19 × 19 mm. Housing recesses, lens profile, body/lens depth split and nominal Ø2 side bores are reconstructed from product photographs; their offsets are not a verified drilling template. PAL/NTSC CVBS; TVL is not a pixel count.",
+    "geometry": {
+      "projection": 9,
+      "lensDiameter": 16,
+      "sideHole": 2,
+      "sideMountZ": -13.5,
+      "color": 3488576
+    },
+    "tvl": 1200,
+    "weight": 5.3,
+    "voltageMin": 5,
+    "voltageMax": 23,
+    "current": 0.12,
+    "hfov": 120,
+    "vfov": 87,
+    "dfov": 150,
+    "sensor": "1/3-inch CMOS",
+    "shutter": "rolling",
+    "conditions": {
+      "current": "120 mA at 5 V; also specified as 60 mA at 12 V."
+    }
+  },
+  {
+    "id": "ant",
+    "name": "Caddx Ant",
+    "manufacturer": "Caddx",
+    "kind": "fpv-analog",
+    "form": "fpv-board",
+    "width": 14,
+    "height": 14,
+    "depth": 15,
+    "interface": "cvbs",
+    "source": "https://en.caddxfpv.com.cn/products/ant.html",
+    "drawing": "https://en.caddxfpv.com.cn/app/template/images/product_ant/img11.webp",
+    "notes": "Bare 14 × 14 mm camera PCB with lens holder; the optional 19 mm adapter and attached wire plug are excluded. The manufacturer dimension illustration gives a 15 mm camera axial extent and Ø9 mm lens. The exposed PCB is retained rather than inventing a closed camera housing. PCB thickness, component layout, connector dimensions and lens-holder depth split are approximate. Side mounting bores are omitted because no hole size or datum is dimensioned. PAL/NTSC CVBS.",
+    "geometry": {
+      "projection": 7,
+      "lensDiameter": 9,
+      "rear": 1.2,
+      "pcb": 1,
+      "color": 2698546
+    },
+    "tvl": 1200,
+    "weight": 2,
+    "voltageMin": 3.7,
+    "voltageMax": 18,
+    "focalLength": 1.8,
+    "sensor": "1/3-inch CMOS"
+  },
+  {
+    "id": "ratel-pro",
+    "name": "Caddx Ratel Pro",
+    "manufacturer": "Caddx",
+    "kind": "fpv-analog",
+    "form": "fpv",
+    "width": 19,
+    "height": 19,
+    "depth": 28.5,
+    "interface": "cvbs",
+    "source": "https://en.caddxfpv.com.cn/products/ratel-pro.html",
+    "drawing": "https://en.caddxfpv.com.cn/app/template/images/product_ratel_pro/img10.webp",
+    "notes": "Camera only; cables and OSD board excluded. Manufacturer drawing specifies a 19 × 19 mm body, Ø15 mm lens, 26.8 mm lens-to-body axial extent and 28.5 mm overall extent including the rear connector. The 1.7 mm difference is retained as connector projection. Rounded body profile, lens/body split, nominal Ø2 side bores and their offsets are illustrative; no mounting thread or tolerance is inferred from the undimensioned hole illustration. The 5 MP lens rating is not the analog image resolution. PAL/NTSC CVBS.",
+    "geometry": {
+      "projection": 16,
+      "lensDiameter": 15,
+      "rear": 1.7,
+      "sideHole": 2,
+      "sideMountZ": -23,
+      "color": 5593696
+    },
+    "tvl": 1500,
+    "weight": 9.5,
+    "voltageMin": 4.5,
+    "voltageMax": 27,
+    "dfov": 125,
+    "sensor": "1/1.8-inch",
+    "conditions": {
+      "dfov": "125° is identified as diagonal FoV in the manufacturer product description."
+    }
+  },
+  {
+    "id": "avatar-nano-v3",
+    "name": "Walksnail Avatar HD Nano Camera V3",
+    "manufacturer": "Caddx",
+    "kind": "fpv-digital",
+    "form": "fpv",
+    "width": 14,
+    "height": 14,
+    "depth": 16.8,
+    "interface": "walksnail-avatar",
+    "source": "https://caddxfpv.com/products/walksnail-avatar-hd-nano-camera-v3",
+    "notes": "Camera only; coaxial cable, VTX, antenna and adapter excluded. Manufacturer camera specifications give 14 × 14 × 16.8 mm and 3 g without cable. Requires a compatible Walksnail Avatar video transmitter; complete-kit input voltage and transmitter power are not camera ratings. Housing, lens outer profile and nominal Ø2 side mount offsets are reconstructed. Published 160° FoV has no stated axis, so no axis-specific filter is assigned. Maximum image resolution and maximum frame rate use different modes.",
+    "geometry": {
+      "projection": 7,
+      "lensDiameter": 10,
+      "sideHole": 2,
+      "sideMountZ": -10.8,
+      "color": 3422784
+    },
+    "weight": 3,
+    "pixelsX": 1920,
+    "pixelsY": 1080,
+    "fps": 120,
+    "focalLength": 2.1,
+    "sensor": "1/3.2-inch 4 MP 4:3 sensor",
+    "shutter": "rolling",
+    "channel": "colour",
+    "conditions": {
+      "weight": "Camera without coaxial cable.",
+      "fps": "120 fps at 1280 × 720; 1920 × 1080 up to 60 fps. A compatible Avatar VTX is required.",
+      "pixelsX": "Maximum published camera output dimensions, not the 4 MP sensor pixel count.",
+      "pixelsY": "Maximum published camera output dimensions; see frame-rate condition."
+    }
   },
   {
     "id": "dji-o4",
@@ -265,7 +423,7 @@
   },
   {
     "id": "rlc510a",
-    "name": "Reolink RLC-510A (5 MP, 4 mm)",
+    "name": "Reolink RLC-510A · 5 MP · 4 mm",
     "manufacturer": "Reolink",
     "kind": "ip",
     "form": "ip-bullet",
@@ -299,7 +457,7 @@
   },
   {
     "id": "rlc520a",
-    "name": "Reolink RLC-520A (5 MP, 4 mm)",
+    "name": "Reolink RLC-520A · 5 MP · 4 mm",
     "manufacturer": "Reolink",
     "kind": "ip",
     "form": "ip-turret",
@@ -569,12 +727,7 @@
     "source": "https://www.realsenseai.com/products/depth-camera-d435i/",
     "notes": "USB-C 3.1 Gen 1, active stereo depth and IMU. Depth cameras have global shutters; RGB uses rolling shutter. 50 mm stereo baseline. Connector, optical-window outlines and shell profile are reconstructed; mounts omitted pending exact drawing integration.",
     "geometry": {
-      "lenses": [
-        -30,
-        -1,
-        20,
-        31.5
-      ],
+      "lenses": [-30, -1, 20, 31.5],
       "lensDiameter": 9,
       "color": 11384253
     },
@@ -605,11 +758,7 @@
     "source": "https://checkout.luxonis.com/products/oak-d-lite-1",
     "notes": "USB stereo depth with on-device neural inference, autofocus colour variant. RGB rolling shutter; stereo global shutters. 75 mm stereo baseline. 1/4-inch tripod and 75 mm M4 mounting mentioned by manufacturer; hole depths/positions omitted pending drawing integration. Optical-window and connector profiles reconstructed.",
     "geometry": {
-      "lenses": [
-        -37.5,
-        0,
-        37.5
-      ],
+      "lenses": [-37.5, 0, 37.5],
       "lensDiameter": 9,
       "color": 11450045
     },
@@ -654,9 +803,7 @@
     "source": "",
     "sourceKind": "attachment",
     "notes": "The supplied dimensional drawing is labeled CV256-4MM, not DM256. Its 31.7 mm body and 36.4 mm overall envelope are used only as an illustrative reconstruction for this DM256 4 mm selection; correspondence is unconfirmed and axial depth is excluded from filters. Eight smooth Ø2 mm, 2 mm-deep side-hole envelopes use the separate CV256-4MM drawing as a shape reference. Their applicability to DM models is unconfirmed; axial offset and internal stack are approximate.",
-    "unknownDimensions": [
-      "depth"
-    ],
+    "unknownDimensions": ["depth"],
     "geometry": {
       "stack": {
         "bodyDepth": 31.7,
@@ -703,9 +850,7 @@
     "source": "",
     "sourceKind": "attachment",
     "notes": "Only 21 × 21 mm is unambiguously specified. A photo caption reads 27 × 27 mm along the side; it does not establish the complete axial envelope for this lens variant. Model uses an illustrative 27 mm body plus 4.7 mm connector projection, excluded from dimension filters. Eight smooth Ø2 mm, 2 mm-deep side-hole envelopes use the separate CV256-4MM drawing as a shape reference. Their applicability to DM models is unconfirmed; axial offset and internal stack are approximate.",
-    "unknownDimensions": [
-      "depth"
-    ],
+    "unknownDimensions": ["depth"],
     "geometry": {
       "stack": {
         "bodyDepth": 27,
@@ -753,9 +898,7 @@
     "source": "",
     "sourceKind": "attachment",
     "notes": "Only 21 × 21 mm is unambiguously specified. A photo caption reads 27 × 27 mm along the side; it does not establish the complete axial envelope for this lens variant. Model uses an illustrative 27 mm body plus 4.7 mm connector projection, excluded from dimension filters. Eight smooth Ø2 mm, 2 mm-deep side-hole envelopes use the separate CV256-4MM drawing as a shape reference. Their applicability to DM models is unconfirmed; axial offset and internal stack are approximate.",
-    "unknownDimensions": [
-      "depth"
-    ],
+    "unknownDimensions": ["depth"],
     "geometry": {
       "stack": {
         "bodyDepth": 27,
@@ -803,9 +946,7 @@
     "source": "",
     "sourceKind": "attachment",
     "notes": "Only 21 × 21 mm is unambiguously specified. A photo caption reads 27 × 27 mm along the side; it does not establish the complete axial envelope for this lens variant. Model uses an illustrative 27 mm body plus 4.7 mm connector projection, excluded from dimension filters. Eight smooth Ø2 mm, 2 mm-deep side-hole envelopes use the separate CV256-4MM drawing as a shape reference. Their applicability to DM models is unconfirmed; axial offset and internal stack are approximate.",
-    "unknownDimensions": [
-      "depth"
-    ],
+    "unknownDimensions": ["depth"],
     "geometry": {
       "stack": {
         "bodyDepth": 27,
@@ -853,9 +994,7 @@
     "source": "",
     "sourceKind": "attachment",
     "notes": "UC table specifies 21 × 21 × 29.8 mm without interface; supplied drawing also marks 27 ± 0.5 mm. The reference does not reconcile these revisions. Model uses a 29.8 mm body plus an assumed 4.7 mm connector projection; total 34.5 mm is illustrative and excluded from dimension filters. Eight M2 mounting-hole envelopes, 2.5 mm deep, with 12 mm pitch on each side; smooth bores represent the nominal thread envelope. The axial hole offset, board thicknesses, screw heads, connector dimensions and housing split are reconstructed.",
-    "unknownDimensions": [
-      "depth"
-    ],
+    "unknownDimensions": ["depth"],
     "geometry": {
       "stack": {
         "bodyDepth": 29.8,
@@ -903,9 +1042,7 @@
     "source": "",
     "sourceKind": "attachment",
     "notes": "UC table specifies 21 × 21 × 29.8 mm without interface; supplied drawing also marks 27 ± 0.5 mm. The reference does not reconcile these revisions. Model uses a 29.8 mm body plus an assumed 4.7 mm connector projection; total 34.5 mm is illustrative and excluded from dimension filters. Eight M2 mounting-hole envelopes, 2.5 mm deep, with 12 mm pitch on each side; smooth bores represent the nominal thread envelope. The axial hole offset, board thicknesses, screw heads, connector dimensions and housing split are reconstructed.",
-    "unknownDimensions": [
-      "depth"
-    ],
+    "unknownDimensions": ["depth"],
     "geometry": {
       "stack": {
         "bodyDepth": 29.8,
@@ -953,9 +1090,7 @@
     "source": "",
     "sourceKind": "attachment",
     "notes": "UC table specifies 21 × 21 × 29.8 mm without interface; supplied drawing also marks 27 ± 0.5 mm. The reference does not reconcile these revisions. Model uses a 29.8 mm body plus an assumed 4.7 mm connector projection; total 34.5 mm is illustrative and excluded from dimension filters. Eight M2 mounting-hole envelopes, 2.5 mm deep, with 12 mm pitch on each side; smooth bores represent the nominal thread envelope. The axial hole offset, board thicknesses, screw heads, connector dimensions and housing split are reconstructed.",
-    "unknownDimensions": [
-      "depth"
-    ],
+    "unknownDimensions": ["depth"],
     "geometry": {
       "stack": {
         "bodyDepth": 29.8,

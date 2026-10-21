@@ -2,12 +2,8 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import {
-  familyId,
-  familyLabel,
-  familyMembers,
-  groupBrowseFamilies,
-} from '../src/core/browse-families';
+import { familyId, familyMembers, groupBrowseFamilies } from '../src/core/browse-families';
+import { familyLabel } from '../src/core/library-labels';
 import { groupProductLibrary, type ProductLibraryView } from '../src/core/product-library';
 import { registerPartModules, type PartModule } from '../src/core/part-modules';
 import type { PartDefinition } from '../src/core/types';

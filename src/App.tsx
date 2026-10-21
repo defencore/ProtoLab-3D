@@ -48,7 +48,8 @@ import { validateParameters } from './core/validation';
 import { parseConfiguration } from './core/configuration';
 import { downloadFile } from './core/download';
 import { productKindLabels, supplyKindLabels } from './core/product-library';
-import { familyId, familyLabel, familyMembers } from './core/browse-families';
+import { familyId, familyMembers } from './core/browse-families';
+import { familyLabel, libraryLabel } from './core/library-labels';
 import { createPresetId, readPresets, storePresets, type SavedPreset } from './core/storage';
 import type { Parameters, PartDefinition, Preset } from './core/types';
 import type { QuickPickFilters } from './core/quick-picks';
@@ -478,9 +479,9 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
         <div className="breadcrumbs">
           <span>Library</span>
           <ChevronRight size={13} />
-          <span>{part.category}</span>
+          <span>{libraryLabel(part.category)}</span>
           <ChevronRight size={13} />
-          <strong>{part.subgroup}</strong>
+          <strong>{libraryLabel(part.subgroup)}</strong>
         </div>
         <div className="action-buttons">
           <button

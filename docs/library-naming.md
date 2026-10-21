@@ -14,4 +14,6 @@ Use concise English names, matching the application interface.
 
 Every built-in part belongs to one registered section and subgroup. Names are unique within each part’s variants. Threaded rods include pitch and handedness; sealing washers include bore, outside diameter and thickness. Identical supplier entries retain separate listing numbers without inventing geometric differences.
 
+`core/library-labels.ts` owns presentation of section labels, browse-family titles and preset labels. A preset's `name` is its canonical visible title in model selectors and search results. A different `catalog.designation` appears as a separate source designation and remains searchable; it must not replace the curated title or be rewritten during a naming cleanup. Section labels are formatted for display without changing category or subgroup IDs. Browse-family titles do not replace physical member names in configurations or exports.
+
 See [the library map](library-structure.md) for the full hierarchy.

@@ -2,19 +2,35 @@
 
 A fixed supplier catalog under **ELECTRONICS & VISION → CAMERAS & VISION**. Select by camera class, interface, dimensions, mass, primary image channel, resolution, frame rate, field of view, shutter and published electrical characteristics. Dimensions are not editable.
 
-The initial 17 selections cover RunCam Phoenix 2 SPV5, Caddx Ratel 2 / Baby Ratel 2, DJI O4 / O4 Pro camera modules, FLIR Lepton 3.5 / 3.1R with socket, Adafruit MLX90640 55° / 110°, Reolink RLC-510A / RLC-520A (5 MP, 4 mm versions), Raspberry Pi Camera Module 3 / Wide / AI / bare Global Shutter CS body, RealSense D435i and Luxonis OAK-D Lite AF.
+The catalog contains **29 models**. The original selections cover RunCam Phoenix 2 SPV5, Caddx Ratel 2 / Baby Ratel 2, DJI O4 / O4 Pro camera modules, FLIR Lepton 3.5 / 3.1R with socket, Adafruit MLX90640 55° / 110°, Reolink RLC-510A / RLC-520A (5 MP, 4 mm versions), Raspberry Pi Camera Module 3 / Wide / AI / bare Global Shutter CS body, RealSense D435i and Luxonis OAK-D Lite AF.
+
+## FPV camera additions
+
+Five further models provide 14 mm nano, 19 mm micro, open-PCB and digital camera options. These are camera-only procurement units; harnesses, adapter brackets, menu boards and video transmitters are excluded.
+
+| Model                                                                                                  | Width × height × axial depth | Source-defined installation detail                                                                                           |
+| ------------------------------------------------------------------------------------------------------ | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| [RunCam Racer Nano 4](https://shop.runcam.com/runcam-racer-nano-4/)                                    | 14 × 14 × 20 mm              | M2 side pivot 14 mm behind the lens tip, 6 mm from the rear datum; nominal smooth Ø2 bores, no modeled thread.               |
+| [RunCam Robin 3](https://shop.runcam.com/runcam-robin-3/)                                              | 19 × 19 × 19 mm              | Outer envelope from the official specifications; side-bore positions and lens/body split are approximate.                    |
+| [Caddx Ant](https://en.caddxfpv.com.cn/products/ant.html)                                              | 14 × 14 × 15 mm              | Exposed PCB and Ø9 lens from the official dimension illustration; no invented closed housing or undimensioned mounting bore. |
+| [Caddx Ratel Pro](https://en.caddxfpv.com.cn/products/ratel-pro.html)                                  | 19 × 19 × 28.5 mm            | Ø15 lens; 26.8 mm lens-to-body extent plus 1.7 mm connector projection. Side bores and housing profile are approximate.      |
+| [Walksnail Avatar HD Nano Camera V3](https://caddxfpv.com/products/walksnail-avatar-hd-nano-camera-v3) | 14 × 14 × 16.8 mm            | Camera only; compatible Avatar VTX and coaxial cable required. Side-bore positions and lens outer diameter are approximate.  |
+
+The [Racer Nano 4 manual](https://store-m8o52p.mybigcommerce.com/product_images/img_RunCam_racer_nano4/Racer%20Nano4%20Manual_EN.pdf), [Ant drawing](https://en.caddxfpv.com.cn/app/template/images/product_ant/img11.webp) and [Ratel Pro drawing](https://en.caddxfpv.com.cn/app/template/images/product_ratel_pro/img10.webp) are recorded as per-model evidence. Authored solids are reconstructed from these dimensions and product images; they are not manufacturer CAD. Undimensioned mounting offsets, internal details, wall thicknesses and optical profiles need verification against the purchased camera before making a rigid mount.
+
+Analog entries retain TVL without invented pixel counts or progressive frame rates. Avatar's 1920 × 1080 output is available up to 60 fps, while 120 fps uses 1280 × 720. Its proprietary camera link has a separate interface filter. Kit supply voltage, transmitter power, and a 160° FoV with unspecified axis are intentionally not assigned as camera-only numeric filters.
 
 ## Supplied DM and UC references
 
-Seven additional selections bring the catalog to **24 models**:
+Seven supplied-reference selections cover the DM and UC families:
 
-| Family | Lens variants | Primary image interface | Supply listed in supplied table |
-| --- | --- | --- | --- |
-| DM256 | 4 mm, 10 mm | PAL/CVBS | 4.5–18 V |
-| DM384 | 9.1 mm | PAL/CVBS | 4.5–18 V |
-| DM640 | 9 mm | PAL/CVBS | 4.5–18 V |
-| UC256, UC384 | 9 mm | USB/UVC; USB speed unspecified | USB 5 V |
-| UC640 | 9 mm | CVBS + UART control | 4.5–18 V on five-pin connector |
+| Family       | Lens variants | Primary image interface        | Supply listed in supplied table |
+| ------------ | ------------- | ------------------------------ | ------------------------------- |
+| DM256        | 4 mm, 10 mm   | PAL/CVBS                       | 4.5–18 V                        |
+| DM384        | 9.1 mm        | PAL/CVBS                       | 4.5–18 V                        |
+| DM640        | 9 mm          | PAL/CVBS                       | 4.5–18 V                        |
+| UC256, UC384 | 9 mm          | USB/UVC; USB speed unspecified | USB 5 V                         |
+| UC640        | 9 mm          | CVBS + UART control            | 4.5–18 V on five-pin connector  |
 
 The source photographs, tables and drawings are linked from each preset and included in package exports. The manufacturer remains unspecified: NCZOBOE branding appears on the UC illustrations, without establishing that the DM family is the same product. The supplied detector arrays are 256 × 192, 384 × 288 and 640 × 512. Lens focal length, vertical FoV, pixel pitch, NETD upper bound and reported thermal rate have separate filters. The reported 50 Hz does not establish progressive CVBS or USB output throughput; no radiometric temperature capability is inferred.
 

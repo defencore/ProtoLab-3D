@@ -1,6 +1,7 @@
 import type { PartDefinition } from './types';
 import type { BrowseFamily } from './browse-families';
 import { groupProductLibrary, type ProductLibraryView } from './product-library';
+import { libraryLabel } from './library-labels';
 
 export const libraryAreas = [
   {
@@ -64,14 +65,6 @@ const categoryAreas: Readonly<Record<string, LibraryArea>> = {
 export function libraryArea(category: string): LibraryArea {
   // Imported categories must remain reachable before their own navigation is registered.
   return Object.hasOwn(categoryAreas, category) ? categoryAreas[category] : 'hardware';
-}
-
-export function libraryLabel(value: string): string {
-  if (value !== value.toUpperCase()) return value;
-  return value
-    .toLowerCase()
-    .replace(/^./, (letter) => letter.toUpperCase())
-    .replace(/\b(cnc|dc|bec|srs|pcb)\b/gi, (word) => word.toUpperCase());
 }
 
 export interface LibraryNavigationGroup {

@@ -18,10 +18,10 @@ import {
   type ProductLibraryView,
 } from '../core/product-library';
 import { librarySubgroups } from '../core/library';
+import { libraryLabel } from '../core/library-labels';
 import {
   libraryAreas,
   libraryArea,
-  libraryLabel,
   libraryNavigationGroups,
   type LibraryArea,
 } from '../core/library-navigation';

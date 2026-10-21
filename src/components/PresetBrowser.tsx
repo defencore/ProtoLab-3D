@@ -14,7 +14,7 @@ import {
   X,
 } from 'lucide-react';
 import type { Parameters, PartDefinition, Preset } from '../core/types';
-import { libraryLabel } from '../core/library-navigation';
+import { libraryLabel, presetLabels } from '../core/library-labels';
 import { changePresetBrowserScope } from '../core/preset-browser';
 import { usePresetBrowser } from './usePresetBrowser';
 import { isPublishedValue, presetValue, searchableFields } from '../core/catalog-models';
@@ -579,65 +579,68 @@ export default function PresetBrowser({
               </div>
             ) : (
               <div className="pb-result-grid">
-                {visibleItems.map((entry) => (
-                  <article
-                    key={entry.id}
-                    className={`pb-result ${entry.id === selectedId ? 'selected' : ''}`}
-                  >
-                    <button
-                      className="pb-result-select"
-                      aria-label={`Preview ${entry.preset.name}, ${entry.part.name}`}
-                      aria-pressed={entry.id === selectedId}
-                      onClick={() => {
-                        onApply(entry.part, entry.preset);
-                      }}
+                {visibleItems.map((entry) => {
+                  const labels = presetLabels(entry.preset);
+                  return (
+                    <article
+                      key={entry.id}
+                      className={`pb-result ${entry.id === selectedId ? 'selected' : ''}`}
                     >
-                      <div className="pb-result-top">
-                        <span className={`pb-kind ${entry.preset.catalog ? 'pb-catalog' : ''}`}>
-                          {entry.preset.catalog
-                            ? entry.preset.catalog.sourceKind === 'attachment'
-                              ? 'Reference dimensions'
-                              : 'Catalog dimensions'
-                            : 'Prototype example'}
-                        </span>
-                        <span className="pb-selection-dot">
-                          {entry.id === selectedId && <Check size={12} />}
-                        </span>
-                      </div>
-                      <h3>{entry.preset.catalog?.designation ?? entry.preset.name}</h3>
-                      {entry.preset.catalog &&
-                        entry.preset.name !== entry.preset.catalog.designation && (
-                          <p className="pb-result-name">{entry.preset.name}</p>
-                        )}
-                      <p className="pb-part-name">
-                        {entry.part.name}
-                        {entry.preset.catalog?.manufacturer &&
-                          ` · ${entry.preset.catalog.manufacturer}`}
-                      </p>
-                      <DimensionSummary entry={entry} />
-                      {(entry.preset.catalog?.productCodes?.length ?? 0) > 1 && (
-                        <p className="pb-result-description">
-                          {entry.preset.catalog!.productCodes!.length} supplier SKUs · one geometry
-                        </p>
-                      )}
-                      {!entry.preset.catalog && (
-                        <p className="pb-result-description">{entry.preset.description}</p>
-                      )}
-                    </button>
-                    {entry.preset.catalog?.sourceUrl && (
-                      <a
-                        className="pb-source-link"
-                        href={entry.preset.catalog.sourceUrl}
-                        target="_blank"
-                        rel="noreferrer"
+                      <button
+                        className="pb-result-select"
+                        aria-label={`Preview ${labels.name}, ${entry.part.name}`}
+                        aria-pressed={entry.id === selectedId}
+                        onClick={() => {
+                          onApply(entry.part, entry.preset);
+                        }}
                       >
-                        {entry.preset.catalog.sourceName}
-                        <ExternalLink size={11} />
-                        <span className="sr-only"> (opens source in a new tab)</span>
-                      </a>
-                    )}
-                  </article>
-                ))}
+                        <div className="pb-result-top">
+                          <span className={`pb-kind ${entry.preset.catalog ? 'pb-catalog' : ''}`}>
+                            {entry.preset.catalog
+                              ? entry.preset.catalog.sourceKind === 'attachment'
+                                ? 'Reference dimensions'
+                                : 'Catalog dimensions'
+                              : 'Prototype example'}
+                          </span>
+                          <span className="pb-selection-dot">
+                            {entry.id === selectedId && <Check size={12} />}
+                          </span>
+                        </div>
+                        <h3>{labels.name}</h3>
+                        {labels.designation && (
+                          <p className="pb-result-name">Source designation: {labels.designation}</p>
+                        )}
+                        <p className="pb-part-name">
+                          {entry.part.name}
+                          {entry.preset.catalog?.manufacturer &&
+                            ` · ${entry.preset.catalog.manufacturer}`}
+                        </p>
+                        <DimensionSummary entry={entry} />
+                        {(entry.preset.catalog?.productCodes?.length ?? 0) > 1 && (
+                          <p className="pb-result-description">
+                            {entry.preset.catalog!.productCodes!.length} supplier SKUs · one
+                            geometry
+                          </p>
+                        )}
+                        {!entry.preset.catalog && (
+                          <p className="pb-result-description">{entry.preset.description}</p>
+                        )}
+                      </button>
+                      {entry.preset.catalog?.sourceUrl && (
+                        <a
+                          className="pb-source-link"
+                          href={entry.preset.catalog.sourceUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {entry.preset.catalog.sourceName}
+                          <ExternalLink size={11} />
+                          <span className="sr-only"> (opens source in a new tab)</span>
+                        </a>
+                      )}
+                    </article>
+                  );
+                })}
               </div>
             )}
             {hasPages && (

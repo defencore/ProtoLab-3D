@@ -1,0 +1,30 @@
+[
+  {
+    "id": "mpr10-86-neutral",
+    "name": "MPR.10 · Ø90/86 printed stand",
+    "description": "Four NEMA 8 / SFK0601 channels with 52 mm screws, centred 26 mm working threads, 8.5 mm rockers and paired 688ZZ output bearings. Neutral inspection pose.",
+    "parameters": {
+      "fitClearance": 0.6,
+      "printClearance": 0.2,
+      "angle1": 0,
+      "angle2": 0,
+      "angle3": 0,
+      "angle4": 0,
+      "bearingPressFit": 0.04
+    }
+  },
+  {
+    "id": "mpr10-86-motion",
+    "name": "MPR.10 · opposed demonstration pose",
+    "description": "The compact 52 mm screw stand with alternate prescribed outputs at ±18° and nominal joint travel of ±2.627 mm. Motion inspection pose.",
+    "parameters": {
+      "fitClearance": 0.6,
+      "printClearance": 0.2,
+      "angle1": 18,
+      "angle2": -18,
+      "angle3": 18,
+      "angle4": -18,
+      "bearingPressFit": 0.04
+    }
+  }
+]

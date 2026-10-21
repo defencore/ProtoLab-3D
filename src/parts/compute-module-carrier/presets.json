@@ -1,0 +1,87 @@
+[
+  {
+    "id": "raspberry-pi-cm5-io-rev2",
+    "name": "Raspberry Pi Compute Module 5 IO Board \u00b7 rev 2",
+    "description": "Bare CM5 carrier board. 160 \u00d7 90 mm PCB; compute module, case and accessories excluded.",
+    "parameters": {
+      "model": "raspberry-pi-cm5-io-rev2"
+    },
+    "catalog": {
+      "designation": "Raspberry Pi CM5IO revision 2",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Raspberry Pi product and mechanical design files",
+      "sourceUrl": "https://www.raspberrypi.com/products/compute-module-5-io-board/",
+      "alternateSourceUrls": [
+        "https://pip-assets.raspberrypi.com/categories/1098-design-files/documents/RP-008099-DD-1-CM5%20IO%20Board%2C%20revision%202%2C%20KiCAD%20files..zip"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "module": "CM5",
+        "width": 160,
+        "length": 90,
+        "usb3": 2,
+        "ethernet": 1,
+        "hdmi": 2,
+        "pcie": "M.2 M-key"
+      },
+      "attributeConditions": {
+        "width": "PCB only; connector overhangs excluded.",
+        "length": "PCB only; connector overhangs excluded.",
+        "hdmi": "Physically fitted HDMI sockets; additional FFC video connections are not counted."
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "PCB outline, mounting holes and major connector envelopes reconstructed from the cited manufacturer design revision. CM5 is not fitted.",
+        "limitations": "Authored reconstruction from official revision 2 KiCad geometry and connector reference models. Five components have source footprint XY dimensions and approximate heights. Nominal PCB thickness is 1.6 mm from the general KiCad field; the exported source stackup is 1.51 mm. Connector bodies are seated on the nominal PCB faces. Solder tails, traces and small electronics are omitted. B2B open-shell reference envelopes are reconstructed as closed bodies; cavity profiles, individual GPIO contacts and colors are illustrative. The source archive notes that some component models are approximate.",
+        "sourceUrl": "https://pip-assets.raspberrypi.com/categories/1098-design-files/documents/RP-008099-DD-1-CM5%20IO%20Board%2C%20revision%202%2C%20KiCAD%20files..zip",
+        "sourceSha256": "48b14a6757b0edc0ac110331445f35a4212b5ce432bdcec6605c99431b59496b"
+      }
+    }
+  },
+  {
+    "id": "waveshare-cm5-io-base-a",
+    "name": "Waveshare CM5-IO-BASE-A",
+    "description": "Bare CM5 carrier board. 85 \u00d7 56 mm PCB; compute module, case and accessories excluded.",
+    "parameters": {
+      "model": "waveshare-cm5-io-base-a"
+    },
+    "catalog": {
+      "designation": "CM5-IO-BASE-A",
+      "manufacturer": "Waveshare",
+      "sourceName": "Waveshare product and mechanical design files",
+      "sourceUrl": "https://www.waveshare.com/product/cm5-io-base-a.htm",
+      "alternateSourceUrls": [
+        "https://files.waveshare.com/wiki/CM5-IO-BASE-A/CM5-IO-BASE-A-3D.zip",
+        "https://www.waveshare.com/w/upload/7/71/800px-CM5-IO-BASE-A-details-size.jpg"
+      ],
+      "verifiedParameters": [
+        "model"
+      ],
+      "attributes": {
+        "manufacturer": "Waveshare",
+        "module": "CM5",
+        "width": 85,
+        "length": 56,
+        "usb3": 2,
+        "ethernet": 1,
+        "hdmi": 1,
+        "pcie": "16-pin FFC"
+      },
+      "attributeConditions": {
+        "width": "PCB only; connector overhangs excluded.",
+        "length": "PCB only; connector overhangs excluded.",
+        "hdmi": "Physically fitted HDMI sockets; additional FFC video connections are not counted."
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "PCB outline, mounting holes and major connector envelopes reconstructed from the cited manufacturer design revision. CM5 is not fitted.",
+        "limitations": "Authored reconstruction from the manufacturer STEP dated 2025-02-25. PCB corner radius 3.5 mm is inferred from CAD tangent geometry, not a dimensioned callout. Major connector envelopes and mounting bores are source measured. Solder tails, traces and small electronics are omitted; cavities, individual GPIO contacts and colors are illustrative. The source inserted microSD card is excluded. The CR1220 holder and several FFC connectors extend below the PCB.",
+        "sourceUrl": "https://files.waveshare.com/wiki/CM5-IO-BASE-A/CM5-IO-BASE-A-3D.zip",
+        "sourceSha256": "c879c55a9f37172ccb997f4868642447079b239e1b9848aeed0c6eb43310c97e"
+      }
+    }
+  }
+]

@@ -1,6 +1,13 @@
 import type { Parameters } from '../../../core/types';
 import catalog from './models.json';
-import { box, cylinder, roundedRect, ring, subtract, type Shape } from '../../../core/assembly/electronics/shapes';
+import {
+  box,
+  cylinder,
+  roundedRect,
+  ring,
+  subtract,
+  type Shape,
+} from '../../../core/assembly/electronics/shapes';
 import type { Piece } from '../../../core/assembly/electronics/assembly';
 import { thermalStack, type ThermalStackGeometry } from './thermal-stack';
 interface CameraModel {
@@ -15,6 +22,7 @@ interface CameraModel {
     projection?: number;
     lensDiameter?: number;
     sideHole?: number;
+    sideMountZ?: number;
     color?: number;
     pcb?: number;
     rear?: number;
@@ -86,25 +94,55 @@ export function pieces(p: Parameters, state: string): Piece[] {
   if (m.form === 'fpv') {
     const projection = d.projection!,
       r = d.lensDiameter! / 2;
-    const bodyDepth = D - projection,
+    const rear = d.rear ?? 0,
+      back = -D + rear,
+      bodyDepth = D - rear - projection,
       wall = Math.min(1.1, W * 0.07);
-    const body = roundedRect(W, H, 1.3, -D + wall, bodyDepth - wall);
+    const body = roundedRect(W, H, 1.3, back + wall, bodyDepth - wall);
     const cuts: Shape[] = [
-      roundedRect(W - wall * 2, H - wall * 2, 0.5, -D + wall - 0.1, bodyDepth - wall * 2 + 0.1),
+      roundedRect(W - wall * 2, H - wall * 2, 0.5, back + wall - 0.1, bodyDepth - wall * 2 + 0.1),
       cylinder(r * 0.67, wall + 1, [0, 0, -projection - wall - 0.2]),
     ];
     if (d.sideHole) {
-      const mountZ = m.id === 'baby-ratel2' ? -9 : -D + bodyDepth * 0.55;
+      const mountZ = d.sideMountZ ?? back + bodyDepth * 0.55;
       cuts.push(cylinder(d.sideHole / 2, W + 2, [-W / 2 - 1, 0, mountZ], 'x'));
     }
     add('Camera housing', subtract(body, ...cuts), color);
-    add('Rear cover', roundedRect(W, H, 1.3, -D, wall - 0.08), dark, -gap);
+    add('Rear cover', roundedRect(W, H, 1.3, back, wall - 0.08), dark, -gap);
     add(
       'Sensor PCB envelope',
-      roundedRect(W - wall * 2 - 0.2, H - wall * 2 - 0.2, 0.4, -D + wall + 0.15, 0.6),
+      roundedRect(W - wall * 2 - 0.2, H - wall * 2 - 0.2, 0.4, back + wall + 0.15, 0.6),
       green,
     );
-    add('Image sensor envelope', box([r, r, 0.45], [-r / 2, -r / 2, -D + wall + 0.8]), 0x31353d);
+    add('Image sensor envelope', box([r, r, 0.45], [-r / 2, -r / 2, back + wall + 0.8]), 0x31353d);
+    if (rear)
+      rearSocket(Math.min(8, W * 0.6), 3, rear - 0.08, -D, H / 2 - 3, 'Camera connector envelope');
+    optics(0, 0, r, -projection, 0);
+  } else if (m.form === 'fpv-board') {
+    const r = d.lensDiameter! / 2,
+      projection = d.projection!,
+      rear = d.rear ?? 0,
+      pcb = d.pcb ?? 1,
+      boardZ = -D + rear,
+      holderZ = boardZ + pcb + 0.08,
+      holderWidth = Math.min(W - 0.4, 10.8);
+    add('Camera PCB', roundedRect(W, H, 0.7, boardZ, pcb), green);
+    add(
+      'Lens holder envelope',
+      subtract(
+        roundedRect(holderWidth, holderWidth, 0.8, holderZ, -projection - holderZ),
+        cylinder(r * 0.67, -projection - holderZ + 0.2, [0, 0, holderZ - 0.1]),
+      ),
+      dark,
+    );
+    add('Image sensor envelope', box([3.6, 3.6, 0.3], [-1.8, -1.8, holderZ + 0.1]), 0x31353d);
+    if (rear) rearSocket(6, 3, rear - 0.08, -D, H / 2 - 2.2, 'Camera connector envelope');
+    for (const side of [-1, 1])
+      add(
+        `PCB component envelope ${side}`,
+        box([1.2, 1.8, 0.55], [side * (W / 2 - 1) - 0.6, H / 2 - 2.5, boardZ + pcb + 0.05]),
+        silver,
+      );
     optics(0, 0, r, -projection, 0);
   } else if (['pi-board', 'thermal-board', 'cs-board'].includes(m.form)) {
     const pcb = d.pcb ?? 1.1,

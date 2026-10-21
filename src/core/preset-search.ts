@@ -1,4 +1,5 @@
 import { translateSearchQuery } from './search-query';
+import { presetLabels } from './library-labels';
 import type { ParameterDefinition, Parameters, PartDefinition, Preset } from './types';
 import {
   isPublishedValue,
@@ -193,6 +194,7 @@ export function buildPresetIndex(parts: PartDefinition[]): PresetEntry[] {
   return parts.flatMap((part) =>
     part.presets.map((preset) => {
       const catalog = preset.catalog;
+      const labels = presetLabels(preset);
       const values = searchableFields(part).flatMap((definition) => {
         const catalogField = part.catalogFilterFields?.some(
           (field) => field.key === definition.key,
@@ -221,9 +223,9 @@ export function buildPresetIndex(parts: PartDefinition[]): PresetEntry[] {
                   part.subgroup,
                   ...part.keywords.filter((keyword) => !/\d/.test(keyword)),
                 ]),
-            preset.name,
+            labels.name,
             preset.description,
-            catalog?.designation ?? '',
+            labels.designation ?? '',
             catalog?.manufacturer ?? '',
             catalog?.standard ?? '',
             catalog?.sourceName ?? '',
@@ -231,7 +233,7 @@ export function buildPresetIndex(parts: PartDefinition[]): PresetEntry[] {
             ...values,
           ].join(' '),
         ),
-        compactName: normalized(`${preset.name} ${catalog?.designation ?? ''}`).replaceAll(' ', ''),
+        compactName: normalized(`${labels.name} ${labels.designation ?? ''}`).replaceAll(' ', ''),
       };
     }),
   );

@@ -12,9 +12,7 @@
       "sourceName": "RunCam specifications / drawing",
       "sourceUrl": "https://shop.runcam.com/runcam-phoenix-2-spv5/",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 19,
         "height": 19,
@@ -105,9 +103,7 @@
       "sourceName": "Caddx specifications / drawing",
       "sourceUrl": "https://en.caddxfpv.com.cn/products/ratel-2.html",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 19,
         "height": 19,
@@ -170,9 +166,7 @@
       "alternateSourceUrls": [
         "https://en.caddxfpv.com.cn/app/template/images/product_baby_ratel/img10.webp"
       ],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 14,
         "height": 14,
@@ -231,6 +225,467 @@
     }
   },
   {
+    "id": "racer-nano4",
+    "name": "RunCam Racer Nano 4",
+    "description": "14 × 14 mm · Analog CVBS · camera only",
+    "parameters": {
+      "model": "racer-nano4"
+    },
+    "catalog": {
+      "designation": "RunCam Racer Nano 4",
+      "manufacturer": "RunCam",
+      "sourceName": "RunCam official camera specifications and dimension drawing",
+      "sourceUrl": "https://shop.runcam.com/runcam-racer-nano-4/",
+      "alternateSourceUrls": [
+        "https://store-m8o52p.mybigcommerce.com/product_images/img_RunCam_racer_nano4/Racer%20Nano4%20Manual_EN.pdf"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "width": 14,
+        "height": 14,
+        "depth": 20,
+        "hfov": 125,
+        "vfov": 97,
+        "dfov": 160,
+        "tvl": 1200,
+        "weight": 4.5,
+        "voltageMin": 5,
+        "voltageMax": 36,
+        "current": 0.12,
+        "manufacturer": "RunCam",
+        "kind": "fpv-analog",
+        "interface": "cvbs",
+        "shutter": "rolling"
+      },
+      "attributeConditions": {
+        "current": "120 mA at 5 V; also specified as 70 mA at 12 V."
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Authored camera envelope: 14 × 14 × 20 mm from manufacturer specifications or drawing.",
+        "limitations": "Camera only; cable, adapter bracket and menu controller excluded. Manufacturer drawing gives a 14 × 14 mm body and 20 mm axial extent, with the M2 side pivot 14 mm behind the lens tip (6 mm from the rear datum). Nominal smooth Ø2 bores represent the M2 thread; thread form is omitted. Lens outer diameter, housing profile, wall thickness and internal parts are reconstructed. PAL/NTSC CVBS; TVL is not a pixel count. Not manufacturer CAD; verify actual mounting fit before fabricating a rigid bracket.",
+        "sourceUrl": "https://store-m8o52p.mybigcommerce.com/product_images/img_RunCam_racer_nano4/Racer%20Nano4%20Manual_EN.pdf"
+      },
+      "specifications": [
+        {
+          "label": "Width",
+          "value": "14 mm"
+        },
+        {
+          "label": "Height",
+          "value": "14 mm"
+        },
+        {
+          "label": "Axial depth",
+          "value": "20 mm"
+        },
+        {
+          "label": "Horizontal FoV",
+          "value": "125 °"
+        },
+        {
+          "label": "Vertical FoV",
+          "value": "97 °"
+        },
+        {
+          "label": "Diagonal FoV",
+          "value": "160 °"
+        },
+        {
+          "label": "Analog resolution",
+          "value": "1200 TVL"
+        },
+        {
+          "label": "Mass",
+          "value": "4.5 g"
+        },
+        {
+          "label": "Minimum DC supply",
+          "value": "5 V"
+        },
+        {
+          "label": "Maximum DC supply",
+          "value": "36 V"
+        },
+        {
+          "label": "Published current",
+          "value": "0.12 A"
+        },
+        {
+          "label": "Sensor",
+          "value": "Super WDR CMOS"
+        },
+        {
+          "label": "Integration and model scope",
+          "value": "Camera only; cable, adapter bracket and menu controller excluded. Manufacturer drawing gives a 14 × 14 mm body and 20 mm axial extent, with the M2 side pivot 14 mm behind the lens tip (6 mm from the rear datum). Nominal smooth Ø2 bores represent the M2 thread; thread form is omitted. Lens outer diameter, housing profile, wall thickness and internal parts are reconstructed. PAL/NTSC CVBS; TVL is not a pixel count."
+        },
+        {
+          "label": "Geometry fidelity",
+          "value": "Authored reconstruction from manufacturer dimensions and images. Undimensioned profiles, wall thicknesses, connectors and internal parts are illustrative; not manufacturer CAD or a tolerance-controlled mounting template."
+        }
+      ]
+    }
+  },
+  {
+    "id": "robin3",
+    "name": "RunCam Robin 3",
+    "description": "19 × 19 mm · Analog CVBS · camera only",
+    "parameters": {
+      "model": "robin3"
+    },
+    "catalog": {
+      "designation": "RunCam Robin 3",
+      "manufacturer": "RunCam",
+      "sourceName": "RunCam official camera specifications",
+      "sourceUrl": "https://shop.runcam.com/runcam-robin-3/",
+      "alternateSourceUrls": [],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "width": 19,
+        "height": 19,
+        "depth": 19,
+        "hfov": 120,
+        "vfov": 87,
+        "dfov": 150,
+        "tvl": 1200,
+        "weight": 5.3,
+        "voltageMin": 5,
+        "voltageMax": 23,
+        "current": 0.12,
+        "manufacturer": "RunCam",
+        "kind": "fpv-analog",
+        "interface": "cvbs",
+        "shutter": "rolling"
+      },
+      "attributeConditions": {
+        "current": "120 mA at 5 V; also specified as 60 mA at 12 V."
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Authored camera envelope: 19 × 19 × 19 mm from manufacturer specifications or drawing.",
+        "limitations": "Camera only; six-pin cable and fasteners excluded. The manufacturer specifies 19 × 19 × 19 mm. Housing recesses, lens profile, body/lens depth split and nominal Ø2 side bores are reconstructed from product photographs; their offsets are not a verified drilling template. PAL/NTSC CVBS; TVL is not a pixel count. Not manufacturer CAD; verify actual mounting fit before fabricating a rigid bracket.",
+        "sourceUrl": "https://shop.runcam.com/runcam-robin-3/"
+      },
+      "specifications": [
+        {
+          "label": "Width",
+          "value": "19 mm"
+        },
+        {
+          "label": "Height",
+          "value": "19 mm"
+        },
+        {
+          "label": "Axial depth",
+          "value": "19 mm"
+        },
+        {
+          "label": "Horizontal FoV",
+          "value": "120 °"
+        },
+        {
+          "label": "Vertical FoV",
+          "value": "87 °"
+        },
+        {
+          "label": "Diagonal FoV",
+          "value": "150 °"
+        },
+        {
+          "label": "Analog resolution",
+          "value": "1200 TVL"
+        },
+        {
+          "label": "Mass",
+          "value": "5.3 g"
+        },
+        {
+          "label": "Minimum DC supply",
+          "value": "5 V"
+        },
+        {
+          "label": "Maximum DC supply",
+          "value": "23 V"
+        },
+        {
+          "label": "Published current",
+          "value": "0.12 A"
+        },
+        {
+          "label": "Sensor",
+          "value": "1/3-inch CMOS"
+        },
+        {
+          "label": "Integration and model scope",
+          "value": "Camera only; six-pin cable and fasteners excluded. The manufacturer specifies 19 × 19 × 19 mm. Housing recesses, lens profile, body/lens depth split and nominal Ø2 side bores are reconstructed from product photographs; their offsets are not a verified drilling template. PAL/NTSC CVBS; TVL is not a pixel count."
+        },
+        {
+          "label": "Geometry fidelity",
+          "value": "Authored reconstruction from manufacturer dimensions and images. Undimensioned profiles, wall thicknesses, connectors and internal parts are illustrative; not manufacturer CAD or a tolerance-controlled mounting template."
+        }
+      ]
+    }
+  },
+  {
+    "id": "ant",
+    "name": "Caddx Ant",
+    "description": "14 × 14 mm · Analog CVBS · camera only",
+    "parameters": {
+      "model": "ant"
+    },
+    "catalog": {
+      "designation": "Caddx Ant",
+      "manufacturer": "Caddx",
+      "sourceName": "Caddx official camera specifications and dimension drawing",
+      "sourceUrl": "https://en.caddxfpv.com.cn/products/ant.html",
+      "alternateSourceUrls": [
+        "https://en.caddxfpv.com.cn/app/template/images/product_ant/img11.webp"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "width": 14,
+        "height": 14,
+        "depth": 15,
+        "tvl": 1200,
+        "focalLength": 1.8,
+        "weight": 2,
+        "voltageMin": 3.7,
+        "voltageMax": 18,
+        "manufacturer": "Caddx",
+        "kind": "fpv-analog",
+        "interface": "cvbs"
+      },
+      "attributeConditions": {},
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Authored camera envelope: 14 × 14 × 15 mm from manufacturer specifications or drawing.",
+        "limitations": "Bare 14 × 14 mm camera PCB with lens holder; the optional 19 mm adapter and attached wire plug are excluded. The manufacturer dimension illustration gives a 15 mm camera axial extent and Ø9 mm lens. The exposed PCB is retained rather than inventing a closed camera housing. PCB thickness, component layout, connector dimensions and lens-holder depth split are approximate. Side mounting bores are omitted because no hole size or datum is dimensioned. PAL/NTSC CVBS. Not manufacturer CAD; verify actual mounting fit before fabricating a rigid bracket.",
+        "sourceUrl": "https://en.caddxfpv.com.cn/app/template/images/product_ant/img11.webp"
+      },
+      "specifications": [
+        {
+          "label": "Width",
+          "value": "14 mm"
+        },
+        {
+          "label": "Height",
+          "value": "14 mm"
+        },
+        {
+          "label": "Axial depth",
+          "value": "15 mm"
+        },
+        {
+          "label": "Analog resolution",
+          "value": "1200 TVL"
+        },
+        {
+          "label": "Lens focal length",
+          "value": "1.8 mm"
+        },
+        {
+          "label": "Mass",
+          "value": "2 g"
+        },
+        {
+          "label": "Minimum DC supply",
+          "value": "3.7 V"
+        },
+        {
+          "label": "Maximum DC supply",
+          "value": "18 V"
+        },
+        {
+          "label": "Sensor",
+          "value": "1/3-inch CMOS"
+        },
+        {
+          "label": "Integration and model scope",
+          "value": "Bare 14 × 14 mm camera PCB with lens holder; the optional 19 mm adapter and attached wire plug are excluded. The manufacturer dimension illustration gives a 15 mm camera axial extent and Ø9 mm lens. The exposed PCB is retained rather than inventing a closed camera housing. PCB thickness, component layout, connector dimensions and lens-holder depth split are approximate. Side mounting bores are omitted because no hole size or datum is dimensioned. PAL/NTSC CVBS."
+        },
+        {
+          "label": "Geometry fidelity",
+          "value": "Authored reconstruction from manufacturer dimensions and images. Undimensioned profiles, wall thicknesses, connectors and internal parts are illustrative; not manufacturer CAD or a tolerance-controlled mounting template."
+        }
+      ]
+    }
+  },
+  {
+    "id": "ratel-pro",
+    "name": "Caddx Ratel Pro",
+    "description": "19 × 19 mm · Analog CVBS · camera only",
+    "parameters": {
+      "model": "ratel-pro"
+    },
+    "catalog": {
+      "designation": "Caddx Ratel Pro",
+      "manufacturer": "Caddx",
+      "sourceName": "Caddx official camera specifications and dimension drawing",
+      "sourceUrl": "https://en.caddxfpv.com.cn/products/ratel-pro.html",
+      "alternateSourceUrls": [
+        "https://en.caddxfpv.com.cn/app/template/images/product_ratel_pro/img10.webp"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "width": 19,
+        "height": 19,
+        "depth": 28.5,
+        "dfov": 125,
+        "tvl": 1500,
+        "weight": 9.5,
+        "voltageMin": 4.5,
+        "voltageMax": 27,
+        "manufacturer": "Caddx",
+        "kind": "fpv-analog",
+        "interface": "cvbs"
+      },
+      "attributeConditions": {
+        "dfov": "125° is identified as diagonal FoV in the manufacturer product description."
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Authored camera envelope: 19 × 19 × 28.5 mm from manufacturer specifications or drawing.",
+        "limitations": "Camera only; cables and OSD board excluded. Manufacturer drawing specifies a 19 × 19 mm body, Ø15 mm lens, 26.8 mm lens-to-body axial extent and 28.5 mm overall extent including the rear connector. The 1.7 mm difference is retained as connector projection. Rounded body profile, lens/body split, nominal Ø2 side bores and their offsets are illustrative; no mounting thread or tolerance is inferred from the undimensioned hole illustration. The 5 MP lens rating is not the analog image resolution. PAL/NTSC CVBS. Not manufacturer CAD; verify actual mounting fit before fabricating a rigid bracket.",
+        "sourceUrl": "https://en.caddxfpv.com.cn/app/template/images/product_ratel_pro/img10.webp"
+      },
+      "specifications": [
+        {
+          "label": "Width",
+          "value": "19 mm"
+        },
+        {
+          "label": "Height",
+          "value": "19 mm"
+        },
+        {
+          "label": "Axial depth",
+          "value": "28.5 mm"
+        },
+        {
+          "label": "Diagonal FoV",
+          "value": "125 °"
+        },
+        {
+          "label": "Analog resolution",
+          "value": "1500 TVL"
+        },
+        {
+          "label": "Mass",
+          "value": "9.5 g"
+        },
+        {
+          "label": "Minimum DC supply",
+          "value": "4.5 V"
+        },
+        {
+          "label": "Maximum DC supply",
+          "value": "27 V"
+        },
+        {
+          "label": "Sensor",
+          "value": "1/1.8-inch"
+        },
+        {
+          "label": "Integration and model scope",
+          "value": "Camera only; cables and OSD board excluded. Manufacturer drawing specifies a 19 × 19 mm body, Ø15 mm lens, 26.8 mm lens-to-body axial extent and 28.5 mm overall extent including the rear connector. The 1.7 mm difference is retained as connector projection. Rounded body profile, lens/body split, nominal Ø2 side bores and their offsets are illustrative; no mounting thread or tolerance is inferred from the undimensioned hole illustration. The 5 MP lens rating is not the analog image resolution. PAL/NTSC CVBS."
+        },
+        {
+          "label": "Geometry fidelity",
+          "value": "Authored reconstruction from manufacturer dimensions and images. Undimensioned profiles, wall thicknesses, connectors and internal parts are illustrative; not manufacturer CAD or a tolerance-controlled mounting template."
+        }
+      ]
+    }
+  },
+  {
+    "id": "avatar-nano-v3",
+    "name": "Walksnail Avatar HD Nano Camera V3",
+    "description": "14 × 14 mm · Walksnail Avatar digital · camera only",
+    "parameters": {
+      "model": "avatar-nano-v3"
+    },
+    "catalog": {
+      "designation": "Walksnail Avatar HD Nano Camera V3",
+      "manufacturer": "Caddx",
+      "sourceName": "Caddx official camera specifications",
+      "sourceUrl": "https://caddxfpv.com/products/walksnail-avatar-hd-nano-camera-v3",
+      "alternateSourceUrls": [],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "width": 14,
+        "height": 14,
+        "depth": 16.8,
+        "pixelsX": 1920,
+        "pixelsY": 1080,
+        "fps": 120,
+        "focalLength": 2.1,
+        "weight": 3,
+        "manufacturer": "Caddx",
+        "kind": "fpv-digital",
+        "interface": "walksnail-avatar",
+        "shutter": "rolling",
+        "channel": "colour"
+      },
+      "attributeConditions": {
+        "weight": "Camera without coaxial cable.",
+        "fps": "120 fps at 1280 × 720; 1920 × 1080 up to 60 fps. A compatible Avatar VTX is required.",
+        "pixelsX": "Maximum published camera output dimensions, not the 4 MP sensor pixel count.",
+        "pixelsY": "Maximum published camera output dimensions; see frame-rate condition."
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Authored camera envelope: 14 × 14 × 16.8 mm from manufacturer specifications or drawing.",
+        "limitations": "Camera only; coaxial cable, VTX, antenna and adapter excluded. Manufacturer camera specifications give 14 × 14 × 16.8 mm and 3 g without cable. Requires a compatible Walksnail Avatar video transmitter; complete-kit input voltage and transmitter power are not camera ratings. Housing, lens outer profile and nominal Ø2 side mount offsets are reconstructed. Published 160° FoV has no stated axis, so no axis-specific filter is assigned. Maximum image resolution and maximum frame rate use different modes. Not manufacturer CAD; verify actual mounting fit before fabricating a rigid bracket.",
+        "sourceUrl": "https://caddxfpv.com/products/walksnail-avatar-hd-nano-camera-v3"
+      },
+      "specifications": [
+        {
+          "label": "Width",
+          "value": "14 mm"
+        },
+        {
+          "label": "Height",
+          "value": "14 mm"
+        },
+        {
+          "label": "Axial depth",
+          "value": "16.8 mm"
+        },
+        {
+          "label": "Primary image width",
+          "value": "1920 px"
+        },
+        {
+          "label": "Primary image height",
+          "value": "1080 px"
+        },
+        {
+          "label": "Maximum frame rate",
+          "value": "120 fps"
+        },
+        {
+          "label": "Lens focal length",
+          "value": "2.1 mm"
+        },
+        {
+          "label": "Mass",
+          "value": "3 g"
+        },
+        {
+          "label": "Sensor",
+          "value": "1/3.2-inch 4 MP 4:3 sensor"
+        },
+        {
+          "label": "Integration and model scope",
+          "value": "Camera only; coaxial cable, VTX, antenna and adapter excluded. Manufacturer camera specifications give 14 × 14 × 16.8 mm and 3 g without cable. Requires a compatible Walksnail Avatar video transmitter; complete-kit input voltage and transmitter power are not camera ratings. Housing, lens outer profile and nominal Ø2 side mount offsets are reconstructed. Published 160° FoV has no stated axis, so no axis-specific filter is assigned. Maximum image resolution and maximum frame rate use different modes."
+        },
+        {
+          "label": "Geometry fidelity",
+          "value": "Authored reconstruction from manufacturer dimensions and images. Undimensioned profiles, wall thicknesses, connectors and internal parts are illustrative; not manufacturer CAD or a tolerance-controlled mounting template."
+        }
+      ]
+    }
+  },
+  {
     "id": "dji-o4",
     "name": "DJI O4 camera module",
     "description": "12.36 × 16.5 mm · dji-o4 · fpv-digital",
@@ -243,9 +698,7 @@
       "sourceName": "DJI specifications / drawing",
       "sourceUrl": "https://www.dji.com/o4-air-unit/specs",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 12.36,
         "height": 16.5,
@@ -316,9 +769,7 @@
       "sourceName": "DJI specifications / drawing",
       "sourceUrl": "https://www.dji.com/o4-air-unit/specs",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 20,
         "height": 23.3,
@@ -389,9 +840,7 @@
       "sourceName": "Teledyne FLIR specifications / drawing",
       "sourceUrl": "https://www.oem.flir.com/en-150/products/lepton/?model=500-0771-01",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 11.8,
         "height": 12.7,
@@ -476,9 +925,7 @@
       "sourceName": "Teledyne FLIR specifications / drawing",
       "sourceUrl": "https://www.oem.flir.com/en-150/products/lepton/?model=500-0758-03",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 11.8,
         "height": 12.7,
@@ -563,9 +1010,7 @@
       "sourceName": "Adafruit specifications / drawing",
       "sourceUrl": "https://www.adafruit.com/product/4407",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 25.7,
         "height": 17.7,
@@ -662,9 +1107,7 @@
       "sourceName": "Adafruit specifications / drawing",
       "sourceUrl": "https://www.adafruit.com/product/4469",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 25.8,
         "height": 17.8,
@@ -750,7 +1193,7 @@
   },
   {
     "id": "rlc510a",
-    "name": "Reolink RLC-510A (5 MP, 4 mm)",
+    "name": "Reolink RLC-510A · 5 MP · 4 mm",
     "description": "67 × 67 mm · ethernet · ip",
     "parameters": {
       "model": "rlc510a"
@@ -761,9 +1204,7 @@
       "sourceName": "Reolink specifications / drawing",
       "sourceUrl": "https://cdn.reolink.com/files/docs/specs/RLC-510A-IP-Camera-Specifications.pdf",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 67,
         "height": 67,
@@ -850,7 +1291,7 @@
   },
   {
     "id": "rlc520a",
-    "name": "Reolink RLC-520A (5 MP, 4 mm)",
+    "name": "Reolink RLC-520A · 5 MP · 4 mm",
     "description": "105 × 105 mm · ethernet · ip",
     "parameters": {
       "model": "rlc520a"
@@ -861,9 +1302,7 @@
       "sourceName": "Reolink specifications / drawing",
       "sourceUrl": "https://cdn.reolink.com/files/docs/specs/RLC-520A-IP-Camera-Specifications.pdf",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 105,
         "height": 105,
@@ -960,12 +1399,8 @@
       "manufacturer": "Raspberry Pi",
       "sourceName": "Raspberry Pi specifications / drawing",
       "sourceUrl": "https://www.raspberrypi.com/products/camera-module-3/",
-      "alternateSourceUrls": [
-        "https://www.raspberrypi.com/products/camera-module-3/"
-      ],
-      "verifiedParameters": [
-        "model"
-      ],
+      "alternateSourceUrls": ["https://www.raspberrypi.com/products/camera-module-3/"],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 25,
         "height": 23.862,
@@ -1052,12 +1487,8 @@
       "manufacturer": "Raspberry Pi",
       "sourceName": "Raspberry Pi specifications / drawing",
       "sourceUrl": "https://www.raspberrypi.com/products/camera-module-3/",
-      "alternateSourceUrls": [
-        "https://www.raspberrypi.com/products/camera-module-3/"
-      ],
-      "verifiedParameters": [
-        "model"
-      ],
+      "alternateSourceUrls": ["https://www.raspberrypi.com/products/camera-module-3/"],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 25,
         "height": 23.862,
@@ -1145,9 +1576,7 @@
       "sourceName": "Raspberry Pi specifications / drawing",
       "sourceUrl": "https://www.raspberrypi.com/products/ai-camera/",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 25,
         "height": 24,
@@ -1224,9 +1653,7 @@
       "alternateSourceUrls": [
         "https://datasheets.raspberrypi.com/gs-camera/gs-camera-product-brief.pdf"
       ],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 38,
         "height": 38,
@@ -1298,9 +1725,7 @@
       "sourceName": "RealSense specifications / drawing",
       "sourceUrl": "https://www.realsenseai.com/products/depth-camera-d435i/",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 90,
         "height": 25,
@@ -1378,9 +1803,7 @@
       "sourceName": "Luxonis specifications / drawing",
       "sourceUrl": "https://checkout.luxonis.com/products/oak-d-lite-1",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 91,
         "height": 28,
@@ -1468,9 +1891,7 @@
       "sourceKind": "attachment",
       "sourceUrl": "",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 21,
         "height": 21,
@@ -1566,9 +1987,7 @@
       "sourceKind": "attachment",
       "sourceUrl": "",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 21,
         "height": 21,
@@ -1663,9 +2082,7 @@
       "sourceKind": "attachment",
       "sourceUrl": "",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 21,
         "height": 21,
@@ -1761,9 +2178,7 @@
       "sourceKind": "attachment",
       "sourceUrl": "",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 21,
         "height": 21,
@@ -1859,9 +2274,7 @@
       "sourceKind": "attachment",
       "sourceUrl": "",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 21,
         "height": 21,
@@ -1957,9 +2370,7 @@
       "sourceKind": "attachment",
       "sourceUrl": "",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 21,
         "height": 21,
@@ -2055,9 +2466,7 @@
       "sourceKind": "attachment",
       "sourceUrl": "",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "width": 21,
         "height": 21,

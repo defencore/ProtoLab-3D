@@ -5,7 +5,9 @@ import React, { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { parts } from '../src/parts';
 import { libraryCategories } from '../src/core/library';
-import { libraryAreas, libraryArea, libraryLabel } from '../src/core/library-navigation';
+import { libraryAreas, libraryArea } from '../src/core/library-navigation';
+import { libraryLabel } from '../src/core/library-labels';
+import type { PartDefinition } from '../src/core/types';
 import { emptyPresetFilters, fieldId, type PresetFilters } from '../src/core/preset-search';
 
 // Rendering the real component verifies its control layout; styles are handled by Vite in the app.
@@ -23,15 +25,19 @@ const { default: PresetBrowser } = await import('../src/components/PresetBrowser
 const family = parts.filter((part) => part.browseFamily?.id === 'spacers-standoffs');
 const current = family.find((part) => part.id === 'pcb-standoff')!;
 
-function browserHtml(filters: PresetFilters): string {
+function browserHtml(
+  filters: PresetFilters,
+  definitions: PartDefinition[] = parts,
+  selectedPart: PartDefinition = current,
+): string {
   const previousReact = Object.getOwnPropertyDescriptor(globalThis, 'React');
   Object.defineProperty(globalThis, 'React', { configurable: true, value: React });
   try {
     return renderToStaticMarkup(
       createElement(PresetBrowser, {
-        parts,
-        currentPart: current,
-        currentParameters: current.defaults,
+        parts: definitions,
+        currentPart: selectedPart,
+        currentParameters: selectedPart.defaults,
         currentPresetId: '',
         initialMode: 'match',
         filters,
@@ -45,6 +51,31 @@ function browserHtml(filters: PresetFilters): string {
     else Reflect.deleteProperty(globalThis, 'React');
   }
 }
+
+test('preset results use the canonical name and retain a different source designation', () => {
+  const preset = {
+    ...current.presets.find((item) => item.catalog)!,
+    id: 'display-name-fixture',
+    name: 'Maker X1 · 4 mm',
+    catalog: {
+      ...current.presets.find((item) => item.catalog)!.catalog!,
+      designation: 'SOURCE-004',
+    },
+  };
+  const definition = { ...current, presets: [preset] };
+  for (const query of ['Maker X1', 'SOURCE-004']) {
+    const html = browserHtml(
+      { ...emptyPresetFilters(definition), query },
+      [definition],
+      definition,
+    );
+    assert.match(html, /<h3>Maker X1 · 4 mm<\/h3>/);
+    assert.match(html, /Source designation: SOURCE-004/);
+    assert.doesNotMatch(html, /<h3>SOURCE-004<\/h3>/);
+    assert.match(html, /aria-label="Preview Maker X1 · 4 mm,/);
+  }
+  assert.equal(preset.catalog.designation, 'SOURCE-004');
+});
 
 test('a selected multi-part family exposes its source facets and separates catalog body length from plain sleeve length', () => {
   assert.equal(family.length, 4);

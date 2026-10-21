@@ -1,5 +1,6 @@
 import type { PartDefinition } from './types';
 import { sortLibraryParts } from './library';
+import { familyLabel } from './library-labels';
 
 export interface BrowseFamily {
   id: string;
@@ -14,10 +15,6 @@ export interface BrowseFamily {
 
 export function familyId(part: PartDefinition): string {
   return part.browseFamily?.id ?? part.id;
-}
-
-export function familyLabel(part: PartDefinition): string {
-  return part.browseFamily?.label ?? part.name;
 }
 
 /** The result contains real definitions, never a combined synthetic product. */

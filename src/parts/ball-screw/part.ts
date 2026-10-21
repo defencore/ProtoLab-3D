@@ -60,7 +60,19 @@ const part: PartDefinition = {
       ) ?? choices[0];
     return selected ? { ...p, ...selected.parameters } : p;
   },
-  presetMatchKeys: ['family', 'shaftDiameter', 'lead', 'nutLength', 'nutDiameter'],
+  presetMatchKeys: [
+    'family',
+    'shaftDiameter',
+    'lead',
+    'nutLength',
+    'nutDiameter',
+    'fixedGrooveDiameter',
+    'fixedGrooveWidth',
+    'fixedGrooveOffset',
+    'supportGrooveDiameter',
+    'supportGrooveWidth',
+    'supportGrooveOffset',
+  ],
   states: [
     {
       id: 'assembled',
@@ -97,7 +109,7 @@ const part: PartDefinition = {
     },
   ],
   notes:
-    'Catalog dimensions apply only to the fields marked by each preset. Circular raceway clearance, loaded ball spacing, deflectors, return covers, preload spacer and lubrication pilot bore are representative prototype geometry. C5/C7 is requested accuracy metadata, not a manufacturing certificate. Overall shaft length includes machined journals; their dimensions are editable custom values. Positive rotation translates the nut by one lead per revolution. Continuous return routing and production contact profiles are not modeled. The inspection cutaway is offset by 0.001 mm to keep periodic CAD faces robust.',
+    'Catalog dimensions apply only to the fields marked by each preset. Circular raceway clearance, loaded ball spacing, deflectors, return covers, preload spacer and lubrication pilot bore are representative prototype geometry. C5/C7 is requested accuracy metadata, not a manufacturing certificate. Overall shaft length includes machined journals; their dimensions and optional retaining-ring grooves are editable custom values. Each groove offset starts at its journal’s low-Z end; diameter zero disables it. Grooves remain physical in both Simple and Full. Specify supplier groove tolerances, edge radii and end lands separately. Positive rotation translates the nut by one lead per revolution. Continuous return routing and production contact profiles are not modeled. The inspection cutaway is offset by 0.001 mm to keep periodic CAD faces robust.',
 };
 export default withParameterStates(
   { ...part, presets: modulePresets },
@@ -126,6 +138,12 @@ export default withParameterStates(
       'driveJournalLength',
       'supportJournalDiameter',
       'supportJournalLength',
+      'fixedGrooveDiameter',
+      'fixedGrooveWidth',
+      'fixedGrooveOffset',
+      'supportGrooveDiameter',
+      'supportGrooveWidth',
+      'supportGrooveOffset',
       'nutPosition',
     ],
   },

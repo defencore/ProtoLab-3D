@@ -222,6 +222,7 @@
   font-size: 12px;
   font-weight: 550;
   line-height: 1.4;
+  overflow-wrap: anywhere;
 }
 .catalog-model-summary {
   display: grid;
@@ -252,6 +253,7 @@
   color: #b5a593;
   font-size: 9px;
   line-height: 1.45;
+  overflow-wrap: anywhere;
 }
 .catalog-model-empty {
   margin: 0;

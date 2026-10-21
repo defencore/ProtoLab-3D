@@ -1,0 +1,28 @@
+{
+  "sourceKind": "user-supplied-file",
+  "fileName": "MPR.10.step",
+  "originalPath": "/Users/x/Downloads/MPR.10.step",
+  "sizeBytes": 6182194,
+  "sha256": "b7d43b3b04e25d4981efeae824eb3cc1802cdc5b3c26e5e07bf7e60023305e36",
+  "format": "ISO-10303-21 STEP physical file",
+  "header": {
+    "fileDescription": [
+      "MPR.10 aerodynamic control-surface actuator",
+      "ESKD",
+      "base disk diameter 86 mm",
+      "units millimetres"
+    ],
+    "implementationLevel": "2;1",
+    "fileName": "Open CASCADE Shape Model",
+    "timestampAsWritten": "2026-10-21T17:56:37",
+    "authorAsWritten": ["Author"],
+    "organizationAsWritten": ["Open CASCADE"],
+    "preprocessorVersion": "Open CASCADE STEP processor 7.8",
+    "originatingSystem": "Open CASCADE 7.8",
+    "authorizationAsWritten": "Unknown",
+    "fileSchema": "AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }",
+    "productId": "MPR.10"
+  },
+  "use": "Reference topology for the stationary MPR.10 demonstration stand requested by the user.",
+  "interpretation": "Header strings are source metadata, not independently certified dimensions or instructions. The redesigned printed structure, purchased hardware selection, shaft ends and mounting interfaces are new prototype choices. The source file is not bundled by this provenance record."
+}

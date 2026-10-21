@@ -70,7 +70,7 @@ test('electronics: families, fixed variants, sourced ratings and missing values'
   assert.equal(selections.length, 10);
   assert.equal(
     selections.reduce((n, p) => n + p.presets.length, 0),
-    27,
+    59,
   );
   for (const part of selections) {
     assert.equal(part.catalogSelectionOnly, true);

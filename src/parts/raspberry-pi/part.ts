@@ -17,7 +17,18 @@ const part: PartDefinition = {
   icon: 'circuit',
   complexity: 'Fixed supplier models',
   description: 'Raspberry Pi computers and compute modules in distinct mechanical formats.',
-  keywords: ['RPi', 'SBC', 'mini computer', 'single board'],
+  keywords: [
+    'RPi',
+    'SBC',
+    'mini computer',
+    'single board',
+    'Compute Module 5',
+    'CM5',
+    'RPi5 module',
+    'Lite',
+    'eMMC',
+    'carrier board',
+  ],
   parameters,
   defaults,
   presets: presets as unknown as Preset[],
@@ -61,7 +72,7 @@ const part: PartDefinition = {
       ? (p.detail === 'full' ? native : lightweight).dimensions(state)
       : assembly.dimensions(pieces(p, state)),
   notes:
-    'Lightweight is the default for working assemblies. Pi 5 retains the exact source PCB and its holes, and replaces connector/package details with 19 simple bodies measured from the source CAD. Full detail restores all 2,689 source solids. Port cavities in lightweight mode are simplified visual references, not mating drawings. Source colors are illustrative and source revision limitations apply. Other boards omit individual contact pads and socket contacts in lightweight mode. PCB/body dimensions are supplier values; undimensioned component locations remain approximate. Flexible leads, mating plugs and accessories are excluded.',
+    'Lightweight is the default for working assemblies. Pi 5 retains the exact source PCB and its holes, and replaces connector/package details with 19 simple bodies measured from the source CAD. Full detail restores all 2,689 source solids. CM5 uses reconstructed nominal PCB/mounting geometry and source-positioned connector/package envelopes; Full detail adds illustrative B2B contacts, not original manufacturer surfaces. Port cavities in lightweight mode are simplified visual references, not mating drawings. Source colors are illustrative and source revision limitations apply. Other boards omit individual contact pads and socket contacts in lightweight mode. PCB/body dimensions are supplier values; undimensioned component locations remain approximate. Flexible leads, mating plugs and accessories are excluded.',
   sources: [
     ...new Map(
       models.map((m) => [m.source, { label: m.manufacturer + ' — ' + m.name, url: m.source }]),

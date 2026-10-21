@@ -17,10 +17,7 @@
         "https://www.raspberrypi.com/products/raspberry-pi-5/",
         "https://pip.raspberrypi.com/categories/892-raspberry-pi-5"
       ],
-      "verifiedParameters": [
-        "model",
-        "detail"
-      ],
+      "verifiedParameters": ["model", "detail"],
       "attributes": {
         "manufacturer": "Raspberry Pi",
         "construction": "Bare PCB",
@@ -31,7 +28,8 @@
         "interface": "PCIe / MIPI / GbE",
         "mountX": 58,
         "mountY": 49,
-        "hole": 2.7
+        "hole": 2.7,
+        "boardFamily": "Raspberry Pi 5"
       },
       "attributeConditions": {
         "width": "PCB/body only; connector overhangs excluded.",
@@ -114,10 +112,7 @@
         "https://www.raspberrypi.com/products/raspberry-pi-5/",
         "https://pip.raspberrypi.com/categories/892-raspberry-pi-5"
       ],
-      "verifiedParameters": [
-        "model",
-        "detail"
-      ],
+      "verifiedParameters": ["model", "detail"],
       "attributes": {
         "manufacturer": "Raspberry Pi",
         "construction": "Bare PCB",
@@ -128,7 +123,8 @@
         "interface": "PCIe / MIPI / GbE",
         "mountX": 58,
         "mountY": 49,
-        "hole": 2.7
+        "hole": 2.7,
+        "boardFamily": "Raspberry Pi 5"
       },
       "attributeConditions": {
         "width": "PCB/body only; connector overhangs excluded.",
@@ -207,9 +203,7 @@
       "sourceName": "Manufacturer specifications / mechanical drawing",
       "sourceUrl": "https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "manufacturer": "Raspberry Pi",
         "construction": "Bare PCB",
@@ -217,7 +211,8 @@
         "length": 30,
         "usb": "2 Micro USB",
         "connection": "40-pin unpopulated",
-        "interface": "Mini HDMI / CSI / Wi-Fi"
+        "interface": "Mini HDMI / CSI / Wi-Fi",
+        "boardFamily": "Zero 2 W"
       },
       "attributeConditions": {
         "width": "PCB/body only; connector overhangs excluded.",
@@ -276,12 +271,8 @@
       "manufacturer": "Raspberry Pi",
       "sourceName": "Manufacturer specifications / mechanical drawing",
       "sourceUrl": "https://datasheets.raspberrypi.com/cm4/cm4-datasheet.pdf",
-      "alternateSourceUrls": [
-        "https://datasheets.raspberrypi.com/cm4/cm4-datasheet.pdf"
-      ],
-      "verifiedParameters": [
-        "model"
-      ],
+      "alternateSourceUrls": ["https://datasheets.raspberrypi.com/cm4/cm4-datasheet.pdf"],
+      "verifiedParameters": ["model"],
       "attributes": {
         "manufacturer": "Raspberry Pi",
         "construction": "Bare PCB",
@@ -291,7 +282,8 @@
         "connection": "2 × 100-pin board-to-board",
         "interface": "Carrier required",
         "mountX": 48,
-        "mountY": 33
+        "mountY": 33,
+        "boardFamily": "Compute Module 4"
       },
       "attributeConditions": {
         "width": "PCB/body only; connector overhangs excluded.",
@@ -343,6 +335,2950 @@
           "value": "PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout."
         }
       ]
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5002000",
+    "name": "Raspberry Pi Compute Module 5 · CM5002000 · 2 GB RAM · Lite · no wireless",
+    "description": "SC1556 · 55 × 40 mm · microSD on carrier required · no radio",
+    "parameters": {
+      "model": "raspberry-pi-cm5002000",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5002000",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-002000",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 2,
+        "emmcGB": 0,
+        "wireless": "No"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5002000"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1556"
+        },
+        {
+          "label": "RAM",
+          "value": "2 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "Lite — no eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "Not fitted"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5002016",
+    "name": "Raspberry Pi Compute Module 5 · CM5002016 · 2 GB RAM · 16 GB eMMC · no wireless",
+    "description": "SC1558 · 55 × 40 mm · 16GB eMMC · no radio",
+    "parameters": {
+      "model": "raspberry-pi-cm5002016",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5002016",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-002016",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 2,
+        "emmcGB": 16,
+        "wireless": "No"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5002016"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1558"
+        },
+        {
+          "label": "RAM",
+          "value": "2 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "16 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "Not fitted"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5002032",
+    "name": "Raspberry Pi Compute Module 5 · CM5002032 · 2 GB RAM · 32 GB eMMC · no wireless",
+    "description": "SC1559 · 55 × 40 mm · 32GB eMMC · no radio",
+    "parameters": {
+      "model": "raspberry-pi-cm5002032",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5002032",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-002032",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 2,
+        "emmcGB": 32,
+        "wireless": "No"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5002032"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1559"
+        },
+        {
+          "label": "RAM",
+          "value": "2 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "32 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "Not fitted"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5002064",
+    "name": "Raspberry Pi Compute Module 5 · CM5002064 · 2 GB RAM · 64 GB eMMC · no wireless",
+    "description": "SC1560 · 55 × 40 mm · 64GB eMMC · no radio",
+    "parameters": {
+      "model": "raspberry-pi-cm5002064",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5002064",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-002064",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 2,
+        "emmcGB": 64,
+        "wireless": "No"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5002064"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1560"
+        },
+        {
+          "label": "RAM",
+          "value": "2 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "64 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "Not fitted"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5102000",
+    "name": "Raspberry Pi Compute Module 5 · CM5102000 · 2 GB RAM · Lite · wireless",
+    "description": "SC1586 · 55 × 40 mm · microSD on carrier required · Wi-Fi / Bluetooth",
+    "parameters": {
+      "model": "raspberry-pi-cm5102000",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5102000",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-102000",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 2,
+        "emmcGB": 0,
+        "wireless": "Yes"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5102000"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1586"
+        },
+        {
+          "label": "RAM",
+          "value": "2 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "Lite — no eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "2.4/5 GHz Wi-Fi and Bluetooth 5.0"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5102016",
+    "name": "Raspberry Pi Compute Module 5 · CM5102016 · 2 GB RAM · 16 GB eMMC · wireless",
+    "description": "SC1588 · 55 × 40 mm · 16GB eMMC · Wi-Fi / Bluetooth",
+    "parameters": {
+      "model": "raspberry-pi-cm5102016",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5102016",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-102016",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 2,
+        "emmcGB": 16,
+        "wireless": "Yes"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5102016"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1588"
+        },
+        {
+          "label": "RAM",
+          "value": "2 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "16 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "2.4/5 GHz Wi-Fi and Bluetooth 5.0"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5102032",
+    "name": "Raspberry Pi Compute Module 5 · CM5102032 · 2 GB RAM · 32 GB eMMC · wireless",
+    "description": "SC1589 · 55 × 40 mm · 32GB eMMC · Wi-Fi / Bluetooth",
+    "parameters": {
+      "model": "raspberry-pi-cm5102032",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5102032",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-102032",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 2,
+        "emmcGB": 32,
+        "wireless": "Yes"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5102032"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1589"
+        },
+        {
+          "label": "RAM",
+          "value": "2 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "32 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "2.4/5 GHz Wi-Fi and Bluetooth 5.0"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5102064",
+    "name": "Raspberry Pi Compute Module 5 · CM5102064 · 2 GB RAM · 64 GB eMMC · wireless",
+    "description": "SC1590 · 55 × 40 mm · 64GB eMMC · Wi-Fi / Bluetooth",
+    "parameters": {
+      "model": "raspberry-pi-cm5102064",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5102064",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-102064",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 2,
+        "emmcGB": 64,
+        "wireless": "Yes"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5102064"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1590"
+        },
+        {
+          "label": "RAM",
+          "value": "2 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "64 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "2.4/5 GHz Wi-Fi and Bluetooth 5.0"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5004000",
+    "name": "Raspberry Pi Compute Module 5 · CM5004000 · 4 GB RAM · Lite · no wireless",
+    "description": "SC1562 · 55 × 40 mm · microSD on carrier required · no radio",
+    "parameters": {
+      "model": "raspberry-pi-cm5004000",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5004000",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-004000",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 4,
+        "emmcGB": 0,
+        "wireless": "No"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5004000"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1562"
+        },
+        {
+          "label": "RAM",
+          "value": "4 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "Lite — no eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "Not fitted"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5004016",
+    "name": "Raspberry Pi Compute Module 5 · CM5004016 · 4 GB RAM · 16 GB eMMC · no wireless",
+    "description": "SC1564 · 55 × 40 mm · 16GB eMMC · no radio",
+    "parameters": {
+      "model": "raspberry-pi-cm5004016",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5004016",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-004016",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 4,
+        "emmcGB": 16,
+        "wireless": "No"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5004016"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1564"
+        },
+        {
+          "label": "RAM",
+          "value": "4 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "16 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "Not fitted"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5004032",
+    "name": "Raspberry Pi Compute Module 5 · CM5004032 · 4 GB RAM · 32 GB eMMC · no wireless",
+    "description": "SC1565 · 55 × 40 mm · 32GB eMMC · no radio",
+    "parameters": {
+      "model": "raspberry-pi-cm5004032",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5004032",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-004032",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 4,
+        "emmcGB": 32,
+        "wireless": "No"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5004032"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1565"
+        },
+        {
+          "label": "RAM",
+          "value": "4 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "32 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "Not fitted"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5004064",
+    "name": "Raspberry Pi Compute Module 5 · CM5004064 · 4 GB RAM · 64 GB eMMC · no wireless",
+    "description": "SC1566 · 55 × 40 mm · 64GB eMMC · no radio",
+    "parameters": {
+      "model": "raspberry-pi-cm5004064",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5004064",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-004064",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 4,
+        "emmcGB": 64,
+        "wireless": "No"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5004064"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1566"
+        },
+        {
+          "label": "RAM",
+          "value": "4 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "64 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "Not fitted"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5104000",
+    "name": "Raspberry Pi Compute Module 5 · CM5104000 · 4 GB RAM · Lite · wireless",
+    "description": "SC1592 · 55 × 40 mm · microSD on carrier required · Wi-Fi / Bluetooth",
+    "parameters": {
+      "model": "raspberry-pi-cm5104000",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5104000",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-104000",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 4,
+        "emmcGB": 0,
+        "wireless": "Yes"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5104000"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1592"
+        },
+        {
+          "label": "RAM",
+          "value": "4 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "Lite — no eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "2.4/5 GHz Wi-Fi and Bluetooth 5.0"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5104016",
+    "name": "Raspberry Pi Compute Module 5 · CM5104016 · 4 GB RAM · 16 GB eMMC · wireless",
+    "description": "SC1594 · 55 × 40 mm · 16GB eMMC · Wi-Fi / Bluetooth",
+    "parameters": {
+      "model": "raspberry-pi-cm5104016",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5104016",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-104016",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 4,
+        "emmcGB": 16,
+        "wireless": "Yes"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5104016"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1594"
+        },
+        {
+          "label": "RAM",
+          "value": "4 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "16 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "2.4/5 GHz Wi-Fi and Bluetooth 5.0"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5104032",
+    "name": "Raspberry Pi Compute Module 5 · CM5104032 · 4 GB RAM · 32 GB eMMC · wireless",
+    "description": "SC1595 · 55 × 40 mm · 32GB eMMC · Wi-Fi / Bluetooth",
+    "parameters": {
+      "model": "raspberry-pi-cm5104032",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5104032",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-104032",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 4,
+        "emmcGB": 32,
+        "wireless": "Yes"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5104032"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1595"
+        },
+        {
+          "label": "RAM",
+          "value": "4 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "32 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "2.4/5 GHz Wi-Fi and Bluetooth 5.0"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5104064",
+    "name": "Raspberry Pi Compute Module 5 · CM5104064 · 4 GB RAM · 64 GB eMMC · wireless",
+    "description": "SC1596 · 55 × 40 mm · 64GB eMMC · Wi-Fi / Bluetooth",
+    "parameters": {
+      "model": "raspberry-pi-cm5104064",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5104064",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-104064",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 4,
+        "emmcGB": 64,
+        "wireless": "Yes"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5104064"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1596"
+        },
+        {
+          "label": "RAM",
+          "value": "4 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "64 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "2.4/5 GHz Wi-Fi and Bluetooth 5.0"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5008000",
+    "name": "Raspberry Pi Compute Module 5 · CM5008000 · 8 GB RAM · Lite · no wireless",
+    "description": "SC1568 · 55 × 40 mm · microSD on carrier required · no radio",
+    "parameters": {
+      "model": "raspberry-pi-cm5008000",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5008000",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-008000",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 8,
+        "emmcGB": 0,
+        "wireless": "No"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5008000"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1568"
+        },
+        {
+          "label": "RAM",
+          "value": "8 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "Lite — no eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "Not fitted"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5008016",
+    "name": "Raspberry Pi Compute Module 5 · CM5008016 · 8 GB RAM · 16 GB eMMC · no wireless",
+    "description": "SC1570 · 55 × 40 mm · 16GB eMMC · no radio",
+    "parameters": {
+      "model": "raspberry-pi-cm5008016",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5008016",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-008016",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 8,
+        "emmcGB": 16,
+        "wireless": "No"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5008016"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1570"
+        },
+        {
+          "label": "RAM",
+          "value": "8 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "16 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "Not fitted"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5008032",
+    "name": "Raspberry Pi Compute Module 5 · CM5008032 · 8 GB RAM · 32 GB eMMC · no wireless",
+    "description": "SC1571 · 55 × 40 mm · 32GB eMMC · no radio",
+    "parameters": {
+      "model": "raspberry-pi-cm5008032",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5008032",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-008032",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 8,
+        "emmcGB": 32,
+        "wireless": "No"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5008032"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1571"
+        },
+        {
+          "label": "RAM",
+          "value": "8 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "32 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "Not fitted"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5008064",
+    "name": "Raspberry Pi Compute Module 5 · CM5008064 · 8 GB RAM · 64 GB eMMC · no wireless",
+    "description": "SC1572 · 55 × 40 mm · 64GB eMMC · no radio",
+    "parameters": {
+      "model": "raspberry-pi-cm5008064",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5008064",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-008064",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 8,
+        "emmcGB": 64,
+        "wireless": "No"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5008064"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1572"
+        },
+        {
+          "label": "RAM",
+          "value": "8 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "64 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "Not fitted"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5108000",
+    "name": "Raspberry Pi Compute Module 5 · CM5108000 · 8 GB RAM · Lite · wireless",
+    "description": "SC1598 · 55 × 40 mm · microSD on carrier required · Wi-Fi / Bluetooth",
+    "parameters": {
+      "model": "raspberry-pi-cm5108000",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5108000",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-108000",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 8,
+        "emmcGB": 0,
+        "wireless": "Yes"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5108000"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1598"
+        },
+        {
+          "label": "RAM",
+          "value": "8 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "Lite — no eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "2.4/5 GHz Wi-Fi and Bluetooth 5.0"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5108016",
+    "name": "Raspberry Pi Compute Module 5 · CM5108016 · 8 GB RAM · 16 GB eMMC · wireless",
+    "description": "SC1600 · 55 × 40 mm · 16GB eMMC · Wi-Fi / Bluetooth",
+    "parameters": {
+      "model": "raspberry-pi-cm5108016",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5108016",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-108016",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 8,
+        "emmcGB": 16,
+        "wireless": "Yes"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5108016"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1600"
+        },
+        {
+          "label": "RAM",
+          "value": "8 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "16 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "2.4/5 GHz Wi-Fi and Bluetooth 5.0"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5108032",
+    "name": "Raspberry Pi Compute Module 5 · CM5108032 · 8 GB RAM · 32 GB eMMC · wireless",
+    "description": "SC1601 · 55 × 40 mm · 32GB eMMC · Wi-Fi / Bluetooth",
+    "parameters": {
+      "model": "raspberry-pi-cm5108032",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5108032",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-108032",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 8,
+        "emmcGB": 32,
+        "wireless": "Yes"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5108032"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1601"
+        },
+        {
+          "label": "RAM",
+          "value": "8 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "32 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "2.4/5 GHz Wi-Fi and Bluetooth 5.0"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5108064",
+    "name": "Raspberry Pi Compute Module 5 · CM5108064 · 8 GB RAM · 64 GB eMMC · wireless",
+    "description": "SC1602 · 55 × 40 mm · 64GB eMMC · Wi-Fi / Bluetooth",
+    "parameters": {
+      "model": "raspberry-pi-cm5108064",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5108064",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-108064",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 8,
+        "emmcGB": 64,
+        "wireless": "Yes"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5108064"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1602"
+        },
+        {
+          "label": "RAM",
+          "value": "8 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "64 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "2.4/5 GHz Wi-Fi and Bluetooth 5.0"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5016000",
+    "name": "Raspberry Pi Compute Module 5 · CM5016000 · 16 GB RAM · Lite · no wireless",
+    "description": "SC1574 · 55 × 40 mm · microSD on carrier required · no radio",
+    "parameters": {
+      "model": "raspberry-pi-cm5016000",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5016000",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-016000",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 16,
+        "emmcGB": 0,
+        "wireless": "No"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5016000"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1574"
+        },
+        {
+          "label": "RAM",
+          "value": "16 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "Lite — no eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "Not fitted"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5016016",
+    "name": "Raspberry Pi Compute Module 5 · CM5016016 · 16 GB RAM · 16 GB eMMC · no wireless",
+    "description": "SC1576 · 55 × 40 mm · 16GB eMMC · no radio",
+    "parameters": {
+      "model": "raspberry-pi-cm5016016",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5016016",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-016016",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 16,
+        "emmcGB": 16,
+        "wireless": "No"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5016016"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1576"
+        },
+        {
+          "label": "RAM",
+          "value": "16 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "16 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "Not fitted"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5016032",
+    "name": "Raspberry Pi Compute Module 5 · CM5016032 · 16 GB RAM · 32 GB eMMC · no wireless",
+    "description": "SC1577 · 55 × 40 mm · 32GB eMMC · no radio",
+    "parameters": {
+      "model": "raspberry-pi-cm5016032",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5016032",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-016032",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 16,
+        "emmcGB": 32,
+        "wireless": "No"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5016032"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1577"
+        },
+        {
+          "label": "RAM",
+          "value": "16 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "32 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "Not fitted"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5016064",
+    "name": "Raspberry Pi Compute Module 5 · CM5016064 · 16 GB RAM · 64 GB eMMC · no wireless",
+    "description": "SC1578 · 55 × 40 mm · 64GB eMMC · no radio",
+    "parameters": {
+      "model": "raspberry-pi-cm5016064",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5016064",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-016064",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 16,
+        "emmcGB": 64,
+        "wireless": "No"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5016064"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1578"
+        },
+        {
+          "label": "RAM",
+          "value": "16 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "64 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "Not fitted"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5116000",
+    "name": "Raspberry Pi Compute Module 5 · CM5116000 · 16 GB RAM · Lite · wireless",
+    "description": "SC1604 · 55 × 40 mm · microSD on carrier required · Wi-Fi / Bluetooth",
+    "parameters": {
+      "model": "raspberry-pi-cm5116000",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5116000",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-116000",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 16,
+        "emmcGB": 0,
+        "wireless": "Yes"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5116000"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1604"
+        },
+        {
+          "label": "RAM",
+          "value": "16 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "Lite — no eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "2.4/5 GHz Wi-Fi and Bluetooth 5.0"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5116016",
+    "name": "Raspberry Pi Compute Module 5 · CM5116016 · 16 GB RAM · 16 GB eMMC · wireless",
+    "description": "SC1606 · 55 × 40 mm · 16GB eMMC · Wi-Fi / Bluetooth",
+    "parameters": {
+      "model": "raspberry-pi-cm5116016",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5116016",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-116016",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 16,
+        "emmcGB": 16,
+        "wireless": "Yes"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5116016"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1606"
+        },
+        {
+          "label": "RAM",
+          "value": "16 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "16 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "2.4/5 GHz Wi-Fi and Bluetooth 5.0"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5116032",
+    "name": "Raspberry Pi Compute Module 5 · CM5116032 · 16 GB RAM · 32 GB eMMC · wireless",
+    "description": "SC1607 · 55 × 40 mm · 32GB eMMC · Wi-Fi / Bluetooth",
+    "parameters": {
+      "model": "raspberry-pi-cm5116032",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5116032",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-116032",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 16,
+        "emmcGB": 32,
+        "wireless": "Yes"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5116032"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1607"
+        },
+        {
+          "label": "RAM",
+          "value": "16 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "32 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "2.4/5 GHz Wi-Fi and Bluetooth 5.0"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
+    }
+  },
+  {
+    "id": "raspberry-pi-cm5116064",
+    "name": "Raspberry Pi Compute Module 5 · CM5116064 · 16 GB RAM · 64 GB eMMC · wireless",
+    "description": "SC1608 · 55 × 40 mm · 64GB eMMC · Wi-Fi / Bluetooth",
+    "parameters": {
+      "model": "raspberry-pi-cm5116064",
+      "detail": "lightweight"
+    },
+    "catalog": {
+      "designation": "CM5116064",
+      "manufacturer": "Raspberry Pi",
+      "sourceName": "Official CM5 datasheet release 3, ordering table 12; CM5R5 STEP mechanical reference",
+      "sourceUrl": "https://datasheets.raspberrypi.com/cm5/cm5-datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://www.raspberrypi.com/products/compute-module-5/?variant=cm5-116064",
+        "https://pip.raspberrypi.com/categories/1096-design-files"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Raspberry Pi",
+        "construction": "Bare PCB",
+        "width": 55,
+        "length": 40,
+        "usb": "None",
+        "connection": "2 × 100-pin board-to-board",
+        "interface": "Carrier required",
+        "mountX": 48,
+        "mountY": 33,
+        "hole": 2.7,
+        "boardFamily": "Compute Module 5",
+        "ramGB": 16,
+        "emmcGB": 64,
+        "wireless": "Yes"
+      },
+      "attributeConditions": {
+        "width": "PCB outline only; module XY datum is the board center.",
+        "length": "PCB outline only; module XY datum is the board center.",
+        "hole": "2.7 mm clearance bore from CM5R5 STEP for M2.5 hardware.",
+        "ramGB": "Official stocked variant from datasheet table 12.",
+        "emmcGB": "0 denotes Lite; removable storage socket belongs to the carrier, not the module."
+      },
+      "specifications": [
+        {
+          "label": "Raspberry Pi order code",
+          "value": "CM5116064"
+        },
+        {
+          "label": "Raspberry Pi SKU",
+          "value": "SC1608"
+        },
+        {
+          "label": "RAM",
+          "value": "16 GB LPDDR4x-4267"
+        },
+        {
+          "label": "Storage",
+          "value": "64 GB eMMC"
+        },
+        {
+          "label": "Wireless",
+          "value": "2.4/5 GHz Wi-Fi and Bluetooth 5.0"
+        },
+        {
+          "label": "PCB outline / thickness",
+          "value": "55 × 40 × 1.24 mm nominal"
+        },
+        {
+          "label": "Mounting",
+          "value": "4 × Ø2.7 mm; 48 × 33 mm pitch; M2.5 hardware"
+        },
+        {
+          "label": "Underside B2B interface",
+          "value": "2 × 100 pins; centers (-2.5, -17) and (-2.5, +17) mm relative to PCB center"
+        },
+        {
+          "label": "Carrier stacking",
+          "value": "PCB gap 1.5 mm / 4.0 mm; nominal top 4.94 mm / 7.44 mm above carrier top"
+        },
+        {
+          "label": "Geometry accuracy",
+          "value": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed 55 × 40 mm CM5 PCB with R3 corners, four Ø2.7 mm mounting bores on a 48 × 33 mm pattern, nominal 1.24 mm PCB and 2.2 mm SoC height. Underside B2B centers at X = -2.5 mm, Y = ±17 mm and connector envelopes 21.52 × 2.97 mm measured from official CM5R5 STEP.",
+        "limitations": "Authored source-dimension reconstruction, not original manufacturer CAD surfaces. PCB thickness and SoC height use datasheet nominal values; connector XY envelopes, mounting bores and large component XY envelopes use the referenced CM5R5 STEP. Package Z envelopes, antenna copper, connector cavities and full-detail contacts are simplified. RAM sizes share one package reference; eMMC capacities share one populated package. Lite omits eMMC; non-wireless omits radio shield, U.FL and antenna reference. Datasheet gives a bare depth of approximately 4.6 mm (product page rounds to 4.7 mm); reconstructed solids are 4.55 mm deep. Reserve supplier clearance and check the ordered revision. Carrier, cooler, antenna cable and mating hardware are excluded; CM4 electrical compatibility is not implied.",
+        "sourceUrl": "https://pip.raspberrypi.com/categories/1096-design-files",
+        "sourceSha256": "6adc64e5f69b2799b65d56c94b3543bad136fa4191cadaba0aa0e49fa345598f"
+      }
     }
   }
 ]

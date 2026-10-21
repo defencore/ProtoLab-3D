@@ -155,6 +155,60 @@ export const ballScrewParameters: ParameterDefinition[] = [
     ...field,
     visibleWhen: (p: import('../../../../core/types').Parameters) => p.endMachining === 'custom',
   })),
+  ...(['fixed', 'support'] as const).flatMap((end): ParameterDefinition[] => {
+    const label = end === 'fixed' ? 'Fixed' : 'Support',
+      group = `${label} end`;
+    return [
+      {
+        ...numberParameter(
+          end + 'GrooveDiameter',
+          `${label} groove diameter · 0 disables`,
+          'dg',
+          group,
+          0,
+          90,
+          0.01,
+        ),
+        filterable: false,
+        visibleWhen: (p) => p.endMachining === 'custom',
+        description:
+          'Custom retaining-ring groove diameter. Zero leaves the journal cylindrical; the ring and groove tolerance require an order drawing.',
+      },
+      ...[
+        {
+          ...numberParameter(
+            end + 'GrooveWidth',
+            `${label} groove width`,
+            'mg',
+            group,
+            0.01,
+            100,
+            0.01,
+          ),
+          description:
+            'Axial groove width; include the selected ring supplier clearance and machining tolerance.',
+        },
+        {
+          ...numberParameter(
+            end + 'GrooveOffset',
+            `${label} groove offset from low end`,
+            'zg',
+            group,
+            0,
+            300,
+            0.01,
+          ),
+          description:
+            'Distance in +Z from this journal’s low-Z end to the first groove face. The complete groove must remain within the journal.',
+        },
+      ].map((field) => ({
+        ...field,
+        filterable: false,
+        visibleWhen: (p: import('../../../../core/types').Parameters) =>
+          p.endMachining === 'custom' && Number(p[end + 'GrooveDiameter']) > 0,
+      })),
+    ];
+  }),
   {
     ...numberParameter('nutPosition', 'Base travel position', 'x', 'Motion', 0, 100, 1),
     unit: '%',

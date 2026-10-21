@@ -395,6 +395,7 @@
 }
 .pb-result-name {
   color: #b6bbc3;
+  overflow-wrap: anywhere;
 }
 .pb-dimensions {
   display: flex;

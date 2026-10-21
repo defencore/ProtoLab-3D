@@ -242,13 +242,11 @@ kbd {
   font-size: 12px;
 }
 .breadcrumbs span {
-  text-transform: capitalize;
   white-space: nowrap;
 }
 .breadcrumbs strong {
   font-weight: 500;
   color: #bdc1c8;
-  text-transform: capitalize;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

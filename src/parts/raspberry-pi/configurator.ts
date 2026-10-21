@@ -27,6 +27,50 @@ export const parameters: ParameterDefinition[] = [
 export const catalogSelection: NonNullable<PartDefinition['catalogSelection']> = [{ key: 'model' }];
 export const catalogFilterFields: ParameterDefinition[] = [
   {
+    key: 'boardFamily',
+    label: 'Board family',
+    type: 'select',
+    group: 'Hardware',
+    options: [
+      { value: 'Raspberry Pi 5', label: 'Raspberry Pi 5' },
+      { value: 'Zero 2 W', label: 'Zero 2 W' },
+      { value: 'Compute Module 4', label: 'Compute Module 4' },
+      { value: 'Compute Module 5', label: 'Compute Module 5' },
+    ],
+  },
+  {
+    key: 'ramGB',
+    label: 'RAM capacity',
+    unit: 'GB',
+    type: 'number',
+    group: 'Compute Module 5',
+    min: 2,
+    max: 16,
+    step: 2,
+    catalogSummary: true,
+  },
+  {
+    key: 'emmcGB',
+    label: 'eMMC capacity (0 = Lite)',
+    unit: 'GB',
+    type: 'number',
+    group: 'Compute Module 5',
+    min: 0,
+    max: 64,
+    step: 16,
+    catalogSummary: true,
+  },
+  {
+    key: 'wireless',
+    label: 'Wi-Fi / Bluetooth fitted',
+    type: 'select',
+    group: 'Compute Module 5',
+    options: [
+      { value: 'Yes', label: 'Yes' },
+      { value: 'No', label: 'No' },
+    ],
+  },
+  {
     key: 'manufacturer',
     label: 'Manufacturer',
     type: 'select',
@@ -58,7 +102,7 @@ export const catalogFilterFields: ParameterDefinition[] = [
     options: [
       {
         value: '2 Micro USB',
-        label: '2 Micro USB',
+        label: '2 × Micro-USB',
       },
       {
         value: 'None',

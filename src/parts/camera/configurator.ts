@@ -59,6 +59,7 @@ export const catalogFilterFields: ParameterDefinition[] = [
     options: [
       { value: 'cvbs', label: 'Analog CVBS' },
       { value: 'dji-o4', label: 'DJI O4 proprietary link' },
+      { value: 'walksnail-avatar', label: 'Walksnail Avatar proprietary camera link' },
       { value: 'spi', label: 'SPI video + CCI control' },
       { value: 'i2c', label: 'I²C' },
       { value: 'csi2', label: 'MIPI CSI-2' },

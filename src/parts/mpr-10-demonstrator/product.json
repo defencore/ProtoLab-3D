@@ -1,0 +1,15 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "MPR.10 demonstration stand with predominantly printed structure, purchased screw drives and motors, and two separate bearings supporting every output shaft.",
+  "processes": ["assembly"],
+  "releaseRequirements": [
+    "Confirm the delivered motor, ball screw, ball nut and bearing revisions and measure their mounting interfaces before fabrication.",
+    "Assign material grades, print orientations, fit allowances and inspection criteria to every fabricated detail; qualify bearing seats, fastener engagement, layer strength, creep and wear on the actual prints.",
+    "Verify the complete moving assembly against the measured 86 mm tube bore, including the selected motion limits, shaft retention and installed fastener heads.",
+    "Fit both bearing seats on each output shaft coaxially and verify free rotation after installing the inner-ring washers and metal E-clips; qualify the fixed outer-race seats and the sliding rear screw support.",
+    "Specify and inspect custom screw journals, output-shaft flats and grooves, follower-pin grooves, washers and stepped follower sleeves; the purchased screw family does not establish these machining details.",
+    "Verify the nut's shaped flange retention, recessed sleeve-flange capture, removable keeper and free transverse follower travel throughout the demonstration sweep; qualify the captured fork's antirotation constraint on the assembled stand.",
+    "Qualify the assembled demonstration stand on a stationary bench; the supplied reference topology and library geometry do not establish loads, fatigue life or an operating rating."
+  ]
+}

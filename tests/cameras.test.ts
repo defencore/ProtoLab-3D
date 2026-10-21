@@ -51,7 +51,7 @@ function checkMesh(mesh: Mesh, label: string) {
 }
 
 test('camera catalog has fixed models and source-aware filters', () => {
-  assert.equal(camera.presets.length, 24);
+  assert.equal(camera.presets.length, 29);
   assert.equal(camera.catalogSelectionOnly, true);
   for (const preset of camera.presets) {
     assert.deepEqual(validateParameters(camera, preset.parameters, 'assembled'), []);
@@ -69,7 +69,7 @@ test('camera catalog has fixed models and source-aware filters', () => {
     max: '300',
   };
   const matches = filterPresets(buildPresetIndex([camera]), filters).items;
-  assert.equal(matches.length, 16);
+  assert.equal(matches.length, 21);
   assert.ok(
     !matches.some((i) => i.preset.id === 'ratel2'),
     'assumed depth excluded from filtering',

@@ -45,6 +45,12 @@ export const ballScrewDefaults: Parameters = {
   driveJournalLength: 15,
   supportJournalDiameter: 10,
   supportJournalLength: 12,
+  fixedGrooveDiameter: 0,
+  fixedGrooveWidth: 0.64,
+  fixedGrooveOffset: 0,
+  supportGrooveDiameter: 0,
+  supportGrooveWidth: 0.64,
+  supportGrooveOffset: 0,
   nutPosition: 50,
   rotation: 0,
   hand: 'right',
@@ -445,6 +451,40 @@ const lastBounds = new WeakMap<
   { signature: string; states: Map<string, [number, number, number]> }
 >();
 
+/** Closed surface of revolution, with explicit annular shoulders instead of coincident cylinders. */
+function groovedJournal(
+  radius: number,
+  length: number,
+  diameter: number,
+  width: number,
+  offset: number,
+): Mesh {
+  const r = diameter / 2,
+    low = -length / 2,
+    start = low + offset,
+    end = start + width;
+  const profile: [number, number][] = [];
+  if (offset > 0) profile.push([radius, low], [radius, start]);
+  profile.push([r, start], [r, end]);
+  if (offset + width < length) profile.push([radius, end], [radius, length / 2]);
+  const circles = profile.map(([radial, z]) =>
+    Array.from(
+      { length: 96 },
+      (_, i) =>
+        new Vector3(
+          radial * Math.cos((i * 2 * Math.PI) / 96),
+          radial * Math.sin((i * 2 * Math.PI) / 96),
+          z,
+        ),
+    ),
+  );
+  const mesh = new BoundaryMesh();
+  mesh.face(circles[0], [], new Vector3(0, 0, -1));
+  for (let i = 1; i < circles.length; i++) mesh.bridge(circles[i - 1], circles[i]);
+  mesh.face(circles.at(-1)!, [], new Vector3(0, 0, 1));
+  return mesh.build();
+}
+
 export function ballScrewGeometry(p: Parameters, state: string, nutOnly = false): Group {
   const v = ballScrewLayout(p),
     group = new Group(),
@@ -472,7 +512,23 @@ export function ballScrewGeometry(p: Parameters, state: string, nutOnly = false)
           v.end + n(p, 'supportJournalLength') / 2,
         ],
       ] as const) {
-        const journal = cylinder(n(p, key) / 2, length);
+        const groove =
+          key === 'fixedJournalDiameter'
+            ? 'fixed'
+            : key === 'supportJournalDiameter'
+              ? 'support'
+              : undefined;
+        const diameter = groove ? n(p, groove + 'GrooveDiameter') : 0;
+        const journal =
+          diameter > 0
+            ? groovedJournal(
+                n(p, key) / 2,
+                length,
+                diameter,
+                n(p, groove + 'GrooveWidth'),
+                n(p, groove + 'GrooveOffset'),
+              )
+            : cylinder(n(p, key) / 2, length);
         journal.position.z = z;
         journal.name = key === 'driveJournalDiameter' ? 'Drive journal' : 'Bearing journal';
         group.add(journal);
@@ -568,9 +624,7 @@ export function validateBallScrew(p: Parameters, nutOnly = false): string[] {
     errors.push('Nut bodies must provide room for their ball train and end returns.');
   if (!nutOnly) {
     if (v.detail && ((v.end - v.start) / v.lead) * n(p, 'starts') > 1200)
-      errors.push(
-        'Full supports up to 1,200 groove turns. Shorten the shaft or switch to Simple.',
-      );
+      errors.push('Full supports up to 1,200 groove turns. Shorten the shaft or switch to Simple.');
     if (v.end - v.start < v.nl + 2 * v.lead)
       errors.push('The threaded shaft must be longer than the nut plus two leads.');
     if (v.center - v.nl / 2 < v.start || v.center + v.nl / 2 > v.end)
@@ -584,6 +638,28 @@ export function validateBallScrew(p: Parameters, nutOnly = false): string[] {
       errors.push(
         'Machined journals must step down from the shaft; the drive journal cannot exceed the fixed journal.',
       );
+    for (const end of ['fixed', 'support']) {
+      const diameter = n(p, end + 'GrooveDiameter'),
+        width = n(p, end + 'GrooveWidth'),
+        offset = n(p, end + 'GrooveOffset');
+      if (
+        ![diameter, width, offset].every(Number.isFinite) ||
+        diameter < 0 ||
+        width <= 0 ||
+        offset < 0
+      ) {
+        errors.push(
+          `Choose a finite nonnegative ${end} groove diameter/offset and a positive groove width.`,
+        );
+      } else if (diameter > 0) {
+        if (!v.machined)
+          errors.push(`Enable custom end machining for the ${end} retaining-ring groove.`);
+        if (diameter >= n(p, end + 'JournalDiameter'))
+          errors.push(`The ${end} groove diameter must be smaller than its journal diameter.`);
+        if (offset + width > n(p, end + 'JournalLength'))
+          errors.push(`The ${end} groove must fit wholly inside its journal length.`);
+      }
+    }
   }
   return errors;
 }
@@ -645,6 +721,18 @@ export function ballScrewPython(p: Parameters, state: string, nutOnly = false): 
         lines.push(
           `screw = screw.fuse(Part.makeCylinder(${num(n(p, key) / 2)},${num(length)},App.Vector(0,0,${num(z)})))`,
         );
+    if (v.machined) {
+      for (const [end, low] of [
+        ['fixed', v.start - n(p, 'fixedJournalLength')],
+        ['support', v.end],
+      ] as const) {
+        if (n(p, end + 'GrooveDiameter') <= 0) continue;
+        lines.push(
+          `# Custom ${end} retaining-ring groove; offset is from the journal's low-Z end.`,
+          `screw = screw.cut(annulus(${num(n(p, end + 'JournalDiameter') / 2 + 0.1)},${num(n(p, end + 'GrooveDiameter') / 2)},${num(n(p, end + 'GrooveWidth'))},${num(low + n(p, end + 'GrooveOffset'))}))`,
+        );
+      }
+    }
     lines.push('components.append(screw.removeSplitter())');
     label('Screw shaft');
   }
