@@ -33,13 +33,13 @@ Sources: manufacturer BAER metric/UNC/UNF/UNEF/Tr tables and Roton ACME size ref
 
 `tests/thread-tools.test.ts` checks all 79 presets in both modes for finite, closed, consistently oriented preview meshes and expected bounds, plus pitch conversion, handedness, lead, clearance and rejected inputs. Additional cases cover both cap shapes, both thread modes and holes on/off; the optional `FREECAD_PYTHON` test validates native solid topology, cavity and roof occupancy, full through holes, bounds and preview/native volume agreement. Generic module tests cover STL, macro export and parameter boundaries.
 
-`scripts/verify-thread-tools.ts` prepares 24 representative native cases: M1, M2, each thread family, 3/8″-24 UNF, left-hand and multi-start threads, and a custom profile with clearance. `scripts/verify-thread-tools.py` runs their complete macros using FreeCAD, checks the radial profile against the preview, performs actual Cut/Union operations, and round-trips STEP and FCStd. Results are recorded in `data/thread-tools-native-validation.json`. This samples supported geometries; it is not certification of every arbitrary custom combination or manufactured fit.
+`scripts/verify-thread-tools.ts` prepares 24 representative native cases: M1, M2, each thread family, 3/8″-24 UNF, left-hand and multi-start threads, and a custom profile with clearance. `scripts/verify-thread-tools.py` runs their complete macros using FreeCAD, checks the radial profile against the preview, performs actual Cut/Union operations, and round-trips STEP and FCStd. Results are recorded in `test-results/thread-tools-native-validation.json`. This samples supported geometries; it is not certification of every arbitrary custom combination or manufactured fit.
 
 ```sh
 node --import tsx --test tests/thread-tools.test.ts
 node --import tsx scripts/verify-thread-tools.ts /tmp/protolab-thread-cases.json
 # Run with a FreeCAD-enabled Python (FREECAD_LIB may override the default macOS library path):
-python scripts/verify-thread-tools.py /tmp/protolab-thread-cases.json data/thread-tools-native-validation.json
+python scripts/verify-thread-tools.py /tmp/protolab-thread-cases.json test-results/thread-tools-native-validation.json
 ```
 
 ## Manufacturing method

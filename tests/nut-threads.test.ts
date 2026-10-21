@@ -1,13 +1,11 @@
+import { partIsAffected } from './helpers/part-scope';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { Mesh, Raycaster, Vector3 } from 'three';
 import { parts } from '../src/parts';
 import type { Parameters } from '../src/core/types';
 import { disposeModel } from '../src/core/mechanical';
-import {
-  nominalThreadDiameter,
-  nutCoarsePitch,
-} from '../src/core/hardware/internal-thread';
+import { nominalThreadDiameter, nutCoarsePitch } from '../src/core/hardware/internal-thread';
 import { validateParameters } from '../src/core/validation';
 
 // Lifting eye nuts live with lifting hardware; UI taxonomy must not exclude
@@ -65,34 +63,38 @@ test('all nut families and stock presets use smooth named bores with valid size-
   assert.equal(hex.presets.find((p) => Number(p.parameters.bore) === 2)!.parameters.pitch, 0.4);
 });
 
-test('hex nut bore stays cylindrical at every height and angle; handedness is metadata', () => {
-  const part = nuts.find((p) => p.id === 'hex-nut')!;
-  for (const handedness of ['right', 'left']) {
-    const p: Parameters = { ...part.defaults, handedness };
-    const model = part.buildGeometry(p, 'default');
-    model.updateMatrixWorld(true);
-    for (const z of [1, 2, 2.25, 2.5, 3])
-      for (const angle of [0, Math.PI / 2, Math.PI]) {
-        const ray = new Raycaster(
-          new Vector3(0, 0, z),
-          new Vector3(Math.cos(angle), Math.sin(angle), 0),
-        );
-        assert.ok(
-          Math.abs(ray.intersectObject(model, true)[0].distance - Number(p.bore) / 2) < 1e-5,
-        );
-      }
-    assert.equal(nominalThreadDiameter(p, Number(p.bore)), Number(p.bore));
-    assert.match(
-      part.python(p, 'default'),
-      new RegExp(`M6×1 ${handedness === 'left' ? 'LH' : 'RH'}`),
-    );
-    assertClosed(model);
-    disposeModel(model);
-  }
-});
+test(
+  'hex nut bore stays cylindrical at every height and angle; handedness is metadata',
+  { skip: !partIsAffected('hex-nut') },
+  () => {
+    const part = nuts.find((p) => p.id === 'hex-nut')!;
+    for (const handedness of ['right', 'left']) {
+      const p: Parameters = { ...part.defaults, handedness };
+      const model = part.buildGeometry(p, 'default');
+      model.updateMatrixWorld(true);
+      for (const z of [1, 2, 2.25, 2.5, 3])
+        for (const angle of [0, Math.PI / 2, Math.PI]) {
+          const ray = new Raycaster(
+            new Vector3(0, 0, z),
+            new Vector3(Math.cos(angle), Math.sin(angle), 0),
+          );
+          assert.ok(
+            Math.abs(ray.intersectObject(model, true)[0].distance - Number(p.bore) / 2) < 1e-5,
+          );
+        }
+      assert.equal(nominalThreadDiameter(p, Number(p.bore)), Number(p.bore));
+      assert.match(
+        part.python(p, 'default'),
+        new RegExp(`M6×1 ${handedness === 'left' ? 'LH' : 'RH'}`),
+      );
+      assertClosed(model);
+      disposeModel(model);
+    }
+  },
+);
 
 test('hand nut Boolean previews retain closed shells with internal threads', () => {
-  for (const id of ['wing-nut', 'lifting-eye-nut']) {
+  for (const id of ['wing-nut', 'lifting-eye-nut'].filter(partIsAffected)) {
     const part = nuts.find((p) => p.id === id)!;
     const stock = [...part.presets].sort(
       (a, b) => Number(a.parameters.diameter) - Number(b.parameters.diameter),

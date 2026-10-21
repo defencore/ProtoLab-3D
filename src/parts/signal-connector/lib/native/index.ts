@@ -33,6 +33,11 @@ import model31 from './idc-6.json';
 import model32 from './idc-10.json';
 import model33 from './dsub9-pins.json';
 import model34 from './dsub9-socket.json';
+import model35 from './pin-socket-5.json';
+import model36 from './xh254-balance-header-4.json';
+import model37 from './xh254-balance-header-5.json';
+import model38 from './xh254-balance-header-ra-4.json';
+import model39 from './xh254-balance-header-ra-5.json';
 export default [
   model0,
   model1,
@@ -63,10 +68,15 @@ export default [
   model26,
   model27,
   model28,
+  model35,
   model29,
   model30,
   model31,
   model32,
   model33,
   model34,
+  model36,
+  model37,
+  model38,
+  model39,
 ];

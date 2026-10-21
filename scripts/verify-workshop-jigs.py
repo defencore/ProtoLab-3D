@@ -1,4 +1,4 @@
-"""Run in FreeCAD after verify-workshop-jigs.ts. Set WORKSHOP_JIG_OUTPUT to the data directory."""
+"""Run in FreeCAD after verify-workshop-jigs.ts. WORKSHOP_JIG_OUTPUT selects the export directory."""
 import json
 import math
 from pathlib import Path
@@ -6,7 +6,7 @@ import FreeCAD as App
 import Part
 import MeshPart
 
-output = Path(globals().get('WORKSHOP_JIG_OUTPUT', Path.cwd() / 'data/workshop-jigs'))
+output = Path(globals().get('WORKSHOP_JIG_OUTPUT', Path.cwd() / 'test-results/workshop-jigs'))
 report = list(globals().get('WORKSHOP_JIG_PREVIOUS', []))
 completed = {record['id'] for record in report}
 only = globals().get('WORKSHOP_JIG_ONLY')

@@ -26,4 +26,4 @@ CR123A capacity is specified at 100 Ω, 21 °C, to 2.0 V; its 1.5 A field is the
 
 ## Validation
 
-Run `node --import tsx --test tests/batteries.test.ts` for envelope, closed mesh and catalog checks. `scripts/verify-batteries.ts` prepares all 29 complete FreeCAD macros and independently measured preview components. Run them with `scripts/verify-electronics.py` using FreeCAD Python to check valid closed solids, component intersections, preview/CAD agreement, independent movement and STEP/FCStd round trips. Results: `data/batteries-native-validation.json`.
+Run `node --import tsx --test tests/batteries.test.ts` for envelope, closed mesh and catalog checks. `scripts/verify-batteries.ts` prepares all 29 complete FreeCAD macros and independently measured preview components. Run them with `scripts/verify-electronics.py` using FreeCAD Python to check valid closed solids, component intersections, preview/CAD agreement, independent movement and STEP/FCStd round trips. Results: `test-results/batteries-native-validation.json`.

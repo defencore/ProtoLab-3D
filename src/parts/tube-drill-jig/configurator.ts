@@ -9,20 +9,33 @@ export const defaults: Parameters = {
   endOffset: 10,
   axisHeight: 30,
   spacerClearance: 0.3,
-  holeCount: '4',
-  phase: 0,
-  holeMode: 'tap',
+  holeCount: '12',
+  holeMode: 'through',
   thread: 'M3',
   holeDiameter: 3,
   guide: 'auto',
-  bearingGap: 4,
   seatClearance: 0.1,
   cartridgeClearance: 0.3,
   guideClearance: 0.05,
-  stopThickness: 4,
-  plainWall: 6,
+  stopMode: 'end',
+  stopThickness: 5,
+  bodyCapacity: 110,
+  station: 1,
+  showTube: true,
 };
 export const parameters: ParameterDefinition[] = [
+  {
+    ...numberParameter(
+      'bodyCapacity',
+      'Reusable body tube capacity',
+      'C',
+      'Tube and end stop',
+      110,
+      540,
+    ),
+    description:
+      'Choose once before printing. Change the centering head for smaller tubes; allow at least 6 mm between capacity and tube OD.',
+  },
   numberParameter('tubeOD', 'Tube outside diameter', 'D', 'Tube and end stop', 12, 500),
   numberParameter('tubeWall', 'Tube wall thickness', 't', 'Tube and end stop', 0.3, 25),
   numberParameter(
@@ -37,19 +50,21 @@ export const parameters: ParameterDefinition[] = [
   {
     ...numberParameter('endOffset', 'Tube end to hole axis', 'L', 'Hole belt', 3, 200, 0.5),
     description:
-      'Change the spacer stack to set this distance without changing the collar. Steps of 0.5 mm, up to the fixed drill height.',
+      'With the end stop fitted: change only the measured spacer stack. In through mode, position the fixture on a measured axial mark.',
+    visibleWhen: (p) => p.stopMode === 'end',
   },
   {
     key: 'holeCount',
     label: 'Holes around the tube',
     type: 'select',
     group: 'Hole belt',
+    description:
+      'Available patterns depend on tube diameter and cassette size. Invalid patterns are blocked to preserve at least 2.4 mm between sockets.',
     options: ['4', '8', '12'].map((value) => ({
       value,
       label: `${value} holes / ${360 / Number(value)} degrees`,
     })),
   },
-  { ...numberParameter('phase', 'Angular phase', 'a', 'Hole belt', 0, 359, 1), unit: 'deg' },
   {
     key: 'holeMode',
     label: 'Hole operation',
@@ -90,14 +105,10 @@ export const parameters: ParameterDefinition[] = [
     group: 'Drill and guides',
     options: [
       { value: 'auto', label: 'Automatic: exact bearing bore or steel bushing' },
-      { value: 'bearing', label: 'Two bearings per station / exact bore required' },
+      { value: 'bearing', label: 'One movable cassette / two exact-bore bearings total' },
       { value: 'bushing', label: 'Custom hardened steel drill bushing' },
       { value: 'plain', label: 'Printed marking / short-use guide' },
     ],
-  },
-  {
-    ...numberParameter('bearingGap', 'Space between bearings', 'g', 'Fit and manufacture', 2, 15),
-    visibleWhen: (p) => p.guide === 'bearing' || p.guide === 'auto',
   },
   {
     ...numberParameter(
@@ -133,14 +144,33 @@ export const parameters: ParameterDefinition[] = [
     description:
       'Added to drill diameter for bushing and printed holes. Bearing bores retain their catalog size.',
   },
-  numberParameter('stopThickness', 'Bottom stop thickness', 'b', 'Fit and manufacture', 2, 12),
+  {
+    key: 'stopMode',
+    label: 'Tube positioning',
+    type: 'select',
+    group: 'Tube and end stop',
+    options: [
+      { value: 'end', label: 'Removable end stop and measured spacers' },
+      { value: 'through', label: 'Through tube / stop and spacers removed' },
+    ],
+    description:
+      'Remove only the bottom plate for a belt anywhere along a long tube. The centering liner remains positively seated in the body.',
+  },
+  numberParameter(
+    'stopThickness',
+    'Removable stop plate thickness',
+    'b',
+    'Fit and manufacture',
+    5,
+    12,
+  ),
   {
     ...numberParameter(
       'axisHeight',
       'Fixed drill height / body capacity',
       'H',
       'Fit and manufacture',
-      10,
+      26,
       200,
       0.5,
     ),
@@ -157,16 +187,11 @@ export const parameters: ParameterDefinition[] = [
     0.05,
   ),
   {
-    ...numberParameter(
-      'plainWall',
-      'Printed guide radial length',
-      'w',
-      'Fit and manufacture',
-      3,
-      20,
-    ),
-    visibleWhen: (p) => p.guide === 'plain',
+    ...numberParameter('station', 'Current drilling station', 'N', 'Hole belt', 1, 12, 1),
+    description:
+      'Inspection position of the single movable cassette. Must not exceed the selected hole count.',
   },
+  { key: 'showTube', label: 'Show reference tube', type: 'boolean', group: 'Tube and end stop' },
 ];
 export const catalogSelection = [
   { key: 'tubeOD', label: 'Tube OD' },

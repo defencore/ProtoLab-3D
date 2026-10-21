@@ -162,6 +162,11 @@ test('export and import round trip only the selected package, preserve SDK and k
   await assert.rejects(importPackage(root, handoff), /--replace/);
   const result = await importPackage(root, handoff, true);
   assert.ok(result.backup);
+  assert.equal(
+    path.relative(root, result.backup!).split(path.sep).slice(0, 4).join('/'),
+    'test-results/backups/part-modules/first-spacer',
+  );
+  assert.deepEqual(await fs.readdir(path.join(root, 'test-results/.staging')), []);
   assert.match(await fs.readFile(partPath, 'utf8'), /Static import must never execute/);
   assert.equal(
     await fs.readFile(path.join(result.backup!, 'part.ts'), 'utf8'),

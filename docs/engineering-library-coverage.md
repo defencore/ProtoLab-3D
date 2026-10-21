@@ -52,8 +52,8 @@ Geometry checks do not establish accuracy against unavailable drawings, strength
 
 - `npm run build`, test type checking, and `parts:check` passed; registry: **165 packages / 13,258 presets**.
 - **322** targeted geometry, profile, and naming tests and **166** preset uniqueness/validity checks passed.
-- 348 native checks of new packages (`../data/library-expansion-native-validation.json`, generated locally) passed: all presets at available detail levels, one exploded state per family, and sixteen modified configurations.
-- 42 native wing/section checks (`../data/lifting-surfaces-native-validation.json`, generated locally) passed, including nine checks of the three new profiles.
+- 348 native checks of new packages (`../test-results/library-expansion-native-validation.json`, generated locally) passed: all presets at available detail levels, one exploded state per family, and sixteen modified configurations.
+- 42 native wing/section checks (`../test-results/lifting-surfaces-native-validation.json`, generated locally) passed, including nine checks of the three new profiles.
 - Browser checks covered search/subgroups, O-ring cutter resizing, four-bar phase updates, and blocked pantograph export when links collide.
 
 The build warned about a large main JavaScript bundle (approximately 35.1 MB before gzip). This was not a build failure, but loading the complete catalog requires further optimization.

@@ -8,20 +8,66 @@ on:
   workflow_dispatch:
     inputs:
       full_tests:
-        description: Run all geometry tests even when an exact successful result is cached
+        description: Run the complete test suite instead of affected elements
         type: boolean
         default: false
 
 permissions:
   contents: read
+  actions: read
 
 concurrency:
   group: pages-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
+  plan:
+    name: Select affected tests
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+      shards: ${{ steps.matrix.outputs.shards }}
+      has-tests: ${{ steps.matrix.outputs.has-tests }}
+    steps:
+      - name: Check out source and comparison history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Find the last successful push
+        id: baseline
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          BASE_BRANCH: ${{ github.base_ref || github.ref_name }}
+        run: node scripts/ci/successful-base.mjs
+      - name: Plan affected elements and dependent tests
+        env:
+          VERIFIED_BASE: ${{ steps.baseline.outputs.base }}
+          FORCE_FULL: ${{ inputs.full_tests }}
+        run: |
+          args=(--head "$GITHUB_SHA" --output test-results/ci/test-plan.json)
+          if [ -n "$VERIFIED_BASE" ]; then args+=(--base "$VERIFIED_BASE"); fi
+          if [ "$FORCE_FULL" = "true" ]; then args+=(--full); fi
+          node --import tsx scripts/ci/test-plan.ts "${args[@]}"
+      - name: Prepare selected test groups
+        id: matrix
+        run: node scripts/ci/run-tests.mjs matrix --plan test-results/ci/test-plan.json
+      - name: Save test plan
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-plan
+          path: test-results/ci/test-plan.json
+          retention-days: 7
+
   build:
     runs-on: ubuntu-latest
+    needs: plan
     steps:
       - name: Check out source
         uses: actions/checkout@v4
@@ -32,14 +78,21 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Read test plan
+        uses: actions/download-artifact@v4
+        with:
+          name: test-plan
+          path: test-results/ci
+      - name: Check repository hygiene
+        run: npm run check:artifacts
       - name: Check repository language and README scope
         run: npm run check:language
       - name: Check TypeScript and test contracts
         run: npm run typecheck:tests
-      - name: Check all part packages and presets
-        run: npm run parts:check
-      - name: Check Python catalog importers
-        run: python3 -m unittest discover -s tests -p 'test_*.py'
+      - name: Check affected part packages and presets
+        run: node scripts/ci/run-tests.mjs packages --plan test-results/ci/test-plan.json
+      - name: Check affected Python catalog importers
+        run: node scripts/ci/run-tests.mjs python --plan test-results/ci/test-plan.json
       - name: Build static app
         run: npm run build
       - name: Configure Pages
@@ -52,13 +105,13 @@ jobs:
           path: dist
 
   geometry:
-    name: Geometry ${{ matrix.shard }}/8
+    name: Affected tests ${{ matrix.shard }}/${{ needs.plan.outputs.shards }}
     runs-on: ubuntu-latest
-    needs: build
+    needs: plan
+    if: needs.plan.outputs.has-tests == 'true'
     strategy:
       fail-fast: false
-      matrix:
-        shard: [1, 2, 3, 4, 5, 6, 7, 8]
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
     steps:
       - name: Check out source
         uses: actions/checkout@v4
@@ -69,68 +122,37 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: Fingerprint test inputs
-        id: test-inputs
-        run: node scripts/ci-test-key.mjs --github-output
-      - name: Restore exact successful test result
-        id: test-cache
-        uses: actions/cache/restore@v4
+      - name: Read test plan
+        uses: actions/download-artifact@v4
         with:
-          path: .cache/ci-tests/passed
-          key: geometry-tests-v2-${{ matrix.shard }}-of-8-${{ steps.test-inputs.outputs.key }}
-      - name: Verify geometry and generators
+          name: test-plan
+          path: test-results/ci
+      - name: Verify selected geometry and generators
         id: geometry-tests
-        if: inputs.full_tests || steps.test-cache.outputs.cache-hit != 'true'
         run: |
           set -o pipefail
-          mkdir -p .cache/ci-tests
-          node --import tsx --test --test-concurrency=2 --test-reporter=tap --test-shard=${{ matrix.shard }}/8 tests/*.test.ts 2>&1 | tee .cache/ci-tests/test-output.log
+          mkdir -p test-results/ci
+          node scripts/ci/run-tests.mjs run --plan test-results/ci/test-plan.json --shard ${{ matrix.shard }} --shards ${{ needs.plan.outputs.shards }} 2>&1 | tee test-results/ci/test-output.log
       - name: Summarize failed tests
         if: failure() && steps.geometry-tests.outcome == 'failure'
         run: |
-          echo '### Failed geometry tests' >> "$GITHUB_STEP_SUMMARY"
-          echo 'Full assertion details are in the geometry-test-log-${{ matrix.shard }} artifact.' >> "$GITHUB_STEP_SUMMARY"
-          grep '^not ok ' .cache/ci-tests/test-output.log >> "$GITHUB_STEP_SUMMARY" || true
-          while IFS= read -r line; do
-            line="${line//'%'/'%25'}"
-            line="${line//$'\r'/'%0D'}"
-            echo "::error title=Failed geometry test::$line"
-          done < <(grep '^not ok ' .cache/ci-tests/test-output.log || true)
+          echo '### Failed affected tests' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Full assertion details are attached to this test group.' >> "$GITHUB_STEP_SUMMARY"
+          grep '^not ok ' test-results/ci/test-output.log >> "$GITHUB_STEP_SUMMARY" || true
       - name: Upload failed test log
         if: failure() && steps.geometry-tests.outcome == 'failure'
         uses: actions/upload-artifact@v4
         with:
-          name: geometry-test-log-${{ matrix.shard }}
-          path: .cache/ci-tests/test-output.log
+          name: test-log-${{ matrix.shard }}
+          path: test-results/ci/test-output.log
           retention-days: 7
-      - name: Record successful test result
-        if: success() && (inputs.full_tests || steps.test-cache.outputs.cache-hit != 'true')
-        env:
-          TEST_KEY: ${{ steps.test-inputs.outputs.key }}
-        run: |
-          mkdir -p .cache/ci-tests
-          printf '%s\n' "$TEST_KEY" > .cache/ci-tests/passed
-      - name: Cache successful test result
-        if: success() && github.event_name != 'pull_request' && steps.test-cache.outputs.cache-hit != 'true'
-        uses: actions/cache/save@v4
-        with:
-          path: .cache/ci-tests/passed
-          key: geometry-tests-v2-${{ matrix.shard }}-of-8-${{ steps.test-inputs.outputs.key }}
-      - name: Explain test verification
-        env:
-          CACHE_HIT: ${{ steps.test-cache.outputs.cache-hit }}
-          FORCE_TESTS: ${{ inputs.full_tests }}
-        run: |
-          if [ "$CACHE_HIT" = "true" ] && [ "$FORCE_TESTS" != "true" ]; then
-            echo 'Geometry shard ${{ matrix.shard }}/8: reused an exact successful result for unchanged test inputs and Node runtime.' >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo 'Geometry shard ${{ matrix.shard }}/8: executed and passed for these test inputs and Node runtime.' >> "$GITHUB_STEP_SUMMARY"
-          fi
-          echo 'TypeScript, package validation and the production build run on every deployment.' >> "$GITHUB_STEP_SUMMARY"
 
   deploy:
-    if: github.event_name != 'pull_request'
-    needs: [build, geometry]
+    if: >-
+      always() && !cancelled() && github.event_name != 'pull_request' &&
+      needs.plan.result == 'success' && needs.build.result == 'success' &&
+      (needs.geometry.result == 'success' || needs.geometry.result == 'skipped')
+    needs: [plan, build, geometry]
     runs-on: ubuntu-latest
     permissions:
       pages: write

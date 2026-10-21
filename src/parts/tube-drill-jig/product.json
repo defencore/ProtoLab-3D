@@ -1,14 +1,17 @@
 {
   "kind": "assembly",
   "supply": "manufactured",
-  "description": "Flat-sided slip-on drilling fixture with reusable height spacers, a positive tube-end datum and replaceable purchased guide elements.",
+  "description": "Reusable through-bore tube drilling fixture with a removable bottom stop plate, interchangeable split centering/index tooling, three pressure-pad clamps and one movable guide cassette. Use the end datum with measured spacer rings, or remove the stop and set a belt position manually along a long tube.",
   "processes": ["printing", "assembly"],
   "releaseRequirements": [
-    "Measure actual tube OD, roundness and wall thickness. Qualify fit and seating against the annular stop.",
-    "Measure actual spacer thickness and face parallelism. Verify fixed drill height minus the measured spacer stack equals the desired tube-end offset.",
-    "Verify all hardware stays behind the support flats before placing the fixture on a flat table or in a vise.",
-    "Verify guide procurement, free drill passage, guide retention, printed screw engagement and station clearance.",
-    "Clamp tube and jig against rotation and lift. Set drilling depth for one wall; remove the jig before tapping.",
-    "Specify print material, orientation, fit allowances, drawing tolerances and inspection before manufacture."
+    "Measure actual tube OD, roundness, wall thickness and end squareness. Fit the matching centering/index tooling within the selected reusable body capacity.",
+    "For end-stop work, fasten the separate plate with four correctly fitted countersunk M4 screws. Qualify head seating, plate seating and actual engagement in the printed pilots. Measure the ring stack and confirm H minus stack height equals the desired end offset.",
+    "For through-tube work, remove the stop plate, its four screws and all spacer rings. Verify the retained liner and open tube path. Measure axial belt position manually before clamping.",
+    "Seat both alignment bushes and secure all four M4 head-stack fasteners. Verify closed mating faces and support flats before securing the complete fixture in a vise or bench clamp.",
+    "Retain only configurations passing socket-web, cassette-flange, guide-seat and crown-floor validation. Qualify actual FDM walls and fastener engagement on printed fit samples.",
+    "Verify exact guide procurement, free drill passage, outer-race sleeve and full-thickness retainer seating, M3 screw engagement and available exposed drill length.",
+    "Clamp the tube with all three M5 pressure pads before the first hole. Keep them tight while moving the cassette. Withdraw the drill fully before releasing the cassette lock, and drill one wall at a time.",
+    "Use Print layout for printing exports and split it across beds as required. Inspect each component in the slicer and qualify PETG settings; a 0.5 mm ring needs a suitable 0.1 mm layer schedule or calibrated shim stock.",
+    "Run a fresh native geometry and print-orientation audit for the revised removable-stop design before release; prior integrated-bottom results do not qualify it."
   ]
 }

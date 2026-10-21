@@ -16,11 +16,11 @@ The browser preview and native FreeCAD macro share the same envelope and thread 
 
 ## Verification
 
-All 12 presets are checked for closed, oriented preview meshes and source A/B/C/D conversions in `tests/co2-cartridges.test.ts`. The historical native report in `data/co2-cartridges-native-validation.json` predates the smooth-thread representation and covers every model in FreeCAD 1.0.2: one valid closed solid, matching preview bounds/volume, preserved existing document objects, STEP export/reimport and FCStd save/reopen. These are geometry and integration checks, not a certification of source-undimensioned details.
+All 12 presets are checked for closed, oriented preview meshes and source A/B/C/D conversions in `tests/co2-cartridges.test.ts`. The historical native report in `test-results/co2-cartridges-native-validation.json` predates the smooth-thread representation and covers every model in FreeCAD 1.0.2: one valid closed solid, matching preview bounds/volume, preserved existing document objects, STEP export/reimport and FCStd save/reopen. These are geometry and integration checks, not a certification of source-undimensioned details.
 
 ```sh
 node --import tsx --test tests/co2-cartridges.test.ts
 node --import tsx scripts/verify-co2-cartridges.ts /tmp/protolab-co2-cases.json
 # Use a FreeCAD-enabled Python; FREECAD_LIB overrides the default macOS library path.
-python scripts/verify-electronics.py /tmp/protolab-co2-cases.json data/co2-cartridges-native-validation.json
+python scripts/verify-electronics.py /tmp/protolab-co2-cases.json test-results/co2-cartridges-native-validation.json
 ```

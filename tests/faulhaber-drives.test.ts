@@ -1,3 +1,4 @@
+import { partIsAffected } from './helpers/part-scope';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -38,6 +39,7 @@ for (const [family, [presets, series]] of Object.entries(counts)) {
       const key = row.assets.map((a) => a.key).join('/');
       if (checked.has(key)) continue;
       checked.add(key);
+      if (!partIsAffected(id)) continue;
       const model = part.buildGeometry(preset.parameters, 'assembled');
       try {
         model.updateMatrixWorld(true);
@@ -113,30 +115,34 @@ test('FAULHABER reduction stages select different physical bodies and preserve t
     assert.ok(screws.has(screw));
 });
 
-test('FAULHABER LM motion is bounded by stroke, preserves the housing, and survives preset identity', () => {
-  const part = parts.find((p) => p.id === 'faulhaber-linear-motor')!;
-  for (const preset of part.presets) {
-    const stroke = Number(preset.catalog!.attributes!.stroke);
-    const models = [0, 100].map((position) =>
-      part.buildGeometry({ ...preset.parameters, position }, 'assembled'),
-    );
-    try {
-      const a = models[0].children,
-        b = models[1].children;
-      assert.equal(a.length, b.length);
-      for (let i = 0; i < a.length - 1; i++)
-        assert.deepEqual(a[i].position.toArray(), b[i].position.toArray());
-      assert.ok(Math.abs(b.at(-1)!.position.z - a.at(-1)!.position.z - stroke) < 1e-10);
-      assert.equal(
-        modelEvidence(part, { ...preset.parameters, position: 100 }).kind,
-        'manufacturer-cad',
+test(
+  'FAULHABER LM motion is bounded by stroke, preserves the housing, and survives preset identity',
+  { skip: !partIsAffected('faulhaber-linear-motor') },
+  () => {
+    const part = parts.find((p) => p.id === 'faulhaber-linear-motor')!;
+    for (const preset of part.presets) {
+      const stroke = Number(preset.catalog!.attributes!.stroke);
+      const models = [0, 100].map((position) =>
+        part.buildGeometry({ ...preset.parameters, position }, 'assembled'),
       );
-    } finally {
-      models.forEach(disposeModel);
+      try {
+        const a = models[0].children,
+          b = models[1].children;
+        assert.equal(a.length, b.length);
+        for (let i = 0; i < a.length - 1; i++)
+          assert.deepEqual(a[i].position.toArray(), b[i].position.toArray());
+        assert.ok(Math.abs(b.at(-1)!.position.z - a.at(-1)!.position.z - stroke) < 1e-10);
+        assert.equal(
+          modelEvidence(part, { ...preset.parameters, position: 100 }).kind,
+          'manufacturer-cad',
+        );
+      } finally {
+        models.forEach(disposeModel);
+      }
     }
-  }
-  for (const position of [-1, 101, NaN, Infinity]) {
-    assert.ok(part.validate!({ ...part.defaults, position }, 'assembled').length);
-    assert.throws(() => part.buildGeometry({ ...part.defaults, position }, 'assembled'));
-  }
-});
+    for (const position of [-1, 101, NaN, Infinity]) {
+      assert.ok(part.validate!({ ...part.defaults, position }, 'assembled').length);
+      assert.throws(() => part.buildGeometry({ ...part.defaults, position }, 'assembled'));
+    }
+  },
+);

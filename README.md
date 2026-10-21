@@ -182,7 +182,7 @@ npm run typecheck
 npm run build
 ```
 
-Import replaces only the selected package and keeps its previous version under `.part-module-backups/`. SDK and workbench edits are not imported into the application. Omit `--replace` for a new part ID. Shared reference assets are never silently overwritten: an edited drawing needs a unique filename. No UI changes or manual registry edits are needed.
+Import replaces only the selected package and keeps its previous version under ignored `test-results/backups/part-modules/`. SDK and workbench edits are not imported into the application. Omit `--replace` for a new part ID. Shared reference assets are never silently overwritten: an edited drawing needs a unique filename. No UI changes or manual registry edits are needed.
 
 ## Geometry and manufacturing scope
 
@@ -198,15 +198,17 @@ The generated recipes are also checked with a local FreeCAD runtime during devel
 
 GitHub Pages deployment follows the [official custom workflow documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages). Push to `main` after enabling the GitHub Actions Pages source to publish. Pull requests run tests and builds without deploying.
 
-### Reusing successful CI verification
+### Tests for changed elements
 
-Every workflow run installs locked dependencies, checks TypeScript and test contracts, validates all part packages and presets, runs the Python importer tests, and builds the production site. Eight parallel geometry jobs then run the complete test suite using Node's test-file sharding. The per-part contracts are distributed across `tests/parts-catalog-*.test.ts` so one large catalog file cannot serialize most of the workload. Deployment requires the build and every geometry job to succeed.
+Deployment compares the current commit with the latest successful ancestor push on the target branch. Failed and cancelled runs never advance that baseline, so their pending changes remain in the next test plan. Pull requests compare their merge commit against verified target-branch history. If no verified ancestor is available, the complete suite is required.
 
-Each geometry shard is reused only when an exact successful result exists for the same test inputs, shard index/count and Node runtime. `scripts/ci-test-key.mjs` hashes tracked file paths and contents under `src/`, `tests/`, `scripts/`, `data/`, `public/` and `.github/workflows/`, plus the package manifests and root TypeScript configurations. The key also includes the exact Node version, operating system and architecture. Changes, additions, removals and renames invalidate every shard's result. Add any future test inputs outside these paths to the fingerprint contract.
+`scripts/ci/test-plan.ts` selects changed packages, their dependent assemblies and the test files that exercise them. It follows local imports and declared library dependencies, retains explicit ownership for tests that access the generated registry, and includes referenced fixtures and source assets. Additions, removals and renames are compared against both revisions. The generated registry does not turn every package edit into a full-library geometry run. Per-part geometry contracts retain their existing eight-way distribution and intersect it with the affected part IDs; global inventory and cross-library integration checks stay intact.
 
-Deployment-only files (`vite.config.ts`, `index.html`, `CNAME`) and documentation outside those directories do not invalidate geometry results; their build and TypeScript checks still run. UI source changes conservatively invalidate the full suite too. A cache miss or eviction executes that shard's tests. There are no partial-key matches, failed shards never write a success marker, and pull requests can consume the main branch cache but cannot publish one. Failures are published as check annotations and per-shard log artifacts; other shards continue to report their results.
+Changes to shared core geometry, runtime dependencies or semantic compiler settings require broader verification. CI-selection changes run the selection regression tests; documentation-only changes do not rebuild unrelated model geometry. TypeScript checks, repository hygiene, language checks and the production build still run on every deployment. Part-package and Python importer checks follow the selected scope. Up to eight test groups run in parallel, and the exact plan is attached to the workflow. Deployment requires every selected test and the build to pass; an empty geometry selection is an explicit skip, never an implicit full-suite invocation.
 
-The first run after introducing this cache must finish every shard once. Later deploys with unchanged inputs reuse those successful results. A newer push queues behind a running workflow instead of cancelling its tests and starting from zero; GitHub retains only the newest pending run for that branch. Local `npm test` always runs the complete suite. To force fresh verification in GitHub, choose **Actions → Build and deploy GitHub Pages → Run workflow → full_tests**. Each job summary says whether its tests executed or an exact successful result was reused.
+New pushes cancel stale work. The next run still starts from the last successful baseline and includes all unverified changes. Local `npm test` runs the complete suite. To request complete CI verification manually, choose **Actions → Build and deploy GitHub Pages → Run workflow → full_tests**.
+
+Generated exports, reports, screenshots, backups and compiler caches belong under ignored `test-results/`. `npm run check:artifacts` checks the actual working tree as well as tracked output paths, so ignoring a misplaced export does not conceal it. Reviewed source inputs remain in `data/`; runtime native JSON and component reference images remain part of the library source. See the [repository hygiene policy](docs/repository-hygiene.md).
 
 ### Mechanism and control audit
 

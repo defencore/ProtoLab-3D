@@ -1,3 +1,4 @@
+import { affectedParts } from './helpers/part-scope';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { Box3, Mesh, Vector3 } from 'three';
@@ -106,7 +107,7 @@ test('electronics: families, fixed variants, sourced ratings and missing values'
     'unverified component heights not used as exact filters',
   );
 });
-for (const part of selections)
+for (const part of affectedParts(selections))
   for (const preset of part.presets)
     test(`${preset.id}: closed preview and bounds in both states`, () => {
       for (const state of part.states!) {

@@ -7,7 +7,7 @@ import { models, frames } from '../src/parts/multicopter-frame-component/lib/mod
 import { pieces } from '../src/parts/multicopter-frame/lib/model';
 import { generateScript } from '../src/core/freecad';
 import { engineering } from '../src/parts/multicopter-frame/lib/engineering';
-const dir = resolve('data/real-frame-audit');
+const dir = resolve('test-results/real-frame-audit');
 mkdirSync(dir, { recursive: true });
 const cases = frame.presets.flatMap((preset) =>
   frame

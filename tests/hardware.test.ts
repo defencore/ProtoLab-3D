@@ -1,3 +1,4 @@
+import { affectedParts } from './helpers/part-scope';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { Mesh, Vector3 } from 'three';
@@ -20,7 +21,7 @@ const ids = [
   'square-washer',
   'retaining-ring',
 ];
-for (const part of parts.filter((p) => ids.includes(p.id))) {
+for (const part of affectedParts(parts.filter((p) => ids.includes(p.id)))) {
   test(`${part.id}: stock boundaries have closed outward shells with no degenerate faces`, () => {
     for (const preset of geometrySamples(part)) {
       const model = part.buildGeometry(preset.parameters, 'default');

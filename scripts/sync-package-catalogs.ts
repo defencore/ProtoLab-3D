@@ -166,7 +166,9 @@ async function main(): Promise<void> {
       process.exitCode = 1;
     } else {
       const stamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const backup = await fs.mkdtemp(path.join(root, `.catalog-snapshot-backup-${stamp}-`));
+      const backupParent = path.join(root, 'test-results', 'backups', 'catalog-snapshots');
+      await fs.mkdir(backupParent, { recursive: true });
+      const backup = await fs.mkdtemp(path.join(backupParent, `${stamp}-`));
       const written: typeof changes = [];
       try {
         for (const change of changes) {

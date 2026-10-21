@@ -1,3 +1,4 @@
+import { affectedParts } from './helpers/part-scope';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { parts } from '../src/parts';
@@ -35,7 +36,7 @@ test('eccentric catalog keeps documented miniature seats, widths and mounting of
   ]);
 });
 test('all exposed eccentric controls change the exported solid recipe', () => {
-  for (const part of selected)
+  for (const part of affectedParts(selected))
     for (const field of part.parameters) {
       const p = { ...part.defaults };
       if (field.type === 'number')
@@ -50,7 +51,7 @@ test('all exposed eccentric controls change the exported solid recipe', () => {
     }
 });
 test('eccentric orientation moves the outer bearing or follower axis by the catalog offset', () => {
-  for (const part of selected.filter((p) => p.id !== 'eccentric-bushing')) {
+  for (const part of affectedParts(selected.filter((p) => p.id !== 'eccentric-bushing'))) {
     const centres = [];
     for (const angle of [0, 90]) {
       const model = part.buildGeometry({ ...part.defaults, angle }, 'assembled');

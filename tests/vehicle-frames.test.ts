@@ -1,3 +1,4 @@
+import { affectedParts } from './helpers/part-scope';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { Box3, Mesh, Vector3 } from 'three';
@@ -69,7 +70,7 @@ test('four vehicle families include sourced references and editable design prese
     }
   }
 });
-for (const part of selections)
+for (const part of affectedParts(selections))
   for (const preset of part.presets)
     for (const state of part.states!) {
       if (state.availableWhen && !state.availableWhen(preset.parameters)) continue;

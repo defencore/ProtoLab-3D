@@ -333,7 +333,7 @@ const cases = planned
       disposeModel(model);
     }
   });
-const cachePath = new URL('../data/servo-toggle-actuator-validation.json', import.meta.url);
+const cachePath = new URL('../test-results/servo-toggle-actuator-validation.json', import.meta.url);
 const cachedReport = (
   existsSync(cachePath) ? JSON.parse(readFileSync(cachePath, 'utf8')) : { cases: [] }
 ) as {
@@ -364,7 +364,7 @@ const outputCases = cases.map((item) => {
   return {
     ...prepared,
     cachedNativeValidation: proof,
-    cachedReport: 'data/servo-toggle-actuator-validation.json',
+    cachedReport: 'test-results/servo-toggle-actuator-validation.json',
   };
 });
 const output = process.argv[2] ?? '/tmp/protolab-servo-toggle-actuator-cases.json';

@@ -27,4 +27,4 @@ LiPo cell filters apply only to boards with direct battery input. Pixhawk regula
 
 ## Validation
 
-`tests/flight-controllers.test.ts` verifies fixed selection, unknown-data filtering, distinct mechanical signatures, closed preview meshes, envelopes and open PCB mounting bores. `scripts/verify-flight-controllers.ts` prepares every model/state for `scripts/verify-flight-controllers.py`, which checks FreeCAD solids, preview agreement, component intersections and independent movement, and STEP/FCStd round trips. The native report is stored in `data/flight-controllers-native-validation.json`.
+`tests/flight-controllers.test.ts` verifies fixed selection, unknown-data filtering, distinct mechanical signatures, closed preview meshes, envelopes and open PCB mounting bores. `scripts/verify-flight-controllers.ts` prepares every model/state for `scripts/verify-flight-controllers.py`, which checks FreeCAD solids, preview agreement, component intersections and independent movement, and STEP/FCStd round trips. The native report is stored in `test-results/flight-controllers-native-validation.json`.

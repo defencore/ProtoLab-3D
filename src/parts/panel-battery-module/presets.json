@@ -1,0 +1,46 @@
+[
+  {
+    "id": "3s-panel-module",
+    "name": "3S \u00b7 2 mm panel",
+    "description": "Three-cell module with a hook-in lid and recessed spring-return sliding bolt, a soft extraction sling, external M3 holder rails, fixed XT60E-F and a four-contact nominal 2.54 mm right-angle XH-style balance header soldered directly to the main board.",
+    "parameters": {
+      "pack": "3S",
+      "panelThickness": 2,
+      "showPanel": true,
+      "showCells": true
+    }
+  },
+  {
+    "id": "4s-panel-module",
+    "name": "4S \u00b7 2 mm panel",
+    "description": "Four-cell module with a hook-in lid and recessed spring-return sliding bolt, a soft extraction sling, external M3 holder rails, fixed XT60E-F and a five-contact nominal 2.54 mm right-angle XH-style balance header soldered directly to the main board.",
+    "parameters": {
+      "pack": "4S",
+      "panelThickness": 2,
+      "showPanel": true,
+      "showCells": true
+    }
+  },
+  {
+    "id": "3s-thin-panel-module",
+    "name": "3S \u00b7 1 mm panel",
+    "description": "Three-cell module with a hook-in lid and recessed spring-return sliding bolt, a soft extraction sling, external M3 holder rails, fixed XT60E-F and a four-contact nominal 2.54 mm right-angle XH-style balance header soldered directly to the main board.",
+    "parameters": {
+      "pack": "3S",
+      "panelThickness": 1,
+      "showPanel": true,
+      "showCells": true
+    }
+  },
+  {
+    "id": "4s-thick-panel-module",
+    "name": "4S \u00b7 6 mm panel",
+    "description": "Four-cell module with a hook-in lid and recessed spring-return sliding bolt, a soft extraction sling, external M3 holder rails, fixed XT60E-F and a five-contact nominal 2.54 mm right-angle XH-style balance header soldered directly to the main board.",
+    "parameters": {
+      "pack": "4S",
+      "panelThickness": 6,
+      "showPanel": true,
+      "showCells": true
+    }
+  }
+]

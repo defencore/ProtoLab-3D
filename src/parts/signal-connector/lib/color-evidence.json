@@ -127,61 +127,101 @@
       "components": [
         {
           "kind": "source-step",
-          "rgb": [0.507539989043, 0.507539989043, 0.507539989043],
+          "rgb": [
+            0.507539989043,
+            0.507539989043,
+            0.507539989043
+          ],
           "stepSolidEntity": 15,
           "faceCount": 386
         },
         {
           "kind": "source-step",
-          "rgb": [0.147999998088, 0.144999993226, 0.144999993226],
+          "rgb": [
+            0.147999998088,
+            0.144999993226,
+            0.144999993226
+          ],
           "stepSolidEntity": 12411,
           "faceCount": 45
         },
         {
           "kind": "source-step",
-          "rgb": [0.823999987314, 0.819999987296, 0.781000009244],
+          "rgb": [
+            0.823999987314,
+            0.819999987296,
+            0.781000009244
+          ],
           "stepSolidEntity": 13715,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.823999987314, 0.819999987296, 0.781000009244],
+          "rgb": [
+            0.823999987314,
+            0.819999987296,
+            0.781000009244
+          ],
           "stepSolidEntity": 13931,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.823999987314, 0.819999987296, 0.781000009244],
+          "rgb": [
+            0.823999987314,
+            0.819999987296,
+            0.781000009244
+          ],
           "stepSolidEntity": 14147,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.823999987314, 0.819999987296, 0.781000009244],
+          "rgb": [
+            0.823999987314,
+            0.819999987296,
+            0.781000009244
+          ],
           "stepSolidEntity": 14363,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 14579,
           "faceCount": 24
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 15395,
           "faceCount": 24
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 16211,
           "faceCount": 24
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 17027,
           "faceCount": 24
         }
@@ -193,235 +233,391 @@
       "components": [
         {
           "kind": "source-step",
-          "rgb": [0.372321987396, 0.371574020205, 0.373173001298],
+          "rgb": [
+            0.372321987396,
+            0.371574020205,
+            0.373173001298
+          ],
           "stepSolidEntity": 15,
           "faceCount": 68
         },
         {
           "kind": "source-step",
-          "rgb": [0.372321987396, 0.371574020205, 0.373173001298],
+          "rgb": [
+            0.372321987396,
+            0.371574020205,
+            0.373173001298
+          ],
           "stepSolidEntity": 2083,
           "faceCount": 143
         },
         {
           "kind": "source-step",
-          "rgb": [0.147999998088, 0.144999993226, 0.144999993226],
+          "rgb": [
+            0.147999998088,
+            0.144999993226,
+            0.144999993226
+          ],
           "stepSolidEntity": 6341,
           "faceCount": 80
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 8702,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 8852,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 9002,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 9152,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 9302,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 9452,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 9602,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 9752,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 9902,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 10052,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 10202,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 10352,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 10502,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 10720,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 10938,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 11156,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 11374,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 11592,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 11810,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 12028,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 12246,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 12464,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 12682,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 12900,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 13118,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 13336,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 13554,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 13772,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 13990,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 14208,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 14426,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 14644,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 14862,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 15080,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 15298,
           "faceCount": 8
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 15516,
           "faceCount": 8
         }
@@ -433,217 +629,361 @@
       "components": [
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 15,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 165,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 315,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 465,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 615,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 765,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 915,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 1065,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.272999999305, 0.272999999305, 0.272999999305],
+          "rgb": [
+            0.272999999305,
+            0.272999999305,
+            0.272999999305
+          ],
           "stepSolidEntity": 1215,
           "faceCount": 66
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 3161,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 3313,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 3465,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 3617,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 3769,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 3921,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 4073,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 4225,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.823999987314, 0.819999987296, 0.781000009244],
+          "rgb": [
+            0.823999987314,
+            0.819999987296,
+            0.781000009244
+          ],
           "stepSolidEntity": 4377,
           "faceCount": 161
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 9444,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 9594,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 9744,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 9894,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 10044,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 10194,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 10344,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 10494,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.272999999305, 0.272999999305, 0.272999999305],
+          "rgb": [
+            0.272999999305,
+            0.272999999305,
+            0.272999999305
+          ],
           "stepSolidEntity": 10644,
           "faceCount": 66
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 12590,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 12742,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 12894,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 13046,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 13198,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 13350,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 13502,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.859000020776, 0.737999965183, 0.495999988746],
+          "rgb": [
+            0.859000020776,
+            0.737999965183,
+            0.495999988746
+          ],
           "stepSolidEntity": 13654,
           "faceCount": 6
         },
         {
           "kind": "source-step",
-          "rgb": [0.823999987314, 0.819999987296, 0.781000009244],
+          "rgb": [
+            0.823999987314,
+            0.819999987296,
+            0.781000009244
+          ],
           "stepSolidEntity": 13806,
           "faceCount": 161
         }
@@ -679,7 +1019,11 @@
       "components": [
         {
           "kind": "source-step",
-          "rgb": [0.824000000954, 0.819999992847, 0.78100001812],
+          "rgb": [
+            0.824000000954,
+            0.819999992847,
+            0.78100001812
+          ],
           "stepSolidEntity": 15,
           "faceCount": 54
         },
@@ -697,7 +1041,11 @@
       "components": [
         {
           "kind": "source-step",
-          "rgb": [0.824000000954, 0.819999992847, 0.78100001812],
+          "rgb": [
+            0.824000000954,
+            0.819999992847,
+            0.78100001812
+          ],
           "stepSolidEntity": 15,
           "faceCount": 54
         },
@@ -918,6 +1266,130 @@
           "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
           "stepSolidEntity": 15,
           "faceCount": 151
+        }
+      ]
+    },
+    "pin-socket-5": {
+      "sourceSha256": "d5e3b1067d976d21cc2cd186041983e3510933e01df1d3aecaedcfbab3e238f7",
+      "geometryFingerprint": "d7c6f1c0f649b346dc6d08627e5fcceaed8928f13afe92836322b2e4901a6bd9",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Source faces have mixed or incomplete surface colors; a uniform color cannot preserve them.",
+          "stepSolidEntity": 15,
+          "faceCount": 140
+        }
+      ]
+    },
+    "xh254-balance-header-4": {
+      "sourceSha256": "020cc77660872cc18ddd5664bbd46a4e26ce073ef1e3b708688bf89be151a6a3",
+      "geometryFingerprint": "f552c0405713525e7c295f52491cfc21808cf120988d79bad48c507ee3e03cfa",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
+        },
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
+        },
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
+        },
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
+        },
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
+        }
+      ]
+    },
+    "xh254-balance-header-5": {
+      "sourceSha256": "020cc77660872cc18ddd5664bbd46a4e26ce073ef1e3b708688bf89be151a6a3",
+      "geometryFingerprint": "7163c9a0e6f402076c347b8688e994dfe4cd4951040052e18904c637d30a8172",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
+        },
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
+        },
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
+        },
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
+        },
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
+        },
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
+        }
+      ]
+    },
+    "xh254-balance-header-ra-4": {
+      "sourceSha256": "020cc77660872cc18ddd5664bbd46a4e26ce073ef1e3b708688bf89be151a6a3",
+      "geometryFingerprint": "4ffa4f079e043d8950f9cf15df4323e8f66cdafba89c5d0b4a42572c0470da52",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
+        },
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
+        },
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
+        },
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
+        },
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
+        }
+      ]
+    },
+    "xh254-balance-header-ra-5": {
+      "sourceSha256": "020cc77660872cc18ddd5664bbd46a4e26ce073ef1e3b708688bf89be151a6a3",
+      "geometryFingerprint": "223d705164887899cb18c35b890ef8b97f2576ddabdd38143a4cebf1d67b28da",
+      "components": [
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
+        },
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
+        },
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
+        },
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
+        },
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
+        },
+        {
+          "kind": "illustrative",
+          "reason": "Authored user-photo reconstruction has no source STEP surface colors."
         }
       ]
     }

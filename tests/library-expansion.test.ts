@@ -5,10 +5,8 @@ import { parts } from '../src/parts';
 import manifest from '../data/library-expansion.json';
 import { disposeModel } from '../src/core/mechanical';
 import { validateParameters } from '../src/core/validation';
-const filter = process.env.PART_FILTER?.split(',');
-const selections = parts.filter(
-  (p) => manifest.parts.some((m) => m.id === p.id) && (!filter || filter.includes(p.id)),
-);
+import { affectedParts } from './helpers/part-scope';
+const selections = affectedParts(parts.filter((p) => manifest.parts.some((m) => m.id === p.id)));
 function checkMesh(mesh: Mesh, label: string) {
   const positions = mesh.geometry.getAttribute('position');
   const indices = mesh.geometry.index;

@@ -34,6 +34,7 @@ export function checkRepository(root) {
   let packageReadme;
   let count = 0;
   for (const file of files) {
+    if (/^(?:test-results|node_modules|dist|\.cache)\//.test(file)) continue;
     const absolute = path.join(root, file);
     if (!existsSync(absolute) || !lstatSync(absolute).isFile()) continue;
     const bytes = readFileSync(absolute);

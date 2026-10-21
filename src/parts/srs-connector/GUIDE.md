@@ -32,7 +32,7 @@ JST STEP/IGES links require an emailed application and acceptance of redistribut
 
 ## Implementation
 
-`lib/model.ts` supplies one constructive geometry definition for Three.js preview and FreeCAD solids. `presets.json` contains catalog evidence; `configurator.ts` exposes model selection and harness controls. `tests/srs-connectors.test.ts` checks catalog scope, geometry envelopes, contact openings and mesh topology. Native validation uses `scripts/verify-srs-connectors.ts` with `scripts/verify-electronics.py` and stores results in `data/srs-connectors-native-validation.json`.
+`lib/model.ts` supplies one constructive geometry definition for Three.js preview and FreeCAD solids. `presets.json` contains catalog evidence; `configurator.ts` exposes model selection and harness controls. `tests/srs-connectors.test.ts` checks catalog scope, geometry envelopes, contact openings and mesh topology. Native validation uses `scripts/verify-srs-connectors.ts` with `scripts/verify-electronics.py` and stores results in `test-results/srs-connectors-native-validation.json`.
 
 ## TE Connectivity AK II
 

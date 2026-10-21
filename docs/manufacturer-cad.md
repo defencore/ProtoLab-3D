@@ -35,7 +35,7 @@ node --import tsx scripts/prepare-manufacturer-cad.ts nrf52840 adafruit-feather-
 Then run with a FreeCAD-enabled Python interpreter:
 
 ```sh
-python scripts/verify-manufacturer-cad.py nrf52840 feather public/references/electronics/feather-nrf52840-rev-d.step /tmp/feather-case.json data/feather-source-validation.json
+python scripts/verify-manufacturer-cad.py nrf52840 feather public/references/electronics/feather-nrf52840-rev-d.step /tmp/feather-case.json test-results/feather-source-validation.json
 ```
 
 For Pi 5, use family `raspberry-pi`, preset `raspberry-pi-5-full`, native folder `pi5`, and the STEP extracted from the retained official ZIP.
@@ -44,7 +44,7 @@ Recorded assembled-state checks:
 
 | Model | Source comparison | STEP / FCStd |
 | --- | --- | --- |
-| Pi 5 report (`../data/pi5-source-validation.json`, generated locally) | 2,680 matching boundary fingerprints; 9 additional boundary/surface-sampling comparisons. Maximum source bounding-coordinate difference 0.0000001 mm. | Both passed; all 2,689 solids retained. Maximum STEP solid-volume drift 0.000103 mm³; summed solid-volume drift 0.000098 mm³. |
-| Feather report (`../data/feather-source-validation.json`, generated locally) | 61 matching boundary fingerprints. Maximum source bounding-coordinate difference below 0.000000000001 mm. | Both passed; all 61 solids retained. Maximum STEP solid-volume drift 0.000754 mm³; summed drift 0.001685 mm³. |
+| Pi 5 report (`../test-results/pi5-source-validation.json`, generated locally) | 2,680 matching boundary fingerprints; 9 additional boundary/surface-sampling comparisons. Maximum source bounding-coordinate difference 0.0000001 mm. | Both passed; all 2,689 solids retained. Maximum STEP solid-volume drift 0.000103 mm³; summed solid-volume drift 0.000098 mm³. |
+| Feather report (`../test-results/feather-source-validation.json`, generated locally) | 61 matching boundary fingerprints. Maximum source bounding-coordinate difference below 0.000000000001 mm. | Both passed; all 61 solids retained. Maximum STEP solid-volume drift 0.000754 mm³; summed drift 0.001685 mm³. |
 
 STEP reparameterization changes numerical mass integration slightly, particularly on small filleted components. Compare corresponding solid volumes; the compound's integrated volume can differ from the sum of its solids. The verifier checks component bounds to 0.00001 mm and bounds per-solid volume drift by surface area times the stored CAD tolerance. Feather's source/restored maximum CAD tolerance is about 0.00984 mm; this is a source-file tolerance, not measured manufacturing accuracy. The recorded Pi run also passed the stricter per-solid relative-volume threshold of 0.000001 and aggregate drift below 0.001 mm³. These reports supplement the original-source provenance; they do not certify every physical production unit.

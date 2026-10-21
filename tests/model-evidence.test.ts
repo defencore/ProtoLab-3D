@@ -36,10 +36,22 @@ test('every preset has conservative geometry evidence, separate from catalog ide
   assert.equal(modelEvidence(bec, bec.defaults).kind, 'envelope');
 });
 
-test('retained community connector CAD has an explicit provenance class and matching UI label', () => {
+test('community connector CAD and authored XH models retain distinct provenance classes', () => {
   const connector = parts.find((part) => part.id === 'signal-connector')!;
-  assert.equal(connector.presets.length, 35);
-  for (const preset of connector.presets) {
+  const authored = connector.presets.filter((preset) => preset.id.startsWith('xh254-'));
+  const community = connector.presets.filter((preset) => !preset.id.startsWith('xh254-'));
+  assert.equal(community.length, 36);
+  assert.deepEqual(
+    authored.map((preset) => preset.id),
+    [
+      'xh254-balance-header-4',
+      'xh254-balance-header-5',
+      'xh254-balance-header-ra-4',
+      'xh254-balance-header-ra-5',
+    ],
+  );
+  assert.equal(community.length + authored.length, connector.presets.length);
+  for (const preset of community) {
     assert.equal(preset.catalog!.geometryEvidence!.kind, 'community-cad');
     const evidence = modelEvidence(connector, preset.parameters, preset.id);
     assert.equal(evidence.kind, 'community-cad');
@@ -47,7 +59,19 @@ test('retained community connector CAD has an explicit provenance class and matc
     assert.match(evidence.sourceSha256!, /^[a-f0-9]{64}$/);
     assert.equal(evidence.source, preset.catalog!.geometryEvidence!.sourceUrl);
   }
-  const first = connector.presets[0];
+  for (const preset of authored) {
+    const declared = preset.catalog!.geometryEvidence!;
+    const evidence = modelEvidence(connector, preset.parameters, preset.id);
+    assert.equal(declared.kind, 'envelope');
+    assert.equal(evidence.kind, 'envelope');
+    assert.equal(evidence.label, 'Envelope model');
+    assert.match(evidence.summary, /authored/i);
+    assert.match(evidence.limitations, /authored estimates/);
+    assert.match(evidence.limitations, /verify the delivered/i);
+    assert.match(evidence.sourceSha256!, /^[a-f0-9]{64}$/);
+    assert.equal(evidence.source, declared.sourceUrl);
+  }
+  const first = community[0];
   const withoutExplicitEvidence = {
     ...connector,
     presets: [{ ...first, catalog: { ...first.catalog!, geometryEvidence: undefined } }],

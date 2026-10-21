@@ -8,11 +8,23 @@ export const parameters: ParameterDefinition[] = [
     type: 'select',
     group: 'Terminal selection',
     options: data.map((m) => ({ value: m.id, label: m.name })),
-    description: 'Choose an existing supplier model with fixed dimensions.',
+    description: 'Choose a catalog model with fixed dimensions.',
   },
 ];
 export const catalogSelection: NonNullable<PartDefinition['catalogSelection']> = [];
 export const catalogFilterFields: ParameterDefinition[] = [
+  {
+    key: 'termination',
+    label: 'Contact exit',
+    type: 'select',
+    group: 'Terminal selection',
+    catalogSummary: true,
+    options: [
+      { value: 'rear-tab', label: 'Rear solder tab' },
+      { value: 'bottom-tab', label: 'Downward solder tab' },
+      { value: 'bottom-m4', label: 'Bottom M4 contact' },
+    ],
+  },
   ...(['manufacturer', 'connection', 'mount'] as const).map((key) => ({
     key,
     label: { manufacturer: 'Manufacturer', connection: 'Connection type', mount: 'Mounting' }[key],

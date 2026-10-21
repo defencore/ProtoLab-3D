@@ -46,6 +46,7 @@ def mesh(solid):
 
 for row in rows:
  if requested and row['id'] not in requested:continue
+ if row.get('geometryKind')=='authored-photo':continue
  source=SOURCES/row['file'];data=source.read_bytes();sha=hashlib.sha256(data).hexdigest()
  if row.get('sourceSha256'):assert row['sourceSha256']==sha,('Changed source',row['id'])
  target=PACKAGE/'lib/native'/ (row['id']+'.json')

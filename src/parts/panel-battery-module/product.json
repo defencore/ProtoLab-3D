@@ -1,0 +1,16 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Panel-mounted 3S or 4S 18650 module with a hook-in lid and recessed spring-return sliding bolt, an unanchored fabric extraction sling, external M3 holder rails, fixed XT60E-F and a nominal 2.54 mm right-angle XH-style balance header directly on the main board.",
+  "processes": ["printing", "cutting", "drilling", "assembly"],
+  "releaseRequirements": [
+    "Match the delivered MPD BK-18650-PC6 or PC8 holder, protected button-top cells and XT60E-F to their source interfaces; verify actual cell dimensions and elastic retention. Qualify the nominal 2.54 mm XH-style header and matching cable housing against the authored envelope.",
+    "Trim 100x100 donor stock to 100x70 for 3S or retain 100x100 for 4S; inspect the main perfboard against the generated critical hole pattern, including the directly soldered right-angle balance header at X-50.5. MPD blade-tail centres are not a 2.54 mm grid; external M3 rails retain the unmodified holder instead of its original fixing bores.",
+    "Test PETG print poses, removable supports, insert pilots, captive nut seats, hook engagement, sliding clearances, positive 4 mm travel stops and M3 hardware engagement. Confirm that the closed bolt and both hidden hooks positively retain the lid.",
+    "Measure the actual nominal OD8 x free-length10 x wire0.4 spring. Reference six total coils and closed ends are assumptions; verify 9 mm installed length locked, 5 mm released, clearance above actual solid height and reliable return against printed friction. No rated return force or life is established.",
+    "Fit the measured 12 mm soft ribbon over existing holder partitions, with no hard buckle or lid anchor. Retract the slider, tilt the lid 17 degrees and feed the loop through before withdrawing the hooks 4 mm and lifting clear. Pull cells only after the lid clears; verify this service sequence physically.",
+    "Verify the host panel cutout, M4 mounting stack, rear access and lid removal. Qualify mating and withdrawal of the delivered balance lead through the open-bottom left side notch after releasing the M4 mounts and withdrawing the whole module. Cells can be removed for separate charging.",
+    "Author insulated series links and every balance node for the selected 3S or 4S circuit. Select wiring, fuse and protection provisions separately; no BMS, charging circuit or current rating is established by this mechanical assembly.",
+    "Fit the two nominal foam strips for gentle retention without bending the holder or damaging cell wrappers; verify repeated cell replacement and lid closure with the delivered cells."
+  ]
+}

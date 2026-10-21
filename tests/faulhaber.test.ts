@@ -1,3 +1,4 @@
+import { partIsAffected } from './helpers/part-scope';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -82,6 +83,7 @@ for (const family of ['am', 'bx4']) {
       assert.equal(preset.catalog!.geometryEvidence!.kind, 'manufacturer-cad');
       if (checked.has(series)) continue;
       checked.add(series);
+      if (!partIsAffected(id)) continue;
       const expectedPreview = previewDigests[`${id}/native-${series}.json`];
       const model = part.buildGeometry(preset.parameters, 'assembled');
       try {

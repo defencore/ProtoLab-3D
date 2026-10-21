@@ -41,6 +41,6 @@ node --import tsx scripts/verify-lifting-surfaces.ts /tmp/protolab-lifting-surfa
 /Applications/FreeCAD.app/Contents/Resources/bin/python scripts/verify-lifting-surfaces.py /tmp/protolab-lifting-surfaces-cases.json /tmp/protolab-lifting-surfaces-results.json
 ```
 
-The native audit covers all 11 presets in three states (33 cases): closed valid solids, preview/native agreement, component separation, independent movement, and STEP/FCStd round trips. Results are kept in `data/lifting-surfaces-native-validation.json`. The mesh tests also exercise mixed wedge/NACA sections, an off-grid kink, thin highly cambered sections, mirrored winding, and a finite trailing edge.
+The native audit covers all 11 presets in three states (33 cases): closed valid solids, preview/native agreement, component separation, independent movement, and STEP/FCStd round trips. Results are kept in `test-results/lifting-surfaces-native-validation.json`. The mesh tests also exercise mixed wedge/NACA sections, an off-grid kink, thin highly cambered sections, mirrored winding, and a finite trailing edge.
 
 Export the complete isolated package with `npm run parts:export -- lifting-surface /tmp/lifting-surface-workbench`. All profile and geometry logic stays private to this folder; the only shared imports are the generic core SDK and Three.js.

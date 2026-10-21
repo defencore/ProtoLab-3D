@@ -11,6 +11,7 @@ import {
   dimensions,
   python,
   selected,
+  xh254MatingReferences,
 } from '../src/parts/signal-connector/lib/model';
 import type { Parameters } from '../src/core/types';
 
@@ -33,8 +34,8 @@ function contains(model: string, point: number[]): boolean {
   return inside;
 }
 
-test('connector catalog selects 35 fixed models across distinct interfaces', () => {
-  assert.equal(models.length, 35);
+test('connector catalog selects 40 fixed models across distinct interfaces', () => {
+  assert.equal(models.length, 40);
   assert.equal(part.presets!.length, models.length);
   assert.equal(part.catalogSelectionOnly, true);
   assert.equal(part.category, 'CONNECTORS & INTERFACES');
@@ -46,8 +47,9 @@ test('connector catalog selects 35 fixed models across distinct interfaces', () 
   for (const preset of part.presets!) {
     assert.deepEqual(part.validate(preset.parameters, 'assembled'), []);
     assert.equal(preset.name, models.find((m) => m.id === preset.parameters.model)!.name);
-    assert.equal(preset.catalog!.geometryEvidence!.kind, 'community-cad');
-    assert.match(preset.catalog!.sourceName, /community/);
+    const authored = String(preset.parameters.model).startsWith('xh254-');
+    assert.equal(preset.catalog!.geometryEvidence!.kind, authored ? 'envelope' : 'community-cad');
+    assert.match(preset.catalog!.sourceName, authored ? /authored/ : /community/);
     assert.deepEqual(Object.keys(preset.parameters), ['model']);
   }
   for (const key of ['family', 'contactType', 'contacts', 'pitch', 'mounting'])
@@ -70,7 +72,8 @@ test('every native source BRep retains its exact pinned identity and closed inde
     assert.equal(asset.sourceSha256, model.sourceSha256);
     assert.match(asset.sourceSha256, /^[a-f0-9]{64}$/);
     assert.equal(asset.sourceSolids, asset.components.length);
-    assert.ok(asset.sourceUrl.includes('/9.0.1/'));
+    if (asset.sourceKind) assert.match(asset.sourceKind, /Authored user-photo.*2.54/);
+    else assert.ok(asset.sourceUrl.includes('/9.0.1/'));
     const group = geometry({ model: model.id }, 'assembled');
     assert.equal(group.children.length, asset.components.length);
     for (const [ci, item] of asset.components.entries()) {
@@ -142,13 +145,88 @@ test('JST XH 2.50 mm and PH 2.00 mm pin rows remain distinct and the shrouds hav
 });
 
 test('female pin strips retain open contact mouths while male strips retain projecting pins', () => {
-  for (const n of [3, 4, 6]) {
+  for (const n of [3, 4, 5, 6])
     for (let i = 0; i < n; i++) {
       assert.equal(contains(`pin-socket-${n}`, [0, -i * 2.54, 8]), false);
       assert.equal(contains(`pin-socket-${n}`, [0.9, -i * 2.54, 8]), true);
+    }
+  for (const n of [3, 4, 6]) {
+    for (let i = 0; i < n; i++) {
       assert.equal(contains(`pin-header-${n}`, [0, -i * 2.54, 7]), true);
     }
     assert.equal(contains(`pin-header-${n}`, [0, -1.27, 7]), false);
+  }
+});
+
+test('nominal XH-style balance headers keep 2.54 mm pitch and disclose their authored paired guides', () => {
+  for (const contacts of [4, 5]) {
+    const id = `xh254-balance-header-${contacts}`,
+      model = selected({ model: id });
+    assert.equal(model.pitch, 2.54);
+    assert.equal(model.manufacturer, 'Unspecified');
+    assert.match(model.evidence, /user-supplied.*not manufacturer CAD/);
+    assert.match(model.scope, /delivered matched pair/);
+    assert.equal(model.native.components.length, contacts + 1);
+    [-2.9, -(contacts - 1) * 2.54 - 2.45, -3.4, 2.9, 2.45, 7].forEach((value, axis) =>
+      assert.ok(Math.abs(model.native.bounds[axis] - value) < 1e-9),
+    );
+    for (const [index, pin] of model.native.components.slice(1).entries()) {
+      assert.ok(Math.abs((pin.bounds[1] + pin.bounds[4]) / 2 + index * 2.54) < 1e-9);
+      assert.ok(Math.abs(pin.bounds[3] - pin.bounds[0] - 0.64) < 1e-9);
+      assert.equal(contains(id, [0, -index * 2.54, 4.6]), true);
+    }
+    assert.equal(contains(id, [0, -1.27, 6]), false, 'Open shroud above recessed pin tips');
+    assert.equal(contains(id, [2.2, -0.75, 4]), false, 'Matching guide relief is open');
+    assert.equal(contains(id, [-2.2, -0.75, 4]), true, 'Opposite face blocks the reversed guide');
+    const mate = xh254MatingReferences.find((asset) => asset.headerId === id)!;
+    assert.deepEqual(mate.fullyMatedTranslation, [0, 0, 2.1]);
+    assert.match(mate.limitations, /authored pair only/);
+    assert.match(python({ model: id }, 'assembled'), /Authored user-photo reconstruction/);
+  }
+});
+
+test('right-angle nominal XH254 headers retain bent through-hole pins and a matched side-facing housing', () => {
+  for (const contacts of [4, 5]) {
+    const id = `xh254-balance-header-ra-${contacts}`,
+      model = selected({ model: id }),
+      span = (contacts - 1) * 2.54;
+    assert.equal(model.pitch, 2.54);
+    assert.equal(model.contacts, contacts);
+    assert.match(model.mounting, /right angle.*through hole/);
+    assert.match(model.evidence, /separate square bent pins.*not manufacturer CAD/);
+    assert.equal(model.native.components.length, contacts + 1);
+    [-9.5, -span - 2.45, -3.4, 0.32, 2.45, 5.8].forEach((expected, axis) =>
+      assert.ok(
+        Math.abs(model.native.bounds[axis] - expected) < 1e-9,
+        id + ': native datum bounds',
+      ),
+    );
+    for (let pin = 0; pin < contacts; pin++) {
+      const y = -pin * 2.54;
+      assert.equal(contains(id, [0, y, -2]), true, 'Vertical solder tail remains below PCB Z0');
+      assert.equal(
+        contains(id, [-5, y, 2.9]),
+        true,
+        'Horizontal mating contact projects into side shroud',
+      );
+      assert.equal(
+        contains(id, [-0.175736, y, 2.724264]),
+        true,
+        'Quarter-circle bend joins tail to horizontal contact',
+      );
+      assert.equal(contains(id, [0, y, 4]), false, 'No spurious vertical pin above bend');
+      assert.equal(
+        contains(id, [-5, y, 1.5]),
+        false,
+        'Contact is a bent wire rather than a solid rectangular elbow',
+      );
+    }
+    const mate = xh254MatingReferences.find((asset) => asset.headerId === id)!;
+    assert.equal(mate.id, `xh254-balance-mate-ra-${contacts}`);
+    assert.deepEqual(mate.fullyMatedTranslation, [-4.6, 0, 2.9]);
+    assert.deepEqual(mate.insertionAxis, [1, 0, 0]);
+    assert.match(mate.limitations, /authored pair only/);
+    assert.match(python({ model: id }, 'assembled'), /Authored user-photo reconstruction/);
   }
 });
 
@@ -190,7 +268,7 @@ test('source reference download excludes binary payload and declares community s
       data = JSON.parse(file.content);
     assert.equal(data.sourceSha256, model.sourceSha256);
     assert.equal(data.components.length, model.native.sourceSolids);
-    assert.match(file.content, /community/);
+    assert.match(file.content, model.native.sourceKind ? /Authored user-photo/ : /community/);
     assert.doesNotMatch(file.content, /"brep"|"triangles"|"vertices"/);
     assert.ok(part.assessment!({ model: model.id }).some((note) => note.includes('PCB')));
   }
@@ -226,12 +304,15 @@ test('source-color preservation retains geometry fingerprints and records every 
         assert.equal(asset.components[i].color, packed);
       } else {
         illustrative++;
-        assert.match(entry.reason!, /mixed|incomplete|order|count|shell/);
+        assert.match(
+          entry.reason!,
+          model.native.sourceKind ? /Authored user-photo/ : /mixed|incomplete|order|count|shell/,
+        );
       }
     }
   }
   assert.equal(sourceColors, 87);
-  assert.equal(illustrative, 32);
+  assert.equal(illustrative, 55);
   const usb = models.find((m) => m.id === 'usb-c-amphenol-12401610')!;
   assert.deepEqual(
     usb.native.components.slice(0, 3).map((c) => c.color),

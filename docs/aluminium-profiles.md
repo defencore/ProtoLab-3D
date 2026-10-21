@@ -32,4 +32,4 @@ node --import tsx scripts/verify-aluminium-profiles.ts
 /Applications/FreeCAD.app/Contents/Resources/bin/python scripts/verify-aluminium-profiles.py
 ```
 
-Use a FreeCAD-capable Python on other platforms. Local FreeCAD 1.0.2 passed all eight sections: valid closed single solids, nominal bounds, preview/native volume, more than 500 cross-section probes per section, through-length continuity and STEP round trips. Results are recorded in `data/aluminium-profile-native-validation.json`. These native checks do not run in GitHub Pages CI.
+Use a FreeCAD-capable Python on other platforms. Local FreeCAD 1.0.2 passed all eight sections: valid closed single solids, nominal bounds, preview/native volume, more than 500 cross-section probes per section, through-length continuity and STEP round trips. Results are recorded in `test-results/aluminium-profile-native-validation.json`. These native checks do not run in GitHub Pages CI.

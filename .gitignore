@@ -4,7 +4,20 @@ dist/
 .DS_Store
 screenshots/
 test-results/
-.cache/ci-tests/
+
+# Generated CAD exports belong in test-results, never in source control.
+*.[sS][tT][lL]
+*.[sS][tT][eE][pP]
+*.[sS][tT][pP]
+*.FCStd
+*.FCStd1
+*.FCBak
+*.3mf
+*.gcode
+*.brep
+*.brp
+*.obj
+*.zip
 
 __pycache__/
 *.pyc
@@ -17,8 +30,6 @@ data/*
 !data/promtehimport-inventory.json
 
 !data/library-expansion.json
-!data/electrical-catalogs-validation.json
-!data/servo-toggle-actuator-validation.json
 
 
 # Source archives are linked remotely, never bundled.

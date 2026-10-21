@@ -1,3 +1,4 @@
+import { affectedParts } from './helpers/part-scope';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { Box3, Mesh, Vector3, type Object3D } from 'three';
@@ -59,7 +60,10 @@ test('electromagnetics is a discoverable section with complete prototype size ch
   );
   for (const part of electromagneticParts) {
     assert.equal(part.category, 'MOTORS & ACTUATORS');
-    assert.equal(part.subgroup, part.id === 'holding-electromagnet' ? 'HOLDING MAGNETS' : 'SOLENOIDS');
+    assert.equal(
+      part.subgroup,
+      part.id === 'holding-electromagnet' ? 'HOLDING MAGNETS' : 'SOLENOIDS',
+    );
     assert.equal(part.icon, 'magnet');
     assert.ok(part.presets.length >= 4);
     for (const preset of part.presets) {
@@ -78,7 +82,7 @@ test('electromagnetics is a discoverable section with complete prototype size ch
 });
 
 test('all electromagnetic presets and display states have valid closed models and export envelopes', () => {
-  for (const part of electromagneticParts) {
+  for (const part of affectedParts(electromagneticParts)) {
     for (const preset of [{ id: 'default', parameters: part.defaults }, ...part.presets]) {
       for (const state of part.states!) {
         const label = `${part.id}/${preset.id}/${state.id}`;
@@ -111,7 +115,9 @@ test('all electromagnetic presets and display states have valid closed models an
 });
 
 test('solenoid actuation moves one plunger exactly one stroke without shifting the housing', () => {
-  for (const part of electromagneticParts.filter((p) => p.subgroup === 'SOLENOIDS')) {
+  for (const part of affectedParts(
+    electromagneticParts.filter((p) => p.subgroup === 'SOLENOIDS'),
+  )) {
     for (const preset of part.presets) {
       const extended = part.buildGeometry(preset.parameters, 'extended');
       const retracted = part.buildGeometry(preset.parameters, 'retracted');

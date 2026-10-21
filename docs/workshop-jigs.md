@@ -62,10 +62,10 @@ node --import tsx --test tests/workshop-jigs.test.ts
 Run the prepared native geometry audit in FreeCAD:
 
 ```python
-WORKSHOP_JIG_OUTPUT = '/absolute/path/to/ProtoLab-3D/data/workshop-jigs'
+WORKSHOP_JIG_OUTPUT = '/absolute/path/to/ProtoLab-3D/test-results/workshop-jigs'
 WORKSHOP_JIG_PREVIOUS = []
 WORKSHOP_JIG_ONLY = None
 exec(open('/absolute/path/to/ProtoLab-3D/scripts/verify-workshop-jigs.py').read())
 ```
 
-The native audit checks valid single-solid components, component interference, unobstructed declared drill paths, actual stock insertion/end stops for the shaft/V-block/dowel guides, flat support of the inclined shoe, standalone STEP and closed STL bodies, STEP assembly volume and FCStd reopening. It writes a per-case report and one sample assembly per family under `data/workshop-jigs/`. Generated CAD remains outside version control under the repository's existing `data/` policy. Automated geometry checks do not establish manufactured accuracy, tool life or load capacity.
+The native audit checks valid single-solid components, component interference, unobstructed declared drill paths, actual stock insertion/end stops for the shaft/V-block/dowel guides, flat support of the inclined shoe, standalone STEP and closed STL bodies, STEP assembly volume and FCStd reopening. It writes a per-case report and one sample assembly per family under ignored `test-results/workshop-jigs/`. Automated geometry checks do not establish manufactured accuracy, tool life or load capacity.

@@ -499,6 +499,22 @@
     "sourceSha256": "76063e5b34d90fc10c0dbef08c12530783765cdc34c08acf4bbd23fe7c7671e3"
   },
   {
+    "id": "pin-socket-5",
+    "name": "2.54 mm socket strip \u00b7 5-way \u00b7 vertical",
+    "file": "PinSocket_1x05_P2.54mm_Vertical.step",
+    "folder": "Connector_PinSocket_2.54mm.3dshapes",
+    "family": "2.54 mm header",
+    "contactType": "socket",
+    "contacts": 5,
+    "mounting": "PCB \u00b7 through hole",
+    "sourceUrl": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/9.0.1/Connector_PinSocket_2.54mm.3dshapes/PinSocket_1x05_P2.54mm_Vertical.step",
+    "downloadUrl": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/raw/9.0.1/Connector_PinSocket_2.54mm.3dshapes/PinSocket_1x05_P2.54mm_Vertical.step",
+    "evidence": "KiCad 9.0.1 community 3D reference model; not original manufacturer CAD.",
+    "scope": "Generic KiCad reference geometry. No manufacturer or order code is established; insulator height, pin length and socket construction vary by supplier. Not an interchangeable purchasing specification.",
+    "pitch": 2.54,
+    "sourceSha256": "d5e3b1067d976d21cc2cd186041983e3510933e01df1d3aecaedcfbab3e238f7"
+  },
+  {
     "id": "pin-header-6",
     "name": "2.54 mm pin header \u00b7 6-way \u00b7 vertical",
     "file": "PinHeader_1x06_P2.54mm_Vertical.step",
@@ -593,5 +609,121 @@
     "scope": "Generic KiCad DE-9 reference with 2.77 mm columns and 2.84 mm rows. The two screw clearance holes are retained. Often informally called DB9; verify the actual supplier drawing, mounting hardware and contact tail length.",
     "pitch": 2.77,
     "sourceSha256": "6e80613e8778f00d8901743f66cee0340845cd69cd3542c9c34d46efa0917eb3"
+  },
+  {
+    "id": "xh254-balance-header-4",
+    "name": "XH-style 2.54 mm balance header \u00b7 4-way",
+    "file": "xh254-pitch-reference.png",
+    "folder": "Authored_user_photo_reference",
+    "family": "XH-style 2.54 mm",
+    "contactType": "pins",
+    "contacts": 4,
+    "mounting": "PCB \u00b7 through hole",
+    "pitch": 2.54,
+    "manufacturer": "Unspecified",
+    "geometryKind": "authored-photo",
+    "sourceUrl": "https://www.hanbodianzi.com/shows/103/41.html",
+    "sourceSha256": "020cc77660872cc18ddd5664bbd46a4e26ce073ef1e3b708688bf89be151a6a3",
+    "sourcePhotos": [
+      {
+        "file": "lib/reference-images/xh254-pair-reference.png",
+        "sha256": "3d3262d1b5c14ec270db0d7ad7887f486d05ba018f571867883821a988474da6",
+        "kind": "User supplied reference image"
+      },
+      {
+        "file": "lib/reference-images/xh254-pitch-reference.png",
+        "sha256": "020cc77660872cc18ddd5664bbd46a4e26ce073ef1e3b708688bf89be151a6a3",
+        "kind": "User supplied reference image"
+      }
+    ],
+    "evidence": "Authored nominal 2.54 mm model from user-supplied white XH-style cable photographs; not manufacturer CAD or a scaled JST model.",
+    "scope": "All shell dimensions, guide positions, contact section and mating depth are authored estimates. No original JST 2.50 mm or Molex geometry was scaled or used. Nominal anti-reversal proof applies only to the authored header and mate; verify the delivered matched pair."
+  },
+  {
+    "id": "xh254-balance-header-5",
+    "name": "XH-style 2.54 mm balance header \u00b7 5-way",
+    "file": "xh254-pitch-reference.png",
+    "folder": "Authored_user_photo_reference",
+    "family": "XH-style 2.54 mm",
+    "contactType": "pins",
+    "contacts": 5,
+    "mounting": "PCB \u00b7 through hole",
+    "pitch": 2.54,
+    "manufacturer": "Unspecified",
+    "geometryKind": "authored-photo",
+    "sourceUrl": "https://www.hanbodianzi.com/shows/103/41.html",
+    "sourceSha256": "020cc77660872cc18ddd5664bbd46a4e26ce073ef1e3b708688bf89be151a6a3",
+    "sourcePhotos": [
+      {
+        "file": "lib/reference-images/xh254-pair-reference.png",
+        "sha256": "3d3262d1b5c14ec270db0d7ad7887f486d05ba018f571867883821a988474da6",
+        "kind": "User supplied reference image"
+      },
+      {
+        "file": "lib/reference-images/xh254-pitch-reference.png",
+        "sha256": "020cc77660872cc18ddd5664bbd46a4e26ce073ef1e3b708688bf89be151a6a3",
+        "kind": "User supplied reference image"
+      }
+    ],
+    "evidence": "Authored nominal 2.54 mm model from user-supplied white XH-style cable photographs; not manufacturer CAD or a scaled JST model.",
+    "scope": "All shell dimensions, guide positions, contact section and mating depth are authored estimates. No original JST 2.50 mm or Molex geometry was scaled or used. Nominal anti-reversal proof applies only to the authored header and mate; verify the delivered matched pair."
+  },
+  {
+    "id": "xh254-balance-header-ra-4",
+    "name": "XH-style 2.54 mm right-angle balance header \u00b7 4-way",
+    "file": "xh254-pitch-reference.png",
+    "folder": "Authored_user_photo_reference",
+    "family": "XH-style 2.54 mm",
+    "contactType": "pins",
+    "contacts": 4,
+    "mounting": "PCB \u00b7 right angle \u00b7 through hole",
+    "pitch": 2.54,
+    "manufacturer": "Unspecified",
+    "geometryKind": "authored-photo",
+    "sourceUrl": "https://www.hanbodianzi.com/shows/103/41.html",
+    "sourceSha256": "020cc77660872cc18ddd5664bbd46a4e26ce073ef1e3b708688bf89be151a6a3",
+    "sourcePhotos": [
+      {
+        "file": "lib/reference-images/xh254-pair-reference.png",
+        "sha256": "3d3262d1b5c14ec270db0d7ad7887f486d05ba018f571867883821a988474da6",
+        "kind": "User supplied reference image"
+      },
+      {
+        "file": "lib/reference-images/xh254-pitch-reference.png",
+        "sha256": "020cc77660872cc18ddd5664bbd46a4e26ce073ef1e3b708688bf89be151a6a3",
+        "kind": "User supplied reference image"
+      }
+    ],
+    "evidence": "Authored right-angle variant of the user-photo nominal 2.54 mm pair, with a rotated side-facing shroud and separate square bent pins; not manufacturer CAD.",
+    "scope": "Tail pin 1 is X0/Y0 on PCB Z0, row -Y; the mating opening faces -X. Housing, contact bends, guide positions and mating depth are authored estimates. Verify the delivered right-angle header, cable housing and PCB footprint; no manufacturer identity or interchangeability is established."
+  },
+  {
+    "id": "xh254-balance-header-ra-5",
+    "name": "XH-style 2.54 mm right-angle balance header \u00b7 5-way",
+    "file": "xh254-pitch-reference.png",
+    "folder": "Authored_user_photo_reference",
+    "family": "XH-style 2.54 mm",
+    "contactType": "pins",
+    "contacts": 5,
+    "mounting": "PCB \u00b7 right angle \u00b7 through hole",
+    "pitch": 2.54,
+    "manufacturer": "Unspecified",
+    "geometryKind": "authored-photo",
+    "sourceUrl": "https://www.hanbodianzi.com/shows/103/41.html",
+    "sourceSha256": "020cc77660872cc18ddd5664bbd46a4e26ce073ef1e3b708688bf89be151a6a3",
+    "sourcePhotos": [
+      {
+        "file": "lib/reference-images/xh254-pair-reference.png",
+        "sha256": "3d3262d1b5c14ec270db0d7ad7887f486d05ba018f571867883821a988474da6",
+        "kind": "User supplied reference image"
+      },
+      {
+        "file": "lib/reference-images/xh254-pitch-reference.png",
+        "sha256": "020cc77660872cc18ddd5664bbd46a4e26ce073ef1e3b708688bf89be151a6a3",
+        "kind": "User supplied reference image"
+      }
+    ],
+    "evidence": "Authored right-angle variant of the user-photo nominal 2.54 mm pair, with a rotated side-facing shroud and separate square bent pins; not manufacturer CAD.",
+    "scope": "Tail pin 1 is X0/Y0 on PCB Z0, row -Y; the mating opening faces -X. Housing, contact bends, guide positions and mating depth are authored estimates. Verify the delivered right-angle header, cable housing and PCB footprint; no manufacturer identity or interchangeability is established."
   }
 ]

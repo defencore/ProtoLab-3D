@@ -7,6 +7,7 @@ import { consoleCommand, generateScript } from '../../src/core/freecad';
 import type { PartDefinition } from '../../src/core/types';
 import { validateParameters } from '../../src/core/validation';
 import { geometrySamples } from '../catalog-samples';
+import { affectedParts } from './part-scope';
 
 function stateIds(part: PartDefinition, parameters = part.defaults): string[] {
   const states = part.states
@@ -28,9 +29,13 @@ function dispose(group: THREE.Group): void {
 export const catalogShardCount = 8;
 
 /** Split the unchanged per-part contracts into independent test processes. */
-export function registerPartContractTests(shard: number) {
+export function registerPartContractTests(
+  shard: number,
+  definitions: readonly PartDefinition[] = parts,
+) {
   assert.ok(Number.isInteger(shard) && shard >= 0 && shard < catalogShardCount);
-  for (const part of parts.filter((_, index) => index % catalogShardCount === shard)) {
+  const assigned = definitions.filter((_, index) => index % catalogShardCount === shard);
+  for (const part of affectedParts(assigned)) {
     test(`${part.name}: every preset validates in every available state`, () => {
       for (const preset of part.presets)
         for (const state of stateIds(part, preset.parameters))

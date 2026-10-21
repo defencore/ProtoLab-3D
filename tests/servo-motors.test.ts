@@ -1,3 +1,4 @@
+import { affectedParts, partIsAffected } from './helpers/part-scope';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { Box3, Mesh, Raycaster, Vector3, type Object3D } from 'three';
@@ -39,6 +40,7 @@ test('ST3215 uses the pinned original STEP and preserves separate source compone
     nativeST3215.sourceSha256,
     '58e38e4dc49f97df738c5f229f9aa8a7dce64a0a1d01335486a52d53e6017e8a',
   );
+  if (!partIsAffected(servo.id)) return;
   const posed = { ...servo.defaults, outputAngle: 45 };
   const model = servo.buildGeometry(posed, 'assembled');
   const bare = servo.buildGeometry({ ...posed, showHorn: false }, 'assembled');
@@ -240,7 +242,7 @@ test('X10 V8 travel is limited to 50 degrees and model changes constrain the pos
 });
 
 test('servo defaults and sourced variants produce closed meshes with matching export envelopes', () => {
-  for (const part of servos) {
+  for (const part of affectedParts(servos)) {
     for (const configuration of [{ id: 'default', parameters: part.defaults }, ...part.presets]) {
       for (const state of part.states!) {
         const label = `${part.id}/${configuration.id}/${state.id}`;
@@ -276,7 +278,7 @@ test('servo defaults and sourced variants produce closed meshes with matching ex
 });
 
 test('servo output rotation preserves the fixed housing and rotates the optional horn', () => {
-  for (const part of servos) {
+  for (const part of affectedParts(servos)) {
     for (const preset of part.presets) {
       const p = { ...preset.parameters, showHorn: true, hornStyle: 'single', outputAngle: 0 };
       const q = { ...p, outputAngle: 45 };
@@ -390,6 +392,7 @@ test('Power-HD drawing datums and mounting cutouts are retained in the actual ge
     assert.equal(preset.catalog!.attributes!.caseWidth, dimensions.bodyWidth);
     assert.equal(preset.catalog!.attributes!.caseHeight, dimensions.bodyHeight);
     assert.equal(preset.catalog!.attributes!.totalHeight, dimensions.totalHeight);
+    if (!partIsAffected(part.id)) continue;
     const model = part.buildGeometry(preset.parameters, 'body');
     try {
       model.updateMatrixWorld(true);
@@ -438,6 +441,7 @@ test('KST A and B preserve their distinct mounting axes and official hole patter
     assert.equal(p.shaftOffset, fixture.shaftOffset);
     assert.equal(p.bodyHeight, fixture.height);
     assert.equal(p.earThickness, p.variant === 'a' ? 1.8 : 1.9);
+    if (!partIsAffected(part.id)) continue;
     const model = part.buildGeometry(preset.parameters, 'body');
     try {
       model.updateMatrixWorld(true);
@@ -499,6 +503,7 @@ test('ST3215 retains fixed manufacturer drawing datums and the supplied disc acc
       !Object.hasOwn(preset.parameters, key),
       `${key} is fixed inside the model, not a configurable dimension`,
     );
+  if (!partIsAffected(part.id)) return;
   for (const angle of [0, 45]) {
     const p = { ...preset.parameters, showHorn: true, hornStyle: 'disc', outputAngle: angle };
     assert.deepEqual(validateParameters(part, p, 'assembled'), []);

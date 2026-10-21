@@ -1,0 +1,41 @@
+{
+  "sourceType": "User-supplied product photographs and listing links",
+  "listingUrls": [
+    "https://www.aliexpress.com/item/4001315701627.html",
+    "https://www.aliexpress.com/item/4000167641521.html"
+  ],
+  "listingVariantAssociation": "Unconfirmed; live listing pages could not be opened.",
+  "ratingScope": "50A/100A are seller photo labels only.",
+  "images": [
+    {
+      "file": "reference-images/compact-clip.png",
+      "sha256": "d081cab5257ff9d7f54221b4dcb89b8d9d0d235d42e080084cd81152475bff1b",
+      "origin": "User-supplied product photograph; original pixels preserved."
+    },
+    {
+      "file": "reference-images/compact-dimensions.png",
+      "sha256": "1f4cc10e88c0a0bcbdc08b62efd3cbe45ffba11b36c5e05d7701aef6316acfcb",
+      "origin": "User-supplied product photograph; original pixels preserved."
+    },
+    {
+      "file": "reference-images/large-dimensions.png",
+      "sha256": "d5b9f862b2069bae7f610b0a3beed3c0c2436bcd6bf91ca737ce63d691d3fa9e",
+      "origin": "User-supplied product photograph; original pixels preserved."
+    },
+    {
+      "file": "reference-images/six-way-block.png",
+      "sha256": "e140da0b1b29fb3110d0b630e967494e8c120b11f29ef71cac8bd892ea41ed60",
+      "origin": "User-supplied product photograph; original pixels preserved."
+    },
+    {
+      "file": "reference-images/bottom-tab-dimensions.png",
+      "sha256": "b8428100600d67a7dcd6cba66cef1b91774564adc9dddf25445faecb90e30e8d",
+      "origin": "User-supplied downward-contact clip photograph; original pixels preserved."
+    },
+    {
+      "file": "reference-images/bottom-tab-clip.png",
+      "sha256": "38fd1bd1b0ec2d6cf15171fb7697eee056bfdfc4e3f7448867daef378e1b0973",
+      "origin": "User-supplied downward-contact clip photograph; original pixels preserved."
+    }
+  ]
+}

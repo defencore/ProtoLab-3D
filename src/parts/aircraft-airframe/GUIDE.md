@@ -41,4 +41,4 @@ Models contain 7–15 major solids in assembly, without electronics, motors, pro
 
 ## Verification
 
-`tests/aircraft-layouts.test.ts` checks wing placement, distinct body styles, controls and invalid combinations. `tests/vehicle-frames.test.ts` checks every preset and state for closed oriented meshes and matching dimensions. The native FreeCAD report in `data/vehicle-frames-validation.json` checks independent positive solids, intersections, preview/CAD agreement and STEP/FCStd round trips.
+`tests/aircraft-layouts.test.ts` checks wing placement, distinct body styles, controls and invalid combinations. `tests/vehicle-frames.test.ts` checks every preset and state for closed oriented meshes and matching dimensions. The native FreeCAD report in `test-results/vehicle-frames-validation.json` checks independent positive solids, intersections, preview/CAD agreement and STEP/FCStd round trips.

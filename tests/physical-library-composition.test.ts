@@ -16,6 +16,7 @@ import type { PartDefinition } from '../src/core/types';
 import { manufactured } from '../src/parts/rocket-release/lib/names';
 import { python as releasePython } from '../src/parts/rocket-release/lib/assembly';
 import { spawnSync } from 'node:child_process';
+import { affectedParts } from './helpers/part-scope';
 
 test('every authored manufactured assembly resolves valid physical library products for every preset', () => {
   const assemblies = parts.filter(
@@ -24,7 +25,7 @@ test('every authored manufactured assembly resolves valid physical library produ
       ['assembly', 'complex', 'kit'].includes(part.product.kind),
   );
   assert.ok(assemblies.length >= 40);
-  for (const part of assemblies) {
+  for (const part of affectedParts(assemblies)) {
     assert.ok(part.composition, part.id + ' must declare its physical library composition');
     for (const configuration of [{ id: 'defaults', parameters: part.defaults }, ...part.presets]) {
       const definition: AssemblyDefinition = part.composition!(configuration.parameters);

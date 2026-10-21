@@ -57,8 +57,11 @@ const report = {
   families: rows,
   unsupported,
 };
-fs.mkdirSync('data', { recursive: true });
-fs.writeFileSync('data/gvyntok-fastener-analysis.json', JSON.stringify(report, null, 2) + '\n');
+fs.mkdirSync('test-results', { recursive: true });
+fs.writeFileSync(
+  'test-results/gvyntok-fastener-analysis.json',
+  JSON.stringify(report, null, 2) + '\n',
+);
 const lines = [
   '# Gvyntok bolt and screw catalogue analysis',
   '',
@@ -103,7 +106,7 @@ const lines = [
   '- `tests/fasteners.test.ts` checks all imported parameter sets and SKU coverage, fine-pitch parsing, dog-point bands, thread and drive geometry, and manifold meshes across model variants and catalogue bounds.',
   '',
 ];
-fs.writeFileSync('data/gvyntok-fastener-analysis.md', lines.join('\n'));
+fs.writeFileSync('test-results/gvyntok-fastener-analysis.md', lines.join('\n'));
 console.log(
   JSON.stringify({ ...report, families: undefined, unsupported: unsupported.length }, null, 2),
 );

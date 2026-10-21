@@ -20,4 +20,4 @@ Validation checks the farthest polygon or keyway corner against both the tooth r
 
 The shared shaft helper generates identical cap and wall outlines for the preview. Native FreeCAD retains analytic circular portions and planar flats. A bevel hub is extruded as an annulus before its radial holes are cut, preserving the shaft contour at small corners. Its mesher retains small, nonzero intersection facets; unrelated mesher callers keep their existing tolerance.
 
-`tests/gear-bores.test.ts` verifies all seven profiles on each supported gear family, independently mixed pair bores, radial holes, closed outward meshes, representative visible cross sections and wall-breakout rejection. Native validation results are recorded separately in `data/gear-shaft-connections-native-validation.json`.
+`tests/gear-bores.test.ts` verifies all seven profiles on each supported gear family, independently mixed pair bores, radial holes, closed outward meshes, representative visible cross sections and wall-breakout rejection. Native validation results are recorded separately in `test-results/gear-shaft-connections-native-validation.json`.

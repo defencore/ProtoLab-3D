@@ -1,3 +1,4 @@
+import { partIsAffected } from './helpers/part-scope';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { createHash } from 'node:crypto';
@@ -84,14 +85,16 @@ test('wider servo horn roots produce connected model outlines', () => {
     }
 });
 
-for (const [id, forms] of [
-  ['shaft', ['stepped', 'taper', 'spline']],
-  ['threaded-insert', ['heat', 'press', 'rivnut', 'clinch']],
-  ['robot-wheel', ['pneumatic', 'omni', 'mecanum']],
-  ['shaft-coupling', ['rigid', 'oldham', 'bellows', 'beam', 'flange']],
-  ['cable-carrier', ['duct', 'chain']],
-  ['fluid-cylinder', ['round', 'tie', 'compact', 'hydraulic', 'rodless']],
-] as [string, string[]][])
+for (const [id, forms] of (
+  [
+    ['shaft', ['stepped', 'taper', 'spline']],
+    ['threaded-insert', ['heat', 'press', 'rivnut', 'clinch']],
+    ['robot-wheel', ['pneumatic', 'omni', 'mecanum']],
+    ['shaft-coupling', ['rigid', 'oldham', 'bellows', 'beam', 'flange']],
+    ['cable-carrier', ['duct', 'chain']],
+    ['fluid-cylinder', ['round', 'tie', 'compact', 'hydraulic', 'rodless']],
+  ] as [string, string[]][]
+).filter(([id]) => partIsAffected(id)))
   test(`${id}: construction selector changes preview geometry even in envelope mode`, () => {
     const signatures = forms.map((form) =>
       meshSignature(id, { ...get(id).defaults, detail: 'envelope', form }),
@@ -128,15 +131,19 @@ test('family controls apply complete valid preset dimensions', () => {
   }
 });
 
-test('lead screw input revolutions and travel stay coupled when pitch changes', () => {
-  const part = get('lead-screw-axis');
-  const moved = part.updateParameters!({ ...part.defaults, turns: 12.5 }, 'turns');
-  assert.equal(moved.position, 25);
-  const repitched = part.updateParameters!({ ...moved, pitch: 4 }, 'pitch');
-  assert.equal(repitched.position, 50);
-  assert.notEqual(meshSignature(part.id, moved), meshSignature(part.id, repitched));
-  assert.equal(part.updateParameters!({ ...repitched, position: 60 }, 'position').turns, 15);
-});
+test(
+  'lead screw input revolutions and travel stay coupled when pitch changes',
+  { skip: !partIsAffected('lead-screw-axis') },
+  () => {
+    const part = get('lead-screw-axis');
+    const moved = part.updateParameters!({ ...part.defaults, turns: 12.5 }, 'turns');
+    assert.equal(moved.position, 25);
+    const repitched = part.updateParameters!({ ...moved, pitch: 4 }, 'pitch');
+    assert.equal(repitched.position, 50);
+    assert.notEqual(meshSignature(part.id, moved), meshSignature(part.id, repitched));
+    assert.equal(part.updateParameters!({ ...repitched, position: 60 }, 'position').turns, 15);
+  },
+);
 
 test('controls for absent components and inactive deformations are hidden', () => {
   for (const [id, key, hidden, shown] of [
@@ -174,38 +181,44 @@ test('prototype examples retain prototype evidence instead of invented purchase 
   }
 });
 
-test('multi-rib belt retains continuous backing across the complete belt width', () => {
-  const part = get('belt-drive');
-  const preset = part.presets.find((item) => item.parameters.form === 'poly')!;
-  for (const ribs of [2, 6]) {
-    const model = part.buildGeometry({ ...preset.parameters, ribs }, 'assembled');
-    try {
-      model.updateMatrixWorld(true);
-      const belt = model.children[0];
-      const bounds = new Box3().setFromObject(belt, true);
-      belt.traverse((object) => {
-        if (!(object instanceof Mesh)) return;
-        for (const material of Array.isArray(object.material) ? object.material : [object.material])
-          material.side = DoubleSide;
-      });
-      const ray = new Raycaster(
-        new Vector3((bounds.min.x + bounds.max.x) / 2, bounds.max.y - 0.05, bounds.max.z + 1),
-        new Vector3(0, 0, -1),
-      );
-      const distances = [
-        ...new Set(
-          ray.intersectObject(belt, true).map((hit) => Math.round(hit.distance * 1e4) / 1e4),
-        ),
-      ];
-      assert.equal(
-        distances.length,
-        2,
-        'backing must have only an entrance and exit, without gaps between ribs',
-      );
-      assert.ok(Math.abs(distances[0] - 1) < 0.001);
-      assert.ok(Math.abs(distances[1] - 1 - Number(preset.parameters.width)) < 0.001);
-    } finally {
-      disposeModel(model);
+test(
+  'multi-rib belt retains continuous backing across the complete belt width',
+  { skip: !partIsAffected('belt-drive') },
+  () => {
+    const part = get('belt-drive');
+    const preset = part.presets.find((item) => item.parameters.form === 'poly')!;
+    for (const ribs of [2, 6]) {
+      const model = part.buildGeometry({ ...preset.parameters, ribs }, 'assembled');
+      try {
+        model.updateMatrixWorld(true);
+        const belt = model.children[0];
+        const bounds = new Box3().setFromObject(belt, true);
+        belt.traverse((object) => {
+          if (!(object instanceof Mesh)) return;
+          for (const material of Array.isArray(object.material)
+            ? object.material
+            : [object.material])
+            material.side = DoubleSide;
+        });
+        const ray = new Raycaster(
+          new Vector3((bounds.min.x + bounds.max.x) / 2, bounds.max.y - 0.05, bounds.max.z + 1),
+          new Vector3(0, 0, -1),
+        );
+        const distances = [
+          ...new Set(
+            ray.intersectObject(belt, true).map((hit) => Math.round(hit.distance * 1e4) / 1e4),
+          ),
+        ];
+        assert.equal(
+          distances.length,
+          2,
+          'backing must have only an entrance and exit, without gaps between ribs',
+        );
+        assert.ok(Math.abs(distances[0] - 1) < 0.001);
+        assert.ok(Math.abs(distances[1] - 1 - Number(preset.parameters.width)) < 0.001);
+      } finally {
+        disposeModel(model);
+      }
     }
-  }
-});
+  },
+);

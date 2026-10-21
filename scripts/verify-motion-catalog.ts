@@ -7,7 +7,7 @@ import stepper from '../src/parts/stepper-motor/part';
 import { withGeometryMode, type GeometryMode } from '../src/core/geometry-mode';
 import { validateParameters } from '../src/core/validation';
 import { generateScript } from '../src/core/freecad';
-const output = resolve(process.argv[2] ?? 'data/motion-library');
+const output = resolve(process.argv[2] ?? 'test-results/motion-library');
 mkdirSync(output, { recursive: true });
 const cases: object[] = [];
 function add(

@@ -4,6 +4,7 @@ import type { Shape } from '../../../core/assembly/mechanical/shapes';
 import { B, C, T, poly, move, cut, union, finish } from '../../../core/assembly/mechanical/helpers';
 import { cylinder } from '../../../core/assembly/mechanical/shapes';
 import data from './models.json';
+import { leverClipPieces } from './lever-clip';
 
 export interface TerminalModel {
   id: string;
@@ -34,8 +35,11 @@ export interface TerminalModel {
   tail?: number;
   mountPitch?: number;
   mountHole?: number;
+  clipSize?: 'compact' | 'large';
+  clipBase?: boolean;
+  clipTermination?: 'rear-tab' | 'bottom-tab' | 'bottom-m4';
 }
-export const models: TerminalModel[] = data;
+export const models: TerminalModel[] = data as TerminalModel[];
 export function selected(p: Parameters): TerminalModel {
   const model = models.find((m) => m.id === p.model);
   if (!model) throw new Error('Choose a supported laboratory terminal.');
@@ -67,7 +71,9 @@ export function pieces(p: Parameters, state: string): Piece[] {
     out: Piece[] = [];
   const add = (label: string, shape: Shape, color = metal) => out.push({ label, shape, color });
   const xs = positions(m.poles, m.pitch ?? 0);
-  if (m.kind === 'banana-plug') {
+  if (m.kind === 'spring-lever-clip') {
+    out.push(...leverClipPieces(m));
+  } else if (m.kind === 'banana-plug') {
     const exposed = m.pinLength!,
       bodyHeight = m.length - exposed;
     const small = m.contactDiameter === 2;

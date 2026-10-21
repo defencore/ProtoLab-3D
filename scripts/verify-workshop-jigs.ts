@@ -9,7 +9,7 @@ import { generateScript } from '../src/core/freecad';
 import type { PartDefinition, Parameters } from '../src/core/types';
 
 const root = resolve('.'),
-  output = resolve(process.argv[2] ?? 'data/workshop-jigs');
+  output = resolve(process.argv[2] ?? 'test-results/workshop-jigs');
 mkdirSync(output, { recursive: true });
 const inspections = await Promise.all(
   workshopJigIds.map((id) => inspectPackage(resolve(root, 'src/parts', id), root)),

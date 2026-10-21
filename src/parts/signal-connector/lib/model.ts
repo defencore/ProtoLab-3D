@@ -11,6 +11,7 @@ import type { Parameters } from '../../../core/types';
 import catalog from './catalog.json';
 import native from './native';
 import sourceColorData from './color-evidence.json';
+import xh254Mates from './xh254-mating.json';
 export interface SourceColor {
   kind: 'source-step' | 'illustrative';
   rgb?: number[];
@@ -52,7 +53,20 @@ export interface NativeAsset {
   bounds: number[];
   dimensions: number[];
   components: NativeComponent[];
+  sourceKind?: string;
 }
+export const xh254MatingReferences = xh254Mates as (NativeAsset & {
+  headerId: string;
+  designation: string;
+  fullyMatedTranslation: [number, number, number];
+  insertionAxis: [number, number, number];
+  approachTravel: number;
+  keyRibCentresY: number[];
+  limitations: string;
+  outwardAxis?: [number, number, number];
+  pinTipX?: number;
+  pinAxis?: [number, number, number];
+})[];
 export const models = catalog.map((m) => ({
   ...m,
   native: (native as NativeAsset[]).find((n) => n.id === m.id)!,
@@ -67,10 +81,9 @@ function unpack(value: string): Uint8Array {
   return unzlibSync(Uint8Array.from(atob(value), (c) => c.charCodeAt(0)));
 }
 const cache = new WeakMap<NativeComponent, BufferGeometry>();
-export function geometry(p: Parameters, state: string): Group {
-  if (state !== 'assembled') throw new Error('Choose the assembly view.');
+function assetGeometry(asset: NativeAsset): Group {
   const result = new Group();
-  for (const item of selected(p).native.components) {
+  for (const item of asset.components) {
     let template = cache.get(item);
     if (!template) {
       template = new BufferGeometry();
@@ -110,6 +123,17 @@ export function geometry(p: Parameters, state: string): Group {
   }
   return result;
 }
+export function geometry(p: Parameters, state: string): Group {
+  if (state !== 'assembled') throw new Error('Choose the assembly view.');
+  return assetGeometry(selected(p).native);
+}
+export function xh254MatingGeometry(contacts: number): Group {
+  const source = xh254MatingReferences.find(
+    (asset) => asset.components.length === 1 && asset.id === `xh254-balance-mate-${contacts}`,
+  );
+  if (!source) throw new Error('Choose a four- or five-contact nominal XH-style mate.');
+  return assetGeometry(source);
+}
 export function dimensions(p: Parameters): [number, number, number] {
   return [...selected(p).native.dimensions] as [number, number, number];
 }
@@ -128,6 +152,6 @@ export function python(p: Parameters, state: string): string {
     'shape=Part.makeCompound(components)',
     `component_labels=${JSON.stringify(components.map((c) => c.label))}`,
     `component_colors=${JSON.stringify(components.map((c) => [((c.color >> 16) & 255) / 255, ((c.color >> 8) & 255) / 255, (c.color & 255) / 255]))}`,
-    `component_metadata=${JSON.stringify(components.map((c) => ({ SourceComponent: c.id, SourceBRepSHA256: c.brepSha256, CADSource: m.sourceUrl, CADSourceSHA256: m.sourceSha256, SourceKind: 'KiCad community reference' })))}`,
+    `component_metadata=${JSON.stringify(components.map((c) => ({ SourceComponent: c.id, SourceBRepSHA256: c.brepSha256, CADSource: m.sourceUrl, CADSourceSHA256: m.sourceSha256, SourceKind: m.native.sourceKind ?? 'KiCad community reference' })))}`,
   ].join('\n');
 }

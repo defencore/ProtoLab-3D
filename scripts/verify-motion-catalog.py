@@ -10,7 +10,7 @@ import FreeCAD as App
 import Part
 from PySide import QtCore
 
-_motion_output=Path(__file__).resolve().parents[1]/'data/motion-library'
+_motion_output=Path(__file__).resolve().parents[1]/'test-results/motion-library'
 _motion_cases=json.loads((_motion_output/'cases.json').read_text())
 _motion_report={'freecad':'.'.join(App.Version()[:3]),'cases':[],'done':False}
 _motion_started=time.perf_counter()

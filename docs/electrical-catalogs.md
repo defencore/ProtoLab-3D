@@ -47,9 +47,9 @@ npm run parts:check
 node --import tsx --test tests/panel-switch-catalog.test.ts tests/laboratory-terminal-catalog.test.ts tests/signal-connector-catalog.test.ts tests/electrical-catalog-search.test.ts tests/library-categories.test.ts tests/model-evidence.test.ts
 node --import tsx scripts/verify-electrical-catalogs.ts
 # Use an isolated Python runtime with FreeCAD and Part available:
-python scripts/verify-electrical-catalogs.py /tmp/protolab-electrical-catalogs-cases.json data/electrical-catalogs-validation.json
+python scripts/verify-electrical-catalogs.py /tmp/protolab-electrical-catalogs-cases.json test-results/electrical-catalogs-validation.json
 ```
 
 The native audit checks preview/native bounds and volume, closed positive solids, independently movable components, and STEP/FCStd round trips. Authored components must not intersect. Any inherited overlap in retained community geometry is reported without altering the source. These checks establish geometric consistency; they do not certify electrical ratings or interchangeability with another supplier execution.
 
-The [stored native report](../data/electrical-catalogs-validation.json) contains 179 passing cases and 1,410 component occurrences, including the ASW-07D installation-thickness bounds. Maximum preview/native envelope difference is below 0.010 mm and relative volume difference below 0.682%. The report retains 46 inherited housing/contact overlap pairs in the community connector sources; no such overlaps remain in the authored switch and terminal cases.
+The [stored native report](../test-results/electrical-catalogs-validation.json) contains 179 passing cases and 1,410 component occurrences, including the ASW-07D installation-thickness bounds. Maximum preview/native envelope difference is below 0.010 mm and relative volume difference below 0.682%. The report retains 46 inherited housing/contact overlap pairs in the community connector sources; no such overlaps remain in the authored switch and terminal cases.

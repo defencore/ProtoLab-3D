@@ -1,0 +1,27 @@
+{
+  "kind": "Authored user-photo reconstruction",
+  "nominalPitchMm": 2.54,
+  "pitchSource": "Explicit user request and attached XH2.54 label; delivered part not measured.",
+  "referenceImages": [
+    {
+      "file": "lib/reference-images/xh254-pair-reference.png",
+      "sha256": "3d3262d1b5c14ec270db0d7ad7887f486d05ba018f571867883821a988474da6",
+      "kind": "User supplied reference image"
+    },
+    {
+      "file": "lib/reference-images/xh254-pitch-reference.png",
+      "sha256": "020cc77660872cc18ddd5664bbd46a4e26ce073ef1e3b708688bf89be151a6a3",
+      "kind": "User supplied reference image"
+    }
+  ],
+  "externalStyleReference": "https://www.hanbodianzi.com/shows/103/41.html",
+  "externalReferenceScope": "Generic XH-style appearance reference only; no manufacturer identity, source dimensions or interchangeability is assigned to the user cable.",
+  "limitations": "All shell dimensions, guide positions, contact section and mating depth are authored estimates. No original JST 2.50 mm or Molex geometry was scaled or used. Nominal anti-reversal proof applies only to the authored header and mate; verify the delivered matched pair.",
+  "rightAngleVariant": {
+    "ids": ["xh254-balance-header-ra-4", "xh254-balance-header-ra-5"],
+    "derivation": "Authored rotation of the original photo-based shroud by -90 degrees about Y, translated X-2.5/Z2.9; new 0.64 mm square bent pins with nominal centreline radius0.6. No right-angle manufacturer drawing was supplied.",
+    "datum": "PCB Z0; vertical tail pin1 X0/Y0; row-Y; mating opening-X.",
+    "matingReferences": ["xh254-balance-mate-ra-4", "xh254-balance-mate-ra-5"],
+    "limitations": "All right-angle shell, pin-bend and matched housing dimensions are inferred. Verify delivered matched parts and their footprint; this is not an identified manufacturer CAD model."
+  }
+}

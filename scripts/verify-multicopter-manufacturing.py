@@ -2,7 +2,7 @@
 import FreeCAD as App, Part, json, math, time, base64, zlib, os
 from pathlib import Path
 from PySide import QtCore
-_out=Path(__file__).resolve().parents[1]/'data/real-frame-audit'
+_out=Path(__file__).resolve().parents[1]/'test-results/real-frame-audit'
 _config=json.loads((_out/'cases.json').read_text());_cases=_config['cases']
 _filter=os.environ.get('PROTOLAB_FRAME_AUDIT_FILTER','')
 if _filter:_cases=[c for c in _cases if c['id'] in _filter.split(',')]

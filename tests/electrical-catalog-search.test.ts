@@ -46,6 +46,34 @@ test('banana article search excludes unrelated wire clamps and speaker terminals
   );
 });
 
+test('spring test clips are searchable by connection and supplied photo labels', () => {
+  assert.deepEqual(
+    new Set(search(terminal, 'test clip').map((entry) => entry.preset.id)),
+    new Set([
+      'lever-clip-55',
+      'lever-clip-bank-6',
+      'lever-clip-101',
+      'lever-clip-55-bottom',
+      'lever-clip-bank-6-bottom',
+    ]),
+  );
+  for (const [query, id] of [
+    ['Xinmao', 'lever-clip-55'],
+    ['50A', 'lever-clip-55'],
+    ['HENGCHANG', 'lever-clip-bank-6'],
+    ['100A', 'lever-clip-101'],
+  ]) {
+    assert.deepEqual(
+      search(terminal, query).map((entry) => entry.preset.id),
+      [id],
+    );
+  }
+  assert.deepEqual(
+    new Set(search(terminal, 'downward').map((entry) => entry.preset.id)),
+    new Set(['lever-clip-55-bottom', 'lever-clip-bank-6-bottom']),
+  );
+});
+
 test('USB article search returns USB interfaces and excludes JST headers', () => {
   const matches = search(connector, 'USB');
   assert.equal(matches.length, 5);

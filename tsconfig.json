@@ -11,6 +11,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "tsBuildInfoFile": "./test-results/.cache/tsconfig.tsbuildinfo",
     "types": ["vite/client", "node"]
   },
   "files": ["src/main.tsx", "src/workers/assembly.worker.ts", "vite.config.ts"],

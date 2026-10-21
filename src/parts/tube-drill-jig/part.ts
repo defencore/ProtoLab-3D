@@ -10,7 +10,7 @@ import purchased from '../purchased-component/part';
 import { n } from '../../core/geometry';
 import { defaults, parameters } from './configurator';
 import { configuredPieces, jigComposition } from './lib/model';
-import { layout, threads, bearingSource } from './lib/selection';
+import { layout, threads, bearingSource, mr93Source } from './lib/selection';
 import profile from './product.json';
 import presets from './presets.json';
 
@@ -23,7 +23,7 @@ const part: PartDefinition = {
   subgroup: 'DRILLING JIGS',
   icon: 'bracket',
   description:
-    'Flat-sided tube jig with an adjustable spacer stop, 4/8/12 radial holes and automatically matched bearing or bushing guides. Reuse one body for different end offsets.',
+    'Tube fixture with a split indexing head, separate centering liner and flat print orientations. Reuse one through-bore body, removable end stop and movable two-bearing cassette for supported 4/8/12 patterns.',
   complexity: 'Parametric jig assembly',
   preview: 'worker',
   keywords: [
@@ -47,6 +47,13 @@ const part: PartDefinition = {
     'spacer stack',
     'anti-roll',
     'flat sides',
+    'movable cassette',
+    'universal body',
+    'MR93ZZ',
+    '3x9x4',
+    'split head',
+    'print layout',
+    'PETG',
   ],
   defaults,
   parameters,
@@ -56,13 +63,19 @@ const part: PartDefinition = {
       id: 'assembled',
       label: 'Assembly',
       description:
-        'Jig and guides in working positions. The tube end rests on the calculated height spacer stack.',
+        'One guide cassette in the selected station. The independently clamped tube rests on the measured height spacer stack.',
     },
     {
       id: 'exploded',
       label: 'Exploded',
       description:
-        'Separate cartridges, guides, retainers, screws and the removable height spacer stack.',
+        'Inspect the common cup, centering liner, two indexing plates, clamp crown, alignment bushes and the single guide cassette.',
+    },
+    {
+      id: 'print-layout',
+      label: 'Print layout',
+      description:
+        'Only manufactured parts, flat on Z=0 with 8 mm spacing. Split the layout across printer beds as needed; bearings, screws and the reference tube are excluded.',
     },
   ],
   validate(p) {
@@ -74,39 +87,56 @@ const part: PartDefinition = {
       errors.push(
         `No exact bearing bore matches the ${d.drill} mm drill. Choose Automatic or a hardened steel bushing; an oversized bearing is not a drill guide.`,
       );
-    if (d.axisHeight < (d.kind === 'plain' ? d.drill / 2 : d.flangeHeight / 2 + 0.15) + 2)
+    if (d.capacity < n(p, 'tubeOD') + 6)
       errors.push(
-        'Increase the fixed drill height: the guide recess must leave at least 2 mm above the base stop.',
+        'Body capacity must exceed tube OD by at least 6 mm for the interchangeable centering insert.',
       );
-    if (n(p, 'endOffset') > d.axisHeight)
+    if (!Number.isInteger(n(p, 'station')) || n(p, 'station') > d.count)
+      errors.push('Current drilling station must be an integer from 1 to the selected hole count.');
+    if (d.axisHeight < 26)
+      errors.push(
+        'Fixed drill height must be at least 26 mm for the cup, indexing-head pilot and screws.',
+      );
+    if (d.endStop && n(p, 'endOffset') > d.axisHeight)
       errors.push(
         'The desired end offset exceeds this body capacity. Reduce the offset or choose a larger fixed drill height before printing.',
       );
     if (
-      [n(p, 'endOffset'), d.axisHeight].some(
+      (d.endStop ? [n(p, 'endOffset'), d.axisHeight] : [d.axisHeight]).some(
         (value) => Math.abs(value * 2 - Math.round(value * 2)) > 1e-7,
       )
     )
       errors.push(
         'Use 0.5 mm increments for the desired offset and fixed drill height so the reusable spacer kit can set the height exactly.',
       );
-    if (d.spacerOD <= d.stopBore + 1)
+    if (d.endStop && d.spacerOD <= d.stopBore + 1)
       errors.push(
         'Spacer clearance leaves too little annular support. Reduce clearance or use a thicker-wall tube.',
       );
-    if (n(p, 'endOffset') < d.drill / 2 + 1)
+    if (d.endStop && d.spacerOD < n(p, 'tubeOD') - 2 * n(p, 'tubeWall') + 0.4)
+      errors.push(
+        'The spacer must overlap the tube wall by at least 0.2 mm radially. Reduce spacer clearance for this thin-wall tube.',
+      );
+    if (d.endStop && n(p, 'endOffset') < d.drill / 2 + 1)
       errors.push('The tube hole would break through the tube end. Increase the end offset.');
-    if (d.kind !== 'plain' && d.flangeWidth / 2 + 1.5 >= d.floor * Math.tan(Math.PI / d.count))
+    if (d.kind === 'bearing' && d.sleeveLength < 2)
       errors.push(
-        'Adjacent guide stations overlap or leave too little material. Increase tube diameter, reduce hole count or choose printed marking guides.',
+        'Increase body capacity to leave at least 2 mm between the two bearing outer races.',
       );
-    if (
-      d.kind === 'plain' &&
-      d.drill + n(p, 'guideClearance') + 2 >= d.bore * Math.sin(Math.PI / d.count)
-    )
+    if (d.minWeb < 2.4 - 1e-7)
       errors.push(
-        'Adjacent printed guide holes leave less than 2 mm of material. Increase tube diameter or reduce hole count.',
+        `This tube and cassette leave only ${Math.max(0, d.minWeb).toFixed(2)} mm between sockets; at least 2.4 mm is required. Available hole counts: ${d.availableCounts.join(', ') || 'none'}. A larger outer body does not repair this inner web.`,
       );
+    if (d.outerWeb < 2.4 - 1e-7)
+      errors.push(
+        `Increase reusable body capacity: the guide recess must leave at least 2.4 mm around the head alignment bushes (currently ${d.outerWeb.toFixed(2)} mm).`,
+      );
+    if (d.kind !== 'plain' && d.barrelOD / 2 - (d.outer + n(p, 'seatClearance')) / 2 < 2.4)
+      errors.push('Guide seat must leave at least 2.4 mm radial cassette wall.');
+    if (d.kind !== 'plain' && (d.pilotWall < 2 - 1e-7 || d.capWall < 2 - 1e-7))
+      errors.push('Guide seat and retainer holes must retain at least 2 mm of local material.');
+    if (d.kind === 'bushing' && d.flangeEnd - d.width < d.start + 1.2)
+      errors.push('Increase body capacity to leave a positive bushing shoulder.');
     if (d.kind !== 'plain' && n(p, 'seatClearance') >= d.outer - d.drill - 0.6)
       errors.push('Guide seat allowance leaves insufficient retaining shoulder.');
     return errors;
@@ -120,24 +150,31 @@ const part: PartDefinition = {
     const d = layout(p),
       thread = threads[String(p.thread)];
     return [
-      `Tube OD ${p.tubeOD} mm; sleeve bore ${d.bore.toFixed(2)} mm; ${d.flatCount} flat support faces with recessed screw heads. Fixed drill axes Z=${d.axisHeight} mm; ${d.count} stations at ${360 / d.count} degrees.`,
-      `Desired tube-end offset ${p.endOffset} mm: ${d.stack.length ? `fit ${d.stack.join(' + ')} = ${d.spacerHeight} mm of height spacers` : 'remove all spacers and seat on the base stop'}. Tube end is at Z=${d.spacerHeight}; ${d.axisHeight} - ${d.spacerHeight} = ${p.endOffset} mm. Changing this offset does not change the collar or guides.`,
+      `One reusable through-bore body: capacity ${d.capacity} mm, 24 support flats. Match the centering/index insert, cassette reach and clamp screw lengths to the tube OD. Four M4 screws attach the insert; three upper M5 clamps hold the tube independently of the cassette.`,
+      `${d.count} positions at ${360 / d.count} degrees; the single cassette is at station ${d.active.index + 1}. Fully withdraw the bit, release only the cassette lock, transfer the complete cassette and reseat its flange. Keep tube clamps tight.`,
+      d.endStop
+        ? `Tube end offset ${p.endOffset} mm = fixed drill height ${d.axisHeight} minus ${d.spacerHeight} mm of measured spacers${d.stack.length ? ` (${d.stack.join(' + ')} mm)` : ''}. Remove the separate bottom stop plate for through-tube operation. Body, head and cassette stay unchanged when adjusting only the offset.`
+        : 'Through-tube mode: bottom stop plate, its four screws and all height spacers are removed. The hanging centering liner remains seated. Set the hole belt on a measured axial mark, then tighten the three tube clamps; end offset is not set by the fixture in this mode.',
       p.holeMode === 'tap'
-        ? `Drill ${d.drill} mm, remove jig, then cut ${p.thread} x ${thread.pitch}. Nominal wall engagement ${(n(p, 'tubeWall') / thread.pitch).toFixed(1)} turns; suitability depends on tube material and load.`
-        : `Drill ${d.drill} mm through one tube wall at each station. Opposite walls have independent guide stations.`,
+        ? `Pilot drill ${d.drill} mm for ${p.thread} x ${thread.pitch}. Remove the jig before tapping. Nominal wall engagement ${(n(p, 'tubeWall') / thread.pitch).toFixed(1)} turns; qualify material and load.`
+        : `Drill ${d.drill} mm through one tube wall at each indexed position; use a depth stop.`,
       d.bearing
-        ? `Matched guides: ${2 * d.count} x ${d.bearing.id}, ${d.drill} x ${d.outer} x ${d.width} mm; two per station. Nominal bearing bore must be tested for free drill passage.`
+        ? `Only 2 x ${d.bearing.id}, ${d.drill} x ${d.outer} x ${d.width} mm for the entire fixture, including a 12-hole belt. Both bearings, their outer-race sleeve and retainer travel inside one cassette.`
         : d.kind === 'plain'
-          ? 'Printed guides are intended for marking and occasional use; no purchased bearings are required.'
-          : `No bearing substituted: ${d.count} custom hardened bushings, ID ${(d.drill + n(p, 'guideClearance')).toFixed(2)} x OD ${d.outer} x L ${d.width} mm. Confirm procurement and bore tolerance.`,
-      d.kind === 'plain'
-        ? 'Print one collar bottom down. Clamp tube and jig together before drilling.'
-        : `Print one collar, ${d.count} identical cartridges and ${d.count} retainers. Fit ${2 * d.count} M3 retainer screws; select length after checking engagement. Clamp tube and jig together.`,
+          ? 'One movable printed marking cassette; no bearings. Use metal guides for repeated drilling.'
+          : `Only 1 custom hardened bushing, ID ${(d.drill + n(p, 'guideClearance')).toFixed(2)} x OD ${d.outer} x L ${d.width} mm, transferred with the cassette.`,
+      `Allow at least ${d.drillReach.toFixed(1)} mm of exposed drill length from the outside of the guide to penetrate one wall with 2 mm margin. A large body-to-tube reduction may require a long-series drill. Check actual bit passage through nominal bearing bores before use.`,
+      `Three M5 tube clamp screws need ${(d.radius - 6 - (n(p, 'tubeOD') / 2 + 4.05)).toFixed(2)} mm nominal under-head reach for this tube and body. Fit measured lengths with deburred ends so their heads remain behind the support flats.`,
+      `Supported hole counts for this tube and guide: ${d.availableCounts.join(' / ')}. Selected pattern leaves ${d.minWeb.toFixed(2)} mm minimum socket web; required 2.4 mm. Larger bearings increase cassette size and may reduce available patterns.`,
+      'Print layout places only fabricated parts on flat bed faces: open indexing grooves face up, crown slots face up, cassette flange down, and removable stop boss up. The stop underside is flat with countersunk fixings. Structural floors are at least 2.4 mm; the full 4 mm retainer uses M3 x 10 screws and an 8 mm flange with 7 mm pilots. Verify fits and clamp loads on the actual PETG print.',
+      `Removable stop: ${p.stopThickness} mm base, four M4 countersunk screws of ${d.stopScrewLength} mm total length (M4 x 12 at the default 5 mm base), 7 mm nominal pilot engagement and 2 mm tip allowance. The centering liner has a 45-degree hanging flange, independent of this stop.`,
+      `Largest individual plate: ${2 * d.radius} x ${2 * d.radius} mm across flats. Print layout is a separated parts arrangement; divide it across printer beds as required. Thin 0.5 mm rings need a suitable layer schedule or measured shim stock.`,
     ];
   },
   notes:
-    'Prototype based on the supplied Tube90 example. A polygonal collar rests on flat support faces; all retainer heads are recessed behind those faces. The fixed drill axes are at Z=H. Reusable measured annular spacers raise the tube end to Z=S, giving the hole offset H-S without reprinting the body. Spacer kit: 0.5/1/2/5/10/20 mm; bottom thickness does not affect the setting. Purchased guides and screws are nominal envelopes. Clamp the workpiece, verify measured spacer thickness and remove the jig before tapping.',
+    'Prototype modular through-bore tube fixture with removable flat end stop for FDM manufacture: the lower and upper indexing plates print with open grooves facing upward. The separate clamp crown has top-loaded pads/nuts and roofed horizontal passages. A separate tapered liner centers the tube and spacer stack; two tubular keys register the three head layers, clamped by four M4 screws. Print layout excludes all purchased hardware and orients each printed part on a flat face. A single cassette carries only two bearings or one hardened bushing between 4/8/12 stations. Measured stop rings set end offset H-S. Verify actual print fits, screw engagement, bit passage and clamping on a sample tube.',
   sources: [
+    { label: 'SMB MR93ZZ / 3 x 9 x 4 mm drawing', url: mr93Source },
     { label: 'SMB miniature bearing dimensions', url: bearingSource },
     {
       label: 'Dormer Pramet cutting-tap data',

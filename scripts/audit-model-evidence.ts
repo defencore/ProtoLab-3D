@@ -1,5 +1,5 @@
 /** Inventory every preset's evidence; this is not a metrology certificate. */
-import { existsSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { parts } from '../src/parts';
 import { presetEvidence } from '../src/core/model-evidence';
@@ -48,7 +48,8 @@ const report = {
   missingLocalReferences: [...missingReferences].sort(),
   families: modules,
 };
-writeFileSync('data/model-evidence-audit.json', JSON.stringify(report, null, 2) + '\n');
+mkdirSync('test-results', { recursive: true });
+writeFileSync('test-results/model-evidence-audit.json', JSON.stringify(report, null, 2) + '\n');
 const lines = [
   '# Model fidelity audit',
   '',
@@ -56,7 +57,7 @@ const lines = [
   '',
   report.scope,
   '',
-  'The generated `data/model-evidence-audit.json` lists every preset and its declared verified parameters. Unverified numeric fields also include pose controls and custom design choices; they are an evidence inventory, not automatically dimensional defects.',
+  'The generated `test-results/model-evidence-audit.json` lists every preset and its declared verified parameters. Unverified numeric fields also include pose controls and custom design choices; they are an evidence inventory, not automatically dimensional defects.',
   '',
   '## Product classifications',
   '',
@@ -109,7 +110,7 @@ lines.push(
     ? [...missingReferences].map((r) => `- Missing: ${r}`).join('\n')
     : 'All locally linked preset reference assets exist.',
   '',
-  'Full per-preset evidence and unverified numeric fields: [JSON audit](../data/model-evidence-audit.json).',
+  'Full per-preset evidence and unverified numeric fields: [JSON audit](../test-results/model-evidence-audit.json).',
 );
 writeFileSync('docs/model-fidelity-audit.md', lines.join('\n') + '\n');
 console.log(JSON.stringify({ ...report, families: undefined }, null, 2));

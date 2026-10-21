@@ -8,7 +8,7 @@ Fixed models, selected by board format and source revision.
 
 **Full detail** restores all original Pi 5 STEP components and remains available in the detail selector and the full-detail preset. Zero 2 W and CM4 also use lightweight defaults, omitting separate contact pads, socket tongues and contacts (8 and 7 exported bodies respectively).
 
-Validation: `tests/raspberry-pi-detail.test.ts` guards component, triangle and macro-size reductions, source PCB preservation and evidence labels. `scripts/verify-raspberry-pi-lightweight.ts` prepares native checks; `data/raspberry-pi-lightweight-validation.json` records the six assembled/exploded FreeCAD, STEP and FCStd round trips.
+Validation: `tests/raspberry-pi-detail.test.ts` guards component, triangle and macro-size reductions, source PCB preservation and evidence labels. `scripts/verify-raspberry-pi-lightweight.ts` prepares native checks; `test-results/raspberry-pi-lightweight-validation.json` records the six assembled/exploded FreeCAD, STEP and FCStd round trips.
 
 | Model | PCB X × Y, mm | Geometry scope |
 | --- | --- | --- |

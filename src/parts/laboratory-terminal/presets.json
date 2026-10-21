@@ -770,5 +770,260 @@
         }
       ]
     }
+  },
+  {
+    "id": "lever-clip-55",
+    "name": "Spring test clip \u00b7 55 mm",
+    "description": "1 independent contact \u00b7 spring lever test clip \u00b7 Xinmao photo label; nominal 55 mm, seller 50A label.",
+    "parameters": {
+      "model": "lever-clip-55"
+    },
+    "catalog": {
+      "designation": "55 mm modular spring test clip",
+      "manufacturer": "Unspecified",
+      "sourceName": "User-supplied listing links and annotated product photographs",
+      "sourceUrl": "https://www.aliexpress.com/item/4001315701627.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/4000167641521.html"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed from supplied product photographs and annotated dimensions.",
+        "limitations": "User states nominal 55 x 35 x 18 mm. The supplied 50A-labelled image separately shows 53.7 mm length, 34.8 mm rear housing and 39.2 mm lever envelope; these are not interchangeable. Modeled nominal base length 55 mm and body width 18 mm; lever envelope 39.2 mm. Locating pegs may extend beyond the nominal width. Pivot, spring, jaw opening, base slots and solder-tag projection are reconstructed. The 9.6 mm underside offset is not a pivot height or a verified mounting pattern. AliExpress pages were unavailable during this update. Both supplied links are retained; the association of a specific pictured variant with either listing is unconfirmed. 50A and 100A are seller photo labels, not verified electrical ratings. Geometry is an installation reference, not a production mechanism or mating gauge. The compact housing follows the photographed square L profile: approximately 10 mm base rail with a near-vertical head front at the middle of the 55 mm base, rounded outside corners, three side locating pins and matching blind sockets. Underside moulding pockets, ribs, mounting bosses and their depths are reconstructed from the photographs. The base rail thickness and moulding details are not independently dimensioned by a supplier drawing.",
+        "sourceUrl": "https://www.aliexpress.com/item/4001315701627.html"
+      },
+      "attributes": {
+        "manufacturer": "Unspecified",
+        "connection": "spring-lever-clip",
+        "mount": "modular-base",
+        "contacts": 1,
+        "width": 18,
+        "depth": 55,
+        "termination": "rear-tab"
+      },
+      "specifications": [
+        {
+          "label": "Geometry scope",
+          "value": "User states nominal 55 x 35 x 18 mm. The supplied 50A-labelled image separately shows 53.7 mm length, 34.8 mm rear housing and 39.2 mm lever envelope; these are not interchangeable. Modeled nominal base length 55 mm and body width 18 mm; lever envelope 39.2 mm. Locating pegs may extend beyond the nominal width. Pivot, spring, jaw opening, base slots and solder-tag projection are reconstructed. The 9.6 mm underside offset is not a pivot height or a verified mounting pattern."
+        },
+        {
+          "label": "Source scope",
+          "value": "AliExpress pages were unavailable during this update. Both supplied links are retained; the association of a specific pictured variant with either listing is unconfirmed. 50A and 100A are seller photo labels, not verified electrical ratings. Geometry is an installation reference, not a production mechanism or mating gauge."
+        },
+        {
+          "label": "Photo evidence",
+          "value": "Package reference-images/compact-dimensions.png; original supplied photo and SHA-256 recorded in lib/clip-evidence.json."
+        },
+        {
+          "label": "Nominal listing size",
+          "value": "55 x 35 x 18 mm listing size; supplied photo separately shows a 39.2 mm lever envelope. Supplier revision is unconfirmed."
+        },
+        {
+          "label": "Housing outline",
+          "value": "The compact housing follows the photographed square L profile: approximately 10 mm base rail with a near-vertical head front at the middle of the 55 mm base, rounded outside corners, three side locating pins and matching blind sockets. Underside moulding pockets, ribs, mounting bosses and their depths are reconstructed from the photographs. The base rail thickness and moulding details are not independently dimensioned by a supplier drawing."
+        }
+      ]
+    }
+  },
+  {
+    "id": "lever-clip-bank-6",
+    "name": "Spring test terminal block \u00b7 6 contacts",
+    "description": "6 independent contacts \u00b7 spring lever test clip \u00b7 HENGCHANG photo reference assembly.",
+    "parameters": {
+      "model": "lever-clip-bank-6"
+    },
+    "catalog": {
+      "designation": "Six-way spring test terminal block",
+      "manufacturer": "Unspecified",
+      "sourceName": "User-supplied listing links and annotated product photographs",
+      "sourceUrl": "https://www.aliexpress.com/item/4001315701627.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/4000167641521.html"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Reconstructed from supplied product photographs; mounting board is a layout envelope.",
+        "limitations": "Six electrically independent clips and an insulating mounting board follow the supplied photograph. The 132 x 65 x 3 mm board, its mounting pattern, clip spacing and fasteners are reconstructed layout dimensions, not published supplier dimensions. Each clip uses the nominal compact outline. No common electrical bus or wires are included. AliExpress pages were unavailable during this update. Both supplied links are retained; the association of a specific pictured variant with either listing is unconfirmed. 50A and 100A are seller photo labels, not verified electrical ratings. Geometry is an installation reference, not a production mechanism or mating gauge. The compact housing follows the photographed square L profile: approximately 10 mm base rail with a near-vertical head front at the middle of the 55 mm base, rounded outside corners, three side locating pins and matching blind sockets. Underside moulding pockets, ribs, mounting bosses and their depths are reconstructed from the photographs. The base rail thickness and moulding details are not independently dimensioned by a supplier drawing.",
+        "sourceUrl": "https://www.aliexpress.com/item/4001315701627.html"
+      },
+      "attributes": {
+        "manufacturer": "Unspecified",
+        "connection": "spring-lever-clip",
+        "mount": "insulating-board",
+        "contacts": 6,
+        "termination": "rear-tab"
+      },
+      "specifications": [
+        {
+          "label": "Geometry scope",
+          "value": "Six electrically independent clips and an insulating mounting board follow the supplied photograph. The 132 x 65 x 3 mm board, its mounting pattern, clip spacing and fasteners are reconstructed layout dimensions, not published supplier dimensions. Each clip uses the nominal compact outline. No common electrical bus or wires are included."
+        },
+        {
+          "label": "Source scope",
+          "value": "AliExpress pages were unavailable during this update. Both supplied links are retained; the association of a specific pictured variant with either listing is unconfirmed. 50A and 100A are seller photo labels, not verified electrical ratings. Geometry is an installation reference, not a production mechanism or mating gauge."
+        },
+        {
+          "label": "Photo evidence",
+          "value": "Package reference-images/six-way-block.png; original supplied photo and SHA-256 recorded in lib/clip-evidence.json."
+        },
+        {
+          "label": "Housing outline",
+          "value": "The compact housing follows the photographed square L profile: approximately 10 mm base rail with a near-vertical head front at the middle of the 55 mm base, rounded outside corners, three side locating pins and matching blind sockets. Underside moulding pockets, ribs, mounting bosses and their depths are reconstructed from the photographs. The base rail thickness and moulding details are not independently dimensioned by a supplier drawing."
+        }
+      ]
+    }
+  },
+  {
+    "id": "lever-clip-101",
+    "name": "Spring test clip \u00b7 101 mm mounting ears",
+    "description": "1 independent contact \u00b7 spring lever test clip \u00b7 101 mm mounting ears, seller 100A photo label.",
+    "parameters": {
+      "model": "lever-clip-101"
+    },
+    "catalog": {
+      "designation": "101 mm spring test clip with mounting ears",
+      "manufacturer": "Unspecified",
+      "sourceName": "User-supplied listing links and annotated product photographs",
+      "sourceUrl": "https://www.aliexpress.com/item/4000167641521.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/4001315701627.html"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed from supplied product photographs and annotated dimensions.",
+        "limitations": "Supplied 100A-labelled photograph gives 101.3 mm base length, 52.7 mm rear housing and 53.9 mm lever envelope. Width 21.6 mm, mounting centres 86 mm, mounting holes 4.8 mm and jaw width 12 mm are approximately annotated nominal dimensions. The contact has an M4 termination. Pivot, spring, internal contact linkage and moulding contours are reconstructed; M4 termination is a smooth nominal bore without a thread helix. AliExpress pages were unavailable during this update. Both supplied links are retained; the association of a specific pictured variant with either listing is unconfirmed. 50A and 100A are seller photo labels, not verified electrical ratings. Geometry is an installation reference, not a production mechanism or mating gauge. The large housing retains the photographed long sloping side cheeks extending toward the front mounting ear. Underside coring, ribs, moulded corner radii and the exact slope endpoints are photo reconstructions, not additional verified fitting dimensions.",
+        "sourceUrl": "https://www.aliexpress.com/item/4000167641521.html"
+      },
+      "attributes": {
+        "manufacturer": "Unspecified",
+        "connection": "spring-lever-clip",
+        "mount": "mounting-ears",
+        "contacts": 1,
+        "width": 21.6,
+        "depth": 101.3,
+        "length": 53.9,
+        "mountPitch": 86,
+        "mountHole": 4.8,
+        "termination": "bottom-m4"
+      },
+      "specifications": [
+        {
+          "label": "Geometry scope",
+          "value": "Supplied 100A-labelled photograph gives 101.3 mm base length, 52.7 mm rear housing and 53.9 mm lever envelope. Width 21.6 mm, mounting centres 86 mm, mounting holes 4.8 mm and jaw width 12 mm are approximately annotated nominal dimensions. The contact has an M4 termination. Pivot, spring, internal contact linkage and moulding contours are reconstructed; M4 termination is a smooth nominal bore without a thread helix."
+        },
+        {
+          "label": "Source scope",
+          "value": "AliExpress pages were unavailable during this update. Both supplied links are retained; the association of a specific pictured variant with either listing is unconfirmed. 50A and 100A are seller photo labels, not verified electrical ratings. Geometry is an installation reference, not a production mechanism or mating gauge."
+        },
+        {
+          "label": "Photo evidence",
+          "value": "Package reference-images/large-dimensions.png; original supplied photo and SHA-256 recorded in lib/clip-evidence.json."
+        },
+        {
+          "label": "Jaw width",
+          "value": "Approximately 12 mm, annotated photograph."
+        },
+        {
+          "label": "Termination",
+          "value": "M4 nominal threaded contact, thread geometry simplified."
+        },
+        {
+          "label": "Housing outline",
+          "value": "The large housing retains the photographed long sloping side cheeks extending toward the front mounting ear. Underside coring, ribs, moulded corner radii and the exact slope endpoints are photo reconstructions, not additional verified fitting dimensions."
+        }
+      ]
+    }
+  },
+  {
+    "id": "lever-clip-55-bottom",
+    "name": "Spring test clip \u00b7 55 mm downward contact",
+    "description": "1 independent contact \u00b7 spring lever test clip \u00b7 downward solder tab through mounting base.",
+    "parameters": {
+      "model": "lever-clip-55-bottom"
+    },
+    "catalog": {
+      "designation": "55 mm spring test clip with downward solder tab",
+      "manufacturer": "Unspecified",
+      "sourceName": "Supplied downward-contact clip photographs",
+      "sourceUrl": "https://www.aliexpress.com/item/4001315701627.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/4000167641521.html"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Reconstructed from supplied bottom-contact photographs; board and tab projection are nominal layout dimensions.",
+        "limitations": "Supplied photographs show a downward flat solder tab through the mounting base, not a rotated rear-tab model. Nominal base length is 55 mm from the underside 24.5 + 30.5 mm annotation; a side view separately gives 52 mm and the photograph warns of approximately 3 mm measurement variation. Housing height is approximately 35 mm and lever envelope above the mounting plane approximately 41 mm. Width 18 mm is inherited from the earlier compact reference and is not established by these photographs. The paired underside holes are 9.6 mm apart across X; their modeled 3.2 mm diameter and Y = 3 mm position are reconstructed. The solder-tab hole is 4 mm. Tab width 7 mm, thickness 1.6 mm, downward projection 14 mm, hole centre 9 mm below the clip base, contact position and required base clearance are reconstructed. These are installation references, not manufacturing gauges. Seller 50A/100A photo labels are not verified electrical ratings. The association of this pictured execution with either supplied listing is unconfirmed. The compact housing follows the photographed square L profile: approximately 10 mm base rail with a near-vertical head front at the middle of the 55 mm base, rounded outside corners, three side locating pins and matching blind sockets. Underside moulding pockets, ribs, mounting bosses and their depths are reconstructed from the photographs. The base rail thickness and moulding details are not independently dimensioned by a supplier drawing.",
+        "sourceUrl": "https://www.aliexpress.com/item/4001315701627.html"
+      },
+      "attributes": {
+        "manufacturer": "Unspecified",
+        "connection": "spring-lever-clip",
+        "mount": "modular-base",
+        "termination": "bottom-tab",
+        "contacts": 1,
+        "mountPitch": 9.6
+      },
+      "specifications": [
+        {
+          "label": "Contact exit",
+          "value": "Flat brass solder tab pointing down through the mounting base; 4 mm contact hole."
+        },
+        {
+          "label": "Mounting datum",
+          "value": "Clip mounting surface Z = 0; contact tip Z = -14 mm; lever envelope Z = 41 mm."
+        },
+        {
+          "label": "Geometry scope",
+          "value": "Supplied photographs show a downward flat solder tab through the mounting base, not a rotated rear-tab model. Nominal base length is 55 mm from the underside 24.5 + 30.5 mm annotation; a side view separately gives 52 mm and the photograph warns of approximately 3 mm measurement variation. Housing height is approximately 35 mm and lever envelope above the mounting plane approximately 41 mm. Width 18 mm is inherited from the earlier compact reference and is not established by these photographs. The paired underside holes are 9.6 mm apart across X; their modeled 3.2 mm diameter and Y = 3 mm position are reconstructed. The solder-tab hole is 4 mm. Tab width 7 mm, thickness 1.6 mm, downward projection 14 mm, hole centre 9 mm below the clip base, contact position and required base clearance are reconstructed. These are installation references, not manufacturing gauges. Seller 50A/100A photo labels are not verified electrical ratings. The association of this pictured execution with either supplied listing is unconfirmed."
+        },
+        {
+          "label": "Housing outline",
+          "value": "The compact housing follows the photographed square L profile: approximately 10 mm base rail with a near-vertical head front at the middle of the 55 mm base, rounded outside corners, three side locating pins and matching blind sockets. Underside moulding pockets, ribs, mounting bosses and their depths are reconstructed from the photographs. The base rail thickness and moulding details are not independently dimensioned by a supplier drawing."
+        }
+      ]
+    }
+  },
+  {
+    "id": "lever-clip-bank-6-bottom",
+    "name": "Spring test terminal block \u00b7 6 downward contacts",
+    "description": "6 independent contacts \u00b7 spring lever test clip \u00b7 downward solder tab through mounting base.",
+    "parameters": {
+      "model": "lever-clip-bank-6-bottom"
+    },
+    "catalog": {
+      "designation": "Six-way spring test block with downward contacts",
+      "manufacturer": "Unspecified",
+      "sourceName": "Supplied downward-contact clip photographs",
+      "sourceUrl": "https://www.aliexpress.com/item/4001315701627.html",
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/4000167641521.html"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Reconstructed from supplied bottom-contact photographs; board and tab projection are nominal layout dimensions.",
+        "limitations": "Supplied photographs show a downward flat solder tab through the mounting base, not a rotated rear-tab model. Nominal base length is 55 mm from the underside 24.5 + 30.5 mm annotation; a side view separately gives 52 mm and the photograph warns of approximately 3 mm measurement variation. Housing height is approximately 35 mm and lever envelope above the mounting plane approximately 41 mm. Width 18 mm is inherited from the earlier compact reference and is not established by these photographs. The paired underside holes are 9.6 mm apart across X; their modeled 3.2 mm diameter and Y = 3 mm position are reconstructed. The solder-tab hole is 4 mm. Tab width 7 mm, thickness 1.6 mm, downward projection 14 mm, hole centre 9 mm below the clip base, contact position and required base clearance are reconstructed. These are installation references, not manufacturing gauges. Seller 50A/100A photo labels are not verified electrical ratings. The association of this pictured execution with either supplied listing is unconfirmed. The six-way insulating board is a reconstructed 132 x 65 x 3 mm layout, including corner holes and clip spacing. Each independent contact passes through a separate 8 x 3 mm board slot. Clip bases are Z = 3 mm; tabs extend to Z = -11 mm below the board, with no common electrical bus. The compact housing follows the photographed square L profile: approximately 10 mm base rail with a near-vertical head front at the middle of the 55 mm base, rounded outside corners, three side locating pins and matching blind sockets. Underside moulding pockets, ribs, mounting bosses and their depths are reconstructed from the photographs. The base rail thickness and moulding details are not independently dimensioned by a supplier drawing.",
+        "sourceUrl": "https://www.aliexpress.com/item/4001315701627.html"
+      },
+      "attributes": {
+        "manufacturer": "Unspecified",
+        "connection": "spring-lever-clip",
+        "mount": "insulating-board",
+        "termination": "bottom-tab",
+        "contacts": 6
+      },
+      "specifications": [
+        {
+          "label": "Contact exit",
+          "value": "Flat brass solder tab pointing down through the mounting base; 4 mm contact hole."
+        },
+        {
+          "label": "Mounting datum",
+          "value": "Board bottom Z = 0; clip bases Z = 3 mm; contact tips Z = -11 mm."
+        },
+        {
+          "label": "Geometry scope",
+          "value": "Supplied photographs show a downward flat solder tab through the mounting base, not a rotated rear-tab model. Nominal base length is 55 mm from the underside 24.5 + 30.5 mm annotation; a side view separately gives 52 mm and the photograph warns of approximately 3 mm measurement variation. Housing height is approximately 35 mm and lever envelope above the mounting plane approximately 41 mm. Width 18 mm is inherited from the earlier compact reference and is not established by these photographs. The paired underside holes are 9.6 mm apart across X; their modeled 3.2 mm diameter and Y = 3 mm position are reconstructed. The solder-tab hole is 4 mm. Tab width 7 mm, thickness 1.6 mm, downward projection 14 mm, hole centre 9 mm below the clip base, contact position and required base clearance are reconstructed. These are installation references, not manufacturing gauges. Seller 50A/100A photo labels are not verified electrical ratings. The association of this pictured execution with either supplied listing is unconfirmed. The six-way insulating board is a reconstructed 132 x 65 x 3 mm layout, including corner holes and clip spacing. Each independent contact passes through a separate 8 x 3 mm board slot. Clip bases are Z = 3 mm; tabs extend to Z = -11 mm below the board, with no common electrical bus."
+        },
+        {
+          "label": "Housing outline",
+          "value": "The compact housing follows the photographed square L profile: approximately 10 mm base rail with a near-vertical head front at the middle of the 55 mm base, rounded outside corners, three side locating pins and matching blind sockets. Underside moulding pockets, ribs, mounting bosses and their depths are reconstructed from the photographs. The base rail thickness and moulding details are not independently dimensioned by a supplier drawing."
+        }
+      ]
+    }
   }
 ]

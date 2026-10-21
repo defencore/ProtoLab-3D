@@ -38,18 +38,22 @@ const supported = [
   'spring-banana',
   'lever-splice',
   'screw-plug',
+  'spring-lever-clip',
 ];
-test('laboratory catalog contains 19 identified fixed purchased supplier executions', () => {
+test('laboratory catalog contains 24 fixed terminal executions and photo references', () => {
   assert.equal(module.apiVersion, 2);
   assert.equal(part.name, 'Laboratory terminal');
-  assert.equal(part.presets!.length, 19);
-  assert.equal(new Set(models.map((m) => m.id)).size, 19);
+  assert.equal(part.presets!.length, 24);
+  assert.equal(new Set(models.map((m) => m.id)).size, 24);
   assert.deepEqual(new Set(models.map((m) => m.kind)), new Set(supported));
   assert.equal(part.catalogSelectionOnly, true);
   for (const preset of part.presets!) {
     assert.deepEqual(part.validate(preset.parameters, 'assembled'), []);
     assert.ok(preset.catalog?.sourceUrl.startsWith('https://'));
-    assert.equal(preset.catalog?.geometryEvidence?.kind, 'source-dimensions');
+    assert.equal(
+      preset.catalog?.geometryEvidence?.kind,
+      preset.id.startsWith('lever-clip-bank-6') ? 'envelope' : 'source-dimensions',
+    );
     assert.deepEqual(preset.catalog?.verifiedParameters, ['model']);
     for (const k of Object.keys(preset.catalog!.attributes!))
       assert.ok(
