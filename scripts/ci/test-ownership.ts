@@ -151,6 +151,7 @@ export const registryManifestOwners: Record<string, { file: string; property: st
 export const registryScopedGenericTests = new Set([
   'tests/physical-library-composition.test.ts',
   'tests/catalog-data.test.ts',
+  'tests/configuration.test.ts',
 ]);
 
 /** Filesystem inputs not derivable from imports; keep these explicit and reviewable. */

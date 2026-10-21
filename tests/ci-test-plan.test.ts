@@ -410,6 +410,30 @@ test('catalog matcher adoption is operational but later matcher edits seed every
   assert.deepEqual((await f.plan({ base: next })).affectedParts, ['bolt', 'esp32', 'servo-motor']);
 });
 
+test('configuration round-trip scoping preserves fixtures and later round-trip assertion changes seed all owners', async (context) => {
+  const before =
+    "import {parts} from '../src/parts';test('fixtures',()=>{assert.throws(()=>restore('bad'));});test('roundtrips',()=>{for(const item of parts){assert.deepEqual(restore(item),item);}});";
+  const after =
+    "import{affectedParts}from './helpers/part-scope';" +
+    before.replace('item of parts', 'item of affectedParts(parts)');
+  assert.equal(isScopeOnlyTestChange(before, after), true);
+  assert.equal(
+    isScopeOnlyTestChange(before, after.replace("restore('bad')", "restore('wrong')")),
+    false,
+  );
+  const f = await fixture(context);
+  await f.write('tests/configuration.test.ts', before);
+  const base = await f.commit();
+  await f.write('tests/configuration.test.ts', after);
+  const next = await f.commit();
+  const adopted = await f.plan({ base });
+  assert.deepEqual(adopted.affectedParts, []);
+  assert.ok(adopted.tests.includes('tests/configuration.test.ts'));
+  await f.write('tests/configuration.test.ts', after.replace('restore(item)', 'restore(parts[0])'));
+  await f.commit();
+  assert.deepEqual((await f.plan({ base: next })).affectedParts, ['bolt', 'esp32', 'servo-motor']);
+});
+
 test('full-default scope equivalence handles exact guards, skips and legacy unset filtering without hiding real checks', () => {
   const before =
     "import {parts} from '../src/parts'; for(const id of ['a','b']){assert.equal(sourceHash,'abc');build(id);}test('body',()=>{assert.equal(count,36);build(part);});";

@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { parseConfiguration } from '../src/core/configuration';
 import { parts } from '../src/parts';
+import { affectedParts } from './helpers/part-scope';
 
 const part = parts[0];
 const configuration = {
@@ -63,7 +64,7 @@ test('configuration import preserves the absence of optional hidden mechanism co
 });
 
 test('every catalog preset round-trips all conditional parameters without losing configuration', () => {
-  for (const item of parts) {
+  for (const item of affectedParts(parts)) {
     for (const values of [item.defaults, ...item.presets.map((preset) => preset.parameters)]) {
       const states = item.states
         ?.filter((option) => !option.availableWhen || option.availableWhen(values))
