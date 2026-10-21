@@ -147,6 +147,12 @@ export const registryManifestOwners: Record<string, { file: string; property: st
   'tests/library-expansion.test.ts': { file: 'data/library-expansion.json', property: 'parts' },
 };
 
+/** Per-owner loops inside otherwise global registry/inventory suites. */
+export const registryScopedGenericTests = new Set([
+  'tests/physical-library-composition.test.ts',
+  'tests/catalog-data.test.ts',
+]);
+
 /** Filesystem inputs not derivable from imports; keep these explicit and reviewable. */
 export const extraTestInputs: Record<string, readonly string[]> = {
   'tests/part-scope.test.ts': ['tests/helpers/part-contract.ts', 'tests/helpers/part-scope.ts'],

@@ -1171,7 +1171,7 @@
   {
     "id": "xh254-balance-header-4",
     "name": "XH-style 2.54 mm balance header \u00b7 4-way",
-    "description": "Authored nominal 2.54 mm model from user-supplied white XH-style cable photographs; not manufacturer CAD or a scaled JST model. All shell dimensions, guide positions, contact section and mating depth are authored estimates. No original JST 2.50 mm or Molex geometry was scaled or used. Nominal anti-reversal proof applies only to the authored header and mate; verify the delivered matched pair.",
+    "description": "Authored nominal 2.54 mm balance-header model from user-supplied white XH-style cable photographs. Housing dimensions, guide positions, contact section and mating depth are estimates. Verify the delivered matched pair and PCB footprint; no manufacturer identity or interchangeability is established.",
     "parameters": {
       "model": "xh254-balance-header-4"
     },
@@ -1199,7 +1199,7 @@
   {
     "id": "xh254-balance-header-5",
     "name": "XH-style 2.54 mm balance header \u00b7 5-way",
-    "description": "Authored nominal 2.54 mm model from user-supplied white XH-style cable photographs; not manufacturer CAD or a scaled JST model. All shell dimensions, guide positions, contact section and mating depth are authored estimates. No original JST 2.50 mm or Molex geometry was scaled or used. Nominal anti-reversal proof applies only to the authored header and mate; verify the delivered matched pair.",
+    "description": "Authored nominal 2.54 mm balance-header model from user-supplied white XH-style cable photographs. Housing dimensions, guide positions, contact section and mating depth are estimates. Verify the delivered matched pair and PCB footprint; no manufacturer identity or interchangeability is established.",
     "parameters": {
       "model": "xh254-balance-header-5"
     },

@@ -386,6 +386,30 @@ test('physical integration scope adapters preserve every guard and hygiene suite
   assert.deepEqual((await f.plan({ base })).affectedParts, ['bolt', 'esp32', 'servo-motor']);
 });
 
+test('catalog matcher adoption is operational but later matcher edits seed every current owner', async (context) => {
+  const before =
+    "import {parts} from '../src/parts';test('matching',()=>{for(const part of parts){assert.ok(match(part));}});test('inventory',()=>{let count=0;for(const part of parts){count+=part.presets.length;}assert.ok(count>=3500);});";
+  const after =
+    "import{affectedParts}from './helpers/part-scope';" +
+    before.replace(
+      'of parts){assert.ok(match(part))',
+      'of affectedParts(parts)){assert.ok(match(part))',
+    );
+  assert.equal(isScopeOnlyTestChange(before, after), true);
+  assert.equal(isScopeOnlyTestChange(before, after.replace('>=3500', '>=3501')), false);
+  const f = await fixture(context);
+  await f.write('tests/catalog-data.test.ts', before);
+  const base = await f.commit();
+  await f.write('tests/catalog-data.test.ts', after);
+  const next = await f.commit();
+  const adopted = await f.plan({ base });
+  assert.deepEqual(adopted.affectedParts, []);
+  assert.ok(adopted.tests.includes('tests/catalog-data.test.ts'));
+  await f.write('tests/catalog-data.test.ts', after.replace('match(part)', 'match(parts[0])'));
+  await f.commit();
+  assert.deepEqual((await f.plan({ base: next })).affectedParts, ['bolt', 'esp32', 'servo-motor']);
+});
+
 test('full-default scope equivalence handles exact guards, skips and legacy unset filtering without hiding real checks', () => {
   const before =
     "import {parts} from '../src/parts'; for(const id of ['a','b']){assert.equal(sourceHash,'abc');build(id);}test('body',()=>{assert.equal(count,36);build(part);});";

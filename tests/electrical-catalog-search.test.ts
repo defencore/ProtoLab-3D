@@ -84,6 +84,37 @@ test('USB article search returns USB interfaces and excludes JST headers', () =>
   assert.ok(jst.every((entry) => entry.preset.catalog!.manufacturer === 'JST'));
 });
 
+test('authored balance headers remain discoverable without inheriting manufacturers from evidence disclaimers', () => {
+  const authoredIds = [
+    'xh254-balance-header-4',
+    'xh254-balance-header-5',
+    'xh254-balance-header-ra-4',
+    'xh254-balance-header-ra-5',
+  ];
+  assert.deepEqual(
+    new Set(search(connector, 'balance').map((entry) => entry.preset.id)),
+    new Set(authoredIds),
+  );
+  for (const manufacturer of ['JST', 'Molex']) {
+    const matches = search(connector, manufacturer);
+    assert.ok(matches.length > 0);
+    assert.ok(
+      matches.every((entry) => entry.preset.catalog!.manufacturer === manufacturer),
+      manufacturer + ': an evidence disclaimer must not establish an article manufacturer',
+    );
+  }
+  for (const id of authoredIds.slice(0, 2)) {
+    const evidence = connector.presets.find((preset) => preset.id === id)!.catalog!
+      .geometryEvidence!;
+    assert.equal(evidence.kind, 'envelope');
+    assert.match(
+      evidence.limitations,
+      /No original JST 2\.50 mm or Molex geometry was scaled or used/,
+    );
+    assert.match(evidence.limitations, /verify the delivered matched pair/);
+  }
+});
+
 test('family-only navigation keywords still find the family without imposing an article filter', () => {
   const family = { ...terminal, keywords: [...terminal.keywords, 'workbench fitting station'] };
   assert.equal(search(family, 'workbench fitting station').length, 0);

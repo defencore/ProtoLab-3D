@@ -92,7 +92,7 @@ test('batteries and holders share their fitting context while rails, grippers an
       .filter((definition) => definition.subgroup === 'BATTERIES & HOLDERS')
       .map((definition) => definition.id)
       .sort(),
-    ['battery-holder', 'li-ion-battery-holder', 'li-ion-cell', 'lipo-battery', 'standard-battery'],
+    ['battery-holder', 'li-ion-battery-holder', 'li-ion-cell', 'lipo-battery', 'panel-battery-module', 'standard-battery'],
   );
   assert.deepEqual(
     parts

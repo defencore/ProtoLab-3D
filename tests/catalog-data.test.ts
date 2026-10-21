@@ -4,9 +4,10 @@ import { parts } from '../src/parts';
 import { generateScript } from '../src/core/freecad';
 import { validateParameters } from '../src/core/validation';
 import { buildPresetIndex, filterPresets, seedCurrentFilters } from '../src/core/preset-search';
+import { affectedParts } from './helpers/part-scope';
 
 test('matching a sourced preset can find the same preset again', () => {
-  for (const part of parts) {
+  for (const part of affectedParts(parts)) {
     const index = buildPresetIndex([part]);
     for (const preset of part.presets.filter((preset) => preset.catalog)) {
       const result = filterPresets(index, seedCurrentFilters(part, preset.parameters));

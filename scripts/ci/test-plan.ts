@@ -9,6 +9,7 @@ import {
   generatedReadTests,
   pythonTestInputs,
   registryManifestOwners,
+  registryScopedGenericTests,
   registryTestOwners,
 } from './test-ownership';
 
@@ -959,7 +960,7 @@ export async function createTestPlan({
       const manifest = registryManifestOwners[file];
       if (
         genericTest(file) ||
-        file === 'tests/physical-library-composition.test.ts' ||
+        registryScopedGenericTests.has(file) ||
         (input.registry && owner === undefined && !manifest)
       ) {
         for (const id of after.ids) affected.add(id);
