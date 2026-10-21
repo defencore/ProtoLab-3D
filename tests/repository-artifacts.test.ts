@@ -22,6 +22,7 @@ test('artifact policy rejects CAD exports and legacy output folders regardless o
     'screenshots/example.png',
     'result.json',
     'tsconfig.tsbuildinfo',
+    '.cache/hidden-export.step',
     'src/.DS_Store',
   ])
     assert.ok(artifactIssues(file).length, file);

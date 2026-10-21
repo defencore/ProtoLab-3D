@@ -16,6 +16,7 @@ const execute = promisify(execFile);
 const registry = 'src/parts/index.ts';
 const sourceExtension = /\.(?:[cm]?[jt]sx?)$/;
 const partId = (file: string) => /^src\/parts\/([a-z][a-z0-9]*(?:-[a-z0-9]+)*)\//.exec(file)?.[1];
+const partDocument = (file: string) => /^src\/parts\/[^/]+\/(?:README|GUIDE)\.md$/.test(file);
 const sorted = (values: Iterable<string>) => [...new Set(values)].sort();
 const testFile = (file: string) => /^tests\/.+\.test\.ts$/.test(file);
 const pythonTest = (file: string) => /^tests\/(?:test_[^/]+\.py|[^/]+\.test\.py)$/.test(file);
@@ -562,6 +563,199 @@ export function isScopeOnlyContractChange(before: string | undefined, after: str
   return left !== undefined && left === right;
 }
 
+/** Compare full/default execution after removing only the known scope adapters.
+ * Every assertion, source check, inventory guard, body and selector remains exact. */
+export function isScopeOnlyTestChange(
+  before: string | undefined,
+  after: string | undefined,
+  legacyExpansion = false,
+) {
+  if (!before || !after) return false;
+  const importsScope = (text: string) =>
+    ts
+      .createSourceFile('scope.ts', text, ts.ScriptTarget.Latest, true)
+      .statements.some(
+        (statement) =>
+          ts.isImportDeclaration(statement) &&
+          ts.isStringLiteral(statement.moduleSpecifier) &&
+          statement.moduleSpecifier.text === './helpers/part-scope',
+      );
+  // Only adoption is operational; later guard/argument edits are real test changes.
+  if (importsScope(before) || !importsScope(after)) return false;
+  function normalized(text: string) {
+    const source = ts.createSourceFile('scoped-test.ts', text, ts.ScriptTarget.Latest, true);
+    const helpers = new Set<string>();
+    for (const statement of source.statements) {
+      if (
+        !ts.isImportDeclaration(statement) ||
+        !ts.isStringLiteral(statement.moduleSpecifier) ||
+        statement.moduleSpecifier.text !== './helpers/part-scope' ||
+        statement.importClause?.name
+      )
+        continue;
+      const names = statement.importClause?.namedBindings;
+      if (
+        names &&
+        ts.isNamedImports(names) &&
+        names.elements.every(
+          (name) =>
+            !name.propertyName && ['affectedParts', 'partIsAffected'].includes(name.name.text),
+        )
+      )
+        for (const name of names.elements) helpers.add(name.name.text);
+    }
+    const compact = (node: ts.Node) => node.getText(source).replace(/\s+/g, '');
+    const pure = (node: ts.Expression): boolean =>
+      ts.isIdentifier(node) ||
+      ts.isStringLiteral(node) ||
+      (ts.isPropertyAccessExpression(node) && pure(node.expression));
+    const scopeCall = (node: ts.Expression): node is ts.CallExpression =>
+      ts.isCallExpression(node) &&
+      ts.isIdentifier(node.expression) &&
+      node.expression.text === 'partIsAffected' &&
+      helpers.has('partIsAffected') &&
+      node.arguments.length === 1 &&
+      pure(node.arguments[0]);
+    const negated = (node: ts.Expression) =>
+      ts.isPrefixUnaryExpression(unwrap(node)) &&
+      (unwrap(node) as ts.PrefixUnaryExpression).operator === ts.SyntaxKind.ExclamationToken &&
+      scopeCall((unwrap(node) as ts.PrefixUnaryExpression).operand);
+    const transformed = ts.transform(source, [
+      (context) => {
+        const visit: ts.Visitor = (node) => {
+          if (
+            ts.isImportDeclaration(node) &&
+            ts.isStringLiteral(node.moduleSpecifier) &&
+            node.moduleSpecifier.text === './helpers/part-scope' &&
+            !node.importClause?.name
+          ) {
+            const names = node.importClause?.namedBindings;
+            if (
+              names &&
+              ts.isNamedImports(names) &&
+              names.elements.every((name) => !name.propertyName && helpers.has(name.name.text))
+            )
+              return undefined;
+          }
+          if (
+            legacyExpansion &&
+            ts.isVariableStatement(node) &&
+            node.declarationList.declarations.length === 1
+          ) {
+            const declaration = node.declarationList.declarations[0];
+            if (
+              declaration.name.getText(source) === 'filter' &&
+              declaration.initializer &&
+              /^process\.env\.PART_FILTER\?\.split\((['"]),\1\)$/.test(
+                compact(declaration.initializer),
+              )
+            )
+              return undefined;
+          }
+          if (
+            legacyExpansion &&
+            ts.isBinaryExpression(node) &&
+            node.operatorToken.kind === ts.SyntaxKind.AmpersandAmpersandToken &&
+            compact(unwrap(node.right)) === '!filter||filter.includes(p.id)'
+          )
+            return ts.visitNode(node.left, visit);
+          if (ts.isIfStatement(node) && !node.elseStatement && negated(node.expression)) {
+            const branch =
+              ts.isBlock(node.thenStatement) && node.thenStatement.statements.length === 1
+                ? node.thenStatement.statements[0]
+                : node.thenStatement;
+            if (
+              (ts.isReturnStatement(branch) && !branch.expression) ||
+              (ts.isContinueStatement(branch) && !branch.label)
+            )
+              return undefined;
+          }
+          if (ts.isCallExpression(node)) {
+            if (
+              ts.isIdentifier(node.expression) &&
+              node.expression.text === 'affectedParts' &&
+              helpers.has('affectedParts') &&
+              node.arguments.length === 1
+            )
+              return ts.visitNode(node.arguments[0], visit);
+            if (
+              ts.isPropertyAccessExpression(node.expression) &&
+              node.expression.name.text === 'filter' &&
+              node.arguments.length === 1 &&
+              helpers.has('partIsAffected')
+            ) {
+              const callback = unwrap(node.arguments[0]);
+              if (
+                (ts.isIdentifier(callback) && callback.text === 'partIsAffected') ||
+                (ts.isArrowFunction(callback) &&
+                  !ts.isBlock(callback.body) &&
+                  scopeCall(unwrap(callback.body)))
+              ) {
+                let receiver: ts.Expression = node.expression.expression;
+                while (ts.isParenthesizedExpression(receiver)) receiver = receiver.expression;
+                return ts.visitNode(receiver, visit);
+              }
+            }
+            if (
+              ts.isIdentifier(node.expression) &&
+              node.expression.text === 'test' &&
+              node.arguments.length === 3 &&
+              ts.isObjectLiteralExpression(node.arguments[1])
+            ) {
+              const options = node.arguments[1];
+              if (
+                options.properties.length === 1 &&
+                ts.isPropertyAssignment(options.properties[0]) &&
+                options.properties[0].name.getText(source) === 'skip' &&
+                negated(options.properties[0].initializer)
+              )
+                return ts.visitEachChild(
+                  ts.factory.updateCallExpression(node, node.expression, node.typeArguments, [
+                    node.arguments[0],
+                    node.arguments[2],
+                  ]),
+                  visit,
+                  context,
+                );
+            }
+          }
+          return ts.visitEachChild(node, visit, context);
+        };
+        return (node) => ts.visitNode(node, visit) as ts.SourceFile;
+      },
+    ]);
+    function structure(node: ts.Node): unknown {
+      const scalars: unknown[] = [];
+      if (
+        ts.isIdentifier(node) ||
+        ts.isLiteralExpression(node) ||
+        ts.isTemplateHead(node) ||
+        ts.isTemplateMiddle(node) ||
+        ts.isTemplateTail(node)
+      )
+        scalars.push(node.text);
+      if (ts.isPrefixUnaryExpression(node) || ts.isPostfixUnaryExpression(node))
+        scalars.push(node.operator);
+      if (ts.isVariableDeclarationList(node))
+        scalars.push(
+          node.flags &
+            (ts.NodeFlags.Let | ts.NodeFlags.Const | ts.NodeFlags.Using | ts.NodeFlags.AwaitUsing),
+        );
+      if ('isTypeOnly' in node) scalars.push(node.isTypeOnly);
+      if (ts.isExportAssignment(node)) scalars.push(node.isExportEquals);
+      const children: unknown[] = [];
+      ts.forEachChild(node, (child) => {
+        children.push(structure(child));
+      });
+      return [node.kind, scalars, children];
+    }
+    const result = JSON.stringify(structure(transformed.transformed[0]));
+    transformed.dispose();
+    return result;
+  }
+  return normalized(before) === normalized(after);
+}
+
 function workflowRuntimes(text: string | undefined) {
   const lines = (text ?? '').split('\n'),
     fields: string[] = [];
@@ -698,6 +892,16 @@ export async function createTestPlan({
     isScopeOnlyContractChange(before.text.get(contractHelper), after.text.get(contractHelper))
   )
     selectionOnlyInputs.add(contractHelper);
+  for (const file of changedFiles.filter(testFile))
+    if (
+      (registryTestOwners[file] !== undefined || registryManifestOwners[file]) &&
+      isScopeOnlyTestChange(
+        before.text.get(file),
+        after.text.get(file),
+        file === 'tests/library-expansion.test.ts',
+      )
+    )
+      selectionOnlyInputs.add(file);
   const reason = fullReason(changedFiles, before, after);
   if (reason) return all(reason, changedFiles);
   for (const id of changedFiles.flatMap((file) => partId(file) ?? []))
@@ -712,7 +916,9 @@ export async function createTestPlan({
       changedFiles,
     );
   }
-  const affected = new Set(changedFiles.flatMap((file) => partId(file) ?? []));
+  const affected = new Set(
+    changedFiles.filter((file) => !partDocument(file)).flatMap((file) => partId(file) ?? []),
+  );
   const reverse = new Map<string, Set<string>>();
   for (const analysis of analyses) {
     for (const [owner, dependencies] of analysis.parts)
@@ -724,7 +930,9 @@ export async function createTestPlan({
     for (const id of analysis.snapshot.ids) {
       const files = closure(
         analysis,
-        [...analysis.snapshot.files.keys()].filter((file) => partId(file) === id),
+        [...analysis.snapshot.files.keys()].filter(
+          (file) => partId(file) === id && !partDocument(file),
+        ),
       );
       if ([...files.files].some((file) => file !== registry && changedSet.has(file)))
         affected.add(id);
@@ -737,7 +945,7 @@ export async function createTestPlan({
   const changedTestInputs = new Set(
     changedFiles.filter(
       (file) =>
-        !partId(file) &&
+        (!partId(file) || partDocument(file)) &&
         file !== registry &&
         !operationalInput(file) &&
         !selectionOnlyInputs.has(file),
@@ -768,7 +976,7 @@ export async function createTestPlan({
               for (const id of after.ids) affected.add(id);
             }
           }
-        for (const dependency of input.files) {
+        for (const dependency of owner === undefined && !manifest ? input.files : []) {
           const id = partId(dependency);
           if (id) affected.add(id);
         }
@@ -870,7 +1078,13 @@ export async function createTestPlan({
     affectedParts,
     tests: sorted(tests),
     pythonTests: sorted(pythonTests),
-    packageIds: affectedParts,
+    packageIds: sorted([
+      ...affectedParts,
+      ...changedFiles.flatMap((file) => {
+        const id = partId(file);
+        return id && after.ids.has(id) ? [id] : [];
+      }),
+    ]),
   };
 }
 

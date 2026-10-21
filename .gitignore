@@ -2,7 +2,6 @@ node_modules/
 dist/
 *.tsbuildinfo
 .DS_Store
-screenshots/
 test-results/
 
 # Generated CAD exports belong in test-results, never in source control.
@@ -21,16 +20,11 @@ test-results/
 
 __pycache__/
 *.pyc
-.part-module-backups/
-.catalog-snapshot-backup-*/
-.part-module-staging-*/
 
 data/*
 !data/promtehimport-import-report.json
 !data/promtehimport-inventory.json
-
 !data/library-expansion.json
-
 
 # Source archives are linked remotely, never bundled.
 /public/references/

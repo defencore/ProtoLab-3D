@@ -247,4 +247,4 @@ Manufacturer CAD means geometry is imported from an identified source revision, 
 
 All locally linked preset reference assets exist.
 
-Full per-preset evidence and unverified numeric fields: [JSON audit](../test-results/model-evidence-audit.json).
+Full per-preset evidence and unverified numeric fields: JSON audit (local output: `test-results/model-evidence-audit.json`).

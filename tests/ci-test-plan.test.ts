@@ -6,7 +6,11 @@ import path from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import { promisify } from 'node:util';
-import { createTestPlan, isScopeOnlyContractChange } from '../scripts/ci/test-plan';
+import {
+  createTestPlan,
+  isScopeOnlyContractChange,
+  isScopeOnlyTestChange,
+} from '../scripts/ci/test-plan';
 
 const execute = promisify(execFile);
 const helper = fileURLToPath(new URL('../scripts/ci/test-plan.ts', import.meta.url));
@@ -326,6 +330,136 @@ export function registerPartContractTests(shard:number, definitions:readonly Par
   await f.write('tests/helpers/part-contract.ts', after.replace('length>0', 'length>1'));
   await f.commit();
   assert.deepEqual((await f.plan({ base })).affectedParts, ['bolt', 'esp32', 'servo-motor']);
+});
+
+test('physical integration scope adapters preserve every guard and hygiene suites do not seed geometry', async (context) => {
+  const before =
+    "import {parts} from '../src/parts'; test('composition',()=>{const assemblies=parts.filter(p=>p.product);assert.ok(assemblies.length>=40);for(const part of assemblies){assert.ok(part.composition);buildGeometry(part);}});";
+  const after =
+    "import {affectedParts} from './helpers/part-scope';" +
+    before.replace('of assemblies', 'of affectedParts(assemblies)');
+  assert.equal(isScopeOnlyTestChange(before, after), true);
+  assert.equal(
+    isScopeOnlyTestChange(
+      after,
+      after.replace('affectedParts(assemblies)', 'affectedParts(parts)'),
+    ),
+    false,
+    'Later scope edits must remain real test changes.',
+  );
+  assert.equal(isScopeOnlyTestChange(before, after.replace('>=40', '>=41')), false);
+  assert.equal(
+    isScopeOnlyTestChange(before, after.replace('buildGeometry(part)', 'buildGeometry(parts[0])')),
+    false,
+  );
+  const f = await fixture(context);
+  await f.write('tests/physical-library-composition.test.ts', before);
+  await f.write(
+    'tests/repository-artifacts.test.ts',
+    "import {parts} from '../src/parts'; assert.ok(true);",
+  );
+  await f.write(
+    'tests/repository-language.test.ts',
+    "import {parts} from '../src/parts'; assert.ok(true);",
+  );
+  const base = await f.commit();
+  await f.write('tests/physical-library-composition.test.ts', after);
+  await f.write(
+    'tests/repository-artifacts.test.ts',
+    "import {parts} from '../src/parts'; assert.equal('stl'.length,3);",
+  );
+  await f.write(
+    'tests/repository-language.test.ts',
+    "import {parts} from '../src/parts'; assert.equal('English'.length,7);",
+  );
+  await f.commit();
+  const scoped = await f.plan({ base });
+  assert.deepEqual(scoped.affectedParts, []);
+  for (const file of [
+    'tests/physical-library-composition.test.ts',
+    'tests/repository-artifacts.test.ts',
+    'tests/repository-language.test.ts',
+  ])
+    assert.ok(scoped.tests.includes(file));
+  await f.write('tests/physical-library-composition.test.ts', after.replace('>=40', '>=41'));
+  await f.commit();
+  assert.deepEqual((await f.plan({ base })).affectedParts, ['bolt', 'esp32', 'servo-motor']);
+});
+
+test('full-default scope equivalence handles exact guards, skips and legacy unset filtering without hiding real checks', () => {
+  const before =
+    "import {parts} from '../src/parts'; for(const id of ['a','b']){assert.equal(sourceHash,'abc');build(id);}test('body',()=>{assert.equal(count,36);build(part);});";
+  const after =
+    "import {partIsAffected} from './helpers/part-scope';" +
+    before
+      .replace("['a','b']", "['a','b'].filter(partIsAffected)")
+      .replace(
+        '{assert.equal(sourceHash',
+        '{if(!partIsAffected(id))continue;assert.equal(sourceHash',
+      )
+      .replace(
+        "test('body',()=>{",
+        "test('body',{skip:!partIsAffected('a')},()=>{if(!partIsAffected(part.id))return;",
+      );
+  assert.equal(isScopeOnlyTestChange(before, after), true);
+  assert.equal(
+    isScopeOnlyTestChange(after, after.replace("partIsAffected('a')", "partIsAffected('b')")),
+    false,
+  );
+  assert.equal(isScopeOnlyTestChange(before, after.replace('count,36', 'count,37')), false);
+  assert.equal(
+    isScopeOnlyTestChange(before, after.replace("sourceHash,'abc'", "sourceHash,'def'")),
+    false,
+  );
+  const oldExpansion =
+    "const filter=process.env.PART_FILTER?.split(',');const selections=parts.filter(p=>manifest.parts.some(m=>m.id===p.id)&&(!filter||filter.includes(p.id)));assert.equal(count,54);";
+  const newExpansion =
+    "import{affectedParts}from './helpers/part-scope';const selections=affectedParts(parts.filter(p=>manifest.parts.some(m=>m.id===p.id)));assert.equal(count,54);";
+  assert.equal(isScopeOnlyTestChange(oldExpansion, newExpansion, true), true);
+  assert.equal(
+    isScopeOnlyTestChange(oldExpansion, newExpansion.replace('===p.id', '!==p.id'), true),
+    false,
+  );
+});
+
+test('documentation changes validate their package without geometry unless a test consumes them as a fixture', async (context) => {
+  const f = await fixture(context);
+  await f.write('src/parts/bolt/GUIDE.md', '# Guide\nOld print instructions.');
+  await f.write('tests/repository-language.test.ts', 'export {};');
+  const base = await f.commit();
+  await f.write('src/parts/bolt/GUIDE.md', '# Guide\nUpdated print instructions.');
+  await f.commit();
+  const docs = await f.plan({ base });
+  assert.deepEqual(docs.affectedParts, []);
+  assert.deepEqual(docs.packageIds, ['bolt']);
+  assert.ok(docs.tests.includes('tests/repository-language.test.ts'));
+  await f.write(
+    'tests/guide-fixture.test.ts',
+    "import part from '../src/parts/bolt/part';import{readFileSync}from'node:fs';readFileSync('src/parts/bolt/GUIDE.md');",
+  );
+  const fixtureBase = await f.commit();
+  await f.write('src/parts/bolt/GUIDE.md', '# Guide\nChanged consumed fixture.');
+  await f.commit();
+  assert.deepEqual((await f.plan({ base: fixtureBase })).affectedParts, ['bolt']);
+});
+
+test('explicit assembly test ownership excludes unchanged support libraries while real support edits reach dependents', async (context) => {
+  const f = await fixture(context);
+  await f.part('tube-drill-jig', ['bolt']);
+  await f.write(
+    'tests/tube-drill-jig.test.ts',
+    "import jig from '../src/parts/tube-drill-jig/part';import support from '../src/parts/bolt/part';",
+  );
+  const base = await f.commit();
+  await f.write(
+    'tests/tube-drill-jig.test.ts',
+    "import jig from '../src/parts/tube-drill-jig/part';import support from '../src/parts/bolt/part';assert.ok(jig);",
+  );
+  const next = await f.commit();
+  assert.deepEqual((await f.plan({ base })).affectedParts, ['tube-drill-jig']);
+  await f.write('src/parts/bolt/part.ts', 'export default {changed: true};');
+  await f.commit();
+  assert.deepEqual((await f.plan({ base: next })).affectedParts, ['bolt', 'tube-drill-jig']);
 });
 
 test('shared core, compiler semantics, dependencies and Node runtime changes require a full run', async (context) => {

@@ -8,7 +8,6 @@ const excludedDirectories = new Set([
   'node_modules',
   'dist',
   'test-results',
-  '.cache',
   '__pycache__',
 ]);
 const authoredMacros = new Set([
@@ -35,7 +34,7 @@ export function artifactIssues(file) {
         part,
       ),
     ) ||
-    segments[0] === 'screenshots'
+    segments[0] === 'screenshots' || segments.includes('.cache')
   )
     return [`${normalized}: keep generated screenshots, staging and backups under test-results/`];
   if (segments.at(-1) === '.DS_Store') return [`${normalized}: remove operating-system metadata`];

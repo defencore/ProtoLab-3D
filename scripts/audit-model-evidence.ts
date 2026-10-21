@@ -110,7 +110,7 @@ lines.push(
     ? [...missingReferences].map((r) => `- Missing: ${r}`).join('\n')
     : 'All locally linked preset reference assets exist.',
   '',
-  'Full per-preset evidence and unverified numeric fields: [JSON audit](../test-results/model-evidence-audit.json).',
+  'Full per-preset evidence and unverified numeric fields: JSON audit (local output: `test-results/model-evidence-audit.json`).',
 );
 writeFileSync('docs/model-fidelity-audit.md', lines.join('\n') + '\n');
 console.log(JSON.stringify({ ...report, families: undefined }, null, 2));

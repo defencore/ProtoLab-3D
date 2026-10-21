@@ -73,6 +73,11 @@ export const registryTestOwners: Record<string, readonly string[] | 'all'> = {
   'tests/gf5560.test.ts': ['chf-gf5560-180'],
   'tests/rover-chassis.test.ts': ['rover-chassis'],
   'tests/vehicle-interfaces.test.ts': ['tube-arm-clamp', 'vehicle-mounting-plate'],
+  'tests/panel-battery-module.test.ts': ['panel-battery-module'],
+  'tests/tube-drill-jig.test.ts': ['tube-drill-jig'],
+  'tests/laboratory-lever-clips.test.ts': ['laboratory-terminal'],
+  'tests/laboratory-terminal-catalog.test.ts': ['laboratory-terminal'],
+  'tests/signal-connector-catalog.test.ts': ['signal-connector'],
   'tests/workshop-jigs.test.ts': [
     'drill-pattern-jig',
     'v-block-drill-jig',
@@ -114,12 +119,15 @@ export const registryTestOwners: Record<string, readonly string[] | 'all'> = {
   // These inspect registry-wide contracts/inventory, or retain fixed integration cases.
   'tests/catalog-data.test.ts': 'all',
   'tests/catalog-import.test.ts': 'all',
+  'tests/catalog-sync.test.ts': 'all',
+  'tests/electrical-catalog-search.test.ts': 'all',
   'tests/configuration.test.ts': 'all',
   'tests/lazy-parts.test.ts': 'all',
   'tests/library-categories.test.ts': 'all',
   'tests/library-filter-matrix.test.ts': 'all',
   'tests/library-names.test.ts': 'all',
   'tests/library-navigation.test.ts': 'all',
+  'tests/library-script-audit.test.ts': 'all',
   'tests/model-evidence.test.ts': 'all',
   'tests/module-isolation.test.ts': 'all',
   'tests/part-modules.test.ts': 'all',
@@ -130,6 +138,8 @@ export const registryTestOwners: Record<string, readonly string[] | 'all'> = {
   'tests/preset-search.test.ts': 'all',
   'tests/product-library.test.ts': 'all',
   'tests/quick-picks.test.ts': 'all',
+  'tests/repository-artifacts.test.ts': 'all',
+  'tests/repository-language.test.ts': 'all',
 };
 
 /** Dynamic registry ownership is read from BOTH revisions, including removed entries. */
