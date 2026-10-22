@@ -14,14 +14,36 @@ test('stock E-rings preserve the free profile, native recipe and source identity
   const field = eRing.parameters.find((p) => p.key === 'installedGrooveDiameter')!;
   assert.equal(field.filterable, false);
   assert.equal(field.visibleWhen!(eRing.defaults), false);
+  const points = eRingOutline(eRing.defaults);
+  // Preserve the stock contour to 1e-8 mm without depending on platform-specific
+  // low bits from trigonometric functions.
   assert.equal(
-    sha256(JSON.stringify(eRingOutline(eRing.defaults).map((point) => point.toArray()))),
-    '73c6a8c4095186bc1f7df6109772e37653e063e0f111d47e0004d5abf09e723a',
+    sha256(
+      JSON.stringify(
+        points.map((point) => point.toArray().map((value) => Math.round(value * 1e8))),
+      ),
+    ),
+    '94240923f1a64063aac8d4d9a8194750e1970df3d05103a65f1d9e30c9872677',
   );
-  assert.equal(
-    sha256(eRing.python(eRing.defaults, 'default')),
-    'b687dd771680a14fc365b92c0d416e015997af31cc918565d86f70d556797f40',
+  const python = eRing.python(eRing.defaults, 'default');
+  assert.match(python, /shape=Part\.Face\(Part\.makePolygon\(/);
+  assert.match(python, /\)\)\.extrude\(App\.Vector\(0,0,0\.7\)\)$/);
+  const vectors = [...python.matchAll(/App\.Vector\(([^)]+)\)/g)].map((match) =>
+    match[1].split(',').map(Number),
   );
+  const expected = [
+    ...[...points, points[0]].map((point) => [point.x, point.y, -0.35]),
+    [0, 0, 0.7],
+  ];
+  assert.equal(vectors.length, expected.length);
+  for (let index = 0; index < expected.length; index++) {
+    assert.equal(vectors[index].length, 3);
+    for (let axis = 0; axis < 3; axis++)
+      assert.ok(
+        Math.abs(vectors[index][axis] - expected[index][axis]) < 1e-10,
+        `Native profile vector ${index}, axis ${axis}`,
+      );
+  }
   for (const preset of eRing.presets) {
     assert.equal(preset.parameters.installedGrooveDiameter, 0);
     assert.ok(!preset.catalog?.verifiedParameters.includes('installedGrooveDiameter'));
