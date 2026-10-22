@@ -6,6 +6,7 @@ import bolt from '../src/parts/bolt-screw/part';
 import tool from '../src/parts/thread-tool/part';
 import { unpackModel } from '../src/core/mesh-transfer';
 import { disposeModel } from '../src/core/mechanical';
+import type { PartDefinition } from '../src/core/types';
 
 const request = (
   kind: LibraryOutputRequest['kind'],
@@ -26,6 +27,9 @@ test('preview creates a transportable model without generating unused CAD source
     },
     dimensions: () => {
       throw new Error('Measure the built preview once.');
+    },
+    exportDimensions: () => {
+      throw new Error('CAD bounds should be on demand.');
     },
     buildExportGeometry: () => {
       throw new Error('STL should be on demand.');
@@ -65,6 +69,27 @@ test('requested FreeCAD modes retain the same physical configuration and produce
   assert.equal(JSON.stringify(bolt.defaults), parameters);
   assert.equal('model' in simple, false);
   assert.equal(full.stl, undefined);
+});
+
+test('native export validates physical dimensions when the inspection view includes references', () => {
+  const expected = bolt.dimensions(bolt.defaults, 'default');
+  const part: PartDefinition = {
+    ...bolt,
+    dimensions: () => [100, 100, 100],
+    exportDimensions(parameters, state) {
+      assert.equal(this.id, bolt.id);
+      assert.deepEqual(parameters, bolt.defaults);
+      assert.equal(state, 'default');
+      return expected;
+    },
+  };
+  for (const mode of ['simple', 'full'] as const) {
+    const output = buildLibraryOutput(part, request('script', mode));
+    assert.ok(output.script!.includes(`expected_dimensions = ${JSON.stringify(expected)}`));
+    assert.ok(!output.script!.includes('expected_dimensions = [100,100,100]'));
+    const ordinary = buildLibraryOutput(bolt, request('script', mode));
+    assert.ok(ordinary.script!.includes(`expected_dimensions = ${JSON.stringify(expected)}`));
+  }
 });
 
 test('STL retains simple manufacturing geometry even when Full preview is selected', () => {

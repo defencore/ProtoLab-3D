@@ -154,7 +154,7 @@ For a fixed catalog model, `verifiedParameters` identifies the source-owned mode
 
 ## Geometry and FreeCAD
 
-Use millimetres and native Z-up coordinates. Define a useful part origin and keep `dimensions` consistent with both representations. The viewer handles display orientation.
+Use millimetres and native Z-up coordinates. Define a useful part origin and keep `dimensions` consistent with the rendered state. The viewer handles display orientation. When an inspection view includes reference geometry excluded from the physical product, provide `buildExportGeometry` for STL and `exportDimensions` for the physical native-CAD envelope. Otherwise the native exporter uses `dimensions`. Keep the reference out of the Python recipe and the bill of materials.
 
 The Python recipe can use `App`, `Part` and `math` supplied by the application wrapper. It must assign a valid `shape`. Use the SDK's `num(...)` for numeric literals. A single manufactured body should be fused into a single solid where appropriate.
 

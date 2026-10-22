@@ -1,5 +1,7 @@
 import type { Parameters, PartDefinition, Preset } from '../../core/types';
 import type { ProductProfile } from '../../core/product-types';
+import { Box3, Vector3 } from 'three';
+import { disposeModel } from '../../core/mechanical';
 import {
   componentGeometry,
   componentPython,
@@ -12,6 +14,25 @@ import { hardwareSources } from './lib/hardware';
 import { fabricationFiles } from './lib/fabrication';
 import presets from './presets.json';
 import product from './product.json';
+
+function previewGeometry(p: Parameters, state: string) {
+  const model = componentGeometry(libraries, configured(p, state));
+  if (state === 'tube') {
+    const sleeve = component(fitSleeve(p), 'REFERENCE ONLY · tube Ø90/86', 0x9eabb8);
+    sleeve.traverse((o) => {
+      if ('material' in o) {
+        const materials = Array.isArray(o.material) ? o.material : [o.material];
+        for (const material of materials) {
+          material.transparent = true;
+          material.opacity = 0.25;
+          material.depthWrite = false;
+        }
+      }
+    });
+    model.add(sleeve);
+  }
+  return model;
+}
 
 function validate(p: Parameters, state: string) {
   const errors: string[] = [];
@@ -92,27 +113,24 @@ const part: PartDefinition = {
   validate,
   composition,
   fabricationFiles,
-  buildGeometry(p, state) {
-    const model = componentGeometry(libraries, configured(p, state));
-    if (state === 'tube') {
-      const sleeve = component(fitSleeve(p), 'REFERENCE ONLY · tube Ø90/86', 0x9eabb8);
-      sleeve.traverse((o) => {
-        if ('material' in o) {
-          const materials = Array.isArray(o.material) ? o.material : [o.material];
-          for (const material of materials) {
-            material.transparent = true;
-            material.opacity = 0.25;
-            material.depthWrite = false;
-          }
-        }
-      });
-      model.add(sleeve);
-    }
-    return model;
-  },
+  buildGeometry: previewGeometry,
   buildExportGeometry: (p, s) => componentGeometry(libraries, configured(p, s), true),
   python: (p, s) => componentPython(libraries, configured(p, s)),
-  dimensions: (p, s) => componentDimensions(libraries, configured(p, s)),
+  dimensions(p, state) {
+    if (state !== 'tube') return componentDimensions(libraries, configured(p, state));
+    const model = previewGeometry(p, state);
+    try {
+      model.updateMatrixWorld(true);
+      return new Box3().setFromObject(model, true).getSize(new Vector3()).toArray() as [
+        number,
+        number,
+        number,
+      ];
+    } finally {
+      disposeModel(model);
+    }
+  },
+  exportDimensions: (p, s) => componentDimensions(libraries, configured(p, s)),
   assessment(p) {
     return [
       `Tube Ø90/86 mm. Printed deck diameter ${(86 - 2 * Number(p.fitClearance)).toFixed(1)} mm; radial installation clearance ${Number(p.fitClearance).toFixed(2)} mm. Four 12 mm end-open shaft slots permit axial insertion from the slotted end; qualify actual passage and service access.`,

@@ -76,8 +76,10 @@ export interface PartDefinition {
   preview?: 'worker';
   /** These states select separate physical supplier units, rather than inspection views. */
   physicalStates?: string[];
-  /** Export contours can omit visual thread relief while retaining the physical part. */
+  /** Physical export contours can omit inspection references and visual thread relief. */
   buildExportGeometry?: (parameters: Parameters, state: string) => Group;
+  /** Physical CAD envelope when an inspection preview includes non-exported references. */
+  exportDimensions?: (parameters: Parameters, state: string) => [number, number, number];
   defaultSelection?: boolean;
   name: string;
   validationNotice?: string;
@@ -112,6 +114,7 @@ export interface PartDefinition {
   validate: (parameters: Parameters, state: string) => string[];
   buildGeometry: (parameters: Parameters, state: string) => Group;
   python: (parameters: Parameters, state: string) => string;
+  /** Rendered-state envelope, including any inspection references. */
   dimensions: (parameters: Parameters, state: string) => [number, number, number];
   notes?: string;
   assessment?: (parameters: Parameters) => string[];

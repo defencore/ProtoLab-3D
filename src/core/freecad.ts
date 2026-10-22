@@ -35,7 +35,11 @@ function scriptInMode(
     .join('\n');
   const evidence = modelEvidence(part, parameters, presetId);
   const featureName = `ProtoLab_${part.id.replace(/[^a-zA-Z0-9_]/g, '_')}`;
-  const expectedDimensions = JSON.stringify(part.dimensions(parameters, state));
+  const expectedDimensions = JSON.stringify(
+    part.exportDimensions
+      ? part.exportDimensions(parameters, state)
+      : part.dimensions(parameters, state),
+  );
   const catalog = part.presets.find((preset) => preset.id === evidence.presetId)?.catalog;
   const catalogProperties = catalog
     ? `

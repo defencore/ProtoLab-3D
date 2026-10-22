@@ -12,6 +12,7 @@ import {
 } from '../src/parts/mpr-10-demonstrator/lib/model';
 import { validateParameters } from '../src/core/validation';
 import { disposeModel } from '../src/core/mechanical';
+import { generateScript } from '../src/core/freecad';
 import type { Parameters } from '../src/core/types';
 import type { AssemblyComponent } from '../src/core/product-types';
 
@@ -39,6 +40,31 @@ const rotation = (item: AssemblyComponent) =>
     ]),
     'ZYX',
   );
+
+test('tube inspection dimensions include the reference sleeve while physical exports omit it', () => {
+  const preview = part.buildGeometry(part.defaults, 'tube');
+  const exported = part.buildExportGeometry!(part.defaults, 'tube');
+  try {
+    const previewSize = new Box3().setFromObject(preview, true).getSize(new Vector3()).toArray();
+    const exportSize = new Box3().setFromObject(exported, true).getSize(new Vector3()).toArray();
+    const previewDimensions = part.dimensions(part.defaults, 'tube');
+    const physicalDimensions = part.exportDimensions!(part.defaults, 'tube');
+    for (let axis = 0; axis < 3; axis++) {
+      near(previewDimensions[axis], previewSize[axis], 1e-3);
+      near(physicalDimensions[axis], exportSize[axis], 0.05);
+    }
+    near(previewDimensions[2], 106, 1e-3);
+    near(physicalDimensions[2], 93.3, 1e-3);
+    assert.ok(preview.children.some((child) => child.name.startsWith('REFERENCE ONLY')));
+    assert.ok(exported.children.every((child) => !child.name.startsWith('REFERENCE ONLY')));
+    const macro = generateScript(part, part.defaults, 'tube');
+    assert.ok(macro.includes(`expected_dimensions = ${JSON.stringify(physicalDimensions)}`));
+    assert.ok(!macro.includes('REFERENCE ONLY'));
+  } finally {
+    disposeModel(preview);
+    disposeModel(exported);
+  }
+});
 
 test('MPR.10 defaults and complete presets validate with concrete library configurations', () => {
   assert.equal(part.product.kind, 'assembly');
