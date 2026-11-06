@@ -115,22 +115,24 @@ test(
     );
     assert.ok(selected.length >= 4, selected.map((p) => p.label).join('\n'));
     const scripts = [bolt, nut, nyloc, square, flange, cap, high, coupling, metalLock, thin].map(
-      (p) => generateScript(p, p.defaults, 'default'),
+      (p) => ({ id: p.id, name: p.name, code: generateScript(p, p.defaults, 'default') }),
     );
     const code = `import FreeCAD as App, Part, TechDraw, json, tempfile, os, math, hashlib
 scripts = json.loads(${JSON.stringify(JSON.stringify(scripts))})
 for script in scripts:
     doc = App.newDocument('ThreadRepresentationTest')
-    exec(script, {})
+    exec(script['code'], {})
     root = doc.RootObjects[0]
+    assert root.PartId == script['id'] and root.ProductName == script['name']
+    assert root.Label == root.ProductName, (script['id'], root.Label)
     objects = root.Group if root.TypeId == 'App::Part' else [root]
     threaded = [o for o in objects if getattr(o, 'ThreadCallouts', '')]
     assert len(threaded) == 1
     obj = threaded[0]
-    assert 'threads: ' in obj.Label and 'M' in obj.Label, obj.Label
+    assert 'M' in obj.ThreadLabels and obj.ThreadCallouts, (script['id'], obj.Label)
     assert obj.Shape.isValid() and obj.Shape.isClosed()
     # The cap retains its 24-facet dome meridian, independent of the thread.
-    assert len(obj.Shape.Faces) < (80 if obj.Label.startswith('Cap nut') else 50), (obj.Label, len(obj.Shape.Faces))
+    assert len(obj.Shape.Faces) < (80 if script['id'] == 'cap-nut' else 50), (obj.Label, len(obj.Shape.Faces))
     assert all(f['representation'] == 'nominal-cylinder' for f in json.loads(obj.ThreadFeaturesJSON))
     projected = TechDraw.projectToSVG(obj.Shape, App.Vector(0,1,0))
     assert len(projected) > 10 and len(projected) < 50000, len(projected)
@@ -138,11 +140,13 @@ for script in scripts:
         filename = os.path.join(directory, 'thread.FCStd')
         name = obj.Name
         label = obj.Label
+        thread_labels = obj.ThreadLabels
         doc.saveAs(filename)
         App.closeDocument(doc.Name)
         doc = App.openDocument(filename)
         assert doc.getObject(name).Label == label
         assert doc.getObject(name).ThreadCallouts
+        assert doc.getObject(name).ThreadLabels == thread_labels
     App.closeDocument(doc.Name)
 ${co2Python(selected)}
 assert len(component_metadata) == len(components)

@@ -1,7 +1,7 @@
 [
   {
     "id": "contact",
-    "name": "Aluminium contact plate D40 x10",
+    "name": "Aluminium contact plate · Ø40 × 10 mm",
     "description": "Own fabrication design, not a supplier factory drawing.",
     "parameters": {
       "component": "contact"
@@ -9,7 +9,7 @@
   },
   {
     "id": "insulator",
-    "name": "POM locating base D50 x8",
+    "name": "POM locating base · Ø50 × 8 mm",
     "description": "Own fabrication design, not a supplier factory drawing.",
     "parameters": {
       "component": "insulator"

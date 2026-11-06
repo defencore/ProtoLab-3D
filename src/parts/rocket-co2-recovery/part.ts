@@ -57,6 +57,7 @@ const states = [
 ];
 const part: PartDefinition = {
   id: 'rocket-co2-recovery',
+  browseLabel: 'CO₂ parachute recovery assembly',
   preview: 'worker',
   product: productData as ProductProfile,
   name: 'CO2 Parachute Recovery Assembly',

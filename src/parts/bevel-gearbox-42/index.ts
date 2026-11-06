@@ -1,4 +1,4 @@
 import type { PartModule } from '../../core/part-modules';
 import definition from './part';
-const part = { ...definition, id: 'bevel-gearbox-42' };
+const part = { ...definition, id: 'bevel-gearbox-42', browseLabel: 'Bevel gearbox' };
 export default { apiVersion: 2, order: 1217, part } satisfies PartModule;

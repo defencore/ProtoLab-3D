@@ -1,0 +1,12 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Two separately printed authored tongue-groove calibration coupons with editable fit.",
+  "processes": ["printing", "assembly"],
+  "releaseRequirements": [
+    "Choose polymer grade, nozzle, layer height, build orientation and process compensation.",
+    "Print and measure the selected clearance before integrating the mating features into a project.",
+    "Specify loads, allowable play and deformation, temperature and service life; qualify strength, wear and creep.",
+    "Check entry access and provide a separate end stop or retainer when axial retention is required."
+  ]
+}

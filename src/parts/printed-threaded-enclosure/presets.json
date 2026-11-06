@@ -1,0 +1,34 @@
+[
+  {
+    "id": "can-36-p3",
+    "name": "36 mm coarse screw-cap enclosure",
+    "description": "Authored can and cap with 3 mm lead and 0.25 mm female radial allowance.",
+    "parameters": {
+      "diameter": 36,
+      "pitch": 3,
+      "height": 32,
+      "threadLength": 9,
+      "wall": 3,
+      "floor": 3,
+      "roof": 3,
+      "roofGap": 0.5,
+      "clearance": 0.25
+    }
+  },
+  {
+    "id": "can-48-p4",
+    "name": "48 mm coarse screw-cap enclosure",
+    "description": "Larger authored can and cap with 4 mm lead and 0.35 mm female radial allowance.",
+    "parameters": {
+      "diameter": 48,
+      "pitch": 4,
+      "height": 42,
+      "threadLength": 12,
+      "wall": 3.5,
+      "floor": 3.5,
+      "roof": 3.5,
+      "roofGap": 0.6,
+      "clearance": 0.35
+    }
+  }
+]

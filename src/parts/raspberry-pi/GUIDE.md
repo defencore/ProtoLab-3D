@@ -41,3 +41,11 @@ Validation: `tests/raspberry-pi-detail.test.ts` guards component, triangle and m
 Full-detail Pi 5 uses manufacturer CAD, preserving source surfaces in FreeCAD exports. Lightweight mode preserves only the original PCB surfaces and simplifies the component geometry. Other models remain dimension-based reconstructions with approximate undimensioned components and connectors. See [manufacturer CAD sources and limitations](../../../docs/manufacturer-cad.md).
 
 Preview templates are shared by repeated instances; each CAD component retains an independent transform. Source models, licences, importer and validation reports are documented in the linked audit. Source CAD is revision-specific and does not certify manufacturing tolerances.
+
+## Public Pi 5 mounting interface
+
+`pi5Interface`, exported from the package's public `part.ts` (and declared in its root `interface.ts`), exposes the fixed Pi 5 source PCB bounds/thickness, four D2.7 mounting references, nineteen named package bounds and PCIe/CAM connector routing datums. Host assemblies can use it without importing another package's private `lib/` data. It applies only to `raspberry-pi:raspberry-pi-5`, not other selectable boards. The PCB thickness is the exact source bounding thickness, 1.276 mm; it is not rounded to nominal PCB stock thickness.
+
+The same package-bound records now drive the existing lightweight Pi 5 construction. Each record retains its source solid IDs and unmodified source bounds; `bounds` separately records the existing lightweight convention that omits solder tails below above-board packages. Full source geometry, lightweight geometry, hole pattern, colors, states and parameters remain unchanged. The interface records are read-only.
+
+Connector mouths are source-housing top-face centers, with width along local Y and outward reference direction +Z. The [Waveshare installation figure](https://www.waveshare.com/img/devkit/accBoard/PCIe-TO-M.2-Board-D/PCIe-TO-M.2-Board-D-details-15.jpg) supports the PCIe top-entry orientation. The records are routing datums, not dimensioned contacts: actual insertion depth, mating plug, contact side, cable stiffness and permitted bend radius remain the host assembly's responsibility. Use the named package bounds to avoid populated surfaces; a PCB bounding box alone does not identify clear support lands.

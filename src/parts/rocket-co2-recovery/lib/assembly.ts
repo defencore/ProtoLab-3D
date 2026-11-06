@@ -11,6 +11,7 @@ import { disposeModel } from '../../../core/mechanical';
 import { threadMetadata } from '../../../core/thread-callouts';
 import { threadCallouts as cartridgeThreads } from '../../co2-cartridge/lib/model';
 import { num } from '../../../core/geometry';
+import { eskdIdentity } from '../../../core/eskd';
 
 function libraryThreadMetadata(l: NonNullable<Piece['library']>) {
   if (l.kind !== 'cartridge') return {};
@@ -78,6 +79,23 @@ function metadata(piece: Piece, index: number): Record<string, string> {
         ? 'ROUTING ENVELOPE'
         : 'Prototype geometry; fits and load capacity require verification',
     ...piece.metadata,
+    ...(configured
+      ? {
+          ESKDIdentityJSON: JSON.stringify(
+            eskdIdentity(
+              definition(piece),
+              configured.parameters,
+              configured.state,
+              configured.presetId,
+              {
+                ...configured,
+                designation: configured.procurement?.designation ?? '',
+                revision: 'A',
+              },
+            ),
+          ),
+        }
+      : {}),
   };
 }
 

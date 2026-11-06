@@ -1,0 +1,10 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "A complete supplier article with native installation geometry.",
+  "processes": [],
+  "releaseRequirements": [
+    "Match the ordered supplier article, revision and interfaces to the original bill of materials.",
+    "Buy the product complete. Its internal supplied bodies are installation references."
+  ]
+}

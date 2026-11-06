@@ -5,6 +5,7 @@ import { defaults, parameters } from './configurator';
 import presets from './presets.json';
 import { pieces } from './lib/model';
 import * as assembly from '../../core/assembly/electronics/assembly';
+export { gpsTrackerInterface } from './lib/interface';
 const part: PartDefinition = {
   id: 'gps-tracker',
   product: productData as ProductProfile,
@@ -41,6 +42,6 @@ const part: PartDefinition = {
   python: (_, s) => assembly.python(pieces(s)),
   dimensions: (_, s) => assembly.dimensions(pieces(s)),
   notes:
-    'Mechanical installation reference. Main dimensions come from the supplied hardware reference; undimensioned details are illustrative. This is not an electrical pinout or a verified supply/current rating. Read GUIDE.md for measurement scope.',
+    'Mechanical installation reference, cross-checked against the current source project ZX908 component 233. Its 26 visual solids and 35 × 20 × 4.5 mm bounds are retained; native PCB corner arcs replace the source facets with a recorded maximum 0.009631 mm corner deviation. Supplier dimensions, component interfaces and electrical ratings remain unverified. Read GUIDE.md and lib/source-provenance.json for scope.',
 };
 export default part;

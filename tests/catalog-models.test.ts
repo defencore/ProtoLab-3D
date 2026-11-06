@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
+import type { ParameterDefinition, Preset } from '../src/core/types';
 import {
   catalogFilterErrors,
   matchesCatalogFilters,
@@ -18,9 +19,51 @@ import {
 import { matchingPresetId } from '../src/core/part-selection';
 import { registerPartModules } from '../src/core/part-modules';
 import servoModule from '../src/parts/servo-motor';
+import nut from '../src/parts/hex-nut/part';
+import { eskdIdentity } from '../src/core/eskd';
 
 const servo = servoModule.part;
 const fields = servo.catalogFilterFields!;
+
+test('declared nut inspection allowances preserve nominal sourcing without merging geometry identities', () => {
+  const preset = nut.presets.find((item) => item.catalog)!;
+  const nominal = { ...nut.defaults, ...preset.parameters };
+  const inspection = { ...nominal, threadAllowance: 0.05 };
+  const before = structuredClone(inspection);
+  assert.equal(presetMatchesConfiguration(nut, preset, inspection), true);
+  const nominalIdentity = eskdIdentity(nut, nominal, 'default', preset.id);
+  const inspectionIdentity = eskdIdentity(nut, inspection, 'default', preset.id);
+  assert.equal(inspectionIdentity.libraryEntryId, nominalIdentity.libraryEntryId);
+  assert.notEqual(inspectionIdentity.configurationKey, nominalIdentity.configurationKey);
+  assert.deepEqual(inspection, before);
+  for (const threadAllowance of [-0.01, 0.21, NaN])
+    assert.equal(presetMatchesConfiguration(nut, preset, { ...nominal, threadAllowance }), false);
+  for (const evidence of [
+    { verifiedParameters: [...preset.catalog!.verifiedParameters, 'threadAllowance'] },
+    { attributes: { threadAllowance: 0 } },
+    { attributeOptions: { threadAllowance: ['0'] } },
+    { parameterRanges: { threadAllowance: { min: 0, max: 0 } } },
+    { parameterChoices: { threadAllowance: [0] } },
+  ])
+    assert.equal(
+      presetMatchesConfiguration(
+        nut,
+        { ...preset, catalog: { ...preset.catalog!, ...evidence } },
+        inspection,
+      ),
+      false,
+      'published dimensions cannot be replaced by an inspection convention',
+    );
+  assert.equal(
+    presetMatchesConfiguration(
+      { ...nut, catalogIdentityParameters: undefined },
+      preset,
+      inspection,
+    ),
+    false,
+    'families without an explicit inspection contract require exact dimensions',
+  );
+});
 
 test('catalog intervals validate input and combine inclusive characteristics without changing a model', () => {
   const before = JSON.stringify(servo.presets);
@@ -31,7 +74,7 @@ test('catalog intervals validate input and combine inclusive characteristics wit
     servo.presets
       .filter((preset) => matchesCatalogFilters(preset, fields, filters))
       .map((p) => p.parameters.model),
-    ['power-hd-tds-2'],
+    ['power-hd-tds-2', 'waveshare-st3025', 'hitec-hsb-9380th', 'chaservo-hv3609', 'hitec-d954sw'],
   );
   assert.deepEqual(catalogFilterErrors(fields, filters), []);
   const invalidFilters: CatalogModelFilters[] = [
@@ -63,7 +106,7 @@ test('advanced preset search filters published attributes while retaining fixed 
   assert.deepEqual(result.errors, []);
   assert.deepEqual(
     result.items.map((item) => item.preset.parameters.model),
-    ['power-hd-tds-2'],
+    ['power-hd-tds-2', 'waveshare-st3025', 'hitec-hsb-9380th', 'chaservo-hv3609', 'hitec-d954sw'],
   );
   const preset = result.items[0].preset;
   const pose = { ...preset.parameters, outputAngle: 45, showHorn: true };
@@ -78,7 +121,7 @@ test('published operating conditions remain explicit when filtering current or v
   );
   assert.deepEqual(
     current.map((p) => p.parameters.model),
-    ['waveshare-st3215-hs'],
+    ['waveshare-st3215-hs', 'hitec-hsb-9380th', 'towerpro-mg996r'],
   );
   assert.match(
     current[0].catalog!.attributeConditions!.stallCurrent,
@@ -92,7 +135,7 @@ test('published operating conditions remain explicit when filtering current or v
   );
   assert.deepEqual(
     measured.map((p) => p.parameters.model),
-    ['power-hd-t60-bhv'],
+    ['power-hd-t60-bhv', 'hitec-hsb-9380th'],
   );
 });
 
@@ -205,4 +248,33 @@ test('missing identity keys never create a false exact configuration match', () 
     catalog: { ...preset.catalog!, verifiedParameters: ['model'] },
   };
   assert.equal(presetMatchesConfiguration(servo, absent, parameters), false);
+});
+
+test('boolean catalog filters agree with facets for verified source parameters and reject unknown values', () => {
+  const fields: ParameterDefinition[] = [
+    { key: 'sealed', label: 'Sealed', type: 'boolean', group: 'Characteristics' },
+  ];
+  const source = servo.presets[0].catalog!;
+  const preset: Preset = {
+    id: 'sealed-model',
+    name: 'Sealed model',
+    description: 'A source-verified boolean fixture.',
+    parameters: { sealed: true },
+    catalog: { ...source, verifiedParameters: ['sealed'], attributes: {} },
+  };
+  assert.equal(matchesCatalogFilters(preset, fields, { sealed: { value: 'true' } }), true);
+  assert.equal(matchesCatalogFilters(preset, fields, { sealed: { value: 'false' } }), false);
+  assert.deepEqual(catalogFacetOptions([preset], fields, {}, 'sealed'), [
+    { value: 'true', label: 'Yes', count: 1 },
+  ]);
+  const unknown = { ...preset, catalog: { ...preset.catalog!, verifiedParameters: [] } };
+  assert.equal(matchesCatalogFilters(unknown, fields, { sealed: { value: 'true' } }), false);
+  assert.equal(
+    matchesCatalogFilters(
+      { ...preset, catalog: { ...preset.catalog!, attributes: { sealed: false } } },
+      fields,
+      { sealed: { value: 'false' } },
+    ),
+    true,
+  );
 });

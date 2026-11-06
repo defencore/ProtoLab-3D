@@ -1,0 +1,10 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "One Amphenol 095-902-545-100 cable assembly and supplied bulkhead hardware. Visual solids show only its bulkhead installation end.",
+  "processes": [],
+  "releaseRequirements": [
+    "Purchase the complete 100 mm standard-polarity SMA female to AMC right-angle cable assembly.",
+    "Measure delivered hardware, panel thickness allowance, cable route and mating interfaces before release."
+  ]
+}

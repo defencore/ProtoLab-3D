@@ -1,0 +1,20 @@
+[
+  {
+    "id": "small-300",
+    "name": "Canopy D300 x 150 mm · reference",
+    "description": "Authored small open canopy envelope, not a verified supplier product or descent-performance specification.",
+    "parameters": { "diameter": 300, "rise": 150, "thickness": 0.1, "ventDiameter": 10 }
+  },
+  {
+    "id": "medium-600",
+    "name": "Canopy D600 x 250 mm · reference",
+    "description": "Authored medium open canopy envelope with a central vent; suspension lines and seams are excluded.",
+    "parameters": { "diameter": 600, "rise": 250, "thickness": 0.15, "ventDiameter": 30 }
+  },
+  {
+    "id": "large-1200",
+    "name": "Canopy D1200 x 480 mm · reference",
+    "description": "Authored large open canopy envelope, without a supplier identity, load rating or packing model.",
+    "parameters": { "diameter": 1200, "rise": 480, "thickness": 0.2, "ventDiameter": 60 }
+  }
+]

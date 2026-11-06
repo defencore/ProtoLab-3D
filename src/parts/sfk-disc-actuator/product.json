@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Own fixed ball-screw rotary actuator with three laser-cut metal discs, two tabbed bearing cheeks and catalog metal standoffs.",
+  "processes": ["assembly"],
+  "releaseRequirements": [
+    "Confirm the delivered SFK0825 end machining against the 0802 reference before machining supports.",
+    "Specify load, duty cycle, material, fits and toleranced drawings before manufacture.",
+    "Provide motor reversal control, calibrated travel limits and position sensing for powered operation."
+  ]
+}

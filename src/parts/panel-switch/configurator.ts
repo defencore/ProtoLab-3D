@@ -1,5 +1,5 @@
 import type { ParameterDefinition, Parameters } from '../../core/types';
-import { daierColours, models } from './lib/catalog';
+import { daierColours, ds225CapColours, models } from './lib/catalog';
 export const defaults: Parameters = {
   model: 'ck-7101syzqe',
   position: 'first',
@@ -7,6 +7,7 @@ export const defaults: Parameters = {
   colour: 'red',
   panelThickness: 0.3,
   mountingHardware: 'standard',
+  capColour: 'green',
 };
 export const parameters: ParameterDefinition[] = [
   {
@@ -18,14 +19,28 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'colour',
-    label: 'LED / transparent plastic colour',
+    label: 'Lens / transparent plastic colour',
     type: 'select',
     group: 'Model',
     filterable: false,
     options: daierColours.map(({ value, label }) => ({ value, label })),
-    visibleWhen: (p) => models.find((m) => m.id === p.model)?.illuminated === true,
+    visibleWhen: (p) => {
+      const model = models.find((m) => m.id === p.model);
+      return model?.illuminated === true || model?.bermHead !== undefined;
+    },
     description:
-      'Manufacturer-listed red, green, yellow or blue LED. The SAC-01 transparent plastic has the same colour on the paired product.',
+      'DAIER: manufacturer-listed LED and matching SAC-01 plastic. BERM: illustrative red, green, yellow or blue cap appearance; confirm the complete colour and lamp-voltage order code.',
+  },
+  {
+    key: 'capColour',
+    label: 'Button cap colour',
+    type: 'select',
+    group: 'Model',
+    filterable: false,
+    options: ds225CapColours.map(({ value, label }) => ({ value, label })),
+    visibleWhen: (p) => p.model === 'daier-ds-225',
+    description:
+      'DS-225 cap appearance: green follows the supplied photo; red and black follow the requested controller controls. Illustrative RGB colours do not establish supplier order codes, availability or electrical options.',
   },
   {
     key: 'mountingHardware',
@@ -51,9 +66,9 @@ export const parameters: ParameterDefinition[] = [
     step: 0.1,
     group: 'Mounting',
     filterable: false,
-    visibleWhen: (p) => p.model === 'daier-asw-07d',
+    visibleWhen: (p) => ['daier-asw-07d', 'daier-ds-225'].includes(String(p.model)),
     description:
-      'Sets the upper nut seat to Z = 3 mm + this value. With standard hardware, the panel rear face sits above the lower nut at Z = 3 mm. Upper-nut-only assemblies provide their own supporting seat.',
+      'ASW-07D: sets the upper nut seat to Z = 3 mm + this value. DS-225: keeps the bezel at Z=0 and seats the washer and nut behind the panel at negative Z. Mounting dimensions stay fixed.',
   },
   {
     key: 'position',
@@ -108,7 +123,15 @@ export const catalogFilterFields: ParameterDefinition[] = [
     type: 'select',
     group: 'Switch',
     catalogSummary: true,
-    options: options(models.map((m) => m.behavior)),
+    options: options(models.map((m) => m.behavior).filter((value) => value !== 'Unverified')),
+  },
+  {
+    key: 'headShape',
+    label: 'Button head shape',
+    type: 'select',
+    group: 'Switch',
+    catalogSummary: true,
+    options: options(models.flatMap((m) => (m.bermHead ? [m.bermHead] : []))),
   },
   {
     key: 'circuit',
@@ -137,6 +160,14 @@ export const catalogFilterFields: ParameterDefinition[] = [
   {
     key: 'mountDiameter',
     label: 'Round panel opening',
+    type: 'number',
+    unit: 'mm',
+    group: 'Mounting',
+    catalogSummary: true,
+  },
+  {
+    key: 'mountFlatWidth',
+    label: 'Panel opening across flats',
     type: 'number',
     unit: 'mm',
     group: 'Mounting',

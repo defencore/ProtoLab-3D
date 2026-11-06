@@ -18,6 +18,13 @@ self.onmessage = async (event: MessageEvent<WorkerOutputRequest>) => {
       const parts = await loadParts(
         request.project.configurations.map((configuration) => configuration.libraryId),
       );
+      await Promise.all(
+        request.project.configurations.map(async (configuration) => {
+          const part = parts.find((entry) => entry.id === configuration.libraryId);
+          if (!part) throw new Error('Unknown library product.');
+          await part.initializeGeometry?.(configuration.parameters, configuration.state);
+        }),
+      );
       self.postMessage({
         kind: 'project-script',
         script: generateProjectScript(request.project, parts, request.geometryMode),
@@ -27,7 +34,8 @@ self.onmessage = async (event: MessageEvent<WorkerOutputRequest>) => {
     const parts = await loadParts([request.partId]);
     const part = parts.find((entry) => entry.id === request.partId);
     if (!part) throw new Error('Unknown library product.');
-    const { buffers, ...output } = buildLibraryOutput(part, request);
+    await part.initializeGeometry?.(request.parameters, request.state);
+    const { buffers, ...output } = buildLibraryOutput(part, request, parts);
     self.postMessage(output, { transfer: buffers });
   } catch (error) {
     self.postMessage({ error: error instanceof Error ? error.message : String(error) });

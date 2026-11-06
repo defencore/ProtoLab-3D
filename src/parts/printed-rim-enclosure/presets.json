@@ -1,0 +1,98 @@
+[
+  {
+    "id": "stepped-80",
+    "name": "Stepped rim · 80 × 60 mm",
+    "description": "Authored empty box with an inner base lip and outer lid skirt; no seal or latch rating.",
+    "parameters": {
+      "model": "stepped",
+      "width": 80,
+      "depth": 60,
+      "height": 28,
+      "wall": 5,
+      "lidThickness": 2.4,
+      "rimDepth": 4,
+      "rimThickness": 1.6,
+      "clearance": 0.25
+    }
+  },
+  {
+    "id": "stepped-60",
+    "name": "Stepped rim · 60 × 45 mm",
+    "description": "Compact stepped seam template for printed fit calibration.",
+    "parameters": {
+      "model": "stepped",
+      "width": 60,
+      "depth": 45,
+      "height": 22,
+      "wall": 4.8,
+      "lidThickness": 2.4,
+      "rimDepth": 3,
+      "rimThickness": 1.6,
+      "clearance": 0.25
+    }
+  },
+  {
+    "id": "groove-80",
+    "name": "Recessed groove · 80 × 60 mm",
+    "description": "Central perimeter tongue and a real matching recessed lid channel.",
+    "parameters": {
+      "model": "groove",
+      "width": 80,
+      "depth": 60,
+      "height": 28,
+      "wall": 5,
+      "lidThickness": 2.4,
+      "rimDepth": 4,
+      "rimThickness": 1.6,
+      "clearance": 0.25
+    }
+  },
+  {
+    "id": "groove-60",
+    "name": "Recessed groove · 60 × 45 mm",
+    "description": "Compact tongue-and-groove lid template; all dimensions remain editable.",
+    "parameters": {
+      "model": "groove",
+      "width": 60,
+      "depth": 45,
+      "height": 22,
+      "wall": 4.8,
+      "lidThickness": 2.4,
+      "rimDepth": 3,
+      "rimThickness": 1.6,
+      "clearance": 0.25
+    }
+  },
+  {
+    "id": "labyrinth-80",
+    "name": "Labyrinth rim · 80 × 60 mm",
+    "description": "Outer skirt and inner lid rib surround the base lip; no sealing rating is implied.",
+    "parameters": {
+      "model": "labyrinth",
+      "width": 80,
+      "depth": 60,
+      "height": 28,
+      "wall": 5,
+      "lidThickness": 2.4,
+      "rimDepth": 4,
+      "rimThickness": 1.6,
+      "clearance": 0.25
+    }
+  },
+  {
+    "id": "labyrinth-100",
+    "name": "Labyrinth rim · 100 × 70 mm",
+    "description": "Larger empty enclosure with two-sided rim overlap and an open internal cavity.",
+    "parameters": {
+      "model": "labyrinth",
+      "width": 100,
+      "depth": 70,
+      "height": 35,
+      "wall": 5,
+      "lidThickness": 3,
+      "rimDepth": 5,
+      "rimThickness": 1.8,
+      "clearance": 0.3
+    }
+  }
+]

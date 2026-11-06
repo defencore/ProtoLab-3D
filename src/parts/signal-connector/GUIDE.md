@@ -16,7 +16,7 @@ Select a fixed model in **Connectors & interfaces → PCB connectors**. Family, 
 | IDC        | 6 and 10 pins                                                                                                                           | Generic two-row 2.54 mm shrouded board headers; not cable receptacles                        |
 | DE-9       | Male and female                                                                                                                         | Generic vertical board connectors with retained screw clearance holes; often called DB9      |
 
-These 35 references retain the geometry of public **KiCad 9.0.1 community STEP models**. They are not described as original manufacturer CAD. Source names, individual file URLs and SHA-256 hashes are included in each catalog record and source download. Generic pin-strip, IDC and DE-9 references do not identify a supplier order code. The USB4105 source leaves the plating suffix unspecified, and the 67643 source identifies a series; choose the actual order suffix using its supplier drawing.
+The 41 selections comprise 36 retained **KiCad 9.0.1 community STEP references**, four authored XH-style balance headers and the NIKOM A448027 envelope below. Community reference records and source downloads include individual file URLs and SHA-256 hashes. Generic pin-strip, IDC and DE-9 references do not identify a supplier order code. The USB4105 source leaves the plating suffix unspecified, and the 67643 source identifies a series. Choose the actual order suffix using its supplier drawing.
 
 ## Mounting datum and clearances
 
@@ -28,11 +28,19 @@ JST XH uses **2.50 mm**, PH **2.00 mm**, and the generic pin strips and IDC **2.
 
 A barrel jack can be called a socket while having a male center pin. PJ-063AH has an actual Ø2.0 mm center pin for the commonly described 5.5/2.1 mm mating-plug class. It is not modeled as a Ø2.1 mm pin. No polarity is implied by the shape. Audio switch terminals are counted separately from the three signal poles; determine switching and pin numbers from the supplier schematic.
 
+## NIKOM A448027 USB-C panel receptacle
+
+The organizer and curator kept this fixed purchased model in **Connectors & interfaces → PCB connectors → PCB connector**. Select `signal-connector:nikom-a448027` under **Connector selection** or filter **Mounting** by **Panel · screw flange**. It reuses the connector family and its `assembled` state. The screw-flange receptacle is one purchased unit with a rear breakout board. The existing PCB USB-C models remain distinct products.
+
+NIKOM and its Prom listing specify **10 × 7 × 14 mm** and **Ø2.1 mm** nominal mounting holes. The photos show two lateral holes in the flange, a female receptacle normal to the flange and the rear solder board. The vendor gives no axis assignment, hole centres, flange thickness, seating depth or panel cutout. The factory and original CAD were unavailable. [NIKOM A448027](https://www.nikom.biz/ua/product_A448027.html), [Prom listing](https://prom.ua/p2020699918-gnezdo-usb-type.html).
+
+The native analytic envelope places the mouth centre at the local origin, points the mouth along **+Z**, and puts the long flange edge along **X**. Its illustrative X/Y/Z bounds are **14 × 7 × 10 mm**, with the connector behind the mouth from Z = −10 to 0 mm. A 180° rotation about X faces the mouth down. The native and preview geometry omit the mounting bores until their positions are known. Use this shape for preliminary space planning. Use the delivered flange to locate hand-drilled holes and check the aperture against the real connector and plug. The catalog supplies no verified pin mapping, CC termination, data rate or electrical ratings.
+
 ## Source limitations
 
 The community SMA references omit the female center-contact bore and represent the recessed center contact as a solid post. **Do not use these models to judge center-contact mating.** The catalog's `socket` attribute describes the named standard-polarity SMA manufacturer part. It does not certify the simplified source contact. No RP-SMA model is synthesized from the same shape: RP-SMA requires a different center contact even when the coupling looks similar.
 
-Several community files fuse the housing and contacts into a single solid. That source representation is retained. Its solid count is not a manufacturing bill of materials, so there is no artificial exploded view. USB files with several source solids retain them separately at their original positions. Complete uniform colors from the source STEP are retained where available: 87 of the 119 source solids, including the USB-A and both USB-C references. Mixed face colors on fused solids are represented by an explicitly illustrative fallback. The source download records each solid's color basis. Colors do not establish the material or plating of the purchased part.
+Several community files fuse the housing and contacts into a single solid. That source representation is retained. Its solid count is not a manufacturing bill of materials, so there is no artificial exploded view. USB files with several source solids retain them separately at their original positions. Complete uniform STEP colors are retained on 87 of the 120 community source solids, including the USB-A and both USB-C board references. Mixed face colors on fused solids are represented by an explicitly illustrative fallback. The source download records each solid's color basis. Colors do not establish the material or plating of the purchased part.
 
 The library does not infer current, voltage, RF impedance, USB speed, shielding effectiveness, cycle life, tolerances or interchangeability from the 3D appearance. Use the exact supplier drawing and electrical data sheet for the purchased revision. No repairs, scaling or source-solid omissions are applied to these imported assets.
 

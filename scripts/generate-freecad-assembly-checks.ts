@@ -50,8 +50,8 @@ cases.push({
   dimensions: bearing.dimensions(catalog.parameters, 'assembled'),
   script: generateScript(bearing, catalog.parameters, 'assembled'),
 });
-// The wire is valid topology but not a physical component. It must roll back the
-// container and first child already inserted before component validation fails.
+// A closed shell passes the aggregate shape checks but has no solid of its own.
+// Rejecting it must remove the groups and valid first child already inserted.
 const invalid: PartDefinition = {
   ...bearing,
   id: 'invalid-assembly-fixture',
@@ -59,9 +59,11 @@ const invalid: PartDefinition = {
   parameters: [],
   presets: [],
   validate: () => [],
-  dimensions: () => [2, 2, 2],
+  dimensions: () => [4, 1, 1],
   python: () =>
-    'shape = Part.makeCompound([Part.makeSphere(1), Part.makePolygon([App.Vector(0,0,0),App.Vector(1,0,0)])])',
+    `shape = Part.makeCompound([Part.makeBox(1, 1, 1), Part.makeBox(1, 1, 1, App.Vector(3, 0, 0)).Shells[0]])
+component_labels = ["Valid component", "Invalid component"]
+component_groups = [["Valid group"], ["Invalid group"]]`,
 };
 const output = process.argv[2] || '/tmp/protolab-freecad-assembly-cases.json';
 writeFileSync(

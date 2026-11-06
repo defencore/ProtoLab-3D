@@ -1,7 +1,15 @@
 import type { Parameters } from '../../../core/types';
 import data from './models.json';
 import type { Piece } from '../../../core/assembly/electronics/assembly';
-import { box, cylinder, prism, roundedRect, subtract, type Shape, type Vec } from '../../../core/assembly/electronics/shapes';
+import {
+  box,
+  cylinder,
+  prism,
+  roundedRect,
+  subtract,
+  type Shape,
+  type Vec,
+} from '../../../core/assembly/electronics/shapes';
 interface Detail {
   kind: string;
   name: string;
@@ -27,6 +35,7 @@ interface Model {
   color: number;
   construction: string;
   height?: number;
+  cornerRadius?: number;
   holes: number[][];
   details: Detail[];
 }
@@ -174,7 +183,13 @@ export function pieces(p: Parameters, state: string): Piece[] {
     add(subtract(outer, inner), 'Insulated body shell', m.color, 0);
     add(roundedRect(m.width, m.length, 1, h - 0.8, 0.8), 'Top cover', m.color, 3);
   } else {
-    const board = roundedRect(m.width, m.length, Math.min(1, m.width / 10), 0, m.board);
+    const board = roundedRect(
+      m.width,
+      m.length,
+      m.cornerRadius ?? Math.min(1, m.width / 10),
+      0,
+      m.board,
+    );
     add(bores.length ? subtract(board, ...bores) : board, 'PCB — ' + m.id, m.color, 0);
   }
   return out;

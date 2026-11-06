@@ -1,10 +1,12 @@
+import { bearingPalette } from '../../../../core/hardware/bearing-appearance';
+import { analyticRevolvePython } from '../../../../core/hardware/analytic-profile';
 import { LatheGeometry, Mesh, Vector2, Vector3 } from 'three';
 import { BoundaryMesh } from '../../../../core/mechanical';
 import { material, n, num } from '../../../../core/geometry';
 import type { Parameters } from '../../../../core/types';
 
 export type ThrustProfile = [number, number][];
-export function thrustRevolve(profile: ThrustProfile, color = 0x85898e): Mesh {
+export function thrustRevolve(profile: ThrustProfile, color = bearingPalette.race): Mesh {
   const geometry = new LatheGeometry(
     [...profile, profile[0]].map(([r, z]) => new Vector2(r, z)),
     96,
@@ -22,7 +24,7 @@ export function thrustRevolve(profile: ThrustProfile, color = 0x85898e): Mesh {
   return new Mesh(geometry, material(color));
 }
 export function thrustRevolvePython(profile: ThrustProfile): string {
-  return `Part.Face(Part.makePolygon([${[...profile, profile[0]].map(([r, z]) => `App.Vector(${num(r)},0,${num(z)})`).join(',')}])).revolve(App.Vector(0,0,0),App.Vector(0,0,1),360)`;
+  return analyticRevolvePython(profile);
 }
 
 export function sphericalThrustValues(p: Parameters) {
@@ -145,7 +147,7 @@ export function sphericalThrustCage(p: Parameters): Mesh {
             new Vector3(-side * Math.sin(angle), side * Math.cos(angle), 0),
           );
     }
-  const result = mesh.build(0xb09a63);
+  const result = mesh.build(bearingPalette.inclinedCage);
   result.name = 'Inclined windowed cage';
   return result;
 }

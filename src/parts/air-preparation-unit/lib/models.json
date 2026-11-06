@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ar2000-g1-4",
+    "name": "AR2000 · G1/4 · regulator",
+    "designation": "AR2000-02 / G1/4 pressure regulator with gauge",
+    "source": "https://prom.ua/p2081866525-regulyator-davleniya-ar2000.html",
+    "kind": "Pressure regulator",
+    "limits": "The selected supplier listing identifies AR2000-02 with G1/4 working ports, a G1/8 gauge port and a pressure gauge. Manufacturer and revision are unspecified. The body 45 × 45 × 55 mm and representative diameter 40 × 14 mm gauge preserve the band-saw installation study; their dimensions and relative pose are unverified. The adjustment knob, real ports, mounting interface, gauge fitting and internal pressure geometry are unresolved. The source contains conflicting mass and temperature entries; neither is exposed as a numeric catalog fact. This is one regulator with an illustrative gauge, not qualified source CAD. Verify the actual ordered unit, gauge inclusion, adjustment access, mounting drawing and supply ratings before use."
+  },
+  {
+    "id": "afr2000-g1-4",
+    "name": "AFR2000 · G1/4 · filter regulator",
+    "designation": "AFR2000 / G1/4 filter regulator",
+    "source": "https://prom.ua/ua/p2791833418-filtr-vlagootdelitel-reduktorom.html",
+    "kind": "Filter regulator",
+    "limits": "The upstream band-saw BOM identifies AFR2000 G1/4 and cites this supplier listing. That page could not be retrieved during the 2026-11-02 review, so the prior identity/source record is retained without new dimensional claims. The diameter 44 × 100 mm bowl, 60 × 50 × 50 mm body and representative diameter 40 × 14 mm gauge preserve the existing installation study. Their dimensions, bowl construction, drain, gauge inclusion, ports, knob, mounting interface and pressure geometry remain unverified. No filtration grade, flow or pressure rating is asserted. It remains one provisionally identified supplier unit; external fittings, isolation valve, pressure switch and mounting hardware are excluded. Obtain the ordered execution drawing and verify service access and ratings before manufacture or procurement release."
+  }
+]

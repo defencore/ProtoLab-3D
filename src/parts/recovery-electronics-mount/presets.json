@@ -1,0 +1,129 @@
+[
+  {
+    "id": "lower-platform-current",
+    "name": "GPS / JHE42B / USB lower locating platform · Ø81 × 5 mm",
+    "description": "Current source lower platform: 3 mm flat base, 2 mm locating walls and integral USB supports; four current edge notches.",
+    "parameters": {
+      "model": "lower-platform-current"
+    }
+  },
+  {
+    "id": "upper-clamp-disc-current",
+    "name": "GPS / JHE42B / USB upper retaining disc · Ø81 × 3 mm",
+    "description": "Separate flat source retaining disc with buzzer window, wiring passages and mounting/reserve holes.",
+    "parameters": {
+      "model": "upper-clamp-disc-current"
+    }
+  },
+  {
+    "id": "gps-pad-159-current",
+    "name": "GPS compliant retainer · source 159 · 3 × 1 × 8.7 mm",
+    "description": "One source retainer with the exact 0.072 mm³ contact relief preserved in native BREP; material and compression unresolved.",
+    "parameters": {
+      "model": "gps-pad-159-current"
+    },
+    "product": {
+      "supply": "reference"
+    },
+    "catalog": {
+      "designation": "GPS compliant retainer · source 159 · 3 × 1 × 8.7",
+      "sourceName": "User-supplied current R06 assembly; exact retained native GPS retainer surfaces",
+      "sourceKind": "attachment",
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "community-cad",
+        "summary": "Exact source-native retainer geometry, rigidly localized; no face reconstruction or scaling.",
+        "limitations": "Source contact geometry is provisional. No selected consumable, material, compression, load capacity or purchased order code. This selection remains a reference until those requirements are resolved.",
+        "sourceUrl": "",
+        "sourceSha256": "6f6ad8a7bde062b7895b8f8116c28958b462b92291c99d4b80013f9d3362d07e"
+      },
+      "specifications": [
+        {
+          "label": "Source physical occurrence",
+          "value": "Source 159"
+        },
+        {
+          "label": "Source procurement status",
+          "value": "Unselected compliant consumable material. The source records candidates, not an identified purchased pad or an approved printing process."
+        }
+      ]
+    }
+  },
+  {
+    "id": "gps-pad-161-current",
+    "name": "GPS compliant retainer · source 161 · 3 × 1 × 8.7 mm",
+    "description": "One source retainer with the exact 0.054 mm³ contact relief preserved in native BREP; material and compression unresolved.",
+    "parameters": {
+      "model": "gps-pad-161-current"
+    },
+    "product": {
+      "supply": "reference"
+    },
+    "catalog": {
+      "designation": "GPS compliant retainer · source 161 · 3 × 1 × 8.7",
+      "sourceName": "User-supplied current R06 assembly; exact retained native GPS retainer surfaces",
+      "sourceKind": "attachment",
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "community-cad",
+        "summary": "Exact source-native retainer geometry, rigidly localized; no face reconstruction or scaling.",
+        "limitations": "Source contact geometry is provisional. No selected consumable, material, compression, load capacity or purchased order code. This selection remains a reference until those requirements are resolved.",
+        "sourceUrl": "",
+        "sourceSha256": "f4034481615e5a1edbc4e84476f855cfbaaaa0cd6d6cd038d5657bf43e87441b"
+      },
+      "specifications": [
+        {
+          "label": "Source physical occurrence",
+          "value": "Source 161"
+        },
+        {
+          "label": "Source procurement status",
+          "value": "Unselected compliant consumable material. The source records candidates, not an identified purchased pad or an approved printing process."
+        }
+      ]
+    }
+  },
+  {
+    "id": "gps-pad-plain-current",
+    "name": "GPS compliant retainer · plain · 3 × 1 × 8.7 mm",
+    "description": "The same local physical detail is used twice, at source occurrences 160 and 162. No contact relief; material and compression unresolved.",
+    "parameters": {
+      "model": "gps-pad-plain-current"
+    },
+    "product": {
+      "supply": "reference"
+    },
+    "catalog": {
+      "designation": "GPS compliant retainer · plain · 3 × 1 × 8.7",
+      "sourceName": "User-supplied current R06 assembly; exact retained native GPS retainer surfaces",
+      "sourceKind": "attachment",
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "community-cad",
+        "summary": "Exact source-native retainer geometry, rigidly localized; no face reconstruction or scaling.",
+        "limitations": "Source contact geometry is provisional. No selected consumable, material, compression, load capacity or purchased order code. This selection remains a reference until those requirements are resolved.",
+        "sourceUrl": "",
+        "sourceSha256": "0cad500d70cb6a703b801347d2e269803084a6e28bbb04e4642c19f076f31a52"
+      },
+      "specifications": [
+        {
+          "label": "Source physical occurrence",
+          "value": "Source 160; the same local plain geometry is also source 162"
+        },
+        {
+          "label": "Source procurement status",
+          "value": "Unselected compliant consumable material. The source records candidates, not an identified purchased pad or an approved printing process."
+        }
+      ]
+    }
+  }
+]

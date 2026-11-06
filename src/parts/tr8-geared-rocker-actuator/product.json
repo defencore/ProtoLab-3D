@@ -1,0 +1,16 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "One-output TR8x4(P2) rotary mechanism with selectable Surpass Hobby 2845 or 2838 motors, hub-pinned 1:1 gears, a widened nut with ±20 degree carrier-wall stops and four SMB MF106 2Z bearings. Screws fasten only the motor and the enlarged output head.",
+  "processes": ["assembly"],
+  "releaseRequirements": [
+    "Cut the two-start TR8x4 thread in an unthreaded blank, leaving intact 6 mm journals; do not turn 6 mm journals from a 5.5 mm thread root.",
+    "Assign fits, material, runout, coaxiality, lubrication and permissible axial/radial loads on component drawings.",
+    "Match-drill only the separate gear hubs and shafts for the recessed spring cross-pins: diameter 2 on the screw and diameter 1 on the motor. The pin holes must remain outside the tooth faces. Support shafts and control debris and installation force.",
+    "Finish the nut end-stop faces and carrier walls so contact corresponds to -20 and +20 degrees; retain the bearing-clearance pockets and qualify stop loads and control limits.",
+    "Use DIN 6799-3.2 E-Clips on short 5 mm necks immediately outside the 6 mm bearing journals. Cut 3.2 mm root grooves 0.64 mm wide directly at the bearing edges, with no intervening shims. Confirm retention strength, end float and clearance from stationary races.",
+    "Confirm motor screw insertion depth, phase-lead routing and reversible sensorless low-speed operation on the purchased motor.",
+    "Laser-cut the two fork plates, finish the round bores and match-drill the transverse edge/shaft holes for the spring pins.",
+    "Qualify fork-slot wear, cross-pin fatigue, retaining grooves and the custom ST3215-pattern M3 output head for the intended duty."
+  ]
+}

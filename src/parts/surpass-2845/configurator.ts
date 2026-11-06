@@ -1,0 +1,82 @@
+import type { ParameterDefinition } from '../../core/types';
+import presets from './presets.json';
+export const defaults = { model: 'surpass-2845-3100kv' };
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'model',
+    label: 'Motor',
+    type: 'select',
+    group: 'Model',
+    options: presets.map((preset) => ({ value: preset.parameters.model, label: preset.name })),
+  },
+  {
+    key: 'shaftAngle',
+    label: 'Shaft angle',
+    type: 'number',
+    group: 'Position',
+    unit: '°',
+    min: -1000000,
+    max: 1000000,
+    step: 1,
+    visibleWhen: (p, state) => state === 'cross-drilled' && p.shaftAngle !== undefined,
+    optionalWhenHidden: true,
+    description:
+      'Rotates only the locally cross-drilled shaft. Missing angle uses the neutral position.',
+  },
+];
+export const catalogFilterFields: ParameterDefinition[] = [
+  {
+    key: 'bodyDiameter',
+    label: 'Body diameter',
+    unit: 'mm',
+    type: 'number',
+    group: 'Specifications',
+    min: 0,
+    max: 100,
+    step: 0.001,
+    catalogSummary: true,
+  },
+  {
+    key: 'bodyLength',
+    label: 'Body length',
+    unit: 'mm',
+    type: 'number',
+    group: 'Specifications',
+    min: 0,
+    max: 200,
+    step: 0.001,
+    catalogSummary: true,
+  },
+  {
+    key: 'shaftDiameter',
+    label: 'Shaft diameter',
+    unit: 'mm',
+    type: 'number',
+    group: 'Specifications',
+    min: 0,
+    max: 20,
+    step: 0.001,
+    catalogSummary: true,
+  },
+  {
+    key: 'shaftProjection',
+    label: 'Shaft projection',
+    unit: 'mm',
+    type: 'number',
+    group: 'Specifications',
+    min: 0,
+    max: 100,
+    step: 0.001,
+  },
+  {
+    key: 'kv',
+    label: 'Speed constant',
+    unit: 'rpm/V',
+    type: 'number',
+    group: 'Specifications',
+    min: 0,
+    max: 100000,
+    step: 1,
+    catalogSummary: true,
+  },
+];

@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Authored empty printed can and screw-cap assembly with two separately manufactured helical shell components.",
+  "processes": ["printing", "assembly"],
+  "releaseRequirements": [
+    "Define actual equipment, ports, installation and service envelopes, loads and environment.",
+    "Specify polymer, print process, orientation, compensation and measured mating-thread fit.",
+    "Qualify torque, wear, creep, vibration and required cycle life. No sealing or pressure rating is assigned."
+  ]
+}

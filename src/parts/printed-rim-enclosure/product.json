@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Authored empty printed base and lid with configurable perimeter mating seams.",
+  "processes": ["printing", "assembly"],
+  "releaseRequirements": [
+    "Lay out actual contents, mounting datums, connector access, cable bends, service access and heat paths.",
+    "Specify polymer, printing settings and orientation, wall stiffness, tolerances and measured mating fit.",
+    "Provide separately checked lid retention and sealing when needed; an overlapping seam is not a certified barrier."
+  ]
+}

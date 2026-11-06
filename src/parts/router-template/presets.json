@@ -1,7 +1,7 @@
 [
   {
     "id": "slot6x40",
-    "name": "Mortise 6 x 40",
+    "name": "6 × 40 mm mortise",
     "description": "Guide-bush compensated slots, rounded pockets and circular openings with clamping borders. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "opening": "slot",
@@ -17,7 +17,7 @@
   },
   {
     "id": "slot8x60",
-    "name": "Mortise 8 x 60",
+    "name": "8 × 60 mm mortise",
     "description": "Guide-bush compensated slots, rounded pockets and circular openings with clamping borders. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "opening": "slot",
@@ -33,7 +33,7 @@
   },
   {
     "id": "slot12x60",
-    "name": "Slot12 x 60",
+    "name": "12 × 60 mm slot",
     "description": "Guide-bush compensated slots, rounded pockets and circular openings with clamping borders. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "opening": "slot",
@@ -49,7 +49,7 @@
   },
   {
     "id": "pocket30x60",
-    "name": "Pocket30 x 60 / R6",
+    "name": "30 × 60 mm pocket · R6 mm",
     "description": "Guide-bush compensated slots, rounded pockets and circular openings with clamping borders. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "opening": "pocket",
@@ -65,7 +65,7 @@
   },
   {
     "id": "pocket50x100",
-    "name": "Pocket50 x 100 / R10",
+    "name": "50 × 100 mm pocket · R10 mm",
     "description": "Guide-bush compensated slots, rounded pockets and circular openings with clamping borders. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "opening": "pocket",
@@ -81,7 +81,7 @@
   },
   {
     "id": "circle40",
-    "name": "Circular opening40",
+    "name": "Ø40 mm circular opening",
     "description": "Guide-bush compensated slots, rounded pockets and circular openings with clamping borders. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "opening": "circle",
@@ -97,7 +97,7 @@
   },
   {
     "id": "circle80",
-    "name": "Circular opening80",
+    "name": "Ø80 mm circular opening",
     "description": "Guide-bush compensated slots, rounded pockets and circular openings with clamping borders. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "opening": "circle",

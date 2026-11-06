@@ -1,0 +1,13 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "One standard JHEMCU JHE42B finder including its integral rechargeable battery, excluding loose cable and installation hardware.",
+  "processes": [],
+  "releaseRequirements": [
+    "Confirm the delivered module is standard JHE42B, not JHE42B-S or JHE20B, and measure its actual wrapped envelope.",
+    "Measure the socket, mating cable, sound opening, LED and cancel-button positions before releasing a fitted holder or service openings.",
+    "Confirm battery chemistry, condition, electrical supply, pinout and charging compatibility against the delivered product.",
+    "Provide distributed support without concentrated battery pressure, positive capture and cable strain relief; keep the sound outlet, button and connector accessible.",
+    "Qualify the complete installation for its actual deployment acceleration, harness motion, vibration, temperature and repeated service. The library envelope is not a retention or flight-load rating."
+  ]
+}

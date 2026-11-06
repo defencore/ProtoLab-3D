@@ -6,6 +6,9 @@ export const parameters: ParameterDefinition[] = [
     label: 'Module model',
     type: 'select',
     group: 'Model',
-    options: [{ value: 'pwm-switch-17x13', label: 'PWM electronic switch' }],
+    options: [
+      { value: 'pwm-switch-17x13', label: 'PWM electronic switch' },
+      { value: 'user-mosfet-26x16', label: 'User PWM MOSFET · 26 × 16 × 6 mm reference' },
+    ],
   },
 ];

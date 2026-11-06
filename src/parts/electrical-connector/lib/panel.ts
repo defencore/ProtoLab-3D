@@ -14,12 +14,16 @@ interface PanelModel {
   bodyWidth?: number;
   bodyHeight?: number;
   flangeThickness?: number;
+  matingProjection?: number;
   mountPitch?: number;
   mountDiameter?: number;
+  mountInsertOuterDiameter?: number;
+  mountInsertHeight?: number;
+  mountInsertOrigin?: number;
   gasket?: boolean;
 }
 
-/** Mounting datum Z=0 is the rear face of the flange/gasket stack; mating is +Z. */
+/** Z=0 is the flange rear face; mating is +Z, including any source-defined nose projection. */
 export function panelPieces(m: PanelModel, p: Parameters, state: string): Piece[] {
   const { bodyWidth: w, bodyHeight: h, flangeThickness: flange, mountPitch, mountDiameter } = m;
   if ([w, h, flange, mountPitch, mountDiameter].some((value) => value === undefined))
@@ -32,9 +36,10 @@ export function panelPieces(m: PanelModel, p: Parameters, state: string): Piece[
   const female = m.sex === 'F',
     detailed = p.detail === 'detailed',
     tail = female ? 3.9 : m.width > 40 ? 5.4 : 3.7,
-    rear = F - m.length,
+    frontFace = F + (m.matingProjection ?? 0),
+    rear = frontFace - m.length,
     rearBody = rear + tail,
-    floor = F - (female ? 10.2 : m.width > 40 ? 10 : 7.8),
+    floor = frontFace - (female ? 10.2 : m.width > 40 ? 10 : 7.8),
     contactOD = m.contact * 1.2,
     points = [-m.pitch / 2, m.pitch / 2],
     holes = (z: number, depth: number) => [-P / 2, P / 2].map((x) => C(D, depth, z, x)),
@@ -113,11 +118,11 @@ export function panelPieces(m: PanelModel, p: Parameters, state: string): Piece[
   };
   const color = m.width > 40 ? 0x25292d : 0xe5b934;
   let housing: Shape = union(
-    keyed(W, H, F - rearBody - gasketThickness, rearBody),
+    keyed(W, H, frontFace - rearBody - gasketThickness, rearBody),
     flangeOutline(F - gasketThickness, gasketThickness),
   );
   // Open male shroud / female tongue relief, with a solid rear contact-retention web.
-  if (!female) housing = cut(housing, keyed(W - 1.4, H - 1.4, F - floor + 1, floor));
+  if (!female) housing = cut(housing, keyed(W - 1.4, H - 1.4, frontFace - floor + 1, floor));
   else {
     const recess = keyed(W - 2.2, H - 2.2, 0.6, F - 0.55);
     housing = cut(housing, recess);
@@ -127,6 +132,20 @@ export function panelPieces(m: PanelModel, p: Parameters, state: string): Piece[
     ...holes(-1, F + 2),
     ...points.map((x) => C(contactOD + 0.16, m.length + 2, rear - 1, x)),
   );
+  const inserts =
+    m.mountInsertOuterDiameter !== undefined &&
+    m.mountInsertHeight !== undefined &&
+    m.mountInsertOrigin !== undefined
+      ? [-P / 2, P / 2].map((x, index) => ({
+          index,
+          outer: C(m.mountInsertOuterDiameter!, m.mountInsertHeight!, m.mountInsertOrigin!, x),
+          metal: cut(
+            C(m.mountInsertOuterDiameter!, m.mountInsertHeight!, m.mountInsertOrigin!, x),
+            C(D, m.mountInsertHeight! + 2, m.mountInsertOrigin! - 1, x),
+          ),
+        }))
+      : [];
+  if (inserts.length) housing = cut(housing, ...inserts.map(({ outer }) => outer));
   if (female) {
     // Front counterbores follow the illustrated countersinks; angle/depth are reconstructed.
     housing = cut(
@@ -150,6 +169,12 @@ export function panelPieces(m: PanelModel, p: Parameters, state: string): Piece[
       ...[-1, 1].map((side) => B(W * 0.45, 0.4, 0.6, 0, (side * H) / 2, rearBody + 1.1)),
     );
   add(`${m.name} · mounting flange and ${female ? 'socket tongue' : 'pin shroud'}`, housing, color);
+  for (const { index, metal } of inserts)
+    add(
+      `${m.name} · embedded M2.5 mounting insert ${index + 1} · reconstructed envelope`,
+      metal,
+      0xaab0b5,
+    );
   if (m.gasket) {
     const gasket = cut(
       flangeOutline(gasketThickness, 0),
@@ -159,7 +184,7 @@ export function panelPieces(m: PanelModel, p: Parameters, state: string): Piece[
     add(`${m.name} · flange gasket · reconstructed thickness`, gasket, 0x303236);
   }
   for (const [index, x] of points.entries()) {
-    const front = F - (female ? 0.7 : 0.6),
+    const front = frontFace - (female ? 0.7 : 0.6),
       shoulder = rearBody + 0.2;
     let metal: Shape;
     if (female) {

@@ -1,0 +1,12 @@
+import {createHash}from'node:crypto';import{mkdirSync,readFileSync,writeFileSync}from'node:fs';
+import{withGeometryMode}from'../src/core/geometry-mode.ts';
+import{pieces}from'../src/parts/tr8-quad-geared-rocker-actuator/lib/model.ts';
+import{defaults}from'../src/parts/tr8-quad-geared-rocker-actuator/configurator.ts';
+import{nativePython}from'../src/parts/tr8-quad-geared-rocker-actuator/lib/native.ts';
+import{fixed,endDiscWireCenters,endDiscTransform,standMountStations,panelTransform}from'../src/parts/tr8-quad-geared-rocker-actuator/lib/layout.ts';
+import{panelLighteningCircles,panelLighteningSlots,endDiscLighteningCircles,lighteningValues}from'../src/parts/tr8-quad-geared-rocker-actuator/lib/lightening.ts';
+const out=process.argv[2]??'test-results/tr8-quad-geared-rocker-lightened-cables';mkdirSync(out,{recursive:true});const hash=(x:string|Buffer)=>createHash('sha256').update(x).digest('hex');
+const paths=['layout','shapes','sheet-panel','sheet-fabrication','lightening'].map(x=>'src/parts/tr8-quad-geared-rocker-actuator/lib/'+x+'.ts');
+const data:any={scope:'Frozen6metal parts only; original mechanism/cable proof supplied separately.',sources:Object.fromEntries(paths.map(p=>[p,hash(readFileSync(p))])),panelFrames:[0,1,2,3].map(i=>panelTransform(i).elements),fixed,standMountStations:standMountStations(),panelCircles:panelLighteningCircles,panelSlots:panelLighteningSlots,wireCenters:endDiscWireCenters(),endDiscFrames:[endDiscTransform(true).elements,endDiscTransform(false).elements],families:[]};
+for(const motor of['surpass-2838-3700kv','surpass-2845-3100kv'])withGeometryMode('full',()=>{const p={...defaults,motor};const rows=pieces(p,'uncovered').filter(x=>x.component.id.endsWith('-case-panel')||x.component.id.endsWith('-end-disc'));if(rows.length!==6)throw Error('Expected6metal occurrences');data.families.push({motor,source:nativePython(rows),occurrences:rows.map(x=>({id:x.component.id,parameters:x.component.parameters,placement:x.component.placement,geometryKey:hash(JSON.stringify({libraryId:x.component.libraryId,state:x.component.state,parameters:x.component.parameters,placement:x.component.placement,angle:x.angle,position:x.position,z:x.z}))})),discCircles:endDiscLighteningCircles(p),values:lighteningValues(p)});});
+writeFileSync(out+'/metal-capture.json',JSON.stringify(data));console.log(JSON.stringify({out,families:data.families.length}));

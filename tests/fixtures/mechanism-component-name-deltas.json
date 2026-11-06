@@ -1,0 +1,510 @@
+{
+  "sfk-rotary-actuator/part.ts": [
+    {
+      "before": "  name: 'SFK0825 rotary actuator ±20°',\n",
+      "after": "  name: 'SFK0825 ball screw rotary actuator · GMP16T-TEC1636 · 1 output · machined supports · ±20°',\n"
+    }
+  ],
+  "sfk-rotary-actuator/presets.json": [
+    {
+      "before": "    \"name\": \"SFK0825 · 100 mm · ±20° · 361:1 · 12 V\",\n",
+      "after": "    \"name\": \"SFK0825 · GMP16T-TEC1636 361:1 / 12 V · 1 output · machined supports · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"SFK0825 · 100 mm · ±20° · 107:1 · 12 V\",\n",
+      "after": "    \"name\": \"SFK0825 · GMP16T-TEC1636 107:1 / 12 V · 1 output · machined supports · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"SFK0825 · 100 mm · ±20° · 361:1 · 24 V\",\n",
+      "after": "    \"name\": \"SFK0825 · GMP16T-TEC1636 361:1 / 24 V · 1 output · machined supports · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"SFK0825 · 100 mm · ±20° · 107:1 · 24 V\",\n",
+      "after": "    \"name\": \"SFK0825 · GMP16T-TEC1636 107:1 / 24 V · 1 output · machined supports · ±20°\",\n"
+    }
+  ],
+  "sfk-disc-actuator/part.ts": [
+    {
+      "before": "  name: 'SFK0825 three-disc actuator ±20°',\n",
+      "after": "  name: 'SFK0825 ball screw rotary actuator · GMP16T-TEC1636 · 1 output · Ø68 laser steel · ±20°',\n"
+    }
+  ],
+  "sfk-disc-actuator/presets.json": [
+    {
+      "before": "    \"name\": \"SFK0825 · 3 discs · 100 mm · ±20° · 361:1 · 12 V\",\n",
+      "after": "    \"name\": \"SFK0825 · GMP16T-TEC1636 361:1 / 12 V · 1 output · Ø68 laser steel · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"SFK0825 · 3 discs · 100 mm · ±20° · 107:1 · 12 V\",\n",
+      "after": "    \"name\": \"SFK0825 · GMP16T-TEC1636 107:1 / 12 V · 1 output · Ø68 laser steel · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"SFK0825 · 3 discs · 100 mm · ±20° · 361:1 · 24 V\",\n",
+      "after": "    \"name\": \"SFK0825 · GMP16T-TEC1636 361:1 / 24 V · 1 output · Ø68 laser steel · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"SFK0825 · 3 discs · 100 mm · ±20° · 107:1 · 24 V\",\n",
+      "after": "    \"name\": \"SFK0825 · GMP16T-TEC1636 107:1 / 24 V · 1 output · Ø68 laser steel · ±20°\",\n"
+    }
+  ],
+  "sfk-slotted-actuator/part.ts": [
+    {
+      "before": "  name: 'SFK0825 slotted-crank actuator ±20° (previous version)',\n",
+      "after": "  name: 'SFK0825 ball screw rotary actuator · GMP16T-TEC1636 · 1 output · twin slotted cranks · ±20°',\n"
+    }
+  ],
+  "sfk-slotted-actuator/presets.json": [
+    {
+      "before": "    \"name\": \"SFK0825 · slotted crank · 100 mm · ±20° · 361:1 · 12 V\",\n",
+      "after": "    \"name\": \"SFK0825 · GMP16T-TEC1636 361:1 / 12 V · 1 output · twin slotted cranks · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"SFK0825 · slotted crank · 100 mm · ±20° · 107:1 · 12 V\",\n",
+      "after": "    \"name\": \"SFK0825 · GMP16T-TEC1636 107:1 / 12 V · 1 output · twin slotted cranks · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"SFK0825 · slotted crank · 100 mm · ±20° · 361:1 · 24 V\",\n",
+      "after": "    \"name\": \"SFK0825 · GMP16T-TEC1636 361:1 / 24 V · 1 output · twin slotted cranks · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"SFK0825 · slotted crank · 100 mm · ±20° · 107:1 · 24 V\",\n",
+      "after": "    \"name\": \"SFK0825 · GMP16T-TEC1636 107:1 / 24 V · 1 output · twin slotted cranks · ±20°\",\n"
+    }
+  ],
+  "tr8-compact-actuator/part.ts": [
+    {
+      "before": "  name: 'TR8×8 compact three-disc actuator ±20°',\n",
+      "after": "  name: 'TR8×8(P2) rotary actuator · GMP16T-TEC1636 · 1 output · Ø56 laser steel · ±20°',\n"
+    }
+  ],
+  "tr8-compact-actuator/presets.json": [
+    {
+      "before": "    \"name\": \"TR8\\u00d78 \\u00b7 compact \\u00b7 \\u00b120\\u00b0 \\u00b7 361:1 \\u00b7 12 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 1 output · Ø56 laser steel · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"TR8\\u00d78 \\u00b7 compact \\u00b7 \\u00b120\\u00b0 \\u00b7 107:1 \\u00b7 12 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 1 output · Ø56 laser steel · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"TR8\\u00d78 \\u00b7 compact \\u00b7 \\u00b120\\u00b0 \\u00b7 361:1 \\u00b7 24 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 1 output · Ø56 laser steel · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"TR8\\u00d78 \\u00b7 compact \\u00b7 \\u00b120\\u00b0 \\u00b7 107:1 \\u00b7 24 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 1 output · Ø56 laser steel · ±20°\",\n"
+    }
+  ],
+  "tr8-quad-actuator/part.ts": [
+    {
+      "before": "  name: 'TR8×8 four-drive three-disc block ±20°',\n",
+      "after": "  name: 'TR8×8(P2) rotary actuator · GMP16T-TEC1636 · 4 outputs · Ø82 laser steel · ±20°',\n"
+    }
+  ],
+  "tr8-quad-actuator/presets.json": [
+    {
+      "before": "    \"name\": \"Four radial TR8 drives · 361:1 · 12 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 4 outputs · Ø82 laser steel · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Four radial TR8 drives · 107:1 · 12 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 4 outputs · Ø82 laser steel · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Four radial TR8 drives · 361:1 · 24 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 4 outputs · Ø82 laser steel · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Four radial TR8 drives · 107:1 · 24 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 4 outputs · Ø82 laser steel · ±20°\",\n"
+    }
+  ],
+  "tr8-quad-mini-actuator/part.ts": [
+    {
+      "before": "  name: 'TR8×8 mini four-drive block ±20°',\n",
+      "after": "  name: 'TR8×8(P2) rotary actuator · GMP16T-TEC1636 · 4 outputs · Ø72 laser steel · ±20°',\n"
+    }
+  ],
+  "tr8-quad-mini-actuator/presets.json": [
+    {
+      "before": "    \"name\": \"Mini four-drive TR8 · 361:1 · 12 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 4 outputs · Ø72 laser steel · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Mini four-drive TR8 · 107:1 · 12 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 4 outputs · Ø72 laser steel · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Mini four-drive TR8 · 361:1 · 24 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 4 outputs · Ø72 laser steel · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Mini four-drive TR8 · 107:1 · 24 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 4 outputs · Ø72 laser steel · ±20°\",\n"
+    }
+  ],
+  "tr8-quad-cnc-actuator/part.ts": [
+    {
+      "before": "  const name = staggered ? 'TR8×8 staggered CNC block Ø56 ±20°' : 'TR8×8 CNC four-drive block Ø64 ±20°';\n",
+      "after": "  const name = staggered ? 'TR8×8(P2) rotary actuator · GMP16T-TEC1636 · 4 outputs · Ø56 CNC staggered · ±20°' : 'TR8×8(P2) rotary actuator · GMP16T-TEC1636 · 4 outputs · Ø64 CNC coplanar · ±20°';\n"
+    },
+    {
+      "before": "    name: `Ø${layout.diameter} CNC four-drive · ${motorModel.split('-')[0]}:1 · ${motorModel.split('-')[1]} V`,\n",
+      "after": "    name: `TR8×8(P2) · GMP16T-TEC1636 ${motorModel.split('-')[0]}:1 / ${motorModel.split('-')[1]} V · 4 outputs · Ø${layout.diameter} CNC ${staggered ? 'staggered' : 'coplanar'} · ±20°`,\n"
+    }
+  ],
+  "tr8-quad-cnc-actuator/presets.json": [
+    {
+      "before": "    \"name\": \"Ø64 CNC four-drive · 361:1 · 12 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 4 outputs · Ø64 CNC coplanar · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Ø64 CNC four-drive · 107:1 · 12 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 4 outputs · Ø64 CNC coplanar · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Ø64 CNC four-drive · 361:1 · 24 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 4 outputs · Ø64 CNC coplanar · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Ø64 CNC four-drive · 107:1 · 24 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 4 outputs · Ø64 CNC coplanar · ±20°\",\n"
+    }
+  ],
+  "tr8-quad-staggered-actuator/presets.json": [
+    {
+      "before": "    \"name\": \"Ø56 CNC four-drive · 361:1 · 12 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 4 outputs · Ø56 CNC staggered · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Ø56 CNC four-drive · 107:1 · 12 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 4 outputs · Ø56 CNC staggered · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Ø56 CNC four-drive · 361:1 · 24 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 4 outputs · Ø56 CNC staggered · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Ø56 CNC four-drive · 107:1 · 24 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 4 outputs · Ø56 CNC staggered · ±20°\",\n"
+    }
+  ],
+  "tr8-quad-guided-actuator/part.ts": [
+    {
+      "before": "    name:`TR8×8 ${staggered?'staggered ':''}CNC block Ø${layout.diameter} · central nut guide ±20°`,\n",
+      "after": "    name:`TR8×8(P2) rotary actuator · GMP16T-TEC1636 · 4 outputs · Ø${layout.diameter} CNC ${staggered?'staggered ':''}central guide · ±20°`,\n"
+    }
+  ],
+  "tr8-quad-guided-actuator/presets.json": [
+    {
+      "before": "    \"name\": \"Ø64 central-guide TR8 · 361:1 · 12 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 4 outputs · Ø64 CNC central guide · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Ø64 central-guide TR8 · 107:1 · 12 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 4 outputs · Ø64 CNC central guide · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Ø64 central-guide TR8 · 361:1 · 24 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 4 outputs · Ø64 CNC central guide · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Ø64 central-guide TR8 · 107:1 · 24 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 4 outputs · Ø64 CNC central guide · ±20°\",\n"
+    }
+  ],
+  "tr8-quad-guided-staggered-actuator/presets.json": [
+    {
+      "before": "    \"name\": \"Ø56 central-guide TR8 · 361:1 · 12 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 4 outputs · Ø56 CNC staggered central guide · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Ø56 central-guide TR8 · 107:1 · 12 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 4 outputs · Ø56 CNC staggered central guide · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Ø56 central-guide TR8 · 361:1 · 24 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 4 outputs · Ø56 CNC staggered central guide · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Ø56 central-guide TR8 · 107:1 · 24 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 4 outputs · Ø56 CNC staggered central guide · ±20°\",\n"
+    }
+  ],
+  "tr8-quad-laser-guided-actuator/part.ts": [
+    {
+      "before": "  id:'tr8-quad-laser-guided-actuator',name:'TR8×8 laser-frame block Ø64 · separate nut guide ±20°',\n",
+      "after": "  id:'tr8-quad-laser-guided-actuator',name: 'TR8×8(P2) rotary actuator · GMP16T-TEC1636 · 4 outputs · Ø64 laser steel with nut guide · ±20°',\n"
+    }
+  ],
+  "tr8-quad-laser-guided-actuator/presets.json": [
+    {
+      "before": "    \"name\": \"Laser frame Ø64 · laminated crank · 361:1 · 12 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 4 outputs · Ø64 laser steel with nut guide · laminated crank · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Laser frame Ø64 · laminated crank · 107:1 · 12 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 4 outputs · Ø64 laser steel with nut guide · laminated crank · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Laser frame Ø64 · laminated crank · 361:1 · 24 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 4 outputs · Ø64 laser steel with nut guide · laminated crank · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Laser frame Ø64 · laminated crank · 107:1 · 24 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 4 outputs · Ø64 laser steel with nut guide · laminated crank · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Laser frame Ø64 · solid crank · 361:1 · 12 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 4 outputs · Ø64 laser steel with nut guide · solid crank · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Laser frame Ø64 · solid crank · 107:1 · 12 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 4 outputs · Ø64 laser steel with nut guide · solid crank · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Laser frame Ø64 · solid crank · 361:1 · 24 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 4 outputs · Ø64 laser steel with nut guide · solid crank · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Laser frame Ø64 · solid crank · 107:1 · 24 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 4 outputs · Ø64 laser steel with nut guide · solid crank · ±20°\",\n"
+    }
+  ],
+  "tr8-quad-twin-pin-actuator/part.ts": [
+    {
+      "before": "  id:'tr8-quad-twin-pin-actuator',name:'TR8×8 twin-pin laser block Ø64 ±20°',\n",
+      "after": "  id:'tr8-quad-twin-pin-actuator',name: 'TR8×8(P2) rotary actuator · GMP16T-TEC1636 · 4 outputs · Ø64 laser steel twin-pin · ±20°',\n"
+    }
+  ],
+  "tr8-quad-twin-pin-actuator/presets.json": [
+    {
+      "before": "    \"name\": \"Twin-pin laser Ø64 · 361:1 · 12 V · Prom SMB\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 4 outputs · Ø64 laser steel twin-pin · Prom SMB · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin laser Ø64 · 107:1 · 12 V · Prom SMB\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 4 outputs · Ø64 laser steel twin-pin · Prom SMB · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin laser Ø64 · 361:1 · 24 V · Prom SMB\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 4 outputs · Ø64 laser steel twin-pin · Prom SMB · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin laser Ø64 · 107:1 · 24 V · Prom SMB\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 4 outputs · Ø64 laser steel twin-pin · Prom SMB · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin laser Ø64 · 361:1 · 12 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 4 outputs · Ø64 laser steel twin-pin · reference bearings · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin laser Ø64 · 107:1 · 12 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 4 outputs · Ø64 laser steel twin-pin · reference bearings · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin laser Ø64 · 361:1 · 24 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 4 outputs · Ø64 laser steel twin-pin · reference bearings · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin laser Ø64 · 107:1 · 24 V\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 4 outputs · Ø64 laser steel twin-pin · reference bearings · ±20°\",\n"
+    }
+  ],
+  "tr8-quad-twin-pin-mini-actuator/part.ts": [
+    {
+      "before": "  id:'tr8-quad-twin-pin-mini-actuator',name:'TR8×8 twin-pin mini laser block Ø54 ±20°',\n",
+      "after": "  id:'tr8-quad-twin-pin-mini-actuator',name: 'TR8×8(P2) rotary actuator · GMP16T-TEC1636 · 4 outputs · Ø54 laser steel twin-pin · ±20°',\n"
+    }
+  ],
+  "tr8-quad-twin-pin-mini-actuator/presets.json": [
+    {
+      "before": "    \"name\": \"Twin-pin mini laser Ø54 · 361:1 · 12 V · lightened discs · Prom SMB\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 4 outputs · Ø54 laser steel twin-pin · lightened discs · Prom SMB · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin mini laser Ø54 · 107:1 · 12 V · lightened discs · Prom SMB\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 4 outputs · Ø54 laser steel twin-pin · lightened discs · Prom SMB · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin mini laser Ø54 · 361:1 · 24 V · lightened discs · Prom SMB\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 4 outputs · Ø54 laser steel twin-pin · lightened discs · Prom SMB · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin mini laser Ø54 · 107:1 · 24 V · lightened discs · Prom SMB\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 4 outputs · Ø54 laser steel twin-pin · lightened discs · Prom SMB · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin mini laser Ø54 · 361:1 · 12 V · solid discs · Prom SMB\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 4 outputs · Ø54 laser steel twin-pin · solid discs · Prom SMB · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin mini laser Ø54 · 107:1 · 12 V · solid discs · Prom SMB\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 4 outputs · Ø54 laser steel twin-pin · solid discs · Prom SMB · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin mini laser Ø54 · 361:1 · 24 V · solid discs · Prom SMB\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 4 outputs · Ø54 laser steel twin-pin · solid discs · Prom SMB · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin mini laser Ø54 · 107:1 · 24 V · solid discs · Prom SMB\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 4 outputs · Ø54 laser steel twin-pin · solid discs · Prom SMB · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin mini laser Ø54 · 361:1 · 12 V · lightened discs\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 4 outputs · Ø54 laser steel twin-pin · lightened discs · reference bearings · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin mini laser Ø54 · 107:1 · 12 V · lightened discs\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 4 outputs · Ø54 laser steel twin-pin · lightened discs · reference bearings · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin mini laser Ø54 · 361:1 · 24 V · lightened discs\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 4 outputs · Ø54 laser steel twin-pin · lightened discs · reference bearings · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin mini laser Ø54 · 107:1 · 24 V · lightened discs\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 4 outputs · Ø54 laser steel twin-pin · lightened discs · reference bearings · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin mini laser Ø54 · 361:1 · 12 V · solid discs\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 4 outputs · Ø54 laser steel twin-pin · solid discs · reference bearings · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin mini laser Ø54 · 107:1 · 12 V · solid discs\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 4 outputs · Ø54 laser steel twin-pin · solid discs · reference bearings · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin mini laser Ø54 · 361:1 · 24 V · solid discs\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 4 outputs · Ø54 laser steel twin-pin · solid discs · reference bearings · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Twin-pin mini laser Ø54 · 107:1 · 24 V · solid discs\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 4 outputs · Ø54 laser steel twin-pin · solid discs · reference bearings · ±20°\",\n"
+    }
+  ],
+  "tr8-quad-faulhaber-actuator/part.ts": [
+    {
+      "before": "const part:PartDefinition={...previous,id:'tr8-quad-faulhaber-actuator',name:'TR8×8 FAULHABER four-drive block Ø56 ±20°',\n",
+      "after": "const part:PartDefinition={...previous,id:'tr8-quad-faulhaber-actuator',name: 'TR8×8(P2) rotary actuator · FAULHABER 2250S024BX4 6855 · 4 outputs · Ø56 laser steel · ±20°',\n"
+    }
+  ],
+  "tr8-quad-faulhaber-actuator/presets.json": [
+    {
+      "before": "  {\"id\":\"faulhaber-6855-lightened\",\"name\":\"FAULHABER 2250S024BX4 6855 · Ø56 · lightened discs\",\"description\":\"Four 24 V direct drives with original supplier CAD; compact twin-pin TR8 linkages and Prom SMB bearings.\",\"parameters\":{\"discPattern\":\"lightened\",\"angleA\":0,\"angleB\":0,\"angleC\":0,\"angleD\":0}},\n  {\"id\":\"faulhaber-6855-solid\",\"name\":\"FAULHABER 2250S024BX4 6855 · Ø56 · solid discs\",\"description\":\"Same installation and motor mounts with solid disc webs and a central Ø5 passage.\",\"parameters\":{\"discPattern\":\"solid\",\"angleA\":0,\"angleB\":0,\"angleC\":0,\"angleD\":0}}\n",
+      "after": "  {\"id\":\"faulhaber-6855-lightened\",\"name\":\"TR8×8(P2) · FAULHABER 2250S024BX4 6855 · 4 outputs · Ø56 laser steel twin-pin · lightened discs · ±20°\",\"description\":\"Four 24 V direct drives with original supplier CAD; compact twin-pin TR8 linkages and Prom SMB bearings.\",\"parameters\":{\"discPattern\":\"lightened\",\"angleA\":0,\"angleB\":0,\"angleC\":0,\"angleD\":0}},\n  {\"id\":\"faulhaber-6855-solid\",\"name\":\"TR8×8(P2) · FAULHABER 2250S024BX4 6855 · 4 outputs · Ø56 laser steel twin-pin · solid discs · ±20°\",\"description\":\"Same installation and motor mounts with solid disc webs and a central Ø5 passage.\",\"parameters\":{\"discPattern\":\"solid\",\"angleA\":0,\"angleB\":0,\"angleC\":0,\"angleD\":0}}\n"
+    }
+  ],
+  "tr8-quad-surpass-actuator/part.ts": [
+    {
+      "before": "const part:PartDefinition={...previous,id:'tr8-quad-surpass-actuator',name:'TR8×2 / TR8×8 Surpass2845 four-drive block Ø70 ±20°',\n",
+      "after": "const part:PartDefinition={...previous,id:'tr8-quad-surpass-actuator',name: 'TR8×2/8(P2) rotary actuator · Surpass Hobby KK2845 3100KV · 4 outputs · Ø70 laser steel · ±20°',\n"
+    }
+  ],
+  "tr8-quad-surpass-actuator/presets.json": [
+    {
+      "before": "    \"name\": \"Surpass Hobby 2845 3100KV · TR8×8(P2) · four drives · Ø70 · lightened discs\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · Surpass Hobby KK2845 3100KV · 4 outputs · Ø70 laser steel twin-pin · lightened discs · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Surpass Hobby 2845 3100KV · TR8×8(P2) · four drives · Ø70 · solid discs\",\n",
+      "after": "    \"name\": \"TR8×8(P2) · Surpass Hobby KK2845 3100KV · 4 outputs · Ø70 laser steel twin-pin · solid discs · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Surpass Hobby 2845 3100KV · TR8×2(P2) · four drives · Ø70 · lightened discs\",\n",
+      "after": "    \"name\": \"TR8×2(P2) · Surpass Hobby KK2845 3100KV · 4 outputs · Ø70 laser steel twin-pin · lightened discs · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"Surpass Hobby 2845 3100KV · TR8×2(P2) · four drives · Ø70 · solid discs\",\n",
+      "after": "    \"name\": \"TR8×2(P2) · Surpass Hobby KK2845 3100KV · 4 outputs · Ø70 laser steel twin-pin · solid discs · ±20°\",\n"
+    }
+  ],
+  "tr8-geared-rocker-actuator/part.ts": [
+    {
+      "before": "  name: 'TR8x4 geared fork rotary actuator',\n",
+      "after": "  name: 'TR8×4(P2) rotary actuator · Surpass Hobby 2838/2845 · 1 output · 1:1 gears and laser fork · ±20°',\n"
+    },
+    {
+      "before": "  browseFamily: { id: 'screw-rotary-actuators', label: 'Screw-driven rotary mechanisms' },\n  mechanismExecution: {\n    drive: 'TR8x4(P2)',\n    outputs: 1,\n    construction: '2845 / 2838 BLDC · pinned hubs · MF106 · laser fork',\n    description:\n      'Two laser-cut fork plates pinned to a turned round shaft, with two screw bearings seated directly in the one-piece carrier.',\n  },\n",
+      "after": "  browseFamily: { id: 'screw-rotary-actuators', label: 'Screw-driven rotary mechanisms' },\n"
+    }
+  ],
+  "tr8-geared-rocker-actuator/presets.json": [
+    {
+      "before": "    \"name\": \"2845 3100KV · TR8x4 · MF106 · ±20°\",\n",
+      "after": "    \"name\": \"TR8×4(P2) · Surpass Hobby KK2845 3100KV · 1 output · 1:1 gears and laser fork · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"2838 3200KV · TR8x4 · MF106 · ±20°\",\n",
+      "after": "    \"name\": \"TR8×4(P2) · Surpass Hobby 2838 3200KV · 1 output · 1:1 gears and laser fork · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"2838 3500KV · TR8x4 · MF106 · ±20°\",\n",
+      "after": "    \"name\": \"TR8×4(P2) · Surpass Hobby 2838 3500KV · 1 output · 1:1 gears and laser fork · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"2838 3700KV · TR8x4 · MF106 · ±20°\",\n",
+      "after": "    \"name\": \"TR8×4(P2) · Surpass Hobby 2838 3700KV · 1 output · 1:1 gears and laser fork · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"2838 4400KV · TR8x4 · MF106 · ±20°\",\n",
+      "after": "    \"name\": \"TR8×4(P2) · Surpass Hobby 2838 4400KV · 1 output · 1:1 gears and laser fork · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"2838 4700KV · TR8x4 · MF106 · ±20°\",\n",
+      "after": "    \"name\": \"TR8×4(P2) · Surpass Hobby 2838 4700KV · 1 output · 1:1 gears and laser fork · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"2838 5100KV · TR8x4 · MF106 · ±20°\",\n",
+      "after": "    \"name\": \"TR8×4(P2) · Surpass Hobby 2838 5100KV · 1 output · 1:1 gears and laser fork · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"2838 5700KV · TR8x4 · MF106 · ±20°\",\n",
+      "after": "    \"name\": \"TR8×4(P2) · Surpass Hobby 2838 5700KV · 1 output · 1:1 gears and laser fork · ±20°\",\n"
+    }
+  ],
+  "tr8-quad-geared-rocker-actuator/part.ts": [
+    {
+      "before": "  name: 'TR8x4 compact four-output geared actuator',\n",
+      "after": "  name: 'TR8×4(P2) rotary actuator · Surpass Hobby 2838/2845 · 4 outputs · formed aluminium and PETG · ±20°',\n"
+    },
+    {
+      "before": "  browseFamily: { id: 'screw-rotary-actuators', label: 'Screw-driven rotary mechanisms' },\n  mechanismExecution: {\n    drive: 'TR8x4(P2)',\n    outputs: 4,\n    construction: '4 pocketed PETG covers · acoustic seam overlaps · 4 outputs',\n    description:\n      'Four removable PETG quarters use local motor and gear pockets, dense regions and overlapped seams to form a compact cylindrical enclosure. The metal end discs match its outside diameter.',\n  },\n",
+      "after": "  browseFamily: { id: 'screw-rotary-actuators', label: 'Screw-driven rotary mechanisms' },\n"
+    }
+  ],
+  "tr8-quad-geared-rocker-actuator/presets.json": [
+    {
+      "before": "    \"name\": \"2845 3100KV · four outputs · ±20°\",\n",
+      "after": "    \"name\": \"TR8×4(P2) · Surpass Hobby KK2845 3100KV · 4 outputs · Ø86 formed aluminium / PETG · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"2838 3200KV · four outputs · ±20°\",\n",
+      "after": "    \"name\": \"TR8×4(P2) · Surpass Hobby 2838 3200KV · 4 outputs · Ø76 formed aluminium / PETG · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"2838 3500KV · four outputs · ±20°\",\n",
+      "after": "    \"name\": \"TR8×4(P2) · Surpass Hobby 2838 3500KV · 4 outputs · Ø76 formed aluminium / PETG · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"2838 3700KV · four outputs · ±20°\",\n",
+      "after": "    \"name\": \"TR8×4(P2) · Surpass Hobby 2838 3700KV · 4 outputs · Ø76 formed aluminium / PETG · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"2838 4400KV · four outputs · ±20°\",\n",
+      "after": "    \"name\": \"TR8×4(P2) · Surpass Hobby 2838 4400KV · 4 outputs · Ø76 formed aluminium / PETG · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"2838 4700KV · four outputs · ±20°\",\n",
+      "after": "    \"name\": \"TR8×4(P2) · Surpass Hobby 2838 4700KV · 4 outputs · Ø76 formed aluminium / PETG · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"2838 5100KV · four outputs · ±20°\",\n",
+      "after": "    \"name\": \"TR8×4(P2) · Surpass Hobby 2838 5100KV · 4 outputs · Ø76 formed aluminium / PETG · ±20°\",\n"
+    },
+    {
+      "before": "    \"name\": \"2838 5700KV · four outputs · ±20°\",\n",
+      "after": "    \"name\": \"TR8×4(P2) · Surpass Hobby 2838 5700KV · 4 outputs · Ø76 formed aluminium / PETG · ±20°\",\n"
+    }
+  ]
+}

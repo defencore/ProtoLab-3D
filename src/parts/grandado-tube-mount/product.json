@@ -1,0 +1,26 @@
+{
+  "kind": "kit",
+  "supply": "manufactured",
+  "description": "Printable cylindrical Grandado/3S18650 cassette, two radially anchored solid discs, a smooth replacement lid with a recessed gasket channel and segmented marking jig.",
+  "processes": [
+    "printing",
+    "assembly"
+  ],
+  "releaseRequirements": [
+    "Use the measured 22 mm hard-body height,23.8 mm including the1.8 mm raised rim and6 mm mounting ears. Default ear pockets are6.2 mm with0.2 mm print fitting allowance and at least3 mm ceilings. The99 mm ear pitch remains a photo estimate; four confirmed lid axes remain X±36.5/Y±24 mm.",
+    "Print the fit coupon first and match sliding/key/nut fits to the actual tube, printer and material.",
+    "Confirm the source holder, delivered cells, spring travel, passive keeper capture and rim stops without crushing wrappers or loading terminals.",
+    "Feed the attached wire through the upper body-loading opening while seating Grandado. Place it in the accessible side transfer and axially open lower entry before sliding the loaded lower group from X+ over the routed cable. Lay disc crossings in the open grooves before seating the discs. Cable diameter plus twice its allowance must fit6 mm; retain slack and provide strain relief.",
+    "Use eight DIN 7991 M3 ×12 radial screws and eight M3 nuts, four anchors at each 16 mm disc. Confirm delivered Ø6 ×1.7 mm heads and actual tube bearing material before countersinking.",
+    "Assemble the loaded holder/keeper, two lower halves, upper shell with bare Grandado body and keyed end discs before axial tube insertion. Fit the replacement lid from above afterwards.",
+    "The lid exterior stays on a smooth cylinder with a 1 mm apex projection,3 mm radial roof and intentional 1 mm supported peripheral wrap. Reinforcement is inside; no four external screw bosses are present.",
+    "The lowered lid head seats have 3 mm load webs. Reuse the original-thread Grandado screws with 2 mm removed from each tip, nominal 12.3 mm under-head length. Check delivered screw, insert and blind-hole depths before shortening and deburring; source internal dimensions are photo estimates. Nominal tip clearance is 1.7 mm and full insert traversal 4.6 mm.",
+    "The rim spans are approximately outside78.7 ×53.7 mm and inside76.8 ×51.6 mm, with uniform wall approximately1 mm. Its measured1.8 mm height enters the existing2 mm channel with nominal0.2 mm rigid headroom. Power-connector centre is measured12 mm above the external bottom, leaving itsØ19 crown0.5 mm below the hard seat. The smooth lid remains at its tried datum; qualify actual gasket compression and corner fit.",
+    "After the lid barely snapped on and felt approximately0.5 mm too long while its width fitted easily, the local lidAxialFitAllowance defaults to0.5 mm TOTAL. It relieves only the straight end grooves' inner flanks by0.25 mm per end: end width2.05 mm, unchanged side/post-turn width1.8 mm, retained inner wall1 mm and inner opening73.45 ×48.85 mm. Outer flanks, screw axes, source body and seating height stay fixed. Zero restores the previous fit. This is a trial-based print allowance, not a new purchased dimension or a proved cause; repeat the physical fit and gasket check.",
+    "No antenna cover is included. Keep the adjustable underside cable entry only if required by the actual antenna installation; prove complete SMA plug passage and cable strain relief before drilling.",
+    "The fitting set has 18 printed components plus one coupon; the alternate nominal-window jig has 11 pieces. Check support removal and seating-surface finish in the slicer and physical sample.",
+    "Test actual print strength, vibration, angular and impact retention under defined loads. Native solid/fit checks do not establish physical load capacity or waterproof performance.",
+    "The seal-interface state shows only the channel occupied-space witness, with no extra SKU or print. Actual gasket cross-section, free height, material, deformation, compression and leakage are unmeasured; no round-cord diameter or squeeze/fill ratio is inferred from channel dimensions.",
+    "The shared library body now includes the measured raised rim and ears; deeper cavity, molded corner profiles and the2 mm support ledge remain inferred. The1 mm inner sealing wall is an intentional interface feature. R46/R43 roof and complete head-bearing annuli retain3 mm stock; the local unloaded recess-to-groove bridge remains nominally1 mm."
+  ]
+}

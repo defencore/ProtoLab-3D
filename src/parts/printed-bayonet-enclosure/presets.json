@@ -1,0 +1,71 @@
+[
+  {
+    "id": "three-lug-54",
+    "name": "54 mm · three-lug lid",
+    "description": "Authored empty enclosure with a 45-degree bayonet turn; no detent or sealing rating.",
+    "parameters": {
+      "diameter": 54,
+      "height": 30,
+      "wall": 3,
+      "floor": 3,
+      "lidThickness": 3,
+      "neckHeight": 10,
+      "lugs": 3,
+      "lugProjection": 2,
+      "lugThickness": 2.4,
+      "lugSpan": 14,
+      "turnAngle": 45,
+      "clearance": 0.3,
+      "axialClearance": 0.25,
+      "tangentialClearance": 0.3,
+      "faceGap": 0.3,
+      "roofGap": 0.4
+    }
+  },
+  {
+    "id": "two-lug-42",
+    "name": "42 mm · two-lug lid",
+    "description": "Compact authored two-lug closure with a 60-degree turn; print and qualify fits before use.",
+    "parameters": {
+      "diameter": 42,
+      "height": 26,
+      "wall": 2.5,
+      "floor": 2.5,
+      "lidThickness": 2.5,
+      "neckHeight": 9,
+      "lugs": 2,
+      "lugProjection": 1.8,
+      "lugThickness": 2,
+      "lugSpan": 16,
+      "turnAngle": 60,
+      "clearance": 0.25,
+      "axialClearance": 0.2,
+      "tangentialClearance": 0.25,
+      "faceGap": 0.25,
+      "roofGap": 0.35
+    }
+  },
+  {
+    "id": "four-lug-72",
+    "name": "72 mm · four-lug lid",
+    "description": "Larger empty enclosure with four integral lugs and a 35-degree turn.",
+    "parameters": {
+      "diameter": 72,
+      "height": 40,
+      "wall": 3.5,
+      "floor": 3.5,
+      "lidThickness": 3.5,
+      "neckHeight": 12,
+      "lugs": 4,
+      "lugProjection": 2.5,
+      "lugThickness": 3,
+      "lugSpan": 14,
+      "turnAngle": 35,
+      "clearance": 0.35,
+      "axialClearance": 0.3,
+      "tangentialClearance": 0.35,
+      "faceGap": 0.35,
+      "roofGap": 0.5
+    }
+  }
+]

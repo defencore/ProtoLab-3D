@@ -268,5 +268,23 @@
     "height": 27,
     "weight": 372,
     "source": "https://www.grepow.com/fpv-battery/standard-series-fpv-drone-battery-pack.html"
+  },
+  {
+    "id": "tattu-3s-650-75c",
+    "name": "Tattu 3S 650 mAh 75C",
+    "manufacturer": "Tattu / Grepow",
+    "format": "3S1P",
+    "chemistry": "Li-Po",
+    "connection": "Flying leads (excluded)",
+    "cells": 3,
+    "capacity": 650,
+    "voltage": 11.1,
+    "cRate": 75,
+    "current": 48.75,
+    "width": 31,
+    "length": 58,
+    "height": 16,
+    "weight": 59,
+    "source": "https://genstattu.com/tattu-3s1p-75c-11-1v-650mah-lipo-battery-pack-with-xt30-plug.html"
   }
 ]

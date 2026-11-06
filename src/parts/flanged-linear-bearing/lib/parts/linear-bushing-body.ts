@@ -1,7 +1,6 @@
 import { Group, Path, Shape, Vector2, Vector3 } from 'three';
 import { booleans, primitives, solidUnionMesh } from '../../../../core/solid-union';
 import { annulusPython, extrude, n, num, ring } from '../../../../core/geometry';
-import { pythonWire } from '../../../../core/mechanical';
 import type { Parameters } from '../../../../core/types';
 import { ballMeshes, ballPython, circuitPoints } from './guide-circuits';
 
@@ -188,14 +187,25 @@ export function bushingPython(p: Parameters, state: string, flanged = false): st
     );
   }
   lines.push('components = [sleeve.removeSplitter()]');
-  const profile = cageProfile(p, cutaway),
-    z = -v.length / 2 + v.sealWidth;
+  const z = -v.length / 2 + v.sealWidth,
+    cageLength = v.length - 2 * v.sealWidth;
   lines.push(
-    cutaway
-      ? `cage = Part.Face(${pythonWire([...profile.outside, ...profile.inside], z)})`
-      : `cage = Part.Face(${pythonWire(profile.outside, z)}).cut(Part.Face(${pythonWire(profile.inside, z)}))`,
-    `components.append(cage.extrude(App.Vector(0,0,${num(v.length - 2 * v.sealWidth)})))`,
+    `cage = Part.makeCylinder(${num(v.cageOuter)},${num(cageLength)},App.Vector(0,0,${num(z)}))`,
+    `cage = cage.cut(Part.makeCylinder(${num(v.r + v.radius * 0.12)},${num(cageLength + 2)},App.Vector(0,0,${num(z - 1)})))`,
   );
+  // The sampled preview's radial maximum is exactly the union of the central
+  // circular bore and these rectangular return channels.
+  for (const angle of v.angles)
+    lines.push(
+      `channel = Part.makeBox(${num(v.r + v.radius * 4.62)},${num(v.radius * 2.24)},${num(cageLength + 2)},App.Vector(0,${num(-v.radius * 1.12)},${num(z - 1)}))`,
+      `channel.rotate(App.Vector(0,0,0),App.Vector(0,0,1),${num((angle * 180) / Math.PI)})`,
+      'cage = cage.cut(channel)',
+    );
+  if (cutaway)
+    lines.push(
+      `cage = cage.common(Part.makeBox(${num(v.cageOuter + 1)},${num(v.cageOuter * 2 + 2)},${num(cageLength + 2)},App.Vector(${num(-v.cageOuter - 1)},${num(-v.cageOuter - 1)},${num(z - 1)})))`,
+    );
+  lines.push('components.append(cage.removeSplitter())');
   for (const side of [-1, 1])
     lines.push(
       `components.append(${annulusPython(v.R, v.r, v.sealWidth, side * (v.length / 2 - v.sealWidth / 2) - v.sealWidth / 2)})`,
@@ -204,6 +214,7 @@ export function bushingPython(p: Parameters, state: string, flanged = false): st
     `components.extend([${ballPython(v.balls, v.radius).join(',')}])`,
     'shape = Part.makeCompound(components)',
     `component_labels = ${JSON.stringify(['Bearing sleeve', 'Return cage', 'Rear wiper', 'Front wiper', ...v.balls.map((_, i) => `Recirculating ball ${i + 1}`)])}`,
+    `component_colors = ${JSON.stringify([0x85898e, 0x4d5863, 0x222a32, 0x222a32, ...v.balls.map(() => 0xb7c0cb)].map((color) => [16, 8, 0].map((shift) => ((color >> shift) & 255) / 255)))}`,
   );
   return lines.join('\n');
 }

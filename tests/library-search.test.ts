@@ -7,9 +7,33 @@ import pcb from '../src/parts/pcb-standoff/part';
 import insert from '../src/parts/pcb-standoff-insert/part';
 import sleeve from '../src/parts/dremec-spacer-sleeve/part';
 import spacer from '../src/parts/spacer/part';
+import enclosure from '../src/parts/enclosure/part';
+import handheld from '../src/parts/handheld-lora-controller/part';
 
 const bolt = boltModule.part;
 const index = buildLibrarySearchIndex(groupBrowseFamilies([bolt, pcb, insert, sleeve, spacer]));
+
+test('enclosure and device vocabulary finds actual device families and keeps platform queries scoped', () => {
+  const devices = buildLibrarySearchIndex(groupBrowseFamilies([enclosure, handheld, bolt]));
+  for (const query of [
+    '\u043a\u043e\u0440\u043f\u0443\u0441\u0438',
+    '\u043f\u0440\u0438\u0441\u0442\u0440\u043e\u0457',
+  ])
+    assert.deepEqual(
+      searchLibrary(devices, query)
+        .map(({ family }) => family.id)
+        .sort(),
+      ['enclosure', 'handheld-lora-controller'],
+    );
+  for (const query of [
+    '\u043a\u043e\u0440\u043f\u0443\u0441 \u0434\u043b\u044f Heltec V4',
+    '\u043a\u043e\u043d\u0442\u0440\u043e\u043b\u0435\u0440 Heltec V4',
+  ])
+    assert.deepEqual(
+      searchLibrary(devices, query).map(({ family }) => family.id),
+      ['handheld-lora-controller'],
+    );
+});
 
 test('library navigation matches one real size before passing the query into the model chooser', () => {
   for (const query of ['M3 10', 'M3 × 10', 'M3x10']) {

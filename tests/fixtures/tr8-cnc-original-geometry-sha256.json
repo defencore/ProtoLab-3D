@@ -1,0 +1,106 @@
+[
+  {
+    "variant": "coplanar-64",
+    "mode": "simple",
+    "parameters": {
+      "motorModel": "361-12",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0
+    },
+    "sourceSha256": "fe141719fb88c95bd455c35e7ae1c7ce91634fbd1414ca758c094dae34ac2b28",
+    "piecesSha256": "356d85f3399e3bf8e792453202e042a4266365472dc216c435d2b06cebf248c2"
+  },
+  {
+    "variant": "coplanar-64",
+    "mode": "simple",
+    "parameters": {
+      "motorModel": "361-12",
+      "angleA": -20,
+      "angleB": 20,
+      "angleC": -20,
+      "angleD": 20
+    },
+    "sourceSha256": "d9ac34bfe3a6de8d0ad75377c8040df33ec915c6e601c4299c432d39b46aaf83",
+    "piecesSha256": "d531476c0d5811e9a658def256984c2a5e77f8ab0d9c28cd381933f5f9b097e2"
+  },
+  {
+    "variant": "coplanar-64",
+    "mode": "full",
+    "parameters": {
+      "motorModel": "361-12",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0
+    },
+    "sourceSha256": "a0496ca40e90c4408f27ff7680aee3a4348b5a63e344b8548e5e9a2eba02e55b",
+    "piecesSha256": "e92c71b0cade99aab4590068fbb3532a9c14021831d27ca68caaf5066e1028a8"
+  },
+  {
+    "variant": "coplanar-64",
+    "mode": "full",
+    "parameters": {
+      "motorModel": "361-12",
+      "angleA": -20,
+      "angleB": 20,
+      "angleC": -20,
+      "angleD": 20
+    },
+    "sourceSha256": "eaa8f6c8fb7d3fa3b6d2ce4c4ec06d2bd2e36771e107dc8fd7b1f0ca47cde0f0",
+    "piecesSha256": "6e150c3c8c5b5003c7a6414eeb9a063c034c4b4b7bec8033e22b0b8ba269d943"
+  },
+  {
+    "variant": "staggered-56",
+    "mode": "simple",
+    "parameters": {
+      "motorModel": "361-12",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0
+    },
+    "sourceSha256": "429e7b5f477eddaec495171c1823d9d500be78b88a7b635278d3ce38b1fc7165",
+    "piecesSha256": "34e22acd2a5d581fc4e91a36a41e6d5c13287d0dfc507c7e088340618f65a0cb"
+  },
+  {
+    "variant": "staggered-56",
+    "mode": "simple",
+    "parameters": {
+      "motorModel": "361-12",
+      "angleA": -20,
+      "angleB": 20,
+      "angleC": -20,
+      "angleD": 20
+    },
+    "sourceSha256": "4bfd79b1cf5fe9ef4ca01a94d86e6d4f43f323f1323067ae96f6eafaa102a47f",
+    "piecesSha256": "0a3c6cfcee8fc00c4d0c6ea962c49bb891e358e2e631d87b9e2b13c89e92a461"
+  },
+  {
+    "variant": "staggered-56",
+    "mode": "full",
+    "parameters": {
+      "motorModel": "361-12",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0
+    },
+    "sourceSha256": "4cd0847063bc47361b1198946d2203ce3307e948ede207b002bc221b6a68c08f",
+    "piecesSha256": "4907c789d80ef5cb85d54a05122ebe47e51a4906d1b6de0c4cfb2df18fe8dfca"
+  },
+  {
+    "variant": "staggered-56",
+    "mode": "full",
+    "parameters": {
+      "motorModel": "361-12",
+      "angleA": -20,
+      "angleB": 20,
+      "angleC": -20,
+      "angleD": 20
+    },
+    "sourceSha256": "829f7c96176a4d3fb7a534cf132c854a2e3210a332c2a49fed90cdddfe112a67",
+    "piecesSha256": "0f10cbe0881ed8f2f5d74e6205c39fb0ef4aa5aa4de847e17d527373b81ce4be"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Mini four-drive TR8 version with EZO SMF106ZZ output bearings, X-arranged outputs and three Ø72 laser-cut discs.",
+  "processes": ["assembly"],
+  "releaseRequirements": [
+    "Specify loads, fits, material grades, lubrication and production tolerances.",
+    "Verify the standard M3 column joints and bearing cheek tabs for the intended load.",
+    "Verify application loads against the smaller SMF106ZZ output bearings and finish their Ø10 bearing seats.",
+    "The 2 mm spacer leaves 3 mm nominal stud engagement at the middle-disc joint.",
+    "Use independent travel limits and control for all four motors."
+  ]
+}

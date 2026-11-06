@@ -43,3 +43,7 @@ The lift-cylinder eye adapters, pin centres and rod-lock envelope are installati
 ## Side optical sensor qualification
 
 The [OMRON specification](https://www.ia.omron.com/products/family/1747/specification.html) identifies E3Z-LL81 as a distance-settable BGS model, not a through-beam pair. Its housing is 10.8 × 20 × 31 mm; the model uses this installation envelope with an adjustable bracket. The listed 1 ms response and reference spot size do not establish ±0.03 mm edge accuracy on a polished tube. Qualify low scan speed, switching threshold, surface angle, cable routing and background rejection on all actual profiles. Prom catalogue search shows this identity, but current stock and the exact seller page were not confirmed.
+
+## Separate library references
+
+The side BGS sensor is available independently as `machine-measurement:e3z-ll81`; its installed occupied body remains a purchased reference recipe and keeps the same placement. The two requested flow controls resolve to `pneumatic-valve:2vd0102-g1-4`. Those flow controls were a procurement-table selection with no placed geometry; their standalone photo illustration does not establish installation dimensions or add assembly occurrences. Both source limitations remain visible in the selected library entry.

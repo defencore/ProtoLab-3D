@@ -315,7 +315,7 @@ test(
           )!;
         assert.deepEqual(frame.validate(instance.component.parameters, 'default'), []);
         assert.equal(instance.component.parameters.sizeY, 30);
-        assert.equal(layout.movingPlateTop, layout.tableTop + 590);
+        assert.equal(layout.movingPlateTop, layout.tableTop + 545);
         const pocket = JSON.parse(String(instance.component.parameters.centralDrivePocket));
         assert.equal(pocket.axisY + instance.component.placement!.translation[1], 178);
         assert.equal(pocket.rearDepth, 24);

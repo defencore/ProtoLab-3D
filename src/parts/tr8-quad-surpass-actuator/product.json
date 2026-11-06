@@ -1,0 +1,15 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Four Surpass Hobby KK2845 3100KV direct drives with selectable TR8×2(P2) single-start or TR8×8(P2) four-start screws, matching twin-pin nuts and three Ø70 laser discs.",
+  "processes": [
+    "assembly"
+  ],
+  "releaseRequirements": [
+    "Confirm actual motor installation dimensions, allowed blind-thread engagement and free-cable routing.",
+    "Order couplings with motor bores Ø3.175, not Ø3; confirm fit on actual shafts.",
+    "Qualify reversible sensorless low-speed control, thermal duty, screw travel and braking for the load.",
+    "Assign production fits, bearing end float, sheet stiffness, journal fatigue and pin/slot wear limits.",
+    "Use matching screw and nut leads; regenerate motor travel limits for the selected 2 or 8 mm/revolution lead."
+  ]
+}

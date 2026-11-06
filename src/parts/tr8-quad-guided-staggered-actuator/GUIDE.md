@@ -1,0 +1,9 @@
+# Staggered four-drive CNC mechanism with a central nut guide
+
+Separate guided version of the 56 mm mechanism. Search for **TR8 central guide**. It retains the earlier 56 mm arrangement's 149 x 56 x 56 mm envelope with 361:1 motors, four screw axes at D/4, three main discs and adjacent nut/output stations at X=-8.5 and +8.5 mm. All earlier library versions remain available.
+
+The new middle body includes a square axial spine with 2.95 mm half-width and four 1.5 mm pinwheel fins. Stationary faces have 0.05 mm nominal clearance from all four moving carrier inner flats. They cover the complete carrier pads throughout independent -20 to +20 degree output motion. The spine and fins react nut roll in both directions without relying on the outward forks or follower pins. Running clearance permits finite angular play; actual load capacity, fit, lubrication, root stiffness and wear require application qualification.
+
+The guide spans X=-24.1 to X=20.242881 mm and ends before the end bearing disc. It joins the existing middle base, keeping the frame a single CNC solid inside its original diameter 56 x 81 mm billet. There are no extra fasteners, guide slots in the outer discs or extra main discs. All purchased parts, machined channel parts, screw lengths and placements remain unchanged. The total is still 123 configured occurrences and 391 native physical solids.
+
+Use only **TR8-CNC56-guided** fabrication files. Outer-disc and fork cutting profiles are unchanged. The CNC middle-body macro and machining schedule include the four new guide faces. Follow the [shared central-guide requirements](../tr8-quad-guided-actuator/GUIDE.md) and the [original staggered CNC machining requirements](../tr8-quad-staggered-actuator/GUIDE.md). Tool reliefs and root fillets must remain inside the verified clearance envelope.

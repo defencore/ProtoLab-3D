@@ -2,12 +2,24 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import ts from 'typescript';
 import { validateProductProfile } from '../../src/core/product-library';
+import { isValidPresetId } from '../../src/core/library-identity';
 import { PART_ID_PATTERN, PART_MODULE_API_VERSION } from '../../src/core/part-modules';
 
 export const SDK_FILES = [
+  'analytic-geometry.ts',
+  'pcb-retention.ts',
+  'pcb-retention-bridge.ts',
+  'hardware/analytic-profile.ts',
+  'hardware/bearing-appearance.ts',
+  'freecad-appearance.ts',
+  'freecad-tree.ts',
+  'eskd.ts',
+  'freecad-eskd.ts',
+  'open-eskd.ts',
   'numeric-range.ts',
   'catalog-models.ts',
   'preset-resolution.ts',
+  'part-selection.ts',
   'recovery-component-recipes.ts',
   'assembly/recovery/python.ts',
   'assembly/recovery/shapes.ts',
@@ -36,7 +48,10 @@ export const SDK_FILES = [
   'product-types.ts',
   'product-library.ts',
   'library.ts',
+  'library-identity.ts',
   'storage.ts',
+  'configuration.ts',
+  'configuration-upgrades.ts',
   'validation.ts',
   'design-project.ts',
   'project-storage.ts',
@@ -48,6 +63,7 @@ export const SDK_FILES = [
   'assembly/detail-instances.ts',
   'assembly/machine-instances.ts',
   'assembly/precision-mesh.ts',
+  'assembly/manifold-boundary.ts',
   'assembly/mesh.ts',
   'assembly/mechanical/shapes.ts',
   'assembly/mechanical/assembly.ts',
@@ -206,10 +222,11 @@ function staticDescriptor(source: ts.SourceFile): {
     throw new Error(
       'Declare the explicit part id after object spreads so another object cannot override it.',
     );
-  const dependencyNode = resolve(objectProperty(descriptor, 'dependencies'));
+  const dependencyProperty = objectProperty(descriptor, 'dependencies');
+  const dependencyNode = resolve(dependencyProperty);
   const dependencies: string[] = [];
-  if (dependencyNode) {
-    if (!ts.isArrayLiteralExpression(dependencyNode))
+  if (dependencyProperty) {
+    if (!dependencyNode || !ts.isArrayLiteralExpression(dependencyNode))
       throw new Error('Dependencies must be a literal array of package IDs.');
     for (const node of dependencyNode.elements) {
       if (
@@ -284,8 +301,32 @@ export async function inspectPackage(
   projectRoot: string,
   ancestors: string[] = [],
 ): Promise<PackageInspection> {
+  return inspectPackageTree(directory, projectRoot, ancestors, new Map());
+}
+
+export async function inspectPackageSelection(
+  projectRoot: string,
+  ids: readonly string[],
+): Promise<PackageInspection[]> {
+  if (!ids.length || ids.some((id) => !PART_ID_PATTERN.test(id)))
+    throw new Error('Invalid part ID selection.');
+  if (new Set(ids).size !== ids.length) throw new Error('Duplicate selected part ID.');
+  const inspected = new Map<string, PackageInspection>();
+  for (const id of ids)
+    await inspectPackageTree(path.join(projectRoot, 'src/parts', id), projectRoot, [], inspected);
+  return [...inspected.values()];
+}
+
+async function inspectPackageTree(
+  directory: string,
+  projectRoot: string,
+  ancestors: string[],
+  inspected: Map<string, PackageInspection>,
+): Promise<PackageInspection> {
   directory = path.resolve(directory);
   projectRoot = path.resolve(projectRoot);
+  const cached = inspected.get(directory);
+  if (cached) return cached;
   const files = await packageFiles(directory);
   for (const name of REQUIRED_FILES)
     if (!files.includes(path.join(directory, name)))
@@ -301,14 +342,18 @@ export async function inspectPackage(
     throw new Error(`Folder ${path.basename(directory)} does not match part ID ${descriptor.id}.`);
   if (ancestors.includes(descriptor.id))
     throw new Error('Cyclic package dependency: ' + [...ancestors, descriptor.id].join(' -> '));
-  const dependencies = await Promise.all(
-    descriptor.dependencies.map((id) =>
-      inspectPackage(path.join(projectRoot, 'src/parts', id), projectRoot, [
-        ...ancestors,
-        descriptor.id,
-      ]),
-    ),
-  );
+  const dependencies: PackageInspection[] = [];
+  // Finish each branch before the next one so shared descendants are inspected once.
+  // Cache only completed inspections: a pending ancestor must still fail as a cycle.
+  for (const id of descriptor.dependencies)
+    dependencies.push(
+      await inspectPackageTree(
+        path.join(projectRoot, 'src/parts', id),
+        projectRoot,
+        [...ancestors, descriptor.id],
+        inspected,
+      ),
+    );
   const sdk = new Set(SDK_FILES.map((name) => path.join(projectRoot, 'src/core', name)));
   const references = new Set<string>();
   for (const file of files) {
@@ -370,24 +415,32 @@ export async function inspectPackage(
   for (const preset of presets) {
     if (
       !preset ||
-      typeof preset.id !== 'string' ||
+      !isValidPresetId(preset.id) ||
       presetIds.has(preset.id) ||
       !preset.parameters ||
-      typeof preset.parameters !== 'object'
+      typeof preset.parameters !== 'object' ||
+      Array.isArray(preset.parameters)
     )
-      throw new Error('Every preset needs a unique id and a parameters object.');
+      throw new Error(
+        'Every preset needs a unique id and a parameters object. IDs must be nonempty, trimmed strings without colons or control characters; custom is reserved.',
+      );
     presetIds.add(preset.id);
   }
-  return { ...descriptor, directory, files, references: [...references].sort() };
+  const result = { ...descriptor, directory, files, references: [...references].sort() };
+  inspected.set(directory, result);
+  return result;
 }
 
 export async function discoverPackages(projectRoot: string): Promise<PackageInspection[]> {
   const directory = path.join(projectRoot, 'src/parts');
   const modules: PackageInspection[] = [];
+  const inspected = new Map<string, PackageInspection>();
   for (const entry of await fs.readdir(directory, { withFileTypes: true })) {
     if (entry.isSymbolicLink()) throw new Error(`Part folders cannot be symlinks: ${entry.name}.`);
     if (entry.isDirectory())
-      modules.push(await inspectPackage(path.join(directory, entry.name), projectRoot));
+      modules.push(
+        await inspectPackageTree(path.join(directory, entry.name), projectRoot, [], inspected),
+      );
   }
   if (!modules.length) throw new Error('No part packages were found in src/parts.');
   const ids = new Set<string>();

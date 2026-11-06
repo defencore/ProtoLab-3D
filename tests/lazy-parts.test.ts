@@ -3,9 +3,10 @@ import test from 'node:test';
 import { createPartLoader, type PartModuleImport } from '../src/core/lazy-parts';
 import bolt from '../src/parts/bolt-screw/index';
 import washer from '../src/parts/washer/index';
-import type { PartModule } from '../src/core/part-modules';
+import { registerPartModules, type PartModule } from '../src/core/part-modules';
 
 test('workers import only requested modules and deduplicate their dependency closure', async () => {
+  const sourceParts = [bolt.part, washer.part].map((part) => ({ ...part }));
   const calls: string[] = [];
   const tracked =
     (id: string, module: PartModule): PartModuleImport =>
@@ -26,10 +27,14 @@ test('workers import only requested modules and deduplicate their dependency clo
     ['bolt-screw', 'washer'],
   );
   assert.deepEqual(calls.sort(), ['bolt-screw', 'washer']);
-  assert.equal(first[0], bolt.part);
-  assert.equal(first[1], washer.part);
-  await load(['bolt-screw']);
+  assert.deepEqual(first, registerPartModules([bolt, washer]));
+  assert.deepEqual(await load(['bolt-screw']), first);
   assert.equal(calls.length, 2);
+  assert.deepEqual(
+    [bolt.part, washer.part],
+    sourceParts,
+    'lazy registration leaves sources intact',
+  );
 });
 
 test('lazy imports preserve module validation and fail on missing, mismatched or cyclic dependencies', async () => {
@@ -62,6 +67,6 @@ test('a failed module import can be retried without caching its rejection', asyn
     },
   });
   await assert.rejects(load(['bolt-screw']), /Interrupted module download/);
-  assert.equal((await load(['bolt-screw']))[0], bolt.part);
+  assert.deepEqual(await load(['bolt-screw']), registerPartModules([bolt]));
   assert.equal(attempts, 2);
 });

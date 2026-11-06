@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "One custom polymer rail guide button, with a through bore and screw-head recess.",
+  "processes": ["turning", "drilling"],
+  "releaseRequirements": [
+    "Measure the actual rail slot and channel; specify running clearances, material, finish and tolerances.",
+    "Select and document the separate screw, backing hardware and airframe attachment.",
+    "Verify free travel on the actual rail and qualify the complete attachment under project loads."
+  ]
+}

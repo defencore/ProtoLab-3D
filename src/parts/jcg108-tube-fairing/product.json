@@ -1,0 +1,14 @@
+{
+  "kind": "reference",
+  "supply": "reference",
+  "description": "Preserved conformal JCG108 antenna fairing concept for a 90 mm tube. Valid reference geometry is not a qualified manufactured or purchased product.",
+  "processes": [],
+  "releaseRequirements": [
+    "Resolve aerodynamic loads, local compressibility and flow separation for the actual operating environment. The 300 m/s design case is not a demonstrated speed rating.",
+    "Qualify structural, thermal, material, layer-bonding and fastener performance before fabrication or operational use.",
+    "Measure the delivered JCG108 housing, adhesive layer, cable outlet, boot and minimum coax bend radius. The library antenna remains a nominal source reference, not a resized mounting solid.",
+    "Resolve the actual anchor support and captive nut structure. The two M3 screw axes and nominal nut radii are retained interface datums, not a complete host mounting design.",
+    "The nominal 1 mm authored perimeter is a tube-supported transition only. Native spline interpolation must be checked separately; edge bonding and finishing are required. It is not a free-standing structural fin.",
+    "Inspect the supported printing orientation and actual 256 mm bed clearance. This family is an independent future design study and is not included in the Grandado mounting kit."
+  ]
+}

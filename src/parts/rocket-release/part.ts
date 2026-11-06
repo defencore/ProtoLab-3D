@@ -18,6 +18,7 @@ import { layout, at, springAngles } from './lib/motion';
 import * as assembly from './lib/assembly';
 const part: PartDefinition = {
   id: 'rocket-release',
+  browseLabel: 'Rocket release mechanism',
   composition,
   preview: 'worker',
   product: productData as ProductProfile,

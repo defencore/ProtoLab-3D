@@ -1,0 +1,44 @@
+[
+  {
+    "id": "small-reference",
+    "name": "Small button · D10 × 9.7 · prototype",
+    "description": "Apogee 1010 button metric outside-envelope reference only. Groove, bore and recess are authored examples; actual rail fit is unverified.",
+    "parameters": {
+      "flangeDiameter": 10,
+      "neckDiameter": 6,
+      "height": 9.7,
+      "flangeThickness": 2.5,
+      "bore": 3.4,
+      "counterbore": 6.2,
+      "counterboreDepth": 1.5
+    }
+  },
+  {
+    "id": "large-reference",
+    "name": "Large button · D16 × 11 · prototype",
+    "description": "Apogee 1515 button metric outside-envelope reference only. Groove, bore and recess are authored examples; actual rail fit is unverified.",
+    "parameters": {
+      "flangeDiameter": 16,
+      "neckDiameter": 8,
+      "height": 11,
+      "flangeThickness": 3,
+      "bore": 4.5,
+      "counterbore": 8,
+      "counterboreDepth": 2
+    }
+  },
+  {
+    "id": "custom-m4",
+    "name": "Custom M4 button · D14 × 12 · prototype",
+    "description": "Authored geometry example for a measured custom rail interface; no rail standard or supplier identity is claimed.",
+    "parameters": {
+      "flangeDiameter": 14,
+      "neckDiameter": 8,
+      "height": 12,
+      "flangeThickness": 3,
+      "bore": 4.5,
+      "counterbore": 8,
+      "counterboreDepth": 2
+    }
+  }
+]

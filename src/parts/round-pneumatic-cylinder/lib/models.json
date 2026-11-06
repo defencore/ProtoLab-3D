@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ma32x50-sca",
+    "name": "MA32\u00d750-SCA",
+    "stroke": 50,
+    "body": 154,
+    "referenceOverall": 196,
+    "source": "https://prom.ua/ua/p1969399405-pnevmotsilindr-kruglyj-magnitom.html"
+  },
+  {
+    "id": "ma32x100-sca",
+    "name": "MA32\u00d7100-SCA",
+    "stroke": 100,
+    "body": 187,
+    "referenceOverall": 246,
+    "source": "https://prom.ua/p1969890636-pnevmotsilindr-kruglyj-magnitom.html"
+  }
+]

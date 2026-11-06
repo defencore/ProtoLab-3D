@@ -239,7 +239,7 @@ const part: PartDefinition = {
       group: 'Model',
       options: ['bk20-c3', 'bf20-c3', 'bk15-c3', 'bf15-c3'].map((value) => ({
         value,
-        label: `HIWIN${value.toUpperCase()}`,
+        label: `HIWIN ${value.toUpperCase()}`,
       })),
     },
   ],

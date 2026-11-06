@@ -21,6 +21,105 @@
     "parameters": {
       "model": "e2b-m12"
     },
-    "description": "M12 PNP inductive end-position sensor."
+    "description": "M12 PNP inductive end-position sensor.",
+    "catalog": {
+      "designation": "E2B-M12KS04-WP-B1 2M",
+      "manufacturer": "OMRON",
+      "sourceName": "OMRON E2B product catalog",
+      "sourceUrl": "https://www.ia.omron.com/data_pdf/cat/e2b_d116-e1_1_6_csm1012652.pdf",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Source-identified M12 sensor with retained installation-reference body.",
+        "limitations": "Retains the existing \u00d812 \u00d7 47 mm body, smooth nominal thread envelope, mounting nuts, sensing-face and strain-relief representations. Fine threads, indicator ring, full 2 m cable and exact supplied nut contour are not reconstructed. Verify the selected short-body PNP 2M execution, mounting and clearance before release.",
+        "sourceUrl": "https://www.ia.omron.com/data_pdf/cat/e2b_d116-e1_1_6_csm1012652.pdf"
+      }
+    },
+    "product": {
+      "supply": "purchased"
+    }
+  },
+  {
+    "id": "e3z-t81-l",
+    "name": "OMRON E3Z-T81-L 2M",
+    "parameters": {
+      "model": "e3z-t81-l"
+    },
+    "description": "Through-beam emitter; one separately identified half of the E3Z-T81 pair.",
+    "catalog": {
+      "designation": "E3Z-T81-L 2M",
+      "manufacturer": "OMRON",
+      "sourceName": "OMRON E3Z official execution and dimension tables",
+      "sourceUrl": "https://www.ia.omron.com/products/family/407/dimension.html",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Source-identified emitter or receiver using the retained E3Z external installation reference.",
+        "limitations": "Source explicitly distinguishes emitter -L and receiver -D order designations. Model retains the existing 10.8 \u00d7 20 \u00d7 31 mm body and 25.4 mm mounting pitch. Lens, indicator, strain relief and cable exit are planning geometry; full 2 m flexible cable is omitted. Exact optical internals, label printing and differential emitter/receiver construction are not reconstructed. Check the ordered execution drawing and cable access before release.",
+        "sourceUrl": "https://www.ia.omron.com/products/family/407/dimension.html"
+      }
+    },
+    "product": {
+      "supply": "purchased"
+    }
+  },
+  {
+    "id": "e3z-t81-d",
+    "name": "OMRON E3Z-T81-D 2M",
+    "parameters": {
+      "model": "e3z-t81-d"
+    },
+    "description": "PNP through-beam receiver; one separately identified half of the E3Z-T81 pair.",
+    "catalog": {
+      "designation": "E3Z-T81-D 2M",
+      "manufacturer": "OMRON",
+      "sourceName": "OMRON E3Z official execution and dimension tables",
+      "sourceUrl": "https://www.ia.omron.com/products/family/407/dimension.html",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Source-identified emitter or receiver using the retained E3Z external installation reference.",
+        "limitations": "Source explicitly distinguishes emitter -L and receiver -D order designations. Model retains the existing 10.8 \u00d7 20 \u00d7 31 mm body and 25.4 mm mounting pitch. Lens, indicator, strain relief and cable exit are planning geometry; full 2 m flexible cable is omitted. Exact optical internals, label printing and differential emitter/receiver construction are not reconstructed. Check the ordered execution drawing and cable access before release.",
+        "sourceUrl": "https://www.ia.omron.com/products/family/407/dimension.html"
+      }
+    },
+    "product": {
+      "supply": "purchased"
+    }
+  },
+  {
+    "id": "e3z-ll81",
+    "name": "OMRON E3Z-LL81",
+    "description": "PNP BGS reflective laser sensor; retained occupied-body installation reference.",
+    "parameters": {
+      "model": "e3z-ll81"
+    },
+    "catalog": {
+      "designation": "E3Z-LL81",
+      "manufacturer": "OMRON",
+      "sourceName": "OMRON E3Z-LT/LR/LL official specification and dimension pages",
+      "sourceUrl": "https://www.ia.omron.com/products/family/1747/specification.html",
+      "alternateSourceUrls": [
+        "https://www.ia.omron.com/products/family/1747/dimension.html",
+        "https://prom.ua/Fotoelektricheskij-datchik-omron-e3z-l81.html"
+      ],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Preserved band-saw occupied housing; complete mechanical and cable geometry unresolved.",
+        "limitations": "Manufacturer identifies E3Z-LL81 as a PNP distance-settable BGS laser sensor, distinct from an E3Z-T81 through-beam pair. The standalone reference preserves the band-saw plain 10.8 \u00d7 20 \u00d7 31 mm occupied housing; mounting holes, optical windows, adjusters, indicators, cable exit and the pre-wired cable are not reconstructed. The standard cable length is 2 m in the source, but the assembly has no selected cable routing or full ordered cable execution. Source geometry is incomplete and cannot define a mounting interface or prove optical edge accuracy. The Prom link is a catalogue search reference rather than a confirmed exact seller listing; no stock or seller availability is asserted.",
+        "sourceUrl": "https://www.ia.omron.com/products/family/1747/dimension.html"
+      },
+      "specifications": [
+        {
+          "label": "Detection principle",
+          "value": "PNP distance-settable BGS laser sensing; one sensor, no through-beam emitter/receiver pair."
+        },
+        {
+          "label": "Geometry and source limits",
+          "value": "Manufacturer identifies E3Z-LL81 as a PNP distance-settable BGS laser sensor, distinct from an E3Z-T81 through-beam pair. The standalone reference preserves the band-saw plain 10.8 \u00d7 20 \u00d7 31 mm occupied housing; mounting holes, optical windows, adjusters, indicators, cable exit and the pre-wired cable are not reconstructed. The standard cable length is 2 m in the source, but the assembly has no selected cable routing or full ordered cable execution. Source geometry is incomplete and cannot define a mounting interface or prove optical edge accuracy. The Prom link is a catalogue search reference rather than a confirmed exact seller listing; no stock or seller availability is asserted."
+        }
+      ]
+    }
   }
 ]

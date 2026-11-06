@@ -1,0 +1,10 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "One identified supplied accessory. Its seven visualization solids are not separate procurement items.",
+  "processes": [],
+  "releaseRequirements": [
+    "Verify the delivered execution and whether this extender is supplied within the selected flight-controller kit or ordered separately; avoid duplicate kit procurement.",
+    "Confirm the actual PCB, mounting-hole edge offset, connectors, underside components and cable clearance before manufacture."
+  ]
+}

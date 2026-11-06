@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "Brushless motor and planetary gearbox purchased as one supplier unit.",
+  "processes": [],
+  "releaseRequirements": [
+    "Confirm the seller execution, reduction ratio, rated voltage and shaft code before ordering.",
+    "Resolve the datasheet conflict between gearbox torque limits and the output torque table.",
+    "Verify mounting thread depths and installation clearances against the delivered product."
+  ]
+}

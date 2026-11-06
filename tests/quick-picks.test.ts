@@ -185,7 +185,7 @@ test('miniature pinion quick selectors expose the supplied tooth counts', () => 
     ['11', '13', '15', '17'],
   );
 });
-test('sourced ball screws keep catalog mode when assembly length is a prototype setting', () => {
+test('sourced ball screws expose custom dimensions when assembly length is a prototype setting', () => {
   const screw = parts.find((part) => part.id === 'ball-screw')!;
   const preset = screw.presets.find(
     (preset) =>
@@ -194,7 +194,7 @@ test('sourced ball screws keep catalog mode when assembly length is a prototype 
       !preset.catalog.verifiedParameters.includes('length'),
   )!;
   assert.ok(preset);
-  assert.equal(hasCatalogQuickSize(screw, preset.parameters), true);
+  assert.equal(hasCatalogQuickSize(screw, preset.parameters), false);
   assert.ok(quickPickMatches(screw.presets, { family: 'SFU' }).includes(preset));
   assert.ok(
     !quickPickMatches(screw.presets, {
@@ -226,5 +226,42 @@ test('the selected DIN 915 reference retains its own source scope beside equal-s
         preset.parameters.length === 16 && preset.catalog!.verifiedParameters.includes('length'),
     ),
     'Explicit length selection still finds real equal-size stock screws',
+  );
+});
+
+test('Other hole coupling orders expose custom dimensions even beside identical fixed-size presets', () => {
+  const coupling = parts.find((part) => part.id === 'jaw-coupling')!;
+  const fixed = coupling.presets.find((row) => row.id === 'lf-d14-l22-clamp-3-4')!;
+  assert.equal(hasCatalogQuickSize(coupling, fixed.parameters), true);
+  const custom = coupling.updateParameters!(
+    { ...fixed.parameters, boreOption: 'other' },
+    'boreOption',
+  );
+  assert.equal(custom.boreA, fixed.parameters.boreA);
+  assert.equal(custom.boreB, fixed.parameters.boreB);
+  assert.equal(hasCatalogQuickSize(coupling, custom), false);
+  for (const preset of coupling.presets.filter((row) => row.id.endsWith('-other'))) {
+    assert.ok(!preset.catalog!.verifiedParameters.includes('boreA'));
+    assert.equal(hasCatalogQuickSize(coupling, preset.parameters), false);
+  }
+  const unverified = {
+    ...fixed,
+    catalog: {
+      ...fixed.catalog!,
+      verifiedParameters: fixed.catalog!.verifiedParameters.filter((key) => key !== 'boreA'),
+    },
+  };
+  assert.equal(
+    hasCatalogQuickSize(
+      {
+        ...coupling,
+        presets: [
+          unverified,
+          { ...fixed, id: 'other-source-size', parameters: { ...fixed.parameters, boreA: 6 } },
+        ],
+      },
+      fixed.parameters,
+    ),
+    false,
   );
 });

@@ -91,6 +91,8 @@ export function maCylinderPieces(
     out.map((item) => item.shape),
     {
       name,
+      libraryId: 'round-pneumatic-cylinder',
+      presetId: length === 187 ? 'ma32x100-sca' : 'ma32x50-sca',
       procurement: {
         designation: length === 187 ? 'MA32x100-SCA' : 'MA32x50-SCA',
         manufacturer: '',

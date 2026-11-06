@@ -27,7 +27,7 @@ export const parameters: ParameterDefinition[] = [
     unit: '°',
     filterable: false,
     description:
-      'Geometric position: ST3215-HS ±180°, KST Pro ±60°, X10 V8.0 ±50°, Power-HD ±55°. Ratings stay unchanged.',
+      'Geometric position, constrained by the selected model. HPS-H701 uses an illustrative ±90° inspection range; Hitec extended travel requires programming. Ratings stay unchanged.',
   },
   {
     key: 'showHorn',

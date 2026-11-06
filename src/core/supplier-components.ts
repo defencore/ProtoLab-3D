@@ -103,5 +103,10 @@ export function supplierComponent(
     libraryId: 'purchased-component',
     supply: 'purchased',
     ...(source.procurement ? { procurement: source.procurement } : {}),
+    ...(source.libraryId && source.presetId
+      ? {
+          notes: `SourceLibraryEntry: ${source.libraryId}:${source.presetId}; supplier identity reference only, installed geometry remains an independent fit reference.`,
+        }
+      : {}),
   };
 }

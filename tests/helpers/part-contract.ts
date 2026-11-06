@@ -45,11 +45,12 @@ export function registerPartContractTests(
             `${part.id}/${preset.id}/${state}`,
           );
     });
-    test(`${part.name}: every shape variant and stock size boundary has matching dimensions`, () => {
+    test(`${part.name}: every shape variant and stock size boundary has matching dimensions`, async () => {
       for (const preset of geometrySamples(part)) {
         for (const state of stateIds(part, preset.parameters)) {
           const label = `${part.id}/${preset.id}/${state}`;
           assert.deepEqual(validateParameters(part, preset.parameters, state), [], label);
+          await part.initializeGeometry?.(preset.parameters, state);
           const model = part.buildGeometry(preset.parameters, state);
           try {
             // Transform vertices directly: rotated roller bounding boxes overestimate the solid envelope.
@@ -91,8 +92,9 @@ export function registerPartContractTests(
       }
     });
 
-    test(`${part.name}: binary STL contains complete, finite triangle records`, () => {
+    test(`${part.name}: binary STL contains complete, finite triangle records`, async () => {
       for (const state of stateIds(part)) {
+        await part.initializeGeometry?.(part.defaults, state);
         const model = part.buildGeometry(part.defaults, state);
         try {
           model.updateMatrixWorld(true);
@@ -122,23 +124,22 @@ export function registerPartContractTests(
       }
     });
 
-    test(`${part.name}: console command preserves the complete FreeCAD macro`, () => {
+    test(`${part.name}: console command preserves the complete FreeCAD macro`, async () => {
       for (const preset of geometrySamples(part)) {
         for (const state of stateIds(part, preset.parameters)) {
+          await part.initializeGeometry?.(preset.parameters, state);
           const script = generateScript(part, preset.parameters, state);
           assert.match(script, /import FreeCAD as App/);
           assert.match(script, /doc\.openTransaction\(/);
           assert.match(script, /doc\.abortTransaction\(\)/);
           assert.match(script, /obj\.Shape = shape/);
           assert.match(script, /shape\.isValid\(\)/);
+          const source =
+            part.standaloneCad?.(preset.parameters, state).python ??
+            part.python(preset.parameters, state);
           assert.ok(
-            script.includes(
-              part
-                .python(preset.parameters, state)
-                .split('\n')
-                .map((line) => `        ${line}`)
-                .join('\n'),
-            ),
+            script.includes(source.split('\n').map((line) => `        ${line}`).join('\n')),
+            `${part.id}/${preset.id}/${state}: standalone CAD recipe is missing from the macro`,
           );
           const command = consoleCommand(script);
           assert.ok(command.startsWith('exec(') && command.endsWith(')'));

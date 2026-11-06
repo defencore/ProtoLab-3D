@@ -139,12 +139,14 @@ jobs:
           echo '### Failed affected tests' >> "$GITHUB_STEP_SUMMARY"
           echo 'Full assertion details are attached to this test group.' >> "$GITHUB_STEP_SUMMARY"
           grep '^not ok ' test-results/ci/test-output.log >> "$GITHUB_STEP_SUMMARY" || true
-      - name: Upload failed test log
-        if: failure() && steps.geometry-tests.outcome == 'failure'
+      - name: Upload test reports
+        if: always() && (steps.geometry-tests.outcome == 'success' || steps.geometry-tests.outcome == 'failure')
         uses: actions/upload-artifact@v4
         with:
-          name: test-log-${{ matrix.shard }}
-          path: test-results/ci/test-output.log
+          name: test-report-${{ matrix.shard }}
+          path: |
+            test-results/ci/test-output.log
+            test-results/test-runs/**
           retention-days: 7
 
   deploy:

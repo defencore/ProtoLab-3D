@@ -6,8 +6,16 @@ import type {
 } from '../core/library-output';
 import type { GeometryMode } from '../core/geometry-mode';
 import type { DesignProject } from '../core/product-types';
+import type { PartDefinition } from '../core/types';
 
 type PreviewOutput = Extract<LibraryWorkerOutput, { kind: 'preview' }>;
+
+/** Asynchronous resources must be ready before the synchronous preview builders run. */
+export function previewWorkerPartId(
+  part: Pick<PartDefinition, 'id' | 'preview' | 'initializeGeometry'>,
+): string | undefined {
+  return part.preview === 'worker' || part.initializeGeometry ? part.id : undefined;
+}
 
 /** One worker owns one request; every completion path releases it and its listeners. */
 function requestOutput<T extends { kind: string }>(

@@ -9,6 +9,7 @@ import detail from '../../manufactured-detail/part';
 import wire from '../../formed-wire/part';
 import motor from '../../machine-drive-motor/part';
 import bearing from '../../ball-bearing/part';
+import { eskdIdentity } from '../../../core/eskd';
 
 export interface Piece {
   shape?: Shape;
@@ -155,7 +156,7 @@ export function python(pieces: Piece[]): string {
     'shape = Part.makeCompound(components)',
     `component_labels = ${JSON.stringify(pieces.map((piece) => piece.label))}`,
     `component_colors = ${JSON.stringify(pieces.map((piece) => [((piece.color >> 16) & 255) / 255, ((piece.color >> 8) & 255) / 255, (piece.color & 255) / 255]))}`,
-    `component_metadata = ${JSON.stringify(configured.map((item) => ({ LibraryId: item.libraryId, PhysicalOccurrenceId: item.id, ConfigurationJSON: JSON.stringify(item.parameters), Supply: item.supply, Procurement: JSON.stringify(item.procurement ?? {}), DrawingStatus: item.supply === 'manufactured' ? 'Material, blank, operations, free shape and inspection remain project requirements.' : 'Verify the selected alternate component and delivered mounting interfaces; not a verified Hiwonder BOM.' })))}`,
+    `component_metadata = ${JSON.stringify(configured.map((item) => ({ LibraryId: item.libraryId, PhysicalOccurrenceId: item.id, ConfigurationJSON: JSON.stringify(item.parameters), Supply: item.supply, ESKDIdentityJSON: JSON.stringify(eskdIdentity(libraryDefinition(item.libraryId), item.parameters, item.state, item.presetId, { ...item, designation: item.procurement?.designation ?? '', revision: 'A' })), Procurement: JSON.stringify(item.procurement ?? {}), DrawingStatus: item.supply === 'manufactured' ? 'Material, blank, operations, free shape and inspection remain project requirements.' : 'Verify the selected alternate component and delivered mounting interfaces; not a verified Hiwonder BOM.' })))}`,
   );
   return lines.join('\n');
 }

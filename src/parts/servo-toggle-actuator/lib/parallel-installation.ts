@@ -2,8 +2,9 @@ import type { Parameters } from '../../../core/types';
 import { box, cylinder, union, type Shape } from '../../../core/assembly/boundary/shapes';
 
 export const isParallel = (p: Parameters) =>
-  p.mechanism === 'parallel' || p.mechanism === 'parallel-dual';
-export const isDual = (p: Parameters) => p.mechanism === 'parallel-dual';
+  ['parallel', 'parallel-dual', 'case-panel'].includes(String(p.mechanism));
+export const isDual = (p: Parameters) =>
+  ['parallel-dual', 'case-panel'].includes(String(p.mechanism));
 
 /** Full-width side access for the switch blade and its insulated receptacle. */
 export function parallelTerminalChannel(switchY = 0): Shape {

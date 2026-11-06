@@ -1,0 +1,14 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Four TR8 drives with a central integral sliding guide that restrains all four nut carriers.",
+  "processes": [
+    "assembly"
+  ],
+  "releaseRequirements": [
+    "Assign application loads and production bearing/shaft fits.",
+    "Finish the stationary and moving sliding flats together; specify actual running clearances, alignment and surface finish.",
+    "Provide lubrication and verify guide-fin stiffness, contact pressure and wear under nut reaction torque.",
+    "Review indexed CNC setups and root reliefs within the verified clearance envelope."
+  ]
+}

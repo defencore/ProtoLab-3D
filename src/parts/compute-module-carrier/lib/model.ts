@@ -10,6 +10,7 @@ import {
   type Vec,
 } from '../../../core/assembly/electronics/shapes';
 import data from './models.json';
+import * as native from './nano-native';
 
 export interface CarrierComponent {
   label: string;
@@ -39,6 +40,7 @@ export interface CarrierModel {
   sourceSha256: string;
   attributes: Record<string, string | number | boolean>;
   limitations: string;
+  geometryKind?: 'manufacturer-cad';
 }
 export const models = data as unknown as CarrierModel[];
 export function selected(p: Parameters): CarrierModel {
@@ -48,6 +50,8 @@ export function selected(p: Parameters): CarrierModel {
 }
 export function pieces(p: Parameters, state: string): Piece[] {
   const model = selected(p);
+  if (model.geometryKind === 'manufacturer-cad')
+    throw new Error('Manufacturer CAD models use their retained source geometry.');
   const bores = [...model.holes, ...model.moduleHoles].map(([x, y, diameter]) =>
     cylinder(diameter / 2, model.board + 2, [x, y, -1]),
   );
@@ -105,6 +109,15 @@ export function pieces(p: Parameters, state: string): Piece[] {
   }
   return out;
 }
-export const geometry = (p: Parameters, state: string) => assembly.geometry(pieces(p, state));
-export const dimensions = (p: Parameters, state: string) => assembly.dimensions(pieces(p, state));
-export const python = (p: Parameters, state: string) => assembly.python(pieces(p, state));
+export const geometry = (p: Parameters, state: string) =>
+  native.hasNativeModel(selected(p).id)
+    ? native.geometry(selected(p).id, state)
+    : assembly.geometry(pieces(p, state));
+export const dimensions = (p: Parameters, state: string) =>
+  native.hasNativeModel(selected(p).id)
+    ? native.dimensions(selected(p).id, state)
+    : assembly.dimensions(pieces(p, state));
+export const python = (p: Parameters, state: string) =>
+  native.hasNativeModel(selected(p).id)
+    ? native.python(selected(p).id, state)
+    : assembly.python(pieces(p, state));

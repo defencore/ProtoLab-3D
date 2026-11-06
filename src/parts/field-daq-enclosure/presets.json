@@ -1,0 +1,66 @@
+[
+  {
+    "id": "field-daq-two-sensors",
+    "name": "Field DAQ · Two sensors · M3 × 30",
+    "description": "R3 with a removable positive-groove central PCB bridge. Compact 220 × 116 × 46 mm shell with SP16 and a two-position SP20 cassette on opposite narrow ends. SP20 uses the library Ø20.5 cutout with two opposing flats; SP16 uses its library mounting profile.",
+    "parameters": {
+      "sensorCount": "2",
+      "boardThickness": 1.6,
+      "fitClearance": 0.25,
+      "sp16Hole": 16.5,
+      "sp20Hole": 20.5,
+      "screwLength": "30",
+      "showReferences": true,
+      "componentHeight": 25,
+      "bodyWidth": 116
+    }
+  },
+  {
+    "id": "field-daq-three-sensors",
+    "name": "Field DAQ · Three sensors · M3 × 30",
+    "description": "R3 with a removable positive-groove central PCB bridge. Compact 220 × 116 × 46 mm shell with three SP20 apertures at 32 mm pitch on the narrow end, opposite SP16. Cassettes interchange within the same body width.",
+    "parameters": {
+      "sensorCount": "3",
+      "boardThickness": 1.6,
+      "fitClearance": 0.25,
+      "sp16Hole": 16.5,
+      "sp20Hole": 20.5,
+      "screwLength": "30",
+      "showReferences": true,
+      "componentHeight": 25,
+      "bodyWidth": 116
+    }
+  },
+  {
+    "id": "field-daq-four-sensors",
+    "name": "Field DAQ · Four sensors · Wide 164 mm · M3 × 30",
+    "description": "R3 with a removable positive-groove central PCB bridge. Wide 220 × 164 × 46 mm shell with four SP20 sockets at 36 mm pitch on the narrow end, opposite SP16. This width also accepts matching two-, three- and blank cassettes.",
+    "parameters": {
+      "sensorCount": "4",
+      "boardThickness": 1.6,
+      "fitClearance": 0.25,
+      "sp16Hole": 16.5,
+      "sp20Hole": 20.5,
+      "screwLength": "30",
+      "showReferences": true,
+      "componentHeight": 25,
+      "bodyWidth": 164
+    }
+  },
+  {
+    "id": "field-daq-blank-cassette",
+    "name": "Field DAQ · Blank cassette · M3 × 30",
+    "description": "R3 with a removable positive-groove central PCB bridge. Compact 220 × 116 × 46 mm shell with a blank removable cassette on the narrow end, opposite the fixed SP16 aperture.",
+    "parameters": {
+      "sensorCount": "blank",
+      "boardThickness": 1.6,
+      "fitClearance": 0.25,
+      "sp16Hole": 16.5,
+      "sp20Hole": 20.5,
+      "screwLength": "30",
+      "showReferences": true,
+      "componentHeight": 25,
+      "bodyWidth": 116
+    }
+  }
+]

@@ -4,6 +4,7 @@ import { createHash } from 'node:crypto';
 import { inflateSync } from 'node:zlib';
 import { Box3, DoubleSide, Mesh, MeshStandardMaterial, Raycaster, Vector3 } from 'three';
 import part from '../src/parts/signal-connector/part';
+import { connectorChoices } from '../src/parts/signal-connector/configurator';
 import {
   models,
   colorEvidence,
@@ -34,9 +35,9 @@ function contains(model: string, point: number[]): boolean {
   return inside;
 }
 
-test('connector catalog selects 40 fixed models across distinct interfaces', () => {
+test('connector catalog selects 41 fixed models across distinct interfaces', () => {
   assert.equal(models.length, 40);
-  assert.equal(part.presets!.length, models.length);
+  assert.equal(part.presets!.length, models.length + 1);
   assert.equal(part.catalogSelectionOnly, true);
   assert.equal(part.category, 'CONNECTORS & INTERFACES');
   assert.equal(part.subgroup, 'PCB CONNECTORS');
@@ -46,10 +47,17 @@ test('connector catalog selects 40 fixed models across distinct interfaces', () 
   );
   for (const preset of part.presets!) {
     assert.deepEqual(part.validate(preset.parameters, 'assembled'), []);
-    assert.equal(preset.name, models.find((m) => m.id === preset.parameters.model)!.name);
+    assert.equal(preset.name, connectorChoices.find((m) => m.id === preset.parameters.model)!.name);
     const authored = String(preset.parameters.model).startsWith('xh254-');
-    assert.equal(preset.catalog!.geometryEvidence!.kind, authored ? 'envelope' : 'community-cad');
-    assert.match(preset.catalog!.sourceName, authored ? /authored/ : /community/);
+    const panelReference = preset.id === 'nikom-a448027';
+    assert.equal(
+      preset.catalog!.geometryEvidence!.kind,
+      authored || panelReference ? 'envelope' : 'community-cad',
+    );
+    assert.match(
+      preset.catalog!.sourceName,
+      panelReference ? /NIKOM supplier/ : authored ? /authored/ : /community/,
+    );
     assert.deepEqual(Object.keys(preset.parameters), ['model']);
   }
   for (const key of ['family', 'contactType', 'contacts', 'pitch', 'mounting'])
@@ -64,6 +72,33 @@ test('connector catalog selects 40 fixed models across distinct interfaces', () 
     assert.ok(part.validate({ ...part.defaults, ...extra } as Parameters, 'assembled').length);
   assert.ok(part.validate(part.defaults, 'exploded').length);
   assert.throws(() => selected({ model: 'unknown' }));
+});
+
+test('NIKOM A448027 shares a bounded mouth datum and discloses unresolved panel geometry', () => {
+  const preset = part.presets!.find(({ id }) => id === 'nikom-a448027')!;
+  assert.equal(preset.catalog!.designation, 'A448027');
+  assert.equal(preset.catalog!.manufacturer, undefined);
+  assert.equal(preset.catalog!.attributes!.mounting, 'Panel · screw flange');
+  const params = preset.parameters;
+  const reference = JSON.parse(part.fabricationFiles!(params)[0].content);
+  assert.deepEqual(reference.listedDimensionsMm, [10, 7, 14]);
+  assert.equal(reference.mountingHoleDiameterMm, 2.1);
+  assert.match(reference.datum, /mouth centre at \(0, 0, 0\).*\+Z points outward/);
+  assert.match(reference.limitations, /Hole centres.*panel cutout remain unpublished/);
+  assert.deepEqual(part.dimensions(params, 'assembled'), [14, 7, 10]);
+  const model = part.buildExportGeometry!(params, 'assembled');
+  const bounds = new Box3().setFromObject(model, true);
+  [...bounds.min.toArray(), ...bounds.max.toArray()].forEach((value, axis) =>
+    assert.ok(Math.abs(value - [-7, -3.5, -10, 7, 3.5, 0][axis]) < 1e-6),
+  );
+  assert.match(part.python(params, 'assembled'), /Part\.makeBox/);
+  assert.match(part.python(params, 'assembled'), /Part\.Arc/);
+  model.traverse((child) => {
+    if (child instanceof Mesh) {
+      child.geometry.dispose();
+      (child.material as MeshStandardMaterial).dispose();
+    }
+  });
 });
 
 test('every native source BRep retains its exact pinned identity and closed indexed preview', () => {

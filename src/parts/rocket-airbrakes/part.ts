@@ -20,6 +20,7 @@ const libraries = [manufactured, purchased];
 const configured = (p: Parameters, state: string) => configureRecoveryPieces(pieces(p, state), 120);
 const part: PartDefinition = {
   id: 'rocket-airbrakes',
+  browseLabel: 'Rocket airbrake',
   product: productData as ProductProfile,
   name: 'Rocket AirBrakes',
   category: 'VEHICLE STRUCTURES',

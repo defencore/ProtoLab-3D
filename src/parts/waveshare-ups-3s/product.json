@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "One Waveshare UPS Module 3S board and fitted battery holder, excluding removable batteries and loose accessories.",
+  "processes": [],
+  "releaseRequirements": [
+    "Confirm the actual board revision, holder dimensions, connector and insulating-panel clearances against purchased hardware.",
+    "Select compatible cells shorter than 67 mm as separate procurement items and specify mechanical retention.",
+    "Verify the actual supply, wiring, cooling and operating ratings for the complete system."
+  ]
+}

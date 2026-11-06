@@ -1,4 +1,5 @@
 import productData from './product.json';
+import { bearingPalette, bearingRgb } from '../../core/hardware/bearing-appearance';
 import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
@@ -59,7 +60,10 @@ const part: PartDefinition = {
   },
   python(p) {
     const v = values(p);
-    return compoundPython([annulusPython(v.R, v.casing, v.width), turnedPython(v.profile)]);
+    return (
+      compoundPython([annulusPython(v.R, v.casing, v.width), turnedPython(v.profile)]) +
+      `\ncomponent_colors = ${JSON.stringify([bearingPalette.race, DARK_STEEL].map(bearingRgb))}`
+    );
   },
   dimensions: (p) => [n(p, 'outer'), n(p, 'outer'), n(p, 'width')],
   notes:

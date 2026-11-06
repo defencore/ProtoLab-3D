@@ -1,0 +1,44 @@
+[
+  {
+    "id": "trapezoid-120",
+    "name": "Trapezoidal fin 120 / 50 x 60 x 3 mm",
+    "description": "Authored prototype: 120 mm root, 50 mm tip, 60 mm span and 30 mm leading-edge offset.",
+    "parameters": {
+      "shape": "trapezoidal",
+      "rootChord": 120,
+      "tipChord": 50,
+      "span": 60,
+      "sweep": 30,
+      "points": "[[0,0],[140,0],[105,25],[65,75],[20,60]]",
+      "thickness": 3
+    }
+  },
+  {
+    "id": "ellipse-100",
+    "name": "Elliptical fin 100 x 55 x 3 mm",
+    "description": "Authored prototype: a half-ellipse with 100 mm root chord and 55 mm radial span, sampled identically for preview and native CAD.",
+    "parameters": {
+      "shape": "elliptical",
+      "rootChord": 100,
+      "tipChord": 50,
+      "span": 55,
+      "sweep": 30,
+      "points": "[[0,0],[140,0],[105,25],[65,75],[20,60]]",
+      "thickness": 3
+    }
+  },
+  {
+    "id": "freeform-140",
+    "name": "Freeform fin 140 x 75 x 3.5 mm",
+    "description": "Authored five-corner prototype outline; edit the JSON points to define another simple polygon.",
+    "parameters": {
+      "shape": "freeform",
+      "rootChord": 140,
+      "tipChord": 50,
+      "span": 75,
+      "sweep": 30,
+      "points": "[[0,0],[140,0],[105,25],[65,75],[20,60]]",
+      "thickness": 3.5
+    }
+  }
+]

@@ -1,0 +1,100 @@
+[
+  {
+    "id": "user-m3x10-af4-7-ac5-2",
+    "name": "M3 female coupling \u00b7 10 mm \u00b7 AF4.7 / AC5.2 \u00b7 measured reference",
+    "description": "User-owned unidentified coupling, measured 10 mm long, 4.7 mm across flats and 5.2 mm maximum corners. Fixed fitting envelope; source corner and internal thread details remain unresolved.",
+    "parameters": {
+      "catalogItem": "user-m3x10-af4-7-ac5-2",
+      "profile": "hex",
+      "endA": "female",
+      "endB": "female",
+      "bodyLength": 10,
+      "bodyWidth": 4.7,
+      "cornerDiameter": 5.2,
+      "threadDiameterA": 3,
+      "threadDiameterB": 3,
+      "threadPitchA": 0,
+      "threadPitchB": 0,
+      "threadDesignationA": "M3",
+      "threadDesignationB": "M3",
+      "threadRootDiameterA": 0,
+      "threadRootDiameterB": 0,
+      "maleLengthA": 0,
+      "maleLengthB": 0,
+      "maleEnvelopeLengthA": 0,
+      "maleEnvelopeLengthB": 0,
+      "femaleDepthA": 0,
+      "femaleDepthB": 0,
+      "femaleEnvelopeDepthA": 0,
+      "femaleEnvelopeDepthB": 0,
+      "boreDiameter": 0,
+      "throughBore": false,
+      "threadedThrough": true,
+      "meetingFemaleBores": false,
+      "appearance": "neutral"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "User M3 coupling, L10 / AF4.7 / AC5.2",
+      "sourceName": "User prototype measurements, 2026-11-05",
+      "sourceKind": "attachment",
+      "sourceUrl": "",
+      "verifiedParameters": [
+        "catalogItem",
+        "bodyLength",
+        "bodyWidth",
+        "cornerDiameter",
+        "threadDesignationA",
+        "threadDiameterA",
+        "threadDesignationB",
+        "threadDiameterB"
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "User-measured external envelope of one unidentified M3 female coupling.",
+        "limitations": "User observations describe one unidentified purchased M3 coupling: body length 10 mm, across flats 4.7 mm and maximum across-corner envelope 5.2 mm. The model intersects a regular 4.7 mm AF hex with a 5.2 mm cylinder; this preserves the measured bounds but does not establish the actual irregular rounded-corner profile. Manufacturer, SKU, material, finish, chamfers and dimensional tolerances are unknown. M3 is an observed mating designation. Pitch, fit class, complete thread span and through continuity were not measured: pitch remains zero and the smooth continuous M3 opening is an installation assumption, not a verified internal thread or engagement guarantee.",
+        "sourceUrl": ""
+      },
+      "attributes": {
+        "supplier": "Unidentified user-owned unit",
+        "series": "User-measured reference",
+        "endForm": "female/female",
+        "bodyForm": "hex with unresolved rounded corners",
+        "threadLabel": "M3",
+        "catalogThreadA": "M3",
+        "catalogThreadB": "M3",
+        "catalogBodyLength": 10,
+        "catalogBodyWidth": 4.7,
+        "catalogCornerDiameter": 5.2,
+        "modelFidelity": "Measured envelope; corner and internal details unresolved"
+      },
+      "attributeConditions": {
+        "catalogBodyLength": "User measurement; tolerance not supplied.",
+        "catalogBodyWidth": "Measured across-flat envelope, not a regular-hex across-corner calculation.",
+        "catalogCornerDiameter": "Measured maximum corner envelope. Rounded/irregular profile is not reconstructed exactly.",
+        "threadLabel": "Observed M3 mating designation only; pitch, fit class and available engagement remain unmeasured.",
+        "modelFidelity": "User observations describe one unidentified purchased M3 coupling: body length 10 mm, across flats 4.7 mm and maximum across-corner envelope 5.2 mm. The model intersects a regular 4.7 mm AF hex with a 5.2 mm cylinder; this preserves the measured bounds but does not establish the actual irregular rounded-corner profile. Manufacturer, SKU, material, finish, chamfers and dimensional tolerances are unknown. M3 is an observed mating designation. Pitch, fit class, complete thread span and through continuity were not measured: pitch remains zero and the smooth continuous M3 opening is an installation assumption, not a verified internal thread or engagement guarantee."
+      },
+      "specifications": [
+        {
+          "label": "Measured body",
+          "value": "10 mm long; 4.7 mm across flats; 5.2 mm maximum across corners."
+        },
+        {
+          "label": "Identity boundary",
+          "value": "One existing user-owned unit. No manufacturer, supplier order code, material or finish is inferred; not a DREMEC 114x10."
+        },
+        {
+          "label": "Profile representation",
+          "value": "Intersection of AF4.7 regular hex and D5.2 cylinder. Exact corner rounding and chamfers are unresolved."
+        },
+        {
+          "label": "Thread representation",
+          "value": "Observed M3 female ends; smooth nominal through opening with pitch 0. Through continuity, thread length and pitch are unverified installation assumptions."
+        }
+      ]
+    }
+  }
+]

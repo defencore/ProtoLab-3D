@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "One physical FinsROV making detail, with its confirmed printing or metal machining route. Complete purchased equipment belongs to a separate product family.",
+  "processes": ["printing", "turning", "milling", "drilling"],
+  "releaseRequirements": [
+    "Use the selected part's source revision, material, manufacturing route and project assembly instructions.",
+    "Specify fits, sealing surfaces, stock and finishing operations before fabrication; a valid mesh does not establish these requirements.",
+    "Verify the complete vehicle, electrical installation, buoyancy and leak and pressure tests separately."
+  ]
+}

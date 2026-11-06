@@ -14,6 +14,7 @@ import {
   validateBallScrew,
 } from './lib/parts/ball-screw-geometry';
 import { ballScrewParameters } from './lib/parts/ball-screw-parameters';
+import { ballScrewEndParameters } from './lib/parts/ball-screw-ends';
 
 const part: PartDefinition = {
   id: 'ball-screw',
@@ -33,6 +34,9 @@ const part: PartDefinition = {
     'ball screw guide',
     'linear screw drive',
     'SFK',
+    'SFK08025',
+    'EK6',
+    'EF6',
     'SFU',
     'SFS',
     'SFE',
@@ -51,6 +55,10 @@ const part: PartDefinition = {
   defaults: ballScrewDefaults,
   presets: modulePresets,
   updateParameters(p, key) {
+    if (key === 'endMachining')
+      return p.endMachining === 'none'
+        ? { ...p, fixedGrooveDiameter: 0, supportGrooveDiameter: 0 }
+        : ballScrewEndParameters(p);
     if (key !== 'family') return p;
     const choices = part.presets.filter((item) => item.parameters.family === p.family);
     const selected =
@@ -64,6 +72,8 @@ const part: PartDefinition = {
     'family',
     'shaftDiameter',
     'lead',
+    'length',
+    'endMachining',
     'nutLength',
     'nutDiameter',
     'fixedGrooveDiameter',
@@ -96,6 +106,18 @@ const part: PartDefinition = {
   python: ballScrewPython,
   dimensions: ballScrewDimensions,
   sources: [
+    {
+      label: 'Supplied KAIYADE SFK dimension table · p17',
+      url: 'references/kaiyade-sfk/dimension-table.png',
+    },
+    {
+      label: 'Supplied EK6/EF6 0802 end-machining drawing',
+      url: 'references/kaiyade-sfk/ek6-ef6-0802.png',
+    },
+    {
+      label: 'Supplied KAIYADE designation coding · p09',
+      url: 'references/kaiyade-sfk/designation-coding.png',
+    },
     { label: 'Supplied ball nut construction families', url: '' },
     { label: 'Supplied ball nut size options', url: '' },
     { label: 'Supplied SFU dimension table', url: '' },

@@ -31,6 +31,8 @@ export interface ManufacturingDefinition {
 }
 
 export interface ProcurementDefinition {
+  /** Exact supplier listing title, independent of the installation role. */
+  name?: string;
   designation: string;
   manufacturer: string;
   source: string;
@@ -47,6 +49,9 @@ export interface ProductConfiguration {
   designation: string;
   name: string;
   revision: string;
+  /** An execution changes size/configuration; a revision records a design change. */
+  baseDesignation?: string;
+  execution?: string;
   supply: SupplyKind;
   manufacturing?: ManufacturingDefinition;
   procurement?: ProcurementDefinition;

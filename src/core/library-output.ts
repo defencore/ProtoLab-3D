@@ -29,7 +29,11 @@ export interface ProjectOutput {
 export type WorkerOutputRequest = LibraryOutputRequest | ProjectOutputRequest;
 
 /** Preview jobs never generate CAD source or an unused STL. Each export is explicit. */
-export function buildLibraryOutput(part: PartDefinition, request: LibraryOutputRequest) {
+export function buildLibraryOutput(
+  part: PartDefinition,
+  request: LibraryOutputRequest,
+  parts: readonly PartDefinition[] = [],
+) {
   if (part.id !== request.partId) throw new Error('The requested library product does not match.');
   const { kind, parameters, state, presetId, geometryMode } = request;
   const errors = validateParameters(part, parameters, state);
@@ -38,7 +42,7 @@ export function buildLibraryOutput(part: PartDefinition, request: LibraryOutputR
     if (kind === 'script')
       return {
         kind,
-        script: generateScript(part, parameters, state, presetId, undefined, geometryMode),
+        script: generateScript(part, parameters, state, presetId, undefined, geometryMode, parts),
         buffers: [] as ArrayBuffer[],
       };
     if (kind !== 'preview' && kind !== 'stl') throw new Error('Unknown library output.');

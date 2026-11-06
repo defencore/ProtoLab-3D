@@ -1,7 +1,7 @@
 [
   {
     "id": "printed-rocker-off",
-    "name": "Printed rocker · OFF",
+    "name": "ST3215 / ASW-07D · Printed rocker · OFF",
     "description": "Three printed mounting and rocker parts, with the toggle off and fingers clear at rest.",
     "parameters": {
       "mechanism": "rocker",
@@ -16,7 +16,7 @@
   },
   {
     "id": "printed-rocker-press-on",
-    "name": "Printed rocker · Press ON",
+    "name": "ST3215 / ASW-07D · Printed rocker · Press ON",
     "description": "Rounded rocker finger reaches the ON contact position.",
     "parameters": {
       "mechanism": "rocker",
@@ -31,7 +31,7 @@
   },
   {
     "id": "printed-rocker-wide-on",
-    "name": "Printed rocker · Wide base · ON",
+    "name": "ST3215 / ASW-07D · Printed rocker · Wide base · ON",
     "description": "120 × 100 mm printed base with the toggle on and the rocker centred.",
     "parameters": {
       "mechanism": "rocker",
@@ -46,7 +46,7 @@
   },
   {
     "id": "panel-mount",
-    "name": "Guided fork · Panel mounting · OFF",
+    "name": "ST3215 / ASW-07D · Guided fork · Panel mounting · OFF",
     "description": "160 × 96 mm mounting base with the fork centred and the toggle off.",
     "parameters": {
       "mechanism": "guided",
@@ -61,7 +61,7 @@
   },
   {
     "id": "wide-enclosure",
-    "name": "Guided fork · Wide enclosure mounting · ON",
+    "name": "ST3215 / ASW-07D · Guided fork · Wide enclosure mounting · ON",
     "description": "180 × 120 mm base with the toggle on and the fork returned to centre.",
     "parameters": {
       "mechanism": "guided",
@@ -76,7 +76,7 @@
   },
   {
     "id": "raised-platform",
-    "name": "Guided fork · Raised switch platform · OFF",
+    "name": "ST3215 / ASW-07D · Guided fork · Raised switch platform · OFF",
     "description": "Switch case mounting face at 65 mm, with the same source switch mounting stack and contact height.",
     "parameters": {
       "mechanism": "guided",
@@ -91,7 +91,7 @@
   },
   {
     "id": "press-on",
-    "name": "Guided fork · Press ON",
+    "name": "ST3215 / ASW-07D · Guided fork · Press ON",
     "description": "Inspect the ON push, with the servo turned and the soft contact pad compressed.",
     "parameters": {
       "mechanism": "guided",
@@ -106,7 +106,7 @@
   },
   {
     "id": "parallel-shaft-off",
-    "name": "Parallel-shaft rocker · OFF",
+    "name": "ST3215 / ASW-07D · Parallel-shaft rocker · OFF",
     "description": "80 × 110 mm panel-mounted assembly with four PETG parts, including a separate lower servo and switch cradle, and two external thin TPU frames beneath a flat flange without gasket recesses. The opposed bar rests across the servo, leaving the toggle free for manual operation.",
     "parameters": {
       "mechanism": "parallel",
@@ -121,7 +121,7 @@
   },
   {
     "id": "parallel-shaft-press-on",
-    "name": "Parallel-shaft rocker · Press ON",
+    "name": "ST3215 / ASW-07D · Parallel-shaft rocker · Press ON",
     "description": "80 × 110 mm panel-mounted assembly with four PETG parts, including a separate lower servo and switch cradle, and two external thin TPU frames beneath a flat flange without gasket recesses. Inspect one end of the opposed bar at its calculated ON contact.",
     "parameters": {
       "mechanism": "parallel",
@@ -136,7 +136,7 @@
   },
   {
     "id": "parallel-shaft-large-flange-off",
-    "name": "Parallel-shaft rocker · Larger flange · OFF",
+    "name": "ST3215 / ASW-07D · Parallel-shaft rocker · Larger flange · OFF",
     "description": "100 × 120 mm panel-mounted assembly with four PETG parts, including a separate lower servo and switch cradle, and two external thin TPU frames beneath a flat flange without gasket recesses. The larger flange provides more space for the enclosure mounting.",
     "parameters": {
       "mechanism": "parallel",
@@ -151,7 +151,7 @@
   },
   {
     "id": "parallel-dual-guarded-off",
-    "name": "Two switches · ARM 1 OFF · cover closed",
+    "name": "ST3215 / ASW-07D · Two switches · ARM 1 OFF · cover closed",
     "description": "150 × 100 mm flange along X/Y, with ARM 1 manual on the left and ARM 2 servo-operated on the right. OFF leans toward the labels; the cover opens away. Four PETG parts with a flat flange underside and three external thin TPU frames; ARM 2 is OFF at rest.",
     "parameters": {
       "mechanism": "parallel-dual",
@@ -167,7 +167,7 @@
   },
   {
     "id": "parallel-dual-open-off",
-    "name": "Two switches · ARM 1 OFF · cover open",
+    "name": "ST3215 / ASW-07D · Two switches · ARM 1 OFF · cover open",
     "description": "150 × 100 mm flange along X/Y, with ARM 1 manual on the left and ARM 2 servo-operated on the right. OFF leans toward the labels; the cover opens away. Four PETG parts with a flat flange underside and three external thin TPU frames; ARM 2 is OFF at rest.",
     "parameters": {
       "mechanism": "parallel-dual",
@@ -183,7 +183,7 @@
   },
   {
     "id": "parallel-dual-open-on",
-    "name": "Two switches · ARM 1 ON · cover open",
+    "name": "ST3215 / ASW-07D · Two switches · ARM 1 ON · cover open",
     "description": "160 × 110 mm flange along X/Y, with ARM 1 manual on the left and ARM 2 servo-operated on the right. OFF leans toward the labels; the cover opens away. Four PETG parts with a flat flange underside and three external thin TPU frames; ARM 2 is OFF at rest.",
     "parameters": {
       "mechanism": "parallel-dual",
@@ -195,6 +195,22 @@
       "padGap": 14.6,
       "servoSweep": 50,
       "manualState": "open-on"
+    }
+  },
+  {
+    "id": "case-panel-batteries",
+    "name": "ST3215 / ASW-07D · Case panel · INTERTOOL BX-0151",
+    "description": "A 214 × 150.6 mm front-down faceplate with R4 corners with seven side-wall M3 mounts, a continuous ARM 1 / servo / ARM 2 cassette shifted 12 mm left, and a honeycomb-lightened universal 20 mm M3 base with seven removable electronics adapters. Four 50 mm brass standoffs carry the mechanism and four 40 mm standoffs carry the spring-clip housing; recessed floor screws anchor them and four M3 x 15 lid screws retain the cassette; the registered spring-clip housing uses nylon ties. A straight wall below it supports the vertical PWM module with two ties and a compact keeper. Yellow aligns midway between the battery rows and the SP20 pair. ARM1/ARM2 are engraved on the enlarged cassette; I/R/P mark the red/yellow/green indicators, TS/PS sit to the right of the SP20 pair, and ICT sits above the clips. A fitted servo cradle, independent braced converter adapters, closed battery guide pockets and XT60 reaction stops provide direct support. HAT, Heltec, ADS1220 and both LC filters have separate replaceable adapters; board changes leave the universal base unchanged. XT60E-M fits from below into flange pockets; M2.5 screws enter from the front through shallow head recesses into its embedded nuts. The left wall uses one central screw. Fit the delivered hardware before fabrication.",
+    "parameters": {
+      "mechanism": "case-panel",
+      "phase": "off",
+      "baseLength": 214,
+      "baseWidth": 150.6,
+      "deckHeight": 42,
+      "contactHeight": 12,
+      "padGap": 14.6,
+      "servoSweep": 50,
+      "manualState": "guarded-off"
     }
   }
 ]

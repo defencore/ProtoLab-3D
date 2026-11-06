@@ -1,0 +1,11 @@
+{
+  "kind": "reference",
+  "supply": "reference",
+  "description": "Source electronics seating study with independently registered components, incomplete hardware selection and unresolved material, cable and retention qualification.",
+  "processes": [],
+  "releaseRequirements": [
+    "Complete and verify the actual supporting posts, fasteners, nuts and buzzer ties before treating this study as an installed assembly.",
+    "Resolve module executions, pad material/compression, connectors, cable insertion and the surrounding enclosure interfaces.",
+    "Assign tolerances, manufacturing definitions and the applicable load/retention acceptance criteria before production release."
+  ]
+}

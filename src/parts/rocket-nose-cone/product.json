@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "One authored solid or hollow hobby rocket nose cone with integral shoulder.",
+  "processes": ["turning", "printing", "moulding"],
+  "releaseRequirements": [
+    "Specify material, manufacturing route, wall distribution, tolerances and surface finish.",
+    "Measure the actual tube bore, assign shoulder clearance and define retention separately.",
+    "Qualify the actual airframe attachment, structural loads and manufacturing process."
+  ]
+}

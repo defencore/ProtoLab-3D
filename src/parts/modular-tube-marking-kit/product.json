@@ -1,0 +1,13 @@
+{
+  "kind": "kit",
+  "supply": "manufactured",
+  "description": "Separate reusable printed marking tools for the current modular Ø90/86 tube pattern; not installed avionics parts.",
+  "processes": ["printing", "assembly"],
+  "releaseRequirements": [
+    "Seat the front frame and its nominal tube-contact lands, then apply the pressure shoe. Verify actual tube fit and holding before marking.",
+    "Verify the fixed tube-front datum, opposed tool registers and rail overlap against the two source windows and all sixteen radial centers. Keep the base fixed between passes.",
+    "Use the printed passages for center transfer. Remove the tools before final drilling, head-seat preparation or powered cutting, and work through one tube wall at a time.",
+    "Print every tool in its supplied orientation within the individual printer envelope. Clean the datum faces, mark passages and hardware seats before assembly.",
+    "Verify the exact selected screw/nut bearing, thread engagement, tool access and fit on the printed kit. Nominal CAD geometry and slicing do not certify marking accuracy or repeated-use wear."
+  ]
+}

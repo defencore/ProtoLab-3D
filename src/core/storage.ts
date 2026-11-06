@@ -1,5 +1,5 @@
 import type { Parameters, PartDefinition } from './types';
-import { validateParameters } from './validation';
+import { configurationFromDocument } from './configuration';
 
 export interface SavedPreset {
   id: string;
@@ -7,6 +7,7 @@ export interface SavedPreset {
   partId: string;
   parameters: Parameters;
   state: string;
+  presetId?: string;
 }
 
 const key = 'protolab.presets.v1';
@@ -20,7 +21,7 @@ export function readPresets(parts: PartDefinition[]): SavedPreset[] {
   try {
     const parsed: unknown = JSON.parse(localStorage.getItem(key) ?? '[]');
     if (!Array.isArray(parsed)) return [];
-    return parsed.filter((entry): entry is SavedPreset => {
+    return parsed.flatMap((entry): SavedPreset[] => {
       if (
         !entry ||
         typeof entry !== 'object' ||
@@ -29,9 +30,16 @@ export function readPresets(parts: PartDefinition[]): SavedPreset[] {
         !entry.parameters ||
         typeof entry.state !== 'string'
       )
-        return false;
-      const part = parts.find((part) => part.id === entry.partId);
-      return !!part && validateParameters(part, entry.parameters, entry.state).length === 0;
+        return [];
+      try {
+        const { parameters, state, presetId } = configurationFromDocument(
+          { ...entry, version: 1, units: 'mm', part: entry.partId },
+          parts,
+        );
+        return [{ ...entry, parameters, state, ...(presetId === undefined ? {} : { presetId }) }];
+      } catch {
+        return [];
+      }
     });
   } catch {
     return [];

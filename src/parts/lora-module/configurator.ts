@@ -1,6 +1,8 @@
 import type { ParameterDefinition, Parameters, PartDefinition } from '../../core/types';
 import models from './lib/models.json';
 export const defaults: Parameters = { model: 'ai-thinker-ra02' };
+const options = (values: string[]) =>
+  [...new Set(values)].sort().map((value) => ({ value, label: value }));
 export const parameters: ParameterDefinition[] = [
   {
     key: 'model',
@@ -19,92 +21,42 @@ export const catalogFilterFields: ParameterDefinition[] = [
     label: 'Manufacturer',
     type: 'select',
     group: 'Hardware',
-    options: [
-      {
-        value: 'Ai-Thinker',
-        label: 'Ai-Thinker',
-      },
-      {
-        value: 'Ebyte',
-        label: 'Ebyte',
-      },
-      {
-        value: 'Waveshare',
-        label: 'Waveshare',
-      },
-    ],
+    options: options(models.map((m) => m.manufacturer)),
   },
   {
     key: 'construction',
     label: 'Construction',
     type: 'select',
     group: 'Hardware',
-    options: [
-      {
-        value: 'Bare PCB',
-        label: 'Bare PCB',
-      },
-    ],
+    options: options(models.map((m) => m.construction)),
   },
   {
     key: 'usb',
     label: 'USB connector',
     type: 'select',
     group: 'Hardware',
-    options: [
-      {
-        value: 'None',
-        label: 'None',
-      },
-    ],
+    options: options(models.map((m) => m.attributes.usb)),
   },
   {
     key: 'connection',
     label: 'Physical connection',
     type: 'select',
     group: 'Hardware',
-    options: [
-      {
-        value: '16 castellated pads + U.FL',
-        label: '16 castellated pads + U.FL',
-      },
-      {
-        value: 'Castellated pads + ANT pad',
-        label: 'Castellated pads + ANT pad',
-      },
-      {
-        value: 'Castellated pads + antenna socket',
-        label: 'Castellated pads + antenna socket',
-      },
-    ],
+    options: options(models.map((m) => m.attributes.connection)),
   },
   {
     key: 'interface',
     label: 'Interface',
     type: 'select',
     group: 'Hardware',
-    options: [
-      {
-        value: 'SPI',
-        label: 'SPI',
-      },
-    ],
+    options: options(models.map((m) => m.attributes.interface)),
   },
   {
     key: 'chip',
     label: 'Radio chip',
     type: 'select',
     group: 'Hardware',
-    options: [
-      {
-        value: 'SX1262',
-        label: 'SX1262',
-      },
-      {
-        value: 'SX1278',
-        label: 'SX1278',
-      },
-    ],
+    options: options(models.map((m) => m.attributes.chip)),
   },
   {
     key: 'width',

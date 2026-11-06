@@ -1,4 +1,5 @@
 import productData from './product.json';
+import { bearingPalette, bearingRgb } from '../../core/hardware/bearing-appearance';
 import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
@@ -88,7 +89,8 @@ const part: PartDefinition = {
 shank = Part.makeCylinder(${num(n(p, 'stemDiameter') / 2)}, ${num(n(p, 'stemLength') + (R - bearingR - (R - r) * 0.04) / 2)}, App.Vector(0, ${num(-R - n(p, 'stemLength'))}, 0), App.Vector(0, 1, 0))
 housing = housing.fuse(shank).removeSplitter()
 bushing = ${turnedPython(innerProfile(p))}
-shape = Part.makeCompound([housing, bushing])`;
+shape = Part.makeCompound([housing, bushing])
+component_colors = ${JSON.stringify([bearingPalette.race, DARK_STEEL].map(bearingRgb))}`;
   },
   dimensions: (p) => [
     n(p, 'outer'),

@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "One purchased enclosure article. Its illustrative body and cover remain internal reference solids of one procurement unit.",
+  "processes": [],
+  "releaseRequirements": [
+    "Confirm the selected enclosure designation, material, cover execution and complete supplier order code.",
+    "Verify usable internal dimensions and all installation interfaces against the manufacturer's drawing or a measured sample.",
+    "Confirm the source article's environmental rating and the effect of any machining or added cable entries."
+  ]
+}

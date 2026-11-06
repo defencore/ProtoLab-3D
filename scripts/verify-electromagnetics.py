@@ -15,6 +15,7 @@ import time
 sys.path.insert(0, os.environ.get('FREECAD_LIB', '/Applications/FreeCAD.app/Contents/Resources/lib'))
 import FreeCAD as App
 import Part
+from freecad_tree import component_leaves
 
 cases = json.loads(Path(sys.argv[1] if len(sys.argv) > 1 else '/tmp/protolab-electromagnetics-cases.json').read_text())
 output = Path(sys.argv[2] if len(sys.argv) > 2 else '/tmp/protolab-electromagnetics-results.json')
@@ -38,7 +39,7 @@ with tempfile.TemporaryDirectory(prefix='protolab-electromagnetics-') as directo
             root = roots[0]
             assert root.PartId == case['id'] and root.ModelState == case['state']
             assert json.loads(root.Configuration) == case['parameters']
-            children = list(root.Group) if root.TypeId == 'App::Part' else [root]
+            children = component_leaves(root)
             assert len(children) == len(case['components']), 'Preview/CAD component count mismatch'
             bound_errors, volume_errors = [], []
             for child, expected in zip(children, case['components']):
@@ -82,7 +83,7 @@ with tempfile.TemporaryDirectory(prefix='protolab-electromagnetics-') as directo
             App.closeDocument(doc.Name)
             doc = App.openDocument(fcstd)
             root = doc.getObject(name)
-            reopened = list(root.Group) if root.TypeId == 'App::Part' else [root]
+            reopened = component_leaves(root)
             assert [child.Label for child in reopened] == labels, 'FCStd component mismatch'
             for child in reopened:
                 check_shape(child.Shape)

@@ -1,7 +1,7 @@
 [
   {
     "id": "tr8",
-    "name": "Trapezoidal screw \u00b7 \u00d88 \u00d7 250 mm",
+    "name": "Trapezoidal screw and flange nut · Ø8 × 250 mm · lead 2 mm",
     "description": "Trapezoidal/ACME screw dimensional reference with a separate flange nut and adjustable travel. Editable prototype dimensions.",
     "parameters": {
       "form": "tr",
@@ -16,7 +16,7 @@
   },
   {
     "id": "acme12",
-    "name": "ACME screw \u00b7 \u00d812.7 \u00d7 300 mm",
+    "name": "ACME screw and flange nut · Ø12.7 × 300 mm · lead 2.54 mm",
     "description": "Trapezoidal/ACME screw dimensional reference with a separate flange nut and adjustable travel. Editable prototype dimensions.",
     "parameters": {
       "form": "acme",

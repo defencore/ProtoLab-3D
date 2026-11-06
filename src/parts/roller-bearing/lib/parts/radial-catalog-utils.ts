@@ -1,3 +1,5 @@
+import { bearingPalette, bearingRgb } from '../../../../core/hardware/bearing-appearance';
+import { analyticRevolvePython } from '../../../../core/hardware/analytic-profile';
 import { cageMesh, cagePython, type CageLayout } from './bearing-cage';
 import { Group, LatheGeometry, Mesh, Quaternion, Vector2, Vector3 } from 'three';
 import {
@@ -16,7 +18,7 @@ import type { RadialFamily } from '../catalog/radial-bearings';
 
 type Profile = [number, number][];
 
-function revolved(profile: Profile, color = 0x85898e) {
+function revolved(profile: Profile, color = bearingPalette.race) {
   const closed = [...profile, profile[0]];
   const geometry = new LatheGeometry(
     closed.map(([r, z]) => new Vector2(r, z)),
@@ -42,10 +44,7 @@ function revolved(profile: Profile, color = 0x85898e) {
 }
 
 function revolvePython(profile: Profile, zOffset = 0) {
-  const vertices = [...profile, profile[0]].map(
-    ([r, z]) => `App.Vector(${num(r)}, 0, ${num(z + zOffset)})`,
-  );
-  return `Part.Face(Part.makePolygon([${vertices.join(', ')}])).revolve(App.Vector(0, 0, 0), App.Vector(0, 0, 1), 360)`;
+  return analyticRevolvePython(profile, zOffset);
 }
 
 export function radialVisualSizes(p: Parameters, family: RadialFamily) {
@@ -344,7 +343,7 @@ export function radialGeometry(p: Parameters, state: string, family: RadialFamil
   });
   if (hasNeedleSeals(p, family)) {
     for (const sign of [-1, 1]) {
-      const seal = revolved(needleSealProfile(p, sign), 0x292d31);
+      const seal = revolved(needleSealProfile(p, sign), bearingPalette.rubberSeal);
       seal.position.z = offset;
       group.add(seal);
     }
@@ -354,7 +353,9 @@ export function radialGeometry(p: Parameters, state: string, family: RadialFamil
         outer - (outer - bore) * 0.4,
         bore + (outer - bore) * 0.4,
         width * 0.05,
-        String(p.seals).startsWith('metal') ? 0xa0a6ac : 0x292d31,
+        String(p.seals).startsWith('metal')
+          ? bearingPalette.metalShield
+          : bearingPalette.rubberSeal,
       );
       seal.position.z = sign * (width * 0.455 + offset);
       group.add(seal);
@@ -374,18 +375,18 @@ export function radialPython(p: Parameters, state: string, family: RadialFamily)
     revolvePython(profile, profiles.length === 1 ? offset : index === 0 ? -offset : offset),
   );
   const labels = profiles.length === 1 ? ['Outer ring'] : ['Inner ring', 'Outer ring'];
-  const colors = profiles.map(() => [0.62, 0.7, 0.78]);
+  const colors = profiles.map(() => bearingRgb(bearingPalette.race));
   const setup: string[] = [];
   const rowOffsets = double ? [-width * 0.23, width * 0.23] : [0];
   rowOffsets.forEach((z, row) => {
     setup.push(cagePython(cageLayout(p, family, z, row), `cage_${row}`));
     shapes.push(`cage_${row}`);
     labels.push(`Cage ${row + 1}`);
-    colors.push([0.72, 0.53, 0.27]);
+    colors.push(bearingRgb(bearingPalette.cage));
     for (let i = 0; i < sizes(p, family).count; i++) {
       const roller = ['needle', 'cylindrical', 'spherical', 'tapered'].includes(family);
       labels.push(`${roller ? 'Roller' : 'Ball'} ${row + 1}.${i + 1}`);
-      colors.push([0.75, 0.78, 0.82]);
+      colors.push(bearingRgb(DARK_STEEL));
       const a = ((i + row * 0.5) * Math.PI * 2) / sizes(p, family).count;
       const x = Math.cos(a) * pitch,
         y = Math.sin(a) * pitch;
@@ -419,7 +420,7 @@ export function radialPython(p: Parameters, state: string, family: RadialFamily)
     for (const sign of [-1, 1]) {
       shapes.push(revolvePython(needleSealProfile(p, sign), offset));
       labels.push(sign < 0 ? 'Rear seal' : 'Front seal');
-      colors.push([0.15, 0.18, 0.22]);
+      colors.push(bearingRgb(bearingPalette.rubberSeal));
     }
   } else if (p.seals && p.seals !== 'open')
     for (const sign of String(p.seals).endsWith('-one') ? [1] : [-1, 1]) {
@@ -433,7 +434,7 @@ export function radialPython(p: Parameters, state: string, family: RadialFamily)
       );
       const rubber = String(p.seals).startsWith('rubber');
       labels.push(`${sign < 0 ? 'Rear' : 'Front'} ${rubber ? 'seal' : 'shield'}`);
-      colors.push(rubber ? [0.15, 0.18, 0.22] : [0.62, 0.65, 0.69]);
+      colors.push(bearingRgb(rubber ? bearingPalette.rubberSeal : bearingPalette.metalShield));
     }
   return [
     ...setup,

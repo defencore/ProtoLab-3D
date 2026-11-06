@@ -33,7 +33,7 @@ export const catalogFilterFields: ParameterDefinition[] = [
     label: 'PCIe connection',
     type: 'select',
     group: 'Board selection',
-    options: ['M.2 M-key', '16-pin FFC'].map((value) => ({ value, label: value })),
+    options: ['None', 'M.2 M-key', '16-pin FFC'].map((value) => ({ value, label: value })),
     catalogSummary: true,
   },
   ...(
@@ -43,6 +43,8 @@ export const catalogFilterFields: ParameterDefinition[] = [
       ['usb3', 'USB 3 Type-A ports', ''],
       ['ethernet', 'Ethernet RJ45 ports', ''],
       ['hdmi', 'Fitted HDMI sockets', ''],
+      ['mipi', 'MIPI FPC interfaces', ''],
+      ['inputVoltage', 'Power input', 'V'],
     ] as const
   ).map(([key, label, unit]) => ({
     key,

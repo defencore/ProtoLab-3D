@@ -1,0 +1,27 @@
+[
+  {
+    "id": "user-23-17-6",
+    "name": "User reference D23 / D17 × 6 mm",
+    "description": "Outside dimensions from the supplied image. The 1 mm flange and shell thicknesses and spherical construction are fitting assumptions.",
+    "parameters": {
+      "flangeDiameter": 23,
+      "domeDiameter": 17,
+      "height": 6,
+      "flangeThickness": 1,
+      "wall": 1
+    },
+    "catalog": {
+      "designation": "User reference optical window D23 / D17 × 6 mm",
+      "sourceName": "User-supplied dimensioned optical image",
+      "sourceUrl": "references/nose-optical-dome-user-reference.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["flangeDiameter", "domeDiameter", "height"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "User image shows a 2.3 cm flange, 1.7 cm dome and 0.6 cm overall height.",
+        "limitations": "Wall, flange thickness and optical surfaces are not dimensioned; concentric spherical surfaces are authored assumptions, without focal or material data.",
+        "sourceUrl": "references/nose-optical-dome-user-reference.png"
+      }
+    }
+  }
+]

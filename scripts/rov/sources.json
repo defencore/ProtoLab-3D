@@ -1,0 +1,98 @@
+[
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "LICENSE",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/LICENSE",
+    "sha256": "e6bbd00c752fa2f793111abd15071d05fe7ea78e039dcb02c0a5674c990662f7"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "Making_Instructions/README.md",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Making_Instructions/README.md",
+    "sha256": "4cee39ec80bd1209fdcdaac24acecaf247afcdca7b08f9eccc70430cb2cf8d4e"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/README.md",
+    "sha256": "707dcd555a3079fc55a2c253829fd8cbaef87654ccd8f673c55ec5ab2016d641"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "Structure/En/3DPrinting/Pressure_Sensor_Mount.STEP",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/3DPrinting/Pressure_Sensor_Mount.STEP",
+    "sha256": "083afe580a9f1c6b3b83f467923353cbf0597a63de84ce94647fb15a98140d8d"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "Structure/En/BOM.xlsx",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/BOM.xlsx",
+    "sha256": "496399edb890175bd452916a9b9200125cab33a7bec2a91e546a1922e1b56a96"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "Structure/En/CNC_Machining/CNC_Maching.xlsx",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/CNC_Maching.xlsx",
+    "sha256": "b1a7dc4fc2248117c87ee90a258227d5a3da6b082fe280bd1762e36b6f1a2535"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "Structure/En/CNC_Machining/Cable-passing_Screw.STEP",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Cable-passing_Screw.STEP",
+    "sha256": "1ca61cc49b1e4b1455599a9b054063cd6ed7dfda75cf5abc252eb88ba3ddab00"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "Structure/En/CNC_Machining/Front_Cabin_Mount.STEP",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Front_Cabin_Mount.STEP",
+    "sha256": "b10199ed0ea5adf9d3fbee7e97793cb2c6b394ff40129c2b59c785b693a508a4"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "Structure/En/CNC_Machining/Horizontal_Thruster_Bracket.STEP",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Horizontal_Thruster_Bracket.STEP",
+    "sha256": "09fc231da9f88ed1d625afa827995fd46bf4ed6d7beddb1abeff4b51f92aa0c4"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "Structure/En/CNC_Machining/Rear_Cabin_Hatch.STEP",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Rear_Cabin_Hatch.STEP",
+    "sha256": "977ab38ecd24b30ef0047b6c4da4eedef9d4b54e93807da0ef3af65225f73179"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "Structure/En/CNC_Machining/Thruster_Mount.STEP",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Thruster_Mount.STEP",
+    "sha256": "b026d3d02ebcf19f8867c7a7da943e0b9c70ea42a17c73c824c103496399924e"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "Structure/En/Configuration.STEP",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/Configuration.STEP",
+    "sha256": "d774498f1ee8065552c6abdcef07a414a675946e10e48b54410b6662b7d3e135"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "One M.2 NVMe SSD procurement item represented by a generic installation envelope.",
+  "processes": [],
+  "releaseRequirements": [
+    "Select the actual NVMe SSD manufacturer, part number and measured thickness.",
+    "Verify socket key, standoff location, thermal solution and operating conditions against the purchased module."
+  ]
+}

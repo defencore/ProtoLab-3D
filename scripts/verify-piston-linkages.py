@@ -7,6 +7,7 @@ import tempfile
 sys.path.insert(0, os.environ.get("FREECAD_LIB", "/Applications/FreeCAD.app/Contents/Resources/lib"))
 import FreeCAD as App
 import Part
+from freecad_tree import component_leaves
 import Import
 
 with open(sys.argv[1], encoding="utf-8") as source:
@@ -23,7 +24,7 @@ with tempfile.TemporaryDirectory(prefix="protolab-piston-") as directory:
             root = roots[0]
             assert root.PartId == case["id"]
             assert json.loads(root.Configuration) == case["parameters"]
-            children = list(root.Group) if root.TypeId == "App::Part" else [root]
+            children = component_leaves(root)
             assert len(children) == len(case["components"]), "Preview and CAD component counts differ."
             for child, preview in zip(children, case["components"]):
                 shape = child.Shape
@@ -70,7 +71,7 @@ with tempfile.TemporaryDirectory(prefix="protolab-piston-") as directory:
                 App.closeDocument(doc.Name)
                 doc = App.openDocument(path)
                 root = doc.getObject(name)
-                reopened = list(root.Group) if root.TypeId == "App::Part" else [root]
+                reopened = component_leaves(root)
                 assert [child.Label for child in reopened] == labels
             results.append({"name": case["name"], "passed": True, "components": len(children), "roundTrip": case["roundTrip"], "previewBounds": True, "overlaps": overlaps})
             print(case["name"], "PASS", len(children), "components", flush=True)

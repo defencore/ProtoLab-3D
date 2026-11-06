@@ -10,6 +10,7 @@ export const defaults: Parameters = {
 export const parameters: ParameterDefinition[] = [
   {
     key: 'diameter',
+    catalogSummary: true,
     label: 'Tube diameter',
     type: 'number',
     group: 'Dimensions',
@@ -20,6 +21,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'bodyLength',
+    catalogSummary: true,
     label: 'Tube length',
     type: 'number',
     group: 'Dimensions',
@@ -30,6 +32,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'rod',
+    catalogSummary: true,
     label: 'Rod diameter',
     type: 'number',
     group: 'Dimensions',
@@ -40,6 +43,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'stroke',
+    catalogSummary: true,
     description:
       'Maximum travel limit. Change extension to move the mechanism; changing this limit alone preserves its current position.',
     label: 'Stroke',
@@ -52,6 +56,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'extension',
+    filterable: false,
     label: 'Extension',
     type: 'number',
     group: 'Dimensions',

@@ -1,7 +1,10 @@
 """Run inside FreeCAD. Native geometry and screw seating, not flight qualification."""
-import FreeCAD as App, Part, json, math, time, base64, zlib, os
+import FreeCAD as App, Part, json, math, time, base64, zlib, os, sys
 from pathlib import Path
 from PySide import QtCore
+
+sys.path.append(str(Path(__file__).resolve().parent))
+from freecad_tree import component_leaves
 _out=Path(__file__).resolve().parents[1]/'test-results/real-frame-audit'
 _config=json.loads((_out/'cases.json').read_text());_cases=_config['cases']
 _filter=os.environ.get('PROTOLAB_FRAME_AUDIT_FILTER','')
@@ -99,7 +102,7 @@ def _run_frame_case(index):
     exec((_out/(case['frame']+'.FCMacro')).read_text(),{})
     assert sentinel in doc.Objects
     roots=[o for o in doc.RootObjects if o!=sentinel];assert len(roots)==1
-    objects=list(roots[0].Group);assert len(objects)==len(solids)
+    objects=component_leaves(roots[0]);assert len(objects)==len(solids)
     step=str(_out/(case['frame']+'.step'));Part.export(objects,step)
     restored=Part.Shape();restored.read(step);assert restored.isValid() and len(restored.Solids)==len(solids)
     doc.saveAs(str(_out/(case['frame']+'.FCStd')));record['stepRoundTrip']=True

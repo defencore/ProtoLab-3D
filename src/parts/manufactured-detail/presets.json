@@ -1,1 +1,106 @@
-[]
+[
+  {
+    "id": "plate-80x60x8",
+    "name": "Plate 80 × 60 × 8 · four Ø5 holes",
+    "description": "Editable rectangular plate family with four through holes.",
+    "parameters": {
+      "mode": "plate",
+      "length": 80,
+      "width": 60,
+      "height": 40,
+      "thickness": 8,
+      "diameter": 20,
+      "boreDiameter": 10,
+      "holePattern": "four",
+      "holeDiameter": 5,
+      "holeMargin": 10,
+      "crossHoleDiameter": 0,
+      "crossHolePosition": 10,
+      "bracketHoleDiameter": 5,
+      "meshBackend": "jscad",
+      "meshConform": false,
+      "nativeRefine": true,
+      "meshEdgeTolerance": 0.01,
+      "meshMinimumTriangleArea": 5e-8,
+      "recipe": "{\"kind\":\"subtract\",\"children\":[{\"kind\":\"box\",\"size\":[80,60,8],\"origin\":[0,0,0]},{\"kind\":\"cylinder\",\"radius\":4.5,\"height\":10,\"origin\":[10,10,-1],\"axis\":\"z\"},{\"kind\":\"cylinder\",\"radius\":4.5,\"height\":10,\"origin\":[70,50,-1],\"axis\":\"z\"}]}"
+    }
+  },
+  {
+    "id": "sleeve-20x10x30",
+    "name": "Sleeve Ø20 / Ø10 × 30",
+    "description": "Editable turned sleeve or spacer family.",
+    "parameters": {
+      "mode": "sleeve",
+      "length": 30,
+      "width": 60,
+      "height": 40,
+      "thickness": 8,
+      "diameter": 20,
+      "boreDiameter": 10,
+      "holePattern": "four",
+      "holeDiameter": 5,
+      "holeMargin": 10,
+      "crossHoleDiameter": 0,
+      "crossHolePosition": 10,
+      "bracketHoleDiameter": 5,
+      "meshBackend": "jscad",
+      "meshConform": false,
+      "nativeRefine": true,
+      "meshEdgeTolerance": 0.01,
+      "meshMinimumTriangleArea": 5e-8,
+      "recipe": "{\"kind\":\"subtract\",\"children\":[{\"kind\":\"box\",\"size\":[80,60,8],\"origin\":[0,0,0]},{\"kind\":\"cylinder\",\"radius\":4.5,\"height\":10,\"origin\":[10,10,-1],\"axis\":\"z\"},{\"kind\":\"cylinder\",\"radius\":4.5,\"height\":10,\"origin\":[70,50,-1],\"axis\":\"z\"}]}"
+    }
+  },
+  {
+    "id": "shaft-12x60",
+    "name": "Shaft Ø12 × 60 · cross hole Ø3",
+    "description": "Editable cylindrical shaft or pin with an optional radial cross hole.",
+    "parameters": {
+      "mode": "shaft",
+      "length": 60,
+      "width": 60,
+      "height": 40,
+      "thickness": 8,
+      "diameter": 12,
+      "boreDiameter": 10,
+      "holePattern": "four",
+      "holeDiameter": 5,
+      "holeMargin": 10,
+      "crossHoleDiameter": 3,
+      "crossHolePosition": 10,
+      "bracketHoleDiameter": 5,
+      "meshBackend": "jscad",
+      "meshConform": false,
+      "nativeRefine": true,
+      "meshEdgeTolerance": 0.01,
+      "meshMinimumTriangleArea": 5e-8,
+      "recipe": "{\"kind\":\"subtract\",\"children\":[{\"kind\":\"box\",\"size\":[80,60,8],\"origin\":[0,0,0]},{\"kind\":\"cylinder\",\"radius\":4.5,\"height\":10,\"origin\":[10,10,-1],\"axis\":\"z\"},{\"kind\":\"cylinder\",\"radius\":4.5,\"height\":10,\"origin\":[70,50,-1],\"axis\":\"z\"}]}"
+    }
+  },
+  {
+    "id": "bracket-40x40x40",
+    "name": "Angle bracket 40 × 40 × 40 · wall 4",
+    "description": "Editable angle bracket with one through hole in each leg.",
+    "parameters": {
+      "mode": "bracket",
+      "length": 40,
+      "width": 40,
+      "height": 40,
+      "thickness": 4,
+      "diameter": 20,
+      "boreDiameter": 10,
+      "holePattern": "four",
+      "holeDiameter": 5,
+      "holeMargin": 10,
+      "crossHoleDiameter": 0,
+      "crossHolePosition": 10,
+      "bracketHoleDiameter": 5,
+      "meshBackend": "jscad",
+      "meshConform": false,
+      "nativeRefine": true,
+      "meshEdgeTolerance": 0.01,
+      "meshMinimumTriangleArea": 5e-8,
+      "recipe": "{\"kind\":\"subtract\",\"children\":[{\"kind\":\"box\",\"size\":[80,60,8],\"origin\":[0,0,0]},{\"kind\":\"cylinder\",\"radius\":4.5,\"height\":10,\"origin\":[10,10,-1],\"axis\":\"z\"},{\"kind\":\"cylinder\",\"radius\":4.5,\"height\":10,\"origin\":[70,50,-1],\"axis\":\"z\"}]}"
+    }
+  }
+]

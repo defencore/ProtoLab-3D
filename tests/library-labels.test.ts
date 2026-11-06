@@ -22,6 +22,23 @@ test('family titles do not replace the physical member name', () => {
   assert.equal(familyLabel({ ...member, browseFamily: undefined }), 'Threaded spacer');
 });
 
+test('navigation uses the shared family, then the component type, without rewriting physical names', () => {
+  const member = {
+    name: 'TR8×8(P2) worm-sector actuator',
+    browseLabel: 'Worm-sector actuator',
+  };
+  assert.equal(familyLabel(member), 'Worm-sector actuator');
+  assert.equal(member.name, 'TR8×8(P2) worm-sector actuator');
+  assert.equal(familyLabel({ ...member, browseLabel: undefined }), member.name);
+  assert.equal(
+    familyLabel({
+      ...member,
+      browseFamily: { id: 'actuators', label: 'Rotary mechanisms' },
+    }),
+    'Rotary mechanisms',
+  );
+});
+
 test('preset presentation keeps canonical titles and original source records independent', () => {
   const preset: Preset = {
     id: 'model-x1',

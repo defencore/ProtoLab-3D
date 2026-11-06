@@ -12,6 +12,58 @@ const part = (id: string) => {
   return found;
 };
 
+test('enclosure models share one catalog while handheld devices retain their own family', () => {
+  assert.deepEqual(librarySubgroups(parts, 'ENCLOSURES & DEVICES'), [
+    'GENERAL-PURPOSE ENCLOSURES',
+    'HANDHELD CONTROLLERS',
+  ]);
+  const definitions = parts.filter((definition) => definition.category === 'ENCLOSURES & DEVICES');
+  assert.deepEqual(definitions.map((definition) => definition.id).sort(), [
+    'catalog-enclosure',
+    'enclosure',
+    'field-daq-enclosure',
+    'grandado-tube-mount',
+    'handheld-lora-controller',
+    'jcg108-tube-fairing',
+    'printed-bayonet-enclosure',
+    'printed-rim-enclosure',
+    'printed-screw-enclosure',
+    'printed-self-centering-enclosure',
+    'printed-threaded-enclosure',
+    'printed-threaded-shell',
+    'underwater-pressure-enclosure',
+  ]);
+  const generic = part('enclosure');
+  const handheld = part('handheld-lora-controller');
+  assert.equal(generic.name, 'Rectangular open-top enclosure');
+  assert.equal(generic.subgroup, 'GENERAL-PURPOSE ENCLOSURES');
+  assert.equal(generic.product.kind, 'detail');
+  assert.equal(handheld.name, 'Heltec V4 handheld controller');
+  assert.equal(handheld.subgroup, 'HANDHELD CONTROLLERS');
+  assert.equal(handheld.product.kind, 'assembly');
+  assert.equal(typeof handheld.composition, 'function');
+  const families = groupBrowseFamilies(definitions);
+  assert.equal(families.length, 2);
+  assert.deepEqual(families.map((family) => family.id).sort(), [
+    'enclosures',
+    'handheld-lora-controller',
+  ]);
+  assert.equal(families.find((family) => family.id === 'enclosures')?.members.length, 12);
+  assert.ok(!librarySubgroups(parts, 'STRUCTURAL PARTS').includes('BOXES & CASES'));
+  assert.equal(part('lora-module').category, 'ELECTRONICS & VISION');
+  const index = buildLibrarySearchIndex(groupBrowseFamilies(parts));
+  for (const [query, id] of [
+    ['Rectangular open-top enclosure', 'enclosures'],
+    ['Field DAQ', 'enclosures'],
+    ['Heltec V4', 'handheld-lora-controller'],
+    ['Palm Lock', 'handheld-lora-controller'],
+  ])
+    assert.ok(
+      searchLibrary(index, query).some((match) => match.family.id === id),
+      query,
+    );
+});
+
 test('machine tools contains complete composed machines rather than their reusable components', () => {
   const machines = parts.filter((definition) => definition.category === 'MACHINE TOOLS');
   assert.deepEqual(machines.map((definition) => definition.id).sort(), [
@@ -38,10 +90,12 @@ test('reusable machine components belong to their engineering disciplines and de
     'machine-drive-motor': ['MOTORS & ACTUATORS', 'MOTOR ASSEMBLIES'],
     'machine-measurement': ['ELECTRONICS & VISION', 'SENSORS & SWITCHES'],
     'panel-switch': ['SWITCHES & BUTTONS', 'PANEL CONTROLS'],
+    'panel-indicator': ['SWITCHES & BUTTONS', 'PANEL CONTROLS'],
     'panel-control': ['SWITCHES & BUTTONS', 'PANEL CONTROLS'],
     'laboratory-terminal': ['CONNECTORS & INTERFACES', 'LABORATORY TERMINALS'],
     'signal-connector': ['CONNECTORS & INTERFACES', 'PCB CONNECTORS'],
     'electrical-connector': ['CONNECTORS & INTERFACES', 'POWER & INDUSTRIAL'],
+    'waterproof-connector': ['CONNECTORS & INTERFACES', 'POWER & INDUSTRIAL'],
     'prototyping-board': ['ELECTRONICS & VISION', 'PROTOTYPING BOARDS'],
     'addressable-led': ['ELECTRONICS & VISION', 'LED MODULES'],
     'cnc-process-accessory': ['WORKSHOP TOOLS', 'COOLING & COOLANT'],
@@ -65,6 +119,9 @@ test('reusable machine components belong to their engineering disciplines and de
     'bolt-screw': ['FASTENERS & THREADS', 'BOLTS & SCREWS'],
     'lipo-battery': ['POWER & MOTOR CONTROL', 'BATTERIES & HOLDERS'],
     'li-ion-cell': ['POWER & MOTOR CONTROL', 'BATTERIES & HOLDERS'],
+    'li-ion-pack': ['POWER & MOTOR CONTROL', 'BATTERIES & HOLDERS'],
+    'adc-module': ['ELECTRONICS & VISION', 'SENSORS & SWITCHES'],
+    'power-filter': ['POWER & MOTOR CONTROL', 'POWER FILTERS'],
     'standard-battery': ['POWER & MOTOR CONTROL', 'BATTERIES & HOLDERS'],
     'battery-holder': ['POWER & MOTOR CONTROL', 'BATTERIES & HOLDERS'],
     'li-ion-battery-holder': ['POWER & MOTOR CONTROL', 'BATTERIES & HOLDERS'],
@@ -92,7 +149,16 @@ test('batteries and holders share their fitting context while rails, grippers an
       .filter((definition) => definition.subgroup === 'BATTERIES & HOLDERS')
       .map((definition) => definition.id)
       .sort(),
-    ['battery-holder', 'li-ion-battery-holder', 'li-ion-cell', 'lipo-battery', 'panel-battery-module', 'standard-battery'],
+    [
+      'battery-holder',
+      'li-ion-battery-holder',
+      'li-ion-cell',
+      'li-ion-pack',
+      'lipo-battery',
+      'panel-battery-module',
+      'standard-battery',
+      'waveshare-ups-3s',
+    ],
   );
   assert.deepEqual(
     parts
@@ -122,6 +188,16 @@ test('electrical catalogs are discoverable by workshop terminology and supplier 
   const index = buildLibrarySearchIndex(groupBrowseFamilies(parts));
   const examples = [
     ['toggle', 'panel-switch'],
+    ['Lehao AD16-16C', 'panel-indicator'],
+    ['SP20-2', 'waterproof-connector'],
+    ['SP20-4', 'waterproof-connector'],
+    ['SP20-6', 'waterproof-connector'],
+    ['\u0456\u043d\u0434\u0438\u043a\u0430\u0442\u043e\u0440\u0438', 'panel-indicator'],
+    [
+      '\u0433\u0435\u0440\u043c\u0435\u0442\u0438\u0447\u043d\u0456 \u0440\u043e\u0437\u0454\u043c\u0438',
+      'waterproof-connector',
+    ],
+    ['SP20 \u0433\u043d\u0456\u0437\u0434\u0430', 'waterproof-connector'],
     ['guard', 'panel-switch'],
     ['banana', 'laboratory-terminal'],
     ['WAGO 221-413', 'laboratory-terminal'],
@@ -145,14 +221,16 @@ test('electrical catalogs are discoverable by workshop terminology and supplier 
   ];
   for (const [query, id] of examples)
     assert.ok(
-      searchLibrary(index, query).some((match) => match.family.id === id),
+      searchLibrary(index, query).some((match) =>
+        match.family.members.some((member) => member.id === id),
+      ),
       query,
     );
   assert.deepEqual(
     sortLibraryParts(parts.filter((definition) => definition.subgroup === 'PANEL CONTROLS')).map(
       (definition) => definition.id,
     ),
-    ['panel-switch', 'panel-control', 'servo-toggle-actuator'],
+    ['panel-switch', 'panel-indicator', 'panel-control', 'servo-toggle-actuator'],
   );
 });
 
@@ -175,7 +253,7 @@ test('neutral component names do not make screws, guides, motors or fixtures CNC
   assert.match(part('cnc-milling-machine').name, /\bCNC\b/);
 });
 
-test('discipline navigation preserves distinct supplier definitions and stable primary-to-accessory order', () => {
+test('discipline navigation preserves distinct supplier definitions inside catalogs and stable primary-to-accessory order', () => {
   const ids = [
     'linear-guide',
     'cnc-guide-rail',
@@ -190,14 +268,24 @@ test('discipline navigation preserves distinct supplier definitions and stable p
   ];
   const definitions = ids.map(part);
   const families = groupBrowseFamilies(definitions);
-  assert.equal(families.length, definitions.length, 'unlike components are not synthetic variants');
+  assert.deepEqual(
+    families.flatMap((family) => family.members.map((member) => member.id)).sort(),
+    [...ids].sort(),
+    'shared catalogs retain every physical definition without duplicates',
+  );
   for (const definition of definitions) {
-    const family = families.find((entry) => entry.id === definition.id)!;
-    assert.equal(family.primary, definition);
-    assert.deepEqual(family.members, [definition]);
+    const family = families.find((entry) => entry.members.includes(definition))!;
+    assert.ok(family);
+    assert.ok(family.members.includes(definition));
     assert.equal(family.category, definition.category);
     assert.equal(family.subgroup, definition.subgroup);
   }
+  const servos = families.find((family) => family.id === 'servo-motors')!;
+  assert.equal(servos.primary, part('servo-motor'));
+  assert.deepEqual(servos.members.map((member) => member.id).sort(), [
+    'cnc-feed-servo',
+    'servo-motor',
+  ]);
   assert.deepEqual(
     sortLibraryParts(
       definitions.filter((definition) => definition.subgroup === 'PROFILE RAILS'),

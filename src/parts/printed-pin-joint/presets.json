@@ -1,0 +1,50 @@
+[
+  {
+    "id": "pin-6-clearance-030",
+    "name": "Ø6 mm pin · 0.30 mm diametral clearance",
+    "description": "Authored diametral-clearance calibration example; no guaranteed fit or load rating.",
+    "parameters": {
+      "width": 24,
+      "baseThickness": 4,
+      "pinDiameter": 6,
+      "engagement": 12,
+      "wall": 3,
+      "tipChamfer": 0.8,
+      "clearance": 0.3,
+      "endClearance": 0.6,
+      "faceGap": 0.3
+    }
+  },
+  {
+    "id": "pin-6-clearance-015",
+    "name": "Ø6 mm pin · 0.15 mm diametral clearance",
+    "description": "Compare the measured fit against the 0.30 mm example using the same print settings.",
+    "parameters": {
+      "width": 24,
+      "baseThickness": 4,
+      "pinDiameter": 6,
+      "engagement": 12,
+      "wall": 3,
+      "tipChamfer": 0.8,
+      "clearance": 0.15,
+      "endClearance": 0.6,
+      "faceGap": 0.3
+    }
+  },
+  {
+    "id": "pin-10-clearance-050",
+    "name": "Ø10 mm pin · 0.50 mm diametral clearance",
+    "description": "Larger authored alignment example with explicitly selected diametral clearance.",
+    "parameters": {
+      "width": 30,
+      "baseThickness": 5,
+      "pinDiameter": 10,
+      "engagement": 16,
+      "wall": 4,
+      "tipChamfer": 1,
+      "clearance": 0.5,
+      "endClearance": 0.8,
+      "faceGap": 0.4
+    }
+  }
+]

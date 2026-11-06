@@ -17,7 +17,7 @@ const part: PartDefinition = {
   id: 'indexing-disc-jig',
   name: 'Manual indexing drill fixture',
   category: 'WORKSHOP TOOLS',
-  subgroup: 'BENDING & ASSEMBLY JIGS',
+  subgroup: 'DRILLING JIGS',
   icon: 'bracket',
   complexity: 'Workshop fixture prototype',
   preview: 'worker',

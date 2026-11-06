@@ -111,10 +111,14 @@ test('all 11 miniature listing options expose ten shaft lengths while ambiguous 
       'SFK1602',
     ],
   );
-  const miniature = screw.presets.filter((p) => p.parameters.family === 'SFK');
+  const miniature = screw.presets.filter(
+    (p) => p.parameters.family === 'SFK' && !p.id.startsWith('kaiyade-'),
+  );
   assert.equal(miniature.length, 110);
   assert.equal(miniature.filter((p) => p.catalog).length, 100);
-  for (const reference of ballScrewReferences.filter((r) => r.parameters.family === 'SFK')) {
+  for (const reference of ballScrewReferences.filter(
+    (r) => r.parameters.family === 'SFK' && !r.id?.startsWith('kaiyade-'),
+  )) {
     const variants = miniature.filter((p) =>
       p.catalog
         ? p.catalog.designation === reference.designation
@@ -136,7 +140,9 @@ test('all 11 miniature listing options expose ten shaft lengths while ambiguous 
       }
     }
   }
-  const miniatureNuts = nut.presets.filter((p) => p.parameters.family === 'SFK');
+  const miniatureNuts = nut.presets.filter(
+    (p) => p.parameters.family === 'SFK' && !p.id.startsWith('kaiyade-'),
+  );
   assert.equal(miniatureNuts.length, 11);
   assert.ok(miniatureNuts.every((p) => !p.catalog?.verifiedParameters.includes('length')));
 });
@@ -177,10 +183,10 @@ test('all nine nut families are present and both ambiguous listing names remain 
     'SFU',
     'SFY',
   ]);
-  assert.equal(ballScrewReferences.length, 131);
-  assert.equal(ballScrewReferences.filter((r) => r.catalog).length, 129);
-  assert.equal(screw.presets.length, 230);
-  assert.equal(nut.presets.length, 131);
+  assert.equal(ballScrewReferences.length, 146);
+  assert.equal(ballScrewReferences.filter((r) => r.catalog).length, 144);
+  assert.equal(screw.presets.length, 410);
+  assert.equal(nut.presets.length, 146);
   const ambiguous = ballScrewReferences.filter((r) => !r.catalog);
   assert.deepEqual(
     ambiguous.map((r) => r.designation),
@@ -264,8 +270,13 @@ test('source badges never verify editable end journals, accuracy classes or undo
       assert.equal(new Set(verified).size, verified.length);
       for (const key of verified)
         assert.notEqual(preset.parameters[key], undefined, `${preset.name}: ${key}`);
-      for (const key of unverified)
-        assert.ok(!verified.includes(key), `${preset.name}: ${key} must remain unsourced`);
+      for (const key of unverified) {
+        const drawingEnd =
+          preset.id.startsWith('kaiyade-sfk0802-') && preset.parameters.endMachining === 'ek6-ef6';
+        if (drawingEnd && /^(?:endMachining|fixedJournal|driveJournal|supportJournal)/.test(key))
+          assert.ok(verified.includes(key), `${preset.name}: ${key} follows the 0802 drawing`);
+        else assert.ok(!verified.includes(key), `${preset.name}: ${key} must remain unsourced`);
+      }
       if (preset.parameters.family !== 'SFK') assert.ok(!verified.includes('length'));
     }
 });
@@ -281,8 +292,14 @@ test('family and inclusive numeric ranges find real miniature presets at the sel
   assert.deepEqual(result.errors, []);
   assert.deepEqual(result.items.map((r) => r.preset.catalog!.designation).sort(), [
     'SFK0802',
+    'SFK0802',
+    'SFK0802',
     'SFK082.5',
+    'SFK0825',
+    'SFK0825',
     'SFK1002',
+    'SFK1002',
+    'SFK1004',
     'SFK1004',
   ]);
   assert.ok(result.items.every((r) => r.part === screw && r.preset.parameters.length === 350));
@@ -291,7 +308,7 @@ test('family and inclusive numeric ranges find real miniature presets at the sel
     filterPresets(index, filters)
       .items.map((r) => r.preset.catalog!.designation)
       .sort(),
-    ['SFK082.5', 'SFK1004'],
+    ['SFK082.5', 'SFK0825', 'SFK0825', 'SFK1004', 'SFK1004'],
   );
 });
 

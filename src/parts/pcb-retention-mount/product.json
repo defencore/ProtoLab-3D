@@ -1,0 +1,12 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Authored printed PCB carrier with optional removable bridge locks and configured anti-flex support features.",
+  "processes": ["printing", "assembly"],
+  "releaseRequirements": [
+    "Measure actual PCB outlines and thickness; reserve outer-corner and bridge contact lands free of components, solder and exposed conductors.",
+    "Match optional side rails and underside support ribs to verified clear contact areas on the populated boards.",
+    "Check board, bridge, tool and host enclosure insertion/removal paths, connector mating and cable clearance.",
+    "Specify polymer, process, build orientation, attachment hardware and actual working loads; qualify fit, support stiffness, creep, vibration and service cycles."
+  ]
+}

@@ -1,6 +1,6 @@
 # Product library and design release
 
-The library starts with six collections: **Hardware**, **Motion**, **Electronics**, **Workshop**, **Machines** and **Vehicles**. Within a collection, **Function** groups products by category and subgroup. Related product families keep their model or size choices in the configurator. Categories and subgroups expand independently; opened branches are remembered for the browser session, and the grouping view is remembered between visits. The collection follows the selected product when the library reopens.
+The library starts with seven collections: **Hardware**, **Motion**, **Electronics**, **Enclosures & devices**, **Workshop**, **Machines** and **Vehicles**. Within a collection, **Function** groups products by category and subgroup. Related product families keep their model or size choices in the configurator. Categories and subgroups expand independently; opened branches are remembered for the browser session, and the grouping view is remembered between visits. The collection follows the selected product when the library reopens.
 
 Navigation is separate from a product's type, supply policy and manufacturing processes. Its package ID remains stable when the collection or navigation view changes. Each package owns its classification in `product.json`; registration and portable-package checks reject missing or invalid profiles. API2 registration also requires a physical composition function for manufactured assemblies, complexes and kits. Purchased supplier units can remain opaque.
 
@@ -55,3 +55,15 @@ Specification sections follow the selected documentation policy. The application
 Keep classification in the package's `product.json`, component-specific evidence in its `GUIDE.md`, catalog evidence in `presets.json`, and physical composition in the definition's composition function. Do not infer make or buy classification from a part name, engineering category, number of visible solids or the mere presence of a catalog row.
 
 Run the package checker after changing classification. `tests/product-library.test.ts` checks portable profile coverage, classification exceptions, specification mapping and all library views. `npm run audit:models` regenerates the source-fidelity inventory and preserves the reviewed product profile for every family in its JSON report, with independent classification counts.
+
+Named purchased devices used by authored assemblies must have independently
+searchable family/model selections, including source-identified installation
+references. Reuse their qualified library IDs instead of defining their only
+model inside an assembly. Unknown interface dimensions remain explicit in the
+model evidence and guide. Where an inherited assembly uses editable fit geometry
+that differs from a fixed supplier model, retain the installed recipe and record
+its qualified `SourceLibraryEntry` separately; a source identity reference is not
+proof that the installed geometry matches that product. Never silently replace
+or resize existing occurrences to make their procurement identity appear resolved.
+`tests/assembly-device-library.test.ts` checks the reviewed device selections by
+name and exact ID, plus WING MINI occurrence and project identity retention.

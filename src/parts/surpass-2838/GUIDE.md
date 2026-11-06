@@ -1,0 +1,11 @@
+# Surpass Hobby KK2838 motors
+
+Seven windings from the [2019 manufacturer catalog](https://www.ytk-group.co.jp/products/wp-content/uploads/2021/02/Catalog-from-Suprass-Hobby_compressed-1-1.pdf) are represented separately: 3200, 3500, 3700, 4400, 4700, 5100 and 5700KV. The 3500KV catalog row is not silently renamed to the 3600KV winding used in later listings. A catalog record does not assert current stock availability.
+
+The common installation model uses a nominal diameter-28, length-40 body, a diameter-3.175 shaft and 15 mm shaft projection. The [authorized importer](https://surpasshobbyusa.net/2838-3700kv-2-3s-mini-motor-3-175mm-shaft-3-5mm-connector-1-16-1-18/2838-3700/) supplies the body and shaft dimensions. Front mounting plane is Z=0; the shaft points along +Z. The [supplier installation reference](https://hobbyking.com/en_us/sp-028380-01-rc-car-motors-3600kv.html) gives the 16/19 mm M3 mounting cross. Its other conflicting table fields are not inherited. Confirm the actual mounting cross and permitted screw insertion depth before machining the carrier.
+
+Four analytic installation bodies represent the red motor can, two black end caps and silver shaft. These are reconstructed exterior shells, not manufacturer CAD or a model of motor internals. One-millimetre cap seams, nominal blind-hole depth and the round shaft envelope are illustrative. Wires, connector boots, winding packs and bearings are omitted.
+
+The **Custom cross-drilled shaft** physical state adds a diameter-1 hole through local X at Z=13 mm from the motor mounting face. It supports the pinned pinion hub outside the gear teeth. The optional shaftAngle rotates only the prepared shaft about local Z. The stock state and supplier presets have no hole. A mechanism records this drilling operation and the purchased motor blank on a manufactured configuration; the custom hole is not claimed as a supplier shaft feature. Support the shaft and keep drilling chips and insertion loads out of the motor bearings.
+
+The 15 mm shaft supports a hub pin at 13 mm without an extension adapter. The mechanism should preserve the front mounting plane while adapting only its rear motor clearance for this shorter body. Electrical duty, low-speed commutation and allowable cross-hole torque remain application-specific.

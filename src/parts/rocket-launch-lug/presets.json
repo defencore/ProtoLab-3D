@@ -1,0 +1,20 @@
+[
+  {
+    "id": "rod-3",
+    "name": "3 mm rod guide · prototype",
+    "description": "Authored sleeve with 0.4 mm nominal diametral rod clearance; measure the actual rod.",
+    "parameters": { "outerDiameter": 5, "bore": 3.4, "length": 25 }
+  },
+  {
+    "id": "rod-5",
+    "name": "5 mm rod guide · prototype",
+    "description": "Authored sleeve with 0.4 mm nominal diametral rod clearance; measure the actual rod.",
+    "parameters": { "outerDiameter": 7, "bore": 5.4, "length": 35 }
+  },
+  {
+    "id": "rod-6",
+    "name": "6 mm rod guide · prototype",
+    "description": "Authored sleeve with 0.5 mm nominal diametral rod clearance; measure the actual rod.",
+    "parameters": { "outerDiameter": 8, "bore": 6.5, "length": 40 }
+  }
+]

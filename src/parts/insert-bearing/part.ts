@@ -1,4 +1,5 @@
 import productData from './product.json';
+import { bearingPalette, bearingRgb } from '../../core/hardware/bearing-appearance';
 import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
@@ -91,13 +92,16 @@ const part: PartDefinition = {
     const R = n(p, 'outer') / 2,
       h = n(p, 'hubDiameter') / 2,
       c = n(p, 'outerWidth');
-    return compoundPython([
-      turnedPython(outerProfile(p)),
-      annulusPython(h, n(p, 'bore') / 2, n(p, 'width')),
-      ...[-1, 1].map((side) =>
-        annulusPython(h + (R - h) * 0.4, h + 0.02, c * 0.08, side * c * 0.44 - c * 0.04),
-      ),
-    ]);
+    return (
+      compoundPython([
+        turnedPython(outerProfile(p)),
+        annulusPython(h, n(p, 'bore') / 2, n(p, 'width')),
+        ...[-1, 1].map((side) =>
+          annulusPython(h + (R - h) * 0.4, h + 0.02, c * 0.08, side * c * 0.44 - c * 0.04),
+        ),
+      ]) +
+      `\ncomponent_colors = ${JSON.stringify([bearingPalette.race, bearingPalette.race, DARK_STEEL, DARK_STEEL].map(bearingRgb))}`
+    );
   },
   dimensions: (p) => [n(p, 'outer'), n(p, 'outer'), n(p, 'width')],
   notes:

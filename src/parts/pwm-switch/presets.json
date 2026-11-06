@@ -6,5 +6,13 @@
     "parameters": {
       "model": "pwm-switch-17x13"
     }
+  },
+  {
+    "id": "user-mosfet-26x16",
+    "name": "User PWM MOSFET · 26 × 16 × 6 mm reference",
+    "description": "User-supplied occupied-body dimensions only; manufacturer, execution, terminals and electrical ratings remain unknown. This is distinct from the 17 × 13 × 10 mm switch.",
+    "parameters": {
+      "model": "user-mosfet-26x16"
+    }
   }
 ]

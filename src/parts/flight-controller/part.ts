@@ -5,6 +5,13 @@ import { parameters, defaults, catalogFilterFields } from './configurator';
 import presets from './presets.json';
 import models from './lib/models.json';
 import { pieces } from './lib/model';
+import {
+  wingMiniModel,
+  wingMiniGeometry,
+  wingMiniPython,
+  wingMiniDimensions,
+  wingMiniDefaults,
+} from './lib/wing-mini';
 import * as assembly from '../../core/assembly/electronics/assembly';
 const part: PartDefinition = {
   id: 'flight-controller',
@@ -25,6 +32,7 @@ const part: PartDefinition = {
     'Holybro',
     'Kakute',
     'SpeedyBee',
+    'F405 WING MINI',
     'BETAFPV',
     'flight controller',
     'robotics',
@@ -40,7 +48,7 @@ const part: PartDefinition = {
       id: 'assembled',
       label: 'Assembled',
       description:
-        'Controller only; excludes loose cables, dampers, external ESC and breakout boards.',
+        'Controller only, or WING MINI FC/PDB/standard shield with supplied stack hardware; loose cables, external wireless USB extender and mounting dampers excluded.',
     },
     {
       id: 'exploded',
@@ -51,20 +59,40 @@ const part: PartDefinition = {
   ],
   validate(p, state) {
     const errors: string[] = [];
-    if (!models.some((m) => m.id === p.model)) errors.push('Select a supported controller model.');
+    if (p.model !== wingMiniModel && !models.some((m) => m.id === p.model))
+      errors.push('Select a supported controller model.');
     for (const key of Object.keys(p))
-      if (key !== 'model')
+      if (key !== 'model' && !(key in wingMiniDefaults))
         errors.push(`Controller dimensions are fixed; unsupported parameter: ${key}.`);
+    if (p.model === wingMiniModel) {
+      for (const [key, min, max] of [
+        ['wingHolePitchX', 17, 18.3],
+        ['wingHolePitchY', 20, 22],
+      ] as const) {
+        const value = p[key] ?? wingMiniDefaults[key];
+        if (typeof value !== 'number' || !Number.isFinite(value) || value < min || value > max)
+          errors.push('Reference hole pitch is outside the supported installation range: ' + key);
+      }
+    }
     if (!['assembled', 'exploded'].includes(state))
       errors.push('Select a supported assembly state.');
     return errors;
   },
-  buildGeometry: (p, state) => assembly.geometry(pieces(p, state)),
-  python: (p, state) => assembly.python(pieces(p, state)),
-  dimensions: (p, state) => assembly.dimensions(pieces(p, state)),
+  buildGeometry: (p, state) =>
+    p.model === wingMiniModel ? wingMiniGeometry(p, state) : assembly.geometry(pieces(p, state)),
+  python: (p, state) =>
+    p.model === wingMiniModel ? wingMiniPython(p, state) : assembly.python(pieces(p, state)),
+  dimensions: (p, state) =>
+    p.model === wingMiniModel
+      ? wingMiniDimensions(p, state)
+      : assembly.dimensions(pieces(p, state)),
   notes:
     'Catalog variants differ mechanically or by physical connections. Processor, firmware and receiver-protocol variations alone do not create separate entries. External geometry is reconstructed from manufacturer drawings and photographs; undimensioned component sizes and connector offsets are approximate. Read model scope before designing a mount. Unknown dimensions are omitted from numeric filters. Bare FC dimensions exclude external ESCs, cables and dampers. Pixhawk regulated controller input is separate from the servo power rail. This model is not an electrical pinout or wiring diagram.',
   sources: [
+    {
+      label: 'SpeedyBee F405 WING MINI manufacturer manual',
+      url: 'https://www.speedybee.com/f405-wing-mini-download/',
+    },
     ...new Map(
       models.map((m) => [m.source, { label: m.manufacturer + ' — ' + m.name, url: m.source }]),
     ).values(),

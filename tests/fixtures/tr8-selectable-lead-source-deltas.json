@@ -1,0 +1,106 @@
+{
+  "description": "Exact reviewed source deltas for the TR8 selectable 2/8 mm lead feature. Reverse only these changes before applying the retained historical package hashes; the default remains four-start TR8x8(P2). No geometry edits outside these deltas are accepted.",
+  "provenance": "The pre-feature drive.ts and native.ts were recovered from test-results/tr8-selectable-screw/before/. drive.ts matches the historical 94b2544d3967978303e79ffae8edd7e89091143bf2589f8fb9388293f2566d9b hash directly; native.ts matches its historical hash after the existing ESKD identity projection. The part.ts public reexport reversal also reproduces its original historical hash after title/identity projection. These ignored backups are evidence only, not test dependencies.",
+  "evidence": [
+    "src/parts/tr8-quad-surpass-actuator/GUIDE.md",
+    "tests/tr8-surpass-lead.test.ts",
+    "test-results/tr8-selectable-screw/lead-native-report.json",
+    "test-results/tr8-selectable-screw/final-capture-comparison.json"
+  ],
+  "files": {
+    "tr8-compact-actuator/lib/drive.ts": {
+      "beforeSourceSha256": "94b2544d3967978303e79ffae8edd7e89091143bf2589f8fb9388293f2566d9b",
+      "changes": [
+        {
+          "before": "\nexport interface AxialStation {\n",
+          "after": "\nexport type Tr8Lead = 2 | 8;\n/** Both executions use the same 2 mm axial pitch and 30 degree profile. */\nexport function tr8ThreadForLead(lead: Tr8Lead = 8) {\n  if (lead !== 2 && lead !== 8) throw new Error('Choose a supported TR8 lead: 2 or 8 mm/revolution.');\n  return { ...tr8Thread, lead, starts: lead === 2 ? 1 : 4 };\n}\n\nexport interface AxialStation {\n"
+        },
+        {
+          "before": "export interface ScrewOptions {\n  threadStartX: number;\n",
+          "after": "export interface ScrewOptions {\n  threadLead?: Tr8Lead;\n  threadStartX: number;\n"
+        },
+        {
+          "before": "  screwAxisZ: number;\n  /** Physical screw rotation about +X; -360*nut travel/8 keeps the nut unrotated. */\n  angleDeg?: number;\n",
+          "after": "  screwAxisZ: number;\n  /** Physical screw rotation about +X; -360*nut travel/lead keeps the nut unrotated. */\n  angleDeg?: number;\n"
+        },
+        {
+          "before": "export interface NutOptions {\n  /** Left face of the 3.5 mm flange; the small nose projects 1.5 mm left. */\n",
+          "after": "export interface NutOptions {\n  threadLead?: Tr8Lead;\n  /** Left face of the 3.5 mm flange; the small nose projects 1.5 mm left. */\n"
+        },
+        {
+          "before": "\n/** Closed helical stock: preview sections and native four-start swept cuts share one profile. */\nfunction trapezoidalStock(\n",
+          "after": "\n/** Closed helical stock: preview sections and native swept cuts share one profile. */\nfunction trapezoidalStock(\n"
+        },
+        {
+          "before": "  internalTool = false,\n): Shape {\n  const pitch = tr8Thread.pitch;\n  const tangent = Math.tan(Math.PI / 12);\n",
+          "after": "  internalTool = false,\n  threadLead: Tr8Lead = 8,\n): Shape {\n  const thread = tr8ThreadForLead(threadLead);\n  const pitch = thread.pitch;\n  const tangent = Math.tan(Math.PI / 12);\n"
+        },
+        {
+          "before": "  ];\n  const rootAngle = (2 * Math.PI * halfRoot) / tr8Thread.lead;\n  const tipAngle = (2 * Math.PI * halfTip) / tr8Thread.lead;\n  for (let start = 0; start < tr8Thread.starts; start++) {\n    const center = (2 * Math.PI * start) / tr8Thread.starts;\n    // Straight flanks in the axial section, with circular root and crest arcs.\n    for (let i = 0; i <= 4; i++)\n      outline.push(\n        point(root + ((tip - root) * i) / 4, center - rootAngle + ((rootAngle - tipAngle) * i) / 4),\n      );\n    for (let i = 1; i <= 8; i++)\n      outline.push(point(tip, center - tipAngle + (2 * tipAngle * i) / 8));\n    for (let i = 1; i <= 4; i++)\n      outline.push(\n        point(tip - ((tip - root) * i) / 4, center + tipAngle + ((rootAngle - tipAngle) * i) / 4),\n      );\n    const next = (2 * Math.PI * (start + 1)) / tr8Thread.starts - rootAngle;\n    for (let i = 1; i < 8; i++)\n      outline.push(point(root, center + rootAngle + ((next - center - rootAngle) * i) / 8));\n  }\n  const layers = Math.max(16, Math.ceil((length / tr8Thread.lead) * 48));\n  const rings: Vec[][] = Array.from({ length: layers + 1 }, (_, i) => {\n    const z = length * (i / layers - 0.5);\n    const rotation = phase + (2 * Math.PI * z) / tr8Thread.lead;\n    return outline.map(([x, y]): Vec => [\n",
+          "after": "  ];\n  const rootAngle = (2 * Math.PI * halfRoot) / thread.lead;\n  const tipAngle = (2 * Math.PI * halfTip) / thread.lead;\n  const flankSteps = 4 * 8 / thread.lead;\n  const arcSteps = 8 * 8 / thread.lead;\n  for (let start = 0; start < thread.starts; start++) {\n    const center = (2 * Math.PI * start) / thread.starts;\n    // Straight flanks in the axial section, with circular root and crest arcs.\n    for (let i = 0; i <= flankSteps; i++)\n      outline.push(\n        point(root + ((tip - root) * i) / flankSteps, center - rootAngle + ((rootAngle - tipAngle) * i) / flankSteps),\n      );\n    for (let i = 1; i <= arcSteps; i++)\n      outline.push(point(tip, center - tipAngle + (2 * tipAngle * i) / arcSteps));\n    for (let i = 1; i <= flankSteps; i++)\n      outline.push(\n        point(tip - ((tip - root) * i) / flankSteps, center + tipAngle + ((rootAngle - tipAngle) * i) / flankSteps),\n      );\n    const next = (2 * Math.PI * (start + 1)) / thread.starts - rootAngle;\n    for (let i = 1; i < arcSteps; i++)\n      outline.push(point(root, center + rootAngle + ((next - center - rootAngle) * i) / arcSteps));\n  }\n  const layers = Math.max(16, Math.ceil((length / thread.lead) * 48));\n  const rings: Vec[][] = Array.from({ length: layers + 1 }, (_, i) => {\n    const z = length * (i / layers - 0.5);\n    const rotation = phase + (2 * Math.PI * z) / thread.lead;\n    return outline.map(([x, y]): Vec => [\n"
+        },
+        {
+          "before": "      length,\n      lead: tr8Thread.lead,\n      starts: tr8Thread.starts,\n      phase,\n",
+          "after": "      length,\n      lead: thread.lead,\n      starts: thread.starts,\n      phase,\n"
+        },
+        {
+          "before": "      radialExtra,\n      startZ: -length / 2 - tr8Thread.lead,\n    },\n",
+          "after": "      radialExtra,\n      startZ: -length / 2 - thread.lead,\n    },\n"
+        },
+        {
+          "before": "export function screwShape(options: ScrewOptions): Shape {\n  const { threadStartX: start, threadEndX: end, screwAxisZ: z } = options;\n",
+          "after": "export function screwShape(options: ScrewOptions): Shape {\n  const thread = tr8ThreadForLead(options.threadLead);\n  const { threadStartX: start, threadEndX: end, screwAxisZ: z } = options;\n"
+        },
+        {
+          "before": "          z,\n          (center * 360) / tr8Thread.lead + (options.angleDeg ?? 0),\n        )\n",
+          "after": "          z,\n          (center * 360) / thread.lead + (options.angleDeg ?? 0),\n          false,\n          thread.lead,\n        )\n"
+        },
+        {
+          "before": "export function nutShape(options: NutOptions): Shape {\n  const { flangeFaceX: face, screwAxisZ: z, longAxis = 'y' } = options;\n",
+          "after": "export function nutShape(options: NutOptions): Shape {\n  const thread = tr8ThreadForLead(options.threadLead);\n  const { flangeFaceX: face, screwAxisZ: z, longAxis = 'y' } = options;\n"
+        },
+        {
+          "before": "    currentGeometryMode() === 'full'\n      ? trapezoidalStock(15.4, center, z, (neutralCenter * 360) / tr8Thread.lead, true)\n      : axial(4.05, face - 1.7, face + 13.7, z);\n",
+          "after": "    currentGeometryMode() === 'full'\n      ? trapezoidalStock(15.4, center, z, (neutralCenter * 360) / thread.lead, true, thread.lead)\n      : axial(4.05, face - 1.7, face + 13.7, z);\n"
+        },
+        {
+          "before": "  axisZ: number,\n): ThreadCallout & { starts: 4; lead: 8; includedAngle: 30; rootDiameter: 5.5 } {\n  return {\n    designation: 'Tr8x8(P2) RH; 4 starts; 30 degree trapezoidal profile',\n    internal,\n",
+          "after": "  axisZ: number,\n  threadLead: Tr8Lead = 8,\n): ThreadCallout & { starts: number; lead: Tr8Lead; includedAngle: 30; rootDiameter: 5.5 } {\n  const thread = tr8ThreadForLead(threadLead);\n  return {\n    designation: `Tr8x${thread.lead}(P2) RH; ${thread.starts} ${thread.starts === 1 ? 'start' : 'starts'}; 30 degree trapezoidal profile`,\n    internal,\n"
+        },
+        {
+          "before": "    pitch: 2,\n    starts: 4,\n    lead: 8,\n    includedAngle: 30,\n",
+          "after": "    pitch: 2,\n    starts: thread.starts,\n    lead: thread.lead,\n    includedAngle: 30,\n"
+        }
+      ]
+    },
+    "tr8-compact-actuator/lib/native.ts": {
+      "beforeSourceSha256": "d115487c478a34d0e1c1b36a8f0cf28c8a0bdff52d339ffbbd4417ef35cd795a",
+      "changes": [
+        {
+          "before": "import { libraries } from './components';\nimport { driveThreadCallout } from './drive';\nimport { threadMetadata } from '../../../core/thread-callouts';\n",
+          "after": "import { libraries } from './components';\nimport { driveThreadCallout, tr8ThreadForLead, type Tr8Lead } from './drive';\nimport { threadMetadata } from '../../../core/thread-callouts';\n"
+        },
+        {
+          "before": "export interface ActuatorThreadLayout {\n  screwThreadStart: number;\n",
+          "after": "export interface ActuatorThreadLayout {\n  threadLead?: Tr8Lead;\n  screwThreadStart: number;\n"
+        },
+        {
+          "before": "): string {\n  if (\n",
+          "after": "): string {\n  tr8ThreadForLead(threadLayout.threadLead);\n  if (\n"
+        },
+        {
+          "before": "      lines.push(\n        `    component_metadata[-1].update(${JSON.stringify(threadMetadata([driveThreadCallout(internal, from, to, threadLayout.screwAxisZ)]))})`,\n      );\n",
+          "after": "      lines.push(\n        `    component_metadata[-1].update(${JSON.stringify(threadMetadata([driveThreadCallout(internal, from, to, threadLayout.screwAxisZ, threadLayout.threadLead)]))})`,\n      );\n"
+        }
+      ]
+    },
+    "tr8-compact-actuator/part.ts": {
+      "changes": [
+        {
+          "before": "export { screwShape as tr8ScrewShape, nutShape as tr8NutShape, driveThreadCallout } from './lib/drive';\n",
+          "after": "export { screwShape as tr8ScrewShape, nutShape as tr8NutShape, driveThreadCallout, tr8ThreadForLead, type Tr8Lead } from './lib/drive';\n"
+        }
+      ]
+    }
+  }
+}

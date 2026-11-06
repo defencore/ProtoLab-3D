@@ -1,0 +1,8 @@
+[
+  {
+    "id": "pem-current",
+    "name": "Current ZX908 / JHE42B / USB seating layout",
+    "description": "Latest source lower locator and flat upper disc, three module units and four exact GPS retainers; hardware and enclosure excluded.",
+    "parameters": { "model": "pem-current" }
+  }
+]

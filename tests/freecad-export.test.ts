@@ -28,6 +28,66 @@ component_metadata = [{"Placement":"Position note", "Shape":"Shape note", "Label
 };
 
 test(
+  'copied console scripts group components by library function and recognizable installation roles',
+  { skip: !process.env.FREECAD_PYTHON },
+  () => {
+    const electronics = { ...fixture, id: 'fixture-board', category: 'ELECTRONICS & VISION' };
+    const assembly = {
+      ...fixture,
+      category: 'ENCLOSURES & DEVICES',
+      dimensions: () => [16, 2, 3] as [number, number, number],
+      python: () => `shape = Part.makeCompound([Part.makeBox(1,2,3,App.Vector(3*i,0,0)) for i in range(6)])
+component_labels = ["Socket screw 1", "Installed module bracket", "Integral base", "Custom insert 2", "Cover", "Upper bearing shell"]
+component_metadata = [{}, {"LibraryId":"fixture-board"}, {}, {}, {}, {}]`,
+    };
+    const command = consoleCommand(
+      generateScript(assembly, {}, 'default', undefined, undefined, 'simple', [electronics]),
+    );
+    const result = spawnSync(process.env.FREECAD_PYTHON!, ['-'], {
+      input: `import FreeCAD as App, Part, Import, os, tempfile
+doc = App.newDocument("FunctionalGroups")
+expected_folders = ["Bearings & seals", "Electronics", "Enclosures", "Fasteners", "Other components"]
+for attempt in range(2):
+    before = {obj.Name for obj in doc.Objects}
+    ${command}
+    root = next(obj for obj in doc.RootObjects if obj.Name not in before)
+    assert [obj.AssemblyGroup for obj in root.Group] == [[name] for name in expected_folders]
+    assert all(group.Label.startswith(group.AssemblyGroup[0]) for group in root.Group)
+    if attempt == 0:
+        assert [group.Label for group in root.Group] == expected_folders
+    assert all(group.TypeId == "App::Part" and group.Placement.isIdentity() for group in root.Group)
+    assert [[leaf.ComponentIndex for leaf in folder.Group] for folder in root.Group] == [[6], [2], [3,5], [1], [4]]
+    assert root.Group[1].Group[0].LibraryId == "fixture-board"
+    for folder in root.Group:
+        for leaf in folder.Group:
+            assert leaf.AssemblyGroup == folder.AssemblyGroup
+            assert abs(leaf.getGlobalPlacement().Base.x - leaf.AssemblyPlacement.Base.x) < 1e-9
+            assert abs(leaf.Shape.BoundBox.XMin - 3*(leaf.ComponentIndex-1)) < 1e-9
+assert len(doc.RootObjects) == 2
+with tempfile.TemporaryDirectory(prefix="protolab-functional-tree-") as directory:
+    step = os.path.join(directory,"assembly.step")
+    Import.export([root], step)
+    restored = Part.read(step)
+    assert restored.isValid() and len(restored.Solids) == 6
+    assert abs(restored.Volume - 36) < 1e-7 and abs(restored.BoundBox.XLength - 16) < 1e-7
+    saved = os.path.join(directory,"assembly.FCStd")
+    root_name = root.Name
+    doc.saveAs(saved)
+    App.closeDocument(doc.Name)
+    doc = App.openDocument(saved)
+    assert [group.AssemblyGroup[0] for group in doc.getObject(root_name).Group] == expected_folders
+    App.closeDocument(doc.Name)
+print("PASS functional folders")
+`,
+      encoding: 'utf8',
+      timeout: 60_000,
+    });
+    assert.equal(result.status, 0, `${result.error ?? ''}\n${result.stdout}\n${result.stderr}`);
+    assert.match(result.stdout, /PASS functional folders/);
+  },
+);
+
+test(
   'native groups retain hierarchy, placements, FCStd and STEP export, and rollback',
   { skip: !process.env.FREECAD_PYTHON },
   () => {
@@ -35,6 +95,7 @@ test(
       ...fixture,
       python: () =>
         fixture.python({}, 'default') +
+        '\ncomponent_labels[1] = "Socket screw"' +
         '\ncomponent_groups = [["Airframe", "Upper"], ["Electronics", "Battery"]]',
     };
     const broken = {
@@ -89,7 +150,7 @@ with tempfile.TemporaryDirectory(prefix="protolab-groups-") as directory:
         ${consoleCommand(generateScript(broken, {}, 'default'))}
         raise AssertionError("Invalid component accepted")
     except ValueError as error:
-        assert "assembly component" in str(error), str(error)
+        assert any(message in str(error) for message in ["assembly component", "generated CAD shape"]), str(error)
     assert set(o.Name for o in doc.Objects) == before, "Rollback left group objects"
     App.closeDocument(doc.Name)
 print("PASS groups, placement, FCStd, STEP and rollback")

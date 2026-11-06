@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "One selected SP16 or SP20 connector half with its housing hardware. Supplier links sell a plug/socket kit; the selected half is not an independently verified supplier SKU.",
+  "processes": [],
+  "releaseRequirements": [
+    "Order the matching SP16 or SP20 contact-count kit or confirm separate-half availability with the supplier.",
+    "Measure delivered mounting, keying, mating depth, usable threads and cable seal before releasing a panel or cable assembly.",
+    "Confirm electrical, ingress and environmental ratings for the actual delivered manufacturer and installation."
+  ]
+}

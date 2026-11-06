@@ -1,0 +1,18 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "FinsROV mechanical assembly referencing reusable library servos, thrusters, sensors, brackets, enclosure portions and individually fabricated details.",
+  "processes": [
+    "assembly",
+    "printing",
+    "turning",
+    "milling",
+    "drilling"
+  ],
+  "releaseRequirements": [
+    "Resolve every source BOM versus CAD discrepancy shown in the assembly assessment before release.",
+    "Manufacture only the parts explicitly assigned a making route. Thrusters, servos, sensors, enclosure and their internal components are purchased equipment.",
+    "Complete omitted fasteners, sealing parts, internal supports, electronics and cabling from the upstream BOM and instructions.",
+    "Verify actual mating interfaces, thread engagement, sealing fits, buoyancy and electrical integration for the completed build."
+  ]
+}

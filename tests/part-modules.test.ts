@@ -15,10 +15,187 @@ import {
   syncRegistry,
 } from '../scripts/part-modules/library';
 import { createPackage, exportPackage, importPackage } from '../scripts/part-modules/operations';
-import { starterFiles } from '../scripts/part-modules/templates';
+import { starterFiles, workbenchFiles } from '../scripts/part-modules/templates';
 import { checkPackageDefinitions } from '../scripts/part-modules/check';
+import { availableModelState } from '../src/core/part-selection';
 
 const repository = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+
+test('workbench waits for geometry initialization and discards superseded configurations', async () => {
+  const ts = (await import('typescript')).default;
+  const main = workbenchFiles('async-fixture')['src/main.ts'];
+  const source = ts.createSourceFile('main.ts', main, ts.ScriptTarget.Latest, true);
+  const stateNames = new Set(['rebuildRevision', 'readyRevision', 'geometryPreparation']);
+  const state = source.statements
+    .filter(
+      (statement) =>
+        ts.isVariableStatement(statement) &&
+        statement.declarationList.declarations.some(
+          (declaration) =>
+            ts.isIdentifier(declaration.name) && stateNames.has(declaration.name.text),
+        ),
+    )
+    .map((statement) => statement.getText(source))
+    .join('\n');
+  const functions = source.statements
+    .filter(
+      (statement) =>
+        ts.isFunctionDeclaration(statement) &&
+        ['rebuild', 'prepareScript'].includes(statement.name?.text ?? ''),
+    )
+    .map((statement) => statement.getText(source))
+    .join('\n');
+  const pending: {
+    parameters: { length: number };
+    resolve(): void;
+    reject(error: Error): void;
+  }[] = [];
+  const builds: { length: number; state: string }[] = [];
+  const modes: string[] = [];
+  const host = {
+    copy: { disabled: false },
+    download: { disabled: false },
+    textarea: { value: '' },
+    status: { textContent: '', classList: { remove() {}, toggle() {} } },
+    part: {
+      initializeGeometry: (parameters: { length: number }) =>
+        new Promise<void>((resolve, reject) => {
+          pending.push({ parameters, resolve, reject });
+        }),
+      buildGeometry: (parameters: { length: number }, state: string) => {
+        builds.push({ ...parameters, state });
+        return {};
+      },
+    },
+    modes,
+  };
+  const program = ts.transpileModule(
+    `const api = (() => {
+      const { part, copy, download, textarea, status } = host;
+      const dependency = { id: 'fixture-dependency' };
+      const parts = [part, dependency];
+      let parameters = { length: 1 }, state = 'default', geometryMode = 'simple';
+      let model, script = '';
+      const scene = { add() {}, remove() {} };
+      const validateParameters = () => [];
+      const withGeometryMode = (mode, build) => { host.modes.push(mode); return build(); };
+      const release = () => {}, fit = () => {};
+      const generateScript = (_part, values, pose, _a, _b, mode, definitions) => {
+        if (!definitions?.includes(dependency)) throw new Error('The registered workbench dependency is missing.');
+        return JSON.stringify({ ...values, pose, mode });
+      };
+      const consoleCommand = (value) => value;
+      ${state}
+      ${functions}
+      return {
+        rebuild, prepareScript,
+        configure(values, pose = 'default', mode = 'simple') {
+          parameters = values; state = pose; geometryMode = mode;
+          return rebuild(true);
+        },
+        get script() { return script; }
+      };
+    })();`,
+    { compilerOptions: { target: ts.ScriptTarget.ES2022 } },
+  );
+  const flow = new Function('host', program.outputText + '\nreturn api;')(host);
+  const turn = () => new Promise<void>((resolve) => setImmediate(resolve));
+  const initial = flow.rebuild(true);
+  await turn();
+  assert.deepEqual(
+    pending.map((request) => request.parameters.length),
+    [1],
+  );
+  assert.equal(host.copy.disabled, true);
+  assert.equal(host.download.disabled, true);
+  assert.equal(flow.prepareScript(), false);
+  const obsolete = flow.configure({ length: 2 });
+  const latest = flow.configure({ length: 3 }, 'print-layout', 'full');
+  pending[0].resolve();
+  await turn();
+  assert.deepEqual(
+    pending.map((request) => request.parameters.length),
+    [1, 3],
+  );
+  assert.equal(builds.length, 0, 'Neither an uninitialized nor a superseded model is built.');
+  assert.equal(modes.length, 0, 'Initialization runs outside the synchronous geometry mode.');
+  pending[1].resolve();
+  await Promise.all([initial, obsolete, latest]);
+  assert.deepEqual(builds, [{ length: 3, state: 'print-layout' }]);
+  assert.deepEqual(modes, ['full']);
+  assert.equal(host.copy.disabled, false);
+  assert.equal(host.download.disabled, false);
+  assert.equal(flow.prepareScript(), true);
+  assert.deepEqual(JSON.parse(flow.script), { length: 3, pose: 'print-layout', mode: 'full' });
+  const failed = flow.configure({ length: 4 });
+  await turn();
+  pending[2].reject(new Error('Geometry initialization failed.'));
+  await failed;
+  assert.match(host.status.textContent, /Geometry initialization failed/);
+  assert.equal(host.copy.disabled, true);
+  assert.equal(flow.prepareScript(), false);
+  const retry = flow.configure({ length: 5 });
+  await turn();
+  pending[3].resolve();
+  await retry;
+  assert.deepEqual(
+    builds.map((build) => build.length),
+    [3, 5],
+  );
+  assert.equal(host.copy.disabled, false);
+  assert.equal(flow.prepareScript(), true);
+});
+
+test('workbench model switching reconciles conditional states and refreshes their options', async () => {
+  const ts = (await import('typescript')).default;
+  const { default: part } = await import('../src/parts/pwm-switch/part');
+  const main = workbenchFiles(part.id)['src/main.ts'];
+  const source = ts.createSourceFile('main.ts', main, ts.ScriptTarget.Latest, true);
+  const renderFields = source.statements.find(
+    (statement) => ts.isFunctionDeclaration(statement) && statement.name?.text === 'renderFields',
+  )!;
+  const program = ts.transpileModule(
+    `
+    let parameters = { ...part.defaults }, state = 'exploded', presetSelect;
+    const stateSelect = {
+      options: [], value: '',
+      replaceChildren() { this.options = []; },
+      append(option) { this.options.push(option); }
+    };
+    ${renderFields.getText(source)}
+    const api = {
+      render() { renderFields(); return { state, options: stateSelect.options }; },
+      configure(values, requested = state) { parameters = values; state = requested; return this.render(); }
+    };
+  `,
+    { compilerOptions: { target: ts.ScriptTarget.ES2022 } },
+  );
+  const element = () => ({ append() {}, replaceChildren() {}, addEventListener() {} });
+  const document = { querySelector: element, createElement: element };
+  const Option = class {
+    constructor(
+      public label: string,
+      public value: string,
+    ) {}
+  };
+  const api = new Function(
+    'part',
+    'availableModelState',
+    'document',
+    'Option',
+    program.outputText + '\nreturn api;',
+  )(part, availableModelState, document, Option);
+  assert.deepEqual(api.render(), {
+    state: 'exploded',
+    options: [new Option('Assembled', 'assembled'), new Option('Exploded', 'exploded')],
+  });
+  assert.deepEqual(api.configure({ model: 'user-mosfet-26x16' }), {
+    state: 'assembled',
+    options: [new Option('Assembled', 'assembled')],
+  });
+  assert.equal(api.configure(part.defaults).state, 'assembled');
+  assert.equal(api.configure(part.defaults, 'exploded').state, 'exploded');
+});
 
 async function fixture() {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), 'protolab-modules-'));
@@ -78,6 +255,13 @@ test('static preflight rejects cross-part imports, missing files, IDs, API versi
   await assert.rejects(inspectPackage(folder, root), /apiVersion: 2/);
   await fs.writeFile(index, original.replace('id: "first-spacer"', "id: 'different-spacer'"));
   await assert.rejects(inspectPackage(folder, root), /does not match part ID/);
+  for (const dependencies of ['undefined', 'unresolvedDependencies', 'null']) {
+    await fs.writeFile(
+      index,
+      original.replace('apiVersion: 2', `apiVersion: 2, dependencies: ${dependencies}`),
+    );
+    await assert.rejects(inspectPackage(folder, root), /Dependencies must be a literal array/);
+  }
   await fs.writeFile(index, original);
   await addStarter(root, 'other-spacer', 30);
   const part = path.join(folder, 'part.ts');
@@ -90,6 +274,11 @@ test('static preflight rejects cross-part imports, missing files, IDs, API versi
   await assert.rejects(inspectPackage(folder, root), /Dynamic imports must use literal/);
   await fs.writeFile(part, body);
   const presets = JSON.parse(await fs.readFile(path.join(folder, 'presets.json'), 'utf8'));
+  await fs.writeFile(
+    path.join(folder, 'presets.json'),
+    JSON.stringify([{ ...presets[0], parameters: [] }]),
+  );
+  await assert.rejects(inspectPackage(folder, root), /parameters object/);
   await fs.writeFile(path.join(folder, 'presets.json'), JSON.stringify([...presets, ...presets]));
   await assert.rejects(inspectPackage(folder, root), /unique id/);
   await fs.writeFile(path.join(folder, 'presets.json'), JSON.stringify(presets));
@@ -116,12 +305,97 @@ test('static package boundaries reject symbolic links', async (context) => {
   await assert.rejects(inspectPackage(folder, root), /symlinks are not supported/);
 });
 
+test('package discovery inspects shared dependency trees once and revalidates later changes', async (context) => {
+  const root = await fixture();
+  context.after(() => fs.rm(root, { recursive: true, force: true }));
+  for (const [id, order] of [
+    ['branch-a', 30],
+    ['branch-b', 40],
+    ['shared-leaf', 50],
+  ] as const)
+    await addStarter(root, id, order);
+  for (const [id, dependencies] of [
+    ['first-spacer', ['branch-a', 'branch-b']],
+    ['branch-a', ['shared-leaf']],
+    ['branch-b', ['shared-leaf']],
+  ] as const) {
+    const file = path.join(root, 'src/parts', id, 'index.ts');
+    await fs.writeFile(
+      file,
+      (await fs.readFile(file, 'utf8')).replace(
+        'apiVersion: 2',
+        `apiVersion: 2, dependencies: ${JSON.stringify(dependencies)}`,
+      ),
+    );
+  }
+  const visits = new Map<string, number>();
+  const readDirectory = fs.readdir;
+  const observed = context.mock.method(fs, 'readdir', (async (
+    ...args: Parameters<typeof fs.readdir>
+  ) => {
+    const file = String(args[0]);
+    visits.set(file, (visits.get(file) ?? 0) + 1);
+    return readDirectory(...args);
+  }) as typeof fs.readdir);
+  assert.equal((await discoverPackages(root)).length, 4);
+  for (const id of ['first-spacer', 'branch-a', 'branch-b', 'shared-leaf'])
+    assert.equal(visits.get(path.join(root, 'src/parts', id)), 1, id);
+  observed.mock.restore();
+  await fs.writeFile(path.join(root, 'src/parts/shared-leaf/presets.json'), '{invalid');
+  await assert.rejects(discoverPackages(root), /Invalid JSON/);
+});
+
+test('static preflight reserves unambiguous preset IDs without renaming supplier IDs', async (context) => {
+  const root = await fixture();
+  context.after(() => fs.rm(root, { recursive: true, force: true }));
+  const folder = path.join(root, 'src/parts/first-spacer');
+  const file = path.join(folder, 'presets.json');
+  const preset = { name: 'Supplier execution', parameters: { length: 5 } };
+  for (const id of [
+    undefined,
+    null,
+    12,
+    '',
+    ' ',
+    ' model',
+    'model ',
+    'model:execution',
+    'model\nexecution',
+    'model\u0085execution',
+    'custom',
+  ]) {
+    await fs.writeFile(file, JSON.stringify([{ ...preset, id }]));
+    await assert.rejects(inspectPackage(folder, root), /unique id/, String(id));
+  }
+  const id = 'SFK602 / SFK0602 · unverified listing';
+  await fs.writeFile(file, JSON.stringify([{ ...preset, id }]));
+  assert.equal((await inspectPackage(folder, root)).id, 'first-spacer');
+  const other = await addStarter(root, 'other-spacer', 30);
+  await fs.writeFile(path.join(other, 'presets.json'), JSON.stringify([{ ...preset, id }]));
+  assert.equal(
+    (await discoverPackages(root)).length,
+    2,
+    'Local preset IDs are scoped to their package.',
+  );
+});
+
 test('starter creates an isolated configurator and never overwrites an existing package', async (context) => {
   const root = await fixture();
   context.after(() => fs.rm(root, { recursive: true, force: true }));
   const folder = await createPackage(root, 'camera-mount', 'Camera Mount');
   assert.equal((await inspectPackage(folder, root)).id, 'camera-mount');
   assert.match(await fs.readFile(path.join(folder, 'part.ts'), 'utf8'), /Camera Mount/);
+  const existingPackage = (
+    await fs.readdir(path.join(repository, 'src/parts'), { withFileTypes: true })
+  ).find((entry) => entry.isDirectory())!;
+  assert.equal(
+    await fs.readFile(path.join(folder, 'README.md'), 'utf8'),
+    await fs.readFile(
+      path.join(repository, 'src/parts', existingPackage.name, 'README.md'),
+      'utf8',
+    ),
+    'New packages must retain the same universal README as existing packages.',
+  );
   await assert.rejects(createPackage(root, 'camera-mount'), /already exists/);
   await assert.rejects(createPackage(root, '../escape'), /hyphen-separated part ID/);
   assert.deepEqual(
@@ -233,6 +507,60 @@ test('runtime registration reports duplicates and malformed configurators before
   const module: PartModule = { apiVersion: 2, order: 1, part: definition };
   assert.equal(registerPartModules([module])[0], definition);
   assert.throws(() => registerPartModules([module, module]), /Duplicate part module ID/);
+  for (const id of [
+    undefined,
+    null,
+    12,
+    '',
+    ' ',
+    ' model',
+    'model ',
+    'model:execution',
+    'model\nexecution',
+    'model\u0085execution',
+    'custom',
+  ]) {
+    assert.throws(
+      () =>
+        registerPartModules([
+          {
+            ...module,
+            part: {
+              ...definition,
+              presets: [{ id, name: 'Invalid ID', parameters: { length: 5 } }],
+            },
+          } as unknown as PartModule,
+        ]),
+      /Invalid preset ID/,
+      String(id),
+    );
+  }
+  const supplierPreset = {
+    id: 'SFK602 / SFK0602 · unverified listing',
+    name: 'Supplier execution',
+    description: 'A supplier identity fixture with its original spelling.',
+    parameters: { length: 5 },
+  };
+  const supplierModule = { ...module, part: { ...definition, presets: [supplierPreset] } };
+  assert.equal(registerPartModules([supplierModule])[0].presets[0].id, supplierPreset.id);
+  assert.throws(
+    () =>
+      registerPartModules([
+        {
+          ...supplierModule,
+          part: { ...supplierModule.part, presets: [supplierPreset, supplierPreset] },
+        },
+      ]),
+    /Duplicate preset ID/,
+  );
+  assert.equal(
+    registerPartModules([
+      supplierModule,
+      { ...supplierModule, part: { ...supplierModule.part, id: 'other-test-part' } },
+    ]).length,
+    2,
+    'The same local preset ID is valid in distinct physical packages.',
+  );
   assert.throws(
     () => registerPartModules([{ ...module, part: { ...definition, defaults: {} } }]),
     /Missing default for length/,
@@ -397,16 +725,18 @@ test('declared library dependencies are portable and cannot silently overwrite s
   await assert.rejects(inspectPackage(own, root), /Cyclic package dependency/);
 });
 
-test('checking one assembly resolves its transitive dependencies while reporting only the selected package', async (context) => {
+test('batch checks resolve shared transitive dependencies and count only selected packages', async (context) => {
   const root = await fixture();
   context.after(() => fs.rm(root, { recursive: true, force: true }));
   await fs.symlink(path.join(repository, 'node_modules'), path.join(root, 'node_modules'), 'dir');
   const first = path.join(root, 'src/parts/first-spacer');
   const intermediate = await addStarter(root, 'intermediate-spacer', 30);
   await addStarter(root, 'leaf-spacer', 40);
+  const sibling = await addStarter(root, 'other-spacer', 50);
   for (const [folder, dependency] of [
     [first, 'intermediate-spacer'],
     [intermediate, 'leaf-spacer'],
+    [sibling, 'intermediate-spacer'],
   ]) {
     const index = path.join(folder, 'index.ts');
     await fs.writeFile(
@@ -417,8 +747,70 @@ test('checking one assembly resolves its transitive dependencies while reporting
       ),
     );
   }
-  const selected = await inspectPackage(first, root);
-  assert.deepEqual(await checkPackageDefinitions([selected]), { parts: 1, presets: 1 });
+  assert.deepEqual(await checkPackageDefinitions(root, ['first-spacer']), { parts: 1, presets: 1 });
+  assert.deepEqual(await checkPackageDefinitions(root, ['first-spacer', 'other-spacer']), {
+    parts: 2,
+    presets: 2,
+  });
+  await assert.rejects(checkPackageDefinitions(root, ['first-spacer', 'first-spacer']), /Duplicate/);
+});
+
+test('package checks cover every available state per configuration and reject an empty state set', async (context) => {
+  const root = await fixture();
+  context.after(() => fs.rm(root, { recursive: true, force: true }));
+  await fs.symlink(path.join(repository, 'node_modules'), path.join(root, 'node_modules'), 'dir');
+  const state = (id: string, condition = 'true') =>
+    `{ id: '${id}', label: '${id}', description: 'Fixture state.', availableWhen: (p) => ${condition} }`;
+  async function configured(id: string, states: string[], validation = '') {
+    const folder = await addStarter(root, id, 30);
+    const file = path.join(folder, 'part.ts');
+    await fs.writeFile(
+      file,
+      (await fs.readFile(file, 'utf8'))
+        .replace(
+          '  presets: presets as Preset[],',
+          `  presets: presets as Preset[],\n  states: [${states.join(',')}],`,
+        )
+        .replace('  validate(p) {', `  validate(p, state) {\n    ${validation}`),
+    );
+    return folder;
+  }
+  const conditional = await configured(
+    'conditional-states',
+    [state('long', 'Number(p.length) > 20'), state('short', 'Number(p.length) <= 20')],
+    "if (state !== (Number(p.length) > 20 ? 'long' : 'short')) return ['Unavailable fixture state.'];",
+  );
+  const presetFile = path.join(conditional, 'presets.json');
+  const [preset] = JSON.parse(await fs.readFile(presetFile, 'utf8'));
+  await fs.writeFile(
+    presetFile,
+    JSON.stringify([
+      preset,
+      {
+        ...preset,
+        id: 'long',
+        parameters: { ...preset.parameters, length: 30 },
+      },
+    ]),
+  );
+  assert.deepEqual(await checkPackageDefinitions(root, ['conditional-states']), {
+    parts: 1,
+    presets: 2,
+  });
+  await configured(
+    'invalid-inspection',
+    [state('assembled'), state('exploded')],
+    "if (state === 'exploded') return ['Broken inspection state.'];",
+  );
+  await assert.rejects(
+    checkPackageDefinitions(root, ['invalid-inspection']),
+    /invalid-inspection \/ defaults \/ exploded: Broken inspection state/,
+  );
+  await configured('unavailable-states', [state('long', 'Number(p.length) > 20')]);
+  await assert.rejects(
+    checkPackageDefinitions(root, ['unavailable-states']),
+    /unavailable-states \/ defaults: a configuration must have an available model state/,
+  );
 });
 
 test('a dependency assembly handoff compiles the complete shared SDK and registers transitive library packages', async (context) => {
@@ -532,4 +924,48 @@ test('a dependency assembly handoff compiles the complete shared SDK and registe
     { encoding: 'utf8' },
   );
   assert.equal(checked.status, 0, checked.stdout + checked.stderr);
+});
+
+test('an exported asynchronous geometry workbench bundles its pinned Manifold runtime and WASM', async (context) => {
+  const root = await fixture();
+  context.after(() => fs.rm(root, { recursive: true, force: true }));
+  const partPath = path.join(root, 'src/parts/first-spacer/part.ts');
+  const source = await fs.readFile(partPath, 'utf8');
+  await fs.writeFile(
+    partPath,
+    "import { initializeManifoldGeometry } from '../../core/assembly/manifold-boundary';\n" +
+      source.replace(
+        '  presets: presets as Preset[],',
+        '  presets: presets as Preset[],\n  initializeGeometry: initializeManifoldGeometry,',
+      ),
+  );
+  const handoff = await exportPackage(root, 'first-spacer', path.join(root, 'handoff'));
+  const manifest = JSON.parse(await fs.readFile(path.join(handoff, 'package.json'), 'utf8'));
+  assert.equal(manifest.dependencies['manifold-3d'], '3.5.4');
+  assert.match(
+    await fs.readFile(path.join(handoff, 'README.md'), 'utf8'),
+    /initializeGeometry\(parameters, state\)/,
+  );
+  assert.deepEqual(
+    await fs.readFile(path.join(handoff, 'src/core/assembly/manifold-boundary.ts')),
+    await fs.readFile(path.join(repository, 'src/core/assembly/manifold-boundary.ts')),
+  );
+  await fs.symlink(path.join(repository, 'node_modules'), path.join(handoff, 'node_modules'));
+  const built = spawnSync(
+    process.execPath,
+    [path.join(repository, 'node_modules/vite/bin/vite.js'), 'build'],
+    { cwd: handoff, encoding: 'utf8' },
+  );
+  assert.equal(built.status, 0, built.stdout + built.stderr);
+  const checked = spawnSync(
+    process.execPath,
+    [path.join(repository, 'node_modules/typescript/bin/tsc'), '--noEmit'],
+    { cwd: handoff, encoding: 'utf8' },
+  );
+  assert.equal(checked.status, 0, checked.stdout + checked.stderr);
+  const assets = await fs.readdir(path.join(handoff, 'dist/assets'));
+  assert.ok(
+    assets.some((name) => /^manifold-.*\.wasm$/.test(name)),
+    assets.join(', '),
+  );
 });

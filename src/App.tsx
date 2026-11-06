@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import {
   ArrowDownToLine,
   ArrowUpRight,
@@ -7,23 +7,16 @@ import {
   Box,
   Check,
   ChevronDown,
-  ChevronRight,
   Code2,
   Copy,
-  Expand,
   FileCode2,
   FileJson,
-  Grid2X2,
   Keyboard,
   Layers3,
   LoaderCircle,
   Menu,
-  Maximize2,
-  Minimize2,
   MousePointer2,
   Move,
-  Rotate3D,
-  Ruler,
   Settings2,
   Search,
   ShieldCheck,
@@ -31,10 +24,16 @@ import {
   X,
 } from 'lucide-react';
 import Catalog from './components/Catalog';
+import LibraryBreadcrumbs from './components/LibraryBreadcrumbs';
+import { LibraryId } from './components/LibraryIdentity';
+import AssemblyStructurePanel from './components/AssemblyStructurePanel';
 import ProjectWorkspace from './components/ProjectWorkspace';
 import Configurator from './components/Configurator';
 import ModelViewer, { type NavigationMode } from './components/ModelViewer';
+import type { CameraView } from './components/viewer/camera-views';
+import type { DisplayMode, PreviewBackgroundMode } from './components/viewer/PreviewControls';
 import { useAssemblyPreview } from './components/useAssemblyPreview';
+import { previewWorkerPartId } from './components/requestWorkerOutput';
 import { useLibraryOutputs } from './components/useLibraryOutputs';
 import GeometryModeSwitch from './components/GeometryModeSwitch';
 import { usePreviewFullscreen } from './components/usePreviewFullscreen';
@@ -43,15 +42,23 @@ import PresetBrowser from './components/PresetBrowser';
 import { Brand, PartIcon } from './components/PartIcon';
 import { parts } from './parts';
 import { consoleCommand } from './core/freecad';
+import { eskdFileStem, eskdIdentity } from './core/eskd';
 import { withGeometryMode, type GeometryMode } from './core/geometry-mode';
 import { validateParameters } from './core/validation';
 import { parseConfiguration } from './core/configuration';
+import { createFileImporter } from './core/file-import';
+import { parseConfigurationLink } from './core/configuration-link';
+import { selectedMatchingPreset } from './core/preset-resolution';
 import { downloadFile } from './core/download';
 import { productKindLabels, supplyKindLabels } from './core/product-library';
 import { familyId, familyMembers } from './core/browse-families';
-import { familyLabel, libraryLabel } from './core/library-labels';
+import { mechanismExecutionSelection } from './core/mechanism-catalog';
+import { familyLabel } from './core/library-labels';
+import { libraryLocationContains, type LibraryLocation } from './core/library-navigation';
+import { emptyDiscoveryFilters } from './core/library-discovery';
 import { createPresetId, readPresets, storePresets, type SavedPreset } from './core/storage';
 import type { Parameters, PartDefinition, Preset } from './core/types';
+import type { AssemblyComponent } from './core/product-types';
 import type { QuickPickFilters } from './core/quick-picks';
 import {
   emptyPresetFilters,
@@ -65,10 +72,9 @@ import {
   matchingPresetId,
   parametersForPreset,
   reconcilePartSelection,
+  type PartSelection,
 } from './core/part-selection';
 
-type DisplayMode = 'solid' | 'wireframe' | 'xray';
-type View = 'isometric' | 'front' | 'top' | 'right';
 type Dialog = 'script' | 'guide' | 'presets' | 'save' | 'catalog' | 'project' | null;
 
 export default function App() {
@@ -84,16 +90,44 @@ export default function App() {
 }
 
 function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
-  const initialPart = parts.find((item) => item.defaultSelection) ?? parts[0];
+  const [initial] = useState(() => {
+    const defaultPart = parts.find((item) => item.defaultSelection) ?? parts[0];
+    const fallback = { part: defaultPart, selection: defaultPartSelection(defaultPart), error: '' };
+    if (typeof window === 'undefined') return fallback;
+    try {
+      const linked = parseConfigurationLink(window.location.hash, parts);
+      if (!linked) return fallback;
+      return {
+        part: linked.part,
+        selection: {
+          partId: linked.part.id,
+          parameters: linked.parameters,
+          modelState: linked.state,
+          presetId: linked.presetId,
+        },
+        error: '',
+      };
+    } catch (error) {
+      return {
+        ...fallback,
+        error: `The linked component could not be opened: ${error instanceof Error ? error.message : 'Invalid configuration link.'}`,
+      };
+    }
+  });
+  const initialPart = initial.part;
   const [selectedPartId, setSelectedPartId] = useState(initialPart.id);
   const part = parts.find((item) => item.id === selectedPartId) ?? initialPart;
   const browseId = familyId(part);
   const browseParts = useMemo(() => familyMembers(parts, part), [parts, browseId]);
   const [browseQuery, setBrowseQuery] = useState({ query: '', revision: 0 });
   const [libraryQuery, setLibraryQuery] = useState('');
-  const [storedParameters, setParameters] = useState<Parameters>({ ...initialPart.defaults });
-  const [storedModelState, setModelState] = useState(initialPart.states?.[0]?.id ?? 'default');
-  const [storedPresetId, setPresetId] = useState(() => defaultPartSelection(initialPart).presetId);
+  const [libraryDiscoveryFilters, setLibraryDiscoveryFilters] = useState(emptyDiscoveryFilters);
+  const [libraryLocation, setLibraryLocation] = useState<LibraryLocation>();
+  const [libraryNavigationRevision, setLibraryNavigationRevision] = useState(0);
+  const [storedParameters, setParameters] = useState<Parameters>(initial.selection.parameters);
+  const [storedModelState, setModelState] = useState(initial.selection.modelState);
+  const [storedPresetId, setPresetId] = useState(initial.selection.presetId);
+  const mechanismSelections = useRef(new Map<string, PartSelection>());
   const loadedDefinition = useRef(part);
   const definitionVersion = useRef(0);
   const moduleChanged = loadedDefinition.current !== part;
@@ -116,7 +150,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
     if (storedModelState !== modelState) setModelState(modelState);
   }, [storedModelState, modelState]);
   const presetId = part.catalogSelectionOnly
-    ? matchingPresetId(part, parameters, selection.presetId)
+    ? (selectedMatchingPreset(part, parameters, selection.presetId)?.id ?? 'custom')
     : selection.presetId;
   if (moduleChanged) {
     definitionVersion.current++;
@@ -135,8 +169,15 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
     }
   });
   const [navigationMode, setNavigationMode] = useState<NavigationMode>('orbit');
+  const [backgroundMode, setBackgroundMode] = useState<PreviewBackgroundMode>(() => {
+    try {
+      return localStorage.getItem('protolab.preview-background') === 'light' ? 'light' : 'dark';
+    } catch {
+      return 'dark';
+    }
+  });
   const { previewRef, expanded: previewExpanded, toggle: togglePreview } = usePreviewFullscreen();
-  const [view, setView] = useState<View>('isometric');
+  const [view, setView] = useState<CameraView>('isometric');
   const [showGrid, setShowGrid] = useState(true);
   const [showDimensions, setShowDimensions] = useState(false);
   const [fitToken, setFitToken] = useState(0);
@@ -151,28 +192,61 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
     parts.some((item) => item.id === preset.partId),
   );
   const [presetName, setPresetName] = useState('');
-  const [notice, setNotice] = useState<{ message: string; tone: 'success' | 'error' }>();
+  const [notice, setNotice] = useState<{ message: string; tone: 'success' | 'error' } | undefined>(
+    initial.error ? { message: initial.error, tone: 'error' } : undefined,
+  );
   const toast = notice?.message ?? '';
   function setToast(message: string, tone: 'success' | 'error' = 'success') {
     setNotice(message ? { message, tone } : undefined);
   }
   const [mobilePanel, setMobilePanel] = useState<'library' | 'config' | null>(null);
   const [viewerError, setViewerError] = useState('');
+  const [selectedComponentId, setSelectedComponentId] = useState<string | null>(null);
+  const [hiddenComponentIds, setHiddenComponentIds] = useState<string[]>([]);
+  const componentParameters = { ...parameters };
+  for (const { visibilityParameter } of part.assemblyReferences ?? [])
+    delete componentParameters[visibilityParameter];
+  const componentConfigurationKey = JSON.stringify([part.id, componentParameters]);
+  useEffect(() => {
+    setSelectedComponentId(null);
+    setHiddenComponentIds([]);
+  }, [componentConfigurationKey]);
   const exportMenu = useRef<HTMLDivElement>(null);
   const importInput = useRef<HTMLInputElement>(null);
+  const [configurationImporter] = useState(createFileImporter);
+  useLayoutEffect(() => () => configurationImporter.cancel(), [configurationImporter, parts]);
   const consoleInput = useRef<HTMLTextAreaElement>(null);
   const errors = useMemo(
     () => validateParameters(part, parameters, modelState),
     [part, parameters, modelState],
   );
+  const assemblyReferences = useMemo(() => {
+    if (errors.length) return [];
+    return (part.assemblyReferences ?? []).flatMap(({ component, visibilityParameter }) => {
+      const reference = component(parameters, modelState);
+      return reference ? [{ component: reference, visibilityParameter }] : [];
+    });
+  }, [part, parameters, modelState, errors]);
+  const referenceComponents = useMemo(
+    () => assemblyReferences.map(({ component }) => component),
+    [assemblyReferences],
+  );
+  const hiddenAssemblyComponentIds = useMemo(
+    () => [
+      ...hiddenComponentIds,
+      ...assemblyReferences
+        .filter(({ visibilityParameter }) => parameters[visibilityParameter] !== true)
+        .map(({ component }) => component.id),
+    ],
+    [hiddenComponentIds, assemblyReferences, parameters],
+  );
   const validPreview = useRef({ part, parameters, modelState });
   if (!errors.length) validPreview.current = { part, parameters, modelState };
   const preview = validPreview.current;
   const assembly = useAssemblyPreview(
-    preview.part.preview === 'worker' ? preview.part.id : undefined,
+    previewWorkerPartId(preview.part),
     preview.parameters,
     preview.modelState,
-    presetId,
     geometryMode,
     definitionVersion.current,
   );
@@ -217,6 +291,14 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
   }, [geometryMode]);
 
   useEffect(() => {
+    try {
+      localStorage.setItem('protolab.preview-background', backgroundMode);
+    } catch {
+      /* Session preference still applies. */
+    }
+  }, [backgroundMode]);
+
+  useEffect(() => {
     if (!notice) return;
     const timer = setTimeout(() => setToast(''), 4500);
     return () => clearTimeout(timer);
@@ -244,14 +326,62 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
     next: PartDefinition,
     values = next.defaults,
     state = next.states?.[0].id ?? 'default',
+    selectedPresetId?: string,
   ) {
+    configurationImporter.cancel();
+    if (!libraryLocationContains(next, libraryLocation)) setLibraryLocation(undefined);
+    if (part.mechanismExecution && part.id !== next.id)
+      mechanismSelections.current.set(part.id, {
+        partId: part.id,
+        parameters: { ...parameters },
+        modelState,
+        presetId,
+      });
     loadedDefinition.current = next;
     setSelectedPartId(next.id);
     setParameters({ ...values });
     setModelState(state);
     setViewerError('');
-    setPresetId(matchingPresetId(next, values));
+    setPresetId(selectedPresetId ?? matchingPresetId(next, values));
     setFitToken((token) => token + 1);
+  }
+  function toggleComponentVisibility(component: AssemblyComponent) {
+    const reference = assemblyReferences.find((item) => item.component.id === component.id);
+    if (reference) {
+      configurationImporter.cancel();
+      const key = reference.visibilityParameter;
+      setParameters((current) => ({ ...current, [key]: current[key] !== true }));
+    } else {
+      setHiddenComponentIds((current) =>
+        current.includes(component.id)
+          ? current.filter((id) => id !== component.id)
+          : [...current, component.id],
+      );
+    }
+    if (selectedComponentId === component.id) setSelectedComponentId(null);
+  }
+  function showAllComponents() {
+    setHiddenComponentIds([]);
+    const hiddenReferenceParameters = assemblyReferences
+      .map(({ visibilityParameter }) => visibilityParameter)
+      .filter((key) => parameters[key] !== true);
+    if (hiddenReferenceParameters.length) {
+      configurationImporter.cancel();
+      setParameters((current) => {
+        const next = { ...current };
+        for (const key of hiddenReferenceParameters) next[key] = true;
+        return next;
+      });
+    }
+  }
+  function selectExecution(next: PartDefinition) {
+    if (!next.mechanismExecution) {
+      selectPart(next);
+      return;
+    }
+    if (next.id === part.id) return;
+    const saved = mechanismExecutionSelection(next, mechanismSelections.current.get(next.id));
+    selectPart(next, saved.parameters, saved.modelState, saved.presetId);
   }
   function openPresetBrowser(
     mode: 'all' | 'browse' | 'match',
@@ -285,12 +415,19 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
       next.id === part.id && !validateParameters(next, values, modelState).length
         ? modelState
         : (next.states?.[0].id ?? 'default');
-    selectPart(next, values, state);
-    setPresetId(preset.id);
+    selectPart(next, values, state, preset.id);
   }
   function openMobilePanel(panel: 'library' | 'config') {
     setDialog((current) => (current === 'catalog' ? null : current));
     setMobilePanel(panel);
+  }
+  function navigateLibrary(location?: LibraryLocation) {
+    setLibraryLocation(location);
+    setLibraryNavigationRevision((revision) => revision + 1);
+    setLibraryQuery('');
+    setLibraryDiscoveryFilters(emptyDiscoveryFilters());
+    setDialog(null);
+    setMobilePanel('library');
   }
   async function copyScript() {
     if (errors.length || outputs.pending) return;
@@ -323,24 +460,25 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
     if (errors.length || outputs.pending) return;
     setExportOpen(false);
     try {
+      const filename = eskdFileStem(eskdIdentity(part, parameters, modelState, presetId));
       if (format === 'macro') {
         const prepared = await outputs.prepare('script');
         if (!prepared.script) throw new Error('The FreeCAD script is empty.');
-        downloadFile(prepared.script, `${part.id}-${geometryMode}.FCMacro`, 'text/x-python');
+        downloadFile(prepared.script, `${filename}-${geometryMode}.FCMacro`, 'text/x-python');
       }
       if (format === 'stl') {
         const prepared = await outputs.prepare('stl');
         if (!prepared.stl) throw new Error('The STL mesh is empty.');
-        downloadFile(prepared.stl, `${part.id}-${modelState}.stl`, 'model/stl');
+        downloadFile(prepared.stl, `${filename}-${modelState}.stl`, 'model/stl');
       }
       if (format === 'json')
         downloadFile(
           JSON.stringify(
-            { version: 1, part: part.id, state: modelState, units: 'mm', parameters },
+            { version: 1, part: part.id, presetId, state: modelState, units: 'mm', parameters },
             null,
             2,
           ),
-          `${part.id}.json`,
+          `${filename}.json`,
           'application/json',
         );
       setToast(`${format === 'macro' ? 'FreeCAD macro' : format.toUpperCase()} downloaded.`);
@@ -362,6 +500,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
         partId: part.id,
         parameters: { ...parameters },
         state: modelState,
+        presetId,
       };
       const next = [...savedPresets, preset];
       storePresets(next);
@@ -377,20 +516,22 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
   }
   async function importConfiguration(file: File | undefined) {
     if (!file) return;
-    try {
-      if (file.size > 100_000) throw new Error('Choose a parameters file smaller than 100 KB.');
-      const config = parseConfiguration(await file.text(), parts);
-      selectPart(config.part, config.parameters, config.state);
-      setDialog(null);
-      setToast('Configuration imported. Use Save preset to keep it in this browser.');
-    } catch (error) {
-      setToast(
-        `Import failed: ${error instanceof Error ? error.message : 'Invalid JSON file.'}`,
-        'error',
-      );
-    } finally {
-      if (importInput.current) importInput.current.value = '';
-    }
+    if (importInput.current) importInput.current.value = '';
+    await configurationImporter.read(file, {
+      maxBytes: 100_000,
+      sizeMessage: 'Choose a parameters file smaller than 100 KB.',
+      parse: (text) => parseConfiguration(text, parts),
+      apply: (config) => {
+        selectPart(config.part, config.parameters, config.state, config.presetId);
+        setDialog(null);
+        setToast('Configuration imported. Use Save preset to keep it in this browser.');
+      },
+      reportError: (error) =>
+        setToast(
+          `Import failed: ${error instanceof Error ? error.message : 'Invalid JSON file.'}`,
+          'error',
+        ),
+    });
   }
   function removePreset(id: string) {
     const next = savedPresets.filter((preset) => preset.id !== id);
@@ -476,13 +617,10 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
         >
           <Menu size={20} />
         </button>
-        <div className="breadcrumbs">
-          <span>Library</span>
-          <ChevronRight size={13} />
-          <span>{libraryLabel(part.category)}</span>
-          <ChevronRight size={13} />
-          <strong>{libraryLabel(part.subgroup)}</strong>
-        </div>
+        <LibraryBreadcrumbs
+          location={{ level: 'subgroup', category: part.category, subgroup: part.subgroup }}
+          onNavigate={navigateLibrary}
+        />
         <div className="action-buttons">
           <button
             className="secondary-button script-button"
@@ -595,6 +733,15 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
             selected={part}
             query={libraryQuery}
             onQueryChange={setLibraryQuery}
+            location={libraryLocation}
+            locationRevision={libraryNavigationRevision}
+            onLocationChange={navigateLibrary}
+            discoveryFilters={libraryDiscoveryFilters}
+            onDiscoveryFiltersChange={setLibraryDiscoveryFilters}
+            onSelectPreset={(next, preset) => {
+              applyPreset(next, preset);
+              setBrowseQuery((current) => ({ query: '', revision: current.revision + 1 }));
+            }}
             onSelect={(next, query) => {
               if (next.id !== part.id) selectPart(next);
               const nextQuery = query ?? '';
@@ -614,6 +761,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
               <span className="part-revision">/ {supplyKindLabels[part.product.supply]}</span>
             </div>
             <h1>{familyLabel(part)}</h1>
+            <LibraryId part={part} parameters={parameters} presetId={presetId} />
             <p>{part.description}</p>
             <div className="part-badges">
               <span>
@@ -625,7 +773,6 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
             </div>
           </div>
           <div className="workspace-detail-bar">
-            <GeometryModeSwitch value={geometryMode} onChange={setGeometryMode} compact />
             <button
               className="secondary-button add-project-button"
               onClick={() => setDialog('project')}
@@ -636,7 +783,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
           </div>
           <div
             ref={previewRef}
-            className={`viewport-area${previewExpanded ? ' viewport-area--expanded' : ''}`}
+            className={`viewport-area${backgroundMode === 'light' ? ' viewport-area--light' : ''}${previewExpanded ? ' viewport-area--expanded' : ''}`}
             role={previewExpanded ? 'dialog' : 'region'}
             aria-modal={previewExpanded || undefined}
             aria-label={`${part.name} model preview`}
@@ -651,66 +798,27 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
               parameters={preview.parameters}
               modelState={preview.modelState}
               geometryMode={geometryMode}
+              onGeometryModeChange={setGeometryMode}
               displayMode={displayMode}
+              onDisplayModeChange={setDisplayMode}
               navigationMode={navigationMode}
+              backgroundMode={backgroundMode}
+              onBackgroundModeChange={setBackgroundMode}
               showGrid={showGrid}
+              onToggleGrid={() => setShowGrid((current) => !current)}
               showDimensions={showDimensions}
+              onToggleDimensions={() => setShowDimensions((current) => !current)}
+              expanded={previewExpanded}
+              onToggleFullscreen={() => void togglePreview()}
               view={view}
               fitToken={fitToken}
               onError={setViewerError}
               onViewChange={setView}
               onNavigationModeChange={setNavigationMode}
+              selectedComponentId={selectedComponentId}
+              hiddenComponentIds={hiddenAssemblyComponentIds}
+              onSelectComponent={setSelectedComponentId}
             />
-            <div className="viewport-top">
-              <div className="view-select">
-                <Rotate3D size={14} />
-                <select
-                  aria-label="Camera view"
-                  value={view}
-                  onChange={(event) => {
-                    setView(event.target.value as View);
-                    setFitToken((token) => token + 1);
-                  }}
-                >
-                  <option value="isometric">Isometric</option>
-                  <option value="front">Front</option>
-                  <option value="top">Top</option>
-                  <option value="right">Right</option>
-                </select>
-                <ChevronDown size={12} />
-              </div>
-              <div className="preview-actions">
-                <div className="navigation-switch" role="group" aria-label="Mouse navigation">
-                  <button
-                    title="Orbit: drag to rotate (O)"
-                    aria-label="Orbit mode"
-                    aria-pressed={navigationMode === 'orbit'}
-                    onClick={() => setNavigationMode('orbit')}
-                  >
-                    <Rotate3D size={15} />
-                    <span>Orbit</span>
-                  </button>
-                  <button
-                    title="Pan: drag to move (P)"
-                    aria-label="Pan mode"
-                    aria-pressed={navigationMode === 'pan'}
-                    onClick={() => setNavigationMode('pan')}
-                  >
-                    <Move size={15} />
-                    <span>Pan</span>
-                  </button>
-                </div>
-                <button
-                  className="preview-fullscreen-toggle"
-                  title={previewExpanded ? 'Exit full screen (Esc)' : 'Full screen preview'}
-                  aria-label={previewExpanded ? 'Exit full screen preview' : 'Full screen preview'}
-                  aria-expanded={previewExpanded}
-                  onClick={() => void togglePreview()}
-                >
-                  {previewExpanded ? <Minimize2 size={17} /> : <Maximize2 size={17} />}
-                </button>
-              </div>
-            </div>
             {previewExpanded && (
               <div className="preview-navigation-hint">
                 Drag to {navigationMode === 'pan' ? 'pan' : 'orbit'} · Scroll to zoom · Esc to exit
@@ -720,65 +828,6 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
               <div className="preview-warning">Showing last valid configuration</div>
             )}
             {viewerError && <div className="viewer-error">{viewerError}</div>}
-            <div className="viewport-toolbar">
-              <div className="display-switch" role="group" aria-label="Display mode">
-                <button
-                  title="Solid shading"
-                  aria-label="Solid shading"
-                  aria-pressed={displayMode === 'solid'}
-                  className={displayMode === 'solid' ? 'active' : ''}
-                  onClick={() => setDisplayMode('solid')}
-                >
-                  <Box size={17} />
-                  <span>Solid</span>
-                </button>
-                <button
-                  title="Wireframe"
-                  aria-label="Wireframe"
-                  aria-pressed={displayMode === 'wireframe'}
-                  className={displayMode === 'wireframe' ? 'active' : ''}
-                  onClick={() => setDisplayMode('wireframe')}
-                >
-                  <Layers3 size={17} />
-                </button>
-                <button
-                  title="X-ray"
-                  aria-label="X-ray"
-                  aria-pressed={displayMode === 'xray'}
-                  className={displayMode === 'xray' ? 'active' : ''}
-                  onClick={() => setDisplayMode('xray')}
-                >
-                  <ScanIcon />
-                </button>
-              </div>
-              <span className="tool-divider" />
-              <button
-                className={showGrid ? 'active-tool' : ''}
-                title="Toggle grid"
-                aria-label="Toggle grid"
-                aria-pressed={showGrid}
-                onClick={() => setShowGrid(!showGrid)}
-              >
-                <Grid2X2 size={17} />
-              </button>
-              <button
-                className={showDimensions ? 'active-tool' : ''}
-                title="Toggle dimensions"
-                aria-label="Toggle dimensions"
-                aria-pressed={showDimensions}
-                onClick={() => setShowDimensions(!showDimensions)}
-              >
-                <Ruler size={18} />
-              </button>
-              <span className="tool-divider" />
-              <button
-                title="Fit model to view"
-                aria-label="Fit model to view"
-                onClick={() => setFitToken((token) => token + 1)}
-              >
-                <Expand size={17} />
-              </button>
-            </div>
           </div>
           <div className="model-summary">
             <div className="summary-symbol">
@@ -827,6 +876,17 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
             <span>Scroll to zoom</span>
             <span className="precision-note">1 unit = 1 mm</span>
           </footer>
+          <AssemblyStructurePanel
+            part={part}
+            libraryParts={parts}
+            parameters={parameters}
+            referenceComponents={referenceComponents}
+            selectedComponentId={selectedComponentId}
+            hiddenComponentIds={hiddenAssemblyComponentIds}
+            onSelectComponent={(component) => setSelectedComponentId(component?.id ?? null)}
+            onToggleComponentVisibility={toggleComponentVisibility}
+            onShowAll={showAllComponents}
+          />
         </main>
         <div className="config-wrapper">
           <button
@@ -849,16 +909,32 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
             previewPending={assembly.pending}
             previewError={assembly.error || measurement.error || viewerError}
             onPreset={(preset) => applyPreset(part, preset)}
-            onSelectPart={(next) => selectPart(next)}
+            onSelectPart={selectExecution}
             onSelectModel={(next, preset, values) => {
               if (
                 !values ||
                 Object.entries(preset.parameters).every(([key, value]) => values[key] === value)
               )
                 applyPreset(next, preset);
-              else selectPart(next, values);
+              else {
+                selectPart(next, values);
+                setPresetId(selectedMatchingPreset(next, values, preset.id)?.id ?? 'custom');
+              }
             }}
             onChange={(key, value) => {
+              configurationImporter.cancel();
+              const isReferenceVisibility = part.assemblyReferences?.some(
+                ({ visibilityParameter }) => visibilityParameter === key,
+              );
+              if (
+                isReferenceVisibility &&
+                value === false &&
+                assemblyReferences.some(
+                  ({ component, visibilityParameter }) =>
+                    visibilityParameter === key && component.id === selectedComponentId,
+                )
+              )
+                setSelectedComponentId(null);
               setParameters((current) => {
                 const next = { ...current, [key]: value };
                 for (const field of part.parameters) {
@@ -880,9 +956,12 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
                   ? part.updateParameters(next, key)
                   : next;
               });
-              if (!part.catalogSelectionOnly) setPresetId('custom');
+              if (!part.catalogSelectionOnly && !isReferenceVisibility) setPresetId('custom');
             }}
-            onState={setModelState}
+            onState={(state) => {
+              configurationImporter.cancel();
+              setModelState(state);
+            }}
             onBrowse={(filters, query) => openPresetBrowser('browse', filters, query)}
             onFindMatching={() => openPresetBrowser('match')}
             onReset={() => selectPart(part)}
@@ -1020,9 +1099,8 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
           </details>
           <div className="modal-note">
             <InfoIcon />
-            Multi-component models create an expandable assembly with separate, movable parts.
-            Single bodies remain individual solid features. Use FreeCAD’s File menu to save STEP or
-            FCStd.
+            Expand the assembly to browse component groups and select individual parts. Single
+            bodies remain individual solid features. Use FreeCAD’s File menu to save STEP or FCStd.
           </div>
           <div className="modal-actions">
             <button
@@ -1062,7 +1140,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
               ],
               [
                 'Choose your detail level',
-                'Simple hides threads and exports lighter geometry for TechDraw. Full shows threads and includes helical thread geometry in FreeCAD. Switch above the preview or in FreeCAD options.',
+                'Simple hides threads and exports lighter geometry for TechDraw. Full shows threads and includes helical thread geometry in FreeCAD. Use the thread-detail icon below the navigation cube or choose a detail level in FreeCAD options.',
               ],
               [
                 'Build a project or open FreeCAD',
@@ -1173,7 +1251,7 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
                     <PartIcon type={savedPart.icon} size={22} />
                     <button
                       onClick={() => {
-                        selectPart(savedPart, preset.parameters, preset.state);
+                        selectPart(savedPart, preset.parameters, preset.state, preset.presetId);
                         setDialog(null);
                         setToast(`Loaded “${preset.name}”.`);
                       }}
@@ -1220,20 +1298,6 @@ function PartWorkspace({ parts }: { parts: PartDefinition[] }) {
   );
 }
 
-function ScanIcon() {
-  return (
-    <svg
-      width="18"
-      height="18"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path d="M8 3H3v5M16 3h5v5M3 16v5h5m13-5v5h-5M7 8l5-3 5 3v8l-5 3-5-3zM7 8l5 3 5-3m-5 3v8" />
-    </svg>
-  );
-}
 function InfoIcon() {
   return (
     <svg

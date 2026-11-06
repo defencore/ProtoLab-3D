@@ -1,0 +1,91 @@
+{
+  "sourceCodeSha256": "a1cd399826a3a4cf5f2c4e6b955717b56068dad0d191d88d7f8a4c7dff58ce9c",
+  "totalPrintVolumeMm3": 350684.15209936665,
+  "parts": [
+    {
+      "id": "parallel-base",
+      "volumeMm3": 92970.47055097087
+    },
+    {
+      "id": "case-top-bridge",
+      "volumeMm3": 46811.316637756274
+    },
+    {
+      "id": "case-lower-body",
+      "volumeMm3": 139533.15661735064
+    },
+    {
+      "id": "parallel-clamp",
+      "volumeMm3": 5242.940589145471
+    },
+    {
+      "id": "parallel-rocker",
+      "volumeMm3": 5604.407680496256
+    },
+    {
+      "id": "parallel-switch-gasket",
+      "volumeMm3": 483.6776703489163
+    },
+    {
+      "id": "case-servo-shim",
+      "volumeMm3": 492.79999999999995
+    },
+    {
+      "id": "parallel-manual-gasket",
+      "volumeMm3": 483.6776703489164
+    },
+    {
+      "id": "case-onoff-gasket",
+      "volumeMm3": 483.6776703489164
+    },
+    {
+      "id": "case-test-clip-carrier",
+      "volumeMm3": 24038.117249114137
+    },
+    {
+      "id": "case-pwm-keeper",
+      "volumeMm3": 215.50465723947087
+    },
+    {
+      "id": "case-test-clip-key",
+      "volumeMm3": 172.79999999999998
+    },
+    {
+      "id": "case-electronics-adc-keeper",
+      "volumeMm3": 358.8899999999999
+    },
+    {
+      "id": "case-electronics-buck-1-keeper",
+      "volumeMm3": 377.4899999999998
+    },
+    {
+      "id": "case-electronics-buck-2-keeper",
+      "volumeMm3": 377.4899999999998
+    },
+    {
+      "id": "case-electronics-filter-1-keeper",
+      "volumeMm3": 143.85000000000002
+    },
+    {
+      "id": "case-electronics-filter-2-keeper",
+      "volumeMm3": 143.85000000000002
+    },
+    {
+      "id": "case-electronics-heltec-keeper",
+      "volumeMm3": 323.6
+    },
+    {
+      "id": "case-electronics-analogue-hood",
+      "volumeMm3": 9569.629256619524
+    },
+    {
+      "id": "case-fit-seat-ring",
+      "volumeMm3": 22357.141849627264
+    },
+    {
+      "id": "case-panel-gasket",
+      "volumeMm3": 499.6640000000011
+    }
+  ],
+  "basis": "Exact native BRep volumes from the checksum-preserved a1cd delivered kit; volume is a comparison proxy, not slicer time or material consumption."
+}

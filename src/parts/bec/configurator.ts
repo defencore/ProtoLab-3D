@@ -24,6 +24,7 @@ export const catalogFilterFields: ParameterDefinition[] = [
         value: 'Hobbywing',
         label: 'Hobbywing',
       },
+      { value: 'Unspecified', label: 'Unspecified' },
     ],
   },
   {
@@ -36,6 +37,7 @@ export const catalogFilterFields: ParameterDefinition[] = [
         value: 'Enclosed regulator',
         label: 'Enclosed regulator',
       },
+      { value: 'Bare PCB', label: 'Bare PCB' },
     ],
   },
   {

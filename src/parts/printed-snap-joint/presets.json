@@ -1,0 +1,36 @@
+[
+  {
+    "id": "compact-24",
+    "name": "24 mm beam · 0.3 mm side clearance",
+    "description": "Authored calibration example with a 1 mm hook and accessible lift-to-release tab. No material or load rating.",
+    "parameters": {
+      "length": 24,
+      "width": 8,
+      "thickness": 1.6,
+      "hook": 1,
+      "rootRadius": 1,
+      "wall": 2,
+      "clearance": 0.3,
+      "anchor": 6,
+      "releaseTab": 4,
+      "strainLimit": 1
+    }
+  },
+  {
+    "id": "long-32",
+    "name": "32 mm beam · 0.5 mm side clearance",
+    "description": "Longer authored calibration example for comparing fit and elastic lift. Print and qualify the actual material and settings.",
+    "parameters": {
+      "length": 32,
+      "width": 10,
+      "thickness": 2,
+      "hook": 1.4,
+      "rootRadius": 1.2,
+      "wall": 2.4,
+      "clearance": 0.5,
+      "anchor": 8,
+      "releaseTab": 5,
+      "strainLimit": 1
+    }
+  }
+]

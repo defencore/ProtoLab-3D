@@ -416,7 +416,7 @@ const part: PartDefinition = {
   id: 'ball-screw-axis',
   composition,
   product: productData as ProductProfile,
-  name: 'Ball screw linear actuator',
+  name: 'Ball screw axis · dual profile guides',
   category: 'LINEAR MOTION',
   subgroup: 'BALL SCREWS',
   icon: 'rail',
@@ -441,6 +441,7 @@ const part: PartDefinition = {
   parameters: [
     {
       key: 'screwSize',
+      catalogSummary: true,
       label: 'Ball screw size',
       type: 'select',
       group: 'Axis selection',
@@ -454,16 +455,25 @@ const part: PartDefinition = {
     },
     {
       key: 'guideSize',
+      catalogSummary: true,
       label: 'Guide size',
       type: 'select',
       group: 'Axis selection',
       options: ['mgn12h', 'mgn15h'].map((value) => ({ value, label: value.toUpperCase() })),
     },
-    numberParameter('length', 'Axis length', 'L', 'Axis selection', 200, 800, 50),
+    {
+      ...numberParameter('length', 'Axis length', 'L', 'Axis selection', 200, 800, 50),
+      catalogSummary: true,
+    },
     numberParameter('guideSpacing', 'Guide center spacing', 'S', 'Axis selection', 70, 240, 5),
-    { ...numberParameter('position', 'Table position', 'x', 'Motion', 0, 100, 1), unit: '%' },
+    {
+      ...numberParameter('position', 'Table position', 'x', 'Motion', 0, 100, 1),
+      unit: '%',
+      filterable: false,
+    },
     {
       key: 'detail',
+      filterable: false,
       label: 'Screw detail',
       type: 'select',
       group: 'Display',

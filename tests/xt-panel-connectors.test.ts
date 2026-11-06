@@ -21,6 +21,7 @@ const expected = [
     height: 15.8,
     length: 20.2,
     flange: 4.1,
+    front: 4.1,
     pitch: 25,
     bore: 3.1,
     sex: 'F',
@@ -32,10 +33,11 @@ const expected = [
     height: 12.1,
     length: 16.7,
     flange: 4,
+    front: 7,
     pitch: 20.5,
     bore: 2.5,
     sex: 'M',
-    count: 3,
+    count: 5,
   },
   {
     id: 'xt90e-m',
@@ -43,6 +45,7 @@ const expected = [
     height: 15.1,
     length: 22.8,
     flange: 3,
+    front: 3,
     pitch: 32.4,
     bore: 3.2,
     sex: 'M',
@@ -97,8 +100,8 @@ test('panel connector dimensions retain their different manufacturer flange foot
         dims.forEach((v, i) =>
           assert.ok(Math.abs(v - [m.width, m.height, m.length][i]) < 0.002, m.id),
         );
-        assert.ok(Math.abs(b.max.z - m.flange) < 0.002);
-        assert.ok(Math.abs(b.min.z - (m.flange - m.length)) < 0.002);
+        assert.ok(Math.abs(b.max.z - m.front) < 0.002);
+        assert.ok(Math.abs(b.min.z - (m.front - m.length)) < 0.002);
         assert.equal(group.children.length, m.count);
         assert.ok(group.children.every((c) => !/wire|cable/i.test(c.name)));
         assert.deepEqual(
@@ -120,7 +123,7 @@ test('flange bores are genuinely open with material around both mounting holes',
       for (const x of [-m.pitch / 2, m.pitch / 2]) {
         assert.equal(inside(housing, [x, 0, m.flange / 2]), false, m.id + ' mounting bore');
         assert.equal(
-          inside(housing, [x, m.bore / 2 + 0.5, m.flange / 2]),
+          inside(housing, [x, m.bore / 2 + 0.5, m.id === 'xt60e-m' ? 3 : m.flange / 2]),
           true,
           m.id + ' flange material',
         );
@@ -137,7 +140,7 @@ test('female sockets remain open while M contacts occupy the contact axes inside
     try {
       group.updateMatrixWorld(true);
       const model = models.find((item) => item.id === m.id)!,
-        z = m.flange - 2,
+        z = m.front - 2,
         contact = group.children.find((c) => c.name.includes('1 · solder cup')) as Mesh;
       assert.ok(contact);
       // Probe away from the cosmetic contact slot, using the centre axis.
@@ -151,6 +154,34 @@ test('female sockets remain open while M contacts occupy the contact axes inside
     } finally {
       disposeModel(group);
     }
+  }
+});
+
+test('XT60E-M nose and embedded nuts retain distinct drawing and reconstructed datums', () => {
+  const p = { model: 'xt60e-m', detail: 'envelope' },
+    group = part.buildGeometry(p, 'assembled');
+  try {
+    group.updateMatrixWorld(true);
+    assert.equal(group.children.length, 5);
+    const housing = group.children[0],
+      flange = new Box3().setFromObject(housing, true);
+    assert.ok(Math.abs(flange.max.z - 7) < 0.002, '3 mm nose beyond the 4 mm flange');
+    for (const [index, x] of [-10.25, 10.25].entries()) {
+      const insert = group.children[index + 1],
+        b = new Box3().setFromObject(insert, true);
+      assert.match(insert.name, /embedded M2.5 mounting insert/);
+      assert.ok(Math.abs(b.min.z) < 0.002 && Math.abs(b.max.z - 2) < 0.002);
+      assert.equal(inside(insert, [x, 1.8, 1]), true, 'Finite adopted metal insert');
+      assert.equal(inside(housing, [x, 1.8, 1]), false, 'Receiving cavity avoids self-overlap');
+      assert.equal(
+        inside(housing, [x, 1.8, 3]),
+        true,
+        '2 mm housing roof captures the rear insert',
+      );
+      assert.equal(inside(insert, [x, 0, 1]), false, 'Open nominal M2.5 bore');
+    }
+  } finally {
+    disposeModel(group);
   }
 });
 

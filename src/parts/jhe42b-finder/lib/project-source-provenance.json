@@ -1,0 +1,93 @@
+{
+  "reviewedAt": "2026-11-02",
+  "sourceRoot": "/Users/x/Documents/ChatGPT/FereCAD MCP/new_project_v2",
+  "currentPackage": "revisions/2026-10-11_M5/assembly_current",
+  "readOnlySource": true,
+  "sourceFiles": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "8c0517fbe1dd29b14f028904c097958deaf01c9b21fb6ab9beb88f5572f9ae00"
+    },
+    {
+      "path": "scripts/current_platform_access_geometry.py",
+      "sha256": "ad3973533138736e1eeb6a36949fa9e96e23d7975f4df62073df5bc84fa4f9fe"
+    },
+    {
+      "path": "scripts/search_platform_current_registry.py",
+      "sha256": "84070f8c17129424a0698cc8b142a905b91d074e7d1bedacd5259113ebc8ea2f"
+    },
+    {
+      "path": "revisions/2026-10-11_M5/platform_access_current/current_world/world_233.brep",
+      "sha256": "df9b78cb0d49ec36433de9ee0ea2baf9ab9355bf375f43016ac492374610715d"
+    },
+    {
+      "path": "revisions/2026-10-11_M5/platform_access_current/current_world/world_234.brep",
+      "sha256": "f22bddbcaf5bc46f4c8b502541c8932f9d2351f631155b713882ac852e691366"
+    },
+    {
+      "path": "revisions/2026-10-11_M5/platform_access_current/platform_fit_audit.json",
+      "sha256": "3bfbf38192faba46bed0ef4b1d4b26b3321ca52a5165c657799470b7a5eb467f"
+    },
+    {
+      "path": "scripts/current_assembly_stack_geometry.py",
+      "sha256": "c2688c239f8109392f2287e56e975d84a9ca1251c188a2af93b833ee52bed11a"
+    },
+    {
+      "path": "scripts/current_assembly_merge.py",
+      "sha256": "ce640fddc71cc49360ac8417760f487e73e37b42c74f41b338caf9f005f826ee"
+    },
+    {
+      "path": "revisions/2026-10-11_M5/assembly_current/current_world/world_234.brep",
+      "sha256": "49f44f3330ad2a14ae7e3edfc66f682f750396555df12f99b54890cf54a2314e"
+    },
+    {
+      "path": "revisions/2026-10-11_M5/assembly_current/assembly_contract.json",
+      "sha256": "547ad8c0292054a5692b99d8fbcbf3d84003230872845c3028ca41277a4b248e"
+    },
+    {
+      "path": "revisions/2026-10-11_M5/assembly_current/stack_contract.json",
+      "sha256": "528faae9d136203f0c715e225dac67a83498c454b34a368abf18ccfa340eada9"
+    }
+  ],
+  "libraryEntryId": "jhe42b-finder:jhe42b-project-reference-26x17x15",
+  "sourceComponentId": 234,
+  "sourceRegisterPosition": 304,
+  "sourceDocumentRevision": "03",
+  "localDimensions": [26, 17, 15],
+  "sourceFrame": {
+    "translation": [-21, -12, 149.45],
+    "rotation": [0, 0, 90]
+  },
+  "geometryScope": "One fixed occupied box explicitly specified by the user in the latest source project. Not an alternative manufacturer execution.",
+  "sourceIdentityConflict": {
+    "currentLabel": "JHE42B; overall26 \u00d7 17 \u00d7 15 mm",
+    "currentRegistry": "search_platform_current_registry.py explicitly updates component 234 to JHE42B and says the26 \u00d7 17 \u00d7 15 mm overall size is user-given.",
+    "stalePartNumber": "JHEMCU JHE20B; base20 \u00d7 10; maximum height16 mm",
+    "resolution": "Follow the current script, geometry, label and procurement registry. Preserve the stale property as a conflict; do not use it to select or resize JHE20B."
+  },
+  "manufacturerComparison": {
+    "standardEntryId": "jhe42b-finder:jhe42b",
+    "standardDimensions": [23, 17, 17],
+    "standardSourceUrl": "https://jhemcu.com/e_productshow/?54-JHEMCU-JHE42B-Finder-BB-Ring-110dB-Buzzer-Alarm-with-LED-Light-Support-BF-CF-Flight-54.html=",
+    "unchanged": true
+  },
+  "unverified": [
+    "Whether the actual supplied module is a standard JHE42B or another physical execution",
+    "Reason for26 \u00d7 17 \u00d7 15 user size versus23 \u00d7 17 \u00d7 17 manufacturer size",
+    "PCB, integral battery, speaker, button, LED, socket and cable geometry",
+    "Service-feature orientation, permissible clamping lands and retention loads"
+  ],
+  "historicalPlatformPackage": "revisions/2026-10-11_M5/platform_access_current",
+  "sourceFrameScope": "Historical platform_access_current frame retained only for provenance; mountingLayout/assembly_current governs the installed placement.",
+  "latestAssemblyFrame": {
+    "translation": [-21, -12, 158],
+    "rotation": [0, 0, 90]
+  },
+  "rigidEquivalenceFromPlatform": {
+    "translation": [0, 0, 8.55],
+    "symmetricDifferenceMm3": 0.0,
+    "latestComponentSha256": "49f44f3330ad2a14ae7e3edfc66f682f750396555df12f99b54890cf54a2314e",
+    "latestBounds": [-29.5, -25.0, 158.0, -12.5, 1.0, 173.0],
+    "verifiedWith": "FreeCAD1.1.4; exact Boolean comparison after rigid translation; no source-body change"
+  }
+}

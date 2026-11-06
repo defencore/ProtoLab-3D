@@ -75,7 +75,7 @@ const part: PartDefinition = {
       label: 'Drive',
       type: 'select',
       group: 'Model',
-      options: [{ value: 'asd-a3-0721-m', label: 'Delta ASD-A3-0721-M ·750W200–230VAC' }],
+      options: [{ value: 'asd-a3-0721-m', label: 'Delta ASD-A3-0721-M · 750 W · 200–230 V AC' }],
     },
   ],
   presets: presets as Preset[],

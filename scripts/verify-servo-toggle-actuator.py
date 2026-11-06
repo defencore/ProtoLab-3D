@@ -25,6 +25,7 @@ from types import SimpleNamespace
 sys.path.insert(0, os.environ.get('FREECAD_LIB', '/Applications/FreeCAD.app/Contents/Resources/lib'))
 import FreeCAD as App
 import Part
+from freecad_tree import component_leaves
 
 cases = json.loads(Path(sys.argv[1] if len(sys.argv) > 1 else '/tmp/protolab-servo-toggle-actuator-cases.json').read_text())
 output = Path(sys.argv[2] if len(sys.argv) > 2 else '/tmp/protolab-servo-toggle-actuator-results.json')
@@ -809,7 +810,7 @@ with tempfile.TemporaryDirectory(prefix='protolab-servo-toggle-actuator-') as di
             root = roots[0]
             assert root.PartId == case['id'] and root.ModelState == case['state'], 'Assembly identity/state differs'
             assert json.loads(root.Configuration) == case['parameters'], 'Assembly configuration differs'
-            children = list(root.Group) if root.TypeId == 'App::Part' else [root]
+            children = component_leaves(root)
             assert len(children) == len(case['components']), 'Preview/native top-level component count differs'
             expected_libraries = [item['libraryId'] for item in case['components']]
             assert expected_libraries == case['compositionLibraryIds'], 'Inspection view changed physical composition'
@@ -889,7 +890,7 @@ with tempfile.TemporaryDirectory(prefix='protolab-servo-toggle-actuator-') as di
             doc = App.openDocument(fcstd_path)
             reopened_root = doc.getObject(root_name)
             assert reopened_root.PartId == case['id'] and json.loads(reopened_root.Configuration) == case['parameters']
-            reopened = list(reopened_root.Group) if reopened_root.TypeId == 'App::Part' else [reopened_root]
+            reopened = component_leaves(reopened_root)
             assert [child.Label for child in reopened] == labels, 'FCStd component labels differ'
             for child, expected in zip(reopened, case['components']):
                 check_shape(child.Shape, 1 if expected['requireSingleSolid'] else expected['sourceSolids'])

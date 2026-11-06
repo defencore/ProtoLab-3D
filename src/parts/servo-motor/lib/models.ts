@@ -2,9 +2,11 @@ import type { Parameters } from '../../../core/types';
 import data from './catalog-models.json';
 import * as waveshare from './waveshare/model';
 import * as kst from './kst/model';
-import * as powerHd from './power-hd/model';
+import * as standard from './standard/model';
+import * as st3025 from './st3025/model';
+import * as towerpro from './towerpro/model';
 
-export type ServoFamily = 'waveshare' | 'kst' | 'power-hd';
+export type ServoFamily = 'waveshare' | 'kst' | 'standard' | 'st3025' | 'towerpro';
 export interface ServoModelDefinition {
   model: string;
   name: string;
@@ -59,5 +61,16 @@ export function getModelGeometryParameters(parameters: Parameters): Parameters {
 
 export function getModelGeometry(model: unknown) {
   const family = getModelDefinition(model).family;
-  return family === 'waveshare' ? waveshare : family === 'kst' ? kst : powerHd;
+  switch (family) {
+    case 'waveshare':
+      return waveshare;
+    case 'kst':
+      return kst;
+    case 'standard':
+      return standard;
+    case 'st3025':
+      return st3025;
+    case 'towerpro':
+      return towerpro;
+  }
 }

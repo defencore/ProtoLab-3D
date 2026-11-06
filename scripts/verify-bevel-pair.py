@@ -24,6 +24,7 @@ args = parser.parse_args()
 sys.path.insert(0, args.freecad_lib)
 import FreeCAD as App
 import Part
+from freecad_tree import component_leaves
 
 cases = json.loads(Path(args.cases).read_text())
 results = []
@@ -61,7 +62,7 @@ with tempfile.TemporaryDirectory(prefix='protolab-bevel-qa-') as folder:
             roots = [obj for obj in doc.Objects if 'PartId' in obj.PropertiesList]
             assert len(roots) == 1 and roots[0].PartId == 'bevel-gear-pair', 'Missing root metadata'
             root = roots[0]
-            objects = list(root.Group) if root.TypeId == 'App::Part' else [root]
+            objects = component_leaves(root)
             assert len(objects) == len(case['components']), 'Incorrect number of independently editable components'
             volumes = []
             volume_errors = []
@@ -105,7 +106,7 @@ with tempfile.TemporaryDirectory(prefix='protolab-bevel-qa-') as folder:
             App.closeDocument(doc.Name)
             doc = App.openDocument(str(fcstd))
             root = next(obj for obj in doc.Objects if 'PartId' in obj.PropertiesList)
-            restored = list(root.Group) if root.TypeId == 'App::Part' else [root]
+            restored = component_leaves(root)
             assert len(restored) == len(objects), 'FCStd roundtrip lost assembly structure'
             for obj, expected in zip(restored,case['components']):
                 valid_component(obj.Shape,expected['side'])

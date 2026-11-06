@@ -72,7 +72,13 @@ export function pieces(p: Parameters, state: string): Piece[] {
   const add = (label: string, shape: Shape, color = metal) => out.push({ label, shape, color });
   const xs = positions(m.poles, m.pitch ?? 0);
   if (m.kind === 'spring-lever-clip') {
-    out.push(...leverClipPieces(m));
+    let shellColour: number | undefined;
+    if (p.colour !== undefined) {
+      if (p.colour === 'red') shellColour = 0xc6332e;
+      else if (p.colour === 'black') shellColour = 0x292c31;
+      else throw new Error('Choose red or black for a spring-clip shell colour.');
+    }
+    out.push(...leverClipPieces(m, shellColour));
   } else if (m.kind === 'banana-plug') {
     const exposed = m.pinLength!,
       bodyHeight = m.length - exposed;

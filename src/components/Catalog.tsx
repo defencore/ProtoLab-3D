@@ -1,4 +1,12 @@
-import { useRef, useState, useEffect, useLayoutEffect, useMemo, useDeferredValue } from 'react';
+import {
+  useRef,
+  useState,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useDeferredValue,
+  useId,
+} from 'react';
 import {
   ChevronDown,
   ChevronRight,
@@ -8,10 +16,29 @@ import {
   ArrowUpRight,
   FolderOpen,
 } from 'lucide-react';
-import type { PartDefinition } from '../core/types';
+import type { PartDefinition, Preset } from '../core/types';
+import type {
+  DiscoveryCandidate,
+  DiscoveryFilters,
+  DiscoverySuggestion,
+} from '../core/discovery-types';
+import {
+  buildDiscoveryIndex,
+  discoveryChoices,
+  discoveryFamilyMatches,
+  discoverySuggestions,
+  emptyDiscoveryFilters,
+  filterDiscoveryCandidates,
+  hasDiscoveryFilters,
+  parseDiscoveryQuery,
+} from '../core/library-discovery';
+import { numericRangeErrorMessage, parseNumericRange } from '../core/numeric-range';
+import LibraryDiscoveryPanel from './LibraryDiscoveryPanel';
 import { groupBrowseFamilies, type BrowseFamily } from '../core/browse-families';
 import { buildLibrarySearchIndex, searchLibrary } from '../core/library-search';
+import { resolveLibraryEntry } from '../core/library-identity';
 import { PartIcon } from './PartIcon';
+import LibraryBreadcrumbs from './LibraryBreadcrumbs';
 import {
   productLibraryViewLabels,
   supplyKindLabels,
@@ -23,7 +50,11 @@ import {
   libraryAreas,
   libraryArea,
   libraryNavigationGroups,
+  filterLibraryLocation,
+  libraryLocationContains,
+  libraryLocationLabel,
   type LibraryArea,
+  type LibraryLocation,
 } from '../core/library-navigation';
 
 interface Props {
@@ -33,6 +64,12 @@ interface Props {
   onClose: () => void;
   query: string;
   onQueryChange: (query: string) => void;
+  location?: LibraryLocation;
+  locationRevision?: number;
+  onLocationChange?: (location?: LibraryLocation) => void;
+  onSelectPreset?: (part: PartDefinition, preset: Preset) => void;
+  discoveryFilters?: DiscoveryFilters;
+  onDiscoveryFiltersChange?: (filters: DiscoveryFilters) => void;
 }
 
 const branchStorageKey = 'protolab.library-open-branches';
@@ -56,7 +93,28 @@ export default function Catalog({
   onClose,
   query,
   onQueryChange,
+  location,
+  locationRevision = 0,
+  onLocationChange,
+  onSelectPreset,
+  discoveryFilters,
+  onDiscoveryFiltersChange,
 }: Props) {
+  const discoveryEnabled = !!onSelectPreset;
+  const [localFilters, setLocalFilters] = useState(emptyDiscoveryFilters);
+  const filters = discoveryFilters ?? localFilters;
+  const [discoveryExpanded, setDiscoveryExpanded] = useState(false);
+  const [searchFocused, setSearchFocused] = useState(false);
+  const [suggestionsDismissed, setSuggestionsDismissed] = useState(false);
+  const [activeSuggestion, setActiveSuggestion] = useState(-1);
+  const [candidateLimit, setCandidateLimit] = useState(4);
+  const suggestionListId = useId();
+  const filterKey = JSON.stringify(filters);
+  function updateDiscoveryFilters(next: DiscoveryFilters) {
+    setSuggestionsDismissed(false);
+    if (onDiscoveryFiltersChange) onDiscoveryFiltersChange(next);
+    else setLocalFilters(next);
+  }
   const [view, setView] = useState<ProductLibraryView>(() => {
     try {
       const saved = localStorage.getItem('protolab.library-view');
@@ -71,25 +129,134 @@ export default function Catalog({
   const [searchArea, setSearchArea] = useState<LibraryArea | 'all'>('all');
   const [openBranches, setOpenBranches] = useState(readOpenBranches);
   const deferredQuery = useDeferredValue(query);
-  const searching = !!query.trim();
+  const searching = !!query.trim() || (discoveryEnabled && hasDiscoveryFilters(filters));
+  const discoveryActive = discoveryEnabled && searching;
   const pending = query !== deferredQuery;
   const entries = useMemo(() => groupBrowseFamilies(parts), [parts]);
+  const locationKey = JSON.stringify(location);
+  const locationEntries = useMemo(
+    () => filterLibraryLocation(entries, location),
+    [entries, location],
+  );
   const scoped = useMemo(
     () => entries.filter((entry) => libraryArea(entry.category) === area),
     [entries, area],
   );
   const groups = useMemo(() => libraryNavigationGroups(scoped, view), [scoped, view]);
   const searchIndex = useMemo(() => buildLibrarySearchIndex(entries), [entries]);
-  const allMatches = useMemo(
-    () => searchLibrary(searchIndex, deferredQuery),
-    [searchIndex, deferredQuery],
+  const discoveryIndex = useMemo(
+    () => (discoveryEnabled ? buildDiscoveryIndex(searchIndex) : []),
+    [searchIndex, discoveryEnabled],
   );
+  const locationCandidates = useMemo(
+    () => discoveryIndex.filter((candidate) => libraryLocationContains(candidate.family, location)),
+    [discoveryIndex, location],
+  );
+  const candidateMatches = useMemo(
+    () =>
+      discoveryActive ? filterDiscoveryCandidates(locationCandidates, deferredQuery, filters) : [],
+    [discoveryActive, locationCandidates, deferredQuery, filterKey],
+  );
+  const contextCandidates = useMemo(
+    () =>
+      location || searchArea === 'all'
+        ? locationCandidates
+        : locationCandidates.filter(
+            (candidate) => libraryArea(candidate.family.category) === searchArea,
+          ),
+    [locationCandidates, location, searchArea],
+  );
+  const visibleCandidates = useMemo(() => {
+    const scopedCandidates =
+      location || searchArea === 'all'
+        ? candidateMatches
+        : candidateMatches.filter(
+            (candidate) => libraryArea(candidate.family.category) === searchArea,
+          );
+    const seen = new Set<string>();
+    const first: DiscoveryCandidate[] = [],
+      rest: DiscoveryCandidate[] = [];
+    for (const candidate of scopedCandidates) {
+      if (seen.has(candidate.part.id)) rest.push(candidate);
+      else {
+        seen.add(candidate.part.id);
+        first.push(candidate);
+      }
+    }
+    return [...first, ...rest];
+  }, [candidateMatches, location, searchArea]);
+  const choices = useMemo(
+    () =>
+      discoveryEnabled && discoveryExpanded
+        ? discoveryChoices(contextCandidates, deferredQuery, filters)
+        : {
+            power: [],
+            bearing: [],
+            widthKind: filters.widthKind
+              ? [
+                  {
+                    value: filters.widthKind,
+                    label: (() => {
+                      try {
+                        return JSON.parse(filters.widthKind)[1] as string;
+                      } catch {
+                        return filters.widthKind;
+                      }
+                    })(),
+                    count: 0,
+                  },
+                ]
+              : [],
+          },
+    [discoveryEnabled, discoveryExpanded, contextCandidates, deferredQuery, filterKey],
+  );
+  const discoveryErrors = [
+    ...parseNumericRange(filters.width).errors,
+    ...parseNumericRange(parseDiscoveryQuery(query).width).errors,
+  ].map(numericRangeErrorMessage);
+  const suggestions = useMemo(
+    () =>
+      discoveryEnabled &&
+      !suggestionsDismissed &&
+      query === deferredQuery &&
+      !discoveryErrors.length &&
+      (searchFocused || (discoveryActive && visibleCandidates.length === 0))
+        ? discoverySuggestions(contextCandidates, deferredQuery, filters)
+        : [],
+    [
+      discoveryEnabled,
+      searchFocused,
+      contextCandidates,
+      query,
+      deferredQuery,
+      filterKey,
+      discoveryActive,
+      visibleCandidates.length,
+      discoveryErrors.length,
+      suggestionsDismissed,
+    ],
+  );
+  const allMatches = useMemo(() => {
+    const discovered = discoveryActive
+      ? discoveryFamilyMatches(candidateMatches, deferredQuery)
+      : [];
+    const constraints =
+      discoveryActive &&
+      (hasDiscoveryFilters(filters) || parseDiscoveryQuery(deferredQuery).hasConstraints);
+    const navigation = constraints ? [] : searchLibrary(searchIndex, deferredQuery);
+    const families = new Map(navigation.map((match) => [match.family.id, match]));
+    for (const match of discovered)
+      if (!families.has(match.family.id)) families.set(match.family.id, match);
+    return [...families.values()].filter((match) =>
+      libraryLocationContains(match.family, location),
+    );
+  }, [searchIndex, deferredQuery, location, discoveryActive, candidateMatches, filterKey]);
   const matches = useMemo(
     () =>
-      searchArea === 'all'
+      location || searchArea === 'all'
         ? allMatches
         : allMatches.filter((match) => libraryArea(match.family.category) === searchArea),
-    [allMatches, searchArea],
+    [allMatches, searchArea, location],
   );
   const search = useRef<HTMLInputElement>(null);
   const scroll = useRef<HTMLDivElement>(null);
@@ -97,18 +264,37 @@ export default function Catalog({
   const revealed = useRef('');
 
   useEffect(() => {
+    setActiveSuggestion(-1);
+    setCandidateLimit(4);
+  }, [deferredQuery, filterKey, locationKey, searchArea]);
+  useEffect(() => {
+    if (activeSuggestion >= 0)
+      document
+        .getElementById(`${suggestionListId}-${activeSuggestion}`)
+        ?.scrollIntoView({ block: 'nearest' });
+  }, [activeSuggestion, suggestionListId]);
+
+  useEffect(() => {
     if (!searching) setSearchArea('all');
   }, [searching]);
 
   useLayoutEffect(() => {
+    if (location && scroll.current) scroll.current.scrollTop = 0;
+  }, [locationKey, locationRevision]);
+
+  useLayoutEffect(() => {
     const list = scroll.current;
     if (!list) return;
-    const context = searching ? branchKey('search', searchArea) : branchKey(area, view);
-    list.scrollTop = scrollPositions.current.get(context) ?? 0;
+    const context = location
+      ? branchKey('location', locationKey)
+      : searching
+        ? branchKey('search', searchArea)
+        : branchKey(area, view);
+    list.scrollTop = location ? 0 : (scrollPositions.current.get(context) ?? 0);
     const remember = () => scrollPositions.current.set(context, list.scrollTop);
     list.addEventListener('scroll', remember);
     return () => list.removeEventListener('scroll', remember);
-  }, [area, view, searching, searchArea]);
+  }, [area, view, searching, searchArea, locationKey]);
 
   useLayoutEffect(() => {
     if (searching && scroll.current) scroll.current.scrollTop = 0;
@@ -149,12 +335,12 @@ export default function Catalog({
   }, [view]);
   // Follow a selected product once; expanding another branch must never pull the scroll back.
   useEffect(() => {
-    if (deferredQuery.trim()) return;
+    if (location || discoveryActive || discoveryExpanded || deferredQuery.trim()) return;
     const frame = requestAnimationFrame(() => {
       scroll.current?.querySelector('[aria-current="true"]')?.scrollIntoView({ block: 'nearest' });
     });
     return () => cancelAnimationFrame(frame);
-  }, [selected.id, view, deferredQuery]);
+  }, [selected.id, view, deferredQuery, locationKey, discoveryActive, discoveryExpanded]);
   useEffect(() => {
     const handler = (event: KeyboardEvent) => {
       if (
@@ -175,11 +361,42 @@ export default function Catalog({
   }, []);
 
   function choose(entry: BrowseFamily) {
-    onSelect(
-      entry.members.find((part) => part.id === selected.id) ?? entry.primary,
-      searching ? matches.find((match) => match.family.id === entry.id)?.articleQuery : '',
-    );
+    const exact = resolveLibraryEntry(entry.members, query);
+    if (exact) {
+      if (exact.preset && onSelectPreset) onSelectPreset(exact.part, exact.preset);
+      else onSelect(exact.part, exact.preset ? query.trim() : '');
+      onClose();
+      return;
+    }
+    const articleQuery = searching
+      ? matches.find((match) => match.family.id === entry.id)?.articleQuery
+      : '';
+    if (
+      discoveryActive &&
+      (hasDiscoveryFilters(filters) || parseDiscoveryQuery(query).hasConstraints || articleQuery)
+    ) {
+      const compatible = visibleCandidates.filter((candidate) => candidate.family.id === entry.id);
+      const candidate = compatible.find((item) => item.part.id === selected.id) ?? compatible[0];
+      if (candidate) {
+        chooseCandidate(candidate);
+        return;
+      }
+    }
+    onSelect(entry.members.find((part) => part.id === selected.id) ?? entry.primary, articleQuery);
     onClose();
+  }
+  function chooseCandidate(candidate: DiscoveryCandidate) {
+    if (pending || discoveryErrors.length) return;
+    onSelectPreset?.(candidate.part, candidate.preset);
+    setSearchFocused(false);
+    onClose();
+  }
+  function chooseSuggestion(suggestion: DiscoverySuggestion) {
+    setSuggestionsDismissed(false);
+    updateDiscoveryFilters({ ...filters, ...suggestion.filters });
+    onQueryChange(suggestion.query);
+    setActiveSuggestion(-1);
+    search.current?.focus();
   }
   function toggleBranch(key: string) {
     setOpenBranches((current) => {
@@ -204,6 +421,7 @@ export default function Catalog({
       <button
         key={entry.id}
         className={`part-button ${current ? 'selected' : ''}`}
+        onMouseDown={discoveryActive ? (event) => event.preventDefault() : undefined}
         onClick={() => choose(entry)}
         aria-current={current ? 'true' : undefined}
       >
@@ -276,11 +494,97 @@ export default function Catalog({
         <input
           ref={search}
           aria-label="Search parts"
-          placeholder="Search all collections…"
+          role={discoveryEnabled ? 'combobox' : undefined}
+          aria-autocomplete={discoveryEnabled ? 'list' : undefined}
+          aria-expanded={discoveryEnabled ? suggestions.length > 0 : undefined}
+          aria-controls={suggestions.length ? suggestionListId : undefined}
+          aria-activedescendant={
+            activeSuggestion >= 0 && suggestions[activeSuggestion]
+              ? `${suggestionListId}-${activeSuggestion}`
+              : undefined
+          }
+          placeholder={
+            location
+              ? `Search in ${libraryLocationLabel(location)}…`
+              : discoveryEnabled
+                ? 'Name, 12 V, bearing F68, width…'
+                : 'Search all collections…'
+          }
           value={query}
-          onChange={(event) => onQueryChange(event.target.value)}
+          onChange={(event) => {
+            setSearchFocused(true);
+            setSuggestionsDismissed(false);
+            onQueryChange(event.target.value);
+          }}
+          onFocus={() => {
+            setSearchFocused(true);
+            setSuggestionsDismissed(false);
+          }}
+          onClick={() => {
+            setSearchFocused(true);
+            setSuggestionsDismissed(false);
+          }}
+          onBlur={() => {
+            setSearchFocused(false);
+            setActiveSuggestion(-1);
+          }}
           onKeyDown={(event) => {
-            if (event.key === 'Escape') onQueryChange('');
+            if (
+              event.key === 'ArrowDown' &&
+              discoveryEnabled &&
+              suggestionsDismissed &&
+              query.trim()
+            ) {
+              event.preventDefault();
+              event.stopPropagation();
+              setSearchFocused(true);
+              setSuggestionsDismissed(false);
+              setActiveSuggestion(0);
+              return;
+            }
+            if (event.key === 'Escape') {
+              if (suggestions.length) {
+                setSearchFocused(false);
+                setSuggestionsDismissed(true);
+                setActiveSuggestion(-1);
+              } else onQueryChange('');
+              event.preventDefault();
+              event.stopPropagation();
+              return;
+            }
+            if (
+              (event.key === 'ArrowDown' || event.key === 'ArrowUp') &&
+              suggestions.length &&
+              !pending
+            ) {
+              event.preventDefault();
+              event.stopPropagation();
+              setActiveSuggestion((current) =>
+                event.key === 'ArrowDown'
+                  ? (current + 1) % suggestions.length
+                  : current <= 0
+                    ? suggestions.length - 1
+                    : current - 1,
+              );
+              return;
+            }
+            if (
+              event.key === 'Enter' &&
+              activeSuggestion >= 0 &&
+              suggestions[activeSuggestion] &&
+              !pending
+            ) {
+              event.preventDefault();
+              event.stopPropagation();
+              chooseSuggestion(suggestions[activeSuggestion]);
+              return;
+            }
+            if (event.key === 'Enter' && discoveryActive) {
+              event.preventDefault();
+              setSearchFocused(false);
+              setSuggestionsDismissed(true);
+              return;
+            }
             if (event.key === 'ArrowDown' && searching && !pending) {
               event.preventDefault();
               scroll.current?.querySelector<HTMLButtonElement>('.part-button')?.focus();
@@ -304,7 +608,7 @@ export default function Catalog({
           <kbd>/</kbd>
         )}
       </div>
-      {searching && (
+      {searching && !location && !discoveryActive && (
         <button
           type="button"
           className="library-search-scope"
@@ -316,30 +620,84 @@ export default function Catalog({
           <small>{allMatches.length}</small>
         </button>
       )}
-      <nav className="library-areas" aria-label="Library collections">
-        {libraryAreas.map((item) => (
+      {discoveryActive ? (
+        !location && (
+          <label className="library-discovery-collection">
+            <span>Collection</span>
+            <select
+              aria-label="Search collection"
+              value={searchArea}
+              onChange={(event) => setSearchArea(event.target.value as LibraryArea | 'all')}
+            >
+              <option value="all">All collections ({allMatches.length})</option>
+              {libraryAreas.map((item) => (
+                <option key={item.id} value={item.id}>
+                  {item.label} (
+                  {
+                    allMatches.filter((match) => libraryArea(match.family.category) === item.id)
+                      .length
+                  }
+                  )
+                </option>
+              ))}
+            </select>
+          </label>
+        )
+      ) : (
+        <nav className="library-areas" aria-label="Library collections">
+          {libraryAreas.map((item) => (
+            <button
+              key={item.id}
+              aria-label={item.label}
+              title={item.description}
+              aria-pressed={!location && (searching ? searchArea === item.id : area === item.id)}
+              onClick={() => {
+                setArea(item.id);
+                if (location) {
+                  onLocationChange?.(undefined);
+                  onQueryChange('');
+                  setSearchArea('all');
+                } else if (searching) setSearchArea(item.id);
+              }}
+            >
+              <PartIcon type={item.icon} size={15} />
+              <span>{item.label}</span>
+              <small aria-hidden="true">
+                {searching && !location
+                  ? allMatches.filter((match) => libraryArea(match.family.category) === item.id)
+                      .length
+                  : entries.filter((entry) => libraryArea(entry.category) === item.id).length}
+              </small>
+            </button>
+          ))}
+        </nav>
+      )}
+      {location && (
+        <div className="library-location">
+          <LibraryBreadcrumbs
+            location={location}
+            label="Library scope"
+            className="library-scope-path"
+            onNavigate={(next) => {
+              onLocationChange?.(next);
+              onQueryChange('');
+              setSearchArea('all');
+            }}
+          />
           <button
-            key={item.id}
-            aria-label={item.label}
-            title={item.description}
-            aria-pressed={searching ? searchArea === item.id : area === item.id}
+            type="button"
+            className="library-location-clear"
             onClick={() => {
-              setArea(item.id);
-              if (searching) setSearchArea(item.id);
+              onLocationChange?.(undefined);
+              onQueryChange('');
+              setSearchArea('all');
             }}
           >
-            <PartIcon type={item.icon} size={15} />
-            <span>{item.label}</span>
-            <small aria-hidden="true">
-              {searching
-                ? allMatches.filter((match) => libraryArea(match.family.category) === item.id)
-                    .length
-                : entries.filter((entry) => libraryArea(entry.category) === item.id).length}
-            </small>
+            Browse collections
           </button>
-        ))}
-      </nav>
-      {!searching && (
+        </div>
+      )}
+      {!searching && !location && (
         <div className="library-view-picker">
           <label htmlFor="library-view">Group by</label>
           <select
@@ -356,16 +714,50 @@ export default function Catalog({
         </div>
       )}
       <div className="catalog-scroll" ref={scroll} aria-busy={searching && pending}>
+        {discoveryEnabled && (
+          <LibraryDiscoveryPanel
+            query={query}
+            filters={filters}
+            choices={choices}
+            suggestions={suggestions}
+            candidates={pending ? [] : visibleCandidates.slice(0, candidateLimit)}
+            total={visibleCandidates.length}
+            errors={discoveryErrors}
+            expanded={discoveryExpanded}
+            onExpandedChange={setDiscoveryExpanded}
+            onFiltersChange={updateDiscoveryFilters}
+            onSuggestion={chooseSuggestion}
+            onSelect={chooseCandidate}
+            suggestionListId={suggestionListId}
+            activeSuggestion={activeSuggestion}
+            pending={pending}
+            onShowMore={
+              visibleCandidates.length > candidateLimit
+                ? () => setCandidateLimit((count) => count + 8)
+                : undefined
+            }
+          />
+        )}
         <div className="library-heading">
           <span>
-            {searching
-              ? searchArea === 'all'
-                ? 'Search all collections'
-                : `Search in ${searchCollection!.label}`
-              : collection.label}
+            {location
+              ? `${searching ? 'Search in ' : ''}${libraryLocationLabel(location)}`
+              : searching
+                ? searchArea === 'all'
+                  ? 'Search all collections'
+                  : `Search in ${searchCollection!.label}`
+                : collection.label}
           </span>
-          <span>{searching ? (pending ? '…' : matches.length) : scoped.length}</span>
-          {!searching && (
+          <span>
+            {searching
+              ? pending
+                ? '…'
+                : matches.length
+              : location
+                ? locationEntries.length
+                : scoped.length}
+          </span>
+          {!searching && !location && (
             <button
               type="button"
               className="icon-button library-collapse"
@@ -377,7 +769,9 @@ export default function Catalog({
             </button>
           )}
         </div>
-        {!searching && <p className="library-collection-description">{collection.description}</p>}
+        {!searching && !location && (
+          <p className="library-collection-description">{collection.description}</p>
+        )}
         {searching ? (
           <div className="library-search-results">
             <div className="search-count" role="status">
@@ -397,7 +791,7 @@ export default function Catalog({
                 <Search size={24} />
                 <strong>No matching parts</strong>
                 <p>Try a name, designation or size, such as “jig” or “M3 × 10”.</p>
-                {searchArea !== 'all' && (
+                {searchArea !== 'all' && !location && (
                   <button className="text-button" onClick={() => setSearchArea('all')}>
                     Search all collections
                   </button>
@@ -405,6 +799,25 @@ export default function Catalog({
                 <button className="text-button" onClick={() => onQueryChange('')}>
                   Clear search
                 </button>
+              </div>
+            )}
+          </div>
+        ) : location ? (
+          <div className="library-location-results">
+            <div className="search-count" role="status">
+              {locationEntries.length} products in this level
+            </div>
+            {locationEntries.map((entry) =>
+              entryButton(
+                entry,
+                location.level === 'subgroup'
+                  ? undefined
+                  : `${libraryLabel(entry.category)} › ${libraryLabel(entry.subgroup)}`,
+              ),
+            )}
+            {!locationEntries.length && (
+              <div className="empty-catalog">
+                <strong>No products in this level</strong>
               </div>
             )}
           </div>

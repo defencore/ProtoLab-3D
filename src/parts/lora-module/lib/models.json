@@ -1,7 +1,7 @@
 [
   {
     "id": "ai-thinker-ra02",
-    "name": "Ai-Thinker Ra-02 · SX1278",
+    "name": "Ai-Thinker Ra-02 \u00b7 SX1278",
     "manufacturer": "Ai-Thinker",
     "width": 17,
     "length": 16,
@@ -72,12 +72,12 @@
       "interface": "SPI",
       "chip": "SX1278"
     },
-    "scope": "17 × 16 mm module PCB. SX1278 LoRa radio, U.FL antenna socket. External antenna excluded. RF shield and pad offsets approximate.",
+    "scope": "17 \u00d7 16 mm module PCB. SX1278 LoRa radio, U.FL antenna socket. External antenna excluded. RF shield and pad offsets approximate.",
     "references": []
   },
   {
     "id": "waveshare-core1262-hf",
-    "name": "Waveshare Core1262-HF · SX1262",
+    "name": "Waveshare Core1262-HF \u00b7 SX1262",
     "manufacturer": "Waveshare",
     "width": 19,
     "length": 22,
@@ -148,12 +148,12 @@
       "interface": "SPI",
       "chip": "SX1262"
     },
-    "scope": "19 × 22 mm core module, HF radio revision. This is not the larger Raspberry Pi LoRa HAT. Antenna not fitted; no SMA socket.",
+    "scope": "19 \u00d7 22 mm core module, HF radio revision. This is not the larger Raspberry Pi LoRa HAT. Antenna not fitted; no SMA socket.",
     "references": []
   },
   {
     "id": "ebyte-e22-900m30s",
-    "name": "Ebyte E22-900M30S · SX1262",
+    "name": "Ebyte E22-900M30S \u00b7 SX1262",
     "manufacturer": "Ebyte",
     "width": 24,
     "length": 38.5,
@@ -224,7 +224,507 @@
       "interface": "SPI",
       "chip": "SX1262"
     },
-    "scope": "24 × 38.5 mm module. 30 dBm PA version, SPI host interface; not the UART T-series. Antenna and carrier excluded. RF shield, contacts and component offsets approximate.",
+    "scope": "24 \u00d7 38.5 mm module. 30 dBm PA version, SPI host interface; not the UART T-series. Antenna and carrier excluded. RF shield, contacts and component offsets approximate.",
     "references": []
+  },
+  {
+    "id": "heltec-wifi-lora32-v3",
+    "name": "Heltec WiFi LoRa 32 V3.2 \u00b7 ESP32-S3 + SX1262",
+    "manufacturer": "Heltec",
+    "width": 25.5,
+    "length": 50.2,
+    "board": 1.6,
+    "boardZ": 3.6,
+    "color": 15791348,
+    "construction": "Development board",
+    "source": "https://resource.heltec.cn/download/WiFi_LoRa_32_V3/HTIT-WB32LA_V3.2.pdf",
+    "holes": [],
+    "details": [
+      {
+        "kind": "pads",
+        "name": "Unpopulated GPIO -11.43",
+        "x": -11.43,
+        "y": 0.8,
+        "z": 5.2,
+        "w": 1,
+        "l": 1,
+        "h": 0.06,
+        "count": 18,
+        "rows": 1,
+        "dir": "vertical",
+        "pitch": 2.54,
+        "bore": 1
+      },
+      {
+        "kind": "pads",
+        "name": "Unpopulated GPIO 11.43",
+        "x": 11.43,
+        "y": 0.8,
+        "z": 5.2,
+        "w": 1,
+        "l": 1,
+        "h": 0.06,
+        "count": 18,
+        "rows": 1,
+        "dir": "vertical",
+        "pitch": 2.54,
+        "bore": 1
+      },
+      {
+        "kind": "socket",
+        "name": "USB Type-C",
+        "x": 0,
+        "y": 22.25,
+        "z": 0.4,
+        "w": 8.8,
+        "l": 7.5,
+        "h": 3.2,
+        "dir": "north",
+        "count": 12
+      },
+      {
+        "kind": "chip",
+        "name": "ESP32-S3 module envelope",
+        "x": 0,
+        "y": -8.5,
+        "z": 1,
+        "w": 15.4,
+        "l": 18,
+        "h": 2.6,
+        "color": 11187388
+      },
+      {
+        "kind": "chip",
+        "name": "SX1262 RF circuit envelope",
+        "x": -0.3,
+        "y": 8.5,
+        "z": 1.8,
+        "w": 9.6,
+        "l": 10,
+        "h": 1.8,
+        "color": 2436140
+      },
+      {
+        "kind": "socket",
+        "name": "SH1.25-2 battery connector",
+        "x": 8.0,
+        "y": 13.5,
+        "z": 0.6,
+        "w": 4.8,
+        "l": 5,
+        "h": 3,
+        "dir": "north",
+        "count": 2,
+        "color": 15791348
+      },
+      {
+        "kind": "cylinder",
+        "name": "LoRa IPEX U.FL connector",
+        "x": -7.4,
+        "y": 16,
+        "z": 2.1,
+        "w": 2.8,
+        "l": 2.8,
+        "h": 1.5,
+        "color": 13020008
+      },
+      {
+        "kind": "chip",
+        "name": "PRG switch body",
+        "x": -8,
+        "y": 22.1,
+        "z": 1.0,
+        "w": 3.8,
+        "l": 3.8,
+        "h": 2.6,
+        "color": 11187388
+      },
+      {
+        "kind": "chip",
+        "name": "PRG switch actuator",
+        "x": -8,
+        "y": 22.1,
+        "z": 0.4,
+        "w": 2.1,
+        "l": 2.1,
+        "h": 0.6,
+        "color": 2436140
+      },
+      {
+        "kind": "chip",
+        "name": "RST switch body",
+        "x": 8,
+        "y": 22.1,
+        "z": 1.0,
+        "w": 3.8,
+        "l": 3.8,
+        "h": 2.6,
+        "color": 11187388
+      },
+      {
+        "kind": "chip",
+        "name": "RST switch actuator",
+        "x": 8,
+        "y": 22.1,
+        "z": 0.4,
+        "w": 2.1,
+        "l": 2.1,
+        "h": 0.6,
+        "color": 2436140
+      },
+      {
+        "kind": "chip",
+        "name": "WiFi spring antenna clearance envelope",
+        "x": 0,
+        "y": -22.5,
+        "z": 0,
+        "w": 8,
+        "l": 3,
+        "h": 3.6,
+        "color": 13020008
+      },
+      {
+        "kind": "chip",
+        "name": "OLED support envelope",
+        "x": 0,
+        "y": -6.1,
+        "z": 5.2,
+        "w": 18.56,
+        "l": 33.28,
+        "h": 3.9,
+        "color": 2436140
+      },
+      {
+        "kind": "chip",
+        "name": "OLED glass",
+        "x": 0,
+        "y": -6.1,
+        "z": 9.1,
+        "w": 18.56,
+        "l": 33.28,
+        "h": 1,
+        "color": 1249828
+      },
+      {
+        "kind": "chip",
+        "name": "OLED active face",
+        "x": 0,
+        "y": -6.1,
+        "z": 10.1,
+        "w": 13.64,
+        "l": 27.28,
+        "h": 0.1,
+        "color": 5941853
+      }
+    ],
+    "attributes": {
+      "usb": "USB Type-C",
+      "connection": "36 unpopulated pads + SH1.25-2 + U.FL",
+      "interface": "USB / GPIO / SPI",
+      "chip": "ESP32-S3 + SX1262"
+    },
+    "scope": "V3.2 board with OLED facing +Z and no installed header pins. Manufacturer module envelope 50.2 \u00d7 25.5 \u00d7 10.2 mm. Rounded PCB outline, 1.6 mm PCB thickness, component heights/positions, 0.9 mm USB overhang and connector details are approximate. No dedicated mounting holes are claimed. OLED glass 33.28 \u00d7 18.56 mm and active length 27.28 mm follow the drawing; active width 13.64 mm is inferred from the 128 \u00d7 64 pixel aspect ratio. External antenna, cable, battery and loose mating connectors are excluded. Not interchangeable with V4.",
+    "references": [
+      "https://heltec.org/project/wifi-lora-32-v3/",
+      "https://heltec.org/wp-content/uploads/2023/09/pin.png"
+    ]
+  },
+  {
+    "id": "heltec-wifi-lora32-v4",
+    "name": "Heltec WiFi LoRa 32 V4 \u00b7 V4.3.1 \u00b7 ESP32-S3R2 + SX1262",
+    "manufacturer": "Heltec",
+    "width": 25.4,
+    "length": 51.69,
+    "board": 1.6,
+    "boardZ": 3.6,
+    "color": 2436140,
+    "construction": "Development board",
+    "source": "https://resource.heltec.cn/download/WiFi_LoRa_32_V4/datasheet/WiFi_LoRa_32_V4.3.1_Datasheet.pdf",
+    "outline": [
+      [-12.7, 23.685],
+      [-10.54, 25.845],
+      [10.54, 25.845],
+      [12.7, 23.685],
+      [12.7, -22.035],
+      [8.89, -22.035],
+      [5.08, -25.845],
+      [-5.08, -25.845],
+      [-8.89, -22.035],
+      [-12.7, -22.035]
+    ],
+    "holes": [
+      [-7, -20.0345, 2.8],
+      [7, -20.0345, 2.8],
+      [-7, 8.9655, 2.8],
+      [7, 8.9655, 2.8]
+    ],
+    "details": [
+      {
+        "kind": "pads",
+        "name": "Unpopulated GPIO -11.43",
+        "x": -11.43,
+        "y": 0.8255,
+        "z": 5.2,
+        "w": 1,
+        "l": 1,
+        "h": 0.06,
+        "count": 18,
+        "rows": 1,
+        "dir": "vertical",
+        "pitch": 2.54,
+        "bore": 0.9
+      },
+      {
+        "kind": "pads",
+        "name": "Unpopulated GPIO 11.43",
+        "x": 11.43,
+        "y": 0.8255,
+        "z": 5.2,
+        "w": 1,
+        "l": 1,
+        "h": 0.06,
+        "count": 18,
+        "rows": 1,
+        "dir": "vertical",
+        "pitch": 2.54,
+        "bore": 0.9
+      },
+      {
+        "kind": "pads",
+        "name": "Unpopulated auxiliary GPIO left",
+        "x": -4.61602074,
+        "y": -23.3045,
+        "z": 5.2,
+        "w": 1,
+        "l": 1,
+        "h": 0.06,
+        "count": 2,
+        "rows": 1,
+        "dir": "horizontal",
+        "pitch": 2.54,
+        "bore": 0.9
+      },
+      {
+        "kind": "pads",
+        "name": "Unpopulated auxiliary GPIO right",
+        "x": 4.572,
+        "y": -23.3045,
+        "z": 5.2,
+        "w": 1,
+        "l": 1,
+        "h": 0.06,
+        "count": 2,
+        "rows": 1,
+        "dir": "horizontal",
+        "pitch": 2.54,
+        "bore": 0.9
+      },
+      {
+        "kind": "socket",
+        "name": "USB Type-C",
+        "x": 0,
+        "y": 22.85,
+        "z": 5.2,
+        "w": 8.8,
+        "l": 7.5,
+        "h": 2.98,
+        "dir": "north",
+        "count": 12
+      },
+      {
+        "kind": "chip",
+        "name": "ESP32-S3R2 circuit envelope",
+        "x": 0,
+        "y": 0.5,
+        "z": 1,
+        "w": 14,
+        "l": 14,
+        "h": 2.6,
+        "color": 11187388
+      },
+      {
+        "kind": "chip",
+        "name": "SX1262 RF circuit envelope",
+        "x": 0,
+        "y": -8.4,
+        "z": 1.8,
+        "w": 9,
+        "l": 2.6,
+        "h": 1.8,
+        "color": 2436140
+      },
+      {
+        "kind": "chip",
+        "name": "Power management circuit envelope",
+        "x": 0,
+        "y": 13.2,
+        "z": 1.5,
+        "w": 10.8,
+        "l": 8,
+        "h": 2.1,
+        "color": 2436140
+      },
+      {
+        "kind": "socket",
+        "name": "SH1.25-2 battery connector",
+        "x": -5.5,
+        "y": 21.6,
+        "z": 0.4,
+        "w": 4.5,
+        "l": 4.2,
+        "h": 3.2,
+        "dir": "north",
+        "count": 2,
+        "color": 15791348
+      },
+      {
+        "kind": "socket",
+        "name": "SH1.25-2 solar connector",
+        "x": 5.5,
+        "y": 21.6,
+        "z": 0.4,
+        "w": 4.5,
+        "l": 4.2,
+        "h": 3.2,
+        "dir": "north",
+        "count": 2,
+        "color": 15791348
+      },
+      {
+        "kind": "socket",
+        "name": "SH1.25-8 GNSS connector",
+        "x": 0,
+        "y": -14.5,
+        "z": 0,
+        "w": 11.1,
+        "l": 4.2,
+        "h": 3.6,
+        "dir": "south",
+        "count": 8,
+        "color": 15791348
+      },
+      {
+        "kind": "cylinder",
+        "name": "LoRa IPEX U.FL connector",
+        "x": -8.5,
+        "y": -17,
+        "z": 2.1,
+        "w": 2.8,
+        "l": 2.8,
+        "h": 1.5,
+        "color": 13020008
+      },
+      {
+        "kind": "cylinder",
+        "name": "WiFi IPEX U.FL connector",
+        "x": 8.5,
+        "y": -17,
+        "z": 2.1,
+        "w": 2.8,
+        "l": 2.8,
+        "h": 1.5,
+        "color": 13020008
+      },
+      {
+        "kind": "chip",
+        "name": "PRG switch body",
+        "x": -8,
+        "y": 22.1,
+        "z": 5.2,
+        "w": 3.8,
+        "l": 3.8,
+        "h": 2.6,
+        "color": 11187388
+      },
+      {
+        "kind": "chip",
+        "name": "PRG switch actuator",
+        "x": -8,
+        "y": 22.1,
+        "z": 7.8,
+        "w": 2.1,
+        "l": 2.1,
+        "h": 0.6,
+        "color": 2436140
+      },
+      {
+        "kind": "chip",
+        "name": "RST switch body",
+        "x": 8,
+        "y": 22.1,
+        "z": 5.2,
+        "w": 3.8,
+        "l": 3.8,
+        "h": 2.6,
+        "color": 11187388
+      },
+      {
+        "kind": "chip",
+        "name": "RST switch actuator",
+        "x": 8,
+        "y": 22.1,
+        "z": 7.8,
+        "w": 2.1,
+        "l": 2.1,
+        "h": 0.6,
+        "color": 2436140
+      },
+      {
+        "kind": "chip",
+        "name": "PC OLED guard and integrated FPC antenna envelope",
+        "x": 0,
+        "y": -5.35,
+        "z": 5.2,
+        "w": 18.6,
+        "l": 33,
+        "h": 5.5,
+        "color": 2436140,
+        "cutouts": [
+          {
+            "x": 2,
+            "y": -6.35,
+            "z": 9.7,
+            "w": 11.4,
+            "l": 22,
+            "h": 1.2
+          }
+        ]
+      },
+      {
+        "kind": "chip",
+        "name": "OLED glass",
+        "x": 2,
+        "y": -6.35,
+        "z": 9.7,
+        "w": 11.4,
+        "l": 22,
+        "h": 0.8,
+        "color": 1249828
+      },
+      {
+        "kind": "chip",
+        "name": "OLED active face",
+        "x": 2,
+        "y": -6.35,
+        "z": 10.5,
+        "w": 11.4,
+        "l": 22,
+        "h": 0.1,
+        "color": 5941853
+      }
+    ],
+    "attributes": {
+      "usb": "USB Type-C",
+      "connection": "40 unpopulated pads + battery/solar/GNSS + 2 U.FL",
+      "interface": "USB / GPIO / SPI",
+      "chip": "ESP32-S3R2 + SX1262"
+    },
+    "scope": "V4.3.1 mechanical reference, OLED and protective PC frame fitted, no installed header pins. Manufacturer envelope 51.69 \u00d7 25.40 \u00d7 10.70 mm without pins (15.60 mm with pins). Frame 33.00 \u00d7 18.60 mm, display aperture 22.00 \u00d7 11.40 mm follow the page 15 drawing. Four PCB bores are 2.80 mm in the official V4.3.1 STEP; the datasheet labels 1.90 mm in the protective-frame fastener area. PCB thickness, outline transitions, individual component geometry/positions, display recess and USB overhang are approximate. Includes battery, solar and GNSS connector envelopes plus two U.FL sockets; no V3 spring antenna. External antenna, flexible leads, battery, mating connectors and loose headers are excluded. RF hardware revisions and R8 electrical variants must be checked against the ordered board. The OLED glass, active face and guard aperture are centered at local X=+2.00 mm, Y=-6.35 mm following the user-requested handheld display fit correction; the outer protective frame and PCB remain centered at X=0. These display datums include the user-requested 2 mm left and 1 mm upward fit corrections and are a user fit calibration, not a newly verified manufacturer dimension.",
+    "references": [
+      "https://heltec.org/project/wifi-lora-32-v4/",
+      "https://wiki.heltec.org/docs/devices/open-source-hardware/esp32-series/lora-32/wifi-lora-32-v4/",
+      "https://resource.heltec.cn/download/WiFi_LoRa_32_V4/3D/",
+      "https://resource.heltec.cn/download/WiFi_LoRa_32_V4/3D/HTIT-WB32LAF_V4.3.1%281%29.step"
+    ]
   }
 ]

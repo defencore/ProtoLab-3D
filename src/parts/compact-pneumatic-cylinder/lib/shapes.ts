@@ -1,3 +1,5 @@
+import { nativeProfilePython, type NativeProfile } from '../../../core/analytic-geometry';
+import { analyticRevolvePython } from '../../../core/hardware/analytic-profile';
 import { currentGeometryMode } from '../../../core/geometry-mode';
 import { nativeThreadExpression } from '../../../core/thread-native';
 import { showThreads, type VisualThread } from '../../../core/thread-visual';
@@ -10,7 +12,7 @@ export type Vec = [number, number, number];
 export type Shape =
   | { kind: 'transform'; child: Shape; translation: Vec; rotation: Vec }
   | { kind: 'loft'; rings: Vec[][] }
-  | { kind: 'revolve'; profile: [number, number][] }
+  | { kind: 'revolve'; native?: NativeProfile; profile: [number, number][] }
   | { kind: 'box'; size: Vec; origin: Vec }
   | {
       kind: 'cylinder';
@@ -28,6 +30,7 @@ export type Shape =
     }
   | {
       kind: 'prism';
+      native?: NativeProfile;
       points: [number, number][];
       depth: number;
       origin: number;
@@ -280,6 +283,7 @@ export function component(
 }
 const vector = (v: Vec) => `App.Vector(${v.map(num).join(',')})`;
 export function pythonShape(s: Shape): string {
+  if ('native' in s && s.native) return nativeProfilePython(s.native);
   switch (s.kind) {
     case 'transform':
       return `_pl_transform(${pythonShape(s.child)},${JSON.stringify(s.translation)},${JSON.stringify(s.rotation)})`;
@@ -310,7 +314,7 @@ export function pythonShape(s: Shape): string {
       return `Part.makeSolid(Part.makeShell([Part.Face(Part.makePolygon([App.Vector(*pts[i]) for i in face + [face[0]]])) for pts in [${JSON.stringify(points)}] for face in ${JSON.stringify(oriented)}]))`;
     }
     case 'revolve':
-      return `Part.Face(Part.makePolygon([${[...s.profile, s.profile[0]].map(([r, z]) => vector([r, 0, z])).join(',')}])).revolve(App.Vector(0,0,0),App.Vector(0,0,1),360)`;
+      return analyticRevolvePython(s.profile);
     case 'box':
       return `Part.makeBox(${s.size.map(num).join(',')},${vector(s.origin)})`;
     case 'cylinder':

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "jcg108-3m-positive-x",
+    "name": "JCG108 \u00b7 3 m \u00b7 \u2212X \u2192 +X",
+    "description": "Preserved 314.8 mm fairing concept on an OD 90 tube. Engineering reference only; no operational speed or fabrication qualification.",
+    "parameters": {
+      "antennaModel": "jcg108-3m",
+      "antennaDepth": 8.6,
+      "antennaBondline": 0.3,
+      "airflowDirection": "positive-x",
+      "antennaHole": 12,
+      "antennaX": 0,
+      "antennaY": -17.5,
+      "showTube": true,
+      "showAntenna": true
+    }
+  },
+  {
+    "id": "jcg108-3m-negative-x",
+    "name": "JCG108 \u00b7 3 m \u00b7 +X \u2192 \u2212X",
+    "description": "Preserved 314.8 mm fairing concept on an OD 90 tube. Engineering reference only; no operational speed or fabrication qualification.",
+    "parameters": {
+      "antennaModel": "jcg108-3m",
+      "antennaDepth": 8.6,
+      "antennaBondline": 0.3,
+      "airflowDirection": "negative-x",
+      "antennaHole": 12,
+      "antennaX": 0,
+      "antennaY": -17.5,
+      "showTube": true,
+      "showAntenna": true
+    }
+  },
+  {
+    "id": "jcg108-5m-positive-x",
+    "name": "JCG108 \u00b7 5 m \u00b7 \u2212X \u2192 +X",
+    "description": "Preserved 314.8 mm fairing concept on an OD 90 tube. Engineering reference only; no operational speed or fabrication qualification.",
+    "parameters": {
+      "antennaModel": "jcg108-5m",
+      "antennaDepth": 8.6,
+      "antennaBondline": 0.3,
+      "airflowDirection": "positive-x",
+      "antennaHole": 12,
+      "antennaX": 0,
+      "antennaY": -17.5,
+      "showTube": true,
+      "showAntenna": true
+    }
+  },
+  {
+    "id": "jcg108-5m-negative-x",
+    "name": "JCG108 \u00b7 5 m \u00b7 +X \u2192 \u2212X",
+    "description": "Preserved 314.8 mm fairing concept on an OD 90 tube. Engineering reference only; no operational speed or fabrication qualification.",
+    "parameters": {
+      "antennaModel": "jcg108-5m",
+      "antennaDepth": 8.6,
+      "antennaBondline": 0.3,
+      "airflowDirection": "negative-x",
+      "antennaHole": 12,
+      "antennaX": 0,
+      "antennaY": -17.5,
+      "showTube": true,
+      "showAntenna": true
+    }
+  }
+]

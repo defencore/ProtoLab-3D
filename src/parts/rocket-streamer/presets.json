@@ -1,0 +1,20 @@
+[
+  {
+    "id": "small-500",
+    "name": "Streamer 500 x 50 x 0.05 mm · reference",
+    "description": "Authored flat recovery-strip envelope; no material or supplier performance is claimed.",
+    "parameters": { "length": 500, "width": 50, "thickness": 0.05 }
+  },
+  {
+    "id": "medium-1000",
+    "name": "Streamer 1000 x 100 x 0.1 mm · reference",
+    "description": "Authored flat recovery-strip envelope; packing, flutter and attachment are not modeled.",
+    "parameters": { "length": 1000, "width": 100, "thickness": 0.1 }
+  },
+  {
+    "id": "large-2000",
+    "name": "Streamer 2000 x 200 x 0.15 mm · reference",
+    "description": "Authored flat recovery-strip envelope; no descent rate or load rating is assigned.",
+    "parameters": { "length": 2000, "width": 200, "thickness": 0.15 }
+  }
+]

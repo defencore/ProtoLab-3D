@@ -1,0 +1,50 @@
+[
+  {
+    "id": "tr8-quad-361-12",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 4 outputs · Ø72 laser steel · ±20°",
+    "description": "Three Ø72 steel discs, SMF106ZZ output bearings and independent X-arranged Ø6 shafts; all laser stock is 3 mm.",
+    "parameters": {
+      "motorModel": "361-12",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0
+    }
+  },
+  {
+    "id": "tr8-quad-107-12",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 4 outputs · Ø72 laser steel · ±20°",
+    "description": "Three Ø72 steel discs, SMF106ZZ output bearings and independent X-arranged Ø6 shafts; all laser stock is 3 mm.",
+    "parameters": {
+      "motorModel": "107-12",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0
+    }
+  },
+  {
+    "id": "tr8-quad-361-24",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 4 outputs · Ø72 laser steel · ±20°",
+    "description": "Three Ø72 steel discs, SMF106ZZ output bearings and independent X-arranged Ø6 shafts; all laser stock is 3 mm.",
+    "parameters": {
+      "motorModel": "361-24",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0
+    }
+  },
+  {
+    "id": "tr8-quad-107-24",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 4 outputs · Ø72 laser steel · ±20°",
+    "description": "Three Ø72 steel discs, SMF106ZZ output bearings and independent X-arranged Ø6 shafts; all laser stock is 3 mm.",
+    "parameters": {
+      "motorModel": "107-24",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0
+    }
+  }
+]

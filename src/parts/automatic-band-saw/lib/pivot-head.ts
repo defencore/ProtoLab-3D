@@ -1,4 +1,5 @@
 import { box, cylinder, subtract, union, type Shape, type Vec } from './shapes';
+import { markSupplierUnit } from '../../../core/supplier-components';
 import { bearingPieces, socketScrew } from './hardware';
 import { HEAD_PIVOT, WHEEL_CENTRE, headPoint, liftLink } from './layout';
 import type { MachinePiece } from './model';
@@ -224,8 +225,25 @@ export function pivotPieces(angle: number): MachinePiece[] {
   const link = liftLink(angle),
     d = link.tip.map((v, i) => v - link.base[i]),
     rot: Vec = [(Math.atan2(-d[1], d[2]) * 180) / Math.PI, 0, 0];
-  const local = (name: string, shape: Shape, color = 0xb4bec8) =>
+  const liftSource = {
+    name: 'Festo DSBC-63-500-PPSA-N3 lift cylinder · inherited fit reference',
+    libraryId: 'profile-pneumatic-cylinder',
+    presetId: 'dsbc-63-500-ppsa-n3',
+    procurement: {
+      designation: 'DSBC-63-500-PPSA-N3 / 1383643',
+      manufacturer: 'Festo',
+      source: 'https://ftp.festo.com/public/PNEUMATIC/SOFTWARE_SERVICE/DataSheet/EN_US/1383643.pdf',
+    },
+  };
+  const local = (name: string, shape: Shape, color = 0xb4bec8) => {
+    if (
+      /^(DSBC63x500 pivot lift barrel|Lift end cap|Lift tie rod|Lift polished D20 rod|Lift M16x1.5 rod end|Lift D63 piston)/.test(
+        name,
+      )
+    )
+      markSupplierUnit([shape], liftSource);
     add(name, tr(shape, link.base, rot), 'Head lift', color, 'BUY');
+  };
   const holes = [-27, 27].flatMap((x) => [-27, 27].map((y) => cylinder(4.2, 620, [x, y, 29])));
   local(
     'DSBC63x500 pivot lift barrel',

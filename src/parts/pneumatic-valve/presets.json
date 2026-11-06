@@ -1,0 +1,65 @@
+[
+  {
+    "id": "4v210-08-dc24v",
+    "name": "4V210-08 \u00b7 5/2 \u00b7 DC24V",
+    "description": "Source-identified installation reference; exact mounting and port geometry remain unresolved.",
+    "parameters": {
+      "model": "4v210-08-dc24v"
+    },
+    "catalog": {
+      "designation": "4V210-08 5/2 DC24V / seller code 9-12",
+      "sourceName": "Selected supplier listing; inherited installation envelope",
+      "sourceUrl": "https://prom.ua/ua/p2098352716-pnevmoklapan-elektromagnitnyj-4v210.html",
+      "verifiedParameters": ["model"],
+      "productCodes": ["4v210-08-dc24v", "4V210-08 5/2 DC24V / seller code 9-12"],
+      "attributes": {
+        "function": "5/2 directional valve"
+      },
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Preserved analytic installation-study geometry from automatic-band-saw.",
+        "limitations": "The selected supplier listing identifies the 4V210-08 5/2 execution, DC24V coil, Rc1/4 working ports and Rc1/8 exhaust ports. Manufacturer and ordered revision are unspecified. Geometry preserves the existing band-saw installation study: 22 \u00d7 85 \u00d7 32 mm body, 22 \u00d7 35 \u00d7 36 mm coil, 20 \u00d7 25 \u00d7 22 mm connector, three representative top bores and a manual-override cylinder. These dimensions, offsets, mounting faces and bore details are unverified. Exhaust ports, spool circuit, seals and mounting holes are not fully defined. Rc taper and qualified port geometry are not represented. The coil/connector are one complete valve procurement unit; external fittings, tube, silencer and mounting rail are excluded. Confirm the actual unit and interface drawing before using this model for mounting or pressure qualification.",
+        "sourceUrl": "https://prom.ua/ua/p2098352716-pnevmoklapan-elektromagnitnyj-4v210.html"
+      },
+      "specifications": [
+        {
+          "label": "Model and geometry scope",
+          "value": "The selected supplier listing identifies the 4V210-08 5/2 execution, DC24V coil, Rc1/4 working ports and Rc1/8 exhaust ports. Manufacturer and ordered revision are unspecified. Geometry preserves the existing band-saw installation study: 22 \u00d7 85 \u00d7 32 mm body, 22 \u00d7 35 \u00d7 36 mm coil, 20 \u00d7 25 \u00d7 22 mm connector, three representative top bores and a manual-override cylinder. These dimensions, offsets, mounting faces and bore details are unverified. Exhaust ports, spool circuit, seals and mounting holes are not fully defined. Rc taper and qualified port geometry are not represented. The coil/connector are one complete valve procurement unit; external fittings, tube, silencer and mounting rail are excluded. Confirm the actual unit and interface drawing before using this model for mounting or pressure qualification."
+        }
+      ]
+    }
+  },
+  {
+    "id": "2vd0102-g1-4",
+    "name": "2VD0102 \u00b7 G1/4",
+    "description": "Source-identified one-way flow control; illustrative geometry with unresolved dimensions and contradictory supplier fields.",
+    "parameters": {
+      "model": "2vd0102-g1-4"
+    },
+    "product": {
+      "supply": "reference"
+    },
+    "catalog": {
+      "designation": "2VD0102 G1/4 / seller code 0891000003",
+      "manufacturer": "AZ (supplier-listed; order-code cross-reference unverified)",
+      "sourceName": "AMRtechnologi / Prom.ua selected listing and product photo",
+      "sourceUrl": "https://prom.ua/p1913297936-drossel-obratnym-klapanom.html",
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "function": "One-way flow control"
+      },
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Illustrative photo-based reference; no dimensioned product geometry or installed occurrence is available.",
+        "limitations": "The selected AMRtechnologi listing identifies 2VD0102, seller code 0891000003, as a screwdriver-adjusted one-way flow control for a G1/4 banjo interface. Its structured fields conflict with its description: 1/8 versus 1/4 thread, aluminium versus brass, incompatible temperature ranges and 239 MPa versus 10 bar pressure. Manufacturer AZ is seller-listed but no primary AZ order-code cross-reference to 2VD0102 was established. No dimensioned drawing or original CAD was found. Geometry is an illustrative photo-based reference only: assumed \u00d812 waist, 18 mm hex width across flats, 30 mm overall length, radial openings and a slotted adjuster; photo-visible O-rings are omitted. None of those dimensions, O-ring sections, seating depths or port geometry is verified. The nominal lower cylinder does not certify male/internal thread type or mating fit. No pressure, flow, material or temperature rating is published as a numeric library characteristic. The existing band-saw BOM references two units, but it contains no placed flow-control geometry; registration does not invent installed occurrences. Obtain an exact execution drawing and verify the metering direction before design or procurement release.",
+        "sourceUrl": "https://prom.ua/p1913297936-drossel-obratnym-klapanom.html"
+      },
+      "specifications": [
+        {
+          "label": "Source conflicts and geometry limits",
+          "value": "The selected AMRtechnologi listing identifies 2VD0102, seller code 0891000003, as a screwdriver-adjusted one-way flow control for a G1/4 banjo interface. Its structured fields conflict with its description: 1/8 versus 1/4 thread, aluminium versus brass, incompatible temperature ranges and 239 MPa versus 10 bar pressure. Manufacturer AZ is seller-listed but no primary AZ order-code cross-reference to 2VD0102 was established. No dimensioned drawing or original CAD was found. Geometry is an illustrative photo-based reference only: assumed \u00d812 waist, 18 mm hex width across flats, 30 mm overall length, radial openings and a slotted adjuster; photo-visible O-rings are omitted. None of those dimensions, O-ring sections, seating depths or port geometry is verified. The nominal lower cylinder does not certify male/internal thread type or mating fit. No pressure, flow, material or temperature rating is published as a numeric library characteristic. The existing band-saw BOM references two units, but it contains no placed flow-control geometry; registration does not invent installed occurrences. Obtain an exact execution drawing and verify the metering direction before design or procurement release."
+        }
+      ]
+    }
+  }
+]

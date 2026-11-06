@@ -216,8 +216,7 @@ test(
     const code = `import FreeCAD as App, Part, json
 doc = App.newDocument('AxisThreadFrames')
 exec(${JSON.stringify(generateScript(axis, axis.defaults, 'assembled', undefined, undefined, 'simple'))},{})
-root = doc.RootObjects[0]
-guides = [child for child in root.Group if child.LibraryId == 'linear-guide' and hasattr(child,'ThreadFeaturesJSON')]
+guides = sorted((child for child in doc.Objects if getattr(child,'LibraryId','') == 'linear-guide' and hasattr(child,'ThreadFeaturesJSON')), key=lambda child: child.ComponentIndex)
 assert len(guides) == 2
 expected = json.loads(${JSON.stringify(JSON.stringify(expected))})
 for child,wanted in zip(guides,expected):

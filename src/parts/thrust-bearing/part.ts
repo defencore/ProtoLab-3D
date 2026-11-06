@@ -1,10 +1,15 @@
 import productData from './product.json';
+import { bearingPalette, bearingRgb } from '../../core/hardware/bearing-appearance';
 import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
 import { motionSources } from './lib/catalog/motion-bearings';
-import { turnedMesh, turnedPython, type TurnedProfile } from '../../core/hardware/motion-bearing-utils';
+import {
+  turnedMesh,
+  turnedPython,
+  type TurnedProfile,
+} from '../../core/hardware/motion-bearing-utils';
 import { Group } from 'three';
 import type { PartDefinition } from '../../core/types';
 import { compoundPython, DARK_STEEL, n, num, numberParameter, sphere } from '../../core/geometry';
@@ -95,7 +100,10 @@ const part: PartDefinition = {
         `Part.makeSphere(${num(ballR)}, App.Vector(${num(Math.cos(angle) * pitchR)}, ${num(Math.sin(angle) * pitchR)}, 0))`,
       );
     }
-    return compoundPython(shapes);
+    return (
+      compoundPython(shapes) +
+      `\ncomponent_colors = ${JSON.stringify([bearingPalette.race, bearingPalette.race, ...Array(n(p, 'balls')).fill(DARK_STEEL)].map(bearingRgb))}`
+    );
   },
   dimensions: (p, state) => [
     n(p, 'outer'),

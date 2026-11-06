@@ -7,6 +7,14 @@ occurrence owns its parent, quantity, local placement and installation notes.
 Definitions own designation, revision, manufacturing or purchasing records and
 associated documents.
 
+In the library preview, **Assembly components** has **Components** and **BOM**
+tabs. BOM aggregates matching physical configurations and multiplies quantities
+through nested subassemblies. Manufactured subassemblies and their components
+have separate rows; purchased assemblies remain one supplied unit. Engineering
+references are excluded, and preview visibility does not change quantities.
+The arrow beside an element opens its exact library configuration in a new
+browser tab, keeping the assembly, camera and component visibility in the original tab.
+
 ## Build the product structure
 
 The workspace separates **Structure**, **Specification**, **Exports** and
@@ -88,6 +96,10 @@ revision, quantity and manufacturing or procurement metadata. Parent containers
 hold their configured children without duplicating the parent preview geometry.
 A BOM quantity does not invent a spatial array: each occurrence has its recorded
 placement. Add separate occurrences when separate installed positions are needed.
+The FreeCAD model tree can place siblings in category folders under their existing
+assembly parent. Occurrences retain their recorded placements and identifiers.
+See the [FreeCAD assembly export guide](freecad-assemblies.md) for the model tree
+and component traversal rules.
 
 Choose **Simple** or **Full** in Exports before downloading a FreeCAD macro.
 Simple uses nominal thread surfaces while retaining drawing callouts. Full adds
@@ -100,3 +112,18 @@ The macro uses the active FreeCAD document and preserves existing objects.
 Draft exports retain documentation issues and engineering review requirements.
 CAD geometry, specification data and file links remain reviewable engineering
 records rather than production approval.
+
+A reference study with an explicitly declared library composition can retain its
+component occurrences in a project. A reference without that composition remains
+a leaf. Reference studies use the same ancestry, repeated-design structure and
+independent-fork checks as authored assemblies, while retaining reference supply
+and their production-release block. A fixed catalog execution explicitly marked
+as a reference also preserves that status when its family contains physical
+products. Removing its preset ID or editing supply does not promote the known
+reference geometry to a purchased or manufactured product.
+
+An authored assembly ordered complete can retain its declared internal structure
+for inspection. Procurement still stops at that bought unit, and new child
+occurrences cannot be added while it is purchased. An opaque supplier family
+without a declared composition cannot acquire children through saved-project
+editing or import.

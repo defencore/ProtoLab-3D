@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Authored printed empty enclosure body and lid with four separately sourced screws and four captive nuts.",
+  "processes": ["printing", "assembly"],
+  "releaseRequirements": [
+    "Lay out actual equipment, boards, connectors, mating plugs, cable routes and heat paths before finalizing a device enclosure.",
+    "Specify polymer, build orientation and settings; inspect nut-trap roof bridges, side access, head seats, flatness and fit.",
+    "Qualify installation torque, lid retention, impact, creep and service cycles for the actual application. No IP or sealing performance is assigned."
+  ]
+}

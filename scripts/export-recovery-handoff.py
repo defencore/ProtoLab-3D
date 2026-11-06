@@ -8,24 +8,26 @@ from collections import defaultdict
 from pathlib import Path
 import FreeCAD as App
 import Part
+from freecad_tree import component_leaves
 
 parser = argparse.ArgumentParser()
 parser.add_argument('document', type=Path)
 parser.add_argument('output', type=Path)
 args = parser.parse_args()
-args.output.mkdir(parents=True, exist_ok=True)
 doc = App.openDocument(str(args.document.resolve()))
-assembly = next(o for o in doc.RootObjects if o.TypeId == 'App::Part')
-def component_leaves(parent):
-    for child in parent.Group:
-        if child.TypeId == 'App::Part':
-            yield from component_leaves(child)
-        else:
-            yield child
+assemblies = [obj for obj in doc.RootObjects if getattr(obj, 'PartId', None) == 'rocket-release']
+if len(assemblies) != 1 or assemblies[0].TypeId != 'App::Part':
+    parser.error('The document must contain exactly one rocket-release assembly.')
 
-parts = sorted(component_leaves(assembly), key=lambda o: o.ComponentIndex)
+parts = component_leaves(assemblies[0])
 assert parts and all(o.TypeId == 'Part::Feature' for o in parts)
 assert all(o.Shape.isValid() and o.Shape.isClosed() and len(o.Shape.Solids) == 1 for o in parts)
+# The rocket-release recipe assigns this PartNumber to the first threaded spring barrel.
+samples = [obj for obj in parts if getattr(obj, 'PartNumber', '') == 'RR-A8E7A2B5']
+if len(samples) != 1:
+    parser.error('The assembly must contain one threaded spring barrel with PartNumber RR-A8E7A2B5.')
+sample = samples[0]
+args.output.mkdir(parents=True, exist_ok=True)
 
 def table(name, headers, rows):
     with (args.output / name).open('w', newline='', encoding='utf-8-sig') as f:
@@ -62,7 +64,6 @@ assert (other.Shape.Solids[0].CenterOfMass - b).Length < 1e-7
 first.Placement = original
 
 # Native selected-part STEP round trip, retaining analytic BRep surfaces and threads.
-sample = next(o for o in parts if o.Label.startswith('Threaded spring barrel 1 '))
 step = args.output / 'threaded-spring-barrel-sample.step'
 Part.export([sample], str(step))
 restored = Part.read(str(step))

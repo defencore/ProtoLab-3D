@@ -1,0 +1,80 @@
+[
+  {
+    "id": "f6802-tr8-40deg",
+    "name": "TR8×8(P2) worm sector · F6802ZZ/F688ZZ · ±20°",
+    "description": "Compact split housing for machining or 3D printing, with a 3 mm laser blank and finished tooth flanks, F6802 outer and F688 inner output bearings, and two F685 screw bearings.",
+    "parameters": {
+      "frontBearing": "F6802ZZ",
+      "frontBore": 15,
+      "frontOuter": 24,
+      "frontWidth": 5,
+      "frontFlangeOuter": 26,
+      "frontFlangeWidth": 1.1,
+      "wormBearing": "F685ZZ",
+      "travel": 40,
+      "inputTurns": 1,
+      "outputAngle": 0,
+      "plateThickness": 3,
+      "screwRootDiameter": 5.5,
+      "driveStubLength": 10,
+      "housingWall": 2.5,
+      "housingJoinClearance": 0.2,
+      "clearance": 0.25,
+      "seatClearance": 0.04,
+      "meshClearance": 0.08,
+      "backlash": 0.1
+    }
+  },
+  {
+    "id": "f6804-tr8-40deg",
+    "name": "TR8×8(P2) worm sector · F6804ZZ/F688ZZ · ±20°",
+    "description": "Larger outside output bearing in a recalculated two-piece housing, with a stepped sleeve, four-start TR8 screw and 3 mm finish-machined sector blank.",
+    "parameters": {
+      "frontBearing": "F6804ZZ",
+      "frontBore": 15,
+      "frontOuter": 24,
+      "frontWidth": 5,
+      "frontFlangeOuter": 26,
+      "frontFlangeWidth": 1.1,
+      "wormBearing": "F685ZZ",
+      "travel": 40,
+      "inputTurns": 1,
+      "outputAngle": 0,
+      "plateThickness": 3,
+      "screwRootDiameter": 5.5,
+      "driveStubLength": 12,
+      "housingWall": 2.5,
+      "housingJoinClearance": 0.2,
+      "clearance": 0.25,
+      "seatClearance": 0.04,
+      "meshClearance": 0.08,
+      "backlash": 0.1
+    }
+  },
+  {
+    "id": "f6802-tr8-60deg",
+    "name": "TR8×8(P2) worm sector · F6802ZZ/F688ZZ · ±30°",
+    "description": "Wider travel with a recalculated sector and compact split housing, fixed TR8 pitch and two unequal output bearing supports.",
+    "parameters": {
+      "frontBearing": "F6802ZZ",
+      "frontBore": 15,
+      "frontOuter": 24,
+      "frontWidth": 5,
+      "frontFlangeOuter": 26,
+      "frontFlangeWidth": 1.1,
+      "wormBearing": "F685ZZ",
+      "travel": 60,
+      "inputTurns": 1,
+      "outputAngle": 0,
+      "plateThickness": 3,
+      "screwRootDiameter": 5.5,
+      "driveStubLength": 10,
+      "housingWall": 2.5,
+      "housingJoinClearance": 0.2,
+      "clearance": 0.25,
+      "seatClearance": 0.04,
+      "meshClearance": 0.08,
+      "backlash": 0.1
+    }
+  }
+]

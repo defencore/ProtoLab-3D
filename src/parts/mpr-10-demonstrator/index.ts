@@ -1,7 +1,7 @@
 import type { PartModule } from '../../core/part-modules';
 import definition from './part';
 
-const part = { ...definition, id: 'mpr-10-demonstrator' };
+const part = { ...definition, id: 'mpr-10-demonstrator', browseLabel: 'Mechanism demonstrator' };
 
 export default {
   apiVersion: 2,

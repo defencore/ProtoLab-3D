@@ -7,7 +7,6 @@ import { performance } from 'node:perf_hooks';
 import { createPartLoader, type PartModuleImport } from '../../src/core/lazy-parts';
 import { PART_ID_PATTERN } from '../../src/core/part-modules';
 import { generateScript } from '../../src/core/freecad';
-import { withGeometryMode } from '../../src/core/geometry-mode';
 import { caseParameters, type AuditCase, type AuditResult } from './cases';
 
 interface Request {
@@ -112,12 +111,12 @@ process.on('message', async (request: Request) => {
   };
   let parameters: ReturnType<typeof caseParameters> | undefined;
   try {
-    const part = (await loadParts([item.partId])).find((candidate) => candidate.id === item.partId);
+    const parts = await loadParts([item.partId]);
+    const part = parts.find((candidate) => candidate.id === item.partId);
     if (!part) throw new Error('Missing part: ' + item.partId);
     parameters = caseParameters(part, item);
-    const source = withGeometryMode(item.mode, () =>
-      generateScript(part, parameters!, item.state, item.presetId, undefined, item.mode),
-    );
+    await part.initializeGeometry?.(parameters, item.state);
+    const source = generateScript(part, parameters, item.state, item.presetId, undefined, item.mode, parts);
     const generationMs = performance.now() - started,
       sourceHash = createHash('sha256').update(source).digest('hex');
     if (request.previous?.status === 'passed' && request.previous.sourceHash === sourceHash) {

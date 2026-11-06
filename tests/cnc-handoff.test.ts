@@ -47,7 +47,11 @@ test('CNC M4/M5 nut inspection allowances retain qualified nominal ordering iden
       { handedness: 'left' },
     ] as Parameters[])
       assert.deepEqual(millingHandoff(nut, { ...parameters, ...patch }, preset.id), {});
-    const otherFamily = { ...nut, id: 'unrelated-component' };
+    const otherFamily = {
+      ...nut,
+      id: 'unrelated-component',
+      catalogIdentityParameters: undefined,
+    };
     assert.deepEqual(millingHandoff(otherFamily, parameters, preset.id), {});
     const verifiedAllowance = {
       ...nut,
@@ -121,12 +125,16 @@ test('the real CNC project retains both nominal and inspection nut executions wi
   const orders = supplyRows(project, parts, 'purchased'),
     kitParents = project.occurrences.filter(
       (occurrence) =>
-        project.configurations.some(
-          (c) => c.id === occurrence.configurationId && c.supply === 'purchased',
-        ) && project.occurrences.some((child) => child.parentId === occurrence.id),
+        occurrence.notes.includes('One complete shaft/nut order') ||
+        occurrence.notes.includes('One factory LS477 order'),
     );
   assert.equal(kitParents.length, 6);
   for (const parent of kitParents) {
+    assert.equal(
+      project.occurrences.some((child) => child.parentId === parent.id),
+      false,
+      'A purchased kit is opaque in the product structure.',
+    );
     const order = orders.filter((row) => row.configurationId === parent.configurationId);
     assert.equal(order.length, 1);
     assert.equal(order[0].quantity, 1);
@@ -270,7 +278,8 @@ test('adding the actual CNC to a project preserves source identities, fabricatio
       parameters: machine.defaults,
       state: 'assembled',
     });
-  assert.equal(project.occurrences.length, components.length + 7); // Root and six purchased kit parents.
+  // Root and six kit parents replace twelve supplied internal component occurrences.
+  assert.equal(project.occurrences.length, components.length + 7 - 12);
   for (const c of components.filter((c) =>
     [
       'machine-control',
@@ -294,12 +303,17 @@ test('adding the actual CNC to a project preserves source identities, fabricatio
     assert.equal(configuration.designation, c.procurement!.designation);
   }
   const mounts = project.configurations.filter((c) => c.libraryId === mount.id),
-    shafts = project.configurations.filter((c) => c.libraryId === 'cnc-precision-screw'),
+    shaftKits = project.configurations.filter((c) => c.libraryId === 'cnc-precision-axis'),
     slat = project.configurations.find(
       (c) => c.libraryId === table.id && c.parameters.component === 'slat',
     )!;
   assert.equal(mounts.length, 2);
-  assert.equal(shafts.length, 3);
+  assert.equal(shaftKits.length, 3);
+  assert.equal(
+    project.configurations.some((c) => c.libraryId === 'cnc-precision-screw'),
+    false,
+    'Supplied shafts stay inside their purchased matched units.',
+  );
   for (const c of mounts) {
     assert.ok(c.manufacturing?.material);
     assert.ok(c.manufacturing?.blank);
@@ -307,7 +321,7 @@ test('adding the actual CNC to a project preserves source identities, fabricatio
     assert.equal(c.procurement, undefined);
   }
   assert.ok(
-    shafts.every((c) => !c.manufacturing && c.procurement?.designation.includes('included')),
+    shaftKits.every((c) => !c.manufacturing && c.procurement?.designation.includes('matched set')),
   );
   assert.match(slat.manufacturing?.material ?? '', /Aluminium/);
   const spindle = project.configurations.find((c) => c.libraryId === 'cnc-spindle')!;

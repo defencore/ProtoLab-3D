@@ -1,6 +1,7 @@
 import { box, cylinder, prism, union, subtract, component, type Shape, type Vec } from './shapes';
 import type { Piece } from './assembly';
 import { Box3, Mesh, MeshStandardMaterial } from 'three';
+import { annularSectorPoints } from '../../analytic-geometry';
 export { union };
 export const cut = subtract;
 export const B = (w: number, d: number, h: number, x = 0, y = 0, z = 0): Shape =>
@@ -24,12 +25,14 @@ export const rotate = (child: Shape, x = 0, y = 0, z = 0): Shape => ({
 });
 export const T = (profile: [number, number][]): Shape => ({ kind: 'revolve', profile });
 export function torus(major: number, minor: number, z = 0): Shape {
-  return T(
-    Array.from({ length: 24 }, (_, i) => [
+  return {
+    kind: 'revolve',
+    profile: Array.from({ length: 24 }, (_, i) => [
       major + minor * Math.cos((i * Math.PI) / 12),
       z + minor * Math.sin((i * Math.PI) / 12),
     ]),
-  );
+    native: { kind: 'torus', major, minor, z },
+  };
 }
 export function boltCircle(
   shape: Shape,
@@ -81,17 +84,28 @@ export function link(
   return move(rotate(s, 0, 0, angle), a[0], a[1]);
 }
 export function arcBand(r: number, t: number, h: number, start: number, end: number, z = 0): Shape {
-  const points: [number, number][] = [];
-  const steps = 48;
-  for (let i = 0; i <= steps; i++) {
-    const a = ((start + ((end - start) * i) / steps) * Math.PI) / 180;
-    points.push([(r + t) * Math.cos(a), (r + t) * Math.sin(a)]);
-  }
-  for (let i = steps; i >= 0; i--) {
-    const a = ((start + ((end - start) * i) / steps) * Math.PI) / 180;
-    points.push([r * Math.cos(a), r * Math.sin(a)]);
-  }
-  return poly(points, h, z);
+  const native = {
+    kind: 'annular-sector' as const,
+    inner: r,
+    outer: r + t,
+    depth: h,
+    start,
+    end,
+    z,
+  };
+  const points = annularSectorPoints(native);
+  const area = points.reduce((sum, p, i) => {
+    const next = points[(i + 1) % points.length];
+    return sum + p[0] * next[1] - next[0] * p[1];
+  }, 0);
+  return {
+    kind: 'prism',
+    points: area < 0 ? points.reverse() : points,
+    depth: h,
+    origin: z,
+    axis: 'z',
+    native,
+  };
 }
 export function finish(pieces: Piece[], state: string): Piece[] {
   if (state !== 'exploded' || pieces.length < 2) return pieces;

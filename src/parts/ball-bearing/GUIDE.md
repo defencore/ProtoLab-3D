@@ -9,3 +9,9 @@ This folder owns this part's parameter schema, defaults, preview, FreeCAD recipe
 - `index.ts`: API version, stable part ID and display order.
 
 Only the generic geometry SDK under `src/core` is shared. Run `npm run parts:check -- ball-bearing` to check this package and `npm run parts:export -- ball-bearing <output-folder>` to prepare a runnable handoff with the SDK and reference assets.
+
+## Miniature size options
+
+The 39 additional `ID...` presets preserve every bore x outside diameter x width in the supplied AliExpress size list, including decimal widths and distinct widths for the same bore/diameter. Their source link is the requested listing; direct seller-page verification was unavailable. Only those three user-supplied dimensions are marked as verified. Closure, manufacturer, material, ball complement and ratings were not supplied. The open construction and ball count are illustrative editable geometry, not a claimed supplier execution.
+
+Use the bore, outside diameter and width selectors to narrow the miniature options. Flanged F-series 2RS options belong to the separate **Flanged miniature ball bearing** family so its locating lip has an independent installation envelope.

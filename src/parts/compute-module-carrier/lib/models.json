@@ -1,7 +1,7 @@
 [
   {
     "id": "raspberry-pi-cm5-io-rev2",
-    "name": "Raspberry Pi Compute Module 5 IO Board \u00b7 rev 2",
+    "name": "Raspberry Pi Compute Module 5 IO Board · rev 2",
     "manufacturer": "Raspberry Pi",
     "revision": "Official KiCad revision 2",
     "width": 160,
@@ -958,5 +958,73 @@
       "pcie": "16-pin FFC"
     },
     "limitations": "Authored reconstruction from the manufacturer STEP dated 2025-02-25. PCB corner radius 3.5 mm is inferred from CAD tangent geometry, not a dimensioned callout. Major connector envelopes and mounting bores are source measured. Solder tails, traces and small electronics are omitted; cavities, individual GPIO contacts and colors are illustrative. The source inserted microSD card is excluded. The CR1220 holder and several FFC connectors extend below the PCB."
+  },
+  {
+    "id": "waveshare-cm5-nano-a",
+    "name": "Waveshare CM5-NANO-A",
+    "manufacturer": "Waveshare",
+    "revision": "Manufacturer STEP dated 2025-03-13; standard board without fitted GPIO header",
+    "width": 55,
+    "length": 40,
+    "board": 1.59999934,
+    "radius": 3,
+    "holes": [],
+    "moduleHoles": [],
+    "components": [],
+    "geometryKind": "manufacturer-cad",
+    "source": "https://www.waveshare.com/wiki/CM5-NANO-A",
+    "references": [
+      "https://files.waveshare.com/wiki/CM5-NANO-A/CM5-NANO-A-3D.zip",
+      "https://files.waveshare.com/wiki/CM5-NANO-A/CM5-NANO-A_Sch.pdf",
+      "https://www.waveshare.com/w/upload/c/c9/800px-CM5-NANO-A-details-size.jpg"
+    ],
+    "sourceSha256": "6a39316c42b75bd57b7a01651c6174a1287a447e1d9f833862d5c544928ddd26",
+    "attributes": {
+      "manufacturer": "Waveshare",
+      "module": "CM5",
+      "width": 55,
+      "length": 40,
+      "usb3": 1,
+      "ethernet": 0,
+      "hdmi": 0,
+      "pcie": "None",
+      "mipi": 2,
+      "inputVoltage": 5
+    },
+    "limitations": "Incomplete manufacturer CAD engineering reference. The manufacturer STEP omits the actual bodies of both 22-pin MIPI FPC connectors and both 100-pin CM5 board-to-board sockets; source H1/H2 use small passive-component placeholders. Other connector bodies, including the microSD socket, are simplified. Missing connector body dimensions and placements are unresolved; reported dimensions cover retained source shapes, not the complete installed product envelope. Do not use these bounds to certify enclosure fit. Original manufacturer board CAD surfaces with the source PI1 fitted GPIO header excluded for standard CM5-NANO-A; colors are illustrative. CAD PCB is approximately 55.019 × 40.018 × 1.600 mm against the nominal 55 × 40 mm drawing. CM5, cooler, inserted cards, loose GPIO header, cables, battery and enclosure are excluded. Source CAD is a mechanical reference without manufacturing tolerances or certification of every hardware revision. The source microSD socket is a simplified single body; its internal contacts are not documented by the supplied CAD."
+  },
+  {
+    "id": "waveshare-cm5-nano-b",
+    "name": "Waveshare CM5-NANO-B",
+    "manufacturer": "Waveshare",
+    "revision": "Manufacturer STEP dated 2025-03-13; standard board without fitted GPIO header",
+    "width": 56,
+    "length": 41,
+    "board": 1.2514072,
+    "radius": 3,
+    "holes": [],
+    "moduleHoles": [],
+    "components": [],
+    "geometryKind": "manufacturer-cad",
+    "source": "https://www.waveshare.com/wiki/CM5-NANO-B",
+    "references": [
+      "https://files.waveshare.com/wiki/CM5-NANO-B/CM5-NANO-B-3D.zip",
+      "https://files.waveshare.com/wiki/CM5-NANO-B/CM5-NANO-B-Sch.pdf",
+      "https://www.waveshare.com/w/upload/e/e6/800px-CM5-NANO-B-details-size.jpg"
+    ],
+    "sourceSha256": "d06dc1f14b2095aef56fd06abfc7b5920c7c8fa508e7b9b330b8f560e49b79fe",
+    "attributes": {
+      "manufacturer": "Waveshare",
+      "module": "CM5",
+      "width": 56,
+      "length": 41,
+      "usb3": 1,
+      "ethernet": 1,
+      "hdmi": 1,
+      "pcie": "16-pin FFC",
+      "mipi": 2,
+      "inputVoltage": 5
+    },
+    "limitations": "Incomplete manufacturer CAD engineering reference. The manufacturer STEP omits the actual bodies of the RJ45 Ethernet connector, mini HDMI socket, microSD socket, both 22-pin MIPI FPC connectors and both 100-pin CM5 board-to-board sockets. Some other connector bodies are simplified or misassigned. Missing connector body dimensions and placements are unresolved; reported dimensions cover retained source shapes, not the complete installed product envelope. Do not use these bounds to certify enclosure fit. Original manufacturer board CAD surfaces with the fitted GPIO header of the source execution excluded for standard CM5-NANO-B; the pre-soldered CM5-NANO-B-M is not represented. CAD PCB is approximately 56.003 × 41.019 × 1.251 mm. The dimensioned drawing specifies 56 × 41 mm, conflicting with the sales specification of 55 × 41 mm; CAD is not scaled. CM5, cooler, inserted cards, loose GPIO header, cables, battery and enclosure are excluded. Source CAD is a mechanical reference without manufacturing tolerances or certification of every hardware revision."
   }
 ]

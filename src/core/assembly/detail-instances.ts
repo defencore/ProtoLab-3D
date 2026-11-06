@@ -5,6 +5,7 @@ import { num } from '../geometry';
 import type { PartDefinition } from '../types';
 import type { AssemblyComponent } from '../product-types';
 import type { Shape } from './boundary/shapes';
+import { eskdIdentity } from '../eskd';
 
 export interface DetailPiece {
   shape: Shape;
@@ -134,6 +135,7 @@ export function componentGeometry(
     instance.name = piece.label;
     instance.rotation.z = ((piece.angle ?? 0) * Math.PI) / 180;
     instance.position.set(...(piece.position ?? [0, 0, piece.z ?? 0]));
+    instance.userData.occurrenceId = configured.id;
     instance.userData.libraryId = configured.libraryId;
     instance.userData.configuration = configured.parameters;
     return instance;
@@ -177,6 +179,7 @@ export function componentPython(
     '_pl_component_cache = {}',
     'def _pl_component(source):',
     '    if source not in _pl_component_cache:',
+    '        import math',
     '        scope = {"App":App,"Part":Part,"math":math}',
     '        exec(source, scope)',
     '        _pl_component_cache[source] = (scope["shape"], scope.get("component_metadata"), scope.get("component_labels"))',
@@ -214,6 +217,19 @@ export function componentPython(
   for (const piece of pieces) {
     const item = piece.component,
       part = configuredPart(libraries, piece);
+    const identity = eskdIdentity(part, item.parameters, item.state, item.presetId, {
+      id: item.id,
+      libraryId: item.libraryId,
+      parameters: item.parameters,
+      state: item.state,
+      presetId: item.presetId,
+      designation: item.procurement?.designation ?? '',
+      name: item.name,
+      revision: 'A',
+      supply: item.supply,
+      manufacturing: item.manufacturing,
+      procurement: item.procurement,
+    });
     lines.push(
       `component, local_metadata = _pl_component(${JSON.stringify(part.python(item.parameters, item.state))})`,
     );
@@ -233,7 +249,7 @@ export function componentPython(
       `component.translate(App.Vector(${(piece.position ?? [0, 0, piece.z ?? 0]).map(num).join(',')}))`,
       `local_metadata = _pl_placed_metadata(local_metadata, ${JSON.stringify(item.placement.rotation)}, ${JSON.stringify(item.placement.translation)}, ${num(piece.angle ?? 0)}, ${JSON.stringify(piece.position ?? [0, 0, piece.z ?? 0])})`,
       'components.append(component)',
-      `component_metadata.append(dict(local_metadata, **${JSON.stringify({ LibraryId: item.libraryId, ConfigurationJSON: JSON.stringify(item.parameters), Supply: item.supply })}))`,
+      `component_metadata.append(dict(local_metadata, **${JSON.stringify({ LibraryId: item.libraryId, GeometryState: item.state, ConfigurationJSON: JSON.stringify(item.parameters), Supply: item.supply, ESKDIdentityJSON: JSON.stringify(identity) })}))`,
     );
   }
   lines.push(

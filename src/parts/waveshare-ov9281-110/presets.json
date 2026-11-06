@@ -1,0 +1,34 @@
+[
+  {
+    "id": "waveshare-21653",
+    "name": "OV9281-110 Camera \u00b7 Waveshare 21653",
+    "description": "Supplier PCB and hole pattern; maximum drawn focus projection. Additional populated-component envelopes require fitting.",
+    "parameters": {
+      "focusExtension": 10
+    },
+    "catalog": {
+      "designation": "OV9281-110 Camera",
+      "manufacturer": "Waveshare",
+      "productCodes": ["21653"],
+      "sourceName": "Waveshare product and mechanical drawing",
+      "sourceUrl": "https://www.waveshare.com/ov9281-110-camera.htm",
+      "verifiedParameters": ["focusExtension"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "sourceUrl": "https://www.waveshare.com/img/devkit/accBoard/OV9281-110-Camera/OV9281-110-Camera-details-size.jpg",
+        "summary": "PCB 25 x 23.86 x 1.6 mm; six D2.2 holes; optical axis 8.86 mm from top; D14 lens; 7.2 plus 7 to 10 mm front projection.",
+        "limitations": "Lens holder square, connector body and 1 mm rear population are authored reference envelopes, not original supplier CAD. The official rear photograph identifies four bare outer mounting zones; D3.4 envelope reliefs and a D3 contact-button contract are authored, with actual pad outside diameter and rear component heights unknown. Optical entrance-pupil location remains unmeasured."
+      },
+      "specifications": [
+        {
+          "label": "Sensor",
+          "value": "OV9281 monochrome, global shutter, 1280 x 800"
+        },
+        {
+          "label": "Field of view",
+          "value": "110 degrees diagonal / 93 horizontal / 70 vertical"
+        }
+      ]
+    }
+  }
+]

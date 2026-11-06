@@ -1,0 +1,186 @@
+[
+  {
+    "id": "jcg108-3m",
+    "name": "Jinchang JCG108 · 824–960 / 1710–2170 MHz · 3 m",
+    "description": "Adhesive I-bar antenna; drawing L=3 m to connector tip. Nominal housing reference; exact connector and undimensioned geometry unresolved.",
+    "parameters": {
+      "model": "jcg108-3m"
+    },
+    "catalog": {
+      "name": "JCG108 4G Antenna",
+      "designation": "JCG108",
+      "manufacturer": "Zhejiang JC Antenna Co., Ltd.",
+      "productCodes": ["JCG108"],
+      "sourceName": "Original Jinchang JCG108 datasheet, pages 1–2; no stated revision; reviewed 2026-11-01",
+      "sourceUrl": "https://rnrorwxhqioplk5p.ldycdn.com/JCG108-aidqkBpmKjiRliSkjorpnllj.pdf",
+      "alternateSourceUrls": [
+        "https://www.jinchanggps.com/JCG108-4G-Antenna-pd46421675.html",
+        "https://iororwxhqioplk5p.ldycdn.com/cloud/qmBpmKjiRliSkjormnlmj/JCG108.png",
+        "references/antennas/jinchang-jcg108.png"
+      ],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Nominal external housing reference: length 126 ±2 mm, main span 15.5 ±1 mm, overall span including boss 16.2 ±1 mm, maximum depth 8.6 ±1 mm. True native arcs and cylinder retained.",
+        "limitations": "Not manufacturer CAD or a complete accurate antenna. Shallow curved/tapered outline, radii, boss diameter and body depth away from boss are approximate drawing traces. Cable, connector, strain relief, adhesive, decorative grooves and internal PCB omitted. Connector execution and full order code unconfirmed.",
+        "sourceUrl": "https://rnrorwxhqioplk5p.ldycdn.com/JCG108-aidqkBpmKjiRliSkjorpnllj.pdf",
+        "sourceSha256": "71e07e7e341c0bd8baa98326bab27011891bca7b70d7c0f7dd1bdfd1d31f0cff"
+      },
+      "attributes": {
+        "manufacturer": "Zhejiang JC Antenna Co., Ltd.",
+        "frequencyBands": "824–960 / 1710–2170 MHz",
+        "connector": "SMA or others — execution unspecified",
+        "cableType": "RG174",
+        "mounting": "Adhesive",
+        "radomeMaterial": "PVC",
+        "polarization": "Linear",
+        "leadLength": 3000,
+        "gain": 2.5,
+        "impedance": 50,
+        "bodyLength": 126,
+        "bodyHeight": 15.5,
+        "overallHeight": 16.2,
+        "bodyDepth": 8.6,
+        "pcbLength": 115,
+        "pcbWidth": 9,
+        "pcbThickness": 0.8
+      },
+      "attributeConditions": {
+        "manufacturer": "Current website company name; original PDF footer identifies JIAXING JINCHANG ELECTRONIC TECHNOLOGY CO., LTD.",
+        "leadLength": "Drawing L=3M/5M runs from the lower central housing datum to connector tip; not bare coax cut length. No tolerance or length-specific order suffix is stated.",
+        "connector": "Manufacturer says SMA or others. Gender, polarity, exact vendor and dimensions remain unknown; no RP-SMA equivalence is inferred.",
+        "frequencyBands": "Two separate published bands. Website title says 4G; original PDF says GSM. No additional bands or JCG108L equivalence established.",
+        "gain": "Published zenith gain; installation and pattern have not been independently verified.",
+        "bodyLength": "Nominal 126 mm; drawing tolerance ±2 mm. Model does not represent the maximum tolerance envelope.",
+        "bodyHeight": "Nominal main housing height 15.5 mm, excluding the lower central boss extension; drawing tolerance ±1 mm.",
+        "overallHeight": "Nominal span including lower central boss extension 16.2 mm; drawing tolerance ±1 mm. Excludes strain relief and cable.",
+        "bodyDepth": "Maximum nominal depth 8.6 mm; drawing tolerance ±1 mm. Local depth away from the boss is undimensioned and approximate.",
+        "pcbLength": "Internal PCB only; omitted from the external housing reference.",
+        "pcbWidth": "Internal PCB only; omitted from the external housing reference.",
+        "pcbThickness": "Internal PCB only; omitted from the external housing reference."
+      },
+      "specifications": [
+        {
+          "label": "Execution identity",
+          "value": "JCG108, drawing L=3 m; 3 m / 5 m are drawing alternatives, not invented manufacturer order suffixes. Exact connector execution unresolved."
+        },
+        {
+          "label": "Nominal housing dimensions",
+          "value": "Length 126 ±2 mm; main span 15.5 ±1 mm; span including boss 16.2 ±1 mm; depth 8.6 ±1 mm. Model axes X / Y / Z; mounting reference Z=0."
+        },
+        {
+          "label": "Geometry status",
+          "value": "Engineering reference. Four outer dimension callouts preserved; undimensioned contour, boss and local thickness approximate. Cable, plug, strain relief, adhesive and PCB omitted."
+        },
+        {
+          "label": "PCB dimensions",
+          "value": "115 × 9 × 0.8 mm; internal board, not the exterior housing."
+        },
+        {
+          "label": "Published RF characteristics",
+          "value": "824–960 / 1710–2170 MHz; 2.5 dBi zenith; linear; VSWR <2.0; 50 ohm. No RF qualification implied."
+        },
+        {
+          "label": "Published environment",
+          "value": "−40 to +85 °C; up to 95% RH; vibration 10–55 Hz, 1.5 mm amplitude, 2 hours. Supplier claims, not installation qualification."
+        },
+        {
+          "label": "Original source integrity",
+          "value": "PDF SHA-256 71e07e7e341c0bd8baa98326bab27011891bca7b70d7c0f7dd1bdfd1d31f0cff; PDF metadata 2020-07-15, no printed revision. Source company and copyright markings retained."
+        }
+      ]
+    }
+  },
+  {
+    "id": "jcg108-5m",
+    "name": "Jinchang JCG108 · 824–960 / 1710–2170 MHz · 5 m",
+    "description": "Adhesive I-bar antenna; drawing L=5 m to connector tip. Nominal housing reference; exact connector and undimensioned geometry unresolved.",
+    "parameters": {
+      "model": "jcg108-5m"
+    },
+    "catalog": {
+      "name": "JCG108 4G Antenna",
+      "designation": "JCG108",
+      "manufacturer": "Zhejiang JC Antenna Co., Ltd.",
+      "productCodes": ["JCG108"],
+      "sourceName": "Original Jinchang JCG108 datasheet, pages 1–2; no stated revision; reviewed 2026-11-01",
+      "sourceUrl": "https://rnrorwxhqioplk5p.ldycdn.com/JCG108-aidqkBpmKjiRliSkjorpnllj.pdf",
+      "alternateSourceUrls": [
+        "https://www.jinchanggps.com/JCG108-4G-Antenna-pd46421675.html",
+        "https://iororwxhqioplk5p.ldycdn.com/cloud/qmBpmKjiRliSkjormnlmj/JCG108.png",
+        "references/antennas/jinchang-jcg108.png"
+      ],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Nominal external housing reference: length 126 ±2 mm, main span 15.5 ±1 mm, overall span including boss 16.2 ±1 mm, maximum depth 8.6 ±1 mm. True native arcs and cylinder retained.",
+        "limitations": "Not manufacturer CAD or a complete accurate antenna. Shallow curved/tapered outline, radii, boss diameter and body depth away from boss are approximate drawing traces. Cable, connector, strain relief, adhesive, decorative grooves and internal PCB omitted. Connector execution and full order code unconfirmed.",
+        "sourceUrl": "https://rnrorwxhqioplk5p.ldycdn.com/JCG108-aidqkBpmKjiRliSkjorpnllj.pdf",
+        "sourceSha256": "71e07e7e341c0bd8baa98326bab27011891bca7b70d7c0f7dd1bdfd1d31f0cff"
+      },
+      "attributes": {
+        "manufacturer": "Zhejiang JC Antenna Co., Ltd.",
+        "frequencyBands": "824–960 / 1710–2170 MHz",
+        "connector": "SMA or others — execution unspecified",
+        "cableType": "RG174",
+        "mounting": "Adhesive",
+        "radomeMaterial": "PVC",
+        "polarization": "Linear",
+        "leadLength": 5000,
+        "gain": 2.5,
+        "impedance": 50,
+        "bodyLength": 126,
+        "bodyHeight": 15.5,
+        "overallHeight": 16.2,
+        "bodyDepth": 8.6,
+        "pcbLength": 115,
+        "pcbWidth": 9,
+        "pcbThickness": 0.8
+      },
+      "attributeConditions": {
+        "manufacturer": "Current website company name; original PDF footer identifies JIAXING JINCHANG ELECTRONIC TECHNOLOGY CO., LTD.",
+        "leadLength": "Drawing L=3M/5M runs from the lower central housing datum to connector tip; not bare coax cut length. No tolerance or length-specific order suffix is stated.",
+        "connector": "Manufacturer says SMA or others. Gender, polarity, exact vendor and dimensions remain unknown; no RP-SMA equivalence is inferred.",
+        "frequencyBands": "Two separate published bands. Website title says 4G; original PDF says GSM. No additional bands or JCG108L equivalence established.",
+        "gain": "Published zenith gain; installation and pattern have not been independently verified.",
+        "bodyLength": "Nominal 126 mm; drawing tolerance ±2 mm. Model does not represent the maximum tolerance envelope.",
+        "bodyHeight": "Nominal main housing height 15.5 mm, excluding the lower central boss extension; drawing tolerance ±1 mm.",
+        "overallHeight": "Nominal span including lower central boss extension 16.2 mm; drawing tolerance ±1 mm. Excludes strain relief and cable.",
+        "bodyDepth": "Maximum nominal depth 8.6 mm; drawing tolerance ±1 mm. Local depth away from the boss is undimensioned and approximate.",
+        "pcbLength": "Internal PCB only; omitted from the external housing reference.",
+        "pcbWidth": "Internal PCB only; omitted from the external housing reference.",
+        "pcbThickness": "Internal PCB only; omitted from the external housing reference."
+      },
+      "specifications": [
+        {
+          "label": "Execution identity",
+          "value": "JCG108, drawing L=5 m; 3 m / 5 m are drawing alternatives, not invented manufacturer order suffixes. Exact connector execution unresolved."
+        },
+        {
+          "label": "Nominal housing dimensions",
+          "value": "Length 126 ±2 mm; main span 15.5 ±1 mm; span including boss 16.2 ±1 mm; depth 8.6 ±1 mm. Model axes X / Y / Z; mounting reference Z=0."
+        },
+        {
+          "label": "Geometry status",
+          "value": "Engineering reference. Four outer dimension callouts preserved; undimensioned contour, boss and local thickness approximate. Cable, plug, strain relief, adhesive and PCB omitted."
+        },
+        {
+          "label": "PCB dimensions",
+          "value": "115 × 9 × 0.8 mm; internal board, not the exterior housing."
+        },
+        {
+          "label": "Published RF characteristics",
+          "value": "824–960 / 1710–2170 MHz; 2.5 dBi zenith; linear; VSWR <2.0; 50 ohm. No RF qualification implied."
+        },
+        {
+          "label": "Published environment",
+          "value": "−40 to +85 °C; up to 95% RH; vibration 10–55 Hz, 1.5 mm amplitude, 2 hours. Supplier claims, not installation qualification."
+        },
+        {
+          "label": "Original source integrity",
+          "value": "PDF SHA-256 71e07e7e341c0bd8baa98326bab27011891bca7b70d7c0f7dd1bdfd1d31f0cff; PDF metadata 2020-07-15, no printed revision. Source company and copyright markings retained."
+        }
+      ]
+    }
+  }
+]

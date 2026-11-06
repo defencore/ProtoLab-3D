@@ -1,0 +1,9 @@
+# Li-ion battery pack
+
+Library entry: `li-ion-pack:syla-lr2170la-4s1p-xt60`.
+
+The supplier listing establishes the assembled pack SKU, 4S1P 21700 configuration and 88 × 24 × 74 mm wrapped body. XT60 termination is the selected supplier option; XT90 is a different order option. Native Z0 is the body bottom and X/Y are centered. The 1.5 mm corner radius is illustrative. Internal cells, spot welds, leads and the mating plug are omitted because the source does not dimension their positions or lead lengths. Cable exit, connector sex, bend space and actual wrapped dimensions require the delivered pack. The listed current does not qualify a project harness or protection circuit.
+
+Source: [selected supplier listing](https://syla.com.ua/product/akumulyatorna-zbirka-li-ion-4s1p-21700-lishen-lr2170la-4000-mag-144v-35a-v-odyn-ryad/). Reviewed 2026-11-02. The same library definition is used by the SAC-01 case-panel configuration of `servo-toggle-actuator`; repeated occurrences remain one supplier product definition. The model selector is fixed and there are no editable source dimensions or invented numeric catalog ratings. Only Assembled is implemented because no source-qualified internal decomposition is available. Native CAD uses analytic extrusions and straight boxes, with circular corner arcs retained independently of preview tessellation.
+
+Native CAD verification (2026-11-02): the assembled `li-ion-pack:syla-lr2170la-4s1p-xt60` shape is valid and closed, with 1 solid(s), 10 faces and only planar/cylindrical surfaces. Its 88 × 24 × 74 mm bounds match the adopted model. STEP round-trip retained all six solids across the five reviewed devices. Reports and exported CAD are under ignored `test-results/standalone-device-verification/`. This verifies the model topology and adopted dimensions; it does not resolve the documented missing supplier interfaces.

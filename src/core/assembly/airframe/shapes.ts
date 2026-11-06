@@ -1,3 +1,10 @@
+import {
+  roundedRectShape,
+  roundedRectPoints,
+  nativeProfilePython,
+  type NativeProfile,
+} from '../../analytic-geometry';
+import { analyticRevolvePython } from '../../hardware/analytic-profile';
 import modeling from '@jscad/modeling';
 import type { Geom3 } from '@jscad/modeling/src/geometries/types';
 import { Float32BufferAttribute, Group, Mesh, MeshStandardMaterial, Vector3 } from 'three';
@@ -6,7 +13,7 @@ import { num } from '../../geometry';
 export type Vec = [number, number, number];
 export type Shape =
   | { kind: 'loft'; rings: Vec[][] }
-  | { kind: 'revolve'; profile: [number, number][] }
+  | { kind: 'revolve'; native?: NativeProfile; profile: [number, number][] }
   | { kind: 'box'; size: Vec; origin: Vec }
   | {
       kind: 'cylinder';
@@ -17,6 +24,7 @@ export type Shape =
     }
   | {
       kind: 'prism';
+      native?: NativeProfile;
       points: [number, number][];
       depth: number;
       origin: number;
@@ -240,11 +248,13 @@ export function component(
 }
 const vector = (v: Vec) => `App.Vector(${v.map(num).join(',')})`;
 export function pythonShape(s: Shape): string {
+  if ('native' in s && s.native)
+    return nativeProfilePython(s.native);
   switch (s.kind) {
     case 'loft':
       return `Part.makeLoft([Part.makePolygon([App.Vector(*p) for p in section + [section[0]]]) for section in ${JSON.stringify(s.rings)}], True, True)`;
     case 'revolve':
-      return `Part.Face(Part.makePolygon([${[...s.profile, s.profile[0]].map(([r, z]) => vector([r, 0, z])).join(',')}])).revolve(App.Vector(0,0,0),App.Vector(0,0,1),360)`;
+      return analyticRevolvePython(s.profile, 0, 360);
     case 'box':
       return `Part.makeBox(${s.size.map(num).join(',')},${vector(s.origin)})`;
     case 'cylinder':
@@ -266,16 +276,8 @@ export function pythonShape(s: Shape): string {
 }
 
 export function roundedRect(w: number, h: number, r: number, z: number, depth: number): Shape {
-  const points: [number, number][] = [];
-  for (let corner = 0; corner < 4; corner++) {
-    const cx = (corner === 0 || corner === 3 ? 1 : -1) * (w / 2 - r);
-    const cy = (corner < 2 ? 1 : -1) * (h / 2 - r);
-    for (let i = 0; i <= 8; i++) {
-      const a = ((corner * 90 + (i * 90) / 8) * Math.PI) / 180;
-      points.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]);
-    }
-  }
-  return prism(points, depth, z);
+  const native = roundedRectShape(w, h, r, z, depth);
+  return { kind: 'prism', points: roundedRectPoints(native), depth, origin: z, axis: 'z', native };
 }
 export const ring = (r: number, inner: number, z: number, h: number, x = 0, y = 0): Shape =>
   subtract(cylinder(r, h, [x, y, z]), cylinder(inner, h + 2, [x, y, z - 1]));

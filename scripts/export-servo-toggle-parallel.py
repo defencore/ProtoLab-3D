@@ -12,6 +12,7 @@ import sys
 sys.path.insert(0, os.environ.get('FREECAD_LIB', '/Applications/FreeCAD.app/Contents/Resources/lib'))
 import FreeCAD as App
 import Part
+from freecad_tree import component_leaves
 import Mesh
 import MeshPart
 
@@ -22,7 +23,7 @@ assert hashlib.sha256(case['script'].encode()).hexdigest() == case['codeSha256']
 doc = App.newDocument('ParallelRockerExample')
 exec(case['script'], {})
 root = doc.RootObjects[0]
-children = list(root.Group)
+children = component_leaves(root)
 expected_components = len(case['components'])
 expected_solids = sum(len(obj.Shape.Solids) for obj in children)
 assert len(children) == expected_components
@@ -75,7 +76,7 @@ doc.saveAs(str(assembly_file))
 App.closeDocument(doc.Name)
 doc = App.openDocument(str(assembly_file))
 root = doc.getObject(root_name)
-children = list(root.Group)
+children = component_leaves(root)
 assert len(children) == expected_components and sum(len(obj.Shape.Solids) for obj in children) == expected_solids
 assert all(obj.Shape.isValid() and obj.Shape.isClosed() for obj in children)
 

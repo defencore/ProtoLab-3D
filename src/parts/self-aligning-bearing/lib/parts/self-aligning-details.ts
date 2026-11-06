@@ -1,3 +1,4 @@
+import { bearingPalette, bearingRgb } from '../../../../core/hardware/bearing-appearance';
 import type { ParameterDefinition, Parameters } from '../../../../core/types';
 import { annulusPython, ring } from '../../../../core/geometry';
 import { radialGeometry, radialPython, radialVisualSizes } from './radial-catalog-utils';
@@ -37,7 +38,7 @@ export function selfAligningGeometry(p: Parameters, state: string) {
   if (p.seals === 'rubber') {
     const v = sealDimensions(p, state);
     for (const side of [-1, 1]) {
-      const seal = ring(v.outer, v.inner, v.thickness, 0x292d31);
+      const seal = ring(v.outer, v.inner, v.thickness, bearingPalette.rubberSeal);
       seal.name = 'Contact seal envelope';
       seal.position.z = side * v.center;
       group.add(seal);
@@ -50,5 +51,5 @@ export function selfAligningPython(p: Parameters, state: string) {
   const body = radialPython({ ...p, seals: 'open' }, state, 'self-aligning');
   if (p.seals !== 'rubber') return body;
   const v = sealDimensions(p, state);
-  return `${body}\nseal_low = ${annulusPython(v.outer, v.inner, v.thickness, -v.center - v.thickness / 2)}\nseal_high = ${annulusPython(v.outer, v.inner, v.thickness, v.center - v.thickness / 2)}\nshape = Part.makeCompound(shape.childShapes() + [seal_low, seal_high])\ncomponent_labels.extend(["Rear seal", "Front seal"])\ncomponent_colors.extend([(0.15,0.18,0.22),(0.15,0.18,0.22)])`;
+  return `${body}\nseal_low = ${annulusPython(v.outer, v.inner, v.thickness, -v.center - v.thickness / 2)}\nseal_high = ${annulusPython(v.outer, v.inner, v.thickness, v.center - v.thickness / 2)}\nshape = Part.makeCompound(shape.childShapes() + [seal_low, seal_high])\ncomponent_labels.extend(["Rear seal", "Front seal"])\ncomponent_colors.extend(${JSON.stringify([bearingPalette.rubberSeal, bearingPalette.rubberSeal].map(bearingRgb))})`;
 }

@@ -15,7 +15,7 @@
   },
   {
     "id": "a15",
-    "name": "Miter15",
+    "name": "15° miter",
     "description": "Clamped hand-saw guide for repeatable crosscuts and angled cuts in small strip and tube stock. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "stockWidth": 25,
@@ -29,7 +29,7 @@
   },
   {
     "id": "a22p5",
-    "name": "Miter22.5",
+    "name": "22.5° miter",
     "description": "Clamped hand-saw guide for repeatable crosscuts and angled cuts in small strip and tube stock. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "stockWidth": 25,
@@ -43,7 +43,7 @@
   },
   {
     "id": "a30",
-    "name": "Miter30",
+    "name": "30° miter",
     "description": "Clamped hand-saw guide for repeatable crosscuts and angled cuts in small strip and tube stock. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "stockWidth": 25,
@@ -57,7 +57,7 @@
   },
   {
     "id": "a45",
-    "name": "Miter45",
+    "name": "45° miter",
     "description": "Clamped hand-saw guide for repeatable crosscuts and angled cuts in small strip and tube stock. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "stockWidth": 25,
@@ -71,7 +71,7 @@
   },
   {
     "id": "a60",
-    "name": "Miter60 / narrow strip",
+    "name": "60° miter · narrow strip",
     "description": "Clamped hand-saw guide for repeatable crosscuts and angled cuts in small strip and tube stock. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "stockWidth": 16,

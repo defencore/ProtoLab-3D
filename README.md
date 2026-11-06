@@ -6,6 +6,8 @@ A browser-based library of configurable mechanical products and assembly definit
 
 The application is a static React / TypeScript / Three.js site built with Vite. It runs without a backend and is suitable for GitHub Pages. The interface, generated Python, and source comments are in English.
 
+Generated products retain enterprise designations, executions, revisions and supplier identities in FreeCAD. See [ESKD generation](docs/eskd-generation.md) for configurable detail families, product structure and Open ESKD exchange.
+
 ## Run locally
 
 Use Node.js 22 or later.
@@ -37,7 +39,7 @@ The production output is `dist/`. Vite uses `/` as the base for the custom domai
 - Choose a sourced catalog preset, a prototype example, or enter your own dimensions. Invalid configurations display an explanation and disable export.
 - Open the single **Fasteners & threads → Spacers & standoffs** entry for all 4,451 choices: 4,444 supplier articles, four custom-order sleeve templates and three editable plain-spacer designs. Search `M3 10` or `M3 × 10 mm`, or choose ends, thread, body length, shape and material. **Catalog** lists actual supplier body lengths; **Range** accepts From/To bounds. Each length mode remembers its separate manual values. The first switch may initialize the alternate mode from a valid explicit exact length; it never uses the selected model or the lower endpoint of a genuine interval. **More filters** provides construction (including metal inserts), supplier, finish, independent end threads, overall length, diameter/across flats and plain bore. Options show counts under the other active filters; each filter can be cleared separately. Selecting an article preserves your filters and the real product identity. Results load in groups of 24.
 - Each supplier card includes its product link. Choose **Custom-order sleeve** to request dimensions within DREMEC's published range; selecting a template applies your requested dimensions. The steel default reproduces printed example `324/2.1x10`; the other initial dimensions are customer examples. Missing source dimensions and conflicts remain identified in cards/specifications. DREMEC dimensions come from the manufacturer's 2020 catalog, with Ukrainian product-family links; current Ukrainian variations and stock are unconfirmed. See [source coverage and verification](docs/standoff-catalogs.md).
-- Orbit, pan, and zoom the preview. Use the camera and rendering controls to inspect the model.
+- Freely rotate, pan, and zoom the preview. X/Y/Z select exact axis views; the **180°** button below them switches to the opposite side and back without changing zoom. Use **Light background** in the preview toolbar to switch between dark and light backgrounds; the choice is remembered in this browser.
 - Switch **Simple / Full** above the preview to hide or show declared thread detail. Simple is the default for lighter geometry and TechDraw; Full exports actual helical threads where the library defines a pitch and profile. Drawing callouts are retained in both modes. The mode is remembered in this browser and does not change product identity or configured dimensions.
 - Where available, select an assembled/exploded bearing state or a free/loaded spring state. The selected state is used by every export.
 - Save named presets in this browser. Presets use local storage and are not synced to another device.
@@ -63,9 +65,15 @@ For STEP, run the macro in FreeCAD, select the created object, and use **File �
 The library covers mechanical parts, fasteners, motion systems, actuators, electronics, power components, and vehicle structures. Use the category tree or search to select a part. The live library shows the current package count.
 
 - [Library structure](docs/library-structure.md) and [library reference](docs/library-reference.md)
+- [Library organization: family reuse, subgroup placement and Package IDs](docs/library-organization.md)
+- [Reviewed organization decisions and all seventeen section analyses](docs/library-organization-audit.md)
 - [Source-dimensioned motion components](docs/motion-catalog.md): HIWIN guides, TBI screws and STEPPERONLINE motor sizes.
 - [Tube drilling jigs with end stops, 4/8/12 hole belts and automatic guide selection](src/parts/tube-drill-jig/GUIDE.md)
 - [Workshop jigs for drilling, routing, filing, indexing, bending and tube fitting](docs/workshop-jigs.md)
+- [Open underwater ROV projects, original fabrication models and workshop process comparison](docs/rov-projects.md)
+- [LDRS hobby rocket components and preparation supports](docs/ldrs-library.md)
+- [OpenRocket component coverage, shapes and reusable physical details](docs/openrocket-components.md)
+- [Removable CSI camera nose, optical window and Raspberry Pi 5 cassette](docs/rocket-camera-nose.md)
 - [Product classification, specification sections and release requirements](docs/product-library.md)
 - [Engineering projects, enterprise documentation rules and project CAD](docs/engineering-projects.md)
 - [Part package contract and handoff](docs/part-modules.md)
@@ -192,7 +200,7 @@ FreeCAD exports create static solids and configuration metadata. Change paramete
 
 ## Verification
 
-`npm run parts:check -- <part-id>` checks a single package boundary, API, schema, defaults and preset parameters. `npm run parts:check` checks the complete library. `npm test` runs offline catalog, geometry, export, and validation checks, without requiring a FreeCAD installation. `python3 -m unittest discover -s tests -p 'test_*.py'` checks the Python catalog importers. `npm run typecheck` and `npm run build` verify the TypeScript application and production bundle.
+`npm run parts:check -- <part-id>` checks a single package boundary, API, schema, defaults and preset parameters. `npm run parts:check` checks the complete library. `npm test` runs offline catalog, geometry, export, and validation checks, without requiring a FreeCAD installation. Each catalog family runs all five original contracts in a fresh Node process, so geometry caches from other families cannot accumulate. Other test files run sequentially. The shared local and CI runner writes real per-job TAP logs and an aggregate `manifest.json` under `test-results/test-runs/`; `npm test -- --output <new-directory>` chooses a report directory. Its source-baseline checks use Python 3's standard library to inspect generated Python syntax; no Python packages are required. `python3 -m unittest discover -s tests -p 'test_*.py'` checks the Python catalog importers. `npm run typecheck` and `npm run build` verify the TypeScript application and production bundle.
 
 The generated recipes are also checked with a local FreeCAD runtime during development. Checks include validity, positive solid volume and agreement with preview dimensions. Gear checks include all defaults/presets; fastener checks exercise head, drive, thread and point variants; spring checks exercise presets, states and end profiles. Runtime checks establish that the recipes execute and produce the intended geometry; they do not establish engineering suitability or exact manufacturer internals. In-memory shape checks do not add objects to user documents. Full macro checks use a temporary document and restore the previously active document.
 
@@ -202,7 +210,7 @@ GitHub Pages deployment follows the [official custom workflow documentation](htt
 
 Deployment compares the current commit with the latest successful ancestor push on the target branch. Failed and cancelled runs never advance that baseline, so their pending changes remain in the next test plan. Pull requests compare their merge commit against verified target-branch history. If no verified ancestor is available, the complete suite is required.
 
-`scripts/ci/test-plan.ts` selects changed packages, their dependent assemblies and the test files that exercise them. It follows local imports and declared library dependencies, retains explicit ownership for tests that access the generated registry, and includes referenced fixtures and source assets. Additions, removals and renames are compared against both revisions. The generated registry does not turn every package edit into a full-library geometry run. Per-part geometry contracts retain their existing eight-way distribution and intersect it with the affected part IDs; global inventory and cross-library integration checks stay intact.
+`scripts/ci/test-plan.ts` selects changed packages, their dependent assemblies and the test files that exercise them. It follows local imports and declared library dependencies, retains explicit ownership for tests that access the generated registry, and includes referenced fixtures and source assets. Additions, removals and renames are compared against both revisions. The generated registry does not turn every package edit into a full-library geometry run. Per-part geometry contracts retain their existing eight-way assignment and intersect it with the affected part IDs; each selected family executes its complete contracts in an independent process. Global inventory and cross-library integration checks stay intact.
 
 Changes to shared core geometry, runtime dependencies or semantic compiler settings require broader verification. CI-selection changes run the selection regression tests; documentation-only changes do not rebuild unrelated model geometry. TypeScript checks, repository hygiene, language checks and the production build still run on every deployment. Part-package and Python importer checks follow the selected scope. Up to eight test groups run in parallel, and the exact plan is attached to the workflow. Deployment requires every selected test and the build to pass; an empty geometry selection is an explicit skip, never an implicit full-suite invocation.
 
@@ -212,7 +220,7 @@ Generated exports, reports, screenshots, backups and compiler caches belong unde
 
 ### Mechanism and control audit
 
-`npm run audit:parameters -- /tmp/parameter-audit.json` checks visible controls through their actual update functions across construction families and inspection states. Unchanged native recipes are review candidates: reference values, material choices and equal-envelope catalog products may legitimately share geometry. See the [mechanism audit and native CAD results](docs/mechanism-audit.md) for corrected mechanisms, catalog-first selection and explicit modeling limits. Full tests use at most two concurrent files to limit memory pressure.
+`npm run audit:parameters -- /tmp/parameter-audit.json` checks visible controls through their actual update functions across construction families and inspection states. Unchanged native recipes are review candidates: reference values, material choices and equal-envelope catalog products may legitimately share geometry. See the [mechanism audit and native CAD results](docs/mechanism-audit.md) for corrected mechanisms, catalog-first selection and explicit modeling limits. Each test group runs one child job at a time to limit memory pressure.
 
 ### Geometry evidence
 

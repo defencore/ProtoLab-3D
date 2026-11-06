@@ -79,10 +79,16 @@ const part: PartDefinition = {
   ],
   validate(p, s) {
     const errors: string[] = [];
-    if (!models.some((m) => m.id === p.model))
-      errors.push('Choose a supported laboratory terminal.');
-    if (Object.keys(p).some((k) => k !== 'model'))
+    const model = models.find((m) => m.id === p.model);
+    if (!model) errors.push('Choose a supported laboratory terminal.');
+    if (Object.keys(p).some((k) => !['model', 'colour'].includes(k)))
       errors.push('Catalog dimensions are fixed; choose another model.');
+    if (p.colour !== undefined) {
+      if (model?.kind !== 'spring-lever-clip')
+        errors.push('Shell colour applies only to spring test clips.');
+      if (!['red', 'black'].includes(String(p.colour)))
+        errors.push('Choose red or black for a spring-clip shell colour.');
+    }
     if (!['assembled', 'exploded'].includes(s)) errors.push('Choose a valid terminal state.');
     return errors;
   },

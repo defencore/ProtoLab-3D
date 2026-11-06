@@ -1,0 +1,50 @@
+[
+  {
+    "id": "user-csi-19-12-27",
+    "name": "CSI camera 19 × 19 × 27 mm · user reference",
+    "description": "Original generic user envelope: 12 mm body plus 15 mm objective, without side holes or a separate rear connector. Objective diameter 12 mm is an assumption.",
+    "parameters": {
+      "bodyWidth": 19,
+      "bodyHeight": 19,
+      "bodyDepth": 12,
+      "lensDiameter": 12,
+      "lensLength": 15,
+      "rearInterface": "none",
+      "rearConnectorWidth": 17,
+      "rearConnectorHeight": 2,
+      "rearConnectorProjection": 0.5,
+      "rearConnectorTopInset": 3,
+      "rearConnectorRightInset": 0,
+      "sideMount": "none",
+      "sideMountOffset": 7.5,
+      "sideHoleDepth": 2.5,
+      "lensProfile": "cylindrical",
+      "lensCollarDiameter": 12,
+      "lensCollarHeight": 0
+    }
+  },
+  {
+    "id": "imx577-19x19-rear-mipi-m25",
+    "name": "IMX577 19x19 CSI camera · rear MIPI · M2.5 mounts",
+    "description": "User-measured IMX577 reference: 19 × 19 mm body, front objective Ø14.8 mm, lower collar Ø16 × 5 mm, total objective projection 15 mm. The rear 17 × 2 × 0.5 mm MIPI latch and left/right M2.5 holes remain the selected user geometry; module supplier, electrical compatibility and unmeasured interface details remain unidentified.",
+    "parameters": {
+      "bodyWidth": 19,
+      "bodyHeight": 19,
+      "bodyDepth": 12,
+      "lensDiameter": 14.8,
+      "lensLength": 15,
+      "rearInterface": "rear-mipi",
+      "rearConnectorWidth": 17,
+      "rearConnectorHeight": 2,
+      "rearConnectorProjection": 0.5,
+      "rearConnectorTopInset": 3,
+      "rearConnectorRightInset": 0,
+      "sideMount": "m2.5",
+      "sideMountOffset": 7.5,
+      "sideHoleDepth": 2.5,
+      "lensProfile": "stepped",
+      "lensCollarDiameter": 16,
+      "lensCollarHeight": 5
+    }
+  }
+]

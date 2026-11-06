@@ -1,0 +1,12 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "processes": [],
+  "description": "One Waveshare OV9281-110 camera, SKU 21653; loose cables and mounting hardware are separate.",
+  "releaseRequirements": [
+    "Check the delivered PCB revision, adjustable focus position, rear population and FFC connector against the fitting envelopes.",
+    "Select a compatible 100 mm camera FFC for the Raspberry Pi 5 22-pin port and the camera's 15-pin connector; verify contact orientation.",
+    "The holder square, connector envelope and rear-component depth are assumptions; the PCB, bores and optical stack follow the manufacturer drawing.",
+    "Verify driver configuration and the second sensor independently of the mechanical installation."
+  ]
+}

@@ -130,7 +130,7 @@ const part: PartDefinition = {
       group: 'Model',
       options: [
         { value: 'ecm-a3h-c20807rs1', label: 'ECM-A3H-C20807RS1 · without brake' },
-        { value: 'ecm-a3h-c20807ss1', label: 'ECM-A3H-C20807SS1 ·24 V factory holding brake' },
+        { value: 'ecm-a3h-c20807ss1', label: 'ECM-A3H-C20807SS1 · 24 V factory holding brake' },
       ],
     },
     {

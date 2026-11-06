@@ -168,7 +168,10 @@ test(
       releasePython(selected) +
       '\nassert len(components)==' +
       selected.length +
-      '\nfor item in components:\n assert item.isValid() and item.isClosed() and item.Volume>0\nprint("SUPPLIER_CAD_OK")\n';
+      '\nfor item in components:\n assert item.isValid() and item.isClosed() and item.Volume>0\n' +
+      'assert {row["LibraryId"] for row in component_metadata} == {"bus-servo", "bus-servo-driver"}\n' +
+      'assert all(row["Supply"] == "purchased" and json.loads(row["ESKDIdentityJSON"])["supply"] == "purchased" for row in component_metadata)\n' +
+      'print("SUPPLIER_CAD_OK")\n';
     const result = spawnSync(process.env.FREECAD_PYTHON!, ['-'], {
       input: code,
       encoding: 'utf8',

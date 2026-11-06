@@ -1,0 +1,46 @@
+[
+  {
+    "id": "qfs2025",
+    "name": "LIEYING QFS2025 waterproof servo",
+    "description": "Buy complete: LIEYING QFS2025 waterproof20kg180-degree servo (0.5–2.5ms).",
+    "parameters": {
+      "model": "qfs2025"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "LIEYING QFS2025 waterproof20kg180-degree servo (0.5–2.5ms)",
+      "manufacturer": "LIEYING",
+      "sourceName": "FinsROV original product bill of materials and assembly CAD",
+      "sourceUrl": "https://item.taobao.com/item.htm?_u=i20at7545jacc4&id=680656749408&spm=a1z09.2.0.0.3c6c2e8dmFwRSe",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "community-cad",
+        "summary": "Original source solid geometry normalized into a reusable product coordinate frame.",
+        "limitations": "Installation reference. Supplier availability, ratings and delivered mounting interfaces require verification.",
+        "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/Configuration.STEP",
+        "sourceSha256": "d774498f1ee8065552c6abdcef07a414a675946e10e48b54410b6662b7d3e135"
+      },
+      "attributes": {
+        "width": 54.05,
+        "depth": 20.37,
+        "height": 45.65
+      },
+      "specifications": [
+        {
+          "label": "Order designation",
+          "value": "LIEYING QFS2025 waterproof20kg180-degree servo (0.5–2.5ms)"
+        },
+        {
+          "label": "Coordinates",
+          "value": "Origin at output axis on mounting-hole plane; +Z points along output shaft and +X along the case."
+        },
+        {
+          "label": "Supply",
+          "value": "Purchase complete product"
+        }
+      ]
+    }
+  }
+]

@@ -40,7 +40,7 @@ def main():
                 assert root.PartId == 'electrical-connector' and root.ModelState == case['state']
                 assert json.loads(root.Configuration) == case['parameters']
                 children = list(root.Group)
-                assert len(children) == len(case['components']) == 3 + int(case['model'].get('gasket', False)) + case['model'].get('holdDowns', 0)
+                assert len(children) == len(case['components']) == 3 + int(case['model'].get('gasket', False)) + case['model'].get('holdDowns', 0) + (2 if case['model'].get('mountInsertHeight') else 0)
                 max_bound, max_volume = 0, 0
                 for child, expected in zip(children, case['components']):
                     valid(child.Shape)
@@ -63,12 +63,12 @@ def main():
                     b=compound.BoundBox
                     assert max(abs(a-b) for a,b in zip([b.XLength,b.YLength,b.ZLength],[m['width'],m['height'],m['length']])) < 1e-5
                     if m.get('panel'):
-                        assert abs(b.ZMax-m['flangeThickness']) < 1e-5
+                        assert abs(b.ZMax-m['flangeThickness']-m.get('matingProjection',0)) < 1e-5
                         # Probe almost the complete nominal hole, behind and in front of the flange.
                         for x in [-m['mountPitch']/2,m['mountPitch']/2]:
                             probe=Part.makeCylinder(m['mountDiameter']*.49,m['flangeThickness']+2,App.Vector(x,0,-1))
                             assert children[0].Shape.common(probe).Volume < 1e-6, 'Mounting hole is blocked'
-                            assert children[0].Shape.isInside(App.Vector(x,m['mountDiameter']/2+.5,m['flangeThickness']/2),1e-5,True), 'Missing flange around hole'
+                            assert children[0].Shape.isInside(App.Vector(x,m['mountDiameter']/2+.5,3 if m.get('mountInsertHeight') else m['flangeThickness']/2),1e-5,True), 'Missing flange around hole'
                         row['mountingHolesVerified'] = True
                     else:
                         assert abs(b.ZMax-m['pcbFront']) < 1e-5

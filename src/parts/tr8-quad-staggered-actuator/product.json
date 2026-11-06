@@ -1,0 +1,12 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Four independent TR8 mechanisms with an integral CNC middle frame and equally centred screw axes.",
+  "processes": ["assembly"],
+  "releaseRequirements": [
+    "Assign actual working loads, material grades, bearing fits, runout and production tolerances.",
+    "Verify the short outboard bearing span, single-fork pin joint and machined frame for the applied load.",
+    "Finish the carrier anti-roll flats and provide lubrication and motor travel limits.",
+    "Use an indexed machining plan for radial bearing bores, thread ends and any undercuts."
+  ]
+}

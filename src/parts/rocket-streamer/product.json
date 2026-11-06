@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "purchased",
+  "description": "One purchased recovery strip represented as an unfolded rectangular reference sheet.",
+  "processes": [],
+  "releaseRequirements": [
+    "Select the actual manufacturer, product designation, material and supplier evidence.",
+    "Verify actual strip size, thickness, packing and attachment to the recovery harness.",
+    "Qualify recovery performance, environmental resistance and retention with the actual product."
+  ]
+}

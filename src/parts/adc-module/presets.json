@@ -1,0 +1,38 @@
+[
+  {
+    "id": "cjmcu-1220",
+    "name": "CJMCU-1220 ADS1220 · installation reference",
+    "description": "Selected purple CJMCU-1220 board. The seller identifies ADS1220 / code 102300-2 but supplies no dimensioned drawing. The adopted 22 × 21 mm PCB, 1.6 mm thickness, 0.6 mm corner radius and 5 × 5 × 1.2 mm illustrative chip are provisional; no mounting holes or pad locations are invented. Native Z0 is the assumed board underside. Loose headers and wires are excluded. Measure the delivered board, component height and soldered harness before fabrication. This is an installation reference, not verified supplier CAD, a pinout or a complete electrical design.",
+    "parameters": {
+      "model": "cjmcu-1220"
+    },
+    "catalog": {
+      "designation": "ADS1220 / CJMCU-1220 / seller code 102300-2",
+      "manufacturer": "Unspecified",
+      "sourceName": "Supplier listing; geometry limitations recorded in GUIDE.md",
+      "sourceUrl": "https://prom.ua/p2527653228-bitnyj-analogo-tsifrovoj.html",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "cjmcu-1220",
+        "ADS1220 / CJMCU-1220 / seller code 102300-2"
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Preserved provisional installation geometry from SAC-01.",
+        "limitations": "Selected purple CJMCU-1220 board. The seller identifies ADS1220 / code 102300-2 but supplies no dimensioned drawing. The adopted 22 × 21 mm PCB, 1.6 mm thickness, 0.6 mm corner radius and 5 × 5 × 1.2 mm illustrative chip are provisional; no mounting holes or pad locations are invented. Native Z0 is the assumed board underside. Loose headers and wires are excluded. Measure the delivered board, component height and soldered harness before fabrication. This is an installation reference, not verified supplier CAD, a pinout or a complete electrical design.",
+        "sourceUrl": "https://prom.ua/p2527653228-bitnyj-analogo-tsifrovoj.html"
+      },
+      "specifications": [
+        {
+          "label": "Geometry and revision scope",
+          "value": "Selected purple CJMCU-1220 board. The seller identifies ADS1220 / code 102300-2 but supplies no dimensioned drawing. The adopted 22 × 21 mm PCB, 1.6 mm thickness, 0.6 mm corner radius and 5 × 5 × 1.2 mm illustrative chip are provisional; no mounting holes or pad locations are invented. Native Z0 is the assumed board underside. Loose headers and wires are excluded. Measure the delivered board, component height and soldered harness before fabrication. This is an installation reference, not verified supplier CAD, a pinout or a complete electrical design."
+        }
+      ],
+      "attributes": {
+        "manufacturer": "Unspecified"
+      }
+    }
+  }
+]

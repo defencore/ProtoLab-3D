@@ -33,6 +33,8 @@ function poses(part: PartDefinition, baseline: Parameters): Parameters[] {
 
 const importers = {
   'panel-switch': () => import('../src/parts/panel-switch/part'),
+  'panel-indicator': () => import('../src/parts/panel-indicator/part'),
+  'waterproof-connector': () => import('../src/parts/waterproof-connector/part'),
   'laboratory-terminal': () => import('../src/parts/laboratory-terminal/part'),
   'signal-connector': () => import('../src/parts/signal-connector/part'),
 };

@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "Custom rocket bulkhead with authored nominal geometry.",
+  "processes": ["cutting", "milling", "drilling"],
+  "releaseRequirements": [
+    "Specify material, blank, manufacturing route and the applicable drawing revision.",
+    "Define mating dimensions, tolerances, edge treatment, attachment and an inspection method.",
+    "Verify project-specific structural loads and acceptance criteria before use."
+  ]
+}

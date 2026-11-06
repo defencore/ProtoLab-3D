@@ -185,6 +185,14 @@ export const catalogFilterFields: ParameterDefinition[] = [
         value: 'TTL serial bus',
         label: 'TTL serial bus',
       },
+      {
+        value: 'PWM / S.BUS / S.BUS2',
+        label: 'PWM / S.BUS / S.BUS2',
+      },
+      {
+        value: 'PWM / TTL half-duplex',
+        label: 'PWM / TTL half-duplex',
+      },
     ],
   },
 ];

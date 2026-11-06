@@ -15,6 +15,7 @@ import lch7 from '../src/parts/lch7-controller/part';
 import tracker from '../src/parts/gps-tracker/part';
 import buzzer from '../src/parts/recovery-buzzer/part';
 import pwm from '../src/parts/pwm-switch/part';
+import flightController from '../src/parts/flight-controller/part';
 import { pieces } from '../src/parts/rocket-co2-recovery/lib/model';
 import {
   compositionComponents,
@@ -22,7 +23,18 @@ import {
 } from '../src/parts/rocket-co2-recovery/lib/composition';
 import { threadFeatures } from '../src/core/assembly/recovery/thread-features';
 
-const libraries = [recovery, detail, purchased, cartridge, cell, lch7, tracker, buzzer, pwm];
+const libraries = [
+  recovery,
+  detail,
+  purchased,
+  cartridge,
+  cell,
+  lch7,
+  tracker,
+  buzzer,
+  pwm,
+  flightController,
+];
 
 test('CO2 physical BOM resolves all configured library components and excludes routing references', () => {
   for (const preset of recovery.presets) {
@@ -77,7 +89,8 @@ test('CO2 supplier electronics purchase one F405 kit and retain separate custom 
   );
   assert.equal(kits.length, 1);
   assert.equal(kits[0].supply, 'purchased');
-  assert.equal(kits[0].libraryId, purchased.id);
+  assert.equal(kits[0].libraryId, flightController.id);
+  assert.equal(kits[0].presetId, 'speedybee-f405-wing-mini');
   assert.ok(kits[0].procurement!.source.startsWith('https://www.speedybee.com/'));
   assert.ok(kits[0].notes!.includes('individual board components'));
   const project = addProduct(createProject(), libraries, {
@@ -86,7 +99,11 @@ test('CO2 supplier electronics purchase one F405 kit and retain separate custom 
     state: 'assembled',
   }).project;
   assert.equal(
-    supplyRows(project, libraries, 'purchased').filter((row) => row.name === kits[0].name).length,
+    supplyRows(project, libraries, 'purchased').filter(
+      (row) =>
+        project.configurations.find((configuration) => configuration.id === row.configurationId)
+          ?.libraryId === flightController.id,
+    ).length,
     1,
   );
   assert.equal(

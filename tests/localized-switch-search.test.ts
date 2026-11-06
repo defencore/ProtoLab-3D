@@ -35,6 +35,18 @@ const libraryIndex = buildLibrarySearchIndex(
   groupBrowseFamilies([panelSwitch, terminal, connector]),
 );
 
+test('panel indicator and sealed connector terms retain model codes and recognize apostrophe variants', () => {
+  assert.equal(
+    translateSearchQuery('\u0456\u043d\u0434\u0438\u043a\u0430\u0442\u043e\u0440\u0438 AD16-16C'),
+    'indicator AD16-16C',
+  );
+  for (const apostrophe of ["'", '\u2019', '\u02bc', '']) {
+    const query = `\u0433\u0435\u0440\u043c\u0435\u0442\u0438\u0447\u043d\u0456 \u0440\u043e\u0437${apostrophe}\u0454\u043c\u0438 SP20-6`;
+    assert.equal(translateSearchQuery(query), 'waterproof connector SP20-6');
+  }
+  assert.equal(translateSearchQuery('SP20 \u0433\u043d\u0456\u0437\u0434\u0430'), 'SP20 socket');
+});
+
 test('Ukrainian switch query vocabulary recognizes whole-word inflections without changing labels', () => {
   for (const [word, term] of vocabulary) {
     assert.equal(translateSearchQuery(word), term);
@@ -136,6 +148,7 @@ test('unknown terms, unrecognized linking words, supplier SKUs and metric querie
     assert.equal(translateSearchQuery(query), query);
     if (query === 'M3 × 10' || query === 'M3x10') {
       assert.deepEqual(compiled, {
+        libraryId: query,
         normalizedText: query === 'M3 × 10' ? 'm3 x 10' : 'm3x10',
         tokens: [],
         metricSize: { diameter: 3, length: 10 },

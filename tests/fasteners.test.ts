@@ -258,7 +258,16 @@ test('the complete supplier inventory is retained and every supported SKU is map
     'O eye',
     'Q hook',
   ]);
-  assert.equal(represented.size, 5871);
+  assert.ok(
+    represented.has('SSB-M2.5-10-A4'),
+    'The separately sourced Accu execution is retained.',
+  );
+  const imported = new Set(supplierFasteners.map((row) => row.sku));
+  assert.equal([...represented].filter((code) => imported.has(code)).length, 5871);
+  assert.deepEqual(
+    [...represented].filter((code) => !imported.has(code)),
+    ['SSB-M2.5-10-A4'],
+  );
 });
 
 test('every imported fastener preset validates with verified dimensions present', () => {

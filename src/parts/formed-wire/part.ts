@@ -57,6 +57,7 @@ function coil(p: Parameters) {
 }
 const part: PartDefinition = {
   id: 'formed-wire',
+  browseLabel: 'Formed wire',
   product: product as ProductProfile,
   name: 'Configured formed wire',
   category: 'SPRINGS',

@@ -1,0 +1,14 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Compact TR8×8(P2) rotary actuator in a two-piece machinable or printable housing, with a stepped sleeve in two flanged output bearings, two screw bearings, a finished sheet-metal sector and retaining rings. The removable fin platform, its pins and the fin blade are excluded; two sleeve mounting holes remain.",
+  "processes": ["assembly"],
+  "releaseRequirements": [
+    "Resolve each physical component to its fabrication or procurement definition.",
+    "Select the housing manufacturing route; specify material, fit allowance, split-face finish, bearing coaxiality and nut retention.",
+    "Laser-cut the sector blank and finish its teeth to the selected TR8 screw geometry; qualify backlash, lubrication and contact pattern for the intended load.",
+    "Measure the purchased screw blank before machining bearing journals, runouts and retaining grooves.",
+    "Specify shaft and bearing fits, measured thrust shims, housing fasteners and toleranced component drawings.",
+    "Verify complete travel, clearance, axial retention, loading, fatigue and the user's attachment strength before manufacture."
+  ]
+}

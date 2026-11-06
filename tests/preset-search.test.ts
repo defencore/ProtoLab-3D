@@ -560,7 +560,16 @@ test('metric size queries join whitespace and multiplication signs without match
     );
   }
   const comma = filterPresets(index, { ...emptyPresetFilters(bolt), query: 'M2,5 × 10' });
-  assert.equal(comma.items.length, 6);
+  const commaExpected = index
+    .filter(
+      (item) => item.preset.parameters.diameter === 2.5 && item.preset.parameters.length === 10,
+    )
+    .map((item) => item.id);
+  assert.ok(commaExpected.includes('bolt-screw:accu-ssb-m2-5-10-a4'));
+  assert.deepEqual(
+    comma.items.map((item) => item.id),
+    commaExpected,
+  );
   assert.ok(
     comma.items.every(
       (item) => item.preset.parameters.diameter === 2.5 && item.preset.parameters.length === 10,
@@ -699,7 +708,7 @@ test('a browse-family scope keeps all four standoff product types under one sele
   assert.equal(filters.partId, 'spacers-standoffs');
   const result = filterPresets(index, filters);
   assert.deepEqual(result.errors, []);
-  assert.equal(result.items.length, 4451);
+  assert.equal(result.items.length, 4452);
   assert.deepEqual(
     new Set(result.items.map((item) => item.part.id)),
     new Set(members.map((part) => part.id)),

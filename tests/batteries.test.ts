@@ -72,7 +72,7 @@ for (const part of [lipo, liion, standard])
       }
     });
 test('battery catalog separates C-rate derived current, capacity and missing ratings', () => {
-  assert.equal(lipo.presets.length, 15);
+  assert.equal(lipo.presets.length, 16);
   assert.equal(liion.presets.length, 6);
   assert.equal(standard.presets.length, 8);
   assert.deepEqual(

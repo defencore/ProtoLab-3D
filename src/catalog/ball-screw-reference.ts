@@ -1,8 +1,10 @@
 import type { Parameters, Preset } from '../core/types';
 import { getSfeReferences, getInternalReturnReferences } from './ball-screw-additional';
 import { getEndReturnReferences } from './ball-screw-end-return';
+import { getKaiyadeSfkReferences } from './kaiyade-sfk';
 
 export interface BallScrewReference {
+  id?: string;
   designation: string;
   parameters: Parameters;
   catalog?: Preset['catalog'];
@@ -68,9 +70,7 @@ function row(
       designation: `${family}${code}`,
       sourceName,
       sourceUrl: source,
-      ...(!source
-        ? { sourceKind: 'attachment' as const }
-        : { manufacturer: sourceName }),
+      ...(!source ? { sourceKind: 'attachment' as const } : { manufacturer: sourceName }),
       verifiedParameters: Object.keys(parameters).filter(
         (key) =>
           key !== 'oilHoleDiameter' && (key !== 'circuitTurns' || extra.circuitTurns !== undefined),
@@ -178,10 +178,7 @@ for (const reference of sfsReferences) {
   reference.catalog!.verifiedParameters = reference.catalog!.verifiedParameters.filter(
     (key) => key !== 'starts',
   );
-  reference.catalog!.alternateSourceUrls = [
-    limonBallScrewReference + '#page=7',
-    '',
-  ];
+  reference.catalog!.alternateSourceUrls = [limonBallScrewReference + '#page=7', ''];
 }
 
 const dfu = (code: string, values: number[]) =>
@@ -194,6 +191,7 @@ export const dfuReferences = [
 export const sfeReferences = getSfeReferences(row);
 export const internalReturnReferences = getInternalReturnReferences(row, limonBallScrewReference);
 export const endReturnReferences = getEndReturnReferences(row);
+export const kaiyadeSfkReferences = getKaiyadeSfkReferences(row);
 
 // Listing names are preserved as examples when the supplied material has no matching drawing.
 export const unresolvedListingReferences: BallScrewReference[] = [
@@ -216,6 +214,7 @@ export const unresolvedListingReferences: BallScrewReference[] = [
 export const ballScrewReferences: BallScrewReference[] = [
   ...sfuReferences,
   ...sfkReferences,
+  ...kaiyadeSfkReferences,
   ...sfsReferences,
   ...dfuReferences,
   ...sfeReferences,

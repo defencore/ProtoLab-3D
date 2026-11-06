@@ -21,7 +21,18 @@ const part: PartDefinition = {
   subgroup: 'BALL BEARINGS',
   description:
     'Deep-groove radial races with a ball set and selectable open, shielded or sealed faces.',
-  keywords: ['608', '6001', '6204', 'radial', 'shaft', 'ball', 'skateboard'],
+  keywords: [
+    '608',
+    '6001',
+    '6204',
+    'radial',
+    'shaft',
+    'ball',
+    'skateboard',
+    'miniature',
+    'ID1x3x1',
+    'AliExpress',
+  ],
   icon: 'bearing',
   standard: 'Metric envelope',
   complexity: 'Assembly',
@@ -47,6 +58,10 @@ const part: PartDefinition = {
   states: assemblyStates,
   presetMatchKeys: ['bore', 'outer', 'width'],
   sources: [
+    {
+      label: 'AliExpress · user-supplied miniature size options',
+      url: 'https://www.aliexpress.com/item/1005009062108835.html',
+    },
     {
       label: 'Promtehimport · Deep groove ball bearings',
       url: 'https://promtehimport.com.ua/radialni-odnoryadni-pidshipniki-c34/',

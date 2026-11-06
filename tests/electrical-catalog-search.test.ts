@@ -28,6 +28,23 @@ test('fixed switch articles match their own actuator and manufacturer rather tha
   assert.equal(search(panelSwitch, '90C46').length, 1);
 });
 
+test('DS-225 is discoverable as a DAIER momentary pushbutton without matching maintained toggles', () => {
+  for (const query of ['DS-225', 'DAIER momentary'])
+    assert.deepEqual(
+      search(panelSwitch, query).map((entry) => entry.preset.id),
+      ['daier-ds-225'],
+      query,
+    );
+  const index = buildLibrarySearchIndex(groupBrowseFamilies([panelSwitch, terminal, connector]));
+  assert.deepEqual(
+    searchLibrary(index, 'DS-225').map((match) => ({
+      id: match.family.id,
+      query: match.articleQuery,
+    })),
+    [{ id: panelSwitch.id, query: 'DS-225' }],
+  );
+});
+
 test('banana article search excludes unrelated wire clamps and speaker terminals', () => {
   const matches = search(terminal, 'banana');
   assert.equal(matches.length, 8);
@@ -76,9 +93,14 @@ test('spring test clips are searchable by connection and supplied photo labels',
 
 test('USB article search returns USB interfaces and excludes JST headers', () => {
   const matches = search(connector, 'USB');
-  assert.equal(matches.length, 5);
+  assert.equal(matches.length, 6);
   assert.ok(matches.every((entry) => entry.preset.catalog!.attributes!.family === 'USB'));
   assert.ok(!matches.some((entry) => /jst/i.test(entry.preset.name)));
+  for (const query of ['A448027', 'signal-connector:nikom-a448027'])
+    assert.deepEqual(
+      search(connector, query).map(({ preset }) => preset.id),
+      ['nikom-a448027'],
+    );
   const jst = search(connector, 'JST');
   assert.ok(jst.length > 0);
   assert.ok(jst.every((entry) => entry.preset.catalog!.manufacturer === 'JST'));

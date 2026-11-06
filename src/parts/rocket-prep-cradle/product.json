@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "One continuous flat-bottom V support for ground preparation and display.",
+  "processes": ["cutting", "milling", "printing"],
+  "releaseRequirements": [
+    "Define material, fabrication route, dimensions, surface finish and tolerances.",
+    "Select padding, anti-slip provisions and independent restraint for the actual body.",
+    "Verify support spacing, bench stability, supported weight and resistance to sliding or tipping."
+  ]
+}

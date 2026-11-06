@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "purchased",
+  "description": "One purchased recovery cord length represented by a straight circular reference strand.",
+  "processes": [],
+  "releaseRequirements": [
+    "Select actual manufacturer, cord designation, material, rated properties and supplier evidence.",
+    "Specify routing, end terminations, knot or sewn-loop allowances and attachment interfaces.",
+    "Qualify complete harness retention, opening loads, abrasion and environmental resistance with actual hardware."
+  ]
+}

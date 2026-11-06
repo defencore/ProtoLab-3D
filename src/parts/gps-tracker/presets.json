@@ -5,6 +5,34 @@
     "description": "Bare tracker PCB with patch antenna, SIM holder, RF shield and service components.",
     "parameters": {
       "model": "zx908"
+    },
+    "catalog": {
+      "designation": "ZX908",
+      "sourceName": "User-supplied current platform CAD and source registry, component 233",
+      "sourceKind": "attachment",
+      "sourceUrl": "",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Current project 35 \u00d7 20 \u00d7 4.5 mm detailed installation reference with analytic PCB corners.",
+        "limitations": "The current platform source identifies ZX908, component 233, with 26 source solids and 35 \u00d7 20 \u00d7 4.5 mm local bounds. This package retains its existing native analytic reconstruction: 168 faces versus 224 faceted source faces, with a documented 0.074545755 mm\u00b3 corner-rounding volume difference and 0.009631 mm maximum corner sagitta. No supplier-certified PCB, antenna, SIM holder, contacts or mounting drawing is available. These are installation-reference details; no electrical pinout, radio capability, rating or manufactured tolerance is inferred. See lib/source-provenance.json and GUIDE.md.",
+        "sourceUrl": "",
+        "sourceSha256": "3494a5b0c2e27d23fd7057ffe443854cbe6d682183015f15383593589c07ea44"
+      },
+      "specifications": [
+        {
+          "label": "Current source identity",
+          "value": "ZX908; component 233; procurement position 303; source document revision 03, retained in latest assembly_current; platform geometry is unchanged after a rigid +8.55 mm Z shift."
+        },
+        {
+          "label": "Fixed installation size",
+          "value": "35 \u00d7 20 \u00d7 4.5 mm; source project geometry, not a manufacturer drawing."
+        },
+        {
+          "label": "Analytic reconstruction",
+          "value": "26 visual solids retained. Rounded PCB/back-layer corners use native arcs; source comparison and original hashes are recorded in the package provenance."
+        }
+      ]
     }
   }
 ]

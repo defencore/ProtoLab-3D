@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "Custom rocket body tube with authored nominal geometry.",
+  "processes": ["cutting", "turning"],
+  "releaseRequirements": [
+    "Specify material, blank, manufacturing route and the applicable drawing revision.",
+    "Define mating dimensions, tolerances, edge treatment, attachment and an inspection method.",
+    "Verify project-specific structural loads and acceptance criteria before use."
+  ]
+}

@@ -1,0 +1,99 @@
+[
+  {
+    "id": "schillaci",
+    "name": "Schillaci Underwater Drone",
+    "repository": "https://github.com/guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "license": "CC-BY-4.0",
+    "licenseUrl": "https://github.com/guidoschillaci/underwater-drone/blob/58bb0924d71339ecc236e57adc1b10fc3e7e7346/License",
+    "description": "Simple printed mechanical construction kit around a purchased 4-inch watertight tube.",
+    "scope": "10 checked original STL fabrication definitions. Eight other original STL files fail closed/valid-solid checks and are excluded, including the main thruster and posterior clamps. This mechanical source subset requires source repair and control integration before it can become a complete build.",
+    "buildUrl": "https://github.com/guidoschillaci/underwater-drone/blob/58bb0924d71339ecc236e57adc1b10fc3e7e7346/README.md",
+    "bomUrl": "https://github.com/guidoschillaci/underwater-drone#instructions",
+    "softwareUrl": "https://github.com/guidoschillaci/underwater-drone",
+    "requirements": [
+      "Authors recommend solid infill. Match Turnigy Aerodrive DST-700/DST-1200 motor interfaces; BlueRobotics M100/M200 do not fit.",
+      "Authors report shallow-water functional prototype dives; no operating-depth qualification is established here.",
+      "Choose the thruster configuration and integrate the complete control, power, camera and tether system. There is no complete matched vehicle BOM or firmware in this repository."
+    ],
+    "purchased": [
+      "4-inch BlueRobotics watertight enclosure, end caps, seals and penetrators",
+      "Turnigy DST-compatible motors, ESCs, stainless fasteners and ballast",
+      "Controller, camera, power system and tether"
+    ],
+    "processes": ["printing", "drilling", "assembly"]
+  },
+  {
+    "id": "mur",
+    "name": "MUR \u2014 Miniature Underwater Robot",
+    "repository": "https://github.com/scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "license": "CERN-OHL-P-2.0",
+    "licenseUrl": "https://github.com/scottmayberry/MUR/blob/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/LICENSE.md",
+    "description": "Modular underwater robot with printable internals, hardware BOM, assembly videos, firmware and ROS.",
+    "scope": "14 checked original printable STL definitions. One open battery-ring STL is excluded. The full SolidWorks assembly, electronics, complete vehicle BOM and vendor cap remain upstream.",
+    "buildUrl": "https://github.com/scottmayberry/MUR/tree/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/Assembly",
+    "bomUrl": "https://github.com/scottmayberry/MUR/blob/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/BOM/MUR_BOM.xlsx",
+    "softwareUrl": "https://github.com/scottmayberry/MUR/tree/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/software",
+    "requirements": [
+      "Match the source BOM and assembly videos. Custom boards and their firmware add substantial integration work.",
+      "STL files remain faceted source models; native SolidWorks parts are available upstream.",
+      "The piezo transducer and BlueRobotics end-cap STEP are purchasing references; the fabrication catalog does not relicense them as printable or machinable designs."
+    ],
+    "purchased": [
+      "Watertight tube, dome/end caps, O-rings and cable penetrators",
+      "Thrusters, ESCs, batteries, computer, cameras and sensors",
+      "Custom PCBs per upstream production files and electronics BOM"
+    ],
+    "processes": ["printing", "drilling", "assembly"]
+  },
+  {
+    "id": "finsrov",
+    "name": "FinsROV",
+    "repository": "https://github.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/blob/1bc38e83d8af669339c7a86f0a14e2180676347f/LICENSE",
+    "description": "Eight-thruster ROV with an author STEP assembly, five aluminium CNC details and a printable sensor mount.",
+    "scope": "Original Configuration.STEP for assembly inspection plus six original fabrication STEP files. The configuration CAD is not a complete verified electrical or procurement BOM.",
+    "buildUrl": "https://github.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/tree/1bc38e83d8af669339c7a86f0a14e2180676347f/Making_Instructions",
+    "bomUrl": "https://github.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/blob/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/BOM.xlsx",
+    "softwareUrl": "https://github.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/tree/1bc38e83d8af669339c7a86f0a14e2180676347f/Code",
+    "requirements": [
+      "Use the original CNC_Maching.xlsx: aluminium alloy, anodized finish and source drill/tap operations. Turning rotational blanks still requires milling/drilling finishing.",
+      "Retain O-ring grooves, sealing lands and thread geometry; establish material grade, fits, tolerances and leak/pressure tests for the actual build.",
+      "Repository LICENSE is MIT; lower-level controller has a separate GPL license. The README also carries a CC BY-SA badge with unclear scope; preserve upstream notices."
+    ],
+    "purchased": [
+      "Pressure cabin and hemispherical dome matched to the source",
+      "Eight thrusters, four waterproof servos and four depth sensors",
+      "C-board, expansion boards, penetrators, power system and serial tether adapters"
+    ],
+    "processes": ["printing", "turning", "milling", "drilling", "assembly"]
+  },
+  {
+    "id": "loco",
+    "name": "LoCO AUV 1.0",
+    "repository": "https://github.com/LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "license": "CC-BY-SA-4.0",
+    "licenseUrl": "https://github.com/LoCO-AUV/loco_config/blob/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/LICENSE_SHAREALIKE",
+    "description": "Related open AUV with documented tether control, printed structures and original laser-cut MDF bases.",
+    "scope": "19 checked STL definitions and two unchanged original laser-cut DXF bases. Four mounts have unresolved STL units and the TBar fails source/solid volume agreement; those five files are excluded. Remaining files include alternative configurations and are not one matched vehicle BOM.",
+    "buildUrl": "https://github.com/LoCO-AUV/loco_config/wiki",
+    "bomUrl": "https://github.com/LoCO-AUV/loco_config/wiki/Parts-List",
+    "softwareUrl": "https://github.com/LoCO-AUV",
+    "requirements": [
+      "Use 1/4-inch (6.35 mm) MDF for the original dry internal bases; upstream requires about a 2-foot laser bed. Confirm drawing units and actual kerf with a test coupon.",
+      "The current wiki describes newer skeletonized and all-printed alternatives. Select a consistent design revision instead of combining every source file.",
+      "The laser only cuts the original flat profile; drill, chamfer and counterbore as documented. Do not laser-cut PVC or put MDF outside the watertight compartments.",
+      "LoCO is an AUV with a documented tether-control option and a more complex computer/flight-controller stack than the simple Schillaci kit."
+    ],
+    "purchased": [
+      "Two watertight enclosures with tubes, seals and penetrators",
+      "Thrusters, Pixhawk, Raspberry Pi/Jetson and cameras per selected revision",
+      "Power system, tether hardware and stainless fasteners"
+    ],
+    "processes": ["printing", "cutting", "drilling", "assembly"]
+  }
+]

@@ -13,7 +13,13 @@ import { parallelDetails, parallelHardware, parallelKinematics, parallelLayout }
 import { isParallel, isDual, dualPanelPoint } from './parallel-installation';
 import { hardware, hardwareLibraries } from './hardware';
 import { layout } from './layout';
+import { casePanelDetails, casePanelHardware, casePanelPose } from './case-panel';
+import { casePanelLibraries, casePanelPurchased, caseConnectorHardware } from './case-components';
+import { caseElectronicsLibraries, caseElectronicsPurchased } from './case-electronics-components';
+import { caseElectronicsDetails, caseElectronicsHardware } from './case-electronics';
+import { caseFitDetails, caseFitHardware } from './case-fit';
 import type { DetailSpec } from './types';
+import { casePanelAssessment } from './case-description';
 
 export const kinematics = (p: Parameters) =>
   isParallel(p)
@@ -21,10 +27,17 @@ export const kinematics = (p: Parameters) =>
     : p.mechanism === 'rocker'
       ? rockerKinematics(p)
       : guidedKinematics(p);
-export const libraries = [detail, servo, toggle, ...hardwareLibraries];
+export const libraries = [
+  detail,
+  servo,
+  toggle,
+  ...hardwareLibraries,
+  ...casePanelLibraries,
+  ...caseElectronicsLibraries,
+];
 
 function custom(piece: DetailSpec): ConfiguredPiece {
-  const component = detailComponent(piece.id, piece.label, piece.shape);
+  const component = detailComponent(piece.id, piece.label, piece.shape, { meshBackend: 'jscad' });
   component.manufacturing = {
     material: piece.material,
     blank: piece.blank,
@@ -125,7 +138,9 @@ function purchased(p: Parameters): ConfiguredPiece[] {
       source: 'https://www.chinadaier.com/wp-content/uploads/2018/05/SAC-01.pdf',
     },
     notes:
-      'Independent manual switch. Two upper end lands register the source guard base at Z9.5 in a 0.2 mm deep top seat. The reconstructed guard height and opening angle require fitting to the purchased assembly. No electrical circuit or safety function is assigned.',
+      p.mechanism === 'case-panel'
+        ? 'Independent ARM 1 switch. The common control cassette carries source-cleared guard end lips and low side registers at the original Z9.5 steel-base datum. Verify the full guard travel and delivered mounting stack before tightening.'
+        : 'Independent manual switch. Two upper end lands register the source guard base at Z9.5 in a 0.2 mm deep top seat. The reconstructed guard height and opening angle require fitting to the purchased assembly. No electrical circuit or safety function is assigned.',
   };
   return [servoComponent, switchComponent, ...(isDual(p) ? [manualComponent] : [])].map(
     (component) => ({
@@ -140,25 +155,101 @@ function purchased(p: Parameters): ConfiguredPiece[] {
 export function configured(p: Parameters, state: string): ConfiguredPiece[] {
   const simple = p.mechanism === 'rocker';
   const parallel = isParallel(p);
-  const pieces = (
-    parallel
-      ? parallelDetails(p)
-      : simple
-        ? rockerDetails(p)
-        : [...frame(p), ...servoMount(p), ...drive(p)]
-  ).map(custom);
+  const detailSpecs =
+    p.mechanism === 'case-panel'
+      ? [...casePanelDetails(p), ...caseElectronicsDetails(p), ...caseFitDetails(p)]
+      : parallel
+        ? parallelDetails(p)
+        : simple
+          ? rockerDetails(p)
+          : [...frame(p), ...servoMount(p), ...drive(p)];
+  const pieces = detailSpecs.map(custom);
   const result = [
     ...pieces,
     ...purchased(p),
-    ...(parallel ? parallelHardware(p) : simple ? rockerHardware(p) : hardware(p)),
+    ...(p.mechanism === 'case-panel'
+      ? [...casePanelPurchased(p), ...caseElectronicsPurchased(p)]
+      : []),
+    ...(p.mechanism === 'case-panel'
+      ? [
+          ...parallelHardware({ ...p, mechanism: 'parallel' }).filter(
+            (piece) => !piece.component.id.startsWith('parallel-clamp-'),
+          ),
+          ...casePanelHardware(p),
+          ...caseConnectorHardware(p),
+          ...caseElectronicsHardware(p),
+          ...caseFitHardware(p),
+        ]
+      : parallel
+        ? parallelHardware(p)
+        : simple
+          ? rockerHardware(p)
+          : hardware(p)),
   ];
+  if (p.mechanism === 'case-panel')
+    for (const piece of result) {
+      const placement = piece.component.placement;
+      const offset = casePanelPose(p, piece.component.id);
+      piece.component.placement = {
+        ...placement,
+        translation: [
+          placement.translation[0] + offset[0],
+          placement.translation[1] + offset[1],
+          placement.translation[2] + offset[2],
+        ],
+      };
+    }
   const repeated = new Map<string, number>();
   for (const piece of result) repeated.set(piece.label, (repeated.get(piece.label) ?? 0) + 1);
   for (const piece of result)
     if (repeated.get(piece.label)! > 1) piece.label += ` · ${piece.component.id}`;
+  const inspectionOffsets = new Map(detailSpecs.map((piece) => [piece.id, piece.explode]));
   if (state === 'exploded')
     for (const piece of result) {
       const id = piece.component.id;
+      const offset = inspectionOffsets.get(id);
+      if (p.mechanism === 'case-panel' && offset) {
+        piece.position = offset;
+        continue;
+      }
+      if (p.mechanism === 'case-panel' && id.startsWith('case-power-connector-')) {
+        piece.position = [0, 0, -55];
+        continue;
+      }
+      if (
+        p.mechanism === 'case-panel' &&
+        (id.startsWith('case-battery-pack-') ||
+          id.startsWith('case-indicator-') ||
+          id.startsWith('case-sp20-connector-'))
+      ) {
+        piece.position = [0, 0, 55];
+        continue;
+      }
+      if (
+        p.mechanism === 'case-panel' &&
+        (/^case-(servo-driver-hat|heltec-v4|adc-cjmcu1220|pwm-mosfet)$/.test(id) ||
+          /^case-(buck|lc-filter)-\d+$/.test(id))
+      ) {
+        piece.position = [0, 0, -85];
+        continue;
+      }
+      if (p.mechanism === 'case-panel' && /^case-test-clip-(red|black)$/.test(id)) {
+        piece.position = [0, 0, -55];
+        continue;
+      }
+      if (p.mechanism === 'case-panel' && id.startsWith('case-electronics-')) {
+        piece.position = [0, 0, -85];
+        continue;
+      }
+      if (p.mechanism === 'case-panel' && id.startsWith('case-fit-')) {
+        piece.position = [0, 0, id.includes('-screw-') ? 35 : -15];
+        continue;
+      }
+      if (p.mechanism === 'case-panel' && id.startsWith('case-')) {
+        if (id.startsWith('case-lid-screw-')) piece.position = [0, 0, 30];
+        else if (id.startsWith('case-lid-nut-')) piece.position = [0, 0, -85];
+        else if (id.startsWith('case-xt60-')) piece.position = [0, 0, 55];
+      }
       if (parallel) {
         if (
           id === 'parallel-cradle' ||
@@ -208,28 +299,31 @@ export function configured(p: Parameters, state: string): ConfiguredPiece[] {
 export function composition(p: Parameters): AssemblyDefinition {
   return {
     components: configured(p, 'assembled').map((p) => p.component),
-    issues: isDual(p)
-      ? [
-          'The horizontal panel places manual ARM 1 with SAC-01 on the left and servo-operated ARM 2 on the right, with both legends engraved 0.6 mm into the upper carrier. Four PETG parts and three nominal 1.5 mm TPU frames form seven prints.',
-          'The 6 mm mounting flange has one flat underside at Z1.5. Three nominal 1.5 mm TPU frames sit outside the PETG, without gasket pockets or blind locating sockets. Four M3 × 30 servo ties and two staggered M3 × 20 rear ties clamp the lower cradle against flat rigid shoulders.',
-          'Both switches are clocked with OFF toward the engraved-label edge and the manual cover hinge behind the toggle. The cover opens away from the operator, clear of the servo. Manual cover and toggle positions are independent inspection controls; check actual guard travel, insertion access and trip loads.',
-        ]
-      : p.mechanism === 'parallel'
-        ? [
-            'Four PETG parts form the upper flange, removable lower servo/switch cradle, lid and opposed rocker. Two nominal 1.5 mm TPU sheets sit beneath the flat 6 mm flange, with no gasket pockets or blind locating sockets.',
-            'Four M3 through-bolts clamp flat rigid shoulders at Z1.5. The bare toggle omits its removable lower washer and nut; the upper nut meets Z6.8. Fit the body pockets and keep the bottom cable and side terminal paths clear.',
-            'Measure the actual switch trip force and pivot, calibrate low speed and torque limit and return to neutral after each push. Neither nominal gasket contact nor the body register establishes a physical load or sealing rating.',
-          ]
-        : p.mechanism !== 'guided'
+    issues:
+      p.mechanism === 'case-panel'
+        ? casePanelAssessment(p)
+        : isDual(p)
           ? [
-              'The printed rocker has three custom printed parts and retains the purchased servo and switch interfaces. Fit and physically qualify the printed clamps, mounting floor and cantilever fingers.',
-              'The nominal contact angle uses the reconstructed switch pivot. Measure the actual trip positions and force, calibrate low speed and torque limit, then return to neutral after each push. No physical load rating is assigned.',
-              'Fit captive nuts, verify the source disc hardware engagement, maintain access to terminals and select M4 mounting hardware for the actual enclosure thickness.',
+              'The horizontal panel places manual ARM 1 with SAC-01 on the left and servo-operated ARM 2 on the right, with both legends engraved 0.6 mm into the upper carrier. Four PETG parts and three nominal 1.5 mm TPU frames form seven prints.',
+              'The 6 mm mounting flange has one flat underside at Z1.5. Three nominal 1.5 mm TPU frames sit outside the PETG, without gasket pockets or blind locating sockets. Four M3 × 30 servo ties and two staggered M3 × 20 rear ties clamp the lower cradle against flat rigid shoulders.',
+              'Both switches are clocked with OFF toward the engraved-label edge and the manual cover hinge behind the toggle. The cover opens away from the operator, clear of the servo. Manual cover and toggle positions are independent inspection controls; check actual guard travel, insertion access and trip loads.',
             ]
-          : [
-              'Measure the delivered toggle actuation force and pivot before setting fork height, gap and end positions. The CAD pulse and TPU envelope do not establish a force limit.',
-              'Qualify pad material, compression, creep and service life. Calibrate low speed, acceleration and torque limit, pulse the maintained switch, return to neutral and verify the resulting switch state.',
-              'Confirm clamp contact spacing, screw engagement, rod fits, wire clearance and the enclosure mounting stack. Assign toleranced drawings and an acceptance test before production.',
-            ],
+          : p.mechanism === 'parallel'
+            ? [
+                'Four PETG parts form the upper flange, removable lower servo/switch cradle, lid and opposed rocker. Two nominal 1.5 mm TPU sheets sit beneath the flat 6 mm flange, with no gasket pockets or blind locating sockets.',
+                'Four M3 through-bolts clamp flat rigid shoulders at Z1.5. The bare toggle omits its removable lower washer and nut; the upper nut meets Z6.8. Fit the body pockets and keep the bottom cable and side terminal paths clear.',
+                'Measure the actual switch trip force and pivot, calibrate low speed and torque limit and return to neutral after each push. Neither nominal gasket contact nor the body register establishes a physical load or sealing rating.',
+              ]
+            : p.mechanism !== 'guided'
+              ? [
+                  'The printed rocker has three custom printed parts and retains the purchased servo and switch interfaces. Fit and physically qualify the printed clamps, mounting floor and cantilever fingers.',
+                  'The nominal contact angle uses the reconstructed switch pivot. Measure the actual trip positions and force, calibrate low speed and torque limit, then return to neutral after each push. No physical load rating is assigned.',
+                  'Fit captive nuts, verify the source disc hardware engagement, maintain access to terminals and select M4 mounting hardware for the actual enclosure thickness.',
+                ]
+              : [
+                  'Measure the delivered toggle actuation force and pivot before setting fork height, gap and end positions. The CAD pulse and TPU envelope do not establish a force limit.',
+                  'Qualify pad material, compression, creep and service life. Calibrate low speed, acceleration and torque limit, pulse the maintained switch, return to neutral and verify the resulting switch state.',
+                  'Confirm clamp contact spacing, screw engagement, rod fits, wire clearance and the enclosure mounting stack. Assign toleranced drawings and an acceptance test before production.',
+                ],
   };
 }

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "tr8-compact-361-12",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 1 output · Ø56 laser steel · ±20°",
+    "description": "D56 laser discs, cut and turned 50 mm TR8\u00d78 screw, H-flange nut and closed forks.",
+    "parameters": {
+      "motorModel": "361-12",
+      "outputAngle": 0
+    }
+  },
+  {
+    "id": "tr8-compact-107-12",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 1 output · Ø56 laser steel · ±20°",
+    "description": "D56 laser discs, cut and turned 50 mm TR8\u00d78 screw, H-flange nut and closed forks.",
+    "parameters": {
+      "motorModel": "107-12",
+      "outputAngle": 0
+    }
+  },
+  {
+    "id": "tr8-compact-361-24",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 1 output · Ø56 laser steel · ±20°",
+    "description": "D56 laser discs, cut and turned 50 mm TR8\u00d78 screw, H-flange nut and closed forks.",
+    "parameters": {
+      "motorModel": "361-24",
+      "outputAngle": 0
+    }
+  },
+  {
+    "id": "tr8-compact-107-24",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 1 output · Ø56 laser steel · ±20°",
+    "description": "D56 laser discs, cut and turned 50 mm TR8\u00d78 screw, H-flange nut and closed forks.",
+    "parameters": {
+      "motorModel": "107-24",
+      "outputAngle": 0
+    }
+  }
+]

@@ -1,6 +1,6 @@
 # SRS Igniter — adjustable exterior layout
 
-Located in **Electronics & vision → SRS Airbag** beside the SRS pigtail connectors.
+Located in **Connectors & interfaces → SRS airbag** beside the SRS pigtail connectors.
 
 The variant 2 preset uses the supplied drawing: maximum diameter 11 ±0.1 mm, total height 22.5 ±0.2 mm including contacts, and exposed pin length 7.3 mm. It replaces the earlier cylindrical placeholder; dimensions now refer explicitly to the entire exterior including pins.
 

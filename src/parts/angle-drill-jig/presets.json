@@ -1,7 +1,7 @@
 [
   {
     "id": "a0",
-    "name": "Normal drilling / 0 degrees",
+    "name": "0° drilling shoe",
     "description": "Compact inclined guide with a flat clamping foot and a defined entry point on the workpiece. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "angle": 0,
@@ -17,7 +17,7 @@
   },
   {
     "id": "a15",
-    "name": "Tilt15",
+    "name": "15° drilling shoe",
     "description": "Compact inclined guide with a flat clamping foot and a defined entry point on the workpiece. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "angle": 15,
@@ -33,7 +33,7 @@
   },
   {
     "id": "a22p5",
-    "name": "Tilt22.5",
+    "name": "22.5° drilling shoe",
     "description": "Compact inclined guide with a flat clamping foot and a defined entry point on the workpiece. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "angle": 22.5,
@@ -49,7 +49,7 @@
   },
   {
     "id": "a30",
-    "name": "Tilt30",
+    "name": "30° drilling shoe",
     "description": "Compact inclined guide with a flat clamping foot and a defined entry point on the workpiece. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "angle": 30,
@@ -65,7 +65,7 @@
   },
   {
     "id": "a45",
-    "name": "Tilt45",
+    "name": "45° drilling shoe",
     "description": "Compact inclined guide with a flat clamping foot and a defined entry point on the workpiece. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "angle": 45,
@@ -81,7 +81,7 @@
   },
   {
     "id": "a60",
-    "name": "Tilt60 / longer foot",
+    "name": "60° drilling shoe · long foot",
     "description": "Compact inclined guide with a flat clamping foot and a defined entry point on the workpiece. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "angle": 60,

@@ -1,7 +1,7 @@
 [
   {
     "id": "tube120-50",
-    "name": "Tube D120x4 \u00b7 50 mm parts",
+    "name": "Round tube Ø120 × 4 mm · 50 mm parts",
     "description": "Fixed 90 degree cut, 2 m operator-loaded bar; pneumatic head and dropping support. Engineering concept.",
     "parameters": {
       "profile": "round",
@@ -28,7 +28,7 @@
   },
   {
     "id": "tube120-30",
-    "name": "Tube D120x4 \u00b7 30 mm parts",
+    "name": "Round tube Ø120 × 4 mm · 30 mm parts",
     "description": "Fixed 90 degree cut, 2 m operator-loaded bar; pneumatic head and dropping support. Engineering concept.",
     "parameters": {
       "profile": "round",
@@ -55,7 +55,7 @@
   },
   {
     "id": "square80-100",
-    "name": "Square 80x80x4 \u00b7 100 mm parts",
+    "name": "Square 80 × 80 × 4 mm · 100 mm parts",
     "description": "Fixed 90 degree cut, 2 m operator-loaded bar; pneumatic head and dropping support. Engineering concept.",
     "parameters": {
       "profile": "square",
@@ -82,7 +82,7 @@
   },
   {
     "id": "rect100x60-75",
-    "name": "Rectangle 100x60x3 \u00b7 75 mm parts",
+    "name": "Rectangle 100 × 60 × 3 mm · 75 mm parts",
     "description": "Fixed 90 degree cut, 2 m operator-loaded bar; pneumatic head and dropping support. Engineering concept.",
     "parameters": {
       "profile": "rectangular",
@@ -109,7 +109,7 @@
   },
   {
     "id": "triangular-50",
-    "name": "Triangular 80x70x3 \u00b7 50 mm parts",
+    "name": "Triangular 80 × 70 × 3 mm · 50 mm parts",
     "description": "Fixed 90 degree cut, 2 m operator-loaded bar; pneumatic head and dropping support. Engineering concept.",
     "parameters": {
       "profile": "triangular",
@@ -136,7 +136,7 @@
   },
   {
     "id": "oval-50",
-    "name": "Oval 100x60x3 \u00b7 50 mm parts",
+    "name": "Oval 100 × 60 × 3 mm · 50 mm parts",
     "description": "Fixed 90 degree cut, 2 m operator-loaded bar; pneumatic head and dropping support. Engineering concept.",
     "parameters": {
       "profile": "oval",

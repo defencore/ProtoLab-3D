@@ -1,0 +1,90 @@
+[
+  {
+    "id": "cw",
+    "name": "4S underwater thruster — CW source form",
+    "description": "Buy complete: Underwater thruster with built-in ESC for4S, CW/CCW pair per BOM.",
+    "parameters": {
+      "model": "cw"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "Underwater thruster with built-in ESC for4S, CW/CCW pair per BOM",
+      "manufacturer": "Not specified in upstream BOM",
+      "sourceName": "FinsROV original product bill of materials and assembly CAD",
+      "sourceUrl": "https://item.taobao.com/item.htm?spm=a1z09.2.0.0.ef7d2e8dO2XjuV&id=591864716045&_u=92ig9se435ad",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "community-cad",
+        "summary": "Original source solid geometry normalized into a reusable product coordinate frame.",
+        "limitations": "Installation reference. Supplier availability, ratings and delivered mounting interfaces require verification.",
+        "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/Configuration.STEP",
+        "sourceSha256": "d774498f1ee8065552c6abdcef07a414a675946e10e48b54410b6662b7d3e135"
+      },
+      "attributes": {
+        "width": 72.66,
+        "depth": 80.14,
+        "height": 108.1
+      },
+      "specifications": [
+        {
+          "label": "Order designation",
+          "value": "Underwater thruster with built-in ESC for4S, CW/CCW pair per BOM"
+        },
+        {
+          "label": "Coordinates",
+          "value": "Origin at rear measured envelope on shroud axis; +Z follows the shaft through the shroud. CW/CCW identifies source paired geometry; verify actual electrical direction on the delivered pair."
+        },
+        {
+          "label": "Supply",
+          "value": "Purchase complete product"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ccw",
+    "name": "4S underwater thruster — CCW source form",
+    "description": "Buy complete: Underwater thruster with built-in ESC for4S, CW/CCW pair per BOM.",
+    "parameters": {
+      "model": "ccw"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "Underwater thruster with built-in ESC for4S, CW/CCW pair per BOM",
+      "manufacturer": "Not specified in upstream BOM",
+      "sourceName": "FinsROV original product bill of materials and assembly CAD",
+      "sourceUrl": "https://item.taobao.com/item.htm?spm=a1z09.2.0.0.ef7d2e8dO2XjuV&id=591864716045&_u=92ig9se435ad",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "community-cad",
+        "summary": "Original source solid geometry normalized into a reusable product coordinate frame.",
+        "limitations": "Installation reference. Supplier availability, ratings and delivered mounting interfaces require verification.",
+        "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/Configuration.STEP",
+        "sourceSha256": "d774498f1ee8065552c6abdcef07a414a675946e10e48b54410b6662b7d3e135"
+      },
+      "attributes": {
+        "width": 72.66,
+        "depth": 80.14,
+        "height": 108.1
+      },
+      "specifications": [
+        {
+          "label": "Order designation",
+          "value": "Underwater thruster with built-in ESC for4S, CW/CCW pair per BOM"
+        },
+        {
+          "label": "Coordinates",
+          "value": "Origin at rear measured envelope on shroud axis; +Z follows the shaft through the shroud. CW/CCW identifies source paired geometry; verify actual electrical direction on the delivered pair."
+        },
+        {
+          "label": "Supply",
+          "value": "Purchase complete product"
+        }
+      ]
+    }
+  }
+]

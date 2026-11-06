@@ -36,7 +36,7 @@ const ids = (filters: StandoffFilters) =>
     .sort();
 
 test('the unified family view preserves all fixed identities, custom-order records and editable examples', () => {
-  assert.equal(entries.length, 4_451);
+  assert.equal(entries.length, 4_452);
   assert.equal(new Set(entries.map((row) => row.id)).size, entries.length);
   assert.deepEqual(filterStandoffs(entries).items, entries);
   for (const row of entries) {
@@ -53,7 +53,7 @@ test('the unified family view preserves all fixed identities, custom-order recor
       row.part.catalogSelectionOnly ? row.preset.id : undefined,
     );
   }
-  assert.equal(entries.filter((row) => row.construction === 'single-piece').length, 3_441);
+  assert.equal(entries.filter((row) => row.construction === 'single-piece').length, 3_442);
   assert.equal(entries.filter((row) => row.construction === 'metal-insert').length, 1_003);
   assert.equal(entries.filter((row) => row.construction === 'custom-sleeve').length, 4);
   assert.equal(entries.filter((row) => row.construction === 'plain-spacer').length, 3);
@@ -74,7 +74,7 @@ test('either-end and ordered endpoint selectors retain mixed metric, UNC and sel
   assert.equal(reverse.threadA, 'M3');
   assert.equal(reverse.threadB, 'UNC4-40');
   const m3 = filterStandoffs(entries, { values: { thread: 'M3' } }).items;
-  assert.equal(m3.length, 1_177);
+  assert.equal(m3.length, 1_178);
   assert.ok(m3.includes(mixed) && m3.includes(reverse));
   assert.ok(!m3.some((row) => row.connection === 'plain'));
   const exactPair = filterStandoffs(entries, {
@@ -83,7 +83,7 @@ test('either-end and ordered endpoint selectors retain mixed metric, UNC and sel
   assert.equal(exactPair.length, 8);
   assert.ok(exactPair.includes(reverse) && !exactPair.includes(mixed));
   const same = filterStandoffs(entries, { values: { threadA: 'M3', threadB: 'M3' } }).items;
-  assert.equal(same.length, 1_131);
+  assert.equal(same.length, 1_132);
   assert.equal(standoffFacetLabel('thread', 'UNC4-40'), '#4-40 UNC');
   assert.equal(standoffFacetLabel('material', 'polyamide-brass'), 'Polyamide + brass inserts');
   assert.ok(
@@ -95,7 +95,7 @@ test('either-end and ordered endpoint selectors retain mixed metric, UNC and sel
 
 test('search numbers mean body length and cannot match hidden stud spans, widths or illustrative bore depths', () => {
   const result = filterStandoffs(entries, { query: 'M3 10' }).items;
-  assert.equal(result.length, 48);
+  assert.equal(result.length, 49);
   assert.ok(result.every((row) => row.threads.includes('M3') && row.bodyLength === 10));
   assert.deepEqual(ids({ query: 'M3×10' }), ids({ query: 'M3 10' }));
   assert.deepEqual(ids({ query: 'M3*10' }), ids({ query: 'M3 10' }));
@@ -240,11 +240,11 @@ test('body-length options come from fixed source catalogue models, never custom-
   );
   assert.equal(
     options.reduce((sum, option) => sum + option.count, 0),
-    4_444,
+    4_445,
   );
   assert.equal(
     options.reduce((sum, option) => sum + option.publishedCount, 0),
-    4_440,
+    4_441,
   );
   assert.equal(
     options.reduce((sum, option) => sum + option.qualifiedCount, 0),

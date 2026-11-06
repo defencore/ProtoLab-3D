@@ -1,11 +1,11 @@
 # Ball screw and nut references
 
-The library contains **131 nut configurations across nine families**: 129 have dimensional sources and two are explicitly unverified listing examples. These generate **230 ball screw assembly presets** (219 sourced, 11 examples) and **131 standalone nut presets** (129 sourced, two examples). Assembly and standalone entries share nut dimensions; they are not 361 distinct supplier products.
+The library contains **146 nut configurations across nine families**: 144 have dimensional sources and two are explicitly unverified listing examples. These generate **410 ball screw assembly presets** (399 with sourced nut dimensions, 11 examples) and **146 standalone nut presets** (144 sourced, two examples). Assembly and standalone entries share nut dimensions; these are configuration choices rather than 556 distinct supplier products. Each preset identifies exactly which fields have a dimensional source.
 
 | Family | Sourced nut configurations | Unverified examples | Reference                                                |
 | ------ | -------------------------: | ------------------: | -------------------------------------------------------- |
 | SFU    |                         27 |                   0 | Every row in the supplied SFU dimensional table          |
-| SFK    |                         10 |                   1 | Wangong miniature nut table and supplied length options  |
+| SFK    |                         25 |                   1 | Wangong and supplied KAIYADE miniature nut tables         |
 | SFS    |                         12 |                   0 | Wangong SFS table and manufacturer shaft reference       |
 | SFE    |                         20 |                   1 | DLY SFE nut table, preserving each suffix and length     |
 | DFU    |                          2 |                   0 | Wangong double-nut table                                 |
@@ -14,7 +14,11 @@ The library contains **131 nut configurations across nine families**: 129 have d
 | SFH    |                         30 |                   0 | Complete TBI 23.07 SFH table, printed page C44           |
 | SFY    |                          6 |                   0 | Wangong large-lead table; TBI four-hole mounting drawing |
 
-The eleven SFK listing options each offer shaft lengths of 100–550 mm in 50 mm increments. Ten options have manufacturer nut dimensions, producing 100 sourced assembly presets. The remaining option produces ten clearly labeled examples. Nut dimensions and listing length options come from separate references; interchangeability with the photographed seller's product is unverified.
+The original eleven SFK listing options each offer shaft lengths of 100–550 mm in 50 mm increments. Ten have Wangong nut dimensions, producing 100 source-dimensioned assembly presets; the remaining option produces ten clearly labeled examples. The supplied KAIYADE table adds 15 distinct references at those lengths, plus 30 End Machine choices for the three 8 mm shaft/lead references. Nut dimensions and listing length options come from separate references; interchangeability with the photographed seller's product is unverified.
+
+The KAIYADE rows preserve their own load ratings, dimensions and counterbores. They include SFK1204, SFK1205, SFK2002, SFK2502 and SFK2503 in addition to the overlapping Wangong model names. **SFK08025** is a searchable alias for the KAIYADE SFK0825 and Wangong SFK082.5 references. The attached KAIYADE table, designation coding and EK6/EF6 0802 drawing are bundled under `public/references/kaiyade-sfk/`.
+
+End Machine uses the supplied 0802 drawing's Ø6 × 30 mm fixed journal, Ø4 × 8 mm drive journal, Ø6 × 9 mm support journal and Ø5.7 × 0.8 mm retaining groove. The nominal M6×0.75 thread over 10 mm is represented by its major-diameter cylinder. Only SFK0802 marks these end dimensions verified; SFK0801 and SFK08025 reuse the 0802 end envelope with a visible interchangeability caveat. Other diameters use unmachined or editable custom ends. The current AliExpress variation menu was unavailable during this update, so current seller options were not independently verified.
 
 Two listing codes require this distinction:
 
@@ -45,7 +49,7 @@ The LIMON DFI1605-4 row prints an overall length of 10 mm, which conflicts with 
 
 ## Validation
 
-FreeCAD 1.0.2 passed 266 native configurations: all 131 nut presets in complete and cutaway states, three extreme shafts, and a left-handed assembly with machined journals. Every expected component was a valid closed solid; envelopes, sampled ball clearance and STEP round trips passed. The final cutaway audit uses the consistent 0.001 mm inspection offset. The 135 unchanged complete-geometry cases retain their original checks, with Python AST equivalence verified after excluding the added defensive validity guard.
+Before the KAIYADE expansion, FreeCAD 1.0.2 passed 266 native configurations: the original 131 nut presets in complete and cutaway states, three extreme shafts, and a left-handed assembly with machined journals. Every expected component was a valid closed solid; envelopes, sampled ball clearance and STEP round trips passed. The final cutaway audit uses the consistent 0.001 mm inspection offset. The 135 unchanged complete-geometry cases retain their original checks, with Python AST equivalence verified after excluding the added defensive validity guard.
 
 Eight fresh preview/native comparisons cover miniature, maximum-diameter, high-lead and internally recirculating nuts. Their maximum volume difference was 0.221% and maximum envelope difference was 0.0242 mm. These checks verify the prototype representation and export consistency, not manufacturing accuracy or load performance.
 

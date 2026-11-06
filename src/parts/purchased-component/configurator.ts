@@ -1,5 +1,6 @@
 import type { Parameters, ParameterDefinition } from '../../core/types';
 export const defaults: Parameters = {
+  meshBackend: 'jscad',
   meshConform: false,
   nativeRefine: true,
   meshEdgeTolerance: 0.01,
@@ -7,6 +8,17 @@ export const defaults: Parameters = {
   recipe: JSON.stringify({ kind: 'box', size: [40, 20, 15], origin: [0, 0, 0] }),
 };
 export const parameters: ParameterDefinition[] = [
+  {
+    key: 'meshBackend',
+    label: 'Surface construction',
+    type: 'select',
+    options: [
+      { value: 'jscad', label: 'JSCAD' },
+      { value: 'manifold', label: 'Manifold' },
+    ],
+    group: 'Definition',
+    visibleWhen: () => false,
+  },
   {
     key: 'meshConform',
     label: 'Conform precision mesh junctions',

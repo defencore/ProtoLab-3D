@@ -1,0 +1,10 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "One Waveshare PCIe TO M.2 Board (D), excluding an SSD, loose cables and mounting hardware.",
+  "processes": [],
+  "releaseRequirements": [
+    "Confirm actual PCB revision, holes, socket height, standoffs, SSD and cable clearances against purchased parts.",
+    "Specify the supported NVMe SSD, PCIe ribbon, power cable and mounting hardware separately."
+  ]
+}

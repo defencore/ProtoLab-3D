@@ -1,0 +1,12 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Four radial TR8 drives with rotated H-flange nuts, X-arranged outputs and three round laser-cut discs.",
+  "processes": ["assembly"],
+  "releaseRequirements": [
+    "Specify loads, fits, material grades, lubrication and production tolerances.",
+    "Verify the standard M3 column joints and bearing cheek tabs for the intended load.",
+    "The 2 mm spacer leaves 3 mm nominal stud engagement at the middle-disc joint.",
+    "Use independent travel limits and control for all four motors."
+  ]
+}

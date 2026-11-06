@@ -130,7 +130,7 @@ test('unscoped category and all-library browsing stay concise until a part or fa
   }
 });
 
-test('advanced category choices follow the six collections with readable labels and unchanged category IDs', () => {
+test('advanced category choices follow the functional collections with readable labels and unchanged category IDs', () => {
   const html = browserHtml(emptyPresetFilters());
   const select = html.match(/aria-label="Preset category"[^>]*>([\s\S]*?)<\/select>/)![1];
   const decode = (value: string) =>

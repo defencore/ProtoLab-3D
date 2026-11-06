@@ -23,7 +23,13 @@ export function validateParameters(
         );
       }
     }
-    if (field.type === 'select' && !field.options?.some((option) => option.value === value))
+    if (
+      field.type === 'select' &&
+      !field.options?.some(
+        (option) =>
+          option.value === value && (!option.availableWhen || option.availableWhen(values)),
+      )
+    )
       errors.push(`Choose a valid ${field.label.toLowerCase()}.`);
     if (field.type === 'boolean' && typeof value !== 'boolean')
       errors.push(`${field.label} must be enabled or disabled.`);
@@ -31,7 +37,12 @@ export function validateParameters(
       errors.push(`${field.label} must be text.`);
   }
   if (errors.length) return errors;
-  if (part.states && !part.states.some((option) => option.id === state))
+  if (
+    part.states &&
+    !part.states.some(
+      (option) => option.id === state && (!option.availableWhen || option.availableWhen(values)),
+    )
+  )
     return ['Choose a valid model state.'];
   if (!part.states && state !== 'default') return ['This part only supports the default state.'];
   try {

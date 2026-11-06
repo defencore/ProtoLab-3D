@@ -1,5 +1,6 @@
 import type { Parameters, PartDefinition, Preset } from './types';
 import { validateParameters } from './validation';
+import { isQualifiedLibraryEntryId, libraryEntryId } from './library-identity';
 import {
   parseNumericRange,
   numericRangeErrorMessage,
@@ -366,7 +367,7 @@ export function buildStandoffCatalog(parts: PartDefinition[]): StandoffCatalogEn
       if (preset.catalog?.attributeConditions?.material)
         notes.push(preset.catalog.attributeConditions.material);
       return {
-        id: `${part.id}:${preset.id}`,
+        id: libraryEntryId(part.id, preset.id),
         part,
         preset,
         connection,
@@ -467,7 +468,11 @@ function parseFilters(filters: StandoffFilters): ParsedFilters {
     if (parsed.range.min !== undefined || parsed.range.max !== undefined)
       ranges[key] = parsed.range;
   }
-  return { ranges, errors, tokens: queryTokens(filters.query ?? '') };
+  return {
+    ranges,
+    errors,
+    tokens: isQualifiedLibraryEntryId(filters.query ?? '') ? [] : queryTokens(filters.query ?? ''),
+  };
 }
 function facetValues(entry: StandoffCatalogEntry, key: StandoffSelectKey): string[] {
   return key === 'thread' ? entry.threads : entry[key] === undefined ? [] : [entry[key]!];
@@ -582,6 +587,8 @@ export function filterStandoffs(
 ): { items: StandoffCatalogEntry[]; errors: StandoffFilterError[] } {
   const parsed = parseFilters(filters);
   if (parsed.errors.length) return { items: [], errors: parsed.errors };
+  const reference = filters.query?.trim();
+  const exact = entries.some((entry) => entry.id === reference || entry.part.id === reference);
   return {
     errors: [],
     items: entries.filter((entry) => {
@@ -600,11 +607,14 @@ export function filterStandoffs(
           ? { min: designLength.min, max: designLength.max }
           : undefined;
       if (
-        !matchesQuery(entry, parsed.tokens) &&
-        !(
-          designRange &&
-          matchesQuery({ ...entry, ranges: { bodyLength: designRange } }, parsed.tokens)
-        )
+        exact
+          ? entry.id !== reference && entry.part.id !== reference
+          : isQualifiedLibraryEntryId(reference ?? '') ||
+            (!matchesQuery(entry, parsed.tokens) &&
+              !(
+                designRange &&
+                matchesQuery({ ...entry, ranges: { bodyLength: designRange } }, parsed.tokens)
+              ))
       )
         return false;
       for (const key of numericKeys) {

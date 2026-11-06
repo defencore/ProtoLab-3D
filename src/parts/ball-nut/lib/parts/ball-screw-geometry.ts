@@ -11,7 +11,7 @@ import {
 } from 'three';
 import { booleans, primitives, solidUnionMesh, transforms } from '../../../../core/solid-union';
 import { BoundaryMesh, disposeModel } from '../../../../core/mechanical';
-import { cylinder, material, n, num, ring, sphere } from '../../../../core/geometry';
+import { cylinder, material, n, num, ring, sphere, STEEL } from '../../../../core/geometry';
 import type { Parameters } from '../../../../core/types';
 
 // A one-micron inspection offset avoids periodic face seams in OpenCascade half cuts.
@@ -568,9 +568,7 @@ export function validateBallScrew(p: Parameters, nutOnly = false): string[] {
     errors.push('Nut bodies must provide room for their ball train and end returns.');
   if (!nutOnly) {
     if (v.detail && ((v.end - v.start) / v.lead) * n(p, 'starts') > 1200)
-      errors.push(
-        'Full supports up to 1,200 groove turns. Shorten the shaft or switch to Simple.',
-      );
+      errors.push('Full supports up to 1,200 groove turns. Shorten the shaft or switch to Simple.');
     if (v.end - v.start < v.nl + 2 * v.lead)
       errors.push('The threaded shaft must be longer than the nut plus two leads.');
     if (v.center - v.nl / 2 < v.start || v.center + v.nl / 2 > v.end)
@@ -591,9 +589,9 @@ export function validateBallScrew(p: Parameters, nutOnly = false): string[] {
 export function ballScrewPython(p: Parameters, state: string, nutOnly = false): string {
   const labels: string[] = [];
   const colors: number[][] = [];
-  const label = (name: string, color = [0.62, 0.7, 0.78]) => {
+  const label = (name: string, color = STEEL) => {
     labels.push(name);
-    colors.push(color);
+    colors.push([16, 8, 0].map((shift) => ((color >> shift) & 255) / 255));
   };
   const v = ballScrewLayout(p),
     center = nutOnly || state === 'nut' ? 0 : v.center,
@@ -695,7 +693,7 @@ export function ballScrewPython(p: Parameters, state: string, nutOnly = false): 
           lines.push(
             `nut_components.append(annulus(${num(v.core - v.br * 0.02)},${num(v.inner)},${num(v.br * 0.25)},${num((side < 0 ? low : high) - side * v.br * 0.13 - v.br * 0.125)}))`,
           );
-          label(`Nut ${index + 1} ${side < 0 ? 'rear' : 'front'} seal`, [0.15, 0.18, 0.22]);
+          label(`Nut ${index + 1} ${side < 0 ? 'rear' : 'front'} seal`, 0x26333c);
         }
       if (v.oblong) {
         const depth = v.br * 0.18,
@@ -709,14 +707,14 @@ export function ballScrewPython(p: Parameters, state: string, nutOnly = false): 
           `cover = cover.fuse(Part.makeCylinder(${num(radius)},${num(depth)},App.Vector(0,${num(y)},${num(z + run / 2)}),App.Vector(0,1,0)))`,
           'nut_components.append(cover.removeSplitter())',
         );
-        label(`Nut ${index + 1} return cover`, [0.34, 0.39, 0.45]);
+        label(`Nut ${index + 1} return cover`, STEEL);
       } else {
         const count = v.endReturn ? 2 : Math.min(4, n(p, 'circuits'));
         for (let i = 0; i < count; i++) {
           lines.push(
             `nut_components.append(Part.makeCylinder(${num(v.br * 0.65)},${num(v.br * 0.18)},App.Vector(0,${num(R + v.br * 0.01)},${num(region.start + ((i + 1) * (region.end - region.start)) / (count + 1))}),App.Vector(0,1,0)))`,
           );
-          label(`Nut ${index + 1} return cap ${i + 1}`, [0.34, 0.39, 0.45]);
+          label(`Nut ${index + 1} return cap ${i + 1}`, v.endReturn ? 0x34424e : 0x5e6873);
         }
       }
     }
@@ -725,14 +723,14 @@ export function ballScrewPython(p: Parameters, state: string, nutOnly = false): 
       lines.push(
         `nut_components.append(annulus(${num(R - v.br * 0.1)},${num(v.core)},${num(gap * 0.9)},${num(-gap * 0.45)}))`,
       );
-      label('Preload spacer');
+      label('Preload spacer', 0x4d5560);
     }
     if (v.detail)
       for (const [index, point] of ballScrewBalls(p, center).entries()) {
         lines.push(
           `nut_components.append(Part.makeSphere(${num(v.br)},App.Vector(${num(point.x)},${num(point.y)},${num(point.z)})))`,
         );
-        label(`Raceway ball ${index + 1}`, [0.75, 0.78, 0.82]);
+        label(`Raceway ball ${index + 1}`, 0xb8c0c9);
       }
     lines.push(
       'for component in nut_components:',

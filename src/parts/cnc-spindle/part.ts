@@ -12,6 +12,7 @@ export type { SpindleSpec } from './lib/specs';
 export { defaults as spindleDefaults } from './configurator';
 const part: PartDefinition = {
   id: 'cnc-spindle',
+  browseLabel: 'Spindle motor',
   product: profile as ProductProfile,
   name: 'Spindle motor / manufacturer drawing execution',
   category: 'MOTORS & ACTUATORS',

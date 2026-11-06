@@ -9,7 +9,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "7101SYZQE",
@@ -48,7 +49,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "7103SYZQE",
@@ -87,7 +89,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "7105SYZQE",
@@ -126,7 +129,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "7108SYZQE",
@@ -165,7 +169,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "7201SYZQE",
@@ -204,7 +209,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "7203SYZQE",
@@ -243,7 +249,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "7205SYZQE",
@@ -282,7 +289,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "7207SYZQE",
@@ -321,7 +329,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "R1966ABLKBLKFF",
@@ -363,7 +372,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "R1966FBLKBLKAF",
@@ -405,7 +415,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "R1966DBLKBLKAF",
@@ -447,7 +458,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "A10303RNZQ",
@@ -486,7 +498,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "A10603RNZQ",
@@ -525,7 +538,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "A11203RNZQ",
@@ -564,7 +578,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "PVA6FE24S41",
@@ -603,7 +618,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "PVA6LRE21231",
@@ -633,6 +649,77 @@
     }
   },
   {
+    "id": "daier-ds-225",
+    "name": "DAIER DS-225 · Ø12.7 mm · OFF–(ON)",
+    "description": "Momentary non-illuminated pushbutton switch · OFF–(ON) · SPST-NO · two solder lugs. Black rectangular upper housing with round green actuator follows the user photo; rectangular dimensions are illustrative.",
+    "parameters": {
+      "model": "daier-ds-225",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3,
+      "mountingHardware": "standard",
+      "capColour": "green"
+    },
+    "catalog": {
+      "designation": "DS-225",
+      "manufacturer": "DAIER",
+      "sourceName": "User-supplied DS-225 photo and mounting drawing",
+      "sourceUrl": "references/daier-ds-225-user-photo.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [
+        "references/daier-ds-225-user-drawing.png",
+        "https://www.chinadaier.com/ds-225-lockless-square-push-switch/"
+      ],
+      "attributes": {
+        "manufacturer": "DAIER",
+        "actuation": "Pushbutton",
+        "behavior": "Momentary one end",
+        "circuit": "SPST-NO",
+        "positions": 2,
+        "terminalCount": 2,
+        "termination": "Solder lug",
+        "mounting": "Threaded bushing",
+        "mountDiameter": 12.7,
+        "mountFlatWidth": 11.4,
+        "guarded": false
+      },
+      "specifications": [
+        {
+          "label": "Panel opening",
+          "value": "Ø12.7 mm with 11.4 mm opposing flats"
+        },
+        {
+          "label": "Upper housing",
+          "value": "Rounded rectangle · black · modeled 15 × 15 × 3 mm; dimensions illustrative"
+        },
+        {
+          "label": "Retaining stack",
+          "value": "5 mm behind selected panel; flange at Z=0; washer thickness and front projection illustrative"
+        },
+        {
+          "label": "Rear body depth",
+          "value": "17.5 mm; 23.5 mm including terminals"
+        },
+        {
+          "label": "Solder terminals",
+          "value": "2 terminals · 6 × 2 × 0.6 mm · 6 mm centres · 2 mm high slots"
+        },
+        {
+          "label": "Source execution",
+          "value": "Rectangular black upper housing and round green cap verified from the user photo. Modeled 15 × 15 mm bezel is illustrative; drawing Ø15 does not dimension the rectangular sides. Green is appearance, not an electrical option."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "The user correction and supplied photo establish a black rectangular upper housing with rounded corners and a round green actuator. The earlier dimensional drawing is retained as a mounting/body reference: 5 mm retaining stack, placed behind the selected panel; 17.5 mm rear body depth, 10 mm upper mounting section and 11.3 mm lower body width; Ø12.7 mm panel opening with 11.4 mm opposing flats; two 6 × 2 × 0.6 mm solder lugs at 6 mm centres, with 2 mm high slots. OFF–(ON) momentary action follows the user identification and manufacturer function table.",
+        "limitations": "Installation reconstruction using the user photo for the corrected upper housing shape and the earlier drawing for mounting/body reference. Not original manufacturer CAD. The photo does not dimension the rectangular bezel: modeled 15 × 15 mm, 1 mm corner radius and 3 mm height are illustrative; the earlier drawing’s Ø15 mm applies to its round outline and does not verify either rectangular side. Front projection (modeled 5 mm), actuator diameter (Ø9 mm), crown and 1 mm inspection travel are illustrative. The reference drawing specifies the panel opening, not the mounting barrel diameter or flats: Ø12.6 mm with 11.3 mm flats is an illustrative clearance choice. The inherited body/terminal dimensions require confirmation on the photographed article. Thread pitch, nut profile, 2 mm washer thickness, slot width and position are illustrative. Panel thickness moves the 5 mm washer/nut stack behind the panel while keeping the flange at Z=0; this installation pose does not establish the permitted panel thickness. The upper 2.0 annotation has an ambiguous datum and does not establish the modeled front height or inspection travel. Black housing and green actuator follow the photo; exact RGB values are illustrative appearance, not a verified colour order code or electrical option. The manufacturer public page’s inline drawing depicts another model. Threads, knurling, spring and internal contacts are omitted. No electrical rating or permitted panel thickness is assigned.",
+        "sourceUrl": "references/daier-ds-225-user-photo.png"
+      }
+    }
+  },
+  {
     "id": "omron-b3f-1000",
     "name": "Omron B3F-1000 · 6 × 6 mm · H4.3 mm",
     "description": "Tactile button switch. momentary one end; SPST-NO; through-hole pcb.",
@@ -642,7 +729,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "B3F-1000",
@@ -680,7 +768,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "B3F-1020",
@@ -718,7 +807,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "B3F-1050",
@@ -756,7 +846,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "B3F-4000",
@@ -794,7 +885,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "12146AK",
@@ -833,7 +925,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "12146AK + 90C46",
@@ -872,7 +965,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "ASW-07D",
@@ -925,7 +1019,8 @@
       "guard": "closed",
       "colour": "red",
       "panelThickness": 0.3,
-      "mountingHardware": "standard"
+      "mountingHardware": "standard",
+      "capColour": "green"
     },
     "catalog": {
       "designation": "ASW-07D + SAC-01",
@@ -978,6 +1073,250 @@
         "limitations": "Installation reconstruction from the linked ASW-07D-1 drawing. Not original manufacturer CAD. The public product page also quotes 28.3 × 16 × 56 mm, corresponding to a different drawing execution; this model follows the linked 28 × 16 × 19 mm case drawing. Current ratings conflict between the drawing and product/store tables, so none is assigned. Nut and washer profiles, terminal holes, horizontal ground-blade length, actuator end-lens profile and bushing groove depth are illustrative. Blade thickness 0.8 mm follows the manufacturer paired-product specification. Thread helices, lettering and internal contacts are omitted. LED colour is an ordering option, not an electrical simulation. SAC-01 cap width 20 mm follows the manufacturer product envelope; the drawing only dimensions the base widths. The rounded shell profile follows the drawing silhouette, while wall thickness, hole-to-hinge distance, hinge bore/pin, spring and 69° inspection opening angle are illustrative. A 9.5 mm base-seat height and retaining-nut stack are an illustrative installation adjustment chosen to clear the selected actuator. The open pose approximates the drawing's 45 mm envelope within 0.05 mm, not a verified angular stop. Transparent coloured plastic is shown with illustrative 55% opacity in the preview; native export retains RGB colour. Confirm the purchased revision and adjustment before machining a panel or relying on the interlock.",
         "sourceUrl": "https://www.daierswitches.com/products/racing-auto-20a-12v-lighted-toggle-switch-with-safety-guard"
       }
+    }
+  },
+  {
+    "id": "berm-bem-la16-11d-y",
+    "name": "BERM BEM-LA16-11D-Y · round · momentary · provisional",
+    "description": "BERM illuminated round pushbutton switch. Momentary one end. Provisional envelope; all dimensions require verification.",
+    "parameters": {
+      "model": "berm-bem-la16-11d-y",
+      "position": "first",
+      "guard": "closed",
+      "colour": "green",
+      "panelThickness": 0.3,
+      "mountingHardware": "standard",
+      "capColour": "green"
+    },
+    "catalog": {
+      "designation": "BEM-LA16-11D-Y",
+      "manufacturer": "BERM",
+      "sourceName": "BERM supplier listing — provisional envelope, no manufacturer drawing",
+      "sourceUrl": "https://www.mikroelec.com/product/2671/bem-la16-11d-y-g-momentary-push-button-16mm-green-led-220v-5pin",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "BERM",
+        "actuation": "Pushbutton",
+        "behavior": "Momentary one end",
+        "circuit": "1NO + 1NC (supplier-listed)",
+        "positions": 2,
+        "terminalCount": 5,
+        "termination": "Solder lug",
+        "mounting": "Threaded bushing",
+        "headShape": "round",
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Supplier-listed BERM BEM-LA16-11D-Y round pushbutton. Illuminated execution follows the supplier listing. The nominal 16 mm mounting class is supplier-listed, without a BERM dimensional drawing. The preview uses an assumed 18 mm round or square head, or 24 × 18 mm rectangular head; 7 mm front projection, 29 mm rear depth and 6 mm external terminals. These dimensions are not source-verified.",
+        "limitations": "Provisional assumed envelope. Not original manufacturer CAD. No BERM manufacturer drawing was found. All head, barrel, body, nut, washer, terminal and clearance dimensions are assumptions; the modeled 15.8 mm barrel does not verify a production 16 mm cutout or its tolerances. Five terminal locations, the 2.8 × 0.5 mm blades, 1.5 mm inspection stroke and 2 mm illustrative panel stack require measurement on the purchased item. The supplier listings do not establish a verified pinout, contact commoning, lamp polarity, voltage, current or ingress rating. D/DS action and head variants follow supplier descriptions; the square listing mixes self-resetting and self-locking text and describes three terminals, so its action and lamp execution are unverified. Red, green, yellow and blue are appearance choices, not complete colour/voltage order codes or verified availability for every variant. Thread helices, moulding details, lamp and internal contacts are omitted. Confirm the complete order designation and actual mounting dimensions before fabrication.",
+        "sourceUrl": "https://www.mikroelec.com/product/2671/bem-la16-11d-y-g-momentary-push-button-16mm-green-led-220v-5pin"
+      },
+      "specifications": [
+        {
+          "label": "Geometry evidence",
+          "value": "Provisional envelope; no BERM manufacturer dimensional drawing found"
+        },
+        {
+          "label": "Mounting class",
+          "value": "Supplier-listed nominal 16 mm; no source-verified cutout or dimensional filters"
+        },
+        {
+          "label": "Action",
+          "value": "Momentary one end (supplier-listed; verify purchased execution)"
+        },
+        {
+          "label": "Lamp / colour",
+          "value": "Four illustrative cap colours; voltage, polarity and full order code unspecified"
+        },
+        {
+          "label": "Terminals",
+          "value": "Five illustrative solder lugs; confirm actual count, pinout and dimensions"
+        }
+      ]
+    }
+  },
+  {
+    "id": "berm-bem-la16-11ds-y",
+    "name": "BERM BEM-LA16-11DS-Y · round · latching · provisional",
+    "description": "BERM illuminated round pushbutton switch. Latching. Provisional envelope; all dimensions require verification.",
+    "parameters": {
+      "model": "berm-bem-la16-11ds-y",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3,
+      "mountingHardware": "standard",
+      "capColour": "green"
+    },
+    "catalog": {
+      "designation": "BEM-LA16-11DS-Y",
+      "manufacturer": "BERM",
+      "sourceName": "BERM supplier listing — provisional envelope, no manufacturer drawing",
+      "sourceUrl": "https://mercatechbolivia.com/?action=catelog_shop&id=5884",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "BERM",
+        "actuation": "Pushbutton",
+        "behavior": "Latching",
+        "circuit": "1NO + 1NC (supplier-listed)",
+        "positions": 2,
+        "termination": "Solder lug",
+        "mounting": "Threaded bushing",
+        "headShape": "round",
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Supplier-listed BERM BEM-LA16-11DS-Y round pushbutton. Illuminated execution follows the supplier listing. The nominal 16 mm mounting class is supplier-listed, without a BERM dimensional drawing. The preview uses an assumed 18 mm round or square head, or 24 × 18 mm rectangular head; 7 mm front projection, 29 mm rear depth and 6 mm external terminals. These dimensions are not source-verified.",
+        "limitations": "Provisional assumed envelope. Not original manufacturer CAD. No BERM manufacturer drawing was found. All head, barrel, body, nut, washer, terminal and clearance dimensions are assumptions; the modeled 15.8 mm barrel does not verify a production 16 mm cutout or its tolerances. Five terminal locations, the 2.8 × 0.5 mm blades, 1.5 mm inspection stroke and 2 mm illustrative panel stack require measurement on the purchased item. The supplier listings do not establish a verified pinout, contact commoning, lamp polarity, voltage, current or ingress rating. D/DS action and head variants follow supplier descriptions; the square listing mixes self-resetting and self-locking text and describes three terminals, so its action and lamp execution are unverified. Red, green, yellow and blue are appearance choices, not complete colour/voltage order codes or verified availability for every variant. Thread helices, moulding details, lamp and internal contacts are omitted. Confirm the complete order designation and actual mounting dimensions before fabrication.",
+        "sourceUrl": "https://mercatechbolivia.com/?action=catelog_shop&id=5884"
+      },
+      "specifications": [
+        {
+          "label": "Geometry evidence",
+          "value": "Provisional envelope; no BERM manufacturer dimensional drawing found"
+        },
+        {
+          "label": "Mounting class",
+          "value": "Supplier-listed nominal 16 mm; no source-verified cutout or dimensional filters"
+        },
+        {
+          "label": "Action",
+          "value": "Latching (supplier-listed; verify purchased execution)"
+        },
+        {
+          "label": "Lamp / colour",
+          "value": "Four illustrative cap colours; voltage, polarity and full order code unspecified"
+        },
+        {
+          "label": "Terminals",
+          "value": "Five illustrative solder lugs; confirm actual count, pinout and dimensions"
+        }
+      ]
+    }
+  },
+  {
+    "id": "berm-bem-la16-11ds-f",
+    "name": "BERM BEM-LA16-11DS-F · square · action unverified · provisional",
+    "description": "BERM square pushbutton switch. Action and lamp execution are unverified: the supplier describes three pins and mixes momentary and self-locking text. Provisional envelope; all dimensions require verification.",
+    "parameters": {
+      "model": "berm-bem-la16-11ds-f",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3,
+      "mountingHardware": "standard",
+      "capColour": "green"
+    },
+    "catalog": {
+      "designation": "BEM-LA16-11DS-F",
+      "manufacturer": "BERM",
+      "sourceName": "BERM supplier listing — provisional envelope, no manufacturer drawing",
+      "sourceUrl": "https://linhkienvietnam.vn/nut-nhan-nha-vuong-la16-3-chan-mau-vang-chinh-hang-berm-nut-nhan-chat-luong-cao",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "BERM",
+        "actuation": "Pushbutton",
+        "circuit": "1NO + 1NC (supplier-listed)",
+        "positions": 2,
+        "termination": "Solder lug",
+        "mounting": "Threaded bushing",
+        "headShape": "square",
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Supplier-listed BERM BEM-LA16-11DS-F square pushbutton. Lamp execution is unverified: the square source also describes a three-terminal article. The nominal 16 mm mounting class is supplier-listed, without a BERM dimensional drawing. The preview uses an assumed 18 mm round or square head, or 24 × 18 mm rectangular head; 7 mm front projection, 29 mm rear depth and 6 mm external terminals. These dimensions are not source-verified.",
+        "limitations": "Provisional assumed envelope. Not original manufacturer CAD. No BERM manufacturer drawing was found. All head, barrel, body, nut, washer, terminal and clearance dimensions are assumptions; the modeled 15.8 mm barrel does not verify a production 16 mm cutout or its tolerances. Five terminal locations, the 2.8 × 0.5 mm blades, 1.5 mm inspection stroke and 2 mm illustrative panel stack require measurement on the purchased item. The supplier listings do not establish a verified pinout, contact commoning, lamp polarity, voltage, current or ingress rating. D/DS action and head variants follow supplier descriptions; the square listing mixes self-resetting and self-locking text and describes three terminals, so its action and lamp execution are unverified. Red, green, yellow and blue are appearance choices, not complete colour/voltage order codes or verified availability for every variant. Thread helices, moulding details, lamp and internal contacts are omitted. Confirm the complete order designation and actual mounting dimensions before fabrication.",
+        "sourceUrl": "https://linhkienvietnam.vn/nut-nhan-nha-vuong-la16-3-chan-mau-vang-chinh-hang-berm-nut-nhan-chat-luong-cao"
+      },
+      "specifications": [
+        {
+          "label": "Geometry evidence",
+          "value": "Provisional envelope; no BERM manufacturer dimensional drawing found"
+        },
+        {
+          "label": "Mounting class",
+          "value": "Supplier-listed nominal 16 mm; no source-verified cutout or dimensional filters"
+        },
+        {
+          "label": "Action",
+          "value": "Unverified: square listing mixes momentary and self-locking descriptions"
+        },
+        {
+          "label": "Lamp / colour",
+          "value": "Lamp execution unverified; four illustrative cap colours. Voltage and full order code unspecified"
+        },
+        {
+          "label": "Terminals",
+          "value": "Five illustrative solder lugs; confirm actual count, pinout and dimensions"
+        }
+      ]
+    }
+  },
+  {
+    "id": "berm-bem-la16-11ds-j",
+    "name": "BERM BEM-LA16-11DS-J · rectangular · latching · provisional",
+    "description": "BERM illuminated rectangular pushbutton switch. Latching. Provisional envelope; all dimensions require verification.",
+    "parameters": {
+      "model": "berm-bem-la16-11ds-j",
+      "position": "first",
+      "guard": "closed",
+      "colour": "red",
+      "panelThickness": 0.3,
+      "mountingHardware": "standard",
+      "capColour": "green"
+    },
+    "catalog": {
+      "designation": "BEM-LA16-11DS-J",
+      "manufacturer": "BERM",
+      "sourceName": "BERM supplier listing — provisional envelope, no manufacturer drawing",
+      "sourceUrl": "https://www.fruugo.co.uk/high-quality-bermberme-bem-la16-11ds-j-small-push-button-switch-with-light/p-471646323-986990401",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [],
+      "attributes": {
+        "manufacturer": "BERM",
+        "actuation": "Pushbutton",
+        "behavior": "Latching",
+        "circuit": "1NO + 1NC (supplier-listed)",
+        "positions": 2,
+        "termination": "Solder lug",
+        "mounting": "Threaded bushing",
+        "headShape": "rectangular",
+        "guarded": false
+      },
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Supplier-listed BERM BEM-LA16-11DS-J rectangular pushbutton. Illuminated execution follows the supplier listing. The nominal 16 mm mounting class is supplier-listed, without a BERM dimensional drawing. The preview uses an assumed 18 mm round or square head, or 24 × 18 mm rectangular head; 7 mm front projection, 29 mm rear depth and 6 mm external terminals. These dimensions are not source-verified.",
+        "limitations": "Provisional assumed envelope. Not original manufacturer CAD. No BERM manufacturer drawing was found. All head, barrel, body, nut, washer, terminal and clearance dimensions are assumptions; the modeled 15.8 mm barrel does not verify a production 16 mm cutout or its tolerances. Five terminal locations, the 2.8 × 0.5 mm blades, 1.5 mm inspection stroke and 2 mm illustrative panel stack require measurement on the purchased item. The supplier listings do not establish a verified pinout, contact commoning, lamp polarity, voltage, current or ingress rating. D/DS action and head variants follow supplier descriptions; the square listing mixes self-resetting and self-locking text and describes three terminals, so its action and lamp execution are unverified. Red, green, yellow and blue are appearance choices, not complete colour/voltage order codes or verified availability for every variant. Thread helices, moulding details, lamp and internal contacts are omitted. Confirm the complete order designation and actual mounting dimensions before fabrication.",
+        "sourceUrl": "https://www.fruugo.co.uk/high-quality-bermberme-bem-la16-11ds-j-small-push-button-switch-with-light/p-471646323-986990401"
+      },
+      "specifications": [
+        {
+          "label": "Geometry evidence",
+          "value": "Provisional envelope; no BERM manufacturer dimensional drawing found"
+        },
+        {
+          "label": "Mounting class",
+          "value": "Supplier-listed nominal 16 mm; no source-verified cutout or dimensional filters"
+        },
+        {
+          "label": "Action",
+          "value": "Latching (supplier-listed; verify purchased execution)"
+        },
+        {
+          "label": "Lamp / colour",
+          "value": "Four illustrative cap colours; voltage, polarity and full order code unspecified"
+        },
+        {
+          "label": "Terminals",
+          "value": "Five illustrative solder lugs; confirm actual count, pinout and dimensions"
+        }
+      ]
     }
   }
 ]

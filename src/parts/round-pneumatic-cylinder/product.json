@@ -1,0 +1,10 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "One complete sourced round pneumatic cylinder; displayed solids are installation references, not separately purchased internals.",
+  "processes": [],
+  "releaseRequirements": [
+    "Confirm exact supplier execution, brand, mounting drawing and source discrepancies.",
+    "Verify pressure rating, complete mounting and port geometry, rod threads, stroke and closed length on the ordered product."
+  ]
+}

@@ -6,11 +6,13 @@ import models from '../src/parts/flight-controller/lib/models.json';
 import { mountingHoles } from '../src/parts/flight-controller/lib/model';
 import { disposeModel } from '../src/core/mechanical';
 import { validateParameters } from '../src/core/validation';
+import { parametersForPreset } from '../src/core/part-selection';
 import {
   buildPresetIndex,
   emptyPresetFilters,
   filterPresets,
   fieldId,
+  getFilterFields,
 } from '../src/core/preset-search';
 function checkMesh(mesh: Mesh, label: string) {
   const positions = mesh.geometry.getAttribute('position');
@@ -52,7 +54,7 @@ function checkMesh(mesh: Mesh, label: string) {
 }
 
 test('flight controllers: fixed mechanical variants and source-aware filters', () => {
-  assert.equal(part.presets.length, 8);
+  assert.equal(part.presets.length, 9);
   assert.equal(part.catalogSelectionOnly, true);
   const signatures = models.map((m) =>
     JSON.stringify([m.width, m.length, m.height, m.mount, m.motorConnection, m.hdSocket]),
@@ -71,7 +73,7 @@ test('flight controllers: fixed mechanical variants and source-aware filters', (
     max: '100',
   };
   const matches = filterPresets(buildPresetIndex([part]), filters).items;
-  assert.equal(matches.length, 6, 'unknown whoop height excluded');
+  assert.equal(matches.length, 7, 'unknown whoop height excluded');
   const attrs = (id: string) => part.presets.find((p) => p.id === id)!.catalog!.attributes!;
   assert.equal(attrs('speedybee-f405-mini').hdSocket, false);
   assert.equal(attrs('speedybee-f405-v4').hdSocket, true);
@@ -140,4 +142,61 @@ test('motor sockets change only the whoop connection variant', () => {
       disposeModel(g);
     }
   }
+});
+
+test('WING MINI standalone states retain shared detailed geometry and open analytic mounting bores', () => {
+  const preset = part.presets.find((preset) => preset.id === 'speedybee-f405-wing-mini')!;
+  assert.equal(preset.catalog!.geometryEvidence!.kind, 'envelope');
+  assert.equal(preset.catalog!.attributes!.hole, undefined);
+  assert.equal(preset.catalog!.attributes!.mountX, undefined);
+  assert.equal(preset.catalog!.attributes!.weight, undefined);
+  assert.equal(preset.catalog!.attributes!.usb, undefined);
+  assert.equal(preset.catalog!.attributes!.hdSocket, true);
+  for (const state of part.states!) {
+    const model = part.buildGeometry(preset.parameters, state.id);
+    try {
+      model.updateMatrixWorld(true);
+      assert.equal(model.children.length, 56);
+      model.traverse((child) => {
+        if (child instanceof Mesh) checkMesh(child, child.name);
+      });
+      const size = new Box3().setFromObject(model, true).getSize(new Vector3()).toArray();
+      part
+        .dimensions(preset.parameters, state.id)
+        .forEach((value, axis) => assert.ok(Math.abs(value - size[axis]) < 0.001));
+      if (state.id === 'assembled') {
+        [37, 26, 13.8].forEach((value, axis) => assert.ok(Math.abs(value - size[axis]) < 0.001));
+        const boards = model.children.filter((child) =>
+          /shield C|FC board B|PDB board A/.test(child.name),
+        );
+        assert.equal(boards.length, 3);
+        for (const board of boards)
+          for (const x of [-9, 9])
+            for (const y of [-11, 11])
+              assert.equal(
+                new Raycaster(new Vector3(x, y, 50), new Vector3(0, 0, -1)).intersectObject(
+                  board,
+                  true,
+                ).length,
+                0,
+              );
+      }
+    } finally {
+      disposeModel(model);
+    }
+  }
+});
+
+test('WING MINI fit references are independent of model selection and never published search dimensions', () => {
+  const wing = part.presets.find((preset) => preset.id === 'speedybee-f405-wing-mini')!;
+  const other = part.presets.find((preset) => preset.id === 'speedybee-f405-v4')!;
+  const selected = parametersForPreset(part, wing, other.parameters);
+  assert.deepEqual(validateParameters(part, selected, 'assembled'), []);
+  const edited = { ...selected, wingHolePitchX: 17.5, wingHolePitchY: 21 };
+  const away = parametersForPreset(part, other, edited);
+  const restored = parametersForPreset(part, wing, away);
+  assert.equal(restored.wingHolePitchX, 17.5);
+  assert.equal(restored.wingHolePitchY, 21);
+  assert.deepEqual(validateParameters(part, restored, 'assembled'), []);
+  assert.ok(getFilterFields([part]).every((field) => !field.key.startsWith('wingHolePitch')));
 });

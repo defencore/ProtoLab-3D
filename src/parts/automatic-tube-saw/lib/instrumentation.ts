@@ -38,7 +38,7 @@ export function instrumentationPieces(p: Parameters, state: string, movingX: num
     const firstPiece = c.pieces.length;
     const onReceiver = [700, 945, 2365].includes(x);
     for (const sign of [-1, 1]) {
-      for (const q of measurementPieces({ model: 'e3z-t81' }))
+      for (const q of measurementPieces({ model: sign < 0 ? 'e3z-t81-l' : 'e3z-t81-d' }))
         c.add(
           `${label} · ${sign < 0 ? 'emitter' : 'receiver'} · ${q.label}`,
           pose(q.shape, [x, sign * y, z - 15.5], [0, 0, sign < 0 ? 0 : 180]),
@@ -88,7 +88,7 @@ export function instrumentationPieces(p: Parameters, state: string, movingX: num
   beam(610, 900 + Math.max(20, s.height / 2), 180, 'Cut exit tail-clear beam');
   beam(2470, 900 + Math.max(20, s.height / 2), 180, 'Roller outlet clear beam');
   for (const x of [650, 2440]) {
-    for (const q of measurementPieces({ model: 'e3z-t81' }))
+    for (const q of measurementPieces({ model: 'e3z-t81-d' }))
       c.add(
         'Chute passage beam · ' + q.label,
         pose(q.shape, [x, -350, 450], [0, 0, x < 800 ? -90 : 90]),
@@ -115,7 +115,7 @@ export function instrumentationPieces(p: Parameters, state: string, movingX: num
       );
     }
   for (const x of [650, 2440]) {
-    for (const q of measurementPieces({ model: 'e3z-t81' }))
+    for (const q of measurementPieces({ model: 'e3z-t81-d' }))
       c.add(
         'Scrap passage beam - ' + q.label,
         pose(q.shape, [x, -860, 280], [0, 0, x < 800 ? -90 : 90]),

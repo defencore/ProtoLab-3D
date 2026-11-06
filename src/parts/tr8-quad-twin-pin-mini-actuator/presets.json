@@ -1,0 +1,226 @@
+[
+  {
+    "id": "twin54-lightened-361-12-prom",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 4 outputs · Ø54 laser steel twin-pin · lightened discs · Prom SMB · ±20°",
+    "description": "Shorter output shafts and relocated outer supports reduce the disc diameter to54 mm; the twin-pin nut mechanism stays unchanged. Stock SMB bearings from Prom.ua; no journal adapters.",
+    "parameters": {
+      "motorModel": "361-12",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "discPattern": "lightened",
+      "bearingKit": "prom-smb"
+    }
+  },
+  {
+    "id": "twin54-lightened-107-12-prom",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 4 outputs · Ø54 laser steel twin-pin · lightened discs · Prom SMB · ±20°",
+    "description": "Shorter output shafts and relocated outer supports reduce the disc diameter to54 mm; the twin-pin nut mechanism stays unchanged. Stock SMB bearings from Prom.ua; no journal adapters.",
+    "parameters": {
+      "motorModel": "107-12",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "discPattern": "lightened",
+      "bearingKit": "prom-smb"
+    }
+  },
+  {
+    "id": "twin54-lightened-361-24-prom",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 4 outputs · Ø54 laser steel twin-pin · lightened discs · Prom SMB · ±20°",
+    "description": "Shorter output shafts and relocated outer supports reduce the disc diameter to54 mm; the twin-pin nut mechanism stays unchanged. Stock SMB bearings from Prom.ua; no journal adapters.",
+    "parameters": {
+      "motorModel": "361-24",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "discPattern": "lightened",
+      "bearingKit": "prom-smb"
+    }
+  },
+  {
+    "id": "twin54-lightened-107-24-prom",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 4 outputs · Ø54 laser steel twin-pin · lightened discs · Prom SMB · ±20°",
+    "description": "Shorter output shafts and relocated outer supports reduce the disc diameter to54 mm; the twin-pin nut mechanism stays unchanged. Stock SMB bearings from Prom.ua; no journal adapters.",
+    "parameters": {
+      "motorModel": "107-24",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "discPattern": "lightened",
+      "bearingKit": "prom-smb"
+    }
+  },
+  {
+    "id": "twin54-solid-361-12-prom",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 4 outputs · Ø54 laser steel twin-pin · solid discs · Prom SMB · ±20°",
+    "description": "Shorter output shafts and relocated outer supports reduce the disc diameter to54 mm; the twin-pin nut mechanism stays unchanged. Stock SMB bearings from Prom.ua; no journal adapters.",
+    "parameters": {
+      "motorModel": "361-12",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "discPattern": "solid",
+      "bearingKit": "prom-smb"
+    }
+  },
+  {
+    "id": "twin54-solid-107-12-prom",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 4 outputs · Ø54 laser steel twin-pin · solid discs · Prom SMB · ±20°",
+    "description": "Shorter output shafts and relocated outer supports reduce the disc diameter to54 mm; the twin-pin nut mechanism stays unchanged. Stock SMB bearings from Prom.ua; no journal adapters.",
+    "parameters": {
+      "motorModel": "107-12",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "discPattern": "solid",
+      "bearingKit": "prom-smb"
+    }
+  },
+  {
+    "id": "twin54-solid-361-24-prom",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 4 outputs · Ø54 laser steel twin-pin · solid discs · Prom SMB · ±20°",
+    "description": "Shorter output shafts and relocated outer supports reduce the disc diameter to54 mm; the twin-pin nut mechanism stays unchanged. Stock SMB bearings from Prom.ua; no journal adapters.",
+    "parameters": {
+      "motorModel": "361-24",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "discPattern": "solid",
+      "bearingKit": "prom-smb"
+    }
+  },
+  {
+    "id": "twin54-solid-107-24-prom",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 4 outputs · Ø54 laser steel twin-pin · solid discs · Prom SMB · ±20°",
+    "description": "Shorter output shafts and relocated outer supports reduce the disc diameter to54 mm; the twin-pin nut mechanism stays unchanged. Stock SMB bearings from Prom.ua; no journal adapters.",
+    "parameters": {
+      "motorModel": "107-24",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "discPattern": "solid",
+      "bearingKit": "prom-smb"
+    }
+  },
+  {
+    "id": "twin54-lightened-361-12",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 4 outputs · Ø54 laser steel twin-pin · lightened discs · reference bearings · ±20°",
+    "description": "Shorter output shafts and relocated outer supports reduce the disc diameter to54 mm; the twin-pin nut mechanism stays unchanged.",
+    "parameters": {
+      "motorModel": "361-12",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "discPattern": "lightened",
+      "bearingKit": "reference"
+    }
+  },
+  {
+    "id": "twin54-lightened-107-12",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 4 outputs · Ø54 laser steel twin-pin · lightened discs · reference bearings · ±20°",
+    "description": "Shorter output shafts and relocated outer supports reduce the disc diameter to54 mm; the twin-pin nut mechanism stays unchanged.",
+    "parameters": {
+      "motorModel": "107-12",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "discPattern": "lightened",
+      "bearingKit": "reference"
+    }
+  },
+  {
+    "id": "twin54-lightened-361-24",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 4 outputs · Ø54 laser steel twin-pin · lightened discs · reference bearings · ±20°",
+    "description": "Shorter output shafts and relocated outer supports reduce the disc diameter to54 mm; the twin-pin nut mechanism stays unchanged.",
+    "parameters": {
+      "motorModel": "361-24",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "discPattern": "lightened",
+      "bearingKit": "reference"
+    }
+  },
+  {
+    "id": "twin54-lightened-107-24",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 4 outputs · Ø54 laser steel twin-pin · lightened discs · reference bearings · ±20°",
+    "description": "Shorter output shafts and relocated outer supports reduce the disc diameter to54 mm; the twin-pin nut mechanism stays unchanged.",
+    "parameters": {
+      "motorModel": "107-24",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "discPattern": "lightened",
+      "bearingKit": "reference"
+    }
+  },
+  {
+    "id": "twin54-solid-361-12",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 4 outputs · Ø54 laser steel twin-pin · solid discs · reference bearings · ±20°",
+    "description": "Shorter output shafts and relocated outer supports reduce the disc diameter to54 mm; the twin-pin nut mechanism stays unchanged.",
+    "parameters": {
+      "motorModel": "361-12",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "discPattern": "solid",
+      "bearingKit": "reference"
+    }
+  },
+  {
+    "id": "twin54-solid-107-12",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 4 outputs · Ø54 laser steel twin-pin · solid discs · reference bearings · ±20°",
+    "description": "Shorter output shafts and relocated outer supports reduce the disc diameter to54 mm; the twin-pin nut mechanism stays unchanged.",
+    "parameters": {
+      "motorModel": "107-12",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "discPattern": "solid",
+      "bearingKit": "reference"
+    }
+  },
+  {
+    "id": "twin54-solid-361-24",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 4 outputs · Ø54 laser steel twin-pin · solid discs · reference bearings · ±20°",
+    "description": "Shorter output shafts and relocated outer supports reduce the disc diameter to54 mm; the twin-pin nut mechanism stays unchanged.",
+    "parameters": {
+      "motorModel": "361-24",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "discPattern": "solid",
+      "bearingKit": "reference"
+    }
+  },
+  {
+    "id": "twin54-solid-107-24",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 4 outputs · Ø54 laser steel twin-pin · solid discs · reference bearings · ±20°",
+    "description": "Shorter output shafts and relocated outer supports reduce the disc diameter to54 mm; the twin-pin nut mechanism stays unchanged.",
+    "parameters": {
+      "motorModel": "107-24",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "discPattern": "solid",
+      "bearingKit": "reference"
+    }
+  }
+]

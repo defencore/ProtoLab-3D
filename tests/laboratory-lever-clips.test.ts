@@ -100,7 +100,7 @@ test('spring clips retain fixed purchased executions and identify the reconstruc
   assert.equal(part.catalogSelectionOnly, true);
   assert.deepEqual(
     part.parameters.map((parameter) => parameter.key),
-    ['model'],
+    ['model', 'colour'],
   );
   for (const [index, id] of ids.entries()) {
     const model = selected({ model: id }),
@@ -161,6 +161,44 @@ test('spring clips retain fixed purchased executions and identify the reconstruc
     assert.equal(bottomBank.attributes![key], undefined, 'photo-derived bank dimension: ' + key);
   for (const preset of [bottom, bottomBank])
     assert.equal(preset.attributes!.termination, 'bottom-tab');
+});
+
+test('optional clip shell colours preserve metals, geometry and catalog defaults', () => {
+  const colourParameter = part.parameters.find((parameter) => parameter.key === 'colour')!;
+  assert.equal(colourParameter.optionalWhenHidden, true);
+  assert.equal(colourParameter.visibleWhen!({ model: bottomIds[0] }), false);
+  for (const id of ids) {
+    assert.deepEqual(part.validate({ model: id, colour: 'red' }, 'assembled'), []);
+    assert.deepEqual(part.validate({ model: id, colour: 'black' }, 'assembled'), []);
+  }
+  for (const id of [bottomIds[0], bottomIds[1]]) {
+    const original = pieces({ model: id }, 'assembled');
+    for (const [colour, rgb] of [
+      ['red', 0xc6332e],
+      ['black', 0x292c31],
+    ] as const) {
+      const colored = pieces({ model: id, colour }, 'assembled');
+      assert.equal(colored.length, original.length);
+      colored.forEach((piece, index) => {
+        const source = original[index];
+        assert.equal(piece.label, source.label);
+        assert.deepEqual(piece.shape, source.shape, 'colour never modifies mounting geometry');
+        assert.equal(
+          piece.color,
+          /molded housing|ridged pivot lever/.test(piece.label) ? rgb : source.color,
+          piece.label + ': only the clip insulators change colour',
+        );
+      });
+    }
+    assert.deepEqual(
+      pieces({ model: id }, 'assembled'),
+      original,
+      'catalog colours stay deterministic',
+    );
+  }
+  assert.ok(part.validate({ model: bottomIds[0], colour: 'blue' }, 'assembled').length);
+  assert.ok(part.validate({ model: 'pomona-4243-0', colour: 'red' }, 'assembled').length);
+  assert.throws(() => pieces({ model: bottomIds[0], colour: 'blue' }, 'assembled'), /red or black/);
 });
 
 test('supplied photograph evidence is retained verbatim with reproducible hashes', () => {

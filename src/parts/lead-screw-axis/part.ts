@@ -16,7 +16,7 @@ const part: PartDefinition = {
   composition: (p) => shapeComposition(pieces({ ...p, position: 0, turns: 0 }, 'assembled')),
   id: 'lead-screw-axis',
   product: productData as ProductProfile,
-  name: 'Lead screw and nut',
+  name: 'Lead screw and flange nut',
   category: 'LINEAR MOTION',
   subgroup: 'LEAD SCREWS & STAGES',
   icon: 'rail',

@@ -2,6 +2,7 @@ import { spawn } from 'node:child_process';
 import { appendFile, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createExecutionPlan, loadTestInventory, runExecutionPlan } from '../test-runner.mjs';
 
 export function validatePlan(plan) {
   if (!plan || !['affected', 'full'].includes(plan.mode)) throw new Error('Invalid test-plan mode.');
@@ -76,13 +77,21 @@ async function main() {
   if (command === 'run') {
     const files = partitionTests(plan.tests, Number(options.get('--shard')), Number(options.get('--shards')));
     if (!files.length) { process.stdout.write('No affected test files in this shard.\n'); return; }
-    await run(process.execPath, ['--import', 'tsx', '--test', '--test-concurrency=2', '--test-reporter=tap', ...files], env);
+    const inventory = await loadTestInventory();
+    if (files.some((file) => !inventory.files.includes(file)))
+      throw new Error('The test plan references a missing current test file.');
+    const execution = createExecutionPlan({ ...inventory, files, mode: plan.mode, affectedParts: plan.affectedParts });
+    const result = await runExecutionPlan(execution, { environment: env });
+    if (result.status === 'failed') throw new Error('Selected test jobs failed; see the test manifest.');
   } else if (command === 'packages') {
-    if (plan.mode === 'full') await run(process.execPath, ['--import', 'tsx', 'scripts/parts.ts', 'check'], env);
-    else for (const id of plan.packageIds)
-      await run(process.execPath, ['--import', 'tsx', 'scripts/parts.ts', 'check', id], env);
     if (plan.mode === 'affected' && !plan.packageIds.length)
       process.stdout.write('No changed part packages to validate.\n');
+    else
+      await run(
+        process.execPath,
+        ['--import', 'tsx', 'scripts/parts.ts', 'check', ...(plan.mode === 'affected' ? plan.packageIds : [])],
+        env,
+      );
   } else {
     for (const file of plan.pythonTests) await run('python3', [file], env);
     if (!plan.pythonTests.length) process.stdout.write('No affected Python importer tests.\n');

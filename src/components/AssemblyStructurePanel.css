@@ -1,0 +1,374 @@
+.assembly-structure {
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel);
+  overflow: hidden;
+}
+
+.assembly-structure-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+}
+
+.assembly-structure-heading h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.assembly-structure-heading p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.assembly-structure-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 5px 10px;
+}
+
+.assembly-structure-actions button {
+  padding: 3px 0;
+  border: 0;
+  background: none;
+  color: var(--orange);
+  font-size: 11px;
+}
+
+.assembly-structure-actions button:hover {
+  text-decoration: underline;
+}
+
+.assembly-structure-tabs {
+  display: flex;
+  gap: 16px;
+  margin: 0 14px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.assembly-structure-tabs [role='tab'] {
+  padding: 5px 0 8px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.assembly-structure-tabs [aria-selected='true'] {
+  border-bottom-color: var(--orange);
+  color: var(--text);
+}
+
+.assembly-structure-tabs [role='tab']:focus-visible,
+.assembly-structure [role='tabpanel']:focus-visible {
+  outline: 1px solid var(--orange);
+  outline-offset: -1px;
+}
+
+.assembly-bom-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.assembly-bom-table th,
+.assembly-bom-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+.assembly-bom-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--panel);
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.assembly-bom-table tbody tr:hover {
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+}
+
+.assembly-bom-name {
+  display: block;
+  color: var(--text);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.assembly-bom-description,
+.assembly-bom-id {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+
+.assembly-bom-id {
+  font-family: var(--mono);
+  font-size: 9px;
+  user-select: all;
+}
+
+.assembly-bom-table .assembly-bom-supply {
+  width: 75px;
+  padding-inline: 6px;
+  text-align: center;
+}
+
+.assembly-bom-table .assembly-bom-quantity {
+  width: 52px;
+  padding-inline: 6px;
+  color: var(--text);
+  text-align: right;
+  font-family: var(--mono);
+  font-size: 11px;
+}
+
+.assembly-bom-table .assembly-bom-actions {
+  width: 38px;
+  padding-inline: 6px;
+}
+
+.assembly-structure-search {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 12px 10px;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--muted);
+  background: var(--bg);
+}
+
+.assembly-structure-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 12px;
+}
+
+.assembly-structure-search input::placeholder {
+  color: var(--muted);
+}
+
+.assembly-structure-search input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.assembly-structure-search:focus-within {
+  border-color: var(--orange);
+}
+
+.assembly-structure-search button {
+  display: flex;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+}
+
+.assembly-structure-scroll {
+  max-height: 220px;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+  overscroll-behavior: contain;
+  border-top: 1px solid var(--border);
+}
+
+.assembly-structure-tree,
+.assembly-structure-tree ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.assembly-structure-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 37px;
+  padding: 3px 9px 3px 8px;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+.assembly-structure-row:hover {
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+}
+
+.assembly-structure-row.is-selected {
+  background: color-mix(in srgb, var(--orange) 12%, var(--panel));
+  box-shadow: inset 2px 0 0 var(--orange);
+}
+
+.assembly-structure-row.is-hidden .assembly-structure-component {
+  opacity: 0.46;
+}
+
+.assembly-structure-icon {
+  display: inline-flex;
+  flex: 0 0 24px;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  color: var(--muted);
+  background: transparent;
+}
+
+.assembly-structure-icon:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.assembly-structure-icon:disabled:hover {
+  background: transparent;
+}
+
+.assembly-structure-toggle,
+.assembly-structure-toggle-spacer {
+  flex: 0 0 16px;
+  width: 16px;
+}
+
+.assembly-structure-open {
+  color: var(--orange);
+}
+
+.assembly-structure-component {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 5px 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+}
+
+.assembly-structure-position {
+  flex: 0 0 auto;
+  min-width: 19px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+}
+
+.assembly-structure-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text);
+  font-size: 12px;
+  -webkit-user-select: text;
+  user-select: text;
+  cursor: text;
+}
+
+.assembly-structure-copy-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.assembly-structure-quantity {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+}
+
+.assembly-structure-supply {
+  flex: 0 0 auto;
+  min-width: 48px;
+  padding: 3px 5px;
+  border-radius: 3px;
+  background: var(--surface);
+  color: var(--muted);
+  text-align: center;
+  font-size: 9px;
+  line-height: 1;
+}
+
+.assembly-structure-supply.is-buy {
+  background: #28343c;
+  color: #a3c7df;
+}
+
+.assembly-structure-supply.is-make {
+  background: #343027;
+  color: #d9bf90;
+}
+
+.assembly-structure-help,
+.assembly-structure-empty {
+  margin: 0;
+  padding: 9px 14px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.assembly-structure-help {
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 520px) {
+  .assembly-structure-heading {
+    align-items: flex-start;
+  }
+
+  .assembly-structure-row {
+    gap: 3px;
+    padding-right: 5px;
+  }
+
+  .assembly-structure-supply {
+    min-width: 40px;
+    padding-inline: 3px;
+  }
+
+  .assembly-structure-component {
+    gap: 5px;
+  }
+}
+
+/* Keep the model and physical tree usable on short desktop windows. */
+.model-workspace:has(> .assembly-structure) {
+  overflow-y: auto;
+}
+.model-workspace:has(> .assembly-structure) > .viewport-area:not(.viewport-area--expanded) {
+  flex: 0 0 clamp(280px, 40vh, 480px);
+}
+.model-workspace > .assembly-structure {
+  flex-shrink: 0;
+  margin: 0 20px 20px;
+}

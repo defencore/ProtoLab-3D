@@ -4,7 +4,6 @@ import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { Box3, Mesh, Vector3 } from 'three';
 import { workshopJigIds } from '../scripts/workshop-jigs/manifest';
-import { inspectPackage } from '../scripts/part-modules/library';
 import { checkPackageDefinitions } from '../scripts/part-modules/check';
 import { validateParameters } from '../src/core/validation';
 import { disposeModel } from '../src/core/mechanical';
@@ -27,10 +26,10 @@ const entries = await Promise.all(
 const entry = (id: string) => entries.find((item) => item.id === id)!;
 
 test('twelve independent workshop packages validate all 74 presets and declare their dependencies', async () => {
-  const packages = await Promise.all(
-    workshopJigIds.map((id) => inspectPackage(resolve('src/parts', id), resolve('.'))),
-  );
-  assert.deepEqual(await checkPackageDefinitions(packages), { parts: 12, presets: 74 });
+  assert.deepEqual(await checkPackageDefinitions(resolve('.'), workshopJigIds), {
+    parts: 12,
+    presets: 74,
+  });
   for (const { id, part } of entries) {
     assert.equal(part.category, 'WORKSHOP TOOLS', id);
     for (const p of [part.defaults, ...part.presets.map((preset) => preset.parameters)]) {

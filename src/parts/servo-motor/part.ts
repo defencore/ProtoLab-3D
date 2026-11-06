@@ -51,14 +51,27 @@ const part: PartDefinition = {
   icon: 'gear',
   complexity: 'Supplier models selected by fixed dimensions and electrical specifications',
   description:
-    'Choose a Waveshare, KST or Power-HD servo by case size, torque, current, voltage and other published characteristics. Geometry follows the selected model.',
+    'Choose a Waveshare, KST, Power-HD, Futaba, Hitec, CHASERVO or TowerPro servo by case size, torque, current, voltage and other published characteristics. Geometry follows the selected model.',
   keywords: [
     'servo',
     'servomotor',
     'servo motor',
+    'TowerPro',
+    'MG996R',
+    'MG90S',
     'Waveshare',
     'ST3215-HS',
     'ST3215',
+    'ST3025',
+    'Futaba',
+    'HPS-H701',
+    'Hitec',
+    'HSB-9380TH',
+    'D954SW',
+    'CHASERVO',
+    'HV3609',
+    'S.BUS',
+    'S.BUS2',
     'KST',
     'X10 Mini Pro',
     'X10 V8.0',
@@ -131,7 +144,7 @@ const part: PartDefinition = {
     };
   },
   notes:
-    'Servo models have fixed manufacturer dimensions and read-only published specifications. Filters select matching models; they never resize a servo or change its torque/current rating. Case heights follow the dimension drawings; undimensioned casing details, mounting cutouts, threads and most optional horns are fixed visual approximations. KST A/B mounting patterns and ST3215 supplied discs remain distinct. See each model source and specifications for dimension discrepancies and measurement conditions. Current ratings are omitted where absent or ambiguously specified; missing values are not zero. Output angle changes geometric placement only, with no motor or electrical simulation.',
+    'Servo models have fixed manufacturer dimensions and read-only published specifications. Filters select matching models; they never resize a servo or change its torque/current rating. Case heights follow the dimension drawings; undimensioned casing details, mounting cutouts, threads and most optional horns are fixed visual approximations. KST A/B mounting patterns, ST3215 supplied discs and ST3025 face mounting remain distinct. Futaba travel is an inspection range, since rated travel is not published. Hitec extended travel requires programming; its maximum supply voltage is for brief operation. See each model source and specifications for dimension discrepancies and measurement conditions. Current ratings are omitted where absent or ambiguously specified; missing values are not zero. Output angle changes geometric placement only, with no motor or electrical simulation.',
   sources: [
     ...new Map(
       modelDefinitions

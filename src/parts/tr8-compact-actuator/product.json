@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Compact three-disc rotary actuator using a cut and turned four-start TR8\u00d78(P2) screw and H-flange nut.",
+  "processes": ["assembly"],
+  "releaseRequirements": [
+    "Verify the actual H-nut drawing and stock screw root before turning.",
+    "Specify load, fits, tolerances and lubrication before manufacture.",
+    "Provide calibrated travel limits and motor reversal control."
+  ]
+}

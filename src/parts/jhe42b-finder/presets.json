@@ -1,0 +1,118 @@
+[
+  {
+    "id": "jhe42b",
+    "name": "JHEMCU JHE42B · standard",
+    "description": "Detailed visible exterior with PCB, side-outlet buzzer, LED, socket, switch, battery and translucent wrapping; one complete supplied finder.",
+    "parameters": {
+      "model": "jhe42b"
+    },
+    "catalog": {
+      "designation": "JHE42B Finder",
+      "manufacturer": "JHEMCU",
+      "productCodes": ["202378133636"],
+      "sourceName": "JHEMCU standard JHE42B product page and seven manufacturer photographs; user front photograph",
+      "sourceUrl": "https://jhemcu.com/e_productshow/?54-JHEMCU-JHE42B-Finder-BB-Ring-110dB-Buzzer-Alarm-with-LED-Light-Support-BF-CF-Flight-54.html=",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "sourceUrl": "https://jhemcu.com/e_productshow/?54-JHEMCU-JHE42B-Finder-BB-Ring-110dB-Buzzer-Alarm-with-LED-Light-Support-BF-CF-Flight-54.html=",
+        "summary": "Detailed photo-based exterior reconstruction constrained to the nominal 23 × 17 × 17 mm manufacturer web-page envelope; individual visible feature dimensions are estimated.",
+        "limitations": "The official dimension photograph states 25 × 17 × 17 mm, conflicting with the web-page 23 × 17 × 17 mm text. The library retains the existing 23 mm nominal basis; actual length remains unresolved. No manufacturer CAD or dimensioned subfeature drawing was found. PCB, battery, buzzer side outlet, LED, socket, side-actuated cancel switch, leads and shrink-wrap positions/profiles are photographic estimates, not installation-certified dimensions. Hidden electronic and acoustic internals are omitted. No mounting holes are documented. Loose cable and installation hardware are excluded."
+      },
+      "alternateSourceUrls": [
+        "https://jhemcu.com/pic/other/2023-07-08-13-38-089.jpg",
+        "https://jhemcu.com/pic/other/2023-07-08-13-38-215.jpg",
+        "https://jhemcu.com/pic/other/2023-07-08-13-38-338.jpg",
+        "https://jhemcu.com/pic/other/2023-07-08-13-38-481.jpg",
+        "https://jhemcu.com/pic/other/2023-07-08-13-38-597.jpg",
+        "https://jhemcu.com/pic/other/2023-07-08-13-39-113.jpg",
+        "https://jhemcu.com/pic/other/2023-07-08-13-39-221.jpg"
+      ],
+      "attributes": {
+        "bodyLength": 23,
+        "bodyWidth": 17,
+        "bodyHeight": 17,
+        "mass": 7.4,
+        "alarmLevel": 110,
+        "inputVoltage": 5
+      },
+      "attributeConditions": {
+        "alarmLevel": "Manufacturer claim; measurement distance and protocol are not specified.",
+        "inputVoltage": "Nominal +5 V wiring label in the manufacturer's photograph; electrical integration and pin compatibility are not modeled.",
+        "mass": "Published complete-module mass; delivered-unit and loose-wire variation are not measured.",
+        "bodyLength": "Manufacturer web-page text says 23 mm; official dimension photo says 25 mm. The 23 mm nominal library basis is retained, with actual length unresolved.",
+        "bodyWidth": "Manufacturer page and size photograph both state 17 mm overall; feature dimensions remain photo estimates.",
+        "bodyHeight": "Manufacturer page and size photograph both state 17 mm overall, including battery and wrapping; subfeature heights remain estimates."
+      },
+      "specifications": [
+        {
+          "label": "Overall size",
+          "value": "Nominal model basis 23 × 17 × 17 mm from page text; official dimension photograph says 25 × 17 × 17 mm. Actual length remains unresolved."
+        },
+        {
+          "label": "Published mass",
+          "value": "7.4 g"
+        },
+        {
+          "label": "Cable",
+          "value": "Manufacturer lists a three-pin 1.0 mm cable; mating-plug dimensions are not given."
+        },
+        {
+          "label": "Alarm control",
+          "value": "Keep the cancel button accessible; the manufacturer specifies a hold longer than two seconds."
+        },
+        {
+          "label": "Battery",
+          "value": "Integral rechargeable backup battery; chemistry, capacity and detailed dimensions unverified."
+        },
+        {
+          "label": "Visible exterior",
+          "value": "Closed buzzer top with a negative-X rectangular side sound outlet; white/yellow LED; separate positive-X socket and side-actuated cancel switch; silver pouch below PCB; translucent wrapper."
+        },
+        {
+          "label": "Dimensional fidelity",
+          "value": "The detailed appearance follows manufacturer photos and the user front photograph. Numeric subfeature sizes and positions are estimates; this is not manufacturer CAD, a PCB fabrication file or a verified mounting drawing."
+        }
+      ]
+    }
+  },
+  {
+    "id": "jhe42b-project-reference-26x17x15",
+    "name": "JHE42B · 26 × 17 × 15 mm",
+    "description": "Current user-project occupied-box reference. Exact supplier execution and the conflict with the standard 23 × 17 × 17 mm JHE42B remain unresolved.",
+    "parameters": {
+      "model": "jhe42b-project-reference-26x17x15"
+    },
+    "product": {
+      "supply": "reference"
+    },
+    "catalog": {
+      "designation": "JHE42B / current project 26 × 17 × 15 mm reference",
+      "sourceName": "User-supplied current platform geometry and registry, component 234",
+      "sourceKind": "attachment",
+      "sourceUrl": "",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "One native 26 × 17 × 15 mm occupied box reproduces the latest project reference.",
+        "limitations": "The latest platform source explicitly assigns JHE42B to a user-given 26 × 17 × 15 mm occupied box. This conflicts with the standard JHE42B's nominal 23 × 17 × 17 mm web-page basis, which remains a separate selection. Source component 234 still carries a stale JHE20B PartNumber; the current script, label and registry explicitly select JHE42B. This reference does not establish another supplier execution, product code, internal battery, speaker, socket, button, LED, mounting surface or cable geometry. Feature orientation and retention remain unverified. See lib/project-source-provenance.json for immutable source hashes and the conflict record.",
+        "sourceUrl": "",
+        "sourceSha256": "49f44f3330ad2a14ae7e3edfc66f682f750396555df12f99b54890cf54a2314e"
+      },
+      "specifications": [
+        {
+          "label": "Source project size",
+          "value": "26 × 17 × 15 mm, user-given; fixed occupied box, not manufacturer dimensional data."
+        },
+        {
+          "label": "Supplier identity conflict",
+          "value": "Current source label and registry say JHE42B; stale native PartNumber says JHE20B. The separate recovery-buzzer JHE20B definition remains unchanged."
+        },
+        {
+          "label": "Standard model preserved",
+          "value": "jhe42b-finder:jhe42b retains its standard product identity and nominal 23 × 17 × 17 mm web-page basis. The official size photograph's 25 mm length conflict is recorded separately."
+        }
+      ]
+    }
+  }
+]

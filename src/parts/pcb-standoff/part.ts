@@ -14,8 +14,8 @@ const part: PartDefinition = {
   subgroup: 'SPACERS & STANDOFFS',
   icon: 'bolt',
   description:
-    'Supplier-qualified round and hex PCB spacers and female/female, male/female or male/male standoffs.',
-  complexity: 'Fixed supplier SKU',
+    'Source-qualified round and hex PCB spacers and female/female, male/female or male/male standoffs, with limited user-measured references labeled separately.',
+  complexity: 'Fixed source model',
   keywords: [
     'PCB',
     'spacer',

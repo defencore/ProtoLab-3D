@@ -1,0 +1,44 @@
+[
+  {
+    "id": "speedybee-f405-wing-mini-usb",
+    "name": "SpeedyBee F405 WING MINI USB / Wireless Extender",
+    "description": "Current-project 24.5 × 21.5 × 7 mm installation reference; 16 mm mounting pitch.",
+    "parameters": { "model": "speedybee-f405-wing-mini-usb" },
+    "catalog": {
+      "designation": "SpeedyBee F405 WING MINI USB / Wireless Extender",
+      "manufacturer": "SpeedyBee",
+      "sourceName": "Supplied current FreeCAD project; manufacturer manual establishes accessory identity",
+      "sourceUrl": "https://www.speedybee.com/f405-wing-mini-download/",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "sourceUrl": "https://www.speedybee.com/f405-wing-mini-download/",
+        "summary": "Seven analytic visualization solids transferred from the supplied current project, preserving the user-confirmed 24.5 × 21.5 × 7 mm envelope and 16 mm mounting pitch.",
+        "limitations": "Manufacturer CAD is not available in this source. PCB thickness, bore diameter, 2.8 mm mounting edge offset, connector and component profiles are source fitting assumptions. The complete local source BREP and source hashes are retained in lib/source-evidence.json. Flexible cable, mounting screws/nuts and host platform are excluded. Confirm supplied-kit scope before procurement."
+      },
+      "attributes": {
+        "manufacturer": "SpeedyBee",
+        "width": 24.5,
+        "length": 21.5,
+        "height": 7,
+        "mountPitch": 16
+      },
+      "attributeConditions": {
+        "width": "User-confirmed full envelope in the supplied project; not a manufacturer dimension drawing.",
+        "length": "User-confirmed full envelope in the supplied project; not a manufacturer dimension drawing.",
+        "height": "Includes the modeled 1.5 mm underside SMD projection; PCB underside is local Z=0.",
+        "mountPitch": "Source records two M2.5 mounting positions 16 mm apart; edge offset and 2.7 mm bore remain assumptions."
+      },
+      "specifications": [
+        {
+          "label": "Local datum",
+          "value": "PCB center in XY; PCB underside Z=0. Overall bounds Z=-1.5 to +5.5 mm."
+        },
+        {
+          "label": "Source scope",
+          "value": "Current supplied FreeCAD project, component 326. This installation reference is distinct from the flight-controller stack and does not establish a separate supplier order code."
+        }
+      ]
+    }
+  }
+]

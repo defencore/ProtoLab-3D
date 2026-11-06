@@ -1,0 +1,12 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "Source-authored recovery electronics mounting detail; lower locating platform or separate flat upper retaining disc.",
+  "processes": ["printing", "cutting", "drilling"],
+  "releaseRequirements": [
+    "Assign the actual insulating material, manufacturing route, tolerances and drawing approval for the selected detail.",
+    "Verify delivered GPS, JHE42B and USB extender outlines, contact lands, connectors and cable access before fabrication.",
+    "Confirm M2.5 hardware, screw engagement, nut access and the actual supporting post arrangement.",
+    "Qualify handling, vibration, creep and the separate GPS compliant retainers; valid geometry does not establish flight readiness."
+  ]
+}

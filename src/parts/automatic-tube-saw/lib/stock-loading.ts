@@ -148,7 +148,7 @@ export function loadingPieces(p: Parameters, state: string) {
     ['Old tail clear', admissionX + Number(p.stockGap)],
   ] as const) {
     for (const sign of [-1, 1]) {
-      for (const q of measurementPieces({ model: 'e3z-t81' }))
+      for (const q of measurementPieces({ model: sign < 0 ? 'e3z-t81-l' : 'e3z-t81-d' }))
         c.add(
           `${name} beam · ${q.label}`,
           pose(q.shape, [x, sign * 140, s.center - 15.5], [0, 0, sign < 0 ? 0 : 180]),

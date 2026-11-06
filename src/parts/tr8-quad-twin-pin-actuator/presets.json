@@ -1,0 +1,106 @@
+[
+  {
+    "id": "twin64-361-12-prom",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 4 outputs · Ø64 laser steel twin-pin · Prom SMB · ±20°",
+    "description": "One-piece twin-pin nuts and solid cranks; slotted laser guides with inner bearings. Stock SMB bearings from Prom.ua; no journal adapters.",
+    "parameters": {
+      "motorModel": "361-12",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "bearingKit": "prom-smb"
+    }
+  },
+  {
+    "id": "twin64-107-12-prom",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 4 outputs · Ø64 laser steel twin-pin · Prom SMB · ±20°",
+    "description": "One-piece twin-pin nuts and solid cranks; slotted laser guides with inner bearings. Stock SMB bearings from Prom.ua; no journal adapters.",
+    "parameters": {
+      "motorModel": "107-12",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "bearingKit": "prom-smb"
+    }
+  },
+  {
+    "id": "twin64-361-24-prom",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 4 outputs · Ø64 laser steel twin-pin · Prom SMB · ±20°",
+    "description": "One-piece twin-pin nuts and solid cranks; slotted laser guides with inner bearings. Stock SMB bearings from Prom.ua; no journal adapters.",
+    "parameters": {
+      "motorModel": "361-24",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "bearingKit": "prom-smb"
+    }
+  },
+  {
+    "id": "twin64-107-24-prom",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 4 outputs · Ø64 laser steel twin-pin · Prom SMB · ±20°",
+    "description": "One-piece twin-pin nuts and solid cranks; slotted laser guides with inner bearings. Stock SMB bearings from Prom.ua; no journal adapters.",
+    "parameters": {
+      "motorModel": "107-24",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "bearingKit": "prom-smb"
+    }
+  },
+  {
+    "id": "twin64-361-12",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 361:1 / 12 V · 4 outputs · Ø64 laser steel twin-pin · reference bearings · ±20°",
+    "description": "One-piece twin-pin nuts and solid cranks; slotted laser guides with inner bearings.",
+    "parameters": {
+      "motorModel": "361-12",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "bearingKit": "reference"
+    }
+  },
+  {
+    "id": "twin64-107-12",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 107:1 / 12 V · 4 outputs · Ø64 laser steel twin-pin · reference bearings · ±20°",
+    "description": "One-piece twin-pin nuts and solid cranks; slotted laser guides with inner bearings.",
+    "parameters": {
+      "motorModel": "107-12",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "bearingKit": "reference"
+    }
+  },
+  {
+    "id": "twin64-361-24",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 361:1 / 24 V · 4 outputs · Ø64 laser steel twin-pin · reference bearings · ±20°",
+    "description": "One-piece twin-pin nuts and solid cranks; slotted laser guides with inner bearings.",
+    "parameters": {
+      "motorModel": "361-24",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "bearingKit": "reference"
+    }
+  },
+  {
+    "id": "twin64-107-24",
+    "name": "TR8×8(P2) · GMP16T-TEC1636 107:1 / 24 V · 4 outputs · Ø64 laser steel twin-pin · reference bearings · ±20°",
+    "description": "One-piece twin-pin nuts and solid cranks; slotted laser guides with inner bearings.",
+    "parameters": {
+      "motorModel": "107-24",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0,
+      "bearingKit": "reference"
+    }
+  }
+]

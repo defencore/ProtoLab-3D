@@ -1,7 +1,7 @@
 [
   {
     "id": "loop-r3",
-    "name": "Loop / inside R3 / wire1",
+    "name": "Loop · inside R3 mm · Ø1 mm wire",
     "description": "Simple loop and U-bend tooling with replaceable metal mandrels and a drilled mounting plate. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "form": "loop",
@@ -15,7 +15,7 @@
   },
   {
     "id": "loop-r6",
-    "name": "Loop / inside R6 / wire2",
+    "name": "Loop · inside R6 mm · Ø2 mm wire",
     "description": "Simple loop and U-bend tooling with replaceable metal mandrels and a drilled mounting plate. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "form": "loop",
@@ -29,7 +29,7 @@
   },
   {
     "id": "loop-r10",
-    "name": "Loop / inside R10 / wire3",
+    "name": "Loop · inside R10 mm · Ø3 mm wire",
     "description": "Simple loop and U-bend tooling with replaceable metal mandrels and a drilled mounting plate. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "form": "loop",
@@ -43,7 +43,7 @@
   },
   {
     "id": "u24",
-    "name": "U bend / width24 / R4",
+    "name": "U bend · 24 mm inside width · inside R4 mm · Ø2 mm wire",
     "description": "Simple loop and U-bend tooling with replaceable metal mandrels and a drilled mounting plate. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "form": "u",
@@ -57,7 +57,7 @@
   },
   {
     "id": "u40",
-    "name": "U bend / width40 / R6",
+    "name": "U bend · 40 mm inside width · inside R6 mm · Ø2 mm wire",
     "description": "Simple loop and U-bend tooling with replaceable metal mandrels and a drilled mounting plate. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "form": "u",
@@ -71,7 +71,7 @@
   },
   {
     "id": "u64",
-    "name": "U bend / width64 / R10",
+    "name": "U bend · 64 mm inside width · inside R10 mm · Ø2 mm wire",
     "description": "Simple loop and U-bend tooling with replaceable metal mandrels and a drilled mounting plate. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "form": "u",

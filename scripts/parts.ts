@@ -1,21 +1,14 @@
 import path from 'node:path';
-import { promises as fs } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import {
-  discoverPackages,
-  inspectPackage,
-  registrySource,
-  syncRegistry,
-} from './part-modules/library';
+import { syncRegistry } from './part-modules/library';
 import { createPackage, exportPackage, importPackage } from './part-modules/operations';
 import { checkPackageDefinitions } from './part-modules/check';
-import { PART_ID_PATTERN } from '../src/core/part-modules';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const [command, ...args] = process.argv.slice(2);
 const usage = `Part package tools:
   npm run parts:sync
-  npm run parts:check -- [part-id]
+  npm run parts:check -- [part-id ...]
   npm run parts:create -- part-id [--name "Display name"]
   npm run parts:export -- part-id /path/to/new-handoff
   npm run parts:import -- /path/to/handoff [--replace]`;
@@ -24,18 +17,8 @@ try {
   if (command === 'sync' && !args.length) {
     const packages = await syncRegistry(root);
     console.log(`Registered ${packages.length} independent part packages.`);
-  } else if (command === 'check' && args.length <= 1) {
-    if (args[0] && !PART_ID_PATTERN.test(args[0])) throw new Error('Invalid part ID.');
-    const packages = args[0]
-      ? [await inspectPackage(path.join(root, 'src/parts', args[0]), root)]
-      : await discoverPackages(root);
-    if (
-      !args.length &&
-      (await fs.readFile(path.join(root, 'src/parts/index.ts'), 'utf8')) !==
-        registrySource(packages)
-    )
-      throw new Error('Part registry is stale. Run npm run parts:sync.');
-    const result = await checkPackageDefinitions(packages);
+  } else if (command === 'check') {
+    const result = await checkPackageDefinitions(root, args.length ? args : undefined);
     console.log(
       `Validated ${result.parts} part package${result.parts === 1 ? '' : 's'} and ${result.presets} presets: package boundaries, IDs, API, configurator and default/preset parameters.`,
     );

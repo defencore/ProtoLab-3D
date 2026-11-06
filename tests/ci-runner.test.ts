@@ -55,6 +55,8 @@ test('empty selection skips the runner and emits a safe disabled matrix', async 
   const result = await execute(process.execPath, [runner, 'run', '--plan', planPath, '--shard', '1', '--shards', '1']);
   assert.match(result.stdout, /No affected test files/);
   assert.doesNotMatch(result.stdout, /TAP version/);
+  const packages = await execute(process.execPath, [runner, 'packages', '--plan', planPath]);
+  assert.equal(packages.stdout, 'No changed part packages to validate.\n');
   await execute(process.execPath, [runner, 'matrix', '--plan', planPath], {
     env: { ...process.env, GITHUB_OUTPUT: output, GITHUB_STEP_SUMMARY: '' },
   });

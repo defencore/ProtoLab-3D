@@ -2,18 +2,43 @@ import { Group, Mesh, MeshStandardMaterial } from 'three';
 import type { AssemblyComponent } from '../../../core/product-types';
 import { componentGeometry } from '../../../core/assembly/detail-instances';
 import { recoveryDetailComponent } from '../../../core/recovery-component-recipes';
-import { supplierUnit } from '../../../core/supplier-components';
+import { supplierPlacement, supplierUnit } from '../../../core/supplier-components';
 import type { Shape } from '../../../core/assembly/recovery/shapes';
 import detail from '../../recovery-detail/part';
 import purchased from '../../purchased-recovery-component/part';
-import { servoCadGeometry } from '../../bus-servo/part';
+import servo, { servoCadGeometry } from '../../bus-servo/part';
 import controller from '../../bus-servo-driver/part';
+import flightController from '../../flight-controller/part';
+import { component as recoveryShapeComponent } from '../../../core/assembly/recovery/shapes';
+import { recoveryDetailPython } from '../../../core/assembly/recovery/python';
 import { fastenerCatalog } from './fastener-catalog';
 import type { Piece } from './assembly';
+
+const libraries = [detail, purchased, servo, controller, flightController];
+
+export function recoveryPieceDefinition(component: AssemblyComponent) {
+  const definition = libraries.find((part) => part.id === component.libraryId);
+  if (!definition)
+    throw new Error('Unsupported recovery component library: ' + component.libraryId);
+  return definition;
+}
 
 export function configuredRecoveryPiece(piece: Piece, id: string): AssemblyComponent {
   const catalog = fastenerCatalog(piece.shape);
   const supplier = supplierUnit(piece.shape);
+  if (supplier?.libraryId && supplier.parameters && supplier.state)
+    return {
+      id,
+      name: supplier.name,
+      libraryId: supplier.libraryId,
+      parameters: structuredClone(supplier.parameters),
+      state: supplier.state,
+      ...(supplier.presetId ? { presetId: supplier.presetId } : {}),
+      supply: 'purchased',
+      quantity: 1,
+      placement: supplier.placement ?? supplierPlacement(piece.shape, supplier),
+      ...(supplier.procurement ? { procurement: supplier.procurement } : {}),
+    };
   const buy =
     !!supplier ||
     !!piece.metadata?.SupplierUnitId ||
@@ -53,6 +78,9 @@ function supplierGeometry(shape: Shape): Group | undefined {
 
 /** Supplier internals are rendered by the owning product library; fabricated pieces use local recipes. */
 export function recoveryPieceGeometry(piece: Piece): Group {
+  // The supplier owns the shared recipe; each authored visual is only one kit member.
+  if (supplierUnit(piece.shape)?.libraryId === flightController.id)
+    return recoveryShapeComponent(piece.shape, piece.label, piece.color);
   const supplied = supplierGeometry(piece.shape);
   if (supplied) {
     supplied.name = piece.label;
@@ -72,28 +100,24 @@ export function recoveryPieceGeometry(piece: Piece): Group {
     });
     return supplied;
   }
-  const configured = componentGeometry(
-    [detail, purchased],
-    [
-      {
-        component: configuredRecoveryPiece(piece, 'component'),
-        label: piece.label,
-        color: piece.color,
-      },
-    ],
-  );
+  const configured = componentGeometry(libraries, [
+    {
+      component: configuredRecoveryPiece(piece, 'component'),
+      label: piece.label,
+      color: piece.color,
+    },
+  ]);
   configured.name = piece.label;
   return configured;
 }
 
 export function recoveryPiecePython(piece: Piece): string | undefined {
+  if (supplierUnit(piece.shape)?.libraryId === flightController.id)
+    return recoveryDetailPython(piece.shape);
   if (supplierGeometryKind(piece.shape)) return undefined;
   const configured = configuredRecoveryPiece(piece, 'component');
   return [
-    (configured.libraryId === detail.id ? detail : purchased).python(
-      configured.parameters,
-      configured.state,
-    ),
+    recoveryPieceDefinition(configured).python(configured.parameters, configured.state),
     ...configured.placement.rotation.flatMap((angle, index) =>
       angle
         ? [

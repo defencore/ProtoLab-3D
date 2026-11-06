@@ -1,0 +1,58 @@
+[
+  {
+    "id": "conical-54",
+    "name": "Conical nose D54 x 150 mm · prototype",
+    "description": "Authored hollow conical example with a D50.5 shoulder; no supplier fit is established.",
+    "parameters": {
+      "profile": "conical",
+      "baseDiameter": 54,
+      "length": 150,
+      "solid": false,
+      "wall": 1.5,
+      "shoulderDiameter": 50.5,
+      "shoulderLength": 35
+    }
+  },
+  {
+    "id": "elliptical-75",
+    "name": "Elliptical nose D75 x 150 mm · prototype",
+    "description": "Authored hollow elliptical example with a D70.5 shoulder; sampled meridional profile.",
+    "parameters": {
+      "profile": "elliptical",
+      "baseDiameter": 75,
+      "length": 150,
+      "solid": false,
+      "wall": 2,
+      "shoulderDiameter": 70.5,
+      "shoulderLength": 45
+    }
+  },
+  {
+    "id": "ogive-100",
+    "name": "Tangent-ogive nose D100 x 300 mm · prototype",
+    "description": "Authored hollow tangent-ogive example with a D94.5 shoulder; sampled meridional profile.",
+    "parameters": {
+      "profile": "tangent-ogive",
+      "baseDiameter": 100,
+      "length": 300,
+      "solid": false,
+      "wall": 2.5,
+      "shoulderDiameter": 94.5,
+      "shoulderLength": 60
+    }
+  },
+  {
+    "id": "solid-conical-40",
+    "name": "Filled conical nose D40 x 100 mm · prototype",
+    "description": "Authored filled turning blank with no shoulder; no material density or flight properties are assigned.",
+    "parameters": {
+      "profile": "conical",
+      "baseDiameter": 40,
+      "length": 100,
+      "solid": true,
+      "wall": 1.5,
+      "shoulderDiameter": 36,
+      "shoulderLength": 0
+    }
+  }
+]

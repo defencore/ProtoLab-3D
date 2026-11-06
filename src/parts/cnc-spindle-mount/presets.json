@@ -1,7 +1,7 @@
 [
   {
     "id": "back-65",
-    "name": "65 mm / Rear block",
+    "name": "Ø65 mm · Rear block",
     "description": "Own machined aluminium clamp detail; supplier geometry and fit are not implied.",
     "parameters": {
       "component": "back",
@@ -18,7 +18,7 @@
   },
   {
     "id": "cap-65",
-    "name": "65 mm / Front cap",
+    "name": "Ø65 mm · Front cap",
     "description": "Own machined aluminium clamp detail; supplier geometry and fit are not implied.",
     "parameters": {
       "component": "cap",
@@ -35,7 +35,7 @@
   },
   {
     "id": "back-80",
-    "name": "80 mm / Rear block",
+    "name": "Ø80 mm · Rear block",
     "description": "Own machined aluminium clamp detail; supplier geometry and fit are not implied.",
     "parameters": {
       "component": "back",
@@ -52,7 +52,7 @@
   },
   {
     "id": "cap-80",
-    "name": "80 mm / Front cap",
+    "name": "Ø80 mm · Front cap",
     "description": "Own machined aluminium clamp detail; supplier geometry and fit are not implied.",
     "parameters": {
       "component": "cap",
@@ -69,7 +69,7 @@
   },
   {
     "id": "back-100",
-    "name": "100 mm / Rear block",
+    "name": "Ø100 mm · Rear block",
     "description": "Own machined aluminium clamp detail; supplier geometry and fit are not implied.",
     "parameters": {
       "component": "back",
@@ -86,7 +86,7 @@
   },
   {
     "id": "cap-100",
-    "name": "100 mm / Front cap",
+    "name": "Ø100 mm · Front cap",
     "description": "Own machined aluminium clamp detail; supplier geometry and fit are not implied.",
     "parameters": {
       "component": "cap",

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "pcie-m2-d",
+    "name": "Waveshare PCIe TO M.2 Board (D) · SKU 27709",
+    "description": "Pi 5 top adapter for 2230/2242/2260/2280 NVMe SSDs. SSD and ribbon cable are separate items; component heights are reference envelopes.",
+    "parameters": { "model": "pcie-m2-d" },
+    "catalog": {
+      "designation": "PCIe TO M.2 Board (D)",
+      "manufacturer": "Waveshare",
+      "sourceName": "Waveshare product page and dimension drawing",
+      "sourceUrl": "https://www.waveshare.com/product/modules/pcie-to-m.2-board-d.htm",
+      "productCodes": ["27709"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "sourceUrl": "https://www.waveshare.com/img/devkit/accBoard/PCIe-TO-M.2-Board-D/PCIe-TO-M.2-Board-D-details-size.jpg",
+        "summary": "PCB 85 × 56.5 mm maximum outline, 58 × 49 mm board mounting pitch and 18.3 mm SSD axis offset from the upper edge; 3 mm outboard SSD stud projection.",
+        "limitations": "Board outline details, fan opening, slot, mounting datum offsets, D2.7 mounting bores, component locations, PCB thickness and 8 mm overall height are reconstructed or assumed. No original manufacturer CAD or guaranteed plug geometry."
+      },
+      "attributes": { "boardLength": 85, "boardWidth": 56.5 },
+      "specifications": [
+        {
+          "label": "Supported drive",
+          "value": "NVMe M-key 2230, 2242, 2260 or 2280; drive not included"
+        },
+        { "label": "Host", "value": "Raspberry Pi 5 via 16-pin PCIe ribbon" },
+        {
+          "label": "Mounting pitch",
+          "value": "58 × 49 mm; confirm exact offsets and actual bore diameter"
+        }
+      ]
+    }
+  }
+]

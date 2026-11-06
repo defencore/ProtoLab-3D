@@ -1,0 +1,54 @@
+[
+  {
+    "id": "surpass-2845-lightened",
+    "name": "TR8×8(P2) · Surpass Hobby KK2845 3100KV · 4 outputs · Ø70 laser steel twin-pin · lightened discs · ±20°",
+    "description": "Larger Ø13.5/Ø10 disc windows with protected mounting lands. Four Ø28 sensorless motors, custom3.175×4 couplings, twin-pin TR8 linkages, Prom SMB bearings and30 mm stock columns.",
+    "parameters": {
+      "screwModel": "tr8x8-p2",
+      "discPattern": "lightened",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0
+    }
+  },
+  {
+    "id": "surpass-2845-solid",
+    "name": "TR8×8(P2) · Surpass Hobby KK2845 3100KV · 4 outputs · Ø70 laser steel twin-pin · solid discs · ±20°",
+    "description": "Same four-drive installation with solid disc webs; central Ø5 passage retained.",
+    "parameters": {
+      "screwModel": "tr8x8-p2",
+      "discPattern": "solid",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0
+    }
+  },
+  {
+    "id": "surpass-2845-tr8x2-lightened",
+    "name": "TR8×2(P2) · Surpass Hobby KK2845 3100KV · 4 outputs · Ø70 laser steel twin-pin · lightened discs · ±20°",
+    "description": "Single-start TR8×2(P2), 2 mm/revolution, with matching one-piece twin-trunnion nuts. Same Ø70 frame and ±20° output stroke; four times the motor rotation and ideal torque multiplication of TR8×8. Larger Ø13.5/Ø10 disc windows with protected mounting lands. Four Ø28 sensorless motors, custom3.175×4 couplings, twin-pin TR8 linkages, Prom SMB bearings and30 mm stock columns.",
+    "parameters": {
+      "screwModel": "tr8x2-p2",
+      "discPattern": "lightened",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0
+    }
+  },
+  {
+    "id": "surpass-2845-tr8x2-solid",
+    "name": "TR8×2(P2) · Surpass Hobby KK2845 3100KV · 4 outputs · Ø70 laser steel twin-pin · solid discs · ±20°",
+    "description": "Single-start TR8×2(P2), 2 mm/revolution, with matching one-piece twin-trunnion nuts. Same Ø70 frame and ±20° output stroke; four times the motor rotation and ideal torque multiplication of TR8×8. Same four-drive installation with solid disc webs; central Ø5 passage retained.",
+    "parameters": {
+      "screwModel": "tr8x2-p2",
+      "discPattern": "solid",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0
+    }
+  }
+]

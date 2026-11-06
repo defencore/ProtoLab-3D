@@ -14,8 +14,19 @@ const part: PartDefinition = {
   subgroup: 'RADIO MODULES',
   icon: 'circuit',
   complexity: 'Fixed supplier models',
-  description: 'SX1278 and SX1262 radio modules from Ai-Thinker, Waveshare and Ebyte.',
-  keywords: ['Semtech', 'LoRa', 'SX1262', 'SX1278', 'radio module'],
+  description: 'SX1278 and SX1262 radio modules and Heltec ESP32-S3 LoRa development boards.',
+  keywords: [
+    'Semtech',
+    'LoRa',
+    'SX1262',
+    'SX1278',
+    'Heltec',
+    'WiFi LoRa 32',
+    'V3.2',
+    'ESP32-S3',
+    'OLED',
+    'radio module',
+  ],
   parameters,
   defaults,
   presets: presets as unknown as Preset[],
@@ -51,7 +62,16 @@ const part: PartDefinition = {
     'PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout.',
   sources: [
     ...new Map(
-      models.map((m) => [m.source, { label: m.manufacturer + ' — ' + m.name, url: m.source }]),
+      models.flatMap(
+        (m) =>
+          [
+            [m.source, { label: m.manufacturer + ' — ' + m.name, url: m.source }],
+            ...m.references.map((url) => [
+              url,
+              { label: m.manufacturer + ' — supporting reference', url },
+            ]),
+          ] as [string, { label: string; url: string }][],
+      ),
     ).values(),
   ],
 };

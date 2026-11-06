@@ -1,3 +1,10 @@
+import {
+  roundedRectShape,
+  roundedRectPoints,
+  nativeProfilePython,
+  type NativeProfile,
+} from '../../analytic-geometry';
+import { analyticRevolvePython } from '../../hardware/analytic-profile';
 import { currentGeometryMode } from '../../geometry-mode';
 import { nativeThreadExpression } from '../../thread-native';
 import { metricThreadCallout, type ThreadCallout } from '../../thread-callouts';
@@ -19,15 +26,27 @@ import { num } from '../../geometry';
 import { shaftBoreOutline, type ShaftBore } from '../../hardware/shaft-bore';
 import { showThreads, type VisualThread } from '../../thread-visual';
 export type Vec = [number, number, number];
+export interface SmoothLoftSection {
+  segments: { kind: 'line' | 'arc' | 'spline'; points: Vec[] }[];
+}
 export type Shape =
   | { kind: 'shaft-bore'; profile: ShaftBore; length: number; z: number }
   | { kind: 'transform'; child: Shape; translation: Vec; rotation: Vec }
   | { kind: 'loft'; rings: Vec[][] }
   | {
+      kind: 'smooth-loft';
+      sections: SmoothLoftSection[];
+      /** Preview samples authored traces; native edges interpolate all source points. */
+      previewSamples?: number;
+    }
+  | {
       kind: 'curve-loft';
       segments: { kind: 'line' | 'arc' | 'spline'; points: [number, number][] }[];
       layers: { scale: number; angle: number; z: number }[];
       shaftBore?: ShaftBore;
+      /** Preview-only point budget; native analytic curves retain every source sample. */
+      previewSamples?: number;
+      previewBoreSegments?: number;
     }
   | {
       kind: 'helical-worm';
@@ -45,7 +64,13 @@ export type Shape =
       startZ: number;
     }
   | { kind: 'boundary'; points: Vec[]; faces: number[][]; nativeCuts?: Shape[] }
-  | { kind: 'revolve'; profile: [number, number][]; segments?: number; sweep?: number }
+  | {
+      kind: 'revolve';
+      native?: NativeProfile;
+      profile: [number, number][];
+      segments?: number;
+      sweep?: number;
+    }
   | {
       kind: 'plate';
       outline: [number, number][];
@@ -66,6 +91,8 @@ export type Shape =
   | {
       kind: 'cylinder';
       segments?: number;
+      /** Preview tessellation of a true native cylinder, independent of polygon stock. */
+      previewSegments?: number;
       radius: number;
       height: number;
       origin: Vec;
@@ -85,14 +112,16 @@ export type Shape =
     }
   | {
       kind: 'prism';
+      native?: NativeProfile;
       points: [number, number][];
       depth: number;
       origin: number;
       axis: 'y' | 'z';
     }
-  | { kind: 'union'; children: Shape[] }
-  | { kind: 'subtract'; children: Shape[] }
-  | { kind: 'intersect'; children: Shape[] };
+  // Native topology checkpoint; preserves the set geometry before later operations.
+  | { kind: 'union'; children: Shape[]; nativeRefine?: boolean; nativeBatch?: boolean }
+  | { kind: 'subtract'; children: Shape[]; nativeRefine?: boolean }
+  | { kind: 'intersect'; children: Shape[]; nativeRefine?: boolean };
 export const box = (size: Vec, origin: Vec): Shape => ({
   kind: 'box',
   size,
@@ -130,8 +159,180 @@ export const subtract = (...children: Shape[]): Shape => ({
   kind: 'subtract',
   children,
 });
+function loftSolid(rings: Vec[][], triangulateCaps = false, spatialCaps = false): Geom3 {
+  const points = rings.flat(),
+    stride = rings[0].length;
+  const faces: number[][] = [];
+  for (let j = 0; j < rings.length - 1; j++)
+    for (let i = 0; i < stride; i++) {
+      const a = j * stride + i,
+        b = j * stride + ((i + 1) % stride);
+      faces.push([a, b, b + stride], [a, b + stride, a + stride]);
+    }
+  for (const [ring, offset, reverse] of [
+    [rings[0], 0, true],
+    [rings.at(-1)!, points.length - stride, false],
+  ] as const) {
+    if (triangulateCaps) {
+      let outline = ring.map(([x, y]) => new Vector2(x, y));
+      if (spatialCaps) {
+        const origin = new Vector3(...ring[0]);
+        const u = new Vector3(...ring[1]).sub(origin).normalize();
+        const normal = ring
+          .reduce((sum, point, i) => {
+            const a = new Vector3(...point).sub(origin);
+            const b = new Vector3(...ring[(i + 1) % ring.length]).sub(origin);
+            return sum.add(a.cross(b));
+          }, new Vector3())
+          .normalize();
+        const v = new Vector3().crossVectors(normal, u);
+        outline = ring.map((point) => {
+          const delta = new Vector3(...point).sub(origin);
+          return new Vector2(delta.dot(u), delta.dot(v));
+        });
+      }
+      const area = outline.reduce((sum, p, i) => {
+        const next = outline[(i + 1) % outline.length];
+        return sum + p.x * next.y - next.x * p.y;
+      }, 0);
+      // JSCAD Boolean polygons must be convex. A multi-start worm's end
+      // profile is concave; passing it as one polygon creates cap vertices
+      // outside the stock cylinder when a journal is united at that plane.
+      for (const indices of ShapeUtils.triangulateShape(outline, [])) {
+        const [a, b, c] = indices.map((index) => outline[index]);
+        const cross = (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
+        const face = indices.map((index) => index + offset);
+        if (cross * area < 0 !== reverse) face.reverse();
+        faces.push(face);
+      }
+    } else {
+      const face = Array.from({ length: stride }, (_, i) => offset + i);
+      faces.push(reverse ? face.reverse() : face);
+    }
+  }
+  let volume = 0;
+  for (const f of faces)
+    for (let i = 1; i < f.length - 1; i++) {
+      const [a, b, c] = [f[0], f[i], f[i + 1]].map((k) => new Vector3(...points[k]));
+      volume += a.dot(b.cross(c));
+    }
+  return modeling.primitives.polyhedron({
+    points,
+    faces: volume < 0 ? faces.map((f) => f.reverse()) : faces,
+    orientation: 'outward',
+  });
+}
+
+function sampledTrace(points: Vec[], count: number): Vec[] {
+  if (points.length === count) return points;
+  const distances = [0];
+  for (let i = 1; i < points.length; i++)
+    distances.push(
+      distances[i - 1] + new Vector3(...points[i]).distanceTo(new Vector3(...points[i - 1])),
+    );
+  const total = distances.at(-1)!;
+  let segment = 1;
+  return Array.from({ length: count }, (_, i): Vec => {
+    const target = (total * i) / (count - 1);
+    while (segment < distances.length - 1 && distances[segment] < target) segment++;
+    const t = (target - distances[segment - 1]) / (distances[segment] - distances[segment - 1]);
+    return new Vector3(...points[segment - 1])
+      .lerp(new Vector3(...points[segment]), t)
+      .toArray() as Vec;
+  });
+}
+
+function sampledArc(points: Vec[], count: number): Vec[] {
+  const a = new Vector3(...points[0]),
+    b = new Vector3(...points[1]),
+    c = new Vector3(...points[2]);
+  const u = b.clone().sub(a),
+    v = c.clone().sub(a),
+    normal = u.clone().cross(v);
+  const center = a.clone().add(
+    v
+      .clone()
+      .cross(normal)
+      .multiplyScalar(u.lengthSq())
+      .add(normal.clone().cross(u).multiplyScalar(v.lengthSq()))
+      .multiplyScalar(1 / (2 * normal.lengthSq())),
+  );
+  const radial = a.clone().sub(center),
+    tangent = normal.clone().normalize().cross(radial);
+  const angle = (point: Vector3) => {
+    const delta = point.clone().sub(center);
+    const value = Math.atan2(delta.dot(tangent), delta.dot(radial));
+    return value < 0 ? value + 2 * Math.PI : value;
+  };
+  const sweep = angle(c);
+  return Array.from({ length: count }, (_, i): Vec => {
+    const t = (sweep * i) / (count - 1);
+    return center
+      .clone()
+      .addScaledVector(radial, Math.cos(t))
+      .addScaledVector(tangent, Math.sin(t))
+      .toArray() as Vec;
+  });
+}
+
+/** Tessellated approximation; OCC smooth interpolation between stations is native-only. */
+export function smoothLoftRings(s: Extract<Shape, { kind: 'smooth-loft' }>): Vec[][] {
+  const counts = s.sections[0].segments.map((segment, i) =>
+    segment.kind === 'line'
+      ? 2
+      : (s.previewSamples ??
+        Math.max(
+          segment.kind === 'arc' ? 33 : 3,
+          ...s.sections.map((section) => section.segments[i].points.length),
+        )),
+  );
+  return s.sections.map((section) =>
+    section.segments.flatMap((segment, i) => {
+      const points =
+        segment.kind === 'line'
+          ? segment.points
+          : segment.kind === 'arc'
+            ? sampledArc(segment.points, counts[i])
+            : sampledTrace(segment.points, counts[i]);
+      return points.slice(0, -1);
+    }),
+  );
+}
+
+/** Sample the same line/arc definitions used by the native ruled loft. */
+export function curveLoftRings(s: Extract<Shape, { kind: 'curve-loft' }>): Vec[][] {
+  return smoothLoftRings({
+    kind: 'smooth-loft',
+    previewSamples: s.previewSamples,
+    sections: s.layers.map((layer) => ({
+      segments: s.segments.map((segment) => {
+        const points =
+          segment.kind === 'arc'
+            ? [
+                segment.points[0],
+                segment.points[Math.floor(segment.points.length / 2)],
+                segment.points.at(-1)!,
+              ]
+            : segment.kind === 'line'
+              ? [segment.points[0], segment.points.at(-1)!]
+              : segment.points;
+        return {
+          kind: segment.kind,
+          points: points.map(([x, y]): Vec => [
+            layer.scale * (x * Math.cos(layer.angle) - y * Math.sin(layer.angle)),
+            layer.scale * (x * Math.sin(layer.angle) + y * Math.cos(layer.angle)),
+            layer.z,
+          ]),
+        };
+      }),
+    })),
+  });
+}
+
 function solid(s: Shape): Geom3 {
   switch (s.kind) {
+    case 'smooth-loft':
+      return loftSolid(smoothLoftRings(s), true, true);
     case 'shaft-bore':
       return solid({
         kind: 'prism',
@@ -141,18 +342,23 @@ function solid(s: Shape): Geom3 {
         axis: 'z',
       });
     case 'curve-loft': {
-      const points = s.segments.flatMap((segment) => segment.points.slice(0, -1));
-      const rings = s.layers.map((layer) =>
-        points.map(([x, y]): Vec => [
-          layer.scale * (x * Math.cos(layer.angle) - y * Math.sin(layer.angle)),
-          layer.scale * (x * Math.sin(layer.angle) + y * Math.cos(layer.angle)),
-          layer.z,
-        ]),
-      );
+      const rings = curveLoftRings(s);
       if (!s.shaftBore) return solid({ kind: 'loft', rings });
       // Build the complete annular loft directly. Extending a Boolean bore across
       // dense tooth flanks creates sliver edges that are absent in the design.
-      const bore = shaftBoreOutline(s.shaftBore);
+      const sourceBore = shaftBoreOutline(s.shaftBore);
+      const bore =
+        s.shaftBore.shape === 'round' &&
+        s.previewBoreSegments &&
+        s.previewBoreSegments < sourceBore.length
+          ? Array.from(
+              { length: s.previewBoreSegments },
+              (_, i) =>
+                sourceBore[
+                  Math.round((i * sourceBore.length) / s.previewBoreSegments!) % sourceBore.length
+                ],
+            )
+          : sourceBore;
       const vertices: Vec[] = [],
         faces: number[][] = [];
       const wall = (a: Vec[], b: Vec[], inward = false) => {
@@ -189,7 +395,7 @@ function solid(s: Shape): Geom3 {
       return solid({ kind: 'boundary', points: vertices, faces });
     }
     case 'helical-worm':
-      return solid({ kind: 'loft', rings: s.rings });
+      return loftSolid(s.rings, true);
     case 'sphere':
       return modeling.transforms.translate(
         s.origin,
@@ -221,30 +427,8 @@ function solid(s: Shape): Geom3 {
         faces: s.faces,
         orientation: 'outward',
       });
-    case 'loft': {
-      const points = s.rings.flat(),
-        stride = s.rings[0].length;
-      const faces: number[][] = [];
-      for (let j = 0; j < s.rings.length - 1; j++)
-        for (let i = 0; i < stride; i++) {
-          const a = j * stride + i,
-            b = j * stride + ((i + 1) % stride);
-          faces.push([a, b, b + stride], [a, b + stride, a + stride]);
-        }
-      faces.push(Array.from({ length: stride }, (_, i) => stride - 1 - i));
-      faces.push(Array.from({ length: stride }, (_, i) => points.length - stride + i));
-      let volume = 0;
-      for (const f of faces)
-        for (let i = 1; i < f.length - 1; i++) {
-          const [a, b, c] = [f[0], f[i], f[i + 1]].map((k) => new Vector3(...points[k]));
-          volume += a.dot(b.cross(c));
-        }
-      return modeling.primitives.polyhedron({
-        points,
-        faces: volume < 0 ? faces.map((f) => f.reverse()) : faces,
-        orientation: 'outward',
-      });
-    }
+    case 'loft':
+      return loftSolid(s.rings);
     case 'plate': {
       let section = modeling.primitives.polygon({ points: s.outline });
       if (s.holes.length)
@@ -271,7 +455,7 @@ function solid(s: Shape): Geom3 {
       let value = modeling.primitives.cylinder({
         radius: cylinderRadius(s),
         height: s.height,
-        segments: s.segments ?? 48,
+        segments: s.previewSegments ?? s.segments ?? 48,
       });
       if (s.axis === 'x') value = modeling.transforms.rotateY(Math.PI / 2, value);
       if (s.axis === 'y') value = modeling.transforms.rotateX(-Math.PI / 2, value);
@@ -313,7 +497,7 @@ function solid(s: Shape): Geom3 {
               ? modeling.primitives.polygon({ points: base.points })
               : modeling.primitives.circle({
                   radius: cylinderRadius(base),
-                  segments: base.segments ?? 48,
+                  segments: base.previewSegments ?? base.segments ?? 48,
                   center: [base.origin[0], base.origin[1]],
                 });
           const section = modeling.booleans.subtract(
@@ -322,7 +506,7 @@ function solid(s: Shape): Geom3 {
               if (h.kind !== 'cylinder') throw new Error('Expected a profile hole');
               return modeling.primitives.circle({
                 radius: cylinderRadius(h),
-                segments: h.segments ?? 48,
+                segments: h.previewSegments ?? h.segments ?? 48,
                 center: [h.origin[0], h.origin[1]],
               });
             }),
@@ -468,7 +652,20 @@ function profileWire(points: [number, number][], z: number): string {
 const cylinderRadius = (s: Extract<Shape, { kind: 'cylinder' }>) =>
   s.radius + (s.thread?.radialClearance ?? 0);
 export function pythonShape(s: Shape): string {
+  if ('native' in s && s.native) return nativeProfilePython(s.native);
   switch (s.kind) {
+    case 'smooth-loft': {
+      const sections = JSON.stringify(
+        s.sections.map((section) =>
+          section.segments.map((segment) => [
+            segment.kind,
+            segment.points.map((point) => point.map((value) => Number(num(value)))),
+          ]),
+        ),
+      );
+      const wires = `[Part.Wire([(Part.makeLine(pts[0],pts[-1]) if kind == "line" else Part.Arc(pts[0],pts[1],pts[2]).toShape() if kind == "arc" else (lambda curve: (curve.interpolate(pts),curve.toShape())[1])(Part.BSplineCurve())) for kind,coordinates in section for pts in [[App.Vector(*point) for point in coordinates]]]) for section in ${sections}]`;
+      return `Part.makeLoft(${wires},True,False,False,5)`;
+    }
     case 'shaft-bore': {
       const v = s.profile,
         r = v.radius,
@@ -563,7 +760,7 @@ export function pythonShape(s: Shape): string {
     case 'plate':
       return `${s.holes.reduce((value, hole) => `${value}.cut(Part.Face(${profileWire(hole, s.z)}))`, `Part.Face(${profileWire(s.outline, s.z)})`)}.extrude(App.Vector(0,0,${num(s.height)}))`;
     case 'revolve':
-      return `Part.Face(Part.makePolygon([${[...s.profile, s.profile[0]].map(([r, z]) => vector([r, 0, z])).join(',')}])).revolve(App.Vector(0,0,0),App.Vector(0,0,1),${num(s.sweep ?? 360)})`;
+      return analyticRevolvePython(s.profile, 0, s.sweep ?? 360);
     case 'box':
       return `Part.makeBox(${s.size.map(num).join(',')},${vector(s.origin)})`;
     case 'cylinder': {
@@ -595,28 +792,32 @@ export function pythonShape(s: Shape): string {
       );
       return `Part.Face(Part.makePolygon([${points.join(',')}])).extrude(${vector(s.axis === 'y' ? [0, s.depth, 0] : [0, 0, s.depth])})`;
     }
-    default:
-      return s.children
-        .slice(1)
-        .reduce(
-          (expr, child) =>
-            `${expr}.${s.kind === 'union' ? 'fuse' : s.kind === 'intersect' ? 'common' : 'cut'}(${pythonShape(child)})`,
-          pythonShape(s.children[0]),
+    default: {
+      const flattenBatch = (children: Shape[]): Shape[] =>
+        children.flatMap((child) =>
+          child.kind === 'union' && child.nativeBatch && !child.nativeRefine
+            ? flattenBatch(child.children)
+            : [child],
         );
+      const batch = s.kind === 'union' && s.nativeBatch ? flattenBatch(s.children) : undefined;
+      const expression =
+        batch && batch.length > 1
+          ? `${pythonShape(batch[0])}.multiFuse([${batch.slice(1).map(pythonShape).join(',')}])`
+          : s.children
+              .slice(1)
+              .reduce(
+                (expr, child) =>
+                  `${expr}.${s.kind === 'union' ? 'fuse' : s.kind === 'intersect' ? 'common' : 'cut'}(${pythonShape(child)})`,
+                pythonShape(s.children[0]),
+              );
+      return s.nativeRefine ? `(${expression}).removeSplitter()` : expression;
+    }
   }
 }
 
 export function roundedRect(w: number, h: number, r: number, z: number, depth: number): Shape {
-  const points: [number, number][] = [];
-  for (let corner = 0; corner < 4; corner++) {
-    const cx = (corner === 0 || corner === 3 ? 1 : -1) * (w / 2 - r);
-    const cy = (corner < 2 ? 1 : -1) * (h / 2 - r);
-    for (let i = 0; i <= 8; i++) {
-      const a = ((corner * 90 + (i * 90) / 8) * Math.PI) / 180;
-      points.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]);
-    }
-  }
-  return prism(points, depth, z);
+  const native = roundedRectShape(w, h, r, z, depth);
+  return { kind: 'prism', points: roundedRectPoints(native), depth, origin: z, axis: 'z', native };
 }
 export const ring = (r: number, inner: number, z: number, h: number, x = 0, y = 0): Shape =>
   subtract(cylinder(r, h, [x, y, z]), cylinder(inner, h + 2, [x, y, z - 1]));

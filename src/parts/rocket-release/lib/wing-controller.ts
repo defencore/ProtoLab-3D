@@ -1,8 +1,14 @@
 import { wingLayout } from './wing-layout';
+import {
+  wingMiniPieces,
+  wingMiniMounts,
+  wingMiniModel,
+  wingMiniDefaults,
+} from '../../flight-controller/lib/wing-mini';
+import { markSupplierUnit } from '../../../core/supplier-components';
 import type { Parameters } from '../../../core/types';
 import type { Piece } from './assembly';
 import {
-  box,
   circle,
   plate,
   cylinder,
@@ -11,7 +17,6 @@ import {
   transform,
   rotate,
   type Shape,
-  type Point,
 } from '../../../core/assembly/recovery/shapes';
 import { screw, flatScrew, matingHole } from './hardware';
 
@@ -28,22 +33,13 @@ export const controllerPlacement = (p: Parameters, shape: Shape) => {
     w.controllerZ,
   ]);
 };
-export const controllerMounts = (p: Parameters): Point[] =>
-  [-1, 1].flatMap((x) =>
-    [-1, 1].map((y) => [(x * +p.wingHolePitchX) / 2, (y * +p.wingHolePitchY) / 2] as Point),
-  );
+export const controllerMounts = wingMiniMounts;
 export const controllerBottomScrew = (p: Parameters, x: number, y: number): Shape =>
   transform(rotate(p.wingBattery === '2x18650' ? flatScrew(4) : screw(2, 6), 180, 'x'), 0, [
     x,
     y,
     p.wingBattery === '2x18650' ? -2 : 3,
   ]);
-const rect = (x: number, y: number, w: number, h: number): Point[] => [
-  [x, y],
-  [x + w, y],
-  [x + w, y + h],
-  [x, y + h],
-];
 const welded = (solid: Shape): Shape => ({
   kind: 'fusedLayers',
   children: [solid],
@@ -52,6 +48,27 @@ const welded = (solid: Shape): Shape => ({
 });
 export function controllerPieces(p: Parameters): Piece[] {
   const out: Piece[] = [];
+  const kit = wingMiniPieces(p);
+  markSupplierUnit(
+    kit.map((piece) => piece.shape),
+    {
+      name: 'SpeedyBee F405 WING-MINI board stack and supplied mounting hardware',
+      libraryId: 'flight-controller',
+      presetId: wingMiniModel,
+      parameters: {
+        model: wingMiniModel,
+        ...wingMiniDefaults,
+        wingHolePitchX: p.wingHolePitchX ?? wingMiniDefaults.wingHolePitchX,
+        wingHolePitchY: p.wingHolePitchY ?? wingMiniDefaults.wingHolePitchY,
+      },
+      state: 'assembled',
+      procurement: {
+        designation: 'SpeedyBee F405 WING MINI',
+        manufacturer: 'SpeedyBee',
+        source: 'https://www.speedybee.com/f405-wing-mini-download/',
+      },
+    },
+  );
   const supplierUnit = {
     SupplierUnitId: 'speedybee-f405-wing-mini-kit',
     SupplierUnitName: 'SpeedyBee F405 WING-MINI board stack and supplied mounting hardware',
@@ -60,80 +77,16 @@ export function controllerPieces(p: Parameters): Piece[] {
     SupplierScope:
       'One complete supplier kit; individual board components and pins are installation references. Verify the supplied mounting hardware and actual interfaces.',
   };
-  let supplierElectronics = true;
+  out.push(
+    ...kit.map((piece) => ({
+      ...piece,
+      shape: controllerPlacement(p, piece.shape),
+      metadata: supplierUnit,
+    })),
+  );
   const add = (label: string, shape: Shape, color = 0x293c32, metadata?: Record<string, string>) =>
-    out.push({
-      label,
-      shape: controllerPlacement(p, shape),
-      color,
-      metadata: { ...(supplierElectronics ? supplierUnit : {}), ...metadata },
-    });
-  const mounts = controllerMounts(p),
-    holes = mounts.map(([x, y]) => circle(1.1, x, y));
-  add(
-    'BUY SpeedyBee F405 WING-MINI · shield C · standard orientation · FR4 t1 · outline fit reference',
-    plate(rect(-18.5, -13, 37, 26), holes, 0, 1),
-  );
-  add(
-    'BUY SpeedyBee F405 WING-MINI · FC board B · 37×26 · FR4 t1 · pitch fit reference',
-    plate(rect(-18.5, -13, 37, 26), holes, 4, 1),
-  );
-  add(
-    'BUY SpeedyBee F405 WING-MINI · PDB board A · FR4 t1 · outline fit reference',
-    plate(rect(-10.7, -13, 24.7, 26), holes, 11.5, 1),
-  );
-  for (const [i, y] of [-4, 2].entries())
-    add(
-      `BUY WING MINI ${i === 0 ? 'BAT+' : 'GND'} solder pad · copper · placement reference`,
-      box([4, 4, 0.05], [9.5, y, 12.5]),
-      0xb99450,
-    );
-  // Separate physical components retain open air between the boards, access to
-  // the side plugs, and an unobstructed barometer. No solid installation box.
-  add(
-    'BUY WING MINI STM32F405 package · placement reference',
-    box([7, 7, 1.2], [-3.5, -3.5, 5]),
-    0x15171b,
-  );
-  add(
-    'BUY WING MINI MicroSD socket · placement reference',
-    box([5, 11, 1.5], [10, -5.5, 5]),
-    0xa6adb2,
-  );
-  add(
-    'BUY WING MINI barometer · placement reference · keep vent clear',
-    box([2.5, 2.5, 0.8], [1, 5.5, 3.2]),
-    0xb0b5ba,
-  );
-  for (const [i, y] of [-8, 0, 8].entries())
-    add(
-      `BUY WING MINI SH1.0 connector ${i + 1} · cable-side access · envelope reference`,
-      subtract(box([4, 6, 2.3], [13, y - 3, 1.7]), box([2.8, 4.8, 1.3], [14.3, y - 2.4, 2.2])),
-      0xeee8d3,
-    );
-  add(
-    'BUY WING MINI PDB interconnect · pin housing envelope',
-    box([8, 3, 6.5], [-4, -8, 5]),
-    0x25272b,
-  );
-  add(
-    'BUY WING MINI servo BEC inductor · placement reference',
-    box([5, 5, 3], [-2, -2.5, 8.5]),
-    0x4d4f55,
-  );
-  add(
-    'BUY WING MINI PWM1–9 and SBUS header · 2.54 mm pitch · housing',
-    box([7.62, 25.4, 2.5], [-18.5, -12.7, 5]),
-    0x24262a,
-  );
-  for (let col = 0; col < 3; col++)
-    for (let row = 0; row < 10; row++)
-      add(
-        `BUY WING MINI header pin ${col + 1}.${row + 1} · brass 0.64 square · 2.54 pitch`,
-        box([0.64, 0.64, 6], [-17.55 + col * 2.54, -11.75 + row * 2.54, 7.5]),
-        0xb99450,
-      );
-  supplierElectronics = false;
+    out.push({ label, shape: controllerPlacement(p, shape), color, metadata });
+  const mounts = controllerMounts(p);
   mounts.forEach(([x, y], i) => {
     const isolated = p.wingBattery === '2x18650';
     const bottom = controllerBottomScrew(p, x, y);
@@ -175,69 +128,11 @@ export function controllerPieces(p: Parameters): Piece[] {
         Isolation: 'Separate metal ends; 1.1 mm elastomer between embedded ends; no through-bolt',
       };
     }
-    const topScrew = screw(2, 3.5, { head: 'pan', headDiameter: 3.5, headHeight: 1.3 });
-    if (topScrew.kind !== 'fastener') throw new Error('Expected supplied screw');
-    topScrew.parameters = {
-      ...topScrew.parameters,
-      drive: 'cross',
-      driveWidth: 2,
-      driveThickness: 0.5,
-      driveDepth: 0.7,
-    };
-    const top = transform(topScrew, 0, [x, y, 9]);
-    const male: Shape = {
-      kind: 'thread',
-      diameter: 2,
-      pitch: 0.4,
-      length: 3,
-      clearance: 0,
-      internal: false,
-    };
-    add(
-      `BUY WING MINI M2×3+3 copper male-female standoff ${i + 1} · Ø3.2 fit reference`,
-      welded(
-        subtract(
-          union(cylinder(1.6, 3, [x, y, 1]), transform(male, 0, [x, y, 4])),
-          isolated
-            ? transform(
-                {
-                  kind: 'thread',
-                  diameter: 2,
-                  pitch: 0.4,
-                  length: 3,
-                  clearance: 0.04,
-                  internal: true,
-                },
-                0,
-                [x, y, 0],
-              )
-            : matingHole(bottom),
-        ),
-      ),
-      0xb99450,
-      supplierUnit,
-    );
-    add(
-      `BUY WING MINI M2×6.5 copper female-female standoff ${i + 1} · Ø3.2 fit reference`,
-      subtract(
-        cylinder(1.6, 6.5, [x, y, 5]),
-        transform({ ...male, internal: true, clearance: 0.04 }, 0, [x, y, 4]),
-        matingHole(top),
-      ),
-      0xb99450,
-      supplierUnit,
-    );
     add(
       `WING MINI frame screw ${i + 1} · M2×0.4×${isolated ? 4 : 6}${isolated ? ' · countersunk 90° · damper lower end only' : ''}`,
       bottom,
       0x929eac,
       { SourceProcess: 'BUY', SourceMaterial: 'stainless steel; supplied grade to confirm' },
-    );
-    add(
-      `WING MINI supplied top screw ${i + 1} · cross pan head · M2×0.4×3.5`,
-      top,
-      0x929eac,
-      supplierUnit,
     );
     if (!isolated)
       add(

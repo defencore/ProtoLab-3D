@@ -12,6 +12,7 @@ import catalog from './catalog.json';
 import native from './native';
 import sourceColorData from './color-evidence.json';
 import xh254Mates from './xh254-mating.json';
+import { nikomA448027, nikomA448027Geometry, nikomA448027Python } from './nikom-a448027';
 export interface SourceColor {
   kind: 'source-step' | 'illustrative';
   rgb?: number[];
@@ -125,6 +126,7 @@ function assetGeometry(asset: NativeAsset): Group {
 }
 export function geometry(p: Parameters, state: string): Group {
   if (state !== 'assembled') throw new Error('Choose the assembly view.');
+  if (p.model === nikomA448027.id) return nikomA448027Geometry();
   return assetGeometry(selected(p).native);
 }
 export function xh254MatingGeometry(contacts: number): Group {
@@ -135,10 +137,12 @@ export function xh254MatingGeometry(contacts: number): Group {
   return assetGeometry(source);
 }
 export function dimensions(p: Parameters): [number, number, number] {
+  if (p.model === nikomA448027.id) return [...nikomA448027.previewDimensionsMm];
   return [...selected(p).native.dimensions] as [number, number, number];
 }
 export function python(p: Parameters, state: string): string {
   if (state !== 'assembled') throw new Error('Choose the assembly view.');
+  if (p.model === nikomA448027.id) return nikomA448027Python();
   const m = selected(p),
     components = m.native.components;
   return [

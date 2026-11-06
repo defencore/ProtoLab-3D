@@ -8,43 +8,13 @@ import { worktableLayout } from '../../cnc-worktable/part';
 
 type Handoff = Pick<AssemblyComponent, 'presetId' | 'procurement' | 'manufacturing'>;
 
-const nutFamilies = new Set([
-  'hex-nut',
-  'coupling-nut',
-  'flange-nut',
-  'nyloc-nut',
-  'thin-nut',
-  'high-nut',
-  'metal-lock-nut',
-  'cap-nut',
-  'square-nut',
-]);
-
-/** Only this declared, non-catalog nut inspection setting may differ from ordered nominal data. */
-function nominalNutOrdering(part: PartDefinition, p: Parameters, preset: Preset): Parameters {
-  const field = part.parameters.find((one) => one.key === 'threadAllowance');
-  return nutFamilies.has(part.id) &&
-    field?.type === 'number' &&
-    field.filterable === false &&
-    part.defaults.threadAllowance === 0 &&
-    preset.parameters.threadAllowance === 0 &&
-    !preset.catalog?.verifiedParameters.includes('threadAllowance') &&
-    !Object.hasOwn(preset.catalog?.attributes ?? {}, 'threadAllowance') &&
-    typeof p.threadAllowance === 'number' &&
-    Number.isFinite(p.threadAllowance) &&
-    p.threadAllowance >= (field.min ?? 0) &&
-    p.threadAllowance <= (field.max ?? 0)
-    ? { ...p, threadAllowance: 0 }
-    : p;
-}
-
 /** A supplied identity must match; an ambiguous shape is never an automatic supplier selection. */
 function catalogPreset(part: PartDefinition, p: Parameters, presetId?: string): Preset | undefined {
   const candidates = part.presets.filter(
     (preset) =>
       preset.catalog &&
       (presetId === undefined || preset.id === presetId) &&
-      presetMatchesConfiguration(part, preset, nominalNutOrdering(part, p, preset)),
+      presetMatchesConfiguration(part, preset, p),
   );
   return candidates.length === 1 ? candidates[0] : undefined;
 }
@@ -133,8 +103,8 @@ export function millingHandoff(part: PartDefinition, p: Parameters, presetId?: s
   if (!['purchased', 'standard'].includes(part.product.supply)) return {};
   const preset = catalogPreset(part, p, presetId),
     catalog = preset?.catalog,
-    authoredNutAllowance =
-      preset && nominalNutOrdering(part, p, preset).threadAllowance !== p.threadAllowance;
+    nominal = preset ? (part.catalogIdentityParameters?.(p, preset) ?? p) : p,
+    authoredNutAllowance = preset && nominal.threadAllowance !== p.threadAllowance;
   return preset && catalog
     ? {
         presetId: preset.id,

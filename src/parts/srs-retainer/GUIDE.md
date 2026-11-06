@@ -1,6 +1,6 @@
 # Squib retainer
 
-**Electronics & vision → SRS Airbag → Squib retainer** contains device-side keyed inserts:
+**Connectors & interfaces → SRS airbag → SRS squib retainer** contains device-side keyed inserts:
 
 - TE 1-1823640-1, 2-1823640-1 and 3-1823640-1: original customer-view STEP solids for AK II keys I/II/III.
 - Aptiv AK-1: reconstructed dimensional sample for the AK-1 family used by CA281A/CA282B; exact key tolerances are not supplied.

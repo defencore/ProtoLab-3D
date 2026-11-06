@@ -37,11 +37,70 @@ function junction(translation: Point = [0, 0, 0], acute = false): Geom3 {
   );
 }
 
+function segmentedJunction(segments: number): Geom3 {
+  const a: Point = [0, 0, 0],
+    b: Point = [2, 0, 0],
+    c: Point = [0, 2, 0],
+    d: Point = [0, 0, 2];
+  const points = Array.from(
+    { length: segments + 1 },
+    (_, index) => [(2 * index) / segments, 0, 0] as Point,
+  );
+  return modeling.geometries.geom3.create(
+    [
+      [a, c, b],
+      ...points.slice(0, -1).map((point, index) => [point, points[index + 1], d]),
+      [a, d, c],
+      [b, c, d],
+    ].map((face) => modeling.geometries.poly3.create(face.map((point) => [...point]))),
+  );
+}
+
 const controls: [string, () => Geom3][] = [
   ['empty geometry', () => modeling.geometries.geom3.create()],
   ['authored closed T-junction', () => junction()],
   ['translated T-junction', () => junction([100, -200, 300])],
   ['acute T-junction', () => junction([0, 0, 0], true)],
+  ['a long edge with repeated junctions', () => segmentedJunction(32)],
+  [
+    'duplicate side records with distinct colors',
+    () =>
+      modeling.geometries.geom3.create(
+        Array.from({ length: 3 }, (_, copy) =>
+          segmentedJunction(8).polygons.map((polygon, index): Poly3 => ({
+            ...clone(polygon),
+            color: [copy / 4, index / 16, 0.5, 1],
+          })),
+        ).flat(),
+      ),
+  ],
+  [
+    'interleaved reversed and repeated edges',
+    () => {
+      const polygons = segmentedJunction(8).polygons;
+      return modeling.geometries.geom3.create([
+        ...clone(polygons),
+        ...polygons.map((polygon) => ({
+          ...clone(polygon),
+          vertices: clone(polygon.vertices).reverse(),
+        })),
+        ...clone(polygons),
+      ]);
+    },
+  ],
+  [
+    'disjoint unmatched boundaries',
+    () =>
+      modeling.geometries.geom3.create(
+        Array.from({ length: 128 }, (_, index) =>
+          modeling.geometries.poly3.create([
+            [index * 10, 0, 0],
+            [index * 10 + 1, 0, 0],
+            [index * 10, 1, 0],
+          ]),
+        ),
+      ),
+  ],
   ['convex cuboid', () => modeling.primitives.cuboid({ size: [3, 5, 7] })],
   [
     'touching cuboid union',

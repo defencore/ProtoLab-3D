@@ -379,6 +379,14 @@ export function pieces(p: Parameters, state: string): Piece[] {
   }
   return result;
 }
-export const geometry = (p: Parameters, state: string) => assembly.geometry(pieces(p, state));
+export const geometry = (p: Parameters, state: string) => {
+  const complete = pieces(p, 'assembled');
+  const occurrenceIds = new Map(
+    complete.map((piece, index) => [piece.label, `component-${index + 1}`]),
+  );
+  const model = assembly.geometry(state === 'assembled' ? complete : pieces(p, state));
+  for (const child of model.children) child.userData.occurrenceId = occurrenceIds.get(child.name);
+  return model;
+};
 export const python = (p: Parameters, state: string) => assembly.python(pieces(p, state));
 export const dimensions = (p: Parameters, state: string) => assembly.dimensions(pieces(p, state));

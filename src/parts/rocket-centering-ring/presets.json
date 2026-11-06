@@ -1,0 +1,38 @@
+[
+  {
+    "id": "51",
+    "name": "Prototype ring \u00b7 \u00d850.5 / \u00d829.5 \u00d7 5 mm",
+    "description": "Author-defined metric prototype example for LDRS preparation; not a verified supplier size.",
+    "parameters": {
+      "outerDiameter": 50.5,
+      "bore": 29.5,
+      "thickness": 5
+    }
+  },
+  {
+    "id": "71",
+    "name": "Prototype ring \u00b7 \u00d870.5 / \u00d838.5 \u00d7 6 mm",
+    "description": "Author-defined metric prototype example for LDRS preparation; not a verified supplier size.",
+    "parameters": {
+      "outerDiameter": 70.5,
+      "bore": 38.5,
+      "thickness": 6
+    }
+  },
+  {
+    "id": "95",
+    "name": "Prototype ring \u00b7 \u00d894.5 / \u00d854.5 \u00d7 8 mm",
+    "description": "Author-defined metric prototype example for LDRS preparation; not a verified supplier size.",
+    "parameters": {
+      "outerDiameter": 94.5,
+      "bore": 54.5,
+      "thickness": 8
+    }
+  },
+  {
+    "id": "engine-block-28",
+    "name": "Engine block / thrust ring D28 / D23.5 × 5 mm · prototype",
+    "description": "Authored annular stop for the OpenRocket Engine Block role. Select measured tube and mating dimensions and qualify the joint loads.",
+    "parameters": { "outerDiameter": 28, "bore": 23.5, "thickness": 5 }
+  }
+]

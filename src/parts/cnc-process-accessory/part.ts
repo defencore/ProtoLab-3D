@@ -106,6 +106,7 @@ export function coolingPieces(p: Parameters): Piece[] {
 }
 const part: PartDefinition = {
   id: 'cnc-process-accessory',
+  browseLabel: 'Cooling equipment',
   name: 'Spindle coolers and cutting coolant kits',
   product: profile as ProductProfile,
   category: 'WORKSHOP TOOLS',

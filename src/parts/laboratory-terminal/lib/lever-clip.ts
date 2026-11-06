@@ -119,7 +119,7 @@ function spring(y: number, bottom: number, top: number, radius: number, wire: nu
 }
 
 /** Purchased lever clips; only the dimensions called out by the supplier are constrained. */
-export function leverClipPieces(m: LeverClipModel): Piece[] {
+export function leverClipPieces(m: LeverClipModel, shellColour?: number): Piece[] {
   const out: Piece[] = [];
   const large = m.clipSize === 'large';
   const bottomTab = !large && m.clipTermination === 'bottom-tab';
@@ -162,7 +162,7 @@ export function leverClipPieces(m: LeverClipModel): Piece[] {
 
   centers.forEach((x, index) => {
     const label = `Clip ${index + 1}`;
-    const color = m.poles > 1 ? bankColors[index % bankColors.length] : m.color;
+    const color = shellColour ?? (m.poles > 1 ? bankColors[index % bankColors.length] : m.color);
     const cheekProfile = softened(
       large
         ? [

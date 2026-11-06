@@ -1,0 +1,302 @@
+[
+  {
+    "id": "finsrov-pressure-sensor-mount",
+    "name": "FinsROV · Pressure Sensor Mount",
+    "description": "Original STEP fabrication part; printing. Polymer selected and qualified for the upstream design; source does not fix a grade",
+    "parameters": {
+      "component": "finsrov-pressure-sensor-mount"
+    },
+    "product": {
+      "supply": "manufactured"
+    },
+    "catalog": {
+      "designation": "Pressure Sensor Mount",
+      "manufacturer": "FinsROV contributors",
+      "sourceName": "Pinned original ROV project geometry",
+      "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/3DPrinting/Pressure_Sensor_Mount.STEP",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "community-cad",
+        "summary": "Original STEP component retained as native BREP with a source-derived preview.",
+        "limitations": "Source geometry and project instructions do not establish a manufacturing tolerance or a qualified operating depth.",
+        "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/3DPrinting/Pressure_Sensor_Mount.STEP",
+        "sourceSha256": "083afe580a9f1c6b3b83f467923353cbf0597a63de84ce94647fb15a98140d8d"
+      },
+      "attributes": {
+        "project": "FinsROV",
+        "route": "printing",
+        "license": "MIT",
+        "sourceFormat": "STEP",
+        "width": 16.000000100000005,
+        "depth": 24.0000001,
+        "height": 22.000000200000002
+      },
+      "specifications": [
+        {
+          "label": "Source revision",
+          "value": "1bc38e83d8af669339c7a86f0a14e2180676347f"
+        },
+        {
+          "label": "Hardware license",
+          "value": "MIT"
+        },
+        {
+          "label": "Material / stock",
+          "value": "Polymer selected and qualified for the upstream design; source does not fix a grade"
+        }
+      ]
+    }
+  },
+  {
+    "id": "finsrov-cable-passing-screw",
+    "name": "FinsROV · Cable passing Screw",
+    "description": "Original STEP fabrication part; turning. Aluminium alloy per upstream CNC machining workbook; confirm exact stock, temper and finish",
+    "parameters": {
+      "component": "finsrov-cable-passing-screw"
+    },
+    "product": {
+      "supply": "manufactured"
+    },
+    "catalog": {
+      "designation": "Cable passing Screw",
+      "manufacturer": "FinsROV contributors",
+      "sourceName": "Pinned original ROV project geometry",
+      "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Cable-passing_Screw.STEP",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "community-cad",
+        "summary": "Original STEP component retained as native BREP with a source-derived preview.",
+        "limitations": "Source geometry and project instructions do not establish a manufacturing tolerance or a qualified operating depth.",
+        "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Cable-passing_Screw.STEP",
+        "sourceSha256": "1ca61cc49b1e4b1455599a9b054063cd6ed7dfda75cf5abc252eb88ba3ddab00"
+      },
+      "attributes": {
+        "project": "FinsROV",
+        "route": "turning",
+        "license": "MIT",
+        "sourceFormat": "STEP",
+        "width": 14.677312395916868,
+        "depth": 19.000000000000043,
+        "height": 14.677312395916868
+      },
+      "specifications": [
+        {
+          "label": "Source revision",
+          "value": "1bc38e83d8af669339c7a86f0a14e2180676347f"
+        },
+        {
+          "label": "Hardware license",
+          "value": "MIT"
+        },
+        {
+          "label": "Material / stock",
+          "value": "Aluminium alloy per upstream CNC machining workbook; confirm exact stock, temper and finish"
+        }
+      ]
+    }
+  },
+  {
+    "id": "finsrov-front-cabin-mount",
+    "name": "FinsROV · Front Cabin Mount",
+    "description": "Original STEP fabrication part; milling. Aluminium alloy per upstream CNC machining workbook; confirm exact stock, temper and finish",
+    "parameters": {
+      "component": "finsrov-front-cabin-mount"
+    },
+    "product": {
+      "supply": "manufactured"
+    },
+    "catalog": {
+      "designation": "Front Cabin Mount",
+      "manufacturer": "FinsROV contributors",
+      "sourceName": "Pinned original ROV project geometry",
+      "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Front_Cabin_Mount.STEP",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "community-cad",
+        "summary": "Original STEP component retained as native BREP with a source-derived preview.",
+        "limitations": "Source geometry and project instructions do not establish a manufacturing tolerance or a qualified operating depth.",
+        "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Front_Cabin_Mount.STEP",
+        "sourceSha256": "b10199ed0ea5adf9d3fbee7e97793cb2c6b394ff40129c2b59c785b693a508a4"
+      },
+      "attributes": {
+        "project": "FinsROV",
+        "route": "milling",
+        "license": "MIT",
+        "sourceFormat": "STEP",
+        "width": 160.4,
+        "depth": 122.40000000000003,
+        "height": 8.000000000000057
+      },
+      "specifications": [
+        {
+          "label": "Source revision",
+          "value": "1bc38e83d8af669339c7a86f0a14e2180676347f"
+        },
+        {
+          "label": "Hardware license",
+          "value": "MIT"
+        },
+        {
+          "label": "Material / stock",
+          "value": "Aluminium alloy per upstream CNC machining workbook; confirm exact stock, temper and finish"
+        }
+      ]
+    }
+  },
+  {
+    "id": "finsrov-horizontal-thruster-bracket",
+    "name": "FinsROV · Horizontal Thruster Bracket",
+    "description": "Original STEP fabrication part; milling. Aluminium alloy per upstream CNC machining workbook; confirm exact stock, temper and finish",
+    "parameters": {
+      "component": "finsrov-horizontal-thruster-bracket"
+    },
+    "product": {
+      "supply": "manufactured"
+    },
+    "catalog": {
+      "designation": "Horizontal Thruster Bracket",
+      "manufacturer": "FinsROV contributors",
+      "sourceName": "Pinned original ROV project geometry",
+      "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Horizontal_Thruster_Bracket.STEP",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "community-cad",
+        "summary": "Original STEP component retained as native BREP with a source-derived preview.",
+        "limitations": "Source geometry and project instructions do not establish a manufacturing tolerance or a qualified operating depth.",
+        "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Horizontal_Thruster_Bracket.STEP",
+        "sourceSha256": "09fc231da9f88ed1d625afa827995fd46bf4ed6d7beddb1abeff4b51f92aa0c4"
+      },
+      "attributes": {
+        "project": "FinsROV",
+        "route": "milling",
+        "license": "MIT",
+        "sourceFormat": "STEP",
+        "width": 66.33452377915623,
+        "depth": 25.677669629663452,
+        "height": 24.000000200000002
+      },
+      "specifications": [
+        {
+          "label": "Source revision",
+          "value": "1bc38e83d8af669339c7a86f0a14e2180676347f"
+        },
+        {
+          "label": "Hardware license",
+          "value": "MIT"
+        },
+        {
+          "label": "Material / stock",
+          "value": "Aluminium alloy per upstream CNC machining workbook; confirm exact stock, temper and finish"
+        }
+      ]
+    }
+  },
+  {
+    "id": "finsrov-rear-cabin-hatch",
+    "name": "FinsROV · Rear Cabin Hatch",
+    "description": "Original STEP fabrication part; milling. Aluminium alloy per upstream CNC machining workbook; confirm exact stock, temper and finish",
+    "parameters": {
+      "component": "finsrov-rear-cabin-hatch"
+    },
+    "product": {
+      "supply": "manufactured"
+    },
+    "catalog": {
+      "designation": "Rear Cabin Hatch",
+      "manufacturer": "FinsROV contributors",
+      "sourceName": "Pinned original ROV project geometry",
+      "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Rear_Cabin_Hatch.STEP",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "community-cad",
+        "summary": "Original STEP component retained as native BREP with a source-derived preview.",
+        "limitations": "Source geometry and project instructions do not establish a manufacturing tolerance or a qualified operating depth.",
+        "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Rear_Cabin_Hatch.STEP",
+        "sourceSha256": "977ab38ecd24b30ef0047b6c4da4eedef9d4b54e93807da0ef3af65225f73179"
+      },
+      "attributes": {
+        "project": "FinsROV",
+        "route": "milling",
+        "license": "MIT",
+        "sourceFormat": "STEP",
+        "width": 160.4,
+        "depth": 122.4,
+        "height": 8.000000000000007
+      },
+      "specifications": [
+        {
+          "label": "Source revision",
+          "value": "1bc38e83d8af669339c7a86f0a14e2180676347f"
+        },
+        {
+          "label": "Hardware license",
+          "value": "MIT"
+        },
+        {
+          "label": "Material / stock",
+          "value": "Aluminium alloy per upstream CNC machining workbook; confirm exact stock, temper and finish"
+        }
+      ]
+    }
+  },
+  {
+    "id": "finsrov-thruster-mount",
+    "name": "FinsROV · Thruster Mount",
+    "description": "Original STEP fabrication part; milling. Aluminium alloy per upstream CNC machining workbook; confirm exact stock, temper and finish",
+    "parameters": {
+      "component": "finsrov-thruster-mount"
+    },
+    "product": {
+      "supply": "manufactured"
+    },
+    "catalog": {
+      "designation": "Thruster Mount",
+      "manufacturer": "FinsROV contributors",
+      "sourceName": "Pinned original ROV project geometry",
+      "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Thruster_Mount.STEP",
+      "verifiedParameters": [
+        "component"
+      ],
+      "geometryEvidence": {
+        "kind": "community-cad",
+        "summary": "Original STEP component retained as native BREP with a source-derived preview.",
+        "limitations": "Source geometry and project instructions do not establish a manufacturing tolerance or a qualified operating depth.",
+        "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Thruster_Mount.STEP",
+        "sourceSha256": "b026d3d02ebcf19f8867c7a7da943e0b9c70ea42a17c73c824c103496399924e"
+      },
+      "attributes": {
+        "project": "FinsROV",
+        "route": "milling",
+        "license": "MIT",
+        "sourceFormat": "STEP",
+        "width": 25.000000100000037,
+        "depth": 10.000000200000004,
+        "height": 282.00000020000033
+      },
+      "specifications": [
+        {
+          "label": "Source revision",
+          "value": "1bc38e83d8af669339c7a86f0a14e2180676347f"
+        },
+        {
+          "label": "Hardware license",
+          "value": "MIT"
+        },
+        {
+          "label": "Material / stock",
+          "value": "Aluminium alloy per upstream CNC machining workbook; confirm exact stock, temper and finish"
+        }
+      ]
+    }
+  }
+]

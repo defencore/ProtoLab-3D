@@ -3,6 +3,10 @@ import type { PartDefinition } from './types';
 import { projectReadiness, validateProject } from './design-project';
 import { currentGeometryMode, withGeometryMode, type GeometryMode } from './geometry-mode';
 import { modelEvidence } from './model-evidence';
+import { defaultFreecadColor, freecadAppearancePython } from './freecad-appearance';
+import { eskdIdentity } from './eskd';
+import { freecadEskdPython } from './freecad-eskd';
+import { freecadTreePython } from './freecad-tree';
 
 /** Export configured library products with occurrence placements and document identity. */
 export function generateProjectScript(
@@ -16,20 +20,33 @@ export function generateProjectScript(
 function projectScriptInMode(project: DesignProject, parts: readonly PartDefinition[]): string {
   const errors = validateProject(project, parts);
   if (errors.length) throw new Error(errors.join(' '));
+  const partById = new Map(parts.map((part) => [part.id, part]));
   const readiness = projectReadiness(project, parts);
   const parents = new Set(project.occurrences.map((item) => item.parentId));
   const used = new Set(
-    project.occurrences.filter((item) => !parents.has(item.id)).map((item) => item.configurationId),
+    project.occurrences
+      .filter(
+        (item) =>
+          !parents.has(item.id) ||
+          project.configurations.some(
+            (configuration) =>
+              configuration.id === item.configurationId &&
+              ['purchased', 'standard'].includes(configuration.supply),
+          ),
+      )
+      .map((item) => item.configurationId),
   );
   const configurations = project.configurations.filter((item) => used.has(item.id));
   const functions = configurations
     .map((configuration, index) => {
-      const part = parts.find((item) => item.id === configuration.libraryId)!;
+      const part = partById.get(configuration.libraryId)!;
       return `def _definition_${index}():\n    component_labels = None\n    component_colors = None\n    component_metadata = None\n    component_groups = None\n${part
         .python(configuration.parameters, configuration.state)
         .split('\n')
         .map((line) => '    ' + line)
-        .join('\n')}\n    return shape, component_labels, component_colors, component_metadata`;
+        .join(
+          '\n',
+        )}\n    return shape, component_labels, component_colors, component_metadata, component_groups`;
     })
     .join('\n\n');
   const indices = Object.fromEntries(
@@ -37,10 +54,28 @@ function projectScriptInMode(project: DesignProject, parts: readonly PartDefinit
   );
   const provenance = Object.fromEntries(
     project.configurations.map((configuration) => {
-      const part = parts.find((item) => item.id === configuration.libraryId)!;
+      const part = partById.get(configuration.libraryId)!;
       const evidence = modelEvidence(part, configuration.parameters, configuration.presetId);
       const catalog = part.presets.find((preset) => preset.id === evidence.presetId)?.catalog;
-      return [configuration.id, { geometryEvidence: evidence, ...(catalog ? { catalog } : {}) }];
+      return [
+        configuration.id,
+        { category: part.category, geometryEvidence: evidence, ...(catalog ? { catalog } : {}) },
+      ];
+    }),
+  );
+  const identities = Object.fromEntries(
+    project.configurations.map((configuration) => {
+      const part = partById.get(configuration.libraryId)!;
+      return [
+        configuration.id,
+        eskdIdentity(
+          part,
+          configuration.parameters,
+          configuration.state,
+          configuration.presetId,
+          configuration,
+        ),
+      ];
     }),
   );
   return `# ProtoLab design project. Millimetres; local occurrence rotations X, Y, then Z.
@@ -51,18 +86,28 @@ import Part
 import math
 import json
 
+${freecadAppearancePython}
+
+${freecadEskdPython}
+
+${freecadTreePython(parts)}
+
 ${functions}
 
 _project = json.loads(${JSON.stringify(JSON.stringify(project))})
 _indices = json.loads(${JSON.stringify(JSON.stringify(indices))})
 _provenance = json.loads(${JSON.stringify(JSON.stringify(provenance))})
+_identities = json.loads(${JSON.stringify(JSON.stringify(identities))})
 
 def _metadata(obj, configuration, occurrence):
+    identity = _identities[configuration["id"]]
+    if configuration["supply"] == "manufactured":
+        identity = dict(identity, label=occurrence["position"] + " " + identity["label"])
+    _protolab_apply_eskd(obj, identity)
     for key, value in {
         "OccurrenceId": occurrence["id"], "ConfigurationId": configuration["id"],
-        "LibraryId": configuration["libraryId"], "Designation": configuration["designation"],
-        "Revision": configuration["revision"], "BOMPosition": occurrence["position"],
-        "SupplyPolicy": configuration["supply"], "GeometryMode": ${JSON.stringify(currentGeometryMode())},
+        "BOMPosition": occurrence["position"],
+        "GeometryMode": ${JSON.stringify(currentGeometryMode())},
         "ManufacturingDefinition": json.dumps(configuration.get("manufacturing")),
         "ProcurementDefinition": json.dumps(configuration.get("procurement")),
     }.items():
@@ -98,31 +143,44 @@ def _create_project():
         for item in _project["occurrences"]:
             children.setdefault(item["parentId"], []).append(item)
         definitions = {}
+        def append_siblings(occurrences, parent):
+            paths = [
+                [] if children.get(occurrence["id"]) else
+                _protolab_group_path(configurations[occurrence["configurationId"]]["libraryId"], "")
+                for occurrence in occurrences
+            ]
+            parents = _protolab_group_parents(doc, parent, created, "ProtoLabOccurrenceGroup", paths)
+            for occurrence, occurrence_parent in zip(occurrences, parents):
+                append(occurrence, occurrence_parent)
         def append(occurrence, parent):
             configuration = configurations[occurrence["configurationId"]]
             obj = doc.addObject("App::Part", "ProtoLabOccurrence")
             created.append(obj.Name)
-            obj.Label = occurrence["position"] + " " + (configuration["designation"] or configuration["name"])
             parent.addObject(obj)
             _metadata(obj, configuration, occurrence)
             placement = occurrence["placement"]
             x, y, z = placement["rotation"]
             rotation = App.Rotation(App.Vector(0,0,1), z).multiply(App.Rotation(App.Vector(0,1,0), y)).multiply(App.Rotation(App.Vector(1,0,0), x))
             obj.Placement = App.Placement(App.Vector(*placement["translation"]), rotation)
-            nested = children.get(occurrence["id"], [])
+            nested = [] if configuration["supply"] in ["purchased", "standard"] else children.get(occurrence["id"], [])
             if nested:
-                for child in nested:
-                    append(child, obj)
+                append_siblings(nested, obj)
             else:
                 key = configuration["id"]
                 if key not in definitions:
                     definitions[key] = globals()["_definition_" + str(_indices[key])]()
-                shape, labels, colors, metadata = definitions[key]
+                shape, labels, colors, metadata, groups = definitions[key]
                 if shape.isNull() or not shape.isValid() or not shape.isClosed() or not shape.Solids or shape.Volume <= 0:
                     raise ValueError("Invalid configured library product: " + configuration["name"])
                 solids = shape.childShapes() if shape.ShapeType == "Compound" else [shape]
                 if any(values is not None and len(values) != len(solids) for values in [labels, colors, metadata]):
                     raise ValueError("Product component records do not match its geometry")
+                if colors is not None:
+                    colors = [_protolab_color_rgba(color) for color in colors]
+                paths = _protolab_component_paths(
+                    _provenance[key]["category"], configuration["supply"], len(solids), labels, metadata, groups,
+                )
+                parents = _protolab_group_parents(doc, obj, created, "ProtoLabGeometryGroup", paths, groups is not None)
                 for index, solid in enumerate(solids):
                     if solid.isNull() or not solid.isValid() or not solid.isClosed() or not solid.Solids or solid.Volume <= 0:
                         raise ValueError("Invalid physical library component: " + configuration["name"])
@@ -130,7 +188,16 @@ def _create_project():
                     created.append(child.Name)
                     child.Label = labels[index] if labels is not None else configuration["name"]
                     child.Shape = solid.copy()
-                    obj.addObject(child)
+                    parents[index].addObject(child)
+                    child.addProperty("App::PropertyInteger", "ComponentIndex", "ProtoLab")
+                    child.ComponentIndex = index + 1
+                    child.addProperty("App::PropertyStringList", "AssemblyGroup", "ProtoLab")
+                    child.AssemblyGroup = list(paths[index])
+                    if configuration["supply"] == "manufactured":
+                        if len(solids) == 1:
+                            _protolab_apply_eskd(child, _identities[configuration["id"]])
+                        elif metadata is not None and metadata[index].get("ESKDIdentityJSON"):
+                            _protolab_apply_eskd(child, json.loads(metadata[index]["ESKDIdentityJSON"]))
                     if metadata is not None:
                         child.addProperty("App::PropertyString", "ManufacturingMetadata", "Design")
                         child.ManufacturingMetadata = json.dumps(metadata[index])
@@ -140,13 +207,12 @@ def _create_project():
                                 property_name = "Manufacturing" + property_name
                             child.addProperty("App::PropertyString", property_name, "Manufacturing")
                             setattr(child, property_name, str(value))
-                        if metadata[index].get("ThreadLabels"):
+                        if metadata[index].get("ThreadLabels") and getattr(child, "SupplyPolicy", "") not in ["purchased", "standard"]:
                             child.Label += " · threads: " + metadata[index]["ThreadLabels"]
                     if App.GuiUp:
-                        child.ViewObject.ShapeColor = tuple(colors[index]) if colors is not None else (0.62,0.70,0.78)
+                        _protolab_apply_color(child.ViewObject, colors[index] if colors is not None else ${defaultFreecadColor})
             return obj
-        for occurrence in children.get(None, []):
-            append(occurrence, root)
+        append_siblings(children.get(None, []), root)
         doc.recompute()
         doc.commitTransaction()
     except Exception:

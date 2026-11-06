@@ -12,8 +12,8 @@ function fixture() {
   const detail: PartDefinition = {
     id: 'fixture-detail',
     name: 'Machined plate',
-    category: 'TEST',
-    subgroup: 'TEST',
+    category: 'STRUCTURAL PARTS',
+    subgroup: 'BRACKETS & MOUNTS',
     description: 'Project export fixture.',
     keywords: [],
     icon: 'box',
@@ -37,6 +37,8 @@ function fixture() {
     ...detail,
     id: 'fixture-supplier',
     name: 'Supplier assembly',
+    category: 'MOTORS & ACTUATORS',
+    subgroup: 'GEARMOTORS',
     product: { ...detail.product, kind: 'assembly', supply: 'purchased', processes: [] },
     python:
       () => `shape = Part.makeCompound([Part.makeCylinder(2, 5), Part.makeCylinder(1, 3, App.Vector(0, 0, 5))])
@@ -64,6 +66,7 @@ component_metadata = [{'Role': 'housing'}, {'Role': 'shaft'}]`,
   first.quantity = 3;
   first.placement = { translation: [12, 5, 7], rotation: [0, 0, 90] };
   added = addProduct(added.project, parts, selection(detail), rootId);
+  const secondId = added.occurrenceId;
   added.project.occurrences.find((item) => item.id === added.occurrenceId)!.placement.translation =
     [40, 0, 0];
   added = addProduct(added.project, parts, selection(supplier), rootId);
@@ -77,7 +80,7 @@ component_metadata = [{'Role': 'housing'}, {'Role': 'shaft'}]`,
     manufacturer: 'Fixture OEM',
     source: 'Supplier drawing',
   };
-  return { project: added.project, parts, firstId: first.id, supplierId: bought.id };
+  return { project: added.project, parts, rootId, firstId: first.id, secondId, supplierId: bought.id };
 }
 
 test('project macro rejects invalid hierarchy and reuses library definitions without changing its source project', () => {
@@ -96,11 +99,12 @@ test('project macro rejects invalid hierarchy and reuses library definitions wit
 });
 
 test(
-  'project native CAD retains nested placements, opaque supplier identity and quantity metadata',
+  'project native CAD groups leaf occurrences while retaining nested placements and supplier identity',
   { skip: !process.env.FREECAD_PYTHON },
   () => {
-    const { project, parts, firstId, supplierId } = fixture();
+    const { project, parts, rootId, firstId, secondId, supplierId } = fixture();
     const script = `${generateProjectScript(project, parts)}
+import Import, os, tempfile
 doc = App.ActiveDocument
 occurrences = {obj.OccurrenceId: obj for obj in doc.Objects if hasattr(obj, 'OccurrenceId')}
 assert len(occurrences) == 4
@@ -114,15 +118,44 @@ expected = App.Placement(App.Vector(100,200,300), rotation).multiply(App.Placeme
 actual = plate.getGlobalPlacement()
 for point in [App.Vector(), App.Vector(10,0,0), App.Vector(0,4,2)]:
  assert (actual.multVec(point) - expected.multVec(point)).Length < 1e-8
+ assert (plate.Group[0].getGlobalPlacement().multVec(point) - expected.multVec(point)).Length < 1e-8
 bought = occurrences[${JSON.stringify(supplierId)}]
 assert bought.SupplyPolicy == 'purchased' and bought.BOMQuantity == 2
 assert len(bought.Group) == 2 and json.loads(bought.ProcurementDefinition)['designation'] == 'OEM.123'
 assert [obj.Label for obj in bought.Group] == ['Supplier housing', 'Supplier shaft']
 assert json.loads(bought.Group[0].ManufacturingMetadata)['Role'] == 'housing'
+assert all(not hasattr(obj, 'OccurrenceId') and not hasattr(obj, 'Designation') for obj in bought.Group)
 roots = [obj for obj in doc.Objects if hasattr(obj, 'ProjectDefinition')]
 assert len(roots) == 1 and len(roots[0].Group) == 1
-assert json.loads(roots[0].ProjectDefinition)['documentationPolicy'] == 'enterprise-eskd'
-assert roots[0].EngineeringReviewRequirements
+root = roots[0]
+assembly = root.Group[0]
+assert assembly.OccurrenceId == ${JSON.stringify(rootId)}
+folders = {group.Label: group for group in assembly.Group}
+assert set(folders) == {'Structural parts', 'Motion & drives'}
+for label, folder in folders.items():
+ assert folder.TypeId == 'App::Part' and folder.Placement.isIdentity()
+ assert folder.AssemblyGroup == [label] and not hasattr(folder, 'Designation')
+assert len(folders['Structural parts'].Group) == 2 and plate in folders['Structural parts'].Group
+assert folders['Motion & drives'].Group == [bought]
+assert json.loads(root.ProjectDefinition)['documentationPolicy'] == 'enterprise-eskd'
+assert root.EngineeringReviewRequirements
+with tempfile.TemporaryDirectory(prefix='protolab-project-groups-') as directory:
+ step = os.path.join(directory, 'project.step')
+ Import.export([root], step)
+ shape = Part.read(step)
+ assert shape.isValid() and len(shape.Solids) == 4
+ assert abs(shape.Volume - (160 + 23 * math.pi)) < 1e-6
+ assert any((solid.CenterOfMass - expected.multVec(App.Vector(5,2,1))).Length < 1e-6 for solid in shape.Solids)
+ saved = os.path.join(directory, 'project.FCStd')
+ root_name = root.Name
+ doc.saveAs(saved)
+ App.closeDocument(doc.Name)
+ doc = App.openDocument(saved)
+ folders = {group.Label: group for group in doc.getObject(root_name).Group[0].Group}
+ plate_ids = {obj.OccurrenceId for obj in folders['Structural parts'].Group}
+ assert plate_ids == {${JSON.stringify(firstId)}, ${JSON.stringify(secondId)}}
+ assert folders['Motion & drives'].Group[0].OccurrenceId == ${JSON.stringify(supplierId)}
+ App.closeDocument(doc.Name)
 print('PROJECT_CAD_OK')
 `;
     const result = spawnSync(process.env.FREECAD_PYTHON!, ['-'], {

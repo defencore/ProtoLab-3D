@@ -1,0 +1,70 @@
+[
+  {
+    "id": "ma32x50-sca",
+    "name": "MA32\u00d750-SCA",
+    "description": "\u00d832 mm bore \u00b7 50 mm stroke \u00b7 magnetic double-acting cylinder; source-identified installation reference.",
+    "parameters": {
+      "model": "ma32x50-sca",
+      "extension": 0
+    },
+    "catalog": {
+      "designation": "MA32x50-SCA",
+      "manufacturer": "Unspecified",
+      "sourceName": "IgroMAX / Prom.ua exact MA cylinder listing",
+      "sourceUrl": "https://prom.ua/ua/p1969399405-pnevmotsilindr-kruglyj-magnitom.html",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Identified supplier execution with unresolved mounting and closed-length evidence.",
+        "limitations": "Supplier identifies MA32x50-SCA, 32 mm bore, 50 mm stroke, M10\u00d71.25 rod thread and Rc1/8 ports, without a manufacturer drawing or CAD. The standalone installation reference retains the saw\u2019s 154 mm shell length and \u00d835 barrel / \u00d836.5 caps; these shell dimensions, cap lengths, rod diameter, seats, bore depths and port placement are provisional. The 196 \u00d7 32 \u00d7 36.5 mm listing does not establish extension state or complete mounting geometry. The displayed rod projection matches that nominal overall at extension zero but is not a verified closed length. Supplier has no brand identification; no AirTAC/Festo identity is inferred. Internal piston, seals and magnet are not modeled; optional magnetic switch, rod eyes, brackets and mounting hardware are excluded. Obtain the selected execution drawing or measure the delivered unit before assembly release. The listing delivery text inconsistently mentions MA25x50-SCA; confirm order code before purchasing.",
+        "sourceUrl": "https://prom.ua/ua/p1969399405-pnevmotsilindr-kruglyj-magnitom.html"
+      },
+      "attributes": {
+        "bore": 32,
+        "stroke": 50
+      },
+      "specifications": [
+        {
+          "label": "Mechanical source limits",
+          "value": "Supplier identifies MA32x50-SCA, 32 mm bore, 50 mm stroke, M10\u00d71.25 rod thread and Rc1/8 ports, without a manufacturer drawing or CAD. The standalone installation reference retains the saw\u2019s 154 mm shell length and \u00d835 barrel / \u00d836.5 caps; these shell dimensions, cap lengths, rod diameter, seats, bore depths and port placement are provisional. The 196 \u00d7 32 \u00d7 36.5 mm listing does not establish extension state or complete mounting geometry. The displayed rod projection matches that nominal overall at extension zero but is not a verified closed length. Supplier has no brand identification; no AirTAC/Festo identity is inferred. Internal piston, seals and magnet are not modeled; optional magnetic switch, rod eyes, brackets and mounting hardware are excluded. Obtain the selected execution drawing or measure the delivered unit before assembly release. The listing delivery text inconsistently mentions MA25x50-SCA; confirm order code before purchasing."
+        }
+      ]
+    }
+  },
+  {
+    "id": "ma32x100-sca",
+    "name": "MA32\u00d7100-SCA",
+    "description": "\u00d832 mm bore \u00b7 100 mm stroke \u00b7 magnetic double-acting cylinder; source-identified installation reference.",
+    "parameters": {
+      "model": "ma32x100-sca",
+      "extension": 0
+    },
+    "catalog": {
+      "designation": "MA32x100-SCA",
+      "manufacturer": "Unspecified",
+      "sourceName": "IgroMAX / Prom.ua exact MA cylinder listing",
+      "sourceUrl": "https://prom.ua/p1969890636-pnevmotsilindr-kruglyj-magnitom.html",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Identified supplier execution with unresolved mounting and closed-length evidence.",
+        "limitations": "Supplier identifies MA32x100-SCA, 32 mm bore, 100 mm stroke, M10\u00d71.25 rod thread and Rc1/8 ports, without a manufacturer drawing or CAD. The standalone installation reference retains the saw\u2019s 187 mm shell length and \u00d835 barrel / \u00d836.5 caps; these shell dimensions, cap lengths, rod diameter, seats, bore depths and port placement are provisional. The 246 \u00d7 32 \u00d7 36.5 mm listing does not establish extension state or complete mounting geometry. The displayed rod projection matches that nominal overall at extension zero but is not a verified closed length. Supplier has no brand identification; no AirTAC/Festo identity is inferred. Internal piston, seals and magnet are not modeled; optional magnetic switch, rod eyes, brackets and mounting hardware are excluded. Obtain the selected execution drawing or measure the delivered unit before assembly release.",
+        "sourceUrl": "https://prom.ua/p1969890636-pnevmotsilindr-kruglyj-magnitom.html"
+      },
+      "attributes": {
+        "bore": 32,
+        "stroke": 100
+      },
+      "specifications": [
+        {
+          "label": "Mechanical source limits",
+          "value": "Supplier identifies MA32x100-SCA, 32 mm bore, 100 mm stroke, M10\u00d71.25 rod thread and Rc1/8 ports, without a manufacturer drawing or CAD. The standalone installation reference retains the saw\u2019s 187 mm shell length and \u00d835 barrel / \u00d836.5 caps; these shell dimensions, cap lengths, rod diameter, seats, bore depths and port placement are provisional. The 246 \u00d7 32 \u00d7 36.5 mm listing does not establish extension state or complete mounting geometry. The displayed rod projection matches that nominal overall at extension zero but is not a verified closed length. Supplier has no brand identification; no AirTAC/Festo identity is inferred. Internal piston, seals and magnet are not modeled; optional magnetic switch, rod eyes, brackets and mounting hardware are excluded. Obtain the selected execution drawing or measure the delivered unit before assembly release."
+        }
+      ]
+    }
+  }
+]

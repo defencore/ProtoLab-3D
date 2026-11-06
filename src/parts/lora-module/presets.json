@@ -1,20 +1,18 @@
 [
   {
     "id": "ai-thinker-ra02",
-    "name": "Ai-Thinker Ra-02 · SX1278",
-    "description": "17 × 16 mm · 16 castellated pads + U.FL",
+    "name": "Ai-Thinker Ra-02 \u00b7 SX1278",
+    "description": "17 \u00d7 16 mm \u00b7 16 castellated pads + U.FL",
     "parameters": {
       "model": "ai-thinker-ra02"
     },
     "catalog": {
-      "designation": "Ai-Thinker Ra-02 — SX1278",
+      "designation": "Ai-Thinker Ra-02 \u2014 SX1278",
       "manufacturer": "Ai-Thinker",
       "sourceName": "Manufacturer specifications / mechanical drawing",
       "sourceUrl": "https://docs.ai-thinker.com/en/Ra-02/index.html",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "manufacturer": "Ai-Thinker",
         "construction": "Bare PCB",
@@ -64,7 +62,7 @@
         },
         {
           "label": "Revision and model scope",
-          "value": "17 × 16 mm module PCB. SX1278 LoRa radio, U.FL antenna socket. External antenna excluded. RF shield and pad offsets approximate."
+          "value": "17 \u00d7 16 mm module PCB. SX1278 LoRa radio, U.FL antenna socket. External antenna excluded. RF shield and pad offsets approximate."
         },
         {
           "label": "Geometry accuracy",
@@ -75,20 +73,18 @@
   },
   {
     "id": "waveshare-core1262-hf",
-    "name": "Waveshare Core1262-HF · SX1262",
-    "description": "19 × 22 mm · Castellated pads + ANT pad",
+    "name": "Waveshare Core1262-HF \u00b7 SX1262",
+    "description": "19 \u00d7 22 mm \u00b7 Castellated pads + ANT pad",
     "parameters": {
       "model": "waveshare-core1262-hf"
     },
     "catalog": {
-      "designation": "Waveshare Core1262-HF — SX1262",
+      "designation": "Waveshare Core1262-HF \u2014 SX1262",
       "manufacturer": "Waveshare",
       "sourceName": "Manufacturer specifications / mechanical drawing",
       "sourceUrl": "https://www.waveshare.com/wiki/Core1262-868M",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "manufacturer": "Waveshare",
         "construction": "Bare PCB",
@@ -138,7 +134,7 @@
         },
         {
           "label": "Revision and model scope",
-          "value": "19 × 22 mm core module, HF radio revision. This is not the larger Raspberry Pi LoRa HAT. Antenna not fitted; no SMA socket."
+          "value": "19 \u00d7 22 mm core module, HF radio revision. This is not the larger Raspberry Pi LoRa HAT. Antenna not fitted; no SMA socket."
         },
         {
           "label": "Geometry accuracy",
@@ -149,20 +145,18 @@
   },
   {
     "id": "ebyte-e22-900m30s",
-    "name": "Ebyte E22-900M30S · SX1262",
-    "description": "24 × 38.5 mm · Castellated pads + antenna socket",
+    "name": "Ebyte E22-900M30S \u00b7 SX1262",
+    "description": "24 \u00d7 38.5 mm \u00b7 Castellated pads + antenna socket",
     "parameters": {
       "model": "ebyte-e22-900m30s"
     },
     "catalog": {
-      "designation": "Ebyte E22-900M30S — SX1262",
+      "designation": "Ebyte E22-900M30S \u2014 SX1262",
       "manufacturer": "Ebyte",
       "sourceName": "Manufacturer specifications / mechanical drawing",
       "sourceUrl": "https://www.ebyte.com/product/451.html",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "manufacturer": "Ebyte",
         "construction": "Bare PCB",
@@ -212,11 +206,155 @@
         },
         {
           "label": "Revision and model scope",
-          "value": "24 × 38.5 mm module. 30 dBm PA version, SPI host interface; not the UART T-series. Antenna and carrier excluded. RF shield, contacts and component offsets approximate."
+          "value": "24 \u00d7 38.5 mm module. 30 dBm PA version, SPI host interface; not the UART T-series. Antenna and carrier excluded. RF shield, contacts and component offsets approximate."
         },
         {
           "label": "Geometry accuracy",
           "value": "PCB/body dimensions are supplier values; protruding connectors are included in rendered bounds separately. Undimensioned component positions, heights, corner radii and contacts are approximate. Use the linked drawing and physical hardware to confirm mounting and connector clearance. Flexible leads, external antennas, mating plugs and accessories are excluded. The model is a mechanical packaging reference, not a PCB fabrication file or electrical pinout."
+        }
+      ]
+    }
+  },
+  {
+    "id": "heltec-wifi-lora32-v3",
+    "name": "Heltec WiFi LoRa 32 V3.2 \u00b7 ESP32-S3 + SX1262",
+    "description": "25.5 \u00d7 50.2 mm \u00b7 OLED \u00b7 USB-C \u00b7 unpopulated headers",
+    "parameters": {
+      "model": "heltec-wifi-lora32-v3"
+    },
+    "catalog": {
+      "designation": "Heltec WiFi LoRa 32 V3.2 \u2014 ESP32-S3 + SX1262",
+      "manufacturer": "Heltec",
+      "sourceName": "Heltec V3.2 datasheet \u2014 physical dimensions, page 14",
+      "sourceUrl": "https://resource.heltec.cn/download/WiFi_LoRa_32_V3/HTIT-WB32LA_V3.2.pdf",
+      "alternateSourceUrls": [
+        "https://heltec.org/project/wifi-lora-32-v3/",
+        "https://heltec.org/wp-content/uploads/2023/09/pin.png"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Heltec",
+        "construction": "Development board",
+        "width": 25.5,
+        "length": 50.2,
+        "usb": "USB Type-C",
+        "connection": "36 unpopulated pads + SH1.25-2 + U.FL",
+        "interface": "USB / GPIO / SPI",
+        "chip": "ESP32-S3 + SX1262"
+      },
+      "attributeConditions": {
+        "width": "Published module width. Rounded PCB shape is approximate.",
+        "length": "Published module length; approximate USB overhang is included separately in preview/export bounds."
+      },
+      "specifications": [
+        {
+          "label": "Manufacturer module envelope",
+          "value": "50.2 \u00d7 25.5 \u00d7 10.2 mm"
+        },
+        {
+          "label": "OLED",
+          "value": "0.96 in, 128 \u00d7 64; glass 33.28 \u00d7 18.56 mm"
+        },
+        {
+          "label": "USB connector",
+          "value": "USB Type-C"
+        },
+        {
+          "label": "Battery interface",
+          "value": "SH1.25-2; 3.7 V lithium battery"
+        },
+        {
+          "label": "Antenna connection",
+          "value": "LoRa IPEX/U.FL; WiFi spring antenna"
+        },
+        {
+          "label": "Header configuration",
+          "value": "2 \u00d7 18 unpopulated pads, 2.54 mm pitch; loose pins excluded"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "V3.2 board with OLED facing +Z and no installed header pins. Manufacturer module envelope 50.2 \u00d7 25.5 \u00d7 10.2 mm. Rounded PCB outline, 1.6 mm PCB thickness, component heights/positions, 0.9 mm USB overhang and connector details are approximate. No dedicated mounting holes are claimed. OLED glass 33.28 \u00d7 18.56 mm and active length 27.28 mm follow the drawing; active width 13.64 mm is inferred from the 128 \u00d7 64 pixel aspect ratio. External antenna, cable, battery and loose mating connectors are excluded. Not interchangeable with V4."
+        },
+        {
+          "label": "Assembly datum",
+          "value": "PCB centered in XY; USB faces +Y. All solids Z=0..10.2 mm, PCB bottom/top Z=3.6/5.2 mm; OLED center Y=-6.1 mm, face Z=10.2 mm. Approximate USB face Y=26 mm, center Z=2 mm."
+        },
+        {
+          "label": "Mounting and antenna clearance",
+          "value": "No invented mounting holes; use an edge cradle and confirm against hardware. Keep the spring antenna free of pressure and leave space for the U.FL cable bend."
+        }
+      ]
+    }
+  },
+  {
+    "id": "heltec-wifi-lora32-v4",
+    "name": "Heltec WiFi LoRa 32 V4 \u00b7 V4.3.1 \u00b7 ESP32-S3R2 + SX1262",
+    "description": "25.4 \u00d7 51.69 mm \u00b7 V4 protected OLED \u00b7 USB-C \u00b7 battery / solar / GNSS",
+    "parameters": {
+      "model": "heltec-wifi-lora32-v4"
+    },
+    "catalog": {
+      "designation": "Heltec WiFi LoRa 32 V4 \u2014 V4.3.1 mechanical reference",
+      "manufacturer": "Heltec",
+      "sourceName": "Heltec V4.3.1 datasheet \u2014 dimensions, page 15",
+      "sourceUrl": "https://resource.heltec.cn/download/WiFi_LoRa_32_V4/datasheet/WiFi_LoRa_32_V4.3.1_Datasheet.pdf",
+      "alternateSourceUrls": [
+        "https://heltec.org/project/wifi-lora-32-v4/",
+        "https://wiki.heltec.org/docs/devices/open-source-hardware/esp32-series/lora-32/wifi-lora-32-v4/",
+        "https://resource.heltec.cn/download/WiFi_LoRa_32_V4/3D/",
+        "https://resource.heltec.cn/download/WiFi_LoRa_32_V4/3D/HTIT-WB32LAF_V4.3.1%281%29.step"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Heltec",
+        "construction": "Development board",
+        "width": 25.4,
+        "length": 51.69,
+        "usb": "USB Type-C",
+        "connection": "40 unpopulated pads + battery/solar/GNSS + 2 U.FL",
+        "interface": "USB / GPIO / SPI",
+        "chip": "ESP32-S3R2 + SX1262"
+      },
+      "attributeConditions": {
+        "width": "Published module width. Connector shapes are approximate.",
+        "length": "Dimensioned 51.69 mm module length; approximate USB overhang included separately in preview/export bounds."
+      },
+      "specifications": [
+        {
+          "label": "Manufacturer module envelope",
+          "value": "51.69 \u00d7 25.40 \u00d7 10.70 mm without header pins; 15.60 mm with pins"
+        },
+        {
+          "label": "Display protection / aperture",
+          "value": "PC frame 33.00 \u00d7 18.60 mm; aperture 22.00 \u00d7 11.40 mm"
+        },
+        {
+          "label": "USB connector",
+          "value": "USB Type-C on OLED side of PCB"
+        },
+        {
+          "label": "Battery / solar / GNSS interfaces",
+          "value": "SH1.25-2 battery; SH1.25-2 solar; SH1.25-8 GNSS"
+        },
+        {
+          "label": "Antenna connections",
+          "value": "LoRa IPEX/U.FL and 2.4 GHz IPEX/U.FL; FPC antenna integrated in PC frame"
+        },
+        {
+          "label": "Header configuration",
+          "value": "40 unpopulated pads: 2 \u00d7 18 plus 2 \u00d7 2, 2.54 mm pitch; loose pins excluded"
+        },
+        {
+          "label": "Revision and model scope",
+          "value": "V4.3.1 mechanical reference, OLED and protective PC frame fitted, no installed header pins. Manufacturer envelope 51.69 \u00d7 25.40 \u00d7 10.70 mm without pins (15.60 mm with pins). Frame 33.00 \u00d7 18.60 mm, display aperture 22.00 \u00d7 11.40 mm follow the page 15 drawing. Four PCB bores are 2.80 mm in the official V4.3.1 STEP; the datasheet labels 1.90 mm in the protective-frame fastener area. PCB thickness, outline transitions, individual component geometry/positions, display recess and USB overhang are approximate. Includes battery, solar and GNSS connector envelopes plus two U.FL sockets; no V3 spring antenna. External antenna, flexible leads, battery, mating connectors and loose headers are excluded. RF hardware revisions and R8 electrical variants must be checked against the ordered board. The OLED glass, active face and guard aperture are centered at local X=+2.00 mm, Y=-6.35 mm following the user-requested handheld display fit correction; the outer protective frame and PCB remain centered at X=0. These display datums include the user-requested 2 mm left and 1 mm upward fit corrections and are a user fit calibration, not a newly verified manufacturer dimension."
+        },
+        {
+          "label": "Assembly datum",
+          "value": "PCB centered in XY; USB faces +Y. All solids Z=0..10.7 mm, PCB bottom/top Z=3.6/5.2 mm; outer PC guard centered at X=0, Y=-5.35 mm, guard top Z=10.7 mm; OLED glass, face and guard aperture centered at X=+2 mm, Y=-6.35 mm by user fit calibration. Approximate USB face Y=26.6 mm, center Z=6.69 mm."
+        },
+        {
+          "label": "Mounting accuracy",
+          "value": "Four PCB bores are 2.80 mm in the official V4.3.1 STEP, normalized centers X=\u00b17, Y=-20.0345/8.9655 mm. Datasheet 1.90 mm annotation is in the frame fastener area. Confirm actual revision and PCB thickness before using fitted posts; keep PC guard, FPC antenna and U.FL cable bends clear."
         }
       ]
     }

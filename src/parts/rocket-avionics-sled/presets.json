@@ -1,0 +1,41 @@
+[
+  {
+    "id": "compact-40",
+    "name": "Compact sled 40 x 120 x 2.5 mm",
+    "description": "Authored prototype plate with a 24 x 90 mm four-hole pattern; measure the actual board and bay.",
+    "parameters": {
+      "width": 40,
+      "length": 120,
+      "thickness": 2.5,
+      "pitchX": 24,
+      "pitchY": 90,
+      "holeDiameter": 3.4
+    }
+  },
+  {
+    "id": "standard-60",
+    "name": "Avionics sled 60 x 180 x 3 mm",
+    "description": "Authored prototype plate with a 40 x 140 mm four-hole pattern; no electronics footprint certification.",
+    "parameters": {
+      "width": 60,
+      "length": 180,
+      "thickness": 3,
+      "pitchX": 40,
+      "pitchY": 140,
+      "holeDiameter": 3.4
+    }
+  },
+  {
+    "id": "wide-100",
+    "name": "Wide sled 100 x 260 x 4 mm",
+    "description": "Authored prototype plate with a 75 x 220 mm four-hole pattern; qualify fit and equipment retention.",
+    "parameters": {
+      "width": 100,
+      "length": 260,
+      "thickness": 4,
+      "pitchX": 75,
+      "pitchY": 220,
+      "holeDiameter": 4.5
+    }
+  }
+]

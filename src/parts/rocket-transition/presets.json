@@ -1,0 +1,20 @@
+[
+  {
+    "id": "54-to-75",
+    "name": "Transition D54 / D75 x 90 mm · prototype",
+    "description": "Authored open conical shell with a smaller forward interface; joint design remains a project input.",
+    "parameters": { "foreDiameter": 54, "aftDiameter": 75, "length": 90, "wall": 2 }
+  },
+  {
+    "id": "75-to-100",
+    "name": "Transition D75 / D100 x 120 mm · prototype",
+    "description": "Authored open conical shell with a smaller forward interface; no supplier identity is claimed.",
+    "parameters": { "foreDiameter": 75, "aftDiameter": 100, "length": 120, "wall": 2.5 }
+  },
+  {
+    "id": "100-to-75-boattail",
+    "name": "Boattail D100 / D75 x 100 mm · prototype",
+    "description": "Authored open conical shell with a smaller aft interface; no motor retention or fastening is included.",
+    "parameters": { "foreDiameter": 100, "aftDiameter": 75, "length": 100, "wall": 2.5 }
+  }
+]

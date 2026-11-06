@@ -1279,5 +1279,40 @@
         "sourceSha256": "020cc77660872cc18ddd5664bbd46a4e26ce073ef1e3b708688bf89be151a6a3"
       }
     }
+  },
+  {
+    "id": "nikom-a448027",
+    "name": "NIKOM A448027 · USB-C 6-pin panel receptacle",
+    "description": "Supplier-identified USB-C receptacle with a screw flange and rear breakout board. The native CAD is an engineering envelope with an illustrative axis assignment. No fabrication hole pattern is specified.",
+    "parameters": {
+      "model": "nikom-a448027"
+    },
+    "catalog": {
+      "name": "\u0413\u043d\u0456\u0437\u0434\u043e USB Type-C 6pin \u043d\u0430 \u043a\u043e\u0440\u043f\u0443\u0441",
+      "designation": "A448027",
+      "sourceName": "NIKOM supplier listing",
+      "sourceUrl": "https://www.nikom.biz/ua/product_A448027.html",
+      "alternateSourceUrls": ["https://prom.ua/p2020699918-gnezdo-usb-type.html"],
+      "verifiedParameters": ["model"],
+      "productCodes": ["A448027"],
+      "specifications": [
+        { "label": "Listed dimensions", "value": "10 × 7 × 14 mm, axes unspecified" },
+        {
+          "label": "Nominal mounting hole",
+          "value": "Ø2.1 mm. Two flange holes visible in supplier photos."
+        }
+      ],
+      "attributes": {
+        "family": "USB",
+        "contactType": "socket",
+        "mounting": "Panel · screw flange"
+      },
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Analytic reference envelope based on supplier dimensions and product photos. Mouth at the local origin, facing +Z. The 14 × 7 × 10 mm X/Y/Z assignment is illustrative.",
+        "limitations": "Mounting-hole centres, flange thickness, seating depth, panel cutout, and plug and solder lead clearances remain unverified. The two Ø2.1 mm bores are omitted. Exact manufacturer CAD, pin mapping and electrical ratings were unavailable.",
+        "sourceUrl": "https://www.nikom.biz/ua/product_A448027.html"
+      }
+    }
   }
 ]

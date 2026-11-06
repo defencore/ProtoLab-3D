@@ -1,0 +1,38 @@
+[
+  {
+    "id": "sfk0825-slotted-100-361-12",
+    "name": "SFK0825 · GMP16T-TEC1636 361:1 / 12 V · 1 output · twin slotted cranks · ±20°",
+    "description": "Previous version: fixed coaxial drive, twin slotted cranks, opposed rollers and four F686-2RS bearings.",
+    "parameters": {
+      "motorModel": "361-12",
+      "outputAngle": 0
+    }
+  },
+  {
+    "id": "sfk0825-slotted-100-107-12",
+    "name": "SFK0825 · GMP16T-TEC1636 107:1 / 12 V · 1 output · twin slotted cranks · ±20°",
+    "description": "Previous version: fixed coaxial drive, twin slotted cranks, opposed rollers and four F686-2RS bearings.",
+    "parameters": {
+      "motorModel": "107-12",
+      "outputAngle": 0
+    }
+  },
+  {
+    "id": "sfk0825-slotted-100-361-24",
+    "name": "SFK0825 · GMP16T-TEC1636 361:1 / 24 V · 1 output · twin slotted cranks · ±20°",
+    "description": "Previous version: fixed coaxial drive, twin slotted cranks, opposed rollers and four F686-2RS bearings.",
+    "parameters": {
+      "motorModel": "361-24",
+      "outputAngle": 0
+    }
+  },
+  {
+    "id": "sfk0825-slotted-100-107-24",
+    "name": "SFK0825 · GMP16T-TEC1636 107:1 / 24 V · 1 output · twin slotted cranks · ±20°",
+    "description": "Previous version: fixed coaxial drive, twin slotted cranks, opposed rollers and four F686-2RS bearings.",
+    "parameters": {
+      "motorModel": "107-24",
+      "outputAngle": 0
+    }
+  }
+]

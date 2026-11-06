@@ -7,6 +7,7 @@ import { generateScript } from '../src/core/freecad';
 import { disposeModel } from '../src/core/mechanical';
 import { buildPresetIndex, emptyPresetFilters, filterPresets } from '../src/core/preset-search';
 import { validateParameters } from '../src/core/validation';
+import { parametersForPreset } from '../src/core/part-selection';
 import {
   catalogValue,
   matchesCatalogFilters,
@@ -30,6 +31,13 @@ const modelIds = [
   'kst-x10-pro-b',
   'power-hd-t60-bhv',
   'power-hd-tds-2',
+  'waveshare-st3025',
+  'futaba-hps-h701',
+  'hitec-hsb-9380th',
+  'chaservo-hv3609',
+  'hitec-d954sw',
+  'towerpro-mg996r',
+  'towerpro-mg90s',
 ];
 const servos = parts.filter((part) => part.id === 'servo-motor');
 const servo = servos[0]!;
@@ -195,7 +203,11 @@ test('servo catalog filters use published characteristics and never treat missin
     'kst-x10-pro-a',
     'kst-x10-pro-b',
   ]);
-  assert.deepEqual(matched({ stallTorque: { min: '40' } }), ['power-hd-t60-bhv']);
+  assert.deepEqual(matched({ stallTorque: { min: '40' } }), [
+    'power-hd-t60-bhv',
+    'waveshare-st3025',
+    'futaba-hps-h701',
+  ]);
   assert.deepEqual(matched({ caseWidth: { max: '10' }, stallTorque: { min: '10' } }), [
     'kst-x10-pro-a',
     'kst-x10-pro-b',
@@ -206,10 +218,18 @@ test('servo catalog filters use published characteristics and never treat missin
   assert.deepEqual(matched({ noLoadCurrent: { min: '0', max: '0.3' } }), [
     'waveshare-st3215-hs',
     'power-hd-t60-bhv',
+    'hitec-hsb-9380th',
+    'towerpro-mg996r',
   ]);
   assert.deepEqual(matched({ stallCurrent: { min: '0', max: '3' } }), [
     'waveshare-st3215-hs',
     'power-hd-t60-bhv',
+    'hitec-hsb-9380th',
+    'towerpro-mg996r',
+  ]);
+  assert.deepEqual(matched({ stallCurrent: { min: '4.9', max: '5.2' } }), [
+    'chaservo-hv3609',
+    'hitec-d954sw',
   ]);
   assert.deepEqual(matched({ noLoadCurrent: { max: '0' } }), []);
   assert.deepEqual(matched({ stallTorque: { min: '50', max: '20' } }), []);
@@ -224,6 +244,185 @@ test('servo catalog filters use published characteristics and never treat missin
       assert.equal(catalogValue(preset, 'noLoadCurrent'), 0.4);
       assert.equal(catalogValue(preset, 'stallCurrent'), undefined);
     }
+  }
+});
+
+test('new servo specifications retain their source reference voltage and unknown values', () => {
+  // Manufacturer specification tables; the CHASERVO figure is holding torque.
+  const fixtures = [
+    ['waveshare-st3025', 40, 20, 40, 40, 0.117, 12, 0.38, 4.4],
+    ['futaba-hps-h701', 40.5, 21, 37.8, 40, 0.07, 7.4, undefined, undefined],
+    ['hitec-hsb-9380th', 40, 20, 38.5, 34, 0.14, 7.4, 0.25, 2.1],
+    ['chaservo-hv3609', 40.5, 20, 40, 36, 0.09, 7.4, undefined, 4.95],
+    ['hitec-d954sw', 40, 20, 37, 29, 0.12, 7.4, 0.5, 5.2],
+  ] as const;
+  for (const [id, length, width, height, torque, speed, voltage, noLoad, stall] of fixtures) {
+    const preset = servo.presets.find((entry) => entry.id === id)!;
+    assert.ok(preset, `${id}: catalog entry`);
+    const expected = {
+      caseLength: length,
+      caseWidth: width,
+      caseHeight: height,
+      stallTorque: torque,
+      noLoadSpeed: speed,
+      referenceVoltage: voltage,
+      noLoadCurrent: noLoad,
+      stallCurrent: stall,
+    };
+    for (const [key, value] of Object.entries(expected))
+      assert.equal(catalogValue(preset, key), value, `${id}: published ${key}`);
+    if (id !== 'chaservo-hv3609')
+      assert.equal(
+        catalogValue(preset, 'totalHeight'),
+        undefined,
+        `${id}: unverified total height`,
+      );
+  }
+  const st3025 = servo.presets.find((entry) => entry.id === 'waveshare-st3025')!;
+  assert.equal(catalogValue(st3025, 'mountPitch'), undefined, 'ST3025 has no verified ear pitch');
+  for (const key of ['noLoadCurrent', 'stallCurrent'])
+    assert.match(
+      st3025.catalog!.attributeConditions![key],
+      /unspecified|not (?:stated|specified)/i,
+    );
+  const chaservo = servo.presets.find((entry) => entry.id === 'chaservo-hv3609')!;
+  assert.equal(catalogValue(chaservo, 'totalHeight'), 44.2);
+  assert.match(chaservo.catalog!.attributeConditions!.stallTorque, /holding/i);
+  assert.match(chaservo.catalog!.attributeConditions!.caseHeight, /spline|shaft/i);
+});
+
+test('new model travel limits constrain pose changes and reset the ST3215 disc accessory', () => {
+  const limits: Record<string, number> = {
+    'waveshare-st3025': 180,
+    'futaba-hps-h701': 90,
+    'hitec-hsb-9380th': 80,
+    'chaservo-hv3609': 60,
+    'hitec-d954sw': 87.5,
+  };
+  for (const [id, limit] of Object.entries(limits)) {
+    const preset = servo.presets.find((entry) => entry.id === id)!;
+    assert.equal(getModelDefinition(id).angleLimit, limit);
+    for (const sign of [-1, 1]) {
+      const boundary = { ...preset.parameters, outputAngle: sign * limit };
+      assert.deepEqual(servo.validate!(boundary, 'assembled'), [], `${id}: pose boundary`);
+      const exceeded = { ...boundary, outputAngle: sign * (limit + 1) };
+      assert.ok(servo.validate!(exceeded, 'assembled').length, `${id}: excessive pose`);
+      const changed = servo.updateParameters!(
+        { ...servo.defaults, model: id, outputAngle: sign * 180 },
+        'model',
+      );
+      assert.equal(changed.outputAngle, sign * limit, `${id}: model change clamps pose`);
+      assert.equal(changed.hornStyle, 'single', `${id}: supplied discs are ST3215-specific`);
+      assert.deepEqual(servo.validate!(changed, 'assembled'), []);
+    }
+    assert.ok(
+      servo.validate!({ ...preset.parameters, hornStyle: 'disc' }, 'assembled').length,
+      `${id}: rejects an accessory from another model`,
+    );
+  }
+});
+
+test('catalog selection reconciles servo accessories and travel while retaining horn visibility', () => {
+  for (const source of servo.presets)
+    for (const target of servo.presets) {
+      const sourceLimit = getModelDefinition(source.parameters.model).angleLimit;
+      const targetLimit = getModelDefinition(target.parameters.model).angleLimit;
+      for (const sign of [-1, 1])
+        for (const showHorn of [false, true]) {
+          const current = {
+            ...source.parameters,
+            outputAngle: sign * sourceLimit,
+            showHorn,
+            hornStyle: source.id === 'waveshare-st3215-hs' ? 'disc' : 'single',
+          };
+          const original = { ...current };
+          const selected = parametersForPreset(servo, target, current);
+          const label = `${source.id} → ${target.id}`;
+          assert.equal(selected.model, target.parameters.model, label);
+          assert.equal(selected.outputAngle, sign * Math.min(sourceLimit, targetLimit), label);
+          assert.equal(selected.showHorn, showHorn, `${label}: independent visibility`);
+          assert.equal(
+            selected.hornStyle,
+            target.id === 'waveshare-st3215-hs' ? current.hornStyle : 'single',
+            `${label}: model-specific accessory`,
+          );
+          assert.deepEqual(validateParameters(servo, selected, 'assembled'), [], label);
+          assert.ok(presetMatchesConfiguration(servo, target, selected), label);
+          assert.deepEqual(current, original, `${label}: source configuration remains unchanged`);
+        }
+    }
+  for (const preset of servo.presets)
+    assert.deepEqual(parametersForPreset(servo, preset), preset.parameters);
+});
+
+test('new standard servo mounting holes follow the manufacturer installation drawings', () => {
+  const fixtures = [
+    ['futaba-hps-h701', 49.5],
+    ['hitec-hsb-9380th', 49],
+    ['chaservo-hv3609', 49.5],
+    ['hitec-d954sw', 48],
+  ] as const;
+  for (const [id, pitch] of fixtures) {
+    const preset = servo.presets.find((entry) => entry.id === id)!;
+    assert.equal(catalogValue(preset, 'mountPitch'), pitch, `${id}: searchable mounting pitch`);
+    const definition = getModelDefinition(id);
+    assert.equal(definition.geometry.mountPitchX, pitch);
+    assert.equal(definition.geometry.mountPitchY, 10);
+    for (const key of ['mountPitchX', 'mountPitchY'])
+      assert.ok(definition.geometryEvidence.verifiedDimensions.includes(key));
+    if (!partIsAffected(servo.id)) continue;
+    const model = servo.buildGeometry(preset.parameters, 'body');
+    try {
+      model.updateMatrixWorld(true);
+      for (const x of [-pitch / 2, pitch / 2])
+        for (const y of [-5, 5])
+          assert.equal(
+            new Raycaster(new Vector3(x, y, 100), new Vector3(0, 0, -1)).intersectObject(
+              model,
+              true,
+            ).length,
+            0,
+            `${id}: open mounting cutout at ${x},${y}`,
+          );
+    } finally {
+      disposeModel(model);
+    }
+  }
+});
+
+test('ST3025 keeps its no-ear envelope and distinct blind mounting patterns', () => {
+  const preset = servo.presets.find((entry) => entry.id === 'waveshare-st3025')!;
+  const geometry = getModelGeometryParameters(preset.parameters);
+  assert.equal(geometry.bodyLength, 40);
+  assert.equal(geometry.bodyWidth, 20);
+  assert.equal(geometry.bodyHeight, 40);
+  assert.equal(geometry.frontMountPitchX, 36);
+  assert.equal(geometry.frontMountPitchY, 16);
+  assert.equal(geometry.rearMountPitchY, 15);
+  assert.equal(geometry.mountHoleDiameter, 2);
+  if (!partIsAffected(servo.id)) return;
+  const model = servo.buildGeometry(preset.parameters, 'body');
+  try {
+    model.updateMatrixWorld(true);
+    const size = bounds(model).getSize(new Vector3());
+    [40, 20, 40].forEach((expected, axis) =>
+      assert.ok(Math.abs(size.getComponent(axis) - expected) < 0.01, 'no projecting ears'),
+    );
+    for (const x of [-18, 18])
+      for (const sign of [-1, 1]) {
+        const front = new Raycaster(
+          new Vector3(x, sign * 8, 100),
+          new Vector3(0, 0, -1),
+        ).intersectObject(model, true);
+        assert.ok(front.length && front[0].point.z > 0 && front[0].point.z < 40);
+        const rear = new Raycaster(
+          new Vector3(x, sign * 7.5, -100),
+          new Vector3(0, 0, 1),
+        ).intersectObject(model, true);
+        assert.ok(rear.length && rear[0].point.z > 0 && rear[0].point.z < 40);
+      }
+  } finally {
+    disposeModel(model);
   }
 });
 

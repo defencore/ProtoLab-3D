@@ -27,4 +27,18 @@ data/*
 !data/library-expansion.json
 
 # Source archives are linked remotely, never bundled.
-/public/references/
+/public/references/*
+!/public/references/nose-optical-dome-user-reference.png
+!/public/references/daier-ds-225-user-drawing.png
+!/public/references/daier-ds-225-user-photo.png
+
+!/public/references/heltec-handheld-guard-reference-1.png
+!/public/references/heltec-handheld-guard-reference-2.png
+!/public/references/heltec-handheld-guard-reference-3.png
+!/public/references/heltec-handheld-guard-reference-4.png
+!/public/references/worm-fin-actuator/
+
+# Reviewed JCG108 dimension drawing; the datasheet archive remains a remote source.
+!/public/references/antennas/
+/public/references/antennas/*
+!/public/references/antennas/jinchang-jcg108.png

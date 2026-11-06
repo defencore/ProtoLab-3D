@@ -5,6 +5,7 @@
   "processes": [],
   "releaseRequirements": [
     "Select the actual supplier execution with a complete order designation and source reference.",
-    "Verify installation dimensions, mounting interfaces, operating ratings and the ordered product revision."
+    "Verify installation dimensions, mounting interfaces, operating ratings and the ordered product revision.",
+    "For CM5-NANO-A/B, resolve the omitted or misassigned connector CAD using exact product dimensions and placement evidence before enclosure clearance or production release; the retained manufacturer STEP is an incomplete engineering reference."
   ]
 }

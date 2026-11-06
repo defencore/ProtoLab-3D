@@ -11,12 +11,15 @@ import {
   LoaderCircle,
   ArrowUpRight,
 } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { ReferenceSpecifications } from './ReferenceSpecifications';
+import LibraryIdentity from './LibraryIdentity';
 import QuickPicks from './QuickPicks';
 import { modelEvidence } from '../core/model-evidence';
+import { eskdIdentity } from '../core/eskd';
 import CatalogModelPicker from './CatalogModelPicker';
 import StandoffCatalogPicker from './StandoffCatalogPicker';
+import MechanismCatalogPicker from './MechanismCatalogPicker';
 import NumericParameterInput from './NumericParameterInput';
 import { hasCatalogQuickSize, quickPickFields } from '../core/quick-picks';
 import type { QuickPickFilters } from '../core/quick-picks';
@@ -47,9 +50,11 @@ interface Props {
 function ParameterField({
   field,
   value,
+  parameters,
   onChange,
 }: {
   field: ParameterDefinition;
+  parameters: Parameters;
   value: number | string | boolean;
   onChange: Props['onChange'];
 }) {
@@ -93,11 +98,13 @@ function ParameterField({
             value={String(value)}
             onChange={(event) => onChange(field.key, event.target.value)}
           >
-            {field.options?.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
+            {field.options
+              ?.filter((option) => !option.availableWhen || option.availableWhen(parameters))
+              .map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
           </select>
           <ChevronDown size={14} />
         </div>
@@ -137,7 +144,21 @@ export default function Configurator({
   previewError,
 }: Props) {
   const isStandoffFamily = part.browseFamily?.id === 'spacers-standoffs';
+  const isMechanismFamily =
+    familyParts.length > 1 && familyParts.every((member) => !!member.mechanismExecution);
+  const isFamilyCatalog = familyParts.length > 1 && !isStandoffFamily && !isMechanismFamily;
+  const hasModelCatalog = isFamilyCatalog || part.catalogSelectionOnly;
+  const catalogParts = useMemo(
+    () => (isFamilyCatalog ? familyParts : [part]),
+    [isFamilyCatalog, familyParts, part],
+  );
+  const catalogCount = isFamilyCatalog
+    ? familyParts.reduce((count, member) => count + Math.max(1, member.presets.length), 0)
+    : isStandoffFamily
+      ? familyParts.reduce((count, member) => count + member.presets.length, 0)
+      : part.presets.length;
   const evidence = modelEvidence(part, parameters, presetId);
+  const identity = errors.length ? undefined : eskdIdentity(part, parameters, modelState, presetId);
   const [collapsed, setCollapsed] = useState<string[]>([]);
   const pickFields = quickPickFields(part);
   const [customMode, setCustomMode] = useState(() => !hasCatalogQuickSize(part, parameters));
@@ -161,9 +182,11 @@ export default function Configurator({
         <h2>
           {isStandoffFamily
             ? 'Choose a spacer or standoff'
-            : part.catalogSelectionOnly
-              ? 'Select model & configure'
-              : 'Configure part'}
+            : isMechanismFamily
+              ? 'Configure mechanism'
+              : hasModelCatalog
+                ? 'Select model & configure'
+                : 'Configure part'}
         </h2>
         <span className="live-label">
           <span />
@@ -171,27 +194,23 @@ export default function Configurator({
         </span>
       </div>
       <div className="config-scroll">
-        {!isStandoffFamily && familyParts.length > 1 && (
-          <div className="parameter-field select-field">
-            <label htmlFor="family-part-type">Part type</label>
-            <div className="select-wrap">
-              <select
-                id="family-part-type"
-                value={part.id}
-                onChange={(event) => {
-                  const next = familyParts.find((member) => member.id === event.target.value);
-                  if (next) onSelectPart(next);
-                }}
-              >
-                {familyParts.map((member) => (
-                  <option key={member.id} value={member.id}>
-                    {member.name}
-                  </option>
-                ))}
-              </select>
-              <ChevronDown size={14} />
-            </div>
-          </div>
+        <LibraryIdentity
+          part={part}
+          parameters={parameters}
+          presetId={presetId}
+          configurationKey={identity?.configurationKey}
+        />
+        {isMechanismFamily && (
+          <MechanismCatalogPicker
+            key={`mechanisms-${browseQuery.revision}`}
+            parts={familyParts}
+            selectedPart={part}
+            parameters={parameters}
+            query={browseQuery.query}
+            onQueryChange={onBrowseQueryChange}
+            onSelectPart={onSelectPart}
+            onSelectModel={onSelectModel}
+          />
         )}
         {errors.length > 0 && (
           <div className="validation-error" role="alert">
@@ -207,12 +226,8 @@ export default function Configurator({
         <section className="preset-section">
           <div className="field-title">
             <span className="preset-field-label">
-              {isStandoffFamily || part.catalogSelectionOnly ? 'MODEL CATALOG' : 'SIZE & CATALOG'}
-              {(isStandoffFamily
-                ? familyParts.reduce((count, member) => count + member.presets.length, 0)
-                : part.presets.length) > 0
-                ? ` · ${(isStandoffFamily ? familyParts.reduce((count, member) => count + member.presets.length, 0) : part.presets.length).toLocaleString('en-US')} AVAILABLE`
-                : ''}
+              {isStandoffFamily || hasModelCatalog ? 'MODEL CATALOG' : 'SIZE & CATALOG'}
+              {catalogCount > 0 ? ` · ${catalogCount.toLocaleString('en-US')} AVAILABLE` : ''}
             </span>
             <button
               className="icon-button"
@@ -225,6 +240,7 @@ export default function Configurator({
             </button>
           </div>
           {!isStandoffFamily &&
+            !isFamilyCatalog &&
             !part.catalogSelectionOnly &&
             part.presets.length > 0 &&
             (!pickFields.length || customMode) && (
@@ -238,6 +254,7 @@ export default function Configurator({
               </div>
             )}
           {!isStandoffFamily &&
+            !isFamilyCatalog &&
             !part.catalogSelectionOnly &&
             pickFields.length === 0 &&
             part.presets.length > 0 &&
@@ -295,14 +312,17 @@ export default function Configurator({
               onQueryChange={onBrowseQueryChange}
               onSelect={onSelectModel}
             />
-          ) : part.catalogSelectionOnly ? (
+          ) : hasModelCatalog ? (
             <CatalogModelPicker
               key={`catalog-${browseQuery.revision}`}
+              parts={catalogParts}
               part={part}
+              parameters={parameters}
               presetId={presetId}
               initialQuery={browseQuery.query}
               onQueryChange={onBrowseQueryChange}
-              onSelect={onPreset}
+              onSelect={onSelectModel}
+              onSelectPart={onSelectPart}
             />
           ) : pickFields.length ? (
             <div hidden={customMode}>
@@ -328,6 +348,20 @@ export default function Configurator({
               </a>
             )}
           </details>
+          {identity && identity.supply !== 'reference' && (
+            <details className="model-evidence">
+              <summary>
+                {identity.supply === 'manufactured' ? 'ESKD identity' : 'Supplier identity'}
+              </summary>
+              <p>{identity.label}</p>
+              {identity.supply === 'manufactured' && (
+                <p>
+                  Size and configuration select an execution. Edit the enterprise designation and
+                  revision in Design projects.
+                </p>
+              )}
+            </details>
+          )}
           <details
             className="preset-reference-details"
             open={(!part.catalogSelectionOnly && customMode) || undefined}
@@ -423,6 +457,7 @@ export default function Configurator({
                       key={`${part.id}-${field.key}`}
                       field={field}
                       value={parameters[field.key]}
+                      parameters={parameters}
                       onChange={onChange}
                     />
                   ))}

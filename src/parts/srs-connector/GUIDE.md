@@ -1,6 +1,6 @@
 # SRS airbag pigtail connectors
 
-Fixed connector families in **Electronics & vision → Connectors & wiring**:
+Fixed connector families in **Connectors & interfaces → SRS airbag**:
 
 | Selection             | Published dimensional basis                                            | Scope                                                              |
 | --------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------ |

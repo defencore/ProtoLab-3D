@@ -1,0 +1,43 @@
+# Open ESKD exchange
+
+`exportOpenEskd(project, parts)` creates an `open-eskd` schema-6 JSON manifest that can be opened with [Open ESKD](https://eskd.defencore.com). The mapping follows its [format](https://github.com/defencore/open-eskd/blob/main/docs/FORMAT.md), [conformance rules](https://github.com/defencore/open-eskd/blob/main/docs/CONFORMANCE.md), and [external-file workflow](https://github.com/defencore/open-eskd/blob/main/docs/FILESYSTEM.md), reviewed at upstream commit `de769b4b56e2a495f7bc4c7506bedc887892cbf8`.
+
+The manifest is a new draft baseline containing one `main` branch and one saved snapshot. It does not claim to reproduce prior Open ESKD history or publish component catalog revisions. Components have `source: null` and `baseRevisionId: null`; `catalog` and `production` are empty, and `fileCheck` is null. Export never marks an engineering product released.
+
+## Product structure
+
+Each visible ProtoLab occurrence becomes an Open ESKD component with its existing occurrence ID, exact configured name, designation, revision, and quantity per parent. Repeated occurrences share a definition identity. Configurations with the same designation share that identity across revisions. Positions and local placements remain occurrence data, independent of the designation.
+
+Manufactured details map to `part`; assemblies to `assembly`; complexes to `complex`; kits to `set`; and stock to `material`. Purchased and standard products map to `purchased` and `standard`, respectively, and remain opaque leaves. Internal geometry and internal fabrication documents of a purchased assembly do not become separately procured products. A reference product in the exported physical tree is an error.
+
+Existing names and supplier identities are preserved. Export does not invent catalog names, manufacturers, enterprise numbering, material grades, drawing paths, responsible engineers, approval status, or file hashes. Selecting a different size or execution and revising a design remain separate operations in the source project.
+
+Open ESKD requires a nonblank component designation even in a draft. When the source ordering or enterprise designation is absent, the exported field uses `Draft: <authored name> [<configuration ID>]`. An overlong source designation similarly uses an explicit draft label bounded to 200 characters. These are exchange labels, not invented supplier SKUs. The original designation and unresolved ordering requirements remain in ProtoLab annotations and visible component notes; the source project is unchanged. Original names exceeding the schema's 200-character limit use an explicitly noted abbreviation, with the full source name retained in annotations. Unknown supplier titles, manufacturers, and ordering evidence remain unresolved.
+
+The offline supplier-name sync restores 12,092 original listing titles from reviewed Gvyntok and Promtehimport snapshots. Another 7,024 catalog records lack original title evidence, including DREMEC and FAULHABER records. Curated selector names remain available for previews; they do not satisfy an exact supplier-title requirement. See [supplier name coverage and synchronization](supplier-names.md).
+
+Material, stock, process order, and recorded inspection requirements map into the manufacturing route. Process mappings are explicit: `cutting` becomes `cutStock`, `printing` becomes `printing3d`, `moulding` becomes `casting`, and `winding` becomes `other` with a winding instruction. An unspecified cutting process is not represented as laser cutting. Equipment and facility remain empty until engineers provide them.
+
+If combined manufacturing and inspection requirements exceed the operation check field's 2,000-character limit, the field explicitly directs the reader to the complete authored requirements in ProtoLab annotations. `manufacturingRequirementsInAnnotations: true` and visible component notes record this condition. The exporter does not present a clipped subset of inspection requirements as complete.
+
+## Documents and limits
+
+Existing document records become external references linked to every exported occurrence of their configuration. An assembly drawing uses Open ESKD's `assemblyDrawing` kind. Document paths are preserved, and listed documents are required with unknown hashes (`sha256: null`). Repeated references to the exact same path are allowed. No CAD, drawing, image, or other binary file is embedded or copied by JSON export.
+
+Paths must be portable and relative to the directory containing `project.json`. Absolute paths, parent traversal, reserved filenames, case conflicts, file/directory conflicts, and placeholder filenames are rejected. Missing paths are errors, not automatically generated filenames. Open ESKD limits also apply: 64 tree levels, 10,000 components, 10,000 document references, positive occurrence quantities no greater than 1,000,000, and safe multiplied totals. Other unsupported metadata lengths or identities fail with an explicit error.
+
+Generated geometry recipes can exceed Open ESKD's 64 KiB annotation limit. Such components retain lean configuration metadata and the physical `configurationKey`; their annotation records `parametersOmitted: true`, `parameterBytes`, and `parametersOmittedReason`. Component notes state that the complete ProtoLab Project JSON backup must be retained. This exchange is then intentionally not a geometry-parameter backup; the normal ProtoLab project export remains lossless. No oversized recipe is silently truncated or split into undocumented extension namespaces.
+
+## ProtoLab annotation profile, version 1
+
+The optional namespace `com.defencore.protolab` preserves source information that has no equivalent core field. Every payload starts with `version: 1`:
+
+| Location         | Fields and meaning                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Project envelope | `sourceSchemaVersion`, `documentationPolicy`, `documentationRules`: source format and enterprise documentation settings.                                                                                                                                                                                                                                                                                                                                                 |
+| Component        | `configuration`: source configuration metadata, normally including parameters, state, procurement evidence, and manufacturing requirements; `position`: source BOM position; `placement`: local millimetre translation and degree rotation triples. Oversized parameter omission uses the explicit fields described above. Draft labels add `designationIsDraft`, `originalDesignation`, and `unresolved`; abbreviated names add `nameIsAbbreviated` and `originalName`. |
+| Document         | `sourceId`, `configurationId`, `designation`, `format`: the source document identity and drawing metadata.                                                                                                                                                                                                                                                                                                                                                               |
+
+Annotations preserve source configuration data; they do not override Open ESKD core fields, provide pinned revision semantics, or imply approval. Payloads obey the upstream finite-JSON, nesting, reserved-key, and 64 KiB limits. Consumers may preserve the namespace without interpreting it.
+
+Open ESKD is an open engineering information format, not an approved international standard. Successful exchange and valid structure do not certify compliance with GOST, DSTU, ISO, drawing standards, manufacturing tolerances, or an organization's release procedure.

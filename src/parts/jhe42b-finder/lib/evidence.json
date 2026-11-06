@@ -1,0 +1,215 @@
+{
+  "reviewedAt": "2026-11-02",
+  "sourceKind": "manufacturer",
+  "model": "JHE42B",
+  "productCode": "202378133636",
+  "sourceUrl": "https://jhemcu.com/e_productshow/?54-JHEMCU-JHE42B-Finder-BB-Ring-110dB-Buzzer-Alarm-with-LED-Light-Support-BF-CF-Flight-54.html=",
+  "verifiedOverallDimensions": [23, 17, 17],
+  "publishedMassGrams": 7.4,
+  "geometryScope": "Detailed visible exterior reconstructed from the manufacturer photographs and the user front photograph: PCB, closed-top side-outlet buzzer, LED, three-pin socket, separate cancel switch, pouch battery, leads, small visible components and translucent shrink-wrap. Only the nominal overall web-page dimensions and product identity are published dimensional evidence; feature sizes and positions are photo estimates.",
+  "serviceOrientation": {
+    "evidence": "Manufacturer product photographs 089 / 215 / 481 / 597 and user front photograph; inferred orientation, not a dimensioned axis drawing",
+    "sourceUrl": "https://jhemcu.com/pic/other/2023-07-08-13-38-215.jpg",
+    "chosenSoundFace": "-X",
+    "chosenLEDFace": "+Z",
+    "chosenCancelButtonFace": "+X",
+    "chosenConnectorFace": "+X",
+    "chosenBatteryFace": "-Z",
+    "axisAssignmentVerified": false,
+    "featureDimensionsVerified": false,
+    "notes": "The buzzer top is closed. Its rectangular dark opening is on a short side hood at -X. The separate low cancel switch beside the connector appears side-actuated; the square white/yellow component is an LED."
+  },
+  "distinctProducts": [
+    {
+      "model": "JHE42B-S",
+      "productCode": "202378133958",
+      "overallDimensions": [18, 17, 15],
+      "publishedMassGrams": 4.3,
+      "sourceUrl": "https://jhemcu.com/e_productshow/?55-JHEMCU-JHE42B-S-Finder-BB-Ring-100dB-Buzzer-Alarm-with-LED-Light-Support-BF-CF-Flight-55.html="
+    },
+    {
+      "model": "JHE20B",
+      "productCode": "202378132739",
+      "overallDimensions": [22, 12, 9.5],
+      "publishedMassGrams": 2.7,
+      "sourceUrl": "https://jhemcu.com/e_productshow/?53-JHEMCU-JHE20B-Finder-BB-Ring-100dB-Buzzer-Alarm-with-LED-Light-Support-BF-CF-INAV-Flight-53.html="
+    }
+  ],
+  "unverified": [
+    "The conflict between the 23 mm web-page length and 25 mm official dimension photograph",
+    "Exact external subfeature dimensions, coordinates, corner radii, board thickness and wrapper contour/thickness",
+    "Battery chemistry, capacity and internal construction",
+    "Socket family, exact terminal geometry and actual mating-plug/cable envelope",
+    "Actual sound outlet depth and internal acoustic structure",
+    "Permissible clamping/contact lands and mounting loads; no mounting holes are documented",
+    "Environmental, deployment-shock, retention and flight ratings"
+  ],
+  "verifiedOverallDimensionsBasis": "The manufacturer web page states 23 × 17 × 17 mm. These remain the nominal library dimensions. The official dimension photograph states 25 × 17 × 17 mm; actual length is unresolved and neither source is silently treated as a verified execution drawing.",
+  "dimensionConflict": {
+    "manufacturerPageMm": [23, 17, 17],
+    "manufacturerPhotoMm": [25, 17, 17],
+    "photoUrl": "https://jhemcu.com/pic/other/2023-07-08-13-38-338.jpg",
+    "nominalModelBasisMm": [23, 17, 17],
+    "resolution": "Unresolved. The model retains the existing 23 mm web-page basis and installation datum; no separately identified 25 mm product execution is invented. Verify the delivered hardware before a close-fitting mounting design."
+  },
+  "manufacturerPhotographs": [
+    {
+      "name": "2023-07-08-13-38-089.jpg",
+      "url": "https://jhemcu.com/pic/other/2023-07-08-13-38-089.jpg",
+      "sha256": "a01f36e169609251d2396a98f1b683bbfa3f52a2740b856a88a6c37c59745fa8",
+      "bytes": 67048,
+      "purpose": "Three-quarter exterior: battery, PCB, closed buzzer top, LED, socket and switch",
+      "dimensionalScope": "Photographic appearance reference; subfeatures are not dimensioned."
+    },
+    {
+      "name": "2023-07-08-13-38-215.jpg",
+      "url": "https://jhemcu.com/pic/other/2023-07-08-13-38-215.jpg",
+      "sha256": "f6711b99d4e678e16c20517c64bddcde7d37a27538124d11332161a16021f302",
+      "bytes": 30293,
+      "purpose": "Opposite end: rectangular side sound outlet and red/black battery leads",
+      "dimensionalScope": "Photographic appearance reference; subfeatures are not dimensioned."
+    },
+    {
+      "name": "2023-07-08-13-38-338.jpg",
+      "url": "https://jhemcu.com/pic/other/2023-07-08-13-38-338.jpg",
+      "sha256": "e85c231cf1e968ab4b06981a4e4471cce4ae963895647b9155424c9468981c6f",
+      "bytes": 54452,
+      "purpose": "Orthographic-like size photograph; explicit 25 × 17 × 17 mm length conflict",
+      "dimensionalScope": "Photographic appearance reference; subfeatures are not dimensioned."
+    },
+    {
+      "name": "2023-07-08-13-38-481.jpg",
+      "url": "https://jhemcu.com/pic/other/2023-07-08-13-38-481.jpg",
+      "sha256": "5270485bb40952869c9053d0a4a0687c03bff784585030d52977110a7ffdb919",
+      "bytes": 90753,
+      "purpose": "Connection and cancel-control photograph; nominal +5 V / GND / BZ- labels",
+      "dimensionalScope": "Photographic appearance reference; subfeatures are not dimensioned."
+    },
+    {
+      "name": "2023-07-08-13-38-597.jpg",
+      "url": "https://jhemcu.com/pic/other/2023-07-08-13-38-597.jpg",
+      "sha256": "b084b241bed6d55a4cca876fc4c973ad7a3feac792ba592c8b83670ac598b8b9",
+      "bytes": 63193,
+      "purpose": "Module and separate three-wire cable",
+      "dimensionalScope": "Photographic appearance reference; subfeatures are not dimensioned."
+    },
+    {
+      "name": "2023-07-08-13-39-113.jpg",
+      "url": "https://jhemcu.com/pic/other/2023-07-08-13-39-113.jpg",
+      "sha256": "addf85d9f6fe2dadc04313113fbbf82f933fe5db79b61f804705ec379126b118",
+      "bytes": 128744,
+      "purpose": "Module on a scale displaying 7.4 g",
+      "dimensionalScope": "Photographic appearance reference; subfeatures are not dimensioned."
+    },
+    {
+      "name": "2023-07-08-13-39-221.jpg",
+      "url": "https://jhemcu.com/pic/other/2023-07-08-13-39-221.jpg",
+      "sha256": "c101e1380a31601faef42db2a854705af7dc457a96837557a176fdba178454b4",
+      "bytes": 61960,
+      "purpose": "Manufacturer connection schematic; not feature-dimensional evidence",
+      "dimensionalScope": "Photographic appearance reference; subfeatures are not dimensioned."
+    }
+  ],
+  "userFrontPhotograph": {
+    "source": "Attachment to the current modeling request",
+    "sha256": "a68ac23187c3def2ed15ab04c76c35c30102837f9a80356b8cba0bc0591b89e6",
+    "purpose": "Front-facing appearance confirms the closed buzzer cap, white/yellow LED, separate socket and side-actuated cancel switch, black PCB and clear wrapping. No dimensions or revision are established by the attachment."
+  },
+  "cadSearch": {
+    "reviewedAt": "2026-11-02",
+    "scope": "Official JHEMCU product page, seven linked primary photographs, and official-domain searches for JHE42B CAD, STEP, drawings and manual downloads.",
+    "result": "No manufacturer CAD or dimensioned subfeature drawing was linked or found in this review. This is a photo-based exterior reconstruction, not original manufacturer CAD."
+  },
+  "exteriorFeatureEstimates": [
+    {
+      "feature": "PCB",
+      "dimensionsMm": [22, 16, 0.8],
+      "undersideZMm": 7.4,
+      "basis": "Photo estimate; corner rounding and board thickness are not manufacturer-dimensioned."
+    },
+    {
+      "feature": "Silver pouch battery",
+      "dimensionsMm": [21, 15, 6.55],
+      "zRangeMm": [0.25, 6.8],
+      "basis": "Visible external pouch envelope only; chemistry, capacity and internal construction remain unknown."
+    },
+    {
+      "feature": "Intermediate buffer layer",
+      "heightMm": 0.55,
+      "basis": "Photo-estimated visible separation layer; material and compression are not established.",
+      "zRangeMm": [6.85, 7.4]
+    },
+    {
+      "feature": "Closed-top buzzer can",
+      "diameterMm": 13.2,
+      "centreXYMm": [-4.3, 0],
+      "zRangeMm": [8.2, 16.85],
+      "basis": "Photo-estimated visible exterior; no diaphragm, winding or internal acoustic passage is invented."
+    },
+    {
+      "feature": "Negative-X sound hood",
+      "nominalVisibleMouthMm": [4.2, 4.4],
+      "basis": "Photo-estimated rectangular external recess. The model does not establish internal acoustic geometry."
+    },
+    {
+      "feature": "LED body and lens",
+      "centreXYMm": [4.7, -2],
+      "bodyXYMm": [3, 3],
+      "lensDiameterMm": 2.3,
+      "basis": "Photo estimate; white body and yellow phosphor appearance are visible."
+    },
+    {
+      "feature": "Three-pin socket",
+      "boundsMm": {
+        "x": [7.3, 11.2],
+        "y": [1, 6.8],
+        "z": [8.2, 11.4]
+      },
+      "nominalContactPitchMm": 1,
+      "basis": "Body, mouth and contact geometry are photo estimates. The vendor lists a three-pin 1.0 mm cable, which does not identify a connector family or provide a mating-plug drawing."
+    },
+    {
+      "feature": "Cancel switch",
+      "boundsMm": {
+        "x": [8.1, 10.8],
+        "y": [-6.6, -2.8],
+        "z": [8.2, 10.6]
+      },
+      "actuatorFace": "+X",
+      "basis": "Photo-estimated visible case and black side plunger, separate from the LED."
+    },
+    {
+      "feature": "Translucent wrapper",
+      "nominalFilmThicknessMm": 0.12,
+      "maximumNominalEnvelopeMm": [23, 17, 17],
+      "basis": "Estimated open-ended sleeve following the visible exterior; not a measured material thickness, composition or manufacturing flat pattern."
+    },
+    {
+      "feature": "Battery leads, tape, small SMDs and markings",
+      "basis": "Visible appearance details estimated from photographs; no circuit, pin assignment, hidden component or manufacturer package designation is inferred."
+    }
+  ],
+  "productBoundary": "One purchased JHE42B finder with its integral battery and fitted wrapping. Internal/exterior visualization solids do not become extra procurement items. Loose cable, mating plug, mounting pads and fasteners are separate installation items.",
+  "nativeVerification": {
+    "reviewedAt": "2026-11-02",
+    "report": "test-results/jhe42b-detail/independent-native-report.json",
+    "macroSha256": "6be75f894d7a9ac7bbd34fd6736e5070384a649b754c9aed681fe3e3e4ad895a",
+    "freecadVersion": "1.1.4",
+    "passed": true,
+    "visualObjects": 35,
+    "nativeSolids": 43,
+    "nativeFaces": 472,
+    "surfaceTypes": ["BSplineSurface", "Cylinder", "Plane", "Toroid"],
+    "nominalEnvelopeToleranceMm": 0.000001,
+    "intersectionVolumeThresholdMm3": 0.000001,
+    "intersectionsAboveThreshold": 0,
+    "maximumPreviewBoundsErrorMm": 0.003785226197887681,
+    "maximumRelativePreviewVolumeError": 0.0028537533437291117,
+    "STEP": true,
+    "STEPVolumeDriftMm3": 0.0000024982514332805295,
+    "FCStd": true,
+    "supplierUnitCount": 1,
+    "appearanceScope": "Preview opacity 0.22 and native material transparency assignment checked; FreeCAD GUI appearance persistence was not verified.",
+    "qualificationScope": "Valid native geometry, preview consistency, procurement identity and export round trips. This does not verify photo-estimated dimensions against delivered hardware or resolve the manufacturer's 23/25 mm length conflict."
+  }
+}

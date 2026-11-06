@@ -5,6 +5,7 @@ export default {
   order: 121.45,
   dependencies: [
     'rocket-release',
+    'flight-controller',
     'recovery-detail',
     'purchased-recovery-component',
     'co2-cartridge',

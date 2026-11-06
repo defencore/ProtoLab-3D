@@ -1,4 +1,5 @@
 import productData from './product.json';
+import { bearingPalette, bearingRgb } from '../../core/hardware/bearing-appearance';
 import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
@@ -78,7 +79,9 @@ const part: PartDefinition = {
     );
     return group;
   },
-  python: (p) => compoundPython(profiles(p).map(turnedPython)),
+  python: (p) =>
+    compoundPython(profiles(p).map(turnedPython)) +
+    `\ncomponent_colors = ${JSON.stringify([bearingPalette.race, DARK_STEEL].map(bearingRgb))}`,
   dimensions: (p) => [n(p, 'outer'), n(p, 'outer'), n(p, 'width')],
   notes:
     'Supplier bore, outer diameter and ring widths. Spherical seat radius and clearance are representative, sampled in the meridian. Lubrication grooves, split outer ring, seals, articulation travel and contact stress are omitted.',

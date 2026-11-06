@@ -2,7 +2,7 @@ import type { Parameters } from '../../../core/types';
 import type { Piece } from '../../../core/assembly/mechanical/assembly';
 import * as assembly from '../../../core/assembly/mechanical/assembly';
 import type { Shape } from '../../../core/assembly/mechanical/shapes';
-import { cylinder, prism } from '../../../core/assembly/mechanical/shapes';
+import { cylinder, prism, roundedRect } from '../../../core/assembly/mechanical/shapes';
 import { Mesh, MeshStandardMaterial } from 'three';
 import {
   B,
@@ -16,7 +16,8 @@ import {
   finish,
   T,
 } from '../../../core/assembly/mechanical/helpers';
-import { daierColours, selected, type SwitchModel } from './catalog';
+import { daierColours, ds225CapColours, selected, type SwitchModel } from './catalog';
+import { bermButton } from './berm';
 
 const metal = 0xb7bec6,
   plastic = 0x272e35,
@@ -300,12 +301,83 @@ function toggle(
   }
 }
 
+/** Photo-corrected rectangular bezel; its size and other undimensioned details are illustrative. */
+function ds225Button(
+  m: SwitchModel,
+  p: Parameters,
+  add: (label: string, shape: Shape, color?: number) => void,
+) {
+  const depth = m.body[2],
+    upperDepth = m.bushingHeight!,
+    front = m.height!,
+    bezelHeight = front - 2,
+    panelThickness = Number(p.panelThickness),
+    drop = p.position === 'last' ? 1 : 0;
+  add('DS-225 insulating body', C(m.body[0], depth - upperDepth, -depth), plastic);
+  // The source dimensions the opening; a 0.1 mm diametral/flat clearance is illustrative.
+  const barrel = cut(
+    C(m.bushing!, upperDepth, -upperDepth),
+    B(10, 30, upperDepth + 2, 10.65, 0, -upperDepth - 1),
+    B(10, 30, upperDepth + 2, -10.65, 0, -upperDepth - 1),
+  );
+  const bezel = roundedRect(15, 15, 1, 0, bezelHeight);
+  add(
+    'DS-225 mounting barrel and bezel · nominal thread',
+    cut(union(barrel, bezel), C(9.2, upperDepth + bezelHeight + 2, -upperDepth - 1)),
+    plastic,
+  );
+  add(
+    'DS-225 panel retaining nut',
+    cut(hex(13.5, 12.64, 3, -panelThickness - 5), ring(24, 15, 5, -panelThickness - 6)),
+    metal,
+  );
+  add(
+    'DS-225 panel washer · illustrative thickness',
+    ring(15, 12.64, 2, -panelThickness - 2),
+    metal,
+  );
+  add(
+    'DS-225 button actuator',
+    move(
+      T([
+        [0, -1],
+        [4.5, -1],
+        [4.5, front - 0.7],
+        [4.35, front - 0.3],
+        [3.8, front],
+        [0, front],
+      ]),
+      0,
+      0,
+      -drop,
+    ),
+    ds225CapColours.find((colour) => colour.value === p.capColour)!.color,
+  );
+  for (const [index, x] of [-m.pitch![0] / 2, m.pitch![0] / 2].entries())
+    add(
+      `DS-225 solder terminal ${index + 1}`,
+      cut(
+        B(0.6, 2, 6, x, 0, -depth - 6),
+        union(
+          B(2, 0.7, 1.3, x, 0, -depth - 4.15),
+          cylinder(0.35, 2, [x - 1, 0, -depth - 4.15], 'x'),
+          cylinder(0.35, 2, [x - 1, 0, -depth - 2.85], 'x'),
+        ),
+      ),
+      copper,
+    );
+}
+
 export function pieces(p: Parameters, state: string): Piece[] {
   const m = selected(p.model),
     out: Piece[] = [];
   const add = (label: string, shape: Shape, color = metal) => out.push({ label, shape, color });
-  if (m.illuminated) {
+  if (m.bermHead) {
+    bermButton(m, p, add);
+  } else if (m.illuminated) {
     illuminatedToggle(m, p, add);
+  } else if (m.id === 'daier-ds-225') {
+    ds225Button(m, p, add);
   } else if (m.form === 'toggle') {
     toggle(m, p, add);
   } else if (m.form === 'rocker') {

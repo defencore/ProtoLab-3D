@@ -14,6 +14,7 @@ export const defaults: Parameters = {
 export const parameters: ParameterDefinition[] = [
   {
     key: 'mechanism',
+    catalogSummary: true,
     label: 'Mechanism',
     type: 'select',
     group: 'Design',
@@ -21,6 +22,7 @@ export const parameters: ParameterDefinition[] = [
       { value: 'rocker', label: 'Printed rocker · three parts' },
       { value: 'parallel', label: 'Parallel-shaft rocker' },
       { value: 'parallel-dual', label: 'Parallel-shaft rocker · two switches' },
+      { value: 'case-panel', label: 'Case panel · INTERTOOL BX-0151' },
       { value: 'guided', label: 'Guided fork' },
     ],
     description:
@@ -48,7 +50,7 @@ export const parameters: ParameterDefinition[] = [
     group: 'Operation',
     filterable: false,
     optionalWhenHidden: true,
-    visibleWhen: (p) => p.mechanism === 'parallel-dual',
+    visibleWhen: (p) => ['parallel-dual', 'case-panel'].includes(String(p.mechanism)),
     options: [
       { value: 'guarded-off', label: 'OFF · cover closed' },
       { value: 'open-off', label: 'OFF · cover open' },
@@ -59,27 +61,28 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'baseLength',
+    catalogSummary: true,
     label: 'Base length',
     type: 'number',
     unit: 'mm',
     min: 80,
-    max: 220,
+    max: 350,
     step: 1,
     group: 'Mounting',
     description:
-      'Base footprint; for the parallel-shaft rocker, this sets the mounting flange length.',
+      'Base length; the BX-0151 fit prototype uses a 214 mm working faceplate after trimming the physical fit prototype.',
   },
   {
     key: 'baseWidth',
+    catalogSummary: true,
     label: 'Base width',
     type: 'number',
     unit: 'mm',
     min: 60,
-    max: 180,
+    max: 350,
     step: 1,
     group: 'Mounting',
-    description:
-      'Base footprint; for the parallel-shaft rocker, this sets the mounting flange width.',
+    description: 'Base width; the BX-0151 fit prototype uses a 150.6 mm working faceplate height.',
   },
   {
     key: 'deckHeight',
@@ -90,7 +93,7 @@ export const parameters: ParameterDefinition[] = [
     max: 65,
     step: 1,
     group: 'Mounting',
-    visibleWhen: (p) => !['parallel', 'parallel-dual'].includes(String(p.mechanism)),
+    visibleWhen: (p) => !['parallel', 'parallel-dual', 'case-panel'].includes(String(p.mechanism)),
     description:
       'Height of the switch case mounting face above the base bottom. The mounting plate starts 3 mm higher.',
   },

@@ -120,7 +120,13 @@ export function conformPrecisionMesh(group: import('three').Group) {
       ),
     );
     geometry.setIndex(triangles.flat());
-    geometry.computeVertexNormals();
+    // Junction repair shares positions across CAD face boundaries. Retain its
+    // triangles, but give each face independent normals at sharp cap/wall edges.
+    const flat = geometry.toNonIndexed();
+    flat.deleteAttribute('normal');
+    flat.computeVertexNormals();
+    mesh.geometry = flat;
+    geometry.dispose();
   });
   return group;
 }

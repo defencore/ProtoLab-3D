@@ -89,8 +89,8 @@ const part: PartDefinition = {
       type: 'select',
       group: 'Model',
       options: [
-        { value: 'r25-10t3-fdi', label: 'HIWIN R25-10T3-FDI ·25×10' },
-        { value: 'r20-5t3-fdi', label: 'HIWIN R20-5T3-FDI ·20×5' },
+        { value: 'r25-10t3-fdi', label: 'HIWIN R25-10T3-FDI · 25 × 10 mm' },
+        { value: 'r20-5t3-fdi', label: 'HIWIN R20-5T3-FDI · 20 × 5 mm' },
       ],
     },
   ],

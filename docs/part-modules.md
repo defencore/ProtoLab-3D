@@ -46,7 +46,30 @@ npm test
 
 Keep IDs and parameter keys stable when their meaning stays the same, so saved configurations remain identifiable. When changing a field's type, options or allowed range, update the defaults and all affected presets in the same package.
 
+Shared rounded-rectangle, circular-band and torus builders retain an explicit native primitive description beside the sampled preview. Preserve its frame when translating points; manufactured-detail recipes validate that both representations describe the same geometry. Use rigid transforms for general placement. Native circular meridians use the analytic profile SDK; arbitrary polygonal outlines retain their intended straight edges.
+
+Reusable PCB seating and locking features are public SDK modules:
+`src/core/pcb-retention.ts` builds broad open-top triangular edge pockets, and
+`src/core/pcb-retention-bridge.ts` builds a sliding bridge, its integral base
+seats and release-leaf geometry from explicit datums. The field DAQ enclosure
+and `pcb-retention-mount` use these same dimension-driven shapes. Fuse integral
+features into their host's manufactured-detail recipe and register removable
+parts as separate physical configurations; a helper function is not an extra
+procurement item. Preserve the PCB seating plane, bare-edge contact lands and
+complete board/key service envelopes when positioning the features in a new
+host. Both modules are included in the portable SDK allowlist.
+
 ## Add a part
+
+Before creating a package folder, have `library_organizer` apply the
+[organization workflow](library-organization.md#decide-reuse-before-creating-a-package)
+with `library_curator`. Search existing definitions and decide whether the change
+is an existing configuration, a parameter/model/preset extension, a shared-catalog
+member or a genuinely new package. Record the functional path, reused/allocated
+Package/model IDs and reason in the appropriate guide. A different length, thread,
+camera or supported gear form alone does not justify copying a family into another
+package. Run the creation command below only after the new-family decision and
+globally unique Package ID are agreed.
 
 ```sh
 npm run parts:create -- mounting-pad --name "Mounting pad"
@@ -84,6 +107,8 @@ Optional `browseFamily: { id, label, primary? }` groups related definitions into
 
 Use `visibleWhen(parameters)` for variant-dependent fields. Hidden fields remain part of the configuration and must retain valid types and finite numeric values. Use `updateParameters(parameters, changedKey)` when changing a variant needs to initialize related dimensions; preserve other user values. A number with no physical unit uses `unit: ''`.
 
+A select option may define `availableWhen(parameters)` to limit dependent choices to compatible configurations. The main configurator and exported workbench hide unavailable options, and validation rejects a saved selection that is no longer available. Options without this callback remain available. Use `updateParameters` to resolve a dependent selection when a controlling field changes; keep one parameter key for the same physical meaning.
+
 Use `catalogSelection` to choose the ordered inline size filters. These definitions belong to the part, including labels and metric-thread formatting:
 
 ```ts
@@ -100,6 +125,8 @@ export const catalogSelection: NonNullable<PartDefinition['catalogSelection']> =
 Each key must exist in the schema. Only source-verified, filterable parameters produce catalog choices. Setting `catalogSelection: []` disables inline catalog selectors. If omitted, the generic selector can use the first four `presetMatchKeys`. There are no hardcoded part IDs or category tests in this selection behavior.
 
 `presetMatchKeys` also selects the initial conditions for **Find matching**. Choose useful fitting dimensions and shape choices. Other schema parameters remain available to advanced search unless marked `filterable: false`; use that flag for internal metadata that should not be searched as a part size.
+
+`catalogIdentityParameters(parameters, preset)` may normalize a documented inspection control for source-model matching only. It must preserve the supplied parameters and never replace source-verified dimensions, ratings or options. It does not change geometry, physical configuration keys or `identityParameters`. The shared nut definition uses it solely for a finite 0–0.2 mm Full CAD radial inspection allowance when the source specifies the nominal thread and publishes no allowance. Nominal and inspection configurations still have different geometry identities; ordering metadata must qualify the inspection allowance rather than claim a supplier-certified fit. Other dimensions continue to require exact matches.
 
 ### Fixed manufactured models
 
@@ -136,9 +163,15 @@ The `model` value must select a fixed package-owned geometry record. Validation 
 
 Relational validation belongs to `validate(parameters, state)`: check that bores fit, walls remain positive, coils have clearance and other dependent dimensions agree. Schema min/max limits cannot express those relationships. If states are provided, geometry, validation, Python and dimensions must interpret the same state IDs.
 
+`parts:check` evaluates every available state separately for the defaults and each preset, and rejects a configuration with no available state. Pass several package IDs to check them in one operation and inspect shared dependencies once. State availability is evaluated against that configuration's parameters. The standalone workbench filters its state selector and uses the shared `availableModelState` reconciliation whenever a model, preset or parameter changes.
+
 ## Presets and source evidence
 
 `presets.json` is the package's runtime snapshot. Every preset needs a unique stable `id`, English `name` and `description`, and complete `parameters`, including hidden fields. Examples omit `catalog` and are shown as prototype examples.
+
+The physical family ID is `part.id`; the globally unique model reference is `<part.id>:<preset.id>`. Preset IDs are unique within their package, so two packages may reuse a local preset ID. A preset ID must be a nonempty, trimmed string without a colon or control characters; `custom` is reserved for an edited configuration. Existing supplier spelling, case, internal spaces and punctuation remain unchanged. Package inspection and runtime registration reject invalid or duplicate identities before registration. Never change an ID to match a new label or navigation location.
+
+**Library ID** and **Copy ID** appear directly below the model heading, including on mobile. The ID identifies the explicitly selected matching preset or, for a custom configuration, its physical family. Detailed copyable **Family ID**, applicable **Model ID** and **Configuration key** values appear at the top of the configurator, before model choices. Paste a family or model ID into library search to locate the physical definition, including members of grouped catalogs. A custom configuration does not acquire a synthetic preset ID. Projects retain `libraryId`, applicable `presetId`, parameters and configuration identity through export. Supplier codes and enterprise designations remain independent records; see [ESKD generation](eskd-generation.md).
 
 A sourced record includes `catalog.designation`, `sourceName`, `sourceUrl` and `verifiedParameters`. Optional metadata includes manufacturer, standard, product codes, alternative source URLs and reference specifications. `verifiedParameters` names only values established by that source; a standard name alone does not establish unspecified internal dimensions.
 
@@ -156,9 +189,11 @@ For a fixed catalog model, `verifiedParameters` identifies the source-owned mode
 
 Use millimetres and native Z-up coordinates. Define a useful part origin and keep `dimensions` consistent with the rendered state. The viewer handles display orientation. When an inspection view includes reference geometry excluded from the physical product, provide `buildExportGeometry` for STL and `exportDimensions` for the physical native-CAD envelope. Otherwise the native exporter uses `dimensions`. Keep the reference out of the Python recipe and the bill of materials.
 
+Use `standaloneCad` when a standalone FreeCAD copy needs a reference alongside the physical product. Return the Python recipe and bounds from the same set of pieces. The physical `python` recipe, STL and project composition remain independent of this option.
+
 The Python recipe can use `App`, `Part` and `math` supplied by the application wrapper. It must assign a valid `shape`. Use the SDK's `num(...)` for numeric literals. A single manufactured body should be fused into a single solid where appropriate.
 
-For an assembly, return `Part.makeCompound` with direct children representing independently movable physical components. A nested compound can preserve a multi-solid component as one logical unit. Optional `component_labels` and `component_colors` must match the direct-child order; colors are RGB triples from 0 to 1. The wrapper creates an `App::Part` parent and component features, preserves placements and attaches configuration/source metadata. See [the assembly export guide](freecad-assemblies.md).
+For an assembly, return `Part.makeCompound` with direct children representing independently movable physical components. A nested compound can preserve a multi-solid component as one logical unit. Optional `component_labels` and `component_colors` must match the direct-child order; colors are RGB triples or RGBA quadruples with finite channels from 0 to 1. RGB is opaque; the fourth channel is opacity, where 0 is transparent and 1 is opaque. Use `component_groups` in the same order when the design has named subassemblies or requires an explicit folder for a component. The wrapper creates an `App::Part` parent and component features, preserves placements and attaches configuration/source metadata. See [the assembly export guide](freecad-assemblies.md).
 
 ## Shared SDK and independence
 

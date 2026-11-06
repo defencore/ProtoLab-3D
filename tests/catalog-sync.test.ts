@@ -16,7 +16,7 @@ const script = fileURLToPath(new URL('../scripts/sync-package-catalogs.ts', impo
 
 test('authoritative catalog sync removes obsolete IDs while existing families retain local examples', () => {
   for (const [module, count] of [
-    [pcbModule, 3441],
+    [pcbModule, 3442],
     [insertModule, 1003],
     [sleeveModule, 4],
   ] as const) {

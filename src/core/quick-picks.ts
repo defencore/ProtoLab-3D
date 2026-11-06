@@ -84,12 +84,20 @@ export function updateQuickPickFilters(
 }
 export function hasCatalogQuickSize(part: PartDefinition, parameters: Parameters): boolean {
   const fields = quickPickFields(part);
+  const variants = part.parameters.filter(
+    (field) => field.type === 'select' && part.presetMatchKeys?.includes(field.key),
+  );
   return (
     fields.length > 0 &&
     part.presets.some(
       (preset) =>
         preset.catalog &&
-        fields.every((field) => preset.parameters[field.key] === parameters[field.key]),
+        fields.every(
+          (field) =>
+            preset.catalog!.verifiedParameters.includes(field.key) &&
+            preset.parameters[field.key] === parameters[field.key],
+        ) &&
+        variants.every((field) => preset.parameters[field.key] === parameters[field.key]),
     )
   );
 }

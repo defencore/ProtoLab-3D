@@ -14,7 +14,7 @@ const part: PartDefinition = {
   icon: 'circuit',
   complexity: 'CM5 · carrier boards',
   description:
-    'Raspberry Pi Compute Module 5 IO and compact Waveshare carrier boards, with mounting holes and connector envelopes from manufacturer design files. Compute module, cooler, cables and expansion cards are separate.',
+    'Raspberry Pi Compute Module 5 IO and Waveshare carrier boards. CM5-NANO-A/B retain incomplete manufacturer CAD as engineering references with missing connector bodies. Compute module, cooler, cables and expansion cards are separate.',
   keywords: [
     'Raspberry Pi',
     'RPi',
@@ -28,6 +28,8 @@ const part: PartDefinition = {
     'expansion board',
     'Waveshare',
     'CM5-IO-BASE-A',
+    'CM5-NANO-A',
+    'CM5-NANO-B',
     'GPIO',
     'PCIe',
     'M.2',
@@ -40,6 +42,8 @@ const part: PartDefinition = {
   catalogSelection: [{ key: 'model', label: 'Carrier board model' }],
   catalogFilterFields,
   presetMatchKeys: ['model'],
+  validationNotice:
+    'NANO models are incomplete CAD references. Resolve missing connector geometry before enclosure design.',
   states: [
     {
       id: 'assembled',
@@ -49,7 +53,7 @@ const part: PartDefinition = {
     {
       id: 'exploded',
       label: 'Exploded',
-      description: 'Separate visual board and connector envelopes for inspection.',
+      description: 'Separate the PCB and fitted components for inspection of the purchased board.',
     },
   ],
   validate(p, state) {
@@ -68,14 +72,14 @@ const part: PartDefinition = {
   assessment(p) {
     const model = selected(p);
     return [
-      `${model.name}: ${model.width} × ${model.length} mm PCB. ${model.revision}.`,
+      `${model.geometryKind === 'manufacturer-cad' ? 'Incomplete manufacturer CAD engineering reference. ' : ''}${model.name}: ${model.width} × ${model.length} mm PCB. ${model.revision}.`,
       'Select the CM5 separately from Raspberry Pi single-board computer. This carrier model includes neither a compute module nor a cooler, M.2 card, microSD card, case or loose wiring.',
-      'PCB mounting bores are separate from the four compute-module mounting bores. Check connector access and the fitted module/cooler clearance when designing an enclosure.',
+      'Check the selected board outline and mounting features, connector access and fitted module/cooler clearance when designing an enclosure. Do not assume that NANO carriers provide the separate mounting bores of larger IO boards.',
       model.limitations,
     ];
   },
   notes:
-    'Lightweight source-dimension reconstructions. Board outlines, mounting bores and major connector envelopes follow the cited revision of manufacturer design files. Connector cavities, colors and minor electronics are illustrative; signal pins, PCB traces, solder fillets and flexible cables are omitted. These are purchased carrier boards, not printable PCB designs. Do not treat an exploded inspection view as a different bill of materials.',
+    'NANO models retain incomplete manufacturer CAD: CM5 and MIPI connector bodies are missing or misassigned; NANO-B also lacks RJ45, mini HDMI and microSD bodies. Their reported bounds describe retained source shapes and do not establish complete enclosure fit. Other models use source-dimension reconstructions with illustrative connector cavities and minor details. Per-model evidence records source revisions, exclusions and unresolved geometry. Colors are illustrative. Purchased carrier boards exclude the compute module and external accessories. The exploded view preserves the same procurement identity.',
   sources: models.flatMap((model) => [
     { label: model.manufacturer + ' — ' + model.name, url: model.source },
     ...model.references.map((url) => ({ label: model.name + ' — mechanical source', url })),

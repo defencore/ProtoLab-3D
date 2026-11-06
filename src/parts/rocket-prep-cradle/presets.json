@@ -1,0 +1,20 @@
+[
+  {
+    "id": "compact",
+    "name": "Compact V cradle 80 x 35 x 45 mm",
+    "description": "Authored prototype ground support; no body fit or load rating is implied.",
+    "parameters": { "width": 80, "depth": 35, "height": 45, "opening": 64, "floor": 12 }
+  },
+  {
+    "id": "standard",
+    "name": "Preparation V cradle 130 x 50 x 70 mm",
+    "description": "Authored prototype single support; place separate occurrences for two-support layouts.",
+    "parameters": { "width": 130, "depth": 50, "height": 70, "opening": 108, "floor": 15 }
+  },
+  {
+    "id": "wide",
+    "name": "Wide V cradle 190 x 60 x 95 mm",
+    "description": "Authored prototype ground support; define material, padding and restraint for the actual body.",
+    "parameters": { "width": 190, "depth": 60, "height": 95, "opening": 160, "floor": 18 }
+  }
+]

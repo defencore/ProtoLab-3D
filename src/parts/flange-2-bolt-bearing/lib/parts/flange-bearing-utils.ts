@@ -1,3 +1,4 @@
+import { bearingPalette, bearingRgb } from '../../../../core/hardware/bearing-appearance';
 import { Group, Vector2, Vector3 } from 'three';
 import type { Parameters } from '../../../../core/types';
 import { annulusPython, n, num, numberParameter, ring } from '../../../../core/geometry';
@@ -189,7 +190,7 @@ export function flangeGeometry(p: Parameters, bolts: 2 | 4): Group {
   mesh.face(crownA, [boreA], new Vector3(0, 0, 1));
   mesh.bridge(bore0, boreA, true);
   hole0.forEach((hole, i) => mesh.bridge(hole, holeT[i], true));
-  const housing = mesh.build(0x284477);
+  const housing = mesh.build(bearingPalette.flangeHousing);
   housing.name = 'Cast flange housing';
   group.add(housing);
   group.add(turnedMesh(insertProfile(p)));
@@ -198,7 +199,12 @@ export function flangeGeometry(p: Parameters, bolts: 2 | 4): Group {
   hub.name = 'Extended locking inner ring';
   group.add(hub);
   for (const side of [-1, 1]) {
-    const seal = ring(v.hub + (v.R - v.hub) * 0.42, v.hub + 0.02, v.C * 0.08, 0x252d35);
+    const seal = ring(
+      v.hub + (v.R - v.hub) * 0.42,
+      v.hub + 0.02,
+      v.C * 0.08,
+      bearingPalette.insertSeal,
+    );
     seal.position.z = v.seat + side * v.C * 0.44;
     seal.name = 'Insert seal';
     group.add(seal);
@@ -217,7 +223,7 @@ export function flangePython(p: Parameters, bolts: 2 | 4): string {
     )
     .join(
       '\n',
-    )}\nouter_ring = ${turnedPython(insertProfile(p))}\ninner_ring = ${annulusPython(v.hub, v.r, v.B, v.width - v.B)}\nshape = Part.makeCompound([housing.removeSplitter(),outer_ring,inner_ring,${[-1, 1].map((side) => annulusPython(v.hub + (v.R - v.hub) * 0.42, v.hub + 0.02, v.C * 0.08, v.seat + side * v.C * 0.44 - v.C * 0.04)).join(',')}])`;
+    )}\nouter_ring = ${turnedPython(insertProfile(p))}\ninner_ring = ${annulusPython(v.hub, v.r, v.B, v.width - v.B)}\nshape = Part.makeCompound([housing.removeSplitter(),outer_ring,inner_ring,${[-1, 1].map((side) => annulusPython(v.hub + (v.R - v.hub) * 0.42, v.hub + 0.02, v.C * 0.08, v.seat + side * v.C * 0.44 - v.C * 0.04)).join(',')}])\ncomponent_colors = ${JSON.stringify([bearingPalette.flangeHousing, bearingPalette.race, bearingPalette.race, bearingPalette.insertSeal, bearingPalette.insertSeal].map(bearingRgb))}`;
 }
 export const flangeDimensions = (p: Parameters): [number, number, number] => [
   n(p, 'flangeLength'),

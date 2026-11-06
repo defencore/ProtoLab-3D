@@ -1,0 +1,28 @@
+[
+  {
+    "id": "d90-86-ov9281",
+    "name": "Modular Ø85.6 avionics · Ø90/86 tube · OV9281-110",
+    "description": "Engineering reference: removable compute nose, through-bolted Grandado/flight sandwich, keyed wiring spool, separate power sandwich and integrated rear closure with a removable TPU buffer. Recovery load path and physical fits require qualification.",
+    "parameters": {
+      "tubeProfile": "d90-86",
+      "cameraSetup": "ov9281",
+      "module": "all",
+      "keyClearance": 0.3,
+      "showTube": true,
+      "showElectronics": true
+    }
+  },
+  {
+    "id": "d90-86-imx577-19x19",
+    "name": "Modular Ø85.6 avionics · Ø90/86 tube · IMX577 19x19",
+    "description": "Same modular architecture with the user-confirmed IMX577 sensor in the existing 19x19 mm rear-MIPI camera reference. Exact module supplier and electrical compatibility remain unidentified; no recovery load rating is inferred.",
+    "parameters": {
+      "tubeProfile": "d90-86",
+      "cameraSetup": "camera-19",
+      "module": "all",
+      "keyClearance": 0.3,
+      "showTube": true,
+      "showElectronics": true
+    }
+  }
+]

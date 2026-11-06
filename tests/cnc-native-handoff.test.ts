@@ -68,11 +68,15 @@ test('actual native CAD leaves retain exact handoff routes and intrinsic metadat
       const actual = JSON.parse(result.stdout) as Metadata[];
       for (const [index, piece] of pieces.entries()) {
         const component = piece.component;
-        assert.deepEqual(identities[index], {
+        const { ESKDIdentityJSON, ...intrinsic } = identities[index];
+        assert.deepEqual(intrinsic, {
           LibraryId: component.libraryId,
           ConfigurationJSON: JSON.stringify(component.parameters),
           Supply: component.supply,
         });
+        const identity = JSON.parse(ESKDIdentityJSON);
+        assert.equal(identity.supply, component.supply);
+        assert.ok(identity.name && identity.configurationKey && identity.revision);
         const expected = {
           ...(component.manufacturing
             ? { ManufacturingJSON: JSON.stringify(component.manufacturing) }

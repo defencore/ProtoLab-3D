@@ -1,0 +1,13 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "One opaque purchased camera reference with a preserved generic envelope and an optional user-positioned rear MIPI latch and M2.5 side interface.",
+  "processes": [],
+  "releaseRequirements": [
+    "The user confirms IMX577 only for the imx577-19x19-rear-mipi-m25 reference. Identify the exact module supplier designation, connector pinout, cable and Raspberry Pi 5 electrical compatibility; the generic reference assigns no sensor.",
+    "The user supplies the 19 x 19 x 12 mm body, 15 mm objective projection, left/right M2.5 holes 7.5 mm from the body rear, and approximate rear latch 17 x 2 x 0.5 mm with 3 mm top inset.",
+    "Measure the assumed objective diameter, side-hole Y center and thread depth, connector horizontal inset and screw engagement before releasing the mounting design.",
+    "The default 2.5 mm blind-hole depth, Y=0 hole center and right-flush connector placement are authored assumptions, not verified supplier dimensions.",
+    "Verify actual camera-body material, available internal clearance, fastener locking, focus, protective-window clearance, retention, cooling and cable strain relief in the installation."
+  ]
+}

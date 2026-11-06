@@ -1,5 +1,19 @@
 import type { Parameters, ParameterDefinition } from '../../core/types';
 export const defaults: Parameters = {
+  mode: 'recipe',
+  length: 80,
+  width: 60,
+  height: 40,
+  thickness: 8,
+  diameter: 20,
+  boreDiameter: 10,
+  holePattern: 'four',
+  holeDiameter: 5,
+  holeMargin: 10,
+  crossHoleDiameter: 0,
+  crossHolePosition: 10,
+  bracketHoleDiameter: 5,
+  meshBackend: 'jscad',
   meshConform: false,
   nativeRefine: true,
   meshEdgeTolerance: 0.01,
@@ -14,6 +28,75 @@ export const defaults: Parameters = {
   }),
 };
 export const parameters: ParameterDefinition[] = [
+  {
+    key: 'mode',
+    label: 'Detail family',
+    type: 'select',
+    group: 'Configuration',
+    options: [
+      { value: 'recipe', label: 'Authored component' },
+      { value: 'plate', label: 'Plate' },
+      { value: 'sleeve', label: 'Sleeve / spacer' },
+      { value: 'shaft', label: 'Shaft / pin' },
+      { value: 'bracket', label: 'Angle bracket' },
+    ],
+    visibleWhen: (p) => p.mode !== undefined,
+    optionalWhenHidden: true,
+  },
+  ...(
+    [
+      ['length', 'Length / bracket depth', 0.1, 1000, ['plate', 'sleeve', 'shaft', 'bracket']],
+      ['width', 'Width', 0.1, 1000, ['plate', 'bracket']],
+      ['height', 'Bracket height', 0.1, 1000, ['bracket']],
+      ['thickness', 'Thickness', 0.1, 1000, ['plate', 'bracket']],
+      ['diameter', 'Outside diameter', 0.1, 1000, ['sleeve', 'shaft']],
+      ['boreDiameter', 'Bore diameter', 0.1, 1000, ['sleeve']],
+      ['holeDiameter', 'Plate hole diameter', 0.1, 1000, ['plate']],
+      ['holeMargin', 'Hole centre from edge', 0.1, 1000, ['plate']],
+      ['crossHoleDiameter', 'Cross hole diameter (0 = none)', 0, 1000, ['shaft']],
+      ['crossHolePosition', 'Cross hole centre from end', 0.1, 1000, ['shaft']],
+      ['bracketHoleDiameter', 'Bracket hole diameter (0 = none)', 0, 1000, ['bracket']],
+    ] as [string, string, number, number, string[]][]
+  ).map(([key, label, min, max, modes]): ParameterDefinition => ({
+    key,
+    label,
+    type: 'number',
+    group: 'Dimensions',
+    unit: 'mm',
+    min,
+    max,
+    step: 0.1,
+    optionalWhenHidden: true,
+    visibleWhen: (p) =>
+      modes.includes(String(p.mode)) &&
+      (key !== 'holeDiameter' || p.holePattern !== 'none') &&
+      (key !== 'holeMargin' || p.holePattern === 'four') &&
+      (key !== 'crossHolePosition' || Number(p.crossHoleDiameter) > 0),
+  })),
+  {
+    key: 'holePattern',
+    label: 'Plate holes',
+    type: 'select',
+    group: 'Dimensions',
+    options: [
+      { value: 'none', label: 'No holes' },
+      { value: 'center', label: 'Centre hole' },
+      { value: 'four', label: 'Four corner holes' },
+    ],
+    visibleWhen: (p) => p.mode === 'plate',
+    optionalWhenHidden: true,
+  },
+  {
+    key: 'meshBackend',
+    label: 'Surface construction',
+    type: 'select',
+    options: [
+      { value: 'jscad', label: 'JSCAD' },
+      { value: 'manifold', label: 'Manifold' },
+    ],
+    group: 'Definition',
+    visibleWhen: () => false,
+  },
   {
     key: 'meshConform',
     label: 'Conform precision mesh junctions',
@@ -56,5 +139,13 @@ export const parameters: ParameterDefinition[] = [
     type: 'text',
     group: 'Definition',
     visibleWhen: () => false,
+  },
+  {
+    key: 'manufacturingRecipe',
+    label: 'Authored free manufacturing geometry',
+    type: 'text',
+    group: 'Definition',
+    visibleWhen: () => false,
+    optionalWhenHidden: true,
   },
 ];

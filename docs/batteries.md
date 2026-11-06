@@ -1,10 +1,10 @@
 # Batteries and cells
 
-**POWER & MOTOR CONTROL → BATTERY PACKS / RECHARGEABLE CELLS / PRIMARY BATTERIES** contains 29 fixed models in three entries.
+The battery catalog includes the three packages below, with 30 fixed models, plus separately registered Li-ion pack assemblies.
 
 | Entry                      | Included hardware                                                                 | Selection                                                                          |
 | -------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| Li-Po / LiHV battery packs | 15 Tattu Standard 1S–4S packs, 270–3700 mAh, 30–95C                               | Series, chemistry, capacity, published C-rate, derived current and pack dimensions |
+| Li-Po / LiHV battery packs | 16 Tattu Standard / FPV Classic 1S–4S packs, 270–3700 mAh, 30–95C                               | Series, chemistry, capacity, published C-rate, derived current and pack dimensions |
 | Li-ion cells               | Molicel P28A, P30B, M35A (18650); P42A, P45B, P50B (21700)                        | Format, capacity, manufacturer discharge rating, maximum diameter and height       |
 | Standard batteries         | Energizer E96 AAAA, E92 AAA, E91 AA, 123 CR123A, E93 C, E95 D, 522 9V PP3, CR2032 | Format, chemistry, voltage, terminal type and maximum envelope                     |
 
@@ -27,3 +27,5 @@ CR123A capacity is specified at 100 Ω, 21 °C, to 2.0 V; its 1.5 A field is the
 ## Validation
 
 Run `node --import tsx --test tests/batteries.test.ts` for envelope, closed mesh and catalog checks. `scripts/verify-batteries.ts` prepares all 29 complete FreeCAD macros and independently measured preview components. Run them with `scripts/verify-electronics.py` using FreeCAD Python to check valid closed solids, component intersections, preview/CAD agreement, independent movement and STEP/FCStd round trips. Results: `test-results/batteries-native-validation.json`.
+
+The separately registered FPV Classic XT30 `lipo-battery:tattu-3s-650-75c` uses its [exact manufacturer product page](https://genstattu.com/tattu-3s1p-75c-11-1v-650mah-lipo-battery-pack-with-xt30-plug.html): 58 × 31 × 16 mm nominal, with the source length/width/height tolerances retained in the preset. Supplied leads and plugs are part of one purchased pack but their unverified geometry remains omitted. The original 2S 650 mAh ID retains its Grepow table length of 58 mm; the exact XT30 product page says 57 mm. This discrepancy remains explicit in the package guide and assembly fit reference.

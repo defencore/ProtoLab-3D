@@ -4,10 +4,13 @@ import type { ParameterDefinition, Parameters, PartDefinition, Preset } from './
 import {
   isPublishedValue,
   presetValue,
+  presetChoiceValues,
+  matchesPresetNumericValue,
   searchableFields,
   fieldFilterErrors,
 } from './catalog-models';
 import { matchingPreset } from './preset-resolution';
+import { isQualifiedLibraryEntryId, libraryEntryId, resolveLibraryEntry } from './library-identity';
 import {
   matchesNumericRange,
   parseNumericRange,
@@ -52,6 +55,7 @@ export interface PresetFilterError {
 }
 
 export interface PresetQuery {
+  libraryId: string;
   normalizedText: string;
   tokens: string[];
   metricSize?: { diameter: number; length: number };
@@ -85,6 +89,7 @@ const normalized = (text: string) =>
 
 /** Keep a metric diameter/length phrase coherent instead of satisfying its numbers from SKUs. */
 export function compilePresetQuery(query: string): PresetQuery {
+  const libraryId = query.trim();
   query = translateSearchQuery(query);
   const size =
     /(^|\s)m(\d+(?:[.,]\d+)?)\s*(?:[x×]\s*|\s+)(\d+(?:[.,]\d+)?)(?![\p{L}\p{N}.,])/iu.exec(query);
@@ -92,6 +97,7 @@ export function compilePresetQuery(query: string): PresetQuery {
     ? query.slice(0, size.index) + ' ' + query.slice(size.index + size[0].length)
     : query;
   return {
+    libraryId,
     normalizedText: normalized(query),
     tokens: remaining.split(/\s+/).map(normalized).filter(Boolean),
     ...(size
@@ -136,23 +142,33 @@ function matchesMetricSize(
     fields.find((field) => field.key === 'catalogBodyLength') ??
     fields.find((field) => field.key === 'length' && (field.unit ?? 'mm') === 'mm');
   if (!lengthField) return false;
-  const range = getPresetParameterRange(preset, lengthField.key);
-  if (preset.catalog?.parameterRanges?.[lengthField.key] !== undefined && !range) return false;
-  if (preset.catalog && !range && !isPublishedValue(preset, lengthField.key)) return false;
-  const value = presetValue(preset, lengthField.key);
-  return matchesNumericRange(typeof value === 'number' ? value : undefined, range, {
+  return matchesPresetNumericValue(preset, lengthField.key, {
     min: size.length,
     max: size.length,
   });
 }
 
+/** Model names may separate letters from numbers, but must retain each numeric run. */
+function matchesModelToken(text: string, token: string): boolean {
+  const pattern = token
+    .split(/(?<=\p{L})(?=\p{N})|(?<=\p{N})(?=\p{L})/u)
+    .map((segment) => segment.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+    .join('\\s*');
+  const start = /^[\p{N}.]/u.test(token) ? '(?<![\\p{N}.])' : '';
+  const end = /[\p{N}.]$/u.test(token) ? '(?![\\p{N}.])' : '';
+  return new RegExp(start + pattern + end, 'u').test(text);
+}
+
 export function matchesPresetQuery(entry: PresetEntry, query: PresetQuery): boolean {
+  if (query.libraryId === entry.part.id || query.libraryId === entry.id) return true;
+  if (isQualifiedLibraryEntryId(query.libraryId)) return false;
   // A published identifier remains searchable even when it includes an undocumented size.
   const designation = entry.preset.catalog?.designation;
   if (designation && normalized(designation) === query.normalizedText) return true;
   if (query.metricSize && !matchesMetricSize(entry, query.metricSize)) return false;
   return query.tokens.every((token) => {
     if (
+      (designation && normalized(designation).replaceAll(' ', '') === token) ||
       entry.preset.catalog?.productCodes?.some(
         (code) => normalized(code) === token || normalized(code).replaceAll(' ', '') === token,
       )
@@ -160,6 +176,8 @@ export function matchesPresetQuery(entry: PresetEntry, query: PresetQuery): bool
       return true;
     if (/^m\d+(?:\.\d+)?$/.test(token))
       return new RegExp(`\\b${token.replace('.', '\\.')}(?=[^\\d.]|$)`).test(entry.searchText);
+    if (/\p{L}/u.test(token) && /\p{N}/u.test(token))
+      return matchesModelToken(entry.searchText, token);
     return /^\d+(?:\.\d+)?$/.test(token)
       ? entry.searchText.split(/\s+/).includes(token)
       : entry.searchText.includes(token) || entry.compactName.includes(token);
@@ -202,13 +220,17 @@ export function buildPresetIndex(parts: PartDefinition[]): PresetEntry[] {
         const value = catalogField
           ? catalog?.attributes?.[definition.key]
           : preset.parameters[definition.key];
-        if (value === undefined) return [];
-        return [
-          definition.options?.find((option) => option.value === value)?.label ?? String(value),
-        ];
+        const choices =
+          catalog?.attributeOptions?.[definition.key] ??
+          catalog?.parameterChoices?.[definition.key] ??
+          (value === undefined ? [] : [value]);
+        return choices.map(
+          (choice) =>
+            definition.options?.find((option) => option.value === choice)?.label ?? String(choice),
+        );
       });
       return {
-        id: `${part.id}:${preset.id}`,
+        id: libraryEntryId(part.id, preset.id),
         part,
         preset,
         searchText: normalized(
@@ -353,7 +375,9 @@ export function filterPresets(
   errors: PresetFilterError[];
 } {
   const errors: PresetFilterError[] = [];
-  const scope = [...new Map(index.map((entry) => [entry.part.id, entry.part])).values()].filter(
+  const partsById = new Map<string, PartDefinition>();
+  for (const { part } of index) partsById.set(part.id, part);
+  const scope = [...partsById.values()].filter(
     (part) =>
       (!filters.category || part.category === filters.category) &&
       matchesPresetPartScope(part, filters.partId),
@@ -377,8 +401,10 @@ export function filterPresets(
     }
   }
   if (errors.length) return { items: [], errors };
+  const fieldsByPart = new Map<PartDefinition, Map<string, ParameterDefinition>>();
   // Keep compound designations and supplier codes together instead of matching unrelated fragments.
   const query = compilePresetQuery(filters.query);
+  const exact = resolveLibraryEntry(scope, filters.query);
   return {
     errors,
     items: index.filter((entry) => {
@@ -390,13 +416,24 @@ export function filterPresets(
       if (filters.sourceName && catalog?.sourceName !== filters.sourceName) return false;
       if (filters.kind === 'catalog' && !catalog) return false;
       if (filters.kind === 'examples' && catalog) return false;
+      if (exact && (part.id !== exact.part.id || (exact.preset && preset.id !== exact.preset.id)))
+        return false;
       if (!matchesPresetQuery(entry, query)) return false;
+      if (!active.length) return true;
+      let partFields = fieldsByPart.get(part);
+      if (!partFields) {
+        partFields = new Map();
+        for (const field of searchableFields(part)) {
+          const id = fieldId(field);
+          if (!partFields.has(id)) partFields.set(id, field);
+        }
+        fieldsByPart.set(part, partFields);
+      }
+      let values: Parameters | undefined;
       return active.every(([id, filter]) => {
-        const field = searchableFields(part).find(
-          (candidate) => candidate.filterable !== false && fieldId(candidate) === id,
-        );
+        const field = partFields.get(id);
         if (!field) return false;
-        const values = { ...part.defaults, ...preset.parameters };
+        values ??= { ...part.defaults, ...preset.parameters };
         if (
           field.visibleWhen &&
           !part.catalogFilterFields?.some((item) => item.key === field.key) &&
@@ -405,21 +442,14 @@ export function filterPresets(
           return false;
         const value = presetValue(preset, field.key) ?? values[field.key];
         if (field.type === 'number') {
-          const range = getPresetParameterRange(preset, field.key);
-          if (catalog?.parameterRanges?.[field.key] !== undefined && !range) return false;
-          if (catalog && !range && !isPublishedValue(preset, field.key)) return false;
-          return matchesNumericRange(
-            typeof value === 'number' ? value : undefined,
-            range,
-            numeric.get(id)!,
-          );
+          return matchesPresetNumericValue(preset, field.key, numeric.get(id)!, value);
         }
         if (!filter.value?.trim()) return true;
         if (catalog && !isPublishedValue(preset, field.key)) return false;
         const selected = filter.value.trim();
         return field.type === 'boolean'
           ? typeof value === 'boolean' && String(value) === selected
-          : typeof value === 'string' && value === selected;
+          : presetChoiceValues(preset, field.key, value).includes(selected);
       });
     }),
   };
@@ -458,16 +488,17 @@ export function presetFacetOptions(
     )
       continue;
     if (entry.preset.catalog && !isPublishedValue(entry.preset, definition.key)) continue;
-    const value = presetValue(entry.preset, definition.key);
-    if (
-      (field.type === 'boolean' && typeof value !== 'boolean') ||
-      (field.type !== 'boolean' && typeof value !== 'string') ||
-      value === ''
-    )
-      continue;
-    const text = String(value);
-    if (!options.has(text)) options.set(text, 0);
-    if (matches.has(entry.id)) options.set(text, options.get(text)! + 1);
+    for (const value of new Set(presetChoiceValues(entry.preset, definition.key))) {
+      if (
+        (field.type === 'boolean' && typeof value !== 'boolean') ||
+        (field.type !== 'boolean' && typeof value !== 'string') ||
+        value === ''
+      )
+        continue;
+      const text = String(value);
+      if (!options.has(text)) options.set(text, 0);
+      if (matches.has(entry.id)) options.set(text, options.get(text)! + 1);
+    }
   }
   const selected = filters.parameters[field.id]?.value?.trim();
   if (selected && !options.has(selected)) options.set(selected, 0);

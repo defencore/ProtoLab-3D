@@ -1,0 +1,59 @@
+[
+  {
+    "id": "socket-80-60",
+    "name": "80 × 60 mm · recessed socket screws",
+    "description": "Authored empty enclosure with real DIN 912 M3 × 12 screws and side-loaded DIN 934 nuts. No fit or load certification.",
+    "parameters": {
+      "width": 80,
+      "depth": 60,
+      "height": 30,
+      "wall": 2.4,
+      "lidThickness": 6,
+      "headStyle": "socket",
+      "bossWidth": 14,
+      "headRecess": 0.3,
+      "holeClearance": 0.4,
+      "nutClearance": 0.3,
+      "pocketClearance": 0.2,
+      "headClearance": 0.2
+    }
+  },
+  {
+    "id": "countersunk-80-60",
+    "name": "80 × 60 mm · countersunk screws",
+    "description": "90-degree conical seats match the sourced DIN 7991 M3 × 12 heads; top faces are recessed 0.3 mm.",
+    "parameters": {
+      "width": 80,
+      "depth": 60,
+      "height": 30,
+      "wall": 2.4,
+      "lidThickness": 6,
+      "headStyle": "countersunk",
+      "bossWidth": 14,
+      "headRecess": 0.3,
+      "holeClearance": 0.4,
+      "nutClearance": 0.3,
+      "pocketClearance": 0.2,
+      "headClearance": 0.2
+    }
+  },
+  {
+    "id": "socket-110-75",
+    "name": "110 × 75 mm · recessed socket screws",
+    "description": "Larger authored empty box with the same fixed purchased screw and nut identities.",
+    "parameters": {
+      "width": 110,
+      "depth": 75,
+      "height": 38,
+      "wall": 2.8,
+      "lidThickness": 7,
+      "headStyle": "socket",
+      "bossWidth": 16,
+      "headRecess": 0.3,
+      "holeClearance": 0.4,
+      "nutClearance": 0.35,
+      "pocketClearance": 0.2,
+      "headClearance": 0.2
+    }
+  }
+]

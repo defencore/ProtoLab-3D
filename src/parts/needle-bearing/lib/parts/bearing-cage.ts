@@ -1,3 +1,4 @@
+import { bearingPalette } from '../../../../core/hardware/bearing-appearance';
 import { Mesh, Vector3 } from 'three';
 import { annulusPython, num } from '../../../../core/geometry';
 import { BoundaryMesh } from '../../../../core/mechanical';
@@ -87,7 +88,7 @@ export function cageMesh(v: CageLayout): Mesh {
             new Vector3(-sign * Math.sin(angle), sign * Math.cos(angle), 0),
           );
     }
-  const result = mesh.build(0xb39b66);
+  const result = mesh.build(bearingPalette.cage);
   result.name = 'Windowed rolling-element cage';
   return result;
 }

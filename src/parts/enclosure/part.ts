@@ -15,9 +15,9 @@ const values = (p: Parameters) => ({
 const part: PartDefinition = {
   id: 'enclosure',
   product: productData as ProductProfile,
-  name: 'Open enclosure',
-  category: 'STRUCTURAL PARTS',
-  subgroup: 'BOXES & CASES',
+  name: 'Rectangular open-top enclosure',
+  category: 'ENCLOSURES & DEVICES',
+  subgroup: 'GENERAL-PURPOSE ENCLOSURES',
   icon: 'box',
   complexity: '4 parameters',
   description: 'An open-top rectangular project box with uniform walls and floor.',

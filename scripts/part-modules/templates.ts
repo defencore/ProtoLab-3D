@@ -126,16 +126,21 @@ import { generateScript, consoleCommand } from './core/freecad';
 import { withGeometryMode, type GeometryMode } from './core/geometry-mode';
 import { validateParameters } from './core/validation';
 import { presetMatchesConfiguration } from './core/catalog-models';
+import { availableModelState } from './core/part-selection';
 import type { Parameters } from './core/types';
 
-const part = registerPartModules([module${dependencies.map((_, index) => `, dependency${index}`).join('')}]).find((part) => part.id === ${JSON.stringify(id)})!;
+const parts = registerPartModules([module${dependencies.map((_, index) => `, dependency${index}`).join('')}]);
+const part = parts.find((entry) => entry.id === ${JSON.stringify(id)})!;
 let parameters: Parameters = { ...part.defaults };
-let state = part.states?.[0]?.id ?? 'default';
+let state = availableModelState(part, parameters, part.states?.[0]?.id ?? 'default');
 let geometryMode: GeometryMode = 'simple';
 let model: THREE.Group | undefined;
 let script = '';
 let presetSelect: HTMLSelectElement | undefined;
 let stateSelect: HTMLSelectElement | undefined;
+let rebuildRevision = 0;
+let readyRevision = -1;
+let geometryPreparation = Promise.resolve();
 const app = document.querySelector<HTMLDivElement>('#app')!;
 app.innerHTML = '<header><h1></h1><span>Isolated part workbench · millimetres</span></header><main><section id="preview"><div id="viewport"></div><button id="fit">Fit model</button><p id="status" role="status"></p></section><aside><h2>Configure</h2><label>Thread detail<select id="geometry-mode"><option value="simple">Simple · without threads / TechDraw</option><option value="full">Full · with threads</option></select><small>Thread callouts are retained in both modes.</small></label><div id="presets"></div><div id="states"></div><div id="parameters"></div><button id="reset">Reset defaults</button><h2>FreeCAD</h2><div class="actions"><button id="copy">Copy console command</button><button id="download">Download macro</button></div><textarea id="script" readonly aria-label="FreeCAD console command" placeholder="Code is prepared when you copy or download."></textarea></aside></main>';
 app.querySelector('h1')!.textContent = part.name;
@@ -180,24 +185,44 @@ function release(group: THREE.Group) {
     }
   });
 }
-function rebuild(shouldFit = false) {
-  const errors = validateParameters(part, parameters, state);
+async function rebuild(shouldFit = false) {
+  const revision = ++rebuildRevision;
+  const currentParameters = { ...parameters }, currentState = state, currentMode = geometryMode;
+  const errors = validateParameters(part, currentParameters, currentState);
+  readyRevision = -1;
+  copy.disabled = download.disabled = true;
+  textarea.value = ''; script = '';
   if (!errors.length) {
+    status.textContent = 'Preparing preview…';
+    status.classList.remove('error');
     try {
-      const next = withGeometryMode(geometryMode, () => part.buildGeometry(parameters, state));
+      const prepared = geometryPreparation.then(async () => {
+        if (revision === rebuildRevision) await part.initializeGeometry?.(currentParameters, currentState);
+      });
+      // The request reports its own initialization error; later requests can retry.
+      geometryPreparation = prepared.catch(() => {});
+      await prepared;
+      if (revision !== rebuildRevision) return;
+      const next = withGeometryMode(currentMode, () => part.buildGeometry(currentParameters, currentState));
       if (model) { scene.remove(model); release(model); }
       model = next; scene.add(model);
+      readyRevision = revision;
       if (shouldFit) fit();
-    } catch (error) { errors.push(error instanceof Error ? error.message : String(error)); }
+    } catch (error) {
+      if (revision !== rebuildRevision) return;
+      readyRevision = -1;
+      errors.push(error instanceof Error ? error.message : String(error));
+    }
   }
+  if (revision !== rebuildRevision) return;
   copy.disabled = download.disabled = errors.length > 0;
-  textarea.value = ''; script = '';
   status.textContent = errors.length ? errors.join(' ') : 'Preview is up to date. FreeCAD code is prepared when requested.';
   status.classList.toggle('error', errors.length > 0);
 }
 function prepareScript() {
+  if (readyRevision !== rebuildRevision) return false;
   try {
-    if (!script) script = generateScript(part, parameters, state, undefined, undefined, geometryMode);
+    if (!script) script = generateScript(part, parameters, state, undefined, undefined, geometryMode, parts);
     textarea.value = consoleCommand(script);
     return true;
   } catch (error) {
@@ -207,8 +232,16 @@ function prepareScript() {
   }
 }
 function renderFields() {
+  state = availableModelState(part, parameters, state);
   if (presetSelect) presetSelect.value = part.presets.find((preset) => presetMatchesConfiguration(part, preset, parameters))?.id ?? '';
-  if (stateSelect) stateSelect.value = state;
+  if (stateSelect) {
+    stateSelect.replaceChildren();
+    for (const option of part.states ?? []) {
+      if (!option.availableWhen || option.availableWhen(parameters))
+        stateSelect.append(new Option(option.label, option.id));
+    }
+    stateSelect.value = state;
+  }
   const parent = document.querySelector<HTMLDivElement>('#parameters')!;
   parent.replaceChildren();
   let group = '';
@@ -223,7 +256,7 @@ function renderFields() {
       input.value = String(parameters[field.key]);
     } else if (field.type === 'select') {
       input = document.createElement('select');
-      for (const option of field.options ?? []) { const item = document.createElement('option'); item.value = option.value; item.textContent = option.label; input.append(item); }
+      for (const option of field.options ?? []) { if (option.availableWhen && !option.availableWhen(parameters)) continue; const item = document.createElement('option'); item.value = option.value; item.textContent = option.label; input.append(item); }
       input.value = String(parameters[field.key]);
     } else {
       input = document.createElement('input'); input.type = field.type === 'boolean' ? 'checkbox' : 'number';
@@ -255,13 +288,12 @@ if (part.states) {
   const label = document.createElement('label'); label.textContent = 'Model state';
   const select = document.createElement('select');
   stateSelect = select;
-  for (const option of part.states) select.append(new Option(option.label, option.id));
   select.addEventListener('change', () => { state = select.value; renderFields(); rebuild(true); });
   label.append(select); document.querySelector('#states')!.append(label);
 }
 document.querySelector('#fit')!.addEventListener('click', fit);
 document.querySelector<HTMLSelectElement>('#geometry-mode')!.addEventListener('change', (event) => { geometryMode = (event.currentTarget as HTMLSelectElement).value as GeometryMode; rebuild(); });
-document.querySelector('#reset')!.addEventListener('click', () => { parameters = { ...part.defaults }; state = part.states?.[0]?.id ?? 'default'; renderFields(); rebuild(true); });
+document.querySelector('#reset')!.addEventListener('click', () => { parameters = { ...part.defaults }; state = availableModelState(part, parameters, part.states?.[0]?.id ?? 'default'); renderFields(); rebuild(true); });
 copy.addEventListener('click', async () => { if (!prepareScript()) return; try { await navigator.clipboard.writeText(consoleCommand(script)); status.textContent = 'Console command copied (' + geometryMode + ').'; } catch { textarea.focus(); textarea.select(); status.textContent = 'Clipboard unavailable. Copy the selected console command below.'; } });
 download.addEventListener('click', () => { if (!prepareScript()) return; const url = URL.createObjectURL(new Blob([script], { type: 'text/x-python' })); const link = document.createElement('a'); link.href = url; link.download = part.id + '-' + geometryMode + '.FCMacro'; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); });
 resize(); renderFields(); rebuild(true);

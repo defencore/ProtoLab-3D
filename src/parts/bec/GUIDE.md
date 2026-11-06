@@ -13,3 +13,11 @@ PCB/body dimensions are supplier values; protruding connectors are included in r
 Numeric filters omit unknown dimensions and ratings. Input-current, output-current and per-motor ESC ratings are distinct. Memory/firmware-only alternatives do not generate additional models. Semtech is the radio chip supplier, not the manufacturer of every LoRa board.
 
 Preview and FreeCAD use the same independently movable colored solids. Package-private geometry helpers keep this part independently exportable. Validate with `npm run parts:check`, `npm run typecheck:tests`, `tests/electronics.test.ts` and `scripts/verify-electronics.ts` / `scripts/verify-electronics.py`.
+
+## BEC12S-PRO / TPS54560 installation reference
+
+Library entry: `bec:bec12s-pro`. The selected seller identifies BEC12S-PRO / TPS54X60. Adopted 40 × 20 × 5.5 mm envelope matches the photographed supplier family but is unverified for this SKU. PCB thickness 1.6 mm, corner radius 0.6 mm and central 26 × 14 × 3.9 mm component volume are assumptions. No mounting holes or connector coordinates are invented. The SAC-01 uses separate physical boards selected to 12 V and 5 V; output settings do not change this mechanical model. Confirm the delivered board, jumper settings, ratings, underside joints, thermal behavior and harness.
+
+[Selected supplier listing](https://prom.ua/p3103438088-ponizhayuschij-preobrazovatel-bec12s.html) could not be re-fetched during the 2026-11-02 review; identity and prior evidence remain traceable to the existing SAC-01 record. No guessed dimensions or electrical ratings are published as numeric catalog attributes. The same definition now owns the SAC-01 boards; independent occurrences retain their branch output setting in procurement notes.
+
+Native CAD verification (2026-11-02): the assembled `bec:bec12s-pro` shape is valid and closed, with 2 solid(s), 16 faces and only planar/cylindrical surfaces. Its 40 × 20 × 5.5 mm bounds match the adopted model. STEP round-trip retained all six solids across the five reviewed devices. Reports and exported CAD are under ignored `test-results/standalone-device-verification/`. This verifies the model topology and adopted dimensions; it does not resolve the documented missing supplier interfaces.

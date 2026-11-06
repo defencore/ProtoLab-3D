@@ -1,0 +1,46 @@
+[
+  {
+    "id": "lehao-ad16-16c",
+    "name": "Lehao AD16-16C panel indicator",
+    "description": "Retailer-listed model identity. Five appearance choices; all Lehao dimensions and electrical ratings remain unverified.",
+    "parameters": {
+      "model": "lehao-ad16-16c",
+      "lensColour": "red"
+    },
+    "catalog": {
+      "designation": "Lehao AD16-16C",
+      "manufacturer": "Lehao",
+      "sourceName": "JD search-indexed retailer listing — model identity only",
+      "sourceUrl": "https://www.jd.com/jiage/670d59f660d70a08559.html",
+      "alternateSourceUrls": [
+        "https://www.jd.com/jiage/98558181401b33059af3.html?catID=38255&electedExtAttrSet=&extAttrValue=expand_name%2C&sort_type=sort_default"
+      ],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Provisional 19 mm head by 45 mm overall envelope, with an assumed nominal 16 mm panel interface. No Lehao dimensional drawing was found.",
+        "limitations": "The retailer index establishes the brand/model listing only. Every modeled dimension is assumed; comparable AD16-16C products are not proof of Lehao fit. Yellow, blue and white have no Lehao availability evidence. No electrical ratings, IP rating or pinout are established.",
+        "sourceUrl": "https://www.jd.com/jiage/670d59f660d70a08559.html"
+      },
+      "attributes": { "manufacturer": "Lehao", "series": "AD16-16C" },
+      "specifications": [
+        {
+          "label": "Geometry evidence",
+          "value": "Provisional assumed envelope; Lehao drawing unavailable"
+        },
+        {
+          "label": "Colour choices",
+          "value": "Red / green retailer-listed; yellow / blue / white illustrative"
+        },
+        {
+          "label": "Electrical execution",
+          "value": "Unspecified; select and verify the actual ordered voltage execution"
+        },
+        {
+          "label": "Dimension status",
+          "value": "No Lehao dimensions are source-verified or offered as catalogue filters"
+        }
+      ]
+    }
+  }
+]

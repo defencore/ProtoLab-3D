@@ -1,0 +1,40 @@
+[
+  {
+    "id": "dsbc-63-500-ppsa-n3",
+    "name": "Festo DSBC-63-500-PPSA-N3 · 1383643",
+    "description": "63 mm bore / 500 mm stroke; source-identified exterior installation reference with unresolved mounting geometry.",
+    "parameters": {
+      "model": "dsbc-63-500-ppsa-n3",
+      "extension": 0
+    },
+    "catalog": {
+      "designation": "DSBC-63-500-PPSA-N3 / 1383643",
+      "manufacturer": "Festo",
+      "sourceName": "Festo product data sheet 1383643; reviewed 2026-11-02",
+      "sourceUrl": "https://ftp.festo.com/public/PNEUMATIC/SOFTWARE_SERVICE/DataSheet/EN_US/1383643.pdf",
+      "alternateSourceUrls": ["https://prom.ua/ua/Pnevmotsilindr-63.html"],
+      "verifiedParameters": ["model"],
+      "productCodes": ["DSBC-63-500-PPSA-N3", "1383643"],
+      "attributes": {
+        "bore": 63,
+        "stroke": 500
+      },
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Inherited analytic exterior shell; exact Festo extrusion and mounting datums are not reconstructed.",
+        "limitations": "Festo identifies DSBC-63-500-PPSA-N3, part 1383643, as an ISO 15552 double-acting profile-barrel cylinder with 63 mm bore, 500 mm stroke, M16×1.5 rod-end thread and G3/8 air connections. Its product data sheet reviewed 2026-11-02 does not establish the inherited mounting model. The adopted 75 mm square envelope, axial cap/barrel offsets, four nominal fixing passages, port locations, rod diameter and closed-length datums remain installation-study geometry from automatic-band-saw. The simple rectangular shell is not the real Festo extrusion profile. No seals, cushioning passages, magnetic sensor, tie rods, fittings, host clevises or undocumented piston internals are asserted. The standalone exterior omits the inherited illustrative piston and host rod lock; the saw retains its existing visuals with a SourceLibraryEntry identity reference. Extension changes the rod pose within the sourced 500 mm travel; it does not prove installed travel or clearance. Obtain the exact execution CAD/drawing before mounting design, pressure qualification or procurement release.",
+        "sourceUrl": "https://ftp.festo.com/public/PNEUMATIC/SOFTWARE_SERVICE/DataSheet/EN_US/1383643.pdf"
+      },
+      "specifications": [
+        {
+          "label": "Source identity",
+          "value": "Festo 1383643; ISO 15552; double-acting; M16×1.5 rod thread; G3/8 connections."
+        },
+        {
+          "label": "Geometry scope",
+          "value": "Festo identifies DSBC-63-500-PPSA-N3, part 1383643, as an ISO 15552 double-acting profile-barrel cylinder with 63 mm bore, 500 mm stroke, M16×1.5 rod-end thread and G3/8 air connections. Its product data sheet reviewed 2026-11-02 does not establish the inherited mounting model. The adopted 75 mm square envelope, axial cap/barrel offsets, four nominal fixing passages, port locations, rod diameter and closed-length datums remain installation-study geometry from automatic-band-saw. The simple rectangular shell is not the real Festo extrusion profile. No seals, cushioning passages, magnetic sensor, tie rods, fittings, host clevises or undocumented piston internals are asserted. The standalone exterior omits the inherited illustrative piston and host rod lock; the saw retains its existing visuals with a SourceLibraryEntry identity reference. Extension changes the rod pose within the sourced 500 mm travel; it does not prove installed travel or clearance. Obtain the exact execution CAD/drawing before mounting design, pressure qualification or procurement release."
+        }
+      ]
+    }
+  }
+]

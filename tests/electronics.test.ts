@@ -70,8 +70,13 @@ test('electronics: families, fixed variants, sourced ratings and missing values'
   assert.equal(selections.length, 10);
   assert.equal(
     selections.reduce((n, p) => n + p.presets.length, 0),
-    59,
+    62,
   );
+  const bec = selections.find((part) => part.id === 'bec')!;
+  const provisional = bec.presets.find((preset) => preset.id === 'bec12s-pro')!;
+  assert.ok(provisional, 'The additional BEC12S-PRO installation reference is retained.');
+  assert.equal(provisional.catalog!.geometryEvidence!.kind, 'envelope');
+  assert.equal(provisional.catalog!.attributes, undefined, 'Unverified dimensions remain unknown.');
   for (const part of selections) {
     assert.equal(part.catalogSelectionOnly, true);
     assert.ok(part.presets.length >= 2);
@@ -134,11 +139,13 @@ for (const part of affectedParts(selections))
                 assert.ok(bounds.min.z < -6 && bounds.max.z > 0, 'header enters PCB from below');
               }
             }
-            const attrs = preset.catalog!.attributes!;
-            assert.ok(
-              size[0] >= Number(attrs.width) - 0.002 && size[1] >= Number(attrs.length) - 0.002,
-              'PCB/body fits reported dimensions',
-            );
+            const attrs = preset.catalog!.attributes ?? {};
+            for (const [axis, key] of ['width', 'length'].entries())
+              if (attrs[key] !== undefined)
+                assert.ok(
+                  size[axis] >= Number(attrs[key]) - 0.002,
+                  `${preset.id}: body fits published ${key}`,
+                );
             if (attrs.height !== undefined)
               assert.ok(
                 Math.abs(size[2] - Number(attrs.height)) < 0.002,

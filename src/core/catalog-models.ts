@@ -4,6 +4,7 @@ import {
   numericRangeErrorMessage,
   parseNumericRange,
   readNumericInterval,
+  type NumericRange,
 } from './numeric-range';
 
 export type CatalogModelFilters = Record<string, { min?: string; max?: string; value?: string }>;
@@ -39,6 +40,17 @@ export function presetValue(preset: Preset, key: string) {
   return catalogValue(preset, key) ?? preset.parameters[key];
 }
 
+export function presetChoiceValues(
+  preset: Preset,
+  key: string,
+  defaultValue?: number | string | boolean,
+): (number | string | boolean)[] {
+  const alternatives = preset.catalog?.attributeOptions?.[key];
+  if (alternatives) return alternatives;
+  const value = presetValue(preset, key) ?? defaultValue;
+  return value === undefined ? [] : [value];
+}
+
 export function searchableFields(part: PartDefinition): ParameterDefinition[] {
   const fields = part.catalogSelectionOnly
     ? (part.catalogFilterFields ?? [])
@@ -49,10 +61,34 @@ export function searchableFields(part: PartDefinition): ParameterDefinition[] {
 export function isPublishedValue(preset: Preset, key: string): boolean {
   return (
     catalogValue(preset, key) !== undefined ||
+    !!preset.catalog?.attributeOptions?.[key]?.length ||
     (!!preset.catalog?.verifiedParameters.includes(key) &&
       Object.hasOwn(preset.parameters, key) &&
       preset.parameters[key] !== undefined)
   );
+}
+
+/** Discrete source sizes take precedence over a min/max summary of a supplier family. */
+export function matchesPresetNumericValue(
+  preset: Preset,
+  key: string,
+  requested: NumericRange,
+  defaultValue?: number | string | boolean,
+): boolean {
+  const choices = preset.catalog?.parameterChoices?.[key];
+  if (choices !== undefined)
+    return (
+      Array.isArray(choices) &&
+      choices.length > 0 &&
+      choices.every((value) => typeof value === 'number' && Number.isFinite(value)) &&
+      choices.some((value) => matchesNumericRange(value, undefined, requested))
+    );
+  const rawInterval = preset.catalog?.parameterRanges?.[key];
+  const interval = readNumericInterval(rawInterval);
+  if (rawInterval !== undefined && !interval) return false;
+  if (preset.catalog && !interval && !isPublishedValue(preset, key)) return false;
+  const value = presetValue(preset, key) ?? defaultValue;
+  return matchesNumericRange(typeof value === 'number' ? value : undefined, interval, requested);
 }
 
 /** Fixed products keep their identity when only their geometric pose changes. */
@@ -61,6 +97,7 @@ export function presetMatchesConfiguration(
   preset: Preset,
   parameters: Parameters,
 ): boolean {
+  const identity = part.catalogIdentityParameters?.(parameters, preset) ?? parameters;
   const keys = part.catalogSelectionOnly
     ? (preset.catalog?.verifiedParameters ?? [])
     : [...new Set([...Object.keys(part.defaults), ...Object.keys(preset.parameters)])];
@@ -69,8 +106,8 @@ export function presetMatchesConfiguration(
     keys.every(
       (key) =>
         Object.hasOwn(preset.parameters, key) &&
-        Object.hasOwn(parameters, key) &&
-        preset.parameters[key] === parameters[key],
+        Object.hasOwn(identity, key) &&
+        preset.parameters[key] === identity[key],
     )
   );
 }
@@ -101,19 +138,15 @@ export function matchesCatalogFilters(
   return Object.entries(filters).every(([key, filter]) => {
     if (![filter.min, filter.max, filter.value].some(supplied)) return true;
     const field = fields.find((field) => field.key === key && field.filterable !== false)!;
-    const value = catalogValue(preset, key);
+    const value = presetValue(preset, key);
     if (field.type !== 'number')
       return field.type === 'boolean'
-        ? typeof value === 'boolean' && String(value) === filter.value?.trim()
-        : typeof value === 'string' && value === filter.value?.trim();
-    const rawInterval = preset.catalog?.parameterRanges?.[key];
-    const interval = readNumericInterval(rawInterval);
-    if (rawInterval !== undefined && !interval) return false;
-    return matchesNumericRange(
-      typeof value === 'number' ? value : undefined,
-      interval,
-      parseNumericRange(filter).range,
-    );
+        ? isPublishedValue(preset, key) &&
+            typeof value === 'boolean' &&
+            String(value) === filter.value?.trim()
+        : isPublishedValue(preset, key) &&
+            presetChoiceValues(preset, key).includes(filter.value?.trim() ?? '');
+    return matchesPresetNumericValue(preset, key, parseNumericRange(filter).range);
   });
 }
 
@@ -130,20 +163,20 @@ export function catalogFacetOptions(
   const others = Object.fromEntries(Object.entries(filters).filter(([name]) => name !== key));
   const values = new Map<string, number>();
   for (const preset of presets) {
-    const value = catalogValue(preset, key);
-    if (
-      (field.type === 'boolean' && typeof value !== 'boolean') ||
-      (field.type !== 'boolean' && typeof value !== 'string') ||
-      value === ''
-    )
-      continue;
-    const text = String(value);
-    if (!values.has(text)) values.set(text, 0);
-    if (
-      matchesCatalogFilters(preset, [...fields], others) &&
-      (!matchesQuery || matchesQuery(preset))
-    )
-      values.set(text, values.get(text)! + 1);
+    if (!isPublishedValue(preset, key)) continue;
+    const matches =
+      matchesCatalogFilters(preset, [...fields], others) && (!matchesQuery || matchesQuery(preset));
+    for (const value of new Set(presetChoiceValues(preset, key))) {
+      if (
+        (field.type === 'boolean' && typeof value !== 'boolean') ||
+        (field.type !== 'boolean' && typeof value !== 'string') ||
+        value === ''
+      )
+        continue;
+      const text = String(value);
+      if (!values.has(text)) values.set(text, 0);
+      if (matches) values.set(text, values.get(text)! + 1);
+    }
   }
   const selected = filters[key]?.value?.trim();
   if (selected && !values.has(selected)) values.set(selected, 0);

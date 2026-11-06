@@ -23,8 +23,9 @@
  *
  * Derived from @jscad/modeling 2.13.0 insertTjunctions, triangulatePolygons
  * and the triangulate-only generalizeGeom3 path. Owned typed implementation.
- * Only algorithm change: read the first Map key without copying all keys;
- * insertion order, EPS, vector arithmetic and triangulation are unchanged.
+ * Queue traversal avoids repeatedly scanning deleted Map entries. The current
+ * side is retained until complete; insertion order, EPS, vector arithmetic
+ * and triangulation are unchanged.
  * Upstream insertTjunctions SHA-256: 03d3185586c6de076edac74cbadc128e2f51b57c52c14b1811cf3b54c863163a
  */
 import modeling from '@jscad/modeling';
@@ -239,8 +240,9 @@ export const insertTjunctions = (polygons: Poly3[]): Poly3[] => {
       }
 
       let donesomething = false;
+      const sidesIterator = sidesToCheck.keys();
+      let firstSide = sidesIterator.next();
       while (true) {
-        const firstSide = sidesToCheck.keys().next();
         if (firstSide.done) break; // sidesToCheck is empty, we're done!
         const sidetagtocheck = firstSide.value;
         let donewithside = true;
@@ -373,6 +375,7 @@ export const insertTjunctions = (polygons: Poly3[]): Poly3[] => {
         } // if(sidetagtocheck in sidemap)
         if (donewithside) {
           sidesToCheck.delete(sidetagtocheck);
+          firstSide = sidesIterator.next();
         }
       }
       if (!donesomething) break;

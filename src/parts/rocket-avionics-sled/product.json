@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "One fabricated avionics mounting plate with four through holes.",
+  "processes": ["cutting", "drilling"],
+  "releaseRequirements": [
+    "Define material, thickness, hole tolerance and deburring on a detail drawing.",
+    "Measure the actual bay bore, electronics pattern, component height and required access.",
+    "Define plate retention, electrical insulation, fasteners and equipment restraint for the intended service."
+  ]
+}

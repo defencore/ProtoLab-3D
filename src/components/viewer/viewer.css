@@ -7,6 +7,10 @@
   isolation: isolate;
 }
 
+.model-viewer--light {
+  background: #eef1f5;
+}
+
 .model-viewer__canvas {
   display: block;
   width: 100%;
@@ -32,6 +36,27 @@
   overflow: hidden;
   pointer-events: none;
 }
+
+.model-viewer__capture-status {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  z-index: 6;
+  max-width: min(340px, calc(100% - 28px));
+  padding: 8px 11px;
+  border: 1px solid #69728455;
+  border-radius: 6px;
+  background: #242830ed;
+  color: #e2e5e9;
+  font-size: 11px;
+  line-height: 1.4;
+  pointer-events: none;
+}
+
+.model-viewer--light .model-viewer__capture-status {
+  background: #fffffff0;
+  color: #253449;
+}
 .model-viewer__dimension {
   position: absolute;
   transform: translate(-50%, -50%);
@@ -49,76 +74,17 @@
   box-shadow: 0 2px 6px #0002;
 }
 
-.model-viewer__axes {
-  position: absolute;
-  right: 21px;
-  bottom: 20px;
-  width: 88px;
-  height: 86px;
+.model-viewer--light .model-viewer__dimension {
+  border-color: #9aa7b866;
+  background: #fffffff0;
+  color: #405069;
 }
-
-.model-viewer__axes svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+.model-viewer--light .model-viewer__error {
+  background: #fffffff0;
+  color: #253449;
 }
-.model-viewer__axis-line {
-  fill: none;
-  stroke-width: 1.4;
-}
-.model-viewer__axis-line--x {
-  stroke: #c48480;
-}
-.model-viewer__axis-line--y {
-  stroke: #85ac78;
-}
-.model-viewer__axis-line--z {
-  stroke: #7d9ccd;
-}
-.model-viewer__axis {
-  position: absolute;
-  display: grid;
-  place-items: center;
-  width: 23px;
-  height: 23px;
-  padding: 0;
-  border-radius: 50%;
-  border: 1px solid currentColor;
-  background: #252a32;
-  font:
-    10px/1 'IBM Plex Mono',
-    'SFMono-Regular',
-    Consolas,
-    monospace;
-  cursor: pointer;
-  transition:
-    background 130ms,
-    transform 130ms;
-}
-
-.model-viewer__axis:hover {
-  background: #3a424d;
-  transform: scale(1.12);
-}
-.model-viewer__axis:focus-visible {
-  outline: 2px solid #d4ddba;
-  outline-offset: 3px;
-}
-.model-viewer__axis--x {
-  color: #d68f8b;
-  left: 61px;
-  top: 54px;
-}
-.model-viewer__axis--y {
-  color: #91b782;
-  left: 2px;
-  top: 54px;
-}
-.model-viewer__axis--z {
-  color: #94b4e2;
-  left: 31px;
-  top: 3px;
+.model-viewer--light .model-viewer__error p {
+  color: #526176;
 }
 .model-viewer__error {
   position: absolute;
@@ -162,12 +128,6 @@
 }
 
 @media (max-width: 720px) {
-  .model-viewer__axes {
-    right: 10px;
-    bottom: 9px;
-    transform: scale(0.85);
-    transform-origin: bottom right;
-  }
   .model-viewer__dimension {
     font-size: 9px;
   }

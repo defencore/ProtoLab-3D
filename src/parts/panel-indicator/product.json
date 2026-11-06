@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "One purchased Lehao panel indicator including its retaining nut. The provisional internal solids are a packaging reference, not manufacturing definitions.",
+  "processes": [],
+  "releaseRequirements": [
+    "Confirm the actual Lehao AD16-16C colour and voltage execution with a supplier product reference.",
+    "Replace the provisional geometry with a Lehao drawing or measured sample before releasing panel holes, engagement lengths or terminal clearances.",
+    "Verify the actual terminal type, operating voltage, polarity if applicable and environmental rating."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "purchased",
+  "description": "One purchased canopy item represented by an authored open reference envelope.",
+  "processes": [],
+  "releaseRequirements": [
+    "Select the actual manufacturer, canopy designation, material and supplier evidence.",
+    "Verify actual canopy, packed size, line arrangement and all recovery attachment interfaces.",
+    "Qualify recovery performance and opening loads separately; the envelope has no aerodynamic or structural rating."
+  ]
+}

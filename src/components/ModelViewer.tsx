@@ -3,13 +3,13 @@ import {
   ACESFilmicToneMapping,
   AmbientLight,
   Box3,
+  Box3Helper,
   BufferGeometry,
   Color,
   DirectionalLight,
   DoubleSide,
   EdgesGeometry,
   Float32BufferAttribute,
-  GridHelper,
   Group,
   HemisphereLight,
   LineBasicMaterial,
@@ -17,28 +17,46 @@ import {
   Material,
   Mesh,
   MeshStandardMaterial,
-  MOUSE,
   Object3D,
   OrthographicCamera,
   PCFShadowMap,
   PlaneGeometry,
   PMREMGenerator,
+  Raycaster,
   Scene,
   ShadowMaterial,
   SRGBColorSpace,
-  TOUCH,
+  Vector2,
   Vector3,
   WebGLRenderer,
   type WebGLRenderTarget,
 } from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import type { Parameters, PartDefinition } from '../core/types';
 import './viewer/viewer.css';
 import { withGeometryMode, type GeometryMode } from '../core/geometry-mode';
+import { modelComponentMetadata } from '../core/mesh-transfer';
+import { ViewerCameraControls } from './viewer/camera-controls';
+import {
+  animatePresetCameraView,
+  cameraViewUp,
+  setPresetCameraView,
+  type CameraView,
+} from './viewer/camera-views';
+import { capturePreviewImage, copyPreviewImage } from './viewer/preview-image';
+import { PreviewGrid } from './viewer/preview-grid';
+import {
+  disposeObject,
+  releaseModelPresentation,
+  type MaterialAppearance,
+} from './viewer/model-resources';
+import NavigationCube, { type NavigationCubeHandle } from './viewer/NavigationCube';
+import PreviewControls, {
+  type DisplayMode,
+  type PreviewBackgroundMode,
+  type ImageCopyState,
+} from './viewer/PreviewControls';
 
-type CameraView = 'isometric' | 'front' | 'top' | 'right';
-type DisplayMode = 'solid' | 'wireframe' | 'xray';
 export type NavigationMode = 'orbit' | 'pan';
 
 interface ModelViewerProps {
@@ -50,24 +68,26 @@ interface ModelViewerProps {
   parameters: Parameters;
   modelState: string;
   geometryMode: GeometryMode;
+  onGeometryModeChange: (mode: GeometryMode) => void;
   displayMode: DisplayMode;
+  onDisplayModeChange: (mode: DisplayMode) => void;
   navigationMode: NavigationMode;
+  backgroundMode: PreviewBackgroundMode;
+  onBackgroundModeChange: (mode: PreviewBackgroundMode) => void;
   showGrid: boolean;
+  onToggleGrid: () => void;
   showDimensions: boolean;
+  onToggleDimensions: () => void;
+  expanded: boolean;
+  onToggleFullscreen: () => void;
   view: CameraView;
   fitToken: number;
+  selectedComponentId?: string | null;
+  hiddenComponentIds?: readonly string[];
+  onSelectComponent?: (id: string | null) => void;
   onError?: (message: string) => void;
   onViewChange?: (view: CameraView) => void;
   onNavigationModeChange: (mode: NavigationMode) => void;
-}
-
-interface MaterialAppearance {
-  material: Material;
-  opacity: number;
-  transparent: boolean;
-  depthWrite: boolean;
-  side: Material['side'];
-  wireframe?: boolean;
 }
 
 interface DimensionLabel {
@@ -82,14 +102,16 @@ interface ViewerRuntime {
   renderer: WebGLRenderer;
   scene: Scene;
   camera: OrthographicCamera;
-  controls: OrbitControls;
+  controls: ViewerCameraControls;
   stage: Group;
-  grid: GridHelper;
+  grid: PreviewGrid;
   shadow: Mesh;
   keyLight: DirectionalLight;
   model: Group | null;
   edges: LineSegments[];
   appearances: MaterialAppearance[];
+  componentMeshes: { mesh: Mesh; occurrenceId?: string; visible: boolean }[];
+  selection: Box3Helper;
   dimensionGroup: Group;
   dimensionLabels: DimensionLabel[];
   labelLayer: HTMLDivElement;
@@ -97,22 +119,41 @@ interface ViewerRuntime {
   target: Vector3;
   currentPart: string;
   dimensionsVisible: boolean;
+  backgroundMode: 'dark' | 'light';
   width: number;
   height: number;
   requestRender: () => void;
-  fit: (view?: CameraView) => void;
+  fit: (view?: CameraView, animated?: boolean) => void;
 }
 
-function disposeObject(object: Object3D) {
-  const materials = new Set<Material>();
-  object.traverse((child) => {
-    if (child instanceof Mesh || child instanceof LineSegments) {
-      child.geometry.dispose();
-      const childMaterials = Array.isArray(child.material) ? child.material : [child.material];
-      childMaterials.forEach((material) => materials.add(material));
+function objectVisible(object: Object3D): boolean {
+  for (let current: Object3D | null = object; current; current = current.parent)
+    if (!current.visible) return false;
+  return true;
+}
+
+function updateComponents(
+  runtime: ViewerRuntime,
+  selectedId: string | null | undefined,
+  hiddenIds: readonly string[] | undefined,
+) {
+  const hidden = new Set(hiddenIds);
+  const bounds = runtime.selection.box.makeEmpty();
+  runtime.model?.updateMatrixWorld(true);
+  runtime.componentMeshes.forEach(({ mesh, occurrenceId, visible }) => {
+    const nextVisible = visible && (!occurrenceId || !hidden.has(occurrenceId));
+    if (mesh.visible !== nextVisible) {
+      mesh.visible = nextVisible;
+      runtime.renderer.shadowMap.needsUpdate = true;
     }
+    if (!selectedId || occurrenceId !== selectedId || !objectVisible(mesh)) return;
+    mesh.geometry.computeBoundingBox();
+    if (mesh.geometry.boundingBox)
+      bounds.union(mesh.geometry.boundingBox.clone().applyMatrix4(mesh.matrixWorld));
   });
-  materials.forEach((material) => material.dispose());
+  runtime.selection.visible = !bounds.isEmpty();
+  if (runtime.selection.visible) bounds.expandByScalar(runtime.extent * 0.0015);
+  runtime.requestRender();
 }
 
 function applyDisplayMode(runtime: ViewerRuntime, mode: DisplayMode) {
@@ -128,6 +169,20 @@ function applyDisplayMode(runtime: ViewerRuntime, mode: DisplayMode) {
     edge.visible = mode === 'solid';
   });
   runtime.shadow.visible = mode === 'solid';
+  runtime.renderer.shadowMap.needsUpdate = true;
+  runtime.requestRender();
+}
+
+function applyBackgroundMode(runtime: ViewerRuntime, mode: 'dark' | 'light') {
+  runtime.backgroundMode = mode;
+  (runtime.grid.material as Material).opacity = mode === 'light' ? 0.5 : 0.36;
+  (runtime.selection.material as LineBasicMaterial).color.setHex(
+    mode === 'light' ? 0x9b5a12 : 0xe4ad6b,
+  );
+  runtime.dimensionGroup.traverse((object) => {
+    if (!(object instanceof LineSegments)) return;
+    (object.material as LineBasicMaterial).color.setHex(mode === 'light' ? 0x536375 : 0x8997aa);
+  });
   runtime.requestRender();
 }
 
@@ -145,7 +200,7 @@ function updateDimensions(
   const offset = runtime.extent * 0.14;
   const tick = runtime.extent * 0.018;
   const material = new LineBasicMaterial({
-    color: 0x8997aa,
+    color: runtime.backgroundMode === 'light' ? 0x536375 : 0x8997aa,
     transparent: true,
     opacity: 0.65,
     depthTest: false,
@@ -236,23 +291,23 @@ function updateDimensions(
   runtime.dimensionGroup.visible = runtime.dimensionsVisible;
 }
 
-function setCameraView(runtime: ViewerRuntime, view: CameraView) {
-  const direction = {
-    isometric: new Vector3(1.2, 1.7, 1.45),
-    front: new Vector3(0, 0, 1),
-    top: new Vector3(0, 1, 0),
-    right: new Vector3(1, 0, 0),
-  }[view].normalize();
-  // Consume pending orbit inertia before applying an exact orthographic view.
-  const damping = runtime.controls.enableDamping;
-  runtime.controls.enableDamping = false;
-  runtime.controls.update();
-  runtime.controls.enableDamping = damping;
-  // OrbitControls caches its up-axis transform when constructed.
-  runtime.camera.up.set(0, 1, 0);
-  runtime.camera.position.copy(runtime.target).addScaledVector(direction, runtime.extent * 4);
-  runtime.controls.target.copy(runtime.target);
-  runtime.controls.update();
+function viewTransitionDuration() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 350;
+}
+
+function setCameraView(
+  runtime: ViewerRuntime,
+  view: CameraView,
+  fitToModel = false,
+  animated = false,
+) {
+  const distance = fitToModel
+    ? runtime.extent * 4
+    : runtime.camera.position.distanceTo(runtime.controls.target);
+  const target = fitToModel ? runtime.target : runtime.controls.target;
+  if (animated)
+    animatePresetCameraView(runtime.controls, view, distance, target, viewTransitionDuration());
+  else setPresetCameraView(runtime.controls, view, distance, target);
   runtime.requestRender();
 }
 
@@ -265,28 +320,57 @@ export default function ModelViewer({
   parameters,
   modelState,
   geometryMode,
+  onGeometryModeChange,
   displayMode,
+  onDisplayModeChange,
   navigationMode,
+  backgroundMode,
+  onBackgroundModeChange,
   showGrid,
+  onToggleGrid,
   showDimensions,
+  onToggleDimensions,
+  expanded,
+  onToggleFullscreen,
   view,
   fitToken,
+  selectedComponentId,
+  hiddenComponentIds,
+  onSelectComponent,
   onError,
   onViewChange,
   onNavigationModeChange,
 }: ModelViewerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const labelLayerRef = useRef<HTMLDivElement>(null);
+  const navigationCubeRef = useRef<NavigationCubeHandle>(null);
   const runtimeRef = useRef<ViewerRuntime | null>(null);
   const onErrorRef = useRef(onError);
   const currentViewRef = useRef(view);
+  const handledViewRef = useRef(view);
   const displayModeRef = useRef(displayMode);
   const onNavigationModeChangeRef = useRef(onNavigationModeChange);
+  const onSelectComponentRef = useRef(onSelectComponent);
+  const selectedComponentIdRef = useRef(selectedComponentId);
+  const hiddenComponentIdsRef = useRef(hiddenComponentIds);
   const [error, setError] = useState<string | null>(null);
+  const [previewReady, setPreviewReady] = useState(false);
+  const [imageCopyState, setImageCopyState] = useState<ImageCopyState>('idle');
+  const [imageCopyMessage, setImageCopyMessage] = useState('');
+  const copyingImageRef = useRef(false);
   onErrorRef.current = onError;
   currentViewRef.current = view;
   displayModeRef.current = displayMode;
   onNavigationModeChangeRef.current = onNavigationModeChange;
+  onSelectComponentRef.current = onSelectComponent;
+  selectedComponentIdRef.current = selectedComponentId;
+  hiddenComponentIdsRef.current = hiddenComponentIds;
+
+  useEffect(() => {
+    if (imageCopyState !== 'copied' && imageCopyState !== 'error') return;
+    const timeout = window.setTimeout(() => setImageCopyState('idle'), 4500);
+    return () => window.clearTimeout(timeout);
+  }, [imageCopyState]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -312,6 +396,8 @@ export default function ModelViewer({
     renderer.toneMapping = ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.05;
     renderer.shadowMap.enabled = true;
+    // Camera motion does not change the shadow cast by the fixed model and light.
+    renderer.shadowMap.autoUpdate = false;
     renderer.shadowMap.type = PCFShadowMap;
     renderer.setClearColor(0x000000, 0);
     renderer.domElement.className = 'model-viewer__canvas';
@@ -322,14 +408,7 @@ export default function ModelViewer({
     const scene = new Scene();
     const camera = new OrthographicCamera(-50, 50, 50, -50, 0.01, 20000);
     camera.position.set(100, 90, 120);
-    const controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.12;
-    controls.rotateSpeed = 0.7;
-    controls.zoomSpeed = 0.8;
-    controls.minZoom = 0.25;
-    controls.maxZoom = 15;
-    controls.screenSpacePanning = true;
+    const controls = new ViewerCameraControls(camera, renderer.domElement);
     const stage = new Group();
     scene.add(stage);
 
@@ -364,7 +443,7 @@ export default function ModelViewer({
     warmLight.position.set(60, 10, -20);
     scene.add(warmLight);
 
-    const grid = new GridHelper(1, 40, 0x4c5665, 0x343d4b);
+    const grid = new PreviewGrid();
     const gridMaterial = grid.material as Material;
     gridMaterial.transparent = true;
     gridMaterial.opacity = 0.36;
@@ -376,6 +455,15 @@ export default function ModelViewer({
     scene.add(shadow);
     const dimensionGroup = new Group();
     scene.add(dimensionGroup);
+    const selection = new Box3Helper(new Box3(), 0xe4ad6b);
+    const selectionMaterial = selection.material as LineBasicMaterial;
+    selectionMaterial.transparent = true;
+    selectionMaterial.opacity = 0.8;
+    selectionMaterial.depthTest = false;
+    selectionMaterial.depthWrite = false;
+    selection.renderOrder = 4;
+    selection.visible = false;
+    scene.add(selection);
 
     let frame = 0;
     let disposed = false;
@@ -394,6 +482,8 @@ export default function ModelViewer({
       model: null,
       edges: [],
       appearances: [],
+      componentMeshes: [],
+      selection,
       dimensionGroup,
       dimensionLabels: [],
       labelLayer,
@@ -401,6 +491,7 @@ export default function ModelViewer({
       target: new Vector3(),
       currentPart: '',
       dimensionsVisible: false,
+      backgroundMode: 'dark',
       width: 1,
       height: 1,
       requestRender: () => {
@@ -410,6 +501,7 @@ export default function ModelViewer({
           if (disposed) return;
           controls.update();
           camera.updateMatrixWorld();
+          navigationCubeRef.current?.update(camera.quaternion);
           runtime.dimensionLabels.forEach(({ element, position, from, to, guide }) => {
             projected.copy(position).project(camera);
             projectedFrom.copy(from).project(camera);
@@ -431,7 +523,7 @@ export default function ModelViewer({
           renderer.render(scene, camera);
         });
       },
-      fit: (cameraView) => {
+      fit: (cameraView, animated = false) => {
         const aspect = runtime.width / runtime.height;
         const halfHeight = runtime.extent * 0.74 * Math.max(1, 1 / aspect);
         camera.left = -halfHeight * aspect;
@@ -442,12 +534,9 @@ export default function ModelViewer({
         camera.near = Math.max(0.001, runtime.extent * 0.001);
         camera.far = runtime.extent * 100;
         camera.updateProjectionMatrix();
-        if (cameraView) setCameraView(runtime, cameraView);
+        if (cameraView) setCameraView(runtime, cameraView, true, animated);
         else {
-          const damping = controls.enableDamping;
-          controls.enableDamping = false;
-          controls.update();
-          controls.enableDamping = damping;
+          controls.cancelMotion();
           const direction = camera.position.clone().sub(controls.target).normalize();
           controls.target.copy(runtime.target);
           camera.position.copy(runtime.target).addScaledVector(direction, runtime.extent * 4);
@@ -465,6 +554,7 @@ export default function ModelViewer({
       runtime.width = width;
       runtime.height = height;
       renderer.setSize(width, height, false);
+      controls.handleResize();
       // Preserve zoom and orbit while retaining the model when the viewport narrows.
       const aspect = width / height;
       const halfHeight = (camera.top * Math.max(1, 1 / aspect)) / Math.max(1, 1 / previousAspect);
@@ -487,6 +577,55 @@ export default function ModelViewer({
       );
     };
     const handleDoubleClick = () => runtime.fit();
+    const raycaster = new Raycaster();
+    const pointer = new Vector2();
+    let clickStart: { id: number; x: number; y: number } | null = null;
+    const activePointers = new Set<number>();
+    const handlePointerDown = (event: PointerEvent) => {
+      activePointers.add(event.pointerId);
+      clickStart =
+        event.button === 0 && activePointers.size === 1
+          ? { id: event.pointerId, x: event.clientX, y: event.clientY }
+          : null;
+    };
+    const handlePointerMove = (event: PointerEvent) => {
+      if (
+        clickStart?.id === event.pointerId &&
+        Math.hypot(event.clientX - clickStart.x, event.clientY - clickStart.y) > 4
+      )
+        clickStart = null;
+    };
+    const handlePointerCancel = (event: PointerEvent) => {
+      activePointers.delete(event.pointerId);
+      clickStart = null;
+    };
+    const handlePointerUp = (event: PointerEvent) => {
+      const start = clickStart;
+      clickStart = null;
+      activePointers.delete(event.pointerId);
+      if (
+        !onSelectComponentRef.current ||
+        start?.id !== event.pointerId ||
+        Math.hypot(event.clientX - start.x, event.clientY - start.y) > 4 ||
+        !runtime.componentMeshes.some(({ occurrenceId }) => occurrenceId)
+      )
+        return;
+      const rect = renderer.domElement.getBoundingClientRect();
+      pointer.set(
+        ((event.clientX - rect.left) / rect.width) * 2 - 1,
+        -((event.clientY - rect.top) / rect.height) * 2 + 1,
+      );
+      if (Math.abs(pointer.x) > 1 || Math.abs(pointer.y) > 1) return;
+      camera.updateMatrixWorld();
+      raycaster.setFromCamera(pointer, camera);
+      const surfaces = runtime.componentMeshes.filter(({ mesh }) => objectVisible(mesh));
+      const hit = raycaster.intersectObjects(
+        surfaces.map(({ mesh }) => mesh),
+        false,
+      )[0];
+      const occurrenceId = hit && surfaces.find(({ mesh }) => mesh === hit.object)?.occurrenceId;
+      onSelectComponentRef.current(occurrenceId ?? null);
+    };
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.ctrlKey || event.metaKey || event.altKey) return;
       if (event.key.toLowerCase() === 'p' || event.key.toLowerCase() === 'o') {
@@ -501,6 +640,10 @@ export default function ModelViewer({
     renderer.domElement.addEventListener('webglcontextlost', handleContextLost);
     renderer.domElement.addEventListener('dblclick', handleDoubleClick);
     renderer.domElement.addEventListener('keydown', handleKeyDown);
+    renderer.domElement.addEventListener('pointerdown', handlePointerDown);
+    renderer.domElement.addEventListener('pointermove', handlePointerMove);
+    renderer.domElement.addEventListener('pointerup', handlePointerUp);
+    renderer.domElement.addEventListener('pointercancel', handlePointerCancel);
     return () => {
       disposed = true;
       cancelAnimationFrame(frame);
@@ -510,7 +653,12 @@ export default function ModelViewer({
       renderer.domElement.removeEventListener('webglcontextlost', handleContextLost);
       renderer.domElement.removeEventListener('dblclick', handleDoubleClick);
       renderer.domElement.removeEventListener('keydown', handleKeyDown);
+      renderer.domElement.removeEventListener('pointerdown', handlePointerDown);
+      renderer.domElement.removeEventListener('pointermove', handlePointerMove);
+      renderer.domElement.removeEventListener('pointerup', handlePointerUp);
+      renderer.domElement.removeEventListener('pointercancel', handlePointerCancel);
       runtime.dimensionLabels.forEach(({ element }) => element.remove());
+      releaseModelPresentation(runtime);
       disposeObject(scene);
       keyLight.shadow.dispose();
       environment?.dispose();
@@ -525,6 +673,8 @@ export default function ModelViewer({
   useEffect(() => {
     const runtime = runtimeRef.current;
     if (!runtime) return;
+    setPreviewReady(false);
+    setImageCopyState('idle');
     let model: Group | null = null;
     try {
       const issues = part.validate(parameters, modelState);
@@ -548,21 +698,25 @@ export default function ModelViewer({
       const center = bounds.getCenter(new Vector3());
       displayRoot.position.set(-center.x, -bounds.min.y, -center.z);
       displayRoot.updateMatrixWorld(true);
-      const worldBounds = new Box3().setFromObject(displayRoot, true);
+      const worldBounds = bounds.translate(displayRoot.position);
 
+      releaseModelPresentation(runtime);
       if (runtime.model) {
         runtime.stage.remove(runtime.model);
         disposeObject(runtime.model);
       }
       runtime.model = displayRoot;
       runtime.stage.add(displayRoot);
-      runtime.edges = [];
-      runtime.appearances = [];
       const materialSet = new Set<Material>();
       const meshes: Mesh[] = [];
       displayRoot.traverse((child) => {
         if (child instanceof Mesh) meshes.push(child);
       });
+      runtime.componentMeshes = meshes.map((mesh) => ({
+        mesh,
+        occurrenceId: modelComponentMetadata(mesh).occurrenceId,
+        visible: mesh.visible,
+      }));
       const triangleCount = meshes.reduce(
         (n, m) => n + (m.geometry.index?.count ?? m.geometry.getAttribute('position').count) / 3,
         0,
@@ -603,13 +757,14 @@ export default function ModelViewer({
       });
 
       const previousExtent = runtime.extent;
+      runtime.controls.cancelMotion();
       runtime.extent = extent;
       const previousTarget = runtime.target.clone();
       runtime.target.copy(worldBounds.getCenter(new Vector3()));
       const targetDelta = runtime.target.clone().sub(previousTarget);
       runtime.controls.target.add(targetDelta);
       runtime.camera.position.add(targetDelta);
-      runtime.grid.scale.setScalar(extent * 5);
+      runtime.grid.setExtent(extent);
       runtime.grid.position.y = -extent * 0.004;
       runtime.shadow.scale.set(extent * 5, extent * 5, 1);
       runtime.shadow.position.y = -extent * 0.006;
@@ -635,8 +790,10 @@ export default function ModelViewer({
       if (runtime.currentPart !== part.id) runtime.fit(currentViewRef.current);
       else if (extent / previousExtent > 1.6 || extent / previousExtent < 0.6) runtime.fit();
       runtime.currentPart = part.id;
+      updateComponents(runtime, selectedComponentIdRef.current, hiddenComponentIdsRef.current);
       runtime.requestRender();
       setError(null);
+      setPreviewReady(true);
       onErrorRef.current?.('');
     } catch (cause) {
       if (model && model.parent !== runtime.model) disposeObject(model);
@@ -656,14 +813,23 @@ export default function ModelViewer({
 
   useEffect(() => {
     const runtime = runtimeRef.current;
+    if (runtime) updateComponents(runtime, selectedComponentId, hiddenComponentIds);
+  }, [selectedComponentId, hiddenComponentIds]);
+
+  useEffect(() => {
+    const runtime = runtimeRef.current;
     if (!runtime) return;
-    runtime.controls.mouseButtons.LEFT = navigationMode === 'pan' ? MOUSE.PAN : MOUSE.ROTATE;
-    runtime.controls.touches.ONE = navigationMode === 'pan' ? TOUCH.PAN : TOUCH.ROTATE;
+    runtime.controls.setNavigationMode(navigationMode);
     runtime.renderer.domElement.setAttribute(
       'aria-label',
       `Interactive 3D part preview. Drag to ${navigationMode === 'pan' ? 'pan' : 'rotate'}, scroll to zoom, and right-drag to pan. P: pan, O: orbit, F: fit.`,
     );
   }, [navigationMode]);
+
+  useEffect(() => {
+    const runtime = runtimeRef.current;
+    if (runtime) applyBackgroundMode(runtime, backgroundMode);
+  }, [backgroundMode]);
 
   useEffect(() => {
     const runtime = runtimeRef.current;
@@ -682,7 +848,10 @@ export default function ModelViewer({
 
   useEffect(() => {
     const runtime = runtimeRef.current;
-    if (runtime) setCameraView(runtime, view);
+    if (runtime && handledViewRef.current !== view) {
+      handledViewRef.current = view;
+      setCameraView(runtime, view, false, true);
+    }
   }, [view]);
 
   useEffect(() => {
@@ -690,17 +859,81 @@ export default function ModelViewer({
   }, [fitToken]);
 
   const chooseAxisView = (nextView: CameraView) => {
-    runtimeRef.current?.fit(nextView);
+    const runtime = runtimeRef.current;
+    handledViewRef.current = nextView;
+    if (runtime) setCameraView(runtime, nextView, false, true);
     onViewChange?.(nextView);
+  };
+
+  const chooseDirection = (direction: Vector3) => {
+    const runtime = runtimeRef.current;
+    if (!runtime) return;
+    runtime.controls.animateToDirection(
+      direction,
+      cameraViewUp(direction, runtime.camera.quaternion),
+      runtime.camera.position.distanceTo(runtime.controls.target),
+      runtime.controls.target,
+      viewTransitionDuration(),
+    );
+    runtime.requestRender();
+  };
+
+  const homeView = () => {
+    handledViewRef.current = 'isometric';
+    runtimeRef.current?.fit('isometric', true);
+    onViewChange?.('isometric');
+  };
+
+  const copyImage = async () => {
+    const runtime = runtimeRef.current;
+    if (!runtime?.model || !previewReady || pending || error || copyingImageRef.current) return;
+    const model = runtime.model;
+    copyingImageRef.current = true;
+    setImageCopyState('copying');
+    setImageCopyMessage('Copying preview image…');
+    try {
+      await copyPreviewImage(() => {
+        if (runtimeRef.current !== runtime || runtime.model !== model)
+          throw new Error('The preview changed. Copy the image again.');
+        return capturePreviewImage(runtime.renderer, runtime.scene, runtime.camera, {
+          width: runtime.width,
+          height: runtime.height,
+          backgroundMode: runtime.backgroundMode,
+          labels: runtime.dimensionsVisible
+            ? runtime.dimensionLabels
+                .filter(({ guide }) => guide.visible)
+                .map(({ element, position }) => ({ text: element.textContent ?? '', position }))
+            : [],
+        });
+      });
+      if (runtimeRef.current === runtime && runtime.model === model) {
+        setImageCopyState('copied');
+        setImageCopyMessage('Preview image copied to clipboard.');
+      }
+    } catch (cause) {
+      if (runtimeRef.current === runtime && runtime.model === model) {
+        setImageCopyState('error');
+        setImageCopyMessage(
+          cause instanceof Error ? cause.message : 'The image could not be copied.',
+        );
+      }
+    } finally {
+      copyingImageRef.current = false;
+    }
   };
 
   return (
     <div
-      className={`model-viewer model-viewer--${navigationMode}`}
+      className={`model-viewer model-viewer--${navigationMode} model-viewer--${backgroundMode}`}
       ref={containerRef}
       aria-label={`${part.name} 3D workspace`}
     >
       <div className="model-viewer__labels" ref={labelLayerRef} aria-hidden="true" />
+      {imageCopyState !== 'idle' && (
+        <div className="model-viewer__capture-status" role="status" aria-live="polite">
+          {imageCopyMessage}
+        </div>
+      )}
       {pending && (
         <div className="model-viewer__error" role="status">
           <strong>Building model…</strong>
@@ -716,38 +949,35 @@ export default function ModelViewer({
           <p>{error}</p>
         </div>
       )}
-      <div className="model-viewer__axes" aria-label="Quick camera views">
-        <svg viewBox="0 0 88 86" aria-hidden="true">
-          <path d="M43 48 L43 15" className="model-viewer__axis-line model-viewer__axis-line--z" />
-          <path d="M43 48 L73 65" className="model-viewer__axis-line model-viewer__axis-line--x" />
-          <path d="M43 48 L14 65" className="model-viewer__axis-line model-viewer__axis-line--y" />
-          <circle cx="43" cy="48" r="3" fill="#838b99" />
-        </svg>
-        <button
-          className="model-viewer__axis model-viewer__axis--x"
-          title="Right view (X axis)"
-          aria-label="View along X axis"
-          onClick={() => chooseAxisView('right')}
-        >
-          X
-        </button>
-        <button
-          className="model-viewer__axis model-viewer__axis--y"
-          title="Front view (Y axis)"
-          aria-label="View along Y axis"
-          onClick={() => chooseAxisView('front')}
-        >
-          Y
-        </button>
-        <button
-          className="model-viewer__axis model-viewer__axis--z"
-          title="Top view (Z axis)"
-          aria-label="View along Z axis"
-          onClick={() => chooseAxisView('top')}
-        >
-          Z
-        </button>
-      </div>
+      <PreviewControls
+        cube={
+          <NavigationCube
+            ref={navigationCubeRef}
+            onSelectView={chooseAxisView}
+            onSelectDirection={chooseDirection}
+          />
+        }
+        displayMode={displayMode}
+        geometryMode={geometryMode}
+        onGeometryModeChange={onGeometryModeChange}
+        onDisplayModeChange={onDisplayModeChange}
+        navigationMode={navigationMode}
+        onNavigationModeChange={onNavigationModeChange}
+        backgroundMode={backgroundMode}
+        onBackgroundModeChange={onBackgroundModeChange}
+        showGrid={showGrid}
+        onToggleGrid={onToggleGrid}
+        showDimensions={showDimensions}
+        onToggleDimensions={onToggleDimensions}
+        expanded={expanded}
+        onToggleFullscreen={onToggleFullscreen}
+        onHome={homeView}
+        onInvert={() => runtimeRef.current?.controls.invertView(viewTransitionDuration())}
+        onFit={() => runtimeRef.current?.fit()}
+        imageCopyState={imageCopyState}
+        imageCopyDisabled={!previewReady || Boolean(pending || error || loadError)}
+        onCopyImage={() => void copyImage()}
+      />
     </div>
   );
 }

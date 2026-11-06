@@ -1,0 +1,20 @@
+[
+  {
+    "id": "2280-reference",
+    "name": "M.2 NVMe 2280 · installation reference",
+    "description": "Generic 80 × 22 × 3.5 mm authored installation envelope; no supplier or capacity selected.",
+    "parameters": { "format": "2280" }
+  },
+  {
+    "id": "2242-reference",
+    "name": "M.2 NVMe 2242 · installation reference",
+    "description": "Generic 42 × 22 × 3.5 mm authored installation envelope; no supplier or capacity selected.",
+    "parameters": { "format": "2242" }
+  },
+  {
+    "id": "2230-reference",
+    "name": "M.2 NVMe 2230 · installation reference",
+    "description": "Generic 30 × 22 × 3.5 mm authored installation envelope; no supplier or capacity selected.",
+    "parameters": { "format": "2230" }
+  }
+]

@@ -6,8 +6,8 @@ import type { Preset as ModulePreset } from '../../core/types';
 const modulePresets = presetData as ModulePreset[];
 import { Group } from 'three';
 import type { PartDefinition, Parameters } from '../../core/types';
-import { n, numberParameter } from '../../core/geometry';
-import { annularSector, loftMesh, pythonWire, sectionBounds } from '../../core/mechanical';
+import { n, num, numberParameter } from '../../core/geometry';
+import { annularSector, loftMesh, sectionBounds } from '../../core/mechanical';
 
 function values(p: Parameters, state: string) {
   const radius = (n(p, 'diameter') + (state === 'free' ? n(p, 'oversize') : 0)) / 2;
@@ -58,6 +58,7 @@ const part: PartDefinition = {
     numberParameter('chamfer', 'End chamfer length', 'a', 'Ends', 0.1, 5),
   ],
   presetMatchKeys: ['diameter', 'length'],
+  physicalStates: ['free', 'installed'],
   defaults,
   presets: modulePresets,
   states: [
@@ -85,16 +86,25 @@ const part: PartDefinition = {
     return group;
   },
   python(p, state) {
-    return `sections = [${values(p, state)
-      .sections.map((section) => pythonWire(section.points, section.z))
-      .join(',\n')} ]\nshape = Part.makeLoft(sections, True, True).removeSplitter()`;
+    const v = values(p, state),
+      end = v.radius - v.wall * 0.35;
+    return [
+      `shape = Part.makeCone(${num(end)},${num(v.radius)},${num(v.chamfer)},App.Vector(0,0,${num(-v.length / 2)}))`,
+      `shape = shape.fuse(Part.makeCylinder(${num(v.radius)},${num(v.length - 2 * v.chamfer)},App.Vector(0,0,${num(-v.length / 2 + v.chamfer)})))`,
+      `shape = shape.fuse(Part.makeCone(${num(v.radius)},${num(end)},${num(v.chamfer)},App.Vector(0,0,${num(v.length / 2 - v.chamfer)})))`,
+      `shape = shape.cut(Part.makeCylinder(${num(v.radius - v.wall)},${num(v.length + 2)},App.Vector(0,0,${num(-v.length / 2 - 1)})))`,
+      `slit = Part.makeCylinder(${num(v.radius + 1)},${num(v.length + 2)},App.Vector(0,0,${num(-v.length / 2 - 1)}),App.Vector(0,0,1),${num(v.gap)})`,
+      `slit.rotate(App.Vector(0,0,0),App.Vector(0,0,1),${num(-v.gap / 2)})`,
+      'shape = shape.cut(slit).removeSplitter()',
+      'component_colors = [(119/255,127/255,137/255)]',
+    ].join('\n');
   },
   dimensions(p, state) {
     const v = values(p, state);
     return [...sectionBounds(v.sections[1].points), v.length];
   },
   notes:
-    'Nominal diameter, wall and chamfer ranges follow the linked supplier drawing. Slit angles are editable prototype choices. Free and installed states are geometric envelopes, not a press-fit force simulation. Curved surfaces are polygonal in both exports.',
+    'Nominal diameter, wall and chamfer ranges follow the linked supplier drawing. Slit angles are editable prototype choices. Free and installed states are geometric envelopes, not a press-fit force simulation. FreeCAD uses analytic cylinders and cones with a wedge cut; the preview tessellates the same circular surfaces.',
   sources: [
     {
       label: 'Gvyntok · DIN 1481 dimensional drawing',

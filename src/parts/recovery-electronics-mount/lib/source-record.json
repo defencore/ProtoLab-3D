@@ -1,0 +1,130 @@
+{
+  "project": "PEM CO2 recovery project, current R06 assembly",
+  "sourceRoot": "/Users/x/Documents/ChatGPT/FereCAD MCP/new_project_v2",
+  "sourceLicense": "No license declaration found in the inspected project instructions or current geometry sources; user-provided source retained for this workspace.",
+  "authoritativeOverlay": "current_assembly_stack_geometry.py + final assembly_current/stack_contract.json; applied by native_assembly_audit.json",
+  "upstreamAccessConstruction": "current_platform_access_geometry.py; older R06 and search_platform_current variants are superseded",
+  "files": [
+    {
+      "path": "scripts/current_platform_access_geometry.py",
+      "sha256": "ad3973533138736e1eeb6a36949fa9e96e23d7975f4df62073df5bc84fa4f9fe",
+      "bytes": 33779
+    },
+    {
+      "path": "scripts/current_assembly_stack_geometry.py",
+      "sha256": "c2688c239f8109392f2287e56e975d84a9ca1251c188a2af93b833ee52bed11a",
+      "bytes": 25171
+    },
+    {
+      "path": "revisions/2026-10-11_M5/assembly_current/assembly_contract.json",
+      "sha256": "547ad8c0292054a5692b99d8fbcbf3d84003230872845c3028ca41277a4b248e",
+      "bytes": 135480
+    },
+    {
+      "path": "revisions/2026-10-11_M5/assembly_current/stack_contract.json",
+      "sha256": "528faae9d136203f0c715e225dac67a83498c454b34a368abf18ccfa340eada9",
+      "bytes": 69939
+    },
+    {
+      "path": "revisions/2026-10-11_M5/assembly_current/native_assembly_audit.json",
+      "sha256": "349f6d4a1cc5e17043d01fba0167bb5aa9b69efe340c1f899765fccb356ffd18",
+      "bytes": 2823
+    },
+    {
+      "path": "revisions/2026-10-11_M5/assembly_current/current_world/world_140.brep",
+      "sha256": "ba0d0ed78138460612c5eb29f332d00b7319e148a9541ace48a31f38909f06da",
+      "bytes": 124409
+    },
+    {
+      "path": "revisions/2026-10-11_M5/assembly_current/current_world/world_248.brep",
+      "sha256": "129628b77a347c511092d8cba1f319d345e07c942ffc247d37de0c6d42bb5ea4",
+      "bytes": 28029
+    },
+    {
+      "path": "revisions/2026-10-11_M5/assembly_current/current_world/world_159.brep",
+      "sha256": "6f6ad8a7bde062b7895b8f8116c28958b462b92291c99d4b80013f9d3362d07e",
+      "bytes": 13221
+    },
+    {
+      "path": "revisions/2026-10-11_M5/assembly_current/current_world/world_160.brep",
+      "sha256": "0cad500d70cb6a703b801347d2e269803084a6e28bbb04e4642c19f076f31a52",
+      "bytes": 4387
+    },
+    {
+      "path": "revisions/2026-10-11_M5/assembly_current/current_world/world_161.brep",
+      "sha256": "f4034481615e5a1edbc4e84476f855cfbaaaa0cd6d6cd038d5657bf43e87441b",
+      "bytes": 13685
+    },
+    {
+      "path": "revisions/2026-10-11_M5/assembly_current/current_world/world_162.brep",
+      "sha256": "95219209ef250e5ac0cda03622032b1d2adee1c3a16c55e3981004240a1dce1b",
+      "bytes": 4371
+    }
+  ],
+  "models": [
+    {
+      "id": "lower-platform-current",
+      "componentIds": [140],
+      "sourceDesignation": "\u041f\u0415\u041c.03.03.001",
+      "sourceRevision": "06",
+      "sourceWorldUndersideZ": 155,
+      "nativeConstruction": "Analytic reconstruction including four final current assembly edge notches; no scale or design changes."
+    },
+    {
+      "id": "upper-clamp-disc-current",
+      "componentIds": [248],
+      "sourceDesignation": "\u041f\u0415\u041c.03.03.003",
+      "sourceRevision": "03",
+      "sourceWorldUndersideZ": 168,
+      "nativeConstruction": "Analytic reconstruction of flat upper disc; only a rigid datum translation."
+    },
+    {
+      "model": "gps-pad-159-current",
+      "componentId": 159,
+      "sourceSha256": "6f6ad8a7bde062b7895b8f8116c28958b462b92291c99d4b80013f9d3362d07e",
+      "sourceFaces": 15,
+      "volume": 26.028,
+      "localization": {
+        "inverseGPSAngleDeg": -22.5,
+        "gpsCentre": [-8.419035512031975, 20.325349715248308],
+        "padCentre": [-2, -9.4],
+        "sourceBottomZ": 159.3
+      },
+      "nativeGeometryModified": false
+    },
+    {
+      "model": "gps-pad-plain-current",
+      "componentId": 160,
+      "sourceSha256": "0cad500d70cb6a703b801347d2e269803084a6e28bbb04e4642c19f076f31a52",
+      "sourceFaces": 6,
+      "volume": 26.09999999999998,
+      "localization": {
+        "inverseGPSAngleDeg": -22.5,
+        "gpsCentre": [-8.419035512031975, 20.325349715248308],
+        "padCentre": [-2, 9.4],
+        "sourceBottomZ": 159.3
+      },
+      "nativeGeometryModified": false
+    },
+    {
+      "model": "gps-pad-161-current",
+      "componentId": 161,
+      "sourceSha256": "f4034481615e5a1edbc4e84476f855cfbaaaa0cd6d6cd038d5657bf43e87441b",
+      "sourceFaces": 15,
+      "volume": 26.04599999999999,
+      "localization": {
+        "inverseGPSAngleDeg": -22.5,
+        "gpsCentre": [-8.419035512031975, 20.325349715248308],
+        "padCentre": [2, -9.4],
+        "sourceBottomZ": 159.3
+      },
+      "nativeGeometryModified": false
+    }
+  ],
+  "plainRetainerReuse": {
+    "sourceComponentIds": [160, 162],
+    "sameLocalGeometry": true,
+    "symmetricDifferenceMm3": 0.0
+  },
+  "sourceInputsModified": false
+}

@@ -8,7 +8,7 @@ export const libraryAreas = [
     id: 'hardware',
     label: 'Hardware',
     icon: 'bolt',
-    description: 'Profiles, mounts, fasteners and springs',
+    description: 'Profiles, mounts, fasteners, printed joints and springs',
   },
   {
     id: 'motion',
@@ -21,6 +21,12 @@ export const libraryAreas = [
     label: 'Electronics',
     icon: 'circuit',
     description: 'Boards, power, controls and connectors',
+  },
+  {
+    id: 'enclosures',
+    label: 'Enclosures & devices',
+    icon: 'box',
+    description: 'Supplier enclosures, editable project boxes and complete device families',
   },
   {
     id: 'workshop',
@@ -43,6 +49,54 @@ export const libraryAreas = [
 ] as const;
 export type LibraryArea = (typeof libraryAreas)[number]['id'];
 
+export type LibraryLocation =
+  | { level: 'all' }
+  | { level: 'category'; category: string }
+  | { level: 'subgroup'; category: string; subgroup: string };
+
+/** Breadcrumb navigation constrains families without selecting or reconfiguring a product. */
+export function libraryLocationContains(
+  entry: Pick<PartDefinition, 'category' | 'subgroup'>,
+  location?: LibraryLocation,
+): boolean {
+  return (
+    !location ||
+    location.level === 'all' ||
+    (entry.category === location.category &&
+      (location.level === 'category' || entry.subgroup === location.subgroup))
+  );
+}
+
+export function filterLibraryLocation(
+  entries: readonly BrowseFamily[],
+  location?: LibraryLocation,
+): BrowseFamily[] {
+  return entries.filter((entry) => libraryLocationContains(entry, location));
+}
+
+export function libraryLocationLabel(location: LibraryLocation): string {
+  return location.level === 'all'
+    ? 'Library'
+    : libraryLabel(location.level === 'category' ? location.category : location.subgroup);
+}
+
+export function libraryLocationPath(location: LibraryLocation): {
+  label: string;
+  location: LibraryLocation;
+}[] {
+  const path: { label: string; location: LibraryLocation }[] = [
+    { label: 'Library', location: { level: 'all' } },
+  ];
+  if (location.level !== 'all')
+    path.push({
+      label: libraryLabel(location.category),
+      location: { level: 'category', category: location.category },
+    });
+  if (location.level === 'subgroup')
+    path.push({ label: libraryLabel(location.subgroup), location });
+  return path;
+}
+
 const categoryAreas: Readonly<Record<string, LibraryArea>> = {
   'STRUCTURAL PARTS': 'hardware',
   'FASTENERS & THREADS': 'hardware',
@@ -55,7 +109,9 @@ const categoryAreas: Readonly<Record<string, LibraryArea>> = {
   'SWITCHES & BUTTONS': 'electronics',
   'POWER & MOTOR CONTROL': 'electronics',
   'ELECTRONICS & VISION': 'electronics',
+  'ELECTRONICS MOUNTS': 'electronics',
   'CONNECTORS & INTERFACES': 'electronics',
+  'ENCLOSURES & DEVICES': 'enclosures',
   'WORKSHOP TOOLS': 'workshop',
   'MACHINE TOOLS': 'machines',
   'VEHICLE STRUCTURES': 'vehicles',

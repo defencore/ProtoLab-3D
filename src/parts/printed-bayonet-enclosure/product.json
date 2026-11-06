@@ -1,0 +1,12 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Authored two-piece empty printed enclosure with integral bayonet lugs and L channels.",
+  "processes": ["printing", "assembly"],
+  "releaseRequirements": [
+    "Lay out actual contents, mounting points, connector mating and cable bend space before modifying this empty shell template.",
+    "Specify polymer, build orientation, support strategy and measured radial, axial and tangential fits.",
+    "Qualify lug bending, channel bearing, cap-wall strength, layer adhesion, creep and release cycles for actual loads.",
+    "Provide a separately checked anti-rotation device or seal if required; neither is implemented here."
+  ]
+}

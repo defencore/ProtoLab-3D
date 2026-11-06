@@ -8,6 +8,7 @@ import { pieces } from './lib/model';
 import * as assembly from '../../core/assembly/electronics/assembly';
 import * as native from './lib/pi5/model';
 import * as lightweight from './lib/pi5/lightweight';
+export { pi5Interface, type Pi5Bounds } from './interface';
 const part: PartDefinition = {
   id: 'raspberry-pi',
   product: productData as ProductProfile,

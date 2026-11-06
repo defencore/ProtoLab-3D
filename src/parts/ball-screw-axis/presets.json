@@ -1,7 +1,7 @@
 [
   {
     "id": "mini",
-    "name": "SFK0802 · 200 mm",
+    "name": "SFK0802 · 2× MGN12H · 200 mm axis",
     "description": "Prototype axis layout using a dimensioned screw/nut and MGN rail. Plates, journals and supports are custom.",
     "parameters": {
       "screwSize": "SFK0802",
@@ -17,7 +17,7 @@
   },
   {
     "id": "compact",
-    "name": "SFU1204 · 250 mm",
+    "name": "SFU1204-4 · 2× MGN12H · 250 mm axis",
     "description": "Prototype axis layout using a dimensioned screw/nut and MGN rail. Plates, journals and supports are custom.",
     "parameters": {
       "screwSize": "SFU1204-4",
@@ -33,7 +33,7 @@
   },
   {
     "id": "short",
-    "name": "SFU1605 · 200 mm",
+    "name": "SFU1605-4 · 2× MGN12H · 200 mm axis",
     "description": "Prototype axis layout using a dimensioned screw/nut and MGN rail. Plates, journals and supports are custom.",
     "parameters": {
       "screwSize": "SFU1605-4",
@@ -49,7 +49,7 @@
   },
   {
     "id": "standard",
-    "name": "SFU1605 · 300 mm",
+    "name": "SFU1605-4 · 2× MGN12H · 300 mm axis",
     "description": "Prototype axis layout using a dimensioned screw/nut and MGN rail. Plates, journals and supports are custom.",
     "parameters": {
       "screwSize": "SFU1605-4",
@@ -65,7 +65,7 @@
   },
   {
     "id": "long",
-    "name": "SFU1605 · 500 mm",
+    "name": "SFU1605-4 · 2× MGN15H · 500 mm axis",
     "description": "Prototype axis layout using a dimensioned screw/nut and MGN rail. Plates, journals and supports are custom.",
     "parameters": {
       "screwSize": "SFU1605-4",
@@ -81,7 +81,7 @@
   },
   {
     "id": "large",
-    "name": "SFU2005 · 500 mm",
+    "name": "SFU2005-4 · 2× MGN15H · 500 mm axis",
     "description": "Prototype axis layout using a dimensioned screw/nut and MGN rail. Plates, journals and supports are custom.",
     "parameters": {
       "screwSize": "SFU2005-4",

@@ -1,0 +1,135 @@
+[
+  {
+    "id": "heltec-v4-two-ds225",
+    "name": "Heltec V4 · Straight · External SMA · Bottom",
+    "description": "Straight right-handed body with two side buttons and the Bottom SMA mount beside USB. Body model and antenna type are separate library filters. Three printed parts and 22 physical occurrences; the battery remains an unselected packaging reference.",
+    "parameters": {
+      "bodyModel": "original",
+      "antennaType": "external",
+      "externalMount": "bottom",
+      "safetyPosition": "locked",
+      "batteryLength": 43,
+      "batteryWidth": 25,
+      "batteryHeight": 10,
+      "guardProjection": 5.5,
+      "buttonA": "first",
+      "buttonB": "first",
+      "powerButton": "first",
+      "batteryTapeThickness": 0.5
+    }
+  },
+  {
+    "id": "heltec-v4-original-internal-fpc",
+    "name": "Heltec V4 · Straight · Internal FPC",
+    "description": "Straight body with two side buttons, an unselected inner-lid adhesive antenna reserve and no external SMA kit. Three printed parts and 21 physical occurrences. The actual antenna for 928 MHz, adhesive and complete cable routing remain to be selected and checked.",
+    "parameters": {
+      "bodyModel": "original",
+      "antennaType": "internal",
+      "externalMount": "bottom",
+      "safetyPosition": "locked",
+      "batteryLength": 43,
+      "batteryWidth": 25,
+      "batteryHeight": 10,
+      "guardProjection": 5.5,
+      "buttonA": "first",
+      "buttonB": "first",
+      "powerButton": "first",
+      "batteryTapeThickness": 0.5
+    }
+  },
+  {
+    "id": "heltec-v4-contoured-top-sma",
+    "name": "Heltec V4 · Palm · External SMA · Top",
+    "description": "Palm body with a rounded palm profile, two side buttons and the Top SMA installation near the power key. Its open mounting surround is distinct from Compact top. Three printed parts and 22 physical occurrences.",
+    "parameters": {
+      "bodyModel": "contoured",
+      "antennaType": "external",
+      "externalMount": "top",
+      "safetyPosition": "locked",
+      "batteryLength": 43,
+      "batteryWidth": 25,
+      "batteryHeight": 10,
+      "guardProjection": 5.5,
+      "buttonA": "first",
+      "buttonB": "first",
+      "powerButton": "first",
+      "batteryTapeThickness": 0.5
+    }
+  },
+  {
+    "id": "heltec-v4-contoured-internal-fpc",
+    "name": "Heltec V4 · Palm · Internal FPC",
+    "description": "Palm body with a rounded palm profile, two side buttons and a 38 × 10 mm unselected adhesive antenna reference inside the lid. Three printed parts and 21 physical occurrences; battery and antenna references are omitted from physical exports and procurement. Actual 928 MHz performance and cable routing require validation.",
+    "parameters": {
+      "bodyModel": "contoured",
+      "antennaType": "internal",
+      "externalMount": "top",
+      "safetyPosition": "locked",
+      "batteryLength": 43,
+      "batteryWidth": 25,
+      "batteryHeight": 10,
+      "guardProjection": 5.5,
+      "buttonA": "first",
+      "buttonB": "first",
+      "powerButton": "first",
+      "batteryTapeThickness": 0.5
+    }
+  },
+  {
+    "id": "heltec-v4-contoured-compact-sma",
+    "name": "Heltec V4 · Palm · External SMA · Compact top",
+    "description": "Palm body with a rounded palm profile, two side buttons and the Compact top SMA installation near the power key. The external antenna remains unselected; the battery uses the measured 102540 envelope. Three printed parts and 22 physical occurrences.",
+    "parameters": {
+      "bodyModel": "contoured",
+      "antennaType": "external",
+      "externalMount": "compact-top",
+      "safetyPosition": "locked",
+      "batteryLength": 43,
+      "batteryWidth": 25,
+      "batteryHeight": 10,
+      "guardProjection": 5.5,
+      "buttonA": "first",
+      "buttonB": "first",
+      "powerButton": "first",
+      "batteryTapeThickness": 0.5
+    }
+  },
+  {
+    "id": "heltec-v4-web-grip-external",
+    "name": "Heltec V4 · Palm Lock · External SMA · Compact top",
+    "description": "Palm Lock body with an index control, recessed thumb-web second-button paddle and captive sliding safety with Compact top SMA installation. Five prints and an adjustable M3 screw/washer/nyloc clamp; 27 physical occurrences. Slide to unlock before pressing. Battery and internal-antenna references remain excluded from physical exports and procurement.",
+    "parameters": {
+      "bodyModel": "web-grip",
+      "antennaType": "external",
+      "externalMount": "compact-top",
+      "safetyPosition": "locked",
+      "batteryLength": 43,
+      "batteryWidth": 25,
+      "batteryHeight": 10,
+      "guardProjection": 5.5,
+      "buttonA": "first",
+      "buttonB": "first",
+      "powerButton": "first",
+      "batteryTapeThickness": 0.5
+    }
+  },
+  {
+    "id": "heltec-v4-web-grip-internal-fpc",
+    "name": "Heltec V4 · Palm Lock · Internal FPC",
+    "description": "Palm Lock body with an index control, recessed thumb-web second-button paddle and captive sliding safety with an unselected internal FPC antenna reserve. Five prints and an adjustable M3 screw/washer/nyloc clamp; 26 physical occurrences. Slide to unlock before pressing. Battery and internal-antenna references remain excluded from physical exports and procurement.",
+    "parameters": {
+      "bodyModel": "web-grip",
+      "antennaType": "internal",
+      "externalMount": "compact-top",
+      "safetyPosition": "locked",
+      "batteryLength": 43,
+      "batteryWidth": 25,
+      "batteryHeight": 10,
+      "guardProjection": 5.5,
+      "buttonA": "first",
+      "buttonB": "first",
+      "powerButton": "first",
+      "batteryTapeThickness": 0.5
+    }
+  }
+]

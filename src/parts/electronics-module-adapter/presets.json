@@ -1,0 +1,137 @@
+[
+  {
+    "id": "universal-horizontal",
+    "name": "Universal horizontal \u00b7 M3 20 \u00d7 20 mm",
+    "description": "Editable open PCB cradle with four M3 feet and a clear central strap lane; change its PCB fit independently of the mounting grid.",
+    "parameters": {
+      "model": "universal-flat",
+      "mountSpanX": 20,
+      "mountSpanY": 20,
+      "boardWidth": 24,
+      "boardDepth": 20,
+      "boardThickness": 1.6,
+      "seatHeight": 6,
+      "clearance": 0.3
+    }
+  },
+  {
+    "id": "universal-upright",
+    "name": "Universal upright \u00b7 M3 20 \u00d7 20 mm",
+    "description": "Editable 90-degree PCB stand with four M3 feet, a windowed wall and direct gussets.",
+    "parameters": {
+      "model": "universal-vertical",
+      "mountSpanX": 20,
+      "mountSpanY": 20,
+      "boardWidth": 40,
+      "boardDepth": 30,
+      "boardThickness": 1.6,
+      "seatHeight": 6,
+      "clearance": 0.3
+    }
+  },
+  {
+    "id": "hat-case-fit",
+    "name": "Bus Servo Driver HAT (A) \u00b7 case adapter",
+    "description": "The exact independently printable adapter used in the INTERTOOL case assembly. Its fitted geometry is fixed; choose a universal template for an editable different PCB.",
+    "parameters": {
+      "model": "hat",
+      "mountSpanX": 20,
+      "mountSpanY": 20,
+      "boardWidth": 24,
+      "boardDepth": 20,
+      "boardThickness": 1.6,
+      "seatHeight": 6,
+      "clearance": 0.3
+    }
+  },
+  {
+    "id": "heltec-case-fit",
+    "name": "Heltec V4 / LoRa32 \u00b7 case adapter",
+    "description": "The exact independently printable adapter used in the INTERTOOL case assembly. Its fitted geometry is fixed; choose a universal template for an editable different PCB.",
+    "parameters": {
+      "model": "heltec",
+      "mountSpanX": 20,
+      "mountSpanY": 20,
+      "boardWidth": 24,
+      "boardDepth": 20,
+      "boardThickness": 1.6,
+      "seatHeight": 6,
+      "clearance": 0.3
+    }
+  },
+  {
+    "id": "adc-case-fit",
+    "name": "ADS1220 / CJMCU-1220 \u00b7 case adapter",
+    "description": "The exact independently printable adapter used in the INTERTOOL case assembly. Its fitted geometry is fixed; choose a universal template for an editable different PCB.",
+    "parameters": {
+      "model": "adc",
+      "mountSpanX": 20,
+      "mountSpanY": 20,
+      "boardWidth": 24,
+      "boardDepth": 20,
+      "boardThickness": 1.6,
+      "seatHeight": 6,
+      "clearance": 0.3
+    }
+  },
+  {
+    "id": "buck-1-case-fit",
+    "name": "BEC12S-PRO \u00b7 12 V \u00b7 case adapter",
+    "description": "The exact independently printable adapter used in the INTERTOOL case assembly. Its fitted geometry is fixed; choose a universal template for an editable different PCB.",
+    "parameters": {
+      "model": "buck-1",
+      "mountSpanX": 20,
+      "mountSpanY": 20,
+      "boardWidth": 24,
+      "boardDepth": 20,
+      "boardThickness": 1.6,
+      "seatHeight": 6,
+      "clearance": 0.3
+    }
+  },
+  {
+    "id": "buck-2-case-fit",
+    "name": "BEC12S-PRO \u00b7 5 V \u00b7 case adapter",
+    "description": "The exact independently printable adapter used in the INTERTOOL case assembly. Its fitted geometry is fixed; choose a universal template for an editable different PCB.",
+    "parameters": {
+      "model": "buck-2",
+      "mountSpanX": 20,
+      "mountSpanY": 20,
+      "boardWidth": 24,
+      "boardDepth": 20,
+      "boardThickness": 1.6,
+      "seatHeight": 6,
+      "clearance": 0.3
+    }
+  },
+  {
+    "id": "filter-1-case-fit",
+    "name": "LC filter \u00b7 sensor supply \u00b7 case adapter",
+    "description": "The exact independently printable adapter used in the INTERTOOL case assembly. Its fitted geometry is fixed; choose a universal template for an editable different PCB.",
+    "parameters": {
+      "model": "filter-1",
+      "mountSpanX": 20,
+      "mountSpanY": 20,
+      "boardWidth": 24,
+      "boardDepth": 20,
+      "boardThickness": 1.6,
+      "seatHeight": 6,
+      "clearance": 0.3
+    }
+  },
+  {
+    "id": "filter-2-case-fit",
+    "name": "LC filter \u00b7 ADC supply \u00b7 case adapter",
+    "description": "The exact independently printable adapter used in the INTERTOOL case assembly. Its fitted geometry is fixed; choose a universal template for an editable different PCB.",
+    "parameters": {
+      "model": "filter-2",
+      "mountSpanX": 20,
+      "mountSpanY": 20,
+      "boardWidth": 24,
+      "boardDepth": 20,
+      "boardThickness": 1.6,
+      "seatHeight": 6,
+      "clearance": 0.3
+    }
+  }
+]

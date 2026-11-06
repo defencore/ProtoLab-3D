@@ -14,11 +14,11 @@ import {
 } from '../src/core/preset-search';
 import type { ParameterDefinition, PartDefinition } from '../src/core/types';
 
-function offeredValue(
+function offeredValues(
   part: PartDefinition,
   field: ParameterDefinition,
   entry: PresetEntry,
-): number | string | boolean | undefined {
+): (number | string | boolean)[] {
   const { preset } = entry;
   const catalog = preset.catalog;
   const attribute = part.catalogFilterFields?.some((candidate) => candidate.key === field.key);
@@ -27,7 +27,9 @@ function offeredValue(
     field.visibleWhen &&
     !field.visibleWhen({ ...part.defaults, ...preset.parameters })
   )
-    return undefined;
+    return [];
+  const choices = catalog?.parameterChoices?.[field.key] ?? catalog?.attributeOptions?.[field.key];
+  if (choices) return [...choices];
   const rawRange = catalog?.parameterRanges?.[field.key];
   if (rawRange !== undefined) {
     if (
@@ -38,19 +40,19 @@ function offeredValue(
       !Number.isFinite(rawRange.max) ||
       rawRange.min > rawRange.max
     )
-      return undefined;
-    return rawRange.min / 2 + rawRange.max / 2;
+      return [];
+    return [rawRange.min / 2 + rawRange.max / 2];
   }
   const sourced =
     !catalog ||
     catalog.attributes?.[field.key] !== undefined ||
     (catalog.verifiedParameters.includes(field.key) && Object.hasOwn(preset.parameters, field.key));
-  if (!sourced) return undefined;
+  if (!sourced) return [];
   const value = presetValue(preset, field.key) ?? (!catalog ? part.defaults[field.key] : undefined);
   if (field.type === 'number')
-    return typeof value === 'number' && Number.isFinite(value) ? value : undefined;
-  if (field.type === 'boolean') return typeof value === 'boolean' ? value : undefined;
-  return typeof value === 'string' && value.trim() ? value : undefined;
+    return typeof value === 'number' && Number.isFinite(value) ? [value] : [];
+  if (field.type === 'boolean') return typeof value === 'boolean' ? [value] : [];
+  return typeof value === 'string' && value.trim() ? [value] : [];
 }
 
 test('every library model satisfies its own eligible filters while unpublished or inactive fields remain excluded', (t) => {
@@ -85,18 +87,25 @@ test('every library model satisfies its own eligible filters while unpublished o
       >();
       const unknown: PresetEntry[] = [];
       for (const entry of index) {
-        const value = offeredValue(part, field, entry);
-        if (value === undefined) {
+        const values = offeredValues(part, field, entry);
+        if (!values.length) {
           unknown.push(entry);
           continue;
         }
-        const key = JSON.stringify([typeof value, value]);
-        const group = groups.get(key);
-        if (group) group.entries.push(entry);
-        else groups.set(key, { value, entries: [entry] });
+        for (const value of values) {
+          const key = JSON.stringify([typeof value, value]);
+          const group = groups.get(key);
+          if (group) group.entries.push(entry);
+          else groups.set(key, { value, entries: [entry] });
+        }
       }
       assert.equal(
-        [...groups.values()].reduce((count, group) => count + group.entries.length, unknown.length),
+        new Set(
+          [...groups.values()]
+            .flatMap((group) => group.entries)
+            .concat(unknown)
+            .map((entry) => entry.id),
+        ).size,
         index.length,
         `${part.id}/${field.key}: every model is classified for this field`,
       );
@@ -146,10 +155,19 @@ test('every library model satisfies its own eligible filters while unpublished o
       );
       summary.unknownModelChecks += unknown.length;
       if (field.type === 'number' && groups.size) {
-        const known = [...groups.values()].flatMap((group) => group.entries);
+        const known = [
+          ...new Map(
+            [...groups.values()]
+              .flatMap((group) => group.entries)
+              .map((entry) => [entry.id, entry]),
+          ).values(),
+        ];
         const bounds = known.flatMap((entry) => {
           const range = entry.preset.catalog?.parameterRanges?.[field.key];
-          return range ? [range.min, range.max] : [offeredValue(part, field, entry) as number];
+          return (
+            entry.preset.catalog?.parameterChoices?.[field.key] ??
+            (range ? [range.min, range.max] : (offeredValues(part, field, entry) as number[]))
+          );
         });
         const min = Math.min(...bounds),
           max = Math.max(...bounds);

@@ -8,6 +8,7 @@ import { pieces } from './lib/model';
 import * as assembly from '../../core/assembly/mechanical/assembly';
 const part: PartDefinition = {
   id: 'panel-control',
+  browseLabel: 'Panel control',
   product: productData as ProductProfile,
   name: 'Panel button, knob and beacon',
   category: 'SWITCHES & BUTTONS',

@@ -1,0 +1,81 @@
+import type { Parameters, ParameterDefinition } from '../../core/types';
+
+export const defaults: Parameters = {
+  length: 30,
+  width: 28,
+  baseThickness: 3,
+  tongueHeight: 5,
+  tongueWidth: 10,
+  clearance: 0.2,
+};
+
+export const parameters: ParameterDefinition[] = [
+  {
+    key: 'length',
+    label: 'Engagement length',
+    type: 'number',
+    unit: 'mm',
+    min: 12,
+    max: 100,
+    step: 0.1,
+    group: 'Joint geometry',
+    description: 'Length along the open-ended Y insertion axis.',
+  },
+  {
+    key: 'width',
+    label: 'Coupon width',
+    type: 'number',
+    unit: 'mm',
+    min: 12,
+    max: 80,
+    step: 0.1,
+    group: 'Joint geometry',
+    description: 'Overall width across X; must retain receiver flank material.',
+  },
+  {
+    key: 'baseThickness',
+    label: 'Base thickness',
+    type: 'number',
+    unit: 'mm',
+    min: 1.5,
+    max: 12,
+    step: 0.1,
+    group: 'Joint geometry',
+    description: 'Male base and receiver roof thickness; qualify for the chosen process.',
+  },
+  {
+    key: 'tongueHeight',
+    label: 'Tongue height',
+    type: 'number',
+    unit: 'mm',
+    min: 2,
+    max: 15,
+    step: 0.1,
+    group: 'Joint geometry',
+    description: 'Projection above the male base.',
+  },
+  {
+    key: 'tongueWidth',
+    label: 'Tongue width',
+    type: 'number',
+    unit: 'mm',
+    min: 4,
+    max: 40,
+    step: 0.1,
+    group: 'Joint geometry',
+    description: 'Width across X at the tongue root.',
+  },
+  {
+    key: 'clearance',
+    label: 'Mating clearance',
+    type: 'number',
+    unit: 'mm',
+    min: 0.05,
+    max: 0.8,
+    step: 0.05,
+    group: 'Fit',
+    description: 'Clearance on each side of the tongue and vertically at the base and groove roof.',
+  },
+];
+
+export const catalogSelection = [];

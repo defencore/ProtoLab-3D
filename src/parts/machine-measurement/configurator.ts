@@ -9,6 +9,9 @@ export const parameters: ParameterDefinition[] = [
     options: [
       { value: 'mwe21', label: 'Kuebler MWE21 · C200 · encoder1000 ppr' },
       { value: 'e3z-t81', label: 'OMRON E3Z-T81 · PNP through-beam pair' },
+      { value: 'e3z-t81-l', label: 'OMRON E3Z-T81-L 2M' },
+      { value: 'e3z-t81-d', label: 'OMRON E3Z-T81-D 2M' },
+      { value: 'e3z-ll81', label: 'OMRON E3Z-LL81' },
       { value: 'e2b-m12', label: 'OMRON E2B-M12KS04-WP-B1 2M' },
     ],
   },

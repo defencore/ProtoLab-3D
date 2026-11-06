@@ -1,0 +1,536 @@
+[
+  {
+    "id": "sp20-2-cable-plug",
+    "name": "SP20-2 cable plug · male contacts",
+    "description": "2-contact straight cable plug, male pins. Selected half of supplier kit 00000702; individual-half ordering is unverified.",
+    "parameters": {
+      "model": "sp20-2-cable-plug",
+      "panelThickness": 2
+    },
+    "catalog": {
+      "designation": "SP20-2 cable plug · male contacts",
+      "sourceName": "Kladova Maistra SP20-2 kit 00000702, housing drawing and contact table",
+      "sourceUrl": "https://klmaster.com/ua/catalog/germetichnyy-razem-sp20-2-pin-ip68-komplekt-702/",
+      "alternateSourceUrls": [
+        "https://klmaster.com/files/ckeditor/580/f86e25b13177f9f3ba48a7148953cec8.jpg"
+      ],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "66 mm cable-plug overall length; nominal contact diameter 2.8 mm. Same supplier drawing appears in each 2/4/6-contact kit page.",
+        "limitations": "Analytical housing model, not supplier CAD. Axial subdivisions, plug diameters, keying, mating depth, contact pitch, seals, nut and solder cups are approximate. Threads and supplied cap are omitted. Supplier kit code identifies both halves, not an independently verified half SKU.",
+        "sourceUrl": "https://klmaster.com/files/ckeditor/580/f86e25b13177f9f3ba48a7148953cec8.jpg"
+      },
+      "attributes": {
+        "series": "SP20",
+        "contactCount": 2,
+        "housing": "cable-plug",
+        "contactSex": "male",
+        "contactDiameter": 2.8
+      },
+      "specifications": [
+        {
+          "label": "Supplier procurement unit",
+          "value": "Kit 00000702: cable plug + panel socket. Half shown independently; availability of separate halves is unverified."
+        },
+        {
+          "label": "Housing drawing",
+          "value": "Plug length 66 mm; socket body length 22 mm; socket collar Ø29 mm; mounting thread M20×1.5."
+        },
+        {
+          "label": "Panel opening",
+          "value": "Ø20.5 mm with two opposing flats, 19.5 mm across flats. Verify delivered connector and machining allowance."
+        },
+        {
+          "label": "Cable entry",
+          "value": "8–12 mm cable range, PG13.5 entry; flexible cable and seal compression not modeled."
+        },
+        {
+          "label": "Model accuracy",
+          "value": "Published envelope dimensions only. Contact pitch, key, axial subdivisions, hardware and mating interfaces are approximate; protective cap omitted."
+        }
+      ]
+    }
+  },
+  {
+    "id": "sp20-2-panel-socket",
+    "name": "SP20-2 panel socket · female contacts",
+    "description": "2-contact round panel socket, female contacts and retaining nut. Selected half of supplier kit 00000702; individual-half ordering is unverified.",
+    "parameters": {
+      "model": "sp20-2-panel-socket",
+      "panelThickness": 2
+    },
+    "catalog": {
+      "designation": "SP20-2 panel socket · female contacts",
+      "sourceName": "Kladova Maistra SP20-2 kit 00000702, housing drawing and contact table",
+      "sourceUrl": "https://klmaster.com/ua/catalog/germetichnyy-razem-sp20-2-pin-ip68-komplekt-702/",
+      "alternateSourceUrls": [
+        "https://klmaster.com/files/ckeditor/580/f86e25b13177f9f3ba48a7148953cec8.jpg"
+      ],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "22 mm socket body, 29 mm collar, M20×1.5 mounting thread; nominal contact diameter 2.8 mm. Same supplier drawing appears in each 2/4/6-contact kit page.",
+        "limitations": "Analytical housing model, not supplier CAD. Axial subdivisions, plug diameters, keying, mating depth, contact pitch, seals, nut and solder cups are approximate. Threads and supplied cap are omitted. Supplier kit code identifies both halves, not an independently verified half SKU.",
+        "sourceUrl": "https://klmaster.com/files/ckeditor/580/f86e25b13177f9f3ba48a7148953cec8.jpg"
+      },
+      "attributes": {
+        "series": "SP20",
+        "contactCount": 2,
+        "housing": "panel-socket",
+        "contactSex": "female",
+        "contactDiameter": 2.8
+      },
+      "specifications": [
+        {
+          "label": "Supplier procurement unit",
+          "value": "Kit 00000702: cable plug + panel socket. Half shown independently; availability of separate halves is unverified."
+        },
+        {
+          "label": "Housing drawing",
+          "value": "Plug length 66 mm; socket body length 22 mm; socket collar Ø29 mm; mounting thread M20×1.5."
+        },
+        {
+          "label": "Panel opening",
+          "value": "Ø20.5 mm with two opposing flats, 19.5 mm across flats. Verify delivered connector and machining allowance."
+        },
+        {
+          "label": "Cable entry",
+          "value": "8–12 mm cable range, PG13.5 entry; flexible cable and seal compression not modeled."
+        },
+        {
+          "label": "Model accuracy",
+          "value": "Published envelope dimensions only. Contact pitch, key, axial subdivisions, hardware and mating interfaces are approximate; protective cap omitted."
+        }
+      ]
+    }
+  },
+  {
+    "id": "sp20-4-cable-plug",
+    "name": "SP20-4 cable plug · male contacts",
+    "description": "4-contact straight cable plug, male pins. Selected half of supplier kit 00000705; individual-half ordering is unverified.",
+    "parameters": {
+      "model": "sp20-4-cable-plug",
+      "panelThickness": 2
+    },
+    "catalog": {
+      "designation": "SP20-4 cable plug · male contacts",
+      "sourceName": "Kladova Maistra SP20-4 kit 00000705, housing drawing and contact table",
+      "sourceUrl": "https://klmaster.com/ua/catalog/germetichnyy-razem-sp20-4-pin-ip68-komplekt-705/",
+      "alternateSourceUrls": [
+        "https://klmaster.com/files/ckeditor/580/f86e25b13177f9f3ba48a7148953cec8.jpg"
+      ],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "66 mm cable-plug overall length; nominal contact diameter 2.8 mm. Same supplier drawing appears in each 2/4/6-contact kit page.",
+        "limitations": "Analytical housing model, not supplier CAD. Axial subdivisions, plug diameters, keying, mating depth, contact pitch, seals, nut and solder cups are approximate. Threads and supplied cap are omitted. Supplier kit code identifies both halves, not an independently verified half SKU.",
+        "sourceUrl": "https://klmaster.com/files/ckeditor/580/f86e25b13177f9f3ba48a7148953cec8.jpg"
+      },
+      "attributes": {
+        "series": "SP20",
+        "contactCount": 4,
+        "housing": "cable-plug",
+        "contactSex": "male",
+        "contactDiameter": 2.8
+      },
+      "specifications": [
+        {
+          "label": "Supplier procurement unit",
+          "value": "Kit 00000705: cable plug + panel socket. Half shown independently; availability of separate halves is unverified."
+        },
+        {
+          "label": "Housing drawing",
+          "value": "Plug length 66 mm; socket body length 22 mm; socket collar Ø29 mm; mounting thread M20×1.5."
+        },
+        {
+          "label": "Panel opening",
+          "value": "Ø20.5 mm with two opposing flats, 19.5 mm across flats. Verify delivered connector and machining allowance."
+        },
+        {
+          "label": "Cable entry",
+          "value": "8–12 mm cable range, PG13.5 entry; flexible cable and seal compression not modeled."
+        },
+        {
+          "label": "Model accuracy",
+          "value": "Published envelope dimensions only. Contact pitch, key, axial subdivisions, hardware and mating interfaces are approximate; protective cap omitted."
+        }
+      ]
+    }
+  },
+  {
+    "id": "sp20-4-panel-socket",
+    "name": "SP20-4 panel socket · female contacts",
+    "description": "4-contact round panel socket, female contacts and retaining nut. Selected half of supplier kit 00000705; individual-half ordering is unverified.",
+    "parameters": {
+      "model": "sp20-4-panel-socket",
+      "panelThickness": 2
+    },
+    "catalog": {
+      "designation": "SP20-4 panel socket · female contacts",
+      "sourceName": "Kladova Maistra SP20-4 kit 00000705, housing drawing and contact table",
+      "sourceUrl": "https://klmaster.com/ua/catalog/germetichnyy-razem-sp20-4-pin-ip68-komplekt-705/",
+      "alternateSourceUrls": [
+        "https://klmaster.com/files/ckeditor/580/f86e25b13177f9f3ba48a7148953cec8.jpg"
+      ],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "22 mm socket body, 29 mm collar, M20×1.5 mounting thread; nominal contact diameter 2.8 mm. Same supplier drawing appears in each 2/4/6-contact kit page.",
+        "limitations": "Analytical housing model, not supplier CAD. Axial subdivisions, plug diameters, keying, mating depth, contact pitch, seals, nut and solder cups are approximate. Threads and supplied cap are omitted. Supplier kit code identifies both halves, not an independently verified half SKU.",
+        "sourceUrl": "https://klmaster.com/files/ckeditor/580/f86e25b13177f9f3ba48a7148953cec8.jpg"
+      },
+      "attributes": {
+        "series": "SP20",
+        "contactCount": 4,
+        "housing": "panel-socket",
+        "contactSex": "female",
+        "contactDiameter": 2.8
+      },
+      "specifications": [
+        {
+          "label": "Supplier procurement unit",
+          "value": "Kit 00000705: cable plug + panel socket. Half shown independently; availability of separate halves is unverified."
+        },
+        {
+          "label": "Housing drawing",
+          "value": "Plug length 66 mm; socket body length 22 mm; socket collar Ø29 mm; mounting thread M20×1.5."
+        },
+        {
+          "label": "Panel opening",
+          "value": "Ø20.5 mm with two opposing flats, 19.5 mm across flats. Verify delivered connector and machining allowance."
+        },
+        {
+          "label": "Cable entry",
+          "value": "8–12 mm cable range, PG13.5 entry; flexible cable and seal compression not modeled."
+        },
+        {
+          "label": "Model accuracy",
+          "value": "Published envelope dimensions only. Contact pitch, key, axial subdivisions, hardware and mating interfaces are approximate; protective cap omitted."
+        }
+      ]
+    }
+  },
+  {
+    "id": "sp20-6-cable-plug",
+    "name": "SP20-6 cable plug · male contacts",
+    "description": "6-contact straight cable plug, male pins. Selected half of supplier kit 00000707; individual-half ordering is unverified.",
+    "parameters": {
+      "model": "sp20-6-cable-plug",
+      "panelThickness": 2
+    },
+    "catalog": {
+      "designation": "SP20-6 cable plug · male contacts",
+      "sourceName": "Kladova Maistra SP20-6 kit 00000707, housing drawing and contact table",
+      "sourceUrl": "https://klmaster.com/ua/catalog/germetichnyy-razem-sp20-6-pin-ip68-komplekt-707/",
+      "alternateSourceUrls": [
+        "https://klmaster.com/files/ckeditor/580/f86e25b13177f9f3ba48a7148953cec8.jpg"
+      ],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "66 mm cable-plug overall length; nominal contact diameter 1.8 mm. Same supplier drawing appears in each 2/4/6-contact kit page.",
+        "limitations": "Analytical housing model, not supplier CAD. Axial subdivisions, plug diameters, keying, mating depth, contact pitch, seals, nut and solder cups are approximate. Threads and supplied cap are omitted. Supplier kit code identifies both halves, not an independently verified half SKU.",
+        "sourceUrl": "https://klmaster.com/files/ckeditor/580/f86e25b13177f9f3ba48a7148953cec8.jpg"
+      },
+      "attributes": {
+        "series": "SP20",
+        "contactCount": 6,
+        "housing": "cable-plug",
+        "contactSex": "male",
+        "contactDiameter": 1.8
+      },
+      "specifications": [
+        {
+          "label": "Supplier procurement unit",
+          "value": "Kit 00000707: cable plug + panel socket. Half shown independently; availability of separate halves is unverified."
+        },
+        {
+          "label": "Housing drawing",
+          "value": "Plug length 66 mm; socket body length 22 mm; socket collar Ø29 mm; mounting thread M20×1.5."
+        },
+        {
+          "label": "Panel opening",
+          "value": "Ø20.5 mm with two opposing flats, 19.5 mm across flats. Verify delivered connector and machining allowance."
+        },
+        {
+          "label": "Cable entry",
+          "value": "8–12 mm cable range, PG13.5 entry; flexible cable and seal compression not modeled."
+        },
+        {
+          "label": "Model accuracy",
+          "value": "Published envelope dimensions only. Contact pitch, key, axial subdivisions, hardware and mating interfaces are approximate; protective cap omitted."
+        }
+      ]
+    }
+  },
+  {
+    "id": "sp20-6-panel-socket",
+    "name": "SP20-6 panel socket · female contacts",
+    "description": "6-contact round panel socket, female contacts and retaining nut. Selected half of supplier kit 00000707; individual-half ordering is unverified.",
+    "parameters": {
+      "model": "sp20-6-panel-socket",
+      "panelThickness": 2
+    },
+    "catalog": {
+      "designation": "SP20-6 panel socket · female contacts",
+      "sourceName": "Kladova Maistra SP20-6 kit 00000707, housing drawing and contact table",
+      "sourceUrl": "https://klmaster.com/ua/catalog/germetichnyy-razem-sp20-6-pin-ip68-komplekt-707/",
+      "alternateSourceUrls": [
+        "https://klmaster.com/files/ckeditor/580/f86e25b13177f9f3ba48a7148953cec8.jpg"
+      ],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "22 mm socket body, 29 mm collar, M20×1.5 mounting thread; nominal contact diameter 1.8 mm. Same supplier drawing appears in each 2/4/6-contact kit page.",
+        "limitations": "Analytical housing model, not supplier CAD. Axial subdivisions, plug diameters, keying, mating depth, contact pitch, seals, nut and solder cups are approximate. Threads and supplied cap are omitted. Supplier kit code identifies both halves, not an independently verified half SKU.",
+        "sourceUrl": "https://klmaster.com/files/ckeditor/580/f86e25b13177f9f3ba48a7148953cec8.jpg"
+      },
+      "attributes": {
+        "series": "SP20",
+        "contactCount": 6,
+        "housing": "panel-socket",
+        "contactSex": "female",
+        "contactDiameter": 1.8
+      },
+      "specifications": [
+        {
+          "label": "Supplier procurement unit",
+          "value": "Kit 00000707: cable plug + panel socket. Half shown independently; availability of separate halves is unverified."
+        },
+        {
+          "label": "Housing drawing",
+          "value": "Plug length 66 mm; socket body length 22 mm; socket collar Ø29 mm; mounting thread M20×1.5."
+        },
+        {
+          "label": "Panel opening",
+          "value": "Ø20.5 mm with two opposing flats, 19.5 mm across flats. Verify delivered connector and machining allowance."
+        },
+        {
+          "label": "Cable entry",
+          "value": "8–12 mm cable range, PG13.5 entry; flexible cable and seal compression not modeled."
+        },
+        {
+          "label": "Model accuracy",
+          "value": "Published envelope dimensions only. Contact pitch, key, axial subdivisions, hardware and mating interfaces are approximate; protective cap omitted."
+        }
+      ]
+    }
+  },
+  {
+    "id": "sp20-3-cable-plug",
+    "name": "SP20-3 cable plug · male contacts",
+    "description": "3-contact straight cable plug, male pins. Source-dimension model of selected half from kit 00000703; separate-half ordering is unverified.",
+    "parameters": {
+      "model": "sp20-3-cable-plug",
+      "panelThickness": 2
+    },
+    "catalog": {
+      "designation": "SP20-3 cable plug · male contacts",
+      "sourceName": "Kladova Maistra SP20-3 kit 00000703, own housing drawing and contact table",
+      "sourceUrl": "https://klmaster.com/catalog/germetichnyy-razem-sp20-3-pin-ip68-komplekt-703/",
+      "alternateSourceUrls": [
+        "https://klmaster.com/files/ckeditor/580/5238f7e9a0fea65cb4a62e36c2631fb1.jpg",
+        "https://klmaster.com/files/goods/703/gallery/germetichnyy_razem_sp20_3_pin_ip68_komplekt_3.jpg"
+      ],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Own SP20-3 drawing: 66 mm plug, 22 mm panel body, Ø29 collar, M20×1.5 mounting thread, Ø20.5 opening with 19.5 mm opposing flats. Three Ø2.8 contacts in a triangle.",
+        "limitations": "Analytical reconstruction, not manufacturer CAD. Contact pitch, angular key registration, axial subdivisions, internal profiles, nut sizes, seals and mating depth are approximate. Threads, cap, tether and flexible cable are omitted. Source kit code identifies both halves, not a confirmed separate-half order code.",
+        "sourceUrl": "https://klmaster.com/files/ckeditor/580/5238f7e9a0fea65cb4a62e36c2631fb1.jpg"
+      },
+      "attributes": {
+        "series": "SP20",
+        "contactCount": 3,
+        "housing": "cable-plug",
+        "contactSex": "male",
+        "contactDiameter": 2.8
+      },
+      "specifications": [
+        {
+          "label": "Supplier procurement unit",
+          "value": "Kit 00000703: matching cable plug and panel socket; separate-half supply is unverified."
+        },
+        {
+          "label": "Housing source",
+          "value": "SP20 own drawing: plug 66 mm; panel body 22 mm; collar Ø29 mm; M20×1.5 mounting thread."
+        },
+        {
+          "label": "Panel opening",
+          "value": "Ø20.5 mm with two opposing flats, 19.5 mm across flats."
+        },
+        {
+          "label": "Contact pattern",
+          "value": "Three Ø2.8 mm contacts in a triangle; exact pitch and key registration are unverified."
+        },
+        {
+          "label": "Model accuracy",
+          "value": "Source envelope and contact topology; internal profiles, key, seals, hardware and solder cups are authored approximations. No certified IP or electrical performance is established."
+        }
+      ]
+    }
+  },
+  {
+    "id": "sp20-3-panel-socket",
+    "name": "SP20-3 panel socket · female contacts",
+    "description": "3-contact round panel socket, female sleeves and retaining nut. Source-dimension model of selected half from kit 00000703; separate-half ordering is unverified.",
+    "parameters": {
+      "model": "sp20-3-panel-socket",
+      "panelThickness": 2
+    },
+    "catalog": {
+      "designation": "SP20-3 panel socket · female contacts",
+      "sourceName": "Kladova Maistra SP20-3 kit 00000703, own housing drawing and contact table",
+      "sourceUrl": "https://klmaster.com/catalog/germetichnyy-razem-sp20-3-pin-ip68-komplekt-703/",
+      "alternateSourceUrls": [
+        "https://klmaster.com/files/ckeditor/580/5238f7e9a0fea65cb4a62e36c2631fb1.jpg",
+        "https://klmaster.com/files/goods/703/gallery/germetichnyy_razem_sp20_3_pin_ip68_komplekt_3.jpg"
+      ],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Own SP20-3 drawing: 66 mm plug, 22 mm panel body, Ø29 collar, M20×1.5 mounting thread, Ø20.5 opening with 19.5 mm opposing flats. Three Ø2.8 contacts in a triangle.",
+        "limitations": "Analytical reconstruction, not manufacturer CAD. Contact pitch, angular key registration, axial subdivisions, internal profiles, nut sizes, seals and mating depth are approximate. Threads, cap, tether and flexible cable are omitted. Source kit code identifies both halves, not a confirmed separate-half order code.",
+        "sourceUrl": "https://klmaster.com/files/ckeditor/580/5238f7e9a0fea65cb4a62e36c2631fb1.jpg"
+      },
+      "attributes": {
+        "series": "SP20",
+        "contactCount": 3,
+        "housing": "panel-socket",
+        "contactSex": "female",
+        "contactDiameter": 2.8
+      },
+      "specifications": [
+        {
+          "label": "Supplier procurement unit",
+          "value": "Kit 00000703: matching cable plug and panel socket; separate-half supply is unverified."
+        },
+        {
+          "label": "Housing source",
+          "value": "SP20 own drawing: plug 66 mm; panel body 22 mm; collar Ø29 mm; M20×1.5 mounting thread."
+        },
+        {
+          "label": "Panel opening",
+          "value": "Ø20.5 mm with two opposing flats, 19.5 mm across flats."
+        },
+        {
+          "label": "Contact pattern",
+          "value": "Three Ø2.8 mm contacts in a triangle; exact pitch and key registration are unverified."
+        },
+        {
+          "label": "Model accuracy",
+          "value": "Source envelope and contact topology; internal profiles, key, seals, hardware and solder cups are authored approximations. No certified IP or electrical performance is established."
+        }
+      ]
+    }
+  },
+  {
+    "id": "sp16-5-cable-plug",
+    "name": "SP16-5 cable plug · male contacts",
+    "description": "5-contact straight cable plug, male pins. Source-dimension model of selected half from kit 00000182; separate-half ordering is unverified.",
+    "parameters": {
+      "model": "sp16-5-cable-plug",
+      "panelThickness": 2
+    },
+    "catalog": {
+      "designation": "SP16-5 cable plug · male contacts",
+      "sourceName": "Kladova Maistra SP16-5 kit 00000182, own housing drawing and contact table",
+      "sourceUrl": "https://klmaster.com/catalog/germetichnyy-razem-sp16-5-pin-182/",
+      "alternateSourceUrls": [
+        "https://klmaster.com/files/goods/182/gallery/germetichnyy_razem_sp16_5_pin_1.jpg",
+        "https://klmaster.com/files/goods/182/gallery/germetichnyy_razem_sp16_5_pin_ip68_komplekt_2.jpg"
+      ],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Own SP16 drawing: 60 mm plug, 22 mm panel body, Ø25 collar, nominal Ø16 mounting barrel, Ø16.5 opening with 15.3 mm opposing flats. Five Ø1 contacts in a ring.",
+        "limitations": "Analytical reconstruction, not manufacturer CAD. Contact pitch, angular key registration, axial subdivisions, internal profiles, nut sizes, seals and mating depth are approximate. Threads, cap, tether and flexible cable are omitted. Source kit code identifies both halves, not a confirmed separate-half order code.",
+        "sourceUrl": "https://klmaster.com/files/goods/182/gallery/germetichnyy_razem_sp16_5_pin_1.jpg"
+      },
+      "attributes": {
+        "series": "SP16",
+        "contactCount": 5,
+        "housing": "cable-plug",
+        "contactSex": "male",
+        "contactDiameter": 1
+      },
+      "specifications": [
+        {
+          "label": "Supplier procurement unit",
+          "value": "Kit 00000182: matching cable plug and panel socket; separate-half supply is unverified."
+        },
+        {
+          "label": "Housing source",
+          "value": "SP16 own drawing: plug 60 mm; panel body 22 mm; collar Ø25 mm; nominal mounting barrel Ø16 mm. Thread pitch not established."
+        },
+        {
+          "label": "Panel opening",
+          "value": "Ø16.5 mm with two opposing flats, 15.3 mm across flats."
+        },
+        {
+          "label": "Contact pattern",
+          "value": "Five Ø1 mm contacts in a ring with no central contact; exact pitch and key registration are unverified."
+        },
+        {
+          "label": "Model accuracy",
+          "value": "Source envelope and contact topology; internal profiles, key, seals, hardware and solder cups are authored approximations. No certified IP or electrical performance is established."
+        }
+      ]
+    }
+  },
+  {
+    "id": "sp16-5-panel-socket",
+    "name": "SP16-5 panel socket · female contacts",
+    "description": "5-contact round panel socket, female sleeves and retaining nut. Source-dimension model of selected half from kit 00000182; separate-half ordering is unverified.",
+    "parameters": {
+      "model": "sp16-5-panel-socket",
+      "panelThickness": 2
+    },
+    "catalog": {
+      "designation": "SP16-5 panel socket · female contacts",
+      "sourceName": "Kladova Maistra SP16-5 kit 00000182, own housing drawing and contact table",
+      "sourceUrl": "https://klmaster.com/catalog/germetichnyy-razem-sp16-5-pin-182/",
+      "alternateSourceUrls": [
+        "https://klmaster.com/files/goods/182/gallery/germetichnyy_razem_sp16_5_pin_1.jpg",
+        "https://klmaster.com/files/goods/182/gallery/germetichnyy_razem_sp16_5_pin_ip68_komplekt_2.jpg"
+      ],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Own SP16 drawing: 60 mm plug, 22 mm panel body, Ø25 collar, nominal Ø16 mounting barrel, Ø16.5 opening with 15.3 mm opposing flats. Five Ø1 contacts in a ring.",
+        "limitations": "Analytical reconstruction, not manufacturer CAD. Contact pitch, angular key registration, axial subdivisions, internal profiles, nut sizes, seals and mating depth are approximate. Threads, cap, tether and flexible cable are omitted. Source kit code identifies both halves, not a confirmed separate-half order code.",
+        "sourceUrl": "https://klmaster.com/files/goods/182/gallery/germetichnyy_razem_sp16_5_pin_1.jpg"
+      },
+      "attributes": {
+        "series": "SP16",
+        "contactCount": 5,
+        "housing": "panel-socket",
+        "contactSex": "female",
+        "contactDiameter": 1
+      },
+      "specifications": [
+        {
+          "label": "Supplier procurement unit",
+          "value": "Kit 00000182: matching cable plug and panel socket; separate-half supply is unverified."
+        },
+        {
+          "label": "Housing source",
+          "value": "SP16 own drawing: plug 60 mm; panel body 22 mm; collar Ø25 mm; nominal mounting barrel Ø16 mm. Thread pitch not established."
+        },
+        {
+          "label": "Panel opening",
+          "value": "Ø16.5 mm with two opposing flats, 15.3 mm across flats."
+        },
+        {
+          "label": "Contact pattern",
+          "value": "Five Ø1 mm contacts in a ring with no central contact; exact pitch and key registration are unverified."
+        },
+        {
+          "label": "Model accuracy",
+          "value": "Source envelope and contact topology; internal profiles, key, seals, hardware and solder cups are authored approximations. No certified IP or electrical performance is established."
+        }
+      ]
+    }
+  }
+]

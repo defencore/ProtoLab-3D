@@ -8,6 +8,7 @@ import { specialFastenerPresets } from '../src/catalog/special-fastener-catalog'
 import { handNutPresets } from '../src/catalog/hand-nuts';
 import { dremecPresets } from '../src/catalog/dremec-presets';
 import { kosmodromPresets } from '../src/catalog/kosmodrom-presets';
+import measuredStandoffPresets from '../src/catalog/user-measured-standoff-presets.json';
 import { dremecSleevePresets } from '../src/catalog/dremec-sleeve-presets';
 import { parameterSchema, catalogFields } from '../src/parts/pcb-standoff/lib/schema';
 import { validateStandoff } from '../src/parts/pcb-standoff/lib/model';
@@ -16,6 +17,11 @@ import { PART_ID_PATTERN, registerPartModules, type PartModule } from '../src/co
 import type { PartDefinition, Preset } from '../src/core/types';
 import { validateParameters } from '../src/core/validation';
 import { discoverPackages, inspectPackage } from './part-modules/library';
+import {
+  enrichSupplierNames,
+  loadSupplierNameIndex,
+  supplierSnapshotJson,
+} from './sync-supplier-names';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const usage = `Refresh portable preset snapshots from the existing offline supplier data:
@@ -37,15 +43,22 @@ const adapterPresets: Record<string, (part: PartDefinition) => Preset[]> = {
 };
 
 let dremec: ReturnType<typeof dremecPresets> | undefined;
+let supplierNames: ReturnType<typeof loadSupplierNameIndex> | undefined;
 const authoritativePresets: Record<string, () => Preset[]> = {
-  'pcb-standoff': () => [...(dremec ??= dremecPresets()).detail, ...kosmodromPresets()],
+  'pcb-standoff': () => [
+    ...(dremec ??= dremecPresets()).detail,
+    ...kosmodromPresets(),
+    ...(measuredStandoffPresets as Preset[]),
+  ],
   'pcb-standoff-insert': () => (dremec ??= dremecPresets()).insert,
   'dremec-spacer-sleeve': dremecSleevePresets,
 };
 
 export function refreshedPresets(part: PartDefinition): Preset[] {
+  const named = (presets: Preset[]) =>
+    enrichSupplierNames(presets, (supplierNames ??= loadSupplierNameIndex(root)));
   const replace = authoritativePresets[part.id];
-  if (replace) return replace();
+  if (replace) return named(replace());
   const imported = [
     ...withHardwarePresets({ ...part, presets: [] }).presets,
     ...(adapterPresets[part.id]?.(part) ?? []),
@@ -57,7 +70,7 @@ export function refreshedPresets(part: PartDefinition): Preset[] {
     byId.delete(preset.id);
     return replacement ?? preset;
   });
-  return [...updated, ...byId.values()];
+  return named([...updated, ...byId.values()]);
 }
 
 /** Fixed identity choices and validation must refer to the prospective snapshot. */
@@ -153,7 +166,7 @@ async function main(): Promise<void> {
         id: part.id,
         file,
         previous,
-        next: JSON.stringify(presets) + '\n',
+        next: supplierSnapshotJson(presets) + '\n',
         count: presets.length,
       });
     }

@@ -1,0 +1,12 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "Replaceable printed insulating PCB adapter for a square 20 mm M3 mounting interface.",
+  "processes": ["printing"],
+  "releaseRequirements": [
+    "Qualify the selected insulating material, print orientation, contact lands and delivered PCB revision.",
+    "Check both M3 mounting spans, the 2 mm foot web, ordinary nut fit and selected screw engagement on the actual base.",
+    "Preserve clear access to components, solder pads, antenna, cables and fastener tools; a shared raster does not establish a safe installed layout.",
+    "Assign fit tolerances and handling loads and inspect the finished adapter before assembly."
+  ]
+}

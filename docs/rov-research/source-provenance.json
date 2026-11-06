@@ -1,0 +1,890 @@
+[
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "License",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/License",
+    "sha256": "d8902a29b2ee2387c1d3ae16f6bcac9e0dcf06c8979864255612f9f1177275f0"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/README.md",
+    "sha256": "a6e1a2d14e5d91030b2d4557b4e3c02513cb129eaaae48cf454c4595d6c3cf3f"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/adapter_90.stp",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/adapter_90.stp",
+    "sha256": "3e5531a949f63b0923f9eb90e5dd7b335a63e60d86be5a4fca2e0789991ea804"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/adapter_round_female.stp",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/adapter_round_female.stp",
+    "sha256": "89d1e3ee67bca9c0c4d5f799bd7688a159bb6e2bb7fa96d2ddd320be8857efb9"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/adapter_round_male.stp",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/adapter_round_male.stp",
+    "sha256": "fcd779339e7ae2a7ae686f92d10d37989173d83e697f3483a6f8d7b3aa0f8cd2"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/adapter_split.stp",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/adapter_split.stp",
+    "sha256": "208a2548c36fa7c296167546f38c1a83d66a98a282ec87a0032f83086b0ecf4b"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/ballast_cap.stp",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/ballast_cap.stp",
+    "sha256": "876ae93338a707b909f2cdacbbe515a7706d10818d1add1052800fe4c7fa4056"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/ballast_cylinder.stp",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/ballast_cylinder.stp",
+    "sha256": "935b19d8403502779ca584699d926c7d20f39bcf30e176e71d8e33a1d83d25bc"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/clamp_anterior_inferior.stp",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/clamp_anterior_inferior.stp",
+    "sha256": "25c6c9b57b0480378df0a699216aff611479ec7be8649da28bded82b52ffa820"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/clamp_anterior_superior.stp",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/clamp_anterior_superior.stp",
+    "sha256": "357623ce3f8f387142c19a25326f0340015fc9a6325ff48af9aa28b2800387be"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/clamp_posterior_inferior.stp",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/clamp_posterior_inferior.stp",
+    "sha256": "3a2cfd4c8bc7e59db545757f4ad95aa1c357fcb89426b4e35e045aa2bc7a6ffe"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/clamp_posterior_superior.stp",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/clamp_posterior_superior.stp",
+    "sha256": "d33a53fa4876d60d27dd66aad48f65f6f2c2206fb41353ee9b70337d7e1f3797"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/posterior_clamp_2_tube_connector.stp",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/posterior_clamp_2_tube_connector.stp",
+    "sha256": "02fb693a9b10378ee68182f18463c72b35d2bf23a335fc9afbd87c8df7c474a2"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/propeller.stp",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/propeller.stp",
+    "sha256": "1b42d0077679f486f595dc751caa760338cb6de8b897398c4623fbe1eed2b7d2"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/rear_clamp_connector.stp",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/rear_clamp_connector.stp",
+    "sha256": "01e103e23edf20e46dce6be167c1fee07ee6383f2805bea6da39c803d89a7a13"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/stick.stp",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/stick.stp",
+    "sha256": "34d8393c18b830d45f1d4657accbc05bb4b3c7ea020d931ceb648f7e59347f9a"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/thruster_cap.stp",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/thruster_cap.stp",
+    "sha256": "d36f49c2f5d8eb87d8711a7096811c09d06de354c3aff29d331319e84f9b6ef0"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/thruster_dst_2_bluerov_adapter.stp",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/thruster_dst_2_bluerov_adapter.stp",
+    "sha256": "296d7e210e8de80d6d71ce154405ce6ca026cbd738ac6ff248aceea795e85972"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/thruster_main.stp",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/thruster_main.stp",
+    "sha256": "97a10ca10a96d20d25db1bc9bb8a1dd107369f824fc142a32648edc47e36bb8f"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/thruster_motor_mount.stp",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/thruster_motor_mount.stp",
+    "sha256": "6f95d4f0878853c961ea9f848a19208e7e2f929f0ff76886e03c51c7b90eeed0"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "LICENSE.CERN-OHL-P-2.0.md",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/LICENSE.CERN-OHL-P-2.0.md",
+    "sha256": "1b0ac74323adc5932ea5d80170ff424e1d82709851ce39acf85106bfdac2c5c7"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "LICENSE.MIT.md",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/LICENSE.MIT.md",
+    "sha256": "81b977999a4d7daad13386a9ebac6c85677567e60afc4cc87a2e9175165b1d3a"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "LICENSE.md",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/LICENSE.md",
+    "sha256": "17b4b2ecf284f1db6fbb2ddc6d4eac7a08f2b670b5db09e6d37135ab37c9d830"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/README.md",
+    "sha256": "70a4afe1613595af4c2b59a3b3069d26fcf7890544fcca63689ac7d894c7dfed"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/Assembly/README.md",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/Assembly/README.md",
+    "sha256": "1b25b0428136dadb2dd74b182194dcaa6c0cbbafb5f6ae3f7b7b5b2db374ec58"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/BOM/MUR_BOM.xlsx",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/BOM/MUR_BOM.xlsx",
+    "sha256": "104b7f78a97aac5088c534b5b06a53d59f60f00cd784cc03880808532c1f27f8"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/CAD/Ballast Box/ballast_box.STL",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/CAD/Ballast%20Box/ballast_box.STL",
+    "sha256": "45304192cb9587e148fdf96c87cdd86516755cdc56112dab8f69050237c4c477"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/CAD/BlueBuzz/Transducer/transducer.STL",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/CAD/BlueBuzz/Transducer/transducer.STL",
+    "sha256": "3da5f4b798a7676e10ccbdb202d5bd4981ae00e629928cf05a51e8e222339ff6"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/CAD/BlueBuzz/Transducer/transducer_holder.STL",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/CAD/BlueBuzz/Transducer/transducer_holder.STL",
+    "sha256": "ddc8d85a7d722741e2512f88230a4dce8ba2f90bd0d9298240066c4632114072"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/CAD/Cradles/Compute and Camera Cradle/camera_and_compute_print.STL",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/CAD/Cradles/Compute%20and%20Camera%20Cradle/camera_and_compute_print.STL",
+    "sha256": "e78801417d38a975757aea8b1bae8bc64ff980a953ac92ae4d92662bd38da62b"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/CAD/Cradles/Compute and Camera Cradle/camera_to_compute_bridge_print.STL",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/CAD/Cradles/Compute%20and%20Camera%20Cradle/camera_to_compute_bridge_print.STL",
+    "sha256": "005727b3a9646e04040fcec98b73cf5eaed1035e2b501fafa9b4ad8b0c746f2c"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/CAD/Cradles/Compute and Camera Cradle/compute_mini/mur_compute_mini_case_back.STL",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/CAD/Cradles/Compute%20and%20Camera%20Cradle/compute_mini/mur_compute_mini_case_back.STL",
+    "sha256": "fe8554a59bda6cea3521a75a2ab0bef04301a93225addd137d9b253112697f98"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/CAD/Cradles/Compute and Camera Cradle/compute_mini/mur_compute_mini_case_front.STL",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/CAD/Cradles/Compute%20and%20Camera%20Cradle/compute_mini/mur_compute_mini_case_front.STL",
+    "sha256": "21bc35943ec3aa8284fca1d8f321ce5e3e159231f53c6d34670a3f26686b6100"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/CAD/Cradles/Cradle End Cap Assembly/sealed-flange-trip-seal-tighter-inner.STL",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/CAD/Cradles/Cradle%20End%20Cap%20Assembly/sealed-flange-trip-seal-tighter-inner.STL",
+    "sha256": "5f268dbd730a04e0e757fc0c151bcddbb76bc29c56e276c532d1e67977af83f3"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/CAD/Cradles/Sensor Battery and ESC Cradle/battery_and_bluebuzz_cradle/battery_and_sensor_pcb_holder.STL",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/CAD/Cradles/Sensor%20Battery%20and%20ESC%20Cradle/battery_and_bluebuzz_cradle/battery_and_sensor_pcb_holder.STL",
+    "sha256": "6815797d99f132ae648ff3ee9c7edb6e9df026fe66f7e7b800340a9dc9687d43"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/CAD/Cradles/Sensor Battery and ESC Cradle/battery_and_bluebuzz_cradle/battery_and_sensor_pcb_holder_ring_mount.STL",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/CAD/Cradles/Sensor%20Battery%20and%20ESC%20Cradle/battery_and_bluebuzz_cradle/battery_and_sensor_pcb_holder_ring_mount.STL",
+    "sha256": "c938d77ca5b8a1074345eadcff76a797c37780e65c23cd88d77c3f9d5e4b1303"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/CAD/Cradles/Sensor Battery and ESC Cradle/esc_assembly_cradle/esc_vert_printed_casing.STL",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/CAD/Cradles/Sensor%20Battery%20and%20ESC%20Cradle/esc_assembly_cradle/esc_vert_printed_casing.STL",
+    "sha256": "91f6fb5cc430a6aa96b1e3418d656560e56bdcb9bc7676a8ba5857f8f8b8c81c"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/CAD/Cradles/Sensor Battery and ESC Cradle/esc_assembly_cradle/esc_vert_printed_casing_backpiece.STL",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/CAD/Cradles/Sensor%20Battery%20and%20ESC%20Cradle/esc_assembly_cradle/esc_vert_printed_casing_backpiece.STL",
+    "sha256": "acc73547f55b03a65a24225e0939b9d451fc51b41625a5421e1e4176da7f5b0d"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/CAD/Cradles/Sensor Battery and ESC Cradle/esc_assembly_cradle/motor_spring_terminal_pcb.DXF",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/CAD/Cradles/Sensor%20Battery%20and%20ESC%20Cradle/esc_assembly_cradle/motor_spring_terminal_pcb.DXF",
+    "sha256": "a70bcab9262cdcf10f059437d12c5e8f63d72e5a8d405f4da018cc05db244b7d"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/CAD/End Caps/Flat/WTE4-M-END-CAP-10XM10-R2.step",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/CAD/End%20Caps/Flat/WTE4-M-END-CAP-10XM10-R2.step",
+    "sha256": "9eb236f1656b861c6eb747a0bb0377c7ba991ad1ada162a73d426bd3cbf9fa34"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/CAD/End Caps/Flat/end_cap_M10x10,M14x1.DXF",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/CAD/End%20Caps/Flat/end_cap_M10x10%2CM14x1.DXF",
+    "sha256": "24870b6383ec2c9739569152b326df377908cbd73ecc5fe78996296d6efea610"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/CAD/End Caps/Flat/end_cap_M10x10.DXF",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/CAD/End%20Caps/Flat/end_cap_M10x10.DXF",
+    "sha256": "191a73b914e69aefa30703c8d8959b0c0df62ae50ed1d25ed591c34e560cce83"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/CAD/Thrusters and Assemblies/thruster_mount_0_degree.STL",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/CAD/Thrusters%20and%20Assemblies/thruster_mount_0_degree.STL",
+    "sha256": "60a356aac4ee3b917f232068f142b7a0b64c1f06271fa21b19dfb9b842b01472"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/CAD/Thrusters and Assemblies/thruster_mount_45_degree.STL",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/CAD/Thrusters%20and%20Assemblies/thruster_mount_45_degree.STL",
+    "sha256": "0450c20d58ef2e04e524b16385c9de21cde79faf405a4752f2d03e3d4c80f21e"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/CAD/Thrusters and Assemblies/thruster_mount_blank.STL",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/CAD/Thrusters%20and%20Assemblies/thruster_mount_blank.STL",
+    "sha256": "e3d4f9b4dedbbe562c75897ee78b564cf1ea51f91ad3ad35c8be8a334b916042"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/CAD/Thrusters and Assemblies/thruster_spacer.STL",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/CAD/Thrusters%20and%20Assemblies/thruster_spacer.STL",
+    "sha256": "77bdccc6d19fd84a74cceeffa8f0f3725d2023271495565471777b54d78816f7"
+  },
+  {
+    "projectId": "mur",
+    "repository": "scottmayberry/MUR",
+    "revision": "26ac420d6f0be5e7dbd0a6079ec1121bbef32dee",
+    "path": "hardware/README.md",
+    "url": "https://raw.githubusercontent.com/scottmayberry/MUR/26ac420d6f0be5e7dbd0a6079ec1121bbef32dee/hardware/README.md",
+    "sha256": "f5cf7835b6076094d38aef0dc680b9441a7d2c078bc029279c0fd20d08932058"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "LICENSE",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/LICENSE",
+    "sha256": "e6bbd00c752fa2f793111abd15071d05fe7ea78e039dcb02c0a5674c990662f7"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "Making_Instructions/README.md",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Making_Instructions/README.md",
+    "sha256": "4cee39ec80bd1209fdcdaac24acecaf247afcdca7b08f9eccc70430cb2cf8d4e"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/README.md",
+    "sha256": "707dcd555a3079fc55a2c253829fd8cbaef87654ccd8f673c55ec5ab2016d641"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "Structure/En/3DPrinting/Pressure_Sensor_Mount.STEP",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/3DPrinting/Pressure_Sensor_Mount.STEP",
+    "sha256": "083afe580a9f1c6b3b83f467923353cbf0597a63de84ce94647fb15a98140d8d"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "Structure/En/BOM.xlsx",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/BOM.xlsx",
+    "sha256": "496399edb890175bd452916a9b9200125cab33a7bec2a91e546a1922e1b56a96"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "Structure/En/CNC_Machining/CNC_Maching.xlsx",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/CNC_Maching.xlsx",
+    "sha256": "b1a7dc4fc2248117c87ee90a258227d5a3da6b082fe280bd1762e36b6f1a2535"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "Structure/En/CNC_Machining/Cable-passing_Screw.STEP",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Cable-passing_Screw.STEP",
+    "sha256": "1ca61cc49b1e4b1455599a9b054063cd6ed7dfda75cf5abc252eb88ba3ddab00"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "Structure/En/CNC_Machining/Front_Cabin_Mount.STEP",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Front_Cabin_Mount.STEP",
+    "sha256": "b10199ed0ea5adf9d3fbee7e97793cb2c6b394ff40129c2b59c785b693a508a4"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "Structure/En/CNC_Machining/Horizontal_Thruster_Bracket.STEP",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Horizontal_Thruster_Bracket.STEP",
+    "sha256": "09fc231da9f88ed1d625afa827995fd46bf4ed6d7beddb1abeff4b51f92aa0c4"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "Structure/En/CNC_Machining/Rear_Cabin_Hatch.STEP",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Rear_Cabin_Hatch.STEP",
+    "sha256": "977ab38ecd24b30ef0047b6c4da4eedef9d4b54e93807da0ef3af65225f73179"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "Structure/En/CNC_Machining/Thruster_Mount.STEP",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Thruster_Mount.STEP",
+    "sha256": "b026d3d02ebcf19f8867c7a7da943e0b9c70ea42a17c73c824c103496399924e"
+  },
+  {
+    "projectId": "finsrov",
+    "repository": "IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "path": "Structure/En/Configuration.STEP",
+    "url": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/Configuration.STEP",
+    "sha256": "d774498f1ee8065552c6abdcef07a414a675946e10e48b54410b6662b7d3e135"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "LICENSE_GPLV3",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/LICENSE_GPLV3",
+    "sha256": "e57f1c320b8cf8798a7d2ff83a6f9e06a33a03585f6e065fea97f1d86db84052"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "LICENSE_SHAREALIKE",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/LICENSE_SHAREALIKE",
+    "sha256": "3b2890eacd851373001c4a14623458e3adaf1b1967939aa9c38a318e28d61c00"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/README.md",
+    "sha256": "bc42588d5eabf124efb9b7491fee89a02f664bc3f693449dd68e01685a25fda9"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/LaserCut/DXF in INCHES.txt",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/LaserCut/DXF%20in%20INCHES.txt",
+    "sha256": "117c9df9f7731ad8d9deb1d17c45c0754c1251b8b9f6873c11946c3820fcd896"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/LaserCut/MDFBaseLeft.DXF",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/LaserCut/MDFBaseLeft.DXF",
+    "sha256": "260ddbfcd2af99d732adcd7a9f7296c4bd4ea79941f87bca103c54f984fadf25"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/LaserCut/MDFBaseLeft.PDF",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/LaserCut/MDFBaseLeft.PDF",
+    "sha256": "f24514cc2ebdaada265098921d75af15215eb24961709a447e1b0f9d63c0c882"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/LaserCut/MDFBaseLeft.SLDDRW",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/LaserCut/MDFBaseLeft.SLDDRW",
+    "sha256": "af9cbf579e5bcace98028b2186ea7c5517900fa8d89d21764b1e24f35c152f8f"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/LaserCut/MDFBaseRight.DXF",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/LaserCut/MDFBaseRight.DXF",
+    "sha256": "d3790665faf591567f33b5b4fb25e33b8a476a82e1691af6f380f1a4c757772d"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/LaserCut/MDFBaseRight.PDF",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/LaserCut/MDFBaseRight.PDF",
+    "sha256": "e878f2e4dfc589b7e9f667e5836960e7d12e67e69aadbb4a516c2f68a69a06b6"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/LaserCut/MDFBaseRight.SLDDRW",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/LaserCut/MDFBaseRight.SLDDRW",
+    "sha256": "158e0086403c88bd9b34ce9cfa5733798637d7ab72d84dcb18a408efc5a9bf3b"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/BackThrusterSupport.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/BackThrusterSupport.STL",
+    "sha256": "ebb6f82c9b839d80a75dfd8552f1ff7e2073d35a6b538eff4999461c7109c697"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/BatteryHolders.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/BatteryHolders.STL",
+    "sha256": "ce0538a872d1e4f4fb687823319b8ba74088cd6ec071a74a5be6b99c49bb876b"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/ClampConnectionLarge.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/ClampConnectionLarge.STL",
+    "sha256": "fddc99cab617c525af6936c60442a6820d17a54182c97c03191845855d7c66db"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/JetsonMount.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/JetsonMount.STL",
+    "sha256": "91739152ed080d391262d524b00e2978405ee0a100fb85b09d2366056c1a9c95"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/LoCO_Battery_Section.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/LoCO_Battery_Section.STL",
+    "sha256": "d3afd89b395388c143b36368532ae7f704535985aa1a4d8f88b22af38dcfc21a"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/LoCO_CentralSupport.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/LoCO_CentralSupport.STL",
+    "sha256": "2af108e042cddc74ef7d8f27a99cc550ccd998efc17f462ed1d0d2fb4d6596b1"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/LoCO_HREye_Camera_Mount_New_Version_BlueRobotics_LowLight_Camera_Interface.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/LoCO_HREye_Camera_Mount_New_Version_BlueRobotics_LowLight_Camera_Interface.STL",
+    "sha256": "fce58f9d0f43f4905446694129b8643206d431ce41059e8862b7defe82658c89"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/LoCO_Jetson_Section.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/LoCO_Jetson_Section.STL",
+    "sha256": "8ab4d9b050a5c0441d0ad7ba0b68ff5116177300845a61f263acef3ef8685c13"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/LoCO_Magnetic_Switch.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/LoCO_Magnetic_Switch.STL",
+    "sha256": "1d77eb3587cbb220c4f3bbb28ed9763697b4cea46397d60dd4bbbb01c552bfe4"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/LoCO_OLED_Mount.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/LoCO_OLED_Mount.STL",
+    "sha256": "03c81a6d7ba09d143b72bbe3c202342b874e6a3e5e8c5f8152ba0c61eb3b87e2"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/LoCO_Port_Teensy_Vertical_Mount.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/LoCO_Port_Teensy_Vertical_Mount.STL",
+    "sha256": "59df30c742a5e575cf6b4f39dd52df89e3b22b07e78b3ebd2ea1e49421fa5a69"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/LoCO_RaspberryPI_Mount.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/LoCO_RaspberryPI_Mount.STL",
+    "sha256": "2a94c427f548dcdea967b85be1367c969cb2745fae5d3c88f69c4f3f014fa768"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/LoCO_SIREN_Amplifier_Vertical_Mount.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/LoCO_SIREN_Amplifier_Vertical_Mount.STL",
+    "sha256": "5889aa816efc14d664f023f86c17be55678680486c3963bc63ed0fdb5c2d68e2"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/LoCO_TBar.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/LoCO_TBar.STL",
+    "sha256": "225caf721b1c83abb3d7edd01814da668ad70d2cdd8e7756e7f0744c7307ce0e"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/LoCO_Teensy_HREye_Fore_Section.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/LoCO_Teensy_HREye_Fore_Section.STL",
+    "sha256": "b73ed1c0ce1297957fd5acfb3abd28be39e34a8828edaad2beee83524aa30c19"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/LoCO_ThrusterMount.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/LoCO_ThrusterMount.STL",
+    "sha256": "0ceba50c38c7581c1157749a140737d3033db45bd7a4a1d93ea325a0b084e292"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/Low-Light Mounting Bracket.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/Low-Light%20Mounting%20Bracket.STL",
+    "sha256": "aa1c2e9f43f1f5ae8fd2e1067b90210d27c69b3869611586c62d81f80668b7d6"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/MagnetHolderBottom.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/MagnetHolderBottom.STL",
+    "sha256": "a7b13f74d0403004765ec9d7f449be9de19120f371d0ddf28f2da6fc19537e2b"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/MagnetHolderTop.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/MagnetHolderTop.STL",
+    "sha256": "23f4d271dba4cfa6d4b8b0038dc582dab0a31c4ad1f1a29500e098d23cacaa6b"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/OLED_Mount.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/OLED_Mount.STL",
+    "sha256": "33615675dfd992b8d306099fbb8e30231d304db1b871843d6cbc9282ed4e4f96"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/PIXHAWK-P-SHELF.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/PIXHAWK-P-SHELF.STL",
+    "sha256": "fc0a2c45f57ebef0ca49889263b6e90d708b5ec15cb517d03de7eb9b2425f41e"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/PlugHolder.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/PlugHolder.STL",
+    "sha256": "707bdf4b8d762b04f69146915da26fd6826d4139f30f607adc0a249a1a7b947c"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/SwitchHolder.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/SwitchHolder.STL",
+    "sha256": "acef372139b55a666329cc76a7accde09730c5bb450c0f0ab506ed857d5f0513"
+  },
+  {
+    "projectId": "loco",
+    "repository": "LoCO-AUV/loco_config",
+    "revision": "cf30cb1b4c875db19aa9e471c4fdbc30f248cd88",
+    "path": "models/STLs/ThrusterMount.STL",
+    "url": "https://raw.githubusercontent.com/LoCO-AUV/loco_config/cf30cb1b4c875db19aa9e471c4fdbc30f248cd88/models/STLs/ThrusterMount.STL",
+    "sha256": "66cd29b8ddc921621e69280c4e0e76d7f3a2ecd233809f631f0fb2ffe6426121"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/ballast_cap.stl",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/ballast_cap.stl",
+    "sha256": "0a1d21cfde54ebfbddfdea323a0dc9b1a9762b118dfcbb5f661765fd9f583533"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/clamp_posterior_inferior.stl",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/clamp_posterior_inferior.stl",
+    "sha256": "8c0251488289d8f7e3bd94985a0a683a13f724f7212402d2a929dbbca31ff71d"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/clamp_posterior_superior.stl",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/clamp_posterior_superior.stl",
+    "sha256": "4e2674d4b8b67c02c2c221fdceed9d8e8e43bb101811b6893dc30270b1fddc31"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/propeller.stl",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/propeller.stl",
+    "sha256": "e4c14adae09d4f4063a1014fa656592d51b1f2227344b2249145ce7b7561dcdd"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/thruster_motor_mount.stl",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/thruster_motor_mount.stl",
+    "sha256": "b0cad88b59182d6575b4c14f9463d447ac3cf883cf8b2653d681a31b11f11051"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/adapter_90.stl",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/adapter_90.stl",
+    "sha256": "d4f431fd92223cbc1d087437b42971ecd90edcf5b3629ee1a0394601f2c76fe3"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/adapter_round_female.stl",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/adapter_round_female.stl",
+    "sha256": "9628884927e46ca21ae8dad6c7ea711a5c0723566975c76963950905b9c3db41"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/adapter_round_male.stl",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/adapter_round_male.stl",
+    "sha256": "7ecbac619fe34481f0deee0204092068e39c6c5ab42973a61fcb520fe425d2d9"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/adapter_split.stl",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/adapter_split.stl",
+    "sha256": "fec87435e8959e9ea710198d6ab4b8826fe9de08b4832998e4caeafdf3be590c"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/ballast_cylinder.stl",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/ballast_cylinder.stl",
+    "sha256": "6942b76d853a4246ce19587429e1e7a3178dad26cb3d042806574a7794a77238"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/clamp_anterior_inferior.stl",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/clamp_anterior_inferior.stl",
+    "sha256": "3a935cec923ef9bfa6716786bf11de5cc027566aa309f9e66d71101f91998355"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/clamp_anterior_superior.stl",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/clamp_anterior_superior.stl",
+    "sha256": "75e790fb3809103134d484b3a3e8cb428631497ed84416954e908e6980872c69"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/posterior_clamp_2_tube_connector.stl",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/posterior_clamp_2_tube_connector.stl",
+    "sha256": "ad3bc0803328f19d0bfeb7bda40e18ec3c9d67855db208e4fa7a6ef15bbb5748"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/rear_clamp_connector.stl",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/rear_clamp_connector.stl",
+    "sha256": "9cadbbf892db9d10aa835e129a2b28dacac6ec205a0e6e1a48a58481408c859e"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/stick.stl",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/stick.stl",
+    "sha256": "22123896502da35d7b5cb8b01b7aea62148ca485289d13fc84bf327dbb149384"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/thruster_cap.stl",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/thruster_cap.stl",
+    "sha256": "0fe9a6adb9fc4826d14645eb73340e04b10c4919c101df5050c030a6c4939bb2"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/thruster_dst_2_bluerov_adapter.stl",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/thruster_dst_2_bluerov_adapter.stl",
+    "sha256": "b7bc6cadd93ff90383752f54dd688ce9a481660e260f9c20fc7f7a0e2c7c8082"
+  },
+  {
+    "projectId": "schillaci",
+    "repository": "guidoschillaci/underwater-drone",
+    "revision": "58bb0924d71339ecc236e57adc1b10fc3e7e7346",
+    "path": "models/thruster_main.stl",
+    "url": "https://raw.githubusercontent.com/guidoschillaci/underwater-drone/58bb0924d71339ecc236e57adc1b10fc3e7e7346/models/thruster_main.stl",
+    "sha256": "de27273bd92b4c09c9e12ecca05a6321e6e95be618fc720e95875017f1584426"
+  }
+]

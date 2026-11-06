@@ -10,6 +10,7 @@ import sys,os,json,base64,zlib,time,tempfile,traceback,math
 from pathlib import Path
 sys.path.insert(0,os.environ.get('FREECAD_LIB','/Applications/FreeCAD.app/Contents/Resources/lib'))
 import FreeCAD as App,Part
+from freecad_tree import component_leaves
 cases=json.loads(Path(sys.argv[1]).read_text());output=Path(sys.argv[2]);report=[]
 check_intersections='--roundtrip-only' not in sys.argv
 changed_prefix=next((a.split('=',1)[1] for a in sys.argv if a.startswith('--changed-prefix=')),None)
@@ -24,15 +25,23 @@ for case in cases:
  try:
   namespace={}
   exec(case['script'],namespace)
-  root=doc.RootObjects[0];children=list(root.Group)
+  root=doc.RootObjects[0];children=component_leaves(root)
+  assert root.PartId=='rocket-release' and root.ModelState==case['state']
   assert len(children)==len(case['components'])
+  assert [c.ComponentIndex for c in children]==list(range(1,len(children)+1))
   assert json.loads(root.Configuration)==case['parameters']
+  # The prepared case records installation roles in the original component order.
+  roles={child.Name: expected['label'] for child,expected in zip(children,case['components'])}
   bounds_errors=[];volume_errors=[];metrology_errors=[]
   for child,expected in zip(children,case['components']):
    s=child.Shape
-   is_hat=child.Label.startswith('BUY Waveshare Bus Servo')
+   is_hat=roles[child.Name].startswith('BUY Waveshare Bus Servo')
    assert s.isValid() and s.isClosed() and (len(s.Solids)==361 if is_hat else len(s.Solids)==1) and s.Volume>0,(child.Label,'invalid physical component')
-   assert child.Label.startswith(expected['label']),(child.Label,expected['label'])
+   identity=json.loads(child.ESKDIdentityJSON) if hasattr(child,'ESKDIdentityJSON') else None
+   if identity:
+    assert child.ProductName==identity['name'] and child.Designation==identity['designation']
+   expected_label=identity['label'] if identity else expected['label']
+   assert child.Label.startswith(expected_label),(child.Label,expected_label)
    b=s.optimalBoundingBox(False,False)
    error=max(abs(a-b) for a,b in zip([b.XMin,b.YMin,b.ZMin,b.XMax,b.YMax,b.ZMax],expected['min']+expected['max']))
    bounds_errors.append(error)
@@ -42,8 +51,9 @@ for case in cases:
   print(case['name'],'topology checked; metrology issues:',metrology_errors,flush=True)
   native_indices={}
   for i,child in enumerate(children):
-   if not child.Label.startswith('ST3215 ·'):continue
-   index=next(k for k,c in enumerate(source['components']) if child.Label.startswith('ST3215 · '+c['label']+' ·'))
+   role=roles[child.Name]
+   if not role.startswith('ST3215 ·'):continue
+   index=next(k for k,c in enumerate(source['components']) if role.startswith('ST3215 · '+c['label']+' ·'))
    s=Part.Shape();s.importBrepFromString(zlib.decompress(base64.b64decode(source['components'][index]['brep'])).decode())
    if index==5:s.rotate(App.Vector(),App.Vector(0,0,1),-5*case['parameters']['unlockAngle']*min(1,case['parameters']['release']/60))
    p=case['parameters'];angle=p['unlockAngle']*min(1,p['release']/60);lift=p['separation']*max(0,(p['release']-60)/40)
@@ -55,26 +65,26 @@ for case in cases:
    assert abs(s.Volume-child.Shape.Volume)<1e-5,(child.Label,'supplier geometry volume changed')
    assert (s.Solids[0].CenterOfMass-child.Shape.Solids[0].CenterOfMass).Length<1e-6,(child.Label,'supplier placement changed')
   if case['parameters']['drive']=='st3215-nose':
-   rear=next(c for c in children if c.Label.startswith('ST3215 · Rear cover'))
-   front=next(c for c in children if c.Label.startswith('ST3215 · Front cover'))
-   deck=next((c for c in children if c.Label.startswith('Nose servo and gear mounting disk')),None)
+   rear=next(c for c in children if roles[c.Name].startswith('ST3215 · Rear cover'))
+   front=next(c for c in children if roles[c.Name].startswith('ST3215 · Front cover'))
+   deck=next((c for c in children if roles[c.Name].startswith('Nose servo and gear mounting disk')),None)
    for i in range(1,5):
-    clip=next(c for c in children if c.Label.startswith(f'Piston external retaining ring {i} ·'))
-    plug=next(c for c in children if c.Label.startswith(f'Spring barrel bottom plug {i} ·'))
+    clip=next(c for c in children if roles[c.Name].startswith(f'Piston external retaining ring {i} ·'))
+    plug=next(c for c in children if roles[c.Name].startswith(f'Spring barrel bottom plug {i} ·'))
     expected=0.2+max(0,p['springTravel']-min(lift,p['springTravel']))
     assert abs(clip.Shape.distToShape(plug.Shape)[0]-expected)<1e-5,(clip.Label,'incorrect external stop clearance')
    for child in children:
-    if child.Label.startswith('ST3215 machined rear mounting plate'):
+    if roles[child.Name].startswith('ST3215 machined rear mounting plate'):
      assert child.Shape.distToShape(rear.Shape)[0]<1e-5,(child.Label,'does not clamp rear case')
-    if child.Label.startswith('ST3215 front support pillar'):
+    if roles[child.Name].startswith('ST3215 front support pillar'):
      assert child.Shape.distToShape(front.Shape)[0]<1e-5,(child.Label,'does not support front case')
      if deck:assert child.Shape.distToShape(deck.Shape)[0]<1e-5,(child.Label,'does not support mounting disk')
    # Probe each load-bearing contact with a 0.01 mm virtual approach. A zero
    # minimum distance alone would also pass a single-point or edge contact.
    contacts=[];pillars=[]
    for child in children:
-    back=child.Label.startswith('ST3215 machined rear mounting plate')
-    pillar=child.Label.startswith('ST3215 front support pillar')
+    back=roles[child.Name].startswith('ST3215 machined rear mounting plate')
+    pillar=roles[child.Name].startswith('ST3215 front support pillar')
     if not (back or pillar):continue
     probe=child.Shape.copy();probe.translate(App.Vector(0,0,-.01 if back else .01))
     area=probe.common(rear.Shape if back else front.Shape).Volume/.01
@@ -91,14 +101,14 @@ for case in cases:
   for i,first in enumerate(children if check_intersections else []):
    if i%20==0:print(case['name'],'interference progress',i,'/',len(children),flush=True)
    for j,second in enumerate(children[i+1:],i+1):
-    if changed_prefix and not (first.Label.startswith(changed_prefix) or second.Label.startswith(changed_prefix)):continue
+    if changed_prefix and not (roles[first.Name].startswith(changed_prefix) or roles[second.Name].startswith(changed_prefix)):continue
     a,b=boxes[i],boxes[j]
     # Skip separate or merely touching bounding boxes.
     if min(a.XMax,b.XMax)-max(a.XMin,b.XMin)<1e-6 or min(a.YMax,b.YMax)-max(a.YMin,b.YMin)<1e-6 or min(a.ZMax,b.ZMax)-max(a.ZMin,b.ZMin)<1e-6:continue
     # Avoid a global boolean across overlapping supplier subcomponents. The
     # PCB assembly is purchased as one item; check each solid against the mount.
-    if first.Label.startswith('BUY Waveshare Bus Servo') or second.Label.startswith('BUY Waveshare Bus Servo'):
-     board,other=(first,second) if first.Label.startswith('BUY Waveshare Bus Servo') else (second,first)
+    if roles[first.Name].startswith('BUY Waveshare Bus Servo') or roles[second.Name].startswith('BUY Waveshare Bus Servo'):
+     board,other=(first,second) if roles[first.Name].startswith('BUY Waveshare Bus Servo') else (second,first)
      box=other.Shape.BoundBox
      v=sum(s.common(other.Shape).Volume for s in board.Shape.Solids if s.BoundBox.intersect(box))
     else:
@@ -122,7 +132,7 @@ for case in cases:
   for zone in case.get('serviceZones',[]):
    reserved=eval(zone['expression'],zone_scope);hits=[];a=reserved.BoundBox
    for child in children:
-    if zone['label'].startswith('PLS mating') and 'header pin' in child.Label:continue
+    if zone['label'].startswith('PLS mating') and 'header pin' in roles[child.Name]:continue
     b=child.Shape.BoundBox
     if min(a.XMax,b.XMax)-max(a.XMin,b.XMin)<1e-6 or min(a.YMax,b.YMax)-max(a.YMin,b.YMin)<1e-6 or min(a.ZMax,b.ZMax)-max(a.ZMin,b.ZMin)<1e-6:continue
     common=reserved.common(child.Shape)
@@ -146,12 +156,12 @@ for case in cases:
       before=mesh_volume(child.Shape);after=mesh_volume(solid)
       # Re-tessellation of the 0.6 mm spring wire is not bit-identical after STEP.
       assert abs(before-after)/before<.002,(child.Label,'STEP surface volume changed',before,after)
-    names=[c.Label for c in children];rootname=root.Name;fcstd=str(Path(folder)/'recovery.FCStd');doc.saveAs(fcstd)
+    names=[(c.Name,c.ComponentIndex,c.Label) for c in children];rootname=root.Name;fcstd=str(Path(folder)/'recovery.FCStd');doc.saveAs(fcstd)
     App.closeDocument(doc.Name);doc=App.openDocument(fcstd)
-    saved=list(doc.getObject(rootname).Group)
-    assert [c.Label for c in saved]==names
+    saved=component_leaves(doc.getObject(rootname))
+    assert [(c.Name,c.ComponentIndex,c.Label) for c in saved]==names
     assert json.loads(doc.getObject(rootname).Configuration)==case['parameters']
-    invalid=[c.Label for c in saved if not (c.Shape.isValid() and c.Shape.isClosed() and (len(c.Shape.Solids)==361 if c.Label.startswith('BUY Waveshare Bus Servo') else len(c.Shape.Solids)==1))]
+    invalid=[c.Label for c in saved if not (c.Shape.isValid() and c.Shape.isClosed() and (len(c.Shape.Solids)==361 if roles[c.Name].startswith('BUY Waveshare Bus Servo') else len(c.Shape.Solids)==1))]
     assert not invalid, ('FCStd roundtrip topology', invalid)
     roundtrip=True
   record.update(passed=True,components=len(children),maxBoundsError=max(bounds_errors),maxRelativeVolumeError=max(volume_errors),intersectionsChecked=check_intersections,intersectionScope=changed_prefix or 'all pairs',newIntersections=overlaps,preservedSourceIntersections=source_pairs,roundtrip=roundtrip)

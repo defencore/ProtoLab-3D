@@ -1,0 +1,38 @@
+[
+  {
+    "id": "syla-lr2170la-4s1p-xt60",
+    "name": "SYLA Lishen LR2170LA · 4S1P · XT60",
+    "description": "The supplier listing establishes the assembled pack SKU, 4S1P 21700 configuration and 88 × 24 × 74 mm wrapped body. XT60 termination is the selected supplier option; XT90 is a different order option. Native Z0 is the body bottom and X/Y are centered. The 1.5 mm corner radius is illustrative. Internal cells, spot welds, leads and the mating plug are omitted because the source does not dimension their positions or lead lengths. Cable exit, connector sex, bend space and actual wrapped dimensions require the delivered pack. The listed current does not qualify a project harness or protection circuit.",
+    "parameters": {
+      "model": "syla-lr2170la-4s1p-xt60"
+    },
+    "catalog": {
+      "designation": "asm-4s1p-stv-lishen-lr2170la / XT60",
+      "manufacturer": "SYLA / Lishen cells",
+      "sourceName": "Supplier listing; geometry limitations recorded in GUIDE.md",
+      "sourceUrl": "https://syla.com.ua/product/akumulyatorna-zbirka-li-ion-4s1p-21700-lishen-lr2170la-4000-mag-144v-35a-v-odyn-ryad/",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "syla-lr2170la-4s1p-xt60",
+        "asm-4s1p-stv-lishen-lr2170la / XT60"
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Supplier body envelope; undimensioned details omitted.",
+        "limitations": "The supplier listing establishes the assembled pack SKU, 4S1P 21700 configuration and 88 × 24 × 74 mm wrapped body. XT60 termination is the selected supplier option; XT90 is a different order option. Native Z0 is the body bottom and X/Y are centered. The 1.5 mm corner radius is illustrative. Internal cells, spot welds, leads and the mating plug are omitted because the source does not dimension their positions or lead lengths. Cable exit, connector sex, bend space and actual wrapped dimensions require the delivered pack. The listed current does not qualify a project harness or protection circuit.",
+        "sourceUrl": "https://syla.com.ua/product/akumulyatorna-zbirka-li-ion-4s1p-21700-lishen-lr2170la-4000-mag-144v-35a-v-odyn-ryad/"
+      },
+      "specifications": [
+        {
+          "label": "Geometry and revision scope",
+          "value": "The supplier listing establishes the assembled pack SKU, 4S1P 21700 configuration and 88 × 24 × 74 mm wrapped body. XT60 termination is the selected supplier option; XT90 is a different order option. Native Z0 is the body bottom and X/Y are centered. The 1.5 mm corner radius is illustrative. Internal cells, spot welds, leads and the mating plug are omitted because the source does not dimension their positions or lead lengths. Cable exit, connector sex, bend space and actual wrapped dimensions require the delivered pack. The listed current does not qualify a project harness or protection circuit."
+        }
+      ],
+      "attributes": {
+        "manufacturer": "SYLA / Lishen cells"
+      }
+    }
+  }
+]

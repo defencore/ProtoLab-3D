@@ -1,0 +1,50 @@
+[
+  {
+    "id": "finsrov",
+    "name": "FinsROV · mechanical assembly",
+    "description": "Source-positioned manufactured details and complete purchased equipment units, with separate make and buy lists.",
+    "parameters": {
+      "model": "finsrov"
+    },
+    "product": {
+      "supply": "manufactured"
+    },
+    "catalog": {
+      "designation": "FinsROV",
+      "manufacturer": "FinsROV contributors",
+      "sourceName": "FinsROV original mechanical assembly and manufacturing BOM",
+      "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/Configuration.STEP",
+      "verifiedParameters": [
+        "model"
+      ],
+      "geometryEvidence": {
+        "kind": "community-cad",
+        "summary": "Original physical source occurrences, with each fabricated detail and purchased unit explicitly identified.",
+        "limitations": "Unresolved source BOM omissions prevent release. Published geometry does not qualify a newly manufactured vehicle.",
+        "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/Configuration.STEP",
+        "sourceSha256": "d774498f1ee8065552c6abdcef07a414a675946e10e48b54410b6662b7d3e135"
+      },
+      "attributes": {
+        "construction": "Machined aluminium, printed sensor mounts and purchased equipment",
+        "madeOccurrences": 26,
+        "purchasedCadUnits": 24,
+        "printedOccurrences": 4,
+        "license": "MIT"
+      },
+      "specifications": [
+        {
+          "label": "Source revision",
+          "value": "1bc38e83d8af669339c7a86f0a14e2180676347f"
+        },
+        {
+          "label": "Make / buy",
+          "value": "26 fabricated occurrences / 24 purchased CAD units"
+        },
+        {
+          "label": "STL fabrication export",
+          "value": "Only the four printed sensor mounts; purchased and machined parts are excluded"
+        }
+      ]
+    }
+  }
+]

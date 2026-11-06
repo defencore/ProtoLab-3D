@@ -262,12 +262,12 @@ function assertParallelRockerMount(rotor: Object3D, lid: Object3D, servo: Object
 
 test('the mechanism is an authored assembly with stable source units and complete valid presets', () => {
   assert.equal(part.id, 'servo-toggle-actuator');
-  assert.equal(part.name, 'Servo toggle actuator');
+  assert.equal(part.name, 'ST3215 servo toggle actuator · ASW-07D');
   assert.equal(part.product.kind, 'assembly');
   assert.equal(part.product.supply, 'manufactured');
   assert.ok(part.product.processes.includes('assembly'));
   assert.equal(part.catalogSelectionOnly, undefined);
-  assert.equal(part.presets.length, 13);
+  assert.equal(part.presets.length, 14);
   assert.equal(Object.hasOwn(part.defaults, 'manualState'), false);
   assert.deepEqual(
     part.presets.slice(0, 7).map((preset) => preset.id),
@@ -291,7 +291,9 @@ test('the mechanism is an authored assembly with stable source units and complet
       Object.keys(preset.parameters).sort(),
       [
         ...Object.keys(part.defaults),
-        ...(preset.parameters.mechanism === 'parallel-dual' ? ['manualState'] : []),
+        ...(['parallel-dual', 'case-panel'].includes(String(preset.parameters.mechanism))
+          ? ['manualState']
+          : []),
       ].sort(),
     );
     assert.deepEqual(validateParameters(part, preset.parameters, 'assembled'), [], preset.id);

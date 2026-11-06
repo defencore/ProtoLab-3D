@@ -25,7 +25,11 @@ test('every AMASS series has separate pins and bored sockets within published bo
       assert.ok(metal);
       const panel = 'panel' in m && m.panel;
       const tail = m.cover ? m.length * 0.27 : m.family === 'XT30U' ? 2.5 : 4;
-      const L = panel ? m.flangeThickness! : pcb ? m.pcbFront! : m.length - tail;
+      const L = panel
+        ? m.flangeThickness! + ('matingProjection' in m ? m.matingProjection! : 0)
+        : pcb
+          ? m.pcbFront!
+          : m.length - tail;
       const ray = new Raycaster(
         new Vector3((-(m.pins - 1) * m.pitch) / 2, pcb ? m.pcbAxisHeight! : 0, L + 5),
         new Vector3(0, 0, -1),
@@ -38,7 +42,12 @@ test('every AMASS series has separate pins and bored sockets within published bo
       );
       assert.equal(
         model.children.length,
-        m.pins + 1 + Number(m.cover) + Number('gasket' in m && m.gasket) + (pcb ? m.holdDowns! : 0),
+        m.pins +
+          1 +
+          Number(m.cover) +
+          Number('gasket' in m && m.gasket) +
+          (pcb ? m.holdDowns! : 0) +
+          ('mountInsertHeight' in m ? 2 : 0),
       );
     } finally {
       disposeModel(model);

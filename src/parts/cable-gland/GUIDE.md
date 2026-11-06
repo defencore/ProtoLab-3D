@@ -1,13 +1,13 @@
 # Cable gland
 
-Panel cable gland with separate compression nut, body and seal envelope.
+Panel cable gland with separate compression nut and body. A seal is not modeled.
 
 Find **CONNECTORS & INTERFACES → CABLE ENTRY → Cable gland**.
 
 ## Variants
 
-- Cable gland · Ø6 cable
-- Cable gland · Ø10 cable
+- Cable gland · Ø6 mm cable
+- Cable gland · Ø10 mm cable
 
 ## Controls
 

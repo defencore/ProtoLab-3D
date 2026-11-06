@@ -1,0 +1,74 @@
+[
+  {
+    "id": "2845-tr8x4-mf106",
+    "name": "TR8×4(P2) · Surpass Hobby KK2845 3100KV · 1 output · 1:1 gears and laser fork · ±20°",
+    "description": "Hub-pinned gears, 31 mm bearing-to-bearing screw thread, 16 mm nut and laser-cut fork with wall stops at ±20°.",
+    "parameters": {
+      "motor": "surpass-2845-3100kv",
+      "outputAngle": 0
+    }
+  },
+  {
+    "id": "2838-3200-tr8x4-mf106",
+    "name": "TR8×4(P2) · Surpass Hobby 2838 3200KV · 1 output · 1:1 gears and laser fork · ±20°",
+    "description": "Hub-pinned gears, 31 mm bearing-to-bearing screw thread, 16 mm nut and laser-cut fork with wall stops at ±20°.",
+    "parameters": {
+      "motor": "surpass-2838-3200kv",
+      "outputAngle": 0
+    }
+  },
+  {
+    "id": "2838-3500-tr8x4-mf106",
+    "name": "TR8×4(P2) · Surpass Hobby 2838 3500KV · 1 output · 1:1 gears and laser fork · ±20°",
+    "description": "Hub-pinned gears, 31 mm bearing-to-bearing screw thread, 16 mm nut and laser-cut fork with wall stops at ±20°.",
+    "parameters": {
+      "motor": "surpass-2838-3500kv",
+      "outputAngle": 0
+    }
+  },
+  {
+    "id": "2838-3700-tr8x4-mf106",
+    "name": "TR8×4(P2) · Surpass Hobby 2838 3700KV · 1 output · 1:1 gears and laser fork · ±20°",
+    "description": "Hub-pinned gears, 31 mm bearing-to-bearing screw thread, 16 mm nut and laser-cut fork with wall stops at ±20°.",
+    "parameters": {
+      "motor": "surpass-2838-3700kv",
+      "outputAngle": 0
+    }
+  },
+  {
+    "id": "2838-4400-tr8x4-mf106",
+    "name": "TR8×4(P2) · Surpass Hobby 2838 4400KV · 1 output · 1:1 gears and laser fork · ±20°",
+    "description": "Hub-pinned gears, 31 mm bearing-to-bearing screw thread, 16 mm nut and laser-cut fork with wall stops at ±20°.",
+    "parameters": {
+      "motor": "surpass-2838-4400kv",
+      "outputAngle": 0
+    }
+  },
+  {
+    "id": "2838-4700-tr8x4-mf106",
+    "name": "TR8×4(P2) · Surpass Hobby 2838 4700KV · 1 output · 1:1 gears and laser fork · ±20°",
+    "description": "Hub-pinned gears, 31 mm bearing-to-bearing screw thread, 16 mm nut and laser-cut fork with wall stops at ±20°.",
+    "parameters": {
+      "motor": "surpass-2838-4700kv",
+      "outputAngle": 0
+    }
+  },
+  {
+    "id": "2838-5100-tr8x4-mf106",
+    "name": "TR8×4(P2) · Surpass Hobby 2838 5100KV · 1 output · 1:1 gears and laser fork · ±20°",
+    "description": "Hub-pinned gears, 31 mm bearing-to-bearing screw thread, 16 mm nut and laser-cut fork with wall stops at ±20°.",
+    "parameters": {
+      "motor": "surpass-2838-5100kv",
+      "outputAngle": 0
+    }
+  },
+  {
+    "id": "2838-5700-tr8x4-mf106",
+    "name": "TR8×4(P2) · Surpass Hobby 2838 5700KV · 1 output · 1:1 gears and laser fork · ±20°",
+    "description": "Hub-pinned gears, 31 mm bearing-to-bearing screw thread, 16 mm nut and laser-cut fork with wall stops at ±20°.",
+    "parameters": {
+      "motor": "surpass-2838-5700kv",
+      "outputAngle": 0
+    }
+  }
+]

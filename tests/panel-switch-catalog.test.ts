@@ -52,8 +52,8 @@ const p = (model: string, extra: Parameters = {}): Parameters => ({
   ...extra,
 });
 
-test('24 fixed switch configurations cover separate functions and retain source scope', () => {
-  assert.equal(models.length, 24);
+test('29 fixed switch configurations cover separate functions and retain source scope', () => {
+  assert.equal(models.length, 29);
   assert.equal(part.presets!.length, models.length);
   assert.equal(part.catalogSelectionOnly, true);
   assert.equal(part.name, 'Toggle switches & buttons');
@@ -71,16 +71,19 @@ test('24 fixed switch configurations cover separate functions and retain source 
       'colour',
       'panelThickness',
       'mountingHardware',
+      'capColour',
     ]);
     assert.equal(preset.parameters.panelThickness, 0.3);
     assert.equal(preset.parameters.mountingHardware, 'standard');
     assert.deepEqual(preset.catalog!.verifiedParameters, ['model']);
     assert.equal(
       preset.catalog!.geometryEvidence!.kind,
-      model.manufacturer === 'APEM' ? 'envelope' : 'source-dimensions',
+      ['APEM', 'BERM'].includes(model.manufacturer) ? 'envelope' : 'source-dimensions',
     );
     assert.match(preset.catalog!.geometryEvidence!.limitations, /Not original manufacturer CAD/);
-    assert.equal(preset.catalog!.attributes!.terminalCount, model.terminalCount);
+    if (!model.bermHead || model.id === 'berm-bem-la16-11d-y')
+      assert.equal(preset.catalog!.attributes!.terminalCount, model.terminalCount);
+    else assert.equal(preset.catalog!.attributes!.terminalCount, undefined);
     assert.ok(!('current' in preset.catalog!.attributes!), 'Unknown ratings are not invented');
   }
   for (const key of [
@@ -89,6 +92,7 @@ test('24 fixed switch configurations cover separate functions and retain source 
     'circuit',
     'mounting',
     'mountDiameter',
+    'mountFlatWidth',
     'cutoutLength',
     'guarded',
   ])
@@ -103,6 +107,188 @@ test('24 fixed switch configurations cover separate functions and retain source 
     assert.ok(part.validate({ ...part.defaults, ...extra }, 'assembled').length);
 });
 
+test('DS-225 retains the corrected photo, drawing reference and momentary two-terminal identity', () => {
+  const model = models.find((model) => model.id === 'daier-ds-225')!,
+    preset = part.presets.find((preset) => preset.id === model.id)!,
+    source = 'references/daier-ds-225-user-photo.png';
+  assert.equal(model.manufacturer, 'DAIER');
+  assert.equal(model.designation, 'DS-225');
+  assert.equal(model.form, 'pushbutton');
+  assert.equal(model.behavior, 'Momentary one end');
+  assert.equal(model.circuit, 'SPST-NO');
+  assert.equal(model.positions, 2);
+  assert.equal(model.terminalCount, 2);
+  assert.equal(model.termination, 'Solder lug');
+  assert.equal(model.mountDiameter, 12.7);
+  assert.equal(model.guarded, false);
+  assert.equal(model.source, source);
+  assert.equal(preset.catalog!.sourceUrl, source);
+  assert.equal(preset.catalog!.sourceKind, 'attachment');
+  assert.equal(preset.catalog!.geometryEvidence!.kind, 'source-dimensions');
+  assert.equal(preset.catalog!.geometryEvidence!.sourceUrl, source);
+  assert.ok(
+    preset.catalog!.alternateSourceUrls!.includes('references/daier-ds-225-user-drawing.png'),
+    'Keep the earlier dimensional drawing as mounting/body reference',
+  );
+  assert.match(model.evidence, /black rectangular upper housing/);
+  assert.match(model.limitations, /15 × 15 mm/);
+  assert.match(model.limitations, /does not verify either rectangular side/);
+  assert.equal(preset.catalog!.attributes!.circuit, 'SPST-NO');
+  assert.equal(preset.catalog!.attributes!.terminalCount, 2);
+  assert.equal(preset.catalog!.attributes!.mountFlatWidth, 11.4);
+  for (const position of ['first', 'last']) {
+    const params = p(model.id, { position });
+    assert.deepEqual(part.validate(params, 'assembled'), []);
+    assert.equal(presetMatchesConfiguration(part, preset, params), true);
+  }
+  assert.ok(part.validate(p(model.id, { position: 'center' }), 'assembled').length);
+});
+
+test('DS-225 preserves drawing interfaces and moves only its actuator when pressed', () => {
+  const params = p('daier-ds-225'),
+    released = part.buildGeometry(params, 'assembled'),
+    pressed = part.buildGeometry({ ...params, position: 'last' }, 'assembled'),
+    body = released.children.find((child) => child.name === 'DS-225 insulating body')! as Group,
+    barrel = released.children.find((child) =>
+      child.name.startsWith('DS-225 mounting barrel'),
+    )! as Group,
+    nut = released.children.find((child) => child.name === 'DS-225 panel retaining nut')!,
+    washer = released.children.find((child) => child.name.startsWith('DS-225 panel washer'))!,
+    actuator = released.children.find((child) => child.name === 'DS-225 button actuator')!,
+    depressed = pressed.children.find((child) => child.name === actuator.name)!,
+    terminals = released.children.filter((child) =>
+      child.name.startsWith('DS-225 solder terminal'),
+    ),
+    bounds = new Box3().setFromObject(released),
+    bodyBounds = new Box3().setFromObject(body),
+    barrelBounds = new Box3().setFromObject(barrel),
+    retainingBounds = new Box3().setFromObject(nut).union(new Box3().setFromObject(washer)),
+    actuatorBounds = new Box3().setFromObject(actuator),
+    depressedBounds = new Box3().setFromObject(depressed);
+  assert.ok(Math.abs(bounds.max.z - 5) < 0.001, 'Illustrative released height above the panel');
+  assert.ok(Math.abs(bounds.min.z + 23.5) < 0.001, '17.5 mm body plus 6 mm terminals');
+  assert.ok(Math.abs(bodyBounds.min.z + 17.5) < 0.001);
+  assert.ok(
+    Math.abs(retainingBounds.min.z + Number(params.panelThickness) + 5) < 0.001,
+    '5 mm retaining stack behind the panel',
+  );
+  assert.ok(
+    Math.abs(retainingBounds.max.z + Number(params.panelThickness)) < 0.001,
+    'Retaining stack meets the rear panel face',
+  );
+  assert.ok(Math.abs(bodyBounds.getSize(new Vector3()).x - 11.3) < 0.001);
+  assert.ok(
+    Math.abs(barrelBounds.getSize(new Vector3()).x - 15) < 0.001,
+    'Illustrative bezel width',
+  );
+  assert.ok(Math.abs(barrelBounds.getSize(new Vector3()).y - 15) < 0.001);
+  assert.ok(Math.abs(barrelBounds.max.z - 3) < 0.001, 'Illustrative bezel height');
+  assert.equal(contains(barrel, [7.4, 0, 1]), true, 'Flange overlaps the mounting opening');
+  for (const x of [-6.5, 6.5])
+    for (const y of [-6.5, 6.5])
+      assert.equal(contains(barrel, [x, y, 1]), true, 'Rectangular bezel retains corner material');
+  assert.equal(contains(barrel, [7.45, 7.45, 1]), false, 'Outer corners remain rounded');
+  const sourcePieces = pieces(params, 'assembled');
+  assert.equal(
+    sourcePieces.find((piece) => piece.label.startsWith('DS-225 mounting barrel'))!.color,
+    0x272e35,
+    'Black upper housing follows the photo',
+  );
+  assert.equal(
+    sourcePieces.find((piece) => piece.label === 'DS-225 button actuator')!.color,
+    0x43aa67,
+    'Round green cap follows the photo appearance',
+  );
+  assert.equal(contains(barrel, [6.4, 0, -1]), false, 'Barrel clears the 12.7 mm opening');
+  assert.equal(contains(barrel, [5.6, 0, -1]), true, 'Material within the mounting flat');
+  assert.equal(contains(barrel, [5.71, 0, -1]), false, 'Body clears the 11.4 mm mounting flat');
+  assert.equal(contains(barrel, [0, 6.2, -1]), true, 'Round side of the mounting barrel');
+  assert.equal(terminals.length, 2);
+  const terminalCentres = terminals.map((terminal) =>
+    new Box3().setFromObject(terminal).getCenter(new Vector3()),
+  );
+  assert.deepEqual(
+    terminalCentres.map((centre) => Math.round(centre.x * 1000) / 1000).sort((a, b) => a - b),
+    [-3, 3],
+    '6 mm terminal centre spacing',
+  );
+  for (const terminal of terminals) {
+    const terminalBounds = new Box3().setFromObject(terminal),
+      size = terminalBounds.getSize(new Vector3()),
+      centre = terminalBounds.getCenter(new Vector3());
+    assert.ok(Math.abs(size.x - 0.6) < 0.001);
+    assert.ok(Math.abs(size.y - 2) < 0.001);
+    assert.ok(Math.abs(size.z - 6) < 0.001);
+    assert.ok(Math.abs(centre.y) < 0.001);
+    assert.ok(Math.abs(terminalBounds.min.z + 23.5) < 0.001);
+    assert.ok(Math.abs(terminalBounds.max.z + 17.5) < 0.001);
+    for (const z of [-21.9, -21, -20.1])
+      assert.equal(contains(terminal as Group, [centre.x, 0, z]), false, 'Inside the 2 mm slot');
+    for (const z of [-22.1, -19.9])
+      assert.equal(contains(terminal as Group, [centre.x, 0, z]), true, 'Material beyond the slot');
+  }
+  assert.equal(contains(released, [0, 0, -20]), false, 'No invented centre terminal');
+  assert.ok(Math.abs(actuatorBounds.max.z - depressedBounds.max.z - 1) < 0.001);
+  assert.ok(Math.abs(volume(actuator as Group) - volume(depressed as Group)) < 0.001);
+  for (const child of released.children.filter((child) => child.name !== actuator.name)) {
+    const fixed = pressed.children.find((item) => item.name === child.name)!;
+    assert.ok(
+      new Box3().setFromObject(child).equals(new Box3().setFromObject(fixed)),
+      `${child.name}: pressing leaves the mounting geometry fixed`,
+    );
+  }
+  dispose(released);
+  dispose(pressed);
+});
+
+test('DS-225 cap colours preserve its geometry and black housing', () => {
+  const baseline = pieces(p('daier-ds-225'), 'assembled');
+  const field = part.parameters.find((field) => field.key === 'capColour')!;
+  assert.equal(part.defaults.capColour, 'green');
+  assert.equal(field.visibleWhen!(p('daier-ds-225')), true);
+  assert.equal(field.visibleWhen!(p('daier-asw-07d')), false);
+  for (const [capColour, color] of [
+    ['green', 0x43aa67],
+    ['red', 0xdc3e35],
+    ['black', 0x272e35],
+  ] as const) {
+    const params = p('daier-ds-225', { capColour });
+    assert.deepEqual(part.validate(params, 'assembled'), []);
+    const colored = pieces(params, 'assembled');
+    for (const [index, piece] of colored.entries()) {
+      assert.deepEqual(piece.shape, baseline[index].shape);
+      assert.equal(
+        piece.color,
+        piece.label === 'DS-225 button actuator' ? color : baseline[index].color,
+      );
+    }
+  }
+  assert.ok(part.validate(p('daier-ds-225', { capColour: 'purple' }), 'assembled').length);
+});
+
+test('DS-225 panel thickness moves its retaining hardware behind the panel only', () => {
+  const params = p('daier-ds-225'),
+    baseline = geometry(params, 'assembled');
+  for (const panelThickness of [0.3, 2.4, 4]) {
+    const installed = geometry({ ...params, panelThickness }, 'assembled');
+    for (const child of installed.children) {
+      const bounds = new Box3().setFromObject(child);
+      if (child.name === 'DS-225 panel retaining nut') {
+        assert.ok(Math.abs(bounds.min.z + panelThickness + 5) < 0.001);
+        assert.ok(Math.abs(bounds.max.z + panelThickness + 2) < 0.001);
+      } else if (child.name.startsWith('DS-225 panel washer')) {
+        assert.ok(Math.abs(bounds.min.z + panelThickness + 2) < 0.001);
+        assert.ok(Math.abs(bounds.max.z + panelThickness) < 0.001);
+      } else {
+        const original = baseline.children.find((original) => original.name === child.name)!;
+        assert.ok(bounds.equals(new Box3().setFromObject(original)), `${child.name} stays fixed`);
+      }
+    }
+    dispose(installed);
+  }
+  dispose(baseline);
+});
+
 test('bare ASW-07D installation leaves the selected panel thickness between its retaining nuts', () => {
   const field = part.parameters.find((field) => field.key === 'panelThickness')!;
   assert.equal(field.type, 'number');
@@ -110,7 +296,10 @@ test('bare ASW-07D installation leaves the selected panel thickness between its 
   assert.equal(field.max, 4);
   assert.equal(field.filterable, false);
   for (const model of models)
-    assert.equal(field.visibleWhen!(p(model.id)), model.id === 'daier-asw-07d');
+    assert.equal(
+      field.visibleWhen!(p(model.id)),
+      model.id === 'daier-asw-07d' || model.id === 'daier-ds-225',
+    );
   const preset = part.presets.find((preset) => preset.id === 'daier-asw-07d')!;
   const baseline = part.buildGeometry(p(preset.id), 'assembled');
   for (const panelThickness of [0.3, 1, 3, 4]) {

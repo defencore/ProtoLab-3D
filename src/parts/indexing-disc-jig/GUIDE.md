@@ -2,7 +2,7 @@
 
 Bolt-pivot indexing plate with discrete locking positions and a simple carrier mounting pattern.
 
-Find **WORKSHOP TOOLS → BENDING & ASSEMBLY JIGS → Manual indexing drill fixture**. Select a starting example, then edit dimensions. Units are millimetres.
+Find **WORKSHOP TOOLS → DRILLING JIGS → Manual indexing drill fixture**. Select a starting example, then edit dimensions. Units are millimetres.
 
 ## Setup and operation
 

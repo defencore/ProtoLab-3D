@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "One authored printed enclosure can or cap with physical coarse helical geometry.",
+  "processes": ["printing"],
+  "releaseRequirements": [
+    "Specify polymer grade, printer, orientation, dimensional compensation and layer settings.",
+    "Print and measure matching thread coupons; qualify insertion torque, wear, creep and required working loads.",
+    "Review thread supports, end edges and tool access. No seal, pressure, standard thread fit or life rating is assigned."
+  ]
+}

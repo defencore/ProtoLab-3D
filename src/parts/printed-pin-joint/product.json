@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Authored printed locating pin and blind socket fit coupons, with two separately manufactured physical parts.",
+  "processes": ["printing", "assembly"],
+  "releaseRequirements": [
+    "Specify polymer grade, printer, build orientation, layer and perimeter settings, and dimensional compensation.",
+    "Measure the actual pin and bore and qualify insertion, removal, bearing loads and pin bending for the application.",
+    "Provide independently verified axial retention and anti-rotation if required; this coupon does not implement either function."
+  ]
+}

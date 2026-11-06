@@ -2,7 +2,6 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { workshopJigIds } from './workshop-jigs/manifest';
-import { inspectPackage } from './part-modules/library';
 import { checkPackageDefinitions } from './part-modules/check';
 import { validateParameters } from '../src/core/validation';
 import { generateScript } from '../src/core/freecad';
@@ -11,10 +10,7 @@ import type { PartDefinition, Parameters } from '../src/core/types';
 const root = resolve('.'),
   output = resolve(process.argv[2] ?? 'test-results/workshop-jigs');
 mkdirSync(output, { recursive: true });
-const inspections = await Promise.all(
-  workshopJigIds.map((id) => inspectPackage(resolve(root, 'src/parts', id), root)),
-);
-console.log(await checkPackageDefinitions(inspections));
+console.log(await checkPackageDefinitions(root, workshopJigIds));
 const cases: object[] = [];
 for (const id of workshopJigIds) {
   const part: PartDefinition = (

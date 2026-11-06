@@ -27,11 +27,19 @@ export function parametersForPreset(
   preset: Preset,
   current?: Parameters,
 ): Parameters {
-  const parameters = { ...preset.parameters };
-  if (part.catalogSelectionOnly && current)
+  let parameters = { ...preset.parameters };
+  if (part.catalogSelectionOnly && current) {
     for (const field of part.parameters)
       if (field.filterable === false && Object.hasOwn(current, field.key))
         parameters[field.key] = current[field.key];
+    // A catalog choice changes the same fixed fields as editing their controls.
+    // Reconcile dependent accessories and pose limits after retaining placement.
+    const changedKeys = part.parameters
+      .filter((field) => field.filterable !== false && parameters[field.key] !== current[field.key])
+      .map((field) => field.key);
+    for (const key of changedKeys)
+      if (part.updateParameters) parameters = part.updateParameters(parameters, key);
+  }
   return parameters;
 }
 
@@ -39,7 +47,7 @@ export function defaultPartSelection(part: PartDefinition): PartSelection {
   return {
     partId: part.id,
     parameters: { ...part.defaults },
-    modelState: part.states?.[0]?.id ?? 'default',
+    modelState: availableModelState(part, part.defaults, part.states?.[0]?.id ?? 'default'),
     presetId: matchingPresetId(part, part.defaults),
   };
 }
@@ -83,14 +91,12 @@ export function reconcilePartSelection(
     )
       parameters[field.key] = part.defaults[field.key];
   }
-  const modelState =
-    part.states?.some((state) => state.id === selection.modelState) ||
-    (!part.states && selection.modelState === 'default')
-      ? selection.modelState
-      : initial.modelState;
+  const modelState = availableModelState(part, parameters, selection.modelState);
+  const valid = (values: Parameters) =>
+    !validateParameters(part, values, availableModelState(part, values, modelState)).length;
 
   let retained = parameters;
-  if (validateParameters(part, retained, modelState).length) {
+  if (!valid(retained)) {
     retained = { ...part.defaults };
     // Recover independent edits after a new constraint invalidates their original combination.
     const pending = part.parameters.filter(
@@ -101,7 +107,7 @@ export function reconcilePartSelection(
       for (const field of pending) {
         if (retained[field.key] === parameters[field.key]) continue;
         const candidate = { ...retained, [field.key]: parameters[field.key] };
-        if (!validateParameters(part, candidate, modelState).length) {
+        if (valid(candidate)) {
           retained = candidate;
           changed = true;
         }
@@ -109,10 +115,11 @@ export function reconcilePartSelection(
       if (!changed) break;
     }
   }
-  const state = validateParameters(part, retained, modelState).length
-    ? initial.modelState
-    : modelState;
-  if (validateParameters(part, retained, state).length) retained = initial.parameters;
+  let state = availableModelState(part, retained, modelState);
+  if (validateParameters(part, retained, state).length) {
+    retained = initial.parameters;
+    state = initial.modelState;
+  }
   return {
     partId: part.id,
     parameters: retained,
@@ -127,10 +134,9 @@ export function availableModelState(
   parameters: Parameters,
   requested: string,
 ): string {
-  const states = part.states?.filter(
+  if (!part.states) return 'default';
+  const states = part.states.filter(
     (state) => !state.availableWhen || state.availableWhen(parameters),
   );
-  return states?.some((state) => state.id === requested)
-    ? requested
-    : (states?.[0]?.id ?? requested);
+  return states.some((state) => state.id === requested) ? requested : (states[0]?.id ?? requested);
 }

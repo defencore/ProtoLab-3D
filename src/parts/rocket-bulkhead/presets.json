@@ -1,0 +1,32 @@
+[
+  {
+    "id": "solid51",
+    "name": "Prototype solid bulkhead \u00b7 \u00d850.5 \u00d7 6 mm",
+    "description": "Author-defined metric prototype example for LDRS preparation; not a verified supplier size.",
+    "parameters": {
+      "diameter": 50.5,
+      "holeDiameter": 0,
+      "thickness": 6
+    }
+  },
+  {
+    "id": "hole71",
+    "name": "Prototype bulkhead \u00b7 \u00d870.5 / \u00d84.5 \u00d7 6 mm",
+    "description": "Author-defined metric prototype example for LDRS preparation; not a verified supplier size.",
+    "parameters": {
+      "diameter": 70.5,
+      "holeDiameter": 4.5,
+      "thickness": 6
+    }
+  },
+  {
+    "id": "hole95",
+    "name": "Prototype bulkhead \u00b7 \u00d894.5 / \u00d86.5 \u00d7 8 mm",
+    "description": "Author-defined metric prototype example for LDRS preparation; not a verified supplier size.",
+    "parameters": {
+      "diameter": 94.5,
+      "holeDiameter": 6.5,
+      "thickness": 8
+    }
+  }
+]

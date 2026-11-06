@@ -1,5 +1,6 @@
 import type { Parameters, ParameterDefinition } from '../../core/types';
 import models from './lib/models.json';
+import presets from './presets.json';
 export const defaults: Parameters = { model: '2232S024BX4' };
 export const parameters: ParameterDefinition[] = [
   {
@@ -7,7 +8,10 @@ export const parameters: ParameterDefinition[] = [
     label: 'Manufacturer model',
     type: 'select',
     group: 'Catalogue',
-    options: models.map((m) => ({ value: m.model, label: m.model })),
+    options: models.map((model) => ({
+      value: model.model,
+      label: presets.find((preset) => preset.parameters.model === model.model)!.name,
+    })),
   },
 ];
 export const catalogFilterFields: ParameterDefinition[] = [

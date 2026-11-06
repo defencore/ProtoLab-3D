@@ -11,8 +11,20 @@ import type {
 } from './product-types';
 import { createPresetId } from './storage';
 import { validateParameters } from './validation';
+import {
+  upgradeImplicitTubeProfile,
+  upgradeImportedCameraParameters,
+  upgradeImportedPresetId,
+} from './configuration-upgrades';
 import { specificationSection } from './product-library';
-import { selectedMatchingPreset } from './preset-resolution';
+import { matchingPreset, selectedMatchingPreset } from './preset-resolution';
+import {
+  eskdIdentity,
+  physicalParameters,
+  physicalProductState,
+  productIdentityParameters,
+  supplierDesignation,
+} from './eskd';
 
 export interface ProductSelection {
   part: PartDefinition;
@@ -37,6 +49,18 @@ export interface ProjectReadiness {
   complete: boolean;
   issues: string[];
   reviewRequirements: string[];
+}
+
+/** Retain declared source structures without inventing children for supplier units or reference leaves. */
+function canContainComponents(
+  part: PartDefinition,
+  supply: ProductConfiguration['supply'],
+): boolean {
+  if (supply === 'reference') return !!part.composition;
+  const assembled = ['assembly', 'complex', 'kit'].includes(part.product.kind);
+  // An authored assembly can be ordered complete while retaining its inspected structure.
+  // Purchasing still stops at that unit, and the editor cannot add children while bought.
+  return assembled && (!['purchased', 'standard'].includes(supply) || !!part.composition);
 }
 
 const processes: ManufacturingProcess[] = [
@@ -170,12 +194,27 @@ const stable = (value: unknown): string =>
       : item,
   );
 
+/** Index each physical occurrence once; repeated assemblies can share one configuration. */
+function occurrencesByParent(occurrences: readonly ProductOccurrence[]) {
+  const children = new Map<string | null, ProductOccurrence[]>();
+  for (const occurrence of occurrences) {
+    const siblings = children.get(occurrence.parentId);
+    if (siblings) siblings.push(occurrence);
+    else children.set(occurrence.parentId, [occurrence]);
+  }
+  return children;
+}
+
 export function createProject(name = 'New engineering project'): DesignProject {
+  const id = identity('project');
   return {
     schemaVersion: 1,
-    id: identity('project'),
+    id,
     name,
-    designation: '',
+    designation: `PL3D.PROJECT.${id
+      .replace(/[^a-zA-Z0-9]/g, '')
+      .slice(-12)
+      .toUpperCase()}`,
     revision: 'A',
     documentationPolicy: 'enterprise-eskd',
     documentationRules: defaultDocumentationRules(),
@@ -191,16 +230,18 @@ export function configureProduct(selection: ProductSelection): ProductConfigurat
   if (errors.length) throw new Error(`${part.name}: ${errors.join(' ')}`);
   const preset = selectedMatchingPreset(part, parameters, presetId);
   const catalog = preset?.catalog;
+  const supply = catalog ? (preset?.product?.supply ?? part.product.supply) : part.product.supply;
   const configuration: ProductConfiguration = {
     id: identity('configuration'),
     libraryId: part.id,
     parameters: clone(parameters),
-    state: physicalState(part, state),
-    ...(presetId && presetId !== 'custom' ? { presetId } : {}),
-    designation: catalog?.designation ?? '',
+    state: physicalProductState(part, state, parameters),
+    ...(preset ? { presetId: preset.id } : {}),
+    designation:
+      catalog && ['purchased', 'standard'].includes(supply) ? supplierDesignation(catalog) : '',
     name: catalog?.designation ? preset!.name : part.name,
     revision: 'A',
-    supply: catalog ? (preset?.product?.supply ?? part.product.supply) : part.product.supply,
+    supply,
   };
   if (configuration.supply === 'manufactured')
     configuration.manufacturing = {
@@ -211,21 +252,30 @@ export function configureProduct(selection: ProductSelection): ProductConfigurat
     };
   if (configuration.supply === 'purchased' || configuration.supply === 'standard')
     configuration.procurement = {
-      designation: catalog?.designation ?? '',
+      ...(catalog?.name ? { name: catalog.name } : {}),
+      designation: catalog ? supplierDesignation(catalog) : '',
       manufacturer: catalog?.manufacturer ?? '',
       source: catalog?.sourceUrl ?? '',
       ...(catalog?.standard ? { standard: catalog.standard } : {}),
     };
+  const eskd = eskdIdentity(part, parameters, state, presetId, configuration);
+  configuration.designation = eskd.designation;
+  configuration.name = eskd.name;
+  if (configuration.supply === 'manufactured') {
+    configuration.baseDesignation = eskd.baseDesignation;
+    configuration.execution = eskd.execution;
+  }
   return configuration;
 }
 
 function designIdentity(
   configuration: ProductConfiguration,
   parameters = configuration.parameters,
+  part?: PartDefinition,
 ): string {
   return stable({
     libraryId: configuration.libraryId,
-    parameters,
+    parameters: part ? productIdentityParameters(part, parameters) : physicalParameters(parameters),
     state: configuration.state,
     supply: configuration.supply,
     manufacturing: configuration.manufacturing,
@@ -238,25 +288,38 @@ function designationIdentity(
   configuration: ProductConfiguration,
   part: PartDefinition | undefined,
 ): string {
-  const preset =
-    part?.catalogSelectionOnly && ['purchased', 'standard'].includes(configuration.supply)
-      ? selectedMatchingPreset(part, configuration.parameters, configuration.presetId)
-      : undefined;
-  const keys = preset?.catalog?.verifiedParameters;
-  return designIdentity(
-    configuration,
-    keys?.length
-      ? Object.fromEntries(keys.map((key) => [key, configuration.parameters[key]]))
-      : configuration.parameters,
-  );
+  if (['purchased', 'standard'].includes(configuration.supply)) {
+    const keys = part?.presets.find((preset) => preset.id === configuration.presetId)?.catalog
+      ?.verifiedParameters;
+    // The ordering identity is scoped by supplier/standard/source. Installed poses,
+    // nominal envelopes and inspection allowances are separate geometry configurations.
+    return stable({
+      libraryId: configuration.libraryId,
+      supply: configuration.supply,
+      ...(keys?.length
+        ? {
+            parameters: Object.fromEntries(keys.map((key) => [key, configuration.parameters[key]])),
+          }
+        : {}),
+    });
+  }
+  return designIdentity(configuration, configuration.parameters, part);
 }
 
-function physicalState(part: PartDefinition, selected: string): string {
-  return part.physicalStates?.includes(selected)
-    ? selected
-    : (part.states?.find((item) => item.id === 'assembled')?.id ??
-        part.states?.[0]?.id ??
-        'default');
+function designationRecordKey(configuration: ProductConfiguration): string {
+  const designation = configuration.designation.trim();
+  const revision = configuration.revision.trim();
+  return ['purchased', 'standard'].includes(configuration.supply)
+    ? stable([
+        configuration.supply,
+        configuration.libraryId,
+        configuration.procurement?.manufacturer,
+        configuration.procurement?.standard,
+        configuration.procurement?.source,
+        designation,
+        revision,
+      ])
+    : stable([designation, revision]);
 }
 
 /** Add a configured library product and its explicitly declared physical composition. */
@@ -275,8 +338,12 @@ export function addProduct(
       (item) => item.id === parent.configurationId,
     )!;
     const part = parts.find((item) => item.id === configuration.libraryId)!;
-    if (!['assembly', 'complex', 'kit'].includes(part.product.kind))
-      throw new Error('Only an assembly, complex or kit can contain another product.');
+    if (['purchased', 'standard'].includes(configuration.supply))
+      throw new Error(
+        'A purchased product is an opaque unit. Choose a manufactured assembly to add components.',
+      );
+    if (!canContainComponents(part, configuration.supply))
+      throw new Error('This product cannot contain another product.');
   }
   const next = clone(project);
   const byId = new Map(parts.map((part) => [part.id, part]));
@@ -295,18 +362,58 @@ export function addProduct(
     if (depth > 128) throw new Error('Library composition exceeds 128 assembly levels.');
     const configuration = configureProduct(selected);
     if (component) {
-      configuration.name = component.name;
+      const supplierName =
+        !component.procurement || component.procurement.source === configuration.procurement?.source
+          ? configuration.procurement?.name
+          : undefined;
+      configuration.name = ['purchased', 'standard'].includes(component.supply)
+        ? component.procurement?.name || supplierName || component.name
+        : component.name;
       configuration.supply = component.supply;
-      if (component.manufacturing) configuration.manufacturing = clone(component.manufacturing);
+      if (component.manufacturing && component.supply === 'manufactured')
+        configuration.manufacturing = clone(component.manufacturing);
       else if (component.supply !== 'manufactured') delete configuration.manufacturing;
-      if (component.procurement) {
-        configuration.procurement = clone(component.procurement);
+      if (component.supply === 'manufactured') delete configuration.procurement;
+      if (component.procurement && ['purchased', 'standard'].includes(component.supply)) {
+        configuration.procurement = {
+          ...(supplierName ? { name: supplierName } : {}),
+          ...clone(component.procurement),
+        };
         configuration.designation = component.procurement.designation;
       } else if (!['purchased', 'standard'].includes(component.supply))
         delete configuration.procurement;
+      if (['purchased', 'standard'].includes(component.supply)) delete configuration.manufacturing;
+      if (configuration.supply === 'manufactured') {
+        const assigned = eskdIdentity(
+          selected.part,
+          configuration.parameters,
+          configuration.state,
+          configuration.presetId,
+          { ...configuration, designation: '', execution: undefined },
+        );
+        configuration.designation = assigned.designation;
+        configuration.baseDesignation = assigned.baseDesignation;
+        configuration.execution = assigned.execution;
+      } else {
+        const assigned = eskdIdentity(
+          selected.part,
+          configuration.parameters,
+          configuration.state,
+          configuration.presetId,
+          configuration,
+        );
+        configuration.designation = assigned.designation;
+        configuration.name = assigned.name;
+        if (configuration.procurement) configuration.procurement.designation = assigned.designation;
+        delete configuration.baseDesignation;
+        delete configuration.execution;
+      }
     }
     const reusable = next.configurations.find(
-      (item) => designIdentity(item) === designIdentity(configuration),
+      (item) =>
+        item.libraryId === configuration.libraryId &&
+        designIdentity(item, item.parameters, selected.part) ===
+          designIdentity(configuration, configuration.parameters, selected.part),
     );
     if (!reusable) next.configurations.push(configuration);
     const siblings = next.occurrences.filter((item) => item.parentId === parent);
@@ -324,12 +431,10 @@ export function addProduct(
       notes: component?.notes ?? '',
     };
     next.occurrences.push(occurrence);
-    const children =
-      component?.children ??
-      (['purchased', 'standard'].includes(configuration.supply)
-        ? []
-        : (selected.part.composition?.(selected.parameters).components ?? []));
-    if (children.length && !['assembly', 'complex', 'kit'].includes(selected.part.product.kind))
+    const children = ['purchased', 'standard'].includes(configuration.supply)
+      ? []
+      : (component?.children ?? selected.part.composition?.(selected.parameters).components ?? []);
+    if (children.length && !canContainComponents(selected.part, configuration.supply))
       throw new Error(`${selected.part.name}: a detail cannot contain assembly occurrences.`);
     for (const child of children) {
       const part = byId.get(child.libraryId);
@@ -397,21 +502,26 @@ export function forkOccurrenceDesign(
     const definition = parts.find((part) => part.id === configuration.libraryId);
     if (!definition)
       throw new Error('The selected product refers to a missing library definition.');
-    if (
-      item.id !== occurrenceId &&
-      !['assembly', 'complex', 'kit'].includes(definition.product.kind)
-    )
+    if (item.id !== occurrenceId && !canContainComponents(definition, configuration.supply))
       continue;
     let id = forked.get(configuration.id);
     if (!id) {
       id = identity('configuration');
       forked.set(configuration.id, id);
-      next.configurations.push({
+      const independent = {
         ...clone(configuration),
         id,
         designation: '',
         name: `${configuration.name} (independent)`,
-      });
+      };
+      if (configuration.supply === 'manufactured') {
+        independent.baseDesignation = `${configuration.baseDesignation || configuration.designation}.COPY.${id
+          .replace(/[^a-zA-Z0-9]/g, '')
+          .slice(-10)
+          .toUpperCase()}`;
+        independent.designation = `${independent.baseDesignation}${independent.execution ? `-${independent.execution}` : ''}`;
+      }
+      next.configurations.push(independent);
     }
     item.configurationId = id;
   }
@@ -426,6 +536,7 @@ export function validateProject(
   parts: readonly PartDefinition[],
 ): string[] {
   const errors: string[] = documentationRuleErrors(project.documentationRules);
+  if (!project.id.trim()) errors.push('A project needs a stable ID.');
   const library = new Map(parts.map((part) => [part.id, part]));
   const configurations = new Map<string, ProductConfiguration>();
   const designations = new Map<string, string>();
@@ -437,7 +548,10 @@ export function validateProject(
     const part = library.get(configuration.libraryId);
     if (!part) errors.push(`Unknown library product: ${configuration.libraryId}.`);
     else {
-      if (configuration.state !== physicalState(part, configuration.state))
+      if (
+        configuration.state !==
+        physicalProductState(part, configuration.state, configuration.parameters)
+      )
         errors.push(
           `${configuration.name}: an inspection state cannot define a physical configured product.`,
         );
@@ -453,11 +567,23 @@ export function validateProject(
       )
         errors.push(`${configuration.name}: unknown configuration parameter.`);
       if (
-        configuration.presetId &&
+        configuration.presetId !== undefined &&
         !part.presets.some((preset) => preset.id === configuration.presetId)
       )
         errors.push(`${configuration.name}: unknown catalog preset ${configuration.presetId}.`);
-      if ((part.product.kind === 'reference') !== (configuration.supply === 'reference'))
+      else if (
+        configuration.presetId !== undefined &&
+        !selectedMatchingPreset(part, configuration.parameters, configuration.presetId)
+      )
+        errors.push(`${configuration.name}: catalog preset does not match its parameters.`);
+      // Explicit reference executions of a physical family remain references in saved projects.
+      // Resolving a matching reference without its preset ID can reject an unsafe promotion;
+      // it does not establish a purchased identity or relax the reference-family restriction.
+      const preset = matchingPreset(part, configuration.parameters, configuration.presetId);
+      const referenceSelection =
+        part.product.kind === 'reference' ||
+        !!(preset?.catalog && preset.product?.supply === 'reference');
+      if (referenceSelection !== (configuration.supply === 'reference'))
         errors.push(`${configuration.name}: reference geometry cannot become a physical product.`);
     }
     if (configuration.manufacturing && configuration.supply !== 'manufactured')
@@ -472,7 +598,7 @@ export function validateProject(
     )
       errors.push(`${configuration.name}: manufacturing processes must be known and unique.`);
     if (configuration.designation.trim()) {
-      const key = `${configuration.designation.trim()}@${configuration.revision.trim()}`;
+      const key = designationRecordKey(configuration);
       const definition = designationIdentity(configuration, part);
       if (designations.has(key) && designations.get(key) !== definition)
         errors.push(
@@ -532,7 +658,7 @@ export function validateProject(
       const parentPart = parentConfiguration
         ? library.get(parentConfiguration.libraryId)
         : undefined;
-      if (parentPart && !['assembly', 'complex', 'kit'].includes(parentPart.product.kind)) {
+      if (parentPart && !canContainComponents(parentPart, parentConfiguration!.supply)) {
         errors.push(`Position ${occurrence.position}: parent product cannot contain components.`);
         break;
       }
@@ -545,12 +671,12 @@ export function validateProject(
   }
   const structures = new Map<string, string>();
   const designatedStructures = new Map<string, string>();
+  const childrenByParent = occurrencesByParent(project.occurrences);
   for (const occurrence of project.occurrences) {
     const configuration = configurations.get(occurrence.configurationId);
     const part = configuration ? library.get(configuration.libraryId) : undefined;
-    if (!part || !['assembly', 'complex', 'kit'].includes(part.product.kind)) continue;
-    const children = project.occurrences
-      .filter((item) => item.parentId === occurrence.id)
+    if (!part || !canContainComponents(part, configuration!.supply)) continue;
+    const children = (childrenByParent.get(occurrence.id) ?? [])
       .map((item) => ({
         configurationId: item.configurationId,
         position: item.position,
@@ -568,7 +694,7 @@ export function validateProject(
       );
     structures.set(occurrence.configurationId, structure);
     if (configuration!.designation.trim()) {
-      const key = `${configuration!.designation.trim()}@${configuration!.revision.trim()}`;
+      const key = designationRecordKey(configuration!);
       if (designatedStructures.has(key) && designatedStructures.get(key) !== structure)
         errors.push(
           `Designation ${configuration!.designation}, revision ${configuration!.revision} identifies conflicting assembly structures.`,
@@ -616,7 +742,8 @@ export function projectReadiness(
     if (!configuration.designation.trim()) issues.push(`${label}: designation is missing.`);
     if (!configuration.name.trim()) issues.push(`${label}: name is missing.`);
     if (!configuration.revision.trim()) issues.push(`${label}: revision is missing.`);
-    verifyDesignation(configuration.designation, label);
+    if (configuration.supply === 'manufactured')
+      verifyDesignation(configuration.designation, label);
     if (configuration.supply === 'reference')
       issues.push(
         `${label}: reference geometry cannot be released for procurement or manufacture.`,
@@ -647,6 +774,8 @@ export function projectReadiness(
           issues.push(`${label}: ${kind.replaceAll('-', ' ')} record is missing.`);
     }
     if (configuration.supply === 'standard' || configuration.supply === 'purchased') {
+      if (!configuration.procurement?.name?.trim())
+        issues.push(`${label}: exact supplier listing title is missing.`);
       if (!configuration.procurement?.designation.trim())
         issues.push(`${label}: supplier designation is missing.`);
       if (!configuration.procurement?.manufacturer.trim())
@@ -746,11 +875,12 @@ export function supplyRows(
   const errors = validateProject(project, parts);
   if (errors.length) throw new Error(errors.join(' '));
   const totals = new Map<string, number>();
+  const configurations = new Map(project.configurations.map((item) => [item.id, item]));
+  const library = new Map(parts.map((part) => [part.id, part]));
+  const childrenByParent = occurrencesByParent(project.occurrences);
   function visit(parentId: string | null, multiplier: number) {
-    for (const occurrence of project.occurrences.filter((item) => item.parentId === parentId)) {
-      const configuration = project.configurations.find(
-        (item) => item.id === occurrence.configurationId,
-      )!;
+    for (const occurrence of childrenByParent.get(parentId) ?? []) {
+      const configuration = configurations.get(occurrence.configurationId)!;
       const quantity = multiplier * occurrence.quantity;
       if (!Number.isSafeInteger(quantity))
         throw new Error('Multiplied project quantity exceeds the safe integer range.');
@@ -767,8 +897,8 @@ export function supplyRows(
   visit(null, 1);
   return [...totals]
     .map(([id, quantity]) => {
-      const configuration = project.configurations.find((item) => item.id === id)!;
-      const part = parts.find((item) => item.id === configuration.libraryId)!;
+      const configuration = configurations.get(id)!;
+      const part = library.get(configuration.libraryId)!;
       const notes =
         supply === 'manufactured'
           ? [
@@ -903,10 +1033,12 @@ export function parseProject(text: string, parts: readonly PartDefinition[]): De
     const item = object(
       value,
       ['id', 'libraryId', 'parameters', 'state', 'designation', 'name', 'revision', 'supply'],
-      ['presetId', 'manufacturing', 'procurement'],
+      ['presetId', 'manufacturing', 'procurement', 'baseDesignation', 'execution'],
     );
     strings(item, ['id', 'libraryId', 'state', 'designation', 'name', 'revision']);
     if (item.presetId !== undefined) strings(item, ['presetId']);
+    for (const key of ['baseDesignation', 'execution'])
+      if (item[key] !== undefined) strings(item, [key]);
     choice(item.supply, ['manufactured', 'standard', 'purchased', 'reference']);
     if (!item.parameters || typeof item.parameters !== 'object' || Array.isArray(item.parameters))
       throw new Error('Product parameters must be a record.');
@@ -934,10 +1066,11 @@ export function parseProject(text: string, parts: readonly PartDefinition[]): De
       const definition = object(
         item.procurement,
         ['designation', 'manufacturer', 'source'],
-        ['standard'],
+        ['standard', 'name'],
       );
       strings(definition, ['designation', 'manufacturer', 'source']);
       if (definition.standard !== undefined) strings(definition, ['standard']);
+      if (definition.name !== undefined) strings(definition, ['name']);
     }
   }
   for (const value of array(project.occurrences)) {
@@ -995,6 +1128,28 @@ export function parseProject(text: string, parts: readonly PartDefinition[]): De
       !Object.hasOwn(configuration.parameters, 'hornMount')
     )
       configuration.parameters.hornMount = 'original';
+  // Apply the same bounded import upgrade as standalone configurations/links.
+  for (const configuration of result.configurations) {
+    const canonicalPresetId = upgradeImportedPresetId(
+      configuration.libraryId,
+      configuration.presetId,
+    );
+    configuration.parameters = upgradeImportedCameraParameters(
+      configuration.libraryId,
+      upgradeImplicitTubeProfile(configuration.libraryId, configuration.parameters),
+      canonicalPresetId,
+    );
+    if (configuration.presetId !== undefined) {
+      if (canonicalPresetId !== configuration.presetId) {
+        const part = parts.find((item) => item.id === configuration.libraryId);
+        if (!part || !selectedMatchingPreset(part, configuration.parameters, canonicalPresetId))
+          throw new Error(
+            `${configuration.name}: the renamed model does not match its parameters.`,
+          );
+        configuration.presetId = canonicalPresetId;
+      }
+    }
+  }
   const errors = validateProject(result, parts);
   if (errors.length) throw new Error(errors.join(' '));
   return result;
@@ -1004,8 +1159,8 @@ export function createDocument(configuration: ProductConfiguration): DesignDocum
   return {
     id: identity('document'),
     configurationId: configuration.id,
-    designation: '',
-    name: '',
+    designation: configuration.designation,
+    name: configuration.name,
     kind: 'drawing',
     revision: configuration.revision,
     format: 'A4',

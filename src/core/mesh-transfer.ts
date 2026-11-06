@@ -7,8 +7,34 @@ import {
   MaterialLoader,
   Mesh,
   type Material,
+  type Object3D,
   type TypedArray,
 } from 'three';
+import type { Parameters } from './types';
+
+export interface ModelComponentMetadata {
+  occurrenceId?: string;
+  libraryId?: string;
+  configuration?: Parameters;
+}
+
+/** Resolve the component owning a surface before flattening its assembly hierarchy. */
+export function modelComponentMetadata(object: Object3D): ModelComponentMetadata {
+  let current: Object3D | null = object;
+  while (current) {
+    const { occurrenceId, libraryId, configuration } = current.userData;
+    current = current.parent;
+    if (typeof occurrenceId !== 'string' && typeof libraryId !== 'string') continue;
+    return {
+      ...(typeof occurrenceId === 'string' ? { occurrenceId } : {}),
+      ...(typeof libraryId === 'string' ? { libraryId } : {}),
+      ...(configuration && typeof configuration === 'object'
+        ? { configuration: { ...configuration } as Parameters }
+        : {}),
+    };
+  }
+  return {};
+}
 
 /** Binary geometry transport: no JSON vertex arrays or main-thread CSG. */
 export interface PackedModel {
@@ -18,7 +44,12 @@ export interface PackedModel {
     groups: { start: number; count: number; materialIndex?: number }[];
   }[];
   materials: ReturnType<Material['toJSON']>[];
-  meshes: { name: string; matrix: number[]; geometry: number; materials: number[] }[];
+  meshes: ({
+    name: string;
+    matrix: number[];
+    geometry: number;
+    materials: number[];
+  } & ModelComponentMetadata)[];
 }
 export function packModel(root: Group): { model: PackedModel; buffers: ArrayBuffer[] } {
   root.updateMatrixWorld(true);
@@ -52,7 +83,13 @@ export function packModel(root: Group): { model: PackedModel; buffers: ArrayBuff
       }
       return id;
     });
-    model.meshes.push({ name: o.name, matrix: o.matrixWorld.toArray(), geometry, materials: ids });
+    model.meshes.push({
+      name: o.name,
+      matrix: o.matrixWorld.toArray(),
+      geometry,
+      materials: ids,
+      ...modelComponentMetadata(o),
+    });
   });
   return { model, buffers: [...buffers] };
 }
@@ -78,6 +115,9 @@ export function unpackModel(model: PackedModel): Group {
       mesh.name = m.name;
       mesh.matrix.fromArray(m.matrix);
       mesh.matrixAutoUpdate = false;
+      if (m.occurrenceId !== undefined) mesh.userData.occurrenceId = m.occurrenceId;
+      if (m.libraryId !== undefined) mesh.userData.libraryId = m.libraryId;
+      if (m.configuration !== undefined) mesh.userData.configuration = { ...m.configuration };
       return mesh;
     }),
   );

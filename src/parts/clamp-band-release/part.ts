@@ -46,7 +46,9 @@ const configured = (p: Parameters, state: string) =>
     };
   });
 const part: PartDefinition = {
+  identityParameters: (p) => ({ ...p, release: 0, separation: 25 }),
   id: 'clamp-band-release',
+  browseLabel: 'Clamp-band separation mechanism',
   product: productData as ProductProfile,
   name: 'Clamp Band Separation Mechanism',
   category: 'VEHICLE STRUCTURES',

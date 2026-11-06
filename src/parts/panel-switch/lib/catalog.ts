@@ -13,6 +13,7 @@ export interface SwitchModel {
   termination: string;
   mounting: string;
   mountDiameter?: number;
+  mountFlatWidth?: number;
   cutoutLength?: number;
   cutoutWidth?: number;
   guarded: boolean;
@@ -28,12 +29,19 @@ export interface SwitchModel {
   height?: number;
   pitch?: [number, number];
   illuminated?: boolean;
+  bermHead?: 'round' | 'square' | 'rectangular';
 }
 export const daierColours = [
   { value: 'red', label: 'Red', color: 0xdc3e35, suffix: 'TR' },
   { value: 'green', label: 'Green', color: 0x43aa67, suffix: 'TG' },
   { value: 'yellow', label: 'Yellow', color: 0xe6b835, suffix: 'TY' },
   { value: 'blue', label: 'Blue', color: 0x408ed7, suffix: 'TBL' },
+];
+/** Photo-derived default and user-requested cap appearances; no supplier order codes. */
+export const ds225CapColours = [
+  { value: 'green', label: 'Green', color: 0x43aa67 },
+  { value: 'red', label: 'Red', color: 0xdc3e35 },
+  { value: 'black', label: 'Black', color: 0x272e35 },
 ];
 export const sourceUrls = {
   toggle: 'https://www.ckswitches.com/media/1394/7000toggle.pdf',
@@ -48,6 +56,16 @@ export const sourceUrls = {
   daierGuard: 'https://www.chinadaier.com/wp-content/uploads/2018/05/SAC-01.pdf',
   daierPair:
     'https://www.daierswitches.com/products/racing-auto-20a-12v-lighted-toggle-switch-with-safety-guard',
+  daierDs225: 'references/daier-ds-225-user-photo.png',
+  daierDs225Drawing: 'references/daier-ds-225-user-drawing.png',
+  daierDs225Product: 'https://www.chinadaier.com/ds-225-lockless-square-push-switch/',
+  bermMomentary:
+    'https://www.mikroelec.com/product/2671/bem-la16-11d-y-g-momentary-push-button-16mm-green-led-220v-5pin',
+  bermRound: 'https://mercatechbolivia.com/?action=catelog_shop&id=5884',
+  bermSquare:
+    'https://linhkienvietnam.vn/nut-nhan-nha-vuong-la16-3-chan-mau-vang-chinh-hang-berm-nut-nhan-chat-luong-cao',
+  bermRectangular:
+    'https://www.fruugo.co.uk/high-quality-bermberme-bem-la16-11ds-j-small-push-button-switch-with-light/p-471646323-986990401',
 };
 const simpleLimits =
   'Installation reconstruction from published dimensions. Internal contacts, thread helices, edge radii, terminal hole details and moulded lettering are omitted. Undimensioned shell details and nut sizes are illustrative. Not original manufacturer CAD.';
@@ -178,6 +196,63 @@ const pushbuttons: SwitchModel[] = [
   height: Number(height),
   bushing: 16,
 }));
+/** Supplier-listed identities; every BERM dimension is a provisional envelope assumption. */
+const bermButtons: SwitchModel[] = (
+  [
+    {
+      code: '11D-Y',
+      head: 'round',
+      behavior: 'Momentary one end',
+      source: sourceUrls.bermMomentary,
+    },
+    { code: '11DS-Y', head: 'round', behavior: 'Latching', source: sourceUrls.bermRound },
+    { code: '11DS-F', head: 'square', behavior: 'Unverified', source: sourceUrls.bermSquare },
+    {
+      code: '11DS-J',
+      head: 'rectangular',
+      behavior: 'Latching',
+      source: sourceUrls.bermRectangular,
+    },
+  ] as const
+).map<SwitchModel>(({ code, head, behavior, source }) => ({
+  id: `berm-bem-la16-${code.toLowerCase()}`,
+  name: `BERM BEM-LA16-${code} · ${head} · ${behavior === 'Latching' ? 'latching' : behavior === 'Momentary one end' ? 'momentary' : 'action unverified'} · provisional`,
+  designation: `BEM-LA16-${code}`,
+  manufacturer: 'BERM',
+  form: 'pushbutton',
+  actuation: 'Pushbutton',
+  behavior,
+  circuit: '1NO + 1NC (supplier-listed)',
+  positions: 2,
+  terminalCount: 5,
+  termination: 'Solder lug',
+  mounting: 'Threaded bushing',
+  guarded: false,
+  poles: 1,
+  illuminated: head !== 'square',
+  bermHead: head,
+  source,
+  sourceName: 'BERM supplier listing — provisional envelope, no manufacturer drawing',
+  evidence:
+    `Supplier-listed BERM BEM-LA16-${code} ${head} pushbutton. ` +
+    (head === 'square'
+      ? 'Lamp execution is unverified: the square source also describes a three-terminal article. '
+      : 'Illuminated execution follows the supplier listing. ') +
+    'The nominal 16 mm mounting class is supplier-listed, without a BERM dimensional drawing. ' +
+    'The preview uses an assumed 18 mm round or square head, or 24 × 18 mm rectangular head; 7 mm front projection, 29 mm rear depth and 6 mm external terminals. These dimensions are not source-verified.',
+  limitations:
+    'Provisional assumed envelope. Not original manufacturer CAD. No BERM manufacturer drawing was found. ' +
+    'All head, barrel, body, nut, washer, terminal and clearance dimensions are assumptions; the modeled 15.8 mm barrel does not verify a production 16 mm cutout or its tolerances. ' +
+    'Five terminal locations, the 2.8 × 0.5 mm blades, 1.5 mm inspection stroke and 2 mm illustrative panel stack require measurement on the purchased item. ' +
+    'The supplier listings do not establish a verified pinout, contact commoning, lamp polarity, voltage, current or ingress rating. ' +
+    'D/DS action and head variants follow supplier descriptions; the square listing mixes self-resetting and self-locking text and describes three terminals, so its action and lamp execution are unverified. ' +
+    'Red, green, yellow and blue are appearance choices, not complete colour/voltage order codes or verified availability for every variant. ' +
+    'Thread helices, moulding details, lamp and internal contacts are omitted. Confirm the complete order designation and actual mounting dimensions before fabrication.',
+  body: [14, 14, 29],
+  bushing: 15.8,
+  bushingHeight: 10,
+  height: 7,
+}));
 const tactiles: SwitchModel[] = [
   ['B3F-1000', 6, 4.3, 3.5, 6.5, 4.5],
   ['B3F-1020', 6, 5, 3.5, 6.5, 4.5],
@@ -209,6 +284,35 @@ const tactiles: SwitchModel[] = [
   leverLength: Number(plunger),
   pitch: [Number(pitchX), Number(pitchY)],
 }));
+const ds225: SwitchModel = {
+  id: 'daier-ds-225',
+  name: 'DAIER DS-225 · Ø12.7 mm · OFF–(ON)',
+  designation: 'DS-225',
+  manufacturer: 'DAIER',
+  form: 'pushbutton',
+  actuation: 'Pushbutton',
+  behavior: 'Momentary one end',
+  circuit: 'SPST-NO',
+  positions: 2,
+  terminalCount: 2,
+  termination: 'Solder lug',
+  mounting: 'Threaded bushing',
+  mountDiameter: 12.7,
+  mountFlatWidth: 11.4,
+  guarded: false,
+  poles: 1,
+  source: sourceUrls.daierDs225,
+  sourceName: 'User-supplied DS-225 photo and mounting drawing',
+  evidence:
+    'The user correction and supplied photo establish a black rectangular upper housing with rounded corners and a round green actuator. The earlier dimensional drawing is retained as a mounting/body reference: 5 mm retaining stack, placed behind the selected panel; 17.5 mm rear body depth, 10 mm upper mounting section and 11.3 mm lower body width; Ø12.7 mm panel opening with 11.4 mm opposing flats; two 6 × 2 × 0.6 mm solder lugs at 6 mm centres, with 2 mm high slots. OFF–(ON) momentary action follows the user identification and manufacturer function table.',
+  limitations:
+    'Installation reconstruction using the user photo for the corrected upper housing shape and the earlier drawing for mounting/body reference. Not original manufacturer CAD. The photo does not dimension the rectangular bezel: modeled 15 × 15 mm, 1 mm corner radius and 3 mm height are illustrative; the earlier drawing’s Ø15 mm applies to its round outline and does not verify either rectangular side. Front projection (modeled 5 mm), actuator diameter (Ø9 mm), crown and 1 mm inspection travel are illustrative. The reference drawing specifies the panel opening, not the mounting barrel diameter or flats: Ø12.6 mm with 11.3 mm flats is an illustrative clearance choice. The inherited body/terminal dimensions require confirmation on the photographed article. Thread pitch, nut profile, 2 mm washer thickness, slot width and position are illustrative. Panel thickness moves the 5 mm washer/nut stack behind the panel while keeping the flange at Z=0; this installation pose does not establish the permitted panel thickness. The upper 2.0 annotation has an ambiguous datum and does not establish the modeled front height or inspection travel. Black housing and green actuator follow the photo; exact RGB values are illustrative appearance, not a verified colour order code or electrical option. The manufacturer public page’s inline drawing depicts another model. Threads, knurling, spring and internal contacts are omitted. No electrical rating or permitted panel thickness is assigned.',
+  body: [11.3, 11.3, 17.5],
+  bushing: 12.6,
+  bushingHeight: 10,
+  height: 5,
+  pitch: [6, 0],
+};
 const apem: SwitchModel = {
   id: 'apem-12146ak',
   name: 'APEM 12146AK · DPDT · ON–ON',
@@ -269,6 +373,8 @@ export const models: SwitchModel[] = [
   ...rockers,
   ...rotaries,
   ...pushbuttons,
+  ...bermButtons,
+  ds225,
   ...tactiles,
   apem,
   {

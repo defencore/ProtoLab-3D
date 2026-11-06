@@ -1,6 +1,33 @@
 # PCB spacers and standoffs
 
-This package selects fixed supplier-qualified catalog items. A round plain spacer and a threaded female/female, male/female or male/male standoff remain distinct products. Equal dimensions never merge identities: `catalogItem` is the source-qualified preset ID and must occur in `catalog.verifiedParameters`.
+This package selects fixed source-qualified catalog items, including explicitly limited user-measured references. A round plain spacer and a threaded female/female, male/female or male/male standoff remain distinct products. Equal dimensions never merge identities: `catalogItem` is the source-qualified preset ID and must occur in `catalog.verifiedParameters`.
+
+## Prototype measurement and organization decision
+
+The `library_organizer` and `library_curator` roles jointly reviewed the November
+2026 prototype feedback. Reuse **Hardware → Fasteners & threads → Spacers & standoffs →
+PCB spacer and standoff**: the existing fixed female/female model and separate
+across-flat/corner-envelope fields cover this component without a new package
+or navigation branch. The existing `coupling-nut` and `hex-nut` definitions use
+regular standard-nut profiles; assigning a DIN execution to this unidentified
+rounded unit would add unsupported identity and corner geometry. The measured unit is
+`pcb-standoff:user-m3x10-af4-7-ac5-2`; it is not the source-qualified
+`pcb-standoff:dremec-114x10` and does not modify that product.
+
+The user reports one unidentified M3 coupling with length 10 mm, across flats
+4.7 mm and maximum corner envelope 5.2 mm. The regular hex diagonal for AF4.7
+would be about 5.427 mm, so a regular hex alone would contradict the measurement.
+The existing intersection of that hex with a D5.2 cylinder preserves both
+observed bounds. Its six analytic clipping arcs are an envelope, not a measured
+corner radius or exact reproduction of an irregular rounded profile.
+
+Manufacturer, SKU, material, finish, edge breaks and tolerances remain unknown.
+M3 is an observed mating designation; pitch stays zero. The displayed continuous
+smooth M3 opening is an installation assumption, excluded from verified source
+dimensions. Internal continuity, available engagement and thread strength require
+the actual unit. No mounting or anti-rotation load rating follows from this model.
+`src/catalog/user-measured-standoff-presets.json` owns this explicit reference;
+the normal offline catalog sync includes it so regeneration cannot discard it.
 
 ## Definition
 

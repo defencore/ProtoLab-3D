@@ -1,0 +1,44 @@
+[
+  {
+    "id": "54",
+    "name": "Prototype tube \u00b7 \u00d854 \u00d7 600 mm",
+    "description": "Author-defined metric prototype example for LDRS preparation; not a verified supplier size.",
+    "parameters": {
+      "outerDiameter": 54,
+      "wall": 1.5,
+      "length": 600
+    }
+  },
+  {
+    "id": "75",
+    "name": "Prototype tube \u00b7 \u00d875 \u00d7 900 mm",
+    "description": "Author-defined metric prototype example for LDRS preparation; not a verified supplier size.",
+    "parameters": {
+      "outerDiameter": 75,
+      "wall": 2,
+      "length": 900
+    }
+  },
+  {
+    "id": "100",
+    "name": "Prototype tube \u00b7 \u00d8100 \u00d7 1200 mm",
+    "description": "Author-defined metric prototype example for LDRS preparation; not a verified supplier size.",
+    "parameters": {
+      "outerDiameter": 100,
+      "wall": 2.5,
+      "length": 1200
+    }
+  },
+  {
+    "id": "inner-tube-29",
+    "name": "Inner tube D29 × 250 mm · prototype",
+    "description": "Authored internal-tube example for the OpenRocket Inner Tube role; actual bore, stock and installation fit require measurement.",
+    "parameters": { "outerDiameter": 29, "wall": 0.75, "length": 250 }
+  },
+  {
+    "id": "tube-fin-40",
+    "name": "Individual tube fin D40 × 100 mm · prototype",
+    "description": "Authored tube-fin example. Add separate project occurrences for a set; no aerodynamic or attachment qualification is implied.",
+    "parameters": { "outerDiameter": 40, "wall": 1, "length": 100 }
+  }
+]

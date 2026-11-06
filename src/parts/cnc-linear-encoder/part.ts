@@ -22,6 +22,7 @@ export function encoderParameters(
 }
 const part: PartDefinition = {
   id: 'cnc-linear-encoder',
+  browseLabel: 'Linear encoders & mounting spars',
   product: profile as ProductProfile,
   name: 'HEIDENHAIN LS 477 linear encoder and MSL 41 spar',
   category: 'ELECTRONICS & VISION',

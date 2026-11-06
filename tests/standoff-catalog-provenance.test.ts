@@ -199,7 +199,10 @@ for case in cases:
         root=roots[0]
         occurrences={obj.OccurrenceId:obj for obj in doc.Objects if hasattr(obj,'OccurrenceId')}
         physical=[obj for obj in doc.Objects if obj.TypeId=='Part::Feature']
-        assert len(occurrences)==4 and len(root.Group)==4
+        assert len(occurrences)==4 and len(root.Group)==1
+        fasteners=root.Group[0]
+        assert fasteners.TypeId=='App::Part' and fasteners.AssemblyGroup==['Fasteners']
+        assert {obj.OccurrenceId for obj in fasteners.Group}==set(occurrences)
         assert len(physical)==5,'supplier internals are geometry, never extra physical BOM identities'
         assert all(not hasattr(obj,'OccurrenceId') and not hasattr(obj,'ConfigurationId') for obj in physical)
         assert len(json.loads(root.ProjectDefinition)['configurations'])==4

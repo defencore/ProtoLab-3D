@@ -10,6 +10,20 @@ export const parameters: ParameterDefinition[] = [
     options: data.map((m) => ({ value: m.id, label: m.name })),
     description: 'Choose a catalog model with fixed dimensions.',
   },
+  {
+    key: 'colour',
+    label: 'Shell colour',
+    type: 'select',
+    group: 'Terminal selection',
+    optionalWhenHidden: true,
+    visibleWhen: () => false,
+    options: [
+      { value: 'red', label: 'Red' },
+      { value: 'black', label: 'Black' },
+    ],
+    description:
+      'Optional spring-clip housing and lever colour; metal components retain their material colours.',
+  },
 ];
 export const catalogSelection: NonNullable<PartDefinition['catalogSelection']> = [];
 export const catalogFilterFields: ParameterDefinition[] = [

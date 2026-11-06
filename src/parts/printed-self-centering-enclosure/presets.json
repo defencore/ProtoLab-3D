@@ -1,0 +1,53 @@
+[
+  {
+    "id": "guided-80",
+    "name": "Taper-guided lid · 80 × 60 mm",
+    "description": "Authored empty enclosure with a 1.2 mm lead-in and 0.25 mm final per-side clearance.",
+    "parameters": {
+      "width": 80,
+      "depth": 60,
+      "height": 28,
+      "wall": 3,
+      "lidThickness": 2.4,
+      "rimDepth": 6,
+      "rimThickness": 3.2,
+      "leadIn": 1.2,
+      "cornerRelief": 0.6,
+      "clearance": 0.25
+    }
+  },
+  {
+    "id": "guided-60",
+    "name": "Taper-guided lid · 60 × 45 mm",
+    "description": "Compact empty enclosure with short relieved pilot and explicitly finite locating play.",
+    "parameters": {
+      "width": 60,
+      "depth": 45,
+      "height": 22,
+      "wall": 2.8,
+      "lidThickness": 2.4,
+      "rimDepth": 5,
+      "rimThickness": 2.4,
+      "leadIn": 1,
+      "cornerRelief": 0.5,
+      "clearance": 0.2
+    }
+  },
+  {
+    "id": "guided-100",
+    "name": "Taper-guided lid · 100 × 70 mm",
+    "description": "Larger empty template with 1.5 mm taper reduction; qualify warp and fit before use.",
+    "parameters": {
+      "width": 100,
+      "depth": 70,
+      "height": 35,
+      "wall": 3.6,
+      "lidThickness": 3,
+      "rimDepth": 7,
+      "rimThickness": 3.6,
+      "leadIn": 1.5,
+      "cornerRelief": 0.7,
+      "clearance": 0.3
+    }
+  }
+]

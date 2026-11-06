@@ -1,0 +1,18 @@
+{
+  "scope": "Preview volume only. Native constructor hashes and the 0.01 mm3 placed-preview regression tolerance remain unchanged.",
+  "evidence": "docs/tr8-regression-review.md",
+  "gears": [
+    {
+      "id": "driven-gear",
+      "historicalPreviewVolumeMm3": 2373.1906916901157,
+      "previewVolumeMm3": 2372.9941216631755,
+      "nativeSourceSha256": "52dd110be0b5aec9355b9463928e4923255d4e44b28b201fe19c496edc087919"
+    },
+    {
+      "id": "motor-pinion",
+      "historicalPreviewVolumeMm3": 2567.3341598389825,
+      "previewVolumeMm3": 2567.136436470941,
+      "nativeSourceSha256": "e2cdabc0697f01dd9db66cd893b949ca7544ee6d53b1dc9bdf06ab1e7955ac99"
+    }
+  ]
+}

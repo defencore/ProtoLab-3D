@@ -1,0 +1,14 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Laser-cut demountable frame with a separate central guide and selectable laminated or one-piece cranks.",
+  "processes": [
+    "assembly"
+  ],
+  "releaseRequirements": [
+    "Assign application loads, material grades, bearing seats, tab and tenon fits.",
+    "Join and qualify the laminated cranks before installing them; inspect weld distortion and pin-window fit.",
+    "Finish and lubricate central guide flats.",
+    "Confirm source-qualified standoff articles and 5 mm engagements."
+  ]
+}

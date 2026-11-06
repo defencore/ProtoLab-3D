@@ -1,3 +1,5 @@
+import { nativeProfilePython, type NativeProfile } from '../../../core/analytic-geometry';
+import { analyticRevolvePython } from '../../../core/hardware/analytic-profile';
 import modeling from '@jscad/modeling';
 import type { Geom3 } from '@jscad/modeling/src/geometries/types';
 import { Float32BufferAttribute, Group, Mesh, MeshStandardMaterial, Vector3 } from 'three';
@@ -6,7 +8,7 @@ import { num } from '../../../core/geometry';
 export type Vec = [number, number, number];
 export type Shape =
   | { kind: 'loft'; rings: Vec[][] }
-  | { kind: 'revolve'; profile: [number, number][] }
+  | { kind: 'revolve'; native?: NativeProfile; profile: [number, number][] }
   | { kind: 'box'; size: Vec; origin: Vec }
   | {
       kind: 'cylinder';
@@ -17,6 +19,7 @@ export type Shape =
     }
   | {
       kind: 'prism';
+      native?: NativeProfile;
       points: [number, number][];
       depth: number;
       origin: number;
@@ -240,11 +243,12 @@ export function component(
 }
 const vector = (v: Vec) => `App.Vector(${v.map(num).join(',')})`;
 export function pythonShape(s: Shape): string {
+  if ('native' in s && s.native) return nativeProfilePython(s.native);
   switch (s.kind) {
     case 'loft':
       return `Part.makeLoft([Part.makePolygon([App.Vector(*p) for p in section + [section[0]]]) for section in ${JSON.stringify(s.rings)}], True, True)`;
     case 'revolve':
-      return `Part.Face(Part.makePolygon([${[...s.profile, s.profile[0]].map(([r, z]) => vector([r, 0, z])).join(',')}])).revolve(App.Vector(0,0,0),App.Vector(0,0,1),360)`;
+      return analyticRevolvePython(s.profile);
     case 'box':
       return `Part.makeBox(${s.size.map(num).join(',')},${vector(s.origin)})`;
     case 'cylinder':

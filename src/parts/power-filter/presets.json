@@ -1,0 +1,38 @@
+[
+  {
+    "id": "iflight-lc-filter-16x6",
+    "name": "iFlight LC Filter · 16 × 6 seller version · reference",
+    "description": "Selected seller version with an adopted 16 × 6 × 3 mm external envelope. The 1 mm PCB thickness, 0.35 mm corners and central 10 × 4 × 2 mm component volume are unverified. Native Z0 is the assumed board underside. No mounting holes, terminal coordinates or wire geometry are invented. Do not substitute the larger current iFlight revision without checking its fit. Confirm the delivered revision, copper-free retaining lands, solder joints, insulation and component height. The model does not qualify filter behavior, electrical ratings or the completed circuit.",
+    "parameters": {
+      "model": "iflight-lc-filter-16x6"
+    },
+    "catalog": {
+      "designation": "iFlight LC Filter / selected 16 × 6 × 3 mm seller version",
+      "manufacturer": "iFlight",
+      "sourceName": "Supplier listing; geometry limitations recorded in GUIDE.md",
+      "sourceUrl": "https://prom.ua/p2956989595-filtr-pitaniya-iflight.html",
+      "verifiedParameters": [
+        "model"
+      ],
+      "productCodes": [
+        "iflight-lc-filter-16x6",
+        "iFlight LC Filter / selected 16 × 6 × 3 mm seller version"
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Preserved provisional installation geometry from SAC-01.",
+        "limitations": "Selected seller version with an adopted 16 × 6 × 3 mm external envelope. The 1 mm PCB thickness, 0.35 mm corners and central 10 × 4 × 2 mm component volume are unverified. Native Z0 is the assumed board underside. No mounting holes, terminal coordinates or wire geometry are invented. Do not substitute the larger current iFlight revision without checking its fit. Confirm the delivered revision, copper-free retaining lands, solder joints, insulation and component height. The model does not qualify filter behavior, electrical ratings or the completed circuit.",
+        "sourceUrl": "https://prom.ua/p2956989595-filtr-pitaniya-iflight.html"
+      },
+      "specifications": [
+        {
+          "label": "Geometry and revision scope",
+          "value": "Selected seller version with an adopted 16 × 6 × 3 mm external envelope. The 1 mm PCB thickness, 0.35 mm corners and central 10 × 4 × 2 mm component volume are unverified. Native Z0 is the assumed board underside. No mounting holes, terminal coordinates or wire geometry are invented. Do not substitute the larger current iFlight revision without checking its fit. Confirm the delivered revision, copper-free retaining lands, solder joints, insulation and component height. The model does not qualify filter behavior, electrical ratings or the completed circuit."
+        }
+      ],
+      "attributes": {
+        "manufacturer": "iFlight"
+      }
+    }
+  }
+]

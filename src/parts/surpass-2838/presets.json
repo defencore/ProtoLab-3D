@@ -1,0 +1,380 @@
+[
+  {
+    "id": "surpass-2838-3200kv",
+    "name": "Surpass Hobby KK 2838 3200KV · Ø28×40 mm · shaft Ø3.175",
+    "description": "Manufacturer-catalog winding with a common reconstructed 28×40 installation body and 3.175×15 shaft. The 3500KV catalog row is retained distinctly from later 3600KV listings.",
+    "parameters": {
+      "model": "surpass-2838-3200kv"
+    },
+    "catalog": {
+      "designation": "Surpass Hobby KK 2838-3200KV",
+      "manufacturer": "Surpass Hobby",
+      "sourceName": "Surpass Hobby 2019 manufacturer catalog and authorized importer dimensions",
+      "sourceUrl": "https://www.ytk-group.co.jp/products/wp-content/uploads/2021/02/Catalog-from-Suprass-Hobby_compressed-1-1.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [
+        "https://surpasshobbyusa.net/2838-3700kv-2-3s-mini-motor-3-175mm-shaft-3-5mm-connector-1-16-1-18/2838-3700/",
+        "https://hobbyking.com/en_us/sp-028380-01-rc-car-motors-3600kv.html"
+      ],
+      "attributes": {
+        "bodyDiameter": 28,
+        "bodyLength": 40,
+        "shaftDiameter": 3.175,
+        "shaftProjection": 15,
+        "kv": 3200
+      },
+      "specifications": [
+        {
+          "label": "Body",
+          "value": "Ø28×40 mm · shared installation reconstruction"
+        },
+        {
+          "label": "Shaft",
+          "value": "Ø3.175×15 mm projection"
+        },
+        {
+          "label": "Mounts",
+          "value": "4×M3; 16/19 mm cross · confirm delivered execution"
+        },
+        {
+          "label": "Speed constant",
+          "value": "3200 rpm/V"
+        },
+        {
+          "label": "Drive",
+          "value": "Sensorless BLDC; external controller"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Manufacturer catalog identifies the winding and 3.175×15 shaft; the authorized importer specifies a common nominal 28×40 body.",
+        "limitations": "No supplier CAD. The 16/19 M3 cross follows an installation reference and requires confirmation on the delivered motor. Cap seams, blind-hole depth and shaft flat are not source-verified. Free leads and motor internals are omitted. The cross-drilled state is a custom operation, not a supplier feature.",
+        "sourceUrl": "https://surpasshobbyusa.net/2838-3700kv-2-3s-mini-motor-3-175mm-shaft-3-5mm-connector-1-16-1-18/2838-3700/"
+      }
+    }
+  },
+  {
+    "id": "surpass-2838-3500kv",
+    "name": "Surpass Hobby KK 2838 3500KV · Ø28×40 mm · shaft Ø3.175",
+    "description": "Manufacturer-catalog winding with a common reconstructed 28×40 installation body and 3.175×15 shaft. The 3500KV catalog row is retained distinctly from later 3600KV listings.",
+    "parameters": {
+      "model": "surpass-2838-3500kv"
+    },
+    "catalog": {
+      "designation": "Surpass Hobby KK 2838-3500KV",
+      "manufacturer": "Surpass Hobby",
+      "sourceName": "Surpass Hobby 2019 manufacturer catalog and authorized importer dimensions",
+      "sourceUrl": "https://www.ytk-group.co.jp/products/wp-content/uploads/2021/02/Catalog-from-Suprass-Hobby_compressed-1-1.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [
+        "https://surpasshobbyusa.net/2838-3700kv-2-3s-mini-motor-3-175mm-shaft-3-5mm-connector-1-16-1-18/2838-3700/",
+        "https://hobbyking.com/en_us/sp-028380-01-rc-car-motors-3600kv.html"
+      ],
+      "attributes": {
+        "bodyDiameter": 28,
+        "bodyLength": 40,
+        "shaftDiameter": 3.175,
+        "shaftProjection": 15,
+        "kv": 3500
+      },
+      "specifications": [
+        {
+          "label": "Body",
+          "value": "Ø28×40 mm · shared installation reconstruction"
+        },
+        {
+          "label": "Shaft",
+          "value": "Ø3.175×15 mm projection"
+        },
+        {
+          "label": "Mounts",
+          "value": "4×M3; 16/19 mm cross · confirm delivered execution"
+        },
+        {
+          "label": "Speed constant",
+          "value": "3500 rpm/V"
+        },
+        {
+          "label": "Drive",
+          "value": "Sensorless BLDC; external controller"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Manufacturer catalog identifies the winding and 3.175×15 shaft; the authorized importer specifies a common nominal 28×40 body.",
+        "limitations": "No supplier CAD. The 16/19 M3 cross follows an installation reference and requires confirmation on the delivered motor. Cap seams, blind-hole depth and shaft flat are not source-verified. Free leads and motor internals are omitted. The cross-drilled state is a custom operation, not a supplier feature.",
+        "sourceUrl": "https://surpasshobbyusa.net/2838-3700kv-2-3s-mini-motor-3-175mm-shaft-3-5mm-connector-1-16-1-18/2838-3700/"
+      }
+    }
+  },
+  {
+    "id": "surpass-2838-3700kv",
+    "name": "Surpass Hobby KK 2838 3700KV · Ø28×40 mm · shaft Ø3.175",
+    "description": "Manufacturer-catalog winding with a common reconstructed 28×40 installation body and 3.175×15 shaft. The 3500KV catalog row is retained distinctly from later 3600KV listings.",
+    "parameters": {
+      "model": "surpass-2838-3700kv"
+    },
+    "catalog": {
+      "designation": "Surpass Hobby KK 2838-3700KV",
+      "manufacturer": "Surpass Hobby",
+      "sourceName": "Surpass Hobby 2019 manufacturer catalog and authorized importer dimensions",
+      "sourceUrl": "https://www.ytk-group.co.jp/products/wp-content/uploads/2021/02/Catalog-from-Suprass-Hobby_compressed-1-1.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [
+        "https://surpasshobbyusa.net/2838-3700kv-2-3s-mini-motor-3-175mm-shaft-3-5mm-connector-1-16-1-18/2838-3700/",
+        "https://hobbyking.com/en_us/sp-028380-01-rc-car-motors-3600kv.html"
+      ],
+      "attributes": {
+        "bodyDiameter": 28,
+        "bodyLength": 40,
+        "shaftDiameter": 3.175,
+        "shaftProjection": 15,
+        "kv": 3700
+      },
+      "specifications": [
+        {
+          "label": "Body",
+          "value": "Ø28×40 mm · shared installation reconstruction"
+        },
+        {
+          "label": "Shaft",
+          "value": "Ø3.175×15 mm projection"
+        },
+        {
+          "label": "Mounts",
+          "value": "4×M3; 16/19 mm cross · confirm delivered execution"
+        },
+        {
+          "label": "Speed constant",
+          "value": "3700 rpm/V"
+        },
+        {
+          "label": "Drive",
+          "value": "Sensorless BLDC; external controller"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Manufacturer catalog identifies the winding and 3.175×15 shaft; the authorized importer specifies a common nominal 28×40 body.",
+        "limitations": "No supplier CAD. The 16/19 M3 cross follows an installation reference and requires confirmation on the delivered motor. Cap seams, blind-hole depth and shaft flat are not source-verified. Free leads and motor internals are omitted. The cross-drilled state is a custom operation, not a supplier feature.",
+        "sourceUrl": "https://surpasshobbyusa.net/2838-3700kv-2-3s-mini-motor-3-175mm-shaft-3-5mm-connector-1-16-1-18/2838-3700/"
+      }
+    }
+  },
+  {
+    "id": "surpass-2838-4400kv",
+    "name": "Surpass Hobby KK 2838 4400KV · Ø28×40 mm · shaft Ø3.175",
+    "description": "Manufacturer-catalog winding with a common reconstructed 28×40 installation body and 3.175×15 shaft. The 3500KV catalog row is retained distinctly from later 3600KV listings.",
+    "parameters": {
+      "model": "surpass-2838-4400kv"
+    },
+    "catalog": {
+      "designation": "Surpass Hobby KK 2838-4400KV",
+      "manufacturer": "Surpass Hobby",
+      "sourceName": "Surpass Hobby 2019 manufacturer catalog and authorized importer dimensions",
+      "sourceUrl": "https://www.ytk-group.co.jp/products/wp-content/uploads/2021/02/Catalog-from-Suprass-Hobby_compressed-1-1.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [
+        "https://surpasshobbyusa.net/2838-3700kv-2-3s-mini-motor-3-175mm-shaft-3-5mm-connector-1-16-1-18/2838-3700/",
+        "https://hobbyking.com/en_us/sp-028380-01-rc-car-motors-3600kv.html"
+      ],
+      "attributes": {
+        "bodyDiameter": 28,
+        "bodyLength": 40,
+        "shaftDiameter": 3.175,
+        "shaftProjection": 15,
+        "kv": 4400
+      },
+      "specifications": [
+        {
+          "label": "Body",
+          "value": "Ø28×40 mm · shared installation reconstruction"
+        },
+        {
+          "label": "Shaft",
+          "value": "Ø3.175×15 mm projection"
+        },
+        {
+          "label": "Mounts",
+          "value": "4×M3; 16/19 mm cross · confirm delivered execution"
+        },
+        {
+          "label": "Speed constant",
+          "value": "4400 rpm/V"
+        },
+        {
+          "label": "Drive",
+          "value": "Sensorless BLDC; external controller"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Manufacturer catalog identifies the winding and 3.175×15 shaft; the authorized importer specifies a common nominal 28×40 body.",
+        "limitations": "No supplier CAD. The 16/19 M3 cross follows an installation reference and requires confirmation on the delivered motor. Cap seams, blind-hole depth and shaft flat are not source-verified. Free leads and motor internals are omitted. The cross-drilled state is a custom operation, not a supplier feature.",
+        "sourceUrl": "https://surpasshobbyusa.net/2838-3700kv-2-3s-mini-motor-3-175mm-shaft-3-5mm-connector-1-16-1-18/2838-3700/"
+      }
+    }
+  },
+  {
+    "id": "surpass-2838-4700kv",
+    "name": "Surpass Hobby KK 2838 4700KV · Ø28×40 mm · shaft Ø3.175",
+    "description": "Manufacturer-catalog winding with a common reconstructed 28×40 installation body and 3.175×15 shaft. The 3500KV catalog row is retained distinctly from later 3600KV listings.",
+    "parameters": {
+      "model": "surpass-2838-4700kv"
+    },
+    "catalog": {
+      "designation": "Surpass Hobby KK 2838-4700KV",
+      "manufacturer": "Surpass Hobby",
+      "sourceName": "Surpass Hobby 2019 manufacturer catalog and authorized importer dimensions",
+      "sourceUrl": "https://www.ytk-group.co.jp/products/wp-content/uploads/2021/02/Catalog-from-Suprass-Hobby_compressed-1-1.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [
+        "https://surpasshobbyusa.net/2838-3700kv-2-3s-mini-motor-3-175mm-shaft-3-5mm-connector-1-16-1-18/2838-3700/",
+        "https://hobbyking.com/en_us/sp-028380-01-rc-car-motors-3600kv.html"
+      ],
+      "attributes": {
+        "bodyDiameter": 28,
+        "bodyLength": 40,
+        "shaftDiameter": 3.175,
+        "shaftProjection": 15,
+        "kv": 4700
+      },
+      "specifications": [
+        {
+          "label": "Body",
+          "value": "Ø28×40 mm · shared installation reconstruction"
+        },
+        {
+          "label": "Shaft",
+          "value": "Ø3.175×15 mm projection"
+        },
+        {
+          "label": "Mounts",
+          "value": "4×M3; 16/19 mm cross · confirm delivered execution"
+        },
+        {
+          "label": "Speed constant",
+          "value": "4700 rpm/V"
+        },
+        {
+          "label": "Drive",
+          "value": "Sensorless BLDC; external controller"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Manufacturer catalog identifies the winding and 3.175×15 shaft; the authorized importer specifies a common nominal 28×40 body.",
+        "limitations": "No supplier CAD. The 16/19 M3 cross follows an installation reference and requires confirmation on the delivered motor. Cap seams, blind-hole depth and shaft flat are not source-verified. Free leads and motor internals are omitted. The cross-drilled state is a custom operation, not a supplier feature.",
+        "sourceUrl": "https://surpasshobbyusa.net/2838-3700kv-2-3s-mini-motor-3-175mm-shaft-3-5mm-connector-1-16-1-18/2838-3700/"
+      }
+    }
+  },
+  {
+    "id": "surpass-2838-5100kv",
+    "name": "Surpass Hobby KK 2838 5100KV · Ø28×40 mm · shaft Ø3.175",
+    "description": "Manufacturer-catalog winding with a common reconstructed 28×40 installation body and 3.175×15 shaft. The 3500KV catalog row is retained distinctly from later 3600KV listings.",
+    "parameters": {
+      "model": "surpass-2838-5100kv"
+    },
+    "catalog": {
+      "designation": "Surpass Hobby KK 2838-5100KV",
+      "manufacturer": "Surpass Hobby",
+      "sourceName": "Surpass Hobby 2019 manufacturer catalog and authorized importer dimensions",
+      "sourceUrl": "https://www.ytk-group.co.jp/products/wp-content/uploads/2021/02/Catalog-from-Suprass-Hobby_compressed-1-1.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [
+        "https://surpasshobbyusa.net/2838-3700kv-2-3s-mini-motor-3-175mm-shaft-3-5mm-connector-1-16-1-18/2838-3700/",
+        "https://hobbyking.com/en_us/sp-028380-01-rc-car-motors-3600kv.html"
+      ],
+      "attributes": {
+        "bodyDiameter": 28,
+        "bodyLength": 40,
+        "shaftDiameter": 3.175,
+        "shaftProjection": 15,
+        "kv": 5100
+      },
+      "specifications": [
+        {
+          "label": "Body",
+          "value": "Ø28×40 mm · shared installation reconstruction"
+        },
+        {
+          "label": "Shaft",
+          "value": "Ø3.175×15 mm projection"
+        },
+        {
+          "label": "Mounts",
+          "value": "4×M3; 16/19 mm cross · confirm delivered execution"
+        },
+        {
+          "label": "Speed constant",
+          "value": "5100 rpm/V"
+        },
+        {
+          "label": "Drive",
+          "value": "Sensorless BLDC; external controller"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Manufacturer catalog identifies the winding and 3.175×15 shaft; the authorized importer specifies a common nominal 28×40 body.",
+        "limitations": "No supplier CAD. The 16/19 M3 cross follows an installation reference and requires confirmation on the delivered motor. Cap seams, blind-hole depth and shaft flat are not source-verified. Free leads and motor internals are omitted. The cross-drilled state is a custom operation, not a supplier feature.",
+        "sourceUrl": "https://surpasshobbyusa.net/2838-3700kv-2-3s-mini-motor-3-175mm-shaft-3-5mm-connector-1-16-1-18/2838-3700/"
+      }
+    }
+  },
+  {
+    "id": "surpass-2838-5700kv",
+    "name": "Surpass Hobby KK 2838 5700KV · Ø28×40 mm · shaft Ø3.175",
+    "description": "Manufacturer-catalog winding with a common reconstructed 28×40 installation body and 3.175×15 shaft. The 3500KV catalog row is retained distinctly from later 3600KV listings.",
+    "parameters": {
+      "model": "surpass-2838-5700kv"
+    },
+    "catalog": {
+      "designation": "Surpass Hobby KK 2838-5700KV",
+      "manufacturer": "Surpass Hobby",
+      "sourceName": "Surpass Hobby 2019 manufacturer catalog and authorized importer dimensions",
+      "sourceUrl": "https://www.ytk-group.co.jp/products/wp-content/uploads/2021/02/Catalog-from-Suprass-Hobby_compressed-1-1.pdf",
+      "verifiedParameters": ["model"],
+      "alternateSourceUrls": [
+        "https://surpasshobbyusa.net/2838-3700kv-2-3s-mini-motor-3-175mm-shaft-3-5mm-connector-1-16-1-18/2838-3700/",
+        "https://hobbyking.com/en_us/sp-028380-01-rc-car-motors-3600kv.html"
+      ],
+      "attributes": {
+        "bodyDiameter": 28,
+        "bodyLength": 40,
+        "shaftDiameter": 3.175,
+        "shaftProjection": 15,
+        "kv": 5700
+      },
+      "specifications": [
+        {
+          "label": "Body",
+          "value": "Ø28×40 mm · shared installation reconstruction"
+        },
+        {
+          "label": "Shaft",
+          "value": "Ø3.175×15 mm projection"
+        },
+        {
+          "label": "Mounts",
+          "value": "4×M3; 16/19 mm cross · confirm delivered execution"
+        },
+        {
+          "label": "Speed constant",
+          "value": "5700 rpm/V"
+        },
+        {
+          "label": "Drive",
+          "value": "Sensorless BLDC; external controller"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Manufacturer catalog identifies the winding and 3.175×15 shaft; the authorized importer specifies a common nominal 28×40 body.",
+        "limitations": "No supplier CAD. The 16/19 M3 cross follows an installation reference and requires confirmation on the delivered motor. Cap seams, blind-hole depth and shaft flat are not source-verified. Free leads and motor internals are omitted. The cross-drilled state is a custom operation, not a supplier feature.",
+        "sourceUrl": "https://surpasshobbyusa.net/2838-3700kv-2-3s-mini-motor-3-175mm-shaft-3-5mm-connector-1-16-1-18/2838-3700/"
+      }
+    }
+  }
+]

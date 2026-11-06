@@ -1,0 +1,46 @@
+[
+  {
+    "id": "m10-10m",
+    "name": "MS5837-30BA M10 depth sensor",
+    "description": "Buy complete: Stainless M10 MS5837-30BA depth sensor,10m variant with adapter board.",
+    "parameters": {
+      "model": "m10-10m"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "Stainless M10 MS5837-30BA depth sensor,10m variant with adapter board",
+      "manufacturer": "Not specified in upstream BOM",
+      "sourceName": "FinsROV original product bill of materials and assembly CAD",
+      "sourceUrl": "https://item.taobao.com/item.htm?_u=320at7545j5b4a&id=605375059849&spm=a1z09.2.0.0.2d472e8d3f5Wg1",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "community-cad",
+        "summary": "Original source solid geometry normalized into a reusable product coordinate frame.",
+        "limitations": "Installation reference. Supplier availability, ratings and delivered mounting interfaces require verification.",
+        "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/Configuration.STEP",
+        "sourceSha256": "d774498f1ee8065552c6abdcef07a414a675946e10e48b54410b6662b7d3e135"
+      },
+      "attributes": {
+        "width": 18,
+        "depth": 16,
+        "height": 37
+      },
+      "specifications": [
+        {
+          "label": "Order designation",
+          "value": "Stainless M10 MS5837-30BA depth sensor,10m variant with adapter board"
+        },
+        {
+          "label": "Coordinates",
+          "value": "Measured cylindrical axis is +Z; rear envelope is Z=0 and axis passes through X=Y=0."
+        },
+        {
+          "label": "Supply",
+          "value": "Purchase complete product"
+        }
+      ]
+    }
+  }
+]

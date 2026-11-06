@@ -1,3 +1,4 @@
+import { nativeProfilePython, type NativeProfile } from '../../../core/analytic-geometry';
 import modeling from '@jscad/modeling';
 import type { Geom3 } from '@jscad/modeling/src/geometries/types';
 import { Group, Mesh, MeshStandardMaterial } from 'three';
@@ -16,6 +17,7 @@ export type Shape =
     }
   | {
       kind: 'prism';
+      native?: NativeProfile;
       points: [number, number][];
       depth: number;
       origin: number;
@@ -171,6 +173,7 @@ export function component(
 }
 const vector = (v: Vec) => `App.Vector(${v.map(num).join(',')})`;
 export function pythonShape(s: Shape): string {
+  if ('native' in s && s.native) return nativeProfilePython(s.native);
   switch (s.kind) {
     case 'rotateY':
       return `_kp_rotate(${pythonShape(s.child)}, ${num(s.angle)})`;

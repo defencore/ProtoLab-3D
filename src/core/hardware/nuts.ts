@@ -72,7 +72,27 @@ export function nutDefinition(
   const build = (p: Parameters) => {
     const g = new Group();
     const allowance = currentGeometryMode() === 'full' ? n(p, 'threadAllowance') : 0;
-    g.add(threadedShellMesh(sections(p), p, n(p, 'bore'), undefined, allowance));
+    const metalSections = sections(p);
+    if (style === 'nyloc') {
+      const b = n(p, 'bodyHeight'),
+        h = n(p, 'height'),
+        s = n(p, 'acrossFlats'),
+        d = n(p, 'bore');
+      // Sew the collar into the metal body. The coplanar section at its root
+      // forms the two exposed shoulder annuli without internal contact caps.
+      for (const z of [b, h])
+        metalSections.push({ z, outer: outline(s * 0.47), bore: (d + s) / 2 });
+    }
+    g.add(
+      threadedShellMesh(
+        metalSections,
+        p,
+        n(p, 'bore'),
+        undefined,
+        allowance,
+        style === 'nyloc' ? n(p, 'bodyHeight') : undefined,
+      ),
+    );
     if (style === 'flange') {
       const a = threadedShellMesh(
         [
@@ -99,11 +119,9 @@ export function nutDefinition(
         h = n(p, 'height'),
         s = n(p, 'acrossFlats'),
         d = n(p, 'bore');
-      const collar = ring(s * 0.47, (d + s) / 4, h - b);
-      collar.position.z = (h + b) / 2;
       const insert = ring((d + s) / 4, d / 2, (h - b) * 0.85, 0x264d71);
       insert.position.z = b + (h - b) * 0.425;
-      g.add(collar, insert);
+      g.add(insert);
     }
     if (style === 'cap') {
       const mesh = turnedMesh(cap(p));
@@ -128,9 +146,18 @@ export function nutDefinition(
       numberParameter('bore', 'Metric thread diameter', 'd', 'Thread', 1, 160),
       ...internalThreadParameters(),
       {
-        ...numberParameter('threadAllowance', 'Full CAD radial inspection allowance', 'a', 'Thread', 0, 0.2, 0.01),
+        ...numberParameter(
+          'threadAllowance',
+          'Full CAD radial inspection allowance',
+          'a',
+          'Thread',
+          0,
+          0.2,
+          0.01,
+        ),
         filterable: false,
-        description: 'Explicit modeled clearance for Full CAD mating inspection. Simple keeps the nominal catalogue envelope. This is not a supplier-certified ISO fit class or a manufacturing/drill instruction; inspect the delivered thread.',
+        description:
+          'Explicit modeled clearance for Full CAD mating inspection. Simple keeps the nominal catalogue envelope. This is not a supplier-certified ISO fit class or a manufacturing/drill instruction; inspect the delivered thread.',
       },
       numberParameter('acrossFlats', 'Across flats', 's', 'Dimensions', 2, 240),
       numberParameter('height', 'Overall height', 'h', 'Dimensions', 0.5, 400),
@@ -145,6 +172,27 @@ export function nutDefinition(
         : []),
     ],
     presetMatchKeys: ['bore', 'acrossFlats', 'height'],
+    catalogIdentityParameters(p, preset) {
+      const catalog = preset.catalog;
+      // This allowance changes an inspection mesh, not the nominal ordered thread.
+      // A source-published allowance takes precedence over that inspection convention.
+      return defaults.threadAllowance === 0 &&
+        preset.parameters.threadAllowance === 0 &&
+        catalog &&
+        !catalog.verifiedParameters.includes('threadAllowance') &&
+        ![
+          catalog.attributes,
+          catalog.attributeOptions,
+          catalog.parameterRanges,
+          catalog.parameterChoices,
+        ].some((values) => Object.hasOwn(values ?? {}, 'threadAllowance')) &&
+        typeof p.threadAllowance === 'number' &&
+        Number.isFinite(p.threadAllowance) &&
+        p.threadAllowance >= 0 &&
+        p.threadAllowance <= 0.2
+        ? { ...p, threadAllowance: 0 }
+        : p;
+    },
     updateParameters(p, changedKey) {
       return changedKey === 'bore' ? { ...p, pitch: nutCoarsePitch(n(p, 'bore')) } : p;
     },
@@ -158,7 +206,8 @@ export function nutDefinition(
         errors.push('Choose a finite CAD radial inspection allowance from 0 to 0.2 mm.');
       if (style === 'nyloc' && d >= s * 0.88)
         errors.push('The nylon collar needs more material around the bore.');
-      if (s <= d + 2 * allowance + 0.2) errors.push('Across flats must leave material around the modeled bore.');
+      if (s <= d + 2 * allowance + 0.2)
+        errors.push('Across flats must leave material around the modeled bore.');
       if ((style === 'cap' || style === 'nyloc') && n(p, 'bodyHeight') >= h)
         errors.push('The collar or cap must rise above the hex body.');
       if (style === 'cap' && h - n(p, 'bodyHeight') <= (s - d) / 4)
@@ -190,7 +239,10 @@ export function nutDefinition(
       ];
       const bore: TurnedProfile = [
         [0, bottom.z],
-        ...profile.map((s): [number, number] => [(s.bore === d ? minor : Math.max(s.bore, modeledDiameter)) / 2, s.z]),
+        ...profile.map((s): [number, number] => [
+          (s.bore === d ? minor : Math.max(s.bore, modeledDiameter)) / 2,
+          s.z,
+        ]),
         [0, top.z],
         [0, bottom.z],
       ];
@@ -229,7 +281,10 @@ export function nutDefinition(
           const slope = (edge.bore - d) / (2 * Math.abs(edge.z - adjacent.z));
           const radius = edge.bore / 2;
           lines.push(
-            `shape = shape.cut(Part.makeCone(${num(radius)},0,${num(radius / slope)},App.Vector(0,0,${num(edge.z)}),App.Vector(0,0,${direction})))`,
+            `nut_mouth = Part.makeCone(${num(radius)},0,${num(radius / slope)},App.Vector(0,0,${num(edge.z)}),App.Vector(0,0,${direction}))`,
+            // The cone is rotationally symmetric; move its periodic seam away from the helix seam.
+            'nut_mouth.rotate(App.Vector(),App.Vector(0,0,1),17)',
+            'shape = shape.cut(nut_mouth)',
           );
         }
       }

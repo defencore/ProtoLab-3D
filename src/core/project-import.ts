@@ -1,4 +1,5 @@
 import { parseProject } from './design-project';
+import { createFileImporter } from './file-import';
 import type { DesignProject } from './product-types';
 import type { PartDefinition } from './types';
 
@@ -14,26 +15,22 @@ export function mergeImportedProject(
 
 /** File reads can finish out of order. Only the latest active read may apply data or errors. */
 export function createProjectImporter() {
-  let revision = 0;
+  const importer = createFileImporter();
   return {
-    cancel() {
-      revision++;
-    },
-    async read(
+    cancel: importer.cancel,
+    read(
       file: Pick<File, 'size' | 'text'>,
       parts: readonly PartDefinition[],
       apply: (project: DesignProject) => void,
       reportError: (error: unknown) => void,
     ): Promise<void> {
-      const request = ++revision;
-      try {
-        if (file.size > 10_000_000) throw new Error('Choose a project smaller than 10 MB.');
-        const text = await file.text();
-        if (request !== revision) return;
-        apply(parseProject(text, parts));
-      } catch (error) {
-        if (request === revision) reportError(error);
-      }
+      return importer.read(file, {
+        maxBytes: 10_000_000,
+        sizeMessage: 'Choose a project smaller than 10 MB.',
+        parse: (text) => parseProject(text, parts),
+        apply,
+        reportError,
+      });
     },
   };
 }

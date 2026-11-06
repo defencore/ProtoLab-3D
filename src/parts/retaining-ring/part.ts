@@ -112,6 +112,11 @@ const part: PartDefinition = {
       errors.push('Increase lug diameter to connect it securely to the ring ends.');
     if (v.earRadius >= v.inner * 0.8) errors.push('Lugs are too large for the ring bore.');
     if (
+      p.mounting === 'internal' &&
+      Math.hypot(v.cx, v.cy) + n(p, 'holeDiameter') / 2 >= v.r - 0.025
+    )
+      errors.push('Internal-ring plier holes must remain inside the free outside diameter.');
+    if (
       !Number.isFinite(n(p, 'boreEnvelope')) ||
       n(p, 'boreEnvelope') < 0 ||
       (n(p, 'boreEnvelope') > 0 &&
@@ -131,9 +136,15 @@ const part: PartDefinition = {
             sign * v.cy + radius * Math.sin((i * Math.PI * 2) / 72),
           ),
       );
-    const outline = previewOutline(
+    let outline = previewOutline(
       unionPolygons([ringOutline(p), circle(v.earRadius, -1), circle(v.earRadius, 1)]),
     );
+    // Internal plier lugs are inward features of the free outer circular envelope.
+    // Round construction pads must not enlarge the specified groove-fit diameter.
+    if (p.mounting === 'internal') {
+      for (const point of outline) if (point.length() > v.r) point.setLength(v.r);
+      outline = previewOutline(outline);
+    }
     const installedRadius = n(p, 'boreEnvelope') / 2;
     if (installedRadius > 0)
       for (const point of outline)
@@ -152,8 +163,12 @@ const part: PartDefinition = {
   python(p) {
     const v = values(p);
     const source = `shape = Part.Face(${pythonWire(ringOutline(p), -v.thickness / 2)}).extrude(App.Vector(0, 0, ${num(v.thickness)}))\nfor sign in [-1, 1]:\n    lug = Part.makeCylinder(${num(v.earRadius)}, ${num(v.thickness)}, App.Vector(${num(v.cx)}, sign * ${num(v.cy)}, ${num(-v.thickness / 2)}))\n    shape = shape.fuse(lug)\n    hole = Part.makeCylinder(${num(n(p, 'holeDiameter') / 2)}, ${num(v.thickness + 2)}, App.Vector(${num(v.cx)}, sign * ${num(v.cy)}, ${num(-v.thickness / 2 - 1)}))\n    shape = shape.cut(hole)\nshape = shape.removeSplitter()`;
-    if (n(p, 'boreEnvelope') === 0) return source;
-    return `${source}\nshape=shape.cut(Part.makeCylinder(${num(n(p, 'boreEnvelope') / 2)},${num(v.thickness + 2)},App.Vector(0,0,${num(-v.thickness / 2 - 1)})))\ncomponent_metadata=[${JSON.stringify({ InstalledBoreEnvelope: `Illustrative installed spring-ring bore ${n(p, 'boreEnvelope')} mm through body and round lug contours; no machining of the purchased DIN ring is prescribed. Source free-ring dimensions and elastic retention require supplier drawing/physical fit approval.` })}]`;
+    const boundedSource =
+      p.mounting === 'internal'
+        ? `${source}\nshape=shape.common(Part.makeCylinder(${num(v.r)},${num(v.thickness)},App.Vector(0,0,${num(-v.thickness / 2)}))).removeSplitter()`
+        : source;
+    if (n(p, 'boreEnvelope') === 0) return boundedSource;
+    return `${boundedSource}\nshape=shape.cut(Part.makeCylinder(${num(n(p, 'boreEnvelope') / 2)},${num(v.thickness + 2)},App.Vector(0,0,${num(-v.thickness / 2 - 1)})))\ncomponent_metadata=[${JSON.stringify({ InstalledBoreEnvelope: `Illustrative installed spring-ring bore ${n(p, 'boreEnvelope')} mm through body and round lug contours; no machining of the purchased DIN ring is prescribed. Source free-ring dimensions and elastic retention require supplier drawing/physical fit approval.` })}]`;
   },
   dimensions(p) {
     return modelBounds(part.buildGeometry(p, 'default'));

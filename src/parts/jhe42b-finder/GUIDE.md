@@ -1,0 +1,53 @@
+# JHEMCU JHE42B Finder
+
+`jhe42b-finder:jhe42b` represents one complete standard JHEMCU finder, including its visible battery and wrapping. The detailed exterior follows all seven manufacturer photographs and the user's front photograph: black PCB, closed-top cylindrical buzzer with a rectangular side outlet, white/yellow LED, three-pin socket, separate cancel switch, silver pouch battery, leads and translucent shrink-wrap. These visualization solids remain one purchased unit. Loose cable, mating plug and mounting hardware are separate items.
+
+## Source identity and dimensional basis
+
+The [manufacturer product page](https://www.jhemcu.com/e_productshow/?54-JHEMCU-JHE42B-Finder-BB-Ring-110dB-Buzzer-Alarm-with-LED-Light-Support-BF-CF-Flight-54.html) identifies **JHE42B**, product **202378133636**, and states **23 × 17 × 17 mm** and **7.4 g**. The [official size photograph](https://jhemcu.com/pic/other/2023-07-08-13-38-338.jpg) instead labels **25 × 17 × 17 mm**. The nominal library model retains its existing **23 × 17 × 17 mm** web-page basis and datum. The length conflict remains unresolved; it does not establish another supplier execution, a verified 23 mm mounting envelope or permission to silently resize a purchased device.
+
+No manufacturer CAD or dimensioned subfeature drawing was linked or found in the reviewed official page and domain search. Visible features are reconstructed from photographs with explicitly estimated dimensions. Manufacturer identity and published nominal data are separate from geometric fidelity. Detailed evidence, feature estimates and image hashes are in `lib/evidence.json`; downloaded review photographs and their checksum manifest are under ignored `test-results/jhe42b-detail/evidence/`.
+
+The primary photograph set is [three-quarter exterior](https://jhemcu.com/pic/other/2023-07-08-13-38-089.jpg), [sound-outlet end](https://jhemcu.com/pic/other/2023-07-08-13-38-215.jpg), [size](https://jhemcu.com/pic/other/2023-07-08-13-38-338.jpg), [wiring and cancel switch](https://jhemcu.com/pic/other/2023-07-08-13-38-481.jpg), [module and cable](https://jhemcu.com/pic/other/2023-07-08-13-38-597.jpg), [mass](https://jhemcu.com/pic/other/2023-07-08-13-39-113.jpg) and [connection schematic](https://jhemcu.com/pic/other/2023-07-08-13-39-221.jpg). The supplied front photograph corroborates the component layout without providing dimensions or a product revision. Photo copyright is not a manufacturer-CAD license or a claim that CAD was supplied.
+
+## Visible exterior and local coordinates
+
+The nominal model uses X=-11.5..11.5, Y=-8.5..8.5 and Z=0..17 mm. Its positive-X end carries the socket and low side-actuated cancel switch. The large buzzer sits toward negative X; its top is closed and the rectangular sound opening faces negative X. The square white/yellow component is the LED, not the cancel button. The battery lies below the PCB. This orientation is inferred from photographs rather than a dimensioned coordinate drawing.
+
+| Visible feature    | Adopted photo estimate                                         | Source limitation                                                                                                      |
+| ------------------ | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| PCB                | 22 × 16 × 0.8 mm; underside Z7.4                               | Board thickness, corner radii and component footprints are unmeasured.                                                 |
+| Silver pouch       | 21 × 15 × 6.55 mm; Z0.25..6.8                                  | External appearance only; chemistry, capacity and internal structure are unspecified.                                  |
+| Intermediate layer | 0.55 mm; Z6.85..7.4                                             | Appearance-based separation, without a specified foam or adhesive.                                                     |
+| Buzzer can         | Ø13.2 mm; centre X-4.3/Y0; Z8.2..16.85                         | Closed external cap and side hood; no diaphragm, winding or acoustic internals.                                        |
+| Side sound recess  | Approximately 4.2 × 4.4 mm                                     | Visible recess only; the internal passage is unknown.                                                                  |
+| LED                | 3 × 3 mm white body, Ø2.3 yellow lens; centre X4.7/Y-2         | Appearance estimate.                                                                                                   |
+| Three-pin socket   | X7.3..11.2, Y1..6.8, Z8.2..11.4                                | The vendor lists a three-pin 1.0 mm cable; body and contact details are estimated and no connector family is asserted. |
+| Cancel switch      | X8.1..10.8, Y-6.6..-2.8, Z8.2..10.6; positive-X plunger        | Separate low switch beside the socket; its actuation travel is unmeasured.                                             |
+| Clear wrapping     | Nominal 0.12 mm open-ended sleeve within the selected envelope | Material, thickness, folds and conformance are estimates.                                                              |
+
+The battery lead loops, yellow terminal tape, small SMD bodies and markings follow visible appearance. They do not define an electrical circuit, hidden internals or real package order codes. Native CAD uses analytic lines, arcs, cylinders and smooth section geometry independently of preview tessellation. Transparent preview material makes the visible components readable; it does not establish an optical or material property of the supplied sleeve.
+
+## Identity, controls and mounting scope
+
+The fixed **Model** selector and canonical `default` exterior state are preserved. Detailed exterior geometry does not create an exploded state, a size execution, editable purchased dimensions or additional procurement rows. The original family ID, standard preset ID and supplier designation remain unchanged.
+
+Keep negative X clear for the sound outlet, positive X clear for plug withdrawal and the cancel switch, and positive Z clear for LED visibility. Actual connector insertion, switch travel, cable bends and safe contact lands still require a delivered sample. No mounting holes are documented or added. Do not infer permissible clamping loads from the wrapping, pouch or cosmetic support surfaces. Detailed appearance is not an installation-certified drawing or a flight-load qualification.
+
+The [JHE42B-S](https://jhemcu.com/e_productshow/?55-JHEMCU-JHE42B-S-Finder-BB-Ring-100dB-Buzzer-Alarm-with-LED-Light-Support-BF-CF-Flight-55.html=) and [JHE20B](https://jhemcu.com/e_productshow/?53-JHEMCU-JHE20B-Finder-BB-Ring-100dB-Buzzer-Alarm-with-LED-Light-Support-BF-CF-INAV-Flight-53.html=) are different products. Their dimensions, ratings and identity are not borrowed for this model.
+
+## Detailed exterior verification
+
+The generated standard-model macro was independently checked in FreeCAD 1.1.4: all 35 visual objects contain valid, closed, positive-volume shapes, totaling 43 solids and 472 faces. Cylinders and lead tori retain analytic surfaces; the wrapping uses intentional smooth spline surfaces. Native bounds match the selected 23 × 17 × 17 mm nominal envelope within 0.000001 mm. No pairwise intersection exceeds 0.000001 mm³. Per-object preview/native differences are below 0.0038 mm in bounds and 0.29% in volume.
+
+The STEP round trip retained all 43 solids with less than 0.000003 mm³ volume drift. FCStd retained the visual-object labels and purchased-unit root. Sleeve opacity is 0.22 in the preview and the native material assignment; persistence of that appearance through the FreeCAD GUI was not verified. The report is `test-results/jhe42b-detail/independent-native-report.json`; the checked macro SHA-256 is `6be75f894d7a9ac7bbd34fd6736e5070384a649b754c9aed681fe3e3e4ad895a`. These checks establish model consistency and export integrity, not supplier qualification of photo-estimated dimensions. Package validation covers both presets; 23 focused model, source, identity and navigation tests pass.
+
+## Current project reference, 26 × 17 × 15 mm
+
+`jhe42b-finder:jhe42b-project-reference-26x17x15` reproduces the latest source project's fixed occupied box, component 234 / procurement position 304. `current_platform_access_geometry.py` retains the user-given 26 × 17 × 15 mm size; `search_platform_current_registry.py` explicitly assigns JHE42B and states that the size came from the user. The current source local box occupies X=-13..13, Y=-8.5..8.5 and Z=0..15 mm. Its historical platform_access_current frame is translation [-21, -12, 149.45] mm with 90° rotation about +Z. The latest assembly_current frame is [-21, -12, 158] mm with the same rotation. A FreeCAD Boolean comparison proves exact shape equivalence after +8.55 mm Z translation; the mounting layout contract governs installation. Exact file hashes and the source package are recorded in `lib/project-source-provenance.json`.
+
+This selection has explicit engineering-reference supply. It does not create another purchased JHEMCU execution or resize the standard product. The `jhe42b` identity and `jhe42bInterface` retain the web-page's nominal 23 × 17 × 17 mm basis; the standard exterior is now detailed as described above, with the official 25 mm photo conflict still unresolved. Numeric manufacturer dimension, mass, alarm and voltage attributes are not borrowed by the user-project reference. `jhe42bProjectReferenceInterface` exposes only its fixed box and source placement; no connector/control orientation or safe clamping lands are established. Only the default exterior state is implemented.
+
+The source component's native label and registry say JHE42B, but its retained PartNumber property still says JHEMCU JHE20B, 20 × 10 mm base and 16 mm maximum height. That stale property is recorded as a conflict. Selection follows the latest script, geometry, label and procurement registry; the independent `recovery-buzzer:jhe20b` definition remains unchanged. Confirm the delivered model and the reason for the dimensional conflict before defining the close-fitting seat, retention, control access or procurement execution.
+
+The unchanged current-project reference has earlier native six-face-box, source comparison and STEP/FCStd identity checks under ignored `test-results/search-platform-components/`. Those results apply to that reference box, not to the newly detailed standard exterior or its photo-estimated features.

@@ -1,0 +1,23 @@
+import {createHash} from 'node:crypto';
+import {mkdirSync,readFileSync,readdirSync,writeFileSync} from 'node:fs';
+import {withGeometryMode} from '../src/core/geometry-mode.ts';
+import {pieces} from '../src/parts/tr8-quad-geared-rocker-actuator/lib/model.ts';
+import {defaults} from '../src/parts/tr8-quad-geared-rocker-actuator/configurator.ts';
+import {nativePython} from '../src/parts/tr8-quad-geared-rocker-actuator/lib/native.ts';
+import {coverValues,coverMountStations} from '../src/parts/tr8-quad-geared-rocker-actuator/lib/plastic-cover.ts';
+const out=process.argv[2]??'test-results/tr8-quad-geared-rocker-covers-final';mkdirSync(out,{recursive:true});
+const previous=JSON.parse(readFileSync(out+'/capture.json','utf8'));
+const hash=(s:string|Buffer)=>createHash('sha256').update(s).digest('hex');
+const root='src/parts/tr8-quad-geared-rocker-actuator';
+const files=readdirSync(root,{recursive:true}).filter((p):p is string=>typeof p==='string'&&/\.(ts|json)$/.test(p)).map(p=>root+'/'+p);
+const result:any={scope:'Refresh PETG native solids only; require exact unchanged geometry keys for all other111parts.',sources:Object.fromEntries(files.map(p=>[p,hash(readFileSync(p))])),preserved:previous.preserved,previousCaptureSha256:hash(readFileSync(out+'/capture.json')),poses:[]};
+for(const [p,h]of Object.entries(previous.preserved))if(hash(readFileSync(p))!==h)throw Error('Approved source changed:'+p);
+for(const motor of ['surpass-2838-3700kv','surpass-2845-3100kv'])withGeometryMode('full',()=>{
+ const p={...defaults,motor};const rows=pieces(p,'assembled');
+ const occurrences=rows.map(piece=>({id:piece.component.id,name:piece.component.name,libraryId:piece.component.libraryId,requireSingleSolid:!!piece.requireSingleSolid,placement:piece.component.placement,parameters:piece.component.parameters,geometryKey:hash(JSON.stringify({libraryId:piece.component.libraryId,state:piece.component.state,parameters:piece.component.parameters,placement:piece.component.placement,angle:piece.angle,position:piece.position,z:piece.z}))}));
+ const old=previous.poses.find((r:any)=>r.motor===motor&&r.angle===0);const changed=occurrences.filter(x=>x.geometryKey!==old.occurrences.find((o:any)=>o.id===x.id).geometryKey).map(x=>x.id);
+ if(changed.some(x=>!x.startsWith('cover-section-')))throw Error('Unexpected geometry change:'+changed.join(','));
+ const covers=rows.filter(piece=>piece.component.id.startsWith('cover-section-'));
+ result.poses.push({motor,angle:0,values:coverValues(p),mounts:coverMountStations(p),changed,source:nativePython(covers),occurrences,unchangedNonPlasticParts:111});
+});
+writeFileSync(out+'/release-capture.json',JSON.stringify(result));console.log(JSON.stringify({out,changed:result.poses.map((p:any)=>[p.motor,p.changed])}));

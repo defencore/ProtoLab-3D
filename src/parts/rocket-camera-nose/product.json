@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Removable camera and computer cassette in a camera-specific nose housing.",
+  "processes": ["assembly"],
+  "releaseRequirements": [
+    "Measure the actual tube, camera, lens and board hardware, then release toleranced component drawings.",
+    "Specify materials, retention, power wiring, CSI and PCIe cables, insulation and cooling.",
+    "Qualify structural loads, optical clearance, service access and actual hardware operation."
+  ]
+}

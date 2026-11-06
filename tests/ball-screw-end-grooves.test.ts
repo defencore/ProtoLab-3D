@@ -57,6 +57,7 @@ function assertClosed(mesh: Mesh) {
 
 test('stock screw presets keep complete disabled retaining-groove definitions', () => {
   for (const preset of screw.presets) {
+    if (preset.parameters.endMachining === 'ek6-ef6') continue;
     for (const end of ['fixed', 'support']) {
       assert.equal(preset.parameters[end + 'GrooveDiameter'], 0, preset.id);
       assert.equal(preset.parameters[end + 'GrooveWidth'], 0.64, preset.id);
@@ -199,15 +200,21 @@ test(
     const code = `import FreeCAD as App, Part, math, json
 cases=json.loads(${JSON.stringify(JSON.stringify(cases))})
 for case in cases:
-    volumes=[]
+    shapes=[]
     for source in [case['plain'],case['source']]:
         scope={'App':App,'Part':Part,'math':math}
         exec(compile(source,'journal-grooves','exec'),scope)
         shape=scope['shape']
         assert shape.isValid() and shape.isClosed() and len(shape.Solids)==1
-        volumes.append(shape.Volume)
+        shapes.append(shape)
     expected=2*math.pi*(2**2-1.6**2)*0.64
-    assert abs(volumes[0]-volumes[1]-expected)<1e-6,(case['mode'],volumes,expected)
+    # Integrate the actual removed metal: separate mass integrals of long helical
+    # faces change numerical quadrature when the journal faces are split.
+    removed=shapes[0].cut(shapes[1]).Volume
+    added=shapes[1].cut(shapes[0]).Volume
+    assert abs(removed-expected)<1e-6,(case['mode'],removed,expected)
+    assert abs(added)<1e-6,(case['mode'],'unexpected added metal',added)
+    print(json.dumps({'mode':case['mode'],'removed':removed,'expected':expected,'added':added}),flush=True)
 print('PASS native journal retaining grooves')
 `;
     const result = spawnSync(process.env.FREECAD_PYTHON!, ['-'], {

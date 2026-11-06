@@ -48,9 +48,7 @@
       "height": 10
     },
     "scope": "PDF revision: 50 × 17 × 10 mm, selectable 5/6/7.4 V, 15 A peak. Not the older 48 × 27 × 9 mm version. Leads, jumper and ferrite excluded.",
-    "references": [
-      "ubec5.pdf"
-    ],
+    "references": ["ubec5.pdf"],
     "height": 10
   },
   {
@@ -76,9 +74,36 @@
       "height": 16.2
     },
     "scope": "Car PDF revision: 45 × 20 × 16.2 mm, selectable 6/7.4/8.4 V, 15 A peak. Not the 43.1 × 32.3 mm UBEC. Leads, switch and jumper excluded.",
-    "references": [
-      "ubec10.pdf"
-    ],
+    "references": ["ubec10.pdf"],
     "height": 16.2
+  },
+  {
+    "id": "bec12s-pro",
+    "name": "BEC12S-PRO TPS54560 · installation reference",
+    "manufacturer": "Unspecified",
+    "width": 40,
+    "length": 20,
+    "board": 1.6,
+    "cornerRadius": 0.6,
+    "color": 2698289,
+    "construction": "Bare PCB",
+    "source": "https://prom.ua/p3103438088-ponizhayuschij-preobrazovatel-bec12s.html",
+    "holes": [],
+    "details": [
+      {
+        "kind": "chip",
+        "name": "Representative component volume; unverified",
+        "x": 0,
+        "y": 0,
+        "z": 1.6,
+        "w": 26,
+        "l": 14,
+        "h": 3.9,
+        "color": 2698289
+      }
+    ],
+    "attributes": {},
+    "scope": "The selected seller identifies BEC12S-PRO / TPS54X60. Adopted 40 × 20 × 5.5 mm envelope matches the photographed supplier family but is unverified for this SKU. PCB thickness 1.6 mm, corner radius 0.6 mm and central 26 × 14 × 3.9 mm component volume are assumptions. No mounting holes or connector coordinates are invented. The SAC-01 uses separate physical boards selected to 12 V and 5 V; output settings do not change this mechanical model. Confirm the delivered board, jumper settings, ratings, underside joints, thermal behavior and harness.",
+    "references": []
   }
 ]

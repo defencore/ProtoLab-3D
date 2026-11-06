@@ -1,0 +1,4 @@
+[
+  {"id":"faulhaber-6855-lightened","name":"TR8×8(P2) · FAULHABER 2250S024BX4 6855 · 4 outputs · Ø56 laser steel twin-pin · lightened discs · ±20°","description":"Four 24 V direct drives with original supplier CAD; compact twin-pin TR8 linkages and Prom SMB bearings.","parameters":{"discPattern":"lightened","angleA":0,"angleB":0,"angleC":0,"angleD":0}},
+  {"id":"faulhaber-6855-solid","name":"TR8×8(P2) · FAULHABER 2250S024BX4 6855 · 4 outputs · Ø56 laser steel twin-pin · solid discs · ±20°","description":"Same installation and motor mounts with solid disc webs and a central Ø5 passage.","parameters":{"discPattern":"solid","angleA":0,"angleB":0,"angleC":0,"angleD":0}}
+]

@@ -1,0 +1,137 @@
+[
+  {
+    "id": "structural-90-86",
+    "name": "Centered camera / common PETG\u2013TPU cage \u00b7 90 / 86 mm \u00b7 240 mm overall",
+    "description": "Original 19 mm camera cartridge for the common centered single-camera case and cage, with a fitted TPU shroud and positive rear air-load stop. Bench-wired Pi and UPS-side PCIe/NVMe retain their short-cable placements; the protective window and tip bayonet are omitted.",
+    "parameters": {
+      "packaging": "structural-ogive",
+      "tubeOD": 90,
+      "tubeID": 86,
+      "noseLength": 140,
+      "shoulderLength": 98,
+      "wall": 3,
+      "shoulderClearance": 0.2,
+      "cameraSetup": "camera-19"
+    }
+  },
+  {
+    "id": "dual-90-86",
+    "name": "Dual forward cameras \u00b7 OV9281-110 + 19 mm CSI \u00b7 90 / 86 mm \u00b7 240 mm",
+    "description": "Printed PETG load frame, removable optical deck, fitted TPU camera supports and separate 100 mm camera leads. Broader optical crown; prototype fits require verification.",
+    "parameters": {
+      "packaging": "structural-ogive",
+      "tubeOD": 90,
+      "tubeID": 86,
+      "noseLength": 140,
+      "shoulderLength": 94,
+      "wall": 2.4,
+      "shoulderClearance": 0.4,
+      "cameraSetup": "dual"
+    }
+  },
+  {
+    "id": "ov9281-90-86",
+    "name": "Interchangeable OV9281-110 / common PETG\u2013TPU cage \u00b7 90 / 86 mm \u00b7 240 mm overall",
+    "description": "Waveshare 21653 cartridge for the common rounded single-camera case and cage. Uses a fitted TPU shroud, positive rear air-load stop, a separate 150 mm Pi 5 compatible 22-to-15-pin CSI lead and the unchanged Pi/UPS/PCIe arrangement. Geometric assembly and print checks pass; confirm actual cable fit, cooling and printed strength on the prototype.",
+    "parameters": {
+      "packaging": "structural-ogive",
+      "tubeOD": 90,
+      "tubeID": 86,
+      "noseLength": 140,
+      "shoulderLength": 98,
+      "wall": 3,
+      "shoulderClearance": 0.2,
+      "cameraSetup": "ov9281"
+    }
+  },
+  {
+    "id": "tpu-90-86",
+    "name": "One-piece TPU camera cassette \u00b7 tube 90 / 86 mm",
+    "description": "Short 75 mm lens nose, 100 mm TPU structural insert, 17 mm Pi/NVMe spacing and integral board clips/camera cage. Prototype flex assembly; no stiffness or flight qualification.",
+    "parameters": {
+      "packaging": "tpu-compact",
+      "tubeOD": 90,
+      "tubeID": 86,
+      "noseLength": 75,
+      "shoulderLength": 100,
+      "wall": 1.2,
+      "shoulderClearance": 0.4,
+      "cameraSetup": "camera-19"
+    }
+  },
+  {
+    "id": "tube-90-86",
+    "name": "Camera cassette \u00b7 tube 90 / 86 mm",
+    "description": "Tandem Pi 5 and three-cell UPS cassette; 240 mm insertion shoulder. Prototype mounting dimensions.",
+    "parameters": {
+      "tubeOD": 90,
+      "tubeID": 86,
+      "noseLength": 300,
+      "shoulderLength": 240,
+      "wall": 2.2,
+      "shoulderClearance": 0.4,
+      "packaging": "tandem",
+      "cameraSetup": "camera-19"
+    }
+  },
+  {
+    "id": "tube-110-106",
+    "name": "Camera cassette \u00b7 tube 110 / 106 mm",
+    "description": "Same removable equipment layout within a larger measured tube interface. Prototype mounting dimensions.",
+    "parameters": {
+      "tubeOD": 110,
+      "tubeID": 106,
+      "noseLength": 300,
+      "shoulderLength": 240,
+      "wall": 2.2,
+      "shoulderClearance": 0.4,
+      "packaging": "tandem",
+      "cameraSetup": "camera-19"
+    }
+  },
+  {
+    "id": "tube-130-126",
+    "name": "Camera cassette \u00b7 tube 130 / 126 mm",
+    "description": "Same removable equipment layout within a larger measured tube interface. Prototype mounting dimensions.",
+    "parameters": {
+      "tubeOD": 130,
+      "tubeID": 126,
+      "noseLength": 300,
+      "shoulderLength": 240,
+      "wall": 2.2,
+      "shoulderClearance": 0.4,
+      "packaging": "tandem",
+      "cameraSetup": "camera-19"
+    }
+  },
+  {
+    "id": "compact-110-106",
+    "name": "Sandwich cassette \u00b7 tube 110 / 106 mm",
+    "description": "Forward compact computer/UPS sandwich with a 110 mm insertion shoulder. Measured hardware and thermal qualification remain required.",
+    "parameters": {
+      "packaging": "sandwich",
+      "tubeOD": 110,
+      "tubeID": 106,
+      "noseLength": 300,
+      "shoulderLength": 110,
+      "wall": 2.2,
+      "shoulderClearance": 0.4,
+      "cameraSetup": "camera-19"
+    }
+  },
+  {
+    "id": "compact-130-126",
+    "name": "Sandwich cassette \u00b7 tube 130 / 126 mm",
+    "description": "Forward compact computer/UPS sandwich with a 110 mm insertion shoulder. Measured hardware and thermal qualification remain required.",
+    "parameters": {
+      "packaging": "sandwich",
+      "tubeOD": 130,
+      "tubeID": 126,
+      "noseLength": 300,
+      "shoulderLength": 110,
+      "wall": 2.2,
+      "shoulderClearance": 0.4,
+      "cameraSetup": "camera-19"
+    }
+  }
+]

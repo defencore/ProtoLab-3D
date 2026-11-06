@@ -119,27 +119,36 @@ test('curated motion product identities retain audited supplier data across elev
       // Display names are normalized by the library; supplier identity and dimensions stay exact.
       const { name: auditedName, ...auditedData } = audited;
       const { name: registeredName, ...registeredData } = registered;
+      // Original listing titles are independently checked against source snapshots.
+      const { name: supplierTitle, ...registeredCatalog } = registeredData.catalog!;
+      if (supplierTitle) assert.ok(supplierTitle.trim());
       const identity = (value: string) =>
-        value.toLowerCase().replace(/[×\u0445*]/g, 'x').replace(/\s+/g, '');
+        value
+          .toLowerCase()
+          .replace(/[×\u0445*]/g, 'x')
+          .replace(/\s+/g, '');
       assert.ok(
         identity(registeredName).includes(identity(audited.catalog!.designation)),
         auditedName,
       );
-      assert.deepEqual(registeredData, {
-        ...auditedData,
-        id: preset.id,
-        catalog:
-          part.id === 'pillow-block-bearing'
-            ? {
-                ...audited.catalog,
-                verifiedParameters: [...audited.catalog!.verifiedParameters, 'housingStyle'],
-              }
-            : audited.catalog,
-        parameters:
-          part.id === 'pillow-block-bearing'
-            ? { ...audited.parameters, housingStyle: 'ucp', insertOffset: 0 }
-            : audited.parameters,
-      });
+      assert.deepEqual(
+        { ...registeredData, catalog: registeredCatalog },
+        {
+          ...auditedData,
+          id: preset.id,
+          catalog:
+            part.id === 'pillow-block-bearing'
+              ? {
+                  ...audited.catalog,
+                  verifiedParameters: [...audited.catalog!.verifiedParameters, 'housingStyle'],
+                }
+              : audited.catalog,
+          parameters:
+            part.id === 'pillow-block-bearing'
+              ? { ...audited.parameters, housingStyle: 'ucp', insertOffset: 0 }
+              : audited.parameters,
+        },
+      );
       for (const key of part.presetMatchKeys ?? [])
         assert.ok(
           registered.catalog!.verifiedParameters.includes(key),

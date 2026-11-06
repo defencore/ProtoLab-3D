@@ -82,12 +82,14 @@ export const bom = [
   },
   {
     name: 'E3Z-LL81 reflective BGS sensor',
+    libraryEntryId: 'machine-measurement:e3z-ll81',
     quantity: 1,
     role: 'Carriage-mounted nose scan and home-position presence, PNP 12–24 V; qualify surface response and confirm supply',
     source: 7,
   },
   {
     name: '2VD0102 G1/4 one-way flow control',
+    libraryEntryId: 'pneumatic-valve:2vd0102-g1-4',
     quantity: 2,
     role: 'Separate lift/lower meter-out control; check supplied direction and banjo assembly',
     source: 8,

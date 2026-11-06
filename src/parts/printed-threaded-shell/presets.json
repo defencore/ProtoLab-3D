@@ -1,0 +1,70 @@
+[
+  {
+    "id": "body-36-p3",
+    "name": "36 mm · 3 mm lead printed can",
+    "description": "Authored open can with a coarse helical neck and closed floor. Not a catalog product.",
+    "parameters": {
+      "model": "body",
+      "diameter": 36,
+      "pitch": 3,
+      "height": 32,
+      "threadLength": 9,
+      "wall": 3,
+      "floor": 3,
+      "roof": 3,
+      "roofGap": 0.5,
+      "clearance": 0.25
+    }
+  },
+  {
+    "id": "cap-36-p3",
+    "name": "36 mm · 3 mm lead printed cap",
+    "description": "Authored matching closed cap with a 0.25 mm female radial allowance.",
+    "parameters": {
+      "model": "cap",
+      "diameter": 36,
+      "pitch": 3,
+      "height": 32,
+      "threadLength": 9,
+      "wall": 3,
+      "floor": 3,
+      "roof": 3,
+      "roofGap": 0.5,
+      "clearance": 0.25
+    }
+  },
+  {
+    "id": "body-48-p4",
+    "name": "48 mm · 4 mm lead printed can",
+    "description": "Larger authored can with a coarse helical neck and closed floor.",
+    "parameters": {
+      "model": "body",
+      "diameter": 48,
+      "pitch": 4,
+      "height": 42,
+      "threadLength": 12,
+      "wall": 3.5,
+      "floor": 3.5,
+      "roof": 3.5,
+      "roofGap": 0.6,
+      "clearance": 0.35
+    }
+  },
+  {
+    "id": "cap-48-p4",
+    "name": "48 mm · 4 mm lead printed cap",
+    "description": "Larger authored closed cap with a 0.35 mm female radial allowance.",
+    "parameters": {
+      "model": "cap",
+      "diameter": 48,
+      "pitch": 4,
+      "height": 42,
+      "threadLength": 12,
+      "wall": 3.5,
+      "floor": 3.5,
+      "roof": 3.5,
+      "roofGap": 0.6,
+      "clearance": 0.35
+    }
+  }
+]

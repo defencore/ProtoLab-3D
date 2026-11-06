@@ -9,6 +9,7 @@ import { layout, assessment, springDimensions } from './lib/motion';
 import * as assembly from './lib/assembly';
 const part: PartDefinition = {
   id: 'rocket-parachute-recovery',
+  browseLabel: 'Parachute recovery assembly',
   composition,
   preview: 'worker',
   product: productData as ProductProfile,

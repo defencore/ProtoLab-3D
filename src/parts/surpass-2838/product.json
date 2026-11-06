@@ -1,0 +1,12 @@
+{
+  "kind": "assembly",
+  "supply": "purchased",
+  "description": "One purchased Surpass Hobby KK2838 sensorless inrunner selected by winding. Installation shells are not a manufactured motor BOM.",
+  "processes": [],
+  "releaseRequirements": [
+    "Confirm the ordered KK2838 execution, nominal 28\u00d740 body, 3.175\u00d715 shaft and mounting cross against the delivered motor.",
+    "The 16/19 mm M3 mounting cross is reconstructed from installation references; confirm hole spacing and permitted insertion depth on the actual motor.",
+    "Treat the cross-drilled physical state as secondary machining of the purchased blank, with its own manufacturing record.",
+    "Select the controller, supply and low-speed duty for the selected winding."
+  ]
+}

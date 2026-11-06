@@ -1,4 +1,7 @@
 import { translateSearchQuery } from './search-query';
+import { filterMechanismExecutions } from './mechanism-catalog';
+import { libraryCatalogFamily } from './library';
+import { isQualifiedLibraryEntryId, resolveLibraryEntry } from './library-identity';
 import type { BrowseFamily } from './browse-families';
 import {
   buildPresetIndex,
@@ -56,16 +59,47 @@ export function buildLibrarySearchIndex(families: BrowseFamily[]): LibrarySearch
 export function searchLibrary(index: LibrarySearchEntry[], query: string): LibrarySearchMatch[] {
   const trimmed = query.trim();
   if (!trimmed) return index.map((entry) => ({ family: entry.family, articleQuery: '' }));
+  const exact = index.flatMap((entry) => {
+    const resolved = resolveLibraryEntry(entry.family.members, trimmed);
+    return resolved ? [{ family: entry.family, articleQuery: trimmed }] : [];
+  });
+  if (exact.length || isQualifiedLibraryEntryId(trimmed)) return exact;
   const translated = translateSearchQuery(trimmed);
   const words = normalize(translated).split(/\s+/);
   const compiled = compilePresetQuery(trimmed);
   return index
     .flatMap((entry) => {
-      const articleMatch = entry.standoffs
-        ? filterStandoffs(entry.standoffs, { query: trimmed }).items.length > 0
-        : entry.presets.some((preset) => matchesPresetQuery(preset, compiled));
+      const mechanismFamily = entry.family.members.every((part) => !!part.mechanismExecution);
+      const modelCatalog = entry.family.members.some(
+        (part) => libraryCatalogFamily(part.id)?.id === entry.family.id,
+      );
+      const mechanismMatch =
+        mechanismFamily &&
+        filterMechanismExecutions(entry.family.members, {
+          drive: '',
+          outputs: '',
+          query: translated,
+        }).length > 0;
+      const articleMatch = mechanismFamily
+        ? mechanismMatch
+        : entry.standoffs
+          ? filterStandoffs(entry.standoffs, { query: trimmed }).items.length > 0
+          : entry.presets.some((preset) => matchesPresetQuery(preset, compiled));
+      const navigationText = normalize(
+        [entry.family.label, entry.family.category, entry.family.subgroup].join(' '),
+      );
+      const memberNavigationMatch =
+        modelCatalog &&
+        entry.family.members.some((part) => {
+          const name = normalize([part.name, part.category, part.subgroup].join(' '));
+          return words.every((word) => name.includes(word));
+        });
       const terminologyMatch =
-        !compiled.metricSize && words.every((word) => entry.terminology.includes(word));
+        !compiled.metricSize &&
+        (memberNavigationMatch ||
+          words.every((word) =>
+            (mechanismFamily || modelCatalog ? navigationText : entry.terminology).includes(word),
+          ));
       if (!articleMatch && !terminologyMatch) return [];
       const label = normalize(entry.family.label);
       const phrase = normalize(translated);

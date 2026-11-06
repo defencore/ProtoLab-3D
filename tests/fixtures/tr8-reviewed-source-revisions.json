@@ -1,0 +1,14 @@
+{
+  "src/parts/surpass-2845/configurator.ts": {
+    "historicalSha256": "dc7ac904ba9aadc7959225f397ff28cd3f5dc712d0825567110b61f50b896b5f",
+    "reviewedSha256": "4462ef5896fcada7ac165d3856d626eaf4db19d1b6764ebffcc5f32c8c9841e8",
+    "scope": "Fixed supplier model selection, optional cross-drilled shaft pose control and catalog filter metadata. Geometry, part, preset and product sources retain their historical preservation checks.",
+    "evidence": "docs/tr8-regression-review.md"
+  },
+  "src/parts/tr8-geared-rocker-actuator/README.md": {
+    "historicalSha256": "ad5f7ac8f16374c3edb846c2ebd90d223335b3295ce679775f6b05f0d730da2c",
+    "reviewedSha256": "970063ecc8dbdbddc08d73620c31ab1396c475f345eec521888b7c5cba06b714",
+    "scope": "Restore the shared universal package README required by repository policy. The component-specific GUIDE.md retains its historical preservation check.",
+    "evidence": "docs/tr8-regression-review.md"
+  }
+}

@@ -1,4 +1,5 @@
 import productData from './product.json';
+import { bearingPalette, bearingRgb } from '../../core/hardware/bearing-appearance';
 import type { ProductProfile } from '../../core/product-types';
 import presetData from './presets.json';
 import type { Preset as ModulePreset } from '../../core/types';
@@ -144,6 +145,7 @@ const part: PartDefinition = {
       ...setup,
       compoundPython(names),
       `shape.translate(App.Vector(0,0,-${num(v.w / 2)}))`,
+      `component_colors = ${JSON.stringify([bearingPalette.race, bearingPalette.race, bearingPalette.inclinedCage, ...Array(v.count).fill(DARK_STEEL)].map(bearingRgb))}`,
     ].join('\n');
   },
   notes:

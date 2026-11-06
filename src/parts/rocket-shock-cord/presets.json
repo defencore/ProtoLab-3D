@@ -1,0 +1,20 @@
+[
+  {
+    "id": "short-1500",
+    "name": "Cord D2 x 1500 mm · reference",
+    "description": "Authored straight circular harness reference, without a material or load rating.",
+    "parameters": { "length": 1500, "diameter": 2 }
+  },
+  {
+    "id": "medium-3000",
+    "name": "Cord D3 x 3000 mm · reference",
+    "description": "Authored straight circular harness reference; actual routing and end allowances are separate project inputs.",
+    "parameters": { "length": 3000, "diameter": 3 }
+  },
+  {
+    "id": "long-6000",
+    "name": "Cord D5 x 6000 mm · reference",
+    "description": "Authored straight circular harness reference; no stretch, knots or terminations are modeled.",
+    "parameters": { "length": 6000, "diameter": 5 }
+  }
+]

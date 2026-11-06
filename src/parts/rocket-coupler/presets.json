@@ -1,0 +1,32 @@
+[
+  {
+    "id": "51",
+    "name": "Prototype coupler \u00b7 \u00d850.5 \u00d7 100 mm",
+    "description": "Author-defined metric prototype example for LDRS preparation; not a verified supplier size.",
+    "parameters": {
+      "outerDiameter": 50.5,
+      "wall": 1.5,
+      "length": 100
+    }
+  },
+  {
+    "id": "71",
+    "name": "Prototype coupler \u00b7 \u00d870.5 \u00d7 150 mm",
+    "description": "Author-defined metric prototype example for LDRS preparation; not a verified supplier size.",
+    "parameters": {
+      "outerDiameter": 70.5,
+      "wall": 2,
+      "length": 150
+    }
+  },
+  {
+    "id": "95",
+    "name": "Prototype coupler \u00b7 \u00d894.5 \u00d7 200 mm",
+    "description": "Author-defined metric prototype example for LDRS preparation; not a verified supplier size.",
+    "parameters": {
+      "outerDiameter": 94.5,
+      "wall": 2.5,
+      "length": 200
+    }
+  }
+]

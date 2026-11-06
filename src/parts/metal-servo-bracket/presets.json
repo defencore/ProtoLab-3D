@@ -1,0 +1,46 @@
+[
+  {
+    "id": "u-bracket",
+    "name": "Metal multifunctional servo bracket",
+    "description": "Buy complete: Multifunctional metal servo bracket, purchased.",
+    "parameters": {
+      "model": "u-bracket"
+    },
+    "product": {
+      "supply": "purchased"
+    },
+    "catalog": {
+      "designation": "Multifunctional metal servo bracket, purchased",
+      "manufacturer": "Not specified in upstream BOM",
+      "sourceName": "FinsROV original product bill of materials and assembly CAD",
+      "sourceUrl": "https://item.taobao.com/item.htm?spm=a1z0d.6639537/tb3.1997196601.4.1bae7484FEJPw0&id=557166026079&sku_properties=31309:48651884",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "community-cad",
+        "summary": "Original source solid geometry normalized into a reusable product coordinate frame.",
+        "limitations": "Installation reference. Supplier availability, ratings and delivered mounting interfaces require verification.",
+        "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/Configuration.STEP",
+        "sourceSha256": "d774498f1ee8065552c6abdcef07a414a675946e10e48b54410b6662b7d3e135"
+      },
+      "attributes": {
+        "width": 59,
+        "depth": 37,
+        "height": 25
+      },
+      "specifications": [
+        {
+          "label": "Order designation",
+          "value": "Multifunctional metal servo bracket, purchased"
+        },
+        {
+          "label": "Coordinates",
+          "value": "Author mounting orientation, lateral envelope centered; rear plane is Z=0."
+        },
+        {
+          "label": "Supply",
+          "value": "Purchase complete product"
+        }
+      ]
+    }
+  }
+]

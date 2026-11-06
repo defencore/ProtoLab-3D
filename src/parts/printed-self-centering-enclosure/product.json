@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Authored printed empty box and taper-guided lid with a straight locating skirt and planar axial stop.",
+  "processes": ["printing", "assembly"],
+  "releaseRequirements": [
+    "Lay out actual contents, ports, cable bends, mounts, service access and heat paths before adapting the template.",
+    "Specify polymer, build orientation and dimensional compensation, and qualify entry alignment, corner contact and final play.",
+    "Check retention, sealing, wall strength and application loads separately; the tapered pilot does not provide those functions."
+  ]
+}

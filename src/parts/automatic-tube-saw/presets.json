@@ -1,7 +1,7 @@
 [
   {
     "id": "tube120-straight",
-    "name": "Tube \u00d8120\u00d74 \u00b7 20\u2013500 mm \u00b7 230 V",
+    "name": "Round tube Ø120 × 4 mm · 250 mm cut · 230 V",
     "description": "Straight cutting with shuttle feed; engineering review required.",
     "parameters": {
       "tubeDiameter": 120,
@@ -40,7 +40,7 @@
   },
   {
     "id": "tube120-mitre",
-    "name": "Tube \u00d8120\u00d74 \u00b7 manual 45\u00b0 \u00b7 230 V",
+    "name": "Round tube Ø120 × 4 mm · 45° mitre setup · 230 V",
     "description": "Parallel mitres, 250 mm axial spacing. Minimum length is constrained by fixture clearance.",
     "parameters": {
       "tubeDiameter": 120,
@@ -79,7 +79,7 @@
   },
   {
     "id": "ring20",
-    "name": "20 mm ring \u00b7 narrow tooling \u00b7 box outlet",
+    "name": "20 mm ring · narrow tooling · box outlet",
     "description": "Adjustable top/side tooling and automatic material handling.",
     "parameters": {
       "tubeDiameter": 120,
@@ -118,7 +118,7 @@
   },
   {
     "id": "square80",
-    "name": "Square tube 80x80x4 \u00b7 flat tooling",
+    "name": "Square tube 80 × 80 × 4 mm · flat tooling",
     "description": "Adjustable top/side tooling and automatic material handling.",
     "parameters": {
       "tubeDiameter": 80,
@@ -157,7 +157,7 @@
   },
   {
     "id": "rect100x60",
-    "name": "Rectangular tube 100x60x4 \u00b7 flat tooling",
+    "name": "Rectangular tube 100 × 60 × 4 mm · flat tooling",
     "description": "Adjustable top/side tooling and automatic material handling.",
     "parameters": {
       "tubeDiameter": 100,
@@ -196,7 +196,7 @@
   },
   {
     "id": "manual-feed",
-    "name": "Manual infeed \u00b7 DDCS v4.1",
+    "name": "Manual infeed · DDCS v4.1",
     "description": "Common flat cutting table with manual loading; automatic feed axis and loading conveyor removed.",
     "parameters": {
       "tubeDiameter": 120,
@@ -235,7 +235,7 @@
   },
   {
     "id": "operator-loaded-bar",
-    "name": "Operator-loaded bar \u00b7 automatic measuring and cutting",
+    "name": "Operator-loaded bar · automatic measuring and cutting",
     "description": "Straight cutting with shuttle feed; engineering review required.",
     "parameters": {
       "tubeDiameter": 120,

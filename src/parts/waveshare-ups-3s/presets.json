@@ -1,0 +1,33 @@
+[
+  {
+    "id": "ups-module-3s",
+    "name": "Waveshare UPS Module 3S · bare holder",
+    "description": "93 × 60 mm PCB, fitted empty three-cell holder. Removable cells, cables and acrylic panels are separate items.",
+    "parameters": { "model": "ups-module-3s" },
+    "catalog": {
+      "designation": "UPS Module 3S",
+      "manufacturer": "Waveshare",
+      "sourceName": "Waveshare wiki, dimension drawing and 2022 STEP envelope",
+      "sourceUrl": "https://www.waveshare.com/wiki/UPS_Module_3S",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "sourceUrl": "https://files.waveshare.com/upload/3/38/UPS_Module_3Sstep.zip",
+        "summary": "Manufacturer PCB outline 93 × 60 × 1.6 mm, 86 × 46 mm mounting pitch and holder envelope 77.8 × 60 mm extending 21.5 mm below the PCB.",
+        "limitations": "Reconstructed holder channels, electronics, cell-seat positions and connector envelopes. The vendor STEP has a filled holder envelope and D3.1 bores; the wiki calls the holes D3.0. Upper electronics height is a conservative authored 5 mm allowance above the PCB."
+      },
+      "attributes": { "boardLength": 93, "boardWidth": 60, "outputCurrent": 5 },
+      "specifications": [
+        {
+          "label": "Battery support",
+          "value": "3 × 18650 in series, cells not included; cell length must be less than 67 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "86 × 46 mm pitch; D3.0 nominal wiki, D3.1 in manufacturer STEP"
+        },
+        { "label": "Output", "value": "5 V / 5 A; 3.3 V / 300 mA; battery series voltage" }
+      ]
+    }
+  }
+]

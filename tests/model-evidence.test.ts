@@ -36,10 +36,13 @@ test('every preset has conservative geometry evidence, separate from catalog ide
   assert.equal(modelEvidence(bec, bec.defaults).kind, 'envelope');
 });
 
-test('community connector CAD and authored XH models retain distinct provenance classes', () => {
+test('community connector CAD, authored XH models and panel reference retain distinct provenance', () => {
   const connector = parts.find((part) => part.id === 'signal-connector')!;
   const authored = connector.presets.filter((preset) => preset.id.startsWith('xh254-'));
-  const community = connector.presets.filter((preset) => !preset.id.startsWith('xh254-'));
+  const community = connector.presets.filter(
+    (preset) => preset.catalog?.geometryEvidence?.kind === 'community-cad',
+  );
+  const panel = connector.presets.find((preset) => preset.id === 'nikom-a448027')!;
   assert.equal(community.length, 36);
   assert.deepEqual(
     authored.map((preset) => preset.id),
@@ -50,7 +53,11 @@ test('community connector CAD and authored XH models retain distinct provenance 
       'xh254-balance-header-ra-5',
     ],
   );
-  assert.equal(community.length + authored.length, connector.presets.length);
+  assert.equal(community.length + authored.length + 1, connector.presets.length);
+  const panelEvidence = modelEvidence(connector, panel.parameters, panel.id);
+  assert.equal(panelEvidence.kind, 'envelope');
+  assert.match(panelEvidence.limitations, /Mounting-hole centres.*remain unverified/);
+  assert.equal(panelEvidence.source, 'https://www.nikom.biz/ua/product_A448027.html');
   for (const preset of community) {
     assert.equal(preset.catalog!.geometryEvidence!.kind, 'community-cad');
     const evidence = modelEvidence(connector, preset.parameters, preset.id);

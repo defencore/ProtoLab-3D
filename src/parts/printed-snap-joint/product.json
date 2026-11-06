@@ -1,0 +1,11 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Two separately printed calibration coupons: a cantilever arm and an open receiver.",
+  "processes": ["printing", "assembly"],
+  "releaseRequirements": [
+    "Specify polymer grade, print process, orientation, layer settings and dimensional tolerances.",
+    "Qualify mating clearance, hook retention, release access, nominal and local strain, working load and required cycles on printed samples.",
+    "The user strain limit is an engineering assumption, not a material certificate or verified load rating."
+  ]
+}

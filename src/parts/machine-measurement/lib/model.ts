@@ -1,3 +1,5 @@
+import { markSupplierUnit } from '../../../core/supplier-components';
+import presets from '../presets.json';
 import type { Parameters } from '../../../core/types';
 import { box, cylinder, subtract, union, type Shape } from './shapes';
 import type { Piece } from './assembly';
@@ -33,9 +35,15 @@ export function measurementPieces(p: Parameters): Piece[] {
         ),
       ),
     );
-  } else if (p.model === 'e3z-t81') {
+  } else if (p.model === 'e3z-ll81') {
     add(
-      'OMRON E3Z-T81 receiver · 10.8x20x31 · two M3 P25.4',
+      'OMRON E3Z-LL81 BGS housing · occupied-body reference',
+      box([10.8, 20, 31], [-5.4, -20, 0]),
+      0x3179bc,
+    );
+  } else if (String(p.model).startsWith('e3z-t81')) {
+    add(
+      `${p.model === 'e3z-t81-l' ? 'OMRON E3Z-T81-L emitter' : 'OMRON E3Z-T81-D receiver'} · 10.8x20x31 · two M3 P25.4`,
       subtract(
         box([10.8, 20, 31], [-5.4, -20, 0]),
         ...[2.8, 28.2].map((z) => cylinder(1.25, 13, [-6.5, -11, z], 'x')),
@@ -54,6 +62,30 @@ export function measurementPieces(p: Parameters): Piece[] {
         subtract(cylinder(8.5, 4, [0, 0, z]), cylinder(6.05, 6, [0, 0, z - 1])),
       );
     add('Cable tail · strain relief', cylinder(2, 10, [0, 0, -10]), 0x252d34);
+  }
+  const preset = presets.find((entry) => entry.parameters.model === p.model);
+  if (!preset) throw new Error('Select a supported measurement instrument.');
+  // The legacy pair reference shows one body. Exact L/D identifiers link each installed half.
+  // This family retains its reference profile, so authored installed geometry stays a purchased recipe.
+  if (p.model !== 'e3z-t81') {
+    const catalog = 'catalog' in preset ? preset.catalog : undefined;
+    markSupplierUnit(
+      pieces.map((piece) => piece.shape),
+      {
+        name: preset.name,
+        libraryId: 'machine-measurement',
+        presetId: preset.id,
+        procurement: {
+          designation:
+            catalog?.designation ??
+            'MWE21 / C200 / Sendix KIS40 1000 ppr; confirm complete execution',
+          manufacturer: catalog?.manufacturer ?? 'Kuebler',
+          source:
+            catalog?.sourceUrl ??
+            'https://www.kuebler.com/en/products/measurement/linear-measuring-systems/product-finder/product-details/MWE21',
+        },
+      },
+    );
   }
   return pieces;
 }

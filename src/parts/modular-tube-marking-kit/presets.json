@@ -1,0 +1,15 @@
+[
+  {
+    "id": "d90-86",
+    "name": "Ø90/86 modular tube · two windows and sixteen holes",
+    "description": "A fixed front base and three removable pattern tools use the authoritative modular avionics layout. Transfer only the tools to the opposed registers for the second pass.",
+    "parameters": {
+      "tubeProfile": "d90-86",
+      "fitAllowance": 0.8,
+      "jointAllowance": 0.2,
+      "markDiameter": 3.2,
+      "side": "first",
+      "showTube": true
+    }
+  }
+]

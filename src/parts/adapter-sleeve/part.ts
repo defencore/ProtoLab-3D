@@ -6,7 +6,7 @@ const modulePresets = presetData as ModulePreset[];
 import { Group, Path, Shape, Vector2 } from 'three';
 import type { PartDefinition, Parameters } from '../../core/types';
 import { DARK_STEEL, extrude, n, num, numberParameter } from '../../core/geometry';
-import { annularSector, loftMesh, pythonWire } from '../../core/mechanical';
+import { annularSector, loftMesh } from '../../core/mechanical';
 import { envelopeParameters, validateEnvelope } from '../../core/hardware/motion-bearing-utils';
 import { motionSources } from './lib/catalog/motion-bearings';
 
@@ -43,6 +43,32 @@ function nutOutline(p: Parameters): Vector2[] {
       radius = v.outer - (notch ? depth : 0);
     return new Vector2(radius * Math.cos(angle), radius * Math.sin(angle));
   });
+}
+/** The source outline is a sequence of concentric circular runs and straight notch transitions. */
+function nutWire(p: Parameters, z: number): string {
+  const points = nutOutline(p),
+    radius = (point: Vector2) => point.length();
+  const same = (a: Vector2, b: Vector2) => Math.abs(radius(a) - radius(b)) < 1e-9;
+  const start = points.findIndex(
+    (point, i) => !same(point, points[(i + points.length - 1) % points.length]),
+  );
+  const ordered = [...points.slice(start), ...points.slice(0, start)];
+  const runs: Vector2[][] = [];
+  for (const point of ordered) {
+    if (!runs.length || !same(runs.at(-1)![0], point)) runs.push([]);
+    runs.at(-1)!.push(point);
+  }
+  const vector = (point: Vector2) => `App.Vector(${num(point.x)},${num(point.y)},${num(z)})`;
+  const edges: string[] = [];
+  runs.forEach((run, i) => {
+    if (run.length >= 3)
+      edges.push(
+        `Part.Arc(${vector(run[0])},${vector(run[Math.floor(run.length / 2)])},${vector(run.at(-1)!)}).toShape()`,
+      );
+    else if (run.length === 2) edges.push(`Part.makeLine(${vector(run[0])},${vector(run[1])})`);
+    edges.push(`Part.makeLine(${vector(run.at(-1)!)},${vector(runs[(i + 1) % runs.length][0])})`);
+  });
+  return `Part.Wire([${edges.join(',')}])`;
 }
 const part: PartDefinition = {
   id: 'adapter-sleeve',
@@ -96,11 +122,19 @@ const part: PartDefinition = {
   },
   python(p) {
     const v = values(p);
-    return `sections = [${sections(p)
-      .map((section) => pythonWire(section.points, section.z))
-      .join(
-        ', ',
-      )}]\nsleeve = Part.makeLoft(sections, True, True)\nnut = Part.Face(${pythonWire(nutOutline(p), v.width / 2 - v.nut)}).extrude(App.Vector(0, 0, ${num(v.nut)}))\nnut = nut.cut(Part.makeCylinder(${num(v.seat + 0.02)}, ${num(v.nut + 2)}, App.Vector(0, 0, ${num(v.width / 2 - v.nut - 1)})))\nshape = Part.makeCompound([sleeve, nut])`;
+    return [
+      `sleeve = Part.makeCone(${num(v.small)},${num(v.seat)},${num(v.width - v.nut)},App.Vector(0,0,${num(-v.width / 2)}))`,
+      `sleeve = sleeve.fuse(Part.makeCylinder(${num(v.seat)},${num(v.nut)},App.Vector(0,0,${num(v.width / 2 - v.nut)})))`,
+      `sleeve = sleeve.cut(Part.makeCylinder(${num(v.bore)},${num(v.width + 2)},App.Vector(0,0,${num(-v.width / 2 - 1)})))`,
+      `slit = Part.makeCylinder(${num(v.seat + 1)},${num(v.width + 2)},App.Vector(0,0,${num(-v.width / 2 - 1)}),App.Vector(0,0,1),${num(v.gap)})`,
+      `slit.rotate(App.Vector(0,0,0),App.Vector(0,0,1),${num(-v.gap / 2)})`,
+      'sleeve = sleeve.cut(slit).removeSplitter()',
+      `nut = Part.Face(${nutWire(p, v.width / 2 - v.nut)}).extrude(App.Vector(0,0,${num(v.nut)}))`,
+      `nut = nut.cut(Part.makeCylinder(${num(v.seat + 0.02)},${num(v.nut + 2)},App.Vector(0,0,${num(v.width / 2 - v.nut - 1)}))).removeSplitter()`,
+      'shape = Part.makeCompound([sleeve,nut])',
+      'component_labels = ["Split tapered sleeve","Locknut"]',
+      'component_colors = [(119/255,127/255,137/255),(76/255,81/255,88/255)]',
+    ].join('\n');
   },
   dimensions: (p) => [n(p, 'outer'), n(p, 'outer'), n(p, 'width')],
   notes:

@@ -12,9 +12,7 @@
       "sourceName": "Manufacturer specifications / mechanical drawing",
       "sourceUrl": "https://www.hobbywingdirect.com/products/ubec-3a-2-6s-lipo-input",
       "alternateSourceUrls": [],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "manufacturer": "Hobbywing",
         "construction": "Enclosed regulator",
@@ -115,12 +113,8 @@
       "manufacturer": "Hobbywing",
       "sourceName": "Manufacturer specifications / mechanical drawing",
       "sourceUrl": "https://oss.hobbywing.com/pdf/pdfen/UBEC5A.pdf",
-      "alternateSourceUrls": [
-        "https://oss.hobbywing.com/pdf/pdfen/UBEC5A.pdf"
-      ],
-      "verifiedParameters": [
-        "model"
-      ],
+      "alternateSourceUrls": ["https://oss.hobbywing.com/pdf/pdfen/UBEC5A.pdf"],
+      "verifiedParameters": ["model"],
       "attributes": {
         "manufacturer": "Hobbywing",
         "construction": "Enclosed regulator",
@@ -224,9 +218,7 @@
       "alternateSourceUrls": [
         "https://hobbywing.oss-cn-shenzhen.aliyuncs.com/pdf/pdfen/UBEC10ACar.pdf"
       ],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "manufacturer": "Hobbywing",
         "construction": "Enclosed regulator",
@@ -313,6 +305,34 @@
         "limitations": "Cable exits, lead lengths, heat-shrink contours, labels and internal electronics are not reproduced. Do not use the simplified shell as an exact enclosure or connector model.",
         "sourceUrl": "https://hobbywing.oss-cn-shenzhen.aliyuncs.com/pdf/pdfen/UBEC10ACar.pdf"
       }
+    }
+  },
+  {
+    "id": "bec12s-pro",
+    "name": "BEC12S-PRO TPS54560 · installation reference",
+    "description": "The selected seller identifies BEC12S-PRO / TPS54X60. Adopted 40 × 20 × 5.5 mm envelope matches the photographed supplier family but is unverified for this SKU. PCB thickness 1.6 mm, corner radius 0.6 mm and central 26 × 14 × 3.9 mm component volume are assumptions. No mounting holes or connector coordinates are invented. The SAC-01 uses separate physical boards selected to 12 V and 5 V; output settings do not change this mechanical model. Confirm the delivered board, jumper settings, ratings, underside joints, thermal behavior and harness.",
+    "parameters": {
+      "model": "bec12s-pro"
+    },
+    "catalog": {
+      "designation": "BEC12S-PRO / TPS54X60 solder-pad board",
+      "sourceName": "Selected supplier listing; dimensional evidence incomplete",
+      "sourceUrl": "https://prom.ua/p3103438088-ponizhayuschij-preobrazovatel-bec12s.html",
+      "manufacturer": "Unspecified",
+      "productCodes": ["BEC12S-PRO", "TPS54560", "TPS54X60"],
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Preserved provisional SAC-01 installation geometry.",
+        "limitations": "The selected seller identifies BEC12S-PRO / TPS54X60. Adopted 40 × 20 × 5.5 mm envelope matches the photographed supplier family but is unverified for this SKU. PCB thickness 1.6 mm, corner radius 0.6 mm and central 26 × 14 × 3.9 mm component volume are assumptions. No mounting holes or connector coordinates are invented. The SAC-01 uses separate physical boards selected to 12 V and 5 V; output settings do not change this mechanical model. Confirm the delivered board, jumper settings, ratings, underside joints, thermal behavior and harness.",
+        "sourceUrl": "https://prom.ua/p3103438088-ponizhayuschij-preobrazovatel-bec12s.html"
+      },
+      "specifications": [
+        {
+          "label": "Geometry and revision scope",
+          "value": "The selected seller identifies BEC12S-PRO / TPS54X60. Adopted 40 × 20 × 5.5 mm envelope matches the photographed supplier family but is unverified for this SKU. PCB thickness 1.6 mm, corner radius 0.6 mm and central 26 × 14 × 3.9 mm component volume are assumptions. No mounting holes or connector coordinates are invented. The SAC-01 uses separate physical boards selected to 12 V and 5 V; output settings do not change this mechanical model. Confirm the delivered board, jumper settings, ratings, underside joints, thermal behavior and harness."
+        }
+      ]
     }
   }
 ]

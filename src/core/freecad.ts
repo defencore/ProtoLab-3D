@@ -4,6 +4,10 @@ import { modelEvidence } from './model-evidence';
 import { validateParameters } from './validation';
 import type { ProductConfiguration } from './product-types';
 import { currentGeometryMode, withGeometryMode, type GeometryMode } from './geometry-mode';
+import { defaultFreecadColor, freecadAppearancePython } from './freecad-appearance';
+import { eskdIdentity } from './eskd';
+import { freecadEskdPython } from './freecad-eskd';
+import { freecadTreePython } from './freecad-tree';
 
 /** A standalone macro that adds a solid or assembly to the active document. */
 export function generateScript(
@@ -13,9 +17,10 @@ export function generateScript(
   presetId?: string,
   configuration?: ProductConfiguration,
   mode: GeometryMode = currentGeometryMode(),
+  parts: readonly PartDefinition[] = [],
 ): string {
   return withGeometryMode(mode, () =>
-    scriptInMode(part, parameters, state, presetId, configuration),
+    scriptInMode(part, parameters, state, presetId, configuration, parts),
   );
 }
 
@@ -23,22 +28,24 @@ function scriptInMode(
   part: PartDefinition,
   parameters: Parameters,
   state: string,
-  presetId?: string,
-  configuration?: ProductConfiguration,
+  presetId: string | undefined,
+  configuration: ProductConfiguration | undefined,
+  parts: readonly PartDefinition[],
 ): string {
   const errors = validateParameters(part, parameters, state);
   if (errors.length) throw new Error(errors.join(' '));
-  const body = part
-    .python(parameters, state)
+  const standalone = part.standaloneCad?.(parameters, state);
+  const body = (standalone?.python ?? part.python(parameters, state))
     .split('\n')
     .map((line) => `        ${line}`)
     .join('\n');
   const evidence = modelEvidence(part, parameters, presetId);
+  const identity = eskdIdentity(part, parameters, state, presetId, configuration);
   const featureName = `ProtoLab_${part.id.replace(/[^a-zA-Z0-9_]/g, '_')}`;
   const expectedDimensions = JSON.stringify(
-    part.exportDimensions
-      ? part.exportDimensions(parameters, state)
-      : part.dimensions(parameters, state),
+    standalone?.dimensions ??
+      part.exportDimensions?.(parameters, state) ??
+      part.dimensions(parameters, state),
   );
   const catalog = part.presets.find((preset) => preset.id === evidence.presetId)?.catalog;
   const catalogProperties = catalog
@@ -69,7 +76,13 @@ function scriptInMode(
 import FreeCAD as App
 import Part
 import math
+import json
 
+${freecadAppearancePython}
+
+${freecadEskdPython}
+
+${freecadTreePython(parts)}
 
 def _protolab_create():
     doc = App.ActiveDocument or App.newDocument("ProtoLab")
@@ -103,34 +116,19 @@ ${body}
             raise ValueError("Component labels do not match the generated assembly.")
         if component_colors is not None and len(component_colors) != len(component_shapes):
             raise ValueError("Component colors do not match the generated assembly.")
+        if component_colors is not None:
+            component_colors = [_protolab_color_rgba(color) for color in component_colors]
         if component_metadata is not None and len(component_metadata) != len(component_shapes):
             raise ValueError("Component manufacturing metadata does not match the assembly.")
-        if component_groups is not None:
-            if len(component_groups) != len(component_shapes):
-                raise ValueError("Component groups do not match the generated assembly.")
-            if any(not isinstance(path, (list, tuple)) or any(not isinstance(label, str) or not label.strip() for label in path) for path in component_groups):
-                raise ValueError("Each component group must be a path of non-empty labels.")
+        group_paths = _protolab_component_paths(${JSON.stringify(part.category)}, ${JSON.stringify(identity.supply)}, len(component_shapes), component_labels, component_metadata, component_groups)
         display_objects = []
-        if len(component_shapes) > 1:
+        if len(component_shapes) > 1 or ${identity.supply === 'manufactured' && ['assembly', 'complex', 'kit'].includes(identity.productType) ? 'True' : 'False'}:
             obj = doc.addObject("App::Part", ${JSON.stringify(featureName)})
             created_objects.append(obj.Name)
-            assembly_groups = {}
+            parents = _protolab_group_parents(doc, obj, created_objects, ${JSON.stringify(featureName + '_Group')}, group_paths, component_groups is not None)
             for index, component_shape in enumerate(component_shapes):
                 if component_shape.isNull() or not component_shape.isValid() or not component_shape.isClosed() or not component_shape.Solids or component_shape.Volume <= 0:
                     raise ValueError("An assembly component has no valid solid volume.")
-                parent = obj
-                group_path = component_groups[index] if component_groups is not None else []
-                for depth, label in enumerate(group_path):
-                    path = tuple(group_path[:depth + 1])
-                    if path not in assembly_groups:
-                        group = doc.addObject("App::Part", ${JSON.stringify(featureName + '_Group')} + str(len(assembly_groups) + 1))
-                        created_objects.append(group.Name)
-                        group.Label = label
-                        group.addProperty("App::PropertyStringList", "AssemblyGroup", "ProtoLab")
-                        group.AssemblyGroup = list(path)
-                        parent.addObject(group)
-                        assembly_groups[path] = group
-                    parent = assembly_groups[path]
                 child = doc.addObject("Part::Feature", ${JSON.stringify(featureName + '_Component')} + str(index + 1))
                 created_objects.append(child.Name)
                 child.Label = component_labels[index] if component_labels is not None else "Component %02d" % (index + 1)
@@ -140,27 +138,29 @@ ${body}
                 child.addProperty("App::PropertyPlacement", "AssemblyPlacement", "ProtoLab")
                 child.AssemblyPlacement = child.Placement
                 child.addProperty("App::PropertyStringList", "AssemblyGroup", "ProtoLab")
-                child.AssemblyGroup = list(group_path)
-                parent.addObject(child)
+                child.AssemblyGroup = list(group_paths[index])
+                parents[index].addObject(child)
                 display_objects.append(child)
         else:
             obj = doc.addObject("Part::Feature", ${JSON.stringify(featureName)})
             created_objects.append(obj.Name)
             obj.Shape = shape
             display_objects.append(obj)
-        obj.Label = ${JSON.stringify(part.name)}
+        _protolab_apply_eskd(obj, json.loads(${JSON.stringify(JSON.stringify(identity))}))
         # Apply the same manufacturing annotations to standalone parts and assemblies.
         # A thread name belongs to its physical part, never to a floating cutter solid.
         if component_metadata is not None:
             for index, display_object in enumerate(display_objects):
                 metadata = component_metadata[index]
+                if display_object != obj and ${JSON.stringify(identity.supply)} == "manufactured" and metadata.get("ESKDIdentityJSON"):
+                    _protolab_apply_eskd(display_object, json.loads(metadata["ESKDIdentityJSON"]))
                 for key, value in metadata.items():
                     property_name = key
                     while hasattr(display_object, property_name):
                         property_name = "Manufacturing" + property_name
                     display_object.addProperty("App::PropertyString", property_name, "Manufacturing")
                     setattr(display_object, property_name, str(value))
-                if metadata.get("ThreadLabels"):
+                if metadata.get("ThreadLabels") and getattr(display_object, "SupplyPolicy", "") not in ["purchased", "standard"]:
                     display_object.Label += " · threads: " + metadata["ThreadLabels"]
         obj.addProperty("App::PropertyString", "Generator", "ProtoLab")
         obj.Generator = "ProtoLab 3D"
@@ -172,14 +172,6 @@ ${body}
         obj.ModelState = ${JSON.stringify(state)}${catalogProperties}
         obj.addProperty("App::PropertyString", "GeometryMode", "ProtoLab")
         obj.GeometryMode = ${JSON.stringify(currentGeometryMode())}
-        obj.addProperty("App::PropertyString", "ProductType", "Design")
-        obj.ProductType = ${JSON.stringify(part.product.kind)}
-        obj.addProperty("App::PropertyString", "SupplyPolicy", "Design")
-        obj.SupplyPolicy = ${JSON.stringify(configuration?.supply ?? part.product.supply)}
-        obj.addProperty("App::PropertyString", "Designation", "Design")
-        obj.Designation = ${JSON.stringify(configuration?.designation ?? catalog?.designation ?? '')}
-        obj.addProperty("App::PropertyString", "Revision", "Design")
-        obj.Revision = ${JSON.stringify(configuration?.revision ?? '')}
         obj.addProperty("App::PropertyString", "ManufacturingDefinition", "Design")
         obj.ManufacturingDefinition = ${JSON.stringify(JSON.stringify(configuration?.manufacturing ?? null))}
         obj.addProperty("App::PropertyString", "ProcurementDefinition", "Design")
@@ -190,7 +182,7 @@ ${body}
         obj.GeometryEvidence = ${JSON.stringify(JSON.stringify(evidence))}
         if App.GuiUp:
             for index, display_object in enumerate(display_objects):
-                display_object.ViewObject.ShapeColor = tuple(component_colors[index]) if component_colors is not None else (0.62, 0.70, 0.78)
+                _protolab_apply_color(display_object.ViewObject, component_colors[index] if component_colors is not None else ${defaultFreecadColor})
         doc.recompute()
         doc.commitTransaction()
     except Exception:

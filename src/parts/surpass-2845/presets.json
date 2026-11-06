@@ -1,0 +1,57 @@
+[
+  {
+    "id": "surpass-2845-3100kv",
+    "name": "Surpass Hobby KK 2845 3100KV · Ø28×47 mm · shaft Ø3.175",
+    "description": "Drawing-based external installation envelope;16/19 mm M3 mounting cross and15 mm shaft projection.",
+    "parameters": {
+      "model": "surpass-2845-3100kv"
+    },
+    "catalog": {
+      "designation": "Surpass Hobby KK 2845-3100KV",
+      "manufacturer": "Surpass Hobby",
+      "sourceName": "Surpass Hobby branded dimensional drawing and manufacturer catalog",
+      "sourceUrl": "https://www.ytk-group.co.jp/products/wp-content/uploads/2021/02/Catalog-from-Suprass-Hobby_compressed-1-1.pdf",
+      "verifiedParameters": [
+        "model"
+      ],
+      "alternateSourceUrls": [
+        "https://images-na.ssl-images-amazon.com/images/I/51uWegAEAqL.jpg"
+      ],
+      "attributes": {
+        "bodyDiameter": 28,
+        "bodyLength": 47,
+        "shaftDiameter": 3.175,
+        "shaftProjection": 15,
+        "kv": 3100
+      },
+      "specifications": [
+        {
+          "label": "Body",
+          "value": "Ø28×47 mm"
+        },
+        {
+          "label": "Shaft",
+          "value": "Ø3.175×15 mm projection"
+        },
+        {
+          "label": "Mounts",
+          "value": "4×M3;16/19 mm opposed cross"
+        },
+        {
+          "label": "Speed constant",
+          "value": "3100 rpm/V"
+        },
+        {
+          "label": "Drive",
+          "value": "Sensorless BLDC; external controller"
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Analytic external envelope reconstructed from the branded2845 3100KV dimension drawing.",
+        "limitations": "No supplier CAD. Cap seams and nominal hole depth are illustrative; flat depth, free cables and internals are not specified or reconstructed.",
+        "sourceUrl": "https://images-na.ssl-images-amazon.com/images/I/51uWegAEAqL.jpg"
+      }
+    }
+  }
+]

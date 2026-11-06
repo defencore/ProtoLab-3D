@@ -2,7 +2,12 @@ import definition from './part';
 import { catalogSelection } from './configurator';
 import type { PartModule } from '../../core/part-modules';
 
-const part = { ...definition, id: 'ball-screw-axis', catalogSelection };
+const part = {
+  ...definition,
+  id: 'ball-screw-axis',
+  browseLabel: 'Ball screw axis',
+  catalogSelection,
+};
 export default {
   apiVersion: 2,
   order: 68,

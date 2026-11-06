@@ -20,15 +20,23 @@ const part: PartDefinition = {
   defaults,
   presets: presets as Preset[],
   validate: (p) =>
-    ['mwe21', 'e3z-t81', 'e2b-m12'].includes(String(p.model))
+    ['mwe21', 'e3z-t81', 'e3z-t81-l', 'e3z-t81-d', 'e3z-ll81', 'e2b-m12'].includes(String(p.model))
       ? []
       : ['Select a supported instrument.'],
   buildGeometry: (p) => geometry(measurementPieces(p)),
   dimensions: (p) => dimensions(measurementPieces(p)),
   python: (p) => python(measurementPieces(p)),
   notes:
-    'Purchased instruments, not fabrication geometry. MWE21 wheel circumference and encoder diameter are sourced; spring-arm contour, encoder depth and bracket holes are planning envelopes awaiting the exact ordered drawing. E3Z is sold as emitter/receiver pair: the standalone model shows one sensor. The E2B source envelope has no defined pitch/profile; its thread remains nominal in both modes. Standard sensors do not implement a safety function. 0.05 mm quadrature resolution does not establish length accuracy.',
+    'Purchased instruments, not fabrication geometry. MWE21 wheel circumference and encoder diameter are sourced; spring-arm contour, encoder depth and bracket holes are planning envelopes awaiting the exact ordered drawing. E3Z-T81 is sold as emitter/receiver pair: the standalone model shows one sensor. The E2B source envelope has no defined pitch/profile; its thread remains nominal in both modes. Standard sensors do not implement a safety function. 0.05 mm quadrature resolution does not establish length accuracy.',
   sources: [
+    {
+      label: 'OMRON E3Z-LL81 specification',
+      url: 'https://www.ia.omron.com/products/family/1747/specification.html',
+    },
+    {
+      label: 'OMRON E3Z-LL81 dimensions',
+      url: 'https://www.ia.omron.com/products/family/1747/dimension.html',
+    },
     {
       label: 'Kuebler MWE21 measuring system',
       url: 'https://www.kuebler.com/en/products/measurement/linear-measuring-systems/product-finder/product-details/MWE21',

@@ -1,0 +1,3718 @@
+[
+  {
+    "id": "4-12",
+    "name": "4:1 · 12 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 4:1 · 1 planetary stages · Ø16 × 48.5 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "4-12",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 4:1 · 12 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 4,
+        "voltage": "12",
+        "stages": 1,
+        "gearboxLength": 12.5,
+        "bodyLength": 48.5,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6,
+        "noLoadSpeed": 2700,
+        "ratedSpeed": 2000,
+        "ratedTorque": 0.1
+      },
+      "attributeConditions": {
+        "noLoadSpeed": "Output table at 12 V.",
+        "ratedSpeed": "Output table at 12 V.",
+        "ratedTorque": "Transcribed output table; conflicts with general 3 kgf·cm gearbox rated maximum where table gives 5. Not a validated continuous assembly rating."
+      },
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "4:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "12 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "12.5 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10082 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "390 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.37 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "204 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "2.1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "4-24",
+    "name": "4:1 · 24 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 4:1 · 1 planetary stages · Ø16 × 48.5 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "4-24",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 4:1 · 24 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 4,
+        "voltage": "24",
+        "stages": 1,
+        "gearboxLength": 12.5,
+        "bodyLength": 48.5,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6,
+        "noLoadSpeed": 2700,
+        "ratedSpeed": 2200,
+        "ratedTorque": 0.1
+      },
+      "attributeConditions": {
+        "noLoadSpeed": "Output table at 24 V.",
+        "ratedSpeed": "Output table at 24 V.",
+        "ratedTorque": "Transcribed output table; conflicts with general 3 kgf·cm gearbox rated maximum where table gives 5. Not a validated continuous assembly rating."
+      },
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "4:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "24 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "12.5 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10189 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "180 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.41 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "216 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "4.75-12",
+    "name": "4.75:1 · 12 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 4.75:1 · 1 planetary stages · Ø16 × 48.5 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "4.75-12",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 4.75:1 · 12 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 4.75,
+        "voltage": "12",
+        "stages": 1,
+        "gearboxLength": 12.5,
+        "bodyLength": 48.5,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6
+      },
+      "attributeConditions": {},
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "4.75:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "12 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "12.5 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10082 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "390 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.37 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "204 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "2.1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "4.75-24",
+    "name": "4.75:1 · 24 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 4.75:1 · 1 planetary stages · Ø16 × 48.5 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "4.75-24",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 4.75:1 · 24 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 4.75,
+        "voltage": "24",
+        "stages": 1,
+        "gearboxLength": 12.5,
+        "bodyLength": 48.5,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6
+      },
+      "attributeConditions": {},
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "4.75:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "24 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "12.5 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10189 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "180 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.41 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "216 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "16-12",
+    "name": "16:1 · 12 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 16:1 · 2 planetary stages · Ø16 × 52 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "16-12",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 16:1 · 12 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 16,
+        "voltage": "12",
+        "stages": 2,
+        "gearboxLength": 16,
+        "bodyLength": 52,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6,
+        "noLoadSpeed": 700,
+        "ratedSpeed": 600,
+        "ratedTorque": 0.4
+      },
+      "attributeConditions": {
+        "noLoadSpeed": "Output table at 12 V.",
+        "ratedSpeed": "Output table at 12 V.",
+        "ratedTorque": "Transcribed output table; conflicts with general 3 kgf·cm gearbox rated maximum where table gives 5. Not a validated continuous assembly rating."
+      },
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "16:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "12 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "16 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10082 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "390 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.37 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "204 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "2.1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "16-24",
+    "name": "16:1 · 24 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 16:1 · 2 planetary stages · Ø16 × 52 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "16-24",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 16:1 · 24 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 16,
+        "voltage": "24",
+        "stages": 2,
+        "gearboxLength": 16,
+        "bodyLength": 52,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6,
+        "noLoadSpeed": 700,
+        "ratedSpeed": 600,
+        "ratedTorque": 0.4
+      },
+      "attributeConditions": {
+        "noLoadSpeed": "Output table at 24 V.",
+        "ratedSpeed": "Output table at 24 V.",
+        "ratedTorque": "Transcribed output table; conflicts with general 3 kgf·cm gearbox rated maximum where table gives 5. Not a validated continuous assembly rating."
+      },
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "16:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "24 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "16 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10189 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "180 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.41 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "216 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "19-12",
+    "name": "19:1 · 12 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 19:1 · 2 planetary stages · Ø16 × 52 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "19-12",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 19:1 · 12 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 19,
+        "voltage": "12",
+        "stages": 2,
+        "gearboxLength": 16,
+        "bodyLength": 52,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6
+      },
+      "attributeConditions": {},
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "19:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "12 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "16 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10082 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "390 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.37 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "204 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "2.1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "19-24",
+    "name": "19:1 · 24 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 19:1 · 2 planetary stages · Ø16 × 52 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "19-24",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 19:1 · 24 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 19,
+        "voltage": "24",
+        "stages": 2,
+        "gearboxLength": 16,
+        "bodyLength": 52,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6
+      },
+      "attributeConditions": {},
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "19:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "24 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "16 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10189 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "180 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.41 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "216 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "22.6-12",
+    "name": "22.6:1 · 12 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 22.6:1 · 2 planetary stages · Ø16 × 52 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "22.6-12",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 22.6:1 · 12 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 22.6,
+        "voltage": "12",
+        "stages": 2,
+        "gearboxLength": 16,
+        "bodyLength": 52,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6,
+        "noLoadSpeed": 520,
+        "ratedSpeed": 430,
+        "ratedTorque": 0.5
+      },
+      "attributeConditions": {
+        "noLoadSpeed": "Output table at 12 V.",
+        "ratedSpeed": "Output table at 12 V.",
+        "ratedTorque": "Transcribed output table; conflicts with general 3 kgf·cm gearbox rated maximum where table gives 5. Not a validated continuous assembly rating."
+      },
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "22.6:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "12 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "16 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10082 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "390 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.37 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "204 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "2.1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "22.6-24",
+    "name": "22.6:1 · 24 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 22.6:1 · 2 planetary stages · Ø16 × 52 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "22.6-24",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 22.6:1 · 24 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 22.6,
+        "voltage": "24",
+        "stages": 2,
+        "gearboxLength": 16,
+        "bodyLength": 52,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6,
+        "noLoadSpeed": 520,
+        "ratedSpeed": 430,
+        "ratedTorque": 0.5
+      },
+      "attributeConditions": {
+        "noLoadSpeed": "Output table at 24 V.",
+        "ratedSpeed": "Output table at 24 V.",
+        "ratedTorque": "Transcribed output table; conflicts with general 3 kgf·cm gearbox rated maximum where table gives 5. Not a validated continuous assembly rating."
+      },
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "22.6:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "24 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "16 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10189 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "180 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.41 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "216 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "64-12",
+    "name": "64:1 · 12 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 64:1 · 3 planetary stages · Ø16 × 55.5 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "64-12",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 64:1 · 12 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 64,
+        "voltage": "12",
+        "stages": 3,
+        "gearboxLength": 19.5,
+        "bodyLength": 55.5,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6,
+        "noLoadSpeed": 180,
+        "ratedSpeed": 150,
+        "ratedTorque": 1.5
+      },
+      "attributeConditions": {
+        "noLoadSpeed": "Output table at 12 V.",
+        "ratedSpeed": "Output table at 12 V.",
+        "ratedTorque": "Transcribed output table; conflicts with general 3 kgf·cm gearbox rated maximum where table gives 5. Not a validated continuous assembly rating."
+      },
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "64:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "12 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "19.5 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10082 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "390 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.37 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "204 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "2.1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "64-24",
+    "name": "64:1 · 24 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 64:1 · 3 planetary stages · Ø16 × 55.5 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "64-24",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 64:1 · 24 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 64,
+        "voltage": "24",
+        "stages": 3,
+        "gearboxLength": 19.5,
+        "bodyLength": 55.5,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6,
+        "noLoadSpeed": 180,
+        "ratedSpeed": 150,
+        "ratedTorque": 1.5
+      },
+      "attributeConditions": {
+        "noLoadSpeed": "Output table at 24 V.",
+        "ratedSpeed": "Output table at 24 V.",
+        "ratedTorque": "Transcribed output table; conflicts with general 3 kgf·cm gearbox rated maximum where table gives 5. Not a validated continuous assembly rating."
+      },
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "64:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "24 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "19.5 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10189 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "180 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.41 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "216 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "76-12",
+    "name": "76:1 · 12 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 76:1 · 3 planetary stages · Ø16 × 55.5 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "76-12",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 76:1 · 12 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 76,
+        "voltage": "12",
+        "stages": 3,
+        "gearboxLength": 19.5,
+        "bodyLength": 55.5,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6
+      },
+      "attributeConditions": {},
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "76:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "12 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "19.5 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10082 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "390 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.37 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "204 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "2.1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "76-24",
+    "name": "76:1 · 24 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 76:1 · 3 planetary stages · Ø16 × 55.5 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "76-24",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 76:1 · 24 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 76,
+        "voltage": "24",
+        "stages": 3,
+        "gearboxLength": 19.5,
+        "bodyLength": 55.5,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6
+      },
+      "attributeConditions": {},
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "76:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "24 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "19.5 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10189 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "180 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.41 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "216 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "90-12",
+    "name": "90:1 · 12 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 90:1 · 3 planetary stages · Ø16 × 55.5 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "90-12",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 90:1 · 12 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 90,
+        "voltage": "12",
+        "stages": 3,
+        "gearboxLength": 19.5,
+        "bodyLength": 55.5,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6
+      },
+      "attributeConditions": {},
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "90:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "12 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "19.5 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10082 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "390 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.37 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "204 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "2.1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "90-24",
+    "name": "90:1 · 24 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 90:1 · 3 planetary stages · Ø16 × 55.5 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "90-24",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 90:1 · 24 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 90,
+        "voltage": "24",
+        "stages": 3,
+        "gearboxLength": 19.5,
+        "bodyLength": 55.5,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6
+      },
+      "attributeConditions": {},
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "90:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "24 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "19.5 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10189 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "180 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.41 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "216 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "107-12",
+    "name": "107-11.6D7 · 12 V",
+    "description": "GMP16T-TEC1636 · 107:1 · 3 planetary stages · Ø16 × 55.5 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "107-12",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 107:1 · 12 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": ["107-11.6D7"],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 107,
+        "voltage": "12",
+        "stages": 3,
+        "gearboxLength": 19.5,
+        "bodyLength": 55.5,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6,
+        "noLoadSpeed": 110,
+        "ratedSpeed": 90,
+        "ratedTorque": 2.8
+      },
+      "attributeConditions": {
+        "noLoadSpeed": "Output table at 12 V.",
+        "ratedSpeed": "Output table at 12 V.",
+        "ratedTorque": "Transcribed output table; conflicts with general 3 kgf·cm gearbox rated maximum where table gives 5. Not a validated continuous assembly rating."
+      },
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "107:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "12 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "19.5 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10082 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "390 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.37 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "204 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "2.1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "107-24",
+    "name": "107-11.6D7 · 24 V",
+    "description": "GMP16T-TEC1636 · 107:1 · 3 planetary stages · Ø16 × 55.5 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "107-24",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 107:1 · 24 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": ["107-11.6D7"],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 107,
+        "voltage": "24",
+        "stages": 3,
+        "gearboxLength": 19.5,
+        "bodyLength": 55.5,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6,
+        "noLoadSpeed": 110,
+        "ratedSpeed": 90,
+        "ratedTorque": 2.8
+      },
+      "attributeConditions": {
+        "noLoadSpeed": "Output table at 24 V.",
+        "ratedSpeed": "Output table at 24 V.",
+        "ratedTorque": "Transcribed output table; conflicts with general 3 kgf·cm gearbox rated maximum where table gives 5. Not a validated continuous assembly rating."
+      },
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "107:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "24 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "19.5 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10189 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "180 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.41 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "216 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "172-12",
+    "name": "172:1 · 12 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 172:1 · 4 planetary stages · Ø16 × 59 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "172-12",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 172:1 · 12 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 172,
+        "voltage": "12",
+        "stages": 4,
+        "gearboxLength": 23,
+        "bodyLength": 59,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6
+      },
+      "attributeConditions": {},
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "172:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "12 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "23 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10082 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "390 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.37 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "204 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "2.1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "172-24",
+    "name": "172:1 · 24 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 172:1 · 4 planetary stages · Ø16 × 59 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "172-24",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 172:1 · 24 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 172,
+        "voltage": "24",
+        "stages": 4,
+        "gearboxLength": 23,
+        "bodyLength": 59,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6
+      },
+      "attributeConditions": {},
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "172:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "24 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "23 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10189 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "180 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.41 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "216 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "224-12",
+    "name": "224:1 · 12 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 224:1 · 4 planetary stages · Ø16 × 59 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "224-12",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 224:1 · 12 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 224,
+        "voltage": "12",
+        "stages": 4,
+        "gearboxLength": 23,
+        "bodyLength": 59,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6
+      },
+      "attributeConditions": {},
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "224:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "12 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "23 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10082 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "390 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.37 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "204 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "2.1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "224-24",
+    "name": "224:1 · 24 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 224:1 · 4 planetary stages · Ø16 × 59 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "224-24",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 224:1 · 24 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 224,
+        "voltage": "24",
+        "stages": 4,
+        "gearboxLength": 23,
+        "bodyLength": 59,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6
+      },
+      "attributeConditions": {},
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "224:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "24 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "23 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10189 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "180 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.41 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "216 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "256-12",
+    "name": "256:1 · 12 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 256:1 · 4 planetary stages · Ø16 × 59 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "256-12",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 256:1 · 12 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 256,
+        "voltage": "12",
+        "stages": 4,
+        "gearboxLength": 23,
+        "bodyLength": 59,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6,
+        "noLoadSpeed": 45,
+        "ratedSpeed": 38,
+        "ratedTorque": 5
+      },
+      "attributeConditions": {
+        "noLoadSpeed": "Output table at 12 V.",
+        "ratedSpeed": "Output table at 12 V.",
+        "ratedTorque": "Transcribed output table; conflicts with general 3 kgf·cm gearbox rated maximum where table gives 5. Not a validated continuous assembly rating."
+      },
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "256:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "12 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "23 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10082 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "390 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.37 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "204 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "2.1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "256-24",
+    "name": "256:1 · 24 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 256:1 · 4 planetary stages · Ø16 × 59 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "256-24",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 256:1 · 24 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 256,
+        "voltage": "24",
+        "stages": 4,
+        "gearboxLength": 23,
+        "bodyLength": 59,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6,
+        "noLoadSpeed": 45,
+        "ratedSpeed": 38,
+        "ratedTorque": 5
+      },
+      "attributeConditions": {
+        "noLoadSpeed": "Output table at 24 V.",
+        "ratedSpeed": "Output table at 24 V.",
+        "ratedTorque": "Transcribed output table; conflicts with general 3 kgf·cm gearbox rated maximum where table gives 5. Not a validated continuous assembly rating."
+      },
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "256:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "24 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "23 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10189 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "180 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.41 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "216 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "304-12",
+    "name": "304:1 · 12 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 304:1 · 4 planetary stages · Ø16 × 59 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "304-12",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 304:1 · 12 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 304,
+        "voltage": "12",
+        "stages": 4,
+        "gearboxLength": 23,
+        "bodyLength": 59,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6
+      },
+      "attributeConditions": {},
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "304:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "12 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "23 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10082 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "390 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.37 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "204 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "2.1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "304-24",
+    "name": "304:1 · 24 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 304:1 · 4 planetary stages · Ø16 × 59 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "304-24",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 304:1 · 24 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 304,
+        "voltage": "24",
+        "stages": 4,
+        "gearboxLength": 23,
+        "bodyLength": 59,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6
+      },
+      "attributeConditions": {},
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "304:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "24 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "23 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10189 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "180 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.41 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "216 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "361-12",
+    "name": "361-11.6D7 · 12 V",
+    "description": "GMP16T-TEC1636 · 361:1 · 4 planetary stages · Ø16 × 59 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "361-12",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 361:1 · 12 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": ["361-11.6D7"],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 361,
+        "voltage": "12",
+        "stages": 4,
+        "gearboxLength": 23,
+        "bodyLength": 59,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6,
+        "noLoadSpeed": 31,
+        "ratedSpeed": 26,
+        "ratedTorque": 5
+      },
+      "attributeConditions": {
+        "noLoadSpeed": "Output table at 12 V.",
+        "ratedSpeed": "Output table at 12 V.",
+        "ratedTorque": "Transcribed output table; conflicts with general 3 kgf·cm gearbox rated maximum where table gives 5. Not a validated continuous assembly rating."
+      },
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "361:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "12 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "23 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10082 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "390 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.37 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "204 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "2.1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "361-24",
+    "name": "361-11.6D7 · 24 V",
+    "description": "GMP16T-TEC1636 · 361:1 · 4 planetary stages · Ø16 × 59 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "361-24",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 361:1 · 24 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": ["361-11.6D7"],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 361,
+        "voltage": "24",
+        "stages": 4,
+        "gearboxLength": 23,
+        "bodyLength": 59,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6,
+        "noLoadSpeed": 31,
+        "ratedSpeed": 26,
+        "ratedTorque": 5
+      },
+      "attributeConditions": {
+        "noLoadSpeed": "Output table at 24 V.",
+        "ratedSpeed": "Output table at 24 V.",
+        "ratedTorque": "Transcribed output table; conflicts with general 3 kgf·cm gearbox rated maximum where table gives 5. Not a validated continuous assembly rating."
+      },
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "361:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "24 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "23 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10189 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "180 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.41 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "216 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "428.7-12",
+    "name": "428.7:1 · 12 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 428.7:1 · 4 planetary stages · Ø16 × 59 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "428.7-12",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 428.7:1 · 12 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 428.7,
+        "voltage": "12",
+        "stages": 4,
+        "gearboxLength": 23,
+        "bodyLength": 59,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6
+      },
+      "attributeConditions": {},
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "428.7:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "12 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "23 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10082 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "390 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.37 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "204 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "2.1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "428.7-24",
+    "name": "428.7:1 · 24 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 428.7:1 · 4 planetary stages · Ø16 × 59 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "428.7-24",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 428.7:1 · 24 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 428.7,
+        "voltage": "24",
+        "stages": 4,
+        "gearboxLength": 23,
+        "bodyLength": 59,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6
+      },
+      "attributeConditions": {},
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "428.7:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "24 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "23 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10189 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "180 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.41 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "216 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "509-12",
+    "name": "509:1 · 12 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 509:1 · 4 planetary stages · Ø16 × 59 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "509-12",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 509:1 · 12 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 509,
+        "voltage": "12",
+        "stages": 4,
+        "gearboxLength": 23,
+        "bodyLength": 59,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6
+      },
+      "attributeConditions": {},
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "509:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "12 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "23 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10082 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "390 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.37 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "204 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "2.1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "509-24",
+    "name": "509:1 · 24 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 509:1 · 4 planetary stages · Ø16 × 59 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "509-24",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 509:1 · 24 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 509,
+        "voltage": "24",
+        "stages": 4,
+        "gearboxLength": 23,
+        "bodyLength": 59,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6
+      },
+      "attributeConditions": {},
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "509:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "24 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "23 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10189 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "180 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.41 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "216 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "1024-12",
+    "name": "1024:1 · 12 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 1024:1 · 5 planetary stages · Ø16 × 62.5 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "1024-12",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 1024:1 · 12 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 1024,
+        "voltage": "12",
+        "stages": 5,
+        "gearboxLength": 26.5,
+        "bodyLength": 62.5,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6,
+        "noLoadSpeed": 10,
+        "ratedSpeed": 9,
+        "ratedTorque": 5
+      },
+      "attributeConditions": {
+        "noLoadSpeed": "Output table at 12 V.",
+        "ratedSpeed": "Output table at 12 V.",
+        "ratedTorque": "Transcribed output table; conflicts with general 3 kgf·cm gearbox rated maximum where table gives 5. Not a validated continuous assembly rating."
+      },
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "1024:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "12 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "26.5 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10082 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "390 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.37 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "204 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "2.1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  },
+  {
+    "id": "1024-24",
+    "name": "1024:1 · 24 V · 11.6D7 shaft",
+    "description": "GMP16T-TEC1636 · 1024:1 · 5 planetary stages · Ø16 × 62.5 mm body. Datasheet variant; confirm seller availability.",
+    "parameters": {
+      "model": "1024-24",
+      "outputAngle": 0,
+      "showLeads": false
+    },
+    "catalog": {
+      "designation": "GMP16T-TEC1636 · 1024:1 · 24 V · 11.6D7 shaft",
+      "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
+      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceKind": "attachment",
+      "verifiedParameters": ["model"],
+      "productCodes": [],
+      "alternateSourceUrls": ["https://www.aliexpress.com/item/1005011804448445.html"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
+        "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
+        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+      },
+      "attributes": {
+        "ratio": 1024,
+        "voltage": "24",
+        "stages": 5,
+        "gearboxLength": 26.5,
+        "bodyLength": 62.5,
+        "bodyDiameter": 16,
+        "shaftDiameter": 3,
+        "shaftExtension": 11.6,
+        "noLoadSpeed": 10,
+        "ratedSpeed": 9,
+        "ratedTorque": 5
+      },
+      "attributeConditions": {
+        "noLoadSpeed": "Output table at 24 V.",
+        "ratedSpeed": "Output table at 24 V.",
+        "ratedTorque": "Transcribed output table; conflicts with general 3 kgf·cm gearbox rated maximum where table gives 5. Not a validated continuous assembly rating."
+      },
+      "specifications": [
+        {
+          "label": "Reduction",
+          "value": "1024:1"
+        },
+        {
+          "label": "Rated voltage",
+          "value": "24 V"
+        },
+        {
+          "label": "Gearbox length",
+          "value": "26.5 ±0.5 mm"
+        },
+        {
+          "label": "Output shaft",
+          "value": "Ø3 mm · 11.6 mm extension · D-flat 7 mm · flat-to-round 2.8 mm"
+        },
+        {
+          "label": "Mounting",
+          "value": "Two M2 holes · 10.5 mm pitch · Ø6 × 2.3 mm pilot; hole depth unspecified"
+        },
+        {
+          "label": "Motor no-load speed",
+          "value": "12000 rpm"
+        },
+        {
+          "label": "Motor no-load current",
+          "value": "40 mA"
+        },
+        {
+          "label": "Motor rated speed",
+          "value": "10189 rpm"
+        },
+        {
+          "label": "Motor rated current",
+          "value": "180 mA"
+        },
+        {
+          "label": "Motor rated torque",
+          "value": "32.6 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor rated power",
+          "value": "3.41 W · motor alone"
+        },
+        {
+          "label": "Motor stall torque",
+          "value": "216 gf·cm · motor alone"
+        },
+        {
+          "label": "Motor stall current",
+          "value": "1 A · motor alone"
+        },
+        {
+          "label": "Gearbox rated maximum",
+          "value": "3 kgf·cm · conflicts with some output table rows"
+        },
+        {
+          "label": "Gearbox momentary maximum",
+          "value": "5 kgf·cm"
+        },
+        {
+          "label": "Approximate mass",
+          "value": "53 g · datasheet figure; no per-ratio mass given"
+        },
+        {
+          "label": "Seller availability",
+          "value": "Requested 107-11.6D7 and 361-11.6D7; other datasheet options require supplier confirmation."
+        }
+      ]
+    }
+  }
+]

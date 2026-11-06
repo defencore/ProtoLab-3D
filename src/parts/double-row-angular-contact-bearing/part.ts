@@ -1,4 +1,5 @@
 import productData from './product.json';
+import { bearingPalette, bearingRgb } from '../../core/hardware/bearing-appearance';
 import type { ProductProfile } from '../../core/product-types';
 import { withParameterStates } from '../../core/parameter-states';
 import presetData from './presets.json';
@@ -241,7 +242,12 @@ const part: PartDefinition = {
     if (state !== 'internals')
       for (const side of closureSides(p)) {
         const rubber = String(p.closure).startsWith('rubber'),
-          seal = ring(v.sealOuter, v.sealInner, v.sealThickness, rubber ? 0x292f38 : 0xb0b5bc);
+          seal = ring(
+            v.sealOuter,
+            v.sealInner,
+            v.sealThickness,
+            rubber ? bearingPalette.angularRubberSeal : bearingPalette.angularMetalShield,
+          );
         seal.name = rubber ? 'Rubber seal' : 'Metal shield';
         seal.position.z =
           side * (state === 'exploded' ? v.width * 2 : (v.width - v.sealThickness) / 2);
@@ -254,19 +260,23 @@ const part: PartDefinition = {
       profiles = doubleAngularRaceProfiles(p),
       offset = state === 'exploded' ? v.width * 1.1 : 0,
       setup: string[] = [],
-      shapes = [turnedPython(profiles[0].map(([r, z]) => [r, z - offset]))];
+      shapes = [turnedPython(profiles[0].map(([r, z]) => [r, z - offset]))],
+      colors = [bearingRgb(bearingPalette.race)];
     if (state !== 'internals')
       shapes.push(turnedPython(profiles[1].map(([r, z]) => [r, z + offset])));
+    if (state !== 'internals') colors.push(bearingRgb(bearingPalette.race));
     for (const side of [-1, 1]) {
       const layout = cage(p, side),
         name = side < 0 ? 'lower_cage' : 'upper_cage';
       setup.push(cagePython(layout, name));
       shapes.push(name);
+      colors.push(bearingRgb(bearingPalette.cage));
       for (let i = 0; i < layout.count; i++) {
         const angle = (i * Math.PI * 2) / layout.count + layout.rowPhase;
         shapes.push(
           `Part.makeSphere(${num(v.radius)},App.Vector(${num(v.pitch * Math.cos(angle))},${num(v.pitch * Math.sin(angle))},${num(layout.center)}))`,
         );
+        colors.push(bearingRgb(bearingPalette.race));
       }
     }
     if (state !== 'internals')
@@ -276,8 +286,17 @@ const part: PartDefinition = {
         shapes.push(
           annulusPython(v.sealOuter, v.sealInner, v.sealThickness, center - v.sealThickness / 2),
         );
+        colors.push(
+          bearingRgb(
+            String(p.closure).startsWith('rubber')
+              ? bearingPalette.angularRubberSeal
+              : bearingPalette.angularMetalShield,
+          ),
+        );
       }
-    return [...setup, compoundPython(shapes)].join('\n');
+    return [...setup, compoundPython(shapes), `component_colors = ${JSON.stringify(colors)}`].join(
+      '\n',
+    );
   },
   dimensions(p, state) {
     const model = part.buildGeometry(p, state),

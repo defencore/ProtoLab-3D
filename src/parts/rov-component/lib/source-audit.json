@@ -1,0 +1,9 @@
+{
+  "units": "mm",
+  "checkedAt": "2026-10-29",
+  "freecad": "1.1.4",
+  "retained": 6,
+  "rejected": [],
+  "sourceCount": 12,
+  "statement": "Six original single-solid Fins fabrication definitions. Their26 installed occurrences are matched to the named source assembly by exact source poses and symmetric-difference volume under0.001mm3. Purchased equipment is not fabricated."
+}

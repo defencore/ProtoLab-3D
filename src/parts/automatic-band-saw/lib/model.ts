@@ -3,6 +3,8 @@ import { pivotPieces, rotateHead } from './pivot-head';
 import { clampPieces } from './clamps';
 import { feedAxis } from './feed-axis';
 import { motorPieces } from '../../machine-drive-motor/lib/model';
+import { pieces as pneumaticValvePieces } from '../../pneumatic-valve/lib/model';
+import { pieces as airPreparationPieces } from '../../air-preparation-unit/lib/model';
 import { tubeSection } from './profiles';
 import { bearingPieces, maCylinderPieces, socketScrew } from './hardware';
 import type { Parameters } from '../../../core/types';
@@ -75,7 +77,10 @@ export function machinePieces(p: Parameters, state: string): MachinePiece[] {
     group: string,
     prefix: string,
   ) => {
-    markSupplierUnit(items.map(item=>item.shape), {...(items[0] ? supplierUnit(items[0].shape) : undefined), name:prefix});
+    markSupplierUnit(
+      items.map((item) => item.shape),
+      { ...(items[0] ? supplierUnit(items[0].shape) : undefined), name: prefix },
+    );
     for (const item of items)
       add(
         `${prefix} / ${item.label}`,
@@ -432,13 +437,23 @@ export function machinePieces(p: Parameters, state: string): MachinePiece[] {
     'Feed carriage',
     C.frame,
   );
-  b(
-    'Carriage E3Z-LL81 BGS sensor',
+  const carriageSensor = box(
     [10.8, 20, 31],
     [beamX - 5.4, -103, TABLE + Math.max(16, h / 2) - 15.5],
-    'Feed carriage',
-    C.blue,
   );
+  const carriageSensorSource = {
+    name: 'OMRON E3Z-LL81 BGS sensor',
+    libraryId: 'machine-measurement',
+    presetId: 'e3z-ll81',
+    procurement: {
+      designation: 'E3Z-LL81 / confirm pre-wired cable execution',
+      manufacturer: 'OMRON',
+      source: 'https://www.ia.omron.com/products/family/1747/specification.html',
+    },
+  };
+  markSupplierUnit([carriageSensor], carriageSensorSource);
+  add('Carriage E3Z-LL81 BGS sensor', carriageSensor, 'Feed carriage', C.blue, 'BUY');
+  const carriageSensorOccurrence = out[out.length - 1];
   b('Loading nose mark X-30 to X-15', [15, 10, 0.1], [-30, -80, TABLE], 'Sensors', C.part);
 
   // Shelf rotates around X, so it never sweeps into the X=0 cutting plane.
@@ -587,30 +602,41 @@ export function machinePieces(p: Parameters, state: string): MachinePiece[] {
   b('Operator length display', [180, 10, 90], [-425, 555, 1100], 'Controls', C.blue);
   c('Emergency stop', 20, 20, [-220, 555, 1050], 'y', 'Controls', 0xd74035);
   b('24 V valve manifold mounting rail', [310, 90, 12], [-490, 415, 698], 'Pneumatics', C.air);
-  for (let i = 0; i < 5; i++) {
-    const x = -480 + i * 31;
-    add(
-      `4V210 valve spool body ${i + 1}`,
-      subtract(
-        box([22, 85, 32], [x, 410, 710]),
-        ...[426, 450, 474].map((y) =>
-          cylinder(6.4, 10, [x + 11, y, 733], 'z', { pitch: 1.337, internal: true }),
-        ),
-      ),
+  for (let i = 0; i < 5; i++)
+    purchased(
+      pneumaticValvePieces({ model: '4v210-08-dc24v' }).map((piece) => ({
+        ...piece,
+        shape: piece.shape as Shape,
+      })),
+      [-480 + i * 31, 375, 710],
+      [0, 0, 0],
       'Pneumatics',
-      C.air,
-      'BUY',
+      `4V210-08 DC24V valve ${i + 1}`,
     );
-    b(`4V210 DC24V coil ${i + 1}`, [22, 35, 36], [x, 375, 710], 'Pneumatics', C.dark);
-    b(`4V210 connector ${i + 1}`, [20, 25, 22], [x + 1, 380, 746], 'Pneumatics', C.blue);
-    c(`4V210 manual override ${i + 1}`, 3, 3, [x + 22, 420, 724], 'x', 'Pneumatics', 0xdc7a42);
-  }
-  c('AFR2000 filter bowl', 22, 100, [-450, 520, 575], 'z', 'Pneumatics', C.air);
-  b('Air filter regulator body', [60, 50, 50], [-480, 505, 675], 'Pneumatics', C.blue);
-  b('AR2000 clamp pressure regulator', [45, 45, 55], [-390, 500, 635], 'Pneumatics', C.blue);
-  b('AR2000 descent pressure regulator', [45, 45, 55], [-315, 500, 635], 'Pneumatics', C.blue);
-  for (const x of [-450, -367, -292])
-    c(`Regulator gauge ${x}`, 20, 14, [x, x === -450 ? 555 : 545, 690], 'y', 'Pneumatics', C.dark);
+  purchased(
+    airPreparationPieces({ model: 'afr2000-g1-4' }).map((piece) => ({
+      ...piece,
+      shape: piece.shape as Shape,
+    })),
+    [-450, 520, 575],
+    [0, 0, 0],
+    'Pneumatics',
+    'AFR2000 G1/4 filter regulator',
+  );
+  for (const [x, role] of [
+    [-390, 'clamp'],
+    [-315, 'descent'],
+  ] as const)
+    purchased(
+      airPreparationPieces({ model: 'ar2000-g1-4' }).map((piece) => ({
+        ...piece,
+        shape: piece.shape as Shape,
+      })),
+      [x, 500, 635],
+      [0, 0, 0],
+      'Pneumatics',
+      `AR2000 G1/4 ${role} pressure regulator`,
+    );
   if (guards) {
     add(
       'Upper band return channel',
@@ -1078,6 +1104,8 @@ export function machinePieces(p: Parameters, state: string): MachinePiece[] {
     (v) => ['Carriage optical arm', 'Carriage optical height slot'].includes(v.label),
     'Feed carriage',
   );
+  // Hole operations replace the sensor shape; retain provenance on that same occurrence.
+  markSupplierUnit([carriageSensorOccurrence.shape], carriageSensorSource);
   for (const piece of out) {
     if (piece.group === 'Band drive') piece.shape = transform(piece.shape, [-100, 0, 0]);
     if (

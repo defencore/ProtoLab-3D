@@ -1,0 +1,13 @@
+{
+  "kind": "reference",
+  "supply": "reference",
+  "description": "Jinchang JCG108 nominal housing reference with sourced outer dimensions and incomplete mechanical and connector evidence. The actual antenna, lead and connector remain one supplier unit.",
+  "processes": [],
+  "releaseRequirements": [
+    "Confirm the full JCG108 order execution, 3 m or 5 m drawing lead length, connector type, gender, polarity and manufacturer revision.",
+    "Obtain manufacturer CAD, fully dimensioned drawings or verified measurements for the outline, boss, strain relief, adhesive and connector interfaces.",
+    "Check sourced dimensional tolerances, cable route and bend allowance, mating clearance and adhesive mounting against delivered hardware.",
+    "Replace the incomplete engineering reference with verified mechanical evidence before production specification; retain the complete supplier antenna as one procurement unit.",
+    "Qualify RF performance for the actual radio and installation; published frequency bands do not establish every 4G/LTE band."
+  ]
+}

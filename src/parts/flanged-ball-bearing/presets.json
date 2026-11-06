@@ -1,0 +1,478 @@
+[
+  {
+    "id": "f623-2rs",
+    "name": "F623-2RS · 3×10×4 mm",
+    "description": "3 × 10 × 4 mm · 2RS · independent flange reference Ø11.5 × 1 mm",
+    "parameters": {
+      "bore": 3,
+      "outer": 10,
+      "width": 4,
+      "flangeOuter": 11.5,
+      "flangeWidth": 1,
+      "seals": "rubber",
+      "balls": 8
+    },
+    "catalog": {
+      "designation": "F623-2RS",
+      "sourceName": "AliExpress · user-supplied model options",
+      "sourceUrl": "https://www.aliexpress.us/item/3256808281231823.html",
+      "verifiedParameters": ["bore", "outer", "width", "seals"],
+      "alternateSourceUrls": [
+        "https://www.fitrunbearing.com/wp-content/uploads/2022/09/miniature-ball-bearings-catalogue-pdf.pdf#page=11"
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Requested body envelope and 2RS designation; flange based on independent manufacturer size reference.",
+        "limitations": "Seller page verification unavailable. Independent flange reference does not establish seller interchangeability. Ball complement, raceways, cage and seal profiles are illustrative.",
+        "sourceUrl": "https://www.fitrunbearing.com/wp-content/uploads/2022/09/miniature-ball-bearings-catalogue-pdf.pdf#page=11"
+      },
+      "specifications": [
+        {
+          "label": "Flange reference",
+          "value": "Ø11.5 × 1 mm; independent manufacturer reference, confirm seller execution"
+        },
+        {
+          "label": "Overall width",
+          "value": "Includes the flange"
+        },
+        {
+          "label": "Source scope",
+          "value": "Body dimensions and 2RS designation follow supplied list; flange dimensions remain editable independent references"
+        }
+      ]
+    }
+  },
+  {
+    "id": "f686-2rs",
+    "name": "F686-2RS · 6×13×5 mm",
+    "description": "6 × 13 × 5 mm · 2RS · independent flange reference Ø15 × 1.1 mm",
+    "parameters": {
+      "bore": 6,
+      "outer": 13,
+      "width": 5,
+      "flangeOuter": 15,
+      "flangeWidth": 1.1,
+      "seals": "rubber",
+      "balls": 10
+    },
+    "catalog": {
+      "designation": "F686-2RS",
+      "sourceName": "AliExpress · user-supplied model options",
+      "sourceUrl": "https://www.aliexpress.us/item/3256808281231823.html",
+      "verifiedParameters": ["bore", "outer", "width", "seals"],
+      "alternateSourceUrls": [
+        "https://www.fitrunbearing.com/wp-content/uploads/2022/09/miniature-ball-bearings-catalogue-pdf.pdf#page=13"
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Requested body envelope and 2RS designation; flange based on independent manufacturer size reference.",
+        "limitations": "Seller page verification unavailable. Independent flange reference does not establish seller interchangeability. Ball complement, raceways, cage and seal profiles are illustrative.",
+        "sourceUrl": "https://www.fitrunbearing.com/wp-content/uploads/2022/09/miniature-ball-bearings-catalogue-pdf.pdf#page=13"
+      },
+      "specifications": [
+        {
+          "label": "Flange reference",
+          "value": "Ø15 × 1.1 mm; independent manufacturer reference, confirm seller execution"
+        },
+        {
+          "label": "Overall width",
+          "value": "Includes the flange"
+        },
+        {
+          "label": "Source scope",
+          "value": "Body dimensions and 2RS designation follow supplied list; flange dimensions remain editable independent references"
+        }
+      ]
+    }
+  },
+  {
+    "id": "f688-2rs",
+    "name": "F688-2RS · 8×16×5 mm",
+    "description": "8 × 16 × 5 mm · 2RS · independent flange reference Ø18 × 1.1 mm",
+    "parameters": {
+      "bore": 8,
+      "outer": 16,
+      "width": 5,
+      "flangeOuter": 18,
+      "flangeWidth": 1.1,
+      "seals": "rubber",
+      "balls": 10
+    },
+    "catalog": {
+      "designation": "F688-2RS",
+      "sourceName": "AliExpress · user-supplied model options",
+      "sourceUrl": "https://www.aliexpress.us/item/3256808281231823.html",
+      "verifiedParameters": ["bore", "outer", "width", "seals"],
+      "alternateSourceUrls": [
+        "https://www.fitrunbearing.com/wp-content/uploads/2022/09/miniature-ball-bearings-catalogue-pdf.pdf#page=15"
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Requested body envelope and 2RS designation; flange based on independent manufacturer size reference.",
+        "limitations": "Seller page verification unavailable. Independent flange reference does not establish seller interchangeability. Ball complement, raceways, cage and seal profiles are illustrative.",
+        "sourceUrl": "https://www.fitrunbearing.com/wp-content/uploads/2022/09/miniature-ball-bearings-catalogue-pdf.pdf#page=15"
+      },
+      "specifications": [
+        {
+          "label": "Flange reference",
+          "value": "Ø18 × 1.1 mm; independent manufacturer reference, confirm seller execution"
+        },
+        {
+          "label": "Overall width",
+          "value": "Includes the flange"
+        },
+        {
+          "label": "Source scope",
+          "value": "Body dimensions and 2RS designation follow supplied list; flange dimensions remain editable independent references"
+        }
+      ]
+    }
+  },
+  {
+    "id": "f689-2rs",
+    "name": "F689-2RS · 9×17×5 mm",
+    "description": "9 × 17 × 5 mm · 2RS · independent flange reference Ø19 × 1.1 mm",
+    "parameters": {
+      "bore": 9,
+      "outer": 17,
+      "width": 5,
+      "flangeOuter": 19,
+      "flangeWidth": 1.1,
+      "seals": "rubber",
+      "balls": 10
+    },
+    "catalog": {
+      "designation": "F689-2RS",
+      "sourceName": "AliExpress · user-supplied model options",
+      "sourceUrl": "https://www.aliexpress.us/item/3256808281231823.html",
+      "verifiedParameters": ["bore", "outer", "width", "seals"],
+      "alternateSourceUrls": [
+        "https://www.fitrunbearing.com/wp-content/uploads/2022/09/miniature-ball-bearings-catalogue-pdf.pdf#page=15"
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Requested body envelope and 2RS designation; flange based on independent manufacturer size reference.",
+        "limitations": "Seller page verification unavailable. Independent flange reference does not establish seller interchangeability. Ball complement, raceways, cage and seal profiles are illustrative.",
+        "sourceUrl": "https://www.fitrunbearing.com/wp-content/uploads/2022/09/miniature-ball-bearings-catalogue-pdf.pdf#page=15"
+      },
+      "specifications": [
+        {
+          "label": "Flange reference",
+          "value": "Ø19 × 1.1 mm; independent manufacturer reference, confirm seller execution"
+        },
+        {
+          "label": "Overall width",
+          "value": "Includes the flange"
+        },
+        {
+          "label": "Source scope",
+          "value": "Body dimensions and 2RS designation follow supplied list; flange dimensions remain editable independent references"
+        }
+      ]
+    }
+  },
+  {
+    "id": "f695-2rs",
+    "name": "F695-2RS · 5×13×4 mm",
+    "description": "5 × 13 × 4 mm · 2RS · independent flange reference Ø15 × 1 mm",
+    "parameters": {
+      "bore": 5,
+      "outer": 13,
+      "width": 4,
+      "flangeOuter": 15,
+      "flangeWidth": 1,
+      "seals": "rubber",
+      "balls": 10
+    },
+    "catalog": {
+      "designation": "F695-2RS",
+      "sourceName": "AliExpress · user-supplied model options",
+      "sourceUrl": "https://www.aliexpress.us/item/3256808281231823.html",
+      "verifiedParameters": ["bore", "outer", "width", "seals"],
+      "alternateSourceUrls": [
+        "https://www.fitrunbearing.com/wp-content/uploads/2022/09/miniature-ball-bearings-catalogue-pdf.pdf#page=13"
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Requested body envelope and 2RS designation; flange based on independent manufacturer size reference.",
+        "limitations": "Seller page verification unavailable. Independent flange reference does not establish seller interchangeability. Ball complement, raceways, cage and seal profiles are illustrative.",
+        "sourceUrl": "https://www.fitrunbearing.com/wp-content/uploads/2022/09/miniature-ball-bearings-catalogue-pdf.pdf#page=13"
+      },
+      "specifications": [
+        {
+          "label": "Flange reference",
+          "value": "Ø15 × 1 mm; independent manufacturer reference, confirm seller execution"
+        },
+        {
+          "label": "Overall width",
+          "value": "Includes the flange"
+        },
+        {
+          "label": "Source scope",
+          "value": "Body dimensions and 2RS designation follow supplied list; flange dimensions remain editable independent references"
+        }
+      ]
+    }
+  },
+  {
+    "id": "f696-2rs",
+    "name": "F696-2RS · 6×15×5 mm",
+    "description": "6 × 15 × 5 mm · 2RS · independent flange reference Ø17 × 1.2 mm",
+    "parameters": {
+      "bore": 6,
+      "outer": 15,
+      "width": 5,
+      "flangeOuter": 17,
+      "flangeWidth": 1.2,
+      "seals": "rubber",
+      "balls": 10
+    },
+    "catalog": {
+      "designation": "F696-2RS",
+      "sourceName": "AliExpress · user-supplied model options",
+      "sourceUrl": "https://www.aliexpress.us/item/3256808281231823.html",
+      "verifiedParameters": ["bore", "outer", "width", "seals"],
+      "alternateSourceUrls": [
+        "https://www.skdin.com/products/bearings/ball-bearings/deep-groove-ball-bearings/f-series-flanged-miniature-bearings/"
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Requested body envelope and 2RS designation; flange based on independent manufacturer size reference.",
+        "limitations": "Seller page verification unavailable. Independent flange reference does not establish seller interchangeability. Ball complement, raceways, cage and seal profiles are illustrative.",
+        "sourceUrl": "https://www.skdin.com/products/bearings/ball-bearings/deep-groove-ball-bearings/f-series-flanged-miniature-bearings/"
+      },
+      "specifications": [
+        {
+          "label": "Flange reference",
+          "value": "Ø17 × 1.2 mm; independent manufacturer reference, confirm seller execution"
+        },
+        {
+          "label": "Overall width",
+          "value": "Includes the flange"
+        },
+        {
+          "label": "Source scope",
+          "value": "Body dimensions and 2RS designation follow supplied list; flange dimensions remain editable independent references"
+        }
+      ]
+    }
+  },
+  {
+    "id": "f698-2rs",
+    "name": "F698-2RS · 8×19×6 mm",
+    "description": "8 × 19 × 6 mm · 2RS · independent flange reference Ø22 × 1.5 mm",
+    "parameters": {
+      "bore": 8,
+      "outer": 19,
+      "width": 6,
+      "flangeOuter": 22,
+      "flangeWidth": 1.5,
+      "seals": "rubber",
+      "balls": 10
+    },
+    "catalog": {
+      "designation": "F698-2RS",
+      "sourceName": "AliExpress · user-supplied model options",
+      "sourceUrl": "https://www.aliexpress.us/item/3256808281231823.html",
+      "verifiedParameters": ["bore", "outer", "width", "seals"],
+      "alternateSourceUrls": [
+        "https://www.fitrunbearing.com/wp-content/uploads/2022/09/miniature-ball-bearings-catalogue-pdf.pdf#page=15"
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Requested body envelope and 2RS designation; flange based on independent manufacturer size reference.",
+        "limitations": "Seller page verification unavailable. Independent flange reference does not establish seller interchangeability. Ball complement, raceways, cage and seal profiles are illustrative.",
+        "sourceUrl": "https://www.fitrunbearing.com/wp-content/uploads/2022/09/miniature-ball-bearings-catalogue-pdf.pdf#page=15"
+      },
+      "specifications": [
+        {
+          "label": "Flange reference",
+          "value": "Ø22 × 1.5 mm; independent manufacturer reference, confirm seller execution"
+        },
+        {
+          "label": "Overall width",
+          "value": "Includes the flange"
+        },
+        {
+          "label": "Source scope",
+          "value": "Body dimensions and 2RS designation follow supplied list; flange dimensions remain editable independent references"
+        }
+      ]
+    }
+  },
+  {
+    "id": "f608-2rs",
+    "name": "F608-2RS · 8×22×7 mm",
+    "description": "8 × 22 × 7 mm · 2RS · independent flange reference Ø25 × 1.5 mm",
+    "parameters": {
+      "bore": 8,
+      "outer": 22,
+      "width": 7,
+      "flangeOuter": 25,
+      "flangeWidth": 1.5,
+      "seals": "rubber",
+      "balls": 9
+    },
+    "catalog": {
+      "designation": "F608-2RS",
+      "sourceName": "AliExpress · user-supplied model options",
+      "sourceUrl": "https://www.aliexpress.us/item/3256808281231823.html",
+      "verifiedParameters": ["bore", "outer", "width", "seals"],
+      "alternateSourceUrls": [
+        "https://www.fitrunbearing.com/wp-content/uploads/2022/09/miniature-ball-bearings-catalogue-pdf.pdf#page=15"
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Requested body envelope and 2RS designation; flange based on independent manufacturer size reference.",
+        "limitations": "Seller page verification unavailable. Independent flange reference does not establish seller interchangeability. Ball complement, raceways, cage and seal profiles are illustrative.",
+        "sourceUrl": "https://www.fitrunbearing.com/wp-content/uploads/2022/09/miniature-ball-bearings-catalogue-pdf.pdf#page=15"
+      },
+      "specifications": [
+        {
+          "label": "Flange reference",
+          "value": "Ø25 × 1.5 mm; independent manufacturer reference, confirm seller execution"
+        },
+        {
+          "label": "Overall width",
+          "value": "Includes the flange"
+        },
+        {
+          "label": "Source scope",
+          "value": "Body dimensions and 2RS designation follow supplied list; flange dimensions remain editable independent references"
+        }
+      ]
+    }
+  },
+  {
+    "id": "smb-mf105-2z",
+    "name": "SMB MF105 2Z · 5×10×4 mm",
+    "description": "5 × 10 × 4 mm · flange 11.6 × 0.8 mm · Prom.ua",
+    "parameters": {
+      "bore": 5,
+      "outer": 10,
+      "width": 4,
+      "flangeOuter": 11.6,
+      "flangeWidth": 0.8,
+      "seals": "metal",
+      "balls": 8
+    },
+    "catalog": {
+      "designation": "SMB MF105 2Z",
+      "manufacturer": "SMB Bearings",
+      "sourceName": "Prom.ua · Fast-Balls",
+      "sourceUrl": "https://prom.ua/ua/p1448821262-podshipnik-smb-mf105.html",
+      "verifiedParameters": ["bore", "outer", "width", "flangeOuter", "flangeWidth", "seals"],
+      "alternateSourceUrls": [
+        "https://www.smbbearings.com/firebrick/ckeditor/plugins/upload/Uploads/Documents/bearingpdfs/MF105ZZ-flanged-miniature-bearing-5x10x4mm.pdf"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "sourceUrl": "https://www.smbbearings.com/firebrick/ckeditor/plugins/upload/Uploads/Documents/bearingpdfs/MF105ZZ-flanged-miniature-bearing-5x10x4mm.pdf",
+        "summary": "Supplier body/flange diameters and width; flange thickness confirmed by the SMB manufacturer drawing.",
+        "limitations": "Envelope verified. Internal raceways, ball complement and shields are illustrative; application loads and production fits remain to be assigned."
+      },
+      "specifications": [
+        {
+          "label": "Availability checked",
+          "value": "2026-10-29 · ready to ship on Prom.ua; recheck when ordering"
+        },
+        {
+          "label": "Material",
+          "value": "Chrome bearing steel; not the former stainless EZO execution"
+        },
+        {
+          "label": "Overall width",
+          "value": "Includes the locating flange"
+        }
+      ]
+    }
+  },
+  {
+    "id": "smb-mf106-2z",
+    "name": "SMB MF106 2Z · 6×10×3 mm",
+    "description": "6 × 10 × 3 mm · flange 11.2 × 0.6 mm · Prom.ua",
+    "parameters": {
+      "bore": 6,
+      "outer": 10,
+      "width": 3,
+      "flangeOuter": 11.2,
+      "flangeWidth": 0.6,
+      "seals": "metal",
+      "balls": 10
+    },
+    "catalog": {
+      "designation": "SMB MF106 2Z",
+      "manufacturer": "SMB Bearings",
+      "sourceName": "Prom.ua · Fast-Balls",
+      "sourceUrl": "https://prom.ua/p969387376-podshipnik-smb-106.html",
+      "verifiedParameters": ["bore", "outer", "width", "flangeOuter", "flangeWidth", "seals"],
+      "alternateSourceUrls": [
+        "https://www.smbbearings.com/firebrick/ckeditor/plugins/upload/Uploads/Documents/bearingpdfs/MF106ZZ-flanged-miniature-bearing-6x10x3mm.pdf"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "sourceUrl": "https://www.smbbearings.com/firebrick/ckeditor/plugins/upload/Uploads/Documents/bearingpdfs/MF106ZZ-flanged-miniature-bearing-6x10x3mm.pdf",
+        "summary": "Supplier body/flange diameters and width; flange thickness confirmed by the SMB manufacturer drawing.",
+        "limitations": "Envelope verified. Internal raceways, ball complement and shields are illustrative; application loads and production fits remain to be assigned."
+      },
+      "specifications": [
+        {
+          "label": "Availability checked",
+          "value": "2026-10-29 · ready to ship on Prom.ua; recheck when ordering"
+        },
+        {
+          "label": "Material",
+          "value": "Chrome bearing steel; not the former stainless EZO execution"
+        },
+        {
+          "label": "Overall width",
+          "value": "Includes the locating flange"
+        }
+      ]
+    }
+  },
+  {
+    "id": "smb-mf63-2z",
+    "name": "SMB MF63 2Z · 3×6×2.5 mm",
+    "description": "3 × 6 × 2.5 mm · flange 7.2 × 0.6 mm · Prom.ua",
+    "parameters": {
+      "bore": 3,
+      "outer": 6,
+      "width": 2.5,
+      "flangeOuter": 7.2,
+      "flangeWidth": 0.6,
+      "seals": "metal",
+      "balls": 8
+    },
+    "catalog": {
+      "designation": "SMB MF63 2Z",
+      "manufacturer": "SMB Bearings",
+      "sourceName": "Prom.ua · Fast-Balls",
+      "sourceUrl": "https://prom.ua/p1798156382-podshipnik-smb-3x6x25.html",
+      "verifiedParameters": ["bore", "outer", "width", "flangeOuter", "flangeWidth", "seals"],
+      "alternateSourceUrls": [
+        "https://www.smbbearings.com/firebrick/ckeditor/plugins/upload/Uploads/Documents/bearingpdfs/MF63ZZ-flanged-miniature-bearing-3x6x2.5mm.pdf"
+      ],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "sourceUrl": "https://www.smbbearings.com/firebrick/ckeditor/plugins/upload/Uploads/Documents/bearingpdfs/MF63ZZ-flanged-miniature-bearing-3x6x2.5mm.pdf",
+        "summary": "Supplier body/flange diameters and width; flange thickness confirmed by the SMB manufacturer drawing.",
+        "limitations": "Envelope verified. Internal raceways, ball complement and shields are illustrative; application loads and production fits remain to be assigned."
+      },
+      "specifications": [
+        {
+          "label": "Availability checked",
+          "value": "2026-10-29 · ready to ship on Prom.ua; recheck when ordering"
+        },
+        {
+          "label": "Material",
+          "value": "Chrome bearing steel; not the former stainless EZO execution"
+        },
+        {
+          "label": "Overall width",
+          "value": "Includes the locating flange"
+        }
+      ]
+    }
+  }
+]

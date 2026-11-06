@@ -1,0 +1,12 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Handheld enclosure with two protected momentary buttons, a Heltec V4 board, removable retainers and an explicitly unselected LiPo reference envelope.",
+  "processes": ["printing", "assembly"],
+  "releaseRequirements": [
+    "Confirm the exact Heltec revision, switch bezel dimensions, battery dimensions, connector polarity and cable envelopes on the delivered hardware.",
+    "Qualify printed fits, captive-nut insertion, screw lengths, grip edges and guard stiffness before final printing.",
+    "Check flat-surface support clearance on the actual switches; the modeled geometric margin is not an impact or accidental-actuation certification.",
+    "Select the protected 1S battery and complete its insulation, strain relief and wiring; no battery capacity or completed circuit is specified."
+  ]
+}

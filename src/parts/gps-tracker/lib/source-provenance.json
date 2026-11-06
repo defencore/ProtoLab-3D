@@ -1,0 +1,94 @@
+{
+  "reviewedAt": "2026-11-02",
+  "sourceRoot": "/Users/x/Documents/ChatGPT/FereCAD MCP/new_project_v2",
+  "currentPackage": "revisions/2026-10-11_M5/assembly_current",
+  "readOnlySource": true,
+  "sourceFiles": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "8c0517fbe1dd29b14f028904c097958deaf01c9b21fb6ab9beb88f5572f9ae00"
+    },
+    {
+      "path": "scripts/current_platform_access_geometry.py",
+      "sha256": "ad3973533138736e1eeb6a36949fa9e96e23d7975f4df62073df5bc84fa4f9fe"
+    },
+    {
+      "path": "scripts/search_platform_current_registry.py",
+      "sha256": "84070f8c17129424a0698cc8b142a905b91d074e7d1bedacd5259113ebc8ea2f"
+    },
+    {
+      "path": "revisions/2026-10-11_M5/platform_access_current/current_world/world_233.brep",
+      "sha256": "df9b78cb0d49ec36433de9ee0ea2baf9ab9355bf375f43016ac492374610715d"
+    },
+    {
+      "path": "revisions/2026-10-11_M5/platform_access_current/current_world/world_234.brep",
+      "sha256": "f22bddbcaf5bc46f4c8b502541c8932f9d2351f631155b713882ac852e691366"
+    },
+    {
+      "path": "revisions/2026-10-11_M5/platform_access_current/platform_fit_audit.json",
+      "sha256": "3bfbf38192faba46bed0ef4b1d4b26b3321ca52a5165c657799470b7a5eb467f"
+    },
+    {
+      "path": "scripts/current_assembly_stack_geometry.py",
+      "sha256": "c2688c239f8109392f2287e56e975d84a9ca1251c188a2af93b833ee52bed11a"
+    },
+    {
+      "path": "scripts/current_assembly_merge.py",
+      "sha256": "ce640fddc71cc49360ac8417760f487e73e37b42c74f41b338caf9f005f826ee"
+    },
+    {
+      "path": "revisions/2026-10-11_M5/assembly_current/current_world/world_233.brep",
+      "sha256": "3494a5b0c2e27d23fd7057ffe443854cbe6d682183015f15383593589c07ea44"
+    },
+    {
+      "path": "revisions/2026-10-11_M5/assembly_current/assembly_contract.json",
+      "sha256": "547ad8c0292054a5692b99d8fbcbf3d84003230872845c3028ca41277a4b248e"
+    },
+    {
+      "path": "revisions/2026-10-11_M5/assembly_current/stack_contract.json",
+      "sha256": "528faae9d136203f0c715e225dac67a83498c454b34a368abf18ccfa340eada9"
+    }
+  ],
+  "libraryEntryId": "gps-tracker:zx908",
+  "sourceComponentId": 233,
+  "sourceRegisterPosition": 303,
+  "sourceDocumentRevision": "03",
+  "sourcePartNumber": "ZX908; board 35 \u00d7 20 \u00d7 4.5 mm",
+  "localDimensions": [35, 20, 4.5],
+  "sourceFrame": {
+    "translation": [-8.419035512031975, 20.325349715248308, 149.45],
+    "rotation": [0, 0, 22.5]
+  },
+  "geometryScope": "User-project reconstruction, not manufacturer-certified CAD. Existing package preserves the same 26 visual solids and installation bounds with analytic rounded corners.",
+  "comparison": {
+    "sourceFaces": 224,
+    "analyticLibraryFaces": 168,
+    "sourceSolids": 26,
+    "librarySolids": 26,
+    "sourceMinusLibraryVolumeMm3": 0,
+    "libraryMinusSourceVolumeMm3": 0.07454575509819392,
+    "cornerSagittaBoundMm": 0.009630546655606143,
+    "explanation": "Source rounds both PCB outlines with eight straight facets per quarter circle. Native radius-2 and radius-1 arcs replace those facets. Difference equals (pi*4-64*sin(pi/16))*0.8 + (pi-16*sin(pi/16))*0.5. No other positive source-minus-library volume was found."
+  },
+  "unverified": [
+    "Actual manufacturer and supplier execution of ZX908",
+    "PCB fabrication dimensions and tolerances",
+    "Exact SIM holder, antenna, packages, contacts and cable interfaces",
+    "Mechanical support lands and qualified retention loads"
+  ],
+  "historicalPlatformPackage": "revisions/2026-10-11_M5/platform_access_current",
+  "sourceFrameScope": "Historical platform_access_current frame retained only for provenance; mountingLayout/assembly_current governs the installed placement.",
+  "latestAssemblyFrame": {
+    "translation": [-8.419035512031975, 20.325349715248308, 158],
+    "rotation": [0, 0, 22.5]
+  },
+  "rigidEquivalenceFromPlatform": {
+    "translation": [0, 0, 8.55],
+    "symmetricDifferenceMm3": 0.0,
+    "latestComponentSha256": "3494a5b0c2e27d23fd7057ffe443854cbe6d682183015f15383593589c07ea44",
+    "latestBounds": [
+      -27.800635724856726, 5.002720253513037, 158.0, 10.962564700792763, 35.95495836085817, 162.5
+    ],
+    "verifiedWith": "FreeCAD1.1.4; exact Boolean comparison after rigid translation; no source-body change"
+  }
+}

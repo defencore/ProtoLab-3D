@@ -166,6 +166,13 @@ test('chassis inspection states preserve parts and frame-only controls do not pr
   const frame = part.buildGeometry(part.defaults, 'frame');
   const exploded = part.buildGeometry(part.defaults, 'exploded');
   try {
+    const components = part.composition!(part.defaults).components;
+    const idsByName = new Map(components.map((component) => [component.name, component.id]));
+    for (const model of [full, bare, frame, exploded])
+      for (const child of model.children) {
+        assert.ok(idsByName.has(child.name), child.name);
+        assert.equal(child.userData.occurrenceId, idsByName.get(child.name), child.name);
+      }
     assert.equal(bare.children.length, full.children.length - 2);
     assert.equal(frame.children.length, 4);
     assert.equal(exploded.children.length, full.children.length);

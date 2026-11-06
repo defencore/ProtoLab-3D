@@ -1,7 +1,14 @@
 import type { PartDefinition, Preset } from '../../core/types';
 import type { ProductProfile } from '../../core/product-types';
-import { defaults, parameters, catalogSelection, catalogFilterFields } from './configurator';
-import { models, selected, geometry, dimensions, python } from './lib/model';
+import {
+  defaults,
+  parameters,
+  catalogSelection,
+  catalogFilterFields,
+  connectorChoices,
+} from './configurator';
+import { selected, geometry, dimensions, python } from './lib/model';
+import { nikomA448027 } from './lib/nikom-a448027';
 import presets from './presets.json';
 import profile from './product.json';
 const part: PartDefinition = {
@@ -13,7 +20,7 @@ const part: PartDefinition = {
   product: profile as ProductProfile,
   preview: 'worker',
   description:
-    'USB sockets, DC barrel jacks, audio jacks, RF connectors, JST headers, pin strips, IDC and DE-9 connectors, plus authored nominal XH-style 2.54 mm balance headers.',
+    'Board connectors for USB, DC barrel, audio, RF, JST, pin strips, IDC and DE-9, plus the NIKOM USB-C panel receptacle reference and nominal XH-style 2.54 mm balance headers.',
   complexity: 'Fixed connector catalog',
   keywords: [
     'USB',
@@ -58,12 +65,13 @@ const part: PartDefinition = {
       id: 'assembled',
       label: 'Assembly',
       description:
-        'Connector in its declared PCB reference frame, with source quality identified per model.',
+        'Connector in its declared PCB or panel reference frame, with source quality identified per model.',
     },
   ],
   validate(p, state) {
     const errors: string[] = [];
-    if (!models.some((m) => m.id === p.model)) errors.push('Choose a supported connector model.');
+    if (!connectorChoices.some((m) => m.id === p.model))
+      errors.push('Choose a supported connector model.');
     if (Object.keys(p).some((key) => key !== 'model'))
       errors.push('Connector dimensions are fixed; choose another model.');
     if (state !== 'assembled') errors.push('Choose the assembly view.');
@@ -74,6 +82,14 @@ const part: PartDefinition = {
   dimensions,
   python,
   assessment(p) {
+    if (p.model === nikomA448027.id)
+      return [
+        nikomA448027.name,
+        `Supplier listing dimensions ${nikomA448027.listedDimensionsMm.join(' × ')} mm and nominal mounting hole Ø${nikomA448027.mountingHoleDiameterMm} mm. The photos show two flange holes.`,
+        `Illustrative display envelope ${nikomA448027.previewDimensionsMm.join(' × ')} mm in X/Y/Z. ${nikomA448027.datum}`,
+        nikomA448027.limitations,
+        'Measure the actual flange, two hole centres, plug reach and solder lead exit before laying out the panel. Pin mapping, CC termination, data rate, current and voltage are unverified.',
+      ];
     const m = selected(p),
       authored = Boolean(m.native.sourceKind);
     return [
@@ -92,6 +108,17 @@ const part: PartDefinition = {
     ];
   },
   fabricationFiles(p) {
+    if (p.model === nikomA448027.id)
+      return [
+        {
+          id: 'source-reference',
+          label: 'NIKOM A448027 source reference',
+          description: 'Supplier evidence, illustrative datum and unresolved mounting dimensions',
+          name: `${nikomA448027.id}-source-reference.json`,
+          type: 'application/json',
+          content: JSON.stringify(nikomA448027, null, 2),
+        },
+      ];
     const m = selected(p);
     return [
       {
@@ -133,6 +160,7 @@ const part: PartDefinition = {
   notes:
     'Cited KiCad 9.0.1 STEP surfaces and source coordinates are retained. Generic pin strips, IDC and DE-9 do not establish a supplier order code. Nominal XH-style 2.54 mm balance headers are authored from user photos and the requested pitch; other dimensions and the paired cable housing are estimates. They are not original JST 2.50 mm or manufacturer CAD. Complete uniform source colors are retained where available; remaining colors are illustrative. Current, voltage, RF impedance, USB speed and interchangeability are not inferred from geometry.',
   sources: [
+    { label: 'NIKOM · A448027 USB-C panel receptacle', url: nikomA448027.sourceUrl },
     {
       label: 'KiCad · connector 3D libraries',
       url: 'https://gitlab.com/kicad/libraries/kicad-packages3D/-/tree/9.0.1',

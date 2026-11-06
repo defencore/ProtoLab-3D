@@ -60,7 +60,9 @@ export function recoveryPiecesComposition(authored: readonly Piece[]): AssemblyD
         quantity: 1,
         supply: 'purchased',
         placement: source.placement ?? supplierPlacement(first.shape, source),
+        ...(source.presetId ? { presetId: source.presetId } : {}),
         ...(source.procurement ? { procurement: source.procurement } : {}),
+        ...(first.metadata?.SupplierScope ? { notes: first.metadata.SupplierScope } : {}),
       });
     else {
       const shape: Shape =
@@ -78,9 +80,15 @@ export function recoveryPiecesComposition(authored: readonly Piece[]): AssemblyD
         manufacturer: first.metadata!.SupplierManufacturer ?? '',
         source: first.metadata!.SupplierSource ?? '',
       };
-      item.notes =
+      item.notes = [
         first.metadata?.SupplierScope ??
-        'One supplier unit; internal installation visuals do not create additional procurement items.';
+          'One supplier unit; internal installation visuals do not create additional procurement items.',
+        source?.libraryId && source.presetId
+          ? `SourceLibraryEntry: ${source.libraryId}:${source.presetId}; supplier identity reference only, installed geometry remains an independent fit reference.`
+          : '',
+      ]
+        .filter(Boolean)
+        .join('\n');
       components.push(item);
     }
   }

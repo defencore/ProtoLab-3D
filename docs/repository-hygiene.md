@@ -2,9 +2,16 @@
 
 Keep generated CAD, STL/STEP exports, printer toolpaths, screenshots, validation reports, temporary package imports and recoverable backups under ignored `test-results/`. The browser library's reviewed native JSON, source tables, reference images and authored geometry remain in their source packages.
 
+Reviewed library-organization policy, section analyses, identity/grouping decisions
+and their verification summaries belong in `docs/`, including
+[Library organization](library-organization.md) and its
+[section review](library-organization-audit.md). Preserve enough context, results
+and remaining findings for a clean checkout; these documents must not depend on
+ignored logs or snapshots. Raw generated validation output stays in `test-results/`.
+
 Run `node scripts/check-repository-artifacts.mjs` to inspect both tracked files and the local filesystem. The check includes ignored files so an ignore rule cannot hide misplaced CAD. Output/cache trees must also remain untracked. Standard dependency, build and interpreter cache directories are excluded from the filesystem scan.
 
-`data/` retains three reviewed inputs: the supplier inventory, supplier import decisions and library expansion manifest. Historical validation results belong under `test-results/`; their presence there records a previous run and does not establish that current code has passed.
+`data/` retains three reviewed inputs: the supplier inventory, supplier import decisions and library expansion manifest. Raw historical validation output belongs under `test-results/`; its presence there records a previous run and does not establish that current code has passed. Preserve reviewed results and their limitations in the relevant documentation as described above.
 
 Part replacement backups live in `test-results/backups/part-modules/`; catalog snapshot backups live in `test-results/backups/catalog-snapshots/`. Imports use `test-results/.staging/` and remove their staging directory when finished. Existing backups are preserved for manual recovery.
 

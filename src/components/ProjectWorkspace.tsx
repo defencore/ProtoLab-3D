@@ -39,6 +39,9 @@ import {
 } from '../core/design-project';
 import { readProjects, storedProjectText, storeProjects } from '../core/project-storage';
 import { createProjectImporter, mergeImportedProject } from '../core/project-import';
+import { exportOpenEskd } from '../core/open-eskd';
+import { eskdIdentity } from '../core/eskd';
+import { selectedMatchingPreset } from '../core/preset-resolution';
 import { downloadFile } from '../core/download';
 import type { GeometryMode } from '../core/geometry-mode';
 import { requestProjectOutput } from './requestWorkerOutput';
@@ -176,10 +179,16 @@ export default function ProjectWorkspace({
       (item) => item.id === occurrence.configurationId,
     );
     const part = parts.find((item) => item.id === configured?.libraryId);
-    return part && ['assembly', 'complex', 'kit'].includes(part.product.kind);
+    return (
+      part &&
+      !['purchased', 'standard'].includes(configured!.supply) &&
+      ['assembly', 'complex', 'kit'].includes(part.product.kind)
+    );
   });
   const selectedCanContain =
-    !!definition && ['assembly', 'complex', 'kit'].includes(definition.product.kind);
+    !!definition &&
+    !['purchased', 'standard'].includes(configuration!.supply) &&
+    ['assembly', 'complex', 'kit'].includes(definition.product.kind);
   const specificationTarget =
     specificationId && project.occurrences.some((item) => item.id === specificationId)
       ? specificationId
@@ -259,6 +268,34 @@ export default function ProjectWorkspace({
   }
   function configure(changes: Partial<ProductConfiguration>) {
     if (!configuration) return;
+    if (
+      configuration.supply === 'manufactured' &&
+      changes.designation !== undefined &&
+      changes.baseDesignation === undefined &&
+      changes.execution === undefined
+    ) {
+      const split = /^(.*)-([a-zA-Z0-9]+)$/.exec(changes.designation);
+      changes = {
+        ...changes,
+        baseDesignation: split?.[1] ?? changes.designation,
+        execution: split?.[2] ?? '',
+      };
+    }
+    if (
+      ['purchased', 'standard'].includes(configuration.supply) &&
+      changes.name !== undefined &&
+      configuration.procurement
+    )
+      changes = {
+        ...changes,
+        procurement: { ...configuration.procurement, ...changes.procurement, name: changes.name },
+      };
+    if (changes.baseDesignation !== undefined || changes.execution !== undefined) {
+      const base =
+        changes.baseDesignation ?? configuration.baseDesignation ?? configuration.designation;
+      const execution = changes.execution ?? configuration.execution ?? '';
+      changes = { ...changes, designation: `${base}${execution ? `-${execution}` : ''}` };
+    }
     update({
       ...project,
       configurations: project.configurations.map((item) =>
@@ -289,6 +326,8 @@ export default function ProjectWorkspace({
   }
   function procure(changes: Partial<ProcurementDefinition>) {
     configure({
+      ...(changes.name !== undefined ? { name: changes.name } : {}),
+      ...(changes.designation !== undefined ? { designation: changes.designation } : {}),
       procurement: {
         designation: '',
         manufacturer: '',
@@ -323,6 +362,9 @@ export default function ProjectWorkspace({
     const next = { ...configuration, supply };
     delete next.manufacturing;
     delete next.procurement;
+    delete next.baseDesignation;
+    delete next.execution;
+    next.designation = '';
     if (supply === 'manufactured')
       next.manufacturing = {
         material: '',
@@ -330,8 +372,27 @@ export default function ProjectWorkspace({
         processes: [...definition.product.processes],
         requirements: [],
       };
-    if (supply === 'purchased' || supply === 'standard')
-      next.procurement = { designation: configuration.designation, manufacturer: '', source: '' };
+    if (supply === 'purchased' || supply === 'standard') {
+      const preset = selectedMatchingPreset(
+        definition,
+        configuration.parameters,
+        configuration.presetId,
+      );
+      next.procurement = {
+        ...(preset?.catalog?.name ? { name: preset.catalog.name } : {}),
+        designation: preset?.catalog?.designation || '',
+        manufacturer: preset?.catalog?.manufacturer || '',
+        source: preset?.catalog?.sourceUrl || '',
+        ...(preset?.catalog?.standard ? { standard: preset.catalog.standard } : {}),
+      };
+    }
+    const assigned = eskdIdentity(definition, next.parameters, next.state, next.presetId, next);
+    next.designation = assigned.designation;
+    next.name = assigned.name;
+    if (supply === 'manufactured') {
+      next.baseDesignation = assigned.baseDesignation;
+      next.execution = assigned.execution;
+    }
     update({
       ...project,
       configurations: project.configurations.map((item) => (item.id === next.id ? next : item)),
@@ -391,7 +452,11 @@ export default function ProjectWorkspace({
         job.project.name ||
         'engineering-project'
       ).replace(/[^a-zA-Z0-9._-]+/g, '-');
-      downloadFile(output.script, `${filename}-${job.mode}.FCMacro`, 'text/x-python');
+      downloadFile(
+        output.script,
+        `${filename}_rev-${job.project.revision.replace(/[^a-zA-Z0-9._-]+/g, '-')}-${job.mode}.FCMacro`,
+        'text/x-python',
+      );
       setMessage('FreeCAD macro downloaded. Draft exports retain unresolved requirements.');
     } catch (error) {
       if (!isCurrentMacroJob(job)) return;
@@ -407,7 +472,9 @@ export default function ProjectWorkspace({
       }
     }
   }
-  function download(kind: 'project' | 'specification' | 'purchased' | 'manufactured') {
+  function download(
+    kind: 'project' | 'open-eskd' | 'specification' | 'purchased' | 'manufactured',
+  ) {
     try {
       const filename = (project.designation || project.name || 'engineering-project').replace(
         /[^a-zA-Z0-9._-]+/g,
@@ -417,6 +484,12 @@ export default function ProjectWorkspace({
         downloadFile(
           serializeProject(project, parts),
           `${filename}.project.json`,
+          'application/json',
+        );
+      else if (kind === 'open-eskd')
+        downloadFile(
+          exportOpenEskd(project, parts),
+          `${filename}_rev-${project.revision.replace(/[^a-zA-Z0-9._-]+/g, '-')}.open-eskd.json`,
           'application/json',
         );
       else
@@ -540,7 +613,13 @@ export default function ProjectWorkspace({
               onClick={() => selectProduct(item.id)}
             >
               <span>{item.position}</span>
-              <strong>{configured?.designation || configured?.name || 'Missing product'}</strong>
+              <strong>
+                {configured
+                  ? ['purchased', 'standard'].includes(configured.supply)
+                    ? configured.name
+                    : `${configured.designation} ${configured.name} · rev ${configured.revision}`
+                  : 'Missing product'}
+              </strong>
               <small>×{item.quantity}</small>
             </button>
           </div>
@@ -1053,6 +1132,31 @@ export default function ProjectWorkspace({
                           onChange={(event) => configure({ revision: event.target.value })}
                         />
                       </label>
+                      {configuration.supply === 'manufactured' && (
+                        <>
+                          <label>
+                            Family designation
+                            <input
+                              value={configuration.baseDesignation ?? ''}
+                              onChange={(event) =>
+                                configure({ baseDesignation: event.target.value })
+                              }
+                            />
+                          </label>
+                          <label>
+                            Execution / size variant
+                            <input
+                              value={configuration.execution ?? ''}
+                              onChange={(event) => configure({ execution: event.target.value })}
+                            />
+                          </label>
+                          <p className="project-policy-note project-wide-field">
+                            Dimensions and configuration select an execution. Revision records
+                            changes to that design. Generated PL3D identifiers can be replaced with
+                            your enterprise numbering.
+                          </p>
+                        </>
+                      )}
                       <label>
                         Position in parent
                         <input
@@ -1170,10 +1274,10 @@ export default function ProjectWorkspace({
                         Supply
                         <select
                           value={configuration.supply}
-                          disabled={definition.product.kind === 'reference'}
+                          disabled={configuration.supply === 'reference'}
                           onChange={(event) => changeSupply(event.target.value as SupplyKind)}
                         >
-                          {definition.product.kind === 'reference' ? (
+                          {configuration.supply === 'reference' ? (
                             <option value="reference">Reference only</option>
                           ) : (
                             <>
@@ -1244,23 +1348,25 @@ export default function ProjectWorkspace({
                       <div className="project-manufacturing">
                         <h4>Procurement record</h4>
                         <div className="project-fields">
-                          {(['designation', 'manufacturer', 'source', 'standard'] as const).map(
-                            (key) => (
-                              <label key={key}>
-                                {key === 'designation'
+                          {(
+                            ['name', 'designation', 'manufacturer', 'source', 'standard'] as const
+                          ).map((key) => (
+                            <label key={key}>
+                              {key === 'name'
+                                ? 'Exact shop / supplier name'
+                                : key === 'designation'
                                   ? 'Supplier designation'
                                   : key === 'source'
                                     ? 'Source / ordering record'
                                     : key === 'standard'
                                       ? 'Product standard'
                                       : 'Manufacturer'}
-                                <input
-                                  value={configuration.procurement?.[key] ?? ''}
-                                  onChange={(event) => procure({ [key]: event.target.value })}
-                                />
-                              </label>
-                            ),
-                          )}
+                              <input
+                                value={configuration.procurement?.[key] ?? ''}
+                                onChange={(event) => procure({ [key]: event.target.value })}
+                              />
+                            </label>
+                          ))}
                         </div>
                       </div>
                     )}
@@ -1522,6 +1628,20 @@ export default function ProjectWorkspace({
                 onClick={() => download('project')}
               >
                 <ArrowDownToLine size={15} /> Project JSON
+              </button>
+            </article>
+            <article className="project-export-card">
+              <h4>Open ESKD</h4>
+              <p>
+                Product hierarchy, quantities, supplier names, revisions and document records for
+                the Open ESKD editor.
+              </p>
+              <button
+                className="secondary-button"
+                disabled={!!structuralErrors.length || !project.occurrences.length}
+                onClick={() => download('open-eskd')}
+              >
+                <ArrowDownToLine size={15} /> Open ESKD JSON
               </button>
             </article>
             <article className="project-export-card project-cad-export">

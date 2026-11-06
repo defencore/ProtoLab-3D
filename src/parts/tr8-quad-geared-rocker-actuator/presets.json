@@ -1,0 +1,98 @@
+[
+  {
+    "id": "surpass-2845-3100kv-four-output-tr8x4",
+    "name": "TR8×4(P2) · Surpass Hobby KK2845 3100KV · 4 outputs · Ø86 formed aluminium / PETG · ±20°",
+    "description": "Lightened formed 5052-O panels, Ø86 metal end discs and four dense pocketed PETG quadrants with overlapped seams and intentional motor/gear windows. Twenty additional M3×0.5 stand threads follow the output-axis five-point sketch with Ø3.4 PETG shank passages; the external stand is not included. Four motor cable routes and separate reserve grooves use the enlarged end ports. Motor positions remain unchanged; nominal overall height 125.212 mm. One DIN7991 M3×6 cover screw per quadrant; the actual BOM records its configuration.",
+    "parameters": {
+      "motor": "surpass-2845-3100kv",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0
+    }
+  },
+  {
+    "id": "surpass-2838-3200kv-four-output-tr8x4",
+    "name": "TR8×4(P2) · Surpass Hobby 2838 3200KV · 4 outputs · Ø76 formed aluminium / PETG · ±20°",
+    "description": "Lightened formed 5052-O panels, Ø76 metal end discs and four dense pocketed PETG quadrants with overlapped seams and intentional motor/gear windows. Twenty additional M3×0.5 stand threads follow the output-axis five-point sketch with Ø3.4 PETG shank passages; the external stand is not included. Four motor cable routes and separate reserve grooves use the enlarged end ports. Motor positions remain unchanged; nominal overall height 125.212 mm. One DIN7991 M3×6 cover screw per quadrant; the actual BOM records its configuration.",
+    "parameters": {
+      "motor": "surpass-2838-3200kv",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0
+    }
+  },
+  {
+    "id": "surpass-2838-3500kv-four-output-tr8x4",
+    "name": "TR8×4(P2) · Surpass Hobby 2838 3500KV · 4 outputs · Ø76 formed aluminium / PETG · ±20°",
+    "description": "Lightened formed 5052-O panels, Ø76 metal end discs and four dense pocketed PETG quadrants with overlapped seams and intentional motor/gear windows. Twenty additional M3×0.5 stand threads follow the output-axis five-point sketch with Ø3.4 PETG shank passages; the external stand is not included. Four motor cable routes and separate reserve grooves use the enlarged end ports. Motor positions remain unchanged; nominal overall height 125.212 mm. One DIN7991 M3×6 cover screw per quadrant; the actual BOM records its configuration.",
+    "parameters": {
+      "motor": "surpass-2838-3500kv",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0
+    }
+  },
+  {
+    "id": "surpass-2838-3700kv-four-output-tr8x4",
+    "name": "TR8×4(P2) · Surpass Hobby 2838 3700KV · 4 outputs · Ø76 formed aluminium / PETG · ±20°",
+    "description": "Lightened formed 5052-O panels, Ø76 metal end discs and four dense pocketed PETG quadrants with overlapped seams and intentional motor/gear windows. Twenty additional M3×0.5 stand threads follow the output-axis five-point sketch with Ø3.4 PETG shank passages; the external stand is not included. Four motor cable routes and separate reserve grooves use the enlarged end ports. Motor positions remain unchanged; nominal overall height 125.212 mm. One DIN7991 M3×6 cover screw per quadrant; the actual BOM records its configuration.",
+    "parameters": {
+      "motor": "surpass-2838-3700kv",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0
+    }
+  },
+  {
+    "id": "surpass-2838-4400kv-four-output-tr8x4",
+    "name": "TR8×4(P2) · Surpass Hobby 2838 4400KV · 4 outputs · Ø76 formed aluminium / PETG · ±20°",
+    "description": "Lightened formed 5052-O panels, Ø76 metal end discs and four dense pocketed PETG quadrants with overlapped seams and intentional motor/gear windows. Twenty additional M3×0.5 stand threads follow the output-axis five-point sketch with Ø3.4 PETG shank passages; the external stand is not included. Four motor cable routes and separate reserve grooves use the enlarged end ports. Motor positions remain unchanged; nominal overall height 125.212 mm. One DIN7991 M3×6 cover screw per quadrant; the actual BOM records its configuration.",
+    "parameters": {
+      "motor": "surpass-2838-4400kv",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0
+    }
+  },
+  {
+    "id": "surpass-2838-4700kv-four-output-tr8x4",
+    "name": "TR8×4(P2) · Surpass Hobby 2838 4700KV · 4 outputs · Ø76 formed aluminium / PETG · ±20°",
+    "description": "Lightened formed 5052-O panels, Ø76 metal end discs and four dense pocketed PETG quadrants with overlapped seams and intentional motor/gear windows. Twenty additional M3×0.5 stand threads follow the output-axis five-point sketch with Ø3.4 PETG shank passages; the external stand is not included. Four motor cable routes and separate reserve grooves use the enlarged end ports. Motor positions remain unchanged; nominal overall height 125.212 mm. One DIN7991 M3×6 cover screw per quadrant; the actual BOM records its configuration.",
+    "parameters": {
+      "motor": "surpass-2838-4700kv",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0
+    }
+  },
+  {
+    "id": "surpass-2838-5100kv-four-output-tr8x4",
+    "name": "TR8×4(P2) · Surpass Hobby 2838 5100KV · 4 outputs · Ø76 formed aluminium / PETG · ±20°",
+    "description": "Lightened formed 5052-O panels, Ø76 metal end discs and four dense pocketed PETG quadrants with overlapped seams and intentional motor/gear windows. Twenty additional M3×0.5 stand threads follow the output-axis five-point sketch with Ø3.4 PETG shank passages; the external stand is not included. Four motor cable routes and separate reserve grooves use the enlarged end ports. Motor positions remain unchanged; nominal overall height 125.212 mm. One DIN7991 M3×6 cover screw per quadrant; the actual BOM records its configuration.",
+    "parameters": {
+      "motor": "surpass-2838-5100kv",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0
+    }
+  },
+  {
+    "id": "surpass-2838-5700kv-four-output-tr8x4",
+    "name": "TR8×4(P2) · Surpass Hobby 2838 5700KV · 4 outputs · Ø76 formed aluminium / PETG · ±20°",
+    "description": "Lightened formed 5052-O panels, Ø76 metal end discs and four dense pocketed PETG quadrants with overlapped seams and intentional motor/gear windows. Twenty additional M3×0.5 stand threads follow the output-axis five-point sketch with Ø3.4 PETG shank passages; the external stand is not included. Four motor cable routes and separate reserve grooves use the enlarged end ports. Motor positions remain unchanged; nominal overall height 125.212 mm. One DIN7991 M3×6 cover screw per quadrant; the actual BOM records its configuration.",
+    "parameters": {
+      "motor": "surpass-2838-5700kv",
+      "angleA": 0,
+      "angleB": 0,
+      "angleC": 0,
+      "angleD": 0
+    }
+  }
+]

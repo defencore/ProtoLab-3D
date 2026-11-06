@@ -1,5 +1,7 @@
+import { bearingPalette } from './bearing-appearance';
+import { analyticRevolvePython } from './analytic-profile';
 import { LatheGeometry, Mesh, Vector2 } from 'three';
-import { material, n, num, numberParameter } from '../geometry';
+import { material, n, numberParameter } from '../geometry';
 import type { Parameters } from '../types';
 
 export type TurnedProfile = [number, number][];
@@ -12,7 +14,7 @@ function cleanProfile(points: TurnedProfile): TurnedProfile {
 }
 
 /** Meridians use radius / Z coordinates and include their closing point. */
-export function turnedMesh(points: TurnedProfile, color = 0x85898e): Mesh {
+export function turnedMesh(points: TurnedProfile, color = bearingPalette.race): Mesh {
   const geometry = new LatheGeometry(
     cleanProfile(points).map((point) => new Vector2(...point)),
     96,
@@ -22,9 +24,7 @@ export function turnedMesh(points: TurnedProfile, color = 0x85898e): Mesh {
 }
 
 export function turnedPython(points: TurnedProfile): string {
-  return `Part.Face(Part.makePolygon([${cleanProfile(points)
-    .map(([radius, z]) => `App.Vector(${num(radius)}, 0, ${num(z)})`)
-    .join(', ')}])).revolve(App.Vector(0, 0, 0), App.Vector(0, 0, 1), 360)`;
+  return analyticRevolvePython(cleanProfile(points));
 }
 
 export function envelopeParameters() {

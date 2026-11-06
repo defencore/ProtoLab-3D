@@ -6,6 +6,7 @@ import {
   componentDimensions,
 } from '../../core/assembly/detail-instances';
 import { defaults, parameters } from './configurator';
+import { casePanelAssessment } from './lib/case-description';
 import { libraries, configured, kinematics, composition } from './lib/model';
 import presetData from './presets.json';
 import productData from './product.json';
@@ -15,7 +16,10 @@ function validate(parametersValue: Parameters, state: string): string[] {
   for (const key of Object.keys(parametersValue))
     if (!parameters.some((field) => field.key === key)) errors.push(`Unsupported setting: ${key}.`);
   for (const field of parameters) {
-    if (field.key === 'manualState' && parametersValue.mechanism !== 'parallel-dual') {
+    if (
+      field.key === 'manualState' &&
+      !['parallel-dual', 'case-panel'].includes(String(parametersValue.mechanism))
+    ) {
       if (Object.hasOwn(parametersValue, 'manualState'))
         errors.push(
           'The ARM 1 manual switch setting is only available in the two-switch mechanism.',
@@ -36,6 +40,13 @@ function validate(parametersValue: Parameters, state: string): string[] {
   }
   if (!['assembled', 'exploded'].includes(state)) errors.push('Choose a supported assembly view.');
   if (errors.length) return errors;
+  if (parametersValue.mechanism === 'case-panel') {
+    if (Number(parametersValue.baseLength) !== 214 || Number(parametersValue.baseWidth) !== 150.6)
+      errors.push(
+        'The BX-0151 fit prototype uses a fixed 214 × 150.6 mm working faceplate after trimming the latest fit prototype; verify its perimeter and R4 corners on the real case.',
+      );
+    return errors;
+  }
   if (parametersValue.mechanism === 'parallel-dual') {
     if (Number(parametersValue.baseLength) < 100 || Number(parametersValue.baseWidth) < 150)
       errors.push('The two-switch rocker needs a mounting flange at least 100 × 150 mm.');
@@ -99,14 +110,14 @@ const manualDescriptions: Record<string, string> = {
 
 const part: PartDefinition = {
   id: 'servo-toggle-actuator',
-  name: 'Servo toggle actuator',
+  name: 'ST3215 servo toggle actuator · ASW-07D',
   category: 'SWITCHES & BUTTONS',
   subgroup: 'PANEL CONTROLS',
   icon: 'gear',
   preview: 'worker',
   complexity: 'Printed rockers or guided fork',
   description:
-    'Printed mounting parts operate an ST3215 servo and ASW-07D toggle with a horizontal or parallel-shaft rocker. A guided fork with soft pads is also available.',
+    'A modular case panel or printed mounting parts operate an ST3215 servo and ASW-07D toggle with a horizontal or parallel-shaft rocker. A guided fork with soft pads is also available.',
   keywords: [
     'servo',
     'toggle',
@@ -119,6 +130,21 @@ const part: PartDefinition = {
     'PA',
     'ST3215',
     'ASW-07D',
+    'XT60E-M',
+    'PWM MOSFET',
+    'EMI shield',
+    'AD16-16C',
+    'SP20-4',
+    'battery panel',
+    'spring test clip',
+    'compact panel',
+    'INTERTOOL',
+    'BX-0151',
+    'Bus Servo Driver HAT',
+    'Heltec V4',
+    'CJMCU-1220',
+    'TPS54560',
+    'LC filter',
     'panel',
     'enclosure',
     'mounting',
@@ -146,6 +172,17 @@ const part: PartDefinition = {
   validate,
   updateParameters(p, key) {
     if (key !== 'mechanism') return p;
+    if (p.mechanism === 'case-panel')
+      return {
+        ...p,
+        baseLength: 214,
+        baseWidth: 150.6,
+        deckHeight: 42,
+        contactHeight: 12,
+        padGap: 14.6,
+        servoSweep: 50,
+        manualState: 'guarded-off',
+      };
     if (p.mechanism === 'parallel-dual')
       return {
         ...p,
@@ -195,6 +232,7 @@ const part: PartDefinition = {
   dimensions: (p, state) => componentDimensions(libraries, configured(p, state)),
   assessment(p) {
     const motion = kinematics(p);
+    if (p.mechanism === 'case-panel') return casePanelAssessment(p);
     if (p.mechanism === 'parallel-dual')
       return [
         `ARM 2 · servo-operated right switch. ${parallelPhases[String(p.phase)]}`,
@@ -240,6 +278,22 @@ const part: PartDefinition = {
   notes:
     'Select a three-part printed rocker or the guided fork with soft pads. ST3215 12 V supplier CAD and the ASW-07D drawing define the purchased interfaces. Printed mounting parts, rounded fingers, guide fits and contact envelopes are custom prototype choices. The operating stages show geometric positions rather than programmed servo control or a force simulation. Calibrate the purchased switch, mounting and travel before use; no assembly load or operating-force rating is assigned.',
   sources: [
+    {
+      label: 'SYLA 4S1P 21700 battery envelope',
+      url: 'https://syla.com.ua/product/akumulyatorna-zbirka-li-ion-4s1p-21700-lishen-lr2170la-4000-mag-144v-35a-v-odyn-ryad/',
+    },
+    {
+      label: 'AMASS XT60E-M manufacturer dimensional drawing',
+      url: 'https://www.china-amass.net/uploads/36.XT60E-M%EF%BC%88V04%EF%BC%89-SPEC-2025V0.pdf',
+    },
+    {
+      label: 'SP20 supplier housing and panel opening drawing',
+      url: 'https://klmaster.com/files/ckeditor/580/f86e25b13177f9f3ba48a7148953cec8.jpg',
+    },
+    {
+      label: 'Lehao AD16-16C retailer identity; dimensions remain provisional',
+      url: 'https://www.jd.com/jiage/670d59f660d70a08559.html',
+    },
     {
       label: 'Waveshare ST3215 supplier documentation and CAD',
       url: 'https://www.waveshare.com/wiki/ST3215_Servo',

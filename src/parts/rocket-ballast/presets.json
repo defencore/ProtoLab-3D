@@ -1,0 +1,20 @@
+[
+  {
+    "id": "steel-example",
+    "name": "Steel-density D20 × 20 mm · prototype",
+    "description": "Authored bored slug; 7.85 g/cm3 is an assumed density, not material evidence.",
+    "parameters": { "diameter": 20, "length": 20, "bore": 4.5, "density": 7.85 }
+  },
+  {
+    "id": "brass-example",
+    "name": "Brass-density D16 × 15 mm · prototype",
+    "description": "Authored bored slug; 8.5 g/cm3 is an assumed density, not material evidence.",
+    "parameters": { "diameter": 16, "length": 15, "bore": 3.4, "density": 8.5 }
+  },
+  {
+    "id": "solid-example",
+    "name": "Solid D25 × 10 mm · prototype",
+    "description": "Authored solid slug; 7.85 g/cm3 is an assumed density, not material evidence.",
+    "parameters": { "diameter": 25, "length": 10, "bore": 0, "density": 7.85 }
+  }
+]

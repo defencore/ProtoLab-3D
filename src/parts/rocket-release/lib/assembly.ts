@@ -1,4 +1,9 @@
-import { recoveryPieceGeometry, recoveryPiecePython } from './library-components';
+import {
+  recoveryPieceGeometry,
+  recoveryPiecePython,
+  configuredRecoveryPiece,
+  recoveryPieceDefinition,
+} from './library-components';
 import { servoCadPython } from '../../bus-servo/part';
 import { Group, Box3, Vector3, Mesh, MeshStandardMaterial } from 'three';
 import { pythonShape, type Shape, type Vec } from '../../../core/assembly/recovery/shapes';
@@ -8,6 +13,7 @@ import { manufacturingMetadata, threadFeatures, threadLabel } from './manufactur
 import { hatPython } from '../../../core/assembly/recovery/hat';
 import { threadPython } from '../../../core/assembly/recovery/thread';
 import { springPython } from '../../../core/assembly/recovery/spring';
+import { eskdIdentity } from '../../../core/eskd';
 export interface Piece {
   shape: Shape;
   label: string;
@@ -71,7 +77,31 @@ export function python(pieces: Piece[]): string {
     `component_manufactured = ${JSON.stringify(pieces.map(manufactured)).replace(/true/g, 'True').replace(/false/g, 'False')}`,
     `component_materials = ${JSON.stringify(pieces.map(material))}`,
     'import hashlib,json',
-    `component_metadata = json.loads(${JSON.stringify(JSON.stringify(pieces.map(manufacturingMetadata)))})`,
+    `component_metadata = json.loads(${JSON.stringify(
+      JSON.stringify(
+        pieces.map((piece, index) => {
+          const item = configuredRecoveryPiece(piece, `component-${index + 1}`);
+          const identity = eskdIdentity(
+            recoveryPieceDefinition(item),
+            item.parameters,
+            item.state,
+            item.presetId,
+            {
+              ...item,
+              designation: item.procurement?.designation ?? '',
+              revision: 'A',
+            },
+          );
+          return {
+            ...manufacturingMetadata(piece),
+            LibraryId: item.libraryId,
+            ConfigurationJSON: JSON.stringify(item.parameters),
+            Supply: item.supply,
+            ESKDIdentityJSON: JSON.stringify(identity),
+          };
+        }),
+      ),
+    )})`,
     'for i,s in enumerate(components):',
     '    component_metadata[i]["ShapeDigest"] = hashlib.sha256(s.exportBrepToString().encode()).hexdigest()',
     '    if component_manufactured[i]:',

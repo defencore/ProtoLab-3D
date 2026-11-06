@@ -1,0 +1,366 @@
+.preview-controls {
+  --preview-control-color: #aeb8c4;
+  --preview-control-background: #262b32d9;
+  --preview-control-border: #424b56;
+  --preview-control-hover: #3c352bdd;
+  --preview-control-accent: #edb385;
+  --preview-control-active: #493a29ed;
+  --preview-cube-face: #3e4753;
+  --preview-cube-edge: #333c47;
+  --preview-cube-corner: #2a333e;
+  --preview-cube-border: #1c232b;
+  --preview-cube-label: #d6dce4;
+  --preview-cube-highlight: #b77c40;
+  --preview-cube-highlight-label: #fff0dd;
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 5;
+  width: 178px;
+  height: 178px;
+  pointer-events: none;
+}
+
+.preview-controls--light {
+  --preview-control-color: #586575;
+  --preview-control-background: #f8fafcdb;
+  --preview-control-border: #bcc6d1;
+  --preview-control-hover: #f3e7d8ed;
+  --preview-control-accent: #925b28;
+  --preview-control-active: #eed8bdeb;
+  --preview-cube-face: #e2e7ed;
+  --preview-cube-edge: #cdd5df;
+  --preview-cube-corner: #bdc8d5;
+  --preview-cube-border: #98a6b6;
+  --preview-cube-label: #425164;
+  --preview-cube-highlight: #e7b576;
+  --preview-cube-highlight-label: #513319;
+}
+
+.preview-controls__button {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: var(--preview-control-background);
+  color: var(--preview-control-color);
+  box-shadow: 0 1px 3px #00000014;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  pointer-events: auto;
+  transition:
+    color 120ms ease,
+    background-color 120ms ease,
+    border-color 120ms ease;
+}
+
+.preview-controls__button:hover {
+  border-color: var(--preview-control-border);
+  background: var(--preview-control-hover);
+  color: var(--preview-control-accent);
+}
+
+.preview-controls__button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.preview-controls__spinner {
+  animation: preview-copy-spin 800ms linear infinite;
+}
+
+@keyframes preview-copy-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.preview-controls__button[aria-pressed='true'] {
+  border-color: color-mix(in srgb, var(--preview-control-accent) 48%, transparent);
+  background: var(--preview-control-active);
+  color: var(--preview-control-accent);
+}
+
+.preview-controls__button:focus-visible,
+.navigation-cube__keyboard-views button:focus-visible {
+  outline: 2px solid var(--preview-control-accent);
+  outline-offset: 3px;
+}
+
+.preview-controls__button--home {
+  left: 0;
+  top: 0;
+}
+
+.preview-controls__button--copy-image {
+  left: 74px;
+  top: 0;
+}
+
+.preview-controls__button--detail {
+  left: 0;
+  top: 146px;
+}
+
+.preview-controls__button--fullscreen {
+  left: 148px;
+  top: 0;
+}
+
+.preview-controls__button--orbit,
+.preview-controls__button--pan,
+.preview-controls__button--fit {
+  left: 0;
+}
+
+.preview-controls__button--grid,
+.preview-controls__button--dimensions,
+.preview-controls__button--background,
+.preview-controls__button--invert {
+  left: 148px;
+}
+
+.preview-controls__button--orbit,
+.preview-controls__button--grid {
+  top: 40px;
+}
+
+.preview-controls__button--pan,
+.preview-controls__button--dimensions {
+  top: 74px;
+}
+
+.preview-controls__button--fit,
+.preview-controls__button--background {
+  top: 108px;
+}
+
+.preview-controls__button--invert {
+  top: 146px;
+}
+
+.preview-controls__display {
+  position: absolute;
+  left: 36px;
+  top: 146px;
+  width: 96px;
+  height: 28px;
+}
+
+.preview-controls__button--solid {
+  left: 0;
+  top: 0;
+}
+
+.preview-controls__button--wireframe {
+  left: 34px;
+  top: 0;
+}
+
+.preview-controls__button--xray {
+  left: 68px;
+  top: 0;
+}
+
+.preview-controls__cube {
+  position: absolute;
+  left: 32px;
+  top: 24px;
+  width: 112px;
+  height: 112px;
+}
+
+.navigation-cube {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.navigation-cube__viewport {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.navigation-cube__region {
+  outline: none;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.navigation-cube__region polygon {
+  fill: var(--preview-cube-face);
+  stroke: var(--preview-cube-border);
+  stroke-width: 0.8px;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  transition: fill 120ms ease;
+}
+
+.navigation-cube__region--edge polygon {
+  fill: var(--preview-cube-edge);
+}
+
+.navigation-cube__region--corner polygon {
+  fill: var(--preview-cube-corner);
+}
+
+.navigation-cube__region:hover polygon,
+.navigation-cube__region:focus-visible polygon,
+.navigation-cube__region.is-active polygon {
+  fill: var(--preview-cube-highlight);
+  stroke: var(--preview-control-accent);
+}
+
+.navigation-cube__region:focus-visible polygon {
+  stroke-width: 2px;
+}
+
+.navigation-cube__label {
+  fill: var(--preview-cube-label);
+  font-family: inherit;
+  font-size: 8px;
+  font-weight: 650;
+  letter-spacing: 0.3px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.navigation-cube__region:hover .navigation-cube__label,
+.navigation-cube__region:focus-visible .navigation-cube__label,
+.navigation-cube__region.is-active .navigation-cube__label {
+  fill: var(--preview-cube-highlight-label);
+}
+
+.navigation-cube__keyboard-views {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.navigation-cube__keyboard-views:focus-within {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+  width: max-content;
+  max-width: 200px;
+  height: auto;
+  margin: 0;
+  padding: 6px;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  border: 1px solid var(--preview-control-border);
+  border-radius: 8px;
+  background: var(--preview-control-background);
+  box-shadow: 0 4px 14px #00000024;
+  backdrop-filter: blur(8px);
+  pointer-events: auto;
+}
+
+.navigation-cube__keyboard-views button {
+  min-height: 28px;
+  padding: 4px 7px;
+  border-radius: 4px;
+  color: var(--preview-control-color);
+  font-size: 11px;
+  text-align: left;
+  pointer-events: auto;
+}
+
+.navigation-cube__keyboard-views button:hover {
+  background: var(--preview-control-hover);
+  color: var(--preview-control-accent);
+}
+
+@media (max-width: 620px) {
+  .preview-controls {
+    right: 10px;
+    bottom: 10px;
+    width: 160px;
+    height: 160px;
+  }
+
+  .preview-controls__cube {
+    top: 22px;
+    width: 96px;
+    height: 96px;
+  }
+
+  .preview-controls__button--detail {
+    top: 132px;
+  }
+
+  .preview-controls__button--copy-image {
+    left: 66px;
+  }
+
+  .preview-controls__button--fullscreen,
+  .preview-controls__button--grid,
+  .preview-controls__button--dimensions,
+  .preview-controls__button--background,
+  .preview-controls__button--invert {
+    left: 132px;
+  }
+
+  .preview-controls__button--orbit,
+  .preview-controls__button--grid {
+    top: 36px;
+  }
+
+  .preview-controls__button--pan,
+  .preview-controls__button--dimensions {
+    top: 70px;
+  }
+
+  .preview-controls__button--fit,
+  .preview-controls__button--background {
+    top: 104px;
+  }
+
+  .preview-controls__button--invert,
+  .preview-controls__display {
+    top: 132px;
+  }
+
+  .preview-controls__display {
+    left: 32px;
+    width: 92px;
+  }
+
+  .preview-controls__button--wireframe {
+    left: 32px;
+  }
+
+  .preview-controls__button--xray {
+    left: 64px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preview-controls__button,
+  .navigation-cube__region polygon {
+    transition: none;
+  }
+
+  .preview-controls__spinner {
+    animation: none;
+  }
+}

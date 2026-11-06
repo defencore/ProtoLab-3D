@@ -9,9 +9,11 @@ export function libraryLabel(value: string): string {
     .replace(/\b(cnc|dc|bec|srs|pcb|led)\b/gi, (word) => word.toUpperCase());
 }
 
-/** A browse family can share a title without replacing its physical member names. */
-export function familyLabel(part: Pick<PartDefinition, 'name' | 'browseFamily'>): string {
-  return part.browseFamily?.label ?? part.name;
+/** Navigation names the mechanism type; configurations retain their component-specific names. */
+export function familyLabel(
+  part: Pick<PartDefinition, 'name' | 'browseLabel' | 'browseFamily'>,
+): string {
+  return part.browseFamily?.label ?? part.browseLabel ?? part.name;
 }
 
 /** Curated names identify variants; original source designations remain separate evidence. */

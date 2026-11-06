@@ -1,7 +1,7 @@
 [
   {
     "id": "od10-d2",
-    "name": "Shaft OD10 / drill2",
+    "name": "Ø10 mm shaft · Ø2 mm drill",
     "description": "Slip-on end stop for centered axial pilot holes in rods and small tube end plugs. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "stockOD": 10,
@@ -17,7 +17,7 @@
   },
   {
     "id": "od12-d3",
-    "name": "Shaft OD12 / drill3",
+    "name": "Ø12 mm shaft · Ø3 mm drill",
     "description": "Slip-on end stop for centered axial pilot holes in rods and small tube end plugs. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "stockOD": 12,
@@ -33,7 +33,7 @@
   },
   {
     "id": "od16-d4",
-    "name": "Shaft OD16 / drill4",
+    "name": "Ø16 mm shaft · Ø4 mm drill",
     "description": "Slip-on end stop for centered axial pilot holes in rods and small tube end plugs. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "stockOD": 16,
@@ -49,7 +49,7 @@
   },
   {
     "id": "od20-d5",
-    "name": "Shaft OD20 / drill5",
+    "name": "Ø20 mm shaft · Ø5 mm drill",
     "description": "Slip-on end stop for centered axial pilot holes in rods and small tube end plugs. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "stockOD": 20,
@@ -65,7 +65,7 @@
   },
   {
     "id": "od30-d6",
-    "name": "Shaft OD30 / drill6",
+    "name": "Ø30 mm shaft · Ø6 mm drill",
     "description": "Slip-on end stop for centered axial pilot holes in rods and small tube end plugs. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "stockOD": 30,

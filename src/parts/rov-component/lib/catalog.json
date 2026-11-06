@@ -1,0 +1,150 @@
+[
+  {
+    "id": "finsrov-pressure-sensor-mount",
+    "projectId": "finsrov",
+    "projectName": "FinsROV",
+    "label": "Pressure Sensor Mount",
+    "format": "step",
+    "sourcePath": "Structure/En/3DPrinting/Pressure_Sensor_Mount.STEP",
+    "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/3DPrinting/Pressure_Sensor_Mount.STEP",
+    "sourceSha256": "083afe580a9f1c6b3b83f467923353cbf0597a63de84ce94647fb15a98140d8d",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/blob/1bc38e83d8af669339c7a86f0a14e2180676347f/LICENSE",
+    "route": "printing",
+    "material": "Polymer selected and qualified for the upstream design; source does not fix a grade",
+    "requirements": [
+      "Use the pinned source geometry and upstream assembly instructions. Resolve print material, orientation, clearances and fasteners before fabrication."
+    ],
+    "dimensions": [16.000000100000005, 24.0000001, 22.000000200000002],
+    "bounds": [
+      -16.000000100000005, -1e-7, -11.0000001, 1.734723475976807e-15, 24.0, 11.000000100000003
+    ],
+    "volume": 2886.8299085400545,
+    "solidCount": 1
+  },
+  {
+    "id": "finsrov-cable-passing-screw",
+    "projectId": "finsrov",
+    "projectName": "FinsROV",
+    "label": "Cable passing Screw",
+    "format": "step",
+    "sourcePath": "Structure/En/CNC_Machining/Cable-passing_Screw.STEP",
+    "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Cable-passing_Screw.STEP",
+    "sourceSha256": "1ca61cc49b1e4b1455599a9b054063cd6ed7dfda75cf5abc252eb88ba3ddab00",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/blob/1bc38e83d8af669339c7a86f0a14e2180676347f/LICENSE",
+    "route": "turning",
+    "material": "Aluminium alloy per upstream CNC machining workbook; confirm exact stock, temper and finish",
+    "requirements": [
+      "Turn the aluminium cable-passing screw blank, then machine the source cross features/threads. This is a custom CNC part, not a printed cable seal. Match purchased OD12mm x1.5mm source gaskets and verify sealing faces."
+    ],
+    "dimensions": [14.677312395916868, 19.000000000000043, 14.677312395916868],
+    "bounds": [
+      -7.338656197958434, -4.263256414560601e-14, -7.338656197958434, 7.338656197958434, 19.0,
+      7.338656197958434
+    ],
+    "volume": 1347.8527919954702,
+    "solidCount": 1
+  },
+  {
+    "id": "finsrov-front-cabin-mount",
+    "projectId": "finsrov",
+    "projectName": "FinsROV",
+    "label": "Front Cabin Mount",
+    "format": "step",
+    "sourcePath": "Structure/En/CNC_Machining/Front_Cabin_Mount.STEP",
+    "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Front_Cabin_Mount.STEP",
+    "sourceSha256": "b10199ed0ea5adf9d3fbee7e97793cb2c6b394ff40129c2b59c785b693a508a4",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/blob/1bc38e83d8af669339c7a86f0a14e2180676347f/LICENSE",
+    "route": "milling",
+    "material": "Aluminium alloy per upstream CNC machining workbook; confirm exact stock, temper and finish",
+    "requirements": [
+      "Use the original CNC machining workbook for material and quantities. Retain source bores, O-ring grooves and mating surfaces.",
+      "Turning is an initial operation for rotational parts; cross holes, threads, sealing lands and non-axisymmetric features require further drilling/milling.",
+      "The STEP file is geometry, not a toleranced machining drawing. Establish fits, thread specifications and sealing finish."
+    ],
+    "dimensions": [160.4, 122.40000000000003, 8.000000000000057],
+    "bounds": [
+      -80.2, -61.20000000000002, -3.548867813287438e-14, 80.2, 61.20000000000002, 8.000000000000021
+    ],
+    "volume": 26252.945270518936,
+    "solidCount": 1
+  },
+  {
+    "id": "finsrov-horizontal-thruster-bracket",
+    "projectId": "finsrov",
+    "projectName": "FinsROV",
+    "label": "Horizontal Thruster Bracket",
+    "format": "step",
+    "sourcePath": "Structure/En/CNC_Machining/Horizontal_Thruster_Bracket.STEP",
+    "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Horizontal_Thruster_Bracket.STEP",
+    "sourceSha256": "09fc231da9f88ed1d625afa827995fd46bf4ed6d7beddb1abeff4b51f92aa0c4",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/blob/1bc38e83d8af669339c7a86f0a14e2180676347f/LICENSE",
+    "route": "milling",
+    "material": "Aluminium alloy per upstream CNC machining workbook; confirm exact stock, temper and finish",
+    "requirements": [
+      "Use the original CNC machining workbook for material and quantities. Retain source bores, O-ring grooves and mating surfaces.",
+      "Turning is an initial operation for rotational parts; cross holes, threads, sealing lands and non-axisymmetric features require further drilling/milling.",
+      "The STEP file is geometry, not a toleranced machining drawing. Establish fits, thread specifications and sealing finish."
+    ],
+    "dimensions": [66.33452377915623, 25.677669629663452, 24.000000200000002],
+    "bounds": [-23.334523779156232, -17.677669629663452, -1e-7, 43.0, 8.0, 24.0000001],
+    "volume": 12464.400647309989,
+    "solidCount": 1
+  },
+  {
+    "id": "finsrov-rear-cabin-hatch",
+    "projectId": "finsrov",
+    "projectName": "FinsROV",
+    "label": "Rear Cabin Hatch",
+    "format": "step",
+    "sourcePath": "Structure/En/CNC_Machining/Rear_Cabin_Hatch.STEP",
+    "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Rear_Cabin_Hatch.STEP",
+    "sourceSha256": "977ab38ecd24b30ef0047b6c4da4eedef9d4b54e93807da0ef3af65225f73179",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/blob/1bc38e83d8af669339c7a86f0a14e2180676347f/LICENSE",
+    "route": "milling",
+    "material": "Aluminium alloy per upstream CNC machining workbook; confirm exact stock, temper and finish",
+    "requirements": [
+      "Mill the flat 8mm aluminium rear plate; follow the source 48 M2 threaded-hole pattern and specified 4mm thread depth. Retain seal lands and establish finish/tolerances before machining."
+    ],
+    "dimensions": [160.4, 122.4, 8.000000000000007],
+    "bounds": [-80.2, -61.2, -3.9420231381069456e-15, 80.2, 61.2, 8.000000000000004],
+    "volume": 91468.31555607382,
+    "solidCount": 1
+  },
+  {
+    "id": "finsrov-thruster-mount",
+    "projectId": "finsrov",
+    "projectName": "FinsROV",
+    "label": "Thruster Mount",
+    "format": "step",
+    "sourcePath": "Structure/En/CNC_Machining/Thruster_Mount.STEP",
+    "sourceUrl": "https://raw.githubusercontent.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/1bc38e83d8af669339c7a86f0a14e2180676347f/Structure/En/CNC_Machining/Thruster_Mount.STEP",
+    "sourceSha256": "b026d3d02ebcf19f8867c7a7da943e0b9c70ea42a17c73c824c103496399924e",
+    "revision": "1bc38e83d8af669339c7a86f0a14e2180676347f",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform/blob/1bc38e83d8af669339c7a86f0a14e2180676347f/LICENSE",
+    "route": "milling",
+    "material": "Aluminium alloy per upstream CNC machining workbook; confirm exact stock, temper and finish",
+    "requirements": [
+      "Use the original CNC machining workbook for material and quantities. Retain source bores, O-ring grooves and mating surfaces.",
+      "Turning is an initial operation for rotational parts; cross holes, threads, sealing lands and non-axisymmetric features require further drilling/milling.",
+      "The STEP file is geometry, not a toleranced machining drawing. Establish fits, thread specifications and sealing finish."
+    ],
+    "dimensions": [25.000000100000037, 10.000000200000004, 282.00000020000033],
+    "bounds": [
+      -10.219904098009337, -1.0000000089289087e-7, -166.33958701865535, 14.780096001990698,
+      10.000000100000003, 115.66041318134499
+    ],
+    "volume": 46308.52090587083,
+    "solidCount": 1
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "One flat fin cut from plate stock to an authored planar outline.",
+  "processes": ["cutting", "milling"],
+  "releaseRequirements": [
+    "Specify material, stock thickness, finished outline, tolerances and edge treatment.",
+    "Define root attachment, any mounting tab or fillets, orientation and fin quantity in the project.",
+    "Verify the fin and attachment for the actual aerodynamic and handling loads."
+  ]
+}

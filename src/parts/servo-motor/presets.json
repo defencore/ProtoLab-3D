@@ -21,9 +21,7 @@
         "https://www.waveshare.com/product/modules/motors-servos/st3215-hs-servo-motor.htm",
         "https://www.waveshare.com/wiki/ST3215-HS_Servo_Motor"
       ],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "specifications": [
         {
           "label": "Supply",
@@ -131,12 +129,8 @@
         "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
         "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183"
       ],
-      "verifiedParameters": [
-        "model"
-      ],
-      "productCodes": [
-        "BR0023.0230-A"
-      ],
+      "verifiedParameters": ["model"],
+      "productCodes": ["BR0023.0230-A"],
       "specifications": [
         {
           "label": "Case envelope",
@@ -248,12 +242,8 @@
         "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183",
         "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Mini_Pro_Technical_Specifcation.pdf?v=1693965183"
       ],
-      "verifiedParameters": [
-        "model"
-      ],
-      "productCodes": [
-        "BR0023.0230-B"
-      ],
+      "verifiedParameters": ["model"],
+      "productCodes": ["BR0023.0230-B"],
       "specifications": [
         {
           "label": "Case envelope",
@@ -365,12 +355,8 @@
         "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839",
         "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_V8.0_Technical_Specifcation_ee6acc4d-79de-4d61-b686-3288dc5d4153.pdf?v=1704951839"
       ],
-      "verifiedParameters": [
-        "model"
-      ],
-      "productCodes": [
-        "BR0023.0008-V8"
-      ],
+      "verifiedParameters": ["model"],
+      "productCodes": ["BR0023.0008-V8"],
       "specifications": [
         {
           "label": "Dimension basis",
@@ -463,12 +449,8 @@
         "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
         "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163"
       ],
-      "verifiedParameters": [
-        "model"
-      ],
-      "productCodes": [
-        "BR0023.0229-A"
-      ],
+      "verifiedParameters": ["model"],
+      "productCodes": ["BR0023.0229-A"],
       "specifications": [
         {
           "label": "Dimension basis",
@@ -561,12 +543,8 @@
         "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163",
         "https://cdn.shopifycdn.net/s/files/1/0570/1766/3541/files/X10_Pro_Technical_Specifcation.pdf?v=1693965163"
       ],
-      "verifiedParameters": [
-        "model"
-      ],
-      "productCodes": [
-        "BR0023.0229-B"
-      ],
+      "verifiedParameters": ["model"],
+      "productCodes": ["BR0023.0229-B"],
       "specifications": [
         {
           "label": "Dimension basis",
@@ -658,9 +636,7 @@
         "https://www.chd.hk/UploadFiles/Att/2025041613344325.pdf",
         "https://www.chd.hk/Product_Detail.aspx?id=256"
       ],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "specifications": [
         {
           "label": "Motor",
@@ -766,9 +742,7 @@
         "https://www.chd.hk/UploadFiles/Att/2024111314082653.pdf",
         "https://www.chd.hk/Product_Detail.aspx?id=238"
       ],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "specifications": [
         {
           "label": "Operating voltage",
@@ -856,6 +830,482 @@
         "mountPitch": "Longitudinal 49 mm; transverse 10 mm.",
         "stallCurrent": "Unusable current unit in manufacturer V1 datasheet; numeric rating omitted."
       }
+    }
+  },
+  {
+    "id": "waveshare-st3025",
+    "name": "Waveshare ST3025",
+    "description": "Manufacturer nominal 40 × 20 × 40 mm case. Front face M2 corner holes: 36 × 16 mm; rear transverse pitch 15 mm. No conventional mounting ears. Rear longitudinal pitch, shaft offset, shaft/pivot diameters and projections, thread depths, case seams and optional single arm are illustrative. M2 mounting threads use smooth nominal diameter envelopes, without certified thread fit. Drawing accessory-bracket dimensions and 50.95 mm span with supplied discs are not bare-case dimensions. Bare total height, weight and spline tooth count are not established and omitted from numeric search. The 3D model is constructed from source dimensions, not imported supplier CAD.",
+    "parameters": {
+      "model": "waveshare-st3025",
+      "outputAngle": 0,
+      "showHorn": false,
+      "hornStyle": "single"
+    },
+    "catalog": {
+      "designation": "ST3025",
+      "manufacturer": "Waveshare",
+      "sourceName": "Waveshare ST3025 manufacturer specifications and installation drawing",
+      "sourceUrl": "https://www.waveshare.com/wiki/ST3025_Servo",
+      "alternateSourceUrls": [
+        "https://www.waveshare.com/product/modules/motors-servos/st3025-servo.htm",
+        "https://www.waveshare.com/img/devkit/accessories/ST3025-Servo/ST3025-Servo-details-size.jpg"
+      ],
+      "verifiedParameters": ["model"],
+      "specifications": [
+        {
+          "label": "Supply and control",
+          "value": "6–12.6 V (typical 12 V); brushless motor; TTL serial bus, 38400 bps–1 Mbps; 360° magnetic encoder."
+        },
+        {
+          "label": "Performance at 12 V",
+          "value": "Locked-rotor torque 40 kgf·cm; no-load speed 0.117 s/60°."
+        },
+        {
+          "label": "Published current",
+          "value": "No-load 0.38 A; rated 1.5 A; locked rotor 4.4 A. Current test voltage is not stated."
+        },
+        {
+          "label": "Travel",
+          "value": "360° position mode, continuous rotation and step modes. Preview uses ±180° geometric placement."
+        },
+        {
+          "label": "Geometry",
+          "value": "40 × 20 × 40 mm nominal case, two output axes and face mounting; accessory brackets excluded."
+        },
+        {
+          "label": "Unknown ratings",
+          "value": "No numeric manufacturer weight or spline tooth count used."
+        }
+      ],
+      "attributes": {
+        "caseLength": 40,
+        "caseWidth": 20,
+        "caseHeight": 40,
+        "voltageMin": 6,
+        "voltageMax": 12.6,
+        "referenceVoltage": 12,
+        "stallTorque": 40,
+        "noLoadSpeed": 0.117,
+        "noLoadCurrent": 0.38,
+        "stallCurrent": 4.4,
+        "motorType": "Brushless",
+        "interfaceType": "TTL serial bus"
+      },
+      "attributeConditions": {
+        "stallTorque": "At 12 V, locked rotor; not a continuous rating.",
+        "noLoadSpeed": "At 12 V, unloaded.",
+        "noLoadCurrent": "Current test voltage not stated by manufacturer.",
+        "stallCurrent": "Current test voltage not stated by manufacturer; current wiki and product listing specify 4.4 A."
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Constructed 40 × 20 × 40 mm dual-axis envelope with source-dimensioned face mounting; no RC mounting ears.",
+        "limitations": "Manufacturer nominal 40 × 20 × 40 mm case. Front face M2 corner holes: 36 × 16 mm; rear transverse pitch 15 mm. No conventional mounting ears. Rear longitudinal pitch, shaft offset, shaft/pivot diameters and projections, thread depths, case seams and optional single arm are illustrative. M2 mounting threads use smooth nominal diameter envelopes, without certified thread fit. Drawing accessory-bracket dimensions and 50.95 mm span with supplied discs are not bare-case dimensions. Bare total height, weight and spline tooth count are not established and omitted from numeric search. The 3D model is constructed from source dimensions, not imported supplier CAD.",
+        "sourceUrl": "https://www.waveshare.com/img/devkit/accessories/ST3025-Servo/ST3025-Servo-details-size.jpg"
+      }
+    }
+  },
+  {
+    "id": "futaba-hps-h701",
+    "name": "Futaba HPS-H701",
+    "description": "Manufacturer case envelope 40.5 × 21 × 37.8 mm and 49.5 × 10 mm mounting pitch. Mount span, ear elevation/thickness, hole diameter, shaft offset, shaft projection and optional horn are fixed illustrative details. Bare total height is not established and is omitted from search. Smooth Ø6 shaft represents the published 25T interface without mating splines. ±90° is an inspection range, not a published travel rating.",
+    "parameters": {
+      "model": "futaba-hps-h701",
+      "outputAngle": 0,
+      "showHorn": false,
+      "hornStyle": "single"
+    },
+    "catalog": {
+      "designation": "HPS-H701",
+      "manufacturer": "Futaba",
+      "sourceName": "Futaba HPS-H701 manufacturer specifications and installation drawing",
+      "sourceUrl": "https://www.rc.futaba.co.jp/products/detail/I00000346",
+      "alternateSourceUrls": [
+        "https://www.minicars.se/internt/artiklar/internal_documents/HPS-H701.pdf",
+        "https://futaba.uk/products/fut05102721-3"
+      ],
+      "verifiedParameters": ["model"],
+      "specifications": [
+        {
+          "label": "Performance at 6.6 / 7.4 V",
+          "value": "Torque 36 / 40 kgf·cm; speed 0.075 / 0.070 s per 60°."
+        },
+        {
+          "label": "Supply",
+          "value": "Manufacturer manual: rated 6–7.4 V, operating 4.8–8.4 V. Do not use BEC, regulators or dry batteries, per manufacturer."
+        },
+        {
+          "label": "Control",
+          "value": "Digital HPS brushless servo; PWM, S.BUS and S.BUS2; 1520 µs neutral, switchable to 760 µs."
+        },
+        {
+          "label": "Construction",
+          "value": "76 g; aluminum case; metal stages 1–3 and titanium final gear; two ball bearings; Ø6 mm / 25T spline."
+        },
+        {
+          "label": "Unknown characteristics",
+          "value": "Rated travel, bare total height and numeric no-load/stall current are not established. ±90° preview is an inspection range only."
+        }
+      ],
+      "attributes": {
+        "caseLength": 40.5,
+        "caseWidth": 21,
+        "caseHeight": 37.8,
+        "mountPitch": 49.5,
+        "voltageMin": 4.8,
+        "voltageMax": 8.4,
+        "referenceVoltage": 7.4,
+        "stallTorque": 40,
+        "noLoadSpeed": 0.07,
+        "weight": 76,
+        "splineTeeth": 25,
+        "motorType": "Brushless",
+        "interfaceType": "PWM / S.BUS / S.BUS2"
+      },
+      "attributeConditions": {
+        "mountPitch": "Manufacturer installation drawing: longitudinal 49.5 mm, transverse 10 mm.",
+        "voltageMin": "Manufacturer manual operating range 4.8–8.4 V; rated voltage 6–7.4 V.",
+        "voltageMax": "Manufacturer manual operating range 4.8–8.4 V; rated voltage 6–7.4 V. UK product page gives 4.8–7.4 V.",
+        "stallTorque": "At 7.4 V; published torque, not a continuous rating.",
+        "noLoadSpeed": "At 7.4 V, unloaded."
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Fixed source-dimensioned installation envelope; external case, smooth output shaft and optional illustrative arm.",
+        "limitations": "Manufacturer case envelope 40.5 × 21 × 37.8 mm and 49.5 × 10 mm mounting pitch. Mount span, ear elevation/thickness, hole diameter, shaft offset, shaft projection and optional horn are fixed illustrative details. Bare total height is not established and is omitted from search. Smooth Ø6 shaft represents the published 25T interface without mating splines. ±90° is an inspection range, not a published travel rating.",
+        "sourceUrl": "https://www.rc.futaba.co.jp/products/detail/I00000346"
+      }
+    }
+  },
+  {
+    "id": "hitec-hsb-9380th",
+    "name": "Hitec HSB-9380TH",
+    "description": "Installation envelope follows Hitec v2.2 drawing. Raised shaft collar, shaft projection, mounting cutout throat, seams and optional horn are simplified. The spline projects 4 mm above an undimensioned collar: bare total height is illustrative and omitted from numeric search. Older official CAD differs from v2.2 and is not used. Smooth Ø6 shaft is not a mating 25T spline. Default travel is ±60°; ±80° requires programming.",
+    "parameters": {
+      "model": "hitec-hsb-9380th",
+      "outputAngle": 0,
+      "showHorn": false,
+      "hornStyle": "single"
+    },
+    "catalog": {
+      "designation": "HSB-9380TH",
+      "manufacturer": "Hitec",
+      "sourceName": "Hitec HSB-9380TH manufacturer specifications and installation drawing",
+      "sourceUrl": "https://www.hiteccs.com/public/uploads/data_sheet/HCS_HSB-9380TH_Specsheetv2.2-1729882014.pdf",
+      "alternateSourceUrls": [],
+      "verifiedParameters": ["model"],
+      "specifications": [
+        {
+          "label": "Performance at 6.0 V",
+          "value": "Stall torque 34 kgf·cm; no-load speed 0.18 s/60°; no-load current 0.25 A; stall current 2.7 A."
+        },
+        {
+          "label": "Performance at 7.4 V",
+          "value": "Stall torque 34 kgf·cm; no-load speed 0.14 s/60°; no-load current 0.25 A; stall current 2.1 A."
+        },
+        {
+          "label": "Supply",
+          "value": "4.0–8.4 V; maximum voltage is for brief operation only."
+        },
+        {
+          "label": "Control and travel",
+          "value": "16-bit programmable digital PWM, BLDC; default ±60°, maximum programmable total travel 160° (±80°)."
+        },
+        {
+          "label": "Construction",
+          "value": "68 g excluding horn; Ø6 mm / 25T; IP54."
+        },
+        {
+          "label": "Test conditions",
+          "value": "25 °C (±10%), relative humidity 45% (±10%). Numeric ratings use v2.2, which differs from some older product pages."
+        }
+      ],
+      "attributes": {
+        "caseLength": 40,
+        "caseWidth": 20,
+        "caseHeight": 38.5,
+        "mountPitch": 49,
+        "voltageMin": 4,
+        "voltageMax": 8.4,
+        "referenceVoltage": 7.4,
+        "stallTorque": 34,
+        "noLoadSpeed": 0.14,
+        "noLoadCurrent": 0.25,
+        "stallCurrent": 2.1,
+        "weight": 68,
+        "splineTeeth": 25,
+        "motorType": "Brushless",
+        "interfaceType": "PWM"
+      },
+      "attributeConditions": {
+        "mountPitch": "Longitudinal 49 mm; transverse 10 mm; v2.2 drawing.",
+        "voltageMax": "8.4 V maximum is for brief operation only, per v2.2 datasheet.",
+        "stallTorque": "At 7.4 V, stall torque in v2.2; not a continuous rating.",
+        "noLoadSpeed": "At 7.4 V, unloaded.",
+        "noLoadCurrent": "At 7.4 V, unloaded; v2.2 datasheet.",
+        "stallCurrent": "At 7.4 V, stalled; v2.2 datasheet.",
+        "weight": "68 g excluding horn."
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Fixed source-dimensioned installation envelope; external case, smooth output shaft and optional illustrative arm.",
+        "limitations": "Installation envelope follows Hitec v2.2 drawing. Raised shaft collar, shaft projection, mounting cutout throat, seams and optional horn are simplified. The spline projects 4 mm above an undimensioned collar: bare total height is illustrative and omitted from numeric search. Older official CAD differs from v2.2 and is not used. Smooth Ø6 shaft is not a mating 25T spline. Default travel is ±60°; ±80° requires programming.",
+        "sourceUrl": "https://www.hiteccs.com/public/uploads/data_sheet/HCS_HSB-9380TH_Specsheetv2.2-1729882014.pdf"
+      }
+    }
+  },
+  {
+    "id": "chaservo-hv3609",
+    "name": "CHASERVO HV3609",
+    "description": "40.5 × 20 × 40 mm nominal envelope follows the October 2024 drawing; the 40 mm height reaches the spline-root plane, including its collar. Smooth Ø6 output adds 4.2 mm. Simplified case contours, mounting-slot throats and optional horn are illustrative; spline teeth and threads are not modeled. Current product-page weight and pulse limits differ from the linked PDF; both values are retained with their source conditions.",
+    "parameters": {
+      "model": "chaservo-hv3609",
+      "outputAngle": 0,
+      "showHorn": false,
+      "hornStyle": "single"
+    },
+    "catalog": {
+      "designation": "HV3609",
+      "manufacturer": "CHASERVO",
+      "sourceName": "CHASERVO HV3609 manufacturer specifications and installation drawing",
+      "sourceUrl": "https://www.chaservo.com/web/content/product.template/231/x_studio_downloads?download=1",
+      "alternateSourceUrls": [
+        "https://www.chaservo.com/shop/hv-series-2/cha-hv3609-chaservo-hv3609-231"
+      ],
+      "verifiedParameters": ["model"],
+      "specifications": [
+        {
+          "label": "Performance at 4.8 / 6.0 / 7.4 / 8.4 V",
+          "value": "Holding torque 24 / 30 / 36 / 40 kgf·cm; output torque 16 / 20 / 24 / 27 kgf·cm; speed 0.13 / 0.11 / 0.09 / 0.08 s per 60°."
+        },
+        {
+          "label": "Stalling current at 4.8 / 6.0 / 7.4 / 8.4 V",
+          "value": "4.00 / 4.15 / 4.95 / 5.85 A. Numeric no-load current is not published."
+        },
+        {
+          "label": "Control and travel",
+          "value": "PWM 1520 µs / 333 Hz; PDF default ±50°, maximum ±60° at 900–2100 µs. Current product page lists 500–2500 µs without establishing additional travel."
+        },
+        {
+          "label": "Construction",
+          "value": "Coreless DC; hardened steel gears; aluminum alloy; 2BB; potentiometer; Ø6 mm / 25T; M3 retaining screw (smooth bore representation)."
+        },
+        {
+          "label": "Weight discrepancy",
+          "value": "Current official product page: 81 g. Linked October 2024 technical PDF: 70 g ±10%."
+        }
+      ],
+      "attributes": {
+        "caseLength": 40.5,
+        "caseWidth": 20,
+        "caseHeight": 40,
+        "totalHeight": 44.2,
+        "mountPitch": 49.5,
+        "voltageMin": 4.8,
+        "voltageMax": 8.4,
+        "referenceVoltage": 7.4,
+        "stallTorque": 36,
+        "noLoadSpeed": 0.09,
+        "stallCurrent": 4.95,
+        "weight": 81,
+        "splineTeeth": 25,
+        "motorType": "Coreless DC",
+        "interfaceType": "PWM"
+      },
+      "attributeConditions": {
+        "caseHeight": "Nominal 40 mm envelope to spline-root plane, including collar; not the flat top-case height.",
+        "totalHeight": "40 mm to spline root plus 4.2 mm output projection; excludes optional horn.",
+        "mountPitch": "Longitudinal 49.5 mm, transverse 10 mm.",
+        "stallTorque": "At 7.4 V, published holding torque 36 kgf·cm; separate output torque is 24 kgf·cm. Not a continuous rating.",
+        "noLoadSpeed": "At 7.4 V, unloaded.",
+        "stallCurrent": "At 7.4 V, stalling current; October 2024 manufacturer PDF.",
+        "weight": "Current official product page: 81 g; linked October 2024 PDF: 70 g ±10%. Confirm ordered revision."
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Fixed source-dimensioned installation envelope; external case, smooth output shaft and optional illustrative arm.",
+        "limitations": "40.5 × 20 × 40 mm nominal envelope follows the October 2024 drawing; the 40 mm height reaches the spline-root plane, including its collar. Smooth Ø6 output adds 4.2 mm. Simplified case contours, mounting-slot throats and optional horn are illustrative; spline teeth and threads are not modeled. Current product-page weight and pulse limits differ from the linked PDF; both values are retained with their source conditions.",
+        "sourceUrl": "https://www.chaservo.com/web/content/product.template/231/x_studio_downloads?download=1"
+      }
+    }
+  },
+  {
+    "id": "hitec-d954sw",
+    "name": "Hitec D954SW",
+    "description": "Installation envelope follows Hitec v2.2 drawing. Raised shaft collar, shaft projection, mounting cutout throat, seams and optional horn are simplified. The spline projects 4 mm above an undimensioned collar: bare total height is illustrative and omitted from numeric search. Older official CAD differs from v2.2 and is not used. Smooth Ø6 shaft is not a mating 25T spline. Default travel is ±60°; ±87.5° requires programming.",
+    "parameters": {
+      "model": "hitec-d954sw",
+      "outputAngle": 0,
+      "showHorn": false,
+      "hornStyle": "single"
+    },
+    "catalog": {
+      "designation": "D954SW",
+      "manufacturer": "Hitec",
+      "sourceName": "Hitec D954SW manufacturer specifications and installation drawing",
+      "sourceUrl": "https://www.hiteccs.com/public/uploads/data_sheet/HRC_D954SW_Specsheetv2.2_102-1729877827.pdf",
+      "alternateSourceUrls": [],
+      "verifiedParameters": ["model"],
+      "specifications": [
+        {
+          "label": "Performance at 4.8 V",
+          "value": "Torque 18 kgf·cm; speed 0.19 s/60°; no-load current 0.3 A; stall current 3.2 A."
+        },
+        {
+          "label": "Performance at 6.0 V",
+          "value": "Torque 24 kgf·cm; speed 0.15 s/60°; no-load current 0.4 A; stall current 4.2 A."
+        },
+        {
+          "label": "Performance at 7.4 V",
+          "value": "Torque 29 kgf·cm; speed 0.12 s/60°; no-load current 0.5 A; stall current 5.2 A."
+        },
+        {
+          "label": "Supply",
+          "value": "3.5–8.4 V; maximum voltage is for brief operation only."
+        },
+        {
+          "label": "Control and travel",
+          "value": "32-bit programmable digital PWM / TTL half-duplex; default ±60°, maximum programmable total travel 175° (±87.5°)."
+        },
+        {
+          "label": "Construction",
+          "value": "Coreless brushed motor; 66 g excluding horn; Ø6 mm / 25T; IP54."
+        },
+        {
+          "label": "Test conditions",
+          "value": "25 °C (±10%), relative humidity 45% (±10%)."
+        }
+      ],
+      "attributes": {
+        "caseLength": 40,
+        "caseWidth": 20,
+        "caseHeight": 37,
+        "mountPitch": 48,
+        "voltageMin": 3.5,
+        "voltageMax": 8.4,
+        "referenceVoltage": 7.4,
+        "stallTorque": 29,
+        "noLoadSpeed": 0.12,
+        "noLoadCurrent": 0.5,
+        "stallCurrent": 5.2,
+        "weight": 66,
+        "splineTeeth": 25,
+        "motorType": "Coreless DC",
+        "interfaceType": "PWM / TTL half-duplex"
+      },
+      "attributeConditions": {
+        "mountPitch": "Longitudinal 48 mm; transverse 10 mm; v2.2 drawing.",
+        "voltageMax": "8.4 V maximum is for brief operation only, per v2.2 datasheet.",
+        "stallTorque": "At 7.4 V, stalled; not a continuous rating.",
+        "noLoadSpeed": "At 7.4 V, unloaded.",
+        "noLoadCurrent": "At 7.4 V, unloaded; v2.2 datasheet.",
+        "stallCurrent": "At 7.4 V, stalled; v2.2 datasheet.",
+        "weight": "66 g excluding horn."
+      },
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Fixed source-dimensioned installation envelope; external case, smooth output shaft and optional illustrative arm.",
+        "limitations": "Installation envelope follows Hitec v2.2 drawing. Raised shaft collar, shaft projection, mounting cutout throat, seams and optional horn are simplified. The spline projects 4 mm above an undimensioned collar: bare total height is illustrative and omitted from numeric search. Older official CAD differs from v2.2 and is not used. Smooth Ø6 shaft is not a mating 25T spline. Default travel is ±60°; ±87.5° requires programming.",
+        "sourceUrl": "https://www.hiteccs.com/public/uploads/data_sheet/HRC_D954SW_Specsheetv2.2_102-1729877827.pdf"
+      }
+    }
+  },
+  {
+    "id": "towerpro-mg996r",
+    "name": "TowerPro MG996R",
+    "description": "Manufacturer lists 40.7 \u00d7 19.7 \u00d7 42.9 mm nominal dimensions, while its configure table lists 40.9 \u00d7 20 mm, 37 mm case, 42.7 mm overall and 54 mm ear span. The fixed installation reference retains the Rocket Release nominal 40.7 \u00d7 19.7 \u00d7 37 mm body with 5.9 mm output projection. Shaft axis, \u00d86 smooth output, \u00d83.4 bores on 48 \u00d7 10 mm pitch, ear elevation/thickness and optional horn are unverified fit references. No mounting pitch or spline tooth count is published as a verified catalog attribute. Source travel is 0\u2013159\u00b0; geometric pose is centered \u00b179.5\u00b0. Internal gears, motor, supplied arms, screws and 320 mm wire are excluded. Measure the actual servo and resolve the conflicting source dimensions before machining.",
+    "parameters": {
+      "model": "towerpro-mg996r",
+      "outputAngle": 0,
+      "showHorn": false,
+      "hornStyle": "single"
+    },
+    "catalog": {
+      "designation": "MG996R",
+      "manufacturer": "TowerPro",
+      "sourceName": "TowerPro MG996R official specification and configure table",
+      "sourceUrl": "https://towerpro.com.tw/product/mg996r/",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Source-identified external installation reference; unresolved mounting and shaft details.",
+        "limitations": "Manufacturer lists 40.7 \u00d7 19.7 \u00d7 42.9 mm nominal dimensions, while its configure table lists 40.9 \u00d7 20 mm, 37 mm case, 42.7 mm overall and 54 mm ear span. The fixed installation reference retains the Rocket Release nominal 40.7 \u00d7 19.7 \u00d7 37 mm body with 5.9 mm output projection. Shaft axis, \u00d86 smooth output, \u00d83.4 bores on 48 \u00d7 10 mm pitch, ear elevation/thickness and optional horn are unverified fit references. No mounting pitch or spline tooth count is published as a verified catalog attribute. Source travel is 0\u2013159\u00b0; geometric pose is centered \u00b179.5\u00b0. Internal gears, motor, supplied arms, screws and 320 mm wire are excluded. Measure the actual servo and resolve the conflicting source dimensions before machining.",
+        "sourceUrl": "https://towerpro.com.tw/product/mg996r/"
+      },
+      "attributes": {
+        "caseLength": 40.7,
+        "caseWidth": 19.7,
+        "voltageMin": 4.8,
+        "voltageMax": 6.6,
+        "referenceVoltage": 6,
+        "stallTorque": 11,
+        "noLoadSpeed": 0.15,
+        "noLoadCurrent": 0.17,
+        "stallCurrent": 1.4,
+        "weight": 55,
+        "interfaceType": "PWM"
+      },
+      "attributeConditions": {
+        "caseLength": "Manufacturer nominal specification; reconcile conflicting configure-table dimensions before manufacture.",
+        "caseWidth": "Manufacturer nominal specification; reconcile conflicting configure-table dimensions before manufacture.",
+        "stallTorque": "At 6 V; published stall torque, not continuous duty.",
+        "noLoadSpeed": "At 6 V, unloaded.",
+        "noLoadCurrent": "Manufacturer lists currents without a test voltage; do not assign the 6 V torque/speed condition to them.",
+        "stallCurrent": "Manufacturer lists currents without a test voltage; do not assign the 6 V torque/speed condition to them."
+      },
+      "specifications": [
+        {
+          "label": "Geometry limitations",
+          "value": "Manufacturer lists 40.7 \u00d7 19.7 \u00d7 42.9 mm nominal dimensions, while its configure table lists 40.9 \u00d7 20 mm, 37 mm case, 42.7 mm overall and 54 mm ear span. The fixed installation reference retains the Rocket Release nominal 40.7 \u00d7 19.7 \u00d7 37 mm body with 5.9 mm output projection. Shaft axis, \u00d86 smooth output, \u00d83.4 bores on 48 \u00d7 10 mm pitch, ear elevation/thickness and optional horn are unverified fit references. No mounting pitch or spline tooth count is published as a verified catalog attribute. Source travel is 0\u2013159\u00b0; geometric pose is centered \u00b179.5\u00b0. Internal gears, motor, supplied arms, screws and 320 mm wire are excluded. Measure the actual servo and resolve the conflicting source dimensions before machining."
+        }
+      ]
+    }
+  },
+  {
+    "id": "towerpro-mg90s",
+    "name": "TowerPro MG90S",
+    "description": "Manufacturer lists nominal 22.8 \u00d7 12.2 \u00d7 28.5 mm dimensions, but its configure table lists C=28.4, D=12.4 and A=32.5 mm. The fixed installation reference retains the Rocket Release nominal 22.8 \u00d7 12.2 \u00d7 28.5 mm body. The 30.8 mm ears, two \u00d82.1 bores at 26.8 mm pitch, shaft axis, \u00d84.8 smooth output, 3 mm output projection, ear elevation/thickness and optional horn are unverified fit references. Bare total height and mounting pitch are omitted from catalog attributes. \u00b190\u00b0 is an illustrative inspection range, not a sourced travel rating. Source lists 4.8 V operating voltage and separate performance points at higher voltages; a maximum operating voltage is not inferred. Internal gears, motor, supplied arms, screws and 250 mm wire are excluded. Measure the actual servo before machining.",
+    "parameters": {
+      "model": "towerpro-mg90s",
+      "outputAngle": 0,
+      "showHorn": false,
+      "hornStyle": "single"
+    },
+    "catalog": {
+      "designation": "MG90S",
+      "manufacturer": "TowerPro",
+      "sourceName": "TowerPro MG90S official specification and configure table",
+      "sourceUrl": "https://towerpro.com.tw/product/mg90s-3/",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Source-identified external installation reference; unresolved mounting and shaft details.",
+        "limitations": "Manufacturer lists nominal 22.8 \u00d7 12.2 \u00d7 28.5 mm dimensions, but its configure table lists C=28.4, D=12.4 and A=32.5 mm. The fixed installation reference retains the Rocket Release nominal 22.8 \u00d7 12.2 \u00d7 28.5 mm body. The 30.8 mm ears, two \u00d82.1 bores at 26.8 mm pitch, shaft axis, \u00d84.8 smooth output, 3 mm output projection, ear elevation/thickness and optional horn are unverified fit references. Bare total height and mounting pitch are omitted from catalog attributes. \u00b190\u00b0 is an illustrative inspection range, not a sourced travel rating. Source lists 4.8 V operating voltage and separate performance points at higher voltages; a maximum operating voltage is not inferred. Internal gears, motor, supplied arms, screws and 250 mm wire are excluded. Measure the actual servo before machining.",
+        "sourceUrl": "https://towerpro.com.tw/product/mg90s-3/"
+      },
+      "attributes": {
+        "caseLength": 22.8,
+        "caseWidth": 12.2,
+        "voltageMin": 4.8,
+        "referenceVoltage": 4.8,
+        "stallTorque": 1.8,
+        "noLoadSpeed": 0.1,
+        "weight": 13.4,
+        "interfaceType": "PWM"
+      },
+      "attributeConditions": {
+        "caseLength": "Manufacturer nominal specification; reconcile conflicting configure-table dimensions before manufacture.",
+        "caseWidth": "Manufacturer nominal specification; reconcile conflicting configure-table dimensions before manufacture.",
+        "stallTorque": "At 4.8 V; published stall torque, not continuous duty.",
+        "noLoadSpeed": "At 4.8 V, unloaded."
+      },
+      "specifications": [
+        {
+          "label": "Geometry limitations",
+          "value": "Manufacturer lists nominal 22.8 \u00d7 12.2 \u00d7 28.5 mm dimensions, but its configure table lists C=28.4, D=12.4 and A=32.5 mm. The fixed installation reference retains the Rocket Release nominal 22.8 \u00d7 12.2 \u00d7 28.5 mm body. The 30.8 mm ears, two \u00d82.1 bores at 26.8 mm pitch, shaft axis, \u00d84.8 smooth output, 3 mm output projection, ear elevation/thickness and optional horn are unverified fit references. Bare total height and mounting pitch are omitted from catalog attributes. \u00b190\u00b0 is an illustrative inspection range, not a sourced travel rating. Source lists 4.8 V operating voltage and separate performance points at higher voltages; a maximum operating voltage is not inferred. Internal gears, motor, supplied arms, screws and 250 mm wire are excluded. Measure the actual servo before machining."
+        }
+      ]
     }
   }
 ]

@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "One authored hollow conical transition or boattail shell.",
+  "processes": ["turning", "printing", "moulding"],
+  "releaseRequirements": [
+    "Specify material, manufacturing route, wall requirements, tolerances and surface finish.",
+    "Define both airframe joints and their measured interfaces, attachment and inspection.",
+    "Qualify structural loads and the actual manufacturing process before use."
+  ]
+}

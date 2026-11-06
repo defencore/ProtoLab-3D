@@ -1,4 +1,5 @@
 import productData from './product.json';
+import { bearingPalette, bearingRgb } from '../../core/hardware/bearing-appearance';
 import type { ProductProfile } from '../../core/product-types';
 import { withParameterStates } from '../../core/parameter-states';
 import presetData from './presets.json';
@@ -367,14 +368,19 @@ const part: PartDefinition = {
           { points, z: v.spragZ - v.spragLength / 2 },
           { points, z: v.spragZ + v.spragLength / 2 },
         ],
-        0x59616b,
+        bearingPalette.sprag,
       );
       sprag.name = 'Asymmetric sprag cam';
       group.add(sprag);
     }
     if (state !== 'internals' && p.seals === 'rubber')
       for (const side of [-1, 1]) {
-        const seal = ring(v.r + v.gap * 0.665, v.r + v.gap * 0.335, v.w * 0.035, 0x292d31);
+        const seal = ring(
+          v.r + v.gap * 0.665,
+          v.r + v.gap * 0.335,
+          v.w * 0.035,
+          bearingPalette.rubberSeal,
+        );
         seal.position.z = side * (v.w * 0.465 + offset);
         group.add(seal);
       }
@@ -384,27 +390,33 @@ const part: PartDefinition = {
     const v = values(p),
       offset = state === 'exploded' ? v.w * 1.1 : 0;
     const setup = [racePython(p, true, -offset, 'inner')],
-      shapes = ['inner'];
+      shapes = ['inner'],
+      colors = [bearingRgb(bearingPalette.race)];
     if (state !== 'internals') {
       setup.push(racePython(p, false, offset, 'outer'));
       shapes.push('outer');
+      colors.push(bearingRgb(bearingPalette.race));
     }
     cages(p).forEach((layout, i) => {
       setup.push(cagePython(layout, `cage_${i}`));
       shapes.push(`cage_${i}`);
+      colors.push(bearingRgb(bearingPalette.cage));
     });
     for (let i = 0; i < n(p, 'balls'); i++) {
       const a = (i * Math.PI * 2) / n(p, 'balls');
       shapes.push(
         `Part.makeSphere(${num(v.ballRadius)}, App.Vector(${num(v.pitch * Math.cos(a))},${num(v.pitch * Math.sin(a))},${num(v.ballZ)}))`,
       );
+      colors.push(bearingRgb(bearingPalette.race));
     }
-    for (let i = 0; i < n(p, 'sprags'); i++)
+    for (let i = 0; i < n(p, 'sprags'); i++) {
       shapes.push(
         `Part.Face(${pythonWire(spragOutline(p, (i * Math.PI * 2) / n(p, 'sprags')), v.spragZ - v.spragLength / 2)}).extrude(App.Vector(0,0,${num(v.spragLength)}))`,
       );
+      colors.push(bearingRgb(bearingPalette.sprag));
+    }
     if (state !== 'internals' && p.seals === 'rubber')
-      for (const side of [-1, 1])
+      for (const side of [-1, 1]) {
         shapes.push(
           annulusPython(
             v.r + v.gap * 0.665,
@@ -413,7 +425,11 @@ const part: PartDefinition = {
             side * (v.w * 0.465 + offset) - v.w * 0.0175,
           ),
         );
-    return [...setup, compoundPython(shapes)].join('\n');
+        colors.push(bearingRgb(bearingPalette.rubberSeal));
+      }
+    return [...setup, compoundPython(shapes), `component_colors = ${JSON.stringify(colors)}`].join(
+      '\n',
+    );
   },
   dimensions(p, state) {
     return modelBounds(part.buildGeometry(p, state));

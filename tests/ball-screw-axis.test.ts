@@ -124,7 +124,8 @@ for case in cases:
         root = doc.RootObjects[0]
         assert root.GeometryMode == case["mode"]
         assert root.ModelState == case["state"]
-        children = root.Group
+        children = sorted((obj for obj in doc.Objects if obj.TypeId == "Part::Feature"), key=lambda obj: obj.ComponentIndex)
+        assert {"Motion & drives", "Fasteners"}.issubset(obj.AssemblyGroup[0] for obj in root.Group)
         libraries = [child.LibraryId for child in children]
         assert libraries.count("manufactured-detail") == ${customCount}, libraries
         assert libraries.count("ball-screw") > 1, libraries

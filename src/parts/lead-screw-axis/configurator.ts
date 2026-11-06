@@ -12,6 +12,7 @@ export const defaults: Parameters = {
 export const parameters: ParameterDefinition[] = [
   {
     key: 'turns',
+    filterable: false,
     label: 'Input revolutions from origin',
     type: 'number',
     group: 'Travel',
@@ -23,6 +24,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'form',
+    catalogSummary: true,
     label: 'Thread system',
     type: 'select',
     group: 'Configuration',
@@ -33,6 +35,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'diameter',
+    catalogSummary: true,
     label: 'Screw nominal diameter',
     type: 'number',
     group: 'Dimensions',
@@ -43,6 +46,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'length',
+    catalogSummary: true,
     label: 'Screw length',
     type: 'number',
     group: 'Dimensions',
@@ -53,6 +57,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'pitch',
+    catalogSummary: true,
     description:
       'Changes travel for the current input revolutions. The screw uses a smooth thread envelope; use Thread tool for a helical Boolean solid.',
     label: 'Lead per revolution',
@@ -85,6 +90,7 @@ export const parameters: ParameterDefinition[] = [
   },
   {
     key: 'position',
+    filterable: false,
     label: 'Nut position',
     type: 'number',
     group: 'Dimensions',

@@ -1,0 +1,10 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "One custom straight launch-rod guide sleeve.",
+  "processes": ["cutting", "drilling"],
+  "releaseRequirements": [
+    "Measure the actual rod and specify running clearance, material and attachment.",
+    "Verify sliding over the full rod length and qualify the sleeve and airframe joint."
+  ]
+}

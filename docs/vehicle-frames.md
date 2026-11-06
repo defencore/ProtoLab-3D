@@ -1,5 +1,7 @@
 # Vehicle frames and hulls
 
+The **VEHICLE STRUCTURES → UNDERWATER ROVS** group contains the **FinsROV mechanical assembly**, six real **ROV fabrication parts** and complete **ROV purchased equipment** units. The physical composition has 26 made occurrences and 24 purchased CAD units. Servos, thrusters, sensors and enclosure parts stay purchased; the STL export contains only four printed sensor brackets. Metal details use FreeCAD/STEP. The [source and manufacturing review](rov-projects.md) records actual procurement quantities, verified fabrication placements and the unresolved BOM omissions; other investigated projects remain research references.
+
 Find these modules under **VEHICLE STRUCTURES**. Choose **Browse presets** for a popular-model reference or custom starting point. Authored parts have editable dimensions; imported supplier chassis and source multicopter frames retain their fixed geometry.
 
 | Family        | References                                                                                   | Custom designs                                                           |

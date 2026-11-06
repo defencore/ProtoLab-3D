@@ -7,6 +7,7 @@ import tempfile
 sys.path.insert(0, os.environ.get("FREECAD_LIB", "/Applications/FreeCAD.app/Contents/Resources/lib"))
 import FreeCAD as App
 import Part
+from freecad_tree import component_leaves
 import Import
 
 cases = json.load(open(sys.argv[1], encoding="utf-8"))
@@ -22,7 +23,7 @@ with tempfile.TemporaryDirectory(prefix="protolab-servo-") as directory:
             root = roots[0]
             assert root.PartId == case["id"]
             assert json.loads(root.Configuration) == case["parameters"]
-            children = list(root.Group) if root.TypeId == "App::Part" else [root]
+            children = component_leaves(root)
             for child in children:
                 assert child.Shape.isValid() and child.Shape.Volume > 0
                 assert len(child.Shape.Solids) == 1, "Each manufactured component must be one solid."
@@ -54,7 +55,7 @@ with tempfile.TemporaryDirectory(prefix="protolab-servo-") as directory:
                 App.closeDocument(doc.Name)
                 doc = App.openDocument(path)
                 root = doc.getObject(name)
-                reloaded = list(root.Group) if root.TypeId == "App::Part" else [root]
+                reloaded = component_leaves(root)
                 assert [child.Label for child in reloaded] == labels
             results.append({"name": case["name"], "passed": True, "components": len(children), "roundTrip": case["roundTrip"]})
             print(case["name"], "PASS", len(children), "components", flush=True)

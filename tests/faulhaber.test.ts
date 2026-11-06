@@ -64,7 +64,13 @@ for (const family of ['am', 'bx4']) {
   const id = `faulhaber-${family}`,
     part = parts.find((p) => p.id === id)!;
   test(`FAULHABER ${family}: stock models, all windings and CAD provenance`, () => {
-    assert.equal(part.presets.length, 20);
+    assert.equal(part.presets.length, family === 'bx4' ? 21 : 20);
+    if (family === 'bx4') {
+      const execution = part.presets.find((preset) => preset.id === '2250s024bx4-6855')!;
+      assert.equal(execution.parameters.model, '2250S024BX4-6855');
+      assert.deepEqual(execution.catalog!.productCodes, ['2250.00430']);
+      assert.ok(execution.catalog!.sourceUrl.endsWith('/2250S024BX4-6855'));
+    }
     assert.equal(part.catalogSelectionOnly, true);
     assert.deepEqual(
       part.parameters.map((p) => p.key),

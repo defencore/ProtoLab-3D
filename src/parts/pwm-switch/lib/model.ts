@@ -54,3 +54,14 @@ export function pieces(state = 'assembled'): Piece[] {
   add('PWM identification inlay', marking, 0xcd7964, 1);
   return out;
 }
+
+/** User-provided body only; no PCB, terminal or electrical details are inferred. */
+export function userReferencePieces(): Piece[] {
+  return [
+    {
+      shape: roundedRect(26, 16, 0.6, 0, 6),
+      label: 'User PWM MOSFET · unidentified 26 × 16 × 6 mm body',
+      color: 0x4d5951,
+    },
+  ];
+}

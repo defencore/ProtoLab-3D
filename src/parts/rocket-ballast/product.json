@@ -1,0 +1,10 @@
+{
+  "kind": "detail",
+  "supply": "manufactured",
+  "description": "One custom cylindrical ballast slug with an optional bore.",
+  "processes": ["turning", "drilling"],
+  "releaseRequirements": [
+    "Specify actual material, tolerances, retention and the measured finished mass.",
+    "Verify the mounting and project balance using the complete actual assembly."
+  ]
+}

@@ -1,7 +1,7 @@
 [
   {
     "id": "pcd40-4",
-    "name": "Flange PCD40 / 4 holes",
+    "name": "Flange · PCD 40 mm · 4 holes",
     "description": "Referenced guide plate for bolt circles, rows, rectangular patterns and flanges. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "pattern": "circle",
@@ -22,7 +22,7 @@
   },
   {
     "id": "pcd60-6",
-    "name": "Flange PCD60 / 6 holes",
+    "name": "Flange · PCD 60 mm · 6 holes",
     "description": "Referenced guide plate for bolt circles, rows, rectangular patterns and flanges. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "pattern": "circle",
@@ -43,7 +43,7 @@
   },
   {
     "id": "pcd80-8",
-    "name": "Flange PCD80 / 8 holes",
+    "name": "Flange · PCD 80 mm · 8 holes",
     "description": "Referenced guide plate for bolt circles, rows, rectangular patterns and flanges. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "pattern": "circle",
@@ -64,7 +64,7 @@
   },
   {
     "id": "pcd100-12",
-    "name": "Flange PCD100 / 12 holes",
+    "name": "Flange · PCD 100 mm · 12 holes",
     "description": "Referenced guide plate for bolt circles, rows, rectangular patterns and flanges. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "pattern": "circle",
@@ -85,7 +85,7 @@
   },
   {
     "id": "grid32",
-    "name": "Grid 3 x 2 / pitch32",
+    "name": "Grid · 3 × 2 holes · 32 mm pitch",
     "description": "Referenced guide plate for bolt circles, rows, rectangular patterns and flanges. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "pattern": "grid",
@@ -106,7 +106,7 @@
   },
   {
     "id": "row20",
-    "name": "Row / 6 holes at 20 mm",
+    "name": "Row · 6 holes at 20 mm",
     "description": "Referenced guide plate for bolt circles, rows, rectangular patterns and flanges. Editable workshop prototype; see its guide for datums and tool limits.",
     "parameters": {
       "pattern": "line",

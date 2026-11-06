@@ -1,0 +1,21 @@
+import {createHash} from 'node:crypto';
+import {mkdirSync,readFileSync,readdirSync,writeFileSync} from 'node:fs';
+import {withGeometryMode} from '../src/core/geometry-mode.ts';
+import {pieces,roleIds,panelTransform} from '../src/parts/tr8-quad-geared-rocker-actuator/lib/model.ts';
+import {standMountStations,standMountPattern} from '../src/parts/tr8-quad-geared-rocker-actuator/lib/layout.ts';
+import {defaults} from '../src/parts/tr8-quad-geared-rocker-actuator/configurator.ts';
+import {nativePython} from '../src/parts/tr8-quad-geared-rocker-actuator/lib/native.ts';
+import {coverValues,coverMountStations} from '../src/parts/tr8-quad-geared-rocker-actuator/lib/plastic-cover.ts';
+const out=process.argv[2]??'test-results/tr8-quad-geared-rocker-centered-stand';mkdirSync(out,{recursive:true});
+const hash=(s:string|Buffer)=>createHash('sha256').update(s).digest('hex');
+const root='src/parts/tr8-quad-geared-rocker-actuator';
+const files=readdirSync(root,{recursive:true}).filter((p):p is string=>typeof p==='string'&&/\.(ts|json)$/.test(p)).map(p=>root+'/'+p);
+const old=JSON.parse(readFileSync('test-results/tr8-quad-geared-rocker-plain-seat-final/capture.json','utf8'));
+const preserved=JSON.parse(readFileSync('/private/tmp/tr8-single-before-c4-sha256.json','utf8')).files;
+for(const[p,h]of Object.entries(preserved))if(hash(readFileSync(p))!==h)throw Error('Approved source changed:'+p);
+const data:any={preserved,roleIds,standMountStations:standMountStations(),standMountPattern,panelFrames:[0,1,2,3].map(i=>panelTransform(i).elements),baseIds:old.poses[0].occurrences.map((p:any)=>p.id),sources:Object.fromEntries(files.map(p=>[p,hash(readFileSync(p))])),poses:[]};
+for(const motor of ['surpass-2838-3700kv','surpass-2845-3100kv'])for(const angle of [0,20,-20])withGeometryMode('full',()=>{
+ const p={...defaults,motor,angleA:angle,angleB:angle,angleC:angle,angleD:angle};const rows=pieces(p,'assembled');if(rows.length!==115)throw Error('Expected115pieces');
+ data.poses.push({motor,angle,values:coverValues(p),mounts:coverMountStations(p),source:nativePython(rows),occurrences:rows.map(piece=>({id:piece.component.id,name:piece.component.name,libraryId:piece.component.libraryId,requireSingleSolid:!!piece.requireSingleSolid,placement:piece.component.placement,parameters:piece.component.parameters,geometryKey:hash(JSON.stringify({libraryId:piece.component.libraryId,state:piece.component.state,parameters:piece.component.parameters,placement:piece.component.placement,angle:piece.angle,position:piece.position,z:piece.z}))}))});
+});
+writeFileSync(out+'/capture.json',JSON.stringify(data));console.log(JSON.stringify({out,poses:data.poses.length}));

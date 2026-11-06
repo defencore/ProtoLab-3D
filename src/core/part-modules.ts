@@ -1,5 +1,7 @@
 import type { PartDefinition } from './types';
 import { validateProductProfile } from './product-library';
+import { libraryCatalogFamily } from './library';
+import { isValidPresetId } from './library-identity';
 
 /** Increment only when the portable part contract changes incompatibly. */
 export const PART_MODULE_API_VERSION = 2;
@@ -15,7 +17,14 @@ export interface PartModule {
 export const PART_ID_PATTERN = /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/;
 
 /** Fail at the module boundary, before malformed definitions reach the interface. */
-export function registerPartModules(modules: readonly PartModule[]): PartDefinition[] {
+export function registerPartModules(definitions: readonly PartModule[]): PartDefinition[] {
+  const modules = definitions.map((module) => {
+    const family = module?.part && libraryCatalogFamily(module.part.id);
+    if (!family) return module;
+    if (module.part.browseFamily && module.part.browseFamily.id !== family.id)
+      throw new Error(`Conflicting catalog membership for ${module.part.id}.`);
+    return { ...module, part: { ...module.part, browseFamily: family } };
+  });
   const ids = new Set<string>();
   const browseFamilies = new Map<
     string,
@@ -40,6 +49,61 @@ export function registerPartModules(modules: readonly PartModule[]): PartDefinit
     const fail = (message: string): never => {
       throw new Error(`${part.id}: ${message}`);
     };
+    const validWhen = (when: unknown): boolean => {
+      if (when === undefined) return true;
+      if (
+        !when ||
+        typeof when !== 'object' ||
+        Array.isArray(when) ||
+        !Array.isArray(part.parameters)
+      )
+        return false;
+      const values = Object.entries(when);
+      return (
+        values.length > 0 &&
+        values.every(([key, value]) => {
+          const field = part.parameters.find((item) => item.key === key);
+          if (!field) return false;
+          if (field.type === 'number') return typeof value === 'number' && Number.isFinite(value);
+          if (field.type === 'boolean') return typeof value === 'boolean';
+          if (field.type === 'text') return typeof value === 'string';
+          return field.options?.some((option) => option.value === value) ?? false;
+        })
+      );
+    };
+    if (
+      part.discovery !== undefined &&
+      (!Array.isArray(part.discovery) ||
+        part.discovery.some(
+          (fact) =>
+            !fact ||
+            !['power', 'bearing', 'width'].includes(fact.kind) ||
+            typeof fact.key !== 'string' ||
+            !fact.key.trim() ||
+            typeof fact.label !== 'string' ||
+            !fact.label.trim() ||
+            !(typeof fact.value === 'number'
+              ? Number.isFinite(fact.value)
+              : typeof fact.value === 'string' && !!fact.value.trim()) ||
+            (fact.unit !== undefined && typeof fact.unit !== 'string') ||
+            (fact.range !== undefined &&
+              (!fact.range ||
+                !Number.isFinite(fact.range.min) ||
+                !Number.isFinite(fact.range.max) ||
+                fact.range.min > fact.range.max)) ||
+            !validWhen(fact.when),
+        ))
+    )
+      fail(
+        'Discovery characteristics require documented values and valid configuration conditions.',
+      );
+    if (
+      part.browseLabel !== undefined &&
+      (typeof part.browseLabel !== 'string' ||
+        !part.browseLabel.trim() ||
+        part.browseLabel !== part.browseLabel.trim())
+    )
+      fail('Browse label must be a nonempty, trimmed navigation title.');
     if (part.browseFamily !== undefined) {
       const family = part.browseFamily;
       if (
@@ -76,8 +140,89 @@ export function registerPartModules(modules: readonly PartModule[]): PartDefinit
     }
     const productErrors = validateProductProfile(part.product);
     if (productErrors.length) fail(`Invalid product profile: ${productErrors.join(' ')}`);
+    if (part.mechanismExecution !== undefined) {
+      const execution = part.mechanismExecution;
+      if (
+        !part.browseFamily ||
+        !execution ||
+        typeof execution !== 'object' ||
+        Array.isArray(execution) ||
+        !Number.isSafeInteger(execution.outputs) ||
+        execution.outputs < 1 ||
+        !['construction', 'description'].every(
+          (key) =>
+            typeof execution[key as keyof typeof execution] === 'string' &&
+            String(execution[key as keyof typeof execution]).trim(),
+        ) ||
+        !Number.isFinite(execution.travelDegrees) ||
+        execution.travelDegrees <= 0 ||
+        !Array.isArray(execution.screws) ||
+        !execution.screws.length ||
+        !Array.isArray(execution.motors) ||
+        !execution.motors.length ||
+        !['materials', 'processes'].every((key) => {
+          const values = execution[key as 'materials' | 'processes'];
+          return (
+            Array.isArray(values) &&
+            values.length > 0 &&
+            values.every((value) => typeof value === 'string' && value.trim()) &&
+            new Set(values).size === values.length
+          );
+        })
+      )
+        fail(
+          'Mechanism execution requires a browse family, screw and motor models, materials, processes, travel, construction, description and positive integer output count.',
+        );
+      if (
+        execution.screws.some(
+          (screw) =>
+            !screw ||
+            typeof screw.designation !== 'string' ||
+            !screw.designation.trim() ||
+            !['ball-screw', 'lead-screw'].includes(screw.kind) ||
+            !Number.isFinite(screw.lead) ||
+            screw.lead <= 0 ||
+            (screw.pitch !== undefined && (!Number.isFinite(screw.pitch) || screw.pitch <= 0)) ||
+            (screw.starts !== undefined &&
+              (!Number.isSafeInteger(screw.starts) || screw.starts < 1)) ||
+            (screw.pitch !== undefined &&
+              screw.starts !== undefined &&
+              Math.abs(screw.pitch * screw.starts - screw.lead) > 1e-6) ||
+            !validWhen(screw.when),
+        ) ||
+        execution.motors.some(
+          (motor) =>
+            !motor ||
+            typeof motor.model !== 'string' ||
+            !motor.model.trim() ||
+            !validWhen(motor.when),
+        )
+      )
+        fail('Mechanism execution contains invalid screw or motor characteristics.');
+      if (
+        execution.bearings !== undefined &&
+        (!Array.isArray(execution.bearings) ||
+          execution.bearings.some(
+            (bearing) =>
+              !bearing ||
+              typeof bearing.model !== 'string' ||
+              !bearing.model.trim() ||
+              !validWhen(bearing.when),
+          ))
+      )
+        fail('Mechanism execution contains invalid bearing characteristics.');
+      if (part.product.kind !== 'assembly')
+        fail('Mechanism executions must retain their physical assembly product type.');
+    }
     if (part.composition !== undefined && typeof part.composition !== 'function')
       fail('Composition must be a function when provided.');
+    if (part.initializeGeometry !== undefined && typeof part.initializeGeometry !== 'function')
+      fail('Geometry initialization must be a function when provided.');
+    if (
+      part.catalogIdentityParameters !== undefined &&
+      typeof part.catalogIdentityParameters !== 'function'
+    )
+      fail('Catalog identity parameters must be a function when provided.');
     if (
       part.product.supply === 'manufactured' &&
       ['assembly', 'complex', 'kit'].includes(part.product.kind) &&
@@ -142,8 +287,11 @@ export function registerPartModules(modules: readonly PartModule[]): PartDefinit
     if (part.catalogSelectionOnly && (!attributeKeys.size || !part.presets.length))
       fail('Fixed catalog models require characteristics and presets.');
     for (const preset of part.presets) {
-      if (!preset.id || presetIds.has(preset.id))
-        fail(`Duplicate or missing preset ID: ${preset.id}.`);
+      if (!isValidPresetId(preset.id))
+        fail(
+          `Invalid preset ID: ${String(preset.id)}. Use a nonempty, trimmed ID without colons or control characters; custom is reserved.`,
+        );
+      if (presetIds.has(preset.id)) fail(`Duplicate preset ID: ${preset.id}.`);
       presetIds.add(preset.id);
       if (part.catalogSelectionOnly) {
         const identity = preset.catalog?.verifiedParameters;
@@ -169,8 +317,40 @@ export function registerPartModules(modules: readonly PartModule[]): PartDefinit
           fail(`Catalog characteristic ${key} must be finite in ${preset.id}.`);
         if (field!.type === 'boolean' && typeof value !== 'boolean')
           fail(`Catalog characteristic ${key} must be boolean in ${preset.id}.`);
-        if (field!.type === 'select' && !field!.options?.some((option) => option.value === value))
+        if (
+          field!.type === 'select' &&
+          (typeof value !== 'string' ||
+            (!preset.catalog?.attributeOptions?.[key] &&
+              !field!.options?.some((option) => option.value === value)))
+        )
           fail(`Catalog characteristic ${key} must match an option in ${preset.id}.`);
+      }
+      for (const [key, alternatives] of Object.entries(preset.catalog?.attributeOptions ?? {})) {
+        const field = part.catalogFilterFields?.find((field) => field.key === key);
+        if (
+          field?.type !== 'select' ||
+          !Array.isArray(alternatives) ||
+          !alternatives.length ||
+          new Set(alternatives).size !== alternatives.length ||
+          alternatives.some(
+            (value) =>
+              typeof value !== 'string' || !field.options?.some((option) => option.value === value),
+          )
+        )
+          fail(`Catalog alternatives ${key} must match distinct options in ${preset.id}.`);
+      }
+      for (const [key, choices] of Object.entries(preset.catalog?.parameterChoices ?? {})) {
+        const field =
+          part.catalogFilterFields?.find((field) => field.key === key) ??
+          part.parameters.find((field) => field.key === key);
+        if (
+          field?.type !== 'number' ||
+          !Array.isArray(choices) ||
+          !choices.length ||
+          new Set(choices).size !== choices.length ||
+          choices.some((value) => typeof value !== 'number' || !Number.isFinite(value))
+        )
+          fail(`Catalog size choices ${key} must be distinct finite numbers in ${preset.id}.`);
       }
     }
     for (const selection of part.catalogSelection ?? [])

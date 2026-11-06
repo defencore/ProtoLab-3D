@@ -67,3 +67,9 @@ Threads are always shaded with their specified helical pitch in the normal previ
 The machine composes the existing `linear-guide` renderer and Python builder directly. Feed uses four MGN15C blocks on two 400 mm rails. The head uses the coaxial pivot described above. Confirm rail/bearing loading, preload and delivered dimensions before manufacture.
 
 The feed motor is the library closed-loop NEMA23 23HS30-2804-ME1K with laminated body, end shields, mounting pilot, shaft, bearing rings and encoder cover. The band drive reuses the BEVI 90L-2 library motor, including cooling ribs and fan cover, behind a provisional reducer. Reducer ratio, torque rating, input/output adapters and band speed still need final selection. Visible motor internals and casting contours are representative. The old circular saw now also reuses library feed guides and the detailed feed/lift motor.
+
+## Standalone pneumatic control products
+
+The five `pneumatic-valve:4v210-08-dc24v` valves, one `air-preparation-unit:afr2000-g1-4` filter regulator and two `air-preparation-unit:ar2000-g1-4` regulators now reuse independently searchable library definitions. Their original installation envelopes and placements are retained, and each complete unit remains one purchased occurrence. The existing BOM supplier URLs establish the intended executions; exact manufacturer, revision, dimensional interfaces and the AFR gauge scope remain unresolved in the package guides. These models are installation references, not certified supplier CAD or procurement-ready products.
+
+The lift cylinder is independently selectable as `profile-pneumatic-cylinder:dsbc-63-500-ppsa-n3` (Festo order code 1383643). The saw retains its inherited shell, tie-rod and illustrative-piston geometry as one grouped purchased configuration with an explicit `SourceLibraryEntry` reference; it does not claim that reference is exact Festo CAD. Host fittings and the separate rod-lock remain separate components.

@@ -15,19 +15,11 @@ export function useAssemblyPreview(
   partId: string | undefined,
   parameters: Parameters,
   state: string,
-  presetId?: string,
   geometryMode: GeometryMode = 'simple',
   definitionVersion = 0,
 ) {
   const enabled = partId !== undefined;
-  const key = JSON.stringify([
-    partId,
-    parameters,
-    state,
-    presetId,
-    geometryMode,
-    definitionVersion,
-  ]);
+  const key = JSON.stringify([partId, parameters, state, geometryMode, definitionVersion]);
   const [result, setResult] = useState<Result>();
   useEffect(() => {
     if (!enabled) {
@@ -40,7 +32,7 @@ export function useAssemblyPreview(
     const timer = setTimeout(async () => {
       try {
         const output = await requestPreviewOutput(
-          { partId: partId!, parameters, state, presetId, geometryMode },
+          { partId: partId!, parameters, state, geometryMode },
           controller.signal,
         );
         if (!active) return;

@@ -116,7 +116,7 @@ for index, child in enumerate(children):
         assert child.Procurement in ["BUY_STANDARD", "BUY_VERIFY_INTERFACE", "OEM_INCLUDED"], child.Label
         assert "MAKE" not in child.Label, child.Label
 if ${avionicsLayout === 'wing-2s' ? 'False' : 'True'}:
-    foundation = next(o for o in children if o.Label.startswith("Battery foundation disk"))
+    foundation = next(o for o in children if getattr(o, "ProductName", "").startswith("Battery foundation disk"))
     assert "Raised beyond the dispenser nut" in foundation.ManufacturingPlacement
     assert foundation.getGroupOfProperty("ManufacturingPlacement") == "Manufacturing"
 App.closeDocument(doc.Name)

@@ -110,11 +110,14 @@ export function threadedShellMesh(
   diameter: number,
   color?: number,
   radialAllowance = 0,
+  threadLength = sections.at(-1)!.z - sections[0].z,
 ) {
   const mesh = new BoundaryMesh();
   const outer = sections.map((s) => s.outer.map((v) => new Vector3(v.x, v.y, s.z)));
   const inner = sections.map((s) =>
-    outline(Math.max(s.bore, diameter + 2 * radialAllowance) / 2).map((v) => new Vector3(v.x, v.y, s.z)),
+    outline(Math.max(s.bore, diameter + 2 * radialAllowance) / 2).map(
+      (v) => new Vector3(v.x, v.y, s.z),
+    ),
   );
   for (let i = 1; i < sections.length; i++) {
     mesh.bridge(outer[i - 1], outer[i]);
@@ -129,7 +132,7 @@ export function threadedShellMesh(
       axis: [0, 0, 1],
       diameter: diameter + 2 * radialAllowance,
       pitch: Number(p.pitch),
-      length: sections.at(-1)!.z - sections[0].z,
+      length: threadLength,
       internal: true,
       left: p.handedness === 'left',
     },
@@ -149,7 +152,12 @@ export function internalThreadCutter(_p: Parameters, diameter: number, height: n
 }
 
 /** Cut the declared female profile in Full; always retain drawing callouts. */
-export function internalThreadPython(p: Parameters, diameter: number, height: number, radialAllowance = 0): string {
+export function internalThreadPython(
+  p: Parameters,
+  diameter: number,
+  height: number,
+  radialAllowance = 0,
+): string {
   return [
     ...(currentGeometryMode() === 'full'
       ? [
@@ -160,7 +168,11 @@ export function internalThreadPython(p: Parameters, diameter: number, height: nu
     threadMetadataPython([
       metricThreadCallout(diameter, Number(p.pitch), height, true, p.handedness),
     ]),
-    ...(radialAllowance > 0 ? [`component_metadata[0]["ThreadInspectionAllowance"] = ${JSON.stringify(`Nominal M${diameter}, selected Full-only radial CAD inspection allowance ${radialAllowance} mm, Full modeled major diameter ${diameter + 2 * radialAllowance} mm. Simple keeps the nominal bore. Not a supplier-certified ISO fit class or a machining/drill prescription; inspect delivered thread fit.`)}`] : []),
+    ...(radialAllowance > 0
+      ? [
+          `component_metadata[0]["ThreadInspectionAllowance"] = ${JSON.stringify(`Nominal M${diameter}, selected Full-only radial CAD inspection allowance ${radialAllowance} mm, Full modeled major diameter ${diameter + 2 * radialAllowance} mm. Simple keeps the nominal bore. Not a supplier-certified ISO fit class or a machining/drill prescription; inspect delivered thread fit.`)}`,
+        ]
+      : []),
   ].join('\n');
 }
 

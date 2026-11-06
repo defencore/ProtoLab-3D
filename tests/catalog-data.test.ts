@@ -1,5 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
+import { existsSync } from 'node:fs';
+import path from 'node:path';
 import { parts } from '../src/parts';
 import { generateScript } from '../src/core/freecad';
 import { validateParameters } from '../src/core/validation';
@@ -28,7 +30,21 @@ test('sourced presets have auditable dimensions and complete valid configuration
       if (!preset.catalog) continue;
       count++;
       const { catalog } = preset;
-      if (catalog.sourceUrl) assert.equal(new URL(catalog.sourceUrl).protocol, 'https:');
+      if (catalog.sourceUrl && /^\/?references\//.test(catalog.sourceUrl)) {
+        assert.equal(
+          catalog.sourceKind,
+          'attachment',
+          `${part.id}/${preset.id}: local source evidence`,
+        );
+        assert.ok(
+          !catalog.sourceUrl.split('/').includes('..'),
+          'Reference paths stay within public assets.',
+        );
+        assert.ok(
+          existsSync(path.resolve('public', catalog.sourceUrl.replace(/^\//, ''))),
+          `${part.id}/${preset.id}: bundled source must exist`,
+        );
+      } else if (catalog.sourceUrl) assert.equal(new URL(catalog.sourceUrl).protocol, 'https:');
       else
         assert.equal(
           catalog.sourceKind,
@@ -42,11 +58,26 @@ test('sourced presets have auditable dimensions and complete valid configuration
         assert.ok(keys.has(key), `${part.id}/${preset.id}: unknown sourced key ${key}`);
         assert.notEqual(preset.parameters[key], undefined);
       }
-      assert.deepEqual(Object.keys(preset.parameters).sort(), Object.keys(part.defaults).sort());
-      assert.deepEqual(
-        validateParameters(part, preset.parameters, part.states?.[0].id ?? 'default'),
-        [],
-      );
+      const states = part.states
+        ?.filter((state) => !state.availableWhen || state.availableWhen(preset.parameters))
+        .map((state) => state.id) ?? ['default'];
+      assert.ok(states.length, `${part.id}/${preset.id}: an available state is required`);
+      for (const key of Object.keys(preset.parameters))
+        assert.ok(keys.has(key), `${part.id}/${preset.id}: unknown parameter ${key}`);
+      for (const state of states) {
+        for (const field of part.parameters) {
+          const optional =
+            field.optionalWhenHidden &&
+            field.visibleWhen &&
+            !field.visibleWhen(preset.parameters, state);
+          if (!optional)
+            assert.ok(
+              Object.hasOwn(preset.parameters, field.key),
+              `${part.id}/${preset.id}/${state}: missing parameter ${field.key}`,
+            );
+        }
+        assert.deepEqual(validateParameters(part, preset.parameters, state), []);
+      }
     }
   }
   assert.ok(count >= 3500, 'The supplier catalog must retain the full imported geometry range.');

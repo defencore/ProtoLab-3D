@@ -1,0 +1,11 @@
+{
+  "kind": "detail",
+  "supply": "purchased",
+  "description": "One optical window item represented by a user-dimensioned envelope and assumed open-backed shell.",
+  "processes": [],
+  "releaseRequirements": [
+    "Identify the actual supplier item, optical construction, material and dimensions.",
+    "Measure flange and shell thickness, rear aperture and optical clearance before designing the final seat.",
+    "Verify image quality, sealing, retention and environmental loads with the actual camera and window."
+  ]
+}

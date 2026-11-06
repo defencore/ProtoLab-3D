@@ -1,0 +1,40 @@
+[
+  {
+    "id": "amphenol-095-902-545-100",
+    "name": "Amphenol 095-902-545-100 · SMA female / AMC · 100 mm",
+    "description": "Front-mount standard SMA female bulkhead; inner washer and nut. Only the bulkhead end is represented; flexible cable, heatshrink and AMC plug are omitted.",
+    "parameters": { "model": "amphenol-095-902-545-100", "panelThickness": 2.2 },
+    "catalog": {
+      "designation": "095-902-545-100",
+      "manufacturer": "Amphenol RF",
+      "sourceName": "Manufacturer cable assembly drawing, revision C",
+      "sourceUrl": "https://www.amphenolrf.com/en-us/assets/file/4068032676/",
+      "alternateSourceUrls": ["https://www.amphenolrf.com/en-us/part/095-902-545-100/8896/"],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "Amphenol RF",
+        "interface": "SMA female / AMC (U.FL compatible)",
+        "mounting": "Bulkhead front mount",
+        "cableLength": 100
+      },
+      "specifications": [
+        {
+          "label": "Purchased cable assembly",
+          "value": "100 ± 3.81 mm; 1.13 mm micro-coax; 50 ohm; DC–6 GHz"
+        },
+        {
+          "label": "Panel opening",
+          "value": "Diameter 6.60 mm with one flat; total height 6.10 mm"
+        },
+        {
+          "label": "Drawing datum",
+          "value": "Flange rear seat Z=0; SMA face +8.49 mm REF, connector rear −10.01 mm REF"
+        },
+        {
+          "label": "Geometry scope",
+          "value": "Analytical bulkhead installation reference. Undimensioned hardware, socket interior and compressed O-ring are approximate; flexible cable, heatshrink and AMC plug are excluded."
+        }
+      ]
+    }
+  }
+]

@@ -11,6 +11,7 @@ import { engineering, issues } from './lib/engineering';
 import { budgetFor, releaseBlockers } from './lib/bom';
 const part: PartDefinition = {
   id: 'automatic-tube-saw',
+  browseLabel: 'Circular tube saw',
   composition,
   preview: 'worker',
   product: productData as ProductProfile,
@@ -19,7 +20,18 @@ const part: PartDefinition = {
   subgroup: 'CUTTING MACHINES',
   description:
     'Modular DDCS v4.1 aluminium tube saw with a flat stock table, standalone, assisted or automatic feed, a physical new-bar stop, independent stock ledger, emergency-stop stations and guided pneumatic clamps, a slotted steel table, vertical/side tooling, contact length encoder, powered take-away and a tilting short-part receiver. Engineering work in progress; not released for manufacture.',
-  keywords: ['automatic', 'saw', 'ULMS', 'Metallkraft', 'aluminium', 'tube', 'conveyor', 'cutting'],
+  keywords: [
+    'circular saw',
+    'circular tube saw',
+    'automatic',
+    'saw',
+    'ULMS',
+    'Metallkraft',
+    'aluminium',
+    'tube',
+    'conveyor',
+    'cutting',
+  ],
   icon: 'gear',
   complexity: 'Automatic cutting cell',
   parameters,
@@ -124,7 +136,7 @@ const part: PartDefinition = {
       JSON.stringify(pieces.map((q) => [moduleName(q), q.group])) +
       '\ncomponent_manufactured = [' +
       pieces.map((q) => (q.procurement === 'MAKE' ? 'True' : 'False')).join(',') +
-      ']\ncomponent_metadata = json.loads(' +
+      ']\n_protolab_process_metadata = json.loads(' +
       JSON.stringify(
         JSON.stringify(
           pieces.map((q) => ({
@@ -134,7 +146,7 @@ const part: PartDefinition = {
           })),
         ),
       ) +
-      ')'
+      ')\nif len(component_metadata) != len(_protolab_process_metadata):\n    raise ValueError("Machine process records do not match the physical components.")\nfor _protolab_index, _protolab_process in enumerate(_protolab_process_metadata):\n    component_metadata[_protolab_index].update(_protolab_process)'
     );
   },
   assessment: (p) => {

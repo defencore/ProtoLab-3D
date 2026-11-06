@@ -778,5 +778,58 @@
         }
       ]
     }
+  },
+  {
+    "id": "tattu-3s-650-75c",
+    "name": "Tattu 3S 650 mAh 75C",
+    "description": "31 \u00d7 58 \u00d7 16 mm \u00b7 11.1 V \u00b7 FPV Classic XT30",
+    "parameters": {
+      "model": "tattu-3s-650-75c"
+    },
+    "catalog": {
+      "designation": "TA-75C-650-3S1P-XT30",
+      "manufacturer": "Tattu / Grepow",
+      "sourceName": "Tattu FPV Classic 650 mAh 3S 75C XT30 official product specifications",
+      "sourceUrl": "https://genstattu.com/tattu-3s1p-75c-11-1v-650mah-lipo-battery-pack-with-xt30-plug.html",
+      "verifiedParameters": ["model"],
+      "geometryEvidence": {
+        "kind": "source-dimensions",
+        "summary": "Manufacturer nominal wrapped pack envelope; supplied harness geometry omitted.",
+        "limitations": "Manufacturer FPV Classic XT30 pack dimensions: 58 \u00b15 \u00d7 31 \u00b12 \u00d7 16 \u00b12 mm; mass 59 \u00b120 g. Model uses nominal pack envelope. Supplied AWG16 discharge leads and balance leads (both 45 mm), XT30 and JST-XHR-4P plugs are included in the purchased unit but omitted from geometry because plug bodies, lead exits and bend space are not dimensioned. Wrapper folds, corner rounding and label are illustrative. Verify the delivered pack and full harness clearance before fabrication. Published 75C discharge does not certify harness current capacity.",
+        "sourceUrl": "https://genstattu.com/tattu-3s1p-75c-11-1v-650mah-lipo-battery-pack-with-xt30-plug.html"
+      },
+      "attributes": {
+        "manufacturer": "Tattu / Grepow",
+        "format": "3S1P",
+        "chemistry": "Li-Po",
+        "connection": "Flying leads (excluded)",
+        "cells": 3,
+        "capacity": 650,
+        "voltage": 11.1,
+        "cRate": 75,
+        "current": 48.75,
+        "width": 31,
+        "length": 58,
+        "height": 16,
+        "weight": 59
+      },
+      "attributeConditions": {
+        "current": "Derived: capacity (Ah) \u00d7 C; excludes harness limits.",
+        "width": "Manufacturer nominal width 31 \u00b12 mm, excluding leads and plugs.",
+        "length": "Manufacturer nominal length 58 \u00b15 mm, excluding leads and plugs.",
+        "height": "Manufacturer nominal height 16 \u00b12 mm, excluding leads and plugs.",
+        "weight": "Manufacturer nominal net weight 59 \u00b120 g."
+      },
+      "specifications": [
+        {
+          "label": "Supplied connection",
+          "value": "XT30 discharge, JST-XHR-4P balance; 45 mm AWG16 discharge leads, 45 mm balance leads. Geometry excludes flexible harness and plugs."
+        },
+        {
+          "label": "Mechanical detail limits",
+          "value": "Manufacturer FPV Classic XT30 pack dimensions: 58 \u00b15 \u00d7 31 \u00b12 \u00d7 16 \u00b12 mm; mass 59 \u00b120 g. Model uses nominal pack envelope. Supplied AWG16 discharge leads and balance leads (both 45 mm), XT30 and JST-XHR-4P plugs are included in the purchased unit but omitted from geometry because plug bodies, lead exits and bend space are not dimensioned. Wrapper folds, corner rounding and label are illustrative. Verify the delivered pack and full harness clearance before fabrication. Published 75C discharge does not certify harness current capacity."
+        }
+      ]
+    }
   }
 ]

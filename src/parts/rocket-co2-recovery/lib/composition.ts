@@ -3,6 +3,8 @@ import type { Parameters, PartDefinition } from '../../../core/types';
 import { configureProduct } from '../../../core/design-project';
 import { recoveryDetailComponent } from '../../../core/recovery-component-recipes';
 import { union } from '../../../core/assembly/recovery/shapes';
+import { supplierUnit } from '../../../core/supplier-components';
+import { configuredRecoveryPiece } from '../../rocket-release/lib/library-components';
 import { fastenerCatalog } from '../../rocket-release/lib/fastener-catalog';
 import cartridge from '../../co2-cartridge/part';
 import cell from '../../li-ion-cell/part';
@@ -154,12 +156,18 @@ export function compositionComponents(pieces: Piece[]): AssemblyComponent[] {
     if (emitted.has(unit)) return [];
     emitted.add(unit);
     const members = units.get(unit)!;
-    const configured = recoveryDetailComponent(
-      `co2-supplier-${unit}`,
-      piece.metadata!.SupplierUnitName,
-      union(...members.map((item) => item.shape!)),
-      'purchased',
-    );
+    const source = supplierUnit(piece.shape!);
+    const configured = source?.libraryId
+      ? configuredRecoveryPiece(
+          { shape: piece.shape!, label: piece.label, color: piece.color },
+          `co2-supplier-${unit}`,
+        )
+      : recoveryDetailComponent(
+          `co2-supplier-${unit}`,
+          piece.metadata!.SupplierUnitName,
+          union(...members.map((item) => item.shape!)),
+          'purchased',
+        );
     configured.procurement = {
       designation: piece.metadata!.SupplierUnitName,
       manufacturer: piece.metadata!.SupplierManufacturer,

@@ -2,13 +2,23 @@
 
 The 13 October 2026 addition provides 4,444 fixed supplier configurations and four custom-order metal sleeve templates. Portable package snapshots contain the selectable models and their provenance; the larger research records and offline adapters are not imported into the browser.
 
-| Package                        | Fixed choices / templates | Source coverage                                                  |
-| ------------------------------ | ------------------------: | ---------------------------------------------------------------- |
-| PCB spacer and standoff        |                     3,441 | 3,315 DREMEC ordinary articles and 126 Kosmodrom M3 products     |
-| PCB standoff with metal insert |                     1,003 | Complete bought DREMEC polymer/brass units                       |
-| DREMEC custom metal sleeve     |                         4 | Brass, steel, aluminium and stainless steel; customer dimensions |
+| Package                        | Fixed choices / templates | Source coverage                                                                           |
+| ------------------------------ | ------------------------: | ----------------------------------------------------------------------------------------- |
+| PCB spacer and standoff        |                     3,442 | 3,315 DREMEC articles, 126 Kosmodrom M3 products and one user-measured coupling reference |
+| PCB standoff with metal insert |                     1,003 | Complete bought DREMEC polymer/brass units                                                |
+| DREMEC custom metal sleeve     |                         4 | Brass, steel, aluminium and stainless steel; customer dimensions                          |
 
-Open the single **Fasteners & threads → Spacers & standoffs** entry. Its shared list includes 4,444 supplier articles, four custom-order templates and the existing three editable plain-spacer designs: 4,451 choices. Search by article/SKU or a size such as `M3 10`, `M3 × 10 mm` or `M2,5 10 mm`. A standalone search number means body length; it cannot match a hidden stud projection, opening depth or wrench width.
+Open the single **Fasteners & threads → Spacers & standoffs** entry. Its shared list includes 4,444 supplier articles, one user-measured coupling reference, four custom-order templates and the existing three editable plain-spacer designs: 4,452 choices. Search by article/SKU or a size such as `M3 10`, `M3 × 10 mm` or `M2,5 10 mm`. A standalone search number means body length; it cannot match a hidden stud projection, opening depth or wrench width.
+
+The November 2026 prototype addition is
+`pcb-standoff:user-m3x10-af4-7-ac5-2`. Organizer and curator review reuse the
+existing family rather than create a package for another coupling size. Its
+10 mm length, 4.7 mm across flats and 5.2 mm corner envelope are user
+observations of an unidentified unit. It is a fixed engineering reference with
+unknown manufacturer/material and unresolved corner/thread details, not a
+DREMEC article. The [package guide](../src/parts/pcb-standoff/GUIDE.md) records
+the representation and source limits. The dated verification snapshots below
+retain their original counts and do not include this later measured reference.
 
 The primary filters are ends, thread at either end, body length, body form and material. Body length starts at **Catalog → Any catalog length** and lists sizes from actual fixed supplier articles, with counts under the other active filters. Qualified article-code lengths retain an explicit verification label. Editable prototype lengths and custom-order range points do not create catalog size options. **Range** accepts separate From/To bounds, including one-sided ranges. Catalog and Range remember their separate manual values when switching. The first switch may initialize the alternate mode only from a valid explicit exact length, including equal From/To bounds; a selected model or the lower endpoint of a genuine interval never becomes an exact catalog constraint. **More filters** adds construction, supplier, finish, separate end-1/end-2 thread designations, overall length, diameter/across flats and plain bore. Mixed metric/UNC/ST items remain discoverable; separate end selectors resolve exact combinations. Counts reflect all other active filters, unavailable alternatives have zero counts, and each applied filter has a remove button. Results load in groups of 24. Selecting another physical package within the family preserves the query and filters; the preview's actual article, supply policy and assembly classification remain intact. If the preview is outside the results, a status tells the user to select a result rather than displaying an excluded card among matches.
 

@@ -16,9 +16,7 @@
         "https://betafpv.com/products/f4-1s-5a-aio-brushless-flight-controller-elrs-2-4g",
         "https://betafpv.com/products/f4-1s-5a-aio-brushless-flight-controller-elrs-2-4g"
       ],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "manufacturer": "BETAFPV",
         "width": 30,
@@ -98,9 +96,7 @@
         "https://betafpv.com/products/f4-1s-5a-aio-brushless-flight-controller-elrs-2-4g",
         "https://betafpv.com/products/f4-1s-5a-aio-brushless-flight-controller-elrs-2-4g"
       ],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "manufacturer": "BETAFPV",
         "width": 30,
@@ -175,12 +171,8 @@
       "manufacturer": "SpeedyBee",
       "sourceName": "Manufacturer specifications / mechanical drawing",
       "sourceUrl": "https://www.speedybee.com/speedybee-f405-mini-bls-35a-20x20-stack/",
-      "alternateSourceUrls": [
-        "https://www.speedybee.com/speedybee-f405-mini-bls-35a-20x20-stack/"
-      ],
-      "verifiedParameters": [
-        "model"
-      ],
+      "alternateSourceUrls": ["https://www.speedybee.com/speedybee-f405-mini-bls-35a-20x20-stack/"],
+      "verifiedParameters": ["model"],
       "attributes": {
         "manufacturer": "SpeedyBee",
         "width": 32,
@@ -273,9 +265,7 @@
       "alternateSourceUrls": [
         "https://www.speedybee.com/speedybee-f405-v4-bls-55a-30x30-fc-esc-stack/"
       ],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "manufacturer": "SpeedyBee",
         "width": 39.4,
@@ -365,12 +355,8 @@
       "manufacturer": "Holybro",
       "sourceName": "Manufacturer specifications / mechanical drawing",
       "sourceUrl": "https://holybro.com/products/kakute-h7-mini",
-      "alternateSourceUrls": [
-        "https://holybro.com/products/kakute-h7-mini"
-      ],
-      "verifiedParameters": [
-        "model"
-      ],
+      "alternateSourceUrls": ["https://holybro.com/products/kakute-h7-mini"],
+      "verifiedParameters": ["model"],
       "attributes": {
         "manufacturer": "Holybro",
         "width": 31,
@@ -455,12 +441,8 @@
       "manufacturer": "Holybro",
       "sourceName": "Manufacturer specifications / mechanical drawing",
       "sourceUrl": "https://holybro.com/products/pixhawk-6c",
-      "alternateSourceUrls": [
-        "https://holybro.com/products/pixhawk-6c"
-      ],
-      "verifiedParameters": [
-        "model"
-      ],
+      "alternateSourceUrls": ["https://holybro.com/products/pixhawk-6c"],
+      "verifiedParameters": ["model"],
       "attributes": {
         "manufacturer": "Holybro",
         "width": 44,
@@ -535,9 +517,7 @@
         "https://docs.holybro.com/autopilot/pixhawk-6c-mini/dimensions",
         "https://docs.holybro.com/autopilot/pixhawk-6c-mini/dimensions"
       ],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "manufacturer": "Holybro",
         "width": 39,
@@ -614,9 +594,7 @@
         "https://docs.holybro.com/autopilot/pixhawk-6c-mini/dimensions",
         "https://docs.holybro.com/autopilot/pixhawk-6c-mini/dimensions"
       ],
-      "verifiedParameters": [
-        "model"
-      ],
+      "verifiedParameters": ["model"],
       "attributes": {
         "manufacturer": "Holybro",
         "width": 39,
@@ -675,6 +653,68 @@
           "value": "Reconstructed external envelope. Undimensioned outlines, components, connector bodies, offsets and internals are illustrative; connector pins are visual geometry, not a wiring guide."
         }
       ]
+    }
+  },
+  {
+    "id": "speedybee-f405-wing-mini",
+    "name": "SpeedyBee F405 WING MINI",
+    "description": "FC / PDB / standard shield stack · supplied mounting hardware · installation reference",
+    "parameters": {
+      "model": "speedybee-f405-wing-mini",
+      "wingHolePitchX": 18,
+      "wingHolePitchY": 22
+    },
+    "catalog": {
+      "designation": "SpeedyBee F405 WING MINI",
+      "manufacturer": "SpeedyBee",
+      "sourceName": "Manufacturer user manual V1.2; installation reconstruction",
+      "sourceUrl": "https://www.speedybee.com/f405-wing-mini-download/",
+      "alternateSourceUrls": [
+        "https://support.speedybee.cn/?a=p&d=SBFWC2&l=en&s=1000",
+        "https://www.flyingtech.co.uk/wp-content/uploads/2024/03/speedybee_f405_wing_mini_en.pdf"
+      ],
+      "verifiedParameters": ["model"],
+      "attributes": {
+        "manufacturer": "SpeedyBee",
+        "width": 37,
+        "length": 26,
+        "height": 14,
+        "kind": "Wing FC stack",
+        "mount": "Reference pitch; measure boards",
+        "motorConnection": "PWM headers and solder pads",
+        "outputs": 11,
+        "onboardESC": false,
+        "hdSocket": true,
+        "can": false,
+        "cellsMin": 2,
+        "cellsMax": 6
+      },
+      "attributeConditions": {
+        "height": "Nominal manufacturer stack height. Reconstructed installed geometry is 13.8 mm; component heights and board thickness remain installation references.",
+        "outputs": "Nine PWM header outputs plus two PWM solder pads; LED pad excluded. External wireless USB extender is not part of the installed stack.",
+        "width": "Published 37 mm long dimension follows library X.",
+        "length": "Published 26 mm short dimension follows library Y."
+      },
+      "specifications": [
+        {
+          "label": "Source and geometry scope",
+          "value": "Manual V1.2 specifies 37 × 26 × 14 mm and M2×6.5 / M2×3+3 standoffs / M2×3.5 cross screws. PCB outlines, t1, hole pitch, bore diameter, component and connector geometry are undimensioned installation references. Exact purchased interfaces remain unresolved; not manufacturer CAD or a verified drilling template."
+        },
+        {
+          "label": "Procurement scope",
+          "value": "One FC / PDB / standard shield stack with supplied stack hardware. External wireless USB extender, loose cables, custom dampers and host mounting screws excluded. Published 19 g includes wireless USB extender and is omitted from installed-stack mass filters."
+        },
+        {
+          "label": "Electrical source limits",
+          "value": "7–26 V input (2–6S); servo BEC default 5 V, 4 A continuous / 5 A peak. USB-C belongs to the separate wireless USB extender, not the installed stack."
+        }
+      ],
+      "geometryEvidence": {
+        "kind": "envelope",
+        "summary": "Shared FC / PDB / standard shield installation reconstruction; manual V1.2 nominal stack 37 × 26 × 14 mm and supplied spacer lengths.",
+        "limitations": "PCB outlines, t1, bore diameter, mounting pitch, connectors and component positions are undimensioned fit references. Reconstructed height is 13.8 mm. Exact purchased interfaces remain unresolved; not manufacturer CAD or a verified drilling template. External wireless USB extender and loose cables excluded.",
+        "sourceUrl": "https://www.speedybee.com/f405-wing-mini-download/"
+      }
     }
   }
 ]

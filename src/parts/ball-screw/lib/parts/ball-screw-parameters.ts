@@ -120,8 +120,11 @@ export const ballScrewParameters: ParameterDefinition[] = [
     type: 'select',
     options: [
       { value: 'none', label: 'Unmachined · full length raceway' },
+      { value: 'ek6-ef6', label: 'End Machine · EK6/EF6 0802 reference' },
       { value: 'custom', label: 'Machined · custom journals' },
     ],
+    description:
+      'EK6/EF6 uses the supplied 0802 drawing for an 8 mm SFK shaft. Other leads use the same reference envelope; supplier interchangeability requires confirmation. The M6×0.75 thread is a nominal cylindrical envelope.',
   },
   ...[
     numberParameter(

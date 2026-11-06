@@ -1,0 +1,33 @@
+import type { PartModule } from '../../core/part-modules';
+import part from './part';
+export default {
+  apiVersion: 2,
+  order: 124.7,
+  dependencies: [
+    'manufactured-detail',
+    'catalog-enclosure',
+    'grandado-tube-mount',
+    'flight-controller',
+    'lch7-controller',
+    'usb-wireless-extender',
+    'signal-connector',
+    'bolt-screw',
+    'hex-nut',
+    'nyloc-nut',
+    'washer',
+    'pcb-standoff',
+    'dremec-spacer-sleeve',
+    'rocket-camera-nose',
+    'raspberry-pi',
+    'waveshare-pcie-m2-d',
+    'm2-ssd',
+    'gps-tracker',
+    'jhe42b-finder',
+    'waveshare-ov9281-110',
+    'board-camera-19',
+    'waveshare-ups-3s',
+    'li-ion-battery-holder',
+    'electrical-connector',
+  ],
+  part: { ...part, id: 'modular-tube-avionics' },
+} satisfies PartModule;

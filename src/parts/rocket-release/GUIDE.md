@@ -108,3 +108,13 @@ Four provisional Ø6 × 4 mm silicone/metal isolators replace the thin pads and 
 These are custom bonded isolator envelopes, not a selected catalog product or a verified vibration-isolation rating. Compound, dynamic stiffness, damping, bonding process, allowable deflection and shock retention require selection and testing. Avoid taut wiring that would bypass the compliant mounts. FreeCAD exports the elastomer and both inserts as separate labeled parts for review.
 
 In the damped 2×18650 layout, the complete FC stack is rotated 180° in its mounting plane: the PLS bank faces the positive-X side, away from the offset battery collars. This preserves the reserved plug and wire-bend volume. Configure the actual sensor orientation accordingly.
+
+### Standalone controller identity
+
+The WING MINI stack now reuses `flight-controller:speedybee-f405-wing-mini`,
+including its supplied standoffs and top screws, as one purchased occurrence.
+Search **F405 Wing Mini** in the library to select or export it independently.
+Custom mounting and isolation parts remain separate. The two existing measured
+pitch controls retain their saved keys and remain unsourced installation
+references; see the [controller guide](../flight-controller/GUIDE.md) for source
+scope and the distinction between published nominal and reconstructed dimensions.

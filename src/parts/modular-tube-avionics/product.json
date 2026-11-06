@@ -1,0 +1,18 @@
+{
+  "kind": "assembly",
+  "supply": "manufactured",
+  "description": "Modular printed electronics installation reference for a Ø90/86 mm tube, using separately identified supplier units.",
+  "processes": [
+    "printing",
+    "drilling",
+    "assembly"
+  ],
+  "releaseRequirements": [
+    "Qualify a separate metal/tube recovery attachment for the actual deployment speed, opening history and landing impact; the printed electronics sled has no parachute load rating.",
+    "Measure the actual D16T tube bore and available length; confirm its condition and delivered properties, all board interfaces, battery retention, connectors, wiring and printed fits.",
+    "Verify the deliberately drilled Grandado posts, through-screw head seats, 10 mm couplers and thread engagement. The service covers have no qualified seal or IP rating.",
+    "Identify the ELRS receiver and antenna. The user-provided dimensions define fitting references for the integral lid tie saddles only.",
+    "Use TPU 95A and qualify the actual grade's stiffness, travel, damping, creep, temperature, NVMe retention and Pi cooling on a representative instrumented prototype.",
+    "Define CO2 discharge pressure, temperature, jet direction, separation and venting; the integrated rear closure and separate TPU buffer have open cable channels and are not a pressure seal."
+  ]
+}

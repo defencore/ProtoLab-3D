@@ -40,6 +40,7 @@ const recipe = (p: Parameters) => ({
 });
 const part: PartDefinition = {
   id: 'cnc-toolsetter-part',
+  browseLabel: 'Toolsetter detail',
   name: 'Flat toolsetter fabrication details',
   product: profile as ProductProfile,
   category: 'WORKSHOP TOOLS',

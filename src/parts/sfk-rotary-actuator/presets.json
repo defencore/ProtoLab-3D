@@ -1,0 +1,38 @@
+[
+  {
+    "id": "sfk0825-100-361-12",
+    "name": "SFK0825 · GMP16T-TEC1636 361:1 / 12 V · 1 output · machined supports · ±20°",
+    "description": "Fixed drive, 90°-clocked nut, threaded profile cover with short side pins and closed slotted forks; narrow Ø6 output with one capped end, four F686 bearings and ±20° travel.",
+    "parameters": {
+      "motorModel": "361-12",
+      "outputAngle": 0
+    }
+  },
+  {
+    "id": "sfk0825-100-107-12",
+    "name": "SFK0825 · GMP16T-TEC1636 107:1 / 12 V · 1 output · machined supports · ±20°",
+    "description": "Fixed drive, 90°-clocked nut, threaded profile cover with short side pins and closed slotted forks; narrow Ø6 output with one capped end, four F686 bearings and ±20° travel.",
+    "parameters": {
+      "motorModel": "107-12",
+      "outputAngle": 0
+    }
+  },
+  {
+    "id": "sfk0825-100-361-24",
+    "name": "SFK0825 · GMP16T-TEC1636 361:1 / 24 V · 1 output · machined supports · ±20°",
+    "description": "Fixed drive, 90°-clocked nut, threaded profile cover with short side pins and closed slotted forks; narrow Ø6 output with one capped end, four F686 bearings and ±20° travel.",
+    "parameters": {
+      "motorModel": "361-24",
+      "outputAngle": 0
+    }
+  },
+  {
+    "id": "sfk0825-100-107-24",
+    "name": "SFK0825 · GMP16T-TEC1636 107:1 / 24 V · 1 output · machined supports · ±20°",
+    "description": "Fixed drive, 90°-clocked nut, threaded profile cover with short side pins and closed slotted forks; narrow Ø6 output with one capped end, four F686 bearings and ±20° travel.",
+    "parameters": {
+      "motorModel": "107-24",
+      "outputAngle": 0
+    }
+  }
+]

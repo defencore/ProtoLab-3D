@@ -3,6 +3,7 @@ import json
 import os
 import sys
 import tempfile
+from freecad_tree import component_leaves
 
 if os.environ.get("FREECAD_LIB"):
     sys.path.append(os.environ["FREECAD_LIB"])
@@ -12,12 +13,14 @@ import Import
 
 payload = json.load(open(sys.argv[1], encoding="utf-8"))
 results = []
-def component_leaves(parent):
-    if parent.TypeId != "App::Part":
-        yield parent
-    else:
-        for child in parent.Group:
-            yield from component_leaves(child)
+single_body_exports = {
+    ("ball-screw", "screw"),
+    ("jaw-coupling", "spider"),
+    ("linear-guide", "rail"),
+    ("bolt-screw", "default"),
+    ("hex-nut", "default"),
+    ("flange-nut", "default"),
+}
 
 with tempfile.TemporaryDirectory(prefix="protolab-assembly-") as directory:
     for case in payload["cases"]:
@@ -32,26 +35,30 @@ with tempfile.TemporaryDirectory(prefix="protolab-assembly-") as directory:
             root = roots[0]
             assert root.PartId == case["id"] and root.ModelState == case["state"]
             assert json.loads(root.Configuration) == case["parameters"]
-            children = sorted(component_leaves(root), key=lambda o: getattr(o, "ComponentIndex", 0))
-            if case["id"] in ["bolt-screw", "hex-nut", "flange-nut"] or case["state"] in ["spider", "screw", "pinion", "wheel", "shaft", "rail"]:
-                assert root.TypeId == "Part::Feature", "A physical single part was split."
+            children = component_leaves(root)
+            assert children, "The macro created no component features."
+            if (case["id"], case["state"]) in single_body_exports:
+                assert root.TypeId == "Part::Feature", f"{case['name']}: a physical single part was split."
             else:
-                assert root.TypeId == "App::Part", "The assembly is still a single feature."
+                assert root.TypeId == "App::Part", f"{case['name']}: the assembly container was lost."
             assert all(obj.Shape.isValid() and obj.Shape.Volume > 0 for obj in children)
             assert all(solid.isClosed() for obj in children for solid in obj.Shape.Solids)
             assert all(not obj.Label.startswith("Component ") for obj in children), "Semantic names are missing."
             if root.TypeId == "App::Part":
-                first, second = children[:2]
+                first, *siblings = children
                 original_placement = App.Placement(first.Placement)
                 first_center = first.Shape.optimalBoundingBox(False, False).Center
-                second_center = second.Shape.optimalBoundingBox(False, False).Center
+                sibling_centers = [obj.Shape.optimalBoundingBox(False, False).Center for obj in siblings]
                 shift = App.Vector(4.5, -2.25, 7.75)
                 placement = App.Placement(first.Placement)
                 placement.Base += shift
                 first.Placement = placement
                 doc.recompute()
                 assert (first.Shape.optimalBoundingBox(False, False).Center - first_center - shift).Length < 1e-6, "Component movement failed."
-                assert (second.Shape.optimalBoundingBox(False, False).Center - second_center).Length < 1e-6, "Moving one component moved a sibling."
+                assert all(
+                    (obj.Shape.optimalBoundingBox(False, False).Center - center).Length < 1e-6
+                    for obj, center in zip(siblings, sibling_centers)
+                ), "Moving one component moved a sibling."
                 first.Placement = original_placement
                 previous_global = first.getGlobalPlacement().Base
                 root.Placement.Base = shift
@@ -78,7 +85,7 @@ with tempfile.TemporaryDirectory(prefix="protolab-assembly-") as directory:
             App.closeDocument(doc.Name)
             doc = App.openDocument(save_path)
             restored = doc.getObject(root_name)
-            saved_children = sorted(component_leaves(restored), key=lambda o: getattr(o, "ComponentIndex", 0))
+            saved_children = component_leaves(restored)
             assert [(obj.Name, obj.Label) for obj in saved_children] == original_names, "FCStd lost component identities."
             results.append({"name": case["name"], "type": restored.TypeId, "components": len(children), "solids": solids, "independentPlacement": len(children) > 1, "stepRoundTrip": True, "fcstdRoundTrip": True})
             with open(sys.argv[2], "w", encoding="utf-8") as progress:

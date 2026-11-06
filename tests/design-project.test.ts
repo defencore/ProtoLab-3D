@@ -283,7 +283,7 @@ test('composition fails closed for unknown parts, physical children of a detail 
   const project = addProduct(createProject(), parts, selection(plate));
   assert.throws(
     () => addProduct(project.project, parts, selection(fastener), project.occurrenceId),
-    /Only an assembly/,
+    /cannot contain another product/,
   );
 });
 
@@ -392,6 +392,23 @@ test('editable catalog procurement is copied only for an exact selected catalog 
     presetId: 'supplier-part',
   });
   assert.equal(modified.procurement?.designation, '');
+  assert.equal(modified.presetId, undefined, 'custom dimensions cannot retain a source model ID');
+  const project = {
+    ...createProject(),
+    configurations: [{ ...modified, presetId: 'supplier-part' }],
+  };
+  assert.match(validateProject(project, [catalog]).join(' '), /preset does not match/);
+  assert.throws(() => parseProject(JSON.stringify(project), [catalog]), /preset does not match/);
+  project.configurations[0].presetId = '';
+  assert.match(validateProject(project, [catalog]).join(' '), /unknown catalog preset/);
+  assert.throws(() => parseProject(JSON.stringify(project), [catalog]), /unknown catalog preset/);
+});
+
+test('project imports and serialization require a nonempty project identity', () => {
+  const project = { ...createProject(), id: '   ' };
+  assert.match(validateProject(project, []).join(' '), /project needs a stable ID/);
+  assert.throws(() => serializeProject(project, []), /project needs a stable ID/);
+  assert.throws(() => parseProject(JSON.stringify(project), []), /project needs a stable ID/);
 });
 
 test('fixed model pose changes keep the selected supplier in an engineering project', () => {
@@ -495,16 +512,18 @@ test('fixed model pose changes keep the selected supplier in an engineering proj
 
   for (const presetId of [undefined, '', 'custom', 'removed-source']) {
     const custom = configureProduct({ ...configured, presetId });
-    assert.equal(custom.designation, '');
+    assert.match(custom.designation, /^PL3D\./);
     assert.equal(custom.supply, 'manufactured');
     assert.equal(custom.procurement, undefined);
+    assert.equal(custom.presetId, undefined);
   }
   const differentModel = configureProduct({
     ...configured,
     parameters: { ...configured.parameters, model: 'motor-b' },
   });
-  assert.equal(differentModel.designation, '');
+  assert.match(differentModel.designation, /^PL3D\./);
   assert.equal(differentModel.supply, 'manufactured');
+  assert.equal(differentModel.presetId, undefined);
 });
 
 test('explicit supplier presets remain opaque units while custom configurations use authored components', () => {

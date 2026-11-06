@@ -9,7 +9,7 @@ import * as assembly from '../../core/assembly/mechanical/assembly';
 const part: PartDefinition = {
   id: 'linear-actuator',
   product: productData as ProductProfile,
-  name: 'Electric linear actuator',
+  name: 'Motor-and-screw linear actuator',
   category: 'MOTORS & ACTUATORS',
   subgroup: 'LINEAR ACTUATORS',
   icon: 'wheel',
