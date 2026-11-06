@@ -16,7 +16,8 @@ test('the complete KAIYADE SFK table remains distinct from Wangong dimensions an
   assert.equal(new Set(kaiyadeSfkReferences.map((reference) => reference.id)).size, 15);
   const first = kaiyadeSfkReferences[0];
   assert.equal(first.catalog!.sourceKind, 'attachment');
-  assert.equal(first.catalog!.sourceUrl, 'references/kaiyade-sfk/dimension-table.png');
+  assert.equal(first.catalog!.sourceName, 'KAIYADE · supplied SFK table, p17');
+  assert.equal(first.catalog!.sourceUrl, '');
   assert.equal(
     first.catalog!.specifications!.find((row) => row.label.includes('dynamic'))!.value,
     '40 kgf',

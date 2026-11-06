@@ -4,6 +4,8 @@ import ts from 'typescript';
 import { validateProductProfile } from '../../src/core/product-library';
 import { isValidPresetId } from '../../src/core/library-identity';
 import { PART_ID_PATTERN, PART_MODULE_API_VERSION } from '../../src/core/part-modules';
+// @ts-expect-error The dependency-free repository helper has no declaration file.
+import { artifactIssues } from '../check-repository-artifacts.mjs';
 
 export const SDK_FILES = [
   'analytic-geometry.ts',
@@ -106,7 +108,6 @@ export interface PackageInspection {
   order: number;
   directory: string;
   files: string[];
-  references: string[];
   dependencies: string[];
 }
 
@@ -124,9 +125,12 @@ export async function packageFiles(directory: string): Promise<string[]> {
   const result: string[] = [];
   async function visit(current: string) {
     for (const entry of await fs.readdir(current, { withFileTypes: true })) {
-      if (entry.isSymbolicLink())
-        throw new Error(`Package symlinks are not supported: ${path.join(current, entry.name)}`);
       const file = path.join(current, entry.name);
+      if (entry.isSymbolicLink()) throw new Error(`Package symlinks are not supported: ${file}`);
+      const issues = artifactIssues(normalize(path.relative(directory, file)), {
+        allowGeneratedDirectories: false,
+      });
+      if (issues.length) throw new Error(issues.join('\n'));
       if (entry.isDirectory()) await visit(file);
       else if (entry.isFile()) result.push(file);
       else throw new Error(`Unsupported package entry: ${file}`);
@@ -355,7 +359,6 @@ async function inspectPackageTree(
       ),
     );
   const sdk = new Set(SDK_FILES.map((name) => path.join(projectRoot, 'src/core', name)));
-  const references = new Set<string>();
   for (const file of files) {
     if (!SOURCE_EXTENSIONS.has(path.extname(file)) && path.extname(file) !== '.json') continue;
     const content = await fs.readFile(file, 'utf8');
@@ -396,12 +399,11 @@ async function inspectPackageTree(
           );
       }
     }
-    for (const match of content.matchAll(/['"]\/?(references\/[^'"\s?#]+)['"]/g)) {
-      const reference = match[1];
-      if (reference.includes('..') || reference.includes('\\'))
-        throw new Error(`Invalid local reference path: ${reference}.`);
-      references.add(reference);
-    }
+    const reference = /['"]\/?(references\/[^'"\s?#]+)['"]/.exec(content);
+    if (reference)
+      throw new Error(
+        `Local reference paths must be replaced with external source URLs: ${reference[1]}.`,
+      );
   }
   const product = JSON.parse(await fs.readFile(path.join(directory, 'product.json'), 'utf8'));
   const productErrors = validateProductProfile(product);
@@ -424,9 +426,12 @@ async function inspectPackageTree(
       throw new Error(
         'Every preset needs a unique id and a parameters object. IDs must be nonempty, trimmed strings without colons or control characters; custom is reserved.',
       );
+    for (const url of [preset.catalog?.sourceUrl, ...(preset.catalog?.alternateSourceUrls ?? [])])
+      if (url && (typeof url !== 'string' || !/^https?:\/\//i.test(url) || !URL.canParse(url)))
+        throw new Error(`${descriptor.id} / ${preset.id}: source links must be external HTTP URLs.`);
     presetIds.add(preset.id);
   }
-  const result = { ...descriptor, directory, files, references: [...references].sort() };
+  const result = { ...descriptor, directory, files };
   inspected.set(directory, result);
   return result;
 }

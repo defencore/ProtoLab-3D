@@ -3,6 +3,7 @@ import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import ts from 'typescript';
 import namingChanges from '../fixtures/mechanism-component-name-deltas.json';
+import externalReferenceChanges from '../fixtures/mechanism-external-reference-deltas.json';
 import selectableLeadChanges from '../fixtures/tr8-selectable-lead-source-deltas.json';
 
 const executionIndexFiles = new Set(
@@ -268,8 +269,39 @@ const identityBlock = `      ESKDIdentityJSON: JSON.stringify(
       ),
 `;
 
+/** Restore the reviewed reference and handoff text only for historical checksums. */
+function sourceBeforeExternalReferences(file: string, content: Buffer): Buffer {
+  const changes = (externalReferenceChanges as Record<string, { before: string; after: string }[]>)[
+    file
+  ];
+  const revisions =
+    file.endsWith('/README.md') && file !== 'tr8-geared-rocker-actuator/README.md'
+      ? [
+          {
+            before: 'The handoff contains the package, SDK, workbench, and reference assets.',
+            after:
+              'The handoff contains the package, SDK, and workbench, with external source links retained in package metadata.',
+          },
+        ]
+      : changes;
+  if (!revisions) return content;
+  let source = content.toString('utf8');
+  for (const { before, after } of revisions) {
+    const start = source.indexOf(after);
+    assert.ok(start >= 0, `${file}: reviewed reference delta is missing or changed`);
+    assert.equal(
+      source.indexOf(after, start + after.length),
+      -1,
+      `${file}: ambiguous reference delta`,
+    );
+    source = source.slice(0, start) + before + source.slice(start + after.length);
+  }
+  return Buffer.from(source, 'utf8');
+}
+
 /** Preserve historical hashes while reversing only exact reviewed source deltas. */
 export function preservedStudySource(file: string, content: Buffer): Buffer {
+  content = sourceBeforeExternalReferences(file, content);
   content = sourceBeforeSelectableLead(file, content);
   content = sourceBeforeComponentNames(file, content);
   content = indexBeforeExecutionCatalog(file, content);
@@ -374,7 +406,8 @@ export function tr8CncPreservationHashes(
     Array.isArray(projected) &&
       projected.length === captures.length &&
       projected.every(
-        (item) => /^[a-f0-9]{64}$/.test(item.sourceSha256) && /^[a-f0-9]{64}$/.test(item.piecesSha256),
+        (item) =>
+          /^[a-f0-9]{64}$/.test(item.sourceSha256) && /^[a-f0-9]{64}$/.test(item.piecesSha256),
       ),
   );
   return projected;

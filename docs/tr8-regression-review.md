@@ -29,9 +29,12 @@ Two nongeometric files have separately reviewed revisions in
   `tests/surpass-2845-shaft-machining.test.ts`.
 - `tr8-geared-rocker-actuator/README.md`: historical SHA-256
   `ad5f7ac8f16374c3edb846c2ebd90d223335b3295ce679775f6b05f0d730da2c`;
+  previously reviewed universal README SHA-256
+  `970063ecc8dbdbddc08d73620c31ab1396c475f345eec521888b7c5cba06b714`;
   current SHA-256
-  `970063ecc8dbdbddc08d73620c31ab1396c475f345eec521888b7c5cba06b714`.
-  Repository cleanup restored the mandatory universal package README. The test
+  `2db077f5904fbc67c3605ec784a28c6746afd231e670512ef5e6c7120edb7a11`.
+  Repository cleanup restored the mandatory universal package README. Its
+  handoff instructions now retain external source links. The test
   compares it directly with `PACKAGE_README`; the component-specific `GUIDE.md`
   remains checked against its historical source hash.
 
@@ -106,3 +109,17 @@ These checks concern source preservation, geometry and finite inspection poses.
 They establish no new strength, life, drive, continuous-motion or manufacturing
 qualification. Raw reproduction inputs, executed scripts, native reports and
 STEP files are local outputs under ignored `test-results/refactor-tr8/`.
+
+## External source references
+
+The GMP16T-TEC1636 source URL now points to the exact TT Motor data sheet. The
+supplied KAIYADE SFK and LF D14 L22 evidence retains its attribution without a
+verified public URL. TR8 H-flange nut occurrences record the supplied drawing by
+name. These changes affect catalog and procurement metadata.
+
+Historical source checks reverse only the exact reviewed reference text in
+`tests/fixtures/mechanism-external-reference-deltas.json` and the shared handoff
+sentence. The earlier SFK neutral assembly and the TR8 CNC occurrence checks
+also verify the current source fields before restoring their historical values
+for hashing. The original historical checksums, physical parameters, geometry
+and installed occurrence data remain covered.

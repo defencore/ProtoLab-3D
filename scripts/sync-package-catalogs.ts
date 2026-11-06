@@ -18,8 +18,10 @@ import type { PartDefinition, Preset } from '../src/core/types';
 import { validateParameters } from '../src/core/validation';
 import { discoverPackages, inspectPackage } from './part-modules/library';
 import {
+  buildSupplierNameIndex,
   enrichSupplierNames,
   loadSupplierNameIndex,
+  supplierNameForCatalog,
   supplierSnapshotJson,
 } from './sync-supplier-names';
 
@@ -55,8 +57,18 @@ const authoritativePresets: Record<string, () => Preset[]> = {
 };
 
 export function refreshedPresets(part: PartDefinition): Preset[] {
+  const priorNames = buildSupplierNameIndex(
+    part.presets.flatMap(({ catalog }) =>
+      catalog?.name ? [{ url: catalog.sourceUrl, name: catalog.name }] : [],
+    ),
+  );
   const named = (presets: Preset[]) =>
-    enrichSupplierNames(presets, (supplierNames ??= loadSupplierNameIndex(root)));
+    enrichSupplierNames(presets, (supplierNames ??= loadSupplierNameIndex(root))).map((preset) => {
+      const catalog = preset.catalog;
+      if (!catalog || catalog.name) return preset;
+      const name = supplierNameForCatalog({ sourceUrl: catalog.sourceUrl }, priorNames);
+      return name ? { ...preset, catalog: { ...catalog, name } } : preset;
+    });
   const replace = authoritativePresets[part.id];
   if (replace) return named(replace());
   const imported = [

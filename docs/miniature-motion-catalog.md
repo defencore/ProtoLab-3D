@@ -18,7 +18,7 @@ KAIYADE references remain distinct from Wangong where dimensions or load ratings
 
 LF Clamp has split hubs and transverse screws; Thimble has unsplit hubs and radial set screws. The D14 L22 drawing supports bores up to 6.5 mm. Requested 7–8 mm variants retain their bore choices but carry provisional outside envelopes; those envelope dimensions cannot satisfy verified catalog filters.
 
-The supplied drawings/photos are bundled in `public/references/` and linked from the component catalogs. AliExpress pages could not be inspected, so current listing availability and combinations beyond the supplied options remain unconfirmed. The product guides document the evidence and geometry limits:
+The [TT Motor GMP16T-TEC1636 datasheet](https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf) provides a public source for the supplied motor table. The original KAIYADE and LF attachments remain identified in the catalog without a verified public copy. AliExpress pages could not be inspected, so current listing availability and combinations beyond the supplied options remain unconfirmed. The product guides document the evidence and geometry limits:
 
 - [GMP16 gearmotor](../src/parts/gmp16-gearmotor/GUIDE.md)
 - [Radial bearings](../src/parts/ball-bearing/GUIDE.md)

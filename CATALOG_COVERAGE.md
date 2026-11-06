@@ -6,7 +6,7 @@ The library contains **74 part modules**, **12497 sourced presets** and **94 pro
 
 ## Supplied drawings and motion components
 
-The eight supplied images are retained in `public/references/` and linked from the matching presets. Added modules cover ball screw assemblies, standalone ball nuts, a jaw coupling and bevel gear pairs. Ball screw manufacturer tables supplement the images; each preset identifies its own source and verified dimensions.
+The matching presets record evidence from eight supplied drawings. The affected modules cover ball screw assemblies, standalone ball nuts, a jaw coupling and bevel gear pairs. Ball screw manufacturer tables supplement the drawings. Each preset identifies its source and verified dimensions.
 
 - All 27 SFU dimension-table rows and all nine requested ball nut families are represented.
 - Miniature SFK shaft lengths cover 100–550 mm in 50 mm steps. Repeated lengths and assembly/nut exports are distinct configurations, not additional source products.
@@ -202,8 +202,8 @@ Discovered URLs without retrieved dimensions are not labeled as imported presets
 
 ## Audit files
 
-- [Supplier inventory](data/promtehimport-inventory.json)
-- [Bearing mapping report](data/promtehimport-import-report.json)
+- [Promtehimport coverage ledger](src/catalog/generated/promtehimport-coverage.json)
+- [Promtehimport source and audit reproduction](docs/promtehimport-catalog.md)
 - [Hardware mapping report](src/catalog/data/gvyntok-hardware-mapping-coverage.json)
 - [Gvyntok source snapshots](src/catalog/data/)
 

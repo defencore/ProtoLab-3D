@@ -1,6 +1,4 @@
 import assert from 'node:assert/strict';
-import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import { Box3, DoubleSide, Mesh, Raycaster, Vector3 } from 'three';
 import type { Group, Material } from 'three';
@@ -201,17 +199,25 @@ test('optional clip shell colours preserve metals, geometry and catalog defaults
   assert.throws(() => pieces({ model: bottomIds[0], colour: 'blue' }, 'assembled'), /red or black/);
 });
 
-test('supplied photograph evidence is retained verbatim with reproducible hashes', () => {
+test('supplied photograph evidence retains original names and hashes without local links', () => {
   assert.deepEqual(evidence.listingUrls, listingUrls);
   assert.match(evidence.listingVariantAssociation, /unconfirmed/i);
   assert.match(evidence.ratingScope, /seller photo labels only/i);
-  assert.equal(evidence.images.length, 6);
+  assert.match(evidence.referenceAvailability, /no verified public URL/i);
+  assert.deepEqual(
+    evidence.images.map((image) => image.file),
+    [
+      'compact-clip.png',
+      'compact-dimensions.png',
+      'large-dimensions.png',
+      'six-way-block.png',
+      'bottom-tab-dimensions.png',
+      'bottom-tab-clip.png',
+    ],
+  );
+  assert.equal(new Set(evidence.images.map((image) => image.sha256)).size, 6);
   for (const image of evidence.images) {
     assert.match(image.sha256, /^[a-f0-9]{64}$/);
-    const bytes = readFileSync(
-      new URL('../src/parts/laboratory-terminal/lib/' + image.file, import.meta.url),
-    );
-    assert.equal(createHash('sha256').update(bytes).digest('hex'), image.sha256, image.file);
   }
 });
 

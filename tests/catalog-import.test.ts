@@ -1,76 +1,76 @@
 import assert from 'node:assert/strict';
-import fs from 'node:fs';
+import { createHash } from 'node:crypto';
 import test from 'node:test';
+import coverage from '../src/catalog/generated/promtehimport-coverage.json';
 import { parts } from '../src/parts';
 
-const report = JSON.parse(
-  fs.readFileSync(new URL('../data/promtehimport-import-report.json', import.meta.url), 'utf8'),
-);
-const inventory = JSON.parse(
-  fs.readFileSync(new URL('../data/promtehimport-inventory.json', import.meta.url), 'utf8'),
+const productId = (url: string) =>
+  url.match(/promtehimport\.com\.ua\/(?:ru\/)?offer\/.*-o(\d+)\/?$/)?.[1];
+const sourcedPresets = parts.flatMap((part) =>
+  part.presets.flatMap((preset) => {
+    const id = productId(preset.catalog?.sourceUrl ?? '');
+    return id ? [{ part, preset, id }] : [];
+  }),
 );
 
-test('supplier inventory accounts for every enumerated product and every category', () => {
-  assert.equal(Object.keys(inventory.categories).length, 19);
-  const urls = new Set<string>(
-    Object.values(inventory.categories).flatMap((category: any) => category.productUrls),
-  );
-  assert.equal(urls.size, inventory.uniqueProductCount);
-  assert.equal(report.results.length, urls.size);
-  assert.equal(new Set(report.results.map((row: any) => row.url)).size, urls.size);
+test('supplier coverage accounts for every enumerated product and every category', () => {
+  const categories = Object.values(coverage.categories);
+  assert.equal(categories.length, 19);
+  assert.equal(categories.reduce((sum, category) => sum + category.pages, 0), 510);
+  assert.equal(categories.reduce((sum, category) => sum + category.failedPages, 0), 0);
+  assert.equal(coverage.enumeratedProducts, 11977);
+  assert.equal(coverage.processedProducts, coverage.enumeratedProducts);
   assert.equal(
-    Object.values(report.counts).reduce((sum: any, count: any) => sum + count, 0),
-    urls.size,
+    Object.values(coverage.counts).reduce((sum, count) => sum + count, 0),
+    coverage.enumeratedProducts,
   );
-  for (const [code, category] of Object.entries(inventory.categories) as [string, any][]) {
-    const coverage = report.categoryCoverage[code];
-    assert.equal(category.fetchedPages.length + category.failedPages.length, category.pages);
+  assert.equal(
+    categories.reduce((sum, category) => sum + category.enumerated, 0),
+    coverage.enumeratedProducts,
+  );
+  for (const category of categories)
     assert.equal(
-      Object.values(coverage.statuses).reduce((sum: any, count: any) => sum + count, 0),
-      category.productUrls.length,
+      Object.values(category.statuses).reduce((sum, count) => sum + count, 0),
+      category.enumerated,
+      category.url,
     );
-  }
+  assert.deepEqual(
+    Object.fromEntries(
+      parts.flatMap((part) => {
+        const count = part.presets.filter((preset) =>
+          productId(preset.catalog?.sourceUrl ?? ''),
+        ).length;
+        return count ? [[part.id, count]] : [];
+      }),
+    ),
+    coverage.byModel,
+  );
 });
 
 test('source identifiers and specialized topology survive import classification', () => {
-  const prefix = report.results.find((row: any) => row.url.includes('-15bcd107-'));
-  assert.equal(prefix.designation, '15BCD107');
-  assert.equal(prefix.status, 'unsupported-subtype');
-  const longNumber = report.results.find((row: any) => row.url.includes('-511135-'));
-  assert.equal(longNumber.partId, 'ball-bearing');
-  assert.match(longNumber.designation, /511135 A/);
-  const repaired =
-    inventory.products[Object.keys(inventory.products).find((url) => url.endsWith('-o8915/'))!];
-  assert.match(repaired.name, /1680206/);
-  assert.doesNotMatch(repaired.name, /HMK1512/);
-  const contradictoryZarn = report.results.find((row: any) => row.url.endsWith('-o7413/'));
-  assert.equal(contradictoryZarn.status, 'source-conflict');
-  for (const row of report.results.filter((row: any) => row.status === 'imported')) {
+  const longNumber = sourcedPresets.find(({ id }) => id === '12163');
+  assert.equal(longNumber?.part.id, 'ball-bearing');
+  assert.match(longNumber?.preset.catalog?.designation ?? '', /^511135 A/);
+  for (const { part, preset } of sourcedPresets) {
+    const designation = preset.catalog!.designation;
     assert.doesNotMatch(
-      row.designation,
+      designation,
       /\+\s*H\s*\d/,
       'Adapter assemblies cannot become bare bearings',
     );
-    if (row.partId === 'rod-end-bearing') assert.doesNotMatch(row.designation, /^SA\s*2\d{2}/);
+    if (part.id === 'rod-end-bearing') assert.doesNotMatch(designation, /^SA\s*2\d{2}/);
+    if (part.id === 'linear-bearing') {
+      assert.match(designation, /^LME?[\s-]*\d{1,3}[\s-]*UU/);
+      assert.doesNotMatch(designation, /SCS|SBR|TBR|LMK|LMF|OP|AJ/);
+    }
   }
-  for (const row of report.results.filter(
-    (row: any) => row.status === 'imported' && row.partId === 'linear-bearing',
-  )) {
-    assert.match(row.designation, /^LME?[\s-]*\d{1,3}[\s-]*UU/);
-    assert.doesNotMatch(row.designation, /SCS|SBR|TBR|LMK|LMF|OP|AJ/);
-  }
+  const excluded = new Set(sourcedPresets.map(({ id }) => id));
+  for (const id of ['5265', '8915', '7413']) assert.ok(!excluded.has(id), id);
 });
 
 test('catalog integration deduplicates translated and redirected supplier product URLs', () => {
-  for (const part of parts) {
-    const ids = part.presets.flatMap(
-      (preset) =>
-        preset.catalog?.sourceUrl.match(
-          /promtehimport\.com\.ua\/(?:ru\/)?offer\/.*-o(\d+)\/?$/,
-        )?.[1] ?? [],
-    );
-    assert.equal(new Set(ids).size, ids.length, part.id);
-  }
+  const ids = sourcedPresets.map(({ id }) => id);
+  assert.equal(new Set(ids).size, ids.length);
   const singleShield = parts
     .find((part) => part.id === 'ball-bearing')!
     .presets.find((preset) => /^6000-Z\s/.test(preset.catalog?.designation ?? ''));
@@ -82,18 +82,12 @@ test('catalog integration deduplicates translated and redirected supplier produc
   }
 });
 
-test('curated presets cannot reintroduce supplier rows excluded by the source audit', () => {
-  const productId = (url: string) =>
-    url.match(/promtehimport\.com\.ua\/(?:ru\/)?offer\/.*-o(\d+)\/?$/)?.[1];
-  const admitted = new Set(
-    report.results
-      .filter((row: { status: string }) => row.status === 'imported')
-      .map((row: { url: string }) => productId(row.url)),
+test('curated presets retain the exact product identities admitted by the source audit', () => {
+  const ids = sourcedPresets.map(({ id }) => id).sort();
+  assert.equal(ids.length, coverage.counts.imported);
+  // SHA-256 of sorted, newline-joined product IDs from the September 13, 2026 import decisions.
+  assert.equal(
+    createHash('sha256').update(ids.join('\n')).digest('hex'),
+    '30c338a52100ad61b05cfd4742bb63fa5b2a291665d76a86a9a7a31c43502c22',
   );
-  const available = new Set(
-    parts.flatMap((part) =>
-      part.presets.flatMap((preset) => productId(preset.catalog?.sourceUrl ?? '') ?? []),
-    ),
-  );
-  assert.deepEqual(available, admitted);
 });

@@ -1,21 +1,36 @@
 import fs from 'node:fs';
-import inventory from '../src/catalog/data/gvyntok-fasteners.json';
-import { supplierFamily } from '../src/catalog/fasteners';
+import { supplierFamily, type SupplierFastener } from '../src/catalog/fasteners';
 import { parts as libraryParts } from '../src/parts';
+
+const [input, ...extra] = process.argv.slice(2);
+if (!input || extra.length)
+  throw new Error('Usage: node --import tsx scripts/report-fastener-catalog.ts <inventory.json>');
+const inventory = JSON.parse(fs.readFileSync(input, 'utf8')) as {
+  source: string;
+  retrievedAt: string;
+  categories: { pages: string[]; listedCount: number }[];
+  products: SupplierFastener[];
+};
 
 const fastenerIds = ['bolt-screw', 'set-screw', 'wing-screw', 'swing-eye-bolt', 'lifting-eye-bolt'];
 const parts = libraryParts.filter((part) => fastenerIds.includes(part.id));
-const codes = new Set(
-  parts.flatMap((part) => part.presets.flatMap((preset) => preset.catalog?.productCodes ?? [])),
-);
+const supplierCodes = new Set(inventory.products.map((row) => row.sku));
+const partCoverage = parts.map((part) => ({
+  id: part.id,
+  totalPresets: part.presets.length,
+  supplierCodes: part.presets
+    .map((preset) => (preset.catalog?.productCodes ?? []).filter((code) => supplierCodes.has(code)))
+    .filter((codes) => codes.length),
+}));
+const mappedPresets = partCoverage.flatMap((part) => part.supplierCodes);
+const codes = new Set(mappedPresets.flat());
 const families = [...new Set(inventory.products.map(supplierFamily))].sort();
 const rows = families.map((family) => {
   const products = inventory.products.filter((row) => supplierFamily(row) === family);
-  const presets = parts
-    .flatMap((part) => part.presets)
-    .filter((preset) =>
-      preset.catalog?.productCodes?.some((code) => products.some((row) => row.sku === code)),
-    );
+  const familyCodes = new Set(products.map((row) => row.sku));
+  const presets = mappedPresets.filter((presetCodes) =>
+    presetCodes.some((code) => familyCodes.has(code)),
+  );
   return {
     family,
     categories: new Set(products.map((row) => row.categoryUrl)).size,
@@ -44,15 +59,12 @@ const report = {
   navigationSKUs: inventory.categories.reduce((sum, row) => sum + row.listedCount, 0),
   visibleSKUs: inventory.products.length,
   mappedSKUs: codes.size,
-  cataloguePresets: parts.reduce(
-    (sum, part) => sum + part.presets.filter((p) => p.catalog?.productCodes?.length).length,
-    0,
-  ),
-  parts: parts.map((part) => ({
-    id: part.id,
-    totalPresets: part.presets.length,
-    supplierPresets: part.presets.filter((p) => p.catalog?.productCodes?.length).length,
-    SKUs: part.presets.reduce((sum, p) => sum + (p.catalog?.productCodes?.length ?? 0), 0),
+  cataloguePresets: mappedPresets.length,
+  parts: partCoverage.map(({ id, totalPresets, supplierCodes }) => ({
+    id,
+    totalPresets,
+    supplierPresets: supplierCodes.length,
+    SKUs: supplierCodes.flat().length,
   })),
   families: rows,
   unsupported,
@@ -98,9 +110,9 @@ const lines = [
   '',
   '## Reproduction and evidence',
   '',
-  '- `python3 scripts/import-gvyntok-fasteners.py` follows public category pagination, checks extracted counts and writes full raw evidence, a compact runtime projection and an extraction coverage report. Remove or change `--cache` to refresh the HTTP snapshots.',
-  '- `node --import tsx scripts/report-fastener-catalog.ts` regenerates this geometry coverage report.',
-  '- `src/catalog/data/gvyntok-fasteners.json` retains every original product title, source URL, SKU, subcategory and pagination URL. It is not imported by the browser.',
+  '- `python3 scripts/import-gvyntok-fasteners.py --output test-results/catalog/gvyntok-fasteners.json` follows public category pagination, checks extracted counts and writes local raw evidence, a compact runtime projection and an extraction coverage report. Remove or change `--cache` to refresh the HTTP snapshots.',
+  '- `node --import tsx scripts/report-fastener-catalog.ts test-results/catalog/gvyntok-fasteners.json` regenerates this geometry coverage report.',
+  '- The local inventory records original product titles, source URLs, SKUs, subcategories and pagination URLs.',
   '- `src/catalog/data/gvyntok-fasteners-runtime.json` contains compact source tuples used by the offline adapters. Explicitly sync reviewed changes into each package’s `presets.json`.',
   '- `src/catalog/data/gvyntok-fastener-drawings.json` records the source product pages and their linked technical PDFs. `src/catalog/fastener-dimensions.ts` and `src/catalog/special-fastener-catalog.ts` contain the reviewed table transcriptions.',
   '- `tests/fasteners.test.ts` checks all imported parameter sets and SKU coverage, fine-pitch parsing, dog-point bands, thread and drive geometry, and manifold meshes across model variants and catalogue bounds.',

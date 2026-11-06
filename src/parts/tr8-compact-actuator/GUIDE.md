@@ -22,7 +22,7 @@ The 131 mm envelope is approximately 28% shorter than the previous 181.1 mm SFK 
 
 ## Nut and motion
 
-The supplied nut drawing specifies a 22×11 mm flange, R11 ends, two Ø3.5 mounting holes on 16 mm centres, Ø10 body and 15 mm overall axial length. The axial stack is a 1.5 mm nose, 3.5 mm flange and 10 mm rear body. The 22 mm flange direction lies along Y, keeping its 11 mm height clear of the nearby output shaft. Two M3×8 button screws pass through the stock flange into the machined cover's blind M3 taps; no separate nuts are used there.
+The supplied H-flange nut drawing, which has no verified public URL, specifies a 22×11 mm flange, R11 ends, two Ø3.5 mounting holes on 16 mm centres, Ø10 body and 15 mm overall axial length. The axial stack is a 1.5 mm nose, 3.5 mm flange and 10 mm rear body. The 22 mm flange direction lies along Y, keeping its 11 mm height clear of the nearby output shaft. Two M3×8 button screws pass through the stock flange into the machined cover's blind M3 taps; no separate nuts are used there.
 
 Two integral Ø4 side pins and closed slotted forks capture the cover flats. All main discs, motor and screw supports remain fixed. No guide rods or rocking platform are used. The output shaft stays centred between the two bearing discs, whose inside faces are at X=−15 and +15 mm. Both cheek rails and their disc slots lie at output-shaft height.
 

@@ -274,10 +274,7 @@ def package(proof, replace=False):
     copy(SOURCE / 'quad-simple-neutral.FCMacro', 'TR8-quad-simple-static.FCMacro')
     copy(SOURCE / 'quad-full-neutral.FCMacro', 'TR8-quad-full-static.FCMacro')
     copy(SOURCE / 'README-UA.md', 'README-UA.md')
-    guide = (ROOT / 'src/parts/tr8-quad-actuator/GUIDE.md').read_text().replace('../../../public/references/', 'references/')
-    (staging / 'GUIDE.md').write_text(guide)
-    for name in ['h-nut-drawing.png', 'tr8-stock.png']:
-        copy(ROOT / 'public/references/tr8-h-nut' / name, 'references/tr8-h-nut/' + name)
+    copy(ROOT / 'src/parts/tr8-quad-actuator/GUIDE.md', 'GUIDE.md')
     for image in proof['browser']:
         copy(image, image.name)
     copy(proof['nativeImage'], 'FreeCAD-quad-isometric.png')

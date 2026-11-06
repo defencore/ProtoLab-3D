@@ -8,6 +8,7 @@ import pcbModule from '../src/parts/pcb-standoff';
 import insertModule from '../src/parts/pcb-standoff-insert';
 import sleeveModule from '../src/parts/dremec-spacer-sleeve';
 import boltModule from '../src/parts/bolt-screw';
+import ballBearingModule from '../src/parts/ball-bearing';
 import { registerPartModules } from '../src/core/part-modules';
 import type { Preset } from '../src/core/types';
 
@@ -72,6 +73,16 @@ test('empty fixed snapshots rebuild their choices/defaults and validation closur
     registerPartModules(prospective).map((part) => part.id),
     ['pcb-standoff', 'pcb-standoff-insert'],
   );
+});
+
+test('package refresh preserves recorded source titles for compact supplier presets', () => {
+  for (const { part } of [boltModule, ballBearingModule]) {
+    const current = part.presets.find((preset) => preset.catalog?.name)!;
+    const refreshed = refreshedPresets(part).find((preset) => preset.id === current.id);
+    assert.ok(current?.catalog?.name, part.id);
+    assert.equal(refreshed?.catalog?.sourceUrl, current.catalog.sourceUrl);
+    assert.equal(refreshed?.catalog?.name, current.catalog.name);
+  }
 });
 
 test('CLI dry runs register real library dependencies without writing snapshots', () => {

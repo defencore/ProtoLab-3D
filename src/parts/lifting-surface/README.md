@@ -31,6 +31,6 @@ Keep preview geometry, FreeCAD solids, reported dimensions, validation, and pres
 npm run parts:export -- <part-id> <output-folder>
 ```
 
-The handoff contains the package, SDK, workbench, and reference assets. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.
+The handoff contains the package, SDK, and workbench, with external source links retained in package metadata. Preserve `part-module.json` when returning it. Exported FreeCAD assemblies should have independent solid components with matching labels; configuration metadata does not create a PartDesign feature history.
 
 Write instructions, labels, and comments in English. Keep this README applicable to all packages; document component-specific dimensions, procurement, and limitations in `GUIDE.md`.

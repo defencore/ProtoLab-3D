@@ -84,10 +84,6 @@ function presets(defaults: Parameters, standalone: boolean): Preset[] {
                   ]
                 : []),
             ],
-            alternateSourceUrls: [
-              ...(catalog!.alternateSourceUrls ?? []),
-              'references/kaiyade-sfk/ek6-ef6-0802.png',
-            ],
             specifications: [
               ...(catalog!.specifications ?? []),
               {

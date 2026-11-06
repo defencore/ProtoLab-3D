@@ -150,7 +150,7 @@ export function mechanismPieces(p: Parameters, angle: number): ConfiguredPiece[]
   nut.component.procurement = {
     designation: 'TR8×8(P2) RH H-flange nut · 22×11×15',
     manufacturer: 'User-supplied nut drawing',
-    source: 'references/tr8-h-nut/h-nut-drawing.png',
+    source: 'User-supplied TR8 H-flange nut drawing (public URL unavailable)',
   };
   const result = [
     ...kept,

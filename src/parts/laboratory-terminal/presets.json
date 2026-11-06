@@ -811,7 +811,7 @@
         },
         {
           "label": "Photo evidence",
-          "value": "Package reference-images/compact-dimensions.png; original supplied photo and SHA-256 recorded in lib/clip-evidence.json."
+          "value": "Supplied photograph compact-dimensions.png. Its SHA-256 is recorded in lib/clip-evidence.json. The exact photograph has no verified public URL."
         },
         {
           "label": "Nominal listing size",
@@ -862,7 +862,7 @@
         },
         {
           "label": "Photo evidence",
-          "value": "Package reference-images/six-way-block.png; original supplied photo and SHA-256 recorded in lib/clip-evidence.json."
+          "value": "Supplied photograph six-way-block.png. Its SHA-256 is recorded in lib/clip-evidence.json. The exact photograph has no verified public URL."
         },
         {
           "label": "Housing outline",
@@ -914,7 +914,7 @@
         },
         {
           "label": "Photo evidence",
-          "value": "Package reference-images/large-dimensions.png; original supplied photo and SHA-256 recorded in lib/clip-evidence.json."
+          "value": "Supplied photograph large-dimensions.png. Its SHA-256 is recorded in lib/clip-evidence.json. The exact photograph has no verified public URL."
         },
         {
           "label": "Jaw width",

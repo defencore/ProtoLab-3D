@@ -201,7 +201,7 @@ export interface PartDefinition {
   dimensions: (parameters: Parameters, state: string) => [number, number, number];
   notes?: string;
   assessment?: (parameters: Parameters) => string[];
-  sources?: { label: string; url: string }[];
+  sources?: { label: string; url?: string }[];
   updateParameters?: (parameters: Parameters, changedKey: string) => Parameters;
   presetMatchKeys?: string[];
   /** Fixed manufactured models are selected from the catalog; only pose/accessory controls remain editable. */

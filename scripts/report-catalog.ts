@@ -1,6 +1,9 @@
-/** Produce a readable audit alongside the full, reproducible supplier snapshots. */
+/** Produce a readable audit from the source coverage and integrated presets. */
 import fs from 'node:fs';
 import { parts } from '../src/parts';
+import { supplierFasteners } from '../src/catalog/fasteners';
+import fastenerCoverage from '../src/catalog/data/gvyntok-fasteners-coverage.json';
+import report from '../src/catalog/generated/promtehimport-coverage.json';
 const read = (path: string) => JSON.parse(fs.readFileSync(path, 'utf8'));
 const all = parts.flatMap((part) => part.presets.map((preset) => ({ part, preset })));
 const sourced = all.filter((row) => row.preset.catalog);
@@ -21,7 +24,7 @@ const lines = [
   '',
   '## Supplied drawings and motion components',
   '',
-  'The eight supplied images are retained in `public/references/` and linked from the matching presets. Added modules cover ball screw assemblies, standalone ball nuts, a jaw coupling and bevel gear pairs. Ball screw manufacturer tables supplement the images; each preset identifies its own source and verified dimensions.',
+  'The matching presets record evidence from eight supplied drawings. The affected modules cover ball screw assemblies, standalone ball nuts, a jaw coupling and bevel gear pairs. Ball screw manufacturer tables supplement the drawings. Each preset identifies its source and verified dimensions.',
   '',
   '- All 27 SFU dimension-table rows and all nine requested ball nut families are represented.',
   '- Miniature SFK shaft lengths cover 100–550 mm in 50 mm steps. Repeated lengths and assembly/nut exports are distinct configurations, not additional source products.',
@@ -40,12 +43,23 @@ const lines = [
 ];
 const missing = new Map<string, number>();
 for (const [label, id] of sections) {
-  const data = read(`src/catalog/data/gvyntok-${id}.json`);
-  const represented = data.products.filter((p: { sku: string }) => codes.has(p.sku));
+  const data =
+    id === 'fasteners'
+      ? undefined
+      : (read(`src/catalog/data/gvyntok-${id}.json`) as {
+          categories: { pages: string[] }[];
+          products: { sku: string; standard?: string | null }[];
+        });
+  const categories = data?.categories.length ?? fastenerCoverage.categories;
+  const pages =
+    data?.categories.reduce((sum, category) => sum + category.pages.length, 0) ??
+    fastenerCoverage.pages;
+  const products = data?.products ?? supplierFasteners;
+  const represented = products.filter((product) => codes.has(product.sku)).length;
   lines.push(
-    `| ${label} | ${data.categories.length} | ${data.categories.reduce((n: number, c: { pages: string[] }) => n + c.pages.length, 0)} | ${data.products.length} | ${represented.length} |`,
+    `| ${label} | ${categories} | ${pages} | ${products.length} | ${represented} |`,
   );
-  for (const row of data.products)
+  for (const row of products)
     if (!codes.has(row.sku))
       missing.set(
         row.standard ?? 'Other supplier families',
@@ -65,9 +79,8 @@ lines.push(
 );
 for (const [standard, count] of [...missing].sort((a, b) => b[1] - a[1]))
   lines.push(`| ${standard} | ${count} |`);
-const report = read('data/promtehimport-import-report.json');
 const supplierPageCount = Object.values(report.categories).reduce(
-  (sum: number, category) => sum + (category as { pages: number }).pages,
+  (sum, category) => sum + category.pages,
   0,
 );
 const sectionNames: Record<string, string> = {
@@ -108,18 +121,13 @@ lines.push(
   '| Section | Enumerated products | Imported presets | Pending pages |',
   '| --- | ---: | ---: | ---: |',
 );
-for (const [id, coverage] of Object.entries(report.categoryCoverage) as [
+for (const [id, coverage] of Object.entries(report.categories) as [
   string,
   { url: string; enumerated: number; statuses: Record<string, number> },
 ][]) {
   lines.push(
     `| [${sectionNames[id] ?? id}](${coverage.url}) | ${coverage.enumerated} | ${coverage.statuses.imported ?? 0} | ${coverage.statuses['not-fetched'] ?? 0} |`,
   );
-}
-const exclusionReasons = new Map<string, number>();
-for (const row of report.results as { status: string; reason?: string }[]) {
-  if (row.status !== 'imported' && row.reason)
-    exclusionReasons.set(row.reason, (exclusionReasons.get(row.reason) ?? 0) + 1);
 }
 lines.push(
   '',
@@ -128,7 +136,7 @@ lines.push(
   '| Reason | Product rows |',
   '| --- | ---: |',
 );
-for (const [reason, count] of [...exclusionReasons].sort((a, b) => b[1] - a[1]).slice(0, 12))
+for (const { reason, count } of report.exclusionReasons)
   lines.push(`| ${reason.replaceAll('|', '/')} | ${count} |`);
 lines.push(
   '',
@@ -147,8 +155,8 @@ lines.push(
   '',
   '## Audit files',
   '',
-  '- [Supplier inventory](data/promtehimport-inventory.json)',
-  '- [Bearing mapping report](data/promtehimport-import-report.json)',
+  '- [Promtehimport coverage ledger](src/catalog/generated/promtehimport-coverage.json)',
+  '- [Promtehimport source and audit reproduction](docs/promtehimport-catalog.md)',
   '- [Hardware mapping report](src/catalog/data/gvyntok-hardware-mapping-coverage.json)',
   '- [Gvyntok source snapshots](src/catalog/data/)',
   '',

@@ -35,7 +35,9 @@ test('GMP16 provides all seventeen source reductions at both voltages and preser
     for (const state of part.states!)
       assert.deepEqual(validateParameters(part, preset.parameters, state.id), [], preset.id);
     assert.equal(preset.catalog!.sourceKind, 'attachment');
+    assert.equal(preset.catalog!.sourceUrl, 'https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf');
     assert.equal(preset.catalog!.geometryEvidence!.kind, 'source-dimensions');
+    assert.equal(preset.catalog!.geometryEvidence!.sourceUrl, preset.catalog!.sourceUrl);
     assert.deepEqual(
       preset.catalog!.productCodes,
       [107, 361].includes(Number(preset.catalog!.attributes!.ratio))
@@ -55,7 +57,7 @@ test('GMP16 provides all seventeen source reductions at both voltages and preser
   assert.ok(part.validate({ ...part.defaults, gearboxLength: 100 }, 'assembled').length);
 });
 
-test('GMP16 ratio and voltage filters preserve absent performance values and the 24 V speed distinction', () => {
+test('GMP16 ratio and voltage filters preserve sourced and unknown performance values', () => {
   const index = buildPresetIndex([part]);
   const filters = emptyPresetFilters(part);
   filters.parameters[fieldId(part.catalogFilterFields!.find((f) => f.key === 'ratio')!)] = {
@@ -75,7 +77,7 @@ test('GMP16 ratio and voltage filters preserve absent performance values and the
     max: '3000',
   };
   assert.equal(filterPresets(index, withSpeed).items.length, Object.keys(performance).length * 2);
-  assert.equal(part.presets.find((p) => p.id === '4-12')!.catalog!.attributes!.ratedSpeed, 2000);
+  assert.equal(part.presets.find((p) => p.id === '4-12')!.catalog!.attributes!.ratedSpeed, 2200);
   assert.equal(part.presets.find((p) => p.id === '4-24')!.catalog!.attributes!.ratedSpeed, 2200);
   assert.equal(
     part.presets.find((p) => p.id === '428.7-12')!.catalog!.attributes!.ratedSpeed,

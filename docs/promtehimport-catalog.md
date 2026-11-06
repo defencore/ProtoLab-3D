@@ -1,10 +1,10 @@
 # Promtehimport catalog ingestion
 
-The inventory covers all 19 supplier category URLs supplied for this project. Every available pagination link was enumerated; no page or product sample cap was used. The committed inventory contains 510 category pages and 11,977 distinct public product URLs.
+The audited inventory covers all 19 supplier category URLs supplied for this project. Every available pagination link was enumerated without a page or product sample cap. The reviewed snapshot contains 510 category pages and 11,977 distinct public product URLs.
 
 Retrieval is complete for the September 13, 2026 snapshot: all 510 category pages and all 11,977 distinct product pages were retrieved successfully, with no failed or pending pages. Every temporary search-cache excerpt was replaced with the complete direct supplier page. The importer keeps a resumable source ledger and records the modeling decision for every enumerated product.
 
-Read the current [machine-readable coverage](../src/catalog/generated/promtehimport-coverage.json), [per-product import decisions](../data/promtehimport-import-report.json), and [source dimension tables and inventory](../data/promtehimport-inventory.json). Counts distinguish retrieved pages, usable presets, unsupported shapes, conflicting dimensions, and pages that have not been retrieved. The total inventory count is not an imported-preset count.
+The [machine-readable coverage](../src/catalog/generated/promtehimport-coverage.json) links the supplier categories and records their counts, exclusion reasons and accepted model families. The raw dimension tables and per-product decision report are local offline inputs and outputs. A regression test checks the SHA-256 of the 7,928 sorted numeric product IDs accepted by the September 13, 2026 audit.
 
 ## Import outcome
 
@@ -24,21 +24,23 @@ The largest identified exclusions are automotive hubs/cartridges (590), tapered-
 ## Reproduce or resume
 
 ```sh
-python3 scripts/import-promtehimport.py --workers 1
-node --import tsx scripts/build-promtehimport-presets.ts
+python3 scripts/import-promtehimport.py --workers 1 --output test-results/catalog/promtehimport-inventory.json
+node --import tsx scripts/build-promtehimport-presets.ts test-results/catalog/promtehimport-inventory.json
 ```
 
-The default inventory is committed, so resuming on a new machine does not require the temporary cache. Successful new pages are cached under `/tmp/protolab-full-promtehimport-cache`. `--cache-only` rebuilds the source manifest without network access. `--refresh-categories` requests current pagination and product membership. `--refresh-web-cache` replaces temporary search excerpts with complete live product pages. `--request-delay` defaults to one second per worker; repeated connection failures stop the fetch loop with a resumable checkpoint.
+Keep the local inventory and cache to resume a previous retrieval. Successful new pages are cached under `/tmp/protolab-full-promtehimport-cache` by default. `--cache-only` rebuilds the source manifest without network access. `--refresh-categories` requests current pagination and product membership. `--refresh-web-cache` replaces temporary search excerpts with complete live product pages. `--request-delay` defaults to one second per worker. Repeated connection failures stop the fetch loop with a resumable checkpoint. The mapping script writes the detailed import decisions to `test-results/catalog/promtehimport-import-report.json` by default. Use `--report <path>` to select another local destination.
 
 An optional fallback imports saved text from exact public supplier pages:
 
 ```sh
-python3 scripts/cache-promtehimport-web.py public-page-export.txt
-python3 scripts/import-promtehimport.py --cache-only
-node --import tsx scripts/build-promtehimport-presets.ts
+python3 scripts/cache-promtehimport-web.py --inventory test-results/catalog/promtehimport-inventory.json /path/to/public-page-export.txt
+python3 scripts/import-promtehimport.py --cache-only --output test-results/catalog/promtehimport-inventory.json
+node --import tsx scripts/build-promtehimport-presets.ts test-results/catalog/promtehimport-inventory.json
 ```
 
 That parser accepts only supplier product IDs already present in the inventory and rejects excerpts containing several product IDs. Translated URLs are matched to the same public product ID, with the actual evidence URL retained. Category filter values and URL-only dimensional guesses are never treated as product dimensions.
+
+The audited exclusions include [15BCD107](https://promtehimport.com.ua/offer/pidshipnik-15bcd107-pfi-usa-o5265/) and [1680206](https://promtehimport.com.ua/offer/pidshipnik-1680206-craft-litva-o8915/), whose constructions need dedicated models, and [ZARN60120M](https://promtehimport.com.ua/offer/pidshipnik-504912e-zarn60120m-zsg-o7413/), whose reported washer diameter fails to clear the bore. The tapered roller [30204](https://promtehimport.com.ua/offer/pidshipnik-30204-7204-fo-bearings-o1294/) listing lacks total width T, and the drawn cup [HK 0910](https://promtehimport.com.ua/offer/pidshipnik-hk-0910-ntn-o7041/) lists contradictory 9 and 10 mm bore dimensions.
 
 ## Geometry and evidence rules
 

@@ -1,4 +1,4 @@
-export const sourceUrl = 'references/gmp16-gearmotor/tec1636-dimensions.png';
+export const sourceUrl = 'https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf';
 export const listingUrl = 'https://www.aliexpress.com/item/1005011804448445.html';
 
 /** Nominal values transcribed from the supplied GMP16T-TEC1636 table. */
@@ -30,7 +30,7 @@ export const models = reductions.flatMap((reduction) =>
 export const performance: Readonly<
   Record<number, { noLoad: number; rated: number; torque: number }>
 > = {
-  4: { noLoad: 2700, rated: 2000, torque: 0.1 },
+  4: { noLoad: 2700, rated: 2200, torque: 0.1 },
   16: { noLoad: 700, rated: 600, torque: 0.4 },
   22.6: { noLoad: 520, rated: 430, torque: 0.5 },
   64: { noLoad: 180, rated: 150, torque: 1.5 },

@@ -434,6 +434,11 @@ adaptation of an existing project, use this order:
 
 ## Missing purchased components
 
+- Keep drawings, screenshots, photographs, source archives and raw supplier
+  snapshots outside Git. Link to the exact external source when available.
+  For supplied evidence without a public URL, record its label, identity and
+  verified dimensions without a link. Keep the compact data needed to build,
+  configure and verify the models in their existing package contracts.
 - Identify the actual manufacturer, model, order code and relevant revision or
   execution. Research the exact product rather than inventing a plausible shape.
 - Prefer original manufacturer CAD for that execution. Otherwise reconstruct

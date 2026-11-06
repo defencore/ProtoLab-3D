@@ -100,13 +100,7 @@ The two retained sleeve mounting holes are M3 × 0.5; use a 2.5 mm tap drill bef
 
 ## User-supplied references
 
-The images establish arrangement, not measured dimensions, fits or material ratings.
-
-- [Revised bearing and fin arrangement](../../../public/references/worm-fin-actuator/reference-07-fin-bearing-arrangement.png)
-- [Revised stepped-sleeve section](../../../public/references/worm-fin-actuator/reference-08-stepped-sleeve-section.png)
-- [Original oblique view](../../../public/references/worm-fin-actuator/reference-01-oblique.png)
-- [Original fin-side view](../../../public/references/worm-fin-actuator/reference-02-fin-side.png)
-- [Original sector detail](../../../public/references/worm-fin-actuator/reference-03-sector-detail.png)
-- [Original front view](../../../public/references/worm-fin-actuator/reference-04-front.png)
-- [Original assembly section](../../../public/references/worm-fin-actuator/reference-05-section.png)
-- [Original section detail](../../../public/references/worm-fin-actuator/reference-06-section-detail.png)
+The revised user views showed the fin and output bearings and a section through
+the stepped sleeve. The original oblique, fin-side, front and section views
+established the arrangement of the sector and bearings. Dimensions, fits and
+material ratings require separate engineering evidence.

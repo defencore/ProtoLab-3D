@@ -412,19 +412,15 @@ test('export and import round trip only the selected package, preserve SDK and k
   const sdkBefore = await fs.readFile(path.join(root, 'src/core/geometry.ts'), 'utf8');
   const partPath = path.join(root, 'src/parts/first-spacer/part.ts');
   const original = await fs.readFile(partPath, 'utf8');
-  await fs.writeFile(partPath, original + "\nconst evidence = 'references/local-evidence.png';\n");
-  await fs.mkdir(path.join(root, 'public/references'), { recursive: true });
-  await fs.writeFile(
-    path.join(root, 'public/references/local-evidence.png'),
-    Buffer.from([1, 2, 3]),
-  );
+  const externalEvidence = "\nconst evidence = 'https://supplier.example/drawing.pdf';\n";
+  await fs.writeFile(partPath, original + externalEvidence);
   const handoff = await exportPackage(root, 'first-spacer', path.join(root, 'handoff'));
   assert.match(await fs.readFile(path.join(handoff, 'src/main.ts'), 'utf8'), /generateScript/);
-  assert.deepEqual(
-    await fs.readFile(path.join(handoff, 'public/references/local-evidence.png')),
-    Buffer.from([1, 2, 3]),
-  );
+  await assert.rejects(fs.access(path.join(handoff, 'public/references')), { code: 'ENOENT' });
+  const manifest = JSON.parse(await fs.readFile(path.join(handoff, 'part-module.json'), 'utf8'));
+  assert.equal(manifest.references, undefined);
   const editedPart = path.join(handoff, 'src/parts/first-spacer/part.ts');
+  assert.equal(await fs.readFile(editedPart, 'utf8'), original + externalEvidence);
   await fs.appendFile(
     editedPart,
     '\nthrow new Error("Static import must never execute this code");\n',
@@ -441,17 +437,19 @@ test('export and import round trip only the selected package, preserve SDK and k
     'test-results/backups/part-modules/first-spacer',
   );
   assert.deepEqual(await fs.readdir(path.join(root, 'test-results/.staging')), []);
-  assert.match(await fs.readFile(partPath, 'utf8'), /Static import must never execute/);
+  const imported = await fs.readFile(partPath, 'utf8');
+  assert.match(imported, /Static import must never execute/);
+  assert.ok(imported.includes(externalEvidence));
   assert.equal(
     await fs.readFile(path.join(result.backup!, 'part.ts'), 'utf8'),
-    original + "\nconst evidence = 'references/local-evidence.png';\n",
+    original + externalEvidence,
   );
   assert.equal(await fs.readFile(path.join(other, 'part.ts'), 'utf8'), unrelatedBefore);
   assert.equal(await fs.readFile(path.join(root, 'src/core/geometry.ts'), 'utf8'), sdkBefore);
   assert.equal((await discoverPackages(root)).length, 2);
 });
 
-test('invalid imports and conflicting reference assets leave the current package intact', async (context) => {
+test('invalid imports, local reference paths and bundled media leave the current package intact', async (context) => {
   const root = await fixture();
   context.after(() => fs.rm(root, { recursive: true, force: true }));
   const partPath = path.join(root, 'src/parts/first-spacer/part.ts');
@@ -463,20 +461,21 @@ test('invalid imports and conflicting reference assets leave the current package
   await assert.rejects(importPackage(root, handoff, true), /apiVersion/);
   assert.equal(await fs.readFile(partPath, 'utf8'), original);
   await fs.writeFile(index, originalIndex);
-  await fs.appendFile(
-    path.join(handoff, 'src/parts/first-spacer/part.ts'),
-    "\nconst evidence = 'references/collision.png';\n",
-  );
-  for (const directory of [root, handoff])
-    await fs.mkdir(path.join(directory, 'public/references'), { recursive: true });
-  await fs.writeFile(path.join(root, 'public/references/collision.png'), 'original');
-  await fs.writeFile(path.join(handoff, 'public/references/collision.png'), 'edited');
-  await assert.rejects(importPackage(root, handoff, true), /different contents/);
+  const importedPart = path.join(handoff, 'src/parts/first-spacer/part.ts');
+  await fs.appendFile(importedPart, "\nconst evidence = 'references/local-drawing.png';\n");
+  await assert.rejects(importPackage(root, handoff, true), /Local reference paths/);
+  await fs.writeFile(importedPart, original);
+  const presetPath = path.join(path.dirname(importedPart), 'presets.json');
+  const originalPresets = await fs.readFile(presetPath, 'utf8');
+  const presets = JSON.parse(originalPresets);
+  presets[0].catalog = { sourceUrl: 'file:///tmp/drawing.png' };
+  await fs.writeFile(presetPath, JSON.stringify(presets));
+  await assert.rejects(importPackage(root, handoff, true), /source links must be external/);
+  await fs.writeFile(presetPath, originalPresets);
+  await fs.writeFile(path.join(path.dirname(importedPart), 'drawing.PDF'), 'attachment');
+  await assert.rejects(importPackage(root, handoff, true), /keep reference attachments/);
   assert.equal(await fs.readFile(partPath, 'utf8'), original);
-  assert.equal(
-    await fs.readFile(path.join(root, 'public/references/collision.png'), 'utf8'),
-    'original',
-  );
+  await assert.rejects(fs.access(path.join(root, 'public/references')), { code: 'ENOENT' });
 });
 
 test('runtime registration reports duplicates and malformed configurators before UI construction', () => {

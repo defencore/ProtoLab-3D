@@ -222,23 +222,10 @@ const part: PartDefinition = {
       label: 'Meshtastic Heltec button behavior',
       url: 'https://meshtastic.org/docs/hardware/devices/heltec-automation/lora32/buttons/',
     },
-    { label: 'DS-225 rectangular top photo', url: 'references/daier-ds-225-user-photo.png' },
-    {
-      label: 'Latest user reference — open scalloped guard and recessed grip edge',
-      url: 'references/heltec-handheld-guard-reference-4.png',
-    },
-    {
-      label: 'Additional user reference — contoured palm grip and tactile zones',
-      url: 'references/heltec-handheld-palm-grip-reference.png',
-    },
-    {
-      label: 'User original mechanical-blocker reference 1 — no verified dimensions',
-      url: 'references/heltec-handheld-rotary-blocker-reference-1.png',
-    },
-    {
-      label: 'User original mechanical-blocker reference 2 — no verified dimensions',
-      url: 'references/heltec-handheld-rotary-blocker-reference-2.png',
-    },
+    { label: 'User-supplied DS-225 rectangular top photo' },
+    { label: 'User-supplied side profile — open scalloped guard and recessed grip edge' },
+    { label: 'User-supplied palm grip and tactile-zone reference' },
+    { label: 'User-supplied mechanical-blocker concept views — dimensions unverified' },
   ],
 };
 export default part;

@@ -1,0 +1,116 @@
+{
+  "sfk-disc-actuator/part.ts": [
+    {
+      "before": "  sources: [\n    { label: 'Supplied KAIYADE SFK nut table', url: 'references/kaiyade-sfk/dimension-table.png' },\n    {\n      label: 'Supplied 0802 EK6/EF6 end-machining reference',\n      url: 'references/kaiyade-sfk/ek6-ef6-0802.png',\n    },\n",
+      "after": "  sources: [\n    { label: 'Supplied KAIYADE SFK nut table', url: '' },\n    {\n      label: 'Supplied 0802 EK6/EF6 end-machining reference',\n      url: '',\n    },\n"
+    },
+    {
+      "before": "      label: 'Supplied LF D14 L22 coupling drawing',\n      url: 'references/jaw-coupling/lf-d14-l22-drawing.png',\n    },\n",
+      "after": "      label: 'Supplied LF D14 L22 coupling drawing',\n      url: '',\n    },\n"
+    },
+    {
+      "before": "      label: 'Supplied GMP16T-TEC1636 data',\n      url: 'references/gmp16-gearmotor/tec1636-dimensions.png',\n    },\n",
+      "after": "      label: 'Supplied GMP16T-TEC1636 data',\n      url: 'https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf',\n    },\n"
+    }
+  ],
+  "sfk-rotary-actuator/part.ts": [
+    {
+      "before": "  sources: [\n    { label: 'Supplied KAIYADE SFK nut table', url: 'references/kaiyade-sfk/dimension-table.png' },\n    {\n      label: 'Supplied 0802 EK6/EF6 end-machining reference',\n      url: 'references/kaiyade-sfk/ek6-ef6-0802.png',\n    },\n",
+      "after": "  sources: [\n    { label: 'Supplied KAIYADE SFK nut table', url: '' },\n    {\n      label: 'Supplied 0802 EK6/EF6 end-machining reference',\n      url: '',\n    },\n"
+    },
+    {
+      "before": "      label: 'Supplied LF D14 L22 coupling drawing',\n      url: 'references/jaw-coupling/lf-d14-l22-drawing.png',\n    },\n",
+      "after": "      label: 'Supplied LF D14 L22 coupling drawing',\n      url: '',\n    },\n"
+    },
+    {
+      "before": "      label: 'Supplied GMP16T-TEC1636 data',\n      url: 'references/gmp16-gearmotor/tec1636-dimensions.png',\n    },\n",
+      "after": "      label: 'Supplied GMP16T-TEC1636 data',\n      url: 'https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf',\n    },\n"
+    }
+  ],
+  "sfk-slotted-actuator/lib/neutral-occurrences.json": [
+    {
+      "before": "{\"designation\":\"GMP16T-TEC1636 · 361:1 · 12 V · 11.6D7 shaft\",\"manufacturer\":\"Supplied GMP16T-TEC1636 dimensional and performance table\",\"source\":\"references/gmp16-gearmotor/tec1636-dimensions.png\"}",
+      "after": "{\"designation\":\"GMP16T-TEC1636 · 361:1 · 12 V · 11.6D7 shaft\",\"manufacturer\":\"Supplied GMP16T-TEC1636 dimensional and performance table\",\"source\":\"https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf\"}"
+    },
+    {
+      "before": "{\"designation\":\"SFK0825\",\"manufacturer\":\"KAIYADE\",\"source\":\"references/kaiyade-sfk/dimension-table.png\"}",
+      "after": "{\"designation\":\"SFK0825\",\"manufacturer\":\"KAIYADE\",\"source\":\"\"}"
+    },
+    {
+      "before": "{\"designation\":\"LF-B-D14L22(2 claws) Clamp 3 × 4 mm\",\"manufacturer\":\"User-supplied LF dimensional drawing, photos and variant list\",\"source\":\"references/jaw-coupling/lf-d14-l22-drawing.png\"}",
+      "after": "{\"designation\":\"LF-B-D14L22(2 claws) Clamp 3 × 4 mm\",\"manufacturer\":\"User-supplied LF dimensional drawing, photos and variant list\",\"source\":\"\"}"
+    }
+  ],
+  "sfk-slotted-actuator/part.ts": [
+    {
+      "before": "  sources: [\n    { label: 'Supplied KAIYADE SFK nut table', url: 'references/kaiyade-sfk/dimension-table.png' },\n    {\n      label: 'Supplied 0802 EK6/EF6 end-machining reference',\n      url: 'references/kaiyade-sfk/ek6-ef6-0802.png',\n    },\n",
+      "after": "  sources: [\n    { label: 'Supplied KAIYADE SFK nut table', url: '' },\n    {\n      label: 'Supplied 0802 EK6/EF6 end-machining reference',\n      url: '',\n    },\n"
+    },
+    {
+      "before": "      label: 'Supplied LF D14 L22 coupling drawing',\n      url: 'references/jaw-coupling/lf-d14-l22-drawing.png',\n    },\n",
+      "after": "      label: 'Supplied LF D14 L22 coupling drawing',\n      url: '',\n    },\n"
+    },
+    {
+      "before": "      label: 'Supplied GMP16T-TEC1636 data',\n      url: 'references/gmp16-gearmotor/tec1636-dimensions.png',\n    },\n",
+      "after": "      label: 'Supplied GMP16T-TEC1636 data',\n      url: 'https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf',\n    },\n"
+    }
+  ],
+  "tr8-compact-actuator/GUIDE.md": [
+    {
+      "before": "\nThe supplied nut drawing specifies a 22×11 mm flange, R11 ends, two Ø3.5 mounting holes on 16 mm centres, Ø10 body and 15 mm overall axial length. The axial stack is a 1.5 mm nose, 3.5 mm flange and 10 mm rear body. The 22 mm flange direction lies along Y, keeping its 11 mm height clear of the nearby output shaft. Two M3×8 button screws pass through the stock flange into the machined cover's blind M3 taps; no separate nuts are used there.\n\n",
+      "after": "\nThe supplied H-flange nut drawing, which has no verified public URL, specifies a 22×11 mm flange, R11 ends, two Ø3.5 mounting holes on 16 mm centres, Ø10 body and 15 mm overall axial length. The axial stack is a 1.5 mm nose, 3.5 mm flange and 10 mm rear body. The 22 mm flange direction lies along Y, keeping its 11 mm height clear of the nearby output shaft. Two M3×8 button screws pass through the stock flange into the machined cover's blind M3 taps; no separate nuts are used there.\n\n"
+    }
+  ],
+  "tr8-compact-actuator/part.ts": [
+    {
+      "before": "          manufacturer: 'User-supplied nut drawing',\n          source: 'references/tr8-h-nut/h-nut-drawing.png',\n        };\n",
+      "after": "          manufacturer: 'User-supplied nut drawing',\n          source: 'User-supplied TR8 H-flange nut drawing (public URL unavailable)',\n        };\n"
+    },
+    {
+      "before": "  sources: [\n    { label: 'Supplied TR8 H-flange nut drawing', url: 'references/tr8-h-nut/h-nut-drawing.png' },\n    { label: 'Supplied H-flange brass nut photo', url: 'references/tr8-h-nut/h-nut-photo.png' },\n    { label: 'Supplied 250 mm TR8 threaded stock', url: 'references/tr8-h-nut/tr8-stock.png' },\n    { label: 'Multi-start thread lead and pitch', url: 'https://blog.igus.eu/multi-start-thread/' },\n",
+      "after": "  sources: [\n    { label: 'Supplied TR8 H-flange nut drawing', url: '' },\n    { label: 'Supplied H-flange brass nut photo', url: '' },\n    { label: 'Supplied 250 mm TR8 threaded stock', url: '' },\n    { label: 'Multi-start thread lead and pitch', url: 'https://blog.igus.eu/multi-start-thread/' },\n"
+    }
+  ],
+  "tr8-quad-actuator/GUIDE.md": [
+    {
+      "before": "\n- [Supplied H-nut drawing](../../../public/references/tr8-h-nut/h-nut-drawing.png)\n- [Supplied threaded stock](../../../public/references/tr8-h-nut/tr8-stock.png)\n- [Multi-start screw lead and pitch](https://blog.igus.eu/multi-start-thread/)\n",
+      "after": "\n- Supplied TR8 H-flange nut drawing and 250 mm threaded-stock photograph. No verified public copies of these attachments are available.\n- [Multi-start screw lead and pitch](https://blog.igus.eu/multi-start-thread/)\n"
+    }
+  ],
+  "tr8-quad-actuator/lib/mechanism.ts": [
+    {
+      "before": "  nut.component.supply = 'purchased'; delete nut.component.manufacturing;\n  nut.component.procurement = { designation: 'TR8×8(P2) RH H-flange nut · 22×11×15', manufacturer: 'User-supplied nut drawing', source: 'references/tr8-h-nut/h-nut-drawing.png' };\n  const result = [\n",
+      "after": "  nut.component.supply = 'purchased'; delete nut.component.manufacturing;\n  nut.component.procurement = { designation: 'TR8×8(P2) RH H-flange nut · 22×11×15', manufacturer: 'User-supplied nut drawing', source: 'User-supplied TR8 H-flange nut drawing (public URL unavailable)' };\n  const result = [\n"
+    }
+  ],
+  "tr8-quad-actuator/part.ts": [
+    {
+      "before": "  sources: [\n    { label: 'Supplied H-flange nut drawing', url: 'references/tr8-h-nut/h-nut-drawing.png' },\n    { label: 'Supplied 250 mm TR8 stock', url: 'references/tr8-h-nut/tr8-stock.png' },\n    { label: 'Multi-start thread lead and pitch', url: 'https://blog.igus.eu/multi-start-thread/' },\n",
+      "after": "  sources: [\n    { label: 'Supplied H-flange nut drawing', url: '' },\n    { label: 'Supplied 250 mm TR8 stock', url: '' },\n    { label: 'Multi-start thread lead and pitch', url: 'https://blog.igus.eu/multi-start-thread/' },\n"
+    }
+  ],
+  "tr8-quad-cnc-actuator/lib/channel.ts": [
+    {
+      "before": "    manufacturer: 'User-supplied nut drawing',\n    source: 'references/tr8-h-nut/h-nut-drawing.png',\n  };\n",
+      "after": "    manufacturer: 'User-supplied nut drawing',\n    source: 'User-supplied TR8 H-flange nut drawing (public URL unavailable)',\n  };\n"
+    }
+  ],
+  "tr8-quad-cnc-actuator/part.ts": [
+    {
+      "before": "    sources: [\n      { label: 'Supplied H-flange nut drawing', url:'references/tr8-h-nut/h-nut-drawing.png' },\n      { label: 'Supplied 250 mm TR8 stock', url:'references/tr8-h-nut/tr8-stock.png' },\n      { label: 'EZO SMF106ZZ dimensions and abutments', url:'https://www.ezo-brg.co.jp/english/product/spec.php?eid=00582' },\n",
+      "after": "    sources: [\n      { label: 'Supplied H-flange nut drawing', url:'' },\n      { label: 'Supplied 250 mm TR8 stock', url:'' },\n      { label: 'EZO SMF106ZZ dimensions and abutments', url:'https://www.ezo-brg.co.jp/english/product/spec.php?eid=00582' },\n"
+    }
+  ],
+  "tr8-quad-mini-actuator/lib/mechanism.ts": [
+    {
+      "before": "    manufacturer: 'User-supplied nut drawing',\n    source: 'references/tr8-h-nut/h-nut-drawing.png',\n  };\n",
+      "after": "    manufacturer: 'User-supplied nut drawing',\n    source: 'User-supplied TR8 H-flange nut drawing (public URL unavailable)',\n  };\n"
+    }
+  ],
+  "tr8-quad-mini-actuator/part.ts": [
+    {
+      "before": "  sources: [\n    { label: 'Supplied H-flange nut drawing', url: 'references/tr8-h-nut/h-nut-drawing.png' },\n    { label: 'Supplied 250 mm TR8 stock', url: 'references/tr8-h-nut/tr8-stock.png' },\n    { label: 'EZO SMF106ZZ dimensions and abutments', url: 'https://www.ezo-brg.co.jp/english/product/spec.php?eid=00582' },\n",
+      "after": "  sources: [\n    { label: 'Supplied H-flange nut drawing', url: '' },\n    { label: 'Supplied 250 mm TR8 stock', url: '' },\n    { label: 'EZO SMF106ZZ dimensions and abutments', url: 'https://www.ezo-brg.co.jp/english/product/spec.php?eid=00582' },\n"
+    }
+  ]
+}

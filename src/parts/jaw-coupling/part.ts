@@ -725,14 +725,14 @@ const part: PartDefinition = {
       label: 'LF D14 L22 · supplied dimension drawing and listed variants',
       url: jawCouplingReference,
     },
-    { label: 'LF source photos', url: 'references/jaw-coupling/lf-coupling-photos.png' },
+    { label: 'LF source photos', url: '' },
     {
       label: 'Clamp and Thimble · side view',
-      url: 'references/jaw-coupling/clamp-thimble-side.png',
+      url: '',
     },
     {
       label: 'Clamp and Thimble · bore view',
-      url: 'references/jaw-coupling/clamp-thimble-bore.png',
+      url: '',
     },
     {
       label: 'User-supplied supplier listing',

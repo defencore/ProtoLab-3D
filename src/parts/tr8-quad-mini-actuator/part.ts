@@ -91,8 +91,8 @@ const part: PartDefinition = {
   notes:
     `Separate mini version; the Ø82 four-drive, single-drive and SFK versions remain available. Three round Ø${packing.discDiameter}×3 mm discs use standard 30 mm M3 columns and one 2 mm precision spacer per stack. Four radial module frames at 45°, 135°, 225° and 315° sit ${packing.radius} mm from the centre. Output axes form an X at X=${mechanismLayout.outputX} mm. EZO SMF106ZZ 6×10×3 mm shielded bearings have Ø11.2×0.6 mm flanges. Their inner-race thrust sleeves use Ø6.85 mm abutments. Three-millimetre steel forks use two Ø2×10 pins per shaft. The 13 mm nut carrier retains 1.4 mm nominal pin-root wall. Inner sleeves are 0.95 mm, outer sleeves 0.5 mm; rings lie at ±14.4 mm and the integral Ø7.5×1 mm head ends at −16 mm. All laser parts use 3 mm steel, including the clockwise interleaved inner bearing bars. Those bars retain 0.2 mm seams; the fork/cheek gap is 0.35 mm. The frame columns move to radius 28 mm at 25°+90°i. Each 52 mm screw retains 28 mm of thread. The ${mechanismLayout.radius} mm lever gives 10.5551 mm stroke and 1.2224 mm nominal full-thread margin at ±20°. Assign production fits and verify loads for the smaller output bearings; their supplier ratings do not rate the complete actuator. Match-drill and ream the pin joints after setting axial and sliding clearances.`,
   sources: [
-    { label: 'Supplied H-flange nut drawing', url: 'references/tr8-h-nut/h-nut-drawing.png' },
-    { label: 'Supplied 250 mm TR8 stock', url: 'references/tr8-h-nut/tr8-stock.png' },
+    { label: 'Supplied H-flange nut drawing', url: '' },
+    { label: 'Supplied 250 mm TR8 stock', url: '' },
     { label: 'EZO SMF106ZZ dimensions and abutments', url: 'https://www.ezo-brg.co.jp/english/product/spec.php?eid=00582' },
     { label: 'Multi-start thread lead and pitch', url: 'https://blog.igus.eu/multi-start-thread/' },
     { label: 'ISO 8734 Ø2×10 hardened dowel catalogue', url: 'https://static.shop.fibro.com/assets/EN/document/doc_2351_1_english.pdf' },

@@ -12,6 +12,6 @@ A single-arm horn can have a slit, clamp ears and transverse screw bore. The opt
 
 ## Evidence and approximations
 
-Reference presets use the supplied images under `public/references/servo-*.png`. `catalog.verifiedParameters` lists only values established by that particular source; unlisted fields remain editable prototype dimensions. Socket flank geometry, minor diameter and fit clearance are not specified by these images. Irregular hole rows and projected disc patterns are approximated by the configurable uniform-spacing patterns and marked in source details. Cosmetic moulding ribs and weight-reduction pockets are omitted.
+Reference presets record dimensions from the supplied servo-arm images. `catalog.verifiedParameters` lists only values established by that particular source; unlisted fields remain editable prototype dimensions. Socket flank geometry, minor diameter and fit clearance are not specified by these images. Irregular hole rows and projected disc patterns are approximated by the configurable uniform-spacing patterns and marked in source details. Cosmetic moulding ribs and weight-reduction pockets are omitted.
 
 Run `node --import tsx --test tests/servo-arm.test.ts` for the focused reference, geometry, bore and export checks. Run `npm run parts:check -- servo-arm` before handing off the package.

@@ -12,7 +12,7 @@ Native geometry supplements the source-dimension catalog. A valid CAD solid and 
 
 ## Reproducibility
 
-Run `scripts/import-electronics-cad.py` with FreeCAD Python and either `feather` or `pi5` followed by the original STEP path. Extract Pi 5 from `public/references/electronics/raspberry-pi-5-step.zip`; Feather is in `public/references/electronics/feather-nrf52840-rev-d.step`. Input SHA-256 values are pinned in the importer and repeated in the catalog, baked assets and generated FreeCAD macro.
+Run `scripts/import-electronics-cad.py` with FreeCAD Python and either `feather` or `pi5` followed by the original STEP path. Obtain the revision listed above from its external source and extract it outside the repository. Input SHA-256 values are pinned in the importer and repeated in the catalog, baked assets and generated FreeCAD macro.
 
 The importer preserves source CAD surfaces. It groups geometrically equivalent, centered solids only after a bidirectional CAD subtraction check (combined residual volume below 1e-8 mm³). Instances retain their source transforms and independent CAD objects. It does not reconstruct holes, connectors or SMD components from estimated dimensions.
 
@@ -37,10 +37,10 @@ node --import tsx scripts/prepare-manufacturer-cad.ts nrf52840 adafruit-feather-
 Then run with a FreeCAD-enabled Python interpreter:
 
 ```sh
-python scripts/verify-manufacturer-cad.py nrf52840 feather public/references/electronics/feather-nrf52840-rev-d.step /tmp/feather-case.json test-results/feather-source-validation.json
+python scripts/verify-manufacturer-cad.py nrf52840 feather /path/to/feather-nrf52840-rev-d.step /tmp/feather-case.json test-results/feather-source-validation.json
 ```
 
-For Pi 5, use family `raspberry-pi`, preset `raspberry-pi-5-full`, native folder `pi5`, and the STEP extracted from the retained official ZIP.
+For Pi 5, use family `raspberry-pi`, preset `raspberry-pi-5-full`, native folder `pi5`, and the STEP extracted from the official ZIP.
 
 Recorded assembled-state checks:
 

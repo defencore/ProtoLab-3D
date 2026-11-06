@@ -46,6 +46,8 @@ The library does not infer current, voltage, RF impedance, USB speed, shielding 
 
 ## Sources and regeneration
 
+The supplied XH-style 2.54 mm photographs are held separately. [XH-style evidence](lib/xh254-evidence.json) records the original names, SHA-256 fingerprints and the limited scope of the generic external style reference. No verified public copies of the exact photographs are available.
+
 - [Pinned KiCad 9.0.1 3D collection](https://gitlab.com/kicad/libraries/kicad-packages3D/-/tree/9.0.1).
 - [JST XH manufacturer catalog](https://www.jst-mfg.com/product/pdf/eng/eXH.pdf), [JST PH manufacturer catalog](https://www.jst-mfg.com/product/pdf/eng/ePH.pdf).
 - [Amphenol USB-C drawing](https://cdn.amphenol-cs.com/media/wysiwyg/files/drawing/c12401610_c.pdf), [GCT USB4105](https://gct.co/connector/usb4105).

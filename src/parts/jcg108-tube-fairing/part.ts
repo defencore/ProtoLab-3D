@@ -118,7 +118,10 @@ const part: PartDefinition = {
       label: 'Jinchang JCG108 manufacturer datasheet',
       url: 'https://rnrorwxhqioplk5p.ldycdn.com/JCG108-aidqkBpmKjiRliSkjorpnllj.pdf',
     },
-    { label: 'Retained JCG108 dimension drawing', url: 'references/antennas/jinchang-jcg108.png' },
+    {
+      label: 'JCG108 manufacturer dimension drawing',
+      url: 'https://iororwxhqioplk5p.ldycdn.com/cloud/qmBpmKjiRliSkjormnlmj/JCG108.png',
+    },
   ],
 };
 export default part;

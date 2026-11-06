@@ -4,13 +4,13 @@ The five saved gear images are anonymous user-supplied references. Their dimensi
 
 ## Miniature spur pinions
 
-The four presets use module **0.5**, **11 / 13 / 15 / 17 teeth**, and a **2.98 mm bore**, as shown in `public/references/spur-pinion-options.png`. Width **5 mm**, pressure angle **20°**, and tooth-thinning allowance **0.02 mm** are editable prototype assumptions. The image does not specify these values.
+The four presets use module **0.5**, **11 / 13 / 15 / 17 teeth**, and a **2.98 mm bore**, from the supplied spur-pinion options image. Width **5 mm**, pressure angle **20°**, and tooth-thinning allowance **0.02 mm** are editable prototype assumptions. The image does not specify these values.
 
 The new small-pinion layout option permits tooth counts below the unshifted rack-cutter undercut limit. It retains sampled involute flanks with radial root relief; it does not imply a manufactured profile shift or reproduce cutter undercut. The existing unshifted mode continues to reject those low tooth counts.
 
 ## Bevel mounting pairs
 
-The six presets contain both members of every pair in `public/references/bevel-gear-dimensions.png`:
+The six presets contain both members of every pair in the supplied bevel gear dimension table.
 
 | Module | Pinion / wheel | Pinion bore interval | Wheel bore interval |
 | ------ | -------------- | -------------------- | ------------------- |

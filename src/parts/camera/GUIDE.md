@@ -58,7 +58,7 @@ Ratel 2 has an assumed 20 mm axial depth which is excluded from numeric filterin
 - Reolink 12 V DC and active PoE are separate power interfaces. Specifications refer to the cited 5 MP / 4 mm revision.
 - Omitted current, mass, voltage or dimensions are unknown/unassigned, not zero.
 
-See `lib/models.json` and the selected model's source link for provenance. Local Pi drawings are stored under `public/references/cameras/` and included in package references.
+See `lib/models.json` and the selected model's source link for provenance, including the Raspberry Pi mechanical drawings.
 
 ## Validation
 

@@ -55,7 +55,7 @@ X is across the clip or bank, Y follows its length, and Z points up from the mou
 
 Each clip contains a C-shaped insulating housing, a ridged lever, a fixed brass conductor and termination, a moving brass jaw, a pivot pin and one continuous compression spring. The six-way model has no common conductor between poles. Assembly and exploded views use the same components; exploded spacing is an inspection pose.
 
-Evidence comes from the two [supplied AliExpress references](https://www.aliexpress.com/item/4001315701627.html) ([second listing](https://www.aliexpress.com/item/4000167641521.html)) and the user's product photographs. The pages could not be retrieved during this update, and the association of each photographed execution with either listing is unconfirmed. Original photos are retained in `lib/reference-images/`, with hashes in [clip-evidence.json](lib/clip-evidence.json). The dimensioned single clips are labelled **source dimensions**. The six-way block is labelled **envelope** because its board and mounting pattern are reconstructed. Seller photo labels “50A” and “100A” are not verified electrical ratings.
+Evidence comes from the two [supplied AliExpress references](https://www.aliexpress.com/item/4001315701627.html) ([second listing](https://www.aliexpress.com/item/4000167641521.html)) and the user's product photographs. The pages could not be retrieved during this update, and the association of each photographed execution with either listing is unconfirmed. The original photographs are held separately. Their names and SHA-256 fingerprints are recorded in [clip-evidence.json](lib/clip-evidence.json), and no verified public copies are available. The dimensioned single clips are labelled **source dimensions**. The six-way block is labelled **envelope** because its board and mounting pattern are reconstructed. Seller photo labels “50A” and “100A” are not verified electrical ratings.
 
 ## Downward-contact clip executions
 
@@ -67,7 +67,7 @@ The paired underside holes are 9.6 mm apart across X. Their 3.2 mm modeled diame
 
 The tab is a continuous 7 × 1.6 mm brass blade with an estimated 14 mm projection below the clip mounting plane and a hole centred 9 mm below it. Its exact projection, section and exit position are not supplied dimensions. The clip has a real through slot around this blade. On the six-way board, each blade passes through a separate 8 × 3 mm opening; the board bottom is Z = 0, clip bases are Z = 3 mm, and contact tips reach Z = -11 mm. Allow access below the board when placing this execution in a project. These positions define the reference model and must be checked against the ordered hardware.
 
-Original new photographs are retained as `bottom-tab-dimensions.png` and `bottom-tab-clip.png` alongside the earlier evidence. Contacts are independent and no wires are included.
+The supplied `bottom-tab-dimensions.png` and `bottom-tab-clip.png` are identified by name and hash alongside the earlier evidence. Contacts are independent and no wires are included.
 
 ## Housing reconstruction
 

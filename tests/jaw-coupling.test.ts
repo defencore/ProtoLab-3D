@@ -152,7 +152,8 @@ test('LF offers the exact Clamp and Thimble bore lists and independent Other hol
   for (const preset of presets) {
     for (const state of part.states!)
       assert.deepEqual(validateParameters(part, preset.parameters, state.id), [], preset.id);
-    assert.equal(preset.catalog!.sourceUrl, 'references/jaw-coupling/lf-d14-l22-drawing.png');
+    assert.equal(preset.catalog!.sourceUrl, '');
+    assert.match(preset.catalog!.sourceName, /supplied LF dimensional drawing/);
     const oversize =
       Math.max(Number(preset.parameters.boreA), Number(preset.parameters.boreB)) > 6.5;
     assert.equal(preset.catalog!.verifiedParameters.includes('outerDiameter'), !oversize);

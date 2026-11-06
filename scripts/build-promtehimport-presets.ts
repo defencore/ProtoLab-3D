@@ -1,5 +1,7 @@
 /** Adapt the complete cached supplier inventory into validated, offline model presets. */
 import fs from 'node:fs';
+import path from 'node:path';
+import { parseArgs } from 'node:util';
 import { Box3, Vector3 } from 'three';
 import { parts } from '../src/parts';
 import type { Parameters, PartDefinition, Preset } from '../src/core/types';
@@ -50,7 +52,20 @@ interface Result {
   evidence?: Record<string, Evidence | { value: string; source: string }>;
   reconciliation?: SourceReconciliation;
 }
-const input = process.argv[2] ?? 'data/promtehimport-inventory.json';
+const { positionals, values } = parseArgs({
+  allowPositionals: true,
+  options: {
+    report: { type: 'string', default: 'test-results/catalog/promtehimport-import-report.json' },
+  },
+});
+if (positionals.length !== 1)
+  throw new Error(
+    'Usage: node --import tsx scripts/build-promtehimport-presets.ts <inventory.json> [--report <report.json>]',
+  );
+const [input] = positionals;
+const reportPath = values.report;
+if (path.resolve(input) === path.resolve(reportPath))
+  throw new Error('Choose a report path separate from the supplier inventory.');
 const inventory: Inventory = JSON.parse(fs.readFileSync(input, 'utf8'));
 const modelMap = new Map(parts.map((part) => [part.id, part]));
 const generated: Record<string, Preset[]> = {};
@@ -890,6 +905,7 @@ for (const product of Object.values(inventory.products)) {
             .join(' × ')} mm envelope`,
       parameters,
       catalog: {
+        ...(product.name?.trim() ? { name: product.name } : {}),
         designation: name,
         manufacturer,
         sourceName: 'Promtehimport',
@@ -994,7 +1010,16 @@ const report = {
   unsupportedGroups,
   results,
 };
-fs.writeFileSync('data/promtehimport-import-report.json', sourceJson(report));
+const exclusionCounts = new Map<string, number>();
+for (const { status, reason } of results)
+  if (status !== 'imported' && reason)
+    exclusionCounts.set(reason, (exclusionCounts.get(reason) ?? 0) + 1);
+const exclusionReasons = [...exclusionCounts]
+  .sort(([, a], [, b]) => b - a)
+  .slice(0, 12)
+  .map(([reason, count]) => ({ reason, count }));
+fs.mkdirSync(path.dirname(reportPath), { recursive: true });
+fs.writeFileSync(reportPath, sourceJson(report));
 fs.writeFileSync(
   'src/catalog/generated/promtehimport-coverage.json',
   JSON.stringify({
@@ -1007,6 +1032,7 @@ fs.writeFileSync(
     byModel: report.byModel,
     categories: categoryCoverage,
     unsupportedGroups,
+    exclusionReasons,
   }),
 );
 console.log(

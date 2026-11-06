@@ -14,9 +14,9 @@ Pneumatic disks use an axial rod bore and separate circular-section O-rings. The
 
 ## Reference evidence
 
-Eight presets transcribe nominal 42, 47, 48, 51, 65, 70, 80 and 90 mm listing options from `references/piston-compressor-sizes.png`. `variant: compressor` records the explicitly named product family. `nominalBore` is the only source-verified dimensional field, as a nominal listing label used for the layout. Catalog choices include the family so a pneumatic disk cannot qualify as a compressor catalog match merely by sharing its diameter. Switch to **Custom dimensions** to choose engine or pneumatic construction. The source does not establish a measured cylinder bore or running skirt diameter. All heights, clearance values, bosses, groove sections and pin dimensions are editable prototype estimates scaled from the default 65 mm example.
+Eight presets transcribe nominal 42, 47, 48, 51, 65, 70, 80 and 90 mm listing options from the supplied compressor size chart. `variant: compressor` records the explicitly named product family. `nominalBore` is the only source-verified dimensional field, as a nominal listing label used for the layout. Catalog choices include the family so a pneumatic disk cannot qualify as a compressor catalog match merely by sharing its diameter. Switch to **Custom dimensions** to choose engine or pneumatic construction. The source does not establish a measured cylinder bore or running skirt diameter. All heights, clearance values, bosses, groove sections and pin dimensions are editable prototype estimates scaled from the default 65 mm example.
 
-`references/piston-rod-exploded.png` supplies assembly anatomy without dimensions. The dished engine and pneumatic presets are unsourced prototype examples. No production alloy, tolerance, thermal growth, pressure rating, oil-drain drilling or sealing performance is inferred.
+The supplied exploded piston and rod image shows assembly anatomy without dimensions. The dished engine and pneumatic presets are unsourced prototype examples. No production alloy, tolerance, thermal growth, pressure rating, oil-drain drilling or sealing performance is inferred.
 
 ## Checks
 

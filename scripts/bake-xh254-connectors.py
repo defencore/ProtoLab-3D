@@ -18,15 +18,10 @@ import struct
 import sys
 import zlib
 
-sys.path.insert(0, '/Applications/FreeCAD.app/Contents/Resources/lib')
-import FreeCAD as App
-import MeshPart
-import Part
-
 ROOT = Path(__file__).resolve().parents[1]
 PACKAGE = ROOT / 'src/parts/signal-connector'
-HEADER_SOURCE = PACKAGE / 'lib/reference-images/xh254-pitch-reference.png'
-MATE_SOURCE = PACKAGE / 'lib/reference-images/xh254-pair-reference.png'
+HEADER_SOURCE = ('xh254-pitch-reference.png', '020cc77660872cc18ddd5664bbd46a4e26ce073ef1e3b708688bf89be151a6a3')
+MATE_SOURCE = ('xh254-pair-reference.png', '3d3262d1b5c14ec270db0d7ad7887f486d05ba018f571867883821a988474da6')
 STYLE_URL = 'https://www.hanbodianzi.com/shows/103/41.html'
 
 
@@ -123,7 +118,7 @@ def bounds(shape):
 
 
 def bake(id, pieces, source, url):
-    sha = hashlib.sha256(source.read_bytes()).hexdigest()
+    source_file, sha = source
     components = []
     for i, (label, solid, color) in enumerate(pieces):
         assert solid.isValid() and solid.isClosed() and len(solid.Solids) == 1 and solid.Volume > 0, (id, label)
@@ -148,7 +143,7 @@ def bake(id, pieces, source, url):
                                vertices=b64(points), triangles=b64(indices),
                                vertexCount=len(vertices), triangleCount=len(triangles)))
     shape = Part.makeCompound([piece[1] for piece in pieces])
-    return dict(id=id, sourceFile=source.name, sourceUrl=url, sourceSha256=sha,
+    return dict(id=id, sourceFile=source_file, sourceUrl=url, sourceSha256=sha,
                 origin='Authored photo reconstruction with user-specified nominal 2.54 mm pitch. PCB Z=0; pin 1 X0/Y0; row -Y; polarization guides +X. Every remaining dimension needs delivered-pair verification. Not JST 2.50 mm or manufacturer CAD.',
                 sourceKind='Authored user-photo reconstruction / nominal 2.54 mm',
                 brepCompression='zlib', linearDeflection=.025,
@@ -158,10 +153,22 @@ def bake(id, pieces, source, url):
 
 
 parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--header-photo', type=Path, required=True,
+                    help='Path to the original pinned header photo stored outside the repository.')
+parser.add_argument('--mate-photo', type=Path, required=True,
+                    help='Path to the original pinned mating-housing photo stored outside the repository.')
 parser.add_argument('--right-angle-only', action='store_true',
                     help='Bake only the new side-facing variants; preserve straight assets.')
 args = parser.parse_args()
-assert HEADER_SOURCE.exists() and MATE_SOURCE.exists(), 'Both pinned user reference photos are required.'
+for photo, (source_file, expected_sha) in [(args.header_photo, HEADER_SOURCE), (args.mate_photo, MATE_SOURCE)]:
+    if not photo.is_file() or hashlib.sha256(photo.read_bytes()).hexdigest() != expected_sha:
+        parser.error(f'{photo} does not match the pinned source photo {source_file}.')
+
+sys.path.insert(0, '/Applications/FreeCAD.app/Contents/Resources/lib')
+import FreeCAD as App
+import MeshPart
+import Part
+
 evidence_path = PACKAGE / 'lib/color-evidence.json'
 evidence = json.loads(evidence_path.read_text())
 mate_path = PACKAGE / 'lib/xh254-mating.json'

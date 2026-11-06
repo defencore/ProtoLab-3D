@@ -2,14 +2,15 @@
   "kind": "Authored user-photo reconstruction",
   "nominalPitchMm": 2.54,
   "pitchSource": "Explicit user request and attached XH2.54 label; delivered part not measured.",
+  "referenceAvailability": "Original supplied photographs are held separately. No verified public URL is available for these exact images.",
   "referenceImages": [
     {
-      "file": "lib/reference-images/xh254-pair-reference.png",
+      "file": "xh254-pair-reference.png",
       "sha256": "3d3262d1b5c14ec270db0d7ad7887f486d05ba018f571867883821a988474da6",
       "kind": "User supplied reference image"
     },
     {
-      "file": "lib/reference-images/xh254-pitch-reference.png",
+      "file": "xh254-pitch-reference.png",
       "sha256": "020cc77660872cc18ddd5664bbd46a4e26ce073ef1e3b708688bf89be151a6a3",
       "kind": "User supplied reference image"
     }

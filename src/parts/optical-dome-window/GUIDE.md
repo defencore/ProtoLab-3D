@@ -1,6 +1,6 @@
 # Flanged optical dome window
 
-The [user-supplied image](../../../public/references/nose-optical-dome-user-reference.png) specifies a 2.3 cm outside flange, 1.7 cm dome diameter and 0.6 cm overall height. The preset converts those dimensions to 23, 17 and 6 mm. No supplier model is established.
+The user-supplied dimensioned image specifies a 2.3 cm outside flange, 1.7 cm dome diameter and 0.6 cm overall height. The preset converts those dimensions to 23, 17 and 6 mm. No supplier model is established.
 
 ## Coordinates and construction
 

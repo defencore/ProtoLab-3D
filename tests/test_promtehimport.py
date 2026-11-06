@@ -1,8 +1,12 @@
 """Regression checks for supplier retrieval boundaries and mixed search excerpts."""
+from contextlib import redirect_stderr, redirect_stdout
 import importlib.util
+import io
 import json
 from pathlib import Path
+import tempfile
 import unittest
+from unittest.mock import patch
 
 
 def load_script(name):
@@ -18,6 +22,22 @@ fallback = load_script('cache-promtehimport-web')
 
 
 class SourceParsingTests(unittest.TestCase):
+    def test_cache_only_with_missing_pages_never_fetches_or_writes_an_empty_inventory(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            inventory = root / 'inventory.json'
+            args = ['import-promtehimport', '--cache-only', '--cache', str(root / 'cache'),
+                    '--output', str(inventory)]
+            errors = io.StringIO()
+            with patch('sys.argv', args), patch.object(source, 'fetch') as fetch, \
+                 redirect_stderr(errors), redirect_stdout(io.StringIO()):
+                with self.assertRaises(SystemExit) as failure:
+                    source.main()
+            self.assertEqual(failure.exception.code, 2)
+            self.assertIn('complete category inventory or cached category pages', errors.getvalue())
+            fetch.assert_not_called()
+            self.assertFalse(inventory.exists())
+
     def test_category_count_ignores_cart_count(self):
         page = '<span>\u0422\u043e\u0432\u0430\u0440\u0456\u0432: 0</span><strong>\u0422\u043e\u0432\u0430\u0440\u0456\u0432: 75</strong>'
         page += '<a href="?pageNumber=4">4</a><a href="/offer/bearing-o1/">Item</a>'

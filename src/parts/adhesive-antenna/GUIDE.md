@@ -29,14 +29,11 @@ The catalog records that current company name while retaining the original PDF
 footer identity. The website's 4G title does not establish bands beyond the
 two stated ranges or interchangeability with another JCG108 variant.
 
-The original PDF is linked remotely above rather than bundled. The reviewed
-source copy is retained locally under ignored
-`test-results/adhesive-antenna/source/jinchang-jcg108.pdf`. The dimension
-illustration retains its manufacturer markings:
+The SHA-256 checksums identify the manufacturer files reviewed for this model.
 
 - Manufacturer PDF SHA-256
   `71e07e7e341c0bd8baa98326bab27011891bca7b70d7c0f7dd1bdfd1d31f0cff`.
-- [Manufacturer dimension drawing](../../../public/references/antennas/jinchang-jcg108.png),
+- [Manufacturer dimension drawing](https://iororwxhqioplk5p.ldycdn.com/cloud/qmBpmKjiRliSkjormnlmj/JCG108.png),
   SHA-256 `95294ea110af143ee015e42f81d1a6b11137d8eb866ba58ebd2f185bdc5ec7b9`.
 
 The complete antenna, attached RG174 cable and fitted connector form **one

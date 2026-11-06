@@ -9,11 +9,18 @@ import { artifactIssues, checkRepositoryArtifacts } from '../scripts/check-repos
 // @ts-expect-error The dependency-free repository helper has no declaration file.
 import { checkRepository as checkRepositoryLanguage } from '../scripts/check-repository-language.mjs';
 
-test('artifact policy rejects CAD exports and legacy output folders regardless of extension case', () => {
+test('artifact policy rejects CAD exports, reference attachments and legacy output folders', () => {
   for (const file of [
     'data/export.STEP',
     'src/parts/example/test.FCStd',
     'public/references/print-kit.zip',
+    'public/references',
+    'docs/illustration.SVG',
+    'docs/vendor-drawing.PDF',
+    'src/parts/example/lib/reference-images/drawing.png',
+    'data/promtehimport-inventory.json',
+    'data/promtehimport-import-report.json',
+    'src/catalog/data/gvyntok-fasteners.json',
     'docs/sample.stl',
     'sample.GCODE.3MF',
     '.catalog-snapshot-backup-example/presets.json',
@@ -31,15 +38,13 @@ test('artifact policy rejects CAD exports and legacy output folders regardless o
 test('artifact policy preserves required source assets and authored recovery utilities', () => {
   for (const file of [
     'src/parts/example/lib/native/model.json',
-    'src/parts/example/lib/reference-images/drawing.png',
     'src/catalog/data/source.json',
-    'data/promtehimport-inventory.json',
-    'data/promtehimport-import-report.json',
     'data/library-expansion.json',
     'docs/recovery/FixTechDrawLines.FCMacro',
     'docs/recovery/SelectedPartDrawing.FCMacro',
     'scripts/audit-model.ts',
     'test-results/assembly.step',
+    'test-results/preview.png',
   ])
     assert.deepEqual(artifactIssues(file), [], file);
 });
@@ -51,6 +56,7 @@ test('filesystem inspection detects ignored outputs while excluding build and de
     '.gitignore',
     'data/hidden-export.step',
     'result.json',
+    'docs/ignored-image.jpg',
     '.catalog-snapshot-backup-example/presets.json',
     'src/parts/example/lib/native/model.json',
     'test-results/valid-output.step',
@@ -62,9 +68,10 @@ test('filesystem inspection detects ignored outputs while excluding build and de
     await fs.writeFile(path.join(root, file), file === '.gitignore' ? '*' : 'fixture');
   }
   const { issues } = checkRepositoryArtifacts(root, { trackedFiles: [] });
-  assert.equal(issues.length, 3, issues.join('\n'));
+  assert.equal(issues.length, 4, issues.join('\n'));
   assert.ok(issues.some((issue: string) => issue.startsWith('data/')));
   assert.ok(issues.some((issue: string) => issue.startsWith('result.json:')));
+  assert.ok(issues.some((issue: string) => issue.startsWith('docs/ignored-image.jpg:')));
   assert.ok(issues.some((issue: string) => issue.startsWith('.catalog-snapshot-backup-')));
 });
 
@@ -76,6 +83,14 @@ test('force-tracked output files are rejected even inside an ignored output dire
   });
   assert.equal(issues.length, 2);
   assert.ok(issues.every((issue: string) => issue.includes('must remain untracked')));
+});
+
+test('the Git index rejects a reference attachment even when the working copy is absent', async (context) => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'protolab-tracked-references-'));
+  context.after(() => fs.rm(root, { recursive: true, force: true }));
+  const { issues } = checkRepositoryArtifacts(root, { trackedFiles: ['docs/drawing.PDF'] });
+  assert.equal(issues.length, 1);
+  assert.match(issues[0], /keep reference attachments/);
 });
 
 test('generated output is excluded from prose scans while the artifact check rejects force-tracking', async (context) => {

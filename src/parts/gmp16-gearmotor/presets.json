@@ -11,7 +11,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 4:1 · 12 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -20,7 +20,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 4,
@@ -32,7 +32,7 @@
         "shaftDiameter": 3,
         "shaftExtension": 11.6,
         "noLoadSpeed": 2700,
-        "ratedSpeed": 2000,
+        "ratedSpeed": 2200,
         "ratedTorque": 0.1
       },
       "attributeConditions": {
@@ -124,7 +124,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 4:1 · 24 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -133,7 +133,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 4,
@@ -237,7 +237,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 4.75:1 · 12 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -246,7 +246,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 4.75,
@@ -343,7 +343,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 4.75:1 · 24 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -352,7 +352,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 4.75,
@@ -449,7 +449,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 16:1 · 12 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -458,7 +458,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 16,
@@ -562,7 +562,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 16:1 · 24 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -571,7 +571,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 16,
@@ -675,7 +675,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 19:1 · 12 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -684,7 +684,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 19,
@@ -781,7 +781,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 19:1 · 24 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -790,7 +790,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 19,
@@ -887,7 +887,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 22.6:1 · 12 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -896,7 +896,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 22.6,
@@ -1000,7 +1000,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 22.6:1 · 24 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -1009,7 +1009,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 22.6,
@@ -1113,7 +1113,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 64:1 · 12 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -1122,7 +1122,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 64,
@@ -1226,7 +1226,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 64:1 · 24 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -1235,7 +1235,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 64,
@@ -1339,7 +1339,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 76:1 · 12 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -1348,7 +1348,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 76,
@@ -1445,7 +1445,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 76:1 · 24 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -1454,7 +1454,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 76,
@@ -1551,7 +1551,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 90:1 · 12 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -1560,7 +1560,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 90,
@@ -1657,7 +1657,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 90:1 · 24 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -1666,7 +1666,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 90,
@@ -1763,7 +1763,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 107:1 · 12 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": ["107-11.6D7"],
@@ -1772,7 +1772,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 107,
@@ -1876,7 +1876,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 107:1 · 24 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": ["107-11.6D7"],
@@ -1885,7 +1885,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 107,
@@ -1989,7 +1989,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 172:1 · 12 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -1998,7 +1998,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 172,
@@ -2095,7 +2095,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 172:1 · 24 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -2104,7 +2104,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 172,
@@ -2201,7 +2201,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 224:1 · 12 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -2210,7 +2210,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 224,
@@ -2307,7 +2307,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 224:1 · 24 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -2316,7 +2316,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 224,
@@ -2413,7 +2413,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 256:1 · 12 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -2422,7 +2422,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 256,
@@ -2526,7 +2526,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 256:1 · 24 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -2535,7 +2535,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 256,
@@ -2639,7 +2639,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 304:1 · 12 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -2648,7 +2648,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 304,
@@ -2745,7 +2745,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 304:1 · 24 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -2754,7 +2754,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 304,
@@ -2851,7 +2851,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 361:1 · 12 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": ["361-11.6D7"],
@@ -2860,7 +2860,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 361,
@@ -2964,7 +2964,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 361:1 · 24 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": ["361-11.6D7"],
@@ -2973,7 +2973,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 361,
@@ -3077,7 +3077,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 428.7:1 · 12 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -3086,7 +3086,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 428.7,
@@ -3183,7 +3183,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 428.7:1 · 24 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -3192,7 +3192,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 428.7,
@@ -3289,7 +3289,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 509:1 · 12 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -3298,7 +3298,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 509,
@@ -3395,7 +3395,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 509:1 · 24 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -3404,7 +3404,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 509,
@@ -3501,7 +3501,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 1024:1 · 12 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -3510,7 +3510,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 1024,
@@ -3614,7 +3614,7 @@
     "catalog": {
       "designation": "GMP16T-TEC1636 · 1024:1 · 24 V · 11.6D7 shaft",
       "sourceName": "Supplied GMP16T-TEC1636 dimensional and performance table",
-      "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png",
+      "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf",
       "sourceKind": "attachment",
       "verifiedParameters": ["model"],
       "productCodes": [],
@@ -3623,7 +3623,7 @@
         "kind": "source-dimensions",
         "summary": "Ø16 motor/gearbox; 36 mm motor; stage-dependent gearbox; Ø3 output, 11.6 mm extension, 7 mm D-flat, 2.8 mm flat-to-round height; Ø6 × 2.3 mm pilot; two M2 holes at 10.5 mm pitch.",
         "limitations": "Nominal installation geometry; gearbox length tolerance ±0.5 mm. Wall thicknesses, thread depths, rear cable opening and cables are illustrative; no production gear train or verified supplier interchangeability.",
-        "sourceUrl": "references/gmp16-gearmotor/tec1636-dimensions.png"
+        "sourceUrl": "https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf"
       },
       "attributes": {
         "ratio": 1024,

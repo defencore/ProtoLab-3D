@@ -20,7 +20,7 @@ test('the authored precision machine has its own name and stable physical identi
   assert.ok(
     machine.presets.every((preset) => !/yastreb/i.test(preset.name + ' ' + preset.description)),
   );
-  assert.ok(machine.sources!.some((source) => source.url.includes('cncmachines.com.ua')));
+  assert.ok(machine.sources!.some((source) => source.url?.includes('cncmachines.com.ua')));
 });
 
 test('projects saved under the former machine label round trip without changing physical IDs, configurations or placements', () => {

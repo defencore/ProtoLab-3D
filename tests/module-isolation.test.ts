@@ -16,12 +16,6 @@ test('every library part is a complete isolated package discovered in display or
     parts.map((part) => part.id),
     'Run parts:sync when changing the package inventory.',
   );
-  for (const module of discovered) {
-    for (const reference of module.references) {
-      const file = path.join(repository, 'public', reference);
-      assert.ok((await fs.stat(file)).isFile(), `${module.id}: missing handoff asset ${reference}`);
-    }
-  }
 });
 
 test('package preset files are the complete runtime catalog without external enrichment', async () => {
@@ -29,6 +23,12 @@ test('package preset files are the complete runtime catalog without external enr
     const file = path.join(repository, 'src/parts', part.id, 'presets.json');
     const presets = JSON.parse(await fs.readFile(file, 'utf8'));
     assert.deepEqual(part.presets, presets, `${part.id}: runtime presets must be owned locally`);
+    for (const preset of part.presets) {
+      const catalog = preset.catalog;
+      if (!catalog) continue;
+      for (const url of [catalog.sourceUrl, ...(catalog.alternateSourceUrls ?? [])])
+        if (url) assert.match(url, /^https?:\/\/[^/]+/, `${part.id}/${preset.id}`);
+    }
   }
 });
 

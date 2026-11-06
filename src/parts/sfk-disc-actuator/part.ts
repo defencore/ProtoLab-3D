@@ -190,18 +190,18 @@ const part: PartDefinition = {
   notes:
     'A separate three-disc frame for the fixed SFK0825 rotary mechanism. The complete drive is offset 13 mm upward from the disc centres, with the disc rims and column pattern unchanged. Three D68 steel discs and two tabbed output cheeks use 4 mm sheet and through-cut profiles. Bearing holes are laser-cut at 12.8 mm and finished to the configured 13.02 mm installation envelope; assign the production fit before cutting. The output bearing axis is centred at X13.4 between the discs; the nut neutral centre is X8.5. Three DREMEC 115x50 female/female and three 215x55 female/male brass standoffs set exact 50/55 mm clear gaps. No tapped sheet holes, housing pockets or bent tabs are required. Four F686-2RS bearings, a clocked nut cover, closed radial forks, narrow capped shaft and ±20° tangent motion remain. The current machined-support and previous slotted-crank families remain separate.',
   sources: [
-    { label: 'Supplied KAIYADE SFK nut table', url: 'references/kaiyade-sfk/dimension-table.png' },
+    { label: 'Supplied KAIYADE SFK nut table', url: '' },
     {
       label: 'Supplied 0802 EK6/EF6 end-machining reference',
-      url: 'references/kaiyade-sfk/ek6-ef6-0802.png',
+      url: '',
     },
     {
       label: 'Supplied LF D14 L22 coupling drawing',
-      url: 'references/jaw-coupling/lf-d14-l22-drawing.png',
+      url: '',
     },
     {
       label: 'Supplied GMP16T-TEC1636 data',
-      url: 'references/gmp16-gearmotor/tec1636-dimensions.png',
+      url: 'https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf',
     },
   ],
   fabricationFiles(p) {

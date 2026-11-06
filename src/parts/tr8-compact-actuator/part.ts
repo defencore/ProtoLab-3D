@@ -74,7 +74,7 @@ export function actuatorPieces(p: Parameters, state = 'assembled'): ConfiguredPi
         component.procurement = {
           designation: 'TR8×8(P2) RH H-flange nut · 22×11×15',
           manufacturer: 'User-supplied nut drawing',
-          source: 'references/tr8-h-nut/h-nut-drawing.png',
+          source: 'User-supplied TR8 H-flange nut drawing (public URL unavailable)',
         };
         delete component.manufacturing;
       } else
@@ -218,9 +218,9 @@ const part: PartDefinition = {
   notes:
     'Separate compact version; previous SFK assemblies remain unchanged. TR8×8(P2) has four starts, 2 mm axial pitch and 8 mm lead. The 50 mm turned screw retains a 26 mm threaded section with clean Ø5 bearing journals, four retaining-ring grooves and a Ø4 coupling stub. It is made from the specified 250 mm threaded stock. Nut dimensions follow the supplied 22×11×15 H-flange drawing. Axis spacing is 10 mm; nut travel is 10*tan(output angle), giving 7.2794 mm total stroke. Output shaft remains Ø6 with a short capped end and a projecting D-flat end. Main discs are Ø56×3; output cheeks use 4 mm steel. Laser files separate 3 and 4 mm stock. Four bearing pilots require finishing to the assigned production fit. Full mode models actual four-start trapezoidal flanks; no mesh conversion is used in FreeCAD.',
   sources: [
-    { label: 'Supplied TR8 H-flange nut drawing', url: 'references/tr8-h-nut/h-nut-drawing.png' },
-    { label: 'Supplied H-flange brass nut photo', url: 'references/tr8-h-nut/h-nut-photo.png' },
-    { label: 'Supplied 250 mm TR8 threaded stock', url: 'references/tr8-h-nut/tr8-stock.png' },
+    { label: 'Supplied TR8 H-flange nut drawing', url: '' },
+    { label: 'Supplied H-flange brass nut photo', url: '' },
+    { label: 'Supplied 250 mm TR8 threaded stock', url: '' },
     { label: 'Multi-start thread lead and pitch', url: 'https://blog.igus.eu/multi-start-thread/' },
   ],
   fabricationFiles(p) {

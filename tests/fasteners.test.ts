@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import test from 'node:test';
 import { geometrySamples } from './catalog-samples';
 import * as THREE from 'three';
@@ -7,7 +8,8 @@ import setScrew from '../src/parts/set-screw/part';
 import wingScrew from '../src/parts/wing-screw/part';
 import swingEyeBolt from '../src/parts/swing-eye-bolt/part';
 import liftingEyeBolt from '../src/parts/lifting-eye-bolt/part';
-import sourceInventory from '../src/catalog/data/gvyntok-fasteners.json';
+import coverage from '../src/catalog/data/gvyntok-fasteners-coverage.json';
+import sourceData from '../src/catalog/data/gvyntok-fasteners-runtime.json';
 import { supplierFasteners, supplierFamily } from '../src/catalog/fasteners';
 import { fastenerValues } from '../src/core/hardware/fasteners';
 import { validateParameters } from '../src/core/validation';
@@ -225,22 +227,20 @@ test('the requested M2.5 × 8 grub screw has a 0.45 mm pitch, 1.3 mm socket and 
   assert.equal(Number(p.tipLength) * 2, p.diameter);
 });
 
-test('the complete supplier inventory is retained and every supported SKU is mapped', () => {
-  assert.equal(sourceInventory.categories.length, 55);
-  assert.equal(sourceInventory.products.length, 5901);
+test('the compact supplier projection retains every audited row and maps all supported SKUs', () => {
+  assert.equal(coverage.categories, 55);
+  assert.equal(sourceData.categories.length, coverage.categories);
+  assert.equal(coverage.visibleProducts, 5901);
+  assert.equal(coverage.importedProducts, coverage.visibleProducts);
+  assert.equal(supplierFasteners.length, coverage.importedProducts);
+  assert.deepEqual(coverage.errors, []);
+  const rows = supplierFasteners.map(({ sku, url, categoryUrl, standard, diameter, length, pitch }) =>
+    [sku, url, sourceData.categories.indexOf(categoryUrl), standard, diameter, length, pitch],
+  );
+  // SHA-256 of source inventory rows projected onto the compact runtime tuple fields.
   assert.equal(
-    sourceInventory.categories.reduce((sum, category) => sum + category.importedCount, 0),
-    5901,
-  );
-  assert.ok(
-    sourceInventory.categories.every(
-      (category) =>
-        category.errors.length === 0 && category.visibleCount === category.importedCount,
-    ),
-  );
-  assert.deepEqual(
-    supplierFasteners.map((row) => row.sku),
-    sourceInventory.products.map((row) => row.sku),
+    createHash('sha256').update(JSON.stringify(rows)).digest('hex'),
+    '5097de34e2d05566e9416311fac29c2bf6a27d32ae7a7bc3004fe6af2fdc1d62',
   );
   const parts = [bolt, setScrew, wingScrew, swingEyeBolt, liftingEyeBolt];
   const represented = new Set(

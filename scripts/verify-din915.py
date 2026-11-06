@@ -64,7 +64,9 @@ with tempfile.TemporaryDirectory(prefix='protolab-din915-qa-') as folder:
                 z = p['length']-p['driveDepth']/2
                 assert not inside(p['driveWidth']/2-.005,a,z), 'Hex socket too narrow'
                 assert inside(p['driveWidth']/2+.005,a,z), 'Hex socket too wide'
-            assert obj.CatalogSource == 'references/din915-dimensions.png', 'Reference source missing'
+            evidence = json.loads(obj.CatalogDefinition)
+            assert evidence['sourceName'] == 'User-supplied DIN 915 black steel reference'
+            assert evidence['sourceKind'] == 'attachment' and not obj.CatalogSource
             assert 'length' not in json.loads(obj.CatalogDimensions), 'Prototype length incorrectly verified'
             step = str(Path(folder)/(str(index)+'.step'))
             Part.export([obj],step)

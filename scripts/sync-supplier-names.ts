@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { parseArgs } from 'node:util';
 import ts from 'typescript';
 import type { Preset } from '../src/core/types';
 
@@ -16,12 +17,10 @@ export interface SupplierNameIndex {
 
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const snapshots = [
-  'src/catalog/data/gvyntok-fasteners.json',
   'src/catalog/data/gvyntok-gajki.json',
   'src/catalog/data/gvyntok-shajby-koltsa.json',
   'src/catalog/data/gvyntok-shplinty-i-strubtsiny.json',
   'src/catalog/data/gvyntok-shpilki.json',
-  'data/promtehimport-inventory.json',
 ];
 
 function host(url: string): string {
@@ -61,23 +60,30 @@ export function supplierNameForCatalog(
   return candidates.size === 1 ? [...candidates][0] : undefined;
 }
 
-export function loadSupplierNameIndex(root = repositoryRoot): SupplierNameIndex {
+export function loadSupplierNameIndex(
+  root = repositoryRoot,
+  inventories: { gvyntokFasteners?: string; promtehimport?: string } = {},
+): SupplierNameIndex {
   const records: SupplierNameRecord[] = [];
-  for (const relative of snapshots) {
-    const source = JSON.parse(readFileSync(path.join(root, relative), 'utf8')) as {
-      products:
-        | Array<{ url: string; sourceTitle: string; sku?: string }>
-        | Record<string, { url: string; name: string; sku?: string }>;
+  const gvyntokInputs = snapshots.map((relative) => path.join(root, relative));
+  if (inventories.gvyntokFasteners) gvyntokInputs.push(inventories.gvyntokFasteners);
+  for (const input of gvyntokInputs) {
+    const source = JSON.parse(readFileSync(input, 'utf8')) as {
+      products: Array<{ url: string; sourceTitle: string; sku?: string }>;
     };
-    if (Array.isArray(source.products))
-      records.push(
-        ...source.products.map((product) => ({
-          url: product.url,
-          name: product.sourceTitle,
-          sku: product.sku,
-        })),
-      );
-    else records.push(...Object.values(source.products));
+    for (const { url, sourceTitle, sku } of source.products)
+      records.push({ url, name: sourceTitle, sku });
+  }
+  if (inventories.promtehimport) {
+    const source = JSON.parse(readFileSync(inventories.promtehimport, 'utf8')) as {
+      products: Record<string, SupplierNameRecord & { sourceUrl?: string; error?: string }>;
+    };
+    for (const product of Object.values(source.products)) {
+      if (product.error) continue;
+      records.push(product);
+      if (product.sourceUrl && product.sourceUrl !== product.url)
+        records.push({ ...product, url: product.sourceUrl });
+    }
   }
   return buildSupplierNameIndex(records);
 }
@@ -216,15 +222,20 @@ export function collectSupplierNameCoverage(
 }
 
 function main(): void {
-  const args = process.argv.slice(2);
-  if (
-    args.some((argument) => !['--write', '--check'].includes(argument)) ||
-    new Set(args).size !== args.length ||
-    args.length > 1
-  )
-    throw new Error('Usage: node --import tsx scripts/sync-supplier-names.ts [--write|--check]');
-  const index = loadSupplierNameIndex();
-  if (args.includes('--write')) {
+  const { values } = parseArgs({
+    options: {
+      write: { type: 'boolean' },
+      check: { type: 'boolean' },
+      'gvyntok-fastener-inventory': { type: 'string' },
+      'promtehimport-inventory': { type: 'string' },
+    },
+  });
+  if (values.write && values.check) throw new Error('Choose either --write or --check.');
+  const index = loadSupplierNameIndex(repositoryRoot, {
+    gvyntokFasteners: values['gvyntok-fastener-inventory'],
+    promtehimport: values['promtehimport-inventory'],
+  });
+  if (values.write) {
     let updated = 0,
       files = 0;
     for (const file of presetFiles(repositoryRoot)) {
@@ -238,7 +249,7 @@ function main(): void {
   }
   const report = collectSupplierNameCoverage(repositoryRoot, index);
   console.log(JSON.stringify(report, null, 2));
-  if (args.includes('--check') && report.pending) process.exitCode = 1;
+  if (values.check && report.pending) process.exitCode = 1;
 }
 
 if (process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href === import.meta.url)

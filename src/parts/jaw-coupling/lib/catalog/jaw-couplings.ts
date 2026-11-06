@@ -1,4 +1,4 @@
-export const jawCouplingReference = 'references/jaw-coupling/lf-d14-l22-drawing.png';
+export const jawCouplingReference = '';
 
 export const lfBorePairs: Record<'clamp' | 'thimble', [number, number][]> = {
   clamp: [

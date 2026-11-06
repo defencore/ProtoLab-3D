@@ -106,9 +106,10 @@ def import_catalog(cache):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--cache", type=Path, default=Path("/private/tmp/protolab-gvyntok-fasteners-cache"))
+    parser.add_argument("--output", type=Path, required=True, help="Path for the local inventory outside source directories.")
     args = parser.parse_args()
     data = import_catalog(args.cache)
-    target = ROOT / "src/catalog/data/gvyntok-fasteners.json"
+    target = args.output
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(json.dumps(data, ensure_ascii=True, separators=(",", ":")) + "\n")
     # Runtime rows omit the original-language evidence and repeated category URLs.

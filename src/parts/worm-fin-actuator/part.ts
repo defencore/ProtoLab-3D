@@ -184,18 +184,9 @@ const part: PartDefinition = {
   notes:
     'Two output bearings support the stepped sleeve on opposite sides of the sector. Their opposed outward flanges bear against housing shoulders; the sleeve shoulder, selected thrust shims and two shaft circlips close the assembled axial stack. The two worm bearings use the same opposed-flange arrangement, four shaft rings and thrust washers. No separate bearing clamp covers or cover screws are required. Set actual axial play with measured shims; groove clearance and bearing internal play are not preload. The removable fin platform, its pins and its screws are excluded. Two blind M3 holes remain in the sleeve shoulder. Four countersunk M3 screws and captive nuts join the two housing halves; two integral locating bosses align them. Tr8 pitch and lead never scale with bearing choice. The swept numerical tooth surface is a finishing reference for the laser blank, not a qualified hob/tool specification or load rating. Internal M3 features and the fixed captive-nut mating screw phases are declared; Full native CAD models their helices. The 0.04 mm radial assembly allowance is not a tap-drill size. Four starts do not establish self-locking; verify holding torque for the fin load.',
   sources: [
-    {
-      label: 'User · requested stepped sleeve and two output bearings',
-      url: 'references/worm-fin-actuator/reference-08-stepped-sleeve-section.png',
-    },
-    {
-      label: 'User · low-profile worm fin arrangement',
-      url: 'references/worm-fin-actuator/reference-07-fin-bearing-arrangement.png',
-    },
-    {
-      label: 'User · original sector and bearing detail',
-      url: 'references/worm-fin-actuator/reference-03-sector-detail.png',
-    },
+    { label: 'User-supplied section of the stepped sleeve and two output bearings' },
+    { label: 'User-supplied low-profile worm fin arrangement' },
+    { label: 'User-supplied sector and bearing detail' },
     {
       label: 'MakerStore · 8 mm, four-start, 8 mm lead, 2 mm pitch',
       url: 'https://makerstore.co.uk/products/8mm-metric-lead-screw-acme',

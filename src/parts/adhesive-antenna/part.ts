@@ -82,10 +82,6 @@ const part: PartDefinition = {
       label: 'Original JCG108 dimension drawing',
       url: 'https://iororwxhqioplk5p.ldycdn.com/cloud/qmBpmKjiRliSkjormnlmj/JCG108.png',
     },
-    {
-      label: 'Retained manufacturer dimension drawing',
-      url: 'references/antennas/jinchang-jcg108.png',
-    },
   ],
 };
 export default part;

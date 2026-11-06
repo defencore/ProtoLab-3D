@@ -1,6 +1,5 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { readFileSync } from 'node:fs';
 import { Box3, Mesh, Vector3 } from 'three';
 import ball from "../src/parts/ball-bearing/part";
 import cylindrical from "../src/parts/roller-bearing/part";
@@ -54,29 +53,9 @@ test('merged catalog excludes unresolved supplier dimensions and retains documen
   const presets = families
     .flatMap((part) => withSupplierPresets(part).presets)
     .filter((p) => p.catalog);
-  const report = JSON.parse(
-    readFileSync(new URL('../data/promtehimport-import-report.json', import.meta.url), 'utf8'),
-  ) as {
-    results: { url: string; partId?: string; status: string; reason?: string }[];
-  };
-  const familyIds = new Set(families.map((part) => part.id));
-  const rejected = report.results.filter(
-    (entry) =>
-      entry.partId &&
-      familyIds.has(entry.partId) &&
-      ['source-conflict', 'missing-dimensions', 'model-rejected'].includes(entry.status),
-  );
-  // These fixtures exercise missing total width and contradictory shaft diameters.
-  assert.ok(
-    rejected.some((entry) => entry.url.endsWith('-o1294/') && entry.reason === 'Missing width: T'),
-  );
-  assert.ok(
-    rejected.some(
-      (entry) => entry.url.endsWith('-o7041/') && entry.reason === 'Conflicting bore: 9 / 10',
-    ),
-  );
-  const importedUrls = new Set(presets.map((preset) => preset.catalog!.sourceUrl));
-  for (const entry of rejected) assert.equal(importedUrls.has(entry.url), false, entry.url);
+  // O1294 lacks total width T and O7041 has contradictory 9 and 10 mm bore dimensions.
+  for (const suffix of ['-o1294/', '-o7041/'])
+    assert.ok(!presets.some((preset) => preset.catalog!.sourceUrl.endsWith(suffix)), suffix);
 
   // Complete source pages and the NSK cross-reference resolved these former exclusions.
   for (const [suffix, dimensions] of [

@@ -16,7 +16,7 @@ test('RF pigtail retains its complete purchased identity and limits installation
   assert.equal(part.product?.supply, 'purchased');
   assert.equal(part.presets[0].catalog?.designation, '095-902-545-100');
   assert.match(part.notes ?? '', /Not manufacturer CAD/);
-  assert.ok(part.sources?.some((source) => source.url.endsWith('/4068032676/')));
+  assert.ok(part.sources?.some((source) => source.url?.endsWith('/4068032676/')));
 });
 
 test('RF pigtail preserves its outward datum and places hardware behind the panel', () => {

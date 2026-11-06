@@ -65,7 +65,7 @@ export function mechanismPieces(p: Parameters, angle: number): ConfiguredPiece[]
   const drive = quadDrive(travel);
   const nut = custom('lead-nut', 'TR8×8(P2) brass H-nut · clocked 90°', drive.nut, 0xc7a448);
   nut.component.supply = 'purchased'; delete nut.component.manufacturing;
-  nut.component.procurement = { designation: 'TR8×8(P2) RH H-flange nut · 22×11×15', manufacturer: 'User-supplied nut drawing', source: 'references/tr8-h-nut/h-nut-drawing.png' };
+  nut.component.procurement = { designation: 'TR8×8(P2) RH H-flange nut · 22×11×15', manufacturer: 'User-supplied nut drawing', source: 'User-supplied TR8 H-flange nut drawing (public URL unavailable)' };
   const result = [
     ...kept,
     custom('lead-screw', 'TR8×8(P2) screw · 52 mm finished · 28 mm working thread', drive.screw, 0x92a7b6), nut,

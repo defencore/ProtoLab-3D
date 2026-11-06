@@ -14,20 +14,20 @@ const authoredMacros = new Set([
   'docs/recovery/FixTechDrawLines.FCMacro',
   'docs/recovery/SelectedPartDrawing.FCMacro',
 ]);
-const sourceInputs = new Set([
-  'data/promtehimport-inventory.json',
-  'data/promtehimport-import-report.json',
-  'data/library-expansion.json',
-]);
+const sourceInputs = new Set(['data/library-expansion.json']);
 const cadOutput =
-  /\.(?:stl|step|stp|fcstd\d*|fcbak|fcmacro|brep|brp|obj|ply|igs|iges|3mf|amf|gcode|dxf|zip)$/i;
+  /\.(?:stl|step|stp|fcstd\d*|fcbak|fcmacro|brep|brp|obj|ply|igs|iges|3mf|amf|gcode|dxf)$/i;
+const referenceAttachment =
+  /\.(?:apng|avif|bmp|gif|heic|heif|ico|jfif|jpe?g|png|svgz?|tiff?|webp|pdf|docx?|xlsx?|pptx?|mp[34]|mov|mkv|webm|wav|zip|7z|rar|tar|tgz|gz|bz2|xz)$/i;
 
-/** Source CAD is represented by reviewed native JSON, images and authored code. */
-export function artifactIssues(file) {
+/** Source CAD is represented by reviewed native JSON and authored code. */
+export function artifactIssues(file, { allowGeneratedDirectories = true } = {}) {
   const normalized = file.replaceAll('\\', '/').replace(/^\.\//, '').replace(/\/$/, '');
   const segments = normalized.split('/');
-  if (segments[0] === 'test-results') return [];
-  if (segments.some((part) => excludedDirectories.has(part))) return [];
+  if (segments.some((part) => excludedDirectories.has(part)))
+    return allowGeneratedDirectories
+      ? []
+      : [`${normalized}: generated output and cache directories must remain outside packages`];
   if (
     segments.some((part) =>
       /^(?:\.part-module-backups|\.part-module-staging-.*|\.catalog-snapshot-backup-.*)$/.test(
@@ -42,18 +42,27 @@ export function artifactIssues(file) {
     return [`${normalized}: keep generated caches, logs and backup files under test-results/`];
   if (normalized === 'result.json')
     return [`${normalized}: keep slicer results under test-results/`];
+  if (normalized === 'src/catalog/data/gvyntok-fasteners.json')
+    return [`${normalized}: keep the raw supplier inventory outside source directories`];
+  if (
+    referenceAttachment.test(normalized) ||
+    segments.some((part) => /^(?:references|reference-images)$/i.test(part))
+  )
+    return [
+      `${normalized}: keep reference attachments and media outside the repository and link to external sources`,
+    ];
   if (normalized.startsWith('data/') && !sourceInputs.has(normalized))
     return [
       `${normalized}: data/ is reserved for reviewed source inputs; put generated reports in test-results/`,
     ];
   if (cadOutput.test(normalized) && !authoredMacros.has(normalized))
     return [
-      `${normalized}: keep generated CAD, meshes, toolpaths and archives under test-results/`,
+      `${normalized}: keep generated CAD, meshes and toolpaths under test-results/`,
     ];
   return [];
 }
 
-/** Walk the filesystem too: .gitignore must not conceal misplaced CAD outputs. */
+/** Inspect the working tree even when an artifact is ignored by Git. */
 export function checkRepositoryArtifacts(root, options = {}) {
   const trackedFiles =
     options.trackedFiles ??
@@ -68,6 +77,7 @@ export function checkRepositoryArtifacts(root, options = {}) {
   for (const file of trackedFiles) {
     if (file.split('/').some((part) => excludedDirectories.has(part)))
       issues.push(`${file}: generated output and cache directories must remain untracked`);
+    else issues.push(...artifactIssues(file));
   }
   let count = 0;
   function visit(relative) {
@@ -100,6 +110,6 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     process.exitCode = 1;
   } else
     console.log(
-      `Checked ${count} project files: generated artifacts are isolated under test-results/.`,
+      `Checked ${count} project files: source directories are free of bundled references and generated artifacts.`,
     );
 }

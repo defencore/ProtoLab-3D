@@ -28,8 +28,7 @@ Assign application loads, production tolerances, material grades, lubrication, t
 
 ## References
 
-- [Supplied H-nut drawing](../../../public/references/tr8-h-nut/h-nut-drawing.png)
-- [Supplied threaded stock](../../../public/references/tr8-h-nut/tr8-stock.png)
+- Supplied TR8 H-flange nut drawing and 250 mm threaded-stock photograph. No verified public copies of these attachments are available.
 - [Multi-start screw lead and pitch](https://blog.igus.eu/multi-start-thread/)
 - [DIN 471 ring dimensions](https://smarthost.maedler.de/datenblaetter/K43_726_EN.pdf)
 

@@ -1,6 +1,4 @@
 import assert from 'node:assert/strict';
-import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import { Box3, Mesh, Vector3 } from 'three';
 import antenna from '../src/parts/adhesive-antenna/part';
@@ -89,14 +87,15 @@ test('JCG108 fixed configurations retain the documented lead alternatives withou
   );
 });
 
-test('JCG108 source evidence retains drawing integrity and separate PCB dimensions from the housing', () => {
-  const drawing = readFileSync(
-    new URL('../public/references/antennas/jinchang-jcg108.png', import.meta.url),
-  );
-  const hash = (input: Buffer) => createHash('sha256').update(input).digest('hex');
-  assert.equal(hash(drawing), '95294ea110af143ee015e42f81d1a6b11137d8eb866ba58ebd2f185bdc5ec7b9');
+test('JCG108 links the manufacturer drawing and keeps PCB dimensions separate from the housing', () => {
+  const drawing = 'https://iororwxhqioplk5p.ldycdn.com/cloud/qmBpmKjiRliSkjormnlmj/JCG108.png';
+  const datasheet = 'https://rnrorwxhqioplk5p.ldycdn.com/JCG108-aidqkBpmKjiRliSkjorpnllj.pdf';
+  assert.ok(antenna.sources?.some((source) => source.url === drawing));
   for (const preset of antenna.presets) {
     const catalog = preset.catalog!;
+    assert.equal(catalog.sourceUrl, datasheet);
+    assert.equal(catalog.geometryEvidence!.sourceUrl, datasheet);
+    assert.ok(catalog.alternateSourceUrls?.includes(drawing));
     assert.equal(
       catalog.geometryEvidence!.sourceSha256,
       '71e07e7e341c0bd8baa98326bab27011891bca7b70d7c0f7dd1bdfd1d31f0cff',

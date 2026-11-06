@@ -2463,12 +2463,13 @@ kbd {
   cursor: pointer;
   padding: 9px 0;
 }
-.reference-sources a {
-  display: block;
+.reference-source {
   line-height: 1.7;
   padding: 5px 0;
-  color: #d6aa89;
   overflow-wrap: anywhere;
+}
+.reference-source a {
+  color: #d6aa89;
 }
 .reference-sources a:hover {
   text-decoration: underline;

@@ -66,7 +66,26 @@ test('previous slotted and current trunnion assemblies remain independent regist
 test('previous neutral recipes, procurement identities and source colors match the released assembly', () => {
   const pieces = actuatorPieces(previous.defaults);
   assert.equal(pieces.length, 76);
-  assert.equal(digest(pieces.map((piece) => piece.component)), snapshot.neutralComponentsSha256);
+  const sourceRevisions = new Map([
+    [
+      'gearmotor',
+      [
+        'https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf',
+        'references/gmp16-gearmotor/tec1636-dimensions.png',
+      ],
+    ],
+    ['ball-screw', ['', 'references/kaiyade-sfk/dimension-table.png']],
+    ['coupling', ['', 'references/jaw-coupling/lf-d14-l22-drawing.png']],
+  ]);
+  const historicalComponents = pieces.map(({ component }) => {
+    const revision = sourceRevisions.get(component.id);
+    if (!revision) return component;
+    assert.equal(component.procurement?.source, revision[0], component.id);
+    sourceRevisions.delete(component.id);
+    return { ...component, procurement: { ...component.procurement, source: revision[1] } };
+  });
+  assert.equal(sourceRevisions.size, 0);
+  assert.equal(digest(historicalComponents), snapshot.neutralComponentsSha256);
   assert.equal(
     digest(
       pieces.map((piece) => ({

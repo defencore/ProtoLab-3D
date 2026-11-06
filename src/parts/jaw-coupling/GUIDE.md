@@ -8,7 +8,7 @@ This folder owns this part's parameter schema, defaults, preview, FreeCAD recipe
 - `lib/`: private domain helpers and reference values. Edits here affect this package only.
 - `index.ts`: API version, stable part ID and display order.
 
-Only the generic geometry SDK under `src/core` is shared. Run `npm run parts:check -- jaw-coupling` to check this package and `npm run parts:export -- jaw-coupling <output-folder>` to prepare a runnable handoff with the SDK and reference assets.
+Only the generic geometry SDK under `src/core` is shared. Run `npm run parts:check -- jaw-coupling` to check this package and `npm run parts:export -- jaw-coupling <output-folder>` to prepare a runnable handoff with the SDK and available external source links.
 
 The two shaft bores are independent. Existing D25 L30 presets include 6.35 x 10 mm and 8 x 10 mm pairs. The native axis is Z: hub A is on the negative side and hub B on the positive side. `jawCouplingLayout(parameters)` exposes the actual smooth hub spans and shaft insertion datums. For these presets, each smooth clamping section is 10.3 mm long and the opposed shaft-tip gap is 9.4 mm. Rotate around Y by +90 degrees to place bore A on negative X and bore B on positive X.
 
@@ -24,7 +24,7 @@ The supplied LF-B-D14L22(2 claws) drawing specifies D14 mm, L22 mm, a 3–6.5 mm
 
 The user also requested 7–8 mm Thimble bores. They are retained as listing options with explicit **provisional D14 L22 envelope** descriptions; their outside diameter and length are excluded from verified dimensions. The supplied drawing does not verify their installation envelope. Other hole bores are editable custom order inputs and do not qualify as fixed catalog bore dimensions. The seller page could not be independently inspected; the supplied drawing, photos and variant list are the evidence for these entries.
 
-The LF source drawing and three construction photos are bundled under `public/references/jaw-coupling/` and linked directly from each LF catalog entry.
+The supplied LF drawing and three construction photographs remain the basis for the catalog dimensions and construction distinctions. No verified public copies of those attachments are available.
 
 ## Analytic native surfaces
 

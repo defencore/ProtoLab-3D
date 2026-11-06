@@ -128,6 +128,9 @@ const part: PartDefinition = {
   python: (p, state) => assembly.python(pieces(p, state)),
   notes:
     'Fixed purchased configurations. Thread crests, terminals, contact mechanisms and undimensioned moulded details are simplified. BERM BEM-LA16 models are provisional supplier-listed envelopes: all dimensions, terminal layouts and inspection travel require measurement; colour and voltage order codes are incomplete, and the square listing has conflicting action descriptions. DAIER DS-225 follows the supplied rectangular black bezel and round actuator photo, with mounting/body dimensions referenced to the earlier drawing. Green is the photo-derived default cap appearance; the user-requested red and black choices change only that cap and do not establish supplier colour order codes, availability or electrical options. Undimensioned bezel dimensions remain illustrative. DAIER ASW-07D and SAC-01 mounting dimensions follow the linked manufacturer drawings; undimensioned cover curves, wall thickness and installed guard adjustment remain illustrative. APEM switch and guard shell dimensions are explicitly approximate. Missing electrical ratings are unknown, not zero. The 12 mm APEM protective cover is paired only with the compatible bushing class. Nominal panel openings do not replace manufacturer tolerances or orientation features.',
-  sources: Object.entries(sourceUrls).map(([label, url]) => ({ label, url })),
+  sources: [
+    ...Object.entries(sourceUrls).map(([label, url]) => ({ label, url })),
+    { label: 'User-supplied DS-225 photo and mounting drawing' },
+  ],
 };
 export default part;

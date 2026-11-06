@@ -82,7 +82,7 @@ const part: PartDefinition = {
     { label: 'Supplied GMP16T-TEC1636 dimensions and ratings', url: sourceUrl },
     {
       label: 'Supplied planetary construction image',
-      url: 'references/gmp16-gearmotor/planetary-construction.png',
+      url: '',
     },
     { label: 'Supplier listing · availability unconfirmed', url: listingUrl },
   ],

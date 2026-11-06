@@ -1,5 +1,4 @@
 import assert from 'node:assert/strict';
-import { existsSync } from 'node:fs';
 import test from 'node:test';
 import { Box3, Euler, Mesh, Raycaster, Vector3, type Group } from 'three';
 import { parts } from '../src/parts';
@@ -113,8 +112,9 @@ test('the optical attachment establishes only its three printed outside dimensio
     'flangeDiameter',
     'height',
   ]);
-  assert.equal(preset.catalog?.sourceUrl, 'references/nose-optical-dome-user-reference.png');
-  assert.ok(existsSync('public/references/nose-optical-dome-user-reference.png'));
+  assert.equal(preset.catalog?.sourceName, 'User-supplied dimensioned optical image');
+  assert.equal(preset.catalog?.sourceUrl, '');
+  assert.equal(preset.catalog?.geometryEvidence?.sourceUrl, '');
   assert.match(preset.catalog?.geometryEvidence?.limitations ?? '', /not dimensioned/);
   assert.ok(!preset.catalog?.verifiedParameters.includes('wall'));
   assert.ok(!preset.catalog?.verifiedParameters.includes('flangeThickness'));

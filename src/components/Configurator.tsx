@@ -483,16 +483,20 @@ export default function Configurator({
             </p>
           </details>
         )}
-        {!!part.sources?.some((source) => source.url) && (
+        {!!part.sources?.length && (
           <details className="reference-sources">
             <summary>Reference dimensions & sources</summary>
-            {part.sources
-              .filter((source) => source.url)
-              .map((source) => (
-                <a key={source.url} href={source.url} target="_blank" rel="noreferrer">
-                  {source.label} ↗
-                </a>
-              ))}
+            {part.sources.map((source) => (
+              <div className="reference-source" key={`${source.label}:${source.url ?? ''}`}>
+                {source.url ? (
+                  <a href={source.url} target="_blank" rel="noreferrer">
+                    {source.label} ↗
+                  </a>
+                ) : (
+                  source.label
+                )}
+              </div>
+            ))}
           </details>
         )}
       </div>

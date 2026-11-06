@@ -9,7 +9,7 @@ Two independent packages appear under **TRANSMISSION & LINKAGES → PISTONS & CO
 
 ## Reference evidence
 
-The three supplied images are preserved unchanged in `public/references/`:
+Three supplied images informed these prototypes. The catalog records the dimensions and the role of each source.
 
 - `piston-compressor-sizes.png` lists nominal sizes **42, 47, 48, 51, 65, 70, 80 and 90 mm**. These eight values are the only source-verified dimensions. The screenshot does not specify a running clearance or measured skirt diameter.
 - `connecting-rod-anatomy.png` identifies a small-end bushing, rod body, bearing inserts, big-end cap and fasteners. It supplies no dimensions.

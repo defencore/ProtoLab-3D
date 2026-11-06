@@ -2,8 +2,6 @@
 
 Open **STRUCTURES → ALUMINIUM PROFILES → Aluminium extrusion / T-slot profile**. Select a **Profile section**, then a **Cut length**. **Custom dimensions** exposes the cut length, slot dimensions, bore sizes and internal cavity settings. Changing the section resets its cross-section dimensions while retaining the current length. **Top** camera view looks down the extrusion axis to inspect the cross section.
 
-![Modelled aluminium profile cross sections](aluminium-profile-sections.svg)
-
 | Section    | Actual width × height | Open slots                      | Internal openings                    | Presets                                    |
 | ---------- | --------------------- | ------------------------------- | ------------------------------------ | ------------------------------------------ |
 | EU 1020    | 20 × 10 mm            | One top T-slot                  | Two bores, Ø4.2                      | Eleven lengths, 50–550 mm                  |
@@ -15,7 +13,7 @@ Open **STRUCTURES → ALUMINIUM PROFILES → Aluminium extrusion / T-slot profil
 | GB1020H    | 20 × 10 mm            | Two side slots                  | One bore, Ø3.2                       | Reference section; 100 mm prototype length |
 | EU 40 × 15 | 40 × 15 mm            | One top T-slot, two side slots  | Two bores, Ø4.4                      | Reference section; 100 mm prototype length |
 
-The 48 presets retain the ten supplied reference images. Only the four low EU sections have listed cut lengths, at 50 mm increments. The other section presets deliberately exclude their initial length from verified catalog dimensions. GB1020H keeps the printed width and side-opening tolerances. The three supplied mass-per-metre values remain source specifications and do not change the model's dimensions.
+The 48 presets record dimensions from ten supplied reference images. Only the four low EU sections have listed cut lengths, at 50 mm increments. The other section presets deliberately exclude their initial length from verified catalog dimensions. GB1020H keeps the printed width and side-opening tolerances. The three supplied mass-per-metre values remain source specifications and do not change the model's dimensions.
 
 Unspecified cavity widths, bore positions, small radii and internal reliefs are editable prototype geometry. The EU1050 step uses both printed opening widths, 6.2 and 7.2 mm; its step height is illustrative. The 2040 slot depth is derived to preserve the annotated 1.5 mm diagonal web. The 40 × 15 drawing does not print a model code; `eu1540` is only the package's internal identifier. Alloy, temper and material strength are not inferred from the photographs.
 

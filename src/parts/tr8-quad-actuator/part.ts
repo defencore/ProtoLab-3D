@@ -91,8 +91,8 @@ const part: PartDefinition = {
   notes:
     `Independent four-drive version; single-drive and SFK variants remain available. Three round Ø${packing.discDiameter}×3 mm discs use standard 30 mm M3 columns and one 2 mm precision spacer per stack. Four radial module frames at 45°, 135°, 225° and 315° sit ${packing.radius} mm from the centre. Output axes form an X at X=${mechanismLayout.outputX} mm. Flat 3 mm steel forks are pinned to each Ø6 shaft with two Ø2×10 dowels, replacing split clamps, bolts and nuts. Pinned hubs and 0.45 mm sleeves locate the inner races; only two outer retaining rings remain. Four inner 4 mm bearing bars interleave clockwise with 0.2 mm seams, while outer supports remain circular. The integral Ø8×1 mm shaft head replaces a threaded cap. Nut H flanges are rotated 90°. Each 52 mm screw retains 28 mm of TR8×8(P2) thread. The ${mechanismLayout.radius} mm lever gives 10.5551 mm stroke and 1.2224 mm nominal full-thread margin at ±20°. Match-drill and ream the pin joints after setting axial and sliding clearances. Pin end chamfers are inspection geometry; source nominal dimensions are verified. The shimmed M3 joint has 3 mm stud engagement and requires load verification.`,
   sources: [
-    { label: 'Supplied H-flange nut drawing', url: 'references/tr8-h-nut/h-nut-drawing.png' },
-    { label: 'Supplied 250 mm TR8 stock', url: 'references/tr8-h-nut/tr8-stock.png' },
+    { label: 'Supplied H-flange nut drawing', url: '' },
+    { label: 'Supplied 250 mm TR8 stock', url: '' },
     { label: 'Multi-start thread lead and pitch', url: 'https://blog.igus.eu/multi-start-thread/' },
     { label: 'ISO 8734 Ø2×10 hardened dowel catalogue', url: 'https://static.shop.fibro.com/assets/EN/document/doc_2351_1_english.pdf' },
   ],

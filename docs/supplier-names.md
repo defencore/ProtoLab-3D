@@ -2,17 +2,18 @@
 
 `Preset.name` remains the curated English title used by selectors and search. `Preset.catalog.name` records the original product listing title from supplier evidence. A product's supplier designation, SKU, manufacturer, source URL, and listing title are separate fields. The title is copied exactly, including its language and punctuation; a translated or normalized UI label is not evidence of an exact shop name.
 
-The offline synchronization reads five Gvyntok product snapshots under `src/catalog/data/` and `data/promtehimport-inventory.json`. It matches the selected primary `catalog.sourceUrl` first. If no primary listing is recorded, an exact, unambiguous SKU match is allowed within the same supplier hostname. Other grouped SKUs never override a known primary listing. Conflicting titles, another supplier's identical SKU, category headings, drawings, and absent titles do not establish a product name.
+The offline synchronization reads four compact Gvyntok hardware snapshots under `src/catalog/data/`. Pass `--gvyntok-fastener-inventory <path>` or `--promtehimport-inventory <path>` to include an external raw inventory. It matches the selected primary `catalog.sourceUrl` first. If no primary listing is recorded, an exact, unambiguous SKU match is allowed within the same supplier hostname. Other grouped SKUs never override a known primary listing. Conflicting titles, another supplier's identical SKU, category headings, drawings, and absent titles do not establish a product name.
 
 ```sh
 node --import tsx scripts/sync-supplier-names.ts
 node --import tsx scripts/sync-supplier-names.ts --check
 node --import tsx scripts/sync-supplier-names.ts --write
+node --import tsx scripts/sync-supplier-names.ts --check --gvyntok-fastener-inventory test-results/catalog/gvyntok-fasteners.json --promtehimport-inventory test-results/catalog/promtehimport-inventory.json
 ```
 
 The default command reports coverage. `--check` fails if a title available in the reviewed source snapshots has not been synchronized. `--write` patches only `catalog.name` tokens in part snapshots, retaining existing compact or indented JSON formatting. Foreign source strings use Unicode escapes as machine evidence; decoding JSON yields the exact original text. No supplier pages are fetched and no geometry, identifiers, dimensions, curated titles, or source designations are changed.
 
-`scripts/sync-package-catalogs.ts` also enriches the prospective catalogs before writing snapshots, so later refreshes from compact runtime adapters retain exact source names. Its snapshot serializer escapes foreign source evidence. The runtime application does not load the large offline inventory solely to resolve names.
+`scripts/sync-package-catalogs.ts` also enriches the prospective catalogs before writing snapshots. A refreshed preset that still points to the same source URL retains its recorded title when the adapter supplies none. Its snapshot serializer escapes foreign source evidence. Runtime titles are read from package presets.
 
 ## Coverage recorded on 2026-10-28
 

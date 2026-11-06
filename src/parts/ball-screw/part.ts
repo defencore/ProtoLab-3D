@@ -108,15 +108,15 @@ const part: PartDefinition = {
   sources: [
     {
       label: 'Supplied KAIYADE SFK dimension table · p17',
-      url: 'references/kaiyade-sfk/dimension-table.png',
+      url: '',
     },
     {
       label: 'Supplied EK6/EF6 0802 end-machining drawing',
-      url: 'references/kaiyade-sfk/ek6-ef6-0802.png',
+      url: '',
     },
     {
       label: 'Supplied KAIYADE designation coding · p09',
-      url: 'references/kaiyade-sfk/designation-coding.png',
+      url: '',
     },
     { label: 'Supplied ball nut construction families', url: '' },
     { label: 'Supplied ball nut size options', url: '' },

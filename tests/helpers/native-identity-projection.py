@@ -39,6 +39,40 @@ def project_recipe(parameters):
 
 
 def project_pieces(pieces, portable_preview):
+    # Restore the historical source fields without changing the shape data
+    # or accepting another product, quantity or installed execution.
+    components = [piece['component'] for piece in json.loads(pieces)]
+    references = (
+        (
+            '-lead-nut', 'manufactured-detail', 'TR8×8(P2) H nut · 22×11×15',
+            'User-supplied nut drawing',
+            'User-supplied TR8 H-flange nut drawing (public URL unavailable)',
+            'references/tr8-h-nut/h-nut-drawing.png',
+        ),
+        (
+            '-gearmotor', 'gmp16-gearmotor', 'GMP16T-TEC1636 · 361:1 · 12 V · 11.6D7 shaft',
+            'Supplied GMP16T-TEC1636 dimensional and performance table',
+            'https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf',
+            'references/gmp16-gearmotor/tec1636-dimensions.png',
+        ),
+        (
+            '-coupling', 'jaw-coupling', 'LF-B-D14L22(2 claws) Clamp 3 × 4 mm',
+            'User-supplied LF dimensional drawing, photos and variant list',
+            '', 'references/jaw-coupling/lf-d14-l22-drawing.png',
+        ),
+    )
+    for suffix, library, designation, manufacturer, current_source, original_source in references:
+        matches = [item for item in components if item['id'].endswith(suffix)]
+        assert len(matches) == 4
+        for item in matches:
+            assert item['supply'] == 'purchased' and item['libraryId'] == library
+            assert item['procurement']['designation'] == designation
+            assert item['procurement']['manufacturer'] == manufacturer
+            assert item['procurement']['source'] == current_source
+        current = encode(matches[0]['procurement'])
+        historical = encode({**matches[0]['procurement'], 'source': original_source})
+        assert pieces.count(current) == len(matches)
+        pieces = pieces.replace(current, historical)
     if not portable_preview:
         return pieces
     records = json.loads(pieces)

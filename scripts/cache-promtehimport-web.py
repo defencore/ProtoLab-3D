@@ -53,7 +53,7 @@ def parse(text, members):
 def main():
  parser=argparse.ArgumentParser(description=__doc__)
  parser.add_argument('input',nargs='+',type=Path)
- parser.add_argument('--inventory',type=Path,default=Path('data/promtehimport-inventory.json'))
+ parser.add_argument('--inventory', type=Path, required=True, help='Local supplier inventory path.')
  parser.add_argument('--cache',type=Path,default=Path('/tmp/protolab-full-promtehimport-cache/products'))
  args=parser.parse_args()
  inventory=json.loads(args.inventory.read_text());members={url for category in inventory['categories'].values() for url in category['productUrls']}

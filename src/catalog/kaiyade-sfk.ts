@@ -31,7 +31,7 @@ export function getKaiyadeSfkReferences(row: typeof ballScrewReferenceRow) {
       'SFK',
       code,
       dimensions,
-      'references/kaiyade-sfk/dimension-table.png',
+      '',
       'KAIYADE · supplied SFK table, p17',
       counterbore,
       'KAIYADE nut reference from the supplied table. Shaft lengths are supplied listing options; the listing product and this manufacturer reference have not been checked for interchangeability.',

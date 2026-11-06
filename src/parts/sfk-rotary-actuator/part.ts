@@ -169,18 +169,18 @@ const part: PartDefinition = {
   notes:
     'Fixed-axis mechanical prototype with the stock SFK0825 nut clocked 90°. A profile-following cover carries two integral short Ø4 pins on its flat sides. Four M3 screws pass through the stock flange into blind threads in the cover. Closed radial slots let the pins slide freely while their inner faces capture the cover flats against roll. A 56 mm base and thin bored F686 seats narrow the transverse unit; a compact cap closes one end and the opposite Ø6 shaft end extends farther. Output is ±20° with a 13 mm arm and 13 tan(angle) nut travel. Four F686-2RS bearings remain. The M6 source journal and mating nuts keep nominal envelopes; specify loads, fits and tolerances before manufacture.',
   sources: [
-    { label: 'Supplied KAIYADE SFK nut table', url: 'references/kaiyade-sfk/dimension-table.png' },
+    { label: 'Supplied KAIYADE SFK nut table', url: '' },
     {
       label: 'Supplied 0802 EK6/EF6 end-machining reference',
-      url: 'references/kaiyade-sfk/ek6-ef6-0802.png',
+      url: '',
     },
     {
       label: 'Supplied LF D14 L22 coupling drawing',
-      url: 'references/jaw-coupling/lf-d14-l22-drawing.png',
+      url: '',
     },
     {
       label: 'Supplied GMP16T-TEC1636 data',
-      url: 'references/gmp16-gearmotor/tec1636-dimensions.png',
+      url: 'https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf',
     },
   ],
   fabricationFiles(p) {

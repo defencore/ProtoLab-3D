@@ -2,7 +2,7 @@
 
 A browser-based library of configurable mechanical products and assembly definitions. Find a component, adjust its dimensions, inspect its 3D preview, organize its physical occurrences in a design project, and bring the generated solid geometry into an existing FreeCAD document.
 
-![ProtoLab interface showing the part library, a live 3D ball screw assembly preview, and the configurator](docs/protolab-preview.png)
+[Open ProtoLab 3D](https://protolab.defencore.com/)
 
 The application is a static React / TypeScript / Three.js site built with Vite. It runs without a backend and is suitable for GitHub Pages. The interface, generated Python, and source comments are in English.
 
@@ -26,7 +26,7 @@ npm run build
 npm run preview
 ```
 
-The production output is `dist/`. Vite uses `/` as the base for the custom domain `https://protolab.defencore.com/`, including JavaScript, styles and reference images. The GitHub Actions Pages workflow builds and uploads this directory; enable **Settings → Pages → Source → GitHub Actions** and set the custom domain in the repository. Deploying instead to a repository URL such as `https://defencore.github.io/ProtoLab-3D/` requires changing the Vite base to `/ProtoLab-3D/` before rebuilding.
+The production output is `dist/`. Vite uses `/` as the base for the custom domain `https://protolab.defencore.com/`. The GitHub Actions Pages workflow builds and uploads this directory; enable **Settings → Pages → Source → GitHub Actions** and set the custom domain in the repository. Deploying instead to a repository URL such as `https://defencore.github.io/ProtoLab-3D/` requires changing the Vite base to `/ProtoLab-3D/` before rebuilding.
 
 ## Working with parts
 
@@ -145,15 +145,15 @@ Replace `<part-id>` and `<output-folder>` in the examples with actual values.
 Run the import scripts explicitly when a new offline snapshot is needed. They read public catalog pages and do not interact with carts or accounts. Cached pages allow interrupted imports to resume.
 
 ```sh
-python3 scripts/import-gvyntok-fasteners.py
+python3 scripts/import-gvyntok-fasteners.py --output test-results/catalog/gvyntok-fasteners.json
 python3 scripts/import-gvyntok-hardware.py gajki
 python3 scripts/import-gvyntok-hardware.py shajby-koltsa
 python3 scripts/import-gvyntok-hardware.py shpilki
 python3 scripts/import-gvyntok-hardware.py shplinty-i-strubtsiny
 python3 scripts/build-hardware-presets.py
 python3 scripts/build-cotter-presets.py
-python3 scripts/import-promtehimport.py --workers 2
-node --import tsx scripts/build-promtehimport-presets.ts
+python3 scripts/import-promtehimport.py --workers 2 --output test-results/catalog/promtehimport-inventory.json
+node --import tsx scripts/build-promtehimport-presets.ts test-results/catalog/promtehimport-inventory.json
 node --import tsx scripts/sync-package-catalogs.ts <part-id> --check
 node --import tsx scripts/sync-package-catalogs.ts <part-id>
 node --import tsx scripts/report-catalog.ts
@@ -175,7 +175,7 @@ npm run dev
 
 The template starts with a working spacer, so its preview and FreeCAD export can be tested immediately. Change its schema, geometry, labels and categories in `src/parts/<part-id>/`. The package ID stays stable; folder discovery updates the generated registry automatically.
 
-Export an existing part, including the local code, SDK and referenced drawings, to a new folder outside `src/parts`:
+Export an existing part and its SDK to a new folder outside `src/parts`. The package metadata retains external source links.
 
 ```sh
 npm run parts:export -- <part-id> <output-folder>
@@ -190,7 +190,7 @@ npm run typecheck
 npm run build
 ```
 
-Import replaces only the selected package and keeps its previous version under ignored `test-results/backups/part-modules/`. SDK and workbench edits are not imported into the application. Omit `--replace` for a new part ID. Shared reference assets are never silently overwritten: an edited drawing needs a unique filename. No UI changes or manual registry edits are needed.
+Import replaces only the selected package and keeps its previous version under ignored `test-results/backups/part-modules/`. SDK and workbench edits are not imported into the application. Omit `--replace` for a new part ID. Use external links for source drawings. The registry updates automatically.
 
 ## Geometry and manufacturing scope
 
@@ -216,7 +216,7 @@ Changes to shared core geometry, runtime dependencies or semantic compiler setti
 
 New pushes cancel stale work. The next run still starts from the last successful baseline and includes all unverified changes. Local `npm test` runs the complete suite. To request complete CI verification manually, choose **Actions → Build and deploy GitHub Pages → Run workflow → full_tests**.
 
-Generated exports, reports, screenshots, backups and compiler caches belong under ignored `test-results/`. `npm run check:artifacts` checks the actual working tree as well as tracked output paths, so ignoring a misplaced export does not conceal it. Reviewed source inputs remain in `data/`; runtime native JSON and component reference images remain part of the library source. See the [repository hygiene policy](docs/repository-hygiene.md).
+Generated exports, reports, screenshots, backups and compiler caches belong under ignored `test-results/`. `npm run check:artifacts` checks the actual working tree as well as tracked output paths, so ignoring a misplaced export does not conceal it. Catalogs record provenance and link to external references. Source packages contain the geometry and catalog data used by the application. See the [repository hygiene policy](docs/repository-hygiene.md).
 
 ### Mechanism and control audit
 

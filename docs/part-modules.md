@@ -175,7 +175,7 @@ The physical family ID is `part.id`; the globally unique model reference is `<pa
 
 A sourced record includes `catalog.designation`, `sourceName`, `sourceUrl` and `verifiedParameters`. Optional metadata includes manufacturer, standard, product codes, alternative source URLs and reference specifications. `verifiedParameters` names only values established by that source; a standard name alone does not establish unspecified internal dimensions.
 
-For a supplied drawing, use `catalog.sourceKind: 'attachment'` and an app-relative `references/<unique-name>.png` backed by `public/references/`. Optional `specifications` is an array of read-only `{ label, value }` source details, such as a load rating. It does not certify edited geometry.
+Record supplier drawings and other documents as external source URLs. If a private attachment has no public URL, retain the source name and verified values in the preset and record its availability and limitations in the package guide. Optional `specifications` is an array of read-only `{ label, value }` source details, such as a load rating. It does not certify edited geometry.
 
 `catalog.parameterRanges` may record explicitly published numeric intervals, such as `bore: { min: 6, max: 8 }`. Advanced search uses inclusive interval overlap. Applying the result uses its stored parameters; an interval does not make every possible edited value an independently verified measurement.
 
@@ -243,7 +243,7 @@ npm run build
 
 Omit `--replace` when importing a new ID. Import statically checks the package boundary and manifest before installing it, replaces only `src/parts/<id>/` and keeps an existing package under ignored `test-results/backups/part-modules/<id>/`. Backups remain outside the registry. Import does not run the handed-off part's code as its preflight; `parts:check`, the development app and build subsequently evaluate the module.
 
-Referenced drawings are copied with the package. An existing shared reference file with different contents is rejected; give an edited image a new unique filename and update the package's reference URL. SDK files and the workbench are not copied back into the application. The registry updates automatically.
+External source links stay in the package metadata. Import validates the selected package for local reference paths and bundled attachments before replacing it. SDK files and the workbench are not copied back into the application. The registry updates automatically.
 
 ## Refreshing catalog snapshots
 
@@ -269,4 +269,4 @@ This explicit synchronization keeps catalog maintenance available while preservi
 
 A module may declare literal `dependencies: ['package-id']` in its `index.ts`. Direct relative imports from those packages reuse their geometry and metadata. Static preflight and runtime registration reject missing dependencies, duplicate IDs and cycles. Undeclared cross-package imports remain invalid.
 
-Portable export includes the dependency tree and its reference assets. Import validates that bundled dependencies match the installed library byte for byte, then replaces only the selected package. It never implicitly updates shared dependencies. Import any intentional dependency update separately before importing its consumer.
+Portable export includes the dependency tree and retains its external source links. Import validates that bundled dependencies match the installed library byte for byte, then replaces only the selected package. It never implicitly updates shared dependencies. Import any intentional dependency update separately before importing its consumer.

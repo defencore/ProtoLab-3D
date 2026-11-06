@@ -63,11 +63,6 @@ export async function exportPackage(projectRoot: string, id: string, destination
       sourceDependencies.devDependencies[name],
     ]),
   );
-  for (const reference of module.references) {
-    const source = path.join(projectRoot, 'public', reference);
-    if (!(await fs.lstat(source)).isFile())
-      throw new Error(`Reference must be an ordinary file: ${reference}.`);
-  }
   try {
     await copyPackage(module, path.join(destination, 'src/parts', id));
     const copied = new Set([id]);
@@ -80,11 +75,6 @@ export async function exportPackage(projectRoot: string, id: string, destination
           projectRoot,
         );
         await copyPackage(pkg, path.join(destination, 'src/parts', dependency));
-        for (const ref of pkg.references) {
-          const target = path.join(destination, 'public', ref);
-          await fs.mkdir(path.dirname(target), { recursive: true });
-          await fs.copyFile(path.join(projectRoot, 'public', ref), target);
-        }
         await copyDependencies(pkg);
       }
     }
@@ -95,11 +85,6 @@ export async function exportPackage(projectRoot: string, id: string, destination
         path.join(projectRoot, 'src/core', name),
         path.join(destination, 'src/core', name),
       );
-    }
-    for (const reference of module.references) {
-      const target = path.join(destination, 'public', reference);
-      await fs.mkdir(path.dirname(target), { recursive: true });
-      await fs.copyFile(path.join(projectRoot, 'public', reference), target);
     }
     await writeFiles(destination, {
       ...workbenchFiles(
@@ -131,13 +116,12 @@ export async function exportPackage(projectRoot: string, id: string, destination
             apiVersion: PART_MODULE_API_VERSION,
             id,
             packageDirectory: `src/parts/${id}`,
-            references: module.references,
           },
           null,
           2,
         ) + '\n',
       '.gitignore': 'node_modules/\ndist/\n',
-      'README.md': `# ProtoLab part workbench\n\n## Run the workbench\n\nUse the ID and packageDirectory recorded in \`part-module.json\` wherever \`<part-id>\` appears below.\n\n1. Run \`npm install\`.\n2. Run \`npm run dev\` and open the printed local URL.\n3. Edit \`src/parts/<part-id>/\`. The browser reloads as the module changes.\n4. Run \`npm run build\` before returning the package.\n\nThe workbench shows the configurator, presets, states, Three.js preview and generated FreeCAD macro. The same part code is used by the main application.\n\nParts that load a geometry runtime may expose \`initializeGeometry(parameters, state)\`. The workbench awaits this hook before the synchronous geometry builder and exports only the completed configuration.\n\n## Editing boundary\n\nReturn the complete folder with \`part-module.json\` intact. Keep all part-specific code in \`src/parts/<part-id>/\`: \`part.ts\` defines geometry/export/validation and the numeric or conditional parameter schema, directly or through a private factory in \`lib/\`. \`configurator.ts\` declares ordered catalog-selection controls; newly scaffolded parts also keep their fields and defaults there. \`presets.json\` stores complete presets. \`product.json\` records product type, supply policy, process routes and release requirements. \`lib/\` contains component-specific helpers; reusable geometry and hardware come from the documented SDK. \`index.ts\` declares the stable ID, API version 2 and explicit library dependencies.\n\nThe SDK in \`src/core/\` is supplied for running this workbench. SDK edits are not imported back into ProtoLab. A part may import package-local files, the documented geometry/type SDK, Three.js, JSCAD, and library packages explicitly listed in its index.ts dependencies. Dependencies are bundled for preview; importing an assembly requires matching installed dependencies and never replaces them implicitly. Keep new component-specific helpers in the part's \`lib/\` folder. Assembly compositions must reference reusable library configurations independently of inspection state. Keep the existing ID for an update.\n\nLocal source illustrations are included in \`public/references/\`. Existing shared reference files are not overwritten on import; use a new unique filename for an edited illustration.\n\n## Return to ProtoLab\n\nFrom the main ProtoLab project, run:\n\n\`\`\`sh\nnpm run parts:import -- /path/to/this-handoff --replace\nnpm run typecheck\nnpm run build\n\`\`\`\n\nImport validates the package statically before replacing only \`src/parts/<part-id>/\`, and saves its previous version outside the part registry under \`test-results/backups/part-modules/\`. Omit \`--replace\` when importing a new ID. No manual registration is needed.\n\nFreeCAD geometry must remain consistent with the preview and dimension function. Compound children become independent assembly components; provide matching \`component_labels\` and optional \`component_colors\`.\n`,
+      'README.md': `# ProtoLab part workbench\n\n## Run the workbench\n\nUse the ID and packageDirectory recorded in \`part-module.json\` wherever \`<part-id>\` appears below.\n\n1. Run \`npm install\`.\n2. Run \`npm run dev\` and open the printed local URL.\n3. Edit \`src/parts/<part-id>/\`. The browser reloads as the module changes.\n4. Run \`npm run build\` before returning the package.\n\nThe workbench shows the configurator, presets, states, Three.js preview and generated FreeCAD macro. The same part code is used by the main application.\n\nParts that load a geometry runtime may expose \`initializeGeometry(parameters, state)\`. The workbench awaits this hook before the synchronous geometry builder and exports only the completed configuration.\n\n## Editing boundary\n\nReturn the complete folder with \`part-module.json\` intact. Keep all part-specific code in \`src/parts/<part-id>/\`: \`part.ts\` defines geometry/export/validation and the numeric or conditional parameter schema, directly or through a private factory in \`lib/\`. \`configurator.ts\` declares ordered catalog-selection controls; newly scaffolded parts also keep their fields and defaults there. \`presets.json\` stores complete presets. \`product.json\` records product type, supply policy, process routes and release requirements. \`lib/\` contains component-specific helpers; reusable geometry and hardware come from the documented SDK. \`index.ts\` declares the stable ID, API version 2 and explicit library dependencies.\n\nThe SDK in \`src/core/\` is supplied for running this workbench. SDK edits are not imported back into ProtoLab. A part may import package-local files, the documented geometry/type SDK, Three.js, JSCAD, and library packages explicitly listed in its index.ts dependencies. Dependencies are bundled for preview; importing an assembly requires matching installed dependencies and never replaces them implicitly. Keep new component-specific helpers in the part's \`lib/\` folder. Assembly compositions must reference reusable library configurations independently of inspection state. Keep the existing ID for an update.\n\nUse external URLs for source illustrations and documents. Source links in package metadata are preserved during export and import.\n\n## Return to ProtoLab\n\nFrom the main ProtoLab project, run:\n\n\`\`\`sh\nnpm run parts:import -- /path/to/this-handoff --replace\nnpm run typecheck\nnpm run build\n\`\`\`\n\nImport validates the package statically before replacing only \`src/parts/<part-id>/\`, and saves its previous version outside the part registry under \`test-results/backups/part-modules/\`. Omit \`--replace\` when importing a new ID. No manual registration is needed.\n\nFreeCAD geometry must remain consistent with the preview and dimension function. Compound children become independent assembly components; provide matching \`component_labels\` and optional \`component_colors\`.\n`,
     });
     await inspectPackage(path.join(destination, 'src/parts', id), destination);
   } catch (error) {
@@ -201,29 +185,11 @@ export async function importPackage(projectRoot: string, source: string, replace
       `Part ${module.id} already exists. Pass --replace to replace only this package and keep a backup.`,
     );
   if (!current) await assertNewDestination(destination);
-  const additions: { source: string; target: string }[] = [];
-  for (const reference of module.references) {
-    const file = path.join(source, 'public', reference);
-    if (!(await fs.lstat(file)).isFile())
-      throw new Error(`Reference must be an ordinary file: ${reference}.`);
-    const target = path.join(projectRoot, 'public', reference);
-    try {
-      const currentFile = await fs.lstat(target);
-      if (!currentFile.isFile() || !(await fs.readFile(file)).equals(await fs.readFile(target)))
-        throw new Error(
-          `Reference ${reference} already exists with different contents. Give the edited reference a unique filename.`,
-        );
-    } catch (error) {
-      if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;
-      additions.push({ source: file, target });
-    }
-  }
   const stagingParent = path.join(projectRoot, 'test-results', '.staging');
   await fs.mkdir(stagingParent, { recursive: true });
   const stagingRoot = await fs.mkdtemp(path.join(stagingParent, 'part-module-'));
   const staging = path.join(stagingRoot, module.id);
   let backup: string | undefined;
-  const addedReferences: string[] = [];
   let installed = false;
   try {
     await copyPackage(module, staging);
@@ -235,16 +201,10 @@ export async function importPackage(projectRoot: string, source: string, replace
     }
     await fs.rename(staging, destination);
     installed = true;
-    for (const addition of additions) {
-      await fs.mkdir(path.dirname(addition.target), { recursive: true });
-      await fs.copyFile(addition.source, addition.target);
-      addedReferences.push(addition.target);
-    }
     await syncRegistry(projectRoot);
   } catch (error) {
     if (installed) await fs.rm(destination, { recursive: true, force: true });
     if (backup) await fs.rename(backup, destination);
-    for (const reference of addedReferences) await fs.rm(reference, { force: true });
     throw error;
   } finally {
     await fs.rm(stagingRoot, { recursive: true, force: true });

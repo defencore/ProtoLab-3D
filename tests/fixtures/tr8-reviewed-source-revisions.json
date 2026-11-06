@@ -7,8 +7,8 @@
   },
   "src/parts/tr8-geared-rocker-actuator/README.md": {
     "historicalSha256": "ad5f7ac8f16374c3edb846c2ebd90d223335b3295ce679775f6b05f0d730da2c",
-    "reviewedSha256": "970063ecc8dbdbddc08d73620c31ab1396c475f345eec521888b7c5cba06b714",
-    "scope": "Restore the shared universal package README required by repository policy. The component-specific GUIDE.md retains its historical preservation check.",
+    "reviewedSha256": "2db077f5904fbc67c3605ec784a28c6746afd231e670512ef5e6c7120edb7a11",
+    "scope": "Keep the shared universal package README required by repository policy, including the external-source handoff instructions. The component-specific GUIDE.md retains its historical preservation check.",
     "evidence": "docs/tr8-regression-review.md"
   }
 }

@@ -8,7 +8,7 @@ This folder owns this part's parameter schema, defaults, preview, FreeCAD recipe
 - `lib/`: private domain helpers and reference values. Edits here affect this package only.
 - `index.ts`: API version, stable part ID and display order.
 
-Only the generic geometry SDK under `src/core` is shared. Run `npm run parts:check -- ball-screw` to check this package and `npm run parts:export -- ball-screw <output-folder>` to prepare a runnable handoff with the SDK and reference assets.
+Only the generic geometry SDK under `src/core` is shared. Run `npm run parts:check -- ball-screw` to check this package and `npm run parts:export -- ball-screw <output-folder>` to prepare a runnable handoff with the SDK and available external source links.
 
 ## Custom journal retaining grooves
 
@@ -24,4 +24,4 @@ Choose **End Machine · EK6/EF6 0802 reference** to apply the attached 0802 draw
 
 Unmachined and End Machine variants are supplied for each 8 mm KAIYADE reference. Only SFK0802 has the dimensioned end drawing. End Machine variants for SFK0801 and SFK08025 reuse its nominal end envelope as a layout reference; these journal fields are not marked verified for those leads. Changing to Unmachined disables retaining grooves. The named execution rejects other shaft diameters.
 
-The dimension table, end drawing and designation coding are bundled under `public/references/kaiyade-sfk/` for offline inspection and package handoff. The AliExpress listing could not be accessed for current variation verification. Source length/type options are transcribed from the supplied material and existing listing references; supplier interchangeability with the KAIYADE table remains unverified. Accuracy class, preload and manufacturing process are requested metadata rather than certificates.
+The supplied dimension table (page 17), designation coding (page 9) and EK6/EF6 0802 drawing remain the dimensional evidence. No verified public copy of these attachments is available. The AliExpress listing could not be accessed for current variation verification. Source length/type options are transcribed from the supplied material and existing listing references; supplier interchangeability with the KAIYADE table remains unverified. Accuracy class, preload and manufacturing process are requested metadata rather than certificates.

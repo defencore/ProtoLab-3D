@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Inventory every public supplier category page and cache product dimension tables.
 
-Run: python3 scripts/import-promtehimport.py --workers 6
+Run: python3 scripts/import-promtehimport.py --workers 6 --output test-results/catalog/promtehimport-inventory.json
 The importer is resumable. It never substitutes category filter values for dimensions.
 Only parsed text and numeric evidence are cached; product images are not downloaded.
 """
@@ -95,7 +95,7 @@ def parse_product(source, url):
 def main():
  parser = argparse.ArgumentParser(description=__doc__)
  parser.add_argument('--cache', type=Path, default=Path('/tmp/protolab-full-promtehimport-cache'))
- parser.add_argument('--output', type=Path, default=Path('data/promtehimport-inventory.json'))
+ parser.add_argument('--output', type=Path, required=True, help='Path for the local inventory outside source directories.')
  parser.add_argument('--workers', type=int, default=2)
  parser.add_argument('--request-delay', type=float, default=1.0)
  parser.add_argument('--refresh-categories', action='store_true')
@@ -104,6 +104,8 @@ def main():
  parser.add_argument('--max-consecutive-failures', type=int, default=6)
  parser.add_argument('--cache-only', action='store_true')
  args = parser.parse_args()
+ if args.cache_only and (args.refresh_categories or args.refresh_web_cache):
+  parser.error('--cache-only cannot be combined with source refresh flags.')
  previous=json.loads(args.output.read_text()) if args.output.exists() else {}
  args.cache.mkdir(parents=True,exist_ok=True)
  workers = max(1,min(args.workers,8))
@@ -112,6 +114,7 @@ def main():
   key=hashlib.sha256(url.encode()).hexdigest()[:24]
   path=args.cache/kind/(key+'.json')
   if path.exists() and not refresh: return json.loads(path.read_text())
+  if args.cache_only: raise FileNotFoundError(f'Missing cached supplier page: {url}')
   source, final_url = fetch(url)
   data=parse(source,final_url)
   if kind=='products' and final_url!=url:data={**data,'url':url,'sourceUrl':final_url}
@@ -142,6 +145,8 @@ def main():
    for i,result in enumerate(pool.map(category,remaining),1):
     accept(*result)
     if i%50==0:print(json.dumps({'phase':'categories','fetched':i+19,'total':len(remaining)+19}),flush=True)
+ if args.cache_only and any(entry['failedPages'] for entry in categories.values()):
+  parser.error('--cache-only requires a complete category inventory or cached category pages.')
  for code,entry in categories.items():
   if not entry['productUrls'] and code in previous.get('categories',{}):
    failure=entry['failedPages'];categories[code]=entry={**previous['categories'][code],'refreshFailures':failure}

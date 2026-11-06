@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
@@ -135,7 +136,7 @@ test('pretty JSON retains indentation and unchanged fields while adding exact ev
   assert.equal(JSON.parse(result.text)[0].name, JSON.parse(source)[0].name);
 });
 
-test('saved Gvyntok and Promtehimport product titles resolve exactly from offline source evidence', () => {
+test('saved Gvyntok product titles resolve exactly from the compact offline source snapshots', () => {
   const index = loadSupplierNameIndex(root);
   const hardware = JSON.parse(
     readFileSync(path.join(root, 'src/catalog/data/gvyntok-gajki.json'), 'utf8'),
@@ -149,18 +150,37 @@ test('saved Gvyntok and Promtehimport product titles resolve exactly from offlin
     supplierNameForCatalog({ sourceUrl: nut.url, productCodes: [nut.sku] }, index),
     nut.sourceTitle,
   );
-  const inventory = JSON.parse(
-    readFileSync(path.join(root, 'data/promtehimport-inventory.json'), 'utf8'),
+});
+
+test('explicit raw supplier inventories resolve exact titles and redirected evidence URLs', (context) => {
+  const directory = mkdtempSync(path.join(os.tmpdir(), 'protolab-supplier-titles-'));
+  context.after(() => rmSync(directory, { recursive: true, force: true }));
+  const gvyntokFasteners = path.join(directory, 'gvyntok.json');
+  const promtehimport = path.join(directory, 'promtehimport.json');
+  const screw = { url: 'https://gvyntok.com/example', sku: 'BOLT-001', sourceTitle: exactTitle };
+  const product = {
+    name: '6200-Z',
+    url: 'https://promtehimport.com.ua/offer/6200-z-o1/',
+    sourceUrl: 'https://promtehimport.com.ua/ru/offer/6200-z-o1/',
+  };
+  const incomplete = {
+    name: 'Failed page',
+    url: 'https://promtehimport.com.ua/offer/error-o2/',
+    error: 'Error',
+  };
+  writeFileSync(gvyntokFasteners, JSON.stringify({ products: [screw] }));
+  writeFileSync(
+    promtehimport,
+    JSON.stringify({ products: { [product.url]: product, [incomplete.url]: incomplete } }),
   );
-  const product = Object.values(inventory.products).find((item) => {
-    const row = item as { name?: string; url?: string; error?: string };
-    return row.name && row.url && !row.error;
-  }) as { name: string; url: string; sourceUrl?: string } | undefined;
-  assert.ok(product, 'Promtehimport snapshot has original per-product titles');
+  const index = loadSupplierNameIndex(root, { gvyntokFasteners, promtehimport });
+  assert.equal(supplierNameForCatalog({ sourceUrl: screw.url }, index), screw.sourceTitle);
+  assert.equal(supplierNameForCatalog({ sourceUrl: product.url }, index), product.name);
   assert.equal(
-    supplierNameForCatalog({ sourceUrl: product.sourceUrl ?? product.url }, index),
+    supplierNameForCatalog({ sourceUrl: product.sourceUrl }, index),
     product.name,
   );
+  assert.equal(supplierNameForCatalog({ sourceUrl: incomplete.url }, index), undefined);
 });
 
 test('repository coverage distinguishes evidenced supplier names from genuinely missing titles', () => {
@@ -174,6 +194,12 @@ test('repository coverage distinguishes evidenced supplier names from genuinely 
   );
   assert.equal(coverage.named + coverage.missing, coverage.catalogRecords);
   assert.equal(coverage.pending, 0, 'run the offline name sync after changing source snapshots');
+  assert.deepEqual(coverage.bySource.find(({ source }) => source === 'promtehimport.com.ua'), {
+    source: 'promtehimport.com.ua',
+    total: 7928,
+    named: 7928,
+    missing: 0,
+  });
   assert.equal(
     coverage.bySource.reduce((total, source) => total + source.total, 0),
     coverage.catalogRecords,

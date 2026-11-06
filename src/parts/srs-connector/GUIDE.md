@@ -47,4 +47,4 @@ Both have CPA locks, ferrite suppression and 0.35–0.50 mm² wires. The brochur
 
 The brochure number is not an orderable connector SKU. Ordering codes depend on mechanical coding, harness and OEM. AK II+ appears in the family heading, but no distinct dimensioned AK II+ connector is supplied, so it is not duplicated as a separate geometry. The separate 1823640 retainer is not part of either connector model.
 
-The source PDF is preserved at `public/references/srs-connectors/te-akii-akii-plus.pdf`. Both models support assembled and exploded views, and zero-length leads omit wires.
+Both models support assembled and exploded views, and zero-length leads omit wires. [TE AK II and AK II+ brochure](https://www.te.com/content/dam/te-com/documents/automotive/global/1-1773944-9-akii-akii%2B-squib-2-3w-90deg.pdf)

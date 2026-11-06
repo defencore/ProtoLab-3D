@@ -16,7 +16,7 @@ The library contains **146 nut configurations across nine families**: 144 have d
 
 The original eleven SFK listing options each offer shaft lengths of 100–550 mm in 50 mm increments. Ten have Wangong nut dimensions, producing 100 source-dimensioned assembly presets; the remaining option produces ten clearly labeled examples. The supplied KAIYADE table adds 15 distinct references at those lengths, plus 30 End Machine choices for the three 8 mm shaft/lead references. Nut dimensions and listing length options come from separate references; interchangeability with the photographed seller's product is unverified.
 
-The KAIYADE rows preserve their own load ratings, dimensions and counterbores. They include SFK1204, SFK1205, SFK2002, SFK2502 and SFK2503 in addition to the overlapping Wangong model names. **SFK08025** is a searchable alias for the KAIYADE SFK0825 and Wangong SFK082.5 references. The attached KAIYADE table, designation coding and EK6/EF6 0802 drawing are bundled under `public/references/kaiyade-sfk/`.
+The KAIYADE rows preserve their own load ratings, dimensions and counterbores. They include SFK1204, SFK1205, SFK2002, SFK2502 and SFK2503 in addition to the overlapping Wangong model names. **SFK08025** is a searchable alias for the KAIYADE SFK0825 and Wangong SFK082.5 references. The supplied KAIYADE table (page 17), designation coding (page 9) and EK6/EF6 0802 drawing have no verified public copies.
 
 End Machine uses the supplied 0802 drawing's Ø6 × 30 mm fixed journal, Ø4 × 8 mm drive journal, Ø6 × 9 mm support journal and Ø5.7 × 0.8 mm retaining groove. The nominal M6×0.75 thread over 10 mm is represented by its major-diameter cylinder. Only SFK0802 marks these end dimensions verified; SFK0801 and SFK08025 reuse the 0802 end envelope with a visible interchangeability caveat. Other diameters use unmachined or editable custom ends. The current AliExpress variation menu was unavailable during this update, so current seller options were not independently verified.
 
@@ -35,7 +35,7 @@ For a sourced preset, numeric filters match verified dimensions. Combine family,
 
 The inspection cutaway removes the housing in front of a plane 0.001 mm from the shaft axis. The same plane is used in the preview and FreeCAD export to avoid coincident periodic CAD faces. Complete assemblies retain their configured dimensions.
 
-Sources are linked from each preset:
+Presets identify their dimensional sources and link public documents where available:
 
 - Supplied SFU drawing (original reference, not bundled)
 - [Wangong SFK](https://www.wangong.net/product/ball-screw/mini-type-sfk-series-ball-screw.html), [SFS](https://www.wangong.net/product/ball-screw/high-speed-low-noise-sfs-series-ball-screw.html), [DFU](https://www.wangong.net/product/ball-screw/double-nut-dfu-series-ball-screw.html), [SFY](https://www.wangong.net/product/ball-screw/big-lead-sfy-series-ball-screw.html)

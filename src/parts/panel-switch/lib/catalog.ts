@@ -56,8 +56,6 @@ export const sourceUrls = {
   daierGuard: 'https://www.chinadaier.com/wp-content/uploads/2018/05/SAC-01.pdf',
   daierPair:
     'https://www.daierswitches.com/products/racing-auto-20a-12v-lighted-toggle-switch-with-safety-guard',
-  daierDs225: 'references/daier-ds-225-user-photo.png',
-  daierDs225Drawing: 'references/daier-ds-225-user-drawing.png',
   daierDs225Product: 'https://www.chinadaier.com/ds-225-lockless-square-push-switch/',
   bermMomentary:
     'https://www.mikroelec.com/product/2671/bem-la16-11d-y-g-momentary-push-button-16mm-green-led-220v-5pin',
@@ -301,10 +299,10 @@ const ds225: SwitchModel = {
   mountFlatWidth: 11.4,
   guarded: false,
   poles: 1,
-  source: sourceUrls.daierDs225,
+  source: '',
   sourceName: 'User-supplied DS-225 photo and mounting drawing',
   evidence:
-    'The user correction and supplied photo establish a black rectangular upper housing with rounded corners and a round green actuator. The earlier dimensional drawing is retained as a mounting/body reference: 5 mm retaining stack, placed behind the selected panel; 17.5 mm rear body depth, 10 mm upper mounting section and 11.3 mm lower body width; Ø12.7 mm panel opening with 11.4 mm opposing flats; two 6 × 2 × 0.6 mm solder lugs at 6 mm centres, with 2 mm high slots. OFF–(ON) momentary action follows the user identification and manufacturer function table.',
+    'The user correction and supplied photo establish a black rectangular upper housing with rounded corners and a round green actuator. The earlier supplied drawing specifies a 5 mm retaining stack behind the selected panel, 17.5 mm rear body depth, 10 mm upper mounting section and 11.3 mm lower body width. It shows a Ø12.7 mm panel opening with 11.4 mm opposing flats and two 6 × 2 × 0.6 mm solder lugs at 6 mm centres with 2 mm high slots. OFF–(ON) momentary action follows the user identification and manufacturer function table.',
   limitations:
     'Installation reconstruction using the user photo for the corrected upper housing shape and the earlier drawing for mounting/body reference. Not original manufacturer CAD. The photo does not dimension the rectangular bezel: modeled 15 × 15 mm, 1 mm corner radius and 3 mm height are illustrative; the earlier drawing’s Ø15 mm applies to its round outline and does not verify either rectangular side. Front projection (modeled 5 mm), actuator diameter (Ø9 mm), crown and 1 mm inspection travel are illustrative. The reference drawing specifies the panel opening, not the mounting barrel diameter or flats: Ø12.6 mm with 11.3 mm flats is an illustrative clearance choice. The inherited body/terminal dimensions require confirmation on the photographed article. Thread pitch, nut profile, 2 mm washer thickness, slot width and position are illustrative. Panel thickness moves the 5 mm washer/nut stack behind the panel while keeping the flange at Z=0; this installation pose does not establish the permitted panel thickness. The upper 2.0 annotation has an ambiguous datum and does not establish the modeled front height or inspection travel. Black housing and green actuator follow the photo; exact RGB values are illustrative appearance, not a verified colour order code or electrical option. The manufacturer public page’s inline drawing depicts another model. Threads, knurling, spring and internal contacts are omitted. No electrical rating or permitted panel thickness is assigned.',
   body: [11.3, 11.3, 17.5],

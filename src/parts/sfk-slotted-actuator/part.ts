@@ -105,18 +105,18 @@ const part: PartDefinition = {
   notes:
     'Preserves the previous 76-occurrence SFK0825 assembly with its original colors, geometry recipes, fixed screw axis, twin slotted cranks, opposed bronze rollers and four F686-2RS bearings. The 12.2 mm arm offset gives nut travel x=12.2 tan(angle), with 8.880874 mm total stroke for ±20°. The direct trunnion version is a separate library item. The source M6 journal and mating nuts remain nominal envelopes in every detail mode. Verify fits, load and drawing tolerances before manufacture; powered reversal and sensing are external.',
   sources: [
-    { label: 'Supplied KAIYADE SFK nut table', url: 'references/kaiyade-sfk/dimension-table.png' },
+    { label: 'Supplied KAIYADE SFK nut table', url: '' },
     {
       label: 'Supplied 0802 EK6/EF6 end-machining reference',
-      url: 'references/kaiyade-sfk/ek6-ef6-0802.png',
+      url: '',
     },
     {
       label: 'Supplied LF D14 L22 coupling drawing',
-      url: 'references/jaw-coupling/lf-d14-l22-drawing.png',
+      url: '',
     },
     {
       label: 'Supplied GMP16T-TEC1636 data',
-      url: 'references/gmp16-gearmotor/tec1636-dimensions.png',
+      url: 'https://www.ttmotor.com/uploads/GMP16T-TEC1636.pdf',
     },
   ],
   fabricationFiles(p) {

@@ -107,10 +107,9 @@ test('29 fixed switch configurations cover separate functions and retain source 
     assert.ok(part.validate({ ...part.defaults, ...extra }, 'assembled').length);
 });
 
-test('DS-225 retains the corrected photo, drawing reference and momentary two-terminal identity', () => {
+test('DS-225 retains supplied geometry evidence and its momentary two-terminal identity', () => {
   const model = models.find((model) => model.id === 'daier-ds-225')!,
-    preset = part.presets.find((preset) => preset.id === model.id)!,
-    source = 'references/daier-ds-225-user-photo.png';
+    preset = part.presets.find((preset) => preset.id === model.id)!;
   assert.equal(model.manufacturer, 'DAIER');
   assert.equal(model.designation, 'DS-225');
   assert.equal(model.form, 'pushbutton');
@@ -121,16 +120,17 @@ test('DS-225 retains the corrected photo, drawing reference and momentary two-te
   assert.equal(model.termination, 'Solder lug');
   assert.equal(model.mountDiameter, 12.7);
   assert.equal(model.guarded, false);
-  assert.equal(model.source, source);
-  assert.equal(preset.catalog!.sourceUrl, source);
+  assert.equal(model.source, '');
+  assert.equal(preset.catalog!.sourceUrl, '');
+  assert.equal(preset.catalog!.sourceName, 'User-supplied DS-225 photo and mounting drawing');
   assert.equal(preset.catalog!.sourceKind, 'attachment');
   assert.equal(preset.catalog!.geometryEvidence!.kind, 'source-dimensions');
-  assert.equal(preset.catalog!.geometryEvidence!.sourceUrl, source);
-  assert.ok(
-    preset.catalog!.alternateSourceUrls!.includes('references/daier-ds-225-user-drawing.png'),
-    'Keep the earlier dimensional drawing as mounting/body reference',
-  );
+  assert.equal(preset.catalog!.geometryEvidence!.sourceUrl, '');
+  assert.deepEqual(preset.catalog!.alternateSourceUrls, [
+    'https://www.chinadaier.com/ds-225-lockless-square-push-switch/',
+  ]);
   assert.match(model.evidence, /black rectangular upper housing/);
+  assert.match(model.evidence, /earlier supplied drawing/);
   assert.match(model.limitations, /15 × 15 mm/);
   assert.match(model.limitations, /does not verify either rectangular side/);
   assert.equal(preset.catalog!.attributes!.circuit, 'SPST-NO');

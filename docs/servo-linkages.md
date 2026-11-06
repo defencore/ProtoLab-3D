@@ -16,7 +16,7 @@ Horns and gears offer a **Spline socket side** view. Clevis assemblies offer **A
 
 ## Reference evidence
 
-The supplied PNG files are preserved unchanged under `public/references/servo-*` and `public/references/clevis-*`. Presets distinguish explicit dimensions from assumptions through `catalog.verifiedParameters` and their descriptions. Color choices are not duplicated into separate dimensional presets.
+Presets record the dimensions established by the supplied servo and clevis images through `catalog.verifiedParameters` and their descriptions. Color choices are not duplicated into separate dimensional presets.
 
 - Horn references include the 58/36/30/42 mm nylon family, 28/47 mm aluminium arms, PDRS60 15T, the micro arm drawing, the inch cross, Q-XA15, 23T/24T/25T arm families, 4/5/6 mm socket families and the 52 mm clamping arm. Unspecified plate/hub dimensions and irregular hole patterns remain documented prototype assumptions. Cosmetic ribs and lightening pockets are omitted.
 - The supplied gear drawings establish 17.6/25.6 mm OD, 6 mm width, 24T socket and a plain 3 mm retaining hole. [ServoCity's gear family](https://www.servocity.com/mod-0-8-pitch-servo-gears/) establishes 13 real C24T/H25T SKU combinations. The [20-tooth](https://www.servocity.com/2305-series-brass-mod-0-8-servo-gear-24-tooth-spline-20-tooth/) and [30-tooth](https://www.servocity.com/2305-series-brass-mod-0-8-servo-gear-24-tooth-spline-30-tooth/) pages confirm module 0.8 and 20 degree pressure angle. Socket major/minor diameters, depth and screw-head recess dimensions remain unverified.
