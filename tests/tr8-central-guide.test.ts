@@ -1,5 +1,4 @@
 import assert from 'node:assert/strict';
-import { createHash } from 'node:crypto';
 import test from 'node:test';
 import { Euler, Matrix4, Vector3 } from 'three';
 import { withGeometryMode } from '../src/core/geometry-mode';
@@ -9,10 +8,9 @@ import old56 from '../src/parts/tr8-quad-staggered-actuator/part';
 import guided64, { guidedPieces, guidedFramePieces, guideShape, centralGuideFaces, centralGuideLayout } from '../src/parts/tr8-quad-guided-actuator/part';
 import guided56 from '../src/parts/tr8-quad-guided-staggered-actuator/part';
 import before from './fixtures/tr8-cnc-original-geometry-sha256.json';
-import { nativeSourcesBeforeIdentity } from './helpers/study-source-baselines';
+import { tr8CncPreservationHashes } from './helpers/study-source-baselines';
 
 const close = (a:number,b:number,tolerance=1e-8) => assert.ok(Math.abs(a-b)<tolerance, `${a} != ${b}`);
-const hash = (value:string) => createHash('sha256').update(value).digest('hex');
 const mixed = { angleA:-20, angleB:20, angleC:-20, angleD:20 };
 const numeric=(value:number)=>Number(value.toFixed(8));
 function worldRecipe(shape:Shape,frame=new Matrix4()):unknown {
@@ -32,17 +30,24 @@ test('existing CNC products keep all eight source and occurrence baselines', () 
   assert.equal(before.length,8);
   assert.notEqual(old64.defaults, old56.defaults);
   assert.notEqual(old64.parameters, old56.parameters);
-  const sources = before.map((row) => withGeometryMode(row.mode as 'simple'|'full',()=> {
+  const captures = before.map((row) => withGeometryMode(row.mode as 'simple'|'full',()=> {
     const variant=row.variant as CncVariant, part=variant==='coplanar-64'?old64:old56;
     close(cncLayout(variant).diameter,variant==='coplanar-64'?64:56);
     assert.deepEqual(part.identityParameters!(row.parameters), {...row.parameters, angleA:0, angleB:0, angleC:0, angleD:0});
-    const source = part.python(row.parameters,'assembled');
-    assert.equal(hash(JSON.stringify(cncPieces(row.parameters,'assembled',variant))),row.piecesSha256);
-    return source;
+    return {
+      source: part.python(row.parameters,'assembled'),
+      pieces: JSON.stringify(cncPieces(row.parameters,'assembled',variant)),
+      portablePreview: row.mode === 'full',
+    };
   }));
-  const physicalSources = nativeSourcesBeforeIdentity(sources);
-  for (const [index, row] of before.entries())
-    assert.equal(hash(physicalSources[index]), row.sourceSha256);
+  const hashes = tr8CncPreservationHashes(captures);
+  for (const [index, row] of before.entries()) {
+    const { angleA, angleB, angleC, angleD } = row.parameters;
+    const label = `${row.variant}/${row.mode} at [${[angleA, angleB, angleC, angleD].join(', ')}] degrees`;
+    const full = row.mode === 'full';
+    assert.equal(hashes[index].piecesSha256, full ? row.portablePiecesSha256 : row.piecesSha256, `${label} occurrences`);
+    assert.equal(hashes[index].sourceSha256, full ? row.portableSourceSha256 : row.sourceSha256, `${label} native source`);
+  }
 });
 
 for (const [variant,part,original] of [

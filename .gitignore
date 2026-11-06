@@ -26,17 +26,44 @@ data/*
 !data/promtehimport-inventory.json
 !data/library-expansion.json
 
-# Source archives are linked remotely, never bundled.
+# Bundle reviewed drawings and images linked by the catalog. Keep source archives local.
 /public/references/*
 !/public/references/nose-optical-dome-user-reference.png
 !/public/references/daier-ds-225-user-drawing.png
 !/public/references/daier-ds-225-user-photo.png
 
+!/public/references/heltec-handheld-palm-grip-reference.png
+!/public/references/heltec-handheld-rotary-blocker-reference-1.png
+!/public/references/heltec-handheld-rotary-blocker-reference-2.png
 !/public/references/heltec-handheld-guard-reference-1.png
 !/public/references/heltec-handheld-guard-reference-2.png
 !/public/references/heltec-handheld-guard-reference-3.png
 !/public/references/heltec-handheld-guard-reference-4.png
 !/public/references/worm-fin-actuator/
+
+!/public/references/gmp16-gearmotor/
+/public/references/gmp16-gearmotor/*
+!/public/references/gmp16-gearmotor/planetary-construction.png
+!/public/references/gmp16-gearmotor/tec1636-dimensions.png
+
+!/public/references/jaw-coupling/
+/public/references/jaw-coupling/*
+!/public/references/jaw-coupling/clamp-thimble-bore.png
+!/public/references/jaw-coupling/clamp-thimble-side.png
+!/public/references/jaw-coupling/lf-coupling-photos.png
+!/public/references/jaw-coupling/lf-d14-l22-drawing.png
+
+!/public/references/kaiyade-sfk/
+/public/references/kaiyade-sfk/*
+!/public/references/kaiyade-sfk/designation-coding.png
+!/public/references/kaiyade-sfk/dimension-table.png
+!/public/references/kaiyade-sfk/ek6-ef6-0802.png
+
+!/public/references/tr8-h-nut/
+/public/references/tr8-h-nut/*
+!/public/references/tr8-h-nut/h-nut-drawing.png
+!/public/references/tr8-h-nut/h-nut-photo.png
+!/public/references/tr8-h-nut/tr8-stock.png
 
 # Reviewed JCG108 dimension drawing; the datasheet archive remains a remote source.
 !/public/references/antennas/

@@ -102,11 +102,11 @@ The two retained sleeve mounting holes are M3 × 0.5; use a 2.5 mm tap drill bef
 
 The images establish arrangement, not measured dimensions, fits or material ratings.
 
-- [Revised bearing and fin arrangement](/references/worm-fin-actuator/reference-07-fin-bearing-arrangement.png)
-- [Revised stepped-sleeve section](/references/worm-fin-actuator/reference-08-stepped-sleeve-section.png)
-- [Original oblique view](/references/worm-fin-actuator/reference-01-oblique.png)
-- [Original fin-side view](/references/worm-fin-actuator/reference-02-fin-side.png)
-- [Original sector detail](/references/worm-fin-actuator/reference-03-sector-detail.png)
-- [Original front view](/references/worm-fin-actuator/reference-04-front.png)
-- [Original assembly section](/references/worm-fin-actuator/reference-05-section.png)
-- [Original section detail](/references/worm-fin-actuator/reference-06-section-detail.png)
+- [Revised bearing and fin arrangement](../../../public/references/worm-fin-actuator/reference-07-fin-bearing-arrangement.png)
+- [Revised stepped-sleeve section](../../../public/references/worm-fin-actuator/reference-08-stepped-sleeve-section.png)
+- [Original oblique view](../../../public/references/worm-fin-actuator/reference-01-oblique.png)
+- [Original fin-side view](../../../public/references/worm-fin-actuator/reference-02-fin-side.png)
+- [Original sector detail](../../../public/references/worm-fin-actuator/reference-03-sector-detail.png)
+- [Original front view](../../../public/references/worm-fin-actuator/reference-04-front.png)
+- [Original assembly section](../../../public/references/worm-fin-actuator/reference-05-section.png)
+- [Original section detail](../../../public/references/worm-fin-actuator/reference-06-section-detail.png)

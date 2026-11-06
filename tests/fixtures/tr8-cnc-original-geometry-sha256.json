@@ -36,7 +36,9 @@
       "angleD": 0
     },
     "sourceSha256": "a0496ca40e90c4408f27ff7680aee3a4348b5a63e344b8548e5e9a2eba02e55b",
-    "piecesSha256": "e92c71b0cade99aab4590068fbb3532a9c14021831d27ca68caaf5066e1028a8"
+    "piecesSha256": "e92c71b0cade99aab4590068fbb3532a9c14021831d27ca68caaf5066e1028a8",
+    "portableSourceSha256": "836ae3806db8888f0d4f530f152bfd8e36ebe3540b1b365eb8bf39552a9cfa07",
+    "portablePiecesSha256": "84ba0c9e5be150d334abba49f4a4964173df80273c8d468d763d2112f77d646d"
   },
   {
     "variant": "coplanar-64",
@@ -49,7 +51,9 @@
       "angleD": 20
     },
     "sourceSha256": "eaa8f6c8fb7d3fa3b6d2ce4c4ec06d2bd2e36771e107dc8fd7b1f0ca47cde0f0",
-    "piecesSha256": "6e150c3c8c5b5003c7a6414eeb9a063c034c4b4b7bec8033e22b0b8ba269d943"
+    "piecesSha256": "6e150c3c8c5b5003c7a6414eeb9a063c034c4b4b7bec8033e22b0b8ba269d943",
+    "portableSourceSha256": "65eeae793d4bf56b422e746b44b5a0892b02e86ceecabdd6fccd678aa8e65a5e",
+    "portablePiecesSha256": "46fff7d61bdf454ccfebd454055b71ffa2c3208f34c37f5d12792cfe07539244"
   },
   {
     "variant": "staggered-56",
@@ -88,7 +92,9 @@
       "angleD": 0
     },
     "sourceSha256": "4cd0847063bc47361b1198946d2203ce3307e948ede207b002bc221b6a68c08f",
-    "piecesSha256": "4907c789d80ef5cb85d54a05122ebe47e51a4906d1b6de0c4cfb2df18fe8dfca"
+    "piecesSha256": "4907c789d80ef5cb85d54a05122ebe47e51a4906d1b6de0c4cfb2df18fe8dfca",
+    "portableSourceSha256": "8d64ca8bd15cfb6b51b94ce9eda13ff2dd11dc6447df1fe3ad06d8f47cc1ede6",
+    "portablePiecesSha256": "499ee5735e8925161c63c38e3d5067a851eb4031e1a0d61ffb2710f678fa0eb0"
   },
   {
     "variant": "staggered-56",
@@ -101,6 +107,8 @@
       "angleD": 20
     },
     "sourceSha256": "829f7c96176a4d3fb7a534cf132c854a2e3210a332c2a49fed90cdddfe112a67",
-    "piecesSha256": "0f10cbe0881ed8f2f5d74e6205c39fb0ef4aa5aa4de847e17d527373b81ce4be"
+    "piecesSha256": "0f10cbe0881ed8f2f5d74e6205c39fb0ef4aa5aa4de847e17d527373b81ce4be",
+    "portableSourceSha256": "33921a7e9f034ef6103fe3fb9e23afbbf3a865011c864e966c823b67f2dc3fca",
+    "portablePiecesSha256": "1b51f825c26e1dbf64261eb9a1097aff1bff80504b9e32488a3e7b19827b6f77"
   }
 ]

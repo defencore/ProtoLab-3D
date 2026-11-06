@@ -351,17 +351,19 @@ export function preservedStudySource(file: string, content: Buffer): Buffer {
 }
 
 /**
- * Remove only ESKDIdentityJSON literal data from native provenance dictionaries.
- * Python AST positions preserve all remaining source bytes, including embedded
- * constructors. Geometry statements and every original metadata field remain.
+ * Hash historical occurrences and native source after projecting ESKD identity
+ * and rounding Full-mode transverse preview samples to 10 decimal places.
+ * Python AST positions preserve the executable native source byte for byte.
  */
-export function nativeSourcesBeforeIdentity(sources: readonly string[]): string[] {
-  assert.ok(sources.every((source) => source.includes('ESKDIdentityJSON')));
+export function tr8CncPreservationHashes(
+  captures: readonly { source: string; pieces: string; portablePreview: boolean }[],
+): { sourceSha256: string; piecesSha256: string }[] {
+  assert.ok(captures.every(({ source }) => source.includes('ESKDIdentityJSON')));
   const result = spawnSync(
     'python3',
     [fileURLToPath(new URL('./native-identity-projection.py', import.meta.url))],
     {
-      input: JSON.stringify(sources),
+      input: JSON.stringify(captures),
       encoding: 'utf8',
       maxBuffer: 128 * 1024 * 1024,
     },
@@ -370,8 +372,10 @@ export function nativeSourcesBeforeIdentity(sources: readonly string[]): string[
   const projected: unknown = JSON.parse(result.stdout);
   assert.ok(
     Array.isArray(projected) &&
-      projected.length === sources.length &&
-      projected.every((item) => typeof item === 'string'),
+      projected.length === captures.length &&
+      projected.every(
+        (item) => /^[a-f0-9]{64}$/.test(item.sourceSha256) && /^[a-f0-9]{64}$/.test(item.piecesSha256),
+      ),
   );
   return projected;
 }
